@@ -11,27 +11,30 @@ final class constants$442 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$442() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_slice_get_config",
-        constants$173.const$0
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_INT,
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
         JAVA_LONG,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_slice_get_config_state",
-        constants$442.const$1
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_slice_free1",
+        constants$442.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GSpawnChildSetupFunc.class, "apply", constants$13.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_spawn_error_quark",
-        constants$83.const$1
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_slice_free_chain_with_offset",
+        constants$442.const$2
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        JAVA_INT,
+        JAVA_LONG
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_spawn_exit_error_quark",
-        constants$83.const$1
+        "g_slice_set_config",
+        constants$442.const$4
     );
 }
 

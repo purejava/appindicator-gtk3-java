@@ -12,25 +12,21 @@ final class constants$990 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$990() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$989.const$4
+    static final VarHandle const$0 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("read_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.append_to.class, "apply", constants$180.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$180.const$0
     );
-    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("replace"));
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+    static final VarHandle const$3 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("append_to"));
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
         JAVA_INT,
         JAVA_INT,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.replace_async.class, "apply", constants$990.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$990.const$2
-    );
-    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("replace_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.append_to_async.class, "apply", constants$990.const$4);
 }
 
 

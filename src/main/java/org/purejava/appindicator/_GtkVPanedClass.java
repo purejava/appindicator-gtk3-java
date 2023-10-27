@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkVPanedClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3400.const$0;
+        return constants$3405.const$0;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1056);

@@ -2,29 +2,41 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemorySegment;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$1879 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1879() {}
-    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_micro_version", JAVA_INT);
-    static final MemorySegment const$1 = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_version", RuntimeHelper.POINTER);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GdkPixbufDestroyNotify.class, "apply", constants$13.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_desktop",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_timestamp",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_icon",
+        constants$13.const$4
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_error_quark",
-        constants$83.const$1
+        "gdk_app_launch_context_set_icon_name",
+        constants$13.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_ref",
-        constants$5.const$2
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("pixel"),
+        JAVA_SHORT.withName("red"),
+        JAVA_SHORT.withName("green"),
+        JAVA_SHORT.withName("blue"),
+        MemoryLayout.paddingLayout(2)
+    ).withName("_GdkColor");
+    static final VarHandle const$5 = constants$1879.const$4.varHandle(MemoryLayout.PathElement.groupElement("pixel"));
 }
 
 

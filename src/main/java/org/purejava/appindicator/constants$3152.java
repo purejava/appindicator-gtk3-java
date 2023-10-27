@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3152 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3152() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_scroll_mark_onscreen",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_move_mark_onscreen",
-        constants$9.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_place_cursor_onscreen",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_visible_rect",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_cursor_visible",
-        constants$40.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_cursor_visible",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$3149.const$2.varHandle(MemoryLayout.PathElement.groupElement("copy_clipboard"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextViewClass.paste_clipboard.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$3149.const$2.varHandle(MemoryLayout.PathElement.groupElement("paste_clipboard"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextViewClass.toggle_overwrite.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$3149.const$2.varHandle(MemoryLayout.PathElement.groupElement("toggle_overwrite"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextViewClass.create_buffer.class, "apply", constants$5.const$2);
 }
 
 

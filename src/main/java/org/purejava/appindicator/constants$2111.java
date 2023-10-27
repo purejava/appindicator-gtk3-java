@@ -9,12 +9,12 @@ final class constants$2111 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2111() {}
-    static final VarHandle const$0 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("unmap_event"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkWidgetClass.property_notify_event.class, "apply", constants$9.const$0);
-    static final VarHandle const$2 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("property_notify_event"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass.selection_clear_event.class, "apply", constants$9.const$0);
-    static final VarHandle const$4 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("selection_clear_event"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkWidgetClass.selection_request_event.class, "apply", constants$9.const$0);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass.event.class, "apply", constants$9.const$0);
+    static final VarHandle const$1 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("event"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkWidgetClass.button_press_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$3 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("button_press_event"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWidgetClass.button_release_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$5 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("button_release_event"));
 }
 
 

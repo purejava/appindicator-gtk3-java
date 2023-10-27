@@ -9,24 +9,12 @@ final class constants$2334 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2334() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellAreaClass._gtk_reserved8.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved8"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_add",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_remove",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_has_renderer",
-        constants$9.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.get_preferred_height.class, "apply", constants$332.const$1);
+    static final VarHandle const$1 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_height"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.get_preferred_width_for_height.class, "apply", constants$2333.const$2);
+    static final VarHandle const$3 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_width_for_height"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.set_cell_property.class, "apply", constants$380.const$3);
+    static final VarHandle const$5 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("set_cell_property"));
 }
 
 

@@ -19,13 +19,13 @@ import java.lang.invoke.VarHandle;
 public class _AtkRegistry {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2049.const$3;
+        return constants$2054.const$4;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);
     }
     public static VarHandle factory_type_registry$VH() {
-        return constants$2049.const$4;
+        return constants$2054.const$5;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class _AtkRegistry {
      * }
      */
     public static MemorySegment factory_type_registry$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2049.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2054.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -43,16 +43,16 @@ public class _AtkRegistry {
      * }
      */
     public static void factory_type_registry$set(MemorySegment seg, MemorySegment x) {
-        constants$2049.const$4.set(seg, x);
+        constants$2054.const$5.set(seg, x);
     }
     public static MemorySegment factory_type_registry$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2049.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2054.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void factory_type_registry$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2049.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2054.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle factory_singleton_cache$VH() {
-        return constants$2049.const$5;
+        return constants$2055.const$0;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _AtkRegistry {
      * }
      */
     public static MemorySegment factory_singleton_cache$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2049.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2055.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -70,13 +70,13 @@ public class _AtkRegistry {
      * }
      */
     public static void factory_singleton_cache$set(MemorySegment seg, MemorySegment x) {
-        constants$2049.const$5.set(seg, x);
+        constants$2055.const$0.set(seg, x);
     }
     public static MemorySegment factory_singleton_cache$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2049.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2055.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void factory_singleton_cache$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2049.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2055.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

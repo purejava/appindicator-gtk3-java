@@ -13,7 +13,7 @@ public interface gtk_clipboard_request_text$callback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_clipboard_request_text$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2628.const$3, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$2633.const$3, fi, constants$14.const$3, scope);
     }
     static gtk_clipboard_request_text$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

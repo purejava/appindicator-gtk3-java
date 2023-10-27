@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2026 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2026() {}
-    static final VarHandle const$0 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("copy_text"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.cut_text.class, "apply", constants$467.const$3);
-    static final VarHandle const$2 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("cut_text"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.delete_text.class, "apply", constants$467.const$3);
-    static final VarHandle const$4 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("delete_text"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.paste_text.class, "apply", constants$40.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_text_get_text_before_offset",
+        constants$1425.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_text_get_string_at_offset",
+        constants$1425.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_text_get_caret_offset",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_text_get_character_extents",
+        constants$431.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_text_get_run_attributes",
+        constants$180.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_text_get_default_attributes",
+        constants$5.const$2
+    );
 }
 
 

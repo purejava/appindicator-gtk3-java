@@ -28,7 +28,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkCalendarClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2558.const$3;
+        return constants$2563.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 824);
@@ -42,7 +42,7 @@ public class _GtkCalendarClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(month_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2558.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2563.const$4, fi, constants$13.const$1, scope);
         }
         static month_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -57,7 +57,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle month_changed$VH() {
-        return constants$2558.const$5;
+        return constants$2563.const$5;
     }
     /**
      * Getter for field:
@@ -66,7 +66,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment month_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2558.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2563.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -75,13 +75,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void month_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$2558.const$5.set(seg, x);
+        constants$2563.const$5.set(seg, x);
     }
     public static MemorySegment month_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2558.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2563.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void month_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2558.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2563.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static month_changed month_changed(MemorySegment segment, Arena scope) {
         return month_changed.ofAddress(month_changed$get(segment), scope);
@@ -95,7 +95,7 @@ public class _GtkCalendarClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(day_selected fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2559.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2564.const$0, fi, constants$13.const$1, scope);
         }
         static day_selected ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -110,7 +110,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle day_selected$VH() {
-        return constants$2559.const$1;
+        return constants$2564.const$1;
     }
     /**
      * Getter for field:
@@ -119,7 +119,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment day_selected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2559.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2564.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -128,13 +128,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void day_selected$set(MemorySegment seg, MemorySegment x) {
-        constants$2559.const$1.set(seg, x);
+        constants$2564.const$1.set(seg, x);
     }
     public static MemorySegment day_selected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2559.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2564.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void day_selected$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2559.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2564.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static day_selected day_selected(MemorySegment segment, Arena scope) {
         return day_selected.ofAddress(day_selected$get(segment), scope);
@@ -148,7 +148,7 @@ public class _GtkCalendarClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(day_selected_double_click fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2559.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2564.const$2, fi, constants$13.const$1, scope);
         }
         static day_selected_double_click ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -163,7 +163,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle day_selected_double_click$VH() {
-        return constants$2559.const$3;
+        return constants$2564.const$3;
     }
     /**
      * Getter for field:
@@ -172,7 +172,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment day_selected_double_click$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2559.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2564.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -181,13 +181,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void day_selected_double_click$set(MemorySegment seg, MemorySegment x) {
-        constants$2559.const$3.set(seg, x);
+        constants$2564.const$3.set(seg, x);
     }
     public static MemorySegment day_selected_double_click$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2559.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2564.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void day_selected_double_click$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2559.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2564.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static day_selected_double_click day_selected_double_click(MemorySegment segment, Arena scope) {
         return day_selected_double_click.ofAddress(day_selected_double_click$get(segment), scope);
@@ -201,7 +201,7 @@ public class _GtkCalendarClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(prev_month fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2559.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2564.const$4, fi, constants$13.const$1, scope);
         }
         static prev_month ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -216,7 +216,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle prev_month$VH() {
-        return constants$2559.const$5;
+        return constants$2564.const$5;
     }
     /**
      * Getter for field:
@@ -225,7 +225,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment prev_month$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2559.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2564.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -234,13 +234,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void prev_month$set(MemorySegment seg, MemorySegment x) {
-        constants$2559.const$5.set(seg, x);
+        constants$2564.const$5.set(seg, x);
     }
     public static MemorySegment prev_month$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2559.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2564.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void prev_month$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2559.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2564.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static prev_month prev_month(MemorySegment segment, Arena scope) {
         return prev_month.ofAddress(prev_month$get(segment), scope);
@@ -254,7 +254,7 @@ public class _GtkCalendarClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(next_month fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2560.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2565.const$0, fi, constants$13.const$1, scope);
         }
         static next_month ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -269,7 +269,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle next_month$VH() {
-        return constants$2560.const$1;
+        return constants$2565.const$1;
     }
     /**
      * Getter for field:
@@ -278,7 +278,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment next_month$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2560.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2565.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -287,13 +287,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void next_month$set(MemorySegment seg, MemorySegment x) {
-        constants$2560.const$1.set(seg, x);
+        constants$2565.const$1.set(seg, x);
     }
     public static MemorySegment next_month$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2560.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2565.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void next_month$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2560.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2565.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static next_month next_month(MemorySegment segment, Arena scope) {
         return next_month.ofAddress(next_month$get(segment), scope);
@@ -307,7 +307,7 @@ public class _GtkCalendarClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(prev_year fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2560.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2565.const$2, fi, constants$13.const$1, scope);
         }
         static prev_year ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -322,7 +322,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle prev_year$VH() {
-        return constants$2560.const$3;
+        return constants$2565.const$3;
     }
     /**
      * Getter for field:
@@ -331,7 +331,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment prev_year$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2560.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2565.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -340,13 +340,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void prev_year$set(MemorySegment seg, MemorySegment x) {
-        constants$2560.const$3.set(seg, x);
+        constants$2565.const$3.set(seg, x);
     }
     public static MemorySegment prev_year$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2560.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2565.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void prev_year$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2560.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2565.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static prev_year prev_year(MemorySegment segment, Arena scope) {
         return prev_year.ofAddress(prev_year$get(segment), scope);
@@ -360,7 +360,7 @@ public class _GtkCalendarClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(next_year fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2560.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2565.const$4, fi, constants$13.const$1, scope);
         }
         static next_year ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -375,7 +375,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle next_year$VH() {
-        return constants$2560.const$5;
+        return constants$2565.const$5;
     }
     /**
      * Getter for field:
@@ -384,7 +384,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment next_year$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2560.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2565.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -393,13 +393,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void next_year$set(MemorySegment seg, MemorySegment x) {
-        constants$2560.const$5.set(seg, x);
+        constants$2565.const$5.set(seg, x);
     }
     public static MemorySegment next_year$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2560.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2565.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void next_year$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2560.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2565.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static next_year next_year(MemorySegment segment, Arena scope) {
         return next_year.ofAddress(next_year$get(segment), scope);
@@ -413,7 +413,7 @@ public class _GtkCalendarClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2561.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2566.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -428,7 +428,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle _gtk_reserved1$VH() {
-        return constants$2561.const$1;
+        return constants$2566.const$1;
     }
     /**
      * Getter for field:
@@ -437,7 +437,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2561.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2566.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -446,13 +446,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$2561.const$1.set(seg, x);
+        constants$2566.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2561.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2566.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2561.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2566.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
@@ -466,7 +466,7 @@ public class _GtkCalendarClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2561.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2566.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -481,7 +481,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle _gtk_reserved2$VH() {
-        return constants$2561.const$3;
+        return constants$2566.const$3;
     }
     /**
      * Getter for field:
@@ -490,7 +490,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2561.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2566.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -499,13 +499,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$2561.const$3.set(seg, x);
+        constants$2566.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2561.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2566.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2561.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2566.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
@@ -519,7 +519,7 @@ public class _GtkCalendarClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2561.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2566.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -534,7 +534,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle _gtk_reserved3$VH() {
-        return constants$2561.const$5;
+        return constants$2566.const$5;
     }
     /**
      * Getter for field:
@@ -543,7 +543,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2561.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2566.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -552,13 +552,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$2561.const$5.set(seg, x);
+        constants$2566.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2561.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2566.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2561.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2566.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
@@ -572,7 +572,7 @@ public class _GtkCalendarClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2562.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2567.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -587,7 +587,7 @@ public class _GtkCalendarClass {
     }
 
     public static VarHandle _gtk_reserved4$VH() {
-        return constants$2562.const$1;
+        return constants$2567.const$1;
     }
     /**
      * Getter for field:
@@ -596,7 +596,7 @@ public class _GtkCalendarClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2562.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2567.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -605,13 +605,13 @@ public class _GtkCalendarClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$2562.const$1.set(seg, x);
+        constants$2567.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2562.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2567.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2562.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2567.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);

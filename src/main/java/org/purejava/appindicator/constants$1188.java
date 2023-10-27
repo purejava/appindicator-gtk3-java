@@ -3,20 +3,66 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1188 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1188() {}
-    static final VarHandle const$0 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("drive_changed"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.is_supported.class, "apply", constants$83.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$83.const$1
-    );
-    static final VarHandle const$3 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("is_supported"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.get_connected_drives.class, "apply", constants$5.const$2);
-    static final VarHandle const$5 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_connected_drives"));
+    static final VarHandle const$0 = constants$1187.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("volume_added"),
+        RuntimeHelper.POINTER.withName("volume_removed"),
+        RuntimeHelper.POINTER.withName("volume_changed"),
+        RuntimeHelper.POINTER.withName("mount_added"),
+        RuntimeHelper.POINTER.withName("mount_removed"),
+        RuntimeHelper.POINTER.withName("mount_pre_unmount"),
+        RuntimeHelper.POINTER.withName("mount_changed"),
+        RuntimeHelper.POINTER.withName("drive_connected"),
+        RuntimeHelper.POINTER.withName("drive_disconnected"),
+        RuntimeHelper.POINTER.withName("drive_changed"),
+        RuntimeHelper.POINTER.withName("is_supported"),
+        RuntimeHelper.POINTER.withName("get_connected_drives"),
+        RuntimeHelper.POINTER.withName("get_volumes"),
+        RuntimeHelper.POINTER.withName("get_mounts"),
+        RuntimeHelper.POINTER.withName("get_volume_for_uuid"),
+        RuntimeHelper.POINTER.withName("get_mount_for_uuid"),
+        RuntimeHelper.POINTER.withName("adopt_orphan_mount"),
+        RuntimeHelper.POINTER.withName("drive_eject_button"),
+        RuntimeHelper.POINTER.withName("drive_stop_button"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5"),
+        RuntimeHelper.POINTER.withName("_g_reserved6")
+    ).withName("_GVolumeMonitorClass");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.volume_added.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$1188.const$1.varHandle(MemoryLayout.PathElement.groupElement("volume_added"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.volume_removed.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$1188.const$1.varHandle(MemoryLayout.PathElement.groupElement("volume_removed"));
 }
 
 

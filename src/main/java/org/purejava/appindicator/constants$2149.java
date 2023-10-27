@@ -8,27 +8,27 @@ final class constants$2149 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2149() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_compute_expand",
-        constants$13.const$1
+        "gtk_widget_child_focus",
+        constants$11.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_compute_expand",
+        "gtk_widget_keynav_failed",
         constants$11.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_support_multidevice",
-        constants$10.const$5
+        "gtk_widget_error_bell",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_support_multidevice",
-        constants$40.const$2
+        "gtk_widget_set_size_request",
+        constants$469.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_accessible_type",
-        constants$25.const$3
+        "gtk_widget_get_size_request",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_accessible_role",
+        "gtk_widget_set_events",
         constants$40.const$2
     );
 }

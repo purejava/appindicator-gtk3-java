@@ -2,27 +2,42 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1679 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1679() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_read_func_t.class, "apply", constants$62.const$0);
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        JAVA_INT.withName("x"),
-        JAVA_INT.withName("y"),
-        JAVA_INT.withName("width"),
-        JAVA_INT.withName("height")
-    ).withName("_cairo_rectangle_int");
-    static final VarHandle const$2 = constants$1679.const$1.varHandle(MemoryLayout.PathElement.groupElement("x"));
-    static final VarHandle const$3 = constants$1679.const$1.varHandle(MemoryLayout.PathElement.groupElement("y"));
-    static final VarHandle const$4 = constants$1679.const$1.varHandle(MemoryLayout.PathElement.groupElement("width"));
-    static final VarHandle const$5 = constants$1679.const$1.varHandle(MemoryLayout.PathElement.groupElement("height"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_skip_space",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_scan_word",
+        constants$9.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_scan_string",
+        constants$9.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_scan_int",
+        constants$9.const$0
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_parse_enum",
+        constants$1679.const$4
+    );
 }
 
 

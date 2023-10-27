@@ -7,11 +7,259 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
 
     /**
      * {@snippet :
+     * #define PANGO_GLYPH_EMPTY 268435455
+     * }
+     */
+    public static int PANGO_GLYPH_EMPTY() {
+        return (int)268435455L;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_GLYPH_INVALID_INPUT 4294967295
+     * }
+     */
+    public static int PANGO_GLYPH_INVALID_INPUT() {
+        return (int)4294967295L;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_GLYPH_UNKNOWN_FLAG 268435456
+     * }
+     */
+    public static int PANGO_GLYPH_UNKNOWN_FLAG() {
+        return (int)268435456L;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING 0
+     * }
+     */
+    public static int PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_ATTR_INDEX_TO_TEXT_END 4294967295
+     * }
+     */
+    public static int PANGO_ATTR_INDEX_TO_TEXT_END() {
+        return (int)4294967295L;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_ANALYSIS_FLAG_CENTERED_BASELINE 1
+     * }
+     */
+    public static int PANGO_ANALYSIS_FLAG_CENTERED_BASELINE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_ANALYSIS_FLAG_IS_ELLIPSIS 2
+     * }
+     */
+    public static int PANGO_ANALYSIS_FLAG_IS_ELLIPSIS() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_ANALYSIS_FLAG_NEED_HYPHEN 4
+     * }
+     */
+    public static int PANGO_ANALYSIS_FLAG_NEED_HYPHEN() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_RENDER_TYPE_NONE "PangoRenderNone"
+     * }
+     */
+    public static MemorySegment PANGO_RENDER_TYPE_NONE() {
+        return constants$3449.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_ENGINE_TYPE_LANG "PangoEngineLang"
+     * }
+     */
+    public static MemorySegment PANGO_ENGINE_TYPE_LANG() {
+        return constants$3450.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_ENGINE_TYPE_SHAPE "PangoEngineShape"
+     * }
+     */
+    public static MemorySegment PANGO_ENGINE_TYPE_SHAPE() {
+        return constants$3450.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define EOF -1
+     * }
+     */
+    public static int EOF() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
+     * #define P_tmpdir "/tmp"
+     * }
+     */
+    public static MemorySegment P_tmpdir() {
+        return constants$3450.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define PANGO_VERSION 15100
+     * }
+     */
+    public static int PANGO_VERSION() {
+        return (int)15100L;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_FONT_TYPE_ATSUI 3
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_ATSUI() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_VERSION 11800
+     * }
+     */
+    public static int CAIRO_VERSION() {
+        return (int)11800L;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_VERSION_STRING "1.18.0"
+     * }
+     */
+    public static MemorySegment CAIRO_VERSION_STRING() {
+        return constants$3450.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_TAG_DEST "cairo.dest"
+     * }
+     */
+    public static MemorySegment CAIRO_TAG_DEST() {
+        return constants$3450.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_TAG_LINK "Link"
+     * }
+     */
+    public static MemorySegment CAIRO_TAG_LINK() {
+        return constants$3426.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_TAG_CONTENT "cairo.content"
+     * }
+     */
+    public static MemorySegment CAIRO_TAG_CONTENT() {
+        return constants$3450.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_TAG_CONTENT_REF "cairo.content_ref"
+     * }
+     */
+    public static MemorySegment CAIRO_TAG_CONTENT_REF() {
+        return constants$3451.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_JPEG "image/jpeg"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_JPEG() {
+        return constants$3451.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_PNG "image/png"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_PNG() {
+        return constants$3451.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_JP2 "image/jp2"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_JP2() {
+        return constants$3451.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_URI "text/x-uri"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_URI() {
+        return constants$3451.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_UNIQUE_ID "application/x-cairo.uuid"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_UNIQUE_ID() {
+        return constants$3451.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_JBIG2 "application/x-cairo.jbig2"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_JBIG2() {
+        return constants$3452.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_JBIG2_GLOBAL "application/x-cairo.jbig2-global"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL() {
+        return constants$3452.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID "application/x-cairo.jbig2-global-id"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID() {
+        return constants$3452.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_CCITT_FAX "image/g3fax"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX() {
+        return constants$3452.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_CCITT_FAX_PARAMS "application/x-cairo.ccitt.params"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX_PARAMS() {
+        return constants$3452.const$4;
+    }
+    /**
+     * {@snippet :
      * #define CAIRO_MIME_TYPE_EPS "application/postscript"
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_EPS() {
-        return constants$3447.const$3;
+        return constants$3452.const$5;
     }
     /**
      * {@snippet :
@@ -19,7 +267,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_EPS_PARAMS() {
-        return constants$3447.const$4;
+        return constants$3453.const$0;
     }
     /**
      * {@snippet :
@@ -43,7 +291,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_NONE() {
-        return constants$3413.const$1;
+        return constants$3418.const$1;
     }
     /**
      * {@snippet :
@@ -131,7 +379,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_PIXBUF_VERSION() {
-        return constants$3447.const$5;
+        return constants$3453.const$1;
     }
     /**
      * {@snippet :
@@ -339,7 +587,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_PRIMARY() {
-        return constants$3417.const$4;
+        return constants$3422.const$4;
     }
     /**
      * {@snippet :
@@ -347,7 +595,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_SECONDARY() {
-        return constants$3448.const$0;
+        return constants$3453.const$2;
     }
     /**
      * {@snippet :
@@ -355,7 +603,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_CLIPBOARD() {
-        return constants$3448.const$1;
+        return constants$3453.const$3;
     }
     /**
      * {@snippet :
@@ -363,7 +611,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_TARGET_BITMAP() {
-        return constants$3448.const$2;
+        return constants$3453.const$4;
     }
     /**
      * {@snippet :
@@ -371,7 +619,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_TARGET_COLORMAP() {
-        return constants$3448.const$3;
+        return constants$3453.const$5;
     }
     /**
      * {@snippet :
@@ -379,7 +627,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_TARGET_DRAWABLE() {
-        return constants$3448.const$4;
+        return constants$3454.const$0;
     }
     /**
      * {@snippet :
@@ -387,7 +635,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_TARGET_PIXMAP() {
-        return constants$3448.const$5;
+        return constants$3454.const$1;
     }
     /**
      * {@snippet :
@@ -395,7 +643,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_TARGET_STRING() {
-        return constants$3449.const$0;
+        return constants$3454.const$2;
     }
     /**
      * {@snippet :
@@ -403,7 +651,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_TYPE_ATOM() {
-        return constants$3449.const$1;
+        return constants$3454.const$3;
     }
     /**
      * {@snippet :
@@ -411,7 +659,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_TYPE_BITMAP() {
-        return constants$3448.const$2;
+        return constants$3453.const$4;
     }
     /**
      * {@snippet :
@@ -419,7 +667,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_TYPE_COLORMAP() {
-        return constants$3448.const$3;
+        return constants$3453.const$5;
     }
     /**
      * {@snippet :
@@ -427,7 +675,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_TYPE_DRAWABLE() {
-        return constants$3448.const$4;
+        return constants$3454.const$0;
     }
     /**
      * {@snippet :
@@ -435,7 +683,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_TYPE_INTEGER() {
-        return constants$3449.const$2;
+        return constants$3454.const$4;
     }
     /**
      * {@snippet :
@@ -443,7 +691,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_TYPE_PIXMAP() {
-        return constants$3448.const$5;
+        return constants$3454.const$1;
     }
     /**
      * {@snippet :
@@ -451,7 +699,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_TYPE_WINDOW() {
-        return constants$3449.const$3;
+        return constants$3454.const$5;
     }
     /**
      * {@snippet :
@@ -459,7 +707,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GDK_SELECTION_TYPE_STRING() {
-        return constants$3449.const$0;
+        return constants$3454.const$2;
     }
     /**
      * {@snippet :
@@ -479,27 +727,27 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
     }
     /**
      * {@snippet :
-     * #define ATK_MINOR_VERSION 48
+     * #define ATK_MINOR_VERSION 50
      * }
      */
     public static int ATK_MINOR_VERSION() {
-        return (int)48L;
+        return (int)50L;
     }
     /**
      * {@snippet :
-     * #define ATK_MICRO_VERSION 3
+     * #define ATK_MICRO_VERSION 0
      * }
      */
     public static int ATK_MICRO_VERSION() {
-        return (int)3L;
+        return (int)0L;
     }
     /**
      * {@snippet :
-     * #define ATK_BINARY_AGE 24813
+     * #define ATK_BINARY_AGE 25010
      * }
      */
     public static int ATK_BINARY_AGE() {
-        return (int)24813L;
+        return (int)25010L;
     }
     /**
      * {@snippet :
@@ -583,35 +831,35 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
     }
     /**
      * {@snippet :
-     * #define ATK_VERSION_CUR_STABLE 143360
+     * #define ATK_VERSION_CUR_STABLE 143872
      * }
      */
     public static int ATK_VERSION_CUR_STABLE() {
-        return (int)143360L;
+        return (int)143872L;
     }
     /**
      * {@snippet :
-     * #define ATK_VERSION_PREV_STABLE 142848
+     * #define ATK_VERSION_PREV_STABLE 143360
      * }
      */
     public static int ATK_VERSION_PREV_STABLE() {
-        return (int)142848L;
+        return (int)143360L;
     }
     /**
      * {@snippet :
-     * #define ATK_VERSION_MIN_REQUIRED 143360
+     * #define ATK_VERSION_MIN_REQUIRED 143872
      * }
      */
     public static int ATK_VERSION_MIN_REQUIRED() {
-        return (int)143360L;
+        return (int)143872L;
     }
     /**
      * {@snippet :
-     * #define ATK_VERSION_MAX_ALLOWED 143360
+     * #define ATK_VERSION_MAX_ALLOWED 143872
      * }
      */
     public static int ATK_VERSION_MAX_ALLOWED() {
-        return (int)143360L;
+        return (int)143872L;
     }
     /**
      * {@snippet :
@@ -643,7 +891,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_COLOR() {
-        return constants$3449.const$4;
+        return constants$3455.const$0;
     }
     /**
      * {@snippet :
@@ -651,7 +899,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_PROPERTY_COLOR() {
-        return constants$3449.const$5;
+        return constants$3455.const$1;
     }
     /**
      * {@snippet :
@@ -659,7 +907,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_PROPERTY_FONT() {
-        return constants$3450.const$0;
+        return constants$3455.const$2;
     }
     /**
      * {@snippet :
@@ -667,7 +915,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_PROPERTY_PADDING() {
-        return constants$3450.const$1;
+        return constants$3455.const$3;
     }
     /**
      * {@snippet :
@@ -675,7 +923,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_PROPERTY_BORDER_WIDTH() {
-        return constants$3450.const$2;
+        return constants$3455.const$4;
     }
     /**
      * {@snippet :
@@ -683,7 +931,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_PROPERTY_MARGIN() {
-        return constants$3450.const$3;
+        return constants$3455.const$5;
     }
     /**
      * {@snippet :
@@ -691,7 +939,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_PROPERTY_BORDER_RADIUS() {
-        return constants$3450.const$4;
+        return constants$3456.const$0;
     }
     /**
      * {@snippet :
@@ -699,7 +947,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_PROPERTY_BORDER_STYLE() {
-        return constants$3450.const$5;
+        return constants$3456.const$1;
     }
     /**
      * {@snippet :
@@ -707,7 +955,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_PROPERTY_BORDER_COLOR() {
-        return constants$3451.const$0;
+        return constants$3456.const$2;
     }
     /**
      * {@snippet :
@@ -715,7 +963,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_IMAGE() {
-        return constants$3451.const$1;
+        return constants$3456.const$3;
     }
     /**
      * {@snippet :
@@ -723,7 +971,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_CELL() {
-        return constants$3451.const$2;
+        return constants$3456.const$4;
     }
     /**
      * {@snippet :
@@ -731,7 +979,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_DIM_LABEL() {
-        return constants$3451.const$3;
+        return constants$3456.const$5;
     }
     /**
      * {@snippet :
@@ -739,7 +987,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_ENTRY() {
-        return constants$3451.const$4;
+        return constants$3457.const$0;
     }
     /**
      * {@snippet :
@@ -747,7 +995,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_LABEL() {
-        return constants$3441.const$3;
+        return constants$3446.const$3;
     }
     /**
      * {@snippet :
@@ -755,7 +1003,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_COMBOBOX_ENTRY() {
-        return constants$3451.const$5;
+        return constants$3457.const$1;
     }
     /**
      * {@snippet :
@@ -763,7 +1011,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_BUTTON() {
-        return constants$3452.const$0;
+        return constants$3457.const$2;
     }
     /**
      * {@snippet :
@@ -771,7 +1019,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_LIST() {
-        return constants$3452.const$1;
+        return constants$3457.const$3;
     }
     /**
      * {@snippet :
@@ -779,7 +1027,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_LIST_ROW() {
-        return constants$3452.const$2;
+        return constants$3457.const$4;
     }
     /**
      * {@snippet :
@@ -787,7 +1035,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_CALENDAR() {
-        return constants$3452.const$3;
+        return constants$3457.const$5;
     }
     /**
      * {@snippet :
@@ -795,7 +1043,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SLIDER() {
-        return constants$3452.const$4;
+        return constants$3458.const$0;
     }
     /**
      * {@snippet :
@@ -803,7 +1051,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_BACKGROUND() {
-        return constants$3452.const$5;
+        return constants$3458.const$1;
     }
     /**
      * {@snippet :
@@ -811,7 +1059,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_RUBBERBAND() {
-        return constants$3453.const$0;
+        return constants$3458.const$2;
     }
     /**
      * {@snippet :
@@ -819,7 +1067,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_CSD() {
-        return constants$3453.const$1;
+        return constants$3458.const$3;
     }
     /**
      * {@snippet :
@@ -827,7 +1075,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_TOOLTIP() {
-        return constants$3453.const$2;
+        return constants$3458.const$4;
     }
     /**
      * {@snippet :
@@ -835,7 +1083,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_MENU() {
-        return constants$3453.const$3;
+        return constants$3458.const$5;
     }
     /**
      * {@snippet :
@@ -843,7 +1091,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_CONTEXT_MENU() {
-        return constants$3453.const$4;
+        return constants$3459.const$0;
     }
     /**
      * {@snippet :
@@ -851,7 +1099,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_TOUCH_SELECTION() {
-        return constants$3453.const$5;
+        return constants$3459.const$1;
     }
     /**
      * {@snippet :
@@ -859,7 +1107,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_MENUBAR() {
-        return constants$3454.const$0;
+        return constants$3459.const$2;
     }
     /**
      * {@snippet :
@@ -867,7 +1115,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_MENUITEM() {
-        return constants$3454.const$1;
+        return constants$3459.const$3;
     }
     /**
      * {@snippet :
@@ -875,7 +1123,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_TOOLBAR() {
-        return constants$3454.const$2;
+        return constants$3459.const$4;
     }
     /**
      * {@snippet :
@@ -883,7 +1131,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_PRIMARY_TOOLBAR() {
-        return constants$3454.const$3;
+        return constants$3459.const$5;
     }
     /**
      * {@snippet :
@@ -891,7 +1139,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_INLINE_TOOLBAR() {
-        return constants$3454.const$4;
+        return constants$3460.const$0;
     }
     /**
      * {@snippet :
@@ -899,7 +1147,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_STATUSBAR() {
-        return constants$3454.const$5;
+        return constants$3460.const$1;
     }
     /**
      * {@snippet :
@@ -907,7 +1155,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_RADIO() {
-        return constants$3455.const$0;
+        return constants$3460.const$2;
     }
     /**
      * {@snippet :
@@ -915,7 +1163,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_CHECK() {
-        return constants$3455.const$1;
+        return constants$3460.const$3;
     }
     /**
      * {@snippet :
@@ -923,7 +1171,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_DEFAULT() {
-        return constants$3455.const$2;
+        return constants$3460.const$4;
     }
     /**
      * {@snippet :
@@ -931,7 +1179,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_TROUGH() {
-        return constants$3455.const$3;
+        return constants$3460.const$5;
     }
     /**
      * {@snippet :
@@ -939,7 +1187,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SCROLLBAR() {
-        return constants$3455.const$4;
+        return constants$3461.const$0;
     }
     /**
      * {@snippet :
@@ -947,7 +1195,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SCROLLBARS_JUNCTION() {
-        return constants$3455.const$5;
+        return constants$3461.const$1;
     }
     /**
      * {@snippet :
@@ -955,7 +1203,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SCALE() {
-        return constants$3456.const$0;
+        return constants$3461.const$2;
     }
     /**
      * {@snippet :
@@ -963,7 +1211,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE() {
-        return constants$3456.const$1;
+        return constants$3461.const$3;
     }
     /**
      * {@snippet :
@@ -971,7 +1219,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW() {
-        return constants$3456.const$2;
+        return constants$3461.const$4;
     }
     /**
      * {@snippet :
@@ -979,7 +1227,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_HEADER() {
-        return constants$3456.const$3;
+        return constants$3461.const$5;
     }
     /**
      * {@snippet :
@@ -987,7 +1235,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_ACCELERATOR() {
-        return constants$3456.const$4;
+        return constants$3462.const$0;
     }
     /**
      * {@snippet :
@@ -995,7 +1243,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_RAISED() {
-        return constants$3456.const$5;
+        return constants$3462.const$1;
     }
     /**
      * {@snippet :
@@ -1003,7 +1251,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_LINKED() {
-        return constants$3457.const$0;
+        return constants$3462.const$2;
     }
     /**
      * {@snippet :
@@ -1011,7 +1259,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_GRIP() {
-        return constants$3457.const$1;
+        return constants$3462.const$3;
     }
     /**
      * {@snippet :
@@ -1019,7 +1267,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_DOCK() {
-        return constants$3457.const$2;
+        return constants$3462.const$4;
     }
     /**
      * {@snippet :
@@ -1027,7 +1275,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_PROGRESSBAR() {
-        return constants$3457.const$3;
+        return constants$3462.const$5;
     }
     /**
      * {@snippet :
@@ -1035,7 +1283,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SPINNER() {
-        return constants$3457.const$4;
+        return constants$3463.const$0;
     }
     /**
      * {@snippet :
@@ -1043,7 +1291,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_MARK() {
-        return constants$3457.const$5;
+        return constants$3463.const$1;
     }
     /**
      * {@snippet :
@@ -1051,7 +1299,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_EXPANDER() {
-        return constants$3458.const$0;
+        return constants$3463.const$2;
     }
     /**
      * {@snippet :
@@ -1059,7 +1307,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SPINBUTTON() {
-        return constants$3458.const$1;
+        return constants$3463.const$3;
     }
     /**
      * {@snippet :
@@ -1067,7 +1315,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_NOTEBOOK() {
-        return constants$3458.const$2;
+        return constants$3463.const$4;
     }
     /**
      * {@snippet :
@@ -1075,7 +1323,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_VIEW() {
-        return constants$3458.const$3;
+        return constants$3463.const$5;
     }
     /**
      * {@snippet :
@@ -1083,7 +1331,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SIDEBAR() {
-        return constants$3458.const$4;
+        return constants$3464.const$0;
     }
     /**
      * {@snippet :
@@ -1091,7 +1339,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_IMAGE() {
-        return constants$3458.const$5;
+        return constants$3464.const$1;
     }
     /**
      * {@snippet :
@@ -1099,7 +1347,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_HIGHLIGHT() {
-        return constants$3459.const$0;
+        return constants$3464.const$2;
     }
     /**
      * {@snippet :
@@ -1107,7 +1355,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_FRAME() {
-        return constants$3459.const$1;
+        return constants$3464.const$3;
     }
     /**
      * {@snippet :
@@ -1115,7 +1363,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_DND() {
-        return constants$3459.const$2;
+        return constants$3464.const$4;
     }
     /**
      * {@snippet :
@@ -1123,7 +1371,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_PANE_SEPARATOR() {
-        return constants$3459.const$3;
+        return constants$3464.const$5;
     }
     /**
      * {@snippet :
@@ -1131,7 +1379,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SEPARATOR() {
-        return constants$3459.const$4;
+        return constants$3465.const$0;
     }
     /**
      * {@snippet :
@@ -1139,7 +1387,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_INFO() {
-        return constants$3459.const$5;
+        return constants$3465.const$1;
     }
     /**
      * {@snippet :
@@ -1147,7 +1395,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_WARNING() {
-        return constants$3460.const$0;
+        return constants$3465.const$2;
     }
     /**
      * {@snippet :
@@ -1155,7 +1403,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_QUESTION() {
-        return constants$3460.const$1;
+        return constants$3465.const$3;
     }
     /**
      * {@snippet :
@@ -1163,7 +1411,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_ERROR() {
-        return constants$3460.const$2;
+        return constants$3465.const$4;
     }
     /**
      * {@snippet :
@@ -1171,7 +1419,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_HORIZONTAL() {
-        return constants$3460.const$3;
+        return constants$3465.const$5;
     }
     /**
      * {@snippet :
@@ -1179,7 +1427,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_VERTICAL() {
-        return constants$3460.const$4;
+        return constants$3466.const$0;
     }
     /**
      * {@snippet :
@@ -1187,7 +1435,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_TOP() {
-        return constants$3460.const$5;
+        return constants$3466.const$1;
     }
     /**
      * {@snippet :
@@ -1195,7 +1443,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_BOTTOM() {
-        return constants$3461.const$0;
+        return constants$3466.const$2;
     }
     /**
      * {@snippet :
@@ -1203,7 +1451,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_LEFT() {
-        return constants$3461.const$1;
+        return constants$3466.const$3;
     }
     /**
      * {@snippet :
@@ -1211,7 +1459,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_RIGHT() {
-        return constants$3461.const$2;
+        return constants$3466.const$4;
     }
     /**
      * {@snippet :
@@ -1219,7 +1467,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_PULSE() {
-        return constants$3461.const$3;
+        return constants$3466.const$5;
     }
     /**
      * {@snippet :
@@ -1227,7 +1475,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_ARROW() {
-        return constants$3461.const$4;
+        return constants$3467.const$0;
     }
     /**
      * {@snippet :
@@ -1235,7 +1483,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_OSD() {
-        return constants$3461.const$5;
+        return constants$3467.const$1;
     }
     /**
      * {@snippet :
@@ -1243,7 +1491,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_LEVEL_BAR() {
-        return constants$3462.const$0;
+        return constants$3467.const$2;
     }
     /**
      * {@snippet :
@@ -1251,7 +1499,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_CURSOR_HANDLE() {
-        return constants$3462.const$1;
+        return constants$3467.const$3;
     }
     /**
      * {@snippet :
@@ -1259,7 +1507,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_INSERTION_CURSOR() {
-        return constants$3462.const$2;
+        return constants$3467.const$4;
     }
     /**
      * {@snippet :
@@ -1267,7 +1515,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_TITLEBAR() {
-        return constants$3462.const$3;
+        return constants$3467.const$5;
     }
     /**
      * {@snippet :
@@ -1275,7 +1523,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_TITLE() {
-        return constants$3462.const$4;
+        return constants$3468.const$0;
     }
     /**
      * {@snippet :
@@ -1283,7 +1531,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SUBTITLE() {
-        return constants$3462.const$5;
+        return constants$3468.const$1;
     }
     /**
      * {@snippet :
@@ -1291,7 +1539,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_NEEDS_ATTENTION() {
-        return constants$3463.const$0;
+        return constants$3468.const$2;
     }
     /**
      * {@snippet :
@@ -1299,7 +1547,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_SUGGESTED_ACTION() {
-        return constants$3463.const$1;
+        return constants$3468.const$3;
     }
     /**
      * {@snippet :
@@ -1307,7 +1555,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_DESTRUCTIVE_ACTION() {
-        return constants$3463.const$2;
+        return constants$3468.const$4;
     }
     /**
      * {@snippet :
@@ -1315,7 +1563,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_POPOVER() {
-        return constants$3463.const$3;
+        return constants$3468.const$5;
     }
     /**
      * {@snippet :
@@ -1323,7 +1571,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_POPUP() {
-        return constants$3463.const$4;
+        return constants$3469.const$0;
     }
     /**
      * {@snippet :
@@ -1331,7 +1579,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_MESSAGE_DIALOG() {
-        return constants$3463.const$5;
+        return constants$3469.const$1;
     }
     /**
      * {@snippet :
@@ -1339,7 +1587,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_FLAT() {
-        return constants$3464.const$0;
+        return constants$3469.const$2;
     }
     /**
      * {@snippet :
@@ -1347,7 +1595,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_READ_ONLY() {
-        return constants$3464.const$1;
+        return constants$3469.const$3;
     }
     /**
      * {@snippet :
@@ -1355,7 +1603,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_OVERSHOOT() {
-        return constants$3464.const$2;
+        return constants$3469.const$4;
     }
     /**
      * {@snippet :
@@ -1363,7 +1611,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_UNDERSHOOT() {
-        return constants$3464.const$3;
+        return constants$3469.const$5;
     }
     /**
      * {@snippet :
@@ -1371,7 +1619,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_PAPER() {
-        return constants$3464.const$4;
+        return constants$3470.const$0;
     }
     /**
      * {@snippet :
@@ -1379,7 +1627,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_MONOSPACE() {
-        return constants$3464.const$5;
+        return constants$3470.const$1;
     }
     /**
      * {@snippet :
@@ -1387,7 +1635,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_CLASS_WIDE() {
-        return constants$3465.const$0;
+        return constants$3470.const$2;
     }
     /**
      * {@snippet :
@@ -1395,7 +1643,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_REGION_ROW() {
-        return constants$3465.const$1;
+        return constants$3470.const$3;
     }
     /**
      * {@snippet :
@@ -1403,7 +1651,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_REGION_COLUMN() {
-        return constants$3465.const$2;
+        return constants$3470.const$4;
     }
     /**
      * {@snippet :
@@ -1411,7 +1659,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_REGION_COLUMN_HEADER() {
-        return constants$3465.const$3;
+        return constants$3470.const$5;
     }
     /**
      * {@snippet :
@@ -1419,7 +1667,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_STYLE_REGION_TAB() {
-        return constants$3465.const$4;
+        return constants$3471.const$0;
     }
     /**
      * {@snippet :
@@ -1427,7 +1675,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_LEVEL_BAR_OFFSET_LOW() {
-        return constants$3465.const$5;
+        return constants$3471.const$1;
     }
     /**
      * {@snippet :
@@ -1435,7 +1683,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_LEVEL_BAR_OFFSET_HIGH() {
-        return constants$3466.const$0;
+        return constants$3471.const$2;
     }
     /**
      * {@snippet :
@@ -1443,7 +1691,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_LEVEL_BAR_OFFSET_FULL() {
-        return constants$3466.const$1;
+        return constants$3471.const$3;
     }
     /**
      * {@snippet :
@@ -1459,7 +1707,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PAPER_NAME_A3() {
-        return constants$3466.const$2;
+        return constants$3471.const$4;
     }
     /**
      * {@snippet :
@@ -1467,7 +1715,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PAPER_NAME_A4() {
-        return constants$3466.const$3;
+        return constants$3471.const$5;
     }
     /**
      * {@snippet :
@@ -1475,7 +1723,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PAPER_NAME_A5() {
-        return constants$3466.const$4;
+        return constants$3472.const$0;
     }
     /**
      * {@snippet :
@@ -1483,7 +1731,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PAPER_NAME_B5() {
-        return constants$3466.const$5;
+        return constants$3472.const$1;
     }
     /**
      * {@snippet :
@@ -1491,7 +1739,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PAPER_NAME_LETTER() {
-        return constants$3467.const$0;
+        return constants$3472.const$2;
     }
     /**
      * {@snippet :
@@ -1499,7 +1747,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PAPER_NAME_EXECUTIVE() {
-        return constants$3467.const$1;
+        return constants$3472.const$3;
     }
     /**
      * {@snippet :
@@ -1507,7 +1755,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PAPER_NAME_LEGAL() {
-        return constants$3467.const$2;
+        return constants$3472.const$4;
     }
     /**
      * {@snippet :
@@ -1515,7 +1763,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PRINTER() {
-        return constants$3467.const$3;
+        return constants$3472.const$5;
     }
     /**
      * {@snippet :
@@ -1523,7 +1771,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_ORIENTATION() {
-        return constants$3467.const$4;
+        return constants$3473.const$0;
     }
     /**
      * {@snippet :
@@ -1531,7 +1779,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PAPER_FORMAT() {
-        return constants$3467.const$5;
+        return constants$3473.const$1;
     }
     /**
      * {@snippet :
@@ -1539,7 +1787,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PAPER_WIDTH() {
-        return constants$3468.const$0;
+        return constants$3473.const$2;
     }
     /**
      * {@snippet :
@@ -1547,7 +1795,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PAPER_HEIGHT() {
-        return constants$3468.const$1;
+        return constants$3473.const$3;
     }
     /**
      * {@snippet :
@@ -1555,7 +1803,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_N_COPIES() {
-        return constants$3468.const$2;
+        return constants$3473.const$4;
     }
     /**
      * {@snippet :
@@ -1563,7 +1811,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_DEFAULT_SOURCE() {
-        return constants$3468.const$3;
+        return constants$3473.const$5;
     }
     /**
      * {@snippet :
@@ -1571,7 +1819,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_QUALITY() {
-        return constants$3468.const$4;
+        return constants$3474.const$0;
     }
     /**
      * {@snippet :
@@ -1579,7 +1827,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION() {
-        return constants$3468.const$5;
+        return constants$3474.const$1;
     }
     /**
      * {@snippet :
@@ -1587,7 +1835,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_USE_COLOR() {
-        return constants$3469.const$0;
+        return constants$3474.const$2;
     }
     /**
      * {@snippet :
@@ -1595,7 +1843,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_DUPLEX() {
-        return constants$3469.const$1;
+        return constants$3474.const$3;
     }
     /**
      * {@snippet :
@@ -1603,7 +1851,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_COLLATE() {
-        return constants$3469.const$2;
+        return constants$3474.const$4;
     }
     /**
      * {@snippet :
@@ -1611,7 +1859,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_REVERSE() {
-        return constants$3469.const$3;
+        return constants$3474.const$5;
     }
     /**
      * {@snippet :
@@ -1619,7 +1867,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_MEDIA_TYPE() {
-        return constants$3469.const$4;
+        return constants$3475.const$0;
     }
     /**
      * {@snippet :
@@ -1627,7 +1875,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_DITHER() {
-        return constants$3469.const$5;
+        return constants$3475.const$1;
     }
     /**
      * {@snippet :
@@ -1635,7 +1883,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_SCALE() {
-        return constants$3456.const$0;
+        return constants$3461.const$2;
     }
     /**
      * {@snippet :
@@ -1643,7 +1891,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PRINT_PAGES() {
-        return constants$3470.const$0;
+        return constants$3475.const$2;
     }
     /**
      * {@snippet :
@@ -1651,7 +1899,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PAGE_RANGES() {
-        return constants$3470.const$1;
+        return constants$3475.const$3;
     }
     /**
      * {@snippet :
@@ -1659,7 +1907,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PAGE_SET() {
-        return constants$3470.const$2;
+        return constants$3475.const$4;
     }
     /**
      * {@snippet :
@@ -1667,7 +1915,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_FINISHINGS() {
-        return constants$3470.const$3;
+        return constants$3475.const$5;
     }
     /**
      * {@snippet :
@@ -1675,7 +1923,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP() {
-        return constants$3470.const$4;
+        return constants$3476.const$0;
     }
     /**
      * {@snippet :
@@ -1683,7 +1931,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT() {
-        return constants$3470.const$5;
+        return constants$3476.const$1;
     }
     /**
      * {@snippet :
@@ -1691,7 +1939,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BIN() {
-        return constants$3471.const$0;
+        return constants$3476.const$2;
     }
     /**
      * {@snippet :
@@ -1699,7 +1947,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_X() {
-        return constants$3471.const$1;
+        return constants$3476.const$3;
     }
     /**
      * {@snippet :
@@ -1707,7 +1955,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_Y() {
-        return constants$3471.const$2;
+        return constants$3476.const$4;
     }
     /**
      * {@snippet :
@@ -1715,7 +1963,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PRINTER_LPI() {
-        return constants$3471.const$3;
+        return constants$3476.const$5;
     }
     /**
      * {@snippet :
@@ -1723,7 +1971,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_DIR() {
-        return constants$3471.const$4;
+        return constants$3477.const$0;
     }
     /**
      * {@snippet :
@@ -1731,7 +1979,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BASENAME() {
-        return constants$3471.const$5;
+        return constants$3477.const$1;
     }
     /**
      * {@snippet :
@@ -1739,7 +1987,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT() {
-        return constants$3472.const$0;
+        return constants$3477.const$2;
     }
     /**
      * {@snippet :
@@ -1747,7 +1995,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_URI() {
-        return constants$3472.const$1;
+        return constants$3477.const$3;
     }
     /**
      * {@snippet :
@@ -1755,7 +2003,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION() {
-        return constants$3472.const$2;
+        return constants$3477.const$4;
     }
     /**
      * {@snippet :
@@ -1763,7 +2011,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA() {
-        return constants$3472.const$3;
+        return constants$3477.const$5;
     }
     /**
      * {@snippet :
@@ -1827,7 +2075,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON() {
-        return constants$3472.const$4;
+        return constants$3478.const$0;
     }
     /**
      * {@snippet :
@@ -1835,7 +2083,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ATTENTION_ICON() {
-        return constants$3472.const$5;
+        return constants$3478.const$1;
     }
     /**
      * {@snippet :
@@ -1843,7 +2091,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_NEW_STATUS() {
-        return constants$3473.const$0;
+        return constants$3478.const$2;
     }
     /**
      * {@snippet :
@@ -1851,7 +2099,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_NEW_LABEL() {
-        return constants$3473.const$1;
+        return constants$3478.const$3;
     }
     /**
      * {@snippet :
@@ -1859,7 +2107,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_CONNECTION_CHANGED() {
-        return constants$3473.const$2;
+        return constants$3478.const$4;
     }
     /**
      * {@snippet :
@@ -1867,7 +2115,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON_THEME_PATH() {
-        return constants$3473.const$3;
+        return constants$3478.const$5;
     }
     /**
      * {@snippet :
@@ -1875,7 +2123,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_SCROLL_EVENT() {
-        return constants$3473.const$4;
+        return constants$3479.const$0;
     }
 }
 

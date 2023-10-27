@@ -13,7 +13,7 @@ public interface g_queue_foreach$func {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_queue_foreach$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$398.const$0, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$399.const$0, fi, constants$13.const$4, scope);
     }
     static g_queue_foreach$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

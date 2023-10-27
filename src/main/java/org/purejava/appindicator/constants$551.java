@@ -2,37 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$551 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$551() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_type_class_unref",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_type_set_qdata",
-        constants$551.const$0
+        "g_type_class_peek_parent",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_get_qdata",
-        constants$63.const$1
+        "g_type_interface_peek",
+        constants$21.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_type_query",
-        constants$441.const$0
+        "g_type_interface_peek_parent",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_get_instance_count",
-        constants$26.const$2
+        "g_type_default_interface_ref",
+        constants$63.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GBaseInitFunc.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_type_default_interface_peek",
+        constants$63.const$3
+    );
 }
 
 

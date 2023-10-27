@@ -2,9 +2,9 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
@@ -12,32 +12,23 @@ final class constants$603 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$603() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_new_valist$accumulator.class, "apply", constants$34.const$5);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_signal_new_valist$c_marshaller.class, "apply", constants$584.const$3);
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("__stack"),
-            RuntimeHelper.POINTER.withName("__gr_top"),
-            RuntimeHelper.POINTER.withName("__vr_top"),
-            JAVA_INT.withName("__gr_offs"),
-            JAVA_INT.withName("__vr_offs")
-        ).withName("__va_list")
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_signal_new_valist",
-        constants$603.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_new$accumulator.class, "apply", constants$34.const$5);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_signal_new$c_marshaller.class, "apply", constants$584.const$3);
+    static final VarHandle const$0 = constants$602.const$5.varHandle(MemoryLayout.PathElement.groupElement("signal_id"));
+    static final VarHandle const$1 = constants$602.const$5.varHandle(MemoryLayout.PathElement.groupElement("detail"));
+    static final VarHandle const$2 = constants$602.const$5.varHandle(MemoryLayout.PathElement.groupElement("run_type"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("signal_id"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("signal_name"),
+        JAVA_LONG.withName("itype"),
+        JAVA_INT.withName("signal_flags"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_LONG.withName("return_type"),
+        JAVA_INT.withName("n_params"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("param_types")
+    ).withName("_GSignalQuery");
+    static final VarHandle const$4 = constants$603.const$3.varHandle(MemoryLayout.PathElement.groupElement("signal_id"));
+    static final VarHandle const$5 = constants$603.const$3.varHandle(MemoryLayout.PathElement.groupElement("signal_name"));
 }
 
 

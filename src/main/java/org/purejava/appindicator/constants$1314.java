@@ -2,42 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1314 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1314() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_socket_listener_new",
-        constants$35.const$2
+        "g_socket_control_message_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_socket_listener_set_backlog",
-        constants$40.const$2
+        "g_socket_control_message_get_size",
+        constants$4.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_socket",
-        constants$34.const$5
+        "g_socket_control_message_get_level",
+        constants$10.const$5
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_control_message_get_msg_type",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_address",
-        constants$1314.const$3
+        "g_socket_control_message_serialize",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_inet_port",
-        constants$849.const$4
+        "g_socket_control_message_deserialize",
+        constants$1311.const$2
     );
 }
 

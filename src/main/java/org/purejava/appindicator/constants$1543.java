@@ -2,36 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1543 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1543() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_font_description_to_filename",
+        "pango_font_description_equal",
+        constants$9.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_description_free",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_descriptions_free",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_font_description_set_family",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_description_set_family_static",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_description_get_family",
         constants$5.const$2
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        JAVA_INT.withName("ref_count"),
-        JAVA_INT.withName("ascent"),
-        JAVA_INT.withName("descent"),
-        JAVA_INT.withName("height"),
-        JAVA_INT.withName("approximate_char_width"),
-        JAVA_INT.withName("approximate_digit_width"),
-        JAVA_INT.withName("underline_position"),
-        JAVA_INT.withName("underline_thickness"),
-        JAVA_INT.withName("strikethrough_position"),
-        JAVA_INT.withName("strikethrough_thickness")
-    ).withName("_PangoFontMetrics");
-    static final VarHandle const$2 = constants$1543.const$1.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
-    static final VarHandle const$3 = constants$1543.const$1.varHandle(MemoryLayout.PathElement.groupElement("ascent"));
-    static final VarHandle const$4 = constants$1543.const$1.varHandle(MemoryLayout.PathElement.groupElement("descent"));
-    static final VarHandle const$5 = constants$1543.const$1.varHandle(MemoryLayout.PathElement.groupElement("height"));
 }
 
 

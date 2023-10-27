@@ -8,28 +8,28 @@ final class constants$1859 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1859() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_scale_factor",
-        constants$10.const$5
+        "gdk_window_set_opaque_region",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_refresh_rate",
-        constants$10.const$5
+        "gdk_window_set_event_compression",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_subpixel_layout",
+        "gdk_window_get_event_compression",
         constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_monitor_is_primary",
-        constants$10.const$5
+        "gdk_window_set_shadow_width",
+        constants$1648.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_display_get_type",
-        constants$3.const$5
+        "gdk_window_show_window_menu",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_display_open",
-        constants$5.const$2
+        "gdk_window_create_gl_context",
+        constants$5.const$5
     );
 }
 

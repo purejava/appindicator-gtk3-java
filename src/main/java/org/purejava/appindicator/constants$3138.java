@@ -8,28 +8,28 @@ final class constants$3138 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3138() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_modified",
-        constants$10.const$5
+        "gtk_text_buffer_get_slice",
+        constants$198.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_set_modified",
-        constants$40.const$2
+        "gtk_text_buffer_insert_pixbuf",
+        constants$14.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_has_selection",
-        constants$10.const$5
+        "gtk_text_buffer_insert_child_anchor",
+        constants$14.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_add_selection_clipboard",
-        constants$13.const$4
+        "gtk_text_buffer_create_child_anchor",
+        constants$5.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_remove_selection_clipboard",
-        constants$13.const$4
+        "gtk_text_buffer_add_mark",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_cut_clipboard",
-        constants$164.const$5
+        "gtk_text_buffer_create_mark",
+        constants$198.const$2
     );
 }
 

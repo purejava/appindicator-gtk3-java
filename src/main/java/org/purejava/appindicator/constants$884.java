@@ -11,20 +11,19 @@ final class constants$884 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$884() {}
-    static final VarHandle const$0 = constants$883.const$2.varHandle(MemoryLayout.PathElement.groupElement("flags"));
-    static final VarHandle const$1 = constants$883.const$2.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
-    static final StructLayout const$2 = MemoryLayout.structLayout(
+    static final VarHandle const$0 = constants$883.const$4.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final VarHandle const$1 = constants$883.const$4.varHandle(MemoryLayout.PathElement.groupElement("signature"));
+    static final VarHandle const$2 = constants$883.const$4.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
         JAVA_INT.withName("ref_count"),
         MemoryLayout.paddingLayout(4),
         RuntimeHelper.POINTER.withName("name"),
-        RuntimeHelper.POINTER.withName("methods"),
-        RuntimeHelper.POINTER.withName("signals"),
-        RuntimeHelper.POINTER.withName("properties"),
+        RuntimeHelper.POINTER.withName("in_args"),
+        RuntimeHelper.POINTER.withName("out_args"),
         RuntimeHelper.POINTER.withName("annotations")
-    ).withName("_GDBusInterfaceInfo");
-    static final VarHandle const$3 = constants$884.const$2.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
-    static final VarHandle const$4 = constants$884.const$2.varHandle(MemoryLayout.PathElement.groupElement("name"));
-    static final VarHandle const$5 = constants$884.const$2.varHandle(MemoryLayout.PathElement.groupElement("methods"));
+    ).withName("_GDBusMethodInfo");
+    static final VarHandle const$4 = constants$884.const$3.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$5 = constants$884.const$3.varHandle(MemoryLayout.PathElement.groupElement("name"));
 }
 
 

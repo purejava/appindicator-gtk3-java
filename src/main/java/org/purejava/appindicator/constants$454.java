@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$454 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$454() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_test_timer_last",
-        constants$83.const$5
+        "g_test_disable_crash_reporting",
+        constants$7.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_test_queue_free",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_message",
         constants$13.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_test_queue_destroy$destroy_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_bug_base",
+        constants$13.const$1
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_test_queue_destroy",
-        constants$13.const$4
+        "g_test_bug",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_test_trap_fork",
-        constants$64.const$5
+        "g_test_summary",
+        constants$13.const$1
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_test_trap_subprocess",
-        constants$454.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_test_timer_start",
+        constants$7.const$5
     );
 }
 

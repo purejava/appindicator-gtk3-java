@@ -7,22 +7,28 @@ final class constants$1016 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1016() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_append_to_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_get_uri",
+        constants$5.const$2
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_append_to_async",
-        constants$987.const$4
+        "g_file_get_parse_name",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_append_to_finish",
-        constants$23.const$0
+        "g_file_get_parent",
+        constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_create_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_has_parent",
+        constants$9.const$0
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_create_async",
-        constants$987.const$4
+        "g_file_get_child",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_create_finish",
+        "g_file_get_child_for_display_name",
         constants$23.const$0
     );
 }

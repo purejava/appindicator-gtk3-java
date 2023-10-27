@@ -2,47 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$911 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$911() {}
-    static final VarHandle const$0 = constants$909.const$2.varHandle(MemoryLayout.PathElement.groupElement("interface_removed"));
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_get_object_path",
-        constants$5.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_bus_watch_name_on_connection$name_appeared_handler.class, "apply", constants$42.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_bus_watch_name_on_connection$name_vanished_handler.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_bus_watch_name_on_connection$user_data_free_func.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_get_interfaces",
-        constants$5.const$2
+        "g_bus_watch_name_on_connection",
+        constants$909.const$0
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_get_interface",
-        constants$5.const$5
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("parent_iface"),
-        RuntimeHelper.POINTER.withName("get_object_path"),
-        RuntimeHelper.POINTER.withName("get_objects"),
-        RuntimeHelper.POINTER.withName("get_object"),
-        RuntimeHelper.POINTER.withName("get_interface"),
-        RuntimeHelper.POINTER.withName("object_added"),
-        RuntimeHelper.POINTER.withName("object_removed"),
-        RuntimeHelper.POINTER.withName("interface_added"),
-        RuntimeHelper.POINTER.withName("interface_removed")
-    ).withName("_GDBusObjectManagerIface");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_bus_watch_name_with_closures",
+        constants$911.const$4
+    );
 }
 
 

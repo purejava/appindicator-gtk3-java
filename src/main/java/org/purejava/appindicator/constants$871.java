@@ -2,35 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$871 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$871() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_strip_remote_error",
-        constants$10.const$5
+        "g_dbus_connection_unregister_subtree",
+        constants$11.const$4
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        JAVA_INT.withName("error_code"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("dbus_error_name")
-    ).withName("_GDBusErrorEntry");
-    static final VarHandle const$2 = constants$871.const$1.varHandle(MemoryLayout.PathElement.groupElement("error_code"));
-    static final VarHandle const$3 = constants$871.const$1.varHandle(MemoryLayout.PathElement.groupElement("dbus_error_name"));
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_register_error",
-        constants$288.const$1
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_unregister_error",
-        constants$288.const$1
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GDBusSignalCallback.class, "apply", constants$871.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$871.const$1
     );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_dbus_connection_signal_subscribe$callback.class, "apply", constants$871.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_dbus_connection_signal_subscribe$user_data_free_func.class, "apply", constants$13.const$1);
 }
 
 

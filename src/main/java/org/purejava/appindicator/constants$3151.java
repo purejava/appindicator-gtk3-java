@@ -2,47 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$3151 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3151() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_buffer",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_buffer",
-        constants$5.const$2
-    );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_INT,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_scroll_to_iter",
-        constants$3151.const$2
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_INT,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_scroll_to_mark",
-        constants$3151.const$4
-    );
+    static final VarHandle const$0 = constants$3149.const$2.varHandle(MemoryLayout.PathElement.groupElement("delete_from_cursor"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextViewClass.backspace.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$3149.const$2.varHandle(MemoryLayout.PathElement.groupElement("backspace"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextViewClass.cut_clipboard.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$3149.const$2.varHandle(MemoryLayout.PathElement.groupElement("cut_clipboard"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextViewClass.copy_clipboard.class, "apply", constants$13.const$1);
 }
 
 

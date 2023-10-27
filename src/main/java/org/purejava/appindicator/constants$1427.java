@@ -2,21 +2,37 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1427 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1427() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_unicode_compose_func_t.class, "apply", constants$956.const$4);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_unicode_decompose_func_t.class, "apply", constants$373.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$373.const$2
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_blob_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_combining_class_func$func.class, "apply", constants$150.const$0);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_combining_class_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_blob_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_blob_set_user_data",
+        constants$1427.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_blob_get_user_data",
+        constants$5.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_combining_class_func",
-        constants$42.const$1
+        "hb_blob_make_immutable",
+        constants$13.const$1
     );
 }
 

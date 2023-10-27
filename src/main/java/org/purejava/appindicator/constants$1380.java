@@ -2,32 +2,28 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1380 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1380() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_password_get_value",
-        constants$5.const$5
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTlsInteractionClass.request_certificate_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$1378.const$1.varHandle(MemoryLayout.PathElement.groupElement("request_certificate_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_password_set_value",
-        constants$25.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_tls_password_set_value_full$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_password_set_value_full",
-        constants$1139.const$5
+        "g_tls_interaction_invoke_ask_password",
+        constants$34.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_password_get_flags",
-        constants$10.const$5
+        "g_tls_interaction_ask_password",
+        constants$34.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_password_set_flags",
-        constants$40.const$2
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_tls_interaction_ask_password_async$callback.class, "apply", constants$14.const$3);
 }
 
 

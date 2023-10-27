@@ -8,28 +8,28 @@ final class constants$2252 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2252() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_label_set_line_wrap",
-        constants$40.const$2
+        "gtk_label_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_label_get_line_wrap",
-        constants$10.const$5
+        "gtk_label_new",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_label_set_line_wrap_mode",
-        constants$40.const$2
+        "gtk_label_new_with_mnemonic",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_label_get_line_wrap_mode",
-        constants$10.const$5
+        "gtk_label_set_text",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_label_set_selectable",
-        constants$40.const$2
+        "gtk_label_get_text",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_label_get_selectable",
-        constants$10.const$5
+        "gtk_label_set_attributes",
+        constants$13.const$4
     );
 }
 

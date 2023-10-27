@@ -13,7 +13,7 @@ public interface gdk_window_invalidate_maybe_recurse$child_func {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gdk_window_invalidate_maybe_recurse$child_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1850.const$3, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$1855.const$3, fi, constants$9.const$0, scope);
     }
     static gdk_window_invalidate_maybe_recurse$child_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

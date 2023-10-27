@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2861 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2861() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_init_with_args",
-        constants$638.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_get_option_group",
-        constants$24.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_disable_setlocale",
-        constants$7.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_get_default_language",
-        constants$35.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_get_locale_direction",
-        constants$83.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_events_pending",
-        constants$83.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkLockButtonClass.reserved0.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$2860.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved0"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkLockButtonClass.reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$2860.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkLockButtonClass.reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2860.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
 }
 
 

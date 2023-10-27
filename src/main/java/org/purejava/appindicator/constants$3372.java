@@ -2,30 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_SHORT;
+import java.lang.invoke.MethodHandle;
 final class constants$3372 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3372() {}
-    static final VarHandle const$0 = constants$3370.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("widget"),
-        JAVA_SHORT.withName("left_attach"),
-        JAVA_SHORT.withName("right_attach"),
-        JAVA_SHORT.withName("top_attach"),
-        JAVA_SHORT.withName("bottom_attach"),
-        JAVA_SHORT.withName("xpadding"),
-        JAVA_SHORT.withName("ypadding"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GtkTableChild");
-    static final VarHandle const$2 = constants$3372.const$1.varHandle(MemoryLayout.PathElement.groupElement("widget"));
-    static final VarHandle const$3 = constants$3372.const$1.varHandle(MemoryLayout.PathElement.groupElement("left_attach"));
-    static final VarHandle const$4 = constants$3372.const$1.varHandle(MemoryLayout.PathElement.groupElement("right_attach"));
-    static final VarHandle const$5 = constants$3372.const$1.varHandle(MemoryLayout.PathElement.groupElement("top_attach"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "_gtk_style_shade",
+        constants$2842.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_style_has_context",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_widget_style_attach",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_widget_has_rc_style",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_widget_set_style",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_widget_ensure_style",
+        constants$13.const$1
+    );
 }
 
 

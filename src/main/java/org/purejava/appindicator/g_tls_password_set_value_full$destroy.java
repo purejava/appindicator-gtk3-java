@@ -13,7 +13,7 @@ public interface g_tls_password_set_value_full$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_tls_password_set_value_full$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1380.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1384.const$3, fi, constants$13.const$1, scope);
     }
     static g_tls_password_set_value_full$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

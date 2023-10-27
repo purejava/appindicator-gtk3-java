@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GTcpWrapperConnectionClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1339.const$3;
+        return constants$1343.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 304);

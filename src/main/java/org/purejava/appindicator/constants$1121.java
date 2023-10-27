@@ -8,22 +8,28 @@ final class constants$1121 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1121() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_memory_monitor_warning_level_get_type",
+        "g_tls_certificate_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_resolver_name_lookup_flags_get_type",
+        "g_tls_authentication_mode_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_settings_bind_flags_get_type",
+        "g_tls_channel_binding_type_get_type",
         constants$3.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GModuleCheckInit.class, "apply", constants$5.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GModuleUnload.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_channel_binding_error_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_rehandshake_mode_get_type",
+        constants$3.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_module_error_quark",
-        constants$83.const$1
+        "g_tls_password_flags_get_type",
+        constants$3.const$5
     );
 }
 

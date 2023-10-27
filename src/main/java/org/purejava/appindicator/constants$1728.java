@@ -2,34 +2,36 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1728 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1728() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_elapsed",
-        constants$67.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_device_set_user_data$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_paint_elapsed",
-        constants$67.const$0
+        "cairo_device_set_user_data",
+        constants$34.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_mask_elapsed",
-        constants$67.const$0
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_fill_elapsed",
-        constants$67.const$0
+        "cairo_surface_create_similar",
+        constants$1728.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_stroke_elapsed",
-        constants$67.const$0
+        "cairo_surface_create_similar_image",
+        constants$1728.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_device_observer_glyphs_elapsed",
-        constants$67.const$0
+        "cairo_surface_map_to_image",
+        constants$5.const$5
     );
 }
 

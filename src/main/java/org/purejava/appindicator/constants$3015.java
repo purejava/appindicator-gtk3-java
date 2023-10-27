@@ -2,35 +2,57 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3015 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3015() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_unref",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_uri",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_display_name",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_description",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_mime_type",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_added",
-        constants$4.const$0
-    );
+    static final VarHandle const$0 = constants$3014.const$1.varHandle(MemoryLayout.PathElement.groupElement("app_exec"));
+    static final VarHandle const$1 = constants$3014.const$1.varHandle(MemoryLayout.PathElement.groupElement("groups"));
+    static final VarHandle const$2 = constants$3014.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_private"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkRecentManager");
+    static final VarHandle const$4 = constants$3015.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("changed"),
+        RuntimeHelper.POINTER.withName("_gtk_recent1"),
+        RuntimeHelper.POINTER.withName("_gtk_recent2"),
+        RuntimeHelper.POINTER.withName("_gtk_recent3"),
+        RuntimeHelper.POINTER.withName("_gtk_recent4")
+    ).withName("_GtkRecentManagerClass");
 }
 
 

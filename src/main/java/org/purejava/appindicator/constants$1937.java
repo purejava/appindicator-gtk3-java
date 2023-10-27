@@ -8,28 +8,28 @@ final class constants$1937 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1937() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_screen_width_mm",
-        constants$83.const$1
+        "gdk_keyval_from_name",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_screen_height_mm",
-        constants$83.const$1
+        "gdk_keyval_convert_case",
+        constants$127.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_set_double_click_time",
-        constants$80.const$1
+        "gdk_keyval_to_upper",
+        constants$8.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_beep",
-        constants$7.const$5
+        "gdk_keyval_to_lower",
+        constants$8.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_flush",
-        constants$7.const$5
+        "gdk_keyval_is_upper",
+        constants$8.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_disable_multidevice",
-        constants$7.const$5
+        "gdk_keyval_is_lower",
+        constants$8.const$4
     );
 }
 

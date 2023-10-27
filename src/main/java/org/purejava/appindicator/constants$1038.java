@@ -7,23 +7,23 @@ final class constants$1038 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1038() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_load_contents_async",
-        constants$42.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_measure_disk_usage_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_load_contents_finish",
-        constants$638.const$1
+        "g_file_measure_disk_usage_async",
+        constants$1011.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_file_load_partial_contents_async$read_more_callback.class, "apply", constants$62.const$2);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_load_partial_contents_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_measure_disk_usage_finish",
+        constants$640.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_start_mountable$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_load_partial_contents_async",
-        constants$331.const$1
+        "g_file_start_mountable",
+        constants$381.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_load_partial_contents_finish",
-        constants$638.const$1
+        "g_file_start_mountable_finish",
+        constants$12.const$2
     );
 }
 

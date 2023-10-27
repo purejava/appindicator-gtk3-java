@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2397 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2397() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkEditableInterface.insert_text.class, "apply", constants$464.const$4);
-    static final VarHandle const$1 = constants$2396.const$5.varHandle(MemoryLayout.PathElement.groupElement("insert_text"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkEditableInterface.delete_text.class, "apply", constants$467.const$3);
-    static final VarHandle const$3 = constants$2396.const$5.varHandle(MemoryLayout.PathElement.groupElement("delete_text"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkEditableInterface.changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$5 = constants$2396.const$5.varHandle(MemoryLayout.PathElement.groupElement("changed"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_targets_include_text",
+        constants$11.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_targets_include_rich_text",
+        constants$150.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_targets_include_image",
+        constants$49.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_targets_include_uri",
+        constants$11.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_copy",
+        constants$5.const$2
+    );
 }
 
 

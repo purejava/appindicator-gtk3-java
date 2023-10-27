@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkVButtonBoxClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3398.const$4;
+        return constants$3403.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1040);

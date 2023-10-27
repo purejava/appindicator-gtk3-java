@@ -13,7 +13,7 @@ public interface g_vfs_register_uri_scheme$parse_name_destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_vfs_register_uri_scheme$parse_name_destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1400.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1404.const$4, fi, constants$13.const$1, scope);
     }
     static g_vfs_register_uri_scheme$parse_name_destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

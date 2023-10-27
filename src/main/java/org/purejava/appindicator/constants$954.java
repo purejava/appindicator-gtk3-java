@@ -8,26 +8,23 @@ final class constants$954 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$954() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_drive_stop",
-        constants$380.const$0
+        "g_drive_can_poll_for_media",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_drive_stop_finish",
-        constants$12.const$2
+        "g_drive_can_eject",
+        constants$10.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_drive_eject_with_operation$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_drive_eject$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_drive_eject_with_operation",
-        constants$380.const$0
+        "g_drive_eject",
+        constants$282.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_drive_eject_with_operation_finish",
+        "g_drive_eject_finish",
         constants$12.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_drive_get_sort_key",
-        constants$5.const$2
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_drive_poll_for_media$callback.class, "apply", constants$14.const$3);
 }
 
 

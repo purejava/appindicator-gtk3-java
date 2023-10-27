@@ -13,7 +13,7 @@ public interface g_closure_add_marshal_guards$pre_marshal_notify {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_closure_add_marshal_guards$pre_marshal_notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$590.const$3, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$593.const$0, fi, constants$13.const$4, scope);
     }
     static g_closure_add_marshal_guards$pre_marshal_notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

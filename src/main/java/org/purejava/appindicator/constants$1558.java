@@ -8,27 +8,27 @@ final class constants$1558 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1558() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_font_get_glyph_extents",
-        constants$179.const$1
+        "pango_font_face_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_font_get_font_map",
+        "pango_font_face_describe",
         constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_font_get_face",
+        "pango_font_face_get_face_name",
         constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_font_has_char",
-        constants$11.const$4
+        "pango_font_face_list_sizes",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_font_get_features",
-        constants$464.const$4
+        "pango_font_face_is_synthesized",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_font_get_hb_font",
+        "pango_font_face_get_family",
         constants$5.const$2
     );
 }

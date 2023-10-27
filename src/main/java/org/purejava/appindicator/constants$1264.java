@@ -2,46 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1264 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1264() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_simple_action_new",
-        constants$5.const$5
+        "g_settings_set_enum",
+        constants$62.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_simple_action_new_stateful",
-        constants$23.const$0
+        "g_settings_get_flags",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_simple_action_set_enabled",
-        constants$40.const$2
+        "g_settings_set_flags",
+        constants$62.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_simple_action_set_state",
-        constants$13.const$4
+        "g_settings_get_child",
+        constants$5.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_simple_action_set_state_hint",
-        constants$13.const$4
+        "g_settings_is_writable",
+        constants$9.const$0
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GSimpleActionGroup");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_delay",
+        constants$13.const$1
+    );
 }
 
 

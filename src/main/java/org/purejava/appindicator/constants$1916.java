@@ -8,28 +8,28 @@ final class constants$1916 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1916() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_group_n_modes",
-        constants$11.const$4
+        "pango_cairo_layout_path",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_n_features",
-        constants$11.const$4
+        "pango_cairo_error_underline_path",
+        constants$1688.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_feature_group",
-        constants$49.const$0
+        "gdk_cairo_create",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_get_type",
-        constants$3.const$5
+        "gdk_cairo_get_clip_rectangle",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_get",
-        constants$35.const$2
+        "gdk_cairo_set_source_rgba",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_get_default_display",
-        constants$5.const$2
+        "gdk_cairo_set_source_pixbuf",
+        constants$1688.const$2
     );
 }
 

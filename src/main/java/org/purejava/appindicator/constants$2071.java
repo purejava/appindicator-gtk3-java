@@ -9,12 +9,18 @@ final class constants$2071 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2071() {}
-    static final VarHandle const$0 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_column_header"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTableIface.get_row_description.class, "apply", constants$21.const$3);
-    static final VarHandle const$2 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_row_description"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTableIface.get_row_header.class, "apply", constants$21.const$3);
-    static final VarHandle const$4 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_row_header"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTableIface.get_summary.class, "apply", constants$5.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkStreamableContentIface.pad2.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$2069.const$1.varHandle(MemoryLayout.PathElement.groupElement("pad2"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkStreamableContentIface.pad3.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$2069.const$1.varHandle(MemoryLayout.PathElement.groupElement("pad3"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_streamable_content_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_streamable_content_get_n_mime_types",
+        constants$10.const$5
+    );
 }
 
 

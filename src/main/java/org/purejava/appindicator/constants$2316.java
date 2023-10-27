@@ -2,35 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2316 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2316() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_start_editing",
-        constants$2311.const$4
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_set_fixed_size",
-        constants$467.const$3
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellRendererClass.activate.class, "apply", constants$2316.const$0);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_fixed_size",
-        constants$14.const$3
+        constants$2316.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_set_alignment",
-        constants$2225.const$4
+    static final VarHandle const$3 = constants$2313.const$1.varHandle(MemoryLayout.PathElement.groupElement("activate"));
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_alignment",
-        constants$14.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_set_padding",
-        constants$467.const$3
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkCellRendererClass.start_editing.class, "apply", constants$2316.const$4);
 }
 
 

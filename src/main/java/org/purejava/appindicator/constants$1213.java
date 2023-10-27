@@ -9,21 +9,12 @@ final class constants$1213 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1213() {}
-    static final VarHandle const$0 = constants$1211.const$4.varHandle(MemoryLayout.PathElement.groupElement("write_nonblocking"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GPollableOutputStreamInterface.writev_nonblocking.class, "apply", constants$315.const$5);
-    static final VarHandle const$2 = constants$1211.const$4.varHandle(MemoryLayout.PathElement.groupElement("writev_nonblocking"));
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_can_poll",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_is_writable",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$1212.const$4.varHandle(MemoryLayout.PathElement.groupElement("can_poll"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GPollableInputStreamInterface.is_readable.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$1212.const$4.varHandle(MemoryLayout.PathElement.groupElement("is_readable"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GPollableInputStreamInterface.create_source.class, "apply", constants$5.const$5);
+    static final VarHandle const$4 = constants$1212.const$4.varHandle(MemoryLayout.PathElement.groupElement("create_source"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GPollableInputStreamInterface.read_nonblocking.class, "apply", constants$20.const$4);
 }
 
 

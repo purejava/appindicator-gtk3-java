@@ -3,18 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3024 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3024() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.get_current_uri.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$3023.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_current_uri"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.select_uri.class, "apply", constants$12.const$2);
-    static final VarHandle const$3 = constants$3023.const$3.varHandle(MemoryLayout.PathElement.groupElement("select_uri"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.unselect_uri.class, "apply", constants$13.const$4);
-    static final VarHandle const$5 = constants$3023.const$3.varHandle(MemoryLayout.PathElement.groupElement("unselect_uri"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "_gtk_recent_manager_sync",
+        constants$7.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkRecentFilterFunc.class, "apply", constants$9.const$0);
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("contains"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("uri"),
+        RuntimeHelper.POINTER.withName("display_name"),
+        RuntimeHelper.POINTER.withName("mime_type"),
+        RuntimeHelper.POINTER.withName("applications"),
+        RuntimeHelper.POINTER.withName("groups"),
+        JAVA_INT.withName("age"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GtkRecentFilterInfo");
+    static final VarHandle const$3 = constants$3024.const$2.varHandle(MemoryLayout.PathElement.groupElement("contains"));
+    static final VarHandle const$4 = constants$3024.const$2.varHandle(MemoryLayout.PathElement.groupElement("uri"));
+    static final VarHandle const$5 = constants$3024.const$2.varHandle(MemoryLayout.PathElement.groupElement("display_name"));
 }
 
 

@@ -11,28 +11,33 @@ final class constants$406 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$406() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_random_set_seed",
-        constants$80.const$1
+        "g_rand_set_seed",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_random_int",
-        constants$83.const$1
+        "g_rand_set_seed_array",
+        constants$164.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_random_int_range",
-        constants$123.const$5
+        "g_rand_int",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_random_double",
-        constants$83.const$5
+        "g_rand_int_range",
+        constants$49.const$0
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_DOUBLE,
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_rand_double",
+        constants$67.const$0
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_DOUBLE,
+        RuntimeHelper.POINTER,
         JAVA_DOUBLE,
         JAVA_DOUBLE
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_random_double_range",
-        constants$406.const$4
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_rand_double_range",
+        constants$406.const$5
     );
 }
 

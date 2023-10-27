@@ -25,7 +25,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkTextAppearance {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2355.const$0;
+        return constants$2360.const$0;
     }
     public static MemorySegment bg_color$slice(MemorySegment seg) {
         return seg.asSlice(0, 12);
@@ -34,7 +34,7 @@ public class _GtkTextAppearance {
         return seg.asSlice(12, 12);
     }
     public static VarHandle rise$VH() {
-        return constants$2355.const$1;
+        return constants$2360.const$1;
     }
     /**
      * Getter for field:
@@ -43,7 +43,7 @@ public class _GtkTextAppearance {
      * }
      */
     public static int rise$get(MemorySegment seg) {
-        return (int)constants$2355.const$1.get(seg);
+        return (int)constants$2360.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -52,13 +52,13 @@ public class _GtkTextAppearance {
      * }
      */
     public static void rise$set(MemorySegment seg, int x) {
-        constants$2355.const$1.set(seg, x);
+        constants$2360.const$1.set(seg, x);
     }
     public static int rise$get(MemorySegment seg, long index) {
-        return (int)constants$2355.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2360.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void rise$set(MemorySegment seg, long index, int x) {
-        constants$2355.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2360.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment rgba$slice(MemorySegment seg) {
         return seg.asSlice(32, 16);

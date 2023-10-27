@@ -9,12 +9,12 @@ final class constants$3324 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3324() {}
-    static final VarHandle const$0 = constants$3322.const$4.varHandle(MemoryLayout.PathElement.groupElement("create_style"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkRcStyleClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$3322.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkRcStyleClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$3322.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkRcStyleClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$0 = constants$3323.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkRadioActionClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$3323.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkRadioActionClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$3323.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkRadioActionClass._gtk_reserved4.class, "apply", constants$7.const$5);
 }
 
 

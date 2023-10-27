@@ -13,7 +13,7 @@ public interface g_dtls_connection_shutdown_async$callback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_dtls_connection_shutdown_async$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$962.const$2, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$965.const$2, fi, constants$14.const$3, scope);
     }
     static g_dtls_connection_shutdown_async$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

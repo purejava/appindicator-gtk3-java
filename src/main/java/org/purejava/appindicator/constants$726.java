@@ -2,31 +2,24 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$726 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$726() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_app_info_supports_files",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_app_info_launch_uris",
-        constants$34.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_app_info_launch_uris_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_app_info_launch_uris_async",
-        constants$338.const$3
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GAppInfoIface.launch_uris_async.class, "apply", constants$339.const$3);
+    static final VarHandle const$1 = constants$718.const$1.varHandle(MemoryLayout.PathElement.groupElement("launch_uris_async"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GAppInfoIface.launch_uris_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$718.const$1.varHandle(MemoryLayout.PathElement.groupElement("launch_uris_finish"));
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_app_info_launch_uris_finish",
-        constants$12.const$2
+        "g_app_info_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_app_info_should_show",
-        constants$10.const$5
+        "g_app_info_create_from_commandline",
+        constants$484.const$1
     );
 }
 

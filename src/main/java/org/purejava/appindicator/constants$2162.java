@@ -8,28 +8,25 @@ final class constants$2162 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2162() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_requisition_free",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_in_destruction",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_style_context",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_path",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_css_name",
+        "gtk_widget_class_install_style_property",
         constants$13.const$4
     );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_widget_class_install_style_property_parser$parser.class, "apply", constants$12.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_install_style_property_parser",
+        constants$14.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_find_style_property",
+        constants$5.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_list_style_properties",
+        constants$5.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_get_css_name",
-        constants$5.const$2
+        "gtk_widget_style_get_property",
+        constants$14.const$3
     );
 }
 

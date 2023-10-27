@@ -2,33 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1041 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1041() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_load_bytes_finish",
-        constants$39.const$1
+        "g_file_load_contents_async",
+        constants$42.const$1
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("name"),
-        JAVA_INT.withName("type"),
-        JAVA_INT.withName("flags")
-    ).withName("_GFileAttributeInfo");
-    static final VarHandle const$2 = constants$1041.const$1.varHandle(MemoryLayout.PathElement.groupElement("name"));
-    static final VarHandle const$3 = constants$1041.const$1.varHandle(MemoryLayout.PathElement.groupElement("type"));
-    static final VarHandle const$4 = constants$1041.const$1.varHandle(MemoryLayout.PathElement.groupElement("flags"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("infos"),
-        JAVA_INT.withName("n_infos"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GFileAttributeInfoList");
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_load_contents_finish",
+        constants$640.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_file_load_partial_contents_async$read_more_callback.class, "apply", constants$62.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_load_partial_contents_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_load_partial_contents_async",
+        constants$332.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_load_partial_contents_finish",
+        constants$640.const$4
+    );
 }
 
 

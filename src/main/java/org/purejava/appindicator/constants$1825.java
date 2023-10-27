@@ -3,21 +3,52 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1825 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1825() {}
-    static final VarHandle const$0 = constants$1820.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gdk_reserved6"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved7.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$1820.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gdk_reserved7"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved8.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$1820.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gdk_reserved8"));
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_type",
-        constants$3.const$5
-    );
+    static final VarHandle const$0 = constants$1823.const$5.varHandle(MemoryLayout.PathElement.groupElement("width_inc"));
+    static final VarHandle const$1 = constants$1823.const$5.varHandle(MemoryLayout.PathElement.groupElement("height_inc"));
+    static final VarHandle const$2 = constants$1823.const$5.varHandle(MemoryLayout.PathElement.groupElement("min_aspect"));
+    static final VarHandle const$3 = constants$1823.const$5.varHandle(MemoryLayout.PathElement.groupElement("max_aspect"));
+    static final VarHandle const$4 = constants$1823.const$5.varHandle(MemoryLayout.PathElement.groupElement("win_gravity"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("pick_embedded_child"),
+        RuntimeHelper.POINTER.withName("to_embedder"),
+        RuntimeHelper.POINTER.withName("from_embedder"),
+        RuntimeHelper.POINTER.withName("create_surface"),
+        RuntimeHelper.POINTER.withName("_gdk_reserved1"),
+        RuntimeHelper.POINTER.withName("_gdk_reserved2"),
+        RuntimeHelper.POINTER.withName("_gdk_reserved3"),
+        RuntimeHelper.POINTER.withName("_gdk_reserved4"),
+        RuntimeHelper.POINTER.withName("_gdk_reserved5"),
+        RuntimeHelper.POINTER.withName("_gdk_reserved6"),
+        RuntimeHelper.POINTER.withName("_gdk_reserved7"),
+        RuntimeHelper.POINTER.withName("_gdk_reserved8")
+    ).withName("_GdkWindowClass");
 }
 
 

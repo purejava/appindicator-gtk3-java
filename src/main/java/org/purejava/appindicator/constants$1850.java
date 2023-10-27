@@ -8,22 +8,28 @@ final class constants$1850 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1850() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_invalidate_rect",
-        constants$164.const$5
+        "gdk_window_set_group",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_invalidate_region",
-        constants$164.const$5
+        "gdk_window_get_group",
+        constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GdkWindowChildFunc.class, "apply", constants$9.const$0);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_window_invalidate_maybe_recurse$child_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_decorations",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_decorations",
+        constants$9.const$0
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_invalidate_maybe_recurse",
-        constants$42.const$1
+        "gdk_window_set_functions",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_update_area",
-        constants$5.const$2
+        "gdk_window_create_similar_surface",
+        constants$1728.const$2
     );
 }
 

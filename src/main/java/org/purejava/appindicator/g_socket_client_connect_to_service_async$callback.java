@@ -13,7 +13,7 @@ public interface g_socket_client_connect_to_service_async$callback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_socket_client_connect_to_service_async$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1298.const$0, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1302.const$0, fi, constants$14.const$3, scope);
     }
     static g_socket_client_connect_to_service_async$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

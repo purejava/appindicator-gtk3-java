@@ -13,7 +13,7 @@ public interface g_test_queue_destroy$destroy_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_test_queue_destroy$destroy_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$454.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$455.const$3, fi, constants$13.const$1, scope);
     }
     static g_test_queue_destroy$destroy_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

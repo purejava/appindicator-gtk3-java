@@ -8,27 +8,27 @@ final class constants$1832 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1832() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_child_shapes",
-        constants$13.const$1
+        "gdk_window_get_display",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_composited",
-        constants$10.const$5
+        "gdk_window_at_pointer",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_composited",
-        constants$40.const$2
+        "gdk_window_show",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_merge_child_shapes",
+        "gdk_window_hide",
         constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_input_shape_combine_region",
-        constants$1043.const$2
+        "gdk_window_withdraw",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_child_input_shapes",
+        "gdk_window_show_unraised",
         constants$13.const$1
     );
 }

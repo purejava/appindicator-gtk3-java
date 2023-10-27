@@ -8,28 +8,28 @@ final class constants$2346 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2346() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_new_with_area",
-        constants$5.const$2
+        "gtk_cell_area_add_focus_sibling",
+        constants$14.const$3
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_view_column_new_with_attributes",
-        constants$5.const$5
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_remove_focus_sibling",
+        constants$14.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_pack_start",
-        constants$164.const$5
+        "gtk_cell_area_is_focus_sibling",
+        constants$12.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_pack_end",
-        constants$164.const$5
+        "gtk_cell_area_get_focus_siblings",
+        constants$5.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_clear",
-        constants$13.const$1
+        "gtk_cell_area_get_focus_from_sibling",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_add_attribute",
-        constants$331.const$4
+        "gtk_cell_area_get_edited_cell",
+        constants$5.const$2
     );
 }
 

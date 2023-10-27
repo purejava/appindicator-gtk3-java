@@ -22,7 +22,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkFileChooserButtonClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2689.const$5;
+        return constants$2694.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1008);
@@ -36,7 +36,7 @@ public class _GtkFileChooserButtonClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(file_set fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2690.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2695.const$0, fi, constants$13.const$1, scope);
         }
         static file_set ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -51,7 +51,7 @@ public class _GtkFileChooserButtonClass {
     }
 
     public static VarHandle file_set$VH() {
-        return constants$2690.const$1;
+        return constants$2695.const$1;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _GtkFileChooserButtonClass {
      * }
      */
     public static MemorySegment file_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2690.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2695.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -69,13 +69,13 @@ public class _GtkFileChooserButtonClass {
      * }
      */
     public static void file_set$set(MemorySegment seg, MemorySegment x) {
-        constants$2690.const$1.set(seg, x);
+        constants$2695.const$1.set(seg, x);
     }
     public static MemorySegment file_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2690.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2695.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void file_set$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2690.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2695.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static file_set file_set(MemorySegment segment, Arena scope) {
         return file_set.ofAddress(file_set$get(segment), scope);
@@ -89,7 +89,7 @@ public class _GtkFileChooserButtonClass {
 
         void apply();
         static MemorySegment allocate(__gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2690.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2695.const$2, fi, constants$7.const$5, scope);
         }
         static __gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -104,7 +104,7 @@ public class _GtkFileChooserButtonClass {
     }
 
     public static VarHandle __gtk_reserved1$VH() {
-        return constants$2690.const$3;
+        return constants$2695.const$3;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GtkFileChooserButtonClass {
      * }
      */
     public static MemorySegment __gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2690.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2695.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GtkFileChooserButtonClass {
      * }
      */
     public static void __gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$2690.const$3.set(seg, x);
+        constants$2695.const$3.set(seg, x);
     }
     public static MemorySegment __gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2690.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2695.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void __gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2690.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2695.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static __gtk_reserved1 __gtk_reserved1(MemorySegment segment, Arena scope) {
         return __gtk_reserved1.ofAddress(__gtk_reserved1$get(segment), scope);
@@ -142,7 +142,7 @@ public class _GtkFileChooserButtonClass {
 
         void apply();
         static MemorySegment allocate(__gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2690.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2695.const$4, fi, constants$7.const$5, scope);
         }
         static __gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -157,7 +157,7 @@ public class _GtkFileChooserButtonClass {
     }
 
     public static VarHandle __gtk_reserved2$VH() {
-        return constants$2690.const$5;
+        return constants$2695.const$5;
     }
     /**
      * Getter for field:
@@ -166,7 +166,7 @@ public class _GtkFileChooserButtonClass {
      * }
      */
     public static MemorySegment __gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2690.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2695.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -175,13 +175,13 @@ public class _GtkFileChooserButtonClass {
      * }
      */
     public static void __gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$2690.const$5.set(seg, x);
+        constants$2695.const$5.set(seg, x);
     }
     public static MemorySegment __gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2690.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2695.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void __gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2690.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2695.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static __gtk_reserved2 __gtk_reserved2(MemorySegment segment, Arena scope) {
         return __gtk_reserved2.ofAddress(__gtk_reserved2$get(segment), scope);
@@ -195,7 +195,7 @@ public class _GtkFileChooserButtonClass {
 
         void apply();
         static MemorySegment allocate(__gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2691.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2696.const$0, fi, constants$7.const$5, scope);
         }
         static __gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -210,7 +210,7 @@ public class _GtkFileChooserButtonClass {
     }
 
     public static VarHandle __gtk_reserved3$VH() {
-        return constants$2691.const$1;
+        return constants$2696.const$1;
     }
     /**
      * Getter for field:
@@ -219,7 +219,7 @@ public class _GtkFileChooserButtonClass {
      * }
      */
     public static MemorySegment __gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2691.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2696.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -228,13 +228,13 @@ public class _GtkFileChooserButtonClass {
      * }
      */
     public static void __gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$2691.const$1.set(seg, x);
+        constants$2696.const$1.set(seg, x);
     }
     public static MemorySegment __gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2691.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2696.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void __gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2691.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2696.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static __gtk_reserved3 __gtk_reserved3(MemorySegment segment, Arena scope) {
         return __gtk_reserved3.ofAddress(__gtk_reserved3$get(segment), scope);
@@ -248,7 +248,7 @@ public class _GtkFileChooserButtonClass {
 
         void apply();
         static MemorySegment allocate(__gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2691.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2696.const$2, fi, constants$7.const$5, scope);
         }
         static __gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -263,7 +263,7 @@ public class _GtkFileChooserButtonClass {
     }
 
     public static VarHandle __gtk_reserved4$VH() {
-        return constants$2691.const$3;
+        return constants$2696.const$3;
     }
     /**
      * Getter for field:
@@ -272,7 +272,7 @@ public class _GtkFileChooserButtonClass {
      * }
      */
     public static MemorySegment __gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2691.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2696.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -281,13 +281,13 @@ public class _GtkFileChooserButtonClass {
      * }
      */
     public static void __gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$2691.const$3.set(seg, x);
+        constants$2696.const$3.set(seg, x);
     }
     public static MemorySegment __gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2691.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2696.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void __gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2691.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2696.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static __gtk_reserved4 __gtk_reserved4(MemorySegment segment, Arena scope) {
         return __gtk_reserved4.ofAddress(__gtk_reserved4$get(segment), scope);

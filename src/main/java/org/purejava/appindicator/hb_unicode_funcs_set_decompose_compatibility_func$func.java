@@ -13,13 +13,13 @@ public interface hb_unicode_funcs_set_decompose_compatibility_func$func {
 
     int apply(java.lang.foreign.MemorySegment ufuncs, int u, java.lang.foreign.MemorySegment decomposed, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_unicode_funcs_set_decompose_compatibility_func$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1519.const$5, fi, constants$11.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$1524.const$5, fi, constants$11.const$0, scope);
     }
     static hb_unicode_funcs_set_decompose_compatibility_func$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _ufuncs, int _u, java.lang.foreign.MemorySegment _decomposed, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$464.const$0.invokeExact(symbol, _ufuncs, _u, _decomposed, _user_data);
+                return (int)constants$465.const$5.invokeExact(symbol, _ufuncs, _u, _decomposed, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

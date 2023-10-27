@@ -2,20 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2474 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2474() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GtkTreeViewColumnDropFunc.class, "apply", constants$165.const$2);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkTreeViewMappingFunc.class, "apply", constants$14.const$3);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GtkTreeViewSearchEqualFunc.class, "apply", constants$373.const$2);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GtkTreeViewRowSeparatorFunc.class, "apply", constants$12.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GtkTreeViewSearchPositionFunc.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_type",
-        constants$3.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.select_all.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$2471.const$1.varHandle(MemoryLayout.PathElement.groupElement("select_all"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.unselect_all.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$2471.const$1.varHandle(MemoryLayout.PathElement.groupElement("unselect_all"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.select_cursor_row.class, "apply", constants$11.const$4);
+    static final VarHandle const$5 = constants$2471.const$1.varHandle(MemoryLayout.PathElement.groupElement("select_cursor_row"));
 }
 
 

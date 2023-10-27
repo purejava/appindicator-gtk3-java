@@ -13,13 +13,13 @@ public interface GCompletionStrncmpFunc {
 
     int apply(java.lang.foreign.MemorySegment s1, java.lang.foreign.MemorySegment s2, long n);
     static MemorySegment allocate(GCompletionStrncmpFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$496.const$1, fi, constants$18.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$497.const$5, fi, constants$18.const$2, scope);
     }
     static GCompletionStrncmpFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _s1, java.lang.foreign.MemorySegment _s2, long _n) -> {
             try {
-                return (int)constants$496.const$2.invokeExact(symbol, _s1, _s2, _n);
+                return (int)constants$498.const$0.invokeExact(symbol, _s1, _s2, _n);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -9,12 +9,12 @@ final class constants$558 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$558() {}
-    static final VarHandle const$0 = constants$557.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_free"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GTypeValueTable.value_copy.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$557.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_copy"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTypeValueTable.value_peek_pointer.class, "apply", constants$5.const$2);
-    static final VarHandle const$4 = constants$557.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_peek_pointer"));
-    static final VarHandle const$5 = constants$557.const$2.varHandle(MemoryLayout.PathElement.groupElement("collect_format"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GInterfaceInfo.interface_init.class, "apply", constants$13.const$4);
+    static final VarHandle const$1 = constants$557.const$5.varHandle(MemoryLayout.PathElement.groupElement("interface_init"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GInterfaceInfo.interface_finalize.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$557.const$5.varHandle(MemoryLayout.PathElement.groupElement("interface_finalize"));
+    static final VarHandle const$4 = constants$557.const$5.varHandle(MemoryLayout.PathElement.groupElement("interface_data"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GTypeValueInitFunc.class, "apply", constants$13.const$1);
 }
 
 

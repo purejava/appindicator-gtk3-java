@@ -2,20 +2,33 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1617 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1617() {}
-    static final VarHandle const$0 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("start_index"));
-    static final VarHandle const$1 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("start_char"));
-    static final VarHandle const$2 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("end_glyph"));
-    static final VarHandle const$3 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("end_index"));
-    static final VarHandle const$4 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("end_char"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_alignment_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_wrap_mode_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_ellipsize_mode_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_layout_serialize_flags_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_layout_deserialize_error_get_type",
+        constants$3.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_iter_get_type",
+        "pango_layout_deserialize_flags_get_type",
         constants$3.const$5
     );
 }

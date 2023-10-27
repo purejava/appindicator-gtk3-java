@@ -8,26 +8,29 @@ final class constants$401 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$401() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_queue_remove_all",
-        constants$9.const$0
+        "g_queue_pop_nth",
+        constants$21.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_queue_insert_before",
-        constants$14.const$3
+        "g_queue_peek_head",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_queue_insert_before_link",
-        constants$14.const$3
+        "g_queue_peek_tail",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_queue_insert_after",
-        constants$14.const$3
+        "g_queue_peek_nth",
+        constants$21.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_queue_insert_after_link",
-        constants$14.const$3
+        "g_queue_index",
+        constants$9.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_queue_insert_sorted$func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_queue_remove",
+        constants$9.const$0
+    );
 }
 
 

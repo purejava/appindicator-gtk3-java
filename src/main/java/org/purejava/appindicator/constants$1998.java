@@ -3,20 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1998 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1998() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$1942.const$3
+        "atk_get_toolkit_name",
+        constants$35.const$2
     );
-    static final VarHandle const$1 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_extents"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkComponentIface.set_position.class, "apply", constants$608.const$5);
-    static final VarHandle const$3 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_position"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkComponentIface.set_size.class, "apply", constants$49.const$0);
-    static final VarHandle const$5 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_size"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_get_toolkit_version",
+        constants$35.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_get_version",
+        constants$35.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(AtkFocusHandler.class, "apply", constants$40.const$2);
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("x"),
+        JAVA_INT.withName("y"),
+        JAVA_INT.withName("width"),
+        JAVA_INT.withName("height")
+    ).withName("_AtkRectangle");
+    static final VarHandle const$5 = constants$1998.const$4.varHandle(MemoryLayout.PathElement.groupElement("x"));
 }
 
 

@@ -2,21 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1996 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1996() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkComponentIface.get_extents.class, "apply", constants$673.const$2);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$673.const$2
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_remove_focus_tracker",
+        constants$80.const$1
     );
-    static final VarHandle const$2 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_extents"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkComponentIface.get_position.class, "apply", constants$331.const$4);
-    static final VarHandle const$4 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_position"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkComponentIface.get_size.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(atk_focus_tracker_init$init.class, "apply", constants$7.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_focus_tracker_init",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_focus_tracker_notify",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(atk_add_global_event_listener$listener.class, "apply", constants$11.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_add_global_event_listener",
+        constants$9.const$0
+    );
 }
 
 

@@ -13,7 +13,7 @@ public interface hb_paint_funcs_set_image_func$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(hb_paint_funcs_set_image_func$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1466.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1471.const$2, fi, constants$13.const$1, scope);
     }
     static hb_paint_funcs_set_image_func$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

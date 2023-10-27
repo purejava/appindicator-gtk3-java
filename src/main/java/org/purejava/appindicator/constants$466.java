@@ -3,30 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$466 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$466() {}
-    static final VarHandle const$0 = constants$465.const$3.varHandle(MemoryLayout.PathElement.groupElement("user_data"));
-    static final VarHandle const$1 = constants$465.const$3.varHandle(MemoryLayout.PathElement.groupElement("exclusive"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_thread_pool_new$func.class, "apply", constants$13.const$4);
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_test_log_set_fatal_handler$log_func.class, "apply", constants$11.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_log_set_fatal_handler",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_expect_message",
+        constants$42.const$4
+    );
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
-        JAVA_INT,
         JAVA_INT,
         RuntimeHelper.POINTER
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_new",
+        "g_test_assert_expected_messages_internal",
         constants$466.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_thread_pool_new_full$func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_build_filename",
+        constants$24.const$4
+    );
 }
 
 

@@ -13,7 +13,7 @@ public interface GSettingsBindGetMapping {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GSettingsBindGetMapping fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1261.const$5, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1265.const$5, fi, constants$12.const$2, scope);
     }
     static GSettingsBindGetMapping ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

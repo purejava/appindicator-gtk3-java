@@ -12,7 +12,10 @@ final class constants$658 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$658() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
+    static final VarHandle const$0 = constants$657.const$5.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
+    static final VarHandle const$1 = constants$657.const$5.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
+    static final VarHandle const$2 = constants$657.const$5.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 RuntimeHelper.POINTER.withName("g_class")
@@ -28,14 +31,11 @@ final class constants$658 {
             JAVA_INT.withName("ref_count"),
             JAVA_INT.withName("param_id")
         ).withName("parent_instance"),
-        JAVA_LONG.withName("minimum"),
-        JAVA_LONG.withName("maximum"),
-        JAVA_LONG.withName("default_value")
-    ).withName("_GParamSpecULong");
-    static final VarHandle const$1 = constants$658.const$0.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
-    static final VarHandle const$2 = constants$658.const$0.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
-    static final VarHandle const$3 = constants$658.const$0.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
-    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("default_value"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GParamSpecBoolean");
+    static final VarHandle const$4 = constants$658.const$3.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 RuntimeHelper.POINTER.withName("g_class")
@@ -51,11 +51,11 @@ final class constants$658 {
             JAVA_INT.withName("ref_count"),
             JAVA_INT.withName("param_id")
         ).withName("parent_instance"),
-        JAVA_LONG.withName("minimum"),
-        JAVA_LONG.withName("maximum"),
-        JAVA_LONG.withName("default_value")
-    ).withName("_GParamSpecInt64");
-    static final VarHandle const$5 = constants$658.const$4.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
+        JAVA_INT.withName("minimum"),
+        JAVA_INT.withName("maximum"),
+        JAVA_INT.withName("default_value"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GParamSpecInt");
 }
 
 

@@ -5,36 +5,35 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1536 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1536() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_gravity_get_for_script",
-        constants$816.const$5
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_matrix_translate",
+        constants$1536.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_gravity_get_for_script_and_width",
-        constants$1536.const$1
+        "pango_matrix_scale",
+        constants$1536.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_bidi_type_for_unichar",
-        constants$8.const$4
+        "pango_matrix_rotate",
+        constants$692.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_unichar_direction",
-        constants$8.const$4
+        "pango_matrix_concat",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_find_base_dir",
-        constants$11.const$4
+        "pango_matrix_transform_point",
+        constants$14.const$3
     );
 }
 

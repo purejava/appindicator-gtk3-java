@@ -2,57 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$753 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$753() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_initable_init",
-        constants$12.const$2
+        "g_application_command_line_get_arguments",
+        constants$5.const$5
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_options_dict",
+        constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "g_initable_new",
-        constants$753.const$1
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_stdin",
+        constants$5.const$2
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_environ",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_initable_newv",
-        constants$753.const$3
+        "g_application_command_line_getenv",
+        constants$5.const$5
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("__stack"),
-            RuntimeHelper.POINTER.withName("__gr_top"),
-            RuntimeHelper.POINTER.withName("__vr_top"),
-            JAVA_INT.withName("__gr_offs"),
-            JAVA_INT.withName("__vr_offs")
-        ).withName("__va_list"),
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_initable_new_valist",
-        constants$753.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_cwd",
+        constants$5.const$2
     );
 }
 

@@ -7,23 +7,26 @@ final class constants$591 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$591() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_closure_set_marshal$marshal.class, "apply", constants$584.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_closure_ref",
+        constants$5.const$2
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_closure_set_marshal",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_closure_set_meta_marshal$meta_marshal.class, "apply", constants$584.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_closure_set_meta_marshal",
-        constants$14.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_closure_invalidate",
+        "g_closure_sink",
         constants$13.const$1
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_closure_unref",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_closure_new_simple",
+        constants$24.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_closure_add_finalize_notifier$notify_func.class, "apply", constants$13.const$4);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_closure_invoke",
-        constants$379.const$3
+        "g_closure_add_finalize_notifier",
+        constants$14.const$3
     );
 }
 

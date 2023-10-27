@@ -6,36 +6,33 @@ import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$288 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$288() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_unichar_combining_class",
+        constants$8.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_unichar_get_mirror_char",
+        constants$9.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_unichar_get_script",
+        constants$8.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
         "g_unichar_validate",
         constants$8.const$4
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
         JAVA_INT,
         JAVA_INT,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_unichar_compose",
-        constants$288.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_unichar_decompose",
-        constants$10.const$3
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_LONG
-    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_unichar_fully_decompose",
+        "g_unichar_compose",
         constants$288.const$4
     );
 }

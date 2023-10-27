@@ -2,34 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2681 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2681() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_current_name",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_current_name",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$2680.const$2.varHandle(MemoryLayout.PathElement.groupElement("display_name"));
+    static final VarHandle const$1 = constants$2680.const$2.varHandle(MemoryLayout.PathElement.groupElement("mime_type"));
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_filename",
-        constants$5.const$2
+        "gtk_file_filter_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_filename",
-        constants$9.const$0
+        "gtk_file_filter_new",
+        constants$35.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_select_filename",
-        constants$9.const$0
+        "gtk_file_filter_set_name",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_unselect_filename",
-        constants$13.const$4
+        "gtk_file_filter_get_name",
+        constants$5.const$2
     );
 }
 

@@ -2,18 +2,40 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$1655 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1655() {}
-    static final VarHandle const$0 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_IO_save_base"));
-    static final VarHandle const$1 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_IO_backup_base"));
-    static final VarHandle const$2 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_IO_save_end"));
-    static final VarHandle const$3 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_markers"));
-    static final VarHandle const$4 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_chain"));
-    static final VarHandle const$5 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_fileno"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_renderer_deactivate",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_renderer_part_changed",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_renderer_set_color",
+        constants$42.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_renderer_get_color",
+        constants$21.const$3
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_SHORT
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_renderer_set_alpha",
+        constants$1655.const$4
+    );
 }
 
 

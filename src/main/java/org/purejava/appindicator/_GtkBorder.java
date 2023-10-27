@@ -20,10 +20,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkBorder {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1958.const$4;
+        return constants$1963.const$4;
     }
     public static VarHandle left$VH() {
-        return constants$1958.const$5;
+        return constants$1963.const$5;
     }
     /**
      * Getter for field:
@@ -32,7 +32,7 @@ public class _GtkBorder {
      * }
      */
     public static short left$get(MemorySegment seg) {
-        return (short)constants$1958.const$5.get(seg);
+        return (short)constants$1963.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -41,16 +41,16 @@ public class _GtkBorder {
      * }
      */
     public static void left$set(MemorySegment seg, short x) {
-        constants$1958.const$5.set(seg, x);
+        constants$1963.const$5.set(seg, x);
     }
     public static short left$get(MemorySegment seg, long index) {
-        return (short)constants$1958.const$5.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1963.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void left$set(MemorySegment seg, long index, short x) {
-        constants$1958.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1963.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle right$VH() {
-        return constants$1959.const$0;
+        return constants$1964.const$0;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GtkBorder {
      * }
      */
     public static short right$get(MemorySegment seg) {
-        return (short)constants$1959.const$0.get(seg);
+        return (short)constants$1964.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -68,16 +68,16 @@ public class _GtkBorder {
      * }
      */
     public static void right$set(MemorySegment seg, short x) {
-        constants$1959.const$0.set(seg, x);
+        constants$1964.const$0.set(seg, x);
     }
     public static short right$get(MemorySegment seg, long index) {
-        return (short)constants$1959.const$0.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1964.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void right$set(MemorySegment seg, long index, short x) {
-        constants$1959.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1964.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle top$VH() {
-        return constants$1959.const$1;
+        return constants$1964.const$1;
     }
     /**
      * Getter for field:
@@ -86,7 +86,7 @@ public class _GtkBorder {
      * }
      */
     public static short top$get(MemorySegment seg) {
-        return (short)constants$1959.const$1.get(seg);
+        return (short)constants$1964.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -95,16 +95,16 @@ public class _GtkBorder {
      * }
      */
     public static void top$set(MemorySegment seg, short x) {
-        constants$1959.const$1.set(seg, x);
+        constants$1964.const$1.set(seg, x);
     }
     public static short top$get(MemorySegment seg, long index) {
-        return (short)constants$1959.const$1.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1964.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void top$set(MemorySegment seg, long index, short x) {
-        constants$1959.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1964.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle bottom$VH() {
-        return constants$1959.const$2;
+        return constants$1964.const$2;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GtkBorder {
      * }
      */
     public static short bottom$get(MemorySegment seg) {
-        return (short)constants$1959.const$2.get(seg);
+        return (short)constants$1964.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GtkBorder {
      * }
      */
     public static void bottom$set(MemorySegment seg, short x) {
-        constants$1959.const$2.set(seg, x);
+        constants$1964.const$2.set(seg, x);
     }
     public static short bottom$get(MemorySegment seg, long index) {
-        return (short)constants$1959.const$2.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1964.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void bottom$set(MemorySegment seg, long index, short x) {
-        constants$1959.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1964.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

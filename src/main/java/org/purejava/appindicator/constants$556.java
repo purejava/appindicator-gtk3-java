@@ -3,27 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$556 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$556() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        JAVA_INT.withName("type_flags")
-    ).withName("_GTypeFundamentalInfo");
-    static final VarHandle const$1 = constants$556.const$0.varHandle(MemoryLayout.PathElement.groupElement("type_flags"));
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("interface_init"),
-        RuntimeHelper.POINTER.withName("interface_finalize"),
-        RuntimeHelper.POINTER.withName("interface_data")
-    ).withName("_GInterfaceInfo");
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GInterfaceInfo.interface_init.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$556.const$2.varHandle(MemoryLayout.PathElement.groupElement("interface_init"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GInterfaceInfo.interface_finalize.class, "apply", constants$13.const$4);
+    static final VarHandle const$0 = constants$554.const$5.varHandle(MemoryLayout.PathElement.groupElement("class_init"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GTypeInfo.class_finalize.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$554.const$5.varHandle(MemoryLayout.PathElement.groupElement("class_finalize"));
+    static final VarHandle const$3 = constants$554.const$5.varHandle(MemoryLayout.PathElement.groupElement("class_data"));
+    static final VarHandle const$4 = constants$554.const$5.varHandle(MemoryLayout.PathElement.groupElement("instance_size"));
+    static final VarHandle const$5 = constants$554.const$5.varHandle(MemoryLayout.PathElement.groupElement("n_preallocs"));
 }
 
 

@@ -8,28 +8,28 @@ final class constants$1841 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1841() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_root_coords",
-        constants$1494.const$5
+        "gdk_window_set_skip_pager_hint",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_coords_to_parent",
-        constants$1821.const$4
+        "gdk_window_set_urgency_hint",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_coords_from_parent",
-        constants$1821.const$4
+        "gdk_window_set_geometry_hints",
+        constants$164.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_root_origin",
-        constants$14.const$3
+        "gdk_window_get_clip_region",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_frame_extents",
-        constants$13.const$4
+        "gdk_window_get_visible_region",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_scale_factor",
-        constants$10.const$5
+        "gdk_window_begin_paint_rect",
+        constants$13.const$4
     );
 }
 

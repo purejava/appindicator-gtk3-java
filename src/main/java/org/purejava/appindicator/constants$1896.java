@@ -5,35 +5,53 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1896 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1896() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_iter_on_currently_loading_frame",
-        constants$10.const$5
+        "gdk_pixbuf_get_options",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_iter_advance",
+        "gdk_pixbuf_copy_options",
         constants$9.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_get_type",
-        constants$3.const$5
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_INT
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_iter_get_type",
-        constants$3.const$5
+        "gdk_pixbuf_scale",
+        constants$1896.const$2
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
         JAVA_INT,
         JAVA_INT,
-        JAVA_FLOAT
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_new",
+        "gdk_pixbuf_composite",
         constants$1896.const$4
     );
 }

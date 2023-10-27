@@ -2,31 +2,44 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1695 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1695() {}
-    static final VarHandle const$0 = constants$1694.const$3.varHandle(MemoryLayout.PathElement.groupElement("y"));
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_glyph_allocate",
-        constants$24.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_glyph_free",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_stroke_preserve",
         constants$13.const$1
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        JAVA_INT.withName("num_bytes"),
-        JAVA_INT.withName("num_glyphs")
-    ).withName("cairo_text_cluster_t");
-    static final VarHandle const$4 = constants$1695.const$3.varHandle(MemoryLayout.PathElement.groupElement("num_bytes"));
-    static final VarHandle const$5 = constants$1695.const$3.varHandle(MemoryLayout.PathElement.groupElement("num_glyphs"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_fill",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_fill_preserve",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_copy_page",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_show_page",
+        constants$13.const$1
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "cairo_in_stroke",
+        constants$1695.const$5
+    );
 }
 
 

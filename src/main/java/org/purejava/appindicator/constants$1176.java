@@ -2,29 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1176 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1176() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountOperationClass.show_processes.class, "apply", constants$42.const$1);
-    static final VarHandle const$1 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("show_processes"));
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_LONG
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mount_shadow",
+        constants$13.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMountOperationClass.show_unmount_progress.class, "apply", constants$1176.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_mount_unshadow",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_mount_unmount_with_operation$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mount_unmount_with_operation",
+        constants$381.const$0
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$1176.const$2
+        "g_mount_unmount_with_operation_finish",
+        constants$12.const$2
     );
-    static final VarHandle const$5 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("show_unmount_progress"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_mount_eject_with_operation$callback.class, "apply", constants$14.const$3);
 }
 
 

@@ -3,30 +3,17 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 final class constants$2361 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2361() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTextChildAnchorClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2359.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_child_anchor_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_child_anchor_new",
-        constants$35.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_child_anchor_get_widgets",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_child_anchor_get_deleted",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$2360.const$2.varHandle(MemoryLayout.PathElement.groupElement("font"));
+    static final VarHandle const$1 = constants$2360.const$2.varHandle(MemoryLayout.PathElement.groupElement("font_scale"));
+    static final VarHandle const$2 = constants$2360.const$2.varHandle(MemoryLayout.PathElement.groupElement("left_margin"));
+    static final VarHandle const$3 = constants$2360.const$2.varHandle(MemoryLayout.PathElement.groupElement("right_margin"));
+    static final VarHandle const$4 = constants$2360.const$2.varHandle(MemoryLayout.PathElement.groupElement("indent"));
+    static final VarHandle const$5 = constants$2360.const$2.varHandle(MemoryLayout.PathElement.groupElement("pixels_above_lines"));
 }
 
 

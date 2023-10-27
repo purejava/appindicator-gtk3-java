@@ -2,31 +2,24 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$584 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$584() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_list",
-        constants$36.const$1
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GParamSpecTypeInfo.value_validate.class, "apply", constants$9.const$0);
+    static final VarHandle const$1 = constants$582.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_validate"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GParamSpecTypeInfo.values_cmp.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$582.const$2.varHandle(MemoryLayout.PathElement.groupElement("values_cmp"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_param_type_register_static",
+        constants$22.const$0
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GCallback.class, "apply", constants$7.const$5);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GClosureNotify.class, "apply", constants$13.const$4);
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GClosureMarshal.class, "apply", constants$584.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        constants$584.const$3
+        "g_param_spec_is_valid_name",
+        constants$10.const$5
     );
 }
 

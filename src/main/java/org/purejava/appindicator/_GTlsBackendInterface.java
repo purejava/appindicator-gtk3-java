@@ -26,7 +26,7 @@ import java.lang.invoke.VarHandle;
 public class _GTlsBackendInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1346.const$0;
+        return constants$1350.const$1;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -40,7 +40,7 @@ public class _GTlsBackendInterface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(supports_tls fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1346.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1350.const$2, fi, constants$10.const$5, scope);
         }
         static supports_tls ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -55,7 +55,7 @@ public class _GTlsBackendInterface {
     }
 
     public static VarHandle supports_tls$VH() {
-        return constants$1346.const$2;
+        return constants$1350.const$3;
     }
     /**
      * Getter for field:
@@ -64,7 +64,7 @@ public class _GTlsBackendInterface {
      * }
      */
     public static MemorySegment supports_tls$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1346.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1350.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -73,13 +73,13 @@ public class _GTlsBackendInterface {
      * }
      */
     public static void supports_tls$set(MemorySegment seg, MemorySegment x) {
-        constants$1346.const$2.set(seg, x);
+        constants$1350.const$3.set(seg, x);
     }
     public static MemorySegment supports_tls$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1346.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1350.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void supports_tls$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1346.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1350.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static supports_tls supports_tls(MemorySegment segment, Arena scope) {
         return supports_tls.ofAddress(supports_tls$get(segment), scope);
@@ -93,13 +93,13 @@ public class _GTlsBackendInterface {
 
         long apply();
         static MemorySegment allocate(get_certificate_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1346.const$3, fi, constants$3.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1350.const$4, fi, constants$3.const$5, scope);
         }
         static get_certificate_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (long)constants$511.const$2.invokeExact(symbol);
+                    return (long)constants$513.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -108,7 +108,7 @@ public class _GTlsBackendInterface {
     }
 
     public static VarHandle get_certificate_type$VH() {
-        return constants$1346.const$4;
+        return constants$1350.const$5;
     }
     /**
      * Getter for field:
@@ -117,7 +117,7 @@ public class _GTlsBackendInterface {
      * }
      */
     public static MemorySegment get_certificate_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1346.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1350.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -126,13 +126,13 @@ public class _GTlsBackendInterface {
      * }
      */
     public static void get_certificate_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1346.const$4.set(seg, x);
+        constants$1350.const$5.set(seg, x);
     }
     public static MemorySegment get_certificate_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1346.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1350.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_certificate_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1346.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1350.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_certificate_type get_certificate_type(MemorySegment segment, Arena scope) {
         return get_certificate_type.ofAddress(get_certificate_type$get(segment), scope);
@@ -146,13 +146,13 @@ public class _GTlsBackendInterface {
 
         long apply();
         static MemorySegment allocate(get_client_connection_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1346.const$5, fi, constants$3.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1351.const$0, fi, constants$3.const$5, scope);
         }
         static get_client_connection_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (long)constants$511.const$2.invokeExact(symbol);
+                    return (long)constants$513.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -161,7 +161,7 @@ public class _GTlsBackendInterface {
     }
 
     public static VarHandle get_client_connection_type$VH() {
-        return constants$1347.const$0;
+        return constants$1351.const$1;
     }
     /**
      * Getter for field:
@@ -170,7 +170,7 @@ public class _GTlsBackendInterface {
      * }
      */
     public static MemorySegment get_client_connection_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1347.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1351.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -179,13 +179,13 @@ public class _GTlsBackendInterface {
      * }
      */
     public static void get_client_connection_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1347.const$0.set(seg, x);
+        constants$1351.const$1.set(seg, x);
     }
     public static MemorySegment get_client_connection_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1347.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1351.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_client_connection_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1347.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1351.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_client_connection_type get_client_connection_type(MemorySegment segment, Arena scope) {
         return get_client_connection_type.ofAddress(get_client_connection_type$get(segment), scope);
@@ -199,13 +199,13 @@ public class _GTlsBackendInterface {
 
         long apply();
         static MemorySegment allocate(get_server_connection_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1347.const$1, fi, constants$3.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1351.const$2, fi, constants$3.const$5, scope);
         }
         static get_server_connection_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (long)constants$511.const$2.invokeExact(symbol);
+                    return (long)constants$513.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -214,7 +214,7 @@ public class _GTlsBackendInterface {
     }
 
     public static VarHandle get_server_connection_type$VH() {
-        return constants$1347.const$2;
+        return constants$1351.const$3;
     }
     /**
      * Getter for field:
@@ -223,7 +223,7 @@ public class _GTlsBackendInterface {
      * }
      */
     public static MemorySegment get_server_connection_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1347.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1351.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -232,13 +232,13 @@ public class _GTlsBackendInterface {
      * }
      */
     public static void get_server_connection_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1347.const$2.set(seg, x);
+        constants$1351.const$3.set(seg, x);
     }
     public static MemorySegment get_server_connection_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1347.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1351.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_server_connection_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1347.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1351.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_server_connection_type get_server_connection_type(MemorySegment segment, Arena scope) {
         return get_server_connection_type.ofAddress(get_server_connection_type$get(segment), scope);
@@ -252,13 +252,13 @@ public class _GTlsBackendInterface {
 
         long apply();
         static MemorySegment allocate(get_file_database_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1347.const$3, fi, constants$3.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1351.const$4, fi, constants$3.const$5, scope);
         }
         static get_file_database_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (long)constants$511.const$2.invokeExact(symbol);
+                    return (long)constants$513.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -267,7 +267,7 @@ public class _GTlsBackendInterface {
     }
 
     public static VarHandle get_file_database_type$VH() {
-        return constants$1347.const$4;
+        return constants$1351.const$5;
     }
     /**
      * Getter for field:
@@ -276,7 +276,7 @@ public class _GTlsBackendInterface {
      * }
      */
     public static MemorySegment get_file_database_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1347.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1351.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -285,13 +285,13 @@ public class _GTlsBackendInterface {
      * }
      */
     public static void get_file_database_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1347.const$4.set(seg, x);
+        constants$1351.const$5.set(seg, x);
     }
     public static MemorySegment get_file_database_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1347.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1351.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_file_database_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1347.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1351.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_file_database_type get_file_database_type(MemorySegment segment, Arena scope) {
         return get_file_database_type.ofAddress(get_file_database_type$get(segment), scope);
@@ -305,7 +305,7 @@ public class _GTlsBackendInterface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_default_database fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1347.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1352.const$0, fi, constants$5.const$2, scope);
         }
         static get_default_database ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -320,7 +320,7 @@ public class _GTlsBackendInterface {
     }
 
     public static VarHandle get_default_database$VH() {
-        return constants$1348.const$0;
+        return constants$1352.const$1;
     }
     /**
      * Getter for field:
@@ -329,7 +329,7 @@ public class _GTlsBackendInterface {
      * }
      */
     public static MemorySegment get_default_database$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1348.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1352.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -338,13 +338,13 @@ public class _GTlsBackendInterface {
      * }
      */
     public static void get_default_database$set(MemorySegment seg, MemorySegment x) {
-        constants$1348.const$0.set(seg, x);
+        constants$1352.const$1.set(seg, x);
     }
     public static MemorySegment get_default_database$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1348.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1352.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_default_database$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1348.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1352.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_default_database get_default_database(MemorySegment segment, Arena scope) {
         return get_default_database.ofAddress(get_default_database$get(segment), scope);
@@ -358,7 +358,7 @@ public class _GTlsBackendInterface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(supports_dtls fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1348.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1352.const$2, fi, constants$10.const$5, scope);
         }
         static supports_dtls ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -373,7 +373,7 @@ public class _GTlsBackendInterface {
     }
 
     public static VarHandle supports_dtls$VH() {
-        return constants$1348.const$2;
+        return constants$1352.const$3;
     }
     /**
      * Getter for field:
@@ -382,7 +382,7 @@ public class _GTlsBackendInterface {
      * }
      */
     public static MemorySegment supports_dtls$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1348.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1352.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -391,13 +391,13 @@ public class _GTlsBackendInterface {
      * }
      */
     public static void supports_dtls$set(MemorySegment seg, MemorySegment x) {
-        constants$1348.const$2.set(seg, x);
+        constants$1352.const$3.set(seg, x);
     }
     public static MemorySegment supports_dtls$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1348.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1352.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void supports_dtls$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1348.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1352.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static supports_dtls supports_dtls(MemorySegment segment, Arena scope) {
         return supports_dtls.ofAddress(supports_dtls$get(segment), scope);
@@ -411,13 +411,13 @@ public class _GTlsBackendInterface {
 
         long apply();
         static MemorySegment allocate(get_dtls_client_connection_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1348.const$3, fi, constants$3.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1352.const$4, fi, constants$3.const$5, scope);
         }
         static get_dtls_client_connection_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (long)constants$511.const$2.invokeExact(symbol);
+                    return (long)constants$513.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -426,7 +426,7 @@ public class _GTlsBackendInterface {
     }
 
     public static VarHandle get_dtls_client_connection_type$VH() {
-        return constants$1348.const$4;
+        return constants$1352.const$5;
     }
     /**
      * Getter for field:
@@ -435,7 +435,7 @@ public class _GTlsBackendInterface {
      * }
      */
     public static MemorySegment get_dtls_client_connection_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1348.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1352.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -444,13 +444,13 @@ public class _GTlsBackendInterface {
      * }
      */
     public static void get_dtls_client_connection_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1348.const$4.set(seg, x);
+        constants$1352.const$5.set(seg, x);
     }
     public static MemorySegment get_dtls_client_connection_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1348.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1352.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_dtls_client_connection_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1348.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1352.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_dtls_client_connection_type get_dtls_client_connection_type(MemorySegment segment, Arena scope) {
         return get_dtls_client_connection_type.ofAddress(get_dtls_client_connection_type$get(segment), scope);
@@ -464,13 +464,13 @@ public class _GTlsBackendInterface {
 
         long apply();
         static MemorySegment allocate(get_dtls_server_connection_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1348.const$5, fi, constants$3.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1353.const$0, fi, constants$3.const$5, scope);
         }
         static get_dtls_server_connection_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (long)constants$511.const$2.invokeExact(symbol);
+                    return (long)constants$513.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -479,7 +479,7 @@ public class _GTlsBackendInterface {
     }
 
     public static VarHandle get_dtls_server_connection_type$VH() {
-        return constants$1349.const$0;
+        return constants$1353.const$1;
     }
     /**
      * Getter for field:
@@ -488,7 +488,7 @@ public class _GTlsBackendInterface {
      * }
      */
     public static MemorySegment get_dtls_server_connection_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1349.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1353.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -497,13 +497,13 @@ public class _GTlsBackendInterface {
      * }
      */
     public static void get_dtls_server_connection_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1349.const$0.set(seg, x);
+        constants$1353.const$1.set(seg, x);
     }
     public static MemorySegment get_dtls_server_connection_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1349.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1353.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_dtls_server_connection_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1349.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1353.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_dtls_server_connection_type get_dtls_server_connection_type(MemorySegment segment, Arena scope) {
         return get_dtls_server_connection_type.ofAddress(get_dtls_server_connection_type$get(segment), scope);

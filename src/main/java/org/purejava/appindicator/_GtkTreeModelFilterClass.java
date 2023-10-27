@@ -23,7 +23,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkTreeModelFilterClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2426.const$1;
+        return constants$2431.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -37,7 +37,7 @@ public class _GtkTreeModelFilterClass {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(visible fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2426.const$2, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2431.const$2, fi, constants$12.const$2, scope);
         }
         static visible ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -52,7 +52,7 @@ public class _GtkTreeModelFilterClass {
     }
 
     public static VarHandle visible$VH() {
-        return constants$2426.const$3;
+        return constants$2431.const$3;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static MemorySegment visible$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2426.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2431.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -70,13 +70,13 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static void visible$set(MemorySegment seg, MemorySegment x) {
-        constants$2426.const$3.set(seg, x);
+        constants$2431.const$3.set(seg, x);
     }
     public static MemorySegment visible$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2426.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2431.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void visible$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2426.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2431.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static visible visible(MemorySegment segment, Arena scope) {
         return visible.ofAddress(visible$get(segment), scope);
@@ -90,13 +90,13 @@ public class _GtkTreeModelFilterClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, int _x4);
         static MemorySegment allocate(modify fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2426.const$4, fi, constants$646.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2431.const$4, fi, constants$649.const$2, scope);
         }
         static modify ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, int __x4) -> {
                 try {
-                    constants$1174.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$1178.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -105,7 +105,7 @@ public class _GtkTreeModelFilterClass {
     }
 
     public static VarHandle modify$VH() {
-        return constants$2426.const$5;
+        return constants$2431.const$5;
     }
     /**
      * Getter for field:
@@ -114,7 +114,7 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static MemorySegment modify$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2426.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2431.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -123,13 +123,13 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static void modify$set(MemorySegment seg, MemorySegment x) {
-        constants$2426.const$5.set(seg, x);
+        constants$2431.const$5.set(seg, x);
     }
     public static MemorySegment modify$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2426.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2431.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void modify$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2426.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2431.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static modify modify(MemorySegment segment, Arena scope) {
         return modify.ofAddress(modify$get(segment), scope);
@@ -143,7 +143,7 @@ public class _GtkTreeModelFilterClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2427.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2432.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -158,7 +158,7 @@ public class _GtkTreeModelFilterClass {
     }
 
     public static VarHandle _gtk_reserved1$VH() {
-        return constants$2427.const$1;
+        return constants$2432.const$1;
     }
     /**
      * Getter for field:
@@ -167,7 +167,7 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2427.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2432.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -176,13 +176,13 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$2427.const$1.set(seg, x);
+        constants$2432.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2427.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2432.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2427.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2432.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
@@ -196,7 +196,7 @@ public class _GtkTreeModelFilterClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2427.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2432.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -211,7 +211,7 @@ public class _GtkTreeModelFilterClass {
     }
 
     public static VarHandle _gtk_reserved2$VH() {
-        return constants$2427.const$3;
+        return constants$2432.const$3;
     }
     /**
      * Getter for field:
@@ -220,7 +220,7 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2427.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2432.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -229,13 +229,13 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$2427.const$3.set(seg, x);
+        constants$2432.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2427.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2432.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2427.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2432.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
@@ -249,7 +249,7 @@ public class _GtkTreeModelFilterClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2427.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2432.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -264,7 +264,7 @@ public class _GtkTreeModelFilterClass {
     }
 
     public static VarHandle _gtk_reserved3$VH() {
-        return constants$2427.const$5;
+        return constants$2432.const$5;
     }
     /**
      * Getter for field:
@@ -273,7 +273,7 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2427.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2432.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -282,13 +282,13 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$2427.const$5.set(seg, x);
+        constants$2432.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2427.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2432.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2427.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2432.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
@@ -302,7 +302,7 @@ public class _GtkTreeModelFilterClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2428.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2433.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -317,7 +317,7 @@ public class _GtkTreeModelFilterClass {
     }
 
     public static VarHandle _gtk_reserved4$VH() {
-        return constants$2428.const$1;
+        return constants$2433.const$1;
     }
     /**
      * Getter for field:
@@ -326,7 +326,7 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2428.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2433.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -335,13 +335,13 @@ public class _GtkTreeModelFilterClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$2428.const$1.set(seg, x);
+        constants$2433.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2428.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2433.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2428.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2433.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);

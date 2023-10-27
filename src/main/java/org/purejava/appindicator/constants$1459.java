@@ -2,36 +2,42 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 final class constants$1459 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1459() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$1243.const$0
+        "hb_paint_funcs_set_user_data",
+        constants$1427.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_color_line_get_extend_func_t.class, "apply", constants$12.const$2);
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("data"),
-        RuntimeHelper.POINTER.withName("get_color_stops"),
-        RuntimeHelper.POINTER.withName("get_color_stops_user_data"),
-        RuntimeHelper.POINTER.withName("get_extend"),
-        RuntimeHelper.POINTER.withName("get_extend_user_data"),
-        RuntimeHelper.POINTER.withName("reserved0"),
-        RuntimeHelper.POINTER.withName("reserved1"),
-        RuntimeHelper.POINTER.withName("reserved2"),
-        RuntimeHelper.POINTER.withName("reserved3"),
-        RuntimeHelper.POINTER.withName("reserved5"),
-        RuntimeHelper.POINTER.withName("reserved6"),
-        RuntimeHelper.POINTER.withName("reserved7"),
-        RuntimeHelper.POINTER.withName("reserved8")
-    ).withName("hb_color_line_t");
-    static final VarHandle const$3 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("data"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_color_line_t.get_color_stops.class, "apply", constants$1243.const$0);
-    static final VarHandle const$5 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_color_stops"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_get_user_data",
+        constants$5.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_make_immutable",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_is_immutable",
+        constants$10.const$5
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_push_transform_func_t.class, "apply", constants$1459.const$4);
 }
 
 

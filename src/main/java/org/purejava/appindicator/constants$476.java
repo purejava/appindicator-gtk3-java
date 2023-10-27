@@ -7,29 +7,20 @@ final class constants$476 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$476() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tree_insert_node",
-        constants$23.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tree_insert",
-        constants$14.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tree_replace_node",
-        constants$23.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_tree_new_full$key_compare_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_tree_new_full$key_destroy_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_tree_new_full$value_destroy_func.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tree_replace",
-        constants$14.const$3
+        "g_tree_new_full",
+        constants$39.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tree_remove",
-        constants$9.const$0
+        "g_tree_node_first",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tree_remove_all",
-        constants$13.const$1
+        "g_tree_node_last",
+        constants$5.const$2
     );
 }
 

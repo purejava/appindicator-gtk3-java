@@ -9,14 +9,12 @@ final class constants$996 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$996() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.copy_async.class, "apply", constants$995.const$5);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$995.const$5
-    );
-    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("copy_async"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.copy_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("copy_finish"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.move.class, "apply", constants$906.const$0);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.trash_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("trash_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.make_directory.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_directory"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.make_directory_async.class, "apply", constants$282.const$1);
+    static final VarHandle const$5 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_directory_async"));
 }
 
 

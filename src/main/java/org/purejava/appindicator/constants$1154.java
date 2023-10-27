@@ -2,35 +2,46 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1154 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1154() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_menu_remove",
-        constants$40.const$2
+        "g_menu_attribute_iter_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_menu_remove_all",
-        constants$13.const$1
+        "g_menu_attribute_iter_get_next",
+        constants$12.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_menu_insert",
-        constants$179.const$1
+        "g_menu_attribute_iter_next",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_menu_prepend",
-        constants$14.const$3
+        "g_menu_attribute_iter_get_name",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_menu_append",
-        constants$14.const$3
+        "g_menu_attribute_iter_get_value",
+        constants$5.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_menu_insert_section",
-        constants$179.const$1
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GMenuLinkIter");
 }
 
 

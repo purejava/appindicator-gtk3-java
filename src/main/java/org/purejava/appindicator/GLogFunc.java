@@ -13,13 +13,13 @@ public interface GLogFunc {
 
     void apply(java.lang.foreign.MemorySegment log_domain, int log_level, java.lang.foreign.MemorySegment message, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GLogFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$372.const$2, fi, constants$179.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$373.const$2, fi, constants$179.const$1, scope);
     }
     static GLogFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _log_domain, int _log_level, java.lang.foreign.MemorySegment _message, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$372.const$3.invokeExact(symbol, _log_domain, _log_level, _message, _user_data);
+                constants$373.const$3.invokeExact(symbol, _log_domain, _log_level, _message, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

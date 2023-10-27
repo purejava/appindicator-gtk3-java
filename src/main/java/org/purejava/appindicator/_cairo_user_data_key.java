@@ -17,10 +17,10 @@ import java.lang.invoke.VarHandle;
 public class _cairo_user_data_key {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1678.const$3;
+        return constants$1683.const$3;
     }
     public static VarHandle unused$VH() {
-        return constants$1678.const$4;
+        return constants$1683.const$4;
     }
     /**
      * Getter for field:
@@ -29,7 +29,7 @@ public class _cairo_user_data_key {
      * }
      */
     public static int unused$get(MemorySegment seg) {
-        return (int)constants$1678.const$4.get(seg);
+        return (int)constants$1683.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -38,13 +38,13 @@ public class _cairo_user_data_key {
      * }
      */
     public static void unused$set(MemorySegment seg, int x) {
-        constants$1678.const$4.set(seg, x);
+        constants$1683.const$4.set(seg, x);
     }
     public static int unused$get(MemorySegment seg, long index) {
-        return (int)constants$1678.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1683.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void unused$set(MemorySegment seg, long index, int x) {
-        constants$1678.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1683.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -8,28 +8,28 @@ final class constants$2941 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2941() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_paned_get_type",
-        constants$3.const$5
+        "gtk_page_setup_load_file",
+        constants$12.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_paned_new",
-        constants$24.const$0
+        "gtk_page_setup_to_file",
+        constants$12.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_paned_add1",
-        constants$13.const$4
+        "gtk_page_setup_new_from_key_file",
+        constants$23.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_paned_add2",
-        constants$13.const$4
+        "gtk_page_setup_load_key_file",
+        constants$34.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_paned_pack1",
-        constants$1043.const$2
+        "gtk_page_setup_to_key_file",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_paned_pack2",
-        constants$1043.const$2
+        "gtk_page_setup_to_gvariant",
+        constants$5.const$2
     );
 }
 

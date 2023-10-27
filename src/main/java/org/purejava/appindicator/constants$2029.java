@@ -3,24 +3,47 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2029 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2029() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkGObjectAccessibleClass.pad1.class, "apply", constants$10.const$5);
-    static final VarHandle const$1 = constants$2028.const$5.varHandle(MemoryLayout.PathElement.groupElement("pad1"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkGObjectAccessibleClass.pad2.class, "apply", constants$10.const$5);
-    static final VarHandle const$3 = constants$2028.const$5.varHandle(MemoryLayout.PathElement.groupElement("pad2"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_text_attribute_get_name",
+        constants$24.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_text_attribute_for_name",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_text_attribute_get_value",
+        constants$1416.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_text_scroll_substring_to",
+        constants$611.const$1
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_gobject_accessible_for_object",
-        constants$5.const$2
+        "atk_text_scroll_substring_to_point",
+        constants$1947.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_gobject_accessible_get_object",
-        constants$5.const$2
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent_interface"),
+        RuntimeHelper.POINTER.withName("set_run_attributes"),
+        RuntimeHelper.POINTER.withName("set_text_contents"),
+        RuntimeHelper.POINTER.withName("insert_text"),
+        RuntimeHelper.POINTER.withName("copy_text"),
+        RuntimeHelper.POINTER.withName("cut_text"),
+        RuntimeHelper.POINTER.withName("delete_text"),
+        RuntimeHelper.POINTER.withName("paste_text")
+    ).withName("_AtkEditableTextIface");
 }
 
 

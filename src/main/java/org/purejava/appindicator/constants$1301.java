@@ -2,65 +2,39 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$1301 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1301() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    JAVA_LONG.withName("g_type")
-                ).withName("g_type_class"),
-                RuntimeHelper.POINTER.withName("construct_properties"),
-                RuntimeHelper.POINTER.withName("constructor"),
-                RuntimeHelper.POINTER.withName("set_property"),
-                RuntimeHelper.POINTER.withName("get_property"),
-                RuntimeHelper.POINTER.withName("dispose"),
-                RuntimeHelper.POINTER.withName("finalize"),
-                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-                RuntimeHelper.POINTER.withName("notify"),
-                RuntimeHelper.POINTER.withName("constructed"),
-                JAVA_LONG.withName("flags"),
-                JAVA_LONG.withName("n_construct_properties"),
-                RuntimeHelper.POINTER.withName("pspecs"),
-                JAVA_LONG.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-            ).withName("parent_class"),
-            RuntimeHelper.POINTER.withName("get_input_stream"),
-            RuntimeHelper.POINTER.withName("get_output_stream"),
-            RuntimeHelper.POINTER.withName("close_fn"),
-            RuntimeHelper.POINTER.withName("close_async"),
-            RuntimeHelper.POINTER.withName("close_finish"),
-            RuntimeHelper.POINTER.withName("_g_reserved1"),
-            RuntimeHelper.POINTER.withName("_g_reserved2"),
-            RuntimeHelper.POINTER.withName("_g_reserved3"),
-            RuntimeHelper.POINTER.withName("_g_reserved4"),
-            RuntimeHelper.POINTER.withName("_g_reserved5"),
-            RuntimeHelper.POINTER.withName("_g_reserved6"),
-            RuntimeHelper.POINTER.withName("_g_reserved7"),
-            RuntimeHelper.POINTER.withName("_g_reserved8"),
-            RuntimeHelper.POINTER.withName("_g_reserved9"),
-            RuntimeHelper.POINTER.withName("_g_reserved10")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("_g_reserved1"),
-        RuntimeHelper.POINTER.withName("_g_reserved2"),
-        RuntimeHelper.POINTER.withName("_g_reserved3"),
-        RuntimeHelper.POINTER.withName("_g_reserved4"),
-        RuntimeHelper.POINTER.withName("_g_reserved5"),
-        RuntimeHelper.POINTER.withName("_g_reserved6")
-    ).withName("_GSocketConnectionClass");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketConnectionClass._g_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$1301.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSocketConnectionClass._g_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$1301.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSocketConnectionClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_async",
+        constants$332.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_finish",
+        constants$23.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_socket_client_connect_to_host_async$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_SHORT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_host_async",
+        constants$1301.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_host_finish",
+        constants$23.const$0
+    );
 }
 
 

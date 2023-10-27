@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1067 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1067() {}
-    static final VarHandle const$0 = constants$1065.const$1.varHandle(MemoryLayout.PathElement.groupElement("query_info"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileInputStreamClass.query_info_async.class, "apply", constants$584.const$3);
-    static final VarHandle const$2 = constants$1065.const$1.varHandle(MemoryLayout.PathElement.groupElement("query_info_async"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileInputStreamClass.query_info_finish.class, "apply", constants$23.const$0);
-    static final VarHandle const$4 = constants$1065.const$1.varHandle(MemoryLayout.PathElement.groupElement("query_info_finish"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileInputStreamClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_unref",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_subtract",
+        constants$5.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_matches",
+        constants$9.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_matches_only",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_enumerate_namespace",
+        constants$9.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_enumerate_next",
+        constants$5.const$2
+    );
 }
 
 

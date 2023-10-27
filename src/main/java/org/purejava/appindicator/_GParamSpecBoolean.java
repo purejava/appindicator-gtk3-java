@@ -18,13 +18,13 @@ import java.lang.invoke.VarHandle;
 public class _GParamSpecBoolean {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$655.const$4;
+        return constants$658.const$3;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);
     }
     public static VarHandle default_value$VH() {
-        return constants$655.const$5;
+        return constants$658.const$4;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class _GParamSpecBoolean {
      * }
      */
     public static int default_value$get(MemorySegment seg) {
-        return (int)constants$655.const$5.get(seg);
+        return (int)constants$658.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -42,13 +42,13 @@ public class _GParamSpecBoolean {
      * }
      */
     public static void default_value$set(MemorySegment seg, int x) {
-        constants$655.const$5.set(seg, x);
+        constants$658.const$4.set(seg, x);
     }
     public static int default_value$get(MemorySegment seg, long index) {
-        return (int)constants$655.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$658.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void default_value$set(MemorySegment seg, long index, int x) {
-        constants$655.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$658.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

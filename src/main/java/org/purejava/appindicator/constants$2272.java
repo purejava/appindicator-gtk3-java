@@ -9,12 +9,21 @@ final class constants$2272 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2272() {}
-    static final VarHandle const$0 = constants$2271.const$4.varHandle(MemoryLayout.PathElement.groupElement("changed"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkAdjustmentClass.value_changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$2271.const$4.varHandle(MemoryLayout.PathElement.groupElement("value_changed"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkAdjustmentClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2271.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkAdjustmentClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$0 = constants$2271.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_action_target_value"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkActionableInterface.set_action_target_value.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$2271.const$0.varHandle(MemoryLayout.PathElement.groupElement("set_action_target_value"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_actionable_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_actionable_get_action_name",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_actionable_set_action_name",
+        constants$13.const$4
+    );
 }
 
 

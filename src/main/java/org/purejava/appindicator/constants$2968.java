@@ -2,21 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2968 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2968() {}
-    static final VarHandle const$0 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface._gtk_reserved7.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved7"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface._gtk_reserved8.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved8"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_dither",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_dither",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_finishings",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_finishings",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_output_bin",
+        constants$5.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_preview_get_type",
-        constants$3.const$5
+        "gtk_print_settings_set_output_bin",
+        constants$13.const$4
     );
 }
 

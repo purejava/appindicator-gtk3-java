@@ -2,34 +2,37 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$2840 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2840() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_link_button_get_type",
-        constants$3.const$5
+        "gtk_level_bar_new",
+        constants$35.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_link_button_new",
-        constants$5.const$2
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_link_button_new_with_label",
-        constants$5.const$5
+        "gtk_level_bar_new_for_interval",
+        constants$2840.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_link_button_get_uri",
-        constants$5.const$2
+        "gtk_level_bar_set_mode",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_link_button_set_uri",
-        constants$13.const$4
+        "gtk_level_bar_get_mode",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_link_button_get_visited",
-        constants$10.const$5
+        "gtk_level_bar_set_value",
+        constants$692.const$2
     );
 }
 

@@ -8,28 +8,28 @@ final class constants$1158 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1158() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_menu_item_set_section",
-        constants$13.const$4
+        "g_menu_prepend",
+        constants$14.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_menu_item_set_action_and_target_value",
+        "g_menu_append",
         constants$14.const$3
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "g_menu_item_set_action_and_target",
-        constants$14.const$3
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_menu_insert_section",
+        constants$179.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_menu_item_set_detailed_action",
-        constants$13.const$4
+        "g_menu_prepend_section",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_menu_item_set_icon",
-        constants$13.const$4
+        "g_menu_append_section",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_export_menu_model",
-        constants$34.const$5
+        "g_menu_insert_submenu",
+        constants$179.const$1
     );
 }
 

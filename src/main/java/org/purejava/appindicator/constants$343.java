@@ -8,28 +8,28 @@ final class constants$343 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$343() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_markup_escape_text",
-        constants$21.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "g_markup_printf_escaped",
+        "g_markup_parse_context_pop",
         constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_markup_vprintf_escaped",
-        constants$301.const$1
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_end_parse",
+        constants$9.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
-        "g_markup_collect_attributes",
-        constants$328.const$3
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_get_element",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_get_element_stack",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_variant_type_string_is_valid",
-        constants$10.const$5
+        "g_markup_parse_context_get_position",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_type_string_scan",
-        constants$12.const$2
+        "g_markup_parse_context_get_user_data",
+        constants$5.const$2
     );
 }
 

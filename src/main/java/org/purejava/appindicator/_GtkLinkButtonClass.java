@@ -22,7 +22,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkLinkButtonClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2838.const$1;
+        return constants$2843.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1088);
@@ -36,7 +36,7 @@ public class _GtkLinkButtonClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(activate_link fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2838.const$2, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2843.const$2, fi, constants$10.const$5, scope);
         }
         static activate_link ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -51,7 +51,7 @@ public class _GtkLinkButtonClass {
     }
 
     public static VarHandle activate_link$VH() {
-        return constants$2838.const$3;
+        return constants$2843.const$3;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _GtkLinkButtonClass {
      * }
      */
     public static MemorySegment activate_link$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2838.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2843.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -69,13 +69,13 @@ public class _GtkLinkButtonClass {
      * }
      */
     public static void activate_link$set(MemorySegment seg, MemorySegment x) {
-        constants$2838.const$3.set(seg, x);
+        constants$2843.const$3.set(seg, x);
     }
     public static MemorySegment activate_link$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2838.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2843.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void activate_link$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2838.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2843.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static activate_link activate_link(MemorySegment segment, Arena scope) {
         return activate_link.ofAddress(activate_link$get(segment), scope);
@@ -89,7 +89,7 @@ public class _GtkLinkButtonClass {
 
         void apply();
         static MemorySegment allocate(_gtk_padding1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2838.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2843.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_padding1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -104,7 +104,7 @@ public class _GtkLinkButtonClass {
     }
 
     public static VarHandle _gtk_padding1$VH() {
-        return constants$2838.const$5;
+        return constants$2843.const$5;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GtkLinkButtonClass {
      * }
      */
     public static MemorySegment _gtk_padding1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2838.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2843.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GtkLinkButtonClass {
      * }
      */
     public static void _gtk_padding1$set(MemorySegment seg, MemorySegment x) {
-        constants$2838.const$5.set(seg, x);
+        constants$2843.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_padding1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2838.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2843.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_padding1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2838.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2843.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_padding1 _gtk_padding1(MemorySegment segment, Arena scope) {
         return _gtk_padding1.ofAddress(_gtk_padding1$get(segment), scope);
@@ -142,7 +142,7 @@ public class _GtkLinkButtonClass {
 
         void apply();
         static MemorySegment allocate(_gtk_padding2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2839.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2844.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_padding2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -157,7 +157,7 @@ public class _GtkLinkButtonClass {
     }
 
     public static VarHandle _gtk_padding2$VH() {
-        return constants$2839.const$1;
+        return constants$2844.const$1;
     }
     /**
      * Getter for field:
@@ -166,7 +166,7 @@ public class _GtkLinkButtonClass {
      * }
      */
     public static MemorySegment _gtk_padding2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2839.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2844.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -175,13 +175,13 @@ public class _GtkLinkButtonClass {
      * }
      */
     public static void _gtk_padding2$set(MemorySegment seg, MemorySegment x) {
-        constants$2839.const$1.set(seg, x);
+        constants$2844.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_padding2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2839.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2844.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_padding2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2839.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2844.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_padding2 _gtk_padding2(MemorySegment segment, Arena scope) {
         return _gtk_padding2.ofAddress(_gtk_padding2$get(segment), scope);
@@ -195,7 +195,7 @@ public class _GtkLinkButtonClass {
 
         void apply();
         static MemorySegment allocate(_gtk_padding3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2839.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2844.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_padding3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -210,7 +210,7 @@ public class _GtkLinkButtonClass {
     }
 
     public static VarHandle _gtk_padding3$VH() {
-        return constants$2839.const$3;
+        return constants$2844.const$3;
     }
     /**
      * Getter for field:
@@ -219,7 +219,7 @@ public class _GtkLinkButtonClass {
      * }
      */
     public static MemorySegment _gtk_padding3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2839.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2844.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -228,13 +228,13 @@ public class _GtkLinkButtonClass {
      * }
      */
     public static void _gtk_padding3$set(MemorySegment seg, MemorySegment x) {
-        constants$2839.const$3.set(seg, x);
+        constants$2844.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_padding3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2839.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2844.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_padding3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2839.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2844.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_padding3 _gtk_padding3(MemorySegment segment, Arena scope) {
         return _gtk_padding3.ofAddress(_gtk_padding3$get(segment), scope);
@@ -248,7 +248,7 @@ public class _GtkLinkButtonClass {
 
         void apply();
         static MemorySegment allocate(_gtk_padding4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2839.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2844.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_padding4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -263,7 +263,7 @@ public class _GtkLinkButtonClass {
     }
 
     public static VarHandle _gtk_padding4$VH() {
-        return constants$2839.const$5;
+        return constants$2844.const$5;
     }
     /**
      * Getter for field:
@@ -272,7 +272,7 @@ public class _GtkLinkButtonClass {
      * }
      */
     public static MemorySegment _gtk_padding4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2839.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2844.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -281,13 +281,13 @@ public class _GtkLinkButtonClass {
      * }
      */
     public static void _gtk_padding4$set(MemorySegment seg, MemorySegment x) {
-        constants$2839.const$5.set(seg, x);
+        constants$2844.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_padding4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2839.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2844.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_padding4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2839.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2844.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_padding4 _gtk_padding4(MemorySegment segment, Arena scope) {
         return _gtk_padding4.ofAddress(_gtk_padding4$get(segment), scope);

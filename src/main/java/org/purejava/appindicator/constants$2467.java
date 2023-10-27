@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2467 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2467() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.test_collapse_row.class, "apply", constants$12.const$2);
-    static final VarHandle const$1 = constants$2466.const$1.varHandle(MemoryLayout.PathElement.groupElement("test_collapse_row"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.row_expanded.class, "apply", constants$14.const$3);
-    static final VarHandle const$3 = constants$2466.const$1.varHandle(MemoryLayout.PathElement.groupElement("row_expanded"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.row_collapsed.class, "apply", constants$14.const$3);
-    static final VarHandle const$5 = constants$2466.const$1.varHandle(MemoryLayout.PathElement.groupElement("row_collapsed"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_icon_activatable",
+        constants$469.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_activatable",
+        constants$11.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_icon_sensitive",
+        constants$469.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_sensitive",
+        constants$11.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_at_pos",
+        constants$49.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_icon_tooltip_text",
+        constants$42.const$4
+    );
 }
 
 

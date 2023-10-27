@@ -2,7 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
@@ -11,30 +12,45 @@ final class constants$807 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$807() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_content_type_can_be_executable",
-        constants$10.const$5
+        "g_converter_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_content_type_from_mime_type",
-        constants$5.const$2
+        "g_converter_convert",
+        constants$806.const$0
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_converter_reset",
+        constants$13.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_content_type_guess",
-        constants$807.const$2
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class")
+    ).withName("_GCharsetConverterClass");
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_content_type_guess_for_tree",
-        constants$5.const$2
+        "g_charset_converter_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_content_types_get_registered",
-        constants$35.const$2
+        "g_charset_converter_new",
+        constants$23.const$0
     );
 }
 

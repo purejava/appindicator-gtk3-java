@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GVariantIter {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$363.const$0;
+        return constants$364.const$0;
     }
     public static MemorySegment x$slice(MemorySegment seg) {
         return seg.asSlice(0, 128);

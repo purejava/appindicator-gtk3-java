@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$950 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$950() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_drive_has_volumes",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_drive_get_volumes",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_drive_is_removable",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_drive_is_media_removable",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_drive_has_media",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_drive_is_media_check_automatic",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDriveIface.stop_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("stop_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDriveIface.stop_button.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("stop_button"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDriveIface.eject_with_operation.class, "apply", constants$381.const$0);
+    static final VarHandle const$5 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("eject_with_operation"));
 }
 
 

@@ -8,28 +8,28 @@ final class constants$690 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$690() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_value_get_double",
-        constants$67.const$0
+        "g_value_get_int",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_value_set_string",
-        constants$13.const$4
+        "g_value_set_uint",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_value_set_static_string",
-        constants$13.const$4
+        "g_value_get_uint",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_value_set_interned_string",
-        constants$13.const$4
+        "g_value_set_long",
+        constants$25.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_value_get_string",
-        constants$5.const$2
+        "g_value_get_long",
+        constants$4.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_value_dup_string",
-        constants$5.const$2
+        "g_value_set_ulong",
+        constants$25.const$3
     );
 }
 

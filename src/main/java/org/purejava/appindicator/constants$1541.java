@@ -2,34 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1541 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1541() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_gravity",
-        constants$40.const$2
+        "pango_gravity_get_for_script",
+        constants$819.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_gravity",
-        constants$10.const$5
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_variations_static",
-        constants$13.const$4
+        "pango_gravity_get_for_script_and_width",
+        constants$1541.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_variations",
-        constants$13.const$4
+        "pango_bidi_type_for_unichar",
+        constants$8.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_variations",
-        constants$5.const$2
+        "pango_unichar_direction",
+        constants$8.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_set_fields",
-        constants$10.const$5
+        "pango_find_base_dir",
+        constants$11.const$4
     );
 }
 

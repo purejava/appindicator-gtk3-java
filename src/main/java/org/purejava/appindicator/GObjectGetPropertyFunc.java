@@ -13,13 +13,13 @@ public interface GObjectGetPropertyFunc {
 
     void apply(java.lang.foreign.MemorySegment object, int property_id, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment pspec);
     static MemorySegment allocate(GObjectGetPropertyFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$621.const$4, fi, constants$179.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$624.const$0, fi, constants$179.const$1, scope);
     }
     static GObjectGetPropertyFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _object, int _property_id, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _pspec) -> {
             try {
-                constants$372.const$3.invokeExact(symbol, _object, _property_id, _value, _pspec);
+                constants$373.const$3.invokeExact(symbol, _object, _property_id, _value, _pspec);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

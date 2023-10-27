@@ -2,21 +2,32 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$783 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$783() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$766.const$0
+    static final VarHandle const$0 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("write_async"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GOutputStreamClass.write_finish.class, "apply", constants$166.const$0);
+    static final VarHandle const$2 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("write_finish"));
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final VarHandle const$1 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("writev_fn"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GOutputStreamClass.writev_async.class, "apply", constants$761.const$1);
-    static final VarHandle const$3 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("writev_async"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GOutputStreamClass.writev_finish.class, "apply", constants$34.const$5);
-    static final VarHandle const$5 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("writev_finish"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GOutputStreamClass.splice_async.class, "apply", constants$783.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$783.const$3
+    );
 }
 
 

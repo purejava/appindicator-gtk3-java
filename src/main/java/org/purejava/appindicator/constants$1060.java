@@ -8,28 +8,28 @@ final class constants$1060 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1060() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_info_get_sort_order",
-        constants$10.const$5
+        "g_file_info_set_attribute_file_path",
+        constants$14.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_mask",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_info_unset_attribute_mask",
+        "g_file_info_clear_status",
         constants$13.const$1
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_info_get_deletion_date",
+        constants$5.const$2
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_info_set_file_type",
-        constants$40.const$2
+        "g_file_info_get_file_type",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_info_set_is_hidden",
-        constants$40.const$2
+        "g_file_info_get_is_hidden",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_info_set_is_symlink",
-        constants$40.const$2
+        "g_file_info_get_is_backup",
+        constants$10.const$5
     );
 }
 

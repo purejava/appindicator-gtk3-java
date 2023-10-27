@@ -9,12 +9,12 @@ final class constants$2031 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2031() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_end_index.class, "apply", constants$10.const$5);
-    static final VarHandle const$1 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_end_index"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_start_index.class, "apply", constants$10.const$5);
-    static final VarHandle const$3 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_start_index"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.is_valid.class, "apply", constants$10.const$5);
-    static final VarHandle const$5 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_valid"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.copy_text.class, "apply", constants$469.const$2);
+    static final VarHandle const$1 = constants$2029.const$5.varHandle(MemoryLayout.PathElement.groupElement("copy_text"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.cut_text.class, "apply", constants$469.const$2);
+    static final VarHandle const$3 = constants$2029.const$5.varHandle(MemoryLayout.PathElement.groupElement("cut_text"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.delete_text.class, "apply", constants$469.const$2);
+    static final VarHandle const$5 = constants$2029.const$5.varHandle(MemoryLayout.PathElement.groupElement("delete_text"));
 }
 
 

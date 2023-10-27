@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkSearchBar {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3069.const$2;
+        return constants$3074.const$2;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 48);

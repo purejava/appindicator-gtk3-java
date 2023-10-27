@@ -2,32 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$857 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$857() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_last_serial",
-        constants$10.const$5
+        "g_bus_get_finish",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_exit_on_close",
-        constants$10.const$5
+        "g_bus_get_sync",
+        constants$237.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_set_exit_on_close",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_capabilities",
-        constants$10.const$5
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_dbus_connection_new$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_flags",
-        constants$10.const$5
+        "g_dbus_connection_new",
+        constants$857.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_dbus_connection_close$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_new_finish",
+        constants$5.const$5
+    );
 }
 
 

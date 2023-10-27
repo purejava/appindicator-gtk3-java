@@ -23,7 +23,7 @@ import java.lang.invoke.VarHandle;
 public class _GTypeModuleClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$675.const$5;
+        return constants$678.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -37,7 +37,7 @@ public class _GTypeModuleClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(load fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$676.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$678.const$4, fi, constants$10.const$5, scope);
         }
         static load ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -52,7 +52,7 @@ public class _GTypeModuleClass {
     }
 
     public static VarHandle load$VH() {
-        return constants$676.const$1;
+        return constants$678.const$5;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _GTypeModuleClass {
      * }
      */
     public static MemorySegment load$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$676.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$678.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -70,13 +70,13 @@ public class _GTypeModuleClass {
      * }
      */
     public static void load$set(MemorySegment seg, MemorySegment x) {
-        constants$676.const$1.set(seg, x);
+        constants$678.const$5.set(seg, x);
     }
     public static MemorySegment load$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$676.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$678.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void load$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$676.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$678.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static load load(MemorySegment segment, Arena scope) {
         return load.ofAddress(load$get(segment), scope);
@@ -90,7 +90,7 @@ public class _GTypeModuleClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(unload fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$676.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$679.const$0, fi, constants$13.const$1, scope);
         }
         static unload ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -105,7 +105,7 @@ public class _GTypeModuleClass {
     }
 
     public static VarHandle unload$VH() {
-        return constants$676.const$3;
+        return constants$679.const$1;
     }
     /**
      * Getter for field:
@@ -114,7 +114,7 @@ public class _GTypeModuleClass {
      * }
      */
     public static MemorySegment unload$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$676.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$679.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -123,13 +123,13 @@ public class _GTypeModuleClass {
      * }
      */
     public static void unload$set(MemorySegment seg, MemorySegment x) {
-        constants$676.const$3.set(seg, x);
+        constants$679.const$1.set(seg, x);
     }
     public static MemorySegment unload$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$676.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$679.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void unload$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$676.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$679.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static unload unload(MemorySegment segment, Arena scope) {
         return unload.ofAddress(unload$get(segment), scope);
@@ -143,7 +143,7 @@ public class _GTypeModuleClass {
 
         void apply();
         static MemorySegment allocate(reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$676.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$679.const$2, fi, constants$7.const$5, scope);
         }
         static reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -158,7 +158,7 @@ public class _GTypeModuleClass {
     }
 
     public static VarHandle reserved1$VH() {
-        return constants$676.const$5;
+        return constants$679.const$3;
     }
     /**
      * Getter for field:
@@ -167,7 +167,7 @@ public class _GTypeModuleClass {
      * }
      */
     public static MemorySegment reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$676.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$679.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -176,13 +176,13 @@ public class _GTypeModuleClass {
      * }
      */
     public static void reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$676.const$5.set(seg, x);
+        constants$679.const$3.set(seg, x);
     }
     public static MemorySegment reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$676.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$679.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$676.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$679.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved1 reserved1(MemorySegment segment, Arena scope) {
         return reserved1.ofAddress(reserved1$get(segment), scope);
@@ -196,7 +196,7 @@ public class _GTypeModuleClass {
 
         void apply();
         static MemorySegment allocate(reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$677.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$679.const$4, fi, constants$7.const$5, scope);
         }
         static reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -211,7 +211,7 @@ public class _GTypeModuleClass {
     }
 
     public static VarHandle reserved2$VH() {
-        return constants$677.const$1;
+        return constants$679.const$5;
     }
     /**
      * Getter for field:
@@ -220,7 +220,7 @@ public class _GTypeModuleClass {
      * }
      */
     public static MemorySegment reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$677.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$679.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -229,13 +229,13 @@ public class _GTypeModuleClass {
      * }
      */
     public static void reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$677.const$1.set(seg, x);
+        constants$679.const$5.set(seg, x);
     }
     public static MemorySegment reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$677.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$679.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$677.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$679.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved2 reserved2(MemorySegment segment, Arena scope) {
         return reserved2.ofAddress(reserved2$get(segment), scope);
@@ -249,7 +249,7 @@ public class _GTypeModuleClass {
 
         void apply();
         static MemorySegment allocate(reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$677.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$680.const$0, fi, constants$7.const$5, scope);
         }
         static reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -264,7 +264,7 @@ public class _GTypeModuleClass {
     }
 
     public static VarHandle reserved3$VH() {
-        return constants$677.const$3;
+        return constants$680.const$1;
     }
     /**
      * Getter for field:
@@ -273,7 +273,7 @@ public class _GTypeModuleClass {
      * }
      */
     public static MemorySegment reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$677.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$680.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -282,13 +282,13 @@ public class _GTypeModuleClass {
      * }
      */
     public static void reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$677.const$3.set(seg, x);
+        constants$680.const$1.set(seg, x);
     }
     public static MemorySegment reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$677.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$680.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$677.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$680.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved3 reserved3(MemorySegment segment, Arena scope) {
         return reserved3.ofAddress(reserved3$get(segment), scope);
@@ -302,7 +302,7 @@ public class _GTypeModuleClass {
 
         void apply();
         static MemorySegment allocate(reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$677.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$680.const$2, fi, constants$7.const$5, scope);
         }
         static reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -317,7 +317,7 @@ public class _GTypeModuleClass {
     }
 
     public static VarHandle reserved4$VH() {
-        return constants$677.const$5;
+        return constants$680.const$3;
     }
     /**
      * Getter for field:
@@ -326,7 +326,7 @@ public class _GTypeModuleClass {
      * }
      */
     public static MemorySegment reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$677.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$680.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -335,13 +335,13 @@ public class _GTypeModuleClass {
      * }
      */
     public static void reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$677.const$5.set(seg, x);
+        constants$680.const$3.set(seg, x);
     }
     public static MemorySegment reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$677.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$680.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$677.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$680.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved4 reserved4(MemorySegment segment, Arena scope) {
         return reserved4.ofAddress(reserved4$get(segment), scope);

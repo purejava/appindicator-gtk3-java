@@ -2,37 +2,30 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$1139 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1139() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_memory_input_stream_new",
-        constants$35.const$2
+    static final VarHandle const$0 = constants$1137.const$5.varHandle(MemoryLayout.PathElement.groupElement("load_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_loadable_icon_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_memory_input_stream_new_from_data$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_memory_input_stream_new_from_data",
-        constants$36.const$1
+        "g_loadable_icon_load",
+        constants$858.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_memory_input_stream_new_from_bytes",
-        constants$5.const$2
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_loadable_icon_load_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_loadable_icon_load_async",
+        constants$282.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_memory_input_stream_add_data$destroy.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_memory_input_stream_add_data",
-        constants$1139.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_loadable_icon_load_finish",
+        constants$39.const$1
     );
 }
 

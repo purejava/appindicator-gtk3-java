@@ -3,18 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2324 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2324() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.add.class, "apply", constants$13.const$4);
-    static final VarHandle const$1 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("add"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.remove.class, "apply", constants$13.const$4);
-    static final VarHandle const$3 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("remove"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.foreach.class, "apply", constants$14.const$3);
-    static final VarHandle const$5 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("foreach"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GtkTreeIterCompareFunc.class, "apply", constants$34.const$5);
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("sort_column_changed"),
+        RuntimeHelper.POINTER.withName("get_sort_column_id"),
+        RuntimeHelper.POINTER.withName("set_sort_column_id"),
+        RuntimeHelper.POINTER.withName("set_sort_func"),
+        RuntimeHelper.POINTER.withName("set_default_sort_func"),
+        RuntimeHelper.POINTER.withName("has_default_sort_func")
+    ).withName("_GtkTreeSortableIface");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeSortableIface.sort_column_changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$2324.const$1.varHandle(MemoryLayout.PathElement.groupElement("sort_column_changed"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeSortableIface.get_sort_column_id.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$2324.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_sort_column_id"));
 }
 
 

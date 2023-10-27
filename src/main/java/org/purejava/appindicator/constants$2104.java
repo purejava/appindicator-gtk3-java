@@ -9,12 +9,12 @@ final class constants$2104 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2104() {}
-    static final VarHandle const$0 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_height_for_width"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkWidgetClass.mnemonic_activate.class, "apply", constants$11.const$4);
-    static final VarHandle const$2 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("mnemonic_activate"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass.grab_focus.class, "apply", constants$13.const$1);
-    static final VarHandle const$4 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("grab_focus"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkWidgetClass.focus.class, "apply", constants$11.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass.unrealize.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("unrealize"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkWidgetClass.size_allocate.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("size_allocate"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWidgetClass.state_changed.class, "apply", constants$40.const$2);
+    static final VarHandle const$5 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("state_changed"));
 }
 
 

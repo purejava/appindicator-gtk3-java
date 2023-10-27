@@ -8,28 +8,28 @@ final class constants$2655 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2655() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_set",
-        constants$2484.const$3
+        "gtk_css_section_get_section_type",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_set_proxy",
-        constants$1043.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_unset",
-        constants$13.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_find_target",
-        constants$23.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_get_target_list",
+        "gtk_css_section_get_parent",
         constants$5.const$2
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_css_section_get_file",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_css_section_get_start_line",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_css_section_get_start_position",
+        constants$10.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_set_target_list",
-        constants$13.const$4
+        "gtk_css_section_get_end_line",
+        constants$10.const$5
     );
 }
 

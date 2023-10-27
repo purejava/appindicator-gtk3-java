@@ -8,28 +8,28 @@ final class constants$323 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$323() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_line_term",
-        constants$5.const$5
+        "g_io_channel_set_buffer_size",
+        constants$25.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_buffered",
-        constants$40.const$2
+        "g_io_channel_get_buffer_size",
+        constants$4.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_buffered",
+        "g_io_channel_get_buffer_condition",
         constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_encoding",
-        constants$12.const$2
+        "g_io_channel_set_flags",
+        constants$150.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_encoding",
-        constants$5.const$2
+        "g_io_channel_get_flags",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_close_on_unref",
-        constants$40.const$2
+        "g_io_channel_set_line_term",
+        constants$164.const$5
     );
 }
 

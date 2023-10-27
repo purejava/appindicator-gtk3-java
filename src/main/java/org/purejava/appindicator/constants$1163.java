@@ -9,12 +9,12 @@ final class constants$1163 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1163() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountIface.unmount_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$1 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("unmount_finish"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMountIface.eject.class, "apply", constants$281.const$5);
-    static final VarHandle const$3 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("eject"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMountIface.eject_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$5 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("eject_finish"));
+    static final VarHandle const$0 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("changed"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMountIface.unmounted.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("unmounted"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMountIface.get_root.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_root"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GMountIface.get_name.class, "apply", constants$5.const$2);
 }
 
 

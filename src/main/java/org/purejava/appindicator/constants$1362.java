@@ -2,30 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1362 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1362() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTlsClientConnectionInterface.copy_session_state.class, "apply", constants$13.const$4);
-    static final VarHandle const$1 = constants$1361.const$5.varHandle(MemoryLayout.PathElement.groupElement("copy_session_state"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_database",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_database",
+        constants$5.const$2
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_get_type",
-        constants$3.const$5
+        "g_tls_connection_set_certificate",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_new",
-        constants$23.const$0
+        "g_tls_connection_get_certificate",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_get_validation_flags",
-        constants$10.const$5
+        "g_tls_connection_set_interaction",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_set_validation_flags",
-        constants$40.const$2
+        "g_tls_connection_get_interaction",
+        constants$5.const$2
     );
 }
 

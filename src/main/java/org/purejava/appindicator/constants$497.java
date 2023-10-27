@@ -2,19 +2,23 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$497 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$497() {}
-    static final VarHandle const$0 = constants$496.const$3.varHandle(MemoryLayout.PathElement.groupElement("func"));
-    static final VarHandle const$1 = constants$496.const$3.varHandle(MemoryLayout.PathElement.groupElement("prefix"));
-    static final VarHandle const$2 = constants$496.const$3.varHandle(MemoryLayout.PathElement.groupElement("cache"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GCompletion.strncmp_func.class, "apply", constants$18.const$2);
-    static final VarHandle const$4 = constants$496.const$3.varHandle(MemoryLayout.PathElement.groupElement("strncmp_func"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_completion_new$func.class, "apply", constants$5.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_cache_key_foreach$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_cache_key_foreach",
+        constants$14.const$3
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_cache_value_foreach$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_cache_value_foreach",
+        constants$14.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GCompletionFunc.class, "apply", constants$5.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GCompletionStrncmpFunc.class, "apply", constants$18.const$2);
 }
 
 

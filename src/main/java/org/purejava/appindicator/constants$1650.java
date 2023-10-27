@@ -3,39 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$1650 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1650() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_renderer_deactivate",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_renderer_part_changed",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_renderer_set_color",
-        constants$42.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_color",
-        constants$21.const$3
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT,
-        JAVA_SHORT
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_renderer_set_alpha",
-        constants$1650.const$4
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_glyph.class, "apply", constants$1650.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$1650.const$0
     );
+    static final VarHandle const$3 = constants$1646.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_glyph"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoRendererClass.part_changed.class, "apply", constants$40.const$2);
+    static final VarHandle const$5 = constants$1646.const$4.varHandle(MemoryLayout.PathElement.groupElement("part_changed"));
 }
 
 

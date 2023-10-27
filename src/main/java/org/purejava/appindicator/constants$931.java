@@ -10,41 +10,39 @@ final class constants$931 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$931() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_get_cached_property_names",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_dbus_proxy_call$callback.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_dbus_proxy_new_for_bus$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
         JAVA_INT,
         JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_new_for_bus",
+        constants$931.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_call",
-        constants$931.const$2
+        "g_dbus_proxy_new_for_bus_finish",
+        constants$5.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_call_finish",
-        constants$23.const$0
-    );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         JAVA_INT,
         JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_call_sync",
-        constants$931.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_new_for_bus_sync",
+        constants$931.const$4
     );
 }
 

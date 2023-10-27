@@ -30,10 +30,10 @@ import java.lang.invoke.VarHandle;
 public class _GdkWindowAttr {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1816.const$2;
+        return constants$1821.const$2;
     }
     public static VarHandle title$VH() {
-        return constants$1816.const$3;
+        return constants$1821.const$3;
     }
     /**
      * Getter for field:
@@ -42,7 +42,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static MemorySegment title$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1816.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1821.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -51,16 +51,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void title$set(MemorySegment seg, MemorySegment x) {
-        constants$1816.const$3.set(seg, x);
+        constants$1821.const$3.set(seg, x);
     }
     public static MemorySegment title$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1816.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1821.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void title$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1816.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1821.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle event_mask$VH() {
-        return constants$1816.const$4;
+        return constants$1821.const$4;
     }
     /**
      * Getter for field:
@@ -69,7 +69,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static int event_mask$get(MemorySegment seg) {
-        return (int)constants$1816.const$4.get(seg);
+        return (int)constants$1821.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -78,16 +78,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void event_mask$set(MemorySegment seg, int x) {
-        constants$1816.const$4.set(seg, x);
+        constants$1821.const$4.set(seg, x);
     }
     public static int event_mask$get(MemorySegment seg, long index) {
-        return (int)constants$1816.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1821.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void event_mask$set(MemorySegment seg, long index, int x) {
-        constants$1816.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1821.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle x$VH() {
-        return constants$1816.const$5;
+        return constants$1821.const$5;
     }
     /**
      * Getter for field:
@@ -96,7 +96,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static int x$get(MemorySegment seg) {
-        return (int)constants$1816.const$5.get(seg);
+        return (int)constants$1821.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -105,16 +105,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void x$set(MemorySegment seg, int x) {
-        constants$1816.const$5.set(seg, x);
+        constants$1821.const$5.set(seg, x);
     }
     public static int x$get(MemorySegment seg, long index) {
-        return (int)constants$1816.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1821.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void x$set(MemorySegment seg, long index, int x) {
-        constants$1816.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1821.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle y$VH() {
-        return constants$1817.const$0;
+        return constants$1822.const$0;
     }
     /**
      * Getter for field:
@@ -123,7 +123,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static int y$get(MemorySegment seg) {
-        return (int)constants$1817.const$0.get(seg);
+        return (int)constants$1822.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -132,16 +132,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void y$set(MemorySegment seg, int x) {
-        constants$1817.const$0.set(seg, x);
+        constants$1822.const$0.set(seg, x);
     }
     public static int y$get(MemorySegment seg, long index) {
-        return (int)constants$1817.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1822.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void y$set(MemorySegment seg, long index, int x) {
-        constants$1817.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1822.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle width$VH() {
-        return constants$1817.const$1;
+        return constants$1822.const$1;
     }
     /**
      * Getter for field:
@@ -150,7 +150,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static int width$get(MemorySegment seg) {
-        return (int)constants$1817.const$1.get(seg);
+        return (int)constants$1822.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -159,16 +159,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void width$set(MemorySegment seg, int x) {
-        constants$1817.const$1.set(seg, x);
+        constants$1822.const$1.set(seg, x);
     }
     public static int width$get(MemorySegment seg, long index) {
-        return (int)constants$1817.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1822.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void width$set(MemorySegment seg, long index, int x) {
-        constants$1817.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1822.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle height$VH() {
-        return constants$1817.const$2;
+        return constants$1822.const$2;
     }
     /**
      * Getter for field:
@@ -177,7 +177,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static int height$get(MemorySegment seg) {
-        return (int)constants$1817.const$2.get(seg);
+        return (int)constants$1822.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -186,16 +186,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void height$set(MemorySegment seg, int x) {
-        constants$1817.const$2.set(seg, x);
+        constants$1822.const$2.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
-        return (int)constants$1817.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1822.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void height$set(MemorySegment seg, long index, int x) {
-        constants$1817.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1822.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle wclass$VH() {
-        return constants$1817.const$3;
+        return constants$1822.const$3;
     }
     /**
      * Getter for field:
@@ -204,7 +204,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static int wclass$get(MemorySegment seg) {
-        return (int)constants$1817.const$3.get(seg);
+        return (int)constants$1822.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -213,16 +213,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void wclass$set(MemorySegment seg, int x) {
-        constants$1817.const$3.set(seg, x);
+        constants$1822.const$3.set(seg, x);
     }
     public static int wclass$get(MemorySegment seg, long index) {
-        return (int)constants$1817.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1822.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void wclass$set(MemorySegment seg, long index, int x) {
-        constants$1817.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1822.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle visual$VH() {
-        return constants$1817.const$4;
+        return constants$1822.const$4;
     }
     /**
      * Getter for field:
@@ -231,7 +231,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static MemorySegment visual$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1817.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1822.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -240,16 +240,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void visual$set(MemorySegment seg, MemorySegment x) {
-        constants$1817.const$4.set(seg, x);
+        constants$1822.const$4.set(seg, x);
     }
     public static MemorySegment visual$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1817.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1822.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void visual$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1817.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1822.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle window_type$VH() {
-        return constants$1817.const$5;
+        return constants$1822.const$5;
     }
     /**
      * Getter for field:
@@ -258,7 +258,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static int window_type$get(MemorySegment seg) {
-        return (int)constants$1817.const$5.get(seg);
+        return (int)constants$1822.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -267,16 +267,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void window_type$set(MemorySegment seg, int x) {
-        constants$1817.const$5.set(seg, x);
+        constants$1822.const$5.set(seg, x);
     }
     public static int window_type$get(MemorySegment seg, long index) {
-        return (int)constants$1817.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1822.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void window_type$set(MemorySegment seg, long index, int x) {
-        constants$1817.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1822.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle cursor$VH() {
-        return constants$1818.const$0;
+        return constants$1823.const$0;
     }
     /**
      * Getter for field:
@@ -285,7 +285,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static MemorySegment cursor$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1818.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1823.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -294,16 +294,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void cursor$set(MemorySegment seg, MemorySegment x) {
-        constants$1818.const$0.set(seg, x);
+        constants$1823.const$0.set(seg, x);
     }
     public static MemorySegment cursor$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1818.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1823.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void cursor$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1818.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1823.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle wmclass_name$VH() {
-        return constants$1818.const$1;
+        return constants$1823.const$1;
     }
     /**
      * Getter for field:
@@ -312,7 +312,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static MemorySegment wmclass_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1818.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1823.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -321,16 +321,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void wmclass_name$set(MemorySegment seg, MemorySegment x) {
-        constants$1818.const$1.set(seg, x);
+        constants$1823.const$1.set(seg, x);
     }
     public static MemorySegment wmclass_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1818.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1823.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void wmclass_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1818.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1823.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle wmclass_class$VH() {
-        return constants$1818.const$2;
+        return constants$1823.const$2;
     }
     /**
      * Getter for field:
@@ -339,7 +339,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static MemorySegment wmclass_class$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1818.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1823.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -348,16 +348,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void wmclass_class$set(MemorySegment seg, MemorySegment x) {
-        constants$1818.const$2.set(seg, x);
+        constants$1823.const$2.set(seg, x);
     }
     public static MemorySegment wmclass_class$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1818.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1823.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void wmclass_class$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1818.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1823.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle override_redirect$VH() {
-        return constants$1818.const$3;
+        return constants$1823.const$3;
     }
     /**
      * Getter for field:
@@ -366,7 +366,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static int override_redirect$get(MemorySegment seg) {
-        return (int)constants$1818.const$3.get(seg);
+        return (int)constants$1823.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -375,16 +375,16 @@ public class _GdkWindowAttr {
      * }
      */
     public static void override_redirect$set(MemorySegment seg, int x) {
-        constants$1818.const$3.set(seg, x);
+        constants$1823.const$3.set(seg, x);
     }
     public static int override_redirect$get(MemorySegment seg, long index) {
-        return (int)constants$1818.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1823.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void override_redirect$set(MemorySegment seg, long index, int x) {
-        constants$1818.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1823.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle type_hint$VH() {
-        return constants$1818.const$4;
+        return constants$1823.const$4;
     }
     /**
      * Getter for field:
@@ -393,7 +393,7 @@ public class _GdkWindowAttr {
      * }
      */
     public static int type_hint$get(MemorySegment seg) {
-        return (int)constants$1818.const$4.get(seg);
+        return (int)constants$1823.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -402,13 +402,13 @@ public class _GdkWindowAttr {
      * }
      */
     public static void type_hint$set(MemorySegment seg, int x) {
-        constants$1818.const$4.set(seg, x);
+        constants$1823.const$4.set(seg, x);
     }
     public static int type_hint$get(MemorySegment seg, long index) {
-        return (int)constants$1818.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1823.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void type_hint$set(MemorySegment seg, long index, int x) {
-        constants$1818.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1823.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

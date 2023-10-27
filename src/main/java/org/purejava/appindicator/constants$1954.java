@@ -2,41 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1954 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1954() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_unlock",
-        constants$13.const$1
+        "gdk_visual_get_colormap_size",
+        constants$10.const$5
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_bits_per_rgb",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_connect",
-        constants$1954.const$1
+        "gdk_visual_get_red_pixel_details",
+        constants$42.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_connect_by_path",
-        constants$14.const$3
+        "gdk_visual_get_green_pixel_details",
+        constants$42.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_disconnect",
-        constants$9.const$0
+        "gdk_visual_get_blue_pixel_details",
+        constants$42.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_disconnect_key",
-        constants$49.const$0
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GtkAccelGroupActivate.class, "apply", constants$415.const$4);
 }
 
 

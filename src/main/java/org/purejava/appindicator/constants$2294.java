@@ -9,12 +9,12 @@ final class constants$2294 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2294() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.iter_nth_child.class, "apply", constants$311.const$0);
-    static final VarHandle const$1 = constants$2288.const$2.varHandle(MemoryLayout.PathElement.groupElement("iter_nth_child"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.iter_parent.class, "apply", constants$12.const$2);
-    static final VarHandle const$3 = constants$2288.const$2.varHandle(MemoryLayout.PathElement.groupElement("iter_parent"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.ref_node.class, "apply", constants$13.const$4);
-    static final VarHandle const$5 = constants$2288.const$2.varHandle(MemoryLayout.PathElement.groupElement("ref_node"));
+    static final VarHandle const$0 = constants$2293.const$2.varHandle(MemoryLayout.PathElement.groupElement("row_inserted"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.row_has_child_toggled.class, "apply", constants$14.const$3);
+    static final VarHandle const$2 = constants$2293.const$2.varHandle(MemoryLayout.PathElement.groupElement("row_has_child_toggled"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.row_deleted.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$2293.const$2.varHandle(MemoryLayout.PathElement.groupElement("row_deleted"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.rows_reordered.class, "apply", constants$42.const$1);
 }
 
 

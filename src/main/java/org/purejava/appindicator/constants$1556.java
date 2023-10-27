@@ -9,12 +9,12 @@ final class constants$1556 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1556() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoFontClass.describe_absolute.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$1554.const$1.varHandle(MemoryLayout.PathElement.groupElement("describe_absolute"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontClass.get_features.class, "apply", constants$464.const$4);
-    static final VarHandle const$3 = constants$1554.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_features"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoFontClass.create_hb_font.class, "apply", constants$5.const$2);
-    static final VarHandle const$5 = constants$1554.const$1.varHandle(MemoryLayout.PathElement.groupElement("create_hb_font"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoFontFaceClass.describe.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1555.const$3.varHandle(MemoryLayout.PathElement.groupElement("describe"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontFaceClass.list_sizes.class, "apply", constants$14.const$3);
+    static final VarHandle const$3 = constants$1555.const$3.varHandle(MemoryLayout.PathElement.groupElement("list_sizes"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoFontFaceClass.is_synthesized.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$1555.const$3.varHandle(MemoryLayout.PathElement.groupElement("is_synthesized"));
 }
 
 

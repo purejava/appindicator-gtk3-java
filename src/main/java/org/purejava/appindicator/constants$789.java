@@ -2,28 +2,48 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$789 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$789() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_output_stream_writev_finish",
-        constants$34.const$5
+        "g_output_stream_write_all",
+        constants$769.const$0
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_output_stream_writev_all_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_output_stream_writev",
+        constants$769.const$0
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_output_stream_writev_all_async",
-        constants$761.const$1
+        "g_output_stream_writev_all",
+        constants$769.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_output_stream_writev_all_finish",
-        constants$34.const$5
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_output_stream_printf",
+        constants$165.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_output_stream_write_bytes_async$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_output_stream_write_bytes_async",
-        constants$584.const$3
+        "g_output_stream_vprintf",
+        constants$789.const$4
     );
 }
 

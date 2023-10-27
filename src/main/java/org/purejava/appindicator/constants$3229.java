@@ -8,28 +8,28 @@ final class constants$3229 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3229() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_viewport_get_type",
+        "gtk_target_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_viewport_new",
-        constants$5.const$5
+        "gtk_shortcut_type_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_viewport_get_hadjustment",
-        constants$5.const$2
+        "gtk_spin_button_update_policy_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_viewport_get_vadjustment",
-        constants$5.const$2
+        "gtk_spin_type_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_viewport_set_hadjustment",
-        constants$13.const$4
+        "gtk_stack_transition_type_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_viewport_set_vadjustment",
-        constants$13.const$4
+        "gtk_style_context_print_flags_get_type",
+        constants$3.const$5
     );
 }
 

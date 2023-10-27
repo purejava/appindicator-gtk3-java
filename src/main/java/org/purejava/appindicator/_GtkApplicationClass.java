@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkApplicationClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2166.const$5;
+        return constants$2172.const$0;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 312);
@@ -34,7 +34,7 @@ public class _GtkApplicationClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(window_added fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2167.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2172.const$1, fi, constants$13.const$4, scope);
         }
         static window_added ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -49,7 +49,7 @@ public class _GtkApplicationClass {
     }
 
     public static VarHandle window_added$VH() {
-        return constants$2167.const$1;
+        return constants$2172.const$2;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _GtkApplicationClass {
      * }
      */
     public static MemorySegment window_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2167.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2172.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -67,13 +67,13 @@ public class _GtkApplicationClass {
      * }
      */
     public static void window_added$set(MemorySegment seg, MemorySegment x) {
-        constants$2167.const$1.set(seg, x);
+        constants$2172.const$2.set(seg, x);
     }
     public static MemorySegment window_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2167.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2172.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void window_added$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2167.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2172.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static window_added window_added(MemorySegment segment, Arena scope) {
         return window_added.ofAddress(window_added$get(segment), scope);
@@ -87,7 +87,7 @@ public class _GtkApplicationClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(window_removed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2167.const$2, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2172.const$3, fi, constants$13.const$4, scope);
         }
         static window_removed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -102,7 +102,7 @@ public class _GtkApplicationClass {
     }
 
     public static VarHandle window_removed$VH() {
-        return constants$2167.const$3;
+        return constants$2172.const$4;
     }
     /**
      * Getter for field:
@@ -111,7 +111,7 @@ public class _GtkApplicationClass {
      * }
      */
     public static MemorySegment window_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2167.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2172.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -120,13 +120,13 @@ public class _GtkApplicationClass {
      * }
      */
     public static void window_removed$set(MemorySegment seg, MemorySegment x) {
-        constants$2167.const$3.set(seg, x);
+        constants$2172.const$4.set(seg, x);
     }
     public static MemorySegment window_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2167.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2172.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void window_removed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2167.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2172.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static window_removed window_removed(MemorySegment segment, Arena scope) {
         return window_removed.ofAddress(window_removed$get(segment), scope);

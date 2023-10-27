@@ -2,42 +2,23 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1491 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1491() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_font_get_h_extents",
-        constants$9.const$0
+        "hb_font_funcs_set_glyph_h_advances_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_font_get_v_extents",
-        constants$9.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_font_get_nominal_glyph",
-        constants$150.const$0
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_advances_func$func.class, "apply", constants$1483.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_advances_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_font_get_variation_glyph",
-        constants$49.const$2
+        "hb_font_funcs_set_glyph_v_advances_func",
+        constants$42.const$1
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_font_get_nominal_glyphs",
-        constants$1491.const$4
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_h_origin_func$func.class, "apply", constants$1247.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_h_origin_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

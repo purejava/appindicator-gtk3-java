@@ -22,7 +22,7 @@ import java.lang.invoke.VarHandle;
 public class _GConverterInputStreamClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$808.const$4;
+        return constants$811.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 272);
@@ -36,7 +36,7 @@ public class _GConverterInputStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$808.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$811.const$5, fi, constants$7.const$5, scope);
         }
         static _g_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -51,7 +51,7 @@ public class _GConverterInputStreamClass {
     }
 
     public static VarHandle _g_reserved1$VH() {
-        return constants$809.const$0;
+        return constants$812.const$0;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _GConverterInputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$809.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$812.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -69,13 +69,13 @@ public class _GConverterInputStreamClass {
      * }
      */
     public static void _g_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$809.const$0.set(seg, x);
+        constants$812.const$0.set(seg, x);
     }
     public static MemorySegment _g_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$809.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$812.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$809.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$812.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved1 _g_reserved1(MemorySegment segment, Arena scope) {
         return _g_reserved1.ofAddress(_g_reserved1$get(segment), scope);
@@ -89,7 +89,7 @@ public class _GConverterInputStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$809.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$812.const$1, fi, constants$7.const$5, scope);
         }
         static _g_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -104,7 +104,7 @@ public class _GConverterInputStreamClass {
     }
 
     public static VarHandle _g_reserved2$VH() {
-        return constants$809.const$2;
+        return constants$812.const$2;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GConverterInputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$809.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$812.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GConverterInputStreamClass {
      * }
      */
     public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$809.const$2.set(seg, x);
+        constants$812.const$2.set(seg, x);
     }
     public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$809.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$812.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$809.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$812.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved2 _g_reserved2(MemorySegment segment, Arena scope) {
         return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);
@@ -142,7 +142,7 @@ public class _GConverterInputStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$809.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$812.const$3, fi, constants$7.const$5, scope);
         }
         static _g_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -157,7 +157,7 @@ public class _GConverterInputStreamClass {
     }
 
     public static VarHandle _g_reserved3$VH() {
-        return constants$809.const$4;
+        return constants$812.const$4;
     }
     /**
      * Getter for field:
@@ -166,7 +166,7 @@ public class _GConverterInputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$809.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$812.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -175,13 +175,13 @@ public class _GConverterInputStreamClass {
      * }
      */
     public static void _g_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$809.const$4.set(seg, x);
+        constants$812.const$4.set(seg, x);
     }
     public static MemorySegment _g_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$809.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$812.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$809.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$812.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved3 _g_reserved3(MemorySegment segment, Arena scope) {
         return _g_reserved3.ofAddress(_g_reserved3$get(segment), scope);
@@ -195,7 +195,7 @@ public class _GConverterInputStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$809.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$812.const$5, fi, constants$7.const$5, scope);
         }
         static _g_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -210,7 +210,7 @@ public class _GConverterInputStreamClass {
     }
 
     public static VarHandle _g_reserved4$VH() {
-        return constants$810.const$0;
+        return constants$813.const$0;
     }
     /**
      * Getter for field:
@@ -219,7 +219,7 @@ public class _GConverterInputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$810.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$813.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -228,13 +228,13 @@ public class _GConverterInputStreamClass {
      * }
      */
     public static void _g_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$810.const$0.set(seg, x);
+        constants$813.const$0.set(seg, x);
     }
     public static MemorySegment _g_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$810.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$813.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$810.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$813.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved4 _g_reserved4(MemorySegment segment, Arena scope) {
         return _g_reserved4.ofAddress(_g_reserved4$get(segment), scope);
@@ -248,7 +248,7 @@ public class _GConverterInputStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$810.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$813.const$1, fi, constants$7.const$5, scope);
         }
         static _g_reserved5 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -263,7 +263,7 @@ public class _GConverterInputStreamClass {
     }
 
     public static VarHandle _g_reserved5$VH() {
-        return constants$810.const$2;
+        return constants$813.const$2;
     }
     /**
      * Getter for field:
@@ -272,7 +272,7 @@ public class _GConverterInputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$810.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$813.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -281,13 +281,13 @@ public class _GConverterInputStreamClass {
      * }
      */
     public static void _g_reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$810.const$2.set(seg, x);
+        constants$813.const$2.set(seg, x);
     }
     public static MemorySegment _g_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$810.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$813.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$810.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$813.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved5 _g_reserved5(MemorySegment segment, Arena scope) {
         return _g_reserved5.ofAddress(_g_reserved5$get(segment), scope);

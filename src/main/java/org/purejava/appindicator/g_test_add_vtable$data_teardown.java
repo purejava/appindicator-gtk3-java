@@ -13,7 +13,7 @@ public interface g_test_add_vtable$data_teardown {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_test_add_vtable$data_teardown fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$459.const$4, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$461.const$2, fi, constants$13.const$4, scope);
     }
     static g_test_add_vtable$data_teardown ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,35 +2,47 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2663 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2663() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_event_box_get_visible_window",
-        constants$10.const$5
+        "gtk_drag_source_set_icon_pixbuf",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_event_box_set_visible_window",
-        constants$40.const$2
+        "gtk_drag_source_set_icon_stock",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_event_box_get_above_child",
-        constants$10.const$5
+        "gtk_drag_source_set_icon_name",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_event_box_set_above_child",
-        constants$40.const$2
+        "gtk_drag_source_set_icon_gicon",
+        constants$13.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_get_widget",
-        constants$5.const$2
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("widget"),
+        RuntimeHelper.POINTER.withName("dummy")
+    ).withName("_GtkDrawingArea");
+    static final VarHandle const$5 = constants$2663.const$4.varHandle(MemoryLayout.PathElement.groupElement("dummy"));
 }
 
 

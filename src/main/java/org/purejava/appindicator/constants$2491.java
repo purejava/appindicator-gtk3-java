@@ -8,26 +8,26 @@ final class constants$2491 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2491() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_hover_expand",
+        "gtk_tree_view_set_enable_search",
         constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_hover_expand",
+        "gtk_tree_view_get_enable_search",
         constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_rubber_banding",
-        constants$40.const$2
+        "gtk_tree_view_get_search_column",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_rubber_banding",
-        constants$10.const$5
+        "gtk_tree_view_set_search_column",
+        constants$40.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_is_rubber_banding_active",
-        constants$10.const$5
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_tree_view_get_search_equal_func$return.class, "apply", constants$374.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_search_equal_func",
+        constants$5.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_tree_view_get_row_separator_func$return.class, "apply", constants$12.const$2);
 }
 
 

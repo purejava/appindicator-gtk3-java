@@ -18,13 +18,13 @@ import java.lang.invoke.VarHandle;
 public class _GSimpleActionGroup {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1264.const$5;
+        return constants$1268.const$5;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);
     }
     public static VarHandle priv$VH() {
-        return constants$1265.const$0;
+        return constants$1269.const$0;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class _GSimpleActionGroup {
      * }
      */
     public static MemorySegment priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1265.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1269.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -42,13 +42,13 @@ public class _GSimpleActionGroup {
      * }
      */
     public static void priv$set(MemorySegment seg, MemorySegment x) {
-        constants$1265.const$0.set(seg, x);
+        constants$1269.const$0.set(seg, x);
     }
     public static MemorySegment priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1265.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1269.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void priv$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1265.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1269.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

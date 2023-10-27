@@ -13,7 +13,7 @@ public interface pthread_atfork$__child {
 
     void apply();
     static MemorySegment allocate(pthread_atfork$__child fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$536.const$3, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$538.const$0, fi, constants$7.const$5, scope);
     }
     static pthread_atfork$__child ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

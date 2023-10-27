@@ -12,24 +12,24 @@ final class constants$925 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$925() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_flush",
-        constants$13.const$1
+        "g_dbus_object_manager_server_set_connection",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_add_interface",
+        "g_dbus_object_manager_server_export",
         constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_remove_interface",
+        "g_dbus_object_manager_server_export_uniquely",
         constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_remove_interface_by_name",
-        constants$13.const$4
+        "g_dbus_object_manager_server_is_exported",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_set_object_path",
-        constants$13.const$4
+        "g_dbus_object_manager_server_unexport",
+        constants$9.const$0
     );
     static final StructLayout const$5 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
@@ -41,7 +41,7 @@ final class constants$925 {
             RuntimeHelper.POINTER.withName("qdata")
         ).withName("parent_instance"),
         RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GDBusProxy");
+    ).withName("_GDBusObjectProxy");
 }
 
 

@@ -2,18 +2,38 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 final class constants$1474 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1474() {}
-    static final VarHandle const$0 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("ascender"));
-    static final VarHandle const$1 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("descender"));
-    static final VarHandle const$2 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("line_gap"));
-    static final VarHandle const$3 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved9"));
-    static final VarHandle const$4 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved8"));
-    static final VarHandle const$5 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved7"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_pop_group_func",
+        constants$42.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_custom_palette_color_func$func.class, "apply", constants$862.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_custom_palette_color_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_custom_palette_color_func",
+        constants$42.const$1
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_paint_push_transform",
+        constants$1474.const$4
+    );
 }
 
 

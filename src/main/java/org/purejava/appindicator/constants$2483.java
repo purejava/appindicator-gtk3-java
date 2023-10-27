@@ -8,29 +8,23 @@ final class constants$2483 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2483() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_cursor_on_cell",
-        constants$646.const$4
+        "gtk_tree_view_append_column",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_cursor",
-        constants$14.const$3
+        "gtk_tree_view_remove_column",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_bin_window",
-        constants$5.const$2
+        "gtk_tree_view_insert_column",
+        constants$62.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_path_at_pos",
-        constants$1640.const$2
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_tree_view_insert_column_with_attributes",
+        constants$11.const$0
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_cell_area",
-        constants$42.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_background_area",
-        constants$42.const$1
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_tree_view_insert_column_with_data_func$func.class, "apply", constants$332.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_tree_view_insert_column_with_data_func$dnotify.class, "apply", constants$13.const$1);
 }
 
 

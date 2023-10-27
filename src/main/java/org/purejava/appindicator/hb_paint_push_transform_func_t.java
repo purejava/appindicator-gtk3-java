@@ -13,13 +13,13 @@ public interface hb_paint_push_transform_func_t {
 
     void apply(java.lang.foreign.MemorySegment funcs, java.lang.foreign.MemorySegment paint_data, float xx, float yx, float xy, float yy, float dx, float dy, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_paint_push_transform_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1455.const$4, fi, constants$1455.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1459.const$5, fi, constants$1459.const$4, scope);
     }
     static hb_paint_push_transform_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _funcs, java.lang.foreign.MemorySegment _paint_data, float _xx, float _yx, float _xy, float _yy, float _dx, float _dy, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1455.const$5.invokeExact(symbol, _funcs, _paint_data, _xx, _yx, _xy, _yy, _dx, _dy, _user_data);
+                constants$1460.const$0.invokeExact(symbol, _funcs, _paint_data, _xx, _yx, _xy, _yy, _dx, _dy, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

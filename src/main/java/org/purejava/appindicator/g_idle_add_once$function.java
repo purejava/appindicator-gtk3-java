@@ -13,7 +13,7 @@ public interface g_idle_add_once$function {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_idle_add_once$function fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$281.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$281.const$2, fi, constants$13.const$1, scope);
     }
     static g_idle_add_once$function ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

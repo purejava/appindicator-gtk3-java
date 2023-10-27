@@ -2,40 +2,51 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1589 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1589() {}
-    static final VarHandle const$0 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("_pango_reserved4"));
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_fontset_get_font",
-        constants$21.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_fontset_get_metrics",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_reorder_items",
         constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(pango_fontset_foreach$func.class, "apply", constants$12.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_fontset_foreach",
-        constants$14.const$3
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_itemize",
+        constants$992.const$4
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance")
-    ).withName("_PangoFontMap");
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_itemize_with_base_dir",
+        constants$1589.const$2
+    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.paddingLayout(4)
+    ).withName("_PangoLogAttr");
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "pango_break",
+        constants$1589.const$5
+    );
 }
 
 

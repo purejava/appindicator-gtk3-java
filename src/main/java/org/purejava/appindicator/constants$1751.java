@@ -8,28 +8,28 @@ final class constants$1751 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1751() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_region_create_rectangle",
-        constants$5.const$2
+        "cairo_pattern_set_matrix",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_region_create_rectangles",
-        constants$21.const$3
+        "cairo_pattern_get_matrix",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_region_copy",
-        constants$5.const$2
+        "cairo_pattern_set_extend",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_region_reference",
-        constants$5.const$2
+        "cairo_pattern_get_extend",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_region_destroy",
-        constants$13.const$1
+        "cairo_pattern_set_filter",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_region_equal",
-        constants$9.const$0
+        "cairo_pattern_get_filter",
+        constants$10.const$5
     );
 }
 

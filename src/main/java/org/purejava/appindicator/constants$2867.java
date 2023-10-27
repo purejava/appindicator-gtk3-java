@@ -2,27 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2867 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2867() {}
-    static final VarHandle const$0 = constants$2866.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkMenuBarClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2866.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_main_do_event",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_main",
+        constants$7.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_main_level",
+        constants$83.const$1
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_get_type",
-        constants$3.const$5
+        "gtk_main_quit",
+        constants$7.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_new",
-        constants$35.const$2
+        "gtk_main_iteration",
+        constants$83.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_new_from_model",
-        constants$5.const$2
+        "gtk_main_iteration_do",
+        constants$8.const$4
     );
 }
 

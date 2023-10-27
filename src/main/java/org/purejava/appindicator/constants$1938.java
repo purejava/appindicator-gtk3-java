@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1938 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1938() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_set_allowed_backends",
-        constants$13.const$1
+        "gdk_keyval_to_unicode",
+        constants$8.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pango_context_get_for_screen",
-        constants$5.const$2
+        "gdk_unicode_to_keyval",
+        constants$8.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pango_context_get_for_display",
-        constants$5.const$2
+        "gdk_parse_args",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pango_context_get",
-        constants$35.const$2
+        "gdk_init",
+        constants$13.const$4
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_init_check",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pango_layout_line_get_clip_region",
-        constants$1938.const$4
+        "gdk_add_option_entries_libgtk_only",
+        constants$13.const$1
     );
 }
 

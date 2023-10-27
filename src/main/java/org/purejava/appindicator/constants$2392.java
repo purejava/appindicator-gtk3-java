@@ -8,28 +8,28 @@ final class constants$2392 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2392() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_targets_include_text",
-        constants$11.const$4
+        "gtk_target_list_find",
+        constants$12.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_targets_include_rich_text",
-        constants$150.const$0
+        "gtk_target_table_new_from_list",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_targets_include_image",
-        constants$49.const$0
+        "gtk_target_table_free",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_targets_include_uri",
-        constants$11.const$4
+        "gtk_selection_owner_set",
+        constants$62.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_type",
-        constants$3.const$5
+        "gtk_selection_owner_set_for_display",
+        constants$312.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_copy",
-        constants$5.const$2
+        "gtk_selection_add_target",
+        constants$332.const$4
     );
 }
 

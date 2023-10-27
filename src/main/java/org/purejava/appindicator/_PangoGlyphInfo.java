@@ -19,10 +19,10 @@ import java.lang.invoke.VarHandle;
 public class _PangoGlyphInfo {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1599.const$0;
+        return constants$1604.const$0;
     }
     public static VarHandle glyph$VH() {
-        return constants$1599.const$1;
+        return constants$1604.const$1;
     }
     /**
      * Getter for field:
@@ -31,7 +31,7 @@ public class _PangoGlyphInfo {
      * }
      */
     public static int glyph$get(MemorySegment seg) {
-        return (int)constants$1599.const$1.get(seg);
+        return (int)constants$1604.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -40,13 +40,13 @@ public class _PangoGlyphInfo {
      * }
      */
     public static void glyph$set(MemorySegment seg, int x) {
-        constants$1599.const$1.set(seg, x);
+        constants$1604.const$1.set(seg, x);
     }
     public static int glyph$get(MemorySegment seg, long index) {
-        return (int)constants$1599.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1604.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void glyph$set(MemorySegment seg, long index, int x) {
-        constants$1599.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1604.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment geometry$slice(MemorySegment seg) {
         return seg.asSlice(4, 12);

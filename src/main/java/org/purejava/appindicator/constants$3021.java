@@ -8,28 +8,28 @@ final class constants$3021 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3021() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_set_name",
-        constants$13.const$4
+        "gtk_recent_info_get_modified",
+        constants$4.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_get_name",
-        constants$5.const$2
+        "gtk_recent_info_get_visited",
+        constants$4.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_mime_type",
-        constants$13.const$4
+        "gtk_recent_info_get_private_hint",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_pattern",
-        constants$13.const$4
+        "gtk_recent_info_get_application_info",
+        constants$165.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_pixbuf_formats",
-        constants$13.const$1
+        "gtk_recent_info_create_app_info",
+        constants$23.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_application",
-        constants$13.const$4
+        "gtk_recent_info_get_applications",
+        constants$5.const$5
     );
 }
 

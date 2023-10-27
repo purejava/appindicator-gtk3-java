@@ -8,27 +8,27 @@ final class constants$2767 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2767() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_size_wildcarded",
-        constants$40.const$2
+        "gtk_icon_factory_remove_default",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_size_wildcarded",
-        constants$10.const$5
+        "gtk_icon_factory_lookup_default",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_state_wildcarded",
-        constants$10.const$5
+        "gtk_icon_size_lookup",
+        constants$10.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_get_direction_wildcarded",
-        constants$10.const$5
+        "gtk_icon_size_lookup_for_settings",
+        constants$11.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_direction",
-        constants$40.const$2
+        "gtk_icon_size_register",
+        constants$49.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_icon_source_set_state",
+        "gtk_icon_size_register_alias",
         constants$40.const$2
     );
 }

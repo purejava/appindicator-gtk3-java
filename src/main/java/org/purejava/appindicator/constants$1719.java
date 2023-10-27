@@ -2,31 +2,26 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.MethodHandle;
 final class constants$1719 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1719() {}
-    static final VarHandle const$0 = constants$1718.const$4.varHandle(MemoryLayout.PathElement.groupElement("length"));
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        JAVA_DOUBLE.withName("x"),
-        JAVA_DOUBLE.withName("y")
-    ).withName("");
-    static final VarHandle const$2 = constants$1719.const$1.varHandle(MemoryLayout.PathElement.groupElement("x"));
-    static final VarHandle const$3 = constants$1719.const$1.varHandle(MemoryLayout.PathElement.groupElement("y"));
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        JAVA_INT.withName("status"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("data"),
-        JAVA_INT.withName("num_data"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("cairo_path");
-    static final VarHandle const$5 = constants$1719.const$4.varHandle(MemoryLayout.PathElement.groupElement("status"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_user_font_face_get_render_glyph_func$return.class, "apply", constants$394.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_user_font_face_get_render_glyph_func",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(cairo_user_font_face_get_render_color_glyph_func$return.class, "apply", constants$394.const$4);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_user_font_face_get_render_color_glyph_func",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(cairo_user_font_face_get_text_to_glyphs_func$return.class, "apply", constants$1716.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_user_font_face_get_text_to_glyphs_func",
+        constants$5.const$2
+    );
 }
 
 

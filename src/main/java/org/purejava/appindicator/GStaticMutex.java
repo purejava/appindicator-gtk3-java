@@ -18,10 +18,10 @@ import java.lang.invoke.VarHandle;
 public class GStaticMutex {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$536.const$5;
+        return constants$538.const$2;
     }
     public static VarHandle mutex$VH() {
-        return constants$537.const$0;
+        return constants$538.const$3;
     }
     /**
      * Getter for field:
@@ -30,7 +30,7 @@ public class GStaticMutex {
      * }
      */
     public static MemorySegment mutex$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$537.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$538.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -39,13 +39,13 @@ public class GStaticMutex {
      * }
      */
     public static void mutex$set(MemorySegment seg, MemorySegment x) {
-        constants$537.const$0.set(seg, x);
+        constants$538.const$3.set(seg, x);
     }
     public static MemorySegment mutex$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$537.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$538.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void mutex$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$537.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$538.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment unused$slice(MemorySegment seg) {
         return seg.asSlice(8, 48);

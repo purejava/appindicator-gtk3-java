@@ -8,28 +8,28 @@ final class constants$2202 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2202() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_modal",
+        "gtk_window_set_mnemonics_visible",
         constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_window_get_modal",
+        "gtk_window_get_mnemonics_visible",
         constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_window_list_toplevels",
-        constants$35.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_has_user_ref_count",
+        "gtk_window_set_focus_visible",
         constants$40.const$2
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_window_get_focus_visible",
+        constants$10.const$5
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_window_add_mnemonic",
-        constants$42.const$4
+        "gtk_window_set_resizable",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_window_remove_mnemonic",
-        constants$42.const$4
+        "gtk_window_get_resizable",
+        constants$10.const$5
     );
 }
 

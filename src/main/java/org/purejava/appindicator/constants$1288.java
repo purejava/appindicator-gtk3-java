@@ -8,28 +8,28 @@ final class constants$1288 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1288() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_socket_receive_messages",
-        constants$1029.const$4
+        "g_socket_set_multicast_ttl",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_socket_send_messages",
-        constants$1029.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_socket_close",
-        constants$9.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_socket_shutdown",
-        constants$49.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_socket_is_closed",
+        "g_socket_is_connected",
         constants$10.const$5
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_bind",
+        constants$328.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_join_multicast_group",
+        constants$862.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_leave_multicast_group",
+        constants$862.const$1
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_create_source",
-        constants$196.const$3
+        "g_socket_join_multicast_group_ssm",
+        constants$165.const$2
     );
 }
 

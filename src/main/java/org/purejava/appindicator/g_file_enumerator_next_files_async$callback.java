@@ -13,7 +13,7 @@ public interface g_file_enumerator_next_files_async$callback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_file_enumerator_next_files_async$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1049.const$0, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1052.const$0, fi, constants$14.const$3, scope);
     }
     static g_file_enumerator_next_files_async$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

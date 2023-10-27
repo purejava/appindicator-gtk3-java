@@ -13,7 +13,7 @@ public interface gtk_tree_sortable_set_sort_func$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_tree_sortable_set_sort_func$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2322.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2327.const$1, fi, constants$13.const$1, scope);
     }
     static gtk_tree_sortable_set_sort_func$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

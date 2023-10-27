@@ -8,28 +8,19 @@ final class constants$2506 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2506() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_set_active_custom_item",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_set_show_dialog_item",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_get_show_dialog_item",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_set_heading",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_get_heading",
+        "gtk_combo_box_get_model",
         constants$5.const$2
     );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_combo_box_get_row_separator_func$return.class, "apply", constants$12.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_combo_box_get_row_separator_func",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_combo_box_set_row_separator_func$func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_combo_box_set_row_separator_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_set_show_default_item",
-        constants$40.const$2
+        "gtk_combo_box_set_row_separator_func",
+        constants$42.const$1
     );
 }
 

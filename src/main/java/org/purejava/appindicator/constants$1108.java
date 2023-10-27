@@ -2,34 +2,26 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1108 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1108() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_converter_flags_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_converter_result_get_type",
-        constants$3.const$5
-    );
+    static final VarHandle const$0 = constants$1107.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_native_size"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketAddressClass.to_native.class, "apply", constants$27.const$2);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_data_stream_byte_order_get_type",
-        constants$3.const$5
+        constants$27.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_data_stream_newline_type_get_type",
-        constants$3.const$5
-    );
+    static final VarHandle const$3 = constants$1107.const$2.varHandle(MemoryLayout.PathElement.groupElement("to_native"));
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_type_get_type",
+        "g_socket_address_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_flags_get_type",
-        constants$3.const$5
+        "g_socket_address_get_family",
+        constants$10.const$5
     );
 }
 

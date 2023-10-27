@@ -8,28 +8,28 @@ final class constants$371 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$371() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_variant_dict_insert_value",
-        constants$14.const$3
+        "g_variant_dict_new",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_variant_dict_remove",
-        constants$9.const$0
+        "g_variant_dict_init",
+        constants$13.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_dict_clear",
-        constants$13.const$1
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_dict_lookup",
+        constants$12.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_dict_end",
-        constants$5.const$2
+        "g_variant_dict_lookup_value",
+        constants$23.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_variant_dict_ref",
-        constants$5.const$2
+        "g_variant_dict_contains",
+        constants$9.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_dict_unref",
-        constants$13.const$1
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_dict_insert",
+        constants$14.const$3
     );
 }
 

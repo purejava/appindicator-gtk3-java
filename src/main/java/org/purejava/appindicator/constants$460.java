@@ -2,28 +2,57 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.*;
 final class constants$460 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$460() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        JAVA_INT.withName("test_initialized"),
-        JAVA_INT.withName("test_quick"),
-        JAVA_INT.withName("test_perf"),
-        JAVA_INT.withName("test_verbose"),
-        JAVA_INT.withName("test_quiet"),
-        JAVA_INT.withName("test_undefined")
-    ).withName("GTestConfig");
-    static final VarHandle const$1 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_initialized"));
-    static final VarHandle const$2 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_quick"));
-    static final VarHandle const$3 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_perf"));
-    static final VarHandle const$4 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_verbose"));
-    static final VarHandle const$5 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_quiet"));
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_assertion_message_cmpstrv",
+        constants$460.const$0
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_BYTE
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_assertion_message_cmpint",
+        constants$460.const$2
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_assertion_message_error",
+        constants$460.const$4
+    );
 }
 
 

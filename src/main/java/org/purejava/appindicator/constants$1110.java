@@ -2,34 +2,37 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$1110 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1110() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_drive_start_flags_get_type",
+        "g_inet_socket_address_get_type",
         constants$3.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_drive_start_stop_type_get_type",
-        constants$3.const$5
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_SHORT
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_copy_flags_get_type",
-        constants$3.const$5
+        "g_inet_socket_address_new",
+        constants$1110.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_monitor_flags_get_type",
-        constants$3.const$5
+        "g_inet_socket_address_new_from_string",
+        constants$21.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_type_get_type",
-        constants$3.const$5
+        "g_inet_socket_address_get_address",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_filesystem_preview_type_get_type",
-        constants$3.const$5
+        "g_inet_socket_address_get_port",
+        constants$186.const$2
     );
 }
 

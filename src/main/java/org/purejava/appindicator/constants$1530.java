@@ -2,27 +2,38 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1530 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1530() {}
-    static final VarHandle const$0 = constants$1529.const$2.varHandle(MemoryLayout.PathElement.groupElement("yy"));
-    static final VarHandle const$1 = constants$1529.const$2.varHandle(MemoryLayout.PathElement.groupElement("x0"));
-    static final VarHandle const$2 = constants$1529.const$2.varHandle(MemoryLayout.PathElement.groupElement("y0"));
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_matrix_get_type",
-        constants$3.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_shape_plan_execute",
+        constants$1427.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_matrix_copy",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_shape_plan_get_shaper",
         constants$5.const$2
     );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_FLOAT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_style_get_value",
+        constants$1530.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_version",
+        constants$14.const$3
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_matrix_free",
-        constants$13.const$1
+        "hb_version_string",
+        constants$35.const$2
     );
 }
 

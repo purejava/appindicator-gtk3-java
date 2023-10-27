@@ -31,7 +31,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkRecentChooserIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3023.const$3;
+        return constants$3028.const$3;
     }
     public static MemorySegment base_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -45,7 +45,7 @@ public class _GtkRecentChooserIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(set_current_uri fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3023.const$4, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3028.const$4, fi, constants$12.const$2, scope);
         }
         static set_current_uri ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -60,7 +60,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle set_current_uri$VH() {
-        return constants$3023.const$5;
+        return constants$3028.const$5;
     }
     /**
      * Getter for field:
@@ -69,7 +69,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment set_current_uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3023.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3028.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -78,13 +78,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void set_current_uri$set(MemorySegment seg, MemorySegment x) {
-        constants$3023.const$5.set(seg, x);
+        constants$3028.const$5.set(seg, x);
     }
     public static MemorySegment set_current_uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3023.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3028.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void set_current_uri$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3023.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3028.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_current_uri set_current_uri(MemorySegment segment, Arena scope) {
         return set_current_uri.ofAddress(set_current_uri$get(segment), scope);
@@ -98,7 +98,7 @@ public class _GtkRecentChooserIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_current_uri fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3024.const$0, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3029.const$0, fi, constants$5.const$2, scope);
         }
         static get_current_uri ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -113,7 +113,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle get_current_uri$VH() {
-        return constants$3024.const$1;
+        return constants$3029.const$1;
     }
     /**
      * Getter for field:
@@ -122,7 +122,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment get_current_uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3024.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3029.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -131,13 +131,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void get_current_uri$set(MemorySegment seg, MemorySegment x) {
-        constants$3024.const$1.set(seg, x);
+        constants$3029.const$1.set(seg, x);
     }
     public static MemorySegment get_current_uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3024.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3029.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_current_uri$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3024.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3029.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_current_uri get_current_uri(MemorySegment segment, Arena scope) {
         return get_current_uri.ofAddress(get_current_uri$get(segment), scope);
@@ -151,7 +151,7 @@ public class _GtkRecentChooserIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(select_uri fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3024.const$2, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3029.const$2, fi, constants$12.const$2, scope);
         }
         static select_uri ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -166,7 +166,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle select_uri$VH() {
-        return constants$3024.const$3;
+        return constants$3029.const$3;
     }
     /**
      * Getter for field:
@@ -175,7 +175,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment select_uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3024.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3029.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -184,13 +184,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void select_uri$set(MemorySegment seg, MemorySegment x) {
-        constants$3024.const$3.set(seg, x);
+        constants$3029.const$3.set(seg, x);
     }
     public static MemorySegment select_uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3024.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3029.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void select_uri$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3024.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3029.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static select_uri select_uri(MemorySegment segment, Arena scope) {
         return select_uri.ofAddress(select_uri$get(segment), scope);
@@ -204,7 +204,7 @@ public class _GtkRecentChooserIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(unselect_uri fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3024.const$4, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$3029.const$4, fi, constants$13.const$4, scope);
         }
         static unselect_uri ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -219,7 +219,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle unselect_uri$VH() {
-        return constants$3024.const$5;
+        return constants$3029.const$5;
     }
     /**
      * Getter for field:
@@ -228,7 +228,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment unselect_uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3024.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3029.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -237,13 +237,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void unselect_uri$set(MemorySegment seg, MemorySegment x) {
-        constants$3024.const$5.set(seg, x);
+        constants$3029.const$5.set(seg, x);
     }
     public static MemorySegment unselect_uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3024.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3029.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void unselect_uri$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3024.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3029.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static unselect_uri unselect_uri(MemorySegment segment, Arena scope) {
         return unselect_uri.ofAddress(unselect_uri$get(segment), scope);
@@ -257,7 +257,7 @@ public class _GtkRecentChooserIface {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(select_all fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3025.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$3030.const$0, fi, constants$13.const$1, scope);
         }
         static select_all ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -272,7 +272,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle select_all$VH() {
-        return constants$3025.const$1;
+        return constants$3030.const$1;
     }
     /**
      * Getter for field:
@@ -281,7 +281,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment select_all$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3025.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3030.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -290,13 +290,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void select_all$set(MemorySegment seg, MemorySegment x) {
-        constants$3025.const$1.set(seg, x);
+        constants$3030.const$1.set(seg, x);
     }
     public static MemorySegment select_all$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3025.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3030.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void select_all$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3025.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3030.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static select_all select_all(MemorySegment segment, Arena scope) {
         return select_all.ofAddress(select_all$get(segment), scope);
@@ -310,7 +310,7 @@ public class _GtkRecentChooserIface {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(unselect_all fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3025.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$3030.const$2, fi, constants$13.const$1, scope);
         }
         static unselect_all ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -325,7 +325,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle unselect_all$VH() {
-        return constants$3025.const$3;
+        return constants$3030.const$3;
     }
     /**
      * Getter for field:
@@ -334,7 +334,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment unselect_all$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3025.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3030.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -343,13 +343,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void unselect_all$set(MemorySegment seg, MemorySegment x) {
-        constants$3025.const$3.set(seg, x);
+        constants$3030.const$3.set(seg, x);
     }
     public static MemorySegment unselect_all$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3025.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3030.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void unselect_all$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3025.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3030.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static unselect_all unselect_all(MemorySegment segment, Arena scope) {
         return unselect_all.ofAddress(unselect_all$get(segment), scope);
@@ -363,7 +363,7 @@ public class _GtkRecentChooserIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_items fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3025.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3030.const$4, fi, constants$5.const$2, scope);
         }
         static get_items ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -378,7 +378,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle get_items$VH() {
-        return constants$3025.const$5;
+        return constants$3030.const$5;
     }
     /**
      * Getter for field:
@@ -387,7 +387,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment get_items$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3025.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3030.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -396,13 +396,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void get_items$set(MemorySegment seg, MemorySegment x) {
-        constants$3025.const$5.set(seg, x);
+        constants$3030.const$5.set(seg, x);
     }
     public static MemorySegment get_items$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3025.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3030.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_items$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3025.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3030.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_items get_items(MemorySegment segment, Arena scope) {
         return get_items.ofAddress(get_items$get(segment), scope);
@@ -416,7 +416,7 @@ public class _GtkRecentChooserIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_recent_manager fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3026.const$0, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3031.const$0, fi, constants$5.const$2, scope);
         }
         static get_recent_manager ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -431,7 +431,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle get_recent_manager$VH() {
-        return constants$3026.const$1;
+        return constants$3031.const$1;
     }
     /**
      * Getter for field:
@@ -440,7 +440,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment get_recent_manager$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3026.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3031.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -449,13 +449,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void get_recent_manager$set(MemorySegment seg, MemorySegment x) {
-        constants$3026.const$1.set(seg, x);
+        constants$3031.const$1.set(seg, x);
     }
     public static MemorySegment get_recent_manager$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3026.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3031.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_recent_manager$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3026.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3031.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_recent_manager get_recent_manager(MemorySegment segment, Arena scope) {
         return get_recent_manager.ofAddress(get_recent_manager$get(segment), scope);
@@ -469,7 +469,7 @@ public class _GtkRecentChooserIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(add_filter fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3026.const$2, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$3031.const$2, fi, constants$13.const$4, scope);
         }
         static add_filter ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -484,7 +484,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle add_filter$VH() {
-        return constants$3026.const$3;
+        return constants$3031.const$3;
     }
     /**
      * Getter for field:
@@ -493,7 +493,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment add_filter$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3026.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3031.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -502,13 +502,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void add_filter$set(MemorySegment seg, MemorySegment x) {
-        constants$3026.const$3.set(seg, x);
+        constants$3031.const$3.set(seg, x);
     }
     public static MemorySegment add_filter$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3026.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3031.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void add_filter$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3026.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3031.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static add_filter add_filter(MemorySegment segment, Arena scope) {
         return add_filter.ofAddress(add_filter$get(segment), scope);
@@ -522,7 +522,7 @@ public class _GtkRecentChooserIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(remove_filter fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3026.const$4, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$3031.const$4, fi, constants$13.const$4, scope);
         }
         static remove_filter ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -537,7 +537,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle remove_filter$VH() {
-        return constants$3026.const$5;
+        return constants$3031.const$5;
     }
     /**
      * Getter for field:
@@ -546,7 +546,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment remove_filter$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3026.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3031.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -555,13 +555,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void remove_filter$set(MemorySegment seg, MemorySegment x) {
-        constants$3026.const$5.set(seg, x);
+        constants$3031.const$5.set(seg, x);
     }
     public static MemorySegment remove_filter$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3026.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3031.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void remove_filter$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3026.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3031.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static remove_filter remove_filter(MemorySegment segment, Arena scope) {
         return remove_filter.ofAddress(remove_filter$get(segment), scope);
@@ -575,7 +575,7 @@ public class _GtkRecentChooserIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(list_filters fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3027.const$0, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3032.const$0, fi, constants$5.const$2, scope);
         }
         static list_filters ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -590,7 +590,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle list_filters$VH() {
-        return constants$3027.const$1;
+        return constants$3032.const$1;
     }
     /**
      * Getter for field:
@@ -599,7 +599,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment list_filters$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3027.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3032.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -608,13 +608,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void list_filters$set(MemorySegment seg, MemorySegment x) {
-        constants$3027.const$1.set(seg, x);
+        constants$3032.const$1.set(seg, x);
     }
     public static MemorySegment list_filters$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3027.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3032.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void list_filters$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3027.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3032.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static list_filters list_filters(MemorySegment segment, Arena scope) {
         return list_filters.ofAddress(list_filters$get(segment), scope);
@@ -628,7 +628,7 @@ public class _GtkRecentChooserIface {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_sort_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3027.const$2, fi, constants$42.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$3032.const$2, fi, constants$42.const$1, scope);
         }
         static set_sort_func ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -643,7 +643,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle set_sort_func$VH() {
-        return constants$3027.const$3;
+        return constants$3032.const$3;
     }
     /**
      * Getter for field:
@@ -652,7 +652,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment set_sort_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3027.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3032.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -661,13 +661,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void set_sort_func$set(MemorySegment seg, MemorySegment x) {
-        constants$3027.const$3.set(seg, x);
+        constants$3032.const$3.set(seg, x);
     }
     public static MemorySegment set_sort_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3027.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3032.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void set_sort_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3027.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3032.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_sort_func set_sort_func(MemorySegment segment, Arena scope) {
         return set_sort_func.ofAddress(set_sort_func$get(segment), scope);
@@ -681,7 +681,7 @@ public class _GtkRecentChooserIface {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(item_activated fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3027.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$3032.const$4, fi, constants$13.const$1, scope);
         }
         static item_activated ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -696,7 +696,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle item_activated$VH() {
-        return constants$3027.const$5;
+        return constants$3032.const$5;
     }
     /**
      * Getter for field:
@@ -705,7 +705,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment item_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3027.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3032.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -714,13 +714,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void item_activated$set(MemorySegment seg, MemorySegment x) {
-        constants$3027.const$5.set(seg, x);
+        constants$3032.const$5.set(seg, x);
     }
     public static MemorySegment item_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3027.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3032.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void item_activated$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3027.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3032.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static item_activated item_activated(MemorySegment segment, Arena scope) {
         return item_activated.ofAddress(item_activated$get(segment), scope);
@@ -734,7 +734,7 @@ public class _GtkRecentChooserIface {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(selection_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3028.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$3033.const$0, fi, constants$13.const$1, scope);
         }
         static selection_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -749,7 +749,7 @@ public class _GtkRecentChooserIface {
     }
 
     public static VarHandle selection_changed$VH() {
-        return constants$3028.const$1;
+        return constants$3033.const$1;
     }
     /**
      * Getter for field:
@@ -758,7 +758,7 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static MemorySegment selection_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3028.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3033.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -767,13 +767,13 @@ public class _GtkRecentChooserIface {
      * }
      */
     public static void selection_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$3028.const$1.set(seg, x);
+        constants$3033.const$1.set(seg, x);
     }
     public static MemorySegment selection_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3028.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3033.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void selection_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3028.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3033.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static selection_changed selection_changed(MemorySegment segment, Arena scope) {
         return selection_changed.ofAddress(selection_changed$get(segment), scope);

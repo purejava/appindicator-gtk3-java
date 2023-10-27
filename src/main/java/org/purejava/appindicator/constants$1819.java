@@ -2,18 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 final class constants$1819 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1819() {}
-    static final VarHandle const$0 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("min_width"));
-    static final VarHandle const$1 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("min_height"));
-    static final VarHandle const$2 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("max_width"));
-    static final VarHandle const$3 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("max_height"));
-    static final VarHandle const$4 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("base_width"));
-    static final VarHandle const$5 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("base_height"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_frame_time",
+        constants$4.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_presentation_time",
+        constants$4.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_refresh_interval",
+        constants$4.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_predicted_presentation_time",
+        constants$4.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_frame_time",
+        constants$4.const$0
+    );
 }
 
 

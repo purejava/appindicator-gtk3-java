@@ -8,28 +8,28 @@ final class constants$1852 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1852() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_debug_updates",
-        constants$80.const$1
+        "gdk_window_maximize",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_constrain_size",
-        constants$215.const$5
+        "gdk_window_unmaximize",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_enable_synchronized_configure",
+        "gdk_window_fullscreen",
         constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_configure_finished",
-        constants$13.const$1
+        "gdk_window_fullscreen_on_monitor",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_get_default_root_window",
-        constants$35.const$2
+        "gdk_window_set_fullscreen_mode",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_offscreen_window_get_surface",
-        constants$5.const$2
+        "gdk_window_get_fullscreen_mode",
+        constants$10.const$5
     );
 }
 

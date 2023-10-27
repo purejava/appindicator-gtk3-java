@@ -13,7 +13,7 @@ public interface g_tree_traverse$traverse_func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_tree_traverse$traverse_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$478.const$4, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$480.const$3, fi, constants$12.const$2, scope);
     }
     static g_tree_traverse$traverse_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,38 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1127 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1127() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_io_module_load",
-        constants$13.const$1
+        "g_io_module_scope_new",
+        constants$24.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_io_module_unload",
+        "g_io_module_scope_free",
         constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_io_module_query",
-        constants$35.const$2
+        "g_io_module_scope_block",
+        constants$13.const$4
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_io_scheduler_push_job$job_func.class, "apply", constants$12.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_io_scheduler_push_job$notify.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_io_module_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_io_scheduler_push_job",
-        constants$1127.const$5
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_io_module_new",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_io_modules_scan_all_in_directory",
+        constants$13.const$1
     );
 }
 

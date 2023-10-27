@@ -17,7 +17,7 @@ import java.lang.invoke.VarHandle;
 public class GWeakRef {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$641.const$4;
+        return constants$644.const$1;
     }
     /**
      * {@snippet :
@@ -31,10 +31,10 @@ public class GWeakRef {
         // Suppresses default constructor, ensuring non-instantiability.
         private priv() {}
         public static MemoryLayout $LAYOUT() {
-            return constants$641.const$5;
+            return constants$644.const$2;
         }
         public static VarHandle p$VH() {
-            return constants$642.const$0;
+            return constants$644.const$3;
         }
         /**
          * Getter for field:
@@ -43,7 +43,7 @@ public class GWeakRef {
          * }
          */
         public static MemorySegment p$get(MemorySegment seg) {
-            return (java.lang.foreign.MemorySegment)constants$642.const$0.get(seg);
+            return (java.lang.foreign.MemorySegment)constants$644.const$3.get(seg);
         }
         /**
          * Setter for field:
@@ -52,13 +52,13 @@ public class GWeakRef {
          * }
          */
         public static void p$set(MemorySegment seg, MemorySegment x) {
-            constants$642.const$0.set(seg, x);
+            constants$644.const$3.set(seg, x);
         }
         public static MemorySegment p$get(MemorySegment seg, long index) {
-            return (java.lang.foreign.MemorySegment)constants$642.const$0.get(seg.asSlice(index*sizeof()));
+            return (java.lang.foreign.MemorySegment)constants$644.const$3.get(seg.asSlice(index*sizeof()));
         }
         public static void p$set(MemorySegment seg, long index, MemorySegment x) {
-            constants$642.const$0.set(seg.asSlice(index*sizeof()), x);
+            constants$644.const$3.set(seg.asSlice(index*sizeof()), x);
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

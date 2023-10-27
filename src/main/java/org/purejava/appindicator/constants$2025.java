@@ -9,12 +9,27 @@ final class constants$2025 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2025() {}
-    static final VarHandle const$0 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_run_attributes"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.set_text_contents.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_text_contents"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.insert_text.class, "apply", constants$464.const$4);
-    static final VarHandle const$4 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("insert_text"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.copy_text.class, "apply", constants$467.const$3);
+    static final VarHandle const$0 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("scroll_substring_to_point"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_text_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_text_get_text",
+        constants$33.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_text_get_character_at_offset",
+        constants$11.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_text_get_text_after_offset",
+        constants$1425.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_text_get_text_at_offset",
+        constants$1425.const$2
+    );
 }
 
 

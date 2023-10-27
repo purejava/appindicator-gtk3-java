@@ -2,34 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$952 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$952() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_drive_poll_for_media",
-        constants$42.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_drive_poll_for_media_finish",
-        constants$12.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDriveIface.is_removable.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("is_removable"));
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_drive_get_identifier",
-        constants$5.const$5
+        "g_drive_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_drive_enumerate_identifiers",
+        "g_drive_get_name",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_drive_get_start_stop_type",
-        constants$10.const$5
+        "g_drive_get_icon",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_drive_can_start",
-        constants$10.const$5
+        "g_drive_get_symbolic_icon",
+        constants$5.const$2
     );
 }
 

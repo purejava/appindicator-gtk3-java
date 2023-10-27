@@ -8,28 +8,28 @@ final class constants$3160 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3160() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_left_margin",
-        constants$40.const$2
+        "gtk_text_view_get_window_type",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_left_margin",
-        constants$10.const$5
+        "gtk_text_view_set_border_window_size",
+        constants$469.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_right_margin",
-        constants$40.const$2
+        "gtk_text_view_get_border_window_size",
+        constants$11.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_right_margin",
-        constants$10.const$5
+        "gtk_text_view_forward_display_line",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_top_margin",
-        constants$40.const$2
+        "gtk_text_view_backward_display_line",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_top_margin",
-        constants$10.const$5
+        "gtk_text_view_forward_display_line_end",
+        constants$9.const$0
     );
 }
 

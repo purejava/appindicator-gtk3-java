@@ -8,27 +8,27 @@ final class constants$3218 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3218() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_junction_sides_get_type",
+        "gtk_movement_step_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_border_style_get_type",
+        "gtk_scroll_step_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_level_bar_mode_get_type",
+        "gtk_orientation_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_input_purpose_get_type",
+        "gtk_pack_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_input_hints_get_type",
+        "gtk_position_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_propagation_phase_get_type",
+        "gtk_relief_style_get_type",
         constants$3.const$5
     );
 }

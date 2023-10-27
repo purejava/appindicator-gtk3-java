@@ -2,28 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1479 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1479() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_get_glyph_origin_func_t.class, "apply", constants$1243.const$0);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_glyph_h_origin_func_t.class, "apply", constants$1243.const$0);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_get_glyph_v_origin_func_t.class, "apply", constants$1243.const$0);
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_get_glyph_kerning_func_t.class, "apply", constants$1479.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        constants$1479.const$3
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ascender"),
+        JAVA_INT.withName("descender"),
+        JAVA_INT.withName("line_gap"),
+        JAVA_INT.withName("reserved9"),
+        JAVA_INT.withName("reserved8"),
+        JAVA_INT.withName("reserved7"),
+        JAVA_INT.withName("reserved6"),
+        JAVA_INT.withName("reserved5"),
+        JAVA_INT.withName("reserved4"),
+        JAVA_INT.withName("reserved3"),
+        JAVA_INT.withName("reserved2"),
+        JAVA_INT.withName("reserved1")
+    ).withName("hb_font_extents_t");
+    static final VarHandle const$1 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("ascender"));
+    static final VarHandle const$2 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("descender"));
+    static final VarHandle const$3 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("line_gap"));
+    static final VarHandle const$4 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved9"));
+    static final VarHandle const$5 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved8"));
 }
 
 

@@ -8,28 +8,28 @@ final class constants$3241 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3241() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_window_group_get_type",
-        constants$3.const$5
+        "gtk_widget_path_iter_has_name",
+        constants$150.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_window_group_new",
-        constants$35.const$2
+        "gtk_widget_path_iter_has_qname",
+        constants$49.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_window_group_add_window",
-        constants$13.const$4
+        "gtk_widget_path_iter_get_state",
+        constants$11.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_window_group_remove_window",
-        constants$13.const$4
+        "gtk_widget_path_iter_set_state",
+        constants$469.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_window_group_list_windows",
-        constants$5.const$2
+        "gtk_widget_path_iter_add_class",
+        constants$42.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_window_group_get_current_grab",
-        constants$5.const$2
+        "gtk_widget_path_iter_remove_class",
+        constants$42.const$4
     );
 }
 

@@ -13,7 +13,7 @@ public interface g_signal_connect_data$destroy_data {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_signal_connect_data$destroy_data fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$609.const$5, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$612.const$1, fi, constants$13.const$4, scope);
     }
     static g_signal_connect_data$destroy_data ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

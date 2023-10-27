@@ -8,28 +8,28 @@ final class constants$1912 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1912() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_cairo_set_source_window",
-        constants$1683.const$0
+        "pango_cairo_font_map_get_resolution",
+        constants$67.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_cairo_rectangle",
-        constants$13.const$4
+        "pango_cairo_font_map_create_context",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_cairo_region",
-        constants$13.const$4
+        "pango_cairo_font_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_cairo_region_create_from_surface",
+        "pango_cairo_font_get_scaled_font",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_cairo_set_source_color",
+        "pango_cairo_update_context",
         constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_cairo_surface_create_from_pixbuf",
-        constants$196.const$3
+        "pango_cairo_context_set_font_options",
+        constants$13.const$4
     );
 }
 

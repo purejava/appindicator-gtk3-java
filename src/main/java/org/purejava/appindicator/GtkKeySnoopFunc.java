@@ -13,7 +13,7 @@ public interface GtkKeySnoopFunc {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GtkKeySnoopFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2859.const$2, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2864.const$2, fi, constants$12.const$2, scope);
     }
     static GtkKeySnoopFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

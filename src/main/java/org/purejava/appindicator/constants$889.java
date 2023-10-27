@@ -2,34 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$889 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$889() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_arg_info_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_annotation_info_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_node_info_unref",
-        constants$13.const$1
-    );
+    static final VarHandle const$0 = constants$888.const$3.varHandle(MemoryLayout.PathElement.groupElement("interfaces"));
+    static final VarHandle const$1 = constants$888.const$3.varHandle(MemoryLayout.PathElement.groupElement("nodes"));
+    static final VarHandle const$2 = constants$888.const$3.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_unref",
-        constants$13.const$1
+        "g_dbus_annotation_info_lookup",
+        constants$5.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_info_unref",
-        constants$13.const$1
+        "g_dbus_interface_info_lookup_method",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_signal_info_unref",
-        constants$13.const$1
+        "g_dbus_interface_info_lookup_signal",
+        constants$5.const$5
     );
 }
 

@@ -2,35 +2,77 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$3326 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3326() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_rc_add_default_file",
-        constants$13.const$1
+        "gtk_radio_action_get_current_value",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_rc_set_default_files",
-        constants$13.const$1
+        "gtk_radio_action_set_current_value",
+        constants$40.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_rc_get_default_files",
-        constants$35.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_rc_get_style",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_rc_get_style_by_paths",
-        constants$203.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_rc_reparse_all_for_settings",
-        constants$11.const$4
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("name"),
+        MemoryLayout.sequenceLayout(5, RuntimeHelper.POINTER).withName("bg_pixmap_name"),
+        RuntimeHelper.POINTER.withName("font_desc"),
+        MemoryLayout.sequenceLayout(5, JAVA_INT).withName("color_flags"),
+        MemoryLayout.sequenceLayout(5, MemoryLayout.structLayout(
+            JAVA_INT.withName("pixel"),
+            JAVA_SHORT.withName("red"),
+            JAVA_SHORT.withName("green"),
+            JAVA_SHORT.withName("blue"),
+            MemoryLayout.paddingLayout(2)
+        ).withName("_GdkColor")).withName("fg"),
+        MemoryLayout.sequenceLayout(5, MemoryLayout.structLayout(
+            JAVA_INT.withName("pixel"),
+            JAVA_SHORT.withName("red"),
+            JAVA_SHORT.withName("green"),
+            JAVA_SHORT.withName("blue"),
+            MemoryLayout.paddingLayout(2)
+        ).withName("_GdkColor")).withName("bg"),
+        MemoryLayout.sequenceLayout(5, MemoryLayout.structLayout(
+            JAVA_INT.withName("pixel"),
+            JAVA_SHORT.withName("red"),
+            JAVA_SHORT.withName("green"),
+            JAVA_SHORT.withName("blue"),
+            MemoryLayout.paddingLayout(2)
+        ).withName("_GdkColor")).withName("text"),
+        MemoryLayout.sequenceLayout(5, MemoryLayout.structLayout(
+            JAVA_INT.withName("pixel"),
+            JAVA_SHORT.withName("red"),
+            JAVA_SHORT.withName("green"),
+            JAVA_SHORT.withName("blue"),
+            MemoryLayout.paddingLayout(2)
+        ).withName("_GdkColor")).withName("base"),
+        JAVA_INT.withName("xthickness"),
+        JAVA_INT.withName("ythickness"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("rc_properties"),
+        RuntimeHelper.POINTER.withName("rc_style_lists"),
+        RuntimeHelper.POINTER.withName("icon_factories"),
+        MemoryLayout.paddingLayout(8)
+    ).withName("_GtkRcStyle");
+    static final VarHandle const$3 = constants$3326.const$2.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final VarHandle const$4 = constants$3326.const$2.varHandle(MemoryLayout.PathElement.groupElement("font_desc"));
+    static final VarHandle const$5 = constants$3326.const$2.varHandle(MemoryLayout.PathElement.groupElement("xthickness"));
 }
 
 

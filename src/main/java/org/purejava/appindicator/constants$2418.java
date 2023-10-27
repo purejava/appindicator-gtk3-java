@@ -2,35 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2418 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2418() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_new",
-        constants$21.const$3
+        constants$1501.const$3
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_get_bytes",
-        constants$4.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_get_length",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_get_text",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_set_text",
-        constants$164.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_set_max_length",
-        constants$40.const$2
-    );
+    static final VarHandle const$1 = constants$2417.const$4.varHandle(MemoryLayout.PathElement.groupElement("inserted_text"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass.deleted_text.class, "apply", constants$469.const$2);
+    static final VarHandle const$3 = constants$2417.const$4.varHandle(MemoryLayout.PathElement.groupElement("deleted_text"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass.get_text.class, "apply", constants$5.const$5);
+    static final VarHandle const$5 = constants$2417.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_text"));
 }
 
 

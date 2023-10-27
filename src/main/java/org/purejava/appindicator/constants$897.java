@@ -8,28 +8,28 @@ final class constants$897 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$897() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_interface",
-        constants$5.const$2
+        "g_dbus_message_copy",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_interface",
-        constants$13.const$4
+        "g_dbus_message_get_byte_order",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_member",
-        constants$5.const$2
+        "g_dbus_message_set_byte_order",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_member",
-        constants$13.const$4
+        "g_dbus_message_get_message_type",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_path",
-        constants$5.const$2
+        "g_dbus_message_set_message_type",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_path",
-        constants$13.const$4
+        "g_dbus_message_get_flags",
+        constants$10.const$5
     );
 }
 

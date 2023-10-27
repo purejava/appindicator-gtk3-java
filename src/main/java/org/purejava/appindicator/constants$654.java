@@ -2,48 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.*;
 final class constants$654 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$654() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_unicode_script_get_type",
-        constants$3.const$5
+        "g_enum_get_value_by_nick",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_normalize_mode_get_type",
-        constants$3.const$5
+        "g_flags_get_first_value",
+        constants$21.const$3
     );
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            RuntimeHelper.POINTER.withName("name"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("value_type"),
-            JAVA_LONG.withName("owner_type"),
-            RuntimeHelper.POINTER.withName("_nick"),
-            RuntimeHelper.POINTER.withName("_blurb"),
-            RuntimeHelper.POINTER.withName("qdata"),
-            JAVA_INT.withName("ref_count"),
-            JAVA_INT.withName("param_id")
-        ).withName("parent_instance"),
-        JAVA_BYTE.withName("minimum"),
-        JAVA_BYTE.withName("maximum"),
-        JAVA_BYTE.withName("default_value"),
-        MemoryLayout.paddingLayout(5)
-    ).withName("_GParamSpecChar");
-    static final VarHandle const$3 = constants$654.const$2.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
-    static final VarHandle const$4 = constants$654.const$2.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
-    static final VarHandle const$5 = constants$654.const$2.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_flags_get_value_by_name",
+        constants$5.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_flags_get_value_by_nick",
+        constants$5.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_enum_to_string",
+        constants$63.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_flags_to_string",
+        constants$63.const$1
+    );
 }
 
 

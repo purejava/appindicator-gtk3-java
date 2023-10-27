@@ -13,7 +13,7 @@ public interface pango_attr_shape_new_with_data$destroy_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(pango_attr_shape_new_with_data$destroy_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1572.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1577.const$1, fi, constants$13.const$1, scope);
     }
     static pango_attr_shape_new_with_data$destroy_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

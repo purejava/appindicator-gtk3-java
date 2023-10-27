@@ -13,13 +13,13 @@ public interface hb_font_paint_glyph_func_t {
 
     void apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment paint_funcs, java.lang.foreign.MemorySegment paint_data, int palette_index, int foreground, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_font_paint_glyph_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1481.const$4, fi, constants$1481.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1486.const$5, fi, constants$1486.const$4, scope);
     }
     static hb_font_paint_glyph_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _paint_funcs, java.lang.foreign.MemorySegment _paint_data, int _palette_index, int _foreground, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1481.const$5.invokeExact(symbol, _font, _font_data, _glyph, _paint_funcs, _paint_data, _palette_index, _foreground, _user_data);
+                constants$1487.const$0.invokeExact(symbol, _font, _font_data, _glyph, _paint_funcs, _paint_data, _palette_index, _foreground, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

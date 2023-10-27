@@ -2,46 +2,23 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1473 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1473() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_funcs_set_user_data$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_user_data",
-        constants$1423.const$1
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_sweep_gradient_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_get_user_data",
-        constants$5.const$5
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_group_func$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_group_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_make_immutable",
-        constants$13.const$1
+        "hb_paint_funcs_set_push_group_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_is_immutable",
-        constants$10.const$5
-    );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        JAVA_INT.withName("ascender"),
-        JAVA_INT.withName("descender"),
-        JAVA_INT.withName("line_gap"),
-        JAVA_INT.withName("reserved9"),
-        JAVA_INT.withName("reserved8"),
-        JAVA_INT.withName("reserved7"),
-        JAVA_INT.withName("reserved6"),
-        JAVA_INT.withName("reserved5"),
-        JAVA_INT.withName("reserved4"),
-        JAVA_INT.withName("reserved3"),
-        JAVA_INT.withName("reserved2"),
-        JAVA_INT.withName("reserved1")
-    ).withName("hb_font_extents_t");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_group_func$func.class, "apply", constants$466.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_group_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

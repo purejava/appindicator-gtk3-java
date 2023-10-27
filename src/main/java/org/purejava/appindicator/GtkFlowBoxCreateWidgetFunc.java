@@ -13,7 +13,7 @@ public interface GtkFlowBoxCreateWidgetFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
     static MemorySegment allocate(GtkFlowBoxCreateWidgetFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2709.const$2, fi, constants$5.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$2714.const$2, fi, constants$5.const$5, scope);
     }
     static GtkFlowBoxCreateWidgetFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

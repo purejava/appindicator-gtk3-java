@@ -2,27 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1877 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1877() {}
-    static final VarHandle const$0 = constants$1876.const$4.varHandle(MemoryLayout.PathElement.groupElement("green"));
-    static final VarHandle const$1 = constants$1876.const$4.varHandle(MemoryLayout.PathElement.groupElement("blue"));
-    static final VarHandle const$2 = constants$1876.const$4.varHandle(MemoryLayout.PathElement.groupElement("alpha"));
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_rgba_get_type",
-        constants$3.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_default",
+        constants$35.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_rgba_copy",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_setting",
+        constants$12.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_screen_set_font_options",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_font_options",
         constants$5.const$2
     );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_screen_set_resolution",
+        constants$692.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_rgba_free",
-        constants$13.const$1
+        "gdk_screen_get_resolution",
+        constants$67.const$0
     );
 }
 

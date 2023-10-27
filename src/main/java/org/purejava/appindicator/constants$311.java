@@ -3,46 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$311 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$311() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+        JAVA_LONG,
+        JAVA_BYTE
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_string_replace",
+        "g_string_insert_c",
         constants$311.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_string_ascii_down",
-        constants$5.const$2
+        "g_string_insert_unichar",
+        constants$291.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_string_ascii_up",
-        constants$5.const$2
+        "g_string_overwrite",
+        constants$36.const$1
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("__stack"),
-            RuntimeHelper.POINTER.withName("__gr_top"),
-            RuntimeHelper.POINTER.withName("__vr_top"),
-            JAVA_INT.withName("__gr_offs"),
-            JAVA_INT.withName("__vr_offs")
-        ).withName("__va_list")
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_string_overwrite_len",
+        constants$309.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_string_vprintf",
-        constants$311.const$4
+        "g_string_erase",
+        constants$88.const$2
     );
 }
 

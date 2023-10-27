@@ -2,50 +2,33 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.invoke.VarHandle;
 final class constants$428 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$428() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_scanner_get_next_token",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$424.const$4.varHandle(MemoryLayout.PathElement.groupElement("msg_handler"));
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_scanner_peek_next_token",
-        constants$10.const$5
+        "g_scanner_new",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_scanner_cur_token",
-        constants$10.const$5
+        "g_scanner_destroy",
+        constants$13.const$1
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(MemoryLayout.unionLayout(
-        RuntimeHelper.POINTER.withName("v_symbol"),
-        RuntimeHelper.POINTER.withName("v_identifier"),
-        JAVA_LONG.withName("v_binary"),
-        JAVA_LONG.withName("v_octal"),
-        JAVA_LONG.withName("v_int"),
-        JAVA_LONG.withName("v_int64"),
-        JAVA_DOUBLE.withName("v_float"),
-        JAVA_LONG.withName("v_hex"),
-        RuntimeHelper.POINTER.withName("v_string"),
-        RuntimeHelper.POINTER.withName("v_comment"),
-        JAVA_BYTE.withName("v_char"),
-        JAVA_INT.withName("v_error")
-    ).withName("_GTokenValue"),
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_scanner_input_file",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_scanner_cur_value",
-        constants$428.const$3
+        "g_scanner_sync_file_offset",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_scanner_cur_line",
-        constants$10.const$5
+        "g_scanner_input_text",
+        constants$164.const$5
     );
 }
 

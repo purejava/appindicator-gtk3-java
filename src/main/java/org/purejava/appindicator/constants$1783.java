@@ -6,28 +6,31 @@ import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1783 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1783() {}
-    static final VarHandle const$0 = constants$1782.const$5.varHandle(MemoryLayout.PathElement.groupElement("type"));
-    static final VarHandle const$1 = constants$1782.const$5.varHandle(MemoryLayout.PathElement.groupElement("window"));
-    static final VarHandle const$2 = constants$1782.const$5.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
-    static final VarHandle const$3 = constants$1782.const$5.varHandle(MemoryLayout.PathElement.groupElement("in"));
+    static final VarHandle const$0 = constants$1781.const$2.varHandle(MemoryLayout.PathElement.groupElement("x_root"));
+    static final VarHandle const$1 = constants$1781.const$2.varHandle(MemoryLayout.PathElement.groupElement("y_root"));
+    static final VarHandle const$2 = constants$1781.const$2.varHandle(MemoryLayout.PathElement.groupElement("delta_x"));
+    static final VarHandle const$3 = constants$1781.const$2.varHandle(MemoryLayout.PathElement.groupElement("delta_y"));
     static final StructLayout const$4 = MemoryLayout.structLayout(
         JAVA_INT.withName("type"),
         MemoryLayout.paddingLayout(4),
         RuntimeHelper.POINTER.withName("window"),
         JAVA_BYTE.withName("send_event"),
         MemoryLayout.paddingLayout(3),
-        JAVA_INT.withName("x"),
-        JAVA_INT.withName("y"),
-        JAVA_INT.withName("width"),
-        JAVA_INT.withName("height"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GdkEventConfigure");
+        JAVA_INT.withName("time"),
+        JAVA_INT.withName("state"),
+        JAVA_INT.withName("keyval"),
+        JAVA_INT.withName("length"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("string"),
+        JAVA_SHORT.withName("hardware_keycode"),
+        JAVA_BYTE.withName("group"),
+        MemoryLayout.paddingLayout(5)
+    ).withName("_GdkEventKey");
     static final VarHandle const$5 = constants$1783.const$4.varHandle(MemoryLayout.PathElement.groupElement("type"));
 }
 

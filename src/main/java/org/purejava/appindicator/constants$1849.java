@@ -2,46 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1849 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1849() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_resize_drag",
-        constants$1642.const$3
+        "gdk_window_set_device_events",
+        constants$164.const$5
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_device_events",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_resize_drag_for_device",
-        constants$1849.const$1
+        "gdk_window_set_source_events",
+        constants$469.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_move_drag",
-        constants$1643.const$1
+        "gdk_window_get_source_events",
+        constants$11.const$4
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_icon_list",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_move_drag_for_device",
-        constants$1849.const$4
+        "gdk_window_set_icon_name",
+        constants$13.const$4
     );
 }
 

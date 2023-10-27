@@ -9,14 +9,12 @@ final class constants$945 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$945() {}
-    static final VarHandle const$0 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("can_start"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDriveIface.can_start_degraded.class, "apply", constants$10.const$5);
-    static final VarHandle const$2 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("can_start_degraded"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDriveIface.start.class, "apply", constants$380.const$0);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$380.const$0
-    );
-    static final VarHandle const$5 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("start"));
+    static final VarHandle const$0 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("can_eject"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDriveIface.can_poll_for_media.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("can_poll_for_media"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDriveIface.eject.class, "apply", constants$282.const$1);
+    static final VarHandle const$4 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("eject"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDriveIface.eject_finish.class, "apply", constants$12.const$2);
 }
 
 

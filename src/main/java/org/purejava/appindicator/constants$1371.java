@@ -2,32 +2,34 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1371 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1371() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_database_create_certificate_handle",
-        constants$5.const$5
+        constants$1370.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_for_handle",
-        constants$1366.const$3
+    static final VarHandle const$1 = constants$1368.const$3.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificate_for_handle"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_tls_database_lookup_certificate_for_handle_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_for_handle_async",
-        constants$1367.const$1
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.lookup_certificate_for_handle_async.class, "apply", constants$1371.const$2);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_for_handle_finish",
-        constants$23.const$0
+        constants$1371.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_issuer",
-        constants$1366.const$3
-    );
+    static final VarHandle const$5 = constants$1368.const$3.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificate_for_handle_async"));
 }
 
 

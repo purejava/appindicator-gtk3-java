@@ -3,17 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1795 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1795() {}
-    static final VarHandle const$0 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("window"));
-    static final VarHandle const$1 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
-    static final VarHandle const$2 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("phase"));
-    static final VarHandle const$3 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("n_fingers"));
-    static final VarHandle const$4 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("time"));
-    static final VarHandle const$5 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final VarHandle const$0 = constants$1794.const$1.varHandle(MemoryLayout.PathElement.groupElement("device"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("action"),
+        RuntimeHelper.POINTER.withName("name")
+    ).withName("_GdkEventSetting");
+    static final VarHandle const$2 = constants$1795.const$1.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$3 = constants$1795.const$1.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$4 = constants$1795.const$1.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$5 = constants$1795.const$1.varHandle(MemoryLayout.PathElement.groupElement("action"));
 }
 
 

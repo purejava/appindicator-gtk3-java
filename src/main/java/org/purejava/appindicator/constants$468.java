@@ -2,32 +2,31 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$468 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$468() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_unprocessed",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_thread_pool_set_sort_function$func.class, "apply", constants$12.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_sort_function",
-        constants$14.const$3
+    static final VarHandle const$0 = constants$467.const$2.varHandle(MemoryLayout.PathElement.groupElement("exclusive"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_thread_pool_new$func.class, "apply", constants$13.const$4);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_move_to_front",
-        constants$9.const$0
+        "g_thread_pool_new",
+        constants$468.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_max_threads",
-        constants$150.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_max_threads",
-        constants$10.const$5
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_thread_pool_new_full$func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_thread_pool_new_full$item_free_func.class, "apply", constants$13.const$1);
 }
 
 

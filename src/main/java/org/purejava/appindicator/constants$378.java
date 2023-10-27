@@ -2,34 +2,38 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$378 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$378() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_log_writer_journald",
-        constants$82.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_log_writer_standard_streams",
-        constants$82.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_log_set_writer_func$func.class, "apply", constants$82.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_log_set_writer_func$user_data_free.class, "apply", constants$13.const$1);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_log_writer_default",
-        constants$82.const$4
+        "g_log_set_writer_func",
+        constants$14.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_log_writer_default_set_use_stderr",
-        constants$80.const$1
+        "g_log_writer_supports_color",
+        constants$8.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_log_writer_default_would_drop",
-        constants$9.const$2
+        "g_log_writer_is_journald",
+        constants$8.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_log_get_debug_enabled",
-        constants$83.const$1
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_log_writer_format_fields",
+        constants$378.const$5
     );
 }
 

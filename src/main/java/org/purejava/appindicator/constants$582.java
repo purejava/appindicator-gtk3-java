@@ -2,41 +2,39 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$582 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$582() {}
-    static final VarHandle const$0 = constants$579.const$5.varHandle(MemoryLayout.PathElement.groupElement("values_cmp"));
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_param_type_register_static",
-        constants$22.const$0
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_param_spec_get_default_value",
+        constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_param_spec_is_valid_name",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_spec_get_name_quark",
         constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "_g_param_type_register_static_constant",
-        constants$20.const$1
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_param_spec_internal",
-        constants$582.const$4
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_SHORT.withName("instance_size"),
+        JAVA_SHORT.withName("n_preallocs"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("instance_init"),
+        JAVA_LONG.withName("value_type"),
+        RuntimeHelper.POINTER.withName("finalize"),
+        RuntimeHelper.POINTER.withName("value_set_default"),
+        RuntimeHelper.POINTER.withName("value_validate"),
+        RuntimeHelper.POINTER.withName("values_cmp")
+    ).withName("_GParamSpecTypeInfo");
+    static final VarHandle const$3 = constants$582.const$2.varHandle(MemoryLayout.PathElement.groupElement("instance_size"));
+    static final VarHandle const$4 = constants$582.const$2.varHandle(MemoryLayout.PathElement.groupElement("n_preallocs"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GParamSpecTypeInfo.instance_init.class, "apply", constants$13.const$1);
 }
 
 

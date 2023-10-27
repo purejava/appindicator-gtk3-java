@@ -21,13 +21,13 @@ import java.lang.invoke.VarHandle;
 public class _GEnumClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$648.const$0;
+        return constants$650.const$5;
     }
     public static MemorySegment g_type_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 8);
     }
     public static VarHandle minimum$VH() {
-        return constants$648.const$1;
+        return constants$651.const$0;
     }
     /**
      * Getter for field:
@@ -36,7 +36,7 @@ public class _GEnumClass {
      * }
      */
     public static int minimum$get(MemorySegment seg) {
-        return (int)constants$648.const$1.get(seg);
+        return (int)constants$651.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -45,16 +45,16 @@ public class _GEnumClass {
      * }
      */
     public static void minimum$set(MemorySegment seg, int x) {
-        constants$648.const$1.set(seg, x);
+        constants$651.const$0.set(seg, x);
     }
     public static int minimum$get(MemorySegment seg, long index) {
-        return (int)constants$648.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$651.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void minimum$set(MemorySegment seg, long index, int x) {
-        constants$648.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$651.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle maximum$VH() {
-        return constants$648.const$2;
+        return constants$651.const$1;
     }
     /**
      * Getter for field:
@@ -63,7 +63,7 @@ public class _GEnumClass {
      * }
      */
     public static int maximum$get(MemorySegment seg) {
-        return (int)constants$648.const$2.get(seg);
+        return (int)constants$651.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -72,16 +72,16 @@ public class _GEnumClass {
      * }
      */
     public static void maximum$set(MemorySegment seg, int x) {
-        constants$648.const$2.set(seg, x);
+        constants$651.const$1.set(seg, x);
     }
     public static int maximum$get(MemorySegment seg, long index) {
-        return (int)constants$648.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$651.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void maximum$set(MemorySegment seg, long index, int x) {
-        constants$648.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$651.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle n_values$VH() {
-        return constants$648.const$3;
+        return constants$651.const$2;
     }
     /**
      * Getter for field:
@@ -90,7 +90,7 @@ public class _GEnumClass {
      * }
      */
     public static int n_values$get(MemorySegment seg) {
-        return (int)constants$648.const$3.get(seg);
+        return (int)constants$651.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -99,16 +99,16 @@ public class _GEnumClass {
      * }
      */
     public static void n_values$set(MemorySegment seg, int x) {
-        constants$648.const$3.set(seg, x);
+        constants$651.const$2.set(seg, x);
     }
     public static int n_values$get(MemorySegment seg, long index) {
-        return (int)constants$648.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$651.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void n_values$set(MemorySegment seg, long index, int x) {
-        constants$648.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$651.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle values$VH() {
-        return constants$648.const$4;
+        return constants$651.const$3;
     }
     /**
      * Getter for field:
@@ -117,7 +117,7 @@ public class _GEnumClass {
      * }
      */
     public static MemorySegment values$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$648.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$651.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -126,13 +126,13 @@ public class _GEnumClass {
      * }
      */
     public static void values$set(MemorySegment seg, MemorySegment x) {
-        constants$648.const$4.set(seg, x);
+        constants$651.const$3.set(seg, x);
     }
     public static MemorySegment values$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$648.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$651.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void values$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$648.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$651.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

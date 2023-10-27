@@ -8,28 +8,28 @@ final class constants$1749 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1749() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_init_identity",
-        constants$13.const$1
+        "cairo_pattern_add_color_stop_rgb",
+        constants$1688.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_init_translate",
-        constants$1531.const$0
+        "cairo_pattern_add_color_stop_rgba",
+        constants$1692.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_init_scale",
-        constants$1531.const$0
+        "cairo_mesh_pattern_begin_patch",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_init_rotate",
-        constants$689.const$5
+        "cairo_mesh_pattern_end_patch",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_translate",
-        constants$1531.const$0
+        "cairo_mesh_pattern_curve_to",
+        constants$1692.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_scale",
-        constants$1531.const$0
+        "cairo_mesh_pattern_line_to",
+        constants$1536.const$0
     );
 }
 

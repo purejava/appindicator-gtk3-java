@@ -8,27 +8,27 @@ final class constants$3220 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3220() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_error_get_type",
+        "gtk_sort_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_flags_get_type",
+        "gtk_im_preedit_style_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_level_get_type",
+        "gtk_im_status_style_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_icon_lookup_flags_get_type",
+        "gtk_pack_direction_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_error_get_type",
+        "gtk_print_pages_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_drop_position_get_type",
+        "gtk_page_set_get_type",
         constants$3.const$5
     );
 }

@@ -3,25 +3,21 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2673 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2673() {}
-    static final VarHandle const$0 = constants$2672.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkFixedClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2672.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkFixedClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2672.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("widget"),
-        JAVA_INT.withName("x"),
-        JAVA_INT.withName("y")
-    ).withName("_GtkFixedChild");
+    static final VarHandle const$0 = constants$2672.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkExpanderClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$2672.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkExpanderClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$2672.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_expander_get_type",
+        constants$3.const$5
+    );
 }
 
 

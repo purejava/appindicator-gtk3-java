@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GProxyAddressClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1219.const$3;
+        return constants$1223.const$0;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 160);

@@ -8,28 +8,25 @@ final class constants$455 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$455() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_test_trap_has_passed",
-        constants$83.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_test_trap_reached_timeout",
-        constants$83.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_test_rand_int",
-        constants$83.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_test_rand_int_range",
-        constants$123.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_test_rand_double",
+        "g_test_timer_elapsed",
         constants$83.const$5
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_timer_last",
+        constants$83.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_queue_free",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_test_queue_destroy$destroy_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_test_queue_destroy",
+        constants$13.const$4
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_test_rand_double_range",
-        constants$406.const$4
+        "g_test_trap_fork",
+        constants$64.const$5
     );
 }
 

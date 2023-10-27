@@ -9,12 +9,12 @@ final class constants$1406 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1406() {}
-    static final VarHandle const$0 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("enumerate_identifiers"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeIface.should_automount.class, "apply", constants$10.const$5);
-    static final VarHandle const$2 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("should_automount"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeIface.get_activation_root.class, "apply", constants$5.const$2);
-    static final VarHandle const$4 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_activation_root"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeIface.eject_with_operation.class, "apply", constants$380.const$0);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeIface.get_name.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1405.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_name"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeIface.get_icon.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$1405.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_icon"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeIface.get_uuid.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$1405.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_uuid"));
 }
 
 

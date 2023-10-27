@@ -13,7 +13,7 @@ public interface gtk_tree_view_set_search_equal_func$search_destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_tree_view_set_search_equal_func$search_destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2487.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2492.const$1, fi, constants$13.const$1, scope);
     }
     static gtk_tree_view_set_search_equal_func$search_destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

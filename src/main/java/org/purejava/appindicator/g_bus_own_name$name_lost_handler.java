@@ -13,7 +13,7 @@ public interface g_bus_own_name$name_lost_handler {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_bus_own_name$name_lost_handler fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$904.const$5, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$907.const$5, fi, constants$14.const$3, scope);
     }
     static g_bus_own_name$name_lost_handler ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

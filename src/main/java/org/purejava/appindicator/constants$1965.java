@@ -2,39 +2,36 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1965 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1965() {}
-    static final VarHandle const$0 = constants$1964.const$5.varHandle(MemoryLayout.PathElement.groupElement("property_name"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(AtkFunction.class, "apply", constants$10.const$5);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(AtkPropertyChangeHandler.class, "apply", constants$13.const$4);
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("description"),
-        RuntimeHelper.POINTER.withName("name"),
-        RuntimeHelper.POINTER.withName("accessible_parent"),
-        JAVA_INT.withName("role"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("relation_set"),
-        JAVA_INT.withName("layer"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_AtkObject");
-    static final VarHandle const$4 = constants$1965.const$3.varHandle(MemoryLayout.PathElement.groupElement("description"));
-    static final VarHandle const$5 = constants$1965.const$3.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_border_free",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkRcPropertyParser.class, "apply", constants$12.const$2);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GtkBuilderConnectFunc.class, "apply", constants$1965.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$1965.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_get_major_version",
+        constants$83.const$1
+    );
 }
 
 

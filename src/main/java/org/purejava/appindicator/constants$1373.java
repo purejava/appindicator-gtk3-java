@@ -3,47 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1373 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1373() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificates_issued_by_finish",
-        constants$23.const$0
-    );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        MemoryLayout.sequenceLayout(8, RuntimeHelper.POINTER).withName("padding")
-    ).withName("_GTlsFileDatabaseInterface");
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_file_database_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_file_database_new",
-        constants$5.const$5
-    );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GTlsInteraction");
-    static final VarHandle const$5 = constants$1373.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.lookup_certificate_issuer_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$1 = constants$1368.const$3.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificate_issuer_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.lookup_certificates_issued_by.class, "apply", constants$1370.const$4);
+    static final VarHandle const$3 = constants$1368.const$3.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificates_issued_by"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.lookup_certificates_issued_by_async.class, "apply", constants$1371.const$2);
+    static final VarHandle const$5 = constants$1368.const$3.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificates_issued_by_async"));
 }
 
 

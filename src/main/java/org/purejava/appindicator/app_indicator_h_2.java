@@ -13,6 +13,14 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
 
     /**
      * {@snippet :
+     * #define GDK_KEY_Hangul_YU 3792
+     * }
+     */
+    public static int GDK_KEY_Hangul_YU() {
+        return (int)3792L;
+    }
+    /**
+     * {@snippet :
      * #define GDK_KEY_Hangul_EU 3793
      * }
      */
@@ -8137,22 +8145,6 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         var mh$ = memccpy$MH();
         try {
             return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src, __c, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle memset$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.const$1,"memset");
-    }
-    /**
-     * {@snippet :
-     * void* memset(void* __s, int __c, unsigned long __n);
-     * }
-     */
-    public static MemorySegment memset(MemorySegment __s, int __c, long __n) {
-        var mh$ = memset$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s, __c, __n);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

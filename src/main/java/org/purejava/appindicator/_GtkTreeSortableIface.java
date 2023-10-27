@@ -23,7 +23,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkTreeSortableIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2319.const$1;
+        return constants$2324.const$1;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -37,7 +37,7 @@ public class _GtkTreeSortableIface {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(sort_column_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2319.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2324.const$2, fi, constants$13.const$1, scope);
         }
         static sort_column_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -52,7 +52,7 @@ public class _GtkTreeSortableIface {
     }
 
     public static VarHandle sort_column_changed$VH() {
-        return constants$2319.const$3;
+        return constants$2324.const$3;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static MemorySegment sort_column_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2319.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2324.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -70,13 +70,13 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static void sort_column_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$2319.const$3.set(seg, x);
+        constants$2324.const$3.set(seg, x);
     }
     public static MemorySegment sort_column_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2319.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2324.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void sort_column_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2319.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2324.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static sort_column_changed sort_column_changed(MemorySegment segment, Arena scope) {
         return sort_column_changed.ofAddress(sort_column_changed$get(segment), scope);
@@ -90,7 +90,7 @@ public class _GtkTreeSortableIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_sort_column_id fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2319.const$4, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2324.const$4, fi, constants$12.const$2, scope);
         }
         static get_sort_column_id ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -105,7 +105,7 @@ public class _GtkTreeSortableIface {
     }
 
     public static VarHandle get_sort_column_id$VH() {
-        return constants$2319.const$5;
+        return constants$2324.const$5;
     }
     /**
      * Getter for field:
@@ -114,7 +114,7 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static MemorySegment get_sort_column_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2319.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2324.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -123,13 +123,13 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static void get_sort_column_id$set(MemorySegment seg, MemorySegment x) {
-        constants$2319.const$5.set(seg, x);
+        constants$2324.const$5.set(seg, x);
     }
     public static MemorySegment get_sort_column_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2319.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2324.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_sort_column_id$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2319.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2324.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_sort_column_id get_sort_column_id(MemorySegment segment, Arena scope) {
         return get_sort_column_id.ofAddress(get_sort_column_id$get(segment), scope);
@@ -143,13 +143,13 @@ public class _GtkTreeSortableIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
         static MemorySegment allocate(set_sort_column_id fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2320.const$0, fi, constants$467.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2325.const$0, fi, constants$469.const$2, scope);
         }
         static set_sort_column_id ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    constants$1901.const$2.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$1906.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -158,7 +158,7 @@ public class _GtkTreeSortableIface {
     }
 
     public static VarHandle set_sort_column_id$VH() {
-        return constants$2320.const$1;
+        return constants$2325.const$1;
     }
     /**
      * Getter for field:
@@ -167,7 +167,7 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static MemorySegment set_sort_column_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2320.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2325.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -176,13 +176,13 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static void set_sort_column_id$set(MemorySegment seg, MemorySegment x) {
-        constants$2320.const$1.set(seg, x);
+        constants$2325.const$1.set(seg, x);
     }
     public static MemorySegment set_sort_column_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2320.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2325.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void set_sort_column_id$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2320.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2325.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_sort_column_id set_sort_column_id(MemorySegment segment, Arena scope) {
         return set_sort_column_id.ofAddress(set_sort_column_id$get(segment), scope);
@@ -196,13 +196,13 @@ public class _GtkTreeSortableIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(set_sort_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2320.const$2, fi, constants$281.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2325.const$2, fi, constants$282.const$1, scope);
         }
         static set_sort_func ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    constants$754.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$757.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -211,7 +211,7 @@ public class _GtkTreeSortableIface {
     }
 
     public static VarHandle set_sort_func$VH() {
-        return constants$2320.const$3;
+        return constants$2325.const$3;
     }
     /**
      * Getter for field:
@@ -220,7 +220,7 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static MemorySegment set_sort_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2320.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2325.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -229,13 +229,13 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static void set_sort_func$set(MemorySegment seg, MemorySegment x) {
-        constants$2320.const$3.set(seg, x);
+        constants$2325.const$3.set(seg, x);
     }
     public static MemorySegment set_sort_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2320.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2325.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void set_sort_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2320.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2325.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_sort_func set_sort_func(MemorySegment segment, Arena scope) {
         return set_sort_func.ofAddress(set_sort_func$get(segment), scope);
@@ -249,7 +249,7 @@ public class _GtkTreeSortableIface {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_default_sort_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2320.const$4, fi, constants$42.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2325.const$4, fi, constants$42.const$1, scope);
         }
         static set_default_sort_func ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -264,7 +264,7 @@ public class _GtkTreeSortableIface {
     }
 
     public static VarHandle set_default_sort_func$VH() {
-        return constants$2320.const$5;
+        return constants$2325.const$5;
     }
     /**
      * Getter for field:
@@ -273,7 +273,7 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static MemorySegment set_default_sort_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2320.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2325.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -282,13 +282,13 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static void set_default_sort_func$set(MemorySegment seg, MemorySegment x) {
-        constants$2320.const$5.set(seg, x);
+        constants$2325.const$5.set(seg, x);
     }
     public static MemorySegment set_default_sort_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2320.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2325.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void set_default_sort_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2320.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2325.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_default_sort_func set_default_sort_func(MemorySegment segment, Arena scope) {
         return set_default_sort_func.ofAddress(set_default_sort_func$get(segment), scope);
@@ -302,7 +302,7 @@ public class _GtkTreeSortableIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(has_default_sort_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2321.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2326.const$0, fi, constants$10.const$5, scope);
         }
         static has_default_sort_func ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -317,7 +317,7 @@ public class _GtkTreeSortableIface {
     }
 
     public static VarHandle has_default_sort_func$VH() {
-        return constants$2321.const$1;
+        return constants$2326.const$1;
     }
     /**
      * Getter for field:
@@ -326,7 +326,7 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static MemorySegment has_default_sort_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2321.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2326.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -335,13 +335,13 @@ public class _GtkTreeSortableIface {
      * }
      */
     public static void has_default_sort_func$set(MemorySegment seg, MemorySegment x) {
-        constants$2321.const$1.set(seg, x);
+        constants$2326.const$1.set(seg, x);
     }
     public static MemorySegment has_default_sort_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2321.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2326.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void has_default_sort_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2321.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2326.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static has_default_sort_func has_default_sort_func(MemorySegment segment, Arena scope) {
         return has_default_sort_func.ofAddress(has_default_sort_func$get(segment), scope);

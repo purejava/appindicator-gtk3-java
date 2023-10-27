@@ -21,7 +21,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkRecentChooserWidgetClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3039.const$2;
+        return constants$3044.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1008);
@@ -35,7 +35,7 @@ public class _GtkRecentChooserWidgetClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3039.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3044.const$3, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -50,7 +50,7 @@ public class _GtkRecentChooserWidgetClass {
     }
 
     public static VarHandle _gtk_reserved1$VH() {
-        return constants$3039.const$4;
+        return constants$3044.const$4;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GtkRecentChooserWidgetClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3039.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3044.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -68,13 +68,13 @@ public class _GtkRecentChooserWidgetClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$3039.const$4.set(seg, x);
+        constants$3044.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3039.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3044.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3039.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3044.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
@@ -88,7 +88,7 @@ public class _GtkRecentChooserWidgetClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3039.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3044.const$5, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -103,7 +103,7 @@ public class _GtkRecentChooserWidgetClass {
     }
 
     public static VarHandle _gtk_reserved2$VH() {
-        return constants$3040.const$0;
+        return constants$3045.const$0;
     }
     /**
      * Getter for field:
@@ -112,7 +112,7 @@ public class _GtkRecentChooserWidgetClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3040.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3045.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -121,13 +121,13 @@ public class _GtkRecentChooserWidgetClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$3040.const$0.set(seg, x);
+        constants$3045.const$0.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3040.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3045.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3040.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3045.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
@@ -141,7 +141,7 @@ public class _GtkRecentChooserWidgetClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3040.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3045.const$1, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -156,7 +156,7 @@ public class _GtkRecentChooserWidgetClass {
     }
 
     public static VarHandle _gtk_reserved3$VH() {
-        return constants$3040.const$2;
+        return constants$3045.const$2;
     }
     /**
      * Getter for field:
@@ -165,7 +165,7 @@ public class _GtkRecentChooserWidgetClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3040.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3045.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -174,13 +174,13 @@ public class _GtkRecentChooserWidgetClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$3040.const$2.set(seg, x);
+        constants$3045.const$2.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3040.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3045.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3040.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3045.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
@@ -194,7 +194,7 @@ public class _GtkRecentChooserWidgetClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3040.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3045.const$3, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -209,7 +209,7 @@ public class _GtkRecentChooserWidgetClass {
     }
 
     public static VarHandle _gtk_reserved4$VH() {
-        return constants$3040.const$4;
+        return constants$3045.const$4;
     }
     /**
      * Getter for field:
@@ -218,7 +218,7 @@ public class _GtkRecentChooserWidgetClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3040.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3045.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -227,13 +227,13 @@ public class _GtkRecentChooserWidgetClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$3040.const$4.set(seg, x);
+        constants$3045.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3040.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3045.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3040.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3045.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);

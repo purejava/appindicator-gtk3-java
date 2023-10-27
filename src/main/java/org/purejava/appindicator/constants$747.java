@@ -2,34 +2,43 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$747 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$747() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_application_get_default",
-        constants$35.const$2
+        "g_application_set_action_group",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_application_set_default",
-        constants$13.const$1
+        "g_application_add_main_option_entries",
+        constants$13.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_application_mark_busy",
-        constants$13.const$1
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_BYTE,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_application_unmark_busy",
-        constants$13.const$1
+        "g_application_add_main_option",
+        constants$747.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_application_get_is_busy",
-        constants$10.const$5
+        "g_application_add_option_group",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_application_send_notification",
-        constants$14.const$3
+        "g_application_set_option_context_parameter_string",
+        constants$13.const$4
     );
 }
 

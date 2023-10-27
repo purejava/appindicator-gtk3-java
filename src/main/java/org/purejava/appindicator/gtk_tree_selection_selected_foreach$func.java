@@ -13,7 +13,7 @@ public interface gtk_tree_selection_selected_foreach$func {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gtk_tree_selection_selected_foreach$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3199.const$0, fi, constants$42.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$3204.const$0, fi, constants$42.const$1, scope);
     }
     static gtk_tree_selection_selected_foreach$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

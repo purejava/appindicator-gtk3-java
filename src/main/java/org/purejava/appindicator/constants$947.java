@@ -9,12 +9,12 @@ final class constants$947 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$947() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDriveIface.stop_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$1 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("stop_finish"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDriveIface.stop_button.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("stop_button"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDriveIface.eject_with_operation.class, "apply", constants$380.const$0);
-    static final VarHandle const$5 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("eject_with_operation"));
+    static final VarHandle const$0 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_identifier"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDriveIface.enumerate_identifiers.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("enumerate_identifiers"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDriveIface.get_start_stop_type.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_start_stop_type"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDriveIface.can_start.class, "apply", constants$10.const$5);
 }
 
 

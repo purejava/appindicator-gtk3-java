@@ -8,20 +8,29 @@ final class constants$2628 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2628() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_set_image",
-        constants$13.const$4
+        "gtk_check_menu_item_get_active",
+        constants$10.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_clipboard_request_contents$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_toggled",
+        constants$13.const$1
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_request_contents",
-        constants$42.const$1
+        "gtk_check_menu_item_set_inconsistent",
+        constants$40.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_clipboard_request_text$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_get_inconsistent",
+        constants$10.const$5
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_request_text",
-        constants$14.const$3
+        "gtk_check_menu_item_set_draw_as_radio",
+        constants$40.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_clipboard_request_rich_text$callback.class, "apply", constants$2624.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_check_menu_item_get_draw_as_radio",
+        constants$10.const$5
+    );
 }
 
 

@@ -13,7 +13,7 @@ public interface hb_unicode_funcs_set_mirroring_func$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(hb_unicode_funcs_set_mirroring_func$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1428.const$4, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1432.const$5, fi, constants$13.const$1, scope);
     }
     static hb_unicode_funcs_set_mirroring_func$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

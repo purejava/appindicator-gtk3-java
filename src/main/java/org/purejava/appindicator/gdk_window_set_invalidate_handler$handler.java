@@ -13,7 +13,7 @@ public interface gdk_window_set_invalidate_handler$handler {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gdk_window_set_invalidate_handler$handler fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1834.const$4, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$1839.const$4, fi, constants$13.const$4, scope);
     }
     static gdk_window_set_invalidate_handler$handler ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

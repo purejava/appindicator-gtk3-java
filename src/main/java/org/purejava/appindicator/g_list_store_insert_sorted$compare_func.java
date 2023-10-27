@@ -13,7 +13,7 @@ public interface g_list_store_insert_sorted$compare_func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_list_store_insert_sorted$compare_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1132.const$1, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1135.const$4, fi, constants$12.const$2, scope);
     }
     static g_list_store_insert_sorted$compare_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

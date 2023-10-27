@@ -6,29 +6,12 @@ import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.*;
 final class constants$664 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$664() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            RuntimeHelper.POINTER.withName("name"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("value_type"),
-            JAVA_LONG.withName("owner_type"),
-            RuntimeHelper.POINTER.withName("_nick"),
-            RuntimeHelper.POINTER.withName("_blurb"),
-            RuntimeHelper.POINTER.withName("qdata"),
-            JAVA_INT.withName("ref_count"),
-            JAVA_INT.withName("param_id")
-        ).withName("parent_instance")
-    ).withName("_GParamSpecBoxed");
+    static final VarHandle const$0 = constants$663.const$4.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
     static final StructLayout const$1 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
@@ -44,47 +27,16 @@ final class constants$664 {
             RuntimeHelper.POINTER.withName("qdata"),
             JAVA_INT.withName("ref_count"),
             JAVA_INT.withName("param_id")
-        ).withName("parent_instance")
-    ).withName("_GParamSpecPointer");
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            RuntimeHelper.POINTER.withName("name"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("value_type"),
-            JAVA_LONG.withName("owner_type"),
-            RuntimeHelper.POINTER.withName("_nick"),
-            RuntimeHelper.POINTER.withName("_blurb"),
-            RuntimeHelper.POINTER.withName("qdata"),
-            JAVA_INT.withName("ref_count"),
-            JAVA_INT.withName("param_id")
         ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("element_spec"),
-        JAVA_INT.withName("fixed_n_elements"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GParamSpecValueArray");
-    static final VarHandle const$3 = constants$664.const$2.varHandle(MemoryLayout.PathElement.groupElement("element_spec"));
-    static final VarHandle const$4 = constants$664.const$2.varHandle(MemoryLayout.PathElement.groupElement("fixed_n_elements"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            RuntimeHelper.POINTER.withName("name"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("value_type"),
-            JAVA_LONG.withName("owner_type"),
-            RuntimeHelper.POINTER.withName("_nick"),
-            RuntimeHelper.POINTER.withName("_blurb"),
-            RuntimeHelper.POINTER.withName("qdata"),
-            JAVA_INT.withName("ref_count"),
-            JAVA_INT.withName("param_id")
-        ).withName("parent_instance")
-    ).withName("_GParamSpecObject");
+        JAVA_FLOAT.withName("minimum"),
+        JAVA_FLOAT.withName("maximum"),
+        JAVA_FLOAT.withName("default_value"),
+        JAVA_FLOAT.withName("epsilon")
+    ).withName("_GParamSpecFloat");
+    static final VarHandle const$2 = constants$664.const$1.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
+    static final VarHandle const$3 = constants$664.const$1.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
+    static final VarHandle const$4 = constants$664.const$1.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final VarHandle const$5 = constants$664.const$1.varHandle(MemoryLayout.PathElement.groupElement("epsilon"));
 }
 
 

@@ -2,34 +2,32 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 final class constants$821 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$821() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "confstr",
-        constants$814.const$4
+        "getwd",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "getpid",
-        constants$83.const$1
+        "dup",
+        constants$8.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "getppid",
-        constants$83.const$1
+        "dup2",
+        constants$123.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "getpgrp",
-        constants$83.const$1
-    );
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("__environ", RuntimeHelper.POINTER);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "__getpgid",
-        constants$8.const$4
+        "execve",
+        constants$12.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "getpgid",
-        constants$8.const$4
+        "fexecve",
+        constants$10.const$3
     );
 }
 

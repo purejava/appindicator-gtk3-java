@@ -5,108 +5,35 @@ package org.purejava.appindicator;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2043 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2043() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_no_op_object_get_type",
-        constants$3.const$5
+        "atk_hypertext_get_n_links",
+        constants$10.const$5
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    JAVA_LONG.withName("g_type")
-                ).withName("g_type_class"),
-                RuntimeHelper.POINTER.withName("construct_properties"),
-                RuntimeHelper.POINTER.withName("constructor"),
-                RuntimeHelper.POINTER.withName("set_property"),
-                RuntimeHelper.POINTER.withName("get_property"),
-                RuntimeHelper.POINTER.withName("dispose"),
-                RuntimeHelper.POINTER.withName("finalize"),
-                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-                RuntimeHelper.POINTER.withName("notify"),
-                RuntimeHelper.POINTER.withName("constructed"),
-                JAVA_LONG.withName("flags"),
-                JAVA_LONG.withName("n_construct_properties"),
-                RuntimeHelper.POINTER.withName("pspecs"),
-                JAVA_LONG.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-            ).withName("parent"),
-            RuntimeHelper.POINTER.withName("get_name"),
-            RuntimeHelper.POINTER.withName("get_description"),
-            RuntimeHelper.POINTER.withName("get_parent"),
-            RuntimeHelper.POINTER.withName("get_n_children"),
-            RuntimeHelper.POINTER.withName("ref_child"),
-            RuntimeHelper.POINTER.withName("get_index_in_parent"),
-            RuntimeHelper.POINTER.withName("ref_relation_set"),
-            RuntimeHelper.POINTER.withName("get_role"),
-            RuntimeHelper.POINTER.withName("get_layer"),
-            RuntimeHelper.POINTER.withName("get_mdi_zorder"),
-            RuntimeHelper.POINTER.withName("ref_state_set"),
-            RuntimeHelper.POINTER.withName("set_name"),
-            RuntimeHelper.POINTER.withName("set_description"),
-            RuntimeHelper.POINTER.withName("set_parent"),
-            RuntimeHelper.POINTER.withName("set_role"),
-            RuntimeHelper.POINTER.withName("connect_property_change_handler"),
-            RuntimeHelper.POINTER.withName("remove_property_change_handler"),
-            RuntimeHelper.POINTER.withName("initialize"),
-            RuntimeHelper.POINTER.withName("children_changed"),
-            RuntimeHelper.POINTER.withName("focus_event"),
-            RuntimeHelper.POINTER.withName("property_change"),
-            RuntimeHelper.POINTER.withName("state_change"),
-            RuntimeHelper.POINTER.withName("visible_data_changed"),
-            RuntimeHelper.POINTER.withName("active_descendant_changed"),
-            RuntimeHelper.POINTER.withName("get_attributes"),
-            RuntimeHelper.POINTER.withName("get_object_locale"),
-            RuntimeHelper.POINTER.withName("pad1")
-        ).withName("parent_class")
-    ).withName("_AtkNoOpObjectClass");
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_no_op_object_new",
-        constants$5.const$2
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_hypertext_get_link_index",
+        constants$11.const$4
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
+    static final StructLayout const$2 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent")
-    ).withName("_AtkObjectFactory");
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("create_accessible"),
-        RuntimeHelper.POINTER.withName("invalidate"),
-        RuntimeHelper.POINTER.withName("get_accessible_type"),
-        RuntimeHelper.POINTER.withName("pad1"),
-        RuntimeHelper.POINTER.withName("pad2")
-    ).withName("_AtkObjectFactoryClass");
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.create_accessible.class, "apply", constants$5.const$2);
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("get_image_position"),
+        RuntimeHelper.POINTER.withName("get_image_description"),
+        RuntimeHelper.POINTER.withName("get_image_size"),
+        RuntimeHelper.POINTER.withName("set_image_description"),
+        RuntimeHelper.POINTER.withName("get_image_locale")
+    ).withName("_AtkImageIface");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkImageIface.get_image_position.class, "apply", constants$332.const$4);
+    static final VarHandle const$4 = constants$2043.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_image_position"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkImageIface.get_image_description.class, "apply", constants$5.const$2);
 }
 
 

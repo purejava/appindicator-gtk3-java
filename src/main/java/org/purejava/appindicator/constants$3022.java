@@ -8,22 +8,28 @@ final class constants$3022 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3022() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_group",
-        constants$13.const$4
+        "gtk_recent_info_last_application",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_age",
-        constants$40.const$2
+        "gtk_recent_info_has_application",
+        constants$9.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_recent_filter_add_custom$func.class, "apply", constants$9.const$0);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_recent_filter_add_custom$data_destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_get_groups",
+        constants$5.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_recent_info_has_group",
+        constants$9.const$0
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_custom",
-        constants$281.const$5
+        "gtk_recent_info_get_icon",
+        constants$21.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_get_needed",
-        constants$10.const$5
+        "gtk_recent_info_get_gicon",
+        constants$5.const$2
     );
 }
 

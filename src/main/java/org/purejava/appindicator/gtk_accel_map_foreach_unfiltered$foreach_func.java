@@ -13,13 +13,13 @@ public interface gtk_accel_map_foreach_unfiltered$foreach_func {
 
     void apply(java.lang.foreign.MemorySegment data, java.lang.foreign.MemorySegment accel_path, int accel_key, int accel_mods, int changed);
     static MemorySegment allocate(gtk_accel_map_foreach_unfiltered$foreach_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2262.const$3, fi, constants$1513.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2267.const$3, fi, constants$1518.const$2, scope);
     }
     static gtk_accel_map_foreach_unfiltered$foreach_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _data, java.lang.foreign.MemorySegment _accel_path, int _accel_key, int _accel_mods, int _changed) -> {
             try {
-                constants$2260.const$1.invokeExact(symbol, _data, _accel_path, _accel_key, _accel_mods, _changed);
+                constants$2265.const$1.invokeExact(symbol, _data, _accel_path, _accel_key, _accel_mods, _changed);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

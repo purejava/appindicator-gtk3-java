@@ -17,10 +17,10 @@ import java.lang.invoke.VarHandle;
 public class _GTuples {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$499.const$3;
+        return constants$501.const$1;
     }
     public static VarHandle len$VH() {
-        return constants$499.const$4;
+        return constants$501.const$2;
     }
     /**
      * Getter for field:
@@ -29,7 +29,7 @@ public class _GTuples {
      * }
      */
     public static int len$get(MemorySegment seg) {
-        return (int)constants$499.const$4.get(seg);
+        return (int)constants$501.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -38,13 +38,13 @@ public class _GTuples {
      * }
      */
     public static void len$set(MemorySegment seg, int x) {
-        constants$499.const$4.set(seg, x);
+        constants$501.const$2.set(seg, x);
     }
     public static int len$get(MemorySegment seg, long index) {
-        return (int)constants$499.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$501.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void len$set(MemorySegment seg, long index, int x) {
-        constants$499.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$501.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

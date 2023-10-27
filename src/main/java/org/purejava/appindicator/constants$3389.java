@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3389 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3389() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_junction_sides",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_color",
-        constants$42.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_background_color",
-        constants$42.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_border_color",
-        constants$42.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_border",
-        constants$42.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_padding",
-        constants$42.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkThemingEngineClass.render_slider.class, "apply", constants$3048.const$3);
+    static final VarHandle const$1 = constants$3384.const$3.varHandle(MemoryLayout.PathElement.groupElement("render_slider"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkThemingEngineClass.render_handle.class, "apply", constants$3046.const$2);
+    static final VarHandle const$3 = constants$3384.const$3.varHandle(MemoryLayout.PathElement.groupElement("render_handle"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkThemingEngineClass.render_activity.class, "apply", constants$3046.const$2);
+    static final VarHandle const$5 = constants$3384.const$3.varHandle(MemoryLayout.PathElement.groupElement("render_activity"));
 }
 
 

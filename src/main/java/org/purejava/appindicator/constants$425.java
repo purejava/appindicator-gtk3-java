@@ -8,12 +8,12 @@ final class constants$425 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$425() {}
-    static final VarHandle const$0 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("line"));
-    static final VarHandle const$1 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("position"));
-    static final VarHandle const$2 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("next_token"));
-    static final VarHandle const$3 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("next_line"));
-    static final VarHandle const$4 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("next_position"));
-    static final VarHandle const$5 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("symbol_table"));
+    static final VarHandle const$0 = constants$424.const$4.varHandle(MemoryLayout.PathElement.groupElement("max_parse_errors"));
+    static final VarHandle const$1 = constants$424.const$4.varHandle(MemoryLayout.PathElement.groupElement("parse_errors"));
+    static final VarHandle const$2 = constants$424.const$4.varHandle(MemoryLayout.PathElement.groupElement("input_name"));
+    static final VarHandle const$3 = constants$424.const$4.varHandle(MemoryLayout.PathElement.groupElement("qdata"));
+    static final VarHandle const$4 = constants$424.const$4.varHandle(MemoryLayout.PathElement.groupElement("config"));
+    static final VarHandle const$5 = constants$424.const$4.varHandle(MemoryLayout.PathElement.groupElement("token"));
 }
 
 

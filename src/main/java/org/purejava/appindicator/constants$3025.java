@@ -9,12 +9,18 @@ final class constants$3025 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3025() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.select_all.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$3023.const$3.varHandle(MemoryLayout.PathElement.groupElement("select_all"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.unselect_all.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$3023.const$3.varHandle(MemoryLayout.PathElement.groupElement("unselect_all"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.get_items.class, "apply", constants$5.const$2);
-    static final VarHandle const$5 = constants$3023.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_items"));
+    static final VarHandle const$0 = constants$3024.const$2.varHandle(MemoryLayout.PathElement.groupElement("mime_type"));
+    static final VarHandle const$1 = constants$3024.const$2.varHandle(MemoryLayout.PathElement.groupElement("applications"));
+    static final VarHandle const$2 = constants$3024.const$2.varHandle(MemoryLayout.PathElement.groupElement("groups"));
+    static final VarHandle const$3 = constants$3024.const$2.varHandle(MemoryLayout.PathElement.groupElement("age"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_new",
+        constants$35.const$2
+    );
 }
 
 

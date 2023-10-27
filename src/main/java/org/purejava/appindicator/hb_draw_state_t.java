@@ -28,10 +28,10 @@ import java.lang.invoke.VarHandle;
 public class hb_draw_state_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1446.const$0;
+        return constants$1450.const$1;
     }
     public static VarHandle path_open$VH() {
-        return constants$1446.const$1;
+        return constants$1450.const$2;
     }
     /**
      * Getter for field:
@@ -40,7 +40,7 @@ public class hb_draw_state_t {
      * }
      */
     public static int path_open$get(MemorySegment seg) {
-        return (int)constants$1446.const$1.get(seg);
+        return (int)constants$1450.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -49,16 +49,16 @@ public class hb_draw_state_t {
      * }
      */
     public static void path_open$set(MemorySegment seg, int x) {
-        constants$1446.const$1.set(seg, x);
+        constants$1450.const$2.set(seg, x);
     }
     public static int path_open$get(MemorySegment seg, long index) {
-        return (int)constants$1446.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1450.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void path_open$set(MemorySegment seg, long index, int x) {
-        constants$1446.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1450.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle path_start_x$VH() {
-        return constants$1446.const$2;
+        return constants$1450.const$3;
     }
     /**
      * Getter for field:
@@ -67,7 +67,7 @@ public class hb_draw_state_t {
      * }
      */
     public static float path_start_x$get(MemorySegment seg) {
-        return (float)constants$1446.const$2.get(seg);
+        return (float)constants$1450.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -76,16 +76,16 @@ public class hb_draw_state_t {
      * }
      */
     public static void path_start_x$set(MemorySegment seg, float x) {
-        constants$1446.const$2.set(seg, x);
+        constants$1450.const$3.set(seg, x);
     }
     public static float path_start_x$get(MemorySegment seg, long index) {
-        return (float)constants$1446.const$2.get(seg.asSlice(index*sizeof()));
+        return (float)constants$1450.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void path_start_x$set(MemorySegment seg, long index, float x) {
-        constants$1446.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1450.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle path_start_y$VH() {
-        return constants$1446.const$3;
+        return constants$1450.const$4;
     }
     /**
      * Getter for field:
@@ -94,7 +94,7 @@ public class hb_draw_state_t {
      * }
      */
     public static float path_start_y$get(MemorySegment seg) {
-        return (float)constants$1446.const$3.get(seg);
+        return (float)constants$1450.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -103,16 +103,16 @@ public class hb_draw_state_t {
      * }
      */
     public static void path_start_y$set(MemorySegment seg, float x) {
-        constants$1446.const$3.set(seg, x);
+        constants$1450.const$4.set(seg, x);
     }
     public static float path_start_y$get(MemorySegment seg, long index) {
-        return (float)constants$1446.const$3.get(seg.asSlice(index*sizeof()));
+        return (float)constants$1450.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void path_start_y$set(MemorySegment seg, long index, float x) {
-        constants$1446.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1450.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle current_x$VH() {
-        return constants$1446.const$4;
+        return constants$1450.const$5;
     }
     /**
      * Getter for field:
@@ -121,7 +121,7 @@ public class hb_draw_state_t {
      * }
      */
     public static float current_x$get(MemorySegment seg) {
-        return (float)constants$1446.const$4.get(seg);
+        return (float)constants$1450.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -130,16 +130,16 @@ public class hb_draw_state_t {
      * }
      */
     public static void current_x$set(MemorySegment seg, float x) {
-        constants$1446.const$4.set(seg, x);
+        constants$1450.const$5.set(seg, x);
     }
     public static float current_x$get(MemorySegment seg, long index) {
-        return (float)constants$1446.const$4.get(seg.asSlice(index*sizeof()));
+        return (float)constants$1450.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void current_x$set(MemorySegment seg, long index, float x) {
-        constants$1446.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1450.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle current_y$VH() {
-        return constants$1446.const$5;
+        return constants$1451.const$0;
     }
     /**
      * Getter for field:
@@ -148,7 +148,7 @@ public class hb_draw_state_t {
      * }
      */
     public static float current_y$get(MemorySegment seg) {
-        return (float)constants$1446.const$5.get(seg);
+        return (float)constants$1451.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -157,13 +157,13 @@ public class hb_draw_state_t {
      * }
      */
     public static void current_y$set(MemorySegment seg, float x) {
-        constants$1446.const$5.set(seg, x);
+        constants$1451.const$0.set(seg, x);
     }
     public static float current_y$get(MemorySegment seg, long index) {
-        return (float)constants$1446.const$5.get(seg.asSlice(index*sizeof()));
+        return (float)constants$1451.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void current_y$set(MemorySegment seg, long index, float x) {
-        constants$1446.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1451.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment reserved1$slice(MemorySegment seg) {
         return seg.asSlice(20, 4);

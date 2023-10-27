@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GTlsServerConnectionInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1381.const$4;
+        return constants$1385.const$5;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);

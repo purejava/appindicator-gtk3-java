@@ -2,45 +2,30 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$2130 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2130() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_height",
-        constants$14.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_width_for_height",
-        constants$179.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass._gtk_reserved7.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved7"));
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_height_and_baseline_for_width",
-        constants$380.const$0
+        "gtk_widget_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_size",
-        constants$14.const$3
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_widget_new",
+        constants$408.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_child_requisition",
+        "gtk_widget_destroy",
+        constants$13.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_widget_destroyed",
         constants$13.const$4
-    );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "gtk_widget_add_accelerator",
-        constants$2130.const$5
     );
 }
 

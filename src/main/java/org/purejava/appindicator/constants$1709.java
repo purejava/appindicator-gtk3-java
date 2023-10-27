@@ -5,42 +5,39 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1709 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1709() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_get_scaled_font",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_show_text",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_show_glyphs",
+        constants$164.const$5
+    );
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
         RuntimeHelper.POINTER,
         JAVA_INT,
         RuntimeHelper.POINTER,
+        JAVA_INT,
         RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_text_to_glyphs",
-        constants$1709.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_font_face",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_font_matrix",
-        constants$13.const$4
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_ctm",
-        constants$13.const$4
+        "cairo_show_text_glyphs",
+        constants$1709.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_scale_matrix",
+        "cairo_text_path",
         constants$13.const$4
     );
 }

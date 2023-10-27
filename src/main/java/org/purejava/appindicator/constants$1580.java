@@ -2,45 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
 final class constants$1580 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1580() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_attr_iterator_destroy",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_attr_iterator_get",
-        constants$21.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_attr_iterator_get_font",
-        constants$42.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_attr_iterator_get_attrs",
+        "pango_attribute_as_string",
         constants$5.const$2
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("shape_engine"),
-        RuntimeHelper.POINTER.withName("lang_engine"),
-        RuntimeHelper.POINTER.withName("font"),
-        JAVA_BYTE.withName("level"),
-        JAVA_BYTE.withName("gravity"),
-        JAVA_BYTE.withName("flags"),
-        JAVA_BYTE.withName("script"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("language"),
-        RuntimeHelper.POINTER.withName("extra_attrs")
-    ).withName("_PangoAnalysis");
-    static final VarHandle const$5 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("shape_engine"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_language",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_int",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_size",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_float",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_color",
+        constants$5.const$2
+    );
 }
 
 

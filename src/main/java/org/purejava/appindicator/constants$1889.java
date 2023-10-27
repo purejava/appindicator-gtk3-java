@@ -5,45 +5,43 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1889 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1889() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gdk_pixbuf_save_to_streamv_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_save_to_streamv_async",
-        constants$862.const$3
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_resource_at_scale",
+        constants$1888.const$3
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_save_to_streamv",
-        constants$164.const$2
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_BYTE,
-        JAVA_BYTE,
-        JAVA_BYTE
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_add_alpha",
-        constants$1889.const$3
-    );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_pixbuf_new_from_data$destroy_fn.class, "apply", constants$13.const$4);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT,
         JAVA_INT,
         JAVA_INT,
         JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
         RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_data",
+        constants$1889.const$2
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
         JAVA_INT,
         JAVA_INT
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_copy_area",
-        constants$1889.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_bytes",
+        constants$1889.const$4
     );
 }
 

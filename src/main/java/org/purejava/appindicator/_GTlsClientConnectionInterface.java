@@ -18,7 +18,7 @@ import java.lang.invoke.VarHandle;
 public class _GTlsClientConnectionInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1361.const$5;
+        return constants$1366.const$0;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -32,7 +32,7 @@ public class _GTlsClientConnectionInterface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(copy_session_state fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1362.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1366.const$1, fi, constants$13.const$4, scope);
         }
         static copy_session_state ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -47,7 +47,7 @@ public class _GTlsClientConnectionInterface {
     }
 
     public static VarHandle copy_session_state$VH() {
-        return constants$1362.const$1;
+        return constants$1366.const$2;
     }
     /**
      * Getter for field:
@@ -56,7 +56,7 @@ public class _GTlsClientConnectionInterface {
      * }
      */
     public static MemorySegment copy_session_state$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1362.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1366.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -65,13 +65,13 @@ public class _GTlsClientConnectionInterface {
      * }
      */
     public static void copy_session_state$set(MemorySegment seg, MemorySegment x) {
-        constants$1362.const$1.set(seg, x);
+        constants$1366.const$2.set(seg, x);
     }
     public static MemorySegment copy_session_state$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1362.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1366.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void copy_session_state$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1362.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1366.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static copy_session_state copy_session_state(MemorySegment segment, Arena scope) {
         return copy_session_state.ofAddress(copy_session_state$get(segment), scope);

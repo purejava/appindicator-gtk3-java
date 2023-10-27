@@ -8,28 +8,22 @@ final class constants$1839 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1839() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_background_pattern",
-        constants$13.const$4
+        "gdk_window_is_shaped",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_background_pattern",
-        constants$5.const$2
+        "gdk_window_get_state",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_cursor",
-        constants$13.const$4
+        "gdk_window_set_static_gravities",
+        constants$11.const$4
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_cursor",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_device_cursor",
-        constants$14.const$3
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GdkWindowInvalidateHandlerFunc.class, "apply", constants$13.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gdk_window_set_invalidate_handler$handler.class, "apply", constants$13.const$4);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_device_cursor",
-        constants$5.const$5
+        "gdk_window_set_invalidate_handler",
+        constants$13.const$4
     );
 }
 

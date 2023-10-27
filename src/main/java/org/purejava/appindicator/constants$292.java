@@ -8,27 +8,27 @@ final class constants$292 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$292() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_utf8_to_ucs4",
-        constants$36.const$5
+        "g_utf8_strrchr",
+        constants$291.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_utf8_to_ucs4_fast",
-        constants$36.const$1
+        "g_utf8_strreverse",
+        constants$21.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_utf16_to_ucs4",
+        "g_utf8_to_utf16",
         constants$36.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_utf16_to_utf8",
+        "g_utf8_to_ucs4",
         constants$36.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_ucs4_to_utf16",
-        constants$36.const$5
+        "g_utf8_to_ucs4_fast",
+        constants$36.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_ucs4_to_utf8",
+        "g_utf16_to_ucs4",
         constants$36.const$5
     );
 }

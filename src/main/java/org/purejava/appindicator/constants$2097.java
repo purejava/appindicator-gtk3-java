@@ -9,12 +9,26 @@ final class constants$2097 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2097() {}
-    static final VarHandle const$0 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("show"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkWidgetClass.show_all.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("show_all"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass.hide.class, "apply", constants$13.const$1);
-    static final VarHandle const$4 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("hide"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkWidgetClass.map.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$692.const$2
+    );
+    static final VarHandle const$1 = constants$2093.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_value"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_value_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_value_get_current_value",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_value_get_maximum_value",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_value_get_minimum_value",
+        constants$13.const$4
+    );
 }
 
 

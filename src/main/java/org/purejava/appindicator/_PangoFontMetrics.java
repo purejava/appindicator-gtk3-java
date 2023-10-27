@@ -26,10 +26,10 @@ import java.lang.invoke.VarHandle;
 public class _PangoFontMetrics {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1543.const$1;
+        return constants$1548.const$1;
     }
     public static VarHandle ref_count$VH() {
-        return constants$1543.const$2;
+        return constants$1548.const$2;
     }
     /**
      * Getter for field:
@@ -38,7 +38,7 @@ public class _PangoFontMetrics {
      * }
      */
     public static int ref_count$get(MemorySegment seg) {
-        return (int)constants$1543.const$2.get(seg);
+        return (int)constants$1548.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -47,16 +47,16 @@ public class _PangoFontMetrics {
      * }
      */
     public static void ref_count$set(MemorySegment seg, int x) {
-        constants$1543.const$2.set(seg, x);
+        constants$1548.const$2.set(seg, x);
     }
     public static int ref_count$get(MemorySegment seg, long index) {
-        return (int)constants$1543.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1548.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void ref_count$set(MemorySegment seg, long index, int x) {
-        constants$1543.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1548.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle ascent$VH() {
-        return constants$1543.const$3;
+        return constants$1548.const$3;
     }
     /**
      * Getter for field:
@@ -65,7 +65,7 @@ public class _PangoFontMetrics {
      * }
      */
     public static int ascent$get(MemorySegment seg) {
-        return (int)constants$1543.const$3.get(seg);
+        return (int)constants$1548.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -74,16 +74,16 @@ public class _PangoFontMetrics {
      * }
      */
     public static void ascent$set(MemorySegment seg, int x) {
-        constants$1543.const$3.set(seg, x);
+        constants$1548.const$3.set(seg, x);
     }
     public static int ascent$get(MemorySegment seg, long index) {
-        return (int)constants$1543.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1548.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void ascent$set(MemorySegment seg, long index, int x) {
-        constants$1543.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1548.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle descent$VH() {
-        return constants$1543.const$4;
+        return constants$1548.const$4;
     }
     /**
      * Getter for field:
@@ -92,7 +92,7 @@ public class _PangoFontMetrics {
      * }
      */
     public static int descent$get(MemorySegment seg) {
-        return (int)constants$1543.const$4.get(seg);
+        return (int)constants$1548.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -101,16 +101,16 @@ public class _PangoFontMetrics {
      * }
      */
     public static void descent$set(MemorySegment seg, int x) {
-        constants$1543.const$4.set(seg, x);
+        constants$1548.const$4.set(seg, x);
     }
     public static int descent$get(MemorySegment seg, long index) {
-        return (int)constants$1543.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1548.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void descent$set(MemorySegment seg, long index, int x) {
-        constants$1543.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1548.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle height$VH() {
-        return constants$1543.const$5;
+        return constants$1548.const$5;
     }
     /**
      * Getter for field:
@@ -119,7 +119,7 @@ public class _PangoFontMetrics {
      * }
      */
     public static int height$get(MemorySegment seg) {
-        return (int)constants$1543.const$5.get(seg);
+        return (int)constants$1548.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -128,16 +128,16 @@ public class _PangoFontMetrics {
      * }
      */
     public static void height$set(MemorySegment seg, int x) {
-        constants$1543.const$5.set(seg, x);
+        constants$1548.const$5.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
-        return (int)constants$1543.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1548.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void height$set(MemorySegment seg, long index, int x) {
-        constants$1543.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1548.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle approximate_char_width$VH() {
-        return constants$1544.const$0;
+        return constants$1549.const$0;
     }
     /**
      * Getter for field:
@@ -146,7 +146,7 @@ public class _PangoFontMetrics {
      * }
      */
     public static int approximate_char_width$get(MemorySegment seg) {
-        return (int)constants$1544.const$0.get(seg);
+        return (int)constants$1549.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -155,16 +155,16 @@ public class _PangoFontMetrics {
      * }
      */
     public static void approximate_char_width$set(MemorySegment seg, int x) {
-        constants$1544.const$0.set(seg, x);
+        constants$1549.const$0.set(seg, x);
     }
     public static int approximate_char_width$get(MemorySegment seg, long index) {
-        return (int)constants$1544.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1549.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void approximate_char_width$set(MemorySegment seg, long index, int x) {
-        constants$1544.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1549.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle approximate_digit_width$VH() {
-        return constants$1544.const$1;
+        return constants$1549.const$1;
     }
     /**
      * Getter for field:
@@ -173,7 +173,7 @@ public class _PangoFontMetrics {
      * }
      */
     public static int approximate_digit_width$get(MemorySegment seg) {
-        return (int)constants$1544.const$1.get(seg);
+        return (int)constants$1549.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -182,16 +182,16 @@ public class _PangoFontMetrics {
      * }
      */
     public static void approximate_digit_width$set(MemorySegment seg, int x) {
-        constants$1544.const$1.set(seg, x);
+        constants$1549.const$1.set(seg, x);
     }
     public static int approximate_digit_width$get(MemorySegment seg, long index) {
-        return (int)constants$1544.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1549.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void approximate_digit_width$set(MemorySegment seg, long index, int x) {
-        constants$1544.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1549.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle underline_position$VH() {
-        return constants$1544.const$2;
+        return constants$1549.const$2;
     }
     /**
      * Getter for field:
@@ -200,7 +200,7 @@ public class _PangoFontMetrics {
      * }
      */
     public static int underline_position$get(MemorySegment seg) {
-        return (int)constants$1544.const$2.get(seg);
+        return (int)constants$1549.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -209,16 +209,16 @@ public class _PangoFontMetrics {
      * }
      */
     public static void underline_position$set(MemorySegment seg, int x) {
-        constants$1544.const$2.set(seg, x);
+        constants$1549.const$2.set(seg, x);
     }
     public static int underline_position$get(MemorySegment seg, long index) {
-        return (int)constants$1544.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1549.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void underline_position$set(MemorySegment seg, long index, int x) {
-        constants$1544.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1549.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle underline_thickness$VH() {
-        return constants$1544.const$3;
+        return constants$1549.const$3;
     }
     /**
      * Getter for field:
@@ -227,7 +227,7 @@ public class _PangoFontMetrics {
      * }
      */
     public static int underline_thickness$get(MemorySegment seg) {
-        return (int)constants$1544.const$3.get(seg);
+        return (int)constants$1549.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -236,16 +236,16 @@ public class _PangoFontMetrics {
      * }
      */
     public static void underline_thickness$set(MemorySegment seg, int x) {
-        constants$1544.const$3.set(seg, x);
+        constants$1549.const$3.set(seg, x);
     }
     public static int underline_thickness$get(MemorySegment seg, long index) {
-        return (int)constants$1544.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1549.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void underline_thickness$set(MemorySegment seg, long index, int x) {
-        constants$1544.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1549.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle strikethrough_position$VH() {
-        return constants$1544.const$4;
+        return constants$1549.const$4;
     }
     /**
      * Getter for field:
@@ -254,7 +254,7 @@ public class _PangoFontMetrics {
      * }
      */
     public static int strikethrough_position$get(MemorySegment seg) {
-        return (int)constants$1544.const$4.get(seg);
+        return (int)constants$1549.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -263,16 +263,16 @@ public class _PangoFontMetrics {
      * }
      */
     public static void strikethrough_position$set(MemorySegment seg, int x) {
-        constants$1544.const$4.set(seg, x);
+        constants$1549.const$4.set(seg, x);
     }
     public static int strikethrough_position$get(MemorySegment seg, long index) {
-        return (int)constants$1544.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1549.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void strikethrough_position$set(MemorySegment seg, long index, int x) {
-        constants$1544.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1549.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle strikethrough_thickness$VH() {
-        return constants$1544.const$5;
+        return constants$1549.const$5;
     }
     /**
      * Getter for field:
@@ -281,7 +281,7 @@ public class _PangoFontMetrics {
      * }
      */
     public static int strikethrough_thickness$get(MemorySegment seg) {
-        return (int)constants$1544.const$5.get(seg);
+        return (int)constants$1549.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -290,13 +290,13 @@ public class _PangoFontMetrics {
      * }
      */
     public static void strikethrough_thickness$set(MemorySegment seg, int x) {
-        constants$1544.const$5.set(seg, x);
+        constants$1549.const$5.set(seg, x);
     }
     public static int strikethrough_thickness$get(MemorySegment seg, long index) {
-        return (int)constants$1544.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1549.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void strikethrough_thickness$set(MemorySegment seg, long index, int x) {
-        constants$1544.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1549.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

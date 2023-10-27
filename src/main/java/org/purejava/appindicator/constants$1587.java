@@ -3,18 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1587 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1587() {}
-    static final VarHandle const$0 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_metrics"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoFontsetClass.get_language.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_language"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoFontsetClass.foreach.class, "apply", constants$14.const$3);
-    static final VarHandle const$4 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("foreach"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_PangoFontsetClass._pango_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$0 = constants$1585.const$4.varHandle(MemoryLayout.PathElement.groupElement("language"));
+    static final VarHandle const$1 = constants$1585.const$4.varHandle(MemoryLayout.PathElement.groupElement("extra_attrs"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("offset"),
+        JAVA_INT.withName("length"),
+        JAVA_INT.withName("num_chars"),
+        MemoryLayout.paddingLayout(4),
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("shape_engine"),
+            RuntimeHelper.POINTER.withName("lang_engine"),
+            RuntimeHelper.POINTER.withName("font"),
+            JAVA_BYTE.withName("level"),
+            JAVA_BYTE.withName("gravity"),
+            JAVA_BYTE.withName("flags"),
+            JAVA_BYTE.withName("script"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("language"),
+            RuntimeHelper.POINTER.withName("extra_attrs")
+        ).withName("analysis")
+    ).withName("_PangoItem");
+    static final VarHandle const$3 = constants$1587.const$2.varHandle(MemoryLayout.PathElement.groupElement("offset"));
+    static final VarHandle const$4 = constants$1587.const$2.varHandle(MemoryLayout.PathElement.groupElement("length"));
+    static final VarHandle const$5 = constants$1587.const$2.varHandle(MemoryLayout.PathElement.groupElement("num_chars"));
 }
 
 

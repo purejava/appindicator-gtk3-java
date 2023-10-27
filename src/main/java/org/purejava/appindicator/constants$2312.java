@@ -3,20 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2312 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2312() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$2311.const$4
+    static final VarHandle const$0 = constants$2311.const$0.varHandle(MemoryLayout.PathElement.groupElement("start_editing"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_cell_editable_get_type",
+        constants$3.const$5
     );
-    static final VarHandle const$1 = constants$2308.const$1.varHandle(MemoryLayout.PathElement.groupElement("start_editing"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCellRendererClass.editing_canceled.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$2308.const$1.varHandle(MemoryLayout.PathElement.groupElement("editing_canceled"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellRendererClass.editing_started.class, "apply", constants$14.const$3);
-    static final VarHandle const$5 = constants$2308.const$1.varHandle(MemoryLayout.PathElement.groupElement("editing_started"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_cell_editable_start_editing",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_cell_editable_editing_done",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_cell_editable_remove_widget",
+        constants$13.const$1
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkCellRenderer");
 }
 
 

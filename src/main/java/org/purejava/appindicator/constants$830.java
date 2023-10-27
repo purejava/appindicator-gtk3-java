@@ -6,35 +6,33 @@ import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$830 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$830() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "vhangup",
-        constants$83.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "revoke",
-        constants$10.const$5
-    );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
         RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_LONG,
         JAVA_INT
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "profil",
-        constants$830.const$2
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "unlinkat",
+        constants$830.const$0
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "acct",
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rmdir",
         constants$10.const$5
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "tcgetpgrp",
+        constants$8.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "tcsetpgrp",
+        constants$123.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "getusershell",
+        "getlogin",
         constants$35.const$2
     );
 }

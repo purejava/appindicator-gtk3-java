@@ -2,43 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1211 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1211() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_can_poll",
-        constants$10.const$5
+        "g_permission_acquire_async",
+        constants$42.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_is_readable",
-        constants$10.const$5
+        "g_permission_acquire_finish",
+        constants$12.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_create_source",
-        constants$5.const$5
+        "g_permission_release",
+        constants$12.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_read_nonblocking",
-        constants$759.const$4
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_permission_release_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_permission_release_async",
+        constants$42.const$1
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("can_poll"),
-        RuntimeHelper.POINTER.withName("is_writable"),
-        RuntimeHelper.POINTER.withName("create_source"),
-        RuntimeHelper.POINTER.withName("write_nonblocking"),
-        RuntimeHelper.POINTER.withName("writev_nonblocking")
-    ).withName("_GPollableOutputStreamInterface");
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GPollableOutputStreamInterface.can_poll.class, "apply", constants$10.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_permission_release_finish",
+        constants$12.const$2
+    );
 }
 
 

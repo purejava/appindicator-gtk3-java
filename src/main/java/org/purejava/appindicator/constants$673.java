@@ -10,9 +10,27 @@ final class constants$673 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$673() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_group_connect_data$c_handler.class, "apply", constants$7.const$5);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_signal_group_connect_data$notify.class, "apply", constants$13.const$4);
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pointer",
+        constants$198.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_spec_value_array",
+        constants$647.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_param_spec_object",
+        constants$672.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_param_spec_override",
+        constants$5.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_param_spec_gtype",
+        constants$672.const$3
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
@@ -20,14 +38,9 @@ final class constants$673 {
         RuntimeHelper.POINTER,
         JAVA_INT
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect_data",
-        constants$673.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_group_connect$c_handler.class, "apply", constants$7.const$5);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect",
-        constants$42.const$1
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_param_spec_variant",
+        constants$673.const$5
     );
 }
 

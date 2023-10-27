@@ -20,13 +20,13 @@ import java.lang.invoke.VarHandle;
 public class _GParamSpecUInt64 {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$659.const$2;
+        return constants$662.const$1;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);
     }
     public static VarHandle minimum$VH() {
-        return constants$659.const$3;
+        return constants$662.const$2;
     }
     /**
      * Getter for field:
@@ -35,7 +35,7 @@ public class _GParamSpecUInt64 {
      * }
      */
     public static long minimum$get(MemorySegment seg) {
-        return (long)constants$659.const$3.get(seg);
+        return (long)constants$662.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -44,16 +44,16 @@ public class _GParamSpecUInt64 {
      * }
      */
     public static void minimum$set(MemorySegment seg, long x) {
-        constants$659.const$3.set(seg, x);
+        constants$662.const$2.set(seg, x);
     }
     public static long minimum$get(MemorySegment seg, long index) {
-        return (long)constants$659.const$3.get(seg.asSlice(index*sizeof()));
+        return (long)constants$662.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void minimum$set(MemorySegment seg, long index, long x) {
-        constants$659.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$662.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle maximum$VH() {
-        return constants$659.const$4;
+        return constants$662.const$3;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _GParamSpecUInt64 {
      * }
      */
     public static long maximum$get(MemorySegment seg) {
-        return (long)constants$659.const$4.get(seg);
+        return (long)constants$662.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -71,16 +71,16 @@ public class _GParamSpecUInt64 {
      * }
      */
     public static void maximum$set(MemorySegment seg, long x) {
-        constants$659.const$4.set(seg, x);
+        constants$662.const$3.set(seg, x);
     }
     public static long maximum$get(MemorySegment seg, long index) {
-        return (long)constants$659.const$4.get(seg.asSlice(index*sizeof()));
+        return (long)constants$662.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void maximum$set(MemorySegment seg, long index, long x) {
-        constants$659.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$662.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle default_value$VH() {
-        return constants$659.const$5;
+        return constants$662.const$4;
     }
     /**
      * Getter for field:
@@ -89,7 +89,7 @@ public class _GParamSpecUInt64 {
      * }
      */
     public static long default_value$get(MemorySegment seg) {
-        return (long)constants$659.const$5.get(seg);
+        return (long)constants$662.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -98,13 +98,13 @@ public class _GParamSpecUInt64 {
      * }
      */
     public static void default_value$set(MemorySegment seg, long x) {
-        constants$659.const$5.set(seg, x);
+        constants$662.const$4.set(seg, x);
     }
     public static long default_value$get(MemorySegment seg, long index) {
-        return (long)constants$659.const$5.get(seg.asSlice(index*sizeof()));
+        return (long)constants$662.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void default_value$set(MemorySegment seg, long index, long x) {
-        constants$659.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$662.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

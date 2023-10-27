@@ -9,24 +9,12 @@ final class constants$3122 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3122() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTextMarkClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$3120.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_new",
-        constants$21.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_set_visible",
-        constants$40.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_get_visible",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$3121.const$4.varHandle(MemoryLayout.PathElement.groupElement("tag_changed"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextTagTableClass.tag_added.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$3121.const$4.varHandle(MemoryLayout.PathElement.groupElement("tag_added"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextTagTableClass.tag_removed.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$3121.const$4.varHandle(MemoryLayout.PathElement.groupElement("tag_removed"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextTagTableClass._gtk_reserved1.class, "apply", constants$7.const$5);
 }
 
 

@@ -2,41 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$933 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$933() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_server_get_type",
-        constants$3.const$5
+        "g_dbus_proxy_get_default_timeout",
+        constants$10.const$5
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_set_default_timeout",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_server_new_sync",
-        constants$933.const$1
+        "g_dbus_proxy_get_interface_info",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_server_get_client_address",
-        constants$5.const$2
+        "g_dbus_proxy_set_interface_info",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_server_get_guid",
-        constants$5.const$2
+        "g_dbus_proxy_get_cached_property",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_server_get_flags",
-        constants$10.const$5
+        "g_dbus_proxy_set_cached_property",
+        constants$14.const$3
     );
 }
 

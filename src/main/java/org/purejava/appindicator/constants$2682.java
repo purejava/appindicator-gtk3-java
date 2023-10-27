@@ -8,28 +8,22 @@ final class constants$2682 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2682() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_select_all",
-        constants$13.const$1
+        "gtk_file_filter_add_mime_type",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_unselect_all",
-        constants$13.const$1
+        "gtk_file_filter_add_pattern",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_filenames",
-        constants$5.const$2
+        "gtk_file_filter_add_pixbuf_formats",
+        constants$13.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_current_folder",
-        constants$9.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_current_folder",
-        constants$5.const$2
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_file_filter_add_custom$func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_file_filter_add_custom$notify.class, "apply", constants$13.const$1);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_uri",
-        constants$5.const$2
+        "gtk_file_filter_add_custom",
+        constants$282.const$1
     );
 }
 

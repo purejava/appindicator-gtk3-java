@@ -8,28 +8,28 @@ final class constants$615 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$615() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_variant_type_get_gtype",
-        constants$3.const$5
+        "g_signal_chain_from_overridden",
+        constants$13.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_regex_get_type",
-        constants$3.const$5
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_chain_from_overridden_handler",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_match_info_get_type",
-        constants$3.const$5
+        "g_signal_accumulator_true_handled",
+        constants$34.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_error_get_type",
-        constants$3.const$5
+        "g_signal_accumulator_first_wins",
+        constants$34.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_date_time_get_type",
-        constants$3.const$5
+        "g_signal_handlers_destroy",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_time_zone_get_type",
-        constants$3.const$5
+        "_g_signals_destroy",
+        constants$84.const$5
     );
 }
 

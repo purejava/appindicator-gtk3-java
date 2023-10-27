@@ -13,7 +13,7 @@ public interface atk_object_connect_property_change_handler$handler {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(atk_object_connect_property_change_handler$handler fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1979.const$4, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$1984.const$5, fi, constants$13.const$4, scope);
     }
     static atk_object_connect_property_change_handler$handler ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

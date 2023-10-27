@@ -2,35 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$769 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$769() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_input_stream_close_async",
-        constants$281.const$5
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_input_stream_close_finish",
-        constants$12.const$2
+        "g_input_stream_read_all",
+        constants$769.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_input_stream_is_closed",
-        constants$10.const$5
+        "g_input_stream_read_bytes",
+        constants$169.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_input_stream_has_pending",
-        constants$10.const$5
+        "g_input_stream_skip",
+        constants$4.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_input_stream_set_pending",
-        constants$9.const$0
+        "g_input_stream_close",
+        constants$12.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_input_stream_clear_pending",
-        constants$13.const$1
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_input_stream_read_async$callback.class, "apply", constants$14.const$3);
 }
 
 

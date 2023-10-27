@@ -21,7 +21,7 @@ import java.lang.invoke.VarHandle;
 public class _GTlsPasswordClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1378.const$2;
+        return constants$1382.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -35,7 +35,7 @@ public class _GTlsPasswordClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(get_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1378.const$3, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1382.const$4, fi, constants$5.const$5, scope);
         }
         static get_value ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -50,7 +50,7 @@ public class _GTlsPasswordClass {
     }
 
     public static VarHandle get_value$VH() {
-        return constants$1378.const$4;
+        return constants$1382.const$5;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GTlsPasswordClass {
      * }
      */
     public static MemorySegment get_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1378.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1382.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -68,13 +68,13 @@ public class _GTlsPasswordClass {
      * }
      */
     public static void get_value$set(MemorySegment seg, MemorySegment x) {
-        constants$1378.const$4.set(seg, x);
+        constants$1382.const$5.set(seg, x);
     }
     public static MemorySegment get_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1378.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1382.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1378.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1382.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_value get_value(MemorySegment segment, Arena scope) {
         return get_value.ofAddress(get_value$get(segment), scope);
@@ -88,13 +88,13 @@ public class _GTlsPasswordClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3);
         static MemorySegment allocate(set_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1378.const$5, fi, constants$1139.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1383.const$0, fi, constants$1143.const$1, scope);
         }
         static set_value ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    constants$1379.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$1383.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -103,7 +103,7 @@ public class _GTlsPasswordClass {
     }
 
     public static VarHandle set_value$VH() {
-        return constants$1379.const$1;
+        return constants$1383.const$2;
     }
     /**
      * Getter for field:
@@ -112,7 +112,7 @@ public class _GTlsPasswordClass {
      * }
      */
     public static MemorySegment set_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1379.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1383.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -121,13 +121,13 @@ public class _GTlsPasswordClass {
      * }
      */
     public static void set_value$set(MemorySegment seg, MemorySegment x) {
-        constants$1379.const$1.set(seg, x);
+        constants$1383.const$2.set(seg, x);
     }
     public static MemorySegment set_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1379.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1383.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void set_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1379.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1383.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_value set_value(MemorySegment segment, Arena scope) {
         return set_value.ofAddress(set_value$get(segment), scope);
@@ -141,7 +141,7 @@ public class _GTlsPasswordClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_default_warning fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1379.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1383.const$3, fi, constants$5.const$2, scope);
         }
         static get_default_warning ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -156,7 +156,7 @@ public class _GTlsPasswordClass {
     }
 
     public static VarHandle get_default_warning$VH() {
-        return constants$1379.const$3;
+        return constants$1383.const$4;
     }
     /**
      * Getter for field:
@@ -165,7 +165,7 @@ public class _GTlsPasswordClass {
      * }
      */
     public static MemorySegment get_default_warning$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1379.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1383.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -174,13 +174,13 @@ public class _GTlsPasswordClass {
      * }
      */
     public static void get_default_warning$set(MemorySegment seg, MemorySegment x) {
-        constants$1379.const$3.set(seg, x);
+        constants$1383.const$4.set(seg, x);
     }
     public static MemorySegment get_default_warning$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1379.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1383.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_default_warning$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1379.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1383.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_default_warning get_default_warning(MemorySegment segment, Arena scope) {
         return get_default_warning.ofAddress(get_default_warning$get(segment), scope);

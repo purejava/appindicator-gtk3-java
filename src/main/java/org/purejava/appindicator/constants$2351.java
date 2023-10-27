@@ -8,28 +8,28 @@ final class constants$2351 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2351() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_expand",
-        constants$40.const$2
+        "gtk_tree_view_column_new_with_area",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_expand",
-        constants$10.const$5
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_tree_view_column_new_with_attributes",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_clickable",
-        constants$40.const$2
+        "gtk_tree_view_column_pack_start",
+        constants$164.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_clickable",
-        constants$10.const$5
+        "gtk_tree_view_column_pack_end",
+        constants$164.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_widget",
-        constants$13.const$4
+        "gtk_tree_view_column_clear",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_widget",
-        constants$5.const$2
+        "gtk_tree_view_column_add_attribute",
+        constants$332.const$4
     );
 }
 

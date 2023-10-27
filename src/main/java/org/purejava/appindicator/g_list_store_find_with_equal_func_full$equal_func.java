@@ -13,7 +13,7 @@ public interface g_list_store_find_with_equal_func_full$equal_func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_list_store_find_with_equal_func_full$equal_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1134.const$1, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1137.const$3, fi, constants$12.const$2, scope);
     }
     static g_list_store_find_with_equal_func_full$equal_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

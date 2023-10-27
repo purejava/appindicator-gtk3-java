@@ -22,10 +22,10 @@ import java.lang.invoke.VarHandle;
 public class _GOutputMessage {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$697.const$3;
+        return constants$700.const$1;
     }
     public static VarHandle address$VH() {
-        return constants$697.const$4;
+        return constants$700.const$2;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class _GOutputMessage {
      * }
      */
     public static MemorySegment address$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$697.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$700.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -43,16 +43,16 @@ public class _GOutputMessage {
      * }
      */
     public static void address$set(MemorySegment seg, MemorySegment x) {
-        constants$697.const$4.set(seg, x);
+        constants$700.const$2.set(seg, x);
     }
     public static MemorySegment address$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$697.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$700.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void address$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$697.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$700.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle vectors$VH() {
-        return constants$697.const$5;
+        return constants$700.const$3;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _GOutputMessage {
      * }
      */
     public static MemorySegment vectors$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$697.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$700.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -70,16 +70,16 @@ public class _GOutputMessage {
      * }
      */
     public static void vectors$set(MemorySegment seg, MemorySegment x) {
-        constants$697.const$5.set(seg, x);
+        constants$700.const$3.set(seg, x);
     }
     public static MemorySegment vectors$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$697.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$700.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void vectors$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$697.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$700.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle num_vectors$VH() {
-        return constants$698.const$0;
+        return constants$700.const$4;
     }
     /**
      * Getter for field:
@@ -88,7 +88,7 @@ public class _GOutputMessage {
      * }
      */
     public static int num_vectors$get(MemorySegment seg) {
-        return (int)constants$698.const$0.get(seg);
+        return (int)constants$700.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -97,16 +97,16 @@ public class _GOutputMessage {
      * }
      */
     public static void num_vectors$set(MemorySegment seg, int x) {
-        constants$698.const$0.set(seg, x);
+        constants$700.const$4.set(seg, x);
     }
     public static int num_vectors$get(MemorySegment seg, long index) {
-        return (int)constants$698.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$700.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void num_vectors$set(MemorySegment seg, long index, int x) {
-        constants$698.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$700.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle bytes_sent$VH() {
-        return constants$698.const$1;
+        return constants$700.const$5;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _GOutputMessage {
      * }
      */
     public static int bytes_sent$get(MemorySegment seg) {
-        return (int)constants$698.const$1.get(seg);
+        return (int)constants$700.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -124,16 +124,16 @@ public class _GOutputMessage {
      * }
      */
     public static void bytes_sent$set(MemorySegment seg, int x) {
-        constants$698.const$1.set(seg, x);
+        constants$700.const$5.set(seg, x);
     }
     public static int bytes_sent$get(MemorySegment seg, long index) {
-        return (int)constants$698.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$700.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void bytes_sent$set(MemorySegment seg, long index, int x) {
-        constants$698.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$700.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle control_messages$VH() {
-        return constants$698.const$2;
+        return constants$701.const$0;
     }
     /**
      * Getter for field:
@@ -142,7 +142,7 @@ public class _GOutputMessage {
      * }
      */
     public static MemorySegment control_messages$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$698.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$701.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -151,16 +151,16 @@ public class _GOutputMessage {
      * }
      */
     public static void control_messages$set(MemorySegment seg, MemorySegment x) {
-        constants$698.const$2.set(seg, x);
+        constants$701.const$0.set(seg, x);
     }
     public static MemorySegment control_messages$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$698.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$701.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void control_messages$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$698.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$701.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle num_control_messages$VH() {
-        return constants$698.const$3;
+        return constants$701.const$1;
     }
     /**
      * Getter for field:
@@ -169,7 +169,7 @@ public class _GOutputMessage {
      * }
      */
     public static int num_control_messages$get(MemorySegment seg) {
-        return (int)constants$698.const$3.get(seg);
+        return (int)constants$701.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -178,13 +178,13 @@ public class _GOutputMessage {
      * }
      */
     public static void num_control_messages$set(MemorySegment seg, int x) {
-        constants$698.const$3.set(seg, x);
+        constants$701.const$1.set(seg, x);
     }
     public static int num_control_messages$get(MemorySegment seg, long index) {
-        return (int)constants$698.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$701.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void num_control_messages$set(MemorySegment seg, long index, int x) {
-        constants$698.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$701.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

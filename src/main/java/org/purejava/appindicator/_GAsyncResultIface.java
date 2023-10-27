@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class _GAsyncResultIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$757.const$1;
+        return constants$760.const$1;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -34,7 +34,7 @@ public class _GAsyncResultIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_user_data fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$757.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$760.const$2, fi, constants$5.const$2, scope);
         }
         static get_user_data ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -49,7 +49,7 @@ public class _GAsyncResultIface {
     }
 
     public static VarHandle get_user_data$VH() {
-        return constants$757.const$3;
+        return constants$760.const$3;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _GAsyncResultIface {
      * }
      */
     public static MemorySegment get_user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$757.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$760.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -67,13 +67,13 @@ public class _GAsyncResultIface {
      * }
      */
     public static void get_user_data$set(MemorySegment seg, MemorySegment x) {
-        constants$757.const$3.set(seg, x);
+        constants$760.const$3.set(seg, x);
     }
     public static MemorySegment get_user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$757.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$760.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_user_data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$757.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$760.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_user_data get_user_data(MemorySegment segment, Arena scope) {
         return get_user_data.ofAddress(get_user_data$get(segment), scope);
@@ -87,7 +87,7 @@ public class _GAsyncResultIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_source_object fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$757.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$760.const$4, fi, constants$5.const$2, scope);
         }
         static get_source_object ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -102,7 +102,7 @@ public class _GAsyncResultIface {
     }
 
     public static VarHandle get_source_object$VH() {
-        return constants$757.const$5;
+        return constants$760.const$5;
     }
     /**
      * Getter for field:
@@ -111,7 +111,7 @@ public class _GAsyncResultIface {
      * }
      */
     public static MemorySegment get_source_object$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$757.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$760.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -120,13 +120,13 @@ public class _GAsyncResultIface {
      * }
      */
     public static void get_source_object$set(MemorySegment seg, MemorySegment x) {
-        constants$757.const$5.set(seg, x);
+        constants$760.const$5.set(seg, x);
     }
     public static MemorySegment get_source_object$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$757.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$760.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_source_object$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$757.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$760.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_source_object get_source_object(MemorySegment segment, Arena scope) {
         return get_source_object.ofAddress(get_source_object$get(segment), scope);
@@ -140,7 +140,7 @@ public class _GAsyncResultIface {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(is_tagged fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$758.const$0, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$761.const$0, fi, constants$9.const$0, scope);
         }
         static is_tagged ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -155,7 +155,7 @@ public class _GAsyncResultIface {
     }
 
     public static VarHandle is_tagged$VH() {
-        return constants$758.const$1;
+        return constants$761.const$1;
     }
     /**
      * Getter for field:
@@ -164,7 +164,7 @@ public class _GAsyncResultIface {
      * }
      */
     public static MemorySegment is_tagged$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$758.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$761.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -173,13 +173,13 @@ public class _GAsyncResultIface {
      * }
      */
     public static void is_tagged$set(MemorySegment seg, MemorySegment x) {
-        constants$758.const$1.set(seg, x);
+        constants$761.const$1.set(seg, x);
     }
     public static MemorySegment is_tagged$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$758.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$761.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void is_tagged$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$758.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$761.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static is_tagged is_tagged(MemorySegment segment, Arena scope) {
         return is_tagged.ofAddress(is_tagged$get(segment), scope);

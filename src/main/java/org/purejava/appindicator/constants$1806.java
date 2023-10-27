@@ -2,35 +2,33 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1806 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1806() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_coords",
-        constants$12.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_root_coords",
-        constants$12.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_button",
-        constants$9.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_click_count",
-        constants$9.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_keyval",
-        constants$9.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_keycode",
-        constants$9.const$0
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("time"),
+        JAVA_INT.withName("group"),
+        JAVA_INT.withName("index"),
+        JAVA_INT.withName("mode"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_DOUBLE.withName("value")
+    ).withName("_GdkEventPadAxis");
+    static final VarHandle const$1 = constants$1806.const$0.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$2 = constants$1806.const$0.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$3 = constants$1806.const$0.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$4 = constants$1806.const$0.varHandle(MemoryLayout.PathElement.groupElement("time"));
+    static final VarHandle const$5 = constants$1806.const$0.varHandle(MemoryLayout.PathElement.groupElement("group"));
 }
 
 

@@ -2,52 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1287 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1287() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_socket_send",
-        constants$759.const$4
+        "g_socket_set_ttl",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_socket_send_to",
-        constants$1286.const$4
+        "g_socket_get_broadcast",
+        constants$10.const$5
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_set_broadcast",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_socket_receive_message",
-        constants$1287.const$2
+        "g_socket_get_multicast_loopback",
+        constants$10.const$5
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_set_multicast_loopback",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_send_message",
-        constants$1287.const$4
+        "g_socket_get_multicast_ttl",
+        constants$10.const$5
     );
 }
 

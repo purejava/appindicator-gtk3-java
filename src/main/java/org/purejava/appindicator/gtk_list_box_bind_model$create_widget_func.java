@@ -13,7 +13,7 @@ public interface gtk_list_box_bind_model$create_widget_func {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
     static MemorySegment allocate(gtk_list_box_bind_model$create_widget_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2855.const$0, fi, constants$5.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$2860.const$0, fi, constants$5.const$5, scope);
     }
     static gtk_list_box_bind_model$create_widget_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

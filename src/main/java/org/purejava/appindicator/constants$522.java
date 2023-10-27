@@ -2,31 +2,43 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$522 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$522() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(pthread_once$__init_routine.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_attr_setstackaddr",
+        constants$9.const$0
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pthread_once",
+        "pthread_attr_getstacksize",
         constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pthread_setcancelstate",
-        constants$9.const$2
+        "pthread_attr_setstacksize",
+        constants$97.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pthread_setcanceltype",
-        constants$9.const$2
+        "pthread_attr_getstack",
+        constants$12.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pthread_cancel",
-        constants$26.const$2
+        "pthread_attr_setstack",
+        constants$18.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pthread_testcancel",
-        constants$7.const$5
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "pthread_setschedparam",
+        constants$522.const$5
     );
 }
 

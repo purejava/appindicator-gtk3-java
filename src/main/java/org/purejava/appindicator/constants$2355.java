@@ -2,81 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.invoke.MethodHandle;
 final class constants$2355 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2355() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_INT.withName("pixel"),
-            JAVA_SHORT.withName("red"),
-            JAVA_SHORT.withName("green"),
-            JAVA_SHORT.withName("blue"),
-            MemoryLayout.paddingLayout(2)
-        ).withName("bg_color"),
-        MemoryLayout.structLayout(
-            JAVA_INT.withName("pixel"),
-            JAVA_SHORT.withName("red"),
-            JAVA_SHORT.withName("green"),
-            JAVA_SHORT.withName("blue"),
-            MemoryLayout.paddingLayout(2)
-        ).withName("fg_color"),
-        JAVA_INT.withName("rise"),
-        MemoryLayout.paddingLayout(4),
-        MemoryLayout.sequenceLayout(2, RuntimeHelper.POINTER).withName("rgba")
-    ).withName("_GtkTextAppearance");
-    static final VarHandle const$1 = constants$2355.const$0.varHandle(MemoryLayout.PathElement.groupElement("rise"));
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        JAVA_INT.withName("refcount"),
-        MemoryLayout.paddingLayout(4),
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_INT.withName("pixel"),
-                JAVA_SHORT.withName("red"),
-                JAVA_SHORT.withName("green"),
-                JAVA_SHORT.withName("blue"),
-                MemoryLayout.paddingLayout(2)
-            ).withName("bg_color"),
-            MemoryLayout.structLayout(
-                JAVA_INT.withName("pixel"),
-                JAVA_SHORT.withName("red"),
-                JAVA_SHORT.withName("green"),
-                JAVA_SHORT.withName("blue"),
-                MemoryLayout.paddingLayout(2)
-            ).withName("fg_color"),
-            JAVA_INT.withName("rise"),
-            MemoryLayout.paddingLayout(4),
-            MemoryLayout.sequenceLayout(2, RuntimeHelper.POINTER).withName("rgba")
-        ).withName("appearance"),
-        JAVA_INT.withName("justification"),
-        JAVA_INT.withName("direction"),
-        RuntimeHelper.POINTER.withName("font"),
-        JAVA_DOUBLE.withName("font_scale"),
-        JAVA_INT.withName("left_margin"),
-        JAVA_INT.withName("right_margin"),
-        JAVA_INT.withName("indent"),
-        JAVA_INT.withName("pixels_above_lines"),
-        JAVA_INT.withName("pixels_below_lines"),
-        JAVA_INT.withName("pixels_inside_wrap"),
-        RuntimeHelper.POINTER.withName("tabs"),
-        JAVA_INT.withName("wrap_mode"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("language"),
-        RuntimeHelper.POINTER.withName("pg_bg_color"),
-        MemoryLayout.paddingLayout(8),
-        RuntimeHelper.POINTER.withName("pg_bg_rgba"),
-        JAVA_INT.withName("letter_spacing"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("font_features")
-    ).withName("_GtkTextAttributes");
-    static final VarHandle const$3 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("refcount"));
-    static final VarHandle const$4 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("justification"));
-    static final VarHandle const$5 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("direction"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_min_width",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_max_width",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_max_width",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_clicked",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_title",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_title",
+        constants$5.const$2
+    );
 }
 
 

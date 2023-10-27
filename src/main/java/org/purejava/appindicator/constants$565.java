@@ -8,22 +8,28 @@ final class constants$565 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$565() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_type_free_instance",
-        constants$13.const$1
+        "g_type_interface_instantiatable_prerequisite",
+        constants$94.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_type_add_class_cache_func$cache_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_class_add_private",
+        constants$25.const$3
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_add_class_cache_func",
-        constants$13.const$4
+        "g_type_add_instance_private",
+        constants$519.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_type_remove_class_cache_func$cache_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_type_instance_get_private",
+        constants$21.const$1
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_remove_class_cache_func",
+        "g_type_class_adjust_private_offset",
         constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_type_class_unref_uncached",
-        constants$13.const$1
+        "g_type_add_class_private",
+        constants$564.const$3
     );
 }
 

@@ -8,27 +8,27 @@ final class constants$3051 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3051() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_draw_value",
+        "gtk_revealer_set_reveal_child",
         constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_draw_value",
+        "gtk_revealer_get_child_revealed",
         constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_has_origin",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_has_origin",
+        "gtk_revealer_get_transition_duration",
         constants$10.const$5
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_revealer_set_transition_duration",
+        constants$40.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_value_pos",
+        "gtk_revealer_set_transition_type",
         constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_value_pos",
+        "gtk_revealer_get_transition_type",
         constants$10.const$5
     );
 }

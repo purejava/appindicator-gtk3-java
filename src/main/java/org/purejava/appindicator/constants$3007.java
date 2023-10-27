@@ -2,35 +2,29 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3007 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3007() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_range_get_upper_stepper_sensitivity",
-        constants$10.const$5
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRangeClass.get_range_border.class, "apply", constants$13.const$4);
+    static final VarHandle const$1 = constants$3005.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_range_border"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_range_set_increments",
-        constants$1531.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_range_set_range",
-        constants$1531.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_range_set_value",
-        constants$689.const$5
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkRangeClass.change_value.class, "apply", constants$3007.const$2);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_range_get_value",
-        constants$67.const$0
+        constants$3007.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_range_set_show_fill_level",
-        constants$40.const$2
-    );
+    static final VarHandle const$5 = constants$3005.const$3.varHandle(MemoryLayout.PathElement.groupElement("change_value"));
 }
 
 

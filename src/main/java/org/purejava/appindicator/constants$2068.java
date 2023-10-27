@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2068 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2068() {}
-    static final VarHandle const$0 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_index_at"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTableIface.get_column_at_index.class, "apply", constants$11.const$4);
-    static final VarHandle const$2 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_column_at_index"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTableIface.get_row_at_index.class, "apply", constants$11.const$4);
-    static final VarHandle const$4 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_row_at_index"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTableIface.get_n_columns.class, "apply", constants$10.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_state_set_clear_states",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_state_set_contains_state",
+        constants$11.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_state_set_contains_states",
+        constants$62.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_state_set_remove_state",
+        constants$11.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_state_set_and_sets",
+        constants$5.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_state_set_or_sets",
+        constants$5.const$5
+    );
 }
 
 

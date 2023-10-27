@@ -2,28 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1239 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1239() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_resolver_lookup_service_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_service_async",
-        constants$868.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_service_finish",
-        constants$23.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_records",
-        constants$977.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_resolver_lookup_records_async$callback.class, "apply", constants$14.const$3);
+    static final VarHandle const$0 = constants$1234.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_with_flags_async"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_with_flags_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$2 = constants$1234.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_with_flags_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_with_flags.class, "apply", constants$980.const$0);
+    static final VarHandle const$4 = constants$1234.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_with_flags"));
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_records_async",
-        constants$584.const$3
+        "g_resolver_get_type",
+        constants$3.const$5
     );
 }
 

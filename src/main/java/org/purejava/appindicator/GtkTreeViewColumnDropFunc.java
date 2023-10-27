@@ -13,13 +13,13 @@ public interface GtkTreeViewColumnDropFunc {
 
     int apply(java.lang.foreign.MemorySegment tree_view, java.lang.foreign.MemorySegment column, java.lang.foreign.MemorySegment prev_column, java.lang.foreign.MemorySegment next_column, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GtkTreeViewColumnDropFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2474.const$0, fi, constants$165.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2479.const$0, fi, constants$165.const$2, scope);
     }
     static GtkTreeViewColumnDropFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _tree_view, java.lang.foreign.MemorySegment _column, java.lang.foreign.MemorySegment _prev_column, java.lang.foreign.MemorySegment _next_column, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$2086.const$3.invokeExact(symbol, _tree_view, _column, _prev_column, _next_column, _data);
+                return (int)constants$2091.const$4.invokeExact(symbol, _tree_view, _column, _prev_column, _next_column, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

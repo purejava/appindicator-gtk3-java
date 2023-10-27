@@ -3,19 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 final class constants$510 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$510() {}
-    static final VarHandle const$0 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("thread_set_priority"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GThreadFunctions.thread_self.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("thread_self"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GThreadFunctions.thread_equal.class, "apply", constants$9.const$0);
-    static final VarHandle const$4 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("thread_equal"));
-    static final MemorySegment const$5 = RuntimeHelper.lookupGlobalVariable("g_thread_functions_for_glib_use", constants$503.const$0);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$509.const$4
+    );
+    static final VarHandle const$1 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("thread_create"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GThreadFunctions.thread_yield.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("thread_yield"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GThreadFunctions.thread_join.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("thread_join"));
 }
 
 

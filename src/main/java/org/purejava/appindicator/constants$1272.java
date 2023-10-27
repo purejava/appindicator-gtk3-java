@@ -7,26 +7,29 @@ final class constants$1272 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1272() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_simple_async_report_take_gerror_in_idle$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_set_op_res_gpointer",
+        constants$14.const$3
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_simple_async_report_take_gerror_in_idle",
-        constants$42.const$1
+        "g_simple_async_result_get_op_res_gpointer",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_simple_io_stream_get_type",
-        constants$3.const$5
+        "g_simple_async_result_set_op_res_gssize",
+        constants$25.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_simple_io_stream_new",
-        constants$5.const$5
+        "g_simple_async_result_get_op_res_gssize",
+        constants$4.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_simple_permission_get_type",
-        constants$3.const$5
+        "g_simple_async_result_set_op_res_gboolean",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_simple_permission_new",
-        constants$24.const$0
+        "g_simple_async_result_get_op_res_gboolean",
+        constants$10.const$5
     );
 }
 

@@ -2,40 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$776 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$776() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_set_buffer_size",
-        constants$25.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_get_available",
-        constants$4.const$0
-    );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_LONG
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_peek",
-        constants$776.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_peek_buffer",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_fill",
-        constants$4.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GBufferedInputStreamClass.fill_async.class, "apply", constants$765.const$2);
+    static final VarHandle const$1 = constants$775.const$3.varHandle(MemoryLayout.PathElement.groupElement("fill_async"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GBufferedInputStreamClass.fill_finish.class, "apply", constants$166.const$0);
+    static final VarHandle const$3 = constants$775.const$3.varHandle(MemoryLayout.PathElement.groupElement("fill_finish"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GBufferedInputStreamClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$775.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
 }
 
 

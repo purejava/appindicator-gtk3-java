@@ -2,40 +2,30 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2311 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2311() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellRendererClass.activate.class, "apply", constants$2311.const$0);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$2311.const$0
-    );
-    static final VarHandle const$3 = constants$2308.const$1.varHandle(MemoryLayout.PathElement.groupElement("activate"));
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkCellRendererClass.start_editing.class, "apply", constants$2311.const$4);
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("editing_done"),
+        RuntimeHelper.POINTER.withName("remove_widget"),
+        RuntimeHelper.POINTER.withName("start_editing")
+    ).withName("_GtkCellEditableIface");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellEditableIface.editing_done.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$2311.const$0.varHandle(MemoryLayout.PathElement.groupElement("editing_done"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkCellEditableIface.remove_widget.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$2311.const$0.varHandle(MemoryLayout.PathElement.groupElement("remove_widget"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkCellEditableIface.start_editing.class, "apply", constants$13.const$4);
 }
 
 

@@ -7,29 +7,23 @@ final class constants$1125 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1125() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_register",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_lookup",
-        constants$5.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GModuleCheckInit.class, "apply", constants$5.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GModuleUnload.class, "apply", constants$13.const$1);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_set_required_type",
-        constants$25.const$3
+        "g_module_error_quark",
+        constants$83.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_get_required_type",
-        constants$4.const$0
+        "g_module_supported",
+        constants$83.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_get_extensions",
-        constants$5.const$2
+        "g_module_open",
+        constants$21.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_get_extension_by_name",
-        constants$5.const$5
+        "g_module_open_full",
+        constants$196.const$3
     );
 }
 

@@ -18,7 +18,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkImplementorIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1976.const$0;
+        return constants$1981.const$1;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -32,7 +32,7 @@ public class _AtkImplementorIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(ref_accessible fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1976.const$1, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1981.const$2, fi, constants$5.const$2, scope);
         }
         static ref_accessible ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -47,7 +47,7 @@ public class _AtkImplementorIface {
     }
 
     public static VarHandle ref_accessible$VH() {
-        return constants$1976.const$2;
+        return constants$1981.const$3;
     }
     /**
      * Getter for field:
@@ -56,7 +56,7 @@ public class _AtkImplementorIface {
      * }
      */
     public static MemorySegment ref_accessible$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1976.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1981.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -65,13 +65,13 @@ public class _AtkImplementorIface {
      * }
      */
     public static void ref_accessible$set(MemorySegment seg, MemorySegment x) {
-        constants$1976.const$2.set(seg, x);
+        constants$1981.const$3.set(seg, x);
     }
     public static MemorySegment ref_accessible$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1976.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1981.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void ref_accessible$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1976.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1981.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static ref_accessible ref_accessible(MemorySegment segment, Arena scope) {
         return ref_accessible.ofAddress(ref_accessible$get(segment), scope);

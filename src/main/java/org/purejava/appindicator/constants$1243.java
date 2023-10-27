@@ -2,41 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1243 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1243() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_service_finish",
+        constants$23.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_resource_get_info",
-        constants$1243.const$0
+        "g_resolver_lookup_records",
+        constants$980.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_resources_register",
-        constants$13.const$1
-    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_resolver_lookup_records_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_resources_unregister",
-        constants$13.const$1
+        "g_resolver_lookup_records_async",
+        constants$587.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_resources_open_stream",
-        constants$196.const$3
+        "g_resolver_lookup_records_finish",
+        constants$23.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_resources_lookup_data",
-        constants$196.const$3
+        "g_resolver_free_targets",
+        constants$13.const$1
     );
 }
 

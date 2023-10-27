@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2468 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2468() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.columns_changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$2466.const$1.varHandle(MemoryLayout.PathElement.groupElement("columns_changed"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.cursor_changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$2466.const$1.varHandle(MemoryLayout.PathElement.groupElement("cursor_changed"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.move_cursor.class, "apply", constants$49.const$0);
-    static final VarHandle const$5 = constants$2466.const$1.varHandle(MemoryLayout.PathElement.groupElement("move_cursor"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_tooltip_text",
+        constants$21.const$3
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_icon_tooltip_markup",
+        constants$42.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_tooltip_markup",
+        constants$21.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_entry_set_icon_drag_source",
+        constants$1501.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_current_icon_drag_source",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_entry_get_icon_area",
+        constants$42.const$4
+    );
 }
 
 

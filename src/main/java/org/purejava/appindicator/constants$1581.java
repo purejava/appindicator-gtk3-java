@@ -2,18 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 final class constants$1581 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1581() {}
-    static final VarHandle const$0 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("lang_engine"));
-    static final VarHandle const$1 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("font"));
-    static final VarHandle const$2 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("level"));
-    static final VarHandle const$3 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("gravity"));
-    static final VarHandle const$4 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("flags"));
-    static final VarHandle const$5 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("script"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_font_desc",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_shape",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_font_features",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_new",
+        constants$35.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_ref",
+        constants$5.const$2
+    );
 }
 
 

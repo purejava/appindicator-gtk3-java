@@ -22,10 +22,10 @@ import java.lang.invoke.VarHandle;
 public class GTestConfig {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$460.const$0;
+        return constants$461.const$5;
     }
     public static VarHandle test_initialized$VH() {
-        return constants$460.const$1;
+        return constants$462.const$0;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class GTestConfig {
      * }
      */
     public static int test_initialized$get(MemorySegment seg) {
-        return (int)constants$460.const$1.get(seg);
+        return (int)constants$462.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -43,16 +43,16 @@ public class GTestConfig {
      * }
      */
     public static void test_initialized$set(MemorySegment seg, int x) {
-        constants$460.const$1.set(seg, x);
+        constants$462.const$0.set(seg, x);
     }
     public static int test_initialized$get(MemorySegment seg, long index) {
-        return (int)constants$460.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$462.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void test_initialized$set(MemorySegment seg, long index, int x) {
-        constants$460.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$462.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle test_quick$VH() {
-        return constants$460.const$2;
+        return constants$462.const$1;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class GTestConfig {
      * }
      */
     public static int test_quick$get(MemorySegment seg) {
-        return (int)constants$460.const$2.get(seg);
+        return (int)constants$462.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -70,16 +70,16 @@ public class GTestConfig {
      * }
      */
     public static void test_quick$set(MemorySegment seg, int x) {
-        constants$460.const$2.set(seg, x);
+        constants$462.const$1.set(seg, x);
     }
     public static int test_quick$get(MemorySegment seg, long index) {
-        return (int)constants$460.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$462.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void test_quick$set(MemorySegment seg, long index, int x) {
-        constants$460.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$462.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle test_perf$VH() {
-        return constants$460.const$3;
+        return constants$462.const$2;
     }
     /**
      * Getter for field:
@@ -88,7 +88,7 @@ public class GTestConfig {
      * }
      */
     public static int test_perf$get(MemorySegment seg) {
-        return (int)constants$460.const$3.get(seg);
+        return (int)constants$462.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -97,16 +97,16 @@ public class GTestConfig {
      * }
      */
     public static void test_perf$set(MemorySegment seg, int x) {
-        constants$460.const$3.set(seg, x);
+        constants$462.const$2.set(seg, x);
     }
     public static int test_perf$get(MemorySegment seg, long index) {
-        return (int)constants$460.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$462.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void test_perf$set(MemorySegment seg, long index, int x) {
-        constants$460.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$462.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle test_verbose$VH() {
-        return constants$460.const$4;
+        return constants$462.const$3;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class GTestConfig {
      * }
      */
     public static int test_verbose$get(MemorySegment seg) {
-        return (int)constants$460.const$4.get(seg);
+        return (int)constants$462.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -124,16 +124,16 @@ public class GTestConfig {
      * }
      */
     public static void test_verbose$set(MemorySegment seg, int x) {
-        constants$460.const$4.set(seg, x);
+        constants$462.const$3.set(seg, x);
     }
     public static int test_verbose$get(MemorySegment seg, long index) {
-        return (int)constants$460.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$462.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void test_verbose$set(MemorySegment seg, long index, int x) {
-        constants$460.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$462.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle test_quiet$VH() {
-        return constants$460.const$5;
+        return constants$462.const$4;
     }
     /**
      * Getter for field:
@@ -142,7 +142,7 @@ public class GTestConfig {
      * }
      */
     public static int test_quiet$get(MemorySegment seg) {
-        return (int)constants$460.const$5.get(seg);
+        return (int)constants$462.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -151,16 +151,16 @@ public class GTestConfig {
      * }
      */
     public static void test_quiet$set(MemorySegment seg, int x) {
-        constants$460.const$5.set(seg, x);
+        constants$462.const$4.set(seg, x);
     }
     public static int test_quiet$get(MemorySegment seg, long index) {
-        return (int)constants$460.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$462.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void test_quiet$set(MemorySegment seg, long index, int x) {
-        constants$460.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$462.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle test_undefined$VH() {
-        return constants$461.const$0;
+        return constants$462.const$5;
     }
     /**
      * Getter for field:
@@ -169,7 +169,7 @@ public class GTestConfig {
      * }
      */
     public static int test_undefined$get(MemorySegment seg) {
-        return (int)constants$461.const$0.get(seg);
+        return (int)constants$462.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -178,13 +178,13 @@ public class GTestConfig {
      * }
      */
     public static void test_undefined$set(MemorySegment seg, int x) {
-        constants$461.const$0.set(seg, x);
+        constants$462.const$5.set(seg, x);
     }
     public static int test_undefined$get(MemorySegment seg, long index) {
-        return (int)constants$461.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$462.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void test_undefined$set(MemorySegment seg, long index, int x) {
-        constants$461.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$462.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

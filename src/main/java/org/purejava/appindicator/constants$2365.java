@@ -3,40 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2365 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2365() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_changed",
-        constants$40.const$2
-    );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("dummy1"),
-        RuntimeHelper.POINTER.withName("dummy2"),
-        JAVA_INT.withName("dummy3"),
-        JAVA_INT.withName("dummy4"),
-        JAVA_INT.withName("dummy5"),
-        JAVA_INT.withName("dummy6"),
-        JAVA_INT.withName("dummy7"),
-        JAVA_INT.withName("dummy8"),
-        RuntimeHelper.POINTER.withName("dummy9"),
-        RuntimeHelper.POINTER.withName("dummy10"),
-        JAVA_INT.withName("dummy11"),
-        JAVA_INT.withName("dummy12"),
-        JAVA_INT.withName("dummy13"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("dummy14")
-    ).withName("_GtkTextIter");
-    static final VarHandle const$2 = constants$2365.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy1"));
-    static final VarHandle const$3 = constants$2365.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy2"));
-    static final VarHandle const$4 = constants$2365.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy3"));
-    static final VarHandle const$5 = constants$2365.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy4"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTextChildAnchorClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$2364.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTextChildAnchorClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$2364.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTextChildAnchorClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2364.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
 }
 
 

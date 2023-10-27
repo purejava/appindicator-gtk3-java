@@ -8,28 +8,28 @@ final class constants$549 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$549() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_type_class_ref",
-        constants$63.const$3
+        "g_type_init_with_debug_flags",
+        constants$80.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_type_class_peek",
+        "g_type_name",
         constants$63.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_class_peek_static",
-        constants$63.const$3
+        "g_type_qname",
+        constants$26.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_type_class_unref",
-        constants$13.const$1
+        "g_type_from_name",
+        constants$4.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_class_peek_parent",
-        constants$5.const$2
+        "g_type_parent",
+        constants$94.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_type_interface_peek",
-        constants$21.const$1
+        "g_type_depth",
+        constants$26.const$2
     );
 }
 

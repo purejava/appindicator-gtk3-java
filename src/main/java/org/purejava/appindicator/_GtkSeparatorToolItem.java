@@ -18,13 +18,13 @@ import java.lang.invoke.VarHandle;
 public class _GtkSeparatorToolItem {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3078.const$4;
+        return constants$3083.const$4;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 56);
     }
     public static VarHandle priv$VH() {
-        return constants$3078.const$5;
+        return constants$3083.const$5;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class _GtkSeparatorToolItem {
      * }
      */
     public static MemorySegment priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3078.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3083.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -42,13 +42,13 @@ public class _GtkSeparatorToolItem {
      * }
      */
     public static void priv$set(MemorySegment seg, MemorySegment x) {
-        constants$3078.const$5.set(seg, x);
+        constants$3083.const$5.set(seg, x);
     }
     public static MemorySegment priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3078.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3083.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void priv$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3078.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3083.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

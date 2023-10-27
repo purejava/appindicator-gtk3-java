@@ -2,34 +2,35 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$322 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$322() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_buffer_size",
-        constants$25.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_buffer_size",
-        constants$4.const$0
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_io_add_watch_full$notify.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_buffer_condition",
-        constants$10.const$5
+        "g_io_add_watch_full",
+        constants$322.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_flags",
-        constants$150.const$0
+        "g_io_create_watch",
+        constants$21.const$3
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_flags",
-        constants$10.const$5
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_io_add_watch$func.class, "apply", constants$150.const$0);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_line_term",
-        constants$164.const$5
+        "g_io_add_watch",
+        constants$11.const$0
     );
 }
 

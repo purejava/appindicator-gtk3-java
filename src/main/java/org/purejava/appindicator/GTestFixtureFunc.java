@@ -13,7 +13,7 @@ public interface GTestFixtureFunc {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GTestFixtureFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$449.const$0, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$450.const$0, fi, constants$13.const$4, scope);
     }
     static GTestFixtureFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

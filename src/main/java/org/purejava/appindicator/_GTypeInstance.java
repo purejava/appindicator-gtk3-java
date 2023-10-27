@@ -17,10 +17,10 @@ import java.lang.invoke.VarHandle;
 public class _GTypeInstance {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$545.const$4;
+        return constants$547.const$1;
     }
     public static VarHandle g_class$VH() {
-        return constants$545.const$5;
+        return constants$547.const$2;
     }
     /**
      * Getter for field:
@@ -29,7 +29,7 @@ public class _GTypeInstance {
      * }
      */
     public static MemorySegment g_class$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$545.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$547.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -38,13 +38,13 @@ public class _GTypeInstance {
      * }
      */
     public static void g_class$set(MemorySegment seg, MemorySegment x) {
-        constants$545.const$5.set(seg, x);
+        constants$547.const$2.set(seg, x);
     }
     public static MemorySegment g_class$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$545.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$547.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void g_class$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$545.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$547.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

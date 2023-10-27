@@ -2,37 +2,45 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.foreign.UnionLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1723 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1723() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_device_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_get_matrix",
+        constants$13.const$4
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_device_set_user_data",
-        constants$34.const$5
+        "cairo_get_target",
+        constants$5.const$2
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_get_group_target",
+        constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_surface_create_similar",
-        constants$1723.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_surface_create_similar_image",
-        constants$1723.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_surface_map_to_image",
-        constants$5.const$5
-    );
+    static final UnionLayout const$3 = MemoryLayout.unionLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("type"),
+            JAVA_INT.withName("length")
+        ).withName("header"),
+        MemoryLayout.structLayout(
+            JAVA_DOUBLE.withName("x"),
+            JAVA_DOUBLE.withName("y")
+        ).withName("point")
+    ).withName("_cairo_path_data_t");
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        JAVA_INT.withName("length")
+    ).withName("");
+    static final VarHandle const$5 = constants$1723.const$4.varHandle(MemoryLayout.PathElement.groupElement("type"));
 }
 
 

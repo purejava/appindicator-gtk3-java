@@ -2,36 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$376 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$376() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GLogWriterFunc.class, "apply", constants$82.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_log_set_fatal_mask",
+        constants$11.const$4
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$82.const$4
+        "g_log_set_always_fatal",
+        constants$8.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "g_log_structured",
-        constants$40.const$2
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_LONG
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_log_structured_array",
-        constants$376.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_log_variant",
-        constants$42.const$4
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("key"),
+        RuntimeHelper.POINTER.withName("value"),
+        JAVA_LONG.withName("length")
+    ).withName("_GLogField");
+    static final VarHandle const$3 = constants$376.const$2.varHandle(MemoryLayout.PathElement.groupElement("key"));
+    static final VarHandle const$4 = constants$376.const$2.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final VarHandle const$5 = constants$376.const$2.varHandle(MemoryLayout.PathElement.groupElement("length"));
 }
 
 

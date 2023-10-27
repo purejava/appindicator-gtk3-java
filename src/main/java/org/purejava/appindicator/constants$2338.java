@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2338 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2338() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_attribute_connect",
-        constants$331.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_attribute_disconnect",
-        constants$14.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_attribute_get_column",
-        constants$12.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_class_install_cell_property",
-        constants$42.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_class_find_cell_property",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_class_list_cell_properties",
-        constants$5.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellAreaClass._gtk_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCellAreaClass._gtk_reserved6.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellAreaClass._gtk_reserved7.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved7"));
 }
 
 

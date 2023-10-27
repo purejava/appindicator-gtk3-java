@@ -18,7 +18,7 @@ import java.lang.invoke.VarHandle;
 public class _cairo_path_data_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1718.const$3;
+        return constants$1723.const$3;
     }
     /**
      * {@snippet :
@@ -33,10 +33,10 @@ public class _cairo_path_data_t {
         // Suppresses default constructor, ensuring non-instantiability.
         private header() {}
         public static MemoryLayout $LAYOUT() {
-            return constants$1718.const$4;
+            return constants$1723.const$4;
         }
         public static VarHandle type$VH() {
-            return constants$1718.const$5;
+            return constants$1723.const$5;
         }
         /**
          * Getter for field:
@@ -45,7 +45,7 @@ public class _cairo_path_data_t {
          * }
          */
         public static int type$get(MemorySegment seg) {
-            return (int)constants$1718.const$5.get(seg);
+            return (int)constants$1723.const$5.get(seg);
         }
         /**
          * Setter for field:
@@ -54,16 +54,16 @@ public class _cairo_path_data_t {
          * }
          */
         public static void type$set(MemorySegment seg, int x) {
-            constants$1718.const$5.set(seg, x);
+            constants$1723.const$5.set(seg, x);
         }
         public static int type$get(MemorySegment seg, long index) {
-            return (int)constants$1718.const$5.get(seg.asSlice(index*sizeof()));
+            return (int)constants$1723.const$5.get(seg.asSlice(index*sizeof()));
         }
         public static void type$set(MemorySegment seg, long index, int x) {
-            constants$1718.const$5.set(seg.asSlice(index*sizeof()), x);
+            constants$1723.const$5.set(seg.asSlice(index*sizeof()), x);
         }
         public static VarHandle length$VH() {
-            return constants$1719.const$0;
+            return constants$1724.const$0;
         }
         /**
          * Getter for field:
@@ -72,7 +72,7 @@ public class _cairo_path_data_t {
          * }
          */
         public static int length$get(MemorySegment seg) {
-            return (int)constants$1719.const$0.get(seg);
+            return (int)constants$1724.const$0.get(seg);
         }
         /**
          * Setter for field:
@@ -81,13 +81,13 @@ public class _cairo_path_data_t {
          * }
          */
         public static void length$set(MemorySegment seg, int x) {
-            constants$1719.const$0.set(seg, x);
+            constants$1724.const$0.set(seg, x);
         }
         public static int length$get(MemorySegment seg, long index) {
-            return (int)constants$1719.const$0.get(seg.asSlice(index*sizeof()));
+            return (int)constants$1724.const$0.get(seg.asSlice(index*sizeof()));
         }
         public static void length$set(MemorySegment seg, long index, int x) {
-            constants$1719.const$0.set(seg.asSlice(index*sizeof()), x);
+            constants$1724.const$0.set(seg.asSlice(index*sizeof()), x);
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
@@ -113,10 +113,10 @@ public class _cairo_path_data_t {
         // Suppresses default constructor, ensuring non-instantiability.
         private point() {}
         public static MemoryLayout $LAYOUT() {
-            return constants$1719.const$1;
+            return constants$1724.const$1;
         }
         public static VarHandle x$VH() {
-            return constants$1719.const$2;
+            return constants$1724.const$2;
         }
         /**
          * Getter for field:
@@ -125,7 +125,7 @@ public class _cairo_path_data_t {
          * }
          */
         public static double x$get(MemorySegment seg) {
-            return (double)constants$1719.const$2.get(seg);
+            return (double)constants$1724.const$2.get(seg);
         }
         /**
          * Setter for field:
@@ -134,16 +134,16 @@ public class _cairo_path_data_t {
          * }
          */
         public static void x$set(MemorySegment seg, double x) {
-            constants$1719.const$2.set(seg, x);
+            constants$1724.const$2.set(seg, x);
         }
         public static double x$get(MemorySegment seg, long index) {
-            return (double)constants$1719.const$2.get(seg.asSlice(index*sizeof()));
+            return (double)constants$1724.const$2.get(seg.asSlice(index*sizeof()));
         }
         public static void x$set(MemorySegment seg, long index, double x) {
-            constants$1719.const$2.set(seg.asSlice(index*sizeof()), x);
+            constants$1724.const$2.set(seg.asSlice(index*sizeof()), x);
         }
         public static VarHandle y$VH() {
-            return constants$1719.const$3;
+            return constants$1724.const$3;
         }
         /**
          * Getter for field:
@@ -152,7 +152,7 @@ public class _cairo_path_data_t {
          * }
          */
         public static double y$get(MemorySegment seg) {
-            return (double)constants$1719.const$3.get(seg);
+            return (double)constants$1724.const$3.get(seg);
         }
         /**
          * Setter for field:
@@ -161,13 +161,13 @@ public class _cairo_path_data_t {
          * }
          */
         public static void y$set(MemorySegment seg, double x) {
-            constants$1719.const$3.set(seg, x);
+            constants$1724.const$3.set(seg, x);
         }
         public static double y$get(MemorySegment seg, long index) {
-            return (double)constants$1719.const$3.get(seg.asSlice(index*sizeof()));
+            return (double)constants$1724.const$3.get(seg.asSlice(index*sizeof()));
         }
         public static void y$set(MemorySegment seg, long index, double x) {
-            constants$1719.const$3.set(seg.asSlice(index*sizeof()), x);
+            constants$1724.const$3.set(seg.asSlice(index*sizeof()), x);
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

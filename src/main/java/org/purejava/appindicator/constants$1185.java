@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1185 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1185() {}
-    static final VarHandle const$0 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("volume_added"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.volume_removed.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("volume_removed"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.volume_changed.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("volume_changed"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.mount_added.class, "apply", constants$13.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_domain",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_password_save",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_password_save",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_choice",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_choice",
+        constants$40.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_reply",
+        constants$40.const$2
+    );
 }
 
 

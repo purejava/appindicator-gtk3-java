@@ -2,36 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$465 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$465() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "g_test_build_filename",
-        constants$24.const$4
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_test_log_buffer_free",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_test_get_dir",
-        constants$24.const$0
+        "g_test_log_buffer_push",
+        constants$42.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "g_test_get_filename",
-        constants$24.const$4
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_log_buffer_pop",
+        constants$5.const$2
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("func"),
-        RuntimeHelper.POINTER.withName("user_data"),
-        JAVA_INT.withName("exclusive"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GThreadPool");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GThreadPool.func.class, "apply", constants$13.const$4);
-    static final VarHandle const$5 = constants$465.const$3.varHandle(MemoryLayout.PathElement.groupElement("func"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_test_log_msg_free",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GTestLogFatalFunc.class, "apply", constants$11.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$11.const$0
+    );
 }
 
 

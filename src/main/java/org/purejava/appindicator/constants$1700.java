@@ -2,35 +2,31 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1700 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1700() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_set_subpixel_order",
-        constants$40.const$2
-    );
+    static final VarHandle const$0 = constants$1699.const$3.varHandle(MemoryLayout.PathElement.groupElement("y"));
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_get_subpixel_order",
-        constants$10.const$5
+        "cairo_glyph_allocate",
+        constants$24.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_set_hint_style",
-        constants$40.const$2
+        "cairo_glyph_free",
+        constants$13.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_get_hint_style",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_set_hint_metrics",
-        constants$40.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_get_hint_metrics",
-        constants$10.const$5
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("num_bytes"),
+        JAVA_INT.withName("num_glyphs")
+    ).withName("cairo_text_cluster_t");
+    static final VarHandle const$4 = constants$1700.const$3.varHandle(MemoryLayout.PathElement.groupElement("num_bytes"));
+    static final VarHandle const$5 = constants$1700.const$3.varHandle(MemoryLayout.PathElement.groupElement("num_glyphs"));
 }
 
 

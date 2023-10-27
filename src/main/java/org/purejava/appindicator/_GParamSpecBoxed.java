@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GParamSpecBoxed {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$664.const$0;
+        return constants$666.const$5;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);

@@ -2,34 +2,42 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$446 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$446() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_spawn_check_exit_status",
-        constants$9.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_spawn_close_pid",
-        constants$80.const$1
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_spawn_sync$child_setup.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_string_chunk_new",
-        constants$63.const$3
+        "g_spawn_sync",
+        constants$446.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_string_chunk_free",
-        constants$13.const$1
+        "g_spawn_command_line_sync",
+        constants$165.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_string_chunk_clear",
-        constants$13.const$1
+        "g_spawn_command_line_async",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_string_chunk_insert",
-        constants$5.const$5
+        "g_spawn_check_wait_status",
+        constants$9.const$2
     );
 }
 

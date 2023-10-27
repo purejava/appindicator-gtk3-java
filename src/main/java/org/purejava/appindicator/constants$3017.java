@@ -2,34 +2,24 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3017 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3017() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_last_application",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_has_application",
-        constants$9.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_groups",
-        constants$5.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_has_group",
-        constants$9.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRecentManagerClass._gtk_recent3.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$3015.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_recent3"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkRecentManagerClass._gtk_recent4.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3015.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_recent4"));
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_icon",
-        constants$21.const$3
+        "gtk_recent_manager_error_quark",
+        constants$83.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_gicon",
-        constants$5.const$2
+        "gtk_recent_manager_get_type",
+        constants$3.const$5
     );
 }
 

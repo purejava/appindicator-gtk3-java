@@ -14,18 +14,10 @@ final class constants$3244 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3244() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_arrow_get_type",
-        constants$3.const$5
+        "gtk_widget_path_has_parent",
+        constants$97.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_arrow_new",
-        constants$1412.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_arrow_set",
-        constants$467.const$3
-    );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
+    static final StructLayout const$1 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 RuntimeHelper.POINTER.withName("g_class")
@@ -33,11 +25,11 @@ final class constants$3244 {
             JAVA_INT.withName("ref_count"),
             MemoryLayout.paddingLayout(4),
             RuntimeHelper.POINTER.withName("qdata")
-        ).withName("object"),
-        RuntimeHelper.POINTER.withName("private_data")
-    ).withName("_GtkAction");
-    static final VarHandle const$4 = constants$3244.const$3.varHandle(MemoryLayout.PathElement.groupElement("private_data"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkWindowGroup");
+    static final VarHandle const$2 = constants$3244.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 JAVA_LONG.withName("g_type")
@@ -57,19 +49,13 @@ final class constants$3244 {
             JAVA_LONG.withName("n_pspecs"),
             MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
         ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("activate"),
-        JAVA_LONG.withName("menu_item_type"),
-        JAVA_LONG.withName("toolbar_item_type"),
-        RuntimeHelper.POINTER.withName("create_menu_item"),
-        RuntimeHelper.POINTER.withName("create_tool_item"),
-        RuntimeHelper.POINTER.withName("connect_proxy"),
-        RuntimeHelper.POINTER.withName("disconnect_proxy"),
-        RuntimeHelper.POINTER.withName("create_menu"),
         RuntimeHelper.POINTER.withName("_gtk_reserved1"),
         RuntimeHelper.POINTER.withName("_gtk_reserved2"),
         RuntimeHelper.POINTER.withName("_gtk_reserved3"),
         RuntimeHelper.POINTER.withName("_gtk_reserved4")
-    ).withName("_GtkActionClass");
+    ).withName("_GtkWindowGroupClass");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWindowGroupClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$3244.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
 }
 
 

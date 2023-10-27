@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2966 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2966() {}
-    static final VarHandle const$0 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("end_preview"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_scale",
+        constants$67.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_scale",
+        constants$692.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_print_pages",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_print_pages",
+        constants$40.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_page_ranges",
+        constants$5.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_page_ranges",
+        constants$164.const$5
+    );
 }
 
 

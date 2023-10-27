@@ -33,7 +33,7 @@ import java.lang.invoke.VarHandle;
 public class _GResolverClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1230.const$4;
+        return constants$1234.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -47,7 +47,7 @@ public class _GResolverClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(reload fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1230.const$5, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1234.const$3, fi, constants$13.const$1, scope);
         }
         static reload ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -62,7 +62,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle reload$VH() {
-        return constants$1231.const$0;
+        return constants$1234.const$4;
     }
     /**
      * Getter for field:
@@ -71,7 +71,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment reload$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1231.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1234.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -80,13 +80,13 @@ public class _GResolverClass {
      * }
      */
     public static void reload$set(MemorySegment seg, MemorySegment x) {
-        constants$1231.const$0.set(seg, x);
+        constants$1234.const$4.set(seg, x);
     }
     public static MemorySegment reload$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1231.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1234.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void reload$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1231.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1234.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static reload reload(MemorySegment segment, Arena scope) {
         return reload.ofAddress(reload$get(segment), scope);
@@ -100,13 +100,13 @@ public class _GResolverClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
         static MemorySegment allocate(lookup_by_name fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1231.const$1, fi, constants$39.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1234.const$5, fi, constants$39.const$1, scope);
         }
         static lookup_by_name ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$865.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
+                    return (java.lang.foreign.MemorySegment)constants$868.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -115,7 +115,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_by_name$VH() {
-        return constants$1231.const$2;
+        return constants$1235.const$0;
     }
     /**
      * Getter for field:
@@ -124,7 +124,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_by_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1231.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1235.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -133,13 +133,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_by_name$set(MemorySegment seg, MemorySegment x) {
-        constants$1231.const$2.set(seg, x);
+        constants$1235.const$0.set(seg, x);
     }
     public static MemorySegment lookup_by_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1231.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1235.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1231.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1235.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_by_name lookup_by_name(MemorySegment segment, Arena scope) {
         return lookup_by_name.ofAddress(lookup_by_name$get(segment), scope);
@@ -153,13 +153,13 @@ public class _GResolverClass {
 
         void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(lookup_by_name_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1231.const$3, fi, constants$331.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1235.const$1, fi, constants$332.const$1, scope);
         }
         static lookup_by_name_async ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
+                    constants$919.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -168,7 +168,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_by_name_async$VH() {
-        return constants$1231.const$4;
+        return constants$1235.const$2;
     }
     /**
      * Getter for field:
@@ -177,7 +177,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_by_name_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1231.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1235.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -186,13 +186,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_by_name_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1231.const$4.set(seg, x);
+        constants$1235.const$2.set(seg, x);
     }
     public static MemorySegment lookup_by_name_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1231.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1235.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1231.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1235.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_by_name_async lookup_by_name_async(MemorySegment segment, Arena scope) {
         return lookup_by_name_async.ofAddress(lookup_by_name_async$get(segment), scope);
@@ -206,13 +206,13 @@ public class _GResolverClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(lookup_by_name_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1231.const$5, fi, constants$23.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1235.const$3, fi, constants$23.const$0, scope);
         }
         static lookup_by_name_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$734.const$5.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -221,7 +221,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_by_name_finish$VH() {
-        return constants$1232.const$0;
+        return constants$1235.const$4;
     }
     /**
      * Getter for field:
@@ -230,7 +230,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_by_name_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1232.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1235.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -239,13 +239,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_by_name_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1232.const$0.set(seg, x);
+        constants$1235.const$4.set(seg, x);
     }
     public static MemorySegment lookup_by_name_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1232.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1235.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1232.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1235.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_by_name_finish lookup_by_name_finish(MemorySegment segment, Arena scope) {
         return lookup_by_name_finish.ofAddress(lookup_by_name_finish$get(segment), scope);
@@ -259,13 +259,13 @@ public class _GResolverClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
         static MemorySegment allocate(lookup_by_address fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1232.const$1, fi, constants$39.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1235.const$5, fi, constants$39.const$1, scope);
         }
         static lookup_by_address ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$865.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
+                    return (java.lang.foreign.MemorySegment)constants$868.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -274,7 +274,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_by_address$VH() {
-        return constants$1232.const$2;
+        return constants$1236.const$0;
     }
     /**
      * Getter for field:
@@ -283,7 +283,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_by_address$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1232.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1236.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -292,13 +292,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_by_address$set(MemorySegment seg, MemorySegment x) {
-        constants$1232.const$2.set(seg, x);
+        constants$1236.const$0.set(seg, x);
     }
     public static MemorySegment lookup_by_address$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1232.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1236.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_address$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1232.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1236.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_by_address lookup_by_address(MemorySegment segment, Arena scope) {
         return lookup_by_address.ofAddress(lookup_by_address$get(segment), scope);
@@ -312,13 +312,13 @@ public class _GResolverClass {
 
         void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(lookup_by_address_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1232.const$3, fi, constants$331.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1236.const$1, fi, constants$332.const$1, scope);
         }
         static lookup_by_address_async ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
+                    constants$919.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -327,7 +327,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_by_address_async$VH() {
-        return constants$1232.const$4;
+        return constants$1236.const$2;
     }
     /**
      * Getter for field:
@@ -336,7 +336,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_by_address_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1232.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1236.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -345,13 +345,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_by_address_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1232.const$4.set(seg, x);
+        constants$1236.const$2.set(seg, x);
     }
     public static MemorySegment lookup_by_address_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1232.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1236.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_address_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1232.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1236.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_by_address_async lookup_by_address_async(MemorySegment segment, Arena scope) {
         return lookup_by_address_async.ofAddress(lookup_by_address_async$get(segment), scope);
@@ -365,13 +365,13 @@ public class _GResolverClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(lookup_by_address_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1232.const$5, fi, constants$23.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1236.const$3, fi, constants$23.const$0, scope);
         }
         static lookup_by_address_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$734.const$5.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -380,7 +380,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_by_address_finish$VH() {
-        return constants$1233.const$0;
+        return constants$1236.const$4;
     }
     /**
      * Getter for field:
@@ -389,7 +389,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_by_address_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1233.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1236.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -398,13 +398,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_by_address_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1233.const$0.set(seg, x);
+        constants$1236.const$4.set(seg, x);
     }
     public static MemorySegment lookup_by_address_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1233.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1236.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_address_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1233.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1236.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_by_address_finish lookup_by_address_finish(MemorySegment segment, Arena scope) {
         return lookup_by_address_finish.ofAddress(lookup_by_address_finish$get(segment), scope);
@@ -418,13 +418,13 @@ public class _GResolverClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
         static MemorySegment allocate(lookup_service fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1233.const$1, fi, constants$39.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1236.const$5, fi, constants$39.const$1, scope);
         }
         static lookup_service ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$865.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
+                    return (java.lang.foreign.MemorySegment)constants$868.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -433,7 +433,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_service$VH() {
-        return constants$1233.const$2;
+        return constants$1237.const$0;
     }
     /**
      * Getter for field:
@@ -442,7 +442,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_service$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1233.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1237.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -451,13 +451,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_service$set(MemorySegment seg, MemorySegment x) {
-        constants$1233.const$2.set(seg, x);
+        constants$1237.const$0.set(seg, x);
     }
     public static MemorySegment lookup_service$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1233.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1237.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_service$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1233.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1237.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_service lookup_service(MemorySegment segment, Arena scope) {
         return lookup_service.ofAddress(lookup_service$get(segment), scope);
@@ -471,13 +471,13 @@ public class _GResolverClass {
 
         void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(lookup_service_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1233.const$3, fi, constants$331.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1237.const$1, fi, constants$332.const$1, scope);
         }
         static lookup_service_async ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
+                    constants$919.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -486,7 +486,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_service_async$VH() {
-        return constants$1233.const$4;
+        return constants$1237.const$2;
     }
     /**
      * Getter for field:
@@ -495,7 +495,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_service_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1233.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1237.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -504,13 +504,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_service_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1233.const$4.set(seg, x);
+        constants$1237.const$2.set(seg, x);
     }
     public static MemorySegment lookup_service_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1233.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1237.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_service_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1233.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1237.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_service_async lookup_service_async(MemorySegment segment, Arena scope) {
         return lookup_service_async.ofAddress(lookup_service_async$get(segment), scope);
@@ -524,13 +524,13 @@ public class _GResolverClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(lookup_service_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1233.const$5, fi, constants$23.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1237.const$3, fi, constants$23.const$0, scope);
         }
         static lookup_service_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$734.const$5.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -539,7 +539,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_service_finish$VH() {
-        return constants$1234.const$0;
+        return constants$1237.const$4;
     }
     /**
      * Getter for field:
@@ -548,7 +548,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_service_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1234.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1237.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -557,13 +557,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_service_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1234.const$0.set(seg, x);
+        constants$1237.const$4.set(seg, x);
     }
     public static MemorySegment lookup_service_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1234.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1237.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_service_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1234.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1237.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_service_finish lookup_service_finish(MemorySegment segment, Arena scope) {
         return lookup_service_finish.ofAddress(lookup_service_finish$get(segment), scope);
@@ -577,13 +577,13 @@ public class _GResolverClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(lookup_records fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1234.const$1, fi, constants$977.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1237.const$5, fi, constants$980.const$0, scope);
         }
         static lookup_records ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$977.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (java.lang.foreign.MemorySegment)constants$980.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -592,7 +592,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_records$VH() {
-        return constants$1234.const$2;
+        return constants$1238.const$0;
     }
     /**
      * Getter for field:
@@ -601,7 +601,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_records$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1234.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1238.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -610,13 +610,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_records$set(MemorySegment seg, MemorySegment x) {
-        constants$1234.const$2.set(seg, x);
+        constants$1238.const$0.set(seg, x);
     }
     public static MemorySegment lookup_records$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1234.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1238.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_records$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1234.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1238.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_records lookup_records(MemorySegment segment, Arena scope) {
         return lookup_records.ofAddress(lookup_records$get(segment), scope);
@@ -630,13 +630,13 @@ public class _GResolverClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
         static MemorySegment allocate(lookup_records_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1234.const$3, fi, constants$584.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$1238.const$1, fi, constants$587.const$0, scope);
         }
         static lookup_records_async ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    constants$584.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$587.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -645,7 +645,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_records_async$VH() {
-        return constants$1234.const$4;
+        return constants$1238.const$2;
     }
     /**
      * Getter for field:
@@ -654,7 +654,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_records_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1234.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1238.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -663,13 +663,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_records_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1234.const$4.set(seg, x);
+        constants$1238.const$2.set(seg, x);
     }
     public static MemorySegment lookup_records_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1234.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1238.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_records_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1234.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1238.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_records_async lookup_records_async(MemorySegment segment, Arena scope) {
         return lookup_records_async.ofAddress(lookup_records_async$get(segment), scope);
@@ -683,13 +683,13 @@ public class _GResolverClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(lookup_records_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1234.const$5, fi, constants$23.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1238.const$3, fi, constants$23.const$0, scope);
         }
         static lookup_records_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$734.const$5.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -698,7 +698,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_records_finish$VH() {
-        return constants$1235.const$0;
+        return constants$1238.const$4;
     }
     /**
      * Getter for field:
@@ -707,7 +707,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_records_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1235.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1238.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -716,13 +716,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_records_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1235.const$0.set(seg, x);
+        constants$1238.const$4.set(seg, x);
     }
     public static MemorySegment lookup_records_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1235.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1238.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_records_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1235.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1238.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_records_finish lookup_records_finish(MemorySegment segment, Arena scope) {
         return lookup_records_finish.ofAddress(lookup_records_finish$get(segment), scope);
@@ -736,13 +736,13 @@ public class _GResolverClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
         static MemorySegment allocate(lookup_by_name_with_flags_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1235.const$1, fi, constants$584.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$1238.const$5, fi, constants$587.const$0, scope);
         }
         static lookup_by_name_with_flags_async ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    constants$584.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$587.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -751,7 +751,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_by_name_with_flags_async$VH() {
-        return constants$1235.const$2;
+        return constants$1239.const$0;
     }
     /**
      * Getter for field:
@@ -760,7 +760,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_by_name_with_flags_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1235.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1239.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -769,13 +769,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_by_name_with_flags_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1235.const$2.set(seg, x);
+        constants$1239.const$0.set(seg, x);
     }
     public static MemorySegment lookup_by_name_with_flags_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1235.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1239.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name_with_flags_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1235.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1239.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_by_name_with_flags_async lookup_by_name_with_flags_async(MemorySegment segment, Arena scope) {
         return lookup_by_name_with_flags_async.ofAddress(lookup_by_name_with_flags_async$get(segment), scope);
@@ -789,13 +789,13 @@ public class _GResolverClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(lookup_by_name_with_flags_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1235.const$3, fi, constants$23.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1239.const$1, fi, constants$23.const$0, scope);
         }
         static lookup_by_name_with_flags_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$734.const$5.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -804,7 +804,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_by_name_with_flags_finish$VH() {
-        return constants$1235.const$4;
+        return constants$1239.const$2;
     }
     /**
      * Getter for field:
@@ -813,7 +813,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_by_name_with_flags_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1235.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1239.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -822,13 +822,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_by_name_with_flags_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1235.const$4.set(seg, x);
+        constants$1239.const$2.set(seg, x);
     }
     public static MemorySegment lookup_by_name_with_flags_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1235.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1239.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name_with_flags_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1235.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1239.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_by_name_with_flags_finish lookup_by_name_with_flags_finish(MemorySegment segment, Arena scope) {
         return lookup_by_name_with_flags_finish.ofAddress(lookup_by_name_with_flags_finish$get(segment), scope);
@@ -842,13 +842,13 @@ public class _GResolverClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(lookup_by_name_with_flags fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1235.const$5, fi, constants$977.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1239.const$3, fi, constants$980.const$0, scope);
         }
         static lookup_by_name_with_flags ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$977.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (java.lang.foreign.MemorySegment)constants$980.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -857,7 +857,7 @@ public class _GResolverClass {
     }
 
     public static VarHandle lookup_by_name_with_flags$VH() {
-        return constants$1236.const$0;
+        return constants$1239.const$4;
     }
     /**
      * Getter for field:
@@ -866,7 +866,7 @@ public class _GResolverClass {
      * }
      */
     public static MemorySegment lookup_by_name_with_flags$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1236.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1239.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -875,13 +875,13 @@ public class _GResolverClass {
      * }
      */
     public static void lookup_by_name_with_flags$set(MemorySegment seg, MemorySegment x) {
-        constants$1236.const$0.set(seg, x);
+        constants$1239.const$4.set(seg, x);
     }
     public static MemorySegment lookup_by_name_with_flags$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1236.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1239.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name_with_flags$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1236.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1239.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_by_name_with_flags lookup_by_name_with_flags(MemorySegment segment, Arena scope) {
         return lookup_by_name_with_flags.ofAddress(lookup_by_name_with_flags$get(segment), scope);

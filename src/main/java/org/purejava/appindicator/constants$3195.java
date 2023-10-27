@@ -7,42 +7,39 @@ import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3195 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3195() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_drag_dest_drag_data_received",
+        constants$12.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tree_drag_dest_row_drop_possible",
+        constants$12.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_set_row_drag_data",
+        constants$12.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_get_row_drag_data",
+        constants$12.const$2
+    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("changed"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved1"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved2"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved3"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved4")
-    ).withName("_GtkTreeSelectionClass");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTreeSelectionClass.changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$3195.const$0.varHandle(MemoryLayout.PathElement.groupElement("changed"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTreeSelectionClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$3195.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTreeSelectionClass._gtk_reserved2.class, "apply", constants$7.const$5);
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkTreeModelSort");
+    static final VarHandle const$5 = constants$3195.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

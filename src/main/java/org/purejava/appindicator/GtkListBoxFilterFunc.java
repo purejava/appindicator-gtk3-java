@@ -13,7 +13,7 @@ public interface GtkListBoxFilterFunc {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GtkListBoxFilterFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2846.const$3, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$2851.const$3, fi, constants$9.const$0, scope);
     }
     static GtkListBoxFilterFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

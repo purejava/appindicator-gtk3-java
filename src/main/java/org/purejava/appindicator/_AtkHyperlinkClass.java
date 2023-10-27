@@ -27,7 +27,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkHyperlinkClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2030.const$1;
+        return constants$2035.const$2;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -41,13 +41,13 @@ public class _AtkHyperlinkClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(get_uri fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2030.const$2, fi, constants$21.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2035.const$3, fi, constants$21.const$3, scope);
         }
         static get_uri ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$318.const$0.invokeExact(symbol, __x0, __x1);
+                    return (java.lang.foreign.MemorySegment)constants$319.const$0.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -56,7 +56,7 @@ public class _AtkHyperlinkClass {
     }
 
     public static VarHandle get_uri$VH() {
-        return constants$2030.const$3;
+        return constants$2035.const$4;
     }
     /**
      * Getter for field:
@@ -65,7 +65,7 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static MemorySegment get_uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2030.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2035.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -74,13 +74,13 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static void get_uri$set(MemorySegment seg, MemorySegment x) {
-        constants$2030.const$3.set(seg, x);
+        constants$2035.const$4.set(seg, x);
     }
     public static MemorySegment get_uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2030.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2035.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_uri$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2030.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2035.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_uri get_uri(MemorySegment segment, Arena scope) {
         return get_uri.ofAddress(get_uri$get(segment), scope);
@@ -94,13 +94,13 @@ public class _AtkHyperlinkClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(get_object fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2030.const$4, fi, constants$21.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2035.const$5, fi, constants$21.const$3, scope);
         }
         static get_object ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$318.const$0.invokeExact(symbol, __x0, __x1);
+                    return (java.lang.foreign.MemorySegment)constants$319.const$0.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -109,7 +109,7 @@ public class _AtkHyperlinkClass {
     }
 
     public static VarHandle get_object$VH() {
-        return constants$2030.const$5;
+        return constants$2036.const$0;
     }
     /**
      * Getter for field:
@@ -118,7 +118,7 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static MemorySegment get_object$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2030.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2036.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -127,13 +127,13 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static void get_object$set(MemorySegment seg, MemorySegment x) {
-        constants$2030.const$5.set(seg, x);
+        constants$2036.const$0.set(seg, x);
     }
     public static MemorySegment get_object$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2030.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2036.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_object$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2030.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2036.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_object get_object(MemorySegment segment, Arena scope) {
         return get_object.ofAddress(get_object$get(segment), scope);
@@ -147,7 +147,7 @@ public class _AtkHyperlinkClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_end_index fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2031.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2036.const$1, fi, constants$10.const$5, scope);
         }
         static get_end_index ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -162,7 +162,7 @@ public class _AtkHyperlinkClass {
     }
 
     public static VarHandle get_end_index$VH() {
-        return constants$2031.const$1;
+        return constants$2036.const$2;
     }
     /**
      * Getter for field:
@@ -171,7 +171,7 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static MemorySegment get_end_index$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2031.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2036.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -180,13 +180,13 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static void get_end_index$set(MemorySegment seg, MemorySegment x) {
-        constants$2031.const$1.set(seg, x);
+        constants$2036.const$2.set(seg, x);
     }
     public static MemorySegment get_end_index$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2031.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2036.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_end_index$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2031.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2036.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_end_index get_end_index(MemorySegment segment, Arena scope) {
         return get_end_index.ofAddress(get_end_index$get(segment), scope);
@@ -200,7 +200,7 @@ public class _AtkHyperlinkClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_start_index fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2031.const$2, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2036.const$3, fi, constants$10.const$5, scope);
         }
         static get_start_index ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -215,7 +215,7 @@ public class _AtkHyperlinkClass {
     }
 
     public static VarHandle get_start_index$VH() {
-        return constants$2031.const$3;
+        return constants$2036.const$4;
     }
     /**
      * Getter for field:
@@ -224,7 +224,7 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static MemorySegment get_start_index$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2031.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2036.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -233,13 +233,13 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static void get_start_index$set(MemorySegment seg, MemorySegment x) {
-        constants$2031.const$3.set(seg, x);
+        constants$2036.const$4.set(seg, x);
     }
     public static MemorySegment get_start_index$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2031.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2036.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_start_index$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2031.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2036.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_start_index get_start_index(MemorySegment segment, Arena scope) {
         return get_start_index.ofAddress(get_start_index$get(segment), scope);
@@ -253,7 +253,7 @@ public class _AtkHyperlinkClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(is_valid fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2031.const$4, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2036.const$5, fi, constants$10.const$5, scope);
         }
         static is_valid ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -268,7 +268,7 @@ public class _AtkHyperlinkClass {
     }
 
     public static VarHandle is_valid$VH() {
-        return constants$2031.const$5;
+        return constants$2037.const$0;
     }
     /**
      * Getter for field:
@@ -277,7 +277,7 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static MemorySegment is_valid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2031.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2037.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -286,13 +286,13 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static void is_valid$set(MemorySegment seg, MemorySegment x) {
-        constants$2031.const$5.set(seg, x);
+        constants$2037.const$0.set(seg, x);
     }
     public static MemorySegment is_valid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2031.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2037.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void is_valid$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2031.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2037.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static is_valid is_valid(MemorySegment segment, Arena scope) {
         return is_valid.ofAddress(is_valid$get(segment), scope);
@@ -306,7 +306,7 @@ public class _AtkHyperlinkClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_n_anchors fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2032.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2037.const$1, fi, constants$10.const$5, scope);
         }
         static get_n_anchors ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -321,7 +321,7 @@ public class _AtkHyperlinkClass {
     }
 
     public static VarHandle get_n_anchors$VH() {
-        return constants$2032.const$1;
+        return constants$2037.const$2;
     }
     /**
      * Getter for field:
@@ -330,7 +330,7 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static MemorySegment get_n_anchors$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2032.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2037.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -339,13 +339,13 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static void get_n_anchors$set(MemorySegment seg, MemorySegment x) {
-        constants$2032.const$1.set(seg, x);
+        constants$2037.const$2.set(seg, x);
     }
     public static MemorySegment get_n_anchors$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2032.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2037.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_n_anchors$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2032.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2037.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_n_anchors get_n_anchors(MemorySegment segment, Arena scope) {
         return get_n_anchors.ofAddress(get_n_anchors$get(segment), scope);
@@ -359,7 +359,7 @@ public class _AtkHyperlinkClass {
 
         int apply(java.lang.foreign.MemorySegment key);
         static MemorySegment allocate(link_state fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2032.const$2, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2037.const$3, fi, constants$10.const$5, scope);
         }
         static link_state ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -374,7 +374,7 @@ public class _AtkHyperlinkClass {
     }
 
     public static VarHandle link_state$VH() {
-        return constants$2032.const$3;
+        return constants$2037.const$4;
     }
     /**
      * Getter for field:
@@ -383,7 +383,7 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static MemorySegment link_state$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2032.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2037.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -392,13 +392,13 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static void link_state$set(MemorySegment seg, MemorySegment x) {
-        constants$2032.const$3.set(seg, x);
+        constants$2037.const$4.set(seg, x);
     }
     public static MemorySegment link_state$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2032.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2037.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void link_state$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2032.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2037.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static link_state link_state(MemorySegment segment, Arena scope) {
         return link_state.ofAddress(link_state$get(segment), scope);
@@ -412,7 +412,7 @@ public class _AtkHyperlinkClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(is_selected_link fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2032.const$4, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2037.const$5, fi, constants$10.const$5, scope);
         }
         static is_selected_link ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -427,7 +427,7 @@ public class _AtkHyperlinkClass {
     }
 
     public static VarHandle is_selected_link$VH() {
-        return constants$2032.const$5;
+        return constants$2038.const$0;
     }
     /**
      * Getter for field:
@@ -436,7 +436,7 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static MemorySegment is_selected_link$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2032.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2038.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -445,13 +445,13 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static void is_selected_link$set(MemorySegment seg, MemorySegment x) {
-        constants$2032.const$5.set(seg, x);
+        constants$2038.const$0.set(seg, x);
     }
     public static MemorySegment is_selected_link$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2032.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2038.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void is_selected_link$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2032.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2038.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static is_selected_link is_selected_link(MemorySegment segment, Arena scope) {
         return is_selected_link.ofAddress(is_selected_link$get(segment), scope);
@@ -465,7 +465,7 @@ public class _AtkHyperlinkClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(link_activated fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2033.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2038.const$1, fi, constants$13.const$1, scope);
         }
         static link_activated ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -480,7 +480,7 @@ public class _AtkHyperlinkClass {
     }
 
     public static VarHandle link_activated$VH() {
-        return constants$2033.const$1;
+        return constants$2038.const$2;
     }
     /**
      * Getter for field:
@@ -489,7 +489,7 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static MemorySegment link_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2033.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2038.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -498,13 +498,13 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static void link_activated$set(MemorySegment seg, MemorySegment x) {
-        constants$2033.const$1.set(seg, x);
+        constants$2038.const$2.set(seg, x);
     }
     public static MemorySegment link_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2033.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2038.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void link_activated$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2033.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2038.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static link_activated link_activated(MemorySegment segment, Arena scope) {
         return link_activated.ofAddress(link_activated$get(segment), scope);
@@ -518,7 +518,7 @@ public class _AtkHyperlinkClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(pad1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2033.const$2, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2038.const$3, fi, constants$10.const$5, scope);
         }
         static pad1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -533,7 +533,7 @@ public class _AtkHyperlinkClass {
     }
 
     public static VarHandle pad1$VH() {
-        return constants$2033.const$3;
+        return constants$2038.const$4;
     }
     /**
      * Getter for field:
@@ -542,7 +542,7 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static MemorySegment pad1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2033.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2038.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -551,13 +551,13 @@ public class _AtkHyperlinkClass {
      * }
      */
     public static void pad1$set(MemorySegment seg, MemorySegment x) {
-        constants$2033.const$3.set(seg, x);
+        constants$2038.const$4.set(seg, x);
     }
     public static MemorySegment pad1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2033.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2038.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void pad1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2033.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2038.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static pad1 pad1(MemorySegment segment, Arena scope) {
         return pad1.ofAddress(pad1$get(segment), scope);

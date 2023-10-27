@@ -8,28 +8,28 @@ final class constants$3254 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3254() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_action_get_tooltip",
+        "gtk_action_get_name",
         constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_action_set_stock_id",
-        constants$13.const$4
+        "gtk_action_is_sensitive",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_action_get_stock_id",
-        constants$5.const$2
+        "gtk_action_get_sensitive",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_action_set_gicon",
-        constants$13.const$4
+        "gtk_action_set_sensitive",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_action_get_gicon",
-        constants$5.const$2
+        "gtk_action_is_visible",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_action_set_icon_name",
-        constants$13.const$4
+        "gtk_action_get_visible",
+        constants$10.const$5
     );
 }
 

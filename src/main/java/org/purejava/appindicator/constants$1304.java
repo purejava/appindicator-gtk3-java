@@ -2,31 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1304 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1304() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_socket_connection_connect_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_socket_connection_connect_async",
-        constants$331.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSocketConnectableIface.to_string.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1303.const$1.varHandle(MemoryLayout.PathElement.groupElement("to_string"));
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_socket_connection_connect_finish",
-        constants$12.const$2
+        "g_socket_connectable_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_socket",
+        "g_socket_connectable_enumerate",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_local_address",
-        constants$5.const$5
+        "g_socket_connectable_proxy_enumerate",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_remote_address",
-        constants$5.const$5
+        "g_socket_connectable_to_string",
+        constants$5.const$2
     );
 }
 

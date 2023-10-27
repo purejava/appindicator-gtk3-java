@@ -13,7 +13,7 @@ public interface gtk_tree_selection_set_select_function$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_tree_selection_set_select_function$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3197.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$3202.const$3, fi, constants$13.const$1, scope);
     }
     static gtk_tree_selection_set_select_function$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

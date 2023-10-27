@@ -13,7 +13,7 @@ public interface gtk_widget_class_bind_template_callback_full$callback_symbol {
 
     void apply();
     static MemorySegment allocate(gtk_widget_class_bind_template_callback_full$callback_symbol fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2164.const$4, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$2170.const$0, fi, constants$7.const$5, scope);
     }
     static gtk_widget_class_bind_template_callback_full$callback_symbol ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

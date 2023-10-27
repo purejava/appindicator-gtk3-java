@@ -8,17 +8,29 @@ final class constants$473 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$473() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_trash_stack_height",
+        "g_timer_elapsed",
+        constants$67.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_timer_is_active",
         constants$10.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GTraverseFunc.class, "apply", constants$12.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GTraverseNodeFunc.class, "apply", constants$9.const$0);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_tree_new$key_compare_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_usleep",
+        constants$84.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_time_val_add",
+        constants$25.const$3
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tree_new",
+        "g_time_val_from_iso8601",
+        constants$9.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_time_val_to_iso8601",
         constants$5.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_tree_new_with_data$key_compare_func.class, "apply", constants$12.const$2);
 }
 
 

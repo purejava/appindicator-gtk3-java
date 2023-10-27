@@ -2,29 +2,37 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1335 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1335() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_task_run_in_thread",
-        constants$13.const$4
+        "g_task_new",
+        constants$39.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_task_run_in_thread_sync$task_func.class, "apply", constants$42.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_task_report_error$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_task_run_in_thread_sync",
-        constants$13.const$4
+        "g_task_report_error",
+        constants$332.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_task_set_return_on_cancel",
-        constants$11.const$4
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_task_report_new_error$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_task_get_return_on_cancel",
-        constants$10.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_task_report_new_error",
+        constants$1335.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_task_attach_source$callback.class, "apply", constants$10.const$5);
 }
 
 

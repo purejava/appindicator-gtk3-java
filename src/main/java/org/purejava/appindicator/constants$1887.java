@@ -11,33 +11,34 @@ final class constants$1887 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1887() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_save_to_bufferv",
-        constants$164.const$2
+        "gdk_pixbuf_read_pixel_bytes",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream",
-        constants$23.const$0
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gdk_pixbuf_new_from_stream_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_async",
-        constants$42.const$1
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new",
+        constants$1887.const$1
+    );
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_finish",
-        constants$5.const$5
+        "gdk_pixbuf_calculate_rowstride",
+        constants$1887.const$3
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_at_scale",
-        constants$1887.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_copy",
+        constants$5.const$2
     );
 }
 

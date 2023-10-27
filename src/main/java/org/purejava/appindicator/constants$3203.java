@@ -7,29 +7,26 @@ final class constants$3203 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3203() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_store_new",
-        constants$24.const$0
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_get_tree_view",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_newv",
-        constants$24.const$4
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_tree_selection_get_select_function$return.class, "apply", constants$329.const$5);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_set_column_types",
-        constants$42.const$4
+        "gtk_tree_selection_get_select_function",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_set_value",
-        constants$464.const$4
+        "gtk_tree_selection_get_selected",
+        constants$12.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_store_set",
-        constants$13.const$4
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_get_selected_rows",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_set_valuesv",
-        constants$646.const$4
+        "gtk_tree_selection_count_selected_rows",
+        constants$10.const$5
     );
 }
 

@@ -2,34 +2,42 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1833 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1833() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_merge_child_input_shapes",
-        constants$13.const$1
+        "gdk_window_move",
+        constants$469.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_pass_through",
-        constants$40.const$2
+        "gdk_window_resize",
+        constants$469.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_pass_through",
-        constants$10.const$5
+        "gdk_window_move_resize",
+        constants$1648.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_is_visible",
-        constants$10.const$5
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_is_viewable",
-        constants$10.const$5
+        "gdk_window_move_to_rect",
+        constants$1833.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_is_input_only",
-        constants$10.const$5
+        "gdk_window_reparent",
+        constants$1046.const$2
     );
 }
 

@@ -8,23 +8,29 @@ final class constants$2726 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2726() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_get_preview_text",
+        "gtk_font_button_get_font_name",
         constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_set_preview_text",
-        constants$13.const$4
+        "gtk_font_button_set_font_name",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_get_show_preview_entry",
+        "gtk_font_button_get_show_style",
         constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_set_show_preview_entry",
+        "gtk_font_button_set_show_style",
         constants$40.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_font_chooser_set_filter_func$filter.class, "apply", constants$12.const$2);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_font_chooser_set_filter_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_font_button_get_show_size",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_font_button_set_show_size",
+        constants$40.const$2
+    );
 }
 
 

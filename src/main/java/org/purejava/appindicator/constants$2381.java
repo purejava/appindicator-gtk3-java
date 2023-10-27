@@ -8,26 +8,29 @@ final class constants$2381 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2381() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_to_line_end",
-        constants$10.const$5
+        "gtk_text_iter_backward_lines",
+        constants$11.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_visible_line_offset",
-        constants$40.const$2
+        "gtk_text_iter_forward_word_end",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_visible_line_index",
-        constants$40.const$2
+        "gtk_text_iter_backward_word_start",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_to_tag_toggle",
-        constants$9.const$0
+        "gtk_text_iter_forward_word_ends",
+        constants$11.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_to_tag_toggle",
-        constants$9.const$0
+        "gtk_text_iter_backward_word_starts",
+        constants$11.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GtkTextCharPredicate.class, "apply", constants$9.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_visible_line",
+        constants$10.const$5
+    );
 }
 
 

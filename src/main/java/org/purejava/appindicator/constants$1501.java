@@ -5,37 +5,40 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1501 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1501() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_font_set_ptem",
-        constants$689.const$1
+        "hb_font_get_glyph_extents_for_origin",
+        constants$49.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_font_get_ptem",
-        constants$689.const$3
-    );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
         RuntimeHelper.POINTER,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_contour_point_for_origin",
+        constants$1501.const$1
+    );
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
         JAVA_INT
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_font_set_synthetic_bold",
-        constants$1501.const$2
-    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_font_get_synthetic_bold",
-        constants$42.const$1
+        "hb_font_glyph_to_string",
+        constants$1501.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_font_set_synthetic_slant",
-        constants$689.const$1
+        "hb_font_glyph_from_string",
+        constants$328.const$4
     );
 }
 

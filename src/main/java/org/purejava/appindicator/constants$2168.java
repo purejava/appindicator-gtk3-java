@@ -8,29 +8,23 @@ final class constants$2168 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2168() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_application_add_window",
+        "gtk_widget_class_set_css_name",
         constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_application_remove_window",
-        constants$13.const$4
+        "gtk_widget_class_get_css_name",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_application_get_windows",
-        constants$5.const$2
+        "gtk_widget_get_modifier_mask",
+        constants$11.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_application_get_app_menu",
-        constants$5.const$2
+        "gtk_widget_insert_action_group",
+        constants$14.const$3
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_application_set_app_menu",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_application_get_menubar",
-        constants$5.const$2
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_widget_add_tick_callback$callback.class, "apply", constants$12.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_widget_add_tick_callback$notify.class, "apply", constants$13.const$1);
 }
 
 

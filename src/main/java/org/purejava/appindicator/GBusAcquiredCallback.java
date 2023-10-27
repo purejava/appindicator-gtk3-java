@@ -13,7 +13,7 @@ public interface GBusAcquiredCallback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GBusAcquiredCallback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$904.const$0, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$907.const$0, fi, constants$14.const$3, scope);
     }
     static GBusAcquiredCallback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

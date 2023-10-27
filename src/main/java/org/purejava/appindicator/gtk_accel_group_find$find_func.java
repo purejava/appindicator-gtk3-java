@@ -13,7 +13,7 @@ public interface gtk_accel_group_find$find_func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_accel_group_find$find_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1956.const$0, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1961.const$0, fi, constants$12.const$2, scope);
     }
     static gtk_accel_group_find$find_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

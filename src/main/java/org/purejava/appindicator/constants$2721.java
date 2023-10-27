@@ -7,30 +7,18 @@ final class constants$2721 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2721() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_font_button_get_font_name",
-        constants$5.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_flow_box_set_filter_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_font_button_set_font_name",
-        constants$9.const$0
+        "gtk_flow_box_set_filter_func",
+        constants$42.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_font_button_get_show_style",
-        constants$10.const$5
+        "gtk_flow_box_invalidate_filter",
+        constants$13.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_font_button_set_show_style",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_font_button_get_show_size",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_font_button_set_show_size",
-        constants$40.const$2
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GtkFlowBoxSortFunc.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_flow_box_set_sort_func$sort_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_flow_box_set_sort_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

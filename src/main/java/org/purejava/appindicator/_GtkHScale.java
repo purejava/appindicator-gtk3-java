@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkHScale {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3305.const$5;
+        return constants$3310.const$5;
     }
     public static MemorySegment scale$slice(MemorySegment seg) {
         return seg.asSlice(0, 48);

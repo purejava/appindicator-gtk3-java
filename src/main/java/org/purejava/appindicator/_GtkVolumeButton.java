@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkVolumeButton {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3230.const$4;
+        return constants$3235.const$4;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 64);

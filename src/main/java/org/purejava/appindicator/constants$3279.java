@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3279 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3279() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_get_has_opacity_control",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_set_has_opacity_control",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_get_has_palette",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_set_has_palette",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_set_current_alpha",
-        constants$189.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_get_current_alpha",
-        constants$186.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkAlignmentClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$3278.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkAlignmentClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3278.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkAlignmentClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$3278.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
 }
 
 

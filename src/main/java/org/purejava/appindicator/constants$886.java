@@ -3,27 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$886 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$886() {}
-    static final VarHandle const$0 = constants$885.const$3.varHandle(MemoryLayout.PathElement.groupElement("interfaces"));
-    static final VarHandle const$1 = constants$885.const$3.varHandle(MemoryLayout.PathElement.groupElement("nodes"));
-    static final VarHandle const$2 = constants$885.const$3.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_annotation_info_lookup",
-        constants$5.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_lookup_method",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_lookup_signal",
-        constants$5.const$5
-    );
+    static final VarHandle const$0 = constants$885.const$3.varHandle(MemoryLayout.PathElement.groupElement("args"));
+    static final VarHandle const$1 = constants$885.const$3.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("name"),
+        RuntimeHelper.POINTER.withName("signature"),
+        JAVA_INT.withName("flags"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("annotations")
+    ).withName("_GDBusPropertyInfo");
+    static final VarHandle const$3 = constants$886.const$2.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$4 = constants$886.const$2.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final VarHandle const$5 = constants$886.const$2.varHandle(MemoryLayout.PathElement.groupElement("signature"));
 }
 
 

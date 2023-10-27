@@ -3,7 +3,6 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
@@ -11,39 +10,31 @@ final class constants$872 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$872() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_register_error_domain",
-        constants$331.const$4
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_new_for_dbus_error",
-        constants$5.const$5
+        "g_dbus_connection_signal_subscribe",
+        constants$872.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "g_dbus_error_set_dbus_error",
-        constants$42.const$1
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_signal_unsubscribe",
+        constants$40.const$2
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("__stack"),
-            RuntimeHelper.POINTER.withName("__gr_top"),
-            RuntimeHelper.POINTER.withName("__vr_top"),
-            JAVA_INT.withName("__gr_offs"),
-            JAVA_INT.withName("__vr_offs")
-        ).withName("__va_list")
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GDBusMessageFilterFunction.class, "apply", constants$484.const$1);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_set_dbus_error_valist",
-        constants$872.const$3
+        constants$484.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_encode_gerror",
-        constants$5.const$2
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_dbus_connection_add_filter$filter_function.class, "apply", constants$484.const$1);
 }
 
 

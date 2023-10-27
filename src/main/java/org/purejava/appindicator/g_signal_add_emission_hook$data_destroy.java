@@ -13,7 +13,7 @@ public interface g_signal_add_emission_hook$data_destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_signal_add_emission_hook$data_destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$608.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$610.const$4, fi, constants$13.const$1, scope);
     }
     static g_signal_add_emission_hook$data_destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

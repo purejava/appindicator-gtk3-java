@@ -2,29 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2522 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2522() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_assistant_set_forward_page_func$page_func.class, "apply", constants$9.const$2);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_assistant_set_forward_page_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_forward_page_func",
-        constants$42.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_type",
-        constants$164.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_type",
-        constants$9.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_title",
-        constants$14.const$3
-    );
+    static final VarHandle const$0 = constants$2521.const$4.varHandle(MemoryLayout.PathElement.groupElement("prepare"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkAssistantClass.apply.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$2521.const$4.varHandle(MemoryLayout.PathElement.groupElement("apply"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkAssistantClass.close.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$2521.const$4.varHandle(MemoryLayout.PathElement.groupElement("close"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkAssistantClass.cancel.class, "apply", constants$13.const$1);
 }
 
 

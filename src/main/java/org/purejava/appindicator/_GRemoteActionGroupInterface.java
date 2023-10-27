@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _GRemoteActionGroupInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1229.const$0;
+        return constants$1232.const$4;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -33,7 +33,7 @@ public class _GRemoteActionGroupInterface {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(activate_action_full fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1229.const$1, fi, constants$42.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1232.const$5, fi, constants$42.const$1, scope);
         }
         static activate_action_full ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -48,7 +48,7 @@ public class _GRemoteActionGroupInterface {
     }
 
     public static VarHandle activate_action_full$VH() {
-        return constants$1229.const$2;
+        return constants$1233.const$0;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GRemoteActionGroupInterface {
      * }
      */
     public static MemorySegment activate_action_full$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1229.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1233.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GRemoteActionGroupInterface {
      * }
      */
     public static void activate_action_full$set(MemorySegment seg, MemorySegment x) {
-        constants$1229.const$2.set(seg, x);
+        constants$1233.const$0.set(seg, x);
     }
     public static MemorySegment activate_action_full$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1229.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1233.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void activate_action_full$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1229.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1233.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static activate_action_full activate_action_full(MemorySegment segment, Arena scope) {
         return activate_action_full.ofAddress(activate_action_full$get(segment), scope);
@@ -86,7 +86,7 @@ public class _GRemoteActionGroupInterface {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(change_action_state_full fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1229.const$3, fi, constants$42.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1233.const$1, fi, constants$42.const$1, scope);
         }
         static change_action_state_full ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -101,7 +101,7 @@ public class _GRemoteActionGroupInterface {
     }
 
     public static VarHandle change_action_state_full$VH() {
-        return constants$1229.const$4;
+        return constants$1233.const$2;
     }
     /**
      * Getter for field:
@@ -110,7 +110,7 @@ public class _GRemoteActionGroupInterface {
      * }
      */
     public static MemorySegment change_action_state_full$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1229.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1233.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -119,13 +119,13 @@ public class _GRemoteActionGroupInterface {
      * }
      */
     public static void change_action_state_full$set(MemorySegment seg, MemorySegment x) {
-        constants$1229.const$4.set(seg, x);
+        constants$1233.const$2.set(seg, x);
     }
     public static MemorySegment change_action_state_full$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1229.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1233.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void change_action_state_full$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1229.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1233.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static change_action_state_full change_action_state_full(MemorySegment segment, Arena scope) {
         return change_action_state_full.ofAddress(change_action_state_full$get(segment), scope);

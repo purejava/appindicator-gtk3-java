@@ -9,12 +9,12 @@ final class constants$782 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$782() {}
-    static final VarHandle const$0 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("flush_finish"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GOutputStreamClass.close_async.class, "apply", constants$281.const$5);
-    static final VarHandle const$2 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("close_async"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GOutputStreamClass.close_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$4 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("close_finish"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GOutputStreamClass.writev_fn.class, "apply", constants$766.const$0);
+    static final VarHandle const$0 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("splice"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GOutputStreamClass.flush.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("flush"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GOutputStreamClass.close_fn.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("close_fn"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GOutputStreamClass.write_async.class, "apply", constants$764.const$1);
 }
 
 

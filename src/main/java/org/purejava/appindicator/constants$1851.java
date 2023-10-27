@@ -8,28 +8,28 @@ final class constants$1851 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1851() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_freeze_updates",
-        constants$13.const$1
+        "gdk_window_create_similar_image_surface",
+        constants$1739.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_thaw_updates",
+        "gdk_window_beep",
         constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_freeze_toplevel_updates_libgtk_only",
+        "gdk_window_iconify",
         constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_thaw_toplevel_updates_libgtk_only",
+        "gdk_window_deiconify",
         constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_process_all_updates",
-        constants$7.const$5
+        "gdk_window_stick",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_process_updates",
-        constants$40.const$2
+        "gdk_window_unstick",
+        constants$13.const$1
     );
 }
 

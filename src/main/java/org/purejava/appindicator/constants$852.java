@@ -2,34 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.*;
 final class constants$852 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$852() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_address_get_stream",
-        constants$42.const$1
+        "g_data_output_stream_set_byte_order",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_address_get_stream_finish",
-        constants$23.const$0
+        "g_data_output_stream_get_byte_order",
+        constants$10.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_address_get_stream_sync",
-        constants$39.const$1
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_BYTE,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_address_get_for_bus_sync",
-        constants$237.const$5
+        "g_data_output_stream_put_byte",
+        constants$852.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_auth_observer_get_type",
-        constants$3.const$5
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_SHORT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_auth_observer_new",
-        constants$35.const$2
+        "g_data_output_stream_put_int16",
+        constants$852.const$4
     );
 }
 

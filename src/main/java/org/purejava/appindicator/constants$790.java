@@ -8,22 +8,25 @@ final class constants$790 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$790() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_output_stream_write_bytes_finish",
-        constants$166.const$0
+        "g_output_stream_write_bytes",
+        constants$333.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_output_stream_splice_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_output_stream_splice",
+        constants$781.const$3
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_output_stream_splice_async",
-        constants$780.const$3
+        "g_output_stream_flush",
+        constants$12.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_output_stream_splice_finish",
-        constants$166.const$0
+        "g_output_stream_close",
+        constants$12.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_output_stream_flush_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_output_stream_write_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_output_stream_flush_async",
-        constants$281.const$5
+        "g_output_stream_write_async",
+        constants$764.const$1
     );
 }
 

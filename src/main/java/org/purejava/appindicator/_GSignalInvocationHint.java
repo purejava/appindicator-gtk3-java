@@ -19,10 +19,10 @@ import java.lang.invoke.VarHandle;
 public class _GSignalInvocationHint {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$600.const$2;
+        return constants$602.const$5;
     }
     public static VarHandle signal_id$VH() {
-        return constants$600.const$3;
+        return constants$603.const$0;
     }
     /**
      * Getter for field:
@@ -31,7 +31,7 @@ public class _GSignalInvocationHint {
      * }
      */
     public static int signal_id$get(MemorySegment seg) {
-        return (int)constants$600.const$3.get(seg);
+        return (int)constants$603.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -40,16 +40,16 @@ public class _GSignalInvocationHint {
      * }
      */
     public static void signal_id$set(MemorySegment seg, int x) {
-        constants$600.const$3.set(seg, x);
+        constants$603.const$0.set(seg, x);
     }
     public static int signal_id$get(MemorySegment seg, long index) {
-        return (int)constants$600.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$603.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void signal_id$set(MemorySegment seg, long index, int x) {
-        constants$600.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$603.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle detail$VH() {
-        return constants$600.const$4;
+        return constants$603.const$1;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _GSignalInvocationHint {
      * }
      */
     public static int detail$get(MemorySegment seg) {
-        return (int)constants$600.const$4.get(seg);
+        return (int)constants$603.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -67,16 +67,16 @@ public class _GSignalInvocationHint {
      * }
      */
     public static void detail$set(MemorySegment seg, int x) {
-        constants$600.const$4.set(seg, x);
+        constants$603.const$1.set(seg, x);
     }
     public static int detail$get(MemorySegment seg, long index) {
-        return (int)constants$600.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$603.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void detail$set(MemorySegment seg, long index, int x) {
-        constants$600.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$603.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle run_type$VH() {
-        return constants$600.const$5;
+        return constants$603.const$2;
     }
     /**
      * Getter for field:
@@ -85,7 +85,7 @@ public class _GSignalInvocationHint {
      * }
      */
     public static int run_type$get(MemorySegment seg) {
-        return (int)constants$600.const$5.get(seg);
+        return (int)constants$603.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -94,13 +94,13 @@ public class _GSignalInvocationHint {
      * }
      */
     public static void run_type$set(MemorySegment seg, int x) {
-        constants$600.const$5.set(seg, x);
+        constants$603.const$2.set(seg, x);
     }
     public static int run_type$get(MemorySegment seg, long index) {
-        return (int)constants$600.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$603.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void run_type$set(MemorySegment seg, long index, int x) {
-        constants$600.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$603.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -2,34 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$867 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$867() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDBusSubtreeVTable.introspect.class, "apply", constants$330.const$5);
-    static final VarHandle const$1 = constants$866.const$3.varHandle(MemoryLayout.PathElement.groupElement("introspect"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDBusSubtreeVTable.dispatch.class, "apply", constants$494.const$3);
-    static final VarHandle const$3 = constants$866.const$3.varHandle(MemoryLayout.PathElement.groupElement("dispatch"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_dbus_connection_register_subtree$user_data_free_func.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_register_subtree",
-        constants$867.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDBusInterfaceVTable.method_call.class, "apply", constants$865.const$3);
+    static final VarHandle const$1 = constants$866.const$5.varHandle(MemoryLayout.PathElement.groupElement("method_call"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDBusInterfaceVTable.get_property.class, "apply", constants$496.const$1);
+    static final VarHandle const$3 = constants$866.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_property"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDBusInterfaceVTable.set_property.class, "apply", constants$866.const$2);
+    static final VarHandle const$5 = constants$866.const$5.varHandle(MemoryLayout.PathElement.groupElement("set_property"));
 }
 
 

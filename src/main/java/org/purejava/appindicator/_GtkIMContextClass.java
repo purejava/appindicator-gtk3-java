@@ -39,7 +39,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkIMContextClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2402.const$5;
+        return constants$2407.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -53,7 +53,7 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(preedit_start fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2403.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2408.const$0, fi, constants$13.const$1, scope);
         }
         static preedit_start ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -68,7 +68,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle preedit_start$VH() {
-        return constants$2403.const$1;
+        return constants$2408.const$1;
     }
     /**
      * Getter for field:
@@ -77,7 +77,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment preedit_start$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2403.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2408.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -86,13 +86,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void preedit_start$set(MemorySegment seg, MemorySegment x) {
-        constants$2403.const$1.set(seg, x);
+        constants$2408.const$1.set(seg, x);
     }
     public static MemorySegment preedit_start$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2403.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2408.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void preedit_start$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2403.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2408.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static preedit_start preedit_start(MemorySegment segment, Arena scope) {
         return preedit_start.ofAddress(preedit_start$get(segment), scope);
@@ -106,7 +106,7 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(preedit_end fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2403.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2408.const$2, fi, constants$13.const$1, scope);
         }
         static preedit_end ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -121,7 +121,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle preedit_end$VH() {
-        return constants$2403.const$3;
+        return constants$2408.const$3;
     }
     /**
      * Getter for field:
@@ -130,7 +130,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment preedit_end$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2403.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2408.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -139,13 +139,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void preedit_end$set(MemorySegment seg, MemorySegment x) {
-        constants$2403.const$3.set(seg, x);
+        constants$2408.const$3.set(seg, x);
     }
     public static MemorySegment preedit_end$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2403.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2408.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void preedit_end$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2403.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2408.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static preedit_end preedit_end(MemorySegment segment, Arena scope) {
         return preedit_end.ofAddress(preedit_end$get(segment), scope);
@@ -159,7 +159,7 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(preedit_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2403.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2408.const$4, fi, constants$13.const$1, scope);
         }
         static preedit_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -174,7 +174,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle preedit_changed$VH() {
-        return constants$2403.const$5;
+        return constants$2408.const$5;
     }
     /**
      * Getter for field:
@@ -183,7 +183,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment preedit_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2403.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2408.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -192,13 +192,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void preedit_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$2403.const$5.set(seg, x);
+        constants$2408.const$5.set(seg, x);
     }
     public static MemorySegment preedit_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2403.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2408.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void preedit_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2403.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2408.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static preedit_changed preedit_changed(MemorySegment segment, Arena scope) {
         return preedit_changed.ofAddress(preedit_changed$get(segment), scope);
@@ -212,7 +212,7 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(commit fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2404.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2409.const$0, fi, constants$13.const$4, scope);
         }
         static commit ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -227,7 +227,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle commit$VH() {
-        return constants$2404.const$1;
+        return constants$2409.const$1;
     }
     /**
      * Getter for field:
@@ -236,7 +236,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment commit$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2404.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2409.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -245,13 +245,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void commit$set(MemorySegment seg, MemorySegment x) {
-        constants$2404.const$1.set(seg, x);
+        constants$2409.const$1.set(seg, x);
     }
     public static MemorySegment commit$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2404.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2409.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void commit$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2404.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2409.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static commit commit(MemorySegment segment, Arena scope) {
         return commit.ofAddress(commit$get(segment), scope);
@@ -265,7 +265,7 @@ public class _GtkIMContextClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(retrieve_surrounding fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2404.const$2, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2409.const$2, fi, constants$10.const$5, scope);
         }
         static retrieve_surrounding ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -280,7 +280,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle retrieve_surrounding$VH() {
-        return constants$2404.const$3;
+        return constants$2409.const$3;
     }
     /**
      * Getter for field:
@@ -289,7 +289,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment retrieve_surrounding$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2404.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2409.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -298,13 +298,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void retrieve_surrounding$set(MemorySegment seg, MemorySegment x) {
-        constants$2404.const$3.set(seg, x);
+        constants$2409.const$3.set(seg, x);
     }
     public static MemorySegment retrieve_surrounding$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2404.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2409.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void retrieve_surrounding$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2404.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2409.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static retrieve_surrounding retrieve_surrounding(MemorySegment segment, Arena scope) {
         return retrieve_surrounding.ofAddress(retrieve_surrounding$get(segment), scope);
@@ -318,7 +318,7 @@ public class _GtkIMContextClass {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
         static MemorySegment allocate(delete_surrounding fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2404.const$4, fi, constants$49.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$2409.const$4, fi, constants$49.const$0, scope);
         }
         static delete_surrounding ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -333,7 +333,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle delete_surrounding$VH() {
-        return constants$2404.const$5;
+        return constants$2409.const$5;
     }
     /**
      * Getter for field:
@@ -342,7 +342,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment delete_surrounding$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2404.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2409.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -351,13 +351,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void delete_surrounding$set(MemorySegment seg, MemorySegment x) {
-        constants$2404.const$5.set(seg, x);
+        constants$2409.const$5.set(seg, x);
     }
     public static MemorySegment delete_surrounding$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2404.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2409.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void delete_surrounding$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2404.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2409.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static delete_surrounding delete_surrounding(MemorySegment segment, Arena scope) {
         return delete_surrounding.ofAddress(delete_surrounding$get(segment), scope);
@@ -371,7 +371,7 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_client_window fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2405.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2410.const$0, fi, constants$13.const$4, scope);
         }
         static set_client_window ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -386,7 +386,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle set_client_window$VH() {
-        return constants$2405.const$1;
+        return constants$2410.const$1;
     }
     /**
      * Getter for field:
@@ -395,7 +395,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment set_client_window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2405.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2410.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -404,13 +404,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void set_client_window$set(MemorySegment seg, MemorySegment x) {
-        constants$2405.const$1.set(seg, x);
+        constants$2410.const$1.set(seg, x);
     }
     public static MemorySegment set_client_window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2405.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2410.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void set_client_window$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2405.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2410.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_client_window set_client_window(MemorySegment segment, Arena scope) {
         return set_client_window.ofAddress(set_client_window$get(segment), scope);
@@ -424,7 +424,7 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(get_preedit_string fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2405.const$2, fi, constants$42.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2410.const$2, fi, constants$42.const$1, scope);
         }
         static get_preedit_string ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -439,7 +439,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle get_preedit_string$VH() {
-        return constants$2405.const$3;
+        return constants$2410.const$3;
     }
     /**
      * Getter for field:
@@ -448,7 +448,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment get_preedit_string$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2405.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2410.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -457,13 +457,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void get_preedit_string$set(MemorySegment seg, MemorySegment x) {
-        constants$2405.const$3.set(seg, x);
+        constants$2410.const$3.set(seg, x);
     }
     public static MemorySegment get_preedit_string$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2405.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2410.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_preedit_string$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2405.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2410.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_preedit_string get_preedit_string(MemorySegment segment, Arena scope) {
         return get_preedit_string.ofAddress(get_preedit_string$get(segment), scope);
@@ -477,7 +477,7 @@ public class _GtkIMContextClass {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(filter_keypress fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2405.const$4, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$2410.const$4, fi, constants$9.const$0, scope);
         }
         static filter_keypress ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -492,7 +492,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle filter_keypress$VH() {
-        return constants$2405.const$5;
+        return constants$2410.const$5;
     }
     /**
      * Getter for field:
@@ -501,7 +501,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment filter_keypress$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2405.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2410.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -510,13 +510,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void filter_keypress$set(MemorySegment seg, MemorySegment x) {
-        constants$2405.const$5.set(seg, x);
+        constants$2410.const$5.set(seg, x);
     }
     public static MemorySegment filter_keypress$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2405.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2410.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void filter_keypress$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2405.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2410.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static filter_keypress filter_keypress(MemorySegment segment, Arena scope) {
         return filter_keypress.ofAddress(filter_keypress$get(segment), scope);
@@ -530,7 +530,7 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(focus_in fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2406.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2411.const$0, fi, constants$13.const$1, scope);
         }
         static focus_in ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -545,7 +545,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle focus_in$VH() {
-        return constants$2406.const$1;
+        return constants$2411.const$1;
     }
     /**
      * Getter for field:
@@ -554,7 +554,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment focus_in$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2406.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2411.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -563,13 +563,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void focus_in$set(MemorySegment seg, MemorySegment x) {
-        constants$2406.const$1.set(seg, x);
+        constants$2411.const$1.set(seg, x);
     }
     public static MemorySegment focus_in$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2406.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2411.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void focus_in$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2406.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2411.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static focus_in focus_in(MemorySegment segment, Arena scope) {
         return focus_in.ofAddress(focus_in$get(segment), scope);
@@ -583,7 +583,7 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(focus_out fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2406.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2411.const$2, fi, constants$13.const$1, scope);
         }
         static focus_out ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -598,7 +598,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle focus_out$VH() {
-        return constants$2406.const$3;
+        return constants$2411.const$3;
     }
     /**
      * Getter for field:
@@ -607,7 +607,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment focus_out$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2406.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2411.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -616,13 +616,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void focus_out$set(MemorySegment seg, MemorySegment x) {
-        constants$2406.const$3.set(seg, x);
+        constants$2411.const$3.set(seg, x);
     }
     public static MemorySegment focus_out$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2406.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2411.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void focus_out$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2406.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2411.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static focus_out focus_out(MemorySegment segment, Arena scope) {
         return focus_out.ofAddress(focus_out$get(segment), scope);
@@ -636,7 +636,7 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(reset fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2406.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2411.const$4, fi, constants$13.const$1, scope);
         }
         static reset ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -651,7 +651,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle reset$VH() {
-        return constants$2406.const$5;
+        return constants$2411.const$5;
     }
     /**
      * Getter for field:
@@ -660,7 +660,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment reset$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2406.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2411.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -669,13 +669,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void reset$set(MemorySegment seg, MemorySegment x) {
-        constants$2406.const$5.set(seg, x);
+        constants$2411.const$5.set(seg, x);
     }
     public static MemorySegment reset$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2406.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2411.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reset$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2406.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2411.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static reset reset(MemorySegment segment, Arena scope) {
         return reset.ofAddress(reset$get(segment), scope);
@@ -689,7 +689,7 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_cursor_location fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2407.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2412.const$0, fi, constants$13.const$4, scope);
         }
         static set_cursor_location ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -704,7 +704,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle set_cursor_location$VH() {
-        return constants$2407.const$1;
+        return constants$2412.const$1;
     }
     /**
      * Getter for field:
@@ -713,7 +713,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment set_cursor_location$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2407.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2412.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -722,13 +722,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void set_cursor_location$set(MemorySegment seg, MemorySegment x) {
-        constants$2407.const$1.set(seg, x);
+        constants$2412.const$1.set(seg, x);
     }
     public static MemorySegment set_cursor_location$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2407.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2412.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void set_cursor_location$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2407.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2412.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_cursor_location set_cursor_location(MemorySegment segment, Arena scope) {
         return set_cursor_location.ofAddress(set_cursor_location$get(segment), scope);
@@ -742,13 +742,13 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment colors, int n_colors);
         static MemorySegment allocate(set_use_preedit fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2407.const$2, fi, constants$40.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2412.const$2, fi, constants$40.const$2, scope);
         }
         static set_use_preedit ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
                 try {
-                    constants$509.const$5.invokeExact(symbol, _colors, _n_colors);
+                    constants$511.const$3.invokeExact(symbol, _colors, _n_colors);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -757,7 +757,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle set_use_preedit$VH() {
-        return constants$2407.const$3;
+        return constants$2412.const$3;
     }
     /**
      * Getter for field:
@@ -766,7 +766,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment set_use_preedit$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2407.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2412.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -775,13 +775,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void set_use_preedit$set(MemorySegment seg, MemorySegment x) {
-        constants$2407.const$3.set(seg, x);
+        constants$2412.const$3.set(seg, x);
     }
     public static MemorySegment set_use_preedit$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2407.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2412.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void set_use_preedit$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2407.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2412.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_use_preedit set_use_preedit(MemorySegment segment, Arena scope) {
         return set_use_preedit.ofAddress(set_use_preedit$get(segment), scope);
@@ -795,13 +795,13 @@ public class _GtkIMContextClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3);
         static MemorySegment allocate(set_surrounding fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2407.const$4, fi, constants$1043.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2412.const$4, fi, constants$1046.const$2, scope);
         }
         static set_surrounding ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3) -> {
                 try {
-                    constants$1644.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$1649.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -810,7 +810,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle set_surrounding$VH() {
-        return constants$2407.const$5;
+        return constants$2412.const$5;
     }
     /**
      * Getter for field:
@@ -819,7 +819,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment set_surrounding$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2407.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2412.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -828,13 +828,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void set_surrounding$set(MemorySegment seg, MemorySegment x) {
-        constants$2407.const$5.set(seg, x);
+        constants$2412.const$5.set(seg, x);
     }
     public static MemorySegment set_surrounding$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2407.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2412.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void set_surrounding$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2407.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2412.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_surrounding set_surrounding(MemorySegment segment, Arena scope) {
         return set_surrounding.ofAddress(set_surrounding$get(segment), scope);
@@ -848,7 +848,7 @@ public class _GtkIMContextClass {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_surrounding fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2408.const$0, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2413.const$0, fi, constants$12.const$2, scope);
         }
         static get_surrounding ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -863,7 +863,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle get_surrounding$VH() {
-        return constants$2408.const$1;
+        return constants$2413.const$1;
     }
     /**
      * Getter for field:
@@ -872,7 +872,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment get_surrounding$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2408.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2413.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -881,13 +881,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void get_surrounding$set(MemorySegment seg, MemorySegment x) {
-        constants$2408.const$1.set(seg, x);
+        constants$2413.const$1.set(seg, x);
     }
     public static MemorySegment get_surrounding$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2408.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2413.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_surrounding$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2408.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2413.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_surrounding get_surrounding(MemorySegment segment, Arena scope) {
         return get_surrounding.ofAddress(get_surrounding$get(segment), scope);
@@ -901,7 +901,7 @@ public class _GtkIMContextClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2408.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2413.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -916,7 +916,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle _gtk_reserved1$VH() {
-        return constants$2408.const$3;
+        return constants$2413.const$3;
     }
     /**
      * Getter for field:
@@ -925,7 +925,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2408.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2413.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -934,13 +934,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$2408.const$3.set(seg, x);
+        constants$2413.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2408.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2413.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2408.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2413.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
@@ -954,7 +954,7 @@ public class _GtkIMContextClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2408.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2413.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -969,7 +969,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle _gtk_reserved2$VH() {
-        return constants$2408.const$5;
+        return constants$2413.const$5;
     }
     /**
      * Getter for field:
@@ -978,7 +978,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2408.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2413.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -987,13 +987,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$2408.const$5.set(seg, x);
+        constants$2413.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2408.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2413.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2408.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2413.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
@@ -1007,7 +1007,7 @@ public class _GtkIMContextClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2409.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2414.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1022,7 +1022,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle _gtk_reserved3$VH() {
-        return constants$2409.const$1;
+        return constants$2414.const$1;
     }
     /**
      * Getter for field:
@@ -1031,7 +1031,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2409.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2414.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -1040,13 +1040,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$2409.const$1.set(seg, x);
+        constants$2414.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2409.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2414.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2409.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2414.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
@@ -1060,7 +1060,7 @@ public class _GtkIMContextClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2409.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2414.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1075,7 +1075,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle _gtk_reserved4$VH() {
-        return constants$2409.const$3;
+        return constants$2414.const$3;
     }
     /**
      * Getter for field:
@@ -1084,7 +1084,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2409.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2414.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -1093,13 +1093,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$2409.const$3.set(seg, x);
+        constants$2414.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2409.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2414.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2409.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2414.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
@@ -1113,7 +1113,7 @@ public class _GtkIMContextClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2409.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2414.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved5 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1128,7 +1128,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle _gtk_reserved5$VH() {
-        return constants$2409.const$5;
+        return constants$2414.const$5;
     }
     /**
      * Getter for field:
@@ -1137,7 +1137,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment _gtk_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2409.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2414.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -1146,13 +1146,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void _gtk_reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$2409.const$5.set(seg, x);
+        constants$2414.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2409.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2414.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2409.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2414.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, Arena scope) {
         return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), scope);
@@ -1166,7 +1166,7 @@ public class _GtkIMContextClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved6 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2410.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2415.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved6 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1181,7 +1181,7 @@ public class _GtkIMContextClass {
     }
 
     public static VarHandle _gtk_reserved6$VH() {
-        return constants$2410.const$1;
+        return constants$2415.const$1;
     }
     /**
      * Getter for field:
@@ -1190,7 +1190,7 @@ public class _GtkIMContextClass {
      * }
      */
     public static MemorySegment _gtk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2410.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2415.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -1199,13 +1199,13 @@ public class _GtkIMContextClass {
      * }
      */
     public static void _gtk_reserved6$set(MemorySegment seg, MemorySegment x) {
-        constants$2410.const$1.set(seg, x);
+        constants$2415.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2410.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2415.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2410.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2415.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, Arena scope) {
         return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), scope);

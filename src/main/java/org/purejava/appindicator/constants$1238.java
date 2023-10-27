@@ -2,32 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1238 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1238() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_resolver_free_addresses",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_address",
-        constants$39.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_resolver_lookup_by_address_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_address_async",
-        constants$331.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_address_finish",
-        constants$23.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_service",
-        constants$334.const$2
-    );
+    static final VarHandle const$0 = constants$1234.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_records"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_records_async.class, "apply", constants$587.const$0);
+    static final VarHandle const$2 = constants$1234.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_records_async"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_records_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$4 = constants$1234.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_records_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_with_flags_async.class, "apply", constants$587.const$0);
 }
 
 

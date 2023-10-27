@@ -2,21 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3181 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3181() {}
-    static final VarHandle const$0 = constants$3179.const$2.varHandle(MemoryLayout.PathElement.groupElement("rebuild_menu"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkToolShellIface.get_text_orientation.class, "apply", constants$10.const$5);
-    static final VarHandle const$2 = constants$3179.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_text_orientation"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkToolShellIface.get_text_alignment.class, "apply", constants$689.const$3);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$689.const$3
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_set_exclusive",
+        constants$164.const$5
     );
-    static final VarHandle const$5 = constants$3179.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_text_alignment"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_set_expand",
+        constants$164.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_group_position",
+        constants$9.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_exclusive",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_expand",
+        constants$9.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_set_icon_size",
+        constants$40.const$2
+    );
 }
 
 

@@ -9,12 +9,12 @@ final class constants$2217 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2217() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkAboutDialogClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2216.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkAboutDialogClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$2216.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkAboutDialogClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$2216.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkDialogClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$2215.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkDialogClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$2215.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkDialogClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2215.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
 }
 
 

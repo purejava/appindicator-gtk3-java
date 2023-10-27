@@ -2,24 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3259 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3259() {}
-    static final VarHandle const$0 = constants$3258.const$4.varHandle(MemoryLayout.PathElement.groupElement("label"));
-    static final VarHandle const$1 = constants$3258.const$4.varHandle(MemoryLayout.PathElement.groupElement("modifier"));
-    static final VarHandle const$2 = constants$3258.const$4.varHandle(MemoryLayout.PathElement.groupElement("keyval"));
-    static final VarHandle const$3 = constants$3258.const$4.varHandle(MemoryLayout.PathElement.groupElement("translation_domain"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_action_get_tooltip",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_action_set_stock_id",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_action_get_stock_id",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_action_set_gicon",
+        constants$13.const$4
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_stock_add",
-        constants$40.const$2
+        "gtk_action_get_gicon",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_stock_add_static",
-        constants$40.const$2
+        "gtk_action_set_icon_name",
+        constants$13.const$4
     );
 }
 

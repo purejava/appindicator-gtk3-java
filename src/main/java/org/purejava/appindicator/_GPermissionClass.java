@@ -24,7 +24,7 @@ import java.lang.invoke.VarHandle;
 public class _GPermissionClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1204.const$5;
+        return constants$1208.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -38,7 +38,7 @@ public class _GPermissionClass {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(acquire fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1205.const$0, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1208.const$3, fi, constants$12.const$2, scope);
         }
         static acquire ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -53,7 +53,7 @@ public class _GPermissionClass {
     }
 
     public static VarHandle acquire$VH() {
-        return constants$1205.const$1;
+        return constants$1208.const$4;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _GPermissionClass {
      * }
      */
     public static MemorySegment acquire$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1205.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1208.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -71,13 +71,13 @@ public class _GPermissionClass {
      * }
      */
     public static void acquire$set(MemorySegment seg, MemorySegment x) {
-        constants$1205.const$1.set(seg, x);
+        constants$1208.const$4.set(seg, x);
     }
     public static MemorySegment acquire$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1205.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1208.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void acquire$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1205.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1208.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static acquire acquire(MemorySegment segment, Arena scope) {
         return acquire.ofAddress(acquire$get(segment), scope);
@@ -91,7 +91,7 @@ public class _GPermissionClass {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(acquire_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1205.const$2, fi, constants$42.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1208.const$5, fi, constants$42.const$1, scope);
         }
         static acquire_async ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -106,7 +106,7 @@ public class _GPermissionClass {
     }
 
     public static VarHandle acquire_async$VH() {
-        return constants$1205.const$3;
+        return constants$1209.const$0;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _GPermissionClass {
      * }
      */
     public static MemorySegment acquire_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1205.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1209.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -124,13 +124,13 @@ public class _GPermissionClass {
      * }
      */
     public static void acquire_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1205.const$3.set(seg, x);
+        constants$1209.const$0.set(seg, x);
     }
     public static MemorySegment acquire_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1205.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1209.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void acquire_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1205.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1209.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static acquire_async acquire_async(MemorySegment segment, Arena scope) {
         return acquire_async.ofAddress(acquire_async$get(segment), scope);
@@ -144,7 +144,7 @@ public class _GPermissionClass {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(acquire_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1205.const$4, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1209.const$1, fi, constants$12.const$2, scope);
         }
         static acquire_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -159,7 +159,7 @@ public class _GPermissionClass {
     }
 
     public static VarHandle acquire_finish$VH() {
-        return constants$1205.const$5;
+        return constants$1209.const$2;
     }
     /**
      * Getter for field:
@@ -168,7 +168,7 @@ public class _GPermissionClass {
      * }
      */
     public static MemorySegment acquire_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1205.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1209.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -177,13 +177,13 @@ public class _GPermissionClass {
      * }
      */
     public static void acquire_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1205.const$5.set(seg, x);
+        constants$1209.const$2.set(seg, x);
     }
     public static MemorySegment acquire_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1205.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1209.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void acquire_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1205.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1209.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static acquire_finish acquire_finish(MemorySegment segment, Arena scope) {
         return acquire_finish.ofAddress(acquire_finish$get(segment), scope);
@@ -197,7 +197,7 @@ public class _GPermissionClass {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(release fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1206.const$0, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1209.const$3, fi, constants$12.const$2, scope);
         }
         static release ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -212,7 +212,7 @@ public class _GPermissionClass {
     }
 
     public static VarHandle release$VH() {
-        return constants$1206.const$1;
+        return constants$1209.const$4;
     }
     /**
      * Getter for field:
@@ -221,7 +221,7 @@ public class _GPermissionClass {
      * }
      */
     public static MemorySegment release$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1206.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1209.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -230,13 +230,13 @@ public class _GPermissionClass {
      * }
      */
     public static void release$set(MemorySegment seg, MemorySegment x) {
-        constants$1206.const$1.set(seg, x);
+        constants$1209.const$4.set(seg, x);
     }
     public static MemorySegment release$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1206.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1209.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void release$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1206.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1209.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static release release(MemorySegment segment, Arena scope) {
         return release.ofAddress(release$get(segment), scope);
@@ -250,7 +250,7 @@ public class _GPermissionClass {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(release_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1206.const$2, fi, constants$42.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1209.const$5, fi, constants$42.const$1, scope);
         }
         static release_async ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -265,7 +265,7 @@ public class _GPermissionClass {
     }
 
     public static VarHandle release_async$VH() {
-        return constants$1206.const$3;
+        return constants$1210.const$0;
     }
     /**
      * Getter for field:
@@ -274,7 +274,7 @@ public class _GPermissionClass {
      * }
      */
     public static MemorySegment release_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1206.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1210.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -283,13 +283,13 @@ public class _GPermissionClass {
      * }
      */
     public static void release_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1206.const$3.set(seg, x);
+        constants$1210.const$0.set(seg, x);
     }
     public static MemorySegment release_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1206.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1210.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void release_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1206.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1210.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static release_async release_async(MemorySegment segment, Arena scope) {
         return release_async.ofAddress(release_async$get(segment), scope);
@@ -303,7 +303,7 @@ public class _GPermissionClass {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(release_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1206.const$4, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1210.const$1, fi, constants$12.const$2, scope);
         }
         static release_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -318,7 +318,7 @@ public class _GPermissionClass {
     }
 
     public static VarHandle release_finish$VH() {
-        return constants$1206.const$5;
+        return constants$1210.const$2;
     }
     /**
      * Getter for field:
@@ -327,7 +327,7 @@ public class _GPermissionClass {
      * }
      */
     public static MemorySegment release_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1206.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1210.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -336,13 +336,13 @@ public class _GPermissionClass {
      * }
      */
     public static void release_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1206.const$5.set(seg, x);
+        constants$1210.const$2.set(seg, x);
     }
     public static MemorySegment release_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1206.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1210.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void release_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1206.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1210.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static release_finish release_finish(MemorySegment segment, Arena scope) {
         return release_finish.ofAddress(release_finish$get(segment), scope);

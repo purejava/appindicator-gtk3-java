@@ -2,35 +2,33 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$514 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$514() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "sched_getparam",
-        constants$9.const$2
+        "g_thread_set_priority",
+        constants$40.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "sched_setscheduler",
-        constants$288.const$1
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_thread_foreach$thread_func.class, "apply", constants$13.const$4);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "sched_getscheduler",
-        constants$8.const$4
+        "g_thread_foreach",
+        constants$13.const$4
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "sched_yield",
-        constants$83.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "sched_get_priority_max",
-        constants$8.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "sched_get_priority_min",
-        constants$8.const$4
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("sched_priority")
+    ).withName("sched_param");
+    static final VarHandle const$4 = constants$514.const$3.varHandle(MemoryLayout.PathElement.groupElement("sched_priority"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("__bits")
+    ).withName("cpu_set_t");
 }
 
 

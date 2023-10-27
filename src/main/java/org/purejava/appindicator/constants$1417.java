@@ -4,25 +4,59 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
+import java.lang.foreign.UnionLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1417 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1417() {}
-    static final VarHandle const$0 = constants$1416.const$5.varHandle(MemoryLayout.PathElement.groupElement("unused"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_destroy_func_t.class, "apply", constants$13.const$1);
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        JAVA_INT.withName("tag"),
-        JAVA_INT.withName("value"),
-        JAVA_INT.withName("start"),
-        JAVA_INT.withName("end")
-    ).withName("hb_feature_t");
-    static final VarHandle const$3 = constants$1417.const$2.varHandle(MemoryLayout.PathElement.groupElement("tag"));
-    static final VarHandle const$4 = constants$1417.const$2.varHandle(MemoryLayout.PathElement.groupElement("value"));
-    static final VarHandle const$5 = constants$1417.const$2.varHandle(MemoryLayout.PathElement.groupElement("start"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_zlib_compressor_set_file_info",
+        constants$13.const$4
+    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class")
+    ).withName("_GZlibDecompressorClass");
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_zlib_decompressor_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_zlib_decompressor_new",
+        constants$24.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_zlib_decompressor_get_file_info",
+        constants$5.const$2
+    );
+    static final UnionLayout const$5 = MemoryLayout.unionLayout(
+        JAVA_INT.withName("u32"),
+        JAVA_INT.withName("i32"),
+        MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+        MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+    ).withName("_hb_var_int_t");
 }
 
 

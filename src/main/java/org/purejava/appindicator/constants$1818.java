@@ -2,35 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.MethodHandle;
 final class constants$1818 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1818() {}
-    static final VarHandle const$0 = constants$1816.const$2.varHandle(MemoryLayout.PathElement.groupElement("cursor"));
-    static final VarHandle const$1 = constants$1816.const$2.varHandle(MemoryLayout.PathElement.groupElement("wmclass_name"));
-    static final VarHandle const$2 = constants$1816.const$2.varHandle(MemoryLayout.PathElement.groupElement("wmclass_class"));
-    static final VarHandle const$3 = constants$1816.const$2.varHandle(MemoryLayout.PathElement.groupElement("override_redirect"));
-    static final VarHandle const$4 = constants$1816.const$2.varHandle(MemoryLayout.PathElement.groupElement("type_hint"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        JAVA_INT.withName("min_width"),
-        JAVA_INT.withName("min_height"),
-        JAVA_INT.withName("max_width"),
-        JAVA_INT.withName("max_height"),
-        JAVA_INT.withName("base_width"),
-        JAVA_INT.withName("base_height"),
-        JAVA_INT.withName("width_inc"),
-        JAVA_INT.withName("height_inc"),
-        JAVA_DOUBLE.withName("min_aspect"),
-        JAVA_DOUBLE.withName("max_aspect"),
-        JAVA_INT.withName("win_gravity"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GdkGeometry");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_drawing_context_get_cairo_context",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_ref",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_unref",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_frame_counter",
+        constants$4.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_complete",
+        constants$10.const$5
+    );
 }
 
 

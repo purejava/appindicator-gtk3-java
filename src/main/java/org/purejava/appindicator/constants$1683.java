@@ -2,39 +2,26 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1683 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1683() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_set_source_surface",
-        constants$1683.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_set_tolerance",
-        constants$689.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_set_antialias",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_set_fill_rule",
-        constants$40.const$2
-    );
+    static final VarHandle const$0 = constants$1682.const$1.varHandle(MemoryLayout.PathElement.groupElement("x0"));
+    static final VarHandle const$1 = constants$1682.const$1.varHandle(MemoryLayout.PathElement.groupElement("y0"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(cairo_destroy_func_t.class, "apply", constants$13.const$1);
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("unused")
+    ).withName("_cairo_user_data_key");
+    static final VarHandle const$4 = constants$1683.const$3.varHandle(MemoryLayout.PathElement.groupElement("unused"));
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_set_line_width",
-        constants$689.const$5
+        "cairo_pattern_set_dither",
+        constants$40.const$2
     );
 }
 

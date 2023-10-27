@@ -24,7 +24,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkTableCellIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2084.const$3;
+        return constants$2089.const$4;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -38,7 +38,7 @@ public class _AtkTableCellIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_column_span fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2084.const$4, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2089.const$5, fi, constants$10.const$5, scope);
         }
         static get_column_span ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -53,7 +53,7 @@ public class _AtkTableCellIface {
     }
 
     public static VarHandle get_column_span$VH() {
-        return constants$2084.const$5;
+        return constants$2090.const$0;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _AtkTableCellIface {
      * }
      */
     public static MemorySegment get_column_span$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2084.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2090.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -71,13 +71,13 @@ public class _AtkTableCellIface {
      * }
      */
     public static void get_column_span$set(MemorySegment seg, MemorySegment x) {
-        constants$2084.const$5.set(seg, x);
+        constants$2090.const$0.set(seg, x);
     }
     public static MemorySegment get_column_span$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2084.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2090.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_column_span$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2084.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2090.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_column_span get_column_span(MemorySegment segment, Arena scope) {
         return get_column_span.ofAddress(get_column_span$get(segment), scope);
@@ -91,7 +91,7 @@ public class _AtkTableCellIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_column_header_cells fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2085.const$0, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2090.const$1, fi, constants$5.const$2, scope);
         }
         static get_column_header_cells ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -106,7 +106,7 @@ public class _AtkTableCellIface {
     }
 
     public static VarHandle get_column_header_cells$VH() {
-        return constants$2085.const$1;
+        return constants$2090.const$2;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _AtkTableCellIface {
      * }
      */
     public static MemorySegment get_column_header_cells$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2085.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2090.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -124,13 +124,13 @@ public class _AtkTableCellIface {
      * }
      */
     public static void get_column_header_cells$set(MemorySegment seg, MemorySegment x) {
-        constants$2085.const$1.set(seg, x);
+        constants$2090.const$2.set(seg, x);
     }
     public static MemorySegment get_column_header_cells$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2085.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2090.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_column_header_cells$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2085.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2090.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_column_header_cells get_column_header_cells(MemorySegment segment, Arena scope) {
         return get_column_header_cells.ofAddress(get_column_header_cells$get(segment), scope);
@@ -144,7 +144,7 @@ public class _AtkTableCellIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_position fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2085.const$2, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2090.const$3, fi, constants$12.const$2, scope);
         }
         static get_position ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -159,7 +159,7 @@ public class _AtkTableCellIface {
     }
 
     public static VarHandle get_position$VH() {
-        return constants$2085.const$3;
+        return constants$2090.const$4;
     }
     /**
      * Getter for field:
@@ -168,7 +168,7 @@ public class _AtkTableCellIface {
      * }
      */
     public static MemorySegment get_position$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2085.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2090.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -177,13 +177,13 @@ public class _AtkTableCellIface {
      * }
      */
     public static void get_position$set(MemorySegment seg, MemorySegment x) {
-        constants$2085.const$3.set(seg, x);
+        constants$2090.const$4.set(seg, x);
     }
     public static MemorySegment get_position$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2085.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2090.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_position$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2085.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2090.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_position get_position(MemorySegment segment, Arena scope) {
         return get_position.ofAddress(get_position$get(segment), scope);
@@ -197,7 +197,7 @@ public class _AtkTableCellIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_row_span fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2085.const$4, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2090.const$5, fi, constants$10.const$5, scope);
         }
         static get_row_span ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -212,7 +212,7 @@ public class _AtkTableCellIface {
     }
 
     public static VarHandle get_row_span$VH() {
-        return constants$2085.const$5;
+        return constants$2091.const$0;
     }
     /**
      * Getter for field:
@@ -221,7 +221,7 @@ public class _AtkTableCellIface {
      * }
      */
     public static MemorySegment get_row_span$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2085.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2091.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -230,13 +230,13 @@ public class _AtkTableCellIface {
      * }
      */
     public static void get_row_span$set(MemorySegment seg, MemorySegment x) {
-        constants$2085.const$5.set(seg, x);
+        constants$2091.const$0.set(seg, x);
     }
     public static MemorySegment get_row_span$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2085.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2091.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_row_span$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2085.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2091.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_row_span get_row_span(MemorySegment segment, Arena scope) {
         return get_row_span.ofAddress(get_row_span$get(segment), scope);
@@ -250,7 +250,7 @@ public class _AtkTableCellIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_row_header_cells fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2086.const$0, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2091.const$1, fi, constants$5.const$2, scope);
         }
         static get_row_header_cells ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -265,7 +265,7 @@ public class _AtkTableCellIface {
     }
 
     public static VarHandle get_row_header_cells$VH() {
-        return constants$2086.const$1;
+        return constants$2091.const$2;
     }
     /**
      * Getter for field:
@@ -274,7 +274,7 @@ public class _AtkTableCellIface {
      * }
      */
     public static MemorySegment get_row_header_cells$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2086.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2091.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -283,13 +283,13 @@ public class _AtkTableCellIface {
      * }
      */
     public static void get_row_header_cells$set(MemorySegment seg, MemorySegment x) {
-        constants$2086.const$1.set(seg, x);
+        constants$2091.const$2.set(seg, x);
     }
     public static MemorySegment get_row_header_cells$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2086.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2091.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_row_header_cells$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2086.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2091.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_row_header_cells get_row_header_cells(MemorySegment segment, Arena scope) {
         return get_row_header_cells.ofAddress(get_row_header_cells$get(segment), scope);
@@ -303,13 +303,13 @@ public class _AtkTableCellIface {
 
         int apply(java.lang.foreign.MemorySegment tree_view, java.lang.foreign.MemorySegment column, java.lang.foreign.MemorySegment prev_column, java.lang.foreign.MemorySegment next_column, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(get_row_column_span fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2086.const$2, fi, constants$165.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2091.const$3, fi, constants$165.const$2, scope);
         }
         static get_row_column_span ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tree_view, java.lang.foreign.MemorySegment _column, java.lang.foreign.MemorySegment _prev_column, java.lang.foreign.MemorySegment _next_column, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    return (int)constants$2086.const$3.invokeExact(symbol, _tree_view, _column, _prev_column, _next_column, _data);
+                    return (int)constants$2091.const$4.invokeExact(symbol, _tree_view, _column, _prev_column, _next_column, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -318,7 +318,7 @@ public class _AtkTableCellIface {
     }
 
     public static VarHandle get_row_column_span$VH() {
-        return constants$2086.const$4;
+        return constants$2091.const$5;
     }
     /**
      * Getter for field:
@@ -327,7 +327,7 @@ public class _AtkTableCellIface {
      * }
      */
     public static MemorySegment get_row_column_span$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2086.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2091.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -336,13 +336,13 @@ public class _AtkTableCellIface {
      * }
      */
     public static void get_row_column_span$set(MemorySegment seg, MemorySegment x) {
-        constants$2086.const$4.set(seg, x);
+        constants$2091.const$5.set(seg, x);
     }
     public static MemorySegment get_row_column_span$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2086.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2091.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_row_column_span$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2086.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2091.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_row_column_span get_row_column_span(MemorySegment segment, Arena scope) {
         return get_row_column_span.ofAddress(get_row_column_span$get(segment), scope);
@@ -356,7 +356,7 @@ public class _AtkTableCellIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_table fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2086.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2092.const$0, fi, constants$5.const$2, scope);
         }
         static get_table ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -371,7 +371,7 @@ public class _AtkTableCellIface {
     }
 
     public static VarHandle get_table$VH() {
-        return constants$2087.const$0;
+        return constants$2092.const$1;
     }
     /**
      * Getter for field:
@@ -380,7 +380,7 @@ public class _AtkTableCellIface {
      * }
      */
     public static MemorySegment get_table$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2087.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2092.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -389,13 +389,13 @@ public class _AtkTableCellIface {
      * }
      */
     public static void get_table$set(MemorySegment seg, MemorySegment x) {
-        constants$2087.const$0.set(seg, x);
+        constants$2092.const$1.set(seg, x);
     }
     public static MemorySegment get_table$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2087.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2092.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_table$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2087.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2092.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_table get_table(MemorySegment segment, Arena scope) {
         return get_table.ofAddress(get_table$get(segment), scope);

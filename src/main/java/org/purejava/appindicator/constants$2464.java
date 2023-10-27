@@ -8,28 +8,28 @@ final class constants$2464 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2464() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_entry_im_context_filter_keypress",
-        constants$9.const$0
+        "gtk_entry_set_cursor_hadjustment",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_entry_reset_im_context",
-        constants$13.const$1
+        "gtk_entry_get_cursor_hadjustment",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_input_purpose",
-        constants$40.const$2
+        "gtk_entry_set_progress_fraction",
+        constants$692.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_input_purpose",
-        constants$10.const$5
+        "gtk_entry_get_progress_fraction",
+        constants$67.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_input_hints",
-        constants$40.const$2
+        "gtk_entry_set_progress_pulse_step",
+        constants$692.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_input_hints",
-        constants$10.const$5
+        "gtk_entry_get_progress_pulse_step",
+        constants$67.const$0
     );
 }
 

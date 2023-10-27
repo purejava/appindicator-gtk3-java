@@ -31,13 +31,13 @@ import java.lang.invoke.VarHandle;
 public class _GtkRcStyle {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3321.const$2;
+        return constants$3326.const$2;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);
     }
     public static VarHandle name$VH() {
-        return constants$3321.const$3;
+        return constants$3326.const$3;
     }
     /**
      * Getter for field:
@@ -46,7 +46,7 @@ public class _GtkRcStyle {
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3321.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3326.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -55,19 +55,19 @@ public class _GtkRcStyle {
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        constants$3321.const$3.set(seg, x);
+        constants$3326.const$3.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3321.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3326.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3321.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3326.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment bg_pixmap_name$slice(MemorySegment seg) {
         return seg.asSlice(32, 40);
     }
     public static VarHandle font_desc$VH() {
-        return constants$3321.const$4;
+        return constants$3326.const$4;
     }
     /**
      * Getter for field:
@@ -76,7 +76,7 @@ public class _GtkRcStyle {
      * }
      */
     public static MemorySegment font_desc$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3321.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3326.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -85,13 +85,13 @@ public class _GtkRcStyle {
      * }
      */
     public static void font_desc$set(MemorySegment seg, MemorySegment x) {
-        constants$3321.const$4.set(seg, x);
+        constants$3326.const$4.set(seg, x);
     }
     public static MemorySegment font_desc$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3321.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3326.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void font_desc$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3321.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3326.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment color_flags$slice(MemorySegment seg) {
         return seg.asSlice(80, 20);
@@ -109,7 +109,7 @@ public class _GtkRcStyle {
         return seg.asSlice(280, 60);
     }
     public static VarHandle xthickness$VH() {
-        return constants$3321.const$5;
+        return constants$3326.const$5;
     }
     /**
      * Getter for field:
@@ -118,7 +118,7 @@ public class _GtkRcStyle {
      * }
      */
     public static int xthickness$get(MemorySegment seg) {
-        return (int)constants$3321.const$5.get(seg);
+        return (int)constants$3326.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -127,16 +127,16 @@ public class _GtkRcStyle {
      * }
      */
     public static void xthickness$set(MemorySegment seg, int x) {
-        constants$3321.const$5.set(seg, x);
+        constants$3326.const$5.set(seg, x);
     }
     public static int xthickness$get(MemorySegment seg, long index) {
-        return (int)constants$3321.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3326.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void xthickness$set(MemorySegment seg, long index, int x) {
-        constants$3321.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3326.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle ythickness$VH() {
-        return constants$3322.const$0;
+        return constants$3327.const$0;
     }
     /**
      * Getter for field:
@@ -145,7 +145,7 @@ public class _GtkRcStyle {
      * }
      */
     public static int ythickness$get(MemorySegment seg) {
-        return (int)constants$3322.const$0.get(seg);
+        return (int)constants$3327.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -154,16 +154,16 @@ public class _GtkRcStyle {
      * }
      */
     public static void ythickness$set(MemorySegment seg, int x) {
-        constants$3322.const$0.set(seg, x);
+        constants$3327.const$0.set(seg, x);
     }
     public static int ythickness$get(MemorySegment seg, long index) {
-        return (int)constants$3322.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3327.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void ythickness$set(MemorySegment seg, long index, int x) {
-        constants$3322.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3327.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle rc_properties$VH() {
-        return constants$3322.const$1;
+        return constants$3327.const$1;
     }
     /**
      * Getter for field:
@@ -172,7 +172,7 @@ public class _GtkRcStyle {
      * }
      */
     public static MemorySegment rc_properties$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3322.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3327.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -181,16 +181,16 @@ public class _GtkRcStyle {
      * }
      */
     public static void rc_properties$set(MemorySegment seg, MemorySegment x) {
-        constants$3322.const$1.set(seg, x);
+        constants$3327.const$1.set(seg, x);
     }
     public static MemorySegment rc_properties$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3322.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3327.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void rc_properties$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3322.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3327.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle rc_style_lists$VH() {
-        return constants$3322.const$2;
+        return constants$3327.const$2;
     }
     /**
      * Getter for field:
@@ -199,7 +199,7 @@ public class _GtkRcStyle {
      * }
      */
     public static MemorySegment rc_style_lists$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3322.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3327.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -208,16 +208,16 @@ public class _GtkRcStyle {
      * }
      */
     public static void rc_style_lists$set(MemorySegment seg, MemorySegment x) {
-        constants$3322.const$2.set(seg, x);
+        constants$3327.const$2.set(seg, x);
     }
     public static MemorySegment rc_style_lists$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3322.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3327.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void rc_style_lists$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3322.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3327.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle icon_factories$VH() {
-        return constants$3322.const$3;
+        return constants$3327.const$3;
     }
     /**
      * Getter for field:
@@ -226,7 +226,7 @@ public class _GtkRcStyle {
      * }
      */
     public static MemorySegment icon_factories$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3322.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3327.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -235,13 +235,13 @@ public class _GtkRcStyle {
      * }
      */
     public static void icon_factories$set(MemorySegment seg, MemorySegment x) {
-        constants$3322.const$3.set(seg, x);
+        constants$3327.const$3.set(seg, x);
     }
     public static MemorySegment icon_factories$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3322.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3327.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void icon_factories$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3322.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3327.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

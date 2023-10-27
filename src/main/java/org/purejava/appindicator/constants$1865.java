@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1865 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1865() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_selection_notification",
-        constants$10.const$5
+        "gdk_display_get_name",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_display_request_selection_notification",
-        constants$9.const$0
+        "gdk_display_get_n_screens",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_clipboard_persistence",
-        constants$10.const$5
+        "gdk_display_get_screen",
+        constants$21.const$3
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_display_get_default_screen",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_display_store_clipboard",
-        constants$1865.const$3
+        "gdk_display_pointer_ungrab",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_shapes",
-        constants$10.const$5
+        "gdk_display_keyboard_ungrab",
+        constants$40.const$2
     );
 }
 

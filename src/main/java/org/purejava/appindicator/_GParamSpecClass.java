@@ -24,13 +24,13 @@ import java.lang.invoke.VarHandle;
 public class _GParamSpecClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$573.const$1;
+        return constants$575.const$4;
     }
     public static MemorySegment g_type_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 8);
     }
     public static VarHandle value_type$VH() {
-        return constants$573.const$2;
+        return constants$575.const$5;
     }
     /**
      * Getter for field:
@@ -39,7 +39,7 @@ public class _GParamSpecClass {
      * }
      */
     public static long value_type$get(MemorySegment seg) {
-        return (long)constants$573.const$2.get(seg);
+        return (long)constants$575.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -48,13 +48,13 @@ public class _GParamSpecClass {
      * }
      */
     public static void value_type$set(MemorySegment seg, long x) {
-        constants$573.const$2.set(seg, x);
+        constants$575.const$5.set(seg, x);
     }
     public static long value_type$get(MemorySegment seg, long index) {
-        return (long)constants$573.const$2.get(seg.asSlice(index*sizeof()));
+        return (long)constants$575.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void value_type$set(MemorySegment seg, long index, long x) {
-        constants$573.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$575.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -65,7 +65,7 @@ public class _GParamSpecClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(finalize fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$573.const$3, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$576.const$0, fi, constants$13.const$1, scope);
         }
         static finalize ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -80,7 +80,7 @@ public class _GParamSpecClass {
     }
 
     public static VarHandle finalize$VH() {
-        return constants$573.const$4;
+        return constants$576.const$1;
     }
     /**
      * Getter for field:
@@ -89,7 +89,7 @@ public class _GParamSpecClass {
      * }
      */
     public static MemorySegment finalize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$573.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$576.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -98,13 +98,13 @@ public class _GParamSpecClass {
      * }
      */
     public static void finalize$set(MemorySegment seg, MemorySegment x) {
-        constants$573.const$4.set(seg, x);
+        constants$576.const$1.set(seg, x);
     }
     public static MemorySegment finalize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$573.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$576.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void finalize$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$573.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$576.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static finalize finalize(MemorySegment segment, Arena scope) {
         return finalize.ofAddress(finalize$get(segment), scope);
@@ -118,7 +118,7 @@ public class _GParamSpecClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(value_set_default fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$573.const$5, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$576.const$2, fi, constants$13.const$4, scope);
         }
         static value_set_default ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -133,7 +133,7 @@ public class _GParamSpecClass {
     }
 
     public static VarHandle value_set_default$VH() {
-        return constants$574.const$0;
+        return constants$576.const$3;
     }
     /**
      * Getter for field:
@@ -142,7 +142,7 @@ public class _GParamSpecClass {
      * }
      */
     public static MemorySegment value_set_default$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$574.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$576.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -151,13 +151,13 @@ public class _GParamSpecClass {
      * }
      */
     public static void value_set_default$set(MemorySegment seg, MemorySegment x) {
-        constants$574.const$0.set(seg, x);
+        constants$576.const$3.set(seg, x);
     }
     public static MemorySegment value_set_default$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$574.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$576.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void value_set_default$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$574.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$576.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static value_set_default value_set_default(MemorySegment segment, Arena scope) {
         return value_set_default.ofAddress(value_set_default$get(segment), scope);
@@ -171,7 +171,7 @@ public class _GParamSpecClass {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(value_validate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$574.const$1, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$576.const$4, fi, constants$9.const$0, scope);
         }
         static value_validate ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -186,7 +186,7 @@ public class _GParamSpecClass {
     }
 
     public static VarHandle value_validate$VH() {
-        return constants$574.const$2;
+        return constants$576.const$5;
     }
     /**
      * Getter for field:
@@ -195,7 +195,7 @@ public class _GParamSpecClass {
      * }
      */
     public static MemorySegment value_validate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$574.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$576.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -204,13 +204,13 @@ public class _GParamSpecClass {
      * }
      */
     public static void value_validate$set(MemorySegment seg, MemorySegment x) {
-        constants$574.const$2.set(seg, x);
+        constants$576.const$5.set(seg, x);
     }
     public static MemorySegment value_validate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$574.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$576.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void value_validate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$574.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$576.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static value_validate value_validate(MemorySegment segment, Arena scope) {
         return value_validate.ofAddress(value_validate$get(segment), scope);
@@ -224,7 +224,7 @@ public class _GParamSpecClass {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(values_cmp fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$574.const$3, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$577.const$0, fi, constants$12.const$2, scope);
         }
         static values_cmp ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -239,7 +239,7 @@ public class _GParamSpecClass {
     }
 
     public static VarHandle values_cmp$VH() {
-        return constants$574.const$4;
+        return constants$577.const$1;
     }
     /**
      * Getter for field:
@@ -248,7 +248,7 @@ public class _GParamSpecClass {
      * }
      */
     public static MemorySegment values_cmp$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$574.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$577.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -257,13 +257,13 @@ public class _GParamSpecClass {
      * }
      */
     public static void values_cmp$set(MemorySegment seg, MemorySegment x) {
-        constants$574.const$4.set(seg, x);
+        constants$577.const$1.set(seg, x);
     }
     public static MemorySegment values_cmp$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$574.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$577.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void values_cmp$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$574.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$577.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static values_cmp values_cmp(MemorySegment segment, Arena scope) {
         return values_cmp.ofAddress(values_cmp$get(segment), scope);
@@ -277,7 +277,7 @@ public class _GParamSpecClass {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(value_is_valid fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$574.const$5, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$577.const$2, fi, constants$9.const$0, scope);
         }
         static value_is_valid ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -292,7 +292,7 @@ public class _GParamSpecClass {
     }
 
     public static VarHandle value_is_valid$VH() {
-        return constants$575.const$0;
+        return constants$577.const$3;
     }
     /**
      * Getter for field:
@@ -301,7 +301,7 @@ public class _GParamSpecClass {
      * }
      */
     public static MemorySegment value_is_valid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$575.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$577.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -310,13 +310,13 @@ public class _GParamSpecClass {
      * }
      */
     public static void value_is_valid$set(MemorySegment seg, MemorySegment x) {
-        constants$575.const$0.set(seg, x);
+        constants$577.const$3.set(seg, x);
     }
     public static MemorySegment value_is_valid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$575.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$577.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void value_is_valid$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$575.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$577.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static value_is_valid value_is_valid(MemorySegment segment, Arena scope) {
         return value_is_valid.ofAddress(value_is_valid$get(segment), scope);

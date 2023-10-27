@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkStackSwitcher {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3106.const$0;
+        return constants$3111.const$0;
     }
     public static MemorySegment widget$slice(MemorySegment seg) {
         return seg.asSlice(0, 48);

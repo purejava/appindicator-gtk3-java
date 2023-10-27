@@ -13,13 +13,13 @@ public interface GIOFunc {
 
     int apply(java.lang.foreign.MemorySegment datagram_based, int condition, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GIOFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$315.const$2, fi, constants$150.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$316.const$2, fi, constants$150.const$0, scope);
     }
     static GIOFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _datagram_based, int _condition, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$315.const$3.invokeExact(symbol, _datagram_based, _condition, _data);
+                return (int)constants$316.const$3.invokeExact(symbol, _datagram_based, _condition, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

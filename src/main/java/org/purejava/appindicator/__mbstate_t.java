@@ -18,10 +18,10 @@ import java.lang.invoke.VarHandle;
 public class __mbstate_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1652.const$0;
+        return constants$1657.const$0;
     }
     public static VarHandle __count$VH() {
-        return constants$1652.const$1;
+        return constants$1657.const$1;
     }
     /**
      * Getter for field:
@@ -30,7 +30,7 @@ public class __mbstate_t {
      * }
      */
     public static int __count$get(MemorySegment seg) {
-        return (int)constants$1652.const$1.get(seg);
+        return (int)constants$1657.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -39,13 +39,13 @@ public class __mbstate_t {
      * }
      */
     public static void __count$set(MemorySegment seg, int x) {
-        constants$1652.const$1.set(seg, x);
+        constants$1657.const$1.set(seg, x);
     }
     public static int __count$get(MemorySegment seg, long index) {
-        return (int)constants$1652.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1657.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void __count$set(MemorySegment seg, long index, int x) {
-        constants$1652.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1657.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -60,10 +60,10 @@ public class __mbstate_t {
         // Suppresses default constructor, ensuring non-instantiability.
         private __value() {}
         public static MemoryLayout $LAYOUT() {
-            return constants$1652.const$2;
+            return constants$1657.const$2;
         }
         public static VarHandle __wch$VH() {
-            return constants$1652.const$3;
+            return constants$1657.const$3;
         }
         /**
          * Getter for field:
@@ -72,7 +72,7 @@ public class __mbstate_t {
          * }
          */
         public static int __wch$get(MemorySegment seg) {
-            return (int)constants$1652.const$3.get(seg);
+            return (int)constants$1657.const$3.get(seg);
         }
         /**
          * Setter for field:
@@ -81,13 +81,13 @@ public class __mbstate_t {
          * }
          */
         public static void __wch$set(MemorySegment seg, int x) {
-            constants$1652.const$3.set(seg, x);
+            constants$1657.const$3.set(seg, x);
         }
         public static int __wch$get(MemorySegment seg, long index) {
-            return (int)constants$1652.const$3.get(seg.asSlice(index*sizeof()));
+            return (int)constants$1657.const$3.get(seg.asSlice(index*sizeof()));
         }
         public static void __wch$set(MemorySegment seg, long index, int x) {
-            constants$1652.const$3.set(seg.asSlice(index*sizeof()), x);
+            constants$1657.const$3.set(seg.asSlice(index*sizeof()), x);
         }
         public static MemorySegment __wchb$slice(MemorySegment seg) {
             return seg.asSlice(0, 4);

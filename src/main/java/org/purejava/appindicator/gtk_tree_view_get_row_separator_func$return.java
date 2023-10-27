@@ -13,7 +13,7 @@ public interface gtk_tree_view_get_row_separator_func$return {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_tree_view_get_row_separator_func$return fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2491.const$5, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2496.const$5, fi, constants$12.const$2, scope);
     }
     static gtk_tree_view_get_row_separator_func$return ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,35 +2,28 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$888 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$888() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_node_info_generate_xml",
-        constants$42.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_node_info_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_info_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_signal_info_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_property_info_ref",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$887.const$2.varHandle(MemoryLayout.PathElement.groupElement("signals"));
+    static final VarHandle const$1 = constants$887.const$2.varHandle(MemoryLayout.PathElement.groupElement("properties"));
+    static final VarHandle const$2 = constants$887.const$2.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("path"),
+        RuntimeHelper.POINTER.withName("interfaces"),
+        RuntimeHelper.POINTER.withName("nodes"),
+        RuntimeHelper.POINTER.withName("annotations")
+    ).withName("_GDBusNodeInfo");
+    static final VarHandle const$4 = constants$888.const$3.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$5 = constants$888.const$3.varHandle(MemoryLayout.PathElement.groupElement("path"));
 }
 
 

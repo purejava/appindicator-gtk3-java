@@ -2,42 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3205 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3205() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_path_is_selected",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_insert_with_valuesv",
-        constants$3205.const$0
+        "gtk_tree_selection_iter_is_selected",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_prepend",
-        constants$14.const$3
+        "gtk_tree_selection_select_all",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_append",
-        constants$14.const$3
+        "gtk_tree_selection_unselect_all",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_is_ancestor",
-        constants$12.const$2
+        "gtk_tree_selection_select_range",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_iter_depth",
-        constants$9.const$0
+        "gtk_tree_selection_unselect_range",
+        constants$14.const$3
     );
 }
 

@@ -4,7 +4,6 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
-import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
@@ -12,34 +11,20 @@ final class constants$2534 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2534() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_binding_entry_add_signall",
-        constants$1494.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_binding_entry_add_signal_from_string",
-        constants$9.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_binding_entry_remove",
-        constants$467.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_builder_error_quark",
-        constants$83.const$1
-    );
+    static final VarHandle const$0 = constants$2533.const$2.varHandle(MemoryLayout.PathElement.groupElement("widget_class_pspecs"));
+    static final VarHandle const$1 = constants$2533.const$2.varHandle(MemoryLayout.PathElement.groupElement("class_branch_pspecs"));
+    static final VarHandle const$2 = constants$2533.const$2.varHandle(MemoryLayout.PathElement.groupElement("entries"));
+    static final VarHandle const$3 = constants$2533.const$2.varHandle(MemoryLayout.PathElement.groupElement("current"));
     static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkBuilder");
-    static final VarHandle const$5 = constants$2534.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+        JAVA_INT.withName("keyval"),
+        JAVA_INT.withName("modifiers"),
+        RuntimeHelper.POINTER.withName("binding_set"),
+        MemoryLayout.paddingLayout(8),
+        RuntimeHelper.POINTER.withName("set_next"),
+        RuntimeHelper.POINTER.withName("hash_next"),
+        RuntimeHelper.POINTER.withName("signals")
+    ).withName("_GtkBindingEntry");
+    static final VarHandle const$5 = constants$2534.const$4.varHandle(MemoryLayout.PathElement.groupElement("keyval"));
 }
 
 

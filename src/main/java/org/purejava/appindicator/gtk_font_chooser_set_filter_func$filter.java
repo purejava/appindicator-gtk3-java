@@ -13,7 +13,7 @@ public interface gtk_font_chooser_set_filter_func$filter {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_font_chooser_set_filter_func$filter fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2726.const$4, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2731.const$4, fi, constants$12.const$2, scope);
     }
     static gtk_font_chooser_set_filter_func$filter ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,33 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$761 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$761() {}
-    static final VarHandle const$0 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("close_fn"));
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GAsyncResultIface.is_tagged.class, "apply", constants$9.const$0);
+    static final VarHandle const$1 = constants$760.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_tagged"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_async_result_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GInputStreamClass.read_async.class, "apply", constants$761.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        constants$761.const$1
+        "g_async_result_get_user_data",
+        constants$5.const$2
     );
-    static final VarHandle const$4 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("read_async"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GInputStreamClass.read_finish.class, "apply", constants$166.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_async_result_get_source_object",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_async_result_legacy_propagate_error",
+        constants$9.const$0
+    );
 }
 
 

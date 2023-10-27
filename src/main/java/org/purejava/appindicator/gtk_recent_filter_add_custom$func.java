@@ -13,7 +13,7 @@ public interface gtk_recent_filter_add_custom$func {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_recent_filter_add_custom$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3022.const$2, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$3027.const$2, fi, constants$9.const$0, scope);
     }
     static gtk_recent_filter_add_custom$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

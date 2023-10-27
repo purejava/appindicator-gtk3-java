@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class GListStoreClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1131.const$4;
+        return constants$1135.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);

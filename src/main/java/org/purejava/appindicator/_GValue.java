@@ -18,10 +18,10 @@ import java.lang.invoke.VarHandle;
 public class _GValue {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$569.const$0;
+        return constants$571.const$3;
     }
     public static VarHandle g_type$VH() {
-        return constants$569.const$1;
+        return constants$571.const$4;
     }
     /**
      * Getter for field:
@@ -30,7 +30,7 @@ public class _GValue {
      * }
      */
     public static long g_type$get(MemorySegment seg) {
-        return (long)constants$569.const$1.get(seg);
+        return (long)constants$571.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -39,13 +39,13 @@ public class _GValue {
      * }
      */
     public static void g_type$set(MemorySegment seg, long x) {
-        constants$569.const$1.set(seg, x);
+        constants$571.const$4.set(seg, x);
     }
     public static long g_type$get(MemorySegment seg, long index) {
-        return (long)constants$569.const$1.get(seg.asSlice(index*sizeof()));
+        return (long)constants$571.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void g_type$set(MemorySegment seg, long index, long x) {
-        constants$569.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$571.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment data$slice(MemorySegment seg) {
         return seg.asSlice(8, 16);

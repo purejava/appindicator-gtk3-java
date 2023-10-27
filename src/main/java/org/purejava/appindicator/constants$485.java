@@ -2,46 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.*;
 final class constants$485 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$485() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_uri_get_query",
+        "g_uri_to_string",
         constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_uri_get_fragment",
-        constants$5.const$2
+        "g_uri_to_string_partial",
+        constants$21.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_uri_get_flags",
-        constants$10.const$5
+        "g_uri_get_scheme",
+        constants$5.const$2
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_uri_get_userinfo",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_uri_parse_params",
-        constants$485.const$3
+        "g_uri_get_user",
+        constants$5.const$2
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        JAVA_INT.withName("dummy0"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("dummy1"),
-        RuntimeHelper.POINTER.withName("dummy2"),
-        MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("dummy3")
-    ).withName("_GUriParamsIter");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_uri_get_password",
+        constants$5.const$2
+    );
 }
 
 

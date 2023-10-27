@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class _GDBusSubtreeVTable {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$866.const$3;
+        return constants$869.const$3;
     }
     /**
      * {@snippet :
@@ -31,13 +31,13 @@ public class _GDBusSubtreeVTable {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
         static MemorySegment allocate(enumerate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$866.const$4, fi, constants$39.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$869.const$4, fi, constants$39.const$1, scope);
         }
         static enumerate ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$865.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
+                    return (java.lang.foreign.MemorySegment)constants$868.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -46,7 +46,7 @@ public class _GDBusSubtreeVTable {
     }
 
     public static VarHandle enumerate$VH() {
-        return constants$866.const$5;
+        return constants$869.const$5;
     }
     /**
      * Getter for field:
@@ -55,7 +55,7 @@ public class _GDBusSubtreeVTable {
      * }
      */
     public static MemorySegment enumerate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$866.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$869.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -64,13 +64,13 @@ public class _GDBusSubtreeVTable {
      * }
      */
     public static void enumerate$set(MemorySegment seg, MemorySegment x) {
-        constants$866.const$5.set(seg, x);
+        constants$869.const$5.set(seg, x);
     }
     public static MemorySegment enumerate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$866.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$869.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void enumerate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$866.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$869.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static enumerate enumerate(MemorySegment segment, Arena scope) {
         return enumerate.ofAddress(enumerate$get(segment), scope);
@@ -84,13 +84,13 @@ public class _GDBusSubtreeVTable {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(introspect fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$867.const$0, fi, constants$330.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$870.const$0, fi, constants$331.const$5, scope);
         }
         static introspect ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$866.const$1.invokeExact(symbol, _connection, _sender, _object_path, _node, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$869.const$1.invokeExact(symbol, _connection, _sender, _object_path, _node, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -99,7 +99,7 @@ public class _GDBusSubtreeVTable {
     }
 
     public static VarHandle introspect$VH() {
-        return constants$867.const$1;
+        return constants$870.const$1;
     }
     /**
      * Getter for field:
@@ -108,7 +108,7 @@ public class _GDBusSubtreeVTable {
      * }
      */
     public static MemorySegment introspect$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$867.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$870.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -117,13 +117,13 @@ public class _GDBusSubtreeVTable {
      * }
      */
     public static void introspect$set(MemorySegment seg, MemorySegment x) {
-        constants$867.const$1.set(seg, x);
+        constants$870.const$1.set(seg, x);
     }
     public static MemorySegment introspect$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$867.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$870.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void introspect$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$867.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$870.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static introspect introspect(MemorySegment segment, Arena scope) {
         return introspect.ofAddress(introspect$get(segment), scope);
@@ -137,13 +137,13 @@ public class _GDBusSubtreeVTable {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment out_user_data, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(dispatch fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$867.const$2, fi, constants$494.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$870.const$2, fi, constants$496.const$1, scope);
         }
         static dispatch ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _out_user_data, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$863.const$1.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _node, _out_user_data, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$866.const$1.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _node, _out_user_data, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -152,7 +152,7 @@ public class _GDBusSubtreeVTable {
     }
 
     public static VarHandle dispatch$VH() {
-        return constants$867.const$3;
+        return constants$870.const$3;
     }
     /**
      * Getter for field:
@@ -161,7 +161,7 @@ public class _GDBusSubtreeVTable {
      * }
      */
     public static MemorySegment dispatch$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$867.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$870.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -170,13 +170,13 @@ public class _GDBusSubtreeVTable {
      * }
      */
     public static void dispatch$set(MemorySegment seg, MemorySegment x) {
-        constants$867.const$3.set(seg, x);
+        constants$870.const$3.set(seg, x);
     }
     public static MemorySegment dispatch$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$867.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$870.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void dispatch$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$867.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$870.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static dispatch dispatch(MemorySegment segment, Arena scope) {
         return dispatch.ofAddress(dispatch$get(segment), scope);

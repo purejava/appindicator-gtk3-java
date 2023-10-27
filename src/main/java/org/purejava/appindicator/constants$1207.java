@@ -8,25 +8,28 @@ final class constants$1207 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1207() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_permission_get_type",
-        constants$3.const$5
+        "g_notification_add_button",
+        constants$14.const$3
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_permission_acquire",
-        constants$12.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_permission_acquire_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_permission_acquire_async",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_notification_add_button_with_target",
         constants$42.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_permission_acquire_finish",
-        constants$12.const$2
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_notification_add_button_with_target_value",
+        constants$42.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_notification_set_default_action",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_notification_set_default_action_and_target",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_permission_release",
-        constants$12.const$2
+        "g_notification_set_default_action_and_target_value",
+        constants$14.const$3
     );
 }
 

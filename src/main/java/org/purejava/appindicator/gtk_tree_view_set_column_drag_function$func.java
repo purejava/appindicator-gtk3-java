@@ -13,13 +13,13 @@ public interface gtk_tree_view_set_column_drag_function$func {
 
     int apply(java.lang.foreign.MemorySegment tree_view, java.lang.foreign.MemorySegment column, java.lang.foreign.MemorySegment prev_column, java.lang.foreign.MemorySegment next_column, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gtk_tree_view_set_column_drag_function$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2480.const$1, fi, constants$165.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2485.const$1, fi, constants$165.const$2, scope);
     }
     static gtk_tree_view_set_column_drag_function$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _tree_view, java.lang.foreign.MemorySegment _column, java.lang.foreign.MemorySegment _prev_column, java.lang.foreign.MemorySegment _next_column, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$2086.const$3.invokeExact(symbol, _tree_view, _column, _prev_column, _next_column, _data);
+                return (int)constants$2091.const$4.invokeExact(symbol, _tree_view, _column, _prev_column, _next_column, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

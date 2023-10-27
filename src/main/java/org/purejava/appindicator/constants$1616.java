@@ -2,37 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1616 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1616() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_letter_space",
-        constants$331.const$4
+        "pango_weight_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_get_logical_widths",
-        constants$14.const$3
+        "pango_stretch_get_type",
+        constants$3.const$5
     );
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("glyph_item"),
-        RuntimeHelper.POINTER.withName("text"),
-        JAVA_INT.withName("start_glyph"),
-        JAVA_INT.withName("start_index"),
-        JAVA_INT.withName("start_char"),
-        JAVA_INT.withName("end_glyph"),
-        JAVA_INT.withName("end_index"),
-        JAVA_INT.withName("end_char")
-    ).withName("_PangoGlyphItemIter");
-    static final VarHandle const$3 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("glyph_item"));
-    static final VarHandle const$4 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("text"));
-    static final VarHandle const$5 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("start_glyph"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_mask_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_shape_flags_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_gravity_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_gravity_hint_get_type",
+        constants$3.const$5
+    );
 }
 
 

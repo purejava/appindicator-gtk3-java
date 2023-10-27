@@ -2,32 +2,42 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1497 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1497() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_font_create",
-        constants$5.const$2
+        "hb_font_get_glyph_h_advance",
+        constants$11.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_font_create_sub_font",
-        constants$5.const$2
+        "hb_font_get_glyph_v_advance",
+        constants$11.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_font_get_empty",
-        constants$35.const$2
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_font_reference",
-        constants$5.const$2
+        "hb_font_get_glyph_h_advances",
+        constants$1497.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_font_destroy",
-        constants$13.const$1
+        "hb_font_get_glyph_v_advances",
+        constants$1497.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_font_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_h_origin",
+        constants$11.const$0
+    );
 }
 
 

@@ -8,20 +8,26 @@ final class constants$435 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$435() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_sequence_insert_sorted",
-        constants$39.const$1
+        "g_sequence_append",
+        constants$5.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_sequence_insert_sorted_iter$iter_cmp.class, "apply", constants$12.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_sequence_prepend",
+        constants$5.const$5
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_sequence_insert_sorted_iter",
-        constants$39.const$1
+        "g_sequence_insert_before",
+        constants$5.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_sequence_sort_changed$cmp_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_sequence_move",
+        constants$13.const$4
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_sequence_sort_changed",
-        constants$14.const$3
+        "g_sequence_swap",
+        constants$13.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_sequence_sort_changed_iter$iter_cmp.class, "apply", constants$12.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_sequence_insert_sorted$cmp_func.class, "apply", constants$12.const$2);
 }
 
 

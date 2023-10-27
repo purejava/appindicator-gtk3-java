@@ -2,34 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$995 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$995() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.make_symbolic_link_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_symbolic_link_finish"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.copy.class, "apply", constants$906.const$0);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        constants$906.const$0
-    );
-    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("copy"));
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.delete_file_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("delete_file_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.trash.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("trash"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.trash_async.class, "apply", constants$282.const$1);
+    static final VarHandle const$5 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("trash_async"));
 }
 
 

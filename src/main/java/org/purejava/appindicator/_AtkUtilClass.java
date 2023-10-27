@@ -24,7 +24,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkUtilClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1987.const$5;
+        return constants$1993.const$0;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -38,7 +38,7 @@ public class _AtkUtilClass {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
         static MemorySegment allocate(add_global_event_listener fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1988.const$0, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1993.const$1, fi, constants$9.const$0, scope);
         }
         static add_global_event_listener ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -53,7 +53,7 @@ public class _AtkUtilClass {
     }
 
     public static VarHandle add_global_event_listener$VH() {
-        return constants$1988.const$1;
+        return constants$1993.const$2;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _AtkUtilClass {
      * }
      */
     public static MemorySegment add_global_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1988.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1993.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -71,13 +71,13 @@ public class _AtkUtilClass {
      * }
      */
     public static void add_global_event_listener$set(MemorySegment seg, MemorySegment x) {
-        constants$1988.const$1.set(seg, x);
+        constants$1993.const$2.set(seg, x);
     }
     public static MemorySegment add_global_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1988.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1993.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void add_global_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1988.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1993.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static add_global_event_listener add_global_event_listener(MemorySegment segment, Arena scope) {
         return add_global_event_listener.ofAddress(add_global_event_listener$get(segment), scope);
@@ -91,7 +91,7 @@ public class _AtkUtilClass {
 
         void apply(int handle_id);
         static MemorySegment allocate(remove_global_event_listener fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1988.const$2, fi, constants$80.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1993.const$3, fi, constants$80.const$1, scope);
         }
         static remove_global_event_listener ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -106,7 +106,7 @@ public class _AtkUtilClass {
     }
 
     public static VarHandle remove_global_event_listener$VH() {
-        return constants$1988.const$3;
+        return constants$1993.const$4;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _AtkUtilClass {
      * }
      */
     public static MemorySegment remove_global_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1988.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1993.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -124,13 +124,13 @@ public class _AtkUtilClass {
      * }
      */
     public static void remove_global_event_listener$set(MemorySegment seg, MemorySegment x) {
-        constants$1988.const$3.set(seg, x);
+        constants$1993.const$4.set(seg, x);
     }
     public static MemorySegment remove_global_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1988.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1993.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void remove_global_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1988.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1993.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static remove_global_event_listener remove_global_event_listener(MemorySegment segment, Arena scope) {
         return remove_global_event_listener.ofAddress(remove_global_event_listener$get(segment), scope);
@@ -144,7 +144,7 @@ public class _AtkUtilClass {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
         static MemorySegment allocate(add_key_event_listener fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1988.const$4, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1993.const$5, fi, constants$9.const$0, scope);
         }
         static add_key_event_listener ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -159,7 +159,7 @@ public class _AtkUtilClass {
     }
 
     public static VarHandle add_key_event_listener$VH() {
-        return constants$1988.const$5;
+        return constants$1994.const$0;
     }
     /**
      * Getter for field:
@@ -168,7 +168,7 @@ public class _AtkUtilClass {
      * }
      */
     public static MemorySegment add_key_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1988.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1994.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -177,13 +177,13 @@ public class _AtkUtilClass {
      * }
      */
     public static void add_key_event_listener$set(MemorySegment seg, MemorySegment x) {
-        constants$1988.const$5.set(seg, x);
+        constants$1994.const$0.set(seg, x);
     }
     public static MemorySegment add_key_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1988.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1994.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void add_key_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1988.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1994.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static add_key_event_listener add_key_event_listener(MemorySegment segment, Arena scope) {
         return add_key_event_listener.ofAddress(add_key_event_listener$get(segment), scope);
@@ -197,7 +197,7 @@ public class _AtkUtilClass {
 
         void apply(int handle_id);
         static MemorySegment allocate(remove_key_event_listener fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1989.const$0, fi, constants$80.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1994.const$1, fi, constants$80.const$1, scope);
         }
         static remove_key_event_listener ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -212,7 +212,7 @@ public class _AtkUtilClass {
     }
 
     public static VarHandle remove_key_event_listener$VH() {
-        return constants$1989.const$1;
+        return constants$1994.const$2;
     }
     /**
      * Getter for field:
@@ -221,7 +221,7 @@ public class _AtkUtilClass {
      * }
      */
     public static MemorySegment remove_key_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1989.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1994.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -230,13 +230,13 @@ public class _AtkUtilClass {
      * }
      */
     public static void remove_key_event_listener$set(MemorySegment seg, MemorySegment x) {
-        constants$1989.const$1.set(seg, x);
+        constants$1994.const$2.set(seg, x);
     }
     public static MemorySegment remove_key_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1989.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1994.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void remove_key_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1989.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1994.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static remove_key_event_listener remove_key_event_listener(MemorySegment segment, Arena scope) {
         return remove_key_event_listener.ofAddress(remove_key_event_listener$get(segment), scope);
@@ -250,13 +250,13 @@ public class _AtkUtilClass {
 
         java.lang.foreign.MemorySegment apply();
         static MemorySegment allocate(get_root fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1989.const$2, fi, constants$35.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1994.const$3, fi, constants$35.const$2, scope);
         }
         static get_root ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$503.const$2.invokeExact(symbol);
+                    return (java.lang.foreign.MemorySegment)constants$505.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -265,7 +265,7 @@ public class _AtkUtilClass {
     }
 
     public static VarHandle get_root$VH() {
-        return constants$1989.const$3;
+        return constants$1994.const$4;
     }
     /**
      * Getter for field:
@@ -274,7 +274,7 @@ public class _AtkUtilClass {
      * }
      */
     public static MemorySegment get_root$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1989.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1994.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -283,13 +283,13 @@ public class _AtkUtilClass {
      * }
      */
     public static void get_root$set(MemorySegment seg, MemorySegment x) {
-        constants$1989.const$3.set(seg, x);
+        constants$1994.const$4.set(seg, x);
     }
     public static MemorySegment get_root$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1989.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1994.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_root$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1989.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1994.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_root get_root(MemorySegment segment, Arena scope) {
         return get_root.ofAddress(get_root$get(segment), scope);
@@ -303,13 +303,13 @@ public class _AtkUtilClass {
 
         java.lang.foreign.MemorySegment apply();
         static MemorySegment allocate(get_toolkit_name fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1989.const$4, fi, constants$35.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1994.const$5, fi, constants$35.const$2, scope);
         }
         static get_toolkit_name ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$503.const$2.invokeExact(symbol);
+                    return (java.lang.foreign.MemorySegment)constants$505.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -318,7 +318,7 @@ public class _AtkUtilClass {
     }
 
     public static VarHandle get_toolkit_name$VH() {
-        return constants$1989.const$5;
+        return constants$1995.const$0;
     }
     /**
      * Getter for field:
@@ -327,7 +327,7 @@ public class _AtkUtilClass {
      * }
      */
     public static MemorySegment get_toolkit_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1989.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1995.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -336,13 +336,13 @@ public class _AtkUtilClass {
      * }
      */
     public static void get_toolkit_name$set(MemorySegment seg, MemorySegment x) {
-        constants$1989.const$5.set(seg, x);
+        constants$1995.const$0.set(seg, x);
     }
     public static MemorySegment get_toolkit_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1989.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1995.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_toolkit_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1989.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1995.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_toolkit_name get_toolkit_name(MemorySegment segment, Arena scope) {
         return get_toolkit_name.ofAddress(get_toolkit_name$get(segment), scope);
@@ -356,13 +356,13 @@ public class _AtkUtilClass {
 
         java.lang.foreign.MemorySegment apply();
         static MemorySegment allocate(get_toolkit_version fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1990.const$0, fi, constants$35.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1995.const$1, fi, constants$35.const$2, scope);
         }
         static get_toolkit_version ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$503.const$2.invokeExact(symbol);
+                    return (java.lang.foreign.MemorySegment)constants$505.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -371,7 +371,7 @@ public class _AtkUtilClass {
     }
 
     public static VarHandle get_toolkit_version$VH() {
-        return constants$1990.const$1;
+        return constants$1995.const$2;
     }
     /**
      * Getter for field:
@@ -380,7 +380,7 @@ public class _AtkUtilClass {
      * }
      */
     public static MemorySegment get_toolkit_version$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1990.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1995.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -389,13 +389,13 @@ public class _AtkUtilClass {
      * }
      */
     public static void get_toolkit_version$set(MemorySegment seg, MemorySegment x) {
-        constants$1990.const$1.set(seg, x);
+        constants$1995.const$2.set(seg, x);
     }
     public static MemorySegment get_toolkit_version$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1990.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1995.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_toolkit_version$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1990.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1995.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_toolkit_version get_toolkit_version(MemorySegment segment, Arena scope) {
         return get_toolkit_version.ofAddress(get_toolkit_version$get(segment), scope);

@@ -13,7 +13,7 @@ public interface gtk_style_properties_lookup_property$parse_func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_style_properties_lookup_property$parse_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2771.const$1, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2776.const$1, fi, constants$12.const$2, scope);
     }
     static gtk_style_properties_lookup_property$parse_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

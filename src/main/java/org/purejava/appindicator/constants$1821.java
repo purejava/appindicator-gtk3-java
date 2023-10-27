@@ -2,34 +2,44 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1821 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1821() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_current_timings",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GdkWindowClass.pick_embedded_child.class, "apply", constants$1821.const$0);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$1821.const$0
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_refresh_info",
+        constants$682.const$3
     );
-    static final VarHandle const$3 = constants$1820.const$5.varHandle(MemoryLayout.PathElement.groupElement("pick_embedded_child"));
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GdkWindowClass.to_embedder.class, "apply", constants$1821.const$4);
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("title"),
+        JAVA_INT.withName("event_mask"),
+        JAVA_INT.withName("x"),
+        JAVA_INT.withName("y"),
+        JAVA_INT.withName("width"),
+        JAVA_INT.withName("height"),
+        JAVA_INT.withName("wclass"),
+        RuntimeHelper.POINTER.withName("visual"),
+        JAVA_INT.withName("window_type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("cursor"),
+        RuntimeHelper.POINTER.withName("wmclass_name"),
+        RuntimeHelper.POINTER.withName("wmclass_class"),
+        JAVA_INT.withName("override_redirect"),
+        JAVA_INT.withName("type_hint")
+    ).withName("_GdkWindowAttr");
+    static final VarHandle const$3 = constants$1821.const$2.varHandle(MemoryLayout.PathElement.groupElement("title"));
+    static final VarHandle const$4 = constants$1821.const$2.varHandle(MemoryLayout.PathElement.groupElement("event_mask"));
+    static final VarHandle const$5 = constants$1821.const$2.varHandle(MemoryLayout.PathElement.groupElement("x"));
 }
 
 

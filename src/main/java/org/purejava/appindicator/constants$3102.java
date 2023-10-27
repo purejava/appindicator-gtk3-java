@@ -2,40 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$3102 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3102() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_numeric",
-        constants$10.const$5
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_DOUBLE
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_spin",
-        constants$3102.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_wrap",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_wrap",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_snap_to_ticks",
-        constants$40.const$2
-    );
+    static final VarHandle const$0 = constants$3100.const$4.varHandle(MemoryLayout.PathElement.groupElement("change_value"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkSpinButtonClass.wrapped.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$3100.const$4.varHandle(MemoryLayout.PathElement.groupElement("wrapped"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkSpinButtonClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$3100.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkSpinButtonClass._gtk_reserved2.class, "apply", constants$7.const$5);
 }
 
 

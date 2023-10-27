@@ -9,12 +9,12 @@ final class constants$2452 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2452() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkEntryClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2446.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkEntryClass._gtk_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$2446.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkEntryClass._gtk_reserved6.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$2446.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkEntryClass.activate.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$2451.const$3.varHandle(MemoryLayout.PathElement.groupElement("activate"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkEntryClass.move_cursor.class, "apply", constants$1134.const$5);
+    static final VarHandle const$3 = constants$2451.const$3.varHandle(MemoryLayout.PathElement.groupElement("move_cursor"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkEntryClass.insert_at_cursor.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$2451.const$3.varHandle(MemoryLayout.PathElement.groupElement("insert_at_cursor"));
 }
 
 

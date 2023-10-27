@@ -2,18 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 final class constants$2357 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2357() {}
-    static final VarHandle const$0 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("pixels_below_lines"));
-    static final VarHandle const$1 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("pixels_inside_wrap"));
-    static final VarHandle const$2 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("tabs"));
-    static final VarHandle const$3 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("wrap_mode"));
-    static final VarHandle const$4 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("language"));
-    static final VarHandle const$5 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("pg_bg_color"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_alignment",
+        constants$691.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_alignment",
+        constants$692.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_reorderable",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_reorderable",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_sort_column_id",
+        constants$40.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_sort_column_id",
+        constants$10.const$5
+    );
 }
 
 

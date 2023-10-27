@@ -2,35 +2,31 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2955 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2955() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_int",
-        constants$9.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_int_with_default",
-        constants$62.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_int",
-        constants$164.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_printer",
+        "gtk_print_context_create_pango_layout",
         constants$5.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_printer",
-        constants$13.const$4
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_print_context_set_cairo_context",
+        constants$1688.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_orientation",
-        constants$10.const$5
-    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GtkPrintSettingsFunc.class, "apply", constants$14.const$3);
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("start"),
+        JAVA_INT.withName("end")
+    ).withName("_GtkPageRange");
+    static final VarHandle const$4 = constants$2955.const$3.varHandle(MemoryLayout.PathElement.groupElement("start"));
+    static final VarHandle const$5 = constants$2955.const$3.varHandle(MemoryLayout.PathElement.groupElement("end"));
 }
 
 

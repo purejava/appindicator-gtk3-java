@@ -2,32 +2,28 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.UnionLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.*;
 final class constants$1414 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1414() {}
-    static final VarHandle const$0 = constants$1413.const$4.varHandle(MemoryLayout.PathElement.groupElement("i32"));
-    static final UnionLayout const$1 = MemoryLayout.unionLayout(
-        JAVA_FLOAT.withName("f"),
-        JAVA_INT.withName("u32"),
-        JAVA_INT.withName("i32"),
-        MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
-        MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
-        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
-        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
-    ).withName("_hb_var_num_t");
-    static final VarHandle const$2 = constants$1414.const$1.varHandle(MemoryLayout.PathElement.groupElement("f"));
-    static final VarHandle const$3 = constants$1414.const$1.varHandle(MemoryLayout.PathElement.groupElement("u32"));
-    static final VarHandle const$4 = constants$1414.const$1.varHandle(MemoryLayout.PathElement.groupElement("i32"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_volume_mount$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_volume_mount",
+        constants$381.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_volume_mount_finish",
+        constants$12.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_volume_eject$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_volume_eject",
+        constants$282.const$1
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_tag_from_string",
-        constants$11.const$4
+        "g_volume_eject_finish",
+        constants$12.const$2
     );
 }
 

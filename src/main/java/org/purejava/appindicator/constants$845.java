@@ -5,38 +5,38 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
 final class constants$845 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$845() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_line_finish_utf8",
-        constants$39.const$1
+        "g_data_input_stream_new",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_until",
-        constants$330.const$5
+        "g_data_input_stream_set_byte_order",
+        constants$40.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_data_input_stream_read_until_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_get_byte_order",
+        constants$10.const$5
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_until_async",
-        constants$584.const$3
+        "g_data_input_stream_set_newline_type",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_until_finish",
-        constants$39.const$1
+        "g_data_input_stream_get_newline_type",
+        constants$10.const$5
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_BYTE,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
     static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_upto",
+        "g_data_input_stream_read_byte",
         constants$845.const$5
     );
 }

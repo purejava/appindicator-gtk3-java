@@ -2,35 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$651 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$651() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_enum_get_value_by_name",
-        constants$5.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_enum_get_value_by_nick",
-        constants$5.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_flags_get_first_value",
-        constants$21.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_flags_get_value_by_name",
-        constants$5.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_flags_get_value_by_nick",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_enum_to_string",
-        constants$63.const$1
-    );
+    static final VarHandle const$0 = constants$650.const$5.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
+    static final VarHandle const$1 = constants$650.const$5.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
+    static final VarHandle const$2 = constants$650.const$5.varHandle(MemoryLayout.PathElement.groupElement("n_values"));
+    static final VarHandle const$3 = constants$650.const$5.varHandle(MemoryLayout.PathElement.groupElement("values"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type")
+        ).withName("g_type_class"),
+        JAVA_INT.withName("mask"),
+        JAVA_INT.withName("n_values"),
+        RuntimeHelper.POINTER.withName("values")
+    ).withName("_GFlagsClass");
+    static final VarHandle const$5 = constants$651.const$4.varHandle(MemoryLayout.PathElement.groupElement("mask"));
 }
 
 

@@ -8,25 +8,28 @@ final class constants$2859 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2859() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_lock_button_get_permission",
-        constants$5.const$2
+        "gtk_list_box_set_sort_func",
+        constants$42.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_lock_button_set_permission",
-        constants$13.const$4
+        "gtk_list_box_set_activate_on_single_click",
+        constants$40.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GtkKeySnoopFunc.class, "apply", constants$12.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_list_box_get_activate_on_single_click",
+        constants$10.const$5
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_get_major_version",
-        constants$83.const$1
+        "gtk_list_box_drag_unhighlight_row",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_get_minor_version",
-        constants$83.const$1
+        "gtk_list_box_drag_highlight_row",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_get_micro_version",
-        constants$83.const$1
+        "gtk_list_box_new",
+        constants$35.const$2
     );
 }
 

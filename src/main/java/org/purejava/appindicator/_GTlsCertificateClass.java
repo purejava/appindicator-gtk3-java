@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _GTlsCertificateClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1351.const$3;
+        return constants$1355.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -33,7 +33,7 @@ public class _GTlsCertificateClass {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
         static MemorySegment allocate(verify fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1351.const$4, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1355.const$5, fi, constants$12.const$2, scope);
         }
         static verify ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -48,7 +48,7 @@ public class _GTlsCertificateClass {
     }
 
     public static VarHandle verify$VH() {
-        return constants$1351.const$5;
+        return constants$1356.const$0;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GTlsCertificateClass {
      * }
      */
     public static MemorySegment verify$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1351.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1356.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GTlsCertificateClass {
      * }
      */
     public static void verify$set(MemorySegment seg, MemorySegment x) {
-        constants$1351.const$5.set(seg, x);
+        constants$1356.const$0.set(seg, x);
     }
     public static MemorySegment verify$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1351.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1356.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void verify$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1351.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1356.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static verify verify(MemorySegment segment, Arena scope) {
         return verify.ofAddress(verify$get(segment), scope);

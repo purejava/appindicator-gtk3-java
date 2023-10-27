@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkVScrollbarClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3401.const$3;
+        return constants$3406.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 944);

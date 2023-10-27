@@ -2,32 +2,71 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1309 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1309() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSocketControlMessageClass._g_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$1305.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GSocketControlMessageClass._g_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$1305.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
-    static final StructLayout const$4 = MemoryLayout.structLayout(
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_connection_factory_register_type",
+        constants$1309.const$0
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_connection_factory_lookup_type",
+        constants$1309.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_connection_factory_create_connection",
+        constants$5.const$2
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GSocketControlMessage");
-    static final VarHandle const$5 = constants$1309.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("get_size"),
+        RuntimeHelper.POINTER.withName("get_level"),
+        RuntimeHelper.POINTER.withName("get_type"),
+        RuntimeHelper.POINTER.withName("serialize"),
+        RuntimeHelper.POINTER.withName("deserialize"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5")
+    ).withName("_GSocketControlMessageClass");
 }
 
 

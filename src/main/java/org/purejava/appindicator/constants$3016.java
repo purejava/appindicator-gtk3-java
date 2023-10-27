@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3016 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3016() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_modified",
-        constants$4.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_visited",
-        constants$4.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_private_hint",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_application_info",
-        constants$165.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_create_app_info",
-        constants$23.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_applications",
-        constants$5.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRecentManagerClass.changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$3015.const$5.varHandle(MemoryLayout.PathElement.groupElement("changed"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkRecentManagerClass._gtk_recent1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3015.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_recent1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkRecentManagerClass._gtk_recent2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$3015.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_recent2"));
 }
 
 

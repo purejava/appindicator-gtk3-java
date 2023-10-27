@@ -9,12 +9,12 @@ final class constants$1189 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1189() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.get_volumes.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_volumes"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.get_mounts.class, "apply", constants$5.const$2);
-    static final VarHandle const$3 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_mounts"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.get_volume_for_uuid.class, "apply", constants$5.const$5);
-    static final VarHandle const$5 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_volume_for_uuid"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.volume_changed.class, "apply", constants$13.const$4);
+    static final VarHandle const$1 = constants$1188.const$1.varHandle(MemoryLayout.PathElement.groupElement("volume_changed"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.mount_added.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$1188.const$1.varHandle(MemoryLayout.PathElement.groupElement("mount_added"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.mount_removed.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$1188.const$1.varHandle(MemoryLayout.PathElement.groupElement("mount_removed"));
 }
 
 

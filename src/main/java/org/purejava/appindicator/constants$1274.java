@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1274 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1274() {}
-    static final VarHandle const$0 = constants$1273.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$1273.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$1273.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_run_in_thread",
+        constants$466.const$3
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_set_from_error",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_take_error",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_propagate_error",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_simple_async_result_set_error",
+        constants$57.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_set_error_va",
+        constants$906.const$0
+    );
 }
 
 

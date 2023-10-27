@@ -2,34 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$518 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$518() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pthread_attr_destroy",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pthread_attr_getdetachstate",
-        constants$9.const$0
-    );
+    static final VarHandle const$0 = constants$517.const$1.varHandle(MemoryLayout.PathElement.groupElement("__prev"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(pthread_create$__start_routine.class, "apply", constants$5.const$2);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pthread_attr_setdetachstate",
-        constants$11.const$4
+        "pthread_create",
+        constants$34.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pthread_attr_getguardsize",
-        constants$9.const$0
+        "pthread_exit",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pthread_attr_setguardsize",
-        constants$97.const$1
+        "pthread_join",
+        constants$87.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pthread_attr_getschedparam",
-        constants$9.const$0
+        "pthread_detach",
+        constants$26.const$2
     );
 }
 

@@ -25,7 +25,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkDocumentIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2004.const$1;
+        return constants$2009.const$2;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -39,7 +39,7 @@ public class _AtkDocumentIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_document_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2004.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2009.const$3, fi, constants$5.const$2, scope);
         }
         static get_document_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -54,7 +54,7 @@ public class _AtkDocumentIface {
     }
 
     public static VarHandle get_document_type$VH() {
-        return constants$2004.const$3;
+        return constants$2009.const$4;
     }
     /**
      * Getter for field:
@@ -63,7 +63,7 @@ public class _AtkDocumentIface {
      * }
      */
     public static MemorySegment get_document_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2004.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2009.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -72,13 +72,13 @@ public class _AtkDocumentIface {
      * }
      */
     public static void get_document_type$set(MemorySegment seg, MemorySegment x) {
-        constants$2004.const$3.set(seg, x);
+        constants$2009.const$4.set(seg, x);
     }
     public static MemorySegment get_document_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2004.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2009.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_document_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2004.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2009.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_document_type get_document_type(MemorySegment segment, Arena scope) {
         return get_document_type.ofAddress(get_document_type$get(segment), scope);
@@ -92,7 +92,7 @@ public class _AtkDocumentIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_document fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2004.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2009.const$5, fi, constants$5.const$2, scope);
         }
         static get_document ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -107,7 +107,7 @@ public class _AtkDocumentIface {
     }
 
     public static VarHandle get_document$VH() {
-        return constants$2004.const$5;
+        return constants$2010.const$0;
     }
     /**
      * Getter for field:
@@ -116,7 +116,7 @@ public class _AtkDocumentIface {
      * }
      */
     public static MemorySegment get_document$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2004.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2010.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -125,13 +125,13 @@ public class _AtkDocumentIface {
      * }
      */
     public static void get_document$set(MemorySegment seg, MemorySegment x) {
-        constants$2004.const$5.set(seg, x);
+        constants$2010.const$0.set(seg, x);
     }
     public static MemorySegment get_document$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2004.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2010.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_document$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2004.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2010.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_document get_document(MemorySegment segment, Arena scope) {
         return get_document.ofAddress(get_document$get(segment), scope);
@@ -145,7 +145,7 @@ public class _AtkDocumentIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_document_locale fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2005.const$0, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2010.const$1, fi, constants$5.const$2, scope);
         }
         static get_document_locale ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -160,7 +160,7 @@ public class _AtkDocumentIface {
     }
 
     public static VarHandle get_document_locale$VH() {
-        return constants$2005.const$1;
+        return constants$2010.const$2;
     }
     /**
      * Getter for field:
@@ -169,7 +169,7 @@ public class _AtkDocumentIface {
      * }
      */
     public static MemorySegment get_document_locale$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2005.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2010.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -178,13 +178,13 @@ public class _AtkDocumentIface {
      * }
      */
     public static void get_document_locale$set(MemorySegment seg, MemorySegment x) {
-        constants$2005.const$1.set(seg, x);
+        constants$2010.const$2.set(seg, x);
     }
     public static MemorySegment get_document_locale$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2005.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2010.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_document_locale$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2005.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2010.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_document_locale get_document_locale(MemorySegment segment, Arena scope) {
         return get_document_locale.ofAddress(get_document_locale$get(segment), scope);
@@ -198,7 +198,7 @@ public class _AtkDocumentIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_document_attributes fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2005.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2010.const$3, fi, constants$5.const$2, scope);
         }
         static get_document_attributes ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -213,7 +213,7 @@ public class _AtkDocumentIface {
     }
 
     public static VarHandle get_document_attributes$VH() {
-        return constants$2005.const$3;
+        return constants$2010.const$4;
     }
     /**
      * Getter for field:
@@ -222,7 +222,7 @@ public class _AtkDocumentIface {
      * }
      */
     public static MemorySegment get_document_attributes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2005.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2010.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -231,13 +231,13 @@ public class _AtkDocumentIface {
      * }
      */
     public static void get_document_attributes$set(MemorySegment seg, MemorySegment x) {
-        constants$2005.const$3.set(seg, x);
+        constants$2010.const$4.set(seg, x);
     }
     public static MemorySegment get_document_attributes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2005.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2010.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_document_attributes$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2005.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2010.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_document_attributes get_document_attributes(MemorySegment segment, Arena scope) {
         return get_document_attributes.ofAddress(get_document_attributes$get(segment), scope);
@@ -251,7 +251,7 @@ public class _AtkDocumentIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(get_document_attribute_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2005.const$4, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2010.const$5, fi, constants$5.const$5, scope);
         }
         static get_document_attribute_value ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -266,7 +266,7 @@ public class _AtkDocumentIface {
     }
 
     public static VarHandle get_document_attribute_value$VH() {
-        return constants$2005.const$5;
+        return constants$2011.const$0;
     }
     /**
      * Getter for field:
@@ -275,7 +275,7 @@ public class _AtkDocumentIface {
      * }
      */
     public static MemorySegment get_document_attribute_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2005.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2011.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -284,13 +284,13 @@ public class _AtkDocumentIface {
      * }
      */
     public static void get_document_attribute_value$set(MemorySegment seg, MemorySegment x) {
-        constants$2005.const$5.set(seg, x);
+        constants$2011.const$0.set(seg, x);
     }
     public static MemorySegment get_document_attribute_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2005.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2011.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_document_attribute_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2005.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2011.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_document_attribute_value get_document_attribute_value(MemorySegment segment, Arena scope) {
         return get_document_attribute_value.ofAddress(get_document_attribute_value$get(segment), scope);
@@ -304,7 +304,7 @@ public class _AtkDocumentIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(set_document_attribute fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2006.const$0, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2011.const$1, fi, constants$12.const$2, scope);
         }
         static set_document_attribute ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -319,7 +319,7 @@ public class _AtkDocumentIface {
     }
 
     public static VarHandle set_document_attribute$VH() {
-        return constants$2006.const$1;
+        return constants$2011.const$2;
     }
     /**
      * Getter for field:
@@ -328,7 +328,7 @@ public class _AtkDocumentIface {
      * }
      */
     public static MemorySegment set_document_attribute$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2006.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2011.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -337,13 +337,13 @@ public class _AtkDocumentIface {
      * }
      */
     public static void set_document_attribute$set(MemorySegment seg, MemorySegment x) {
-        constants$2006.const$1.set(seg, x);
+        constants$2011.const$2.set(seg, x);
     }
     public static MemorySegment set_document_attribute$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2006.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2011.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void set_document_attribute$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2006.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2011.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_document_attribute set_document_attribute(MemorySegment segment, Arena scope) {
         return set_document_attribute.ofAddress(set_document_attribute$get(segment), scope);
@@ -357,7 +357,7 @@ public class _AtkDocumentIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_current_page_number fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2006.const$2, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2011.const$3, fi, constants$10.const$5, scope);
         }
         static get_current_page_number ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -372,7 +372,7 @@ public class _AtkDocumentIface {
     }
 
     public static VarHandle get_current_page_number$VH() {
-        return constants$2006.const$3;
+        return constants$2011.const$4;
     }
     /**
      * Getter for field:
@@ -381,7 +381,7 @@ public class _AtkDocumentIface {
      * }
      */
     public static MemorySegment get_current_page_number$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2006.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2011.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -390,13 +390,13 @@ public class _AtkDocumentIface {
      * }
      */
     public static void get_current_page_number$set(MemorySegment seg, MemorySegment x) {
-        constants$2006.const$3.set(seg, x);
+        constants$2011.const$4.set(seg, x);
     }
     public static MemorySegment get_current_page_number$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2006.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2011.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_current_page_number$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2006.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2011.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_current_page_number get_current_page_number(MemorySegment segment, Arena scope) {
         return get_current_page_number.ofAddress(get_current_page_number$get(segment), scope);
@@ -410,7 +410,7 @@ public class _AtkDocumentIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_page_count fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2006.const$4, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2011.const$5, fi, constants$10.const$5, scope);
         }
         static get_page_count ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -425,7 +425,7 @@ public class _AtkDocumentIface {
     }
 
     public static VarHandle get_page_count$VH() {
-        return constants$2006.const$5;
+        return constants$2012.const$0;
     }
     /**
      * Getter for field:
@@ -434,7 +434,7 @@ public class _AtkDocumentIface {
      * }
      */
     public static MemorySegment get_page_count$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2006.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2012.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -443,13 +443,13 @@ public class _AtkDocumentIface {
      * }
      */
     public static void get_page_count$set(MemorySegment seg, MemorySegment x) {
-        constants$2006.const$5.set(seg, x);
+        constants$2012.const$0.set(seg, x);
     }
     public static MemorySegment get_page_count$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2006.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2012.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_page_count$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2006.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2012.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_page_count get_page_count(MemorySegment segment, Arena scope) {
         return get_page_count.ofAddress(get_page_count$get(segment), scope);

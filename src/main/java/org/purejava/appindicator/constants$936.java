@@ -2,39 +2,40 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$936 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$936() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_escape_object_path_bytestring",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_escape_object_path",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_unescape_object_path",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_debug_controller_get_type",
+        "g_dbus_server_get_type",
         constants$3.const$5
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface")
-    ).withName("_GDebugControllerInterface");
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_new_sync",
+        constants$936.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_get_client_address",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_get_guid",
+        constants$5.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_debug_controller_get_debug_enabled",
+        "g_dbus_server_get_flags",
         constants$10.const$5
     );
 }

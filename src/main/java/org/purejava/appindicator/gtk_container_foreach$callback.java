@@ -13,7 +13,7 @@ public interface gtk_container_foreach$callback {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gtk_container_foreach$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2179.const$1, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$2184.const$2, fi, constants$13.const$4, scope);
     }
     static gtk_container_foreach$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

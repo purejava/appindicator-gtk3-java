@@ -2,29 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$694 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$694() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        JAVA_INT,
-        JAVA_LONG,
-        JAVA_LONG,
-        JAVA_LONG,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_gtype_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GFileMeasureProgressCallback.class, "apply", constants$694.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_value_set_gtype",
+        constants$25.const$3
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$694.const$0
+        "g_value_get_gtype",
+        constants$4.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GIOSchedulerJobFunc.class, "apply", constants$12.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GSimpleAsyncThreadFunc.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GSocketSourceFunc.class, "apply", constants$150.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_value_set_variant",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_take_variant",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_get_variant",
+        constants$5.const$2
+    );
 }
 
 

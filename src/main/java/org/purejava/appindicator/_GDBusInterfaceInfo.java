@@ -22,10 +22,10 @@ import java.lang.invoke.VarHandle;
 public class _GDBusInterfaceInfo {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$884.const$2;
+        return constants$887.const$2;
     }
     public static VarHandle ref_count$VH() {
-        return constants$884.const$3;
+        return constants$887.const$3;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static int ref_count$get(MemorySegment seg) {
-        return (int)constants$884.const$3.get(seg);
+        return (int)constants$887.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -43,16 +43,16 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static void ref_count$set(MemorySegment seg, int x) {
-        constants$884.const$3.set(seg, x);
+        constants$887.const$3.set(seg, x);
     }
     public static int ref_count$get(MemorySegment seg, long index) {
-        return (int)constants$884.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$887.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void ref_count$set(MemorySegment seg, long index, int x) {
-        constants$884.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$887.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle name$VH() {
-        return constants$884.const$4;
+        return constants$887.const$4;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$884.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$887.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -70,16 +70,16 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        constants$884.const$4.set(seg, x);
+        constants$887.const$4.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$884.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$887.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$884.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$887.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle methods$VH() {
-        return constants$884.const$5;
+        return constants$887.const$5;
     }
     /**
      * Getter for field:
@@ -88,7 +88,7 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static MemorySegment methods$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$884.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$887.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -97,16 +97,16 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static void methods$set(MemorySegment seg, MemorySegment x) {
-        constants$884.const$5.set(seg, x);
+        constants$887.const$5.set(seg, x);
     }
     public static MemorySegment methods$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$884.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$887.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void methods$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$884.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$887.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle signals$VH() {
-        return constants$885.const$0;
+        return constants$888.const$0;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static MemorySegment signals$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$885.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$888.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -124,16 +124,16 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static void signals$set(MemorySegment seg, MemorySegment x) {
-        constants$885.const$0.set(seg, x);
+        constants$888.const$0.set(seg, x);
     }
     public static MemorySegment signals$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$885.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$888.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void signals$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$885.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$888.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle properties$VH() {
-        return constants$885.const$1;
+        return constants$888.const$1;
     }
     /**
      * Getter for field:
@@ -142,7 +142,7 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static MemorySegment properties$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$885.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$888.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -151,16 +151,16 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static void properties$set(MemorySegment seg, MemorySegment x) {
-        constants$885.const$1.set(seg, x);
+        constants$888.const$1.set(seg, x);
     }
     public static MemorySegment properties$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$885.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$888.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void properties$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$885.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$888.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle annotations$VH() {
-        return constants$885.const$2;
+        return constants$888.const$2;
     }
     /**
      * Getter for field:
@@ -169,7 +169,7 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static MemorySegment annotations$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$885.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$888.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -178,13 +178,13 @@ public class _GDBusInterfaceInfo {
      * }
      */
     public static void annotations$set(MemorySegment seg, MemorySegment x) {
-        constants$885.const$2.set(seg, x);
+        constants$888.const$2.set(seg, x);
     }
     public static MemorySegment annotations$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$885.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$888.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void annotations$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$885.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$888.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

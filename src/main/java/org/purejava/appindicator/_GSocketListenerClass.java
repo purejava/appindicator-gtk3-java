@@ -24,7 +24,7 @@ import java.lang.invoke.VarHandle;
 public class _GSocketListenerClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1311.const$0;
+        return constants$1315.const$0;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -38,7 +38,7 @@ public class _GSocketListenerClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1311.const$1, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1315.const$1, fi, constants$13.const$1, scope);
         }
         static changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -53,7 +53,7 @@ public class _GSocketListenerClass {
     }
 
     public static VarHandle changed$VH() {
-        return constants$1311.const$2;
+        return constants$1315.const$2;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _GSocketListenerClass {
      * }
      */
     public static MemorySegment changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1311.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1315.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -71,13 +71,13 @@ public class _GSocketListenerClass {
      * }
      */
     public static void changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1311.const$2.set(seg, x);
+        constants$1315.const$2.set(seg, x);
     }
     public static MemorySegment changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1311.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1315.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1311.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1315.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static changed changed(MemorySegment segment, Arena scope) {
         return changed.ofAddress(changed$get(segment), scope);
@@ -91,13 +91,13 @@ public class _GSocketListenerClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
         static MemorySegment allocate(event fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1311.const$3, fi, constants$42.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1315.const$3, fi, constants$42.const$4, scope);
         }
         static event ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    constants$625.const$2.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$627.const$4.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -106,7 +106,7 @@ public class _GSocketListenerClass {
     }
 
     public static VarHandle event$VH() {
-        return constants$1311.const$4;
+        return constants$1315.const$4;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _GSocketListenerClass {
      * }
      */
     public static MemorySegment event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1311.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1315.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -124,13 +124,13 @@ public class _GSocketListenerClass {
      * }
      */
     public static void event$set(MemorySegment seg, MemorySegment x) {
-        constants$1311.const$4.set(seg, x);
+        constants$1315.const$4.set(seg, x);
     }
     public static MemorySegment event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1311.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1315.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void event$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1311.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1315.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static event event(MemorySegment segment, Arena scope) {
         return event.ofAddress(event$get(segment), scope);
@@ -144,7 +144,7 @@ public class _GSocketListenerClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1311.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1315.const$5, fi, constants$7.const$5, scope);
         }
         static _g_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -159,7 +159,7 @@ public class _GSocketListenerClass {
     }
 
     public static VarHandle _g_reserved2$VH() {
-        return constants$1312.const$0;
+        return constants$1316.const$0;
     }
     /**
      * Getter for field:
@@ -168,7 +168,7 @@ public class _GSocketListenerClass {
      * }
      */
     public static MemorySegment _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1312.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1316.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -177,13 +177,13 @@ public class _GSocketListenerClass {
      * }
      */
     public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1312.const$0.set(seg, x);
+        constants$1316.const$0.set(seg, x);
     }
     public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1312.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1316.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1312.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1316.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved2 _g_reserved2(MemorySegment segment, Arena scope) {
         return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);
@@ -197,7 +197,7 @@ public class _GSocketListenerClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1312.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1316.const$1, fi, constants$7.const$5, scope);
         }
         static _g_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -212,7 +212,7 @@ public class _GSocketListenerClass {
     }
 
     public static VarHandle _g_reserved3$VH() {
-        return constants$1312.const$2;
+        return constants$1316.const$2;
     }
     /**
      * Getter for field:
@@ -221,7 +221,7 @@ public class _GSocketListenerClass {
      * }
      */
     public static MemorySegment _g_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1312.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1316.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -230,13 +230,13 @@ public class _GSocketListenerClass {
      * }
      */
     public static void _g_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$1312.const$2.set(seg, x);
+        constants$1316.const$2.set(seg, x);
     }
     public static MemorySegment _g_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1312.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1316.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1312.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1316.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved3 _g_reserved3(MemorySegment segment, Arena scope) {
         return _g_reserved3.ofAddress(_g_reserved3$get(segment), scope);
@@ -250,7 +250,7 @@ public class _GSocketListenerClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1312.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1316.const$3, fi, constants$7.const$5, scope);
         }
         static _g_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -265,7 +265,7 @@ public class _GSocketListenerClass {
     }
 
     public static VarHandle _g_reserved4$VH() {
-        return constants$1312.const$4;
+        return constants$1316.const$4;
     }
     /**
      * Getter for field:
@@ -274,7 +274,7 @@ public class _GSocketListenerClass {
      * }
      */
     public static MemorySegment _g_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1312.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1316.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -283,13 +283,13 @@ public class _GSocketListenerClass {
      * }
      */
     public static void _g_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$1312.const$4.set(seg, x);
+        constants$1316.const$4.set(seg, x);
     }
     public static MemorySegment _g_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1312.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1316.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1312.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1316.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved4 _g_reserved4(MemorySegment segment, Arena scope) {
         return _g_reserved4.ofAddress(_g_reserved4$get(segment), scope);
@@ -303,7 +303,7 @@ public class _GSocketListenerClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1312.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1316.const$5, fi, constants$7.const$5, scope);
         }
         static _g_reserved5 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -318,7 +318,7 @@ public class _GSocketListenerClass {
     }
 
     public static VarHandle _g_reserved5$VH() {
-        return constants$1313.const$0;
+        return constants$1317.const$0;
     }
     /**
      * Getter for field:
@@ -327,7 +327,7 @@ public class _GSocketListenerClass {
      * }
      */
     public static MemorySegment _g_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1313.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1317.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -336,13 +336,13 @@ public class _GSocketListenerClass {
      * }
      */
     public static void _g_reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$1313.const$0.set(seg, x);
+        constants$1317.const$0.set(seg, x);
     }
     public static MemorySegment _g_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1313.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1317.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1313.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1317.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved5 _g_reserved5(MemorySegment segment, Arena scope) {
         return _g_reserved5.ofAddress(_g_reserved5$get(segment), scope);
@@ -356,7 +356,7 @@ public class _GSocketListenerClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved6 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1313.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1317.const$1, fi, constants$7.const$5, scope);
         }
         static _g_reserved6 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -371,7 +371,7 @@ public class _GSocketListenerClass {
     }
 
     public static VarHandle _g_reserved6$VH() {
-        return constants$1313.const$2;
+        return constants$1317.const$2;
     }
     /**
      * Getter for field:
@@ -380,7 +380,7 @@ public class _GSocketListenerClass {
      * }
      */
     public static MemorySegment _g_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1313.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1317.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -389,13 +389,13 @@ public class _GSocketListenerClass {
      * }
      */
     public static void _g_reserved6$set(MemorySegment seg, MemorySegment x) {
-        constants$1313.const$2.set(seg, x);
+        constants$1317.const$2.set(seg, x);
     }
     public static MemorySegment _g_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1313.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1317.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1313.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1317.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved6 _g_reserved6(MemorySegment segment, Arena scope) {
         return _g_reserved6.ofAddress(_g_reserved6$get(segment), scope);

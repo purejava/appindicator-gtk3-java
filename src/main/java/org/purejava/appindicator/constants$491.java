@@ -2,34 +2,38 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$491 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$491() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_print",
-        constants$13.const$1
-    );
+    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("glib_binary_age", JAVA_INT);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_info",
-        constants$7.const$5
+        "glib_check_version",
+        constants$30.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_blow_chunks",
-        constants$7.const$5
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_LONG,
+        JAVA_INT
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_allocator_new",
-        constants$21.const$3
+        "g_mem_chunk_new",
+        constants$491.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_allocator_free",
+        "g_mem_chunk_destroy",
         constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_list_push_allocator",
-        constants$13.const$1
+        "g_mem_chunk_alloc",
+        constants$5.const$2
     );
 }
 

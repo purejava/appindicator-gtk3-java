@@ -8,27 +8,27 @@ final class constants$2758 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2758() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_pack_start",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_pack_end",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_get_show_close_button",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_set_show_close_button",
+        "gtk_grid_set_row_homogeneous",
         constants$40.const$2
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_grid_get_row_homogeneous",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_grid_set_row_spacing",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_grid_get_row_spacing",
+        constants$10.const$5
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_set_has_subtitle",
+        "gtk_grid_set_column_homogeneous",
         constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_get_has_subtitle",
+        "gtk_grid_get_column_homogeneous",
         constants$10.const$5
     );
 }

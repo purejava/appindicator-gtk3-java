@@ -3,18 +3,71 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2072 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2072() {}
-    static final VarHandle const$0 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_summary"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTableIface.set_caption.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_caption"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTableIface.set_column_description.class, "apply", constants$42.const$4);
-    static final VarHandle const$4 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_column_description"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTableIface.set_column_header.class, "apply", constants$42.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_streamable_content_get_mime_type",
+        constants$21.const$3
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_streamable_content_get_stream",
+        constants$5.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_streamable_content_get_uri",
+        constants$5.const$5
+    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("ref_at"),
+        RuntimeHelper.POINTER.withName("get_index_at"),
+        RuntimeHelper.POINTER.withName("get_column_at_index"),
+        RuntimeHelper.POINTER.withName("get_row_at_index"),
+        RuntimeHelper.POINTER.withName("get_n_columns"),
+        RuntimeHelper.POINTER.withName("get_n_rows"),
+        RuntimeHelper.POINTER.withName("get_column_extent_at"),
+        RuntimeHelper.POINTER.withName("get_row_extent_at"),
+        RuntimeHelper.POINTER.withName("get_caption"),
+        RuntimeHelper.POINTER.withName("get_column_description"),
+        RuntimeHelper.POINTER.withName("get_column_header"),
+        RuntimeHelper.POINTER.withName("get_row_description"),
+        RuntimeHelper.POINTER.withName("get_row_header"),
+        RuntimeHelper.POINTER.withName("get_summary"),
+        RuntimeHelper.POINTER.withName("set_caption"),
+        RuntimeHelper.POINTER.withName("set_column_description"),
+        RuntimeHelper.POINTER.withName("set_column_header"),
+        RuntimeHelper.POINTER.withName("set_row_description"),
+        RuntimeHelper.POINTER.withName("set_row_header"),
+        RuntimeHelper.POINTER.withName("set_summary"),
+        RuntimeHelper.POINTER.withName("get_selected_columns"),
+        RuntimeHelper.POINTER.withName("get_selected_rows"),
+        RuntimeHelper.POINTER.withName("is_column_selected"),
+        RuntimeHelper.POINTER.withName("is_row_selected"),
+        RuntimeHelper.POINTER.withName("is_selected"),
+        RuntimeHelper.POINTER.withName("add_row_selection"),
+        RuntimeHelper.POINTER.withName("remove_row_selection"),
+        RuntimeHelper.POINTER.withName("add_column_selection"),
+        RuntimeHelper.POINTER.withName("remove_column_selection"),
+        RuntimeHelper.POINTER.withName("row_inserted"),
+        RuntimeHelper.POINTER.withName("column_inserted"),
+        RuntimeHelper.POINTER.withName("row_deleted"),
+        RuntimeHelper.POINTER.withName("column_deleted"),
+        RuntimeHelper.POINTER.withName("row_reordered"),
+        RuntimeHelper.POINTER.withName("column_reordered"),
+        RuntimeHelper.POINTER.withName("model_changed")
+    ).withName("_AtkTableIface");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkTableIface.ref_at.class, "apply", constants$33.const$5);
+    static final VarHandle const$5 = constants$2072.const$3.varHandle(MemoryLayout.PathElement.groupElement("ref_at"));
 }
 
 

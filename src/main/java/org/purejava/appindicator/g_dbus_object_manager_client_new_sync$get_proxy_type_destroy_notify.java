@@ -13,7 +13,7 @@ public interface g_dbus_object_manager_client_new_sync$get_proxy_type_destroy_no
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_dbus_object_manager_client_new_sync$get_proxy_type_destroy_notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$918.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$921.const$1, fi, constants$13.const$1, scope);
     }
     static g_dbus_object_manager_client_new_sync$get_proxy_type_destroy_notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

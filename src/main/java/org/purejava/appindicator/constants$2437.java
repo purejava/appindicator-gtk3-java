@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2437 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2437() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_delete_action",
-        constants$40.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_set_inline_completion",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_inline_completion",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_set_inline_selection",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_inline_selection",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_set_popup_completion",
-        constants$40.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkEntryCompletionClass.action_activated.class, "apply", constants$40.const$2);
+    static final VarHandle const$1 = constants$2436.const$3.varHandle(MemoryLayout.PathElement.groupElement("action_activated"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkEntryCompletionClass.insert_prefix.class, "apply", constants$9.const$0);
+    static final VarHandle const$3 = constants$2436.const$3.varHandle(MemoryLayout.PathElement.groupElement("insert_prefix"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkEntryCompletionClass.cursor_on_match.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$2436.const$3.varHandle(MemoryLayout.PathElement.groupElement("cursor_on_match"));
 }
 
 

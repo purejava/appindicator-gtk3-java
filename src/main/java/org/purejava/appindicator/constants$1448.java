@@ -2,35 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 final class constants$1448 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1448() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$1447.const$4
+        "hb_face_get_index",
+        constants$10.const$5
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_face_set_upem",
+        constants$40.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_draw_cubic_to_func_t.class, "apply", constants$1448.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_face_get_upem",
+        constants$10.const$5
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        constants$1448.const$1
+        "hb_face_set_glyph_count",
+        constants$40.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_draw_close_path_func_t.class, "apply", constants$42.const$1);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_move_to_func$func.class, "apply", constants$1447.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_face_get_glyph_count",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_face_get_table_tags",
+        constants$11.const$0
+    );
 }
 
 

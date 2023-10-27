@@ -3,18 +3,54 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$706 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$706() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GActionGroupInterface.get_action_state_hint.class, "apply", constants$5.const$5);
-    static final VarHandle const$1 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_action_state_hint"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GActionGroupInterface.get_action_state.class, "apply", constants$5.const$5);
-    static final VarHandle const$3 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_action_state"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GActionGroupInterface.change_action_state.class, "apply", constants$14.const$3);
-    static final VarHandle const$5 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("change_action_state"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_action_change_state",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_action_activate",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_action_name_is_valid",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_action_parse_detailed_name",
+        constants$34.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_action_print_detailed_name",
+        constants$5.const$5
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("has_action"),
+        RuntimeHelper.POINTER.withName("list_actions"),
+        RuntimeHelper.POINTER.withName("get_action_enabled"),
+        RuntimeHelper.POINTER.withName("get_action_parameter_type"),
+        RuntimeHelper.POINTER.withName("get_action_state_type"),
+        RuntimeHelper.POINTER.withName("get_action_state_hint"),
+        RuntimeHelper.POINTER.withName("get_action_state"),
+        RuntimeHelper.POINTER.withName("change_action_state"),
+        RuntimeHelper.POINTER.withName("activate_action"),
+        RuntimeHelper.POINTER.withName("action_added"),
+        RuntimeHelper.POINTER.withName("action_removed"),
+        RuntimeHelper.POINTER.withName("action_enabled_changed"),
+        RuntimeHelper.POINTER.withName("action_state_changed"),
+        RuntimeHelper.POINTER.withName("query_action")
+    ).withName("_GActionGroupInterface");
 }
 
 

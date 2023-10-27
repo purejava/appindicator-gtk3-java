@@ -2,19 +2,40 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2938 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2938() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkPanedClass.toggle_handle_focus.class, "apply", constants$10.const$5);
-    static final VarHandle const$1 = constants$2937.const$3.varHandle(MemoryLayout.PathElement.groupElement("toggle_handle_focus"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkPanedClass.move_handle.class, "apply", constants$11.const$4);
-    static final VarHandle const$3 = constants$2937.const$3.varHandle(MemoryLayout.PathElement.groupElement("move_handle"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkPanedClass.cycle_handle_focus.class, "apply", constants$11.const$4);
-    static final VarHandle const$5 = constants$2937.const$3.varHandle(MemoryLayout.PathElement.groupElement("cycle_handle_focus"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_set_orientation",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_get_paper_size",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_set_paper_size",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_get_top_margin",
+        constants$2934.const$4
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_INT
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_page_setup_set_top_margin",
+        constants$2938.const$4
+    );
 }
 
 

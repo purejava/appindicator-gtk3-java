@@ -2,41 +2,30 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1684 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1684() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_set_hairline",
-        constants$40.const$2
+        "cairo_pattern_get_dither",
+        constants$10.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_set_line_cap",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_set_line_join",
-        constants$40.const$2
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_DOUBLE
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_set_dash",
-        constants$1684.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_set_miter_limit",
-        constants$689.const$5
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_write_func_t.class, "apply", constants$62.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(cairo_read_func_t.class, "apply", constants$62.const$0);
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("x"),
+        JAVA_INT.withName("y"),
+        JAVA_INT.withName("width"),
+        JAVA_INT.withName("height")
+    ).withName("_cairo_rectangle_int");
+    static final VarHandle const$4 = constants$1684.const$3.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final VarHandle const$5 = constants$1684.const$3.varHandle(MemoryLayout.PathElement.groupElement("y"));
 }
 
 

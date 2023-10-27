@@ -2,36 +2,26 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1271 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1271() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_is_valid",
-        constants$12.const$2
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_simple_async_result_new_error",
+        constants$469.const$0
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_simple_async_report_error_in_idle$callback.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_simple_async_result_new_from_error$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_new_from_error",
+        constants$39.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
-        "g_simple_async_report_error_in_idle",
-        constants$1271.const$2
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_simple_async_result_new_take_error$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_new_take_error",
+        constants$39.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_simple_async_report_gerror_in_idle$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_simple_async_report_gerror_in_idle",
-        constants$42.const$1
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_simple_async_result_set_op_res_gpointer$destroy_op_res.class, "apply", constants$13.const$1);
 }
 
 

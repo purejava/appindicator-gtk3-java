@@ -2,30 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1720 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1720() {}
-    static final VarHandle const$0 = constants$1719.const$4.varHandle(MemoryLayout.PathElement.groupElement("data"));
-    static final VarHandle const$1 = constants$1719.const$4.varHandle(MemoryLayout.PathElement.groupElement("num_data"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_user_font_face_get_unicode_to_glyph_func$return.class, "apply", constants$62.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_user_font_face_get_unicode_to_glyph_func",
+        constants$5.const$2
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_copy_path",
+        "cairo_user_scaled_font_get_foreground_marker",
         constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_copy_path_flat",
+        "cairo_user_scaled_font_get_foreground_source",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_append_path",
-        constants$13.const$4
+        "cairo_get_operator",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_path_destroy",
-        constants$13.const$1
+        "cairo_get_source",
+        constants$5.const$2
     );
 }
 

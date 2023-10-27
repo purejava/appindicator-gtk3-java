@@ -2,43 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$561 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$561() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_type_register_dynamic",
-        constants$560.const$0
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_register_fundamental",
-        constants$561.const$1
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        JAVA_LONG,
-        JAVA_LONG,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_add_interface_static",
-        constants$561.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_type_add_interface_dynamic",
-        constants$561.const$3
-    );
+    static final VarHandle const$0 = constants$560.const$0.varHandle(MemoryLayout.PathElement.groupElement("value_copy"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GTypeValueTable.value_peek_pointer.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$560.const$0.varHandle(MemoryLayout.PathElement.groupElement("value_peek_pointer"));
+    static final VarHandle const$3 = constants$560.const$0.varHandle(MemoryLayout.PathElement.groupElement("collect_format"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTypeValueTable.collect_value.class, "apply", constants$33.const$0);
+    static final VarHandle const$5 = constants$560.const$0.varHandle(MemoryLayout.PathElement.groupElement("collect_value"));
 }
 
 

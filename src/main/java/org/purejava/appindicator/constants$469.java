@@ -2,34 +2,42 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$469 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$469() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_num_threads",
-        constants$10.const$5
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_max_unused_threads",
-        constants$80.const$1
+        "g_thread_pool_new_full",
+        constants$469.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_max_unused_threads",
-        constants$83.const$1
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_num_unused_threads",
-        constants$83.const$1
+        "g_thread_pool_free",
+        constants$469.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_stop_unused_threads",
-        constants$7.const$5
+        "g_thread_pool_push",
+        constants$12.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_max_idle_time",
-        constants$80.const$1
+        "g_thread_pool_unprocessed",
+        constants$10.const$5
     );
 }
 

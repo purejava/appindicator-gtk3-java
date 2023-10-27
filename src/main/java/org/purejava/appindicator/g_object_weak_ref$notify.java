@@ -13,7 +13,7 @@ public interface g_object_weak_ref$notify {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_object_weak_ref$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$633.const$1, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$635.const$4, fi, constants$13.const$4, scope);
     }
     static g_object_weak_ref$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

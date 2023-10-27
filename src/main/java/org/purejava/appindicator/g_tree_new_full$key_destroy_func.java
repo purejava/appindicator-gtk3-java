@@ -13,7 +13,7 @@ public interface g_tree_new_full$key_destroy_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_tree_new_full$key_destroy_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$474.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$476.const$1, fi, constants$13.const$1, scope);
     }
     static g_tree_new_full$key_destroy_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

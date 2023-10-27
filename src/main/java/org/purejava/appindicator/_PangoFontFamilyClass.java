@@ -23,7 +23,7 @@ import java.lang.invoke.VarHandle;
 public class _PangoFontFamilyClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1547.const$1;
+        return constants$1552.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -37,7 +37,7 @@ public class _PangoFontFamilyClass {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(list_faces fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1547.const$2, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$1552.const$2, fi, constants$14.const$3, scope);
         }
         static list_faces ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -52,7 +52,7 @@ public class _PangoFontFamilyClass {
     }
 
     public static VarHandle list_faces$VH() {
-        return constants$1547.const$3;
+        return constants$1552.const$3;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static MemorySegment list_faces$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1547.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1552.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -70,13 +70,13 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static void list_faces$set(MemorySegment seg, MemorySegment x) {
-        constants$1547.const$3.set(seg, x);
+        constants$1552.const$3.set(seg, x);
     }
     public static MemorySegment list_faces$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1547.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1552.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void list_faces$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1547.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1552.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static list_faces list_faces(MemorySegment segment, Arena scope) {
         return list_faces.ofAddress(list_faces$get(segment), scope);
@@ -90,7 +90,7 @@ public class _PangoFontFamilyClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_name fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1547.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1552.const$4, fi, constants$5.const$2, scope);
         }
         static get_name ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -105,7 +105,7 @@ public class _PangoFontFamilyClass {
     }
 
     public static VarHandle get_name$VH() {
-        return constants$1547.const$5;
+        return constants$1552.const$5;
     }
     /**
      * Getter for field:
@@ -114,7 +114,7 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static MemorySegment get_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1547.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1552.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -123,13 +123,13 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static void get_name$set(MemorySegment seg, MemorySegment x) {
-        constants$1547.const$5.set(seg, x);
+        constants$1552.const$5.set(seg, x);
     }
     public static MemorySegment get_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1547.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1552.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1547.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1552.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_name get_name(MemorySegment segment, Arena scope) {
         return get_name.ofAddress(get_name$get(segment), scope);
@@ -143,7 +143,7 @@ public class _PangoFontFamilyClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(is_monospace fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1548.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1553.const$0, fi, constants$10.const$5, scope);
         }
         static is_monospace ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -158,7 +158,7 @@ public class _PangoFontFamilyClass {
     }
 
     public static VarHandle is_monospace$VH() {
-        return constants$1548.const$1;
+        return constants$1553.const$1;
     }
     /**
      * Getter for field:
@@ -167,7 +167,7 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static MemorySegment is_monospace$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1548.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1553.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -176,13 +176,13 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static void is_monospace$set(MemorySegment seg, MemorySegment x) {
-        constants$1548.const$1.set(seg, x);
+        constants$1553.const$1.set(seg, x);
     }
     public static MemorySegment is_monospace$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1548.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1553.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void is_monospace$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1548.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1553.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static is_monospace is_monospace(MemorySegment segment, Arena scope) {
         return is_monospace.ofAddress(is_monospace$get(segment), scope);
@@ -196,7 +196,7 @@ public class _PangoFontFamilyClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(is_variable fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1548.const$2, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1553.const$2, fi, constants$10.const$5, scope);
         }
         static is_variable ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -211,7 +211,7 @@ public class _PangoFontFamilyClass {
     }
 
     public static VarHandle is_variable$VH() {
-        return constants$1548.const$3;
+        return constants$1553.const$3;
     }
     /**
      * Getter for field:
@@ -220,7 +220,7 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static MemorySegment is_variable$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1548.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1553.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -229,13 +229,13 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static void is_variable$set(MemorySegment seg, MemorySegment x) {
-        constants$1548.const$3.set(seg, x);
+        constants$1553.const$3.set(seg, x);
     }
     public static MemorySegment is_variable$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1548.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1553.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void is_variable$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1548.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1553.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static is_variable is_variable(MemorySegment segment, Arena scope) {
         return is_variable.ofAddress(is_variable$get(segment), scope);
@@ -249,7 +249,7 @@ public class _PangoFontFamilyClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(get_face fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1548.const$4, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1553.const$4, fi, constants$5.const$5, scope);
         }
         static get_face ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -264,7 +264,7 @@ public class _PangoFontFamilyClass {
     }
 
     public static VarHandle get_face$VH() {
-        return constants$1548.const$5;
+        return constants$1553.const$5;
     }
     /**
      * Getter for field:
@@ -273,7 +273,7 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static MemorySegment get_face$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1548.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1553.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -282,13 +282,13 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static void get_face$set(MemorySegment seg, MemorySegment x) {
-        constants$1548.const$5.set(seg, x);
+        constants$1553.const$5.set(seg, x);
     }
     public static MemorySegment get_face$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1548.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1553.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_face$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1548.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1553.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_face get_face(MemorySegment segment, Arena scope) {
         return get_face.ofAddress(get_face$get(segment), scope);
@@ -302,7 +302,7 @@ public class _PangoFontFamilyClass {
 
         void apply();
         static MemorySegment allocate(_pango_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1549.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1554.const$0, fi, constants$7.const$5, scope);
         }
         static _pango_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -317,7 +317,7 @@ public class _PangoFontFamilyClass {
     }
 
     public static VarHandle _pango_reserved2$VH() {
-        return constants$1549.const$1;
+        return constants$1554.const$1;
     }
     /**
      * Getter for field:
@@ -326,7 +326,7 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static MemorySegment _pango_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1549.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1554.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -335,13 +335,13 @@ public class _PangoFontFamilyClass {
      * }
      */
     public static void _pango_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1549.const$1.set(seg, x);
+        constants$1554.const$1.set(seg, x);
     }
     public static MemorySegment _pango_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1549.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1554.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _pango_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1549.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1554.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _pango_reserved2 _pango_reserved2(MemorySegment segment, Arena scope) {
         return _pango_reserved2.ofAddress(_pango_reserved2$get(segment), scope);

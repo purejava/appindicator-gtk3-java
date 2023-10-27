@@ -8,24 +8,24 @@ final class constants$2864 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2864() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_device_grab_remove",
+        "gtk_lock_button_get_permission",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_lock_button_set_permission",
         constants$13.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_key_snooper_install$snooper.class, "apply", constants$12.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_key_snooper_install",
-        constants$9.const$0
-    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GtkKeySnoopFunc.class, "apply", constants$12.const$2);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_key_snooper_remove",
-        constants$80.const$1
+        "gtk_get_major_version",
+        constants$83.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_get_current_event",
-        constants$35.const$2
+        "gtk_get_minor_version",
+        constants$83.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_get_current_event_time",
+        "gtk_get_micro_version",
         constants$83.const$1
     );
 }

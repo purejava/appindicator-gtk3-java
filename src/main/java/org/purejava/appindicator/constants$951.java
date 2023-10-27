@@ -2,29 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$951 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$951() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_drive_can_poll_for_media",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_drive_can_eject",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_drive_eject$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_drive_eject",
-        constants$281.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_drive_eject_finish",
-        constants$12.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_drive_poll_for_media$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDriveIface.eject_with_operation_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("eject_with_operation_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDriveIface.get_sort_key.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_sort_key"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDriveIface.get_symbolic_icon.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$941.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_symbolic_icon"));
 }
 
 

@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _AppIndicator {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3408.const$1;
+        return constants$3413.const$1;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);

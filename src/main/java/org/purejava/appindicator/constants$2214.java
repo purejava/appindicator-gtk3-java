@@ -8,28 +8,28 @@ final class constants$2214 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2214() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_dialog_set_default_response",
-        constants$40.const$2
+        "gtk_window_set_application",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_dialog_get_widget_for_response",
-        constants$21.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_dialog_get_response_for_widget",
-        constants$9.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_alternative_dialog_button_order",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_dialog_set_alternative_button_order",
+        "gtk_window_set_has_resize_grip",
         constants$40.const$2
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_window_get_has_resize_grip",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_window_resize_grip_is_visible",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_window_get_resize_grip_area",
+        constants$9.const$0
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_dialog_set_alternative_button_order_from_array",
-        constants$42.const$4
+        "gtk_window_set_titlebar",
+        constants$13.const$4
     );
 }
 

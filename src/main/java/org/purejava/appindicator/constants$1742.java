@@ -2,41 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1742 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1742() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_pattern_create_linear",
-        constants$1741.const$3
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_pattern_create_radial",
-        constants$1742.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_pattern_create_mesh",
-        constants$35.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_raster_source_release_func_t.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_raster_source_snapshot_func_t.class, "apply", constants$9.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(cairo_raster_source_copy_func_t.class, "apply", constants$12.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(cairo_raster_source_finish_func_t.class, "apply", constants$13.const$4);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_pattern_reference",
-        constants$5.const$2
+        "cairo_pattern_create_raster_source",
+        constants$1728.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_pattern_destroy",
-        constants$13.const$1
+        "cairo_raster_source_pattern_set_callback_data",
+        constants$13.const$4
     );
 }
 

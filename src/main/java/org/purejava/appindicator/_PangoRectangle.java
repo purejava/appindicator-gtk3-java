@@ -20,10 +20,10 @@ import java.lang.invoke.VarHandle;
 public class _PangoRectangle {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1528.const$2;
+        return constants$1533.const$2;
     }
     public static VarHandle x$VH() {
-        return constants$1528.const$3;
+        return constants$1533.const$3;
     }
     /**
      * Getter for field:
@@ -32,7 +32,7 @@ public class _PangoRectangle {
      * }
      */
     public static int x$get(MemorySegment seg) {
-        return (int)constants$1528.const$3.get(seg);
+        return (int)constants$1533.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -41,16 +41,16 @@ public class _PangoRectangle {
      * }
      */
     public static void x$set(MemorySegment seg, int x) {
-        constants$1528.const$3.set(seg, x);
+        constants$1533.const$3.set(seg, x);
     }
     public static int x$get(MemorySegment seg, long index) {
-        return (int)constants$1528.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1533.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void x$set(MemorySegment seg, long index, int x) {
-        constants$1528.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1533.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle y$VH() {
-        return constants$1528.const$4;
+        return constants$1533.const$4;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _PangoRectangle {
      * }
      */
     public static int y$get(MemorySegment seg) {
-        return (int)constants$1528.const$4.get(seg);
+        return (int)constants$1533.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -68,16 +68,16 @@ public class _PangoRectangle {
      * }
      */
     public static void y$set(MemorySegment seg, int x) {
-        constants$1528.const$4.set(seg, x);
+        constants$1533.const$4.set(seg, x);
     }
     public static int y$get(MemorySegment seg, long index) {
-        return (int)constants$1528.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1533.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void y$set(MemorySegment seg, long index, int x) {
-        constants$1528.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1533.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle width$VH() {
-        return constants$1528.const$5;
+        return constants$1533.const$5;
     }
     /**
      * Getter for field:
@@ -86,7 +86,7 @@ public class _PangoRectangle {
      * }
      */
     public static int width$get(MemorySegment seg) {
-        return (int)constants$1528.const$5.get(seg);
+        return (int)constants$1533.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -95,16 +95,16 @@ public class _PangoRectangle {
      * }
      */
     public static void width$set(MemorySegment seg, int x) {
-        constants$1528.const$5.set(seg, x);
+        constants$1533.const$5.set(seg, x);
     }
     public static int width$get(MemorySegment seg, long index) {
-        return (int)constants$1528.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1533.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void width$set(MemorySegment seg, long index, int x) {
-        constants$1528.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1533.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle height$VH() {
-        return constants$1529.const$0;
+        return constants$1534.const$0;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _PangoRectangle {
      * }
      */
     public static int height$get(MemorySegment seg) {
-        return (int)constants$1529.const$0.get(seg);
+        return (int)constants$1534.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _PangoRectangle {
      * }
      */
     public static void height$set(MemorySegment seg, int x) {
-        constants$1529.const$0.set(seg, x);
+        constants$1534.const$0.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
-        return (int)constants$1529.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1534.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void height$set(MemorySegment seg, long index, int x) {
-        constants$1529.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1534.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

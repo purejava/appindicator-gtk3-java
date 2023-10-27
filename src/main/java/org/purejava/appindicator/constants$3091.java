@@ -8,28 +8,28 @@ final class constants$3091 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3091() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_transition_duration",
-        constants$40.const$2
+        "gtk_settings_reset_property",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_transition_duration",
-        constants$10.const$5
+        "gtk_shortcut_label_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_transition_type",
-        constants$40.const$2
+        "gtk_shortcut_label_new",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_transition_type",
-        constants$10.const$5
+        "gtk_shortcut_label_get_accelerator",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_transition_running",
-        constants$10.const$5
+        "gtk_shortcut_label_set_accelerator",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_interpolate_size",
-        constants$40.const$2
+        "gtk_shortcut_label_get_disabled_text",
+        constants$5.const$2
     );
 }
 

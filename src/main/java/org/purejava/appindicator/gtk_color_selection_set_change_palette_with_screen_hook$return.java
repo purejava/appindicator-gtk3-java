@@ -13,13 +13,13 @@ public interface gtk_color_selection_set_change_palette_with_screen_hook$return 
 
     void apply(java.lang.foreign.MemorySegment screen, java.lang.foreign.MemorySegment colors, int n_colors);
     static MemorySegment allocate(gtk_color_selection_set_change_palette_with_screen_hook$return fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3281.const$4, fi, constants$164.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$3286.const$4, fi, constants$164.const$5, scope);
     }
     static gtk_color_selection_set_change_palette_with_screen_hook$return ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _screen, java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
             try {
-                constants$420.const$2.invokeExact(symbol, _screen, _colors, _n_colors);
+                constants$421.const$2.invokeExact(symbol, _screen, _colors, _n_colors);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -7,27 +7,21 @@ final class constants$568 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$568() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_type_check_value",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_type_remove_class_cache_func$cache_func.class, "apply", constants$9.const$0);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_type_check_value_holds",
-        constants$97.const$1
+        "g_type_remove_class_cache_func",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_test_flags",
-        constants$64.const$5
+        "g_type_class_unref_uncached",
+        constants$13.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_type_name_from_instance",
-        constants$5.const$2
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_type_add_interface_check$check_func.class, "apply", constants$13.const$4);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_name_from_class",
-        constants$5.const$2
+        "g_type_add_interface_check",
+        constants$13.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GValueTransform.class, "apply", constants$13.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_type_remove_interface_check$check_func.class, "apply", constants$13.const$4);
 }
 
 

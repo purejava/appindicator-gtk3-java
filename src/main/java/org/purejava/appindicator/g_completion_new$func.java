@@ -13,7 +13,7 @@ public interface g_completion_new$func {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_completion_new$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$497.const$5, fi, constants$5.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$499.const$3, fi, constants$5.const$2, scope);
     }
     static g_completion_new$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

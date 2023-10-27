@@ -8,28 +8,28 @@ final class constants$336 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$336() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_key_file_set_comment",
-        constants$165.const$2
+        "g_key_file_get_boolean_list",
+        constants$331.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_key_file_get_comment",
-        constants$39.const$1
+        "g_key_file_set_boolean_list",
+        constants$335.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_key_file_remove_comment",
-        constants$34.const$5
+        "g_key_file_get_integer_list",
+        constants$331.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_key_file_remove_key",
-        constants$34.const$5
+        "g_key_file_set_double_list",
+        constants$335.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_key_file_remove_group",
-        constants$12.const$2
+        "g_key_file_get_double_list",
+        constants$331.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_mapped_file_new",
-        constants$196.const$3
+        "g_key_file_set_integer_list",
+        constants$335.const$0
     );
 }
 

@@ -8,13 +8,14 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1392 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1392() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GVfsFileLookupFunc.class, "apply", constants$23.const$0);
-    static final StructLayout const$1 = MemoryLayout.structLayout(
+    static final VarHandle const$0 = constants$1390.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GUnixFDListClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1390.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 RuntimeHelper.POINTER.withName("g_class")
@@ -22,49 +23,14 @@ final class constants$1392 {
             JAVA_INT.withName("ref_count"),
             MemoryLayout.paddingLayout(4),
             RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance")
-    ).withName("_GVfs");
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("is_active"),
-        RuntimeHelper.POINTER.withName("get_file_for_path"),
-        RuntimeHelper.POINTER.withName("get_file_for_uri"),
-        RuntimeHelper.POINTER.withName("get_supported_uri_schemes"),
-        RuntimeHelper.POINTER.withName("parse_name"),
-        RuntimeHelper.POINTER.withName("local_file_add_info"),
-        RuntimeHelper.POINTER.withName("add_writable_namespaces"),
-        RuntimeHelper.POINTER.withName("local_file_set_attributes"),
-        RuntimeHelper.POINTER.withName("local_file_removed"),
-        RuntimeHelper.POINTER.withName("local_file_moved"),
-        RuntimeHelper.POINTER.withName("deserialize_icon"),
-        RuntimeHelper.POINTER.withName("_g_reserved1"),
-        RuntimeHelper.POINTER.withName("_g_reserved2"),
-        RuntimeHelper.POINTER.withName("_g_reserved3"),
-        RuntimeHelper.POINTER.withName("_g_reserved4"),
-        RuntimeHelper.POINTER.withName("_g_reserved5"),
-        RuntimeHelper.POINTER.withName("_g_reserved6")
-    ).withName("_GVfsClass");
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVfsClass.is_active.class, "apply", constants$10.const$5);
-    static final VarHandle const$4 = constants$1392.const$2.varHandle(MemoryLayout.PathElement.groupElement("is_active"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVfsClass.get_file_for_path.class, "apply", constants$5.const$5);
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GUnixFDList");
+    static final VarHandle const$4 = constants$1392.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_unix_fd_list_get_type",
+        constants$3.const$5
+    );
 }
 
 

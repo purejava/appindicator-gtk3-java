@@ -7,29 +7,26 @@ final class constants$1014 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1014() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_get_relative_path",
-        constants$5.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_new_tmp_dir_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_resolve_relative_path",
-        constants$5.const$5
+        "g_file_new_tmp_dir_async",
+        constants$282.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_is_native",
-        constants$10.const$5
+        "g_file_new_tmp_dir_finish",
+        constants$5.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_has_uri_scheme",
-        constants$9.const$0
+        "g_file_parse_name",
+        constants$5.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_get_uri_scheme",
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_file_new_build_filename",
         constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_read",
-        constants$23.const$0
+        "g_file_new_build_filenamev",
+        constants$5.const$2
     );
 }
 

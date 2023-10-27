@@ -25,7 +25,7 @@ import java.lang.invoke.VarHandle;
 public class _GDBusObjectManagerIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$911.const$5;
+        return constants$914.const$5;
     }
     public static MemorySegment parent_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -39,7 +39,7 @@ public class _GDBusObjectManagerIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_object_path fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$912.const$0, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$915.const$0, fi, constants$5.const$2, scope);
         }
         static get_object_path ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -54,7 +54,7 @@ public class _GDBusObjectManagerIface {
     }
 
     public static VarHandle get_object_path$VH() {
-        return constants$912.const$1;
+        return constants$915.const$1;
     }
     /**
      * Getter for field:
@@ -63,7 +63,7 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static MemorySegment get_object_path$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$912.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$915.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -72,13 +72,13 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static void get_object_path$set(MemorySegment seg, MemorySegment x) {
-        constants$912.const$1.set(seg, x);
+        constants$915.const$1.set(seg, x);
     }
     public static MemorySegment get_object_path$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$912.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$915.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_object_path$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$912.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$915.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_object_path get_object_path(MemorySegment segment, Arena scope) {
         return get_object_path.ofAddress(get_object_path$get(segment), scope);
@@ -92,7 +92,7 @@ public class _GDBusObjectManagerIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_objects fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$912.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$915.const$2, fi, constants$5.const$2, scope);
         }
         static get_objects ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -107,7 +107,7 @@ public class _GDBusObjectManagerIface {
     }
 
     public static VarHandle get_objects$VH() {
-        return constants$912.const$3;
+        return constants$915.const$3;
     }
     /**
      * Getter for field:
@@ -116,7 +116,7 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static MemorySegment get_objects$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$912.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$915.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -125,13 +125,13 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static void get_objects$set(MemorySegment seg, MemorySegment x) {
-        constants$912.const$3.set(seg, x);
+        constants$915.const$3.set(seg, x);
     }
     public static MemorySegment get_objects$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$912.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$915.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_objects$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$912.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$915.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_objects get_objects(MemorySegment segment, Arena scope) {
         return get_objects.ofAddress(get_objects$get(segment), scope);
@@ -145,7 +145,7 @@ public class _GDBusObjectManagerIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(get_object fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$912.const$4, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$915.const$4, fi, constants$5.const$5, scope);
         }
         static get_object ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -160,7 +160,7 @@ public class _GDBusObjectManagerIface {
     }
 
     public static VarHandle get_object$VH() {
-        return constants$912.const$5;
+        return constants$915.const$5;
     }
     /**
      * Getter for field:
@@ -169,7 +169,7 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static MemorySegment get_object$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$912.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$915.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -178,13 +178,13 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static void get_object$set(MemorySegment seg, MemorySegment x) {
-        constants$912.const$5.set(seg, x);
+        constants$915.const$5.set(seg, x);
     }
     public static MemorySegment get_object$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$912.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$915.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_object$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$912.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$915.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_object get_object(MemorySegment segment, Arena scope) {
         return get_object.ofAddress(get_object$get(segment), scope);
@@ -198,13 +198,13 @@ public class _GDBusObjectManagerIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_interface fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$913.const$0, fi, constants$23.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$916.const$0, fi, constants$23.const$0, scope);
         }
         static get_interface ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$734.const$5.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -213,7 +213,7 @@ public class _GDBusObjectManagerIface {
     }
 
     public static VarHandle get_interface$VH() {
-        return constants$913.const$1;
+        return constants$916.const$1;
     }
     /**
      * Getter for field:
@@ -222,7 +222,7 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static MemorySegment get_interface$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$913.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$916.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -231,13 +231,13 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static void get_interface$set(MemorySegment seg, MemorySegment x) {
-        constants$913.const$1.set(seg, x);
+        constants$916.const$1.set(seg, x);
     }
     public static MemorySegment get_interface$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$913.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$916.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_interface$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$913.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$916.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_interface get_interface(MemorySegment segment, Arena scope) {
         return get_interface.ofAddress(get_interface$get(segment), scope);
@@ -251,7 +251,7 @@ public class _GDBusObjectManagerIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(object_added fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$913.const$2, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$916.const$2, fi, constants$13.const$4, scope);
         }
         static object_added ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -266,7 +266,7 @@ public class _GDBusObjectManagerIface {
     }
 
     public static VarHandle object_added$VH() {
-        return constants$913.const$3;
+        return constants$916.const$3;
     }
     /**
      * Getter for field:
@@ -275,7 +275,7 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static MemorySegment object_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$913.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$916.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -284,13 +284,13 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static void object_added$set(MemorySegment seg, MemorySegment x) {
-        constants$913.const$3.set(seg, x);
+        constants$916.const$3.set(seg, x);
     }
     public static MemorySegment object_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$913.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$916.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void object_added$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$913.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$916.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static object_added object_added(MemorySegment segment, Arena scope) {
         return object_added.ofAddress(object_added$get(segment), scope);
@@ -304,7 +304,7 @@ public class _GDBusObjectManagerIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(object_removed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$913.const$4, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$916.const$4, fi, constants$13.const$4, scope);
         }
         static object_removed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -319,7 +319,7 @@ public class _GDBusObjectManagerIface {
     }
 
     public static VarHandle object_removed$VH() {
-        return constants$913.const$5;
+        return constants$916.const$5;
     }
     /**
      * Getter for field:
@@ -328,7 +328,7 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static MemorySegment object_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$913.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$916.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -337,13 +337,13 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static void object_removed$set(MemorySegment seg, MemorySegment x) {
-        constants$913.const$5.set(seg, x);
+        constants$916.const$5.set(seg, x);
     }
     public static MemorySegment object_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$913.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$916.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void object_removed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$913.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$916.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static object_removed object_removed(MemorySegment segment, Arena scope) {
         return object_removed.ofAddress(object_removed$get(segment), scope);
@@ -357,7 +357,7 @@ public class _GDBusObjectManagerIface {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(interface_added fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$914.const$0, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$917.const$0, fi, constants$14.const$3, scope);
         }
         static interface_added ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -372,7 +372,7 @@ public class _GDBusObjectManagerIface {
     }
 
     public static VarHandle interface_added$VH() {
-        return constants$914.const$1;
+        return constants$917.const$1;
     }
     /**
      * Getter for field:
@@ -381,7 +381,7 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static MemorySegment interface_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$914.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$917.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -390,13 +390,13 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static void interface_added$set(MemorySegment seg, MemorySegment x) {
-        constants$914.const$1.set(seg, x);
+        constants$917.const$1.set(seg, x);
     }
     public static MemorySegment interface_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$914.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$917.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void interface_added$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$914.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$917.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static interface_added interface_added(MemorySegment segment, Arena scope) {
         return interface_added.ofAddress(interface_added$get(segment), scope);
@@ -410,7 +410,7 @@ public class _GDBusObjectManagerIface {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(interface_removed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$914.const$2, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$917.const$2, fi, constants$14.const$3, scope);
         }
         static interface_removed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -425,7 +425,7 @@ public class _GDBusObjectManagerIface {
     }
 
     public static VarHandle interface_removed$VH() {
-        return constants$914.const$3;
+        return constants$917.const$3;
     }
     /**
      * Getter for field:
@@ -434,7 +434,7 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static MemorySegment interface_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$914.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$917.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -443,13 +443,13 @@ public class _GDBusObjectManagerIface {
      * }
      */
     public static void interface_removed$set(MemorySegment seg, MemorySegment x) {
-        constants$914.const$3.set(seg, x);
+        constants$917.const$3.set(seg, x);
     }
     public static MemorySegment interface_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$914.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$917.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void interface_removed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$914.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$917.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static interface_removed interface_removed(MemorySegment segment, Arena scope) {
         return interface_removed.ofAddress(interface_removed$get(segment), scope);

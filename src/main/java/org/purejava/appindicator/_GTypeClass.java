@@ -17,10 +17,10 @@ import java.lang.invoke.VarHandle;
 public class _GTypeClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$545.const$2;
+        return constants$546.const$5;
     }
     public static VarHandle g_type$VH() {
-        return constants$545.const$3;
+        return constants$547.const$0;
     }
     /**
      * Getter for field:
@@ -29,7 +29,7 @@ public class _GTypeClass {
      * }
      */
     public static long g_type$get(MemorySegment seg) {
-        return (long)constants$545.const$3.get(seg);
+        return (long)constants$547.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -38,13 +38,13 @@ public class _GTypeClass {
      * }
      */
     public static void g_type$set(MemorySegment seg, long x) {
-        constants$545.const$3.set(seg, x);
+        constants$547.const$0.set(seg, x);
     }
     public static long g_type$get(MemorySegment seg, long index) {
-        return (long)constants$545.const$3.get(seg.asSlice(index*sizeof()));
+        return (long)constants$547.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void g_type$set(MemorySegment seg, long index, long x) {
-        constants$545.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$547.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

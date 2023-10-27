@@ -2,32 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1642 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1642() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_glyphs.class, "apply", constants$1641.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_run",
+        constants$5.const$2
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$1641.const$5
+        "pango_layout_iter_get_run_readonly",
+        constants$5.const$2
     );
-    static final VarHandle const$2 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_glyphs"));
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_line",
+        constants$5.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_rectangle.class, "apply", constants$1642.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_line_readonly",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_at_last_line",
+        constants$10.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        constants$1642.const$3
+        "pango_layout_iter_get_layout",
+        constants$5.const$2
     );
 }
 

@@ -13,7 +13,7 @@ public interface gtk_file_filter_add_custom$notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_file_filter_add_custom$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2677.const$4, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2682.const$4, fi, constants$13.const$1, scope);
     }
     static gtk_file_filter_add_custom$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

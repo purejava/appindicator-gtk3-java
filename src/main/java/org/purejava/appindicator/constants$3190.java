@@ -2,44 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3190 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3190() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_drag_dest_drag_data_received",
-        constants$12.const$2
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_test_create_widget",
+        constants$408.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_drag_dest_row_drop_possible",
-        constants$12.const$2
+        "gtk_test_create_simple_window",
+        constants$5.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_set_row_drag_data",
-        constants$12.const$2
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_test_display_button_window",
+        constants$5.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_get_row_drag_data",
-        constants$12.const$2
+        "gtk_test_slider_set_perc",
+        constants$692.const$2
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkTreeModelSort");
-    static final VarHandle const$5 = constants$3190.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_test_slider_get_value",
+        constants$67.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_test_spin_button_click",
+        constants$49.const$0
+    );
 }
 
 

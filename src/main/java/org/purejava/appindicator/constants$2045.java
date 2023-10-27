@@ -9,20 +9,26 @@ final class constants$2045 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2045() {}
-    static final VarHandle const$0 = constants$2043.const$4.varHandle(MemoryLayout.PathElement.groupElement("pad1"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.pad2.class, "apply", constants$10.const$5);
-    static final VarHandle const$2 = constants$2043.const$4.varHandle(MemoryLayout.PathElement.groupElement("pad2"));
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_object_factory_get_type",
+    static final VarHandle const$0 = constants$2043.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_image_locale"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_image_get_type",
         constants$3.const$5
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_image_get_image_description",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_image_get_image_size",
+        constants$14.const$3
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_object_factory_create_accessible",
-        constants$5.const$5
+        "atk_image_set_image_description",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_object_factory_invalidate",
-        constants$13.const$1
+        "atk_image_get_image_position",
+        constants$332.const$4
     );
 }
 

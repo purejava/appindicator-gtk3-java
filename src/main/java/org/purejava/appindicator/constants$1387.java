@@ -2,19 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1387 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1387() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GUnixFDListClass._g_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$1386.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GUnixFDListClass._g_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$1386.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GUnixFDListClass._g_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$1386.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_unix_connection_send_fd",
+        constants$11.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_unix_connection_receive_fd",
+        constants$12.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_unix_connection_send_credentials",
+        constants$12.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_unix_connection_send_credentials_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_unix_connection_send_credentials_async",
+        constants$42.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_unix_connection_send_credentials_finish",
+        constants$12.const$2
+    );
 }
 
 

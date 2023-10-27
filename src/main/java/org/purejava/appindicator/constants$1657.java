@@ -3,17 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1657 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1657() {}
-    static final VarHandle const$0 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_codecvt"));
-    static final VarHandle const$1 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_wide_data"));
-    static final VarHandle const$2 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_freeres_list"));
-    static final VarHandle const$3 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_freeres_buf"));
-    static final VarHandle const$4 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("__pad5"));
-    static final VarHandle const$5 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_mode"));
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("__count"),
+        MemoryLayout.unionLayout(
+            JAVA_INT.withName("__wch"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("__wchb")
+        ).withName("__value")
+    ).withName("__mbstate_t");
+    static final VarHandle const$1 = constants$1657.const$0.varHandle(MemoryLayout.PathElement.groupElement("__count"));
+    static final UnionLayout const$2 = MemoryLayout.unionLayout(
+        JAVA_INT.withName("__wch"),
+        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("__wchb")
+    ).withName("");
+    static final VarHandle const$3 = constants$1657.const$2.varHandle(MemoryLayout.PathElement.groupElement("__wch"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("__pos"),
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("__count"),
+            MemoryLayout.unionLayout(
+                JAVA_INT.withName("__wch"),
+                MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("__wchb")
+            ).withName("__value")
+        ).withName("__state")
+    ).withName("_G_fpos_t");
+    static final VarHandle const$5 = constants$1657.const$4.varHandle(MemoryLayout.PathElement.groupElement("__pos"));
 }
 
 

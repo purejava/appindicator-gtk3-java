@@ -2,57 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.*;
 final class constants$537 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$537() {}
-    static final VarHandle const$0 = constants$536.const$5.varHandle(MemoryLayout.PathElement.groupElement("mutex"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_key_delete",
+        constants$8.const$4
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_static_mutex_init",
-        constants$13.const$1
+        "pthread_getspecific",
+        constants$24.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_static_mutex_free",
-        constants$13.const$1
+        "pthread_setspecific",
+        constants$9.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_static_mutex_get_mutex_impl",
-        constants$5.const$2
+        "pthread_getcpuclockid",
+        constants$87.const$0
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("mutex"),
-            MemoryLayout.unionLayout(
-                MemoryLayout.structLayout(
-                    JAVA_INT.withName("__lock"),
-                    JAVA_INT.withName("__count"),
-                    JAVA_INT.withName("__owner"),
-                    JAVA_INT.withName("__nusers"),
-                    JAVA_INT.withName("__kind"),
-                    JAVA_INT.withName("__spins"),
-                    MemoryLayout.structLayout(
-                        RuntimeHelper.POINTER.withName("__prev"),
-                        RuntimeHelper.POINTER.withName("__next")
-                    ).withName("__list")
-                ).withName("__data"),
-                MemoryLayout.sequenceLayout(48, JAVA_BYTE).withName("__size"),
-                JAVA_LONG.withName("__align")
-            ).withName("unused")
-        ).withName("mutex"),
-        JAVA_INT.withName("depth"),
-        MemoryLayout.paddingLayout(4),
-        MemoryLayout.unionLayout(
-            JAVA_LONG.withName("owner"),
-            JAVA_DOUBLE.withName("dummy")
-        ).withName("unused")
-    ).withName("_GStaticRecMutex");
-    static final VarHandle const$5 = constants$537.const$4.varHandle(MemoryLayout.PathElement.groupElement("depth"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(pthread_atfork$__prepare.class, "apply", constants$7.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(pthread_atfork$__parent.class, "apply", constants$7.const$5);
 }
 
 

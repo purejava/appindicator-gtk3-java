@@ -2,34 +2,44 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1689 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1689() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_path_extents",
-        constants$331.const$1
+        "cairo_set_fill_rule",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_paint",
-        constants$13.const$1
+        "cairo_set_line_width",
+        constants$692.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_paint_with_alpha",
-        constants$689.const$5
+        "cairo_set_hairline",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_mask",
-        constants$13.const$4
+        "cairo_set_line_cap",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_mask_surface",
-        constants$1683.const$0
+        "cairo_set_line_join",
+        constants$40.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_stroke",
-        constants$13.const$1
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "cairo_set_dash",
+        constants$1689.const$5
     );
 }
 

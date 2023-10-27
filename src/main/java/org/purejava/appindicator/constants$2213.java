@@ -8,28 +8,28 @@ final class constants$2213 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2213() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_dialog_new",
-        constants$35.const$2
+        "gtk_window_resize_to_geometry",
+        constants$469.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_dialog_new_with_buttons",
-        constants$482.const$3
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_window_get_group",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_dialog_add_action_widget",
-        constants$164.const$5
+        "gtk_window_has_group",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_dialog_add_button",
-        constants$32.const$3
+        "gtk_window_reshow_with_initial_size",
+        constants$13.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_dialog_add_buttons",
-        constants$13.const$4
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_window_get_window_type",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_dialog_set_response_sensitive",
-        constants$467.const$3
+        "gtk_window_get_application",
+        constants$5.const$2
     );
 }
 

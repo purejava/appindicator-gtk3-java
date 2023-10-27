@@ -2,19 +2,53 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1291 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1291() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSocketClientClass._g_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$1290.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GSocketClientClass._g_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$1290.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GSocketClientClass._g_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$1290.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_send",
+        constants$762.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_send_to",
+        constants$1290.const$4
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_receive_message",
+        constants$1291.const$2
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_send_message",
+        constants$1291.const$4
+    );
 }
 
 

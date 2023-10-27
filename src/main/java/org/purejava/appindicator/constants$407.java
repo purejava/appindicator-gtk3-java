@@ -5,34 +5,34 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$407 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$407() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_rc_box_alloc",
-        constants$63.const$3
+        "g_random_set_seed",
+        constants$80.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_rc_box_alloc0",
-        constants$63.const$3
+        "g_random_int",
+        constants$83.const$1
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_random_int_range",
+        constants$123.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_rc_box_dup",
-        constants$407.const$2
+        "g_random_double",
+        constants$83.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_rc_box_acquire",
-        constants$5.const$2
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_rc_box_release",
-        constants$13.const$1
+        "g_random_double_range",
+        constants$407.const$4
     );
 }
 

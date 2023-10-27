@@ -13,7 +13,7 @@ public interface pango_cairo_context_set_shape_renderer$dnotify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(pango_cairo_context_set_shape_renderer$dnotify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1908.const$4, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1913.const$4, fi, constants$13.const$1, scope);
     }
     static pango_cairo_context_set_shape_renderer$dnotify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

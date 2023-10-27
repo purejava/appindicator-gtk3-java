@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkMiscClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2041.const$2;
+        return constants$2046.const$3;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -34,7 +34,7 @@ public class _AtkMiscClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(threads_enter fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2041.const$3, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2046.const$4, fi, constants$13.const$1, scope);
         }
         static threads_enter ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -49,7 +49,7 @@ public class _AtkMiscClass {
     }
 
     public static VarHandle threads_enter$VH() {
-        return constants$2041.const$4;
+        return constants$2046.const$5;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _AtkMiscClass {
      * }
      */
     public static MemorySegment threads_enter$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2041.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2046.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -67,13 +67,13 @@ public class _AtkMiscClass {
      * }
      */
     public static void threads_enter$set(MemorySegment seg, MemorySegment x) {
-        constants$2041.const$4.set(seg, x);
+        constants$2046.const$5.set(seg, x);
     }
     public static MemorySegment threads_enter$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2041.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2046.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void threads_enter$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2041.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2046.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static threads_enter threads_enter(MemorySegment segment, Arena scope) {
         return threads_enter.ofAddress(threads_enter$get(segment), scope);
@@ -87,7 +87,7 @@ public class _AtkMiscClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(threads_leave fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2041.const$5, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2047.const$0, fi, constants$13.const$1, scope);
         }
         static threads_leave ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -102,7 +102,7 @@ public class _AtkMiscClass {
     }
 
     public static VarHandle threads_leave$VH() {
-        return constants$2042.const$0;
+        return constants$2047.const$1;
     }
     /**
      * Getter for field:
@@ -111,7 +111,7 @@ public class _AtkMiscClass {
      * }
      */
     public static MemorySegment threads_leave$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2042.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2047.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -120,13 +120,13 @@ public class _AtkMiscClass {
      * }
      */
     public static void threads_leave$set(MemorySegment seg, MemorySegment x) {
-        constants$2042.const$0.set(seg, x);
+        constants$2047.const$1.set(seg, x);
     }
     public static MemorySegment threads_leave$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2042.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2047.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void threads_leave$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2042.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2047.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static threads_leave threads_leave(MemorySegment segment, Arena scope) {
         return threads_leave.ofAddress(threads_leave$get(segment), scope);

@@ -25,7 +25,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkSelectionIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2056.const$0;
+        return constants$2061.const$1;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -39,13 +39,13 @@ public class _AtkSelectionIface {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(add_selection fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2056.const$1, fi, constants$11.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2061.const$2, fi, constants$11.const$4, scope);
         }
         static add_selection ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$840.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -54,7 +54,7 @@ public class _AtkSelectionIface {
     }
 
     public static VarHandle add_selection$VH() {
-        return constants$2056.const$2;
+        return constants$2061.const$3;
     }
     /**
      * Getter for field:
@@ -63,7 +63,7 @@ public class _AtkSelectionIface {
      * }
      */
     public static MemorySegment add_selection$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2056.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2061.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -72,13 +72,13 @@ public class _AtkSelectionIface {
      * }
      */
     public static void add_selection$set(MemorySegment seg, MemorySegment x) {
-        constants$2056.const$2.set(seg, x);
+        constants$2061.const$3.set(seg, x);
     }
     public static MemorySegment add_selection$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2056.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2061.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void add_selection$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2056.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2061.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static add_selection add_selection(MemorySegment segment, Arena scope) {
         return add_selection.ofAddress(add_selection$get(segment), scope);
@@ -92,7 +92,7 @@ public class _AtkSelectionIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(clear_selection fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2056.const$3, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2061.const$4, fi, constants$10.const$5, scope);
         }
         static clear_selection ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -107,7 +107,7 @@ public class _AtkSelectionIface {
     }
 
     public static VarHandle clear_selection$VH() {
-        return constants$2056.const$4;
+        return constants$2061.const$5;
     }
     /**
      * Getter for field:
@@ -116,7 +116,7 @@ public class _AtkSelectionIface {
      * }
      */
     public static MemorySegment clear_selection$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2056.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2061.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -125,13 +125,13 @@ public class _AtkSelectionIface {
      * }
      */
     public static void clear_selection$set(MemorySegment seg, MemorySegment x) {
-        constants$2056.const$4.set(seg, x);
+        constants$2061.const$5.set(seg, x);
     }
     public static MemorySegment clear_selection$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2056.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2061.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void clear_selection$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2056.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2061.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static clear_selection clear_selection(MemorySegment segment, Arena scope) {
         return clear_selection.ofAddress(clear_selection$get(segment), scope);
@@ -145,13 +145,13 @@ public class _AtkSelectionIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(ref_selection fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2056.const$5, fi, constants$21.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2062.const$0, fi, constants$21.const$3, scope);
         }
         static ref_selection ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$318.const$0.invokeExact(symbol, __x0, __x1);
+                    return (java.lang.foreign.MemorySegment)constants$319.const$0.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -160,7 +160,7 @@ public class _AtkSelectionIface {
     }
 
     public static VarHandle ref_selection$VH() {
-        return constants$2057.const$0;
+        return constants$2062.const$1;
     }
     /**
      * Getter for field:
@@ -169,7 +169,7 @@ public class _AtkSelectionIface {
      * }
      */
     public static MemorySegment ref_selection$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2057.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2062.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -178,13 +178,13 @@ public class _AtkSelectionIface {
      * }
      */
     public static void ref_selection$set(MemorySegment seg, MemorySegment x) {
-        constants$2057.const$0.set(seg, x);
+        constants$2062.const$1.set(seg, x);
     }
     public static MemorySegment ref_selection$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2057.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2062.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void ref_selection$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2057.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2062.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static ref_selection ref_selection(MemorySegment segment, Arena scope) {
         return ref_selection.ofAddress(ref_selection$get(segment), scope);
@@ -198,7 +198,7 @@ public class _AtkSelectionIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_selection_count fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2057.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2062.const$2, fi, constants$10.const$5, scope);
         }
         static get_selection_count ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -213,7 +213,7 @@ public class _AtkSelectionIface {
     }
 
     public static VarHandle get_selection_count$VH() {
-        return constants$2057.const$2;
+        return constants$2062.const$3;
     }
     /**
      * Getter for field:
@@ -222,7 +222,7 @@ public class _AtkSelectionIface {
      * }
      */
     public static MemorySegment get_selection_count$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2057.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2062.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -231,13 +231,13 @@ public class _AtkSelectionIface {
      * }
      */
     public static void get_selection_count$set(MemorySegment seg, MemorySegment x) {
-        constants$2057.const$2.set(seg, x);
+        constants$2062.const$3.set(seg, x);
     }
     public static MemorySegment get_selection_count$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2057.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2062.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_selection_count$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2057.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2062.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_selection_count get_selection_count(MemorySegment segment, Arena scope) {
         return get_selection_count.ofAddress(get_selection_count$get(segment), scope);
@@ -251,13 +251,13 @@ public class _AtkSelectionIface {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(is_child_selected fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2057.const$3, fi, constants$11.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2062.const$4, fi, constants$11.const$4, scope);
         }
         static is_child_selected ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$840.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -266,7 +266,7 @@ public class _AtkSelectionIface {
     }
 
     public static VarHandle is_child_selected$VH() {
-        return constants$2057.const$4;
+        return constants$2062.const$5;
     }
     /**
      * Getter for field:
@@ -275,7 +275,7 @@ public class _AtkSelectionIface {
      * }
      */
     public static MemorySegment is_child_selected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2057.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2062.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -284,13 +284,13 @@ public class _AtkSelectionIface {
      * }
      */
     public static void is_child_selected$set(MemorySegment seg, MemorySegment x) {
-        constants$2057.const$4.set(seg, x);
+        constants$2062.const$5.set(seg, x);
     }
     public static MemorySegment is_child_selected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2057.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2062.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void is_child_selected$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2057.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2062.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static is_child_selected is_child_selected(MemorySegment segment, Arena scope) {
         return is_child_selected.ofAddress(is_child_selected$get(segment), scope);
@@ -304,13 +304,13 @@ public class _AtkSelectionIface {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(remove_selection fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2057.const$5, fi, constants$11.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2063.const$0, fi, constants$11.const$4, scope);
         }
         static remove_selection ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$840.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -319,7 +319,7 @@ public class _AtkSelectionIface {
     }
 
     public static VarHandle remove_selection$VH() {
-        return constants$2058.const$0;
+        return constants$2063.const$1;
     }
     /**
      * Getter for field:
@@ -328,7 +328,7 @@ public class _AtkSelectionIface {
      * }
      */
     public static MemorySegment remove_selection$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2058.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2063.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -337,13 +337,13 @@ public class _AtkSelectionIface {
      * }
      */
     public static void remove_selection$set(MemorySegment seg, MemorySegment x) {
-        constants$2058.const$0.set(seg, x);
+        constants$2063.const$1.set(seg, x);
     }
     public static MemorySegment remove_selection$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2058.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2063.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void remove_selection$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2058.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2063.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static remove_selection remove_selection(MemorySegment segment, Arena scope) {
         return remove_selection.ofAddress(remove_selection$get(segment), scope);
@@ -357,7 +357,7 @@ public class _AtkSelectionIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(select_all_selection fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2058.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2063.const$2, fi, constants$10.const$5, scope);
         }
         static select_all_selection ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -372,7 +372,7 @@ public class _AtkSelectionIface {
     }
 
     public static VarHandle select_all_selection$VH() {
-        return constants$2058.const$2;
+        return constants$2063.const$3;
     }
     /**
      * Getter for field:
@@ -381,7 +381,7 @@ public class _AtkSelectionIface {
      * }
      */
     public static MemorySegment select_all_selection$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2058.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2063.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -390,13 +390,13 @@ public class _AtkSelectionIface {
      * }
      */
     public static void select_all_selection$set(MemorySegment seg, MemorySegment x) {
-        constants$2058.const$2.set(seg, x);
+        constants$2063.const$3.set(seg, x);
     }
     public static MemorySegment select_all_selection$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2058.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2063.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void select_all_selection$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2058.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2063.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static select_all_selection select_all_selection(MemorySegment segment, Arena scope) {
         return select_all_selection.ofAddress(select_all_selection$get(segment), scope);
@@ -410,7 +410,7 @@ public class _AtkSelectionIface {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(selection_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2058.const$3, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2063.const$4, fi, constants$13.const$1, scope);
         }
         static selection_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -425,7 +425,7 @@ public class _AtkSelectionIface {
     }
 
     public static VarHandle selection_changed$VH() {
-        return constants$2058.const$4;
+        return constants$2063.const$5;
     }
     /**
      * Getter for field:
@@ -434,7 +434,7 @@ public class _AtkSelectionIface {
      * }
      */
     public static MemorySegment selection_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2058.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2063.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -443,13 +443,13 @@ public class _AtkSelectionIface {
      * }
      */
     public static void selection_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$2058.const$4.set(seg, x);
+        constants$2063.const$5.set(seg, x);
     }
     public static MemorySegment selection_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2058.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2063.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void selection_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2058.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2063.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static selection_changed selection_changed(MemorySegment segment, Arena scope) {
         return selection_changed.ofAddress(selection_changed$get(segment), scope);

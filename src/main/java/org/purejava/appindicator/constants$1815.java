@@ -8,28 +8,28 @@ final class constants$1815 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1815() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_request_phase",
-        constants$40.const$2
+        "gdk_event_get_event_sequence",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_begin_updating",
-        constants$13.const$1
+        "gdk_event_get_event_type",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_end_updating",
-        constants$13.const$1
+        "gdk_event_get_seat",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_frame_counter",
-        constants$4.const$0
+        "gdk_set_show_events",
+        constants$80.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_history_start",
-        constants$4.const$0
+        "gdk_get_show_events",
+        constants$83.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_timings",
-        constants$21.const$1
+        "gdk_setting_get",
+        constants$9.const$0
     );
 }
 

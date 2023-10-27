@@ -13,7 +13,7 @@ public interface g_thread_create$func {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_thread_create$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$511.const$4, fi, constants$5.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$513.const$2, fi, constants$5.const$2, scope);
     }
     static g_thread_create$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

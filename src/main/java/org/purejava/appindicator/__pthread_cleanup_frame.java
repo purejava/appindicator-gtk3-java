@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class __pthread_cleanup_frame {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$523.const$3;
+        return constants$525.const$0;
     }
     /**
      * {@snippet :
@@ -31,7 +31,7 @@ public class __pthread_cleanup_frame {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(__cancel_routine fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$523.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$525.const$1, fi, constants$13.const$1, scope);
         }
         static __cancel_routine ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -46,7 +46,7 @@ public class __pthread_cleanup_frame {
     }
 
     public static VarHandle __cancel_routine$VH() {
-        return constants$523.const$5;
+        return constants$525.const$2;
     }
     /**
      * Getter for field:
@@ -55,7 +55,7 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static MemorySegment __cancel_routine$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$523.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$525.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -64,19 +64,19 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static void __cancel_routine$set(MemorySegment seg, MemorySegment x) {
-        constants$523.const$5.set(seg, x);
+        constants$525.const$2.set(seg, x);
     }
     public static MemorySegment __cancel_routine$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$523.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$525.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void __cancel_routine$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$523.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$525.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static __cancel_routine __cancel_routine(MemorySegment segment, Arena scope) {
         return __cancel_routine.ofAddress(__cancel_routine$get(segment), scope);
     }
     public static VarHandle __cancel_arg$VH() {
-        return constants$524.const$0;
+        return constants$525.const$3;
     }
     /**
      * Getter for field:
@@ -85,7 +85,7 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static MemorySegment __cancel_arg$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$524.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$525.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -94,16 +94,16 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static void __cancel_arg$set(MemorySegment seg, MemorySegment x) {
-        constants$524.const$0.set(seg, x);
+        constants$525.const$3.set(seg, x);
     }
     public static MemorySegment __cancel_arg$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$524.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$525.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void __cancel_arg$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$524.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$525.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle __do_it$VH() {
-        return constants$524.const$1;
+        return constants$525.const$4;
     }
     /**
      * Getter for field:
@@ -112,7 +112,7 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static int __do_it$get(MemorySegment seg) {
-        return (int)constants$524.const$1.get(seg);
+        return (int)constants$525.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -121,16 +121,16 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static void __do_it$set(MemorySegment seg, int x) {
-        constants$524.const$1.set(seg, x);
+        constants$525.const$4.set(seg, x);
     }
     public static int __do_it$get(MemorySegment seg, long index) {
-        return (int)constants$524.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$525.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void __do_it$set(MemorySegment seg, long index, int x) {
-        constants$524.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$525.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle __cancel_type$VH() {
-        return constants$524.const$2;
+        return constants$525.const$5;
     }
     /**
      * Getter for field:
@@ -139,7 +139,7 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static int __cancel_type$get(MemorySegment seg) {
-        return (int)constants$524.const$2.get(seg);
+        return (int)constants$525.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -148,13 +148,13 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static void __cancel_type$set(MemorySegment seg, int x) {
-        constants$524.const$2.set(seg, x);
+        constants$525.const$5.set(seg, x);
     }
     public static int __cancel_type$get(MemorySegment seg, long index) {
-        return (int)constants$524.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$525.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void __cancel_type$set(MemorySegment seg, long index, int x) {
-        constants$524.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$525.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

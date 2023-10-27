@@ -7,26 +7,29 @@ final class constants$1831 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1831() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gdk_window_remove_filter$function.class, "apply", constants$12.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_new",
+        constants$32.const$3
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_remove_filter",
-        constants$14.const$3
+        "gdk_window_destroy",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_scroll",
-        constants$467.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_move_region",
-        constants$1043.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_ensure_native",
+        "gdk_window_get_window_type",
         constants$10.const$5
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_is_destroyed",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_visual",
+        constants$5.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_shape_combine_region",
-        constants$1043.const$2
+        "gdk_window_get_screen",
+        constants$5.const$2
     );
 }
 

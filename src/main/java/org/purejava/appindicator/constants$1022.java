@@ -7,23 +7,26 @@ final class constants$1022 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1022() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_enumerate_children_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_enumerate_children_async",
-        constants$780.const$3
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_replace_readwrite",
+        constants$992.const$4
     );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_replace_readwrite_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_enumerate_children_finish",
-        constants$23.const$0
+        "g_file_replace_readwrite_async",
+        constants$993.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_set_display_name",
-        constants$39.const$1
+        "g_file_replace_readwrite_finish",
+        constants$23.const$0
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_set_display_name_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_query_exists",
+        constants$9.const$0
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_set_display_name_async",
-        constants$584.const$3
+        "g_file_query_file_type",
+        constants$150.const$0
     );
 }
 

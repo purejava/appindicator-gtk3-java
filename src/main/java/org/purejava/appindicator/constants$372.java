@@ -2,38 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$372 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$372() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
-        RuntimeHelper.POINTER,
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("__stack"),
-            RuntimeHelper.POINTER.withName("__gr_top"),
-            RuntimeHelper.POINTER.withName("__vr_top"),
-            JAVA_INT.withName("__gr_offs"),
-            JAVA_INT.withName("__vr_offs")
-        ).withName("__va_list")
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_insert_value",
+        constants$14.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_printf_string_upper_bound",
-        constants$372.const$0
+        "g_variant_dict_remove",
+        constants$9.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GLogFunc.class, "apply", constants$179.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_clear",
+        constants$13.const$1
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        constants$179.const$1
+        "g_variant_dict_end",
+        constants$5.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_log_set_handler$log_func.class, "apply", constants$179.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_ref",
+        constants$5.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_log_set_handler",
-        constants$11.const$0
+        "g_variant_dict_unref",
+        constants$13.const$1
     );
 }
 

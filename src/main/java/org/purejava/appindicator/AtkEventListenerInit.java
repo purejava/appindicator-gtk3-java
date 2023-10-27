@@ -13,7 +13,7 @@ public interface AtkEventListenerInit {
 
     void apply();
     static MemorySegment allocate(AtkEventListenerInit fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1986.const$0, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$1991.const$1, fi, constants$7.const$5, scope);
     }
     static AtkEventListenerInit ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

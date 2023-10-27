@@ -2,44 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$899 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$899() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_signature",
+        "g_dbus_message_get_body",
         constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_signature",
+        "g_dbus_message_set_body",
         constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_num_unix_fds",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_num_unix_fds",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_arg0",
+        "g_dbus_message_get_unix_fd_list",
         constants$5.const$2
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_unix_fd_list",
+        constants$13.const$4
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_from_blob",
-        constants$899.const$5
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_reply_serial",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_reply_serial",
+        constants$40.const$2
     );
 }
 

@@ -8,28 +8,28 @@ final class constants$2742 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2742() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_get_axis",
-        constants$150.const$0
+        "gtk_gesture_get_group",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_get_axes",
-        constants$12.const$2
+        "gtk_gesture_is_grouped_with",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_get_device_tool",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_swipe_get_type",
+        "gtk_gesture_single_get_type",
         constants$3.const$5
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_gesture_single_get_touch_only",
+        constants$10.const$5
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_swipe_new",
-        constants$5.const$2
+        "gtk_gesture_single_set_touch_only",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_swipe_get_velocity",
-        constants$12.const$2
+        "gtk_gesture_single_get_exclusive",
+        constants$10.const$5
     );
 }
 

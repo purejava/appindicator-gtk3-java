@@ -43,10 +43,10 @@ import java.lang.invoke.VarHandle;
 public class _GScannerConfig {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$422.const$4;
+        return constants$423.const$4;
     }
     public static VarHandle cset_skip_characters$VH() {
-        return constants$422.const$5;
+        return constants$423.const$5;
     }
     /**
      * Getter for field:
@@ -55,7 +55,7 @@ public class _GScannerConfig {
      * }
      */
     public static MemorySegment cset_skip_characters$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$423.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -64,16 +64,16 @@ public class _GScannerConfig {
      * }
      */
     public static void cset_skip_characters$set(MemorySegment seg, MemorySegment x) {
-        constants$422.const$5.set(seg, x);
+        constants$423.const$5.set(seg, x);
     }
     public static MemorySegment cset_skip_characters$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$423.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void cset_skip_characters$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$422.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$423.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle cset_identifier_first$VH() {
-        return constants$423.const$0;
+        return constants$424.const$0;
     }
     /**
      * Getter for field:
@@ -82,7 +82,7 @@ public class _GScannerConfig {
      * }
      */
     public static MemorySegment cset_identifier_first$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$424.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -91,16 +91,16 @@ public class _GScannerConfig {
      * }
      */
     public static void cset_identifier_first$set(MemorySegment seg, MemorySegment x) {
-        constants$423.const$0.set(seg, x);
+        constants$424.const$0.set(seg, x);
     }
     public static MemorySegment cset_identifier_first$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$424.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void cset_identifier_first$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$423.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$424.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle cset_identifier_nth$VH() {
-        return constants$423.const$1;
+        return constants$424.const$1;
     }
     /**
      * Getter for field:
@@ -109,7 +109,7 @@ public class _GScannerConfig {
      * }
      */
     public static MemorySegment cset_identifier_nth$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$424.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -118,16 +118,16 @@ public class _GScannerConfig {
      * }
      */
     public static void cset_identifier_nth$set(MemorySegment seg, MemorySegment x) {
-        constants$423.const$1.set(seg, x);
+        constants$424.const$1.set(seg, x);
     }
     public static MemorySegment cset_identifier_nth$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$424.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void cset_identifier_nth$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$423.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$424.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle cpair_comment_single$VH() {
-        return constants$423.const$2;
+        return constants$424.const$2;
     }
     /**
      * Getter for field:
@@ -136,7 +136,7 @@ public class _GScannerConfig {
      * }
      */
     public static MemorySegment cpair_comment_single$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$424.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -145,16 +145,16 @@ public class _GScannerConfig {
      * }
      */
     public static void cpair_comment_single$set(MemorySegment seg, MemorySegment x) {
-        constants$423.const$2.set(seg, x);
+        constants$424.const$2.set(seg, x);
     }
     public static MemorySegment cpair_comment_single$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$424.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void cpair_comment_single$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$423.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$424.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle padding_dummy$VH() {
-        return constants$423.const$3;
+        return constants$424.const$3;
     }
     /**
      * Getter for field:
@@ -163,7 +163,7 @@ public class _GScannerConfig {
      * }
      */
     public static int padding_dummy$get(MemorySegment seg) {
-        return (int)constants$423.const$3.get(seg);
+        return (int)constants$424.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -172,13 +172,13 @@ public class _GScannerConfig {
      * }
      */
     public static void padding_dummy$set(MemorySegment seg, int x) {
-        constants$423.const$3.set(seg, x);
+        constants$424.const$3.set(seg, x);
     }
     public static int padding_dummy$get(MemorySegment seg, long index) {
-        return (int)constants$423.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$424.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void padding_dummy$set(MemorySegment seg, long index, int x) {
-        constants$423.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$424.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

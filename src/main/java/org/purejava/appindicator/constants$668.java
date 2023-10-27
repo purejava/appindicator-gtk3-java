@@ -2,8 +2,9 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
@@ -11,34 +12,48 @@ final class constants$668 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$668() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_param_spec_int64",
-        constants$667.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_param_spec_uint64",
-        constants$667.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_param_spec_unichar",
-        constants$666.const$4
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        JAVA_INT
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_param_spec_enum",
-        constants$668.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_param_spec_flags",
-        constants$668.const$3
-    );
+    static final VarHandle const$0 = constants$667.const$5.varHandle(MemoryLayout.PathElement.groupElement("overridden"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        JAVA_LONG.withName("is_a_type")
+    ).withName("_GParamSpecGType");
+    static final VarHandle const$2 = constants$668.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_a_type"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("type"),
+        RuntimeHelper.POINTER.withName("default_value"),
+        MemoryLayout.sequenceLayout(4, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GParamSpecVariant");
+    static final VarHandle const$4 = constants$668.const$3.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$5 = constants$668.const$3.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
 }
 
 

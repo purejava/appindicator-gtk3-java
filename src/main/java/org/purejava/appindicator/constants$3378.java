@@ -3,21 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$3378 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3378() {}
-    static final VarHandle const$0 = constants$3377.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTearoffMenuItemClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$3377.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTearoffMenuItemClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$3377.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tearoff_menu_item_get_type",
-        constants$3.const$5
-    );
+    static final VarHandle const$0 = constants$3377.const$1.varHandle(MemoryLayout.PathElement.groupElement("bottom_attach"));
+    static final VarHandle const$1 = constants$3377.const$1.varHandle(MemoryLayout.PathElement.groupElement("xpadding"));
+    static final VarHandle const$2 = constants$3377.const$1.varHandle(MemoryLayout.PathElement.groupElement("ypadding"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_SHORT.withName("requisition"),
+        JAVA_SHORT.withName("allocation"),
+        JAVA_SHORT.withName("spacing"),
+        MemoryLayout.paddingLayout(2)
+    ).withName("_GtkTableRowCol");
+    static final VarHandle const$4 = constants$3378.const$3.varHandle(MemoryLayout.PathElement.groupElement("requisition"));
+    static final VarHandle const$5 = constants$3378.const$3.varHandle(MemoryLayout.PathElement.groupElement("allocation"));
 }
 
 

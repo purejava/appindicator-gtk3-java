@@ -17,7 +17,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GDBusObjectProxyClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$923.const$1;
+        return constants$926.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);

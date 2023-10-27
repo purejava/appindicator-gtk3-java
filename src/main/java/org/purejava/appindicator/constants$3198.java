@@ -8,25 +8,28 @@ final class constants$3198 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3198() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_get_tree_view",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_tree_selection_get_select_function$return.class, "apply", constants$328.const$5);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_get_select_function",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_get_selected",
-        constants$12.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_get_selected_rows",
+        "gtk_tree_model_sort_convert_child_path_to_path",
         constants$5.const$5
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_convert_child_iter_to_iter",
+        constants$12.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_convert_path_to_child_path",
+        constants$5.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_convert_iter_to_child_iter",
+        constants$14.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_reset_default_sort_func",
+        constants$13.const$1
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_count_selected_rows",
-        constants$10.const$5
+        "gtk_tree_model_sort_clear_cache",
+        constants$13.const$1
     );
 }
 

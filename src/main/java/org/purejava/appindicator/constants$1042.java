@@ -2,31 +2,47 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1042 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1042() {}
-    static final VarHandle const$0 = constants$1041.const$5.varHandle(MemoryLayout.PathElement.groupElement("infos"));
-    static final VarHandle const$1 = constants$1041.const$5.varHandle(MemoryLayout.PathElement.groupElement("n_infos"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_get_type",
-        constants$3.const$5
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_new",
-        constants$35.const$2
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_replace_contents",
+        constants$1042.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_file_replace_contents_async$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_ref",
-        constants$5.const$2
+        "g_file_replace_contents_async",
+        constants$1042.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_unref",
-        constants$13.const$1
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_replace_contents_bytes_async$callback.class, "apply", constants$14.const$3);
 }
 
 

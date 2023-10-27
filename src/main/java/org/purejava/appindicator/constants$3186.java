@@ -2,35 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3186 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3186() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_test_widget_wait_for_draw",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_test_widget_click",
-        constants$49.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_test_widget_send_key",
-        constants$49.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_test_text_set",
-        constants$13.const$4
-    );
+    static final VarHandle const$0 = constants$3184.const$2.varHandle(MemoryLayout.PathElement.groupElement("rebuild_menu"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkToolShellIface.get_text_orientation.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$3184.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_text_orientation"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkToolShellIface.get_text_alignment.class, "apply", constants$692.const$0);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_test_text_get",
-        constants$5.const$2
+        constants$692.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_test_find_sibling",
-        constants$21.const$1
-    );
+    static final VarHandle const$5 = constants$3184.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_text_alignment"));
 }
 
 

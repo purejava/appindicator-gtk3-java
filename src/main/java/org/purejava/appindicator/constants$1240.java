@@ -2,40 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1240 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1240() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_records_finish",
-        constants$23.const$0
+        "g_resolver_get_default",
+        constants$35.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_resolver_free_targets",
+        "g_resolver_set_default",
         constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_resolver_error_quark",
-        constants$83.const$1
+        "g_resolver_lookup_by_name",
+        constants$39.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_resource_error_quark",
-        constants$83.const$1
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_resolver_lookup_by_name_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_name_async",
+        constants$332.const$1
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("data"),
-        JAVA_LONG.withName("data_len"),
-        RuntimeHelper.POINTER.withName("resource"),
-        RuntimeHelper.POINTER.withName("next"),
-        RuntimeHelper.POINTER.withName("padding")
-    ).withName("_GStaticResource");
-    static final VarHandle const$5 = constants$1240.const$4.varHandle(MemoryLayout.PathElement.groupElement("data"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_name_finish",
+        constants$23.const$0
+    );
 }
 
 

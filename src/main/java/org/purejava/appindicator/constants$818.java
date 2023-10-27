@@ -2,32 +2,40 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemorySegment;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$818 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$818() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "getwd",
-        constants$5.const$2
+        "write",
+        constants$817.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "dup",
-        constants$8.const$4
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "dup2",
-        constants$123.const$5
+        "pread",
+        constants$818.const$1
     );
-    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("__environ", RuntimeHelper.POINTER);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pwrite",
+        constants$818.const$1
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "execve",
-        constants$12.const$2
+        "pipe",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "fexecve",
-        constants$10.const$3
+        "alarm",
+        constants$8.const$4
     );
 }
 

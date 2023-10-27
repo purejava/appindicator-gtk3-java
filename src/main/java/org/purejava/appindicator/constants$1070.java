@@ -3,45 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$1070 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1070() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_input_stream_query_info_async",
-        constants$584.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_input_stream_query_info_finish",
-        constants$23.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_io_error_quark",
-        constants$83.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_io_error_from_errno",
-        constants$8.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_io_error_from_file_error",
-        constants$8.const$4
-    );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GIOStream");
+    static final VarHandle const$0 = constants$1068.const$3.varHandle(MemoryLayout.PathElement.groupElement("seek"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileInputStreamClass.query_info.class, "apply", constants$39.const$1);
+    static final VarHandle const$2 = constants$1068.const$3.varHandle(MemoryLayout.PathElement.groupElement("query_info"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileInputStreamClass.query_info_async.class, "apply", constants$587.const$0);
+    static final VarHandle const$4 = constants$1068.const$3.varHandle(MemoryLayout.PathElement.groupElement("query_info_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileInputStreamClass.query_info_finish.class, "apply", constants$23.const$0);
 }
 
 

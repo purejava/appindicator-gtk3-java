@@ -13,13 +13,13 @@ public interface cairo_user_font_face_get_unicode_to_glyph_func$return {
 
     int apply(java.lang.foreign.MemorySegment scaled_font, long unicode, java.lang.foreign.MemorySegment glyph_index);
     static MemorySegment allocate(cairo_user_font_face_get_unicode_to_glyph_func$return fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1715.const$0, fi, constants$62.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1720.const$0, fi, constants$62.const$2, scope);
     }
     static cairo_user_font_face_get_unicode_to_glyph_func$return ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _scaled_font, long _unicode, java.lang.foreign.MemorySegment _glyph_index) -> {
             try {
-                return (int)constants$693.const$5.invokeExact(symbol, _scaled_font, _unicode, _glyph_index);
+                return (int)constants$696.const$3.invokeExact(symbol, _scaled_font, _unicode, _glyph_index);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

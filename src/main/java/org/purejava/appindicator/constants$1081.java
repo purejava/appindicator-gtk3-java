@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1081 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1081() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIOStreamClass.query_info.class, "apply", constants$39.const$1);
-    static final VarHandle const$1 = constants$1079.const$0.varHandle(MemoryLayout.PathElement.groupElement("query_info"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIOStreamClass.query_info_async.class, "apply", constants$584.const$3);
-    static final VarHandle const$3 = constants$1079.const$0.varHandle(MemoryLayout.PathElement.groupElement("query_info_async"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIOStreamClass.query_info_finish.class, "apply", constants$23.const$0);
-    static final VarHandle const$5 = constants$1079.const$0.varHandle(MemoryLayout.PathElement.groupElement("query_info_finish"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_stream_close_async",
+        constants$282.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_stream_close_finish",
+        constants$12.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_stream_is_closed",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_io_stream_has_pending",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_io_stream_set_pending",
+        constants$9.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_io_stream_clear_pending",
+        constants$13.const$1
+    );
 }
 
 

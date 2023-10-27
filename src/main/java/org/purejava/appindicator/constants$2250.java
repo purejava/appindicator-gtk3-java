@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2250 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2250() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_label_set_text_with_mnemonic",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_label_set_justify",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_label_get_justify",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_label_set_ellipsize",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_label_get_ellipsize",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_label_set_width_chars",
-        constants$40.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkLabelClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$2247.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkLabelClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$2247.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkLabelClass._gtk_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2247.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
 }
 
 

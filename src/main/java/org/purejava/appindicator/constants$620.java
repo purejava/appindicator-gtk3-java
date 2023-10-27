@@ -8,26 +8,29 @@ final class constants$620 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$620() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_value_set_static_boxed",
-        constants$13.const$4
+        "g_checksum_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_value_take_boxed",
-        constants$13.const$4
+        "g_markup_parse_context_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_value_set_boxed_take_ownership",
-        constants$13.const$4
+        "g_mapped_file_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_value_get_boxed",
-        constants$5.const$2
+        "g_option_group_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_value_dup_boxed",
-        constants$5.const$2
+        "g_uri_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_boxed_type_register_static$boxed_copy.class, "apply", constants$5.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tree_get_type",
+        constants$3.const$5
+    );
 }
 
 

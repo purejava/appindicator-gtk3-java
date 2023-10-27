@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkShortcutsWindow {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2507.const$1;
+        return constants$2512.const$1;
     }
     public static MemorySegment window$slice(MemorySegment seg) {
         return seg.asSlice(0, 56);

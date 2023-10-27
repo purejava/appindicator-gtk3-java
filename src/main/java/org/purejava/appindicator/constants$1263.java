@@ -2,31 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1263 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1263() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_settings_bind_writable",
-        constants$646.const$4
+        "g_settings_get_double",
+        constants$67.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_settings_unbind",
-        constants$13.const$4
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_settings_create_action",
+        "g_settings_set_double",
+        constants$1263.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_settings_get_strv",
         constants$5.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_settings_get_mapped$mapping.class, "apply", constants$12.const$2);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_settings_get_mapped",
-        constants$39.const$1
+        "g_settings_set_strv",
+        constants$12.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_simple_action_get_type",
-        constants$3.const$5
+        "g_settings_get_enum",
+        constants$9.const$0
     );
 }
 

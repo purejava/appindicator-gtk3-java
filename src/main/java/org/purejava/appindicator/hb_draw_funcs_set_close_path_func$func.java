@@ -13,7 +13,7 @@ public interface hb_draw_funcs_set_close_path_func$func {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(hb_draw_funcs_set_close_path_func$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1450.const$5, fi, constants$42.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1455.const$0, fi, constants$42.const$1, scope);
     }
     static hb_draw_funcs_set_close_path_func$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

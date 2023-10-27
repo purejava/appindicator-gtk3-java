@@ -12,29 +12,30 @@ final class constants$833 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$833() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "brk",
-        constants$10.const$5
+        "vhangup",
+        constants$83.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "sbrk",
-        constants$63.const$3
+        "revoke",
+        constants$10.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "syscall",
-        constants$94.const$4
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG,
+        JAVA_INT
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_LONG
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "profil",
+        constants$833.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "lockf",
-        constants$833.const$3
+        "acct",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "fdatasync",
-        constants$8.const$4
+        "getusershell",
+        constants$35.const$2
     );
 }
 

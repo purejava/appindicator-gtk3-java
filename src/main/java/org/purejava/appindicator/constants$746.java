@@ -8,28 +8,28 @@ final class constants$746 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$746() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_application_hold",
-        constants$13.const$1
+        "g_application_get_inactivity_timeout",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_application_release",
-        constants$13.const$1
+        "g_application_set_inactivity_timeout",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_application_activate",
-        constants$13.const$1
+        "g_application_get_flags",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_application_open",
-        constants$464.const$4
+        "g_application_set_flags",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_application_run",
-        constants$150.const$0
+        "g_application_get_resource_base_path",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_application_quit",
-        constants$13.const$1
+        "g_application_set_resource_base_path",
+        constants$13.const$4
     );
 }
 

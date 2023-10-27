@@ -2,35 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$449 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$449() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GTestFixtureFunc.class, "apply", constants$13.const$4);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_strcmp0",
-        constants$9.const$0
-    );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        JAVA_DOUBLE,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
-        "g_test_minimized_result",
-        constants$449.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "g_test_maximized_result",
-        constants$449.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
-        "g_test_init",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_strv_builder_addv",
         constants$13.const$4
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_strv_builder_add_many",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_strv_builder_end",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__errno_location",
+        constants$35.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GTestFunc.class, "apply", constants$7.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GTestDataFunc.class, "apply", constants$13.const$1);
 }
 
 

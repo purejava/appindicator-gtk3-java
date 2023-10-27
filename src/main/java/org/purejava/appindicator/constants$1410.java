@@ -2,32 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1410 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1410() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_volume_mount",
-        constants$380.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_volume_mount_finish",
-        constants$12.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_volume_eject$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_volume_eject",
-        constants$281.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_volume_eject_finish",
-        constants$12.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_volume_get_identifier",
-        constants$5.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeIface.enumerate_identifiers.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1405.const$1.varHandle(MemoryLayout.PathElement.groupElement("enumerate_identifiers"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeIface.should_automount.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$1405.const$1.varHandle(MemoryLayout.PathElement.groupElement("should_automount"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeIface.get_activation_root.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$1405.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_activation_root"));
 }
 
 

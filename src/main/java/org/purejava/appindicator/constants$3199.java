@@ -2,32 +2,37 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3199 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3199() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_tree_selection_selected_foreach$func.class, "apply", constants$42.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_selected_foreach",
-        constants$14.const$3
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_iter_is_valid",
+        constants$9.const$0
     );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkTreeSelectionFunc.class, "apply", constants$329.const$5);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_select_path",
-        constants$13.const$4
+        constants$329.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_unselect_path",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_select_iter",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_unselect_iter",
-        constants$13.const$4
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GtkTreeSelectionForeachFunc.class, "apply", constants$42.const$1);
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkTreeSelection");
+    static final VarHandle const$5 = constants$3199.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

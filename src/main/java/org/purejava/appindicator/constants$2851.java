@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2851 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2851() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_selected_foreach",
-        constants$14.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_get_selected_rows",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_unselect_row",
-        constants$13.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_select_all",
-        constants$13.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_unselect_all",
-        constants$13.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_selection_mode",
-        constants$40.const$2
-    );
+    static final VarHandle const$0 = constants$2850.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkListBoxRowClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$2850.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GtkListBoxFilterFunc.class, "apply", constants$9.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GtkListBoxSortFunc.class, "apply", constants$12.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GtkListBoxUpdateHeaderFunc.class, "apply", constants$14.const$3);
 }
 
 

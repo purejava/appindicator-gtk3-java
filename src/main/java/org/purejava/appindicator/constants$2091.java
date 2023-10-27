@@ -9,14 +9,14 @@ final class constants$2091 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2091() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkValueIface.get_increment.class, "apply", constants$67.const$0);
-    static final VarHandle const$1 = constants$2088.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_increment"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkValueIface.get_sub_ranges.class, "apply", constants$5.const$2);
-    static final VarHandle const$3 = constants$2088.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_sub_ranges"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkValueIface.set_value.class, "apply", constants$689.const$5);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        constants$689.const$5
+    static final VarHandle const$0 = constants$2089.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_row_span"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTableCellIface.get_row_header_cells.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$2089.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_row_header_cells"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTableCellIface.get_row_column_span.class, "apply", constants$165.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$165.const$2
     );
+    static final VarHandle const$5 = constants$2089.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_row_column_span"));
 }
 
 

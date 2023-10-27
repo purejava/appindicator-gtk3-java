@@ -24,7 +24,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkTextTagTableClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3116.const$4;
+        return constants$3121.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -38,13 +38,13 @@ public class _GtkTextTagTableClass {
 
         void apply(java.lang.foreign.MemorySegment screen, java.lang.foreign.MemorySegment colors, int n_colors);
         static MemorySegment allocate(tag_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3116.const$5, fi, constants$164.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3121.const$5, fi, constants$164.const$5, scope);
         }
         static tag_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _screen, java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
                 try {
-                    constants$420.const$2.invokeExact(symbol, _screen, _colors, _n_colors);
+                    constants$421.const$2.invokeExact(symbol, _screen, _colors, _n_colors);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -53,7 +53,7 @@ public class _GtkTextTagTableClass {
     }
 
     public static VarHandle tag_changed$VH() {
-        return constants$3117.const$0;
+        return constants$3122.const$0;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static MemorySegment tag_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3117.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3122.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -71,13 +71,13 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static void tag_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$3117.const$0.set(seg, x);
+        constants$3122.const$0.set(seg, x);
     }
     public static MemorySegment tag_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3117.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3122.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void tag_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3117.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3122.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static tag_changed tag_changed(MemorySegment segment, Arena scope) {
         return tag_changed.ofAddress(tag_changed$get(segment), scope);
@@ -91,7 +91,7 @@ public class _GtkTextTagTableClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(tag_added fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3117.const$1, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$3122.const$1, fi, constants$13.const$4, scope);
         }
         static tag_added ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -106,7 +106,7 @@ public class _GtkTextTagTableClass {
     }
 
     public static VarHandle tag_added$VH() {
-        return constants$3117.const$2;
+        return constants$3122.const$2;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static MemorySegment tag_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3117.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3122.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -124,13 +124,13 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static void tag_added$set(MemorySegment seg, MemorySegment x) {
-        constants$3117.const$2.set(seg, x);
+        constants$3122.const$2.set(seg, x);
     }
     public static MemorySegment tag_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3117.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3122.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void tag_added$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3117.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3122.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static tag_added tag_added(MemorySegment segment, Arena scope) {
         return tag_added.ofAddress(tag_added$get(segment), scope);
@@ -144,7 +144,7 @@ public class _GtkTextTagTableClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(tag_removed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3117.const$3, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$3122.const$3, fi, constants$13.const$4, scope);
         }
         static tag_removed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -159,7 +159,7 @@ public class _GtkTextTagTableClass {
     }
 
     public static VarHandle tag_removed$VH() {
-        return constants$3117.const$4;
+        return constants$3122.const$4;
     }
     /**
      * Getter for field:
@@ -168,7 +168,7 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static MemorySegment tag_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3117.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3122.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -177,13 +177,13 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static void tag_removed$set(MemorySegment seg, MemorySegment x) {
-        constants$3117.const$4.set(seg, x);
+        constants$3122.const$4.set(seg, x);
     }
     public static MemorySegment tag_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3117.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3122.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void tag_removed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3117.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3122.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static tag_removed tag_removed(MemorySegment segment, Arena scope) {
         return tag_removed.ofAddress(tag_removed$get(segment), scope);
@@ -197,7 +197,7 @@ public class _GtkTextTagTableClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3117.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3122.const$5, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -212,7 +212,7 @@ public class _GtkTextTagTableClass {
     }
 
     public static VarHandle _gtk_reserved1$VH() {
-        return constants$3118.const$0;
+        return constants$3123.const$0;
     }
     /**
      * Getter for field:
@@ -221,7 +221,7 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3118.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3123.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -230,13 +230,13 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$3118.const$0.set(seg, x);
+        constants$3123.const$0.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3118.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3123.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3118.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3123.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
@@ -250,7 +250,7 @@ public class _GtkTextTagTableClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3118.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3123.const$1, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -265,7 +265,7 @@ public class _GtkTextTagTableClass {
     }
 
     public static VarHandle _gtk_reserved2$VH() {
-        return constants$3118.const$2;
+        return constants$3123.const$2;
     }
     /**
      * Getter for field:
@@ -274,7 +274,7 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3118.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3123.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -283,13 +283,13 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$3118.const$2.set(seg, x);
+        constants$3123.const$2.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3118.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3123.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3118.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3123.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
@@ -303,7 +303,7 @@ public class _GtkTextTagTableClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3118.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3123.const$3, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -318,7 +318,7 @@ public class _GtkTextTagTableClass {
     }
 
     public static VarHandle _gtk_reserved3$VH() {
-        return constants$3118.const$4;
+        return constants$3123.const$4;
     }
     /**
      * Getter for field:
@@ -327,7 +327,7 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3118.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3123.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -336,13 +336,13 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$3118.const$4.set(seg, x);
+        constants$3123.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3118.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3123.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3118.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3123.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
@@ -356,7 +356,7 @@ public class _GtkTextTagTableClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3118.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3123.const$5, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -371,7 +371,7 @@ public class _GtkTextTagTableClass {
     }
 
     public static VarHandle _gtk_reserved4$VH() {
-        return constants$3119.const$0;
+        return constants$3124.const$0;
     }
     /**
      * Getter for field:
@@ -380,7 +380,7 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3119.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3124.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -389,13 +389,13 @@ public class _GtkTextTagTableClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$3119.const$0.set(seg, x);
+        constants$3124.const$0.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3119.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3124.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3119.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3124.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);

@@ -13,13 +13,13 @@ public interface cairo_user_font_face_get_text_to_glyphs_func$return {
 
     int apply(java.lang.foreign.MemorySegment scaled_font, java.lang.foreign.MemorySegment utf8, int utf8_len, java.lang.foreign.MemorySegment glyphs, java.lang.foreign.MemorySegment num_glyphs, java.lang.foreign.MemorySegment clusters, java.lang.foreign.MemorySegment num_clusters, java.lang.foreign.MemorySegment cluster_flags);
     static MemorySegment allocate(cairo_user_font_face_get_text_to_glyphs_func$return fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1714.const$4, fi, constants$1711.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1719.const$4, fi, constants$1716.const$2, scope);
     }
     static cairo_user_font_face_get_text_to_glyphs_func$return ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _scaled_font, java.lang.foreign.MemorySegment _utf8, int _utf8_len, java.lang.foreign.MemorySegment _glyphs, java.lang.foreign.MemorySegment _num_glyphs, java.lang.foreign.MemorySegment _clusters, java.lang.foreign.MemorySegment _num_clusters, java.lang.foreign.MemorySegment _cluster_flags) -> {
             try {
-                return (int)constants$1711.const$4.invokeExact(symbol, _scaled_font, _utf8, _utf8_len, _glyphs, _num_glyphs, _clusters, _num_clusters, _cluster_flags);
+                return (int)constants$1716.const$4.invokeExact(symbol, _scaled_font, _utf8, _utf8_len, _glyphs, _num_glyphs, _clusters, _num_clusters, _cluster_flags);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

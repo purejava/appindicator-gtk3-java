@@ -8,28 +8,28 @@ final class constants$2746 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2746() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_has_alpha",
+        "gtk_gesture_pan_set_orientation",
         constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_has_depth_buffer",
-        constants$10.const$5
+        "gtk_gesture_rotate_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_has_depth_buffer",
-        constants$40.const$2
+        "gtk_gesture_rotate_new",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_has_stencil_buffer",
-        constants$10.const$5
+        "gtk_gesture_rotate_get_angle_delta",
+        constants$67.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_has_stencil_buffer",
-        constants$40.const$2
+        "gtk_gesture_stylus_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_auto_render",
-        constants$10.const$5
+        "gtk_gesture_stylus_new",
+        constants$5.const$2
     );
 }
 

@@ -2,32 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1517 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1517() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_not_found_glyph",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_buffer_deserialize_unicode",
-        constants$1517.const$0
+        "hb_buffer_clear_contents",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_buffer_diff",
-        constants$414.const$4
+        "hb_buffer_pre_allocate",
+        constants$11.const$4
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_buffer_message_func_t.class, "apply", constants$34.const$5);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_buffer_set_message_func$func.class, "apply", constants$34.const$5);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_buffer_set_message_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_buffer_allocation_successful",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_buffer_reverse",
+        constants$13.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_buffer_reverse_range",
+        constants$469.const$2
+    );
 }
 
 

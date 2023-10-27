@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkPopoverClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2869.const$2;
+        return constants$2874.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1008);
@@ -33,7 +33,7 @@ public class _GtkPopoverClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(closed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2869.const$3, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2874.const$3, fi, constants$13.const$1, scope);
         }
         static closed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -48,7 +48,7 @@ public class _GtkPopoverClass {
     }
 
     public static VarHandle closed$VH() {
-        return constants$2869.const$4;
+        return constants$2874.const$4;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GtkPopoverClass {
      * }
      */
     public static MemorySegment closed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2869.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2874.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GtkPopoverClass {
      * }
      */
     public static void closed$set(MemorySegment seg, MemorySegment x) {
-        constants$2869.const$4.set(seg, x);
+        constants$2874.const$4.set(seg, x);
     }
     public static MemorySegment closed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2869.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2874.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void closed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2869.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2874.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static closed closed(MemorySegment segment, Arena scope) {
         return closed.ofAddress(closed$get(segment), scope);

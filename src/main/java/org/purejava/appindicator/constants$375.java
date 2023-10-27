@@ -2,32 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$375 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$375() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_log_set_fatal_mask",
-        constants$11.const$4
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_log_set_default_handler$log_func.class, "apply", constants$179.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_log_set_default_handler$return.class, "apply", constants$179.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_log_set_default_handler",
+        constants$5.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_log_set_always_fatal",
-        constants$8.const$4
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_log",
+        constants$42.const$4
     );
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("key"),
-        RuntimeHelper.POINTER.withName("value"),
-        JAVA_LONG.withName("length")
-    ).withName("_GLogField");
-    static final VarHandle const$3 = constants$375.const$2.varHandle(MemoryLayout.PathElement.groupElement("key"));
-    static final VarHandle const$4 = constants$375.const$2.varHandle(MemoryLayout.PathElement.groupElement("value"));
-    static final VarHandle const$5 = constants$375.const$2.varHandle(MemoryLayout.PathElement.groupElement("length"));
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_logv",
+        constants$375.const$4
+    );
 }
 
 

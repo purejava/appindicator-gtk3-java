@@ -13,13 +13,13 @@ public interface hb_unicode_eastasian_width_func_t {
 
     int apply(java.lang.foreign.MemorySegment ufuncs, int unicode, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_unicode_eastasian_width_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1518.const$5, fi, constants$150.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$1523.const$5, fi, constants$150.const$0, scope);
     }
     static hb_unicode_eastasian_width_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _ufuncs, int _unicode, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$315.const$3.invokeExact(symbol, _ufuncs, _unicode, _user_data);
+                return (int)constants$316.const$3.invokeExact(symbol, _ufuncs, _unicode, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

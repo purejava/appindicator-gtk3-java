@@ -2,39 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1914 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1914() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_from_pixbuf",
-        constants$415.const$5
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_from_surface",
-        constants$1914.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_from_name",
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(pango_cairo_context_get_shape_renderer$return.class, "apply", constants$466.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_get_shape_renderer",
         constants$5.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_display",
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_cairo_create_context",
         constants$5.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_cursor_ref",
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_cairo_create_layout",
         constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_cairo_update_layout",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_glyph_string",
+        constants$14.const$3
     );
 }
 

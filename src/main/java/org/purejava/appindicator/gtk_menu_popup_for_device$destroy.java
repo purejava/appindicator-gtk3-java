@@ -13,7 +13,7 @@ public interface gtk_menu_popup_for_device$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_menu_popup_for_device$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2237.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2242.const$1, fi, constants$13.const$1, scope);
     }
     static gtk_menu_popup_for_device$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

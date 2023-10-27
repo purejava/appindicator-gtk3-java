@@ -8,28 +8,28 @@ final class constants$358 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$358() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_variant_dup_bytestring",
+        "g_variant_dup_string",
         constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_variant_get_bytestring_array",
+        "g_variant_get_strv",
         constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_dup_bytestring_array",
+        "g_variant_dup_strv",
         constants$5.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_new_maybe",
+        "g_variant_get_objv",
         constants$5.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_variant_new_array",
-        constants$17.const$1
+        "g_variant_dup_objv",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_new_tuple",
-        constants$21.const$1
+        "g_variant_get_bytestring",
+        constants$5.const$2
     );
 }
 

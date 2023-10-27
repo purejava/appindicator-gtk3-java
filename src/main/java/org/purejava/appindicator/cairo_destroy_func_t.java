@@ -13,7 +13,7 @@ public interface cairo_destroy_func_t {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(cairo_destroy_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1678.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1683.const$2, fi, constants$13.const$1, scope);
     }
     static cairo_destroy_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

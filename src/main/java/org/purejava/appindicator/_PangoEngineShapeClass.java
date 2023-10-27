@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _PangoEngineShapeClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1605.const$2;
+        return constants$1610.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -33,13 +33,13 @@ public class _PangoEngineShapeClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6, int _x7);
         static MemorySegment allocate(script_shape fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1605.const$4, fi, constants$1605.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$1610.const$4, fi, constants$1610.const$3, scope);
         }
         static script_shape ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6, int __x7) -> {
                 try {
-                    constants$1605.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
+                    constants$1610.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -48,7 +48,7 @@ public class _PangoEngineShapeClass {
     }
 
     public static VarHandle script_shape$VH() {
-        return constants$1606.const$0;
+        return constants$1611.const$0;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _PangoEngineShapeClass {
      * }
      */
     public static MemorySegment script_shape$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1606.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1611.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _PangoEngineShapeClass {
      * }
      */
     public static void script_shape$set(MemorySegment seg, MemorySegment x) {
-        constants$1606.const$0.set(seg, x);
+        constants$1611.const$0.set(seg, x);
     }
     public static MemorySegment script_shape$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1606.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1611.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void script_shape$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1606.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1611.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static script_shape script_shape(MemorySegment segment, Arena scope) {
         return script_shape.ofAddress(script_shape$get(segment), scope);
@@ -86,13 +86,13 @@ public class _PangoEngineShapeClass {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3);
         static MemorySegment allocate(covers fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1606.const$1, fi, constants$311.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1611.const$1, fi, constants$312.const$0, scope);
         }
         static covers ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
                 try {
-                    return (int)constants$1606.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (int)constants$1611.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -101,7 +101,7 @@ public class _PangoEngineShapeClass {
     }
 
     public static VarHandle covers$VH() {
-        return constants$1606.const$3;
+        return constants$1611.const$3;
     }
     /**
      * Getter for field:
@@ -110,7 +110,7 @@ public class _PangoEngineShapeClass {
      * }
      */
     public static MemorySegment covers$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1606.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1611.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -119,13 +119,13 @@ public class _PangoEngineShapeClass {
      * }
      */
     public static void covers$set(MemorySegment seg, MemorySegment x) {
-        constants$1606.const$3.set(seg, x);
+        constants$1611.const$3.set(seg, x);
     }
     public static MemorySegment covers$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1606.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1611.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void covers$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1606.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1611.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static covers covers(MemorySegment segment, Arena scope) {
         return covers.ofAddress(covers$get(segment), scope);

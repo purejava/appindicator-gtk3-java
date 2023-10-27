@@ -2,38 +2,30 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1133 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1133() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_list_store_remove",
-        constants$40.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_list_store_remove_all",
-        constants$13.const$1
-    );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_list_store_splice",
-        constants$1133.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_list_store_find",
-        constants$12.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_list_store_find_with_equal_func$equal_func.class, "apply", constants$9.const$0);
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("get_item_type"),
+        RuntimeHelper.POINTER.withName("get_n_items"),
+        RuntimeHelper.POINTER.withName("get_item")
+    ).withName("_GListModelInterface");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GListModelInterface.get_item_type.class, "apply", constants$4.const$0);
+    static final VarHandle const$2 = constants$1133.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_item_type"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GListModelInterface.get_n_items.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$1133.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_n_items"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GListModelInterface.get_item.class, "apply", constants$21.const$3);
 }
 
 

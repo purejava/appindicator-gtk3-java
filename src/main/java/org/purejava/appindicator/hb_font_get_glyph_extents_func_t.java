@@ -13,13 +13,13 @@ public interface hb_font_get_glyph_extents_func_t {
 
     int apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment extents, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_font_get_glyph_extents_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1480.const$1, fi, constants$859.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1485.const$2, fi, constants$862.const$1, scope);
     }
     static hb_font_get_glyph_extents_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _extents, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$985.const$1.invokeExact(symbol, _font, _font_data, _glyph, _extents, _user_data);
+                return (int)constants$988.const$1.invokeExact(symbol, _font, _font_data, _glyph, _extents, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

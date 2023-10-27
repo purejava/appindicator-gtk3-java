@@ -2,24 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2532 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2532() {}
-    static final VarHandle const$0 = constants$2531.const$5.varHandle(MemoryLayout.PathElement.groupElement("next"));
-    static final VarHandle const$1 = constants$2531.const$5.varHandle(MemoryLayout.PathElement.groupElement("signal_name"));
-    static final VarHandle const$2 = constants$2531.const$5.varHandle(MemoryLayout.PathElement.groupElement("n_args"));
-    static final VarHandle const$3 = constants$2531.const$5.varHandle(MemoryLayout.PathElement.groupElement("args"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_button_box_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_button_box_new",
+        constants$24.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_button_box_get_layout",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_button_box_set_layout",
+        constants$40.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_binding_set_new",
-        constants$5.const$2
+        "gtk_button_box_get_child_secondary",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_binding_set_by_class",
-        constants$5.const$2
+        "gtk_button_box_set_child_secondary",
+        constants$164.const$5
     );
 }
 

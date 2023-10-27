@@ -13,7 +13,7 @@ public interface g_dbus_address_get_stream$callback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_dbus_address_get_stream$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$851.const$5, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$854.const$5, fi, constants$14.const$3, scope);
     }
     static g_dbus_address_get_stream$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

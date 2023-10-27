@@ -22,10 +22,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkRadioActionEntry {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3266.const$1;
+        return constants$3271.const$1;
     }
     public static VarHandle name$VH() {
-        return constants$3266.const$2;
+        return constants$3271.const$2;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3266.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3271.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -43,16 +43,16 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        constants$3266.const$2.set(seg, x);
+        constants$3271.const$2.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3266.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3271.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3266.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3271.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle stock_id$VH() {
-        return constants$3266.const$3;
+        return constants$3271.const$3;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static MemorySegment stock_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3266.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3271.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -70,16 +70,16 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static void stock_id$set(MemorySegment seg, MemorySegment x) {
-        constants$3266.const$3.set(seg, x);
+        constants$3271.const$3.set(seg, x);
     }
     public static MemorySegment stock_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3266.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3271.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void stock_id$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3266.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3271.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle label$VH() {
-        return constants$3266.const$4;
+        return constants$3271.const$4;
     }
     /**
      * Getter for field:
@@ -88,7 +88,7 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static MemorySegment label$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3266.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3271.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -97,16 +97,16 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static void label$set(MemorySegment seg, MemorySegment x) {
-        constants$3266.const$4.set(seg, x);
+        constants$3271.const$4.set(seg, x);
     }
     public static MemorySegment label$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3266.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3271.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void label$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3266.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3271.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle accelerator$VH() {
-        return constants$3266.const$5;
+        return constants$3271.const$5;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static MemorySegment accelerator$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3266.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3271.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -124,16 +124,16 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static void accelerator$set(MemorySegment seg, MemorySegment x) {
-        constants$3266.const$5.set(seg, x);
+        constants$3271.const$5.set(seg, x);
     }
     public static MemorySegment accelerator$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3266.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3271.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void accelerator$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3266.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3271.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle tooltip$VH() {
-        return constants$3267.const$0;
+        return constants$3272.const$0;
     }
     /**
      * Getter for field:
@@ -142,7 +142,7 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static MemorySegment tooltip$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3267.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3272.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -151,16 +151,16 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static void tooltip$set(MemorySegment seg, MemorySegment x) {
-        constants$3267.const$0.set(seg, x);
+        constants$3272.const$0.set(seg, x);
     }
     public static MemorySegment tooltip$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3267.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3272.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void tooltip$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3267.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3272.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle value$VH() {
-        return constants$3267.const$1;
+        return constants$3272.const$1;
     }
     /**
      * Getter for field:
@@ -169,7 +169,7 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static int value$get(MemorySegment seg) {
-        return (int)constants$3267.const$1.get(seg);
+        return (int)constants$3272.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -178,13 +178,13 @@ public class _GtkRadioActionEntry {
      * }
      */
     public static void value$set(MemorySegment seg, int x) {
-        constants$3267.const$1.set(seg, x);
+        constants$3272.const$1.set(seg, x);
     }
     public static int value$get(MemorySegment seg, long index) {
-        return (int)constants$3267.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3272.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void value$set(MemorySegment seg, long index, int x) {
-        constants$3267.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3272.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

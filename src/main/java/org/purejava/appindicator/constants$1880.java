@@ -2,34 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1880 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1880() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_unref",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_colorspace",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_n_channels",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$1879.const$4.varHandle(MemoryLayout.PathElement.groupElement("red"));
+    static final VarHandle const$1 = constants$1879.const$4.varHandle(MemoryLayout.PathElement.groupElement("green"));
+    static final VarHandle const$2 = constants$1879.const$4.varHandle(MemoryLayout.PathElement.groupElement("blue"));
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_has_alpha",
-        constants$10.const$5
+        "gdk_color_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_bits_per_sample",
-        constants$10.const$5
+        "gdk_color_copy",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_pixels",
-        constants$5.const$2
+        "gdk_color_free",
+        constants$13.const$1
     );
 }
 

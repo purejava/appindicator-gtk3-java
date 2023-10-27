@@ -4,28 +4,36 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$546 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$546() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        JAVA_LONG.withName("g_type"),
-        JAVA_LONG.withName("g_instance_type")
-    ).withName("_GTypeInterface");
-    static final VarHandle const$1 = constants$546.const$0.varHandle(MemoryLayout.PathElement.groupElement("g_type"));
-    static final VarHandle const$2 = constants$546.const$0.varHandle(MemoryLayout.PathElement.groupElement("g_instance_type"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        JAVA_LONG.withName("type"),
-        RuntimeHelper.POINTER.withName("type_name"),
-        JAVA_INT.withName("class_size"),
-        JAVA_INT.withName("instance_size")
-    ).withName("_GTypeQuery");
-    static final VarHandle const$4 = constants$546.const$3.varHandle(MemoryLayout.PathElement.groupElement("type"));
-    static final VarHandle const$5 = constants$546.const$3.varHandle(MemoryLayout.PathElement.groupElement("type_name"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mutex_new",
+        constants$35.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_mutex_free",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_cond_new",
+        constants$35.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_cond_free",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_cond_timed_wait",
+        constants$12.const$2
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("g_type")
+    ).withName("_GTypeClass");
 }
 
 

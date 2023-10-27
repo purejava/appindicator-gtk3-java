@@ -9,12 +9,12 @@ final class constants$2077 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2077() {}
-    static final VarHandle const$0 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("remove_column_selection"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTableIface.row_inserted.class, "apply", constants$467.const$3);
-    static final VarHandle const$2 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("row_inserted"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTableIface.column_inserted.class, "apply", constants$467.const$3);
-    static final VarHandle const$4 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("column_inserted"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTableIface.row_deleted.class, "apply", constants$467.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkTableIface.get_summary.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$2072.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_summary"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkTableIface.set_caption.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$2072.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_caption"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkTableIface.set_column_description.class, "apply", constants$42.const$4);
+    static final VarHandle const$5 = constants$2072.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_column_description"));
 }
 
 

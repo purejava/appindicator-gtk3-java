@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _PangoEngineShape {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1605.const$1;
+        return constants$1610.const$1;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);

@@ -2,38 +2,58 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1416 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1416() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_language_matches",
-        constants$9.const$0
+        "g_volume_get_sort_key",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_script_from_iso15924_tag",
-        constants$8.const$4
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class")
+    ).withName("_GZlibCompressorClass");
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_script_from_string",
-        constants$11.const$4
+        "g_zlib_compressor_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_script_to_iso15924_tag",
-        constants$8.const$4
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_script_get_horizontal_direction",
-        constants$8.const$4
+        "g_zlib_compressor_new",
+        constants$1416.const$3
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        JAVA_BYTE.withName("unused")
-    ).withName("hb_user_data_key_t");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_zlib_compressor_get_file_info",
+        constants$5.const$2
+    );
 }
 
 

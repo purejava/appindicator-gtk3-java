@@ -27,13 +27,13 @@ import java.lang.invoke.VarHandle;
 public class _GtkAccelLabelClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2255.const$5;
+        return constants$2260.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 952);
     }
     public static VarHandle signal_quote1$VH() {
-        return constants$2256.const$0;
+        return constants$2261.const$0;
     }
     /**
      * Getter for field:
@@ -42,7 +42,7 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static MemorySegment signal_quote1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2261.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -51,16 +51,16 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static void signal_quote1$set(MemorySegment seg, MemorySegment x) {
-        constants$2256.const$0.set(seg, x);
+        constants$2261.const$0.set(seg, x);
     }
     public static MemorySegment signal_quote1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2261.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void signal_quote1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2256.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2261.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle signal_quote2$VH() {
-        return constants$2256.const$1;
+        return constants$2261.const$1;
     }
     /**
      * Getter for field:
@@ -69,7 +69,7 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static MemorySegment signal_quote2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2261.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -78,16 +78,16 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static void signal_quote2$set(MemorySegment seg, MemorySegment x) {
-        constants$2256.const$1.set(seg, x);
+        constants$2261.const$1.set(seg, x);
     }
     public static MemorySegment signal_quote2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2261.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void signal_quote2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2256.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2261.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle mod_name_shift$VH() {
-        return constants$2256.const$2;
+        return constants$2261.const$2;
     }
     /**
      * Getter for field:
@@ -96,7 +96,7 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static MemorySegment mod_name_shift$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2261.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -105,16 +105,16 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static void mod_name_shift$set(MemorySegment seg, MemorySegment x) {
-        constants$2256.const$2.set(seg, x);
+        constants$2261.const$2.set(seg, x);
     }
     public static MemorySegment mod_name_shift$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2261.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void mod_name_shift$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2256.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2261.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle mod_name_control$VH() {
-        return constants$2256.const$3;
+        return constants$2261.const$3;
     }
     /**
      * Getter for field:
@@ -123,7 +123,7 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static MemorySegment mod_name_control$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2261.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -132,16 +132,16 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static void mod_name_control$set(MemorySegment seg, MemorySegment x) {
-        constants$2256.const$3.set(seg, x);
+        constants$2261.const$3.set(seg, x);
     }
     public static MemorySegment mod_name_control$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2261.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void mod_name_control$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2256.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2261.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle mod_name_alt$VH() {
-        return constants$2256.const$4;
+        return constants$2261.const$4;
     }
     /**
      * Getter for field:
@@ -150,7 +150,7 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static MemorySegment mod_name_alt$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2261.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -159,16 +159,16 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static void mod_name_alt$set(MemorySegment seg, MemorySegment x) {
-        constants$2256.const$4.set(seg, x);
+        constants$2261.const$4.set(seg, x);
     }
     public static MemorySegment mod_name_alt$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2261.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void mod_name_alt$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2256.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2261.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle mod_separator$VH() {
-        return constants$2256.const$5;
+        return constants$2261.const$5;
     }
     /**
      * Getter for field:
@@ -177,7 +177,7 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static MemorySegment mod_separator$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2261.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -186,13 +186,13 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static void mod_separator$set(MemorySegment seg, MemorySegment x) {
-        constants$2256.const$5.set(seg, x);
+        constants$2261.const$5.set(seg, x);
     }
     public static MemorySegment mod_separator$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2256.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2261.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void mod_separator$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2256.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2261.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -203,7 +203,7 @@ public class _GtkAccelLabelClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2257.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2262.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -218,7 +218,7 @@ public class _GtkAccelLabelClass {
     }
 
     public static VarHandle _gtk_reserved1$VH() {
-        return constants$2257.const$1;
+        return constants$2262.const$1;
     }
     /**
      * Getter for field:
@@ -227,7 +227,7 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2257.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2262.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -236,13 +236,13 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$2257.const$1.set(seg, x);
+        constants$2262.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2257.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2262.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2257.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2262.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
@@ -256,7 +256,7 @@ public class _GtkAccelLabelClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2257.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2262.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -271,7 +271,7 @@ public class _GtkAccelLabelClass {
     }
 
     public static VarHandle _gtk_reserved2$VH() {
-        return constants$2257.const$3;
+        return constants$2262.const$3;
     }
     /**
      * Getter for field:
@@ -280,7 +280,7 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2257.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2262.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -289,13 +289,13 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$2257.const$3.set(seg, x);
+        constants$2262.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2257.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2262.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2257.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2262.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
@@ -309,7 +309,7 @@ public class _GtkAccelLabelClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2257.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2262.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -324,7 +324,7 @@ public class _GtkAccelLabelClass {
     }
 
     public static VarHandle _gtk_reserved3$VH() {
-        return constants$2257.const$5;
+        return constants$2262.const$5;
     }
     /**
      * Getter for field:
@@ -333,7 +333,7 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2257.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2262.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -342,13 +342,13 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$2257.const$5.set(seg, x);
+        constants$2262.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2257.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2262.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2257.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2262.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
@@ -362,7 +362,7 @@ public class _GtkAccelLabelClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2258.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2263.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -377,7 +377,7 @@ public class _GtkAccelLabelClass {
     }
 
     public static VarHandle _gtk_reserved4$VH() {
-        return constants$2258.const$1;
+        return constants$2263.const$1;
     }
     /**
      * Getter for field:
@@ -386,7 +386,7 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2258.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2263.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -395,13 +395,13 @@ public class _GtkAccelLabelClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$2258.const$1.set(seg, x);
+        constants$2263.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2258.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2263.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2258.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2263.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);

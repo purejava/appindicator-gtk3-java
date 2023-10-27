@@ -2,40 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.foreign.UnionLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$644 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$644() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_binding_dup_target",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_binding_get_source_property",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_binding_get_target_property",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_binding_unbind",
+        "g_clear_object",
         constants$13.const$1
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.unionLayout(
+            RuntimeHelper.POINTER.withName("p")
+        ).withName("priv")
+    ).withName("GWeakRef");
+    static final UnionLayout const$2 = MemoryLayout.unionLayout(
+        RuntimeHelper.POINTER.withName("p")
+    ).withName("");
+    static final VarHandle const$3 = constants$644.const$2.varHandle(MemoryLayout.PathElement.groupElement("p"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_weak_ref_init",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_object_bind_property",
-        constants$644.const$4
+        "g_weak_ref_clear",
+        constants$13.const$1
     );
 }
 

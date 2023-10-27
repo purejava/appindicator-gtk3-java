@@ -13,7 +13,7 @@ public interface GtkFlowBoxFilterFunc {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GtkFlowBoxFilterFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2715.const$4, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$2720.const$4, fi, constants$9.const$0, scope);
     }
     static GtkFlowBoxFilterFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

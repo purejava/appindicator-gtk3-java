@@ -13,7 +13,7 @@ public interface GTestDataFunc {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(GTestDataFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$448.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$449.const$5, fi, constants$13.const$1, scope);
     }
     static GTestDataFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -13,7 +13,7 @@ public interface g_value_array_sort$compare_func {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_value_array_sort$compare_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$685.const$1, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$687.const$5, fi, constants$9.const$0, scope);
     }
     static g_value_array_sort$compare_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

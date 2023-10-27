@@ -19,10 +19,10 @@ import java.lang.invoke.VarHandle;
 public class hb_color_stop_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1458.const$1;
+        return constants$1462.const$3;
     }
     public static VarHandle offset$VH() {
-        return constants$1458.const$2;
+        return constants$1462.const$4;
     }
     /**
      * Getter for field:
@@ -31,7 +31,7 @@ public class hb_color_stop_t {
      * }
      */
     public static float offset$get(MemorySegment seg) {
-        return (float)constants$1458.const$2.get(seg);
+        return (float)constants$1462.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -40,16 +40,16 @@ public class hb_color_stop_t {
      * }
      */
     public static void offset$set(MemorySegment seg, float x) {
-        constants$1458.const$2.set(seg, x);
+        constants$1462.const$4.set(seg, x);
     }
     public static float offset$get(MemorySegment seg, long index) {
-        return (float)constants$1458.const$2.get(seg.asSlice(index*sizeof()));
+        return (float)constants$1462.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void offset$set(MemorySegment seg, long index, float x) {
-        constants$1458.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1462.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle is_foreground$VH() {
-        return constants$1458.const$3;
+        return constants$1462.const$5;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class hb_color_stop_t {
      * }
      */
     public static int is_foreground$get(MemorySegment seg) {
-        return (int)constants$1458.const$3.get(seg);
+        return (int)constants$1462.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -67,16 +67,16 @@ public class hb_color_stop_t {
      * }
      */
     public static void is_foreground$set(MemorySegment seg, int x) {
-        constants$1458.const$3.set(seg, x);
+        constants$1462.const$5.set(seg, x);
     }
     public static int is_foreground$get(MemorySegment seg, long index) {
-        return (int)constants$1458.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1462.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void is_foreground$set(MemorySegment seg, long index, int x) {
-        constants$1458.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1462.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle color$VH() {
-        return constants$1458.const$4;
+        return constants$1463.const$0;
     }
     /**
      * Getter for field:
@@ -85,7 +85,7 @@ public class hb_color_stop_t {
      * }
      */
     public static int color$get(MemorySegment seg) {
-        return (int)constants$1458.const$4.get(seg);
+        return (int)constants$1463.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -94,13 +94,13 @@ public class hb_color_stop_t {
      * }
      */
     public static void color$set(MemorySegment seg, int x) {
-        constants$1458.const$4.set(seg, x);
+        constants$1463.const$0.set(seg, x);
     }
     public static int color$get(MemorySegment seg, long index) {
-        return (int)constants$1458.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1463.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void color$set(MemorySegment seg, long index, int x) {
-        constants$1458.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1463.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

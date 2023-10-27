@@ -8,28 +8,28 @@ final class constants$1124 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1124() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_io_module_get_type",
+        "g_notification_priority_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_io_module_new",
-        constants$5.const$2
+        "g_network_connectivity_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_io_modules_scan_all_in_directory",
-        constants$13.const$1
+        "g_pollable_return_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_io_modules_load_all_in_directory",
-        constants$5.const$2
+        "g_memory_monitor_warning_level_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_io_modules_scan_all_in_directory_with_scope",
-        constants$13.const$4
+        "g_resolver_name_lookup_flags_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_io_modules_load_all_in_directory_with_scope",
-        constants$5.const$5
+        "g_settings_bind_flags_get_type",
+        constants$3.const$5
     );
 }
 

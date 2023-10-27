@@ -2,34 +2,38 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$823 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$823() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "getgid",
-        constants$83.const$1
+        "_exit",
+        constants$80.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "getegid",
-        constants$83.const$1
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "getgroups",
-        constants$9.const$2
+        "pathconf",
+        constants$823.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "setuid",
-        constants$8.const$4
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "setreuid",
-        constants$123.const$5
+        "fpathconf",
+        constants$823.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "seteuid",
-        constants$8.const$4
+        "sysconf",
+        constants$173.const$0
     );
 }
 

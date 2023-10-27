@@ -18,13 +18,13 @@ import java.lang.invoke.VarHandle;
 public class _PangoAttrInt {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1564.const$1;
+        return constants$1569.const$1;
     }
     public static MemorySegment attr$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
     public static VarHandle value$VH() {
-        return constants$1564.const$2;
+        return constants$1569.const$2;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class _PangoAttrInt {
      * }
      */
     public static int value$get(MemorySegment seg) {
-        return (int)constants$1564.const$2.get(seg);
+        return (int)constants$1569.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -42,13 +42,13 @@ public class _PangoAttrInt {
      * }
      */
     public static void value$set(MemorySegment seg, int x) {
-        constants$1564.const$2.set(seg, x);
+        constants$1569.const$2.set(seg, x);
     }
     public static int value$get(MemorySegment seg, long index) {
-        return (int)constants$1564.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1569.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void value$set(MemorySegment seg, long index, int x) {
-        constants$1564.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1569.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

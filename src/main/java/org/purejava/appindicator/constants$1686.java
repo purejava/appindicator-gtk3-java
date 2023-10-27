@@ -8,28 +8,25 @@ final class constants$1686 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1686() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_user_to_device",
-        constants$14.const$3
+        "cairo_get_user_data",
+        constants$5.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_user_to_device_distance",
-        constants$14.const$3
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_set_user_data$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_device_to_user",
-        constants$14.const$3
+        "cairo_set_user_data",
+        constants$34.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_device_to_user_distance",
-        constants$14.const$3
+        "cairo_save",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_new_path",
+        "cairo_restore",
         constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_move_to",
-        constants$1531.const$0
+        "cairo_push_group",
+        constants$13.const$1
     );
 }
 

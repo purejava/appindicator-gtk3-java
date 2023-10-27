@@ -13,7 +13,7 @@ public interface gtk_flow_box_bind_model$user_data_free_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_flow_box_bind_model$user_data_free_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2710.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2715.const$5, fi, constants$13.const$1, scope);
     }
     static gtk_flow_box_bind_model$user_data_free_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

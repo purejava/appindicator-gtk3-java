@@ -2,36 +2,42 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1134 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1134() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_list_store_find_with_equal_func",
-        constants$34.const$5
+    static final VarHandle const$0 = constants$1133.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_item"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_list_model_get_item_type",
+        constants$4.const$0
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_list_store_find_with_equal_func_full$equal_func.class, "apply", constants$12.const$2);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_list_store_find_with_equal_func_full",
-        constants$165.const$2
+        "g_list_model_get_n_items",
+        constants$10.const$5
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("load"),
-        RuntimeHelper.POINTER.withName("load_async"),
-        RuntimeHelper.POINTER.withName("load_finish")
-    ).withName("_GLoadableIconIface");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GLoadableIconIface.load.class, "apply", constants$855.const$5);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        constants$855.const$5
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_list_model_get_item",
+        constants$21.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_list_model_get_object",
+        constants$21.const$3
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_list_model_items_changed",
+        constants$1134.const$5
     );
 }
 

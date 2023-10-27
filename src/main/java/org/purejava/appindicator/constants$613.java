@@ -2,34 +2,48 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$613 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$613() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_signal_accumulator_true_handled",
-        constants$34.const$5
+        "g_signal_handler_disconnect",
+        constants$25.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_signal_accumulator_first_wins",
-        constants$34.const$5
+        "g_signal_handler_is_connected",
+        constants$97.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_signal_handlers_destroy",
-        constants$13.const$1
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "_g_signals_destroy",
-        constants$84.const$5
+        "g_signal_handler_find",
+        constants$613.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_date_get_type",
-        constants$3.const$5
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_strv_get_type",
-        constants$3.const$5
+        "g_signal_handlers_block_matched",
+        constants$613.const$4
     );
 }
 

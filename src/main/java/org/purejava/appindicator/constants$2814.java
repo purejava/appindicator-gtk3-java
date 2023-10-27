@@ -2,41 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2814 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2814() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_cursor",
-        constants$331.const$4
+        "gtk_icon_view_set_item_width",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_cursor",
-        constants$12.const$2
+        "gtk_icon_view_get_item_width",
+        constants$10.const$5
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_FLOAT,
-        JAVA_FLOAT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_set_spacing",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_scroll_to_path",
-        constants$2814.const$2
+        "gtk_icon_view_get_spacing",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_enable_model_drag_source",
-        constants$2484.const$3
+        "gtk_icon_view_set_row_spacing",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_enable_model_drag_dest",
-        constants$1043.const$2
+        "gtk_icon_view_get_row_spacing",
+        constants$10.const$5
     );
 }
 

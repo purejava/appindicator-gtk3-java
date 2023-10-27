@@ -3,31 +3,21 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$512 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$512() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_thread_create_full$func.class, "apply", constants$5.const$2);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_thread_create_full",
-        constants$416.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_thread_set_priority",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_thread_foreach$thread_func.class, "apply", constants$13.const$4);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_thread_foreach",
-        constants$13.const$4
-    );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        JAVA_INT.withName("sched_priority")
-    ).withName("sched_param");
+    static final VarHandle const$0 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("thread_self"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GThreadFunctions.thread_equal.class, "apply", constants$9.const$0);
+    static final VarHandle const$2 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("thread_equal"));
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("g_thread_functions_for_glib_use", constants$504.const$4);
+    static final MemorySegment const$4 = RuntimeHelper.lookupGlobalVariable("g_thread_use_default_impl", JAVA_INT);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_thread_gettime.class, "apply", constants$3.const$5);
 }
 
 

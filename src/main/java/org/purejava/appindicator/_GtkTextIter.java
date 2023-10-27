@@ -30,10 +30,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkTextIter {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2365.const$1;
+        return constants$2370.const$1;
     }
     public static VarHandle dummy1$VH() {
-        return constants$2365.const$2;
+        return constants$2370.const$2;
     }
     /**
      * Getter for field:
@@ -42,7 +42,7 @@ public class _GtkTextIter {
      * }
      */
     public static MemorySegment dummy1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2365.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2370.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -51,16 +51,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy1$set(MemorySegment seg, MemorySegment x) {
-        constants$2365.const$2.set(seg, x);
+        constants$2370.const$2.set(seg, x);
     }
     public static MemorySegment dummy1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2365.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2370.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2365.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2370.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy2$VH() {
-        return constants$2365.const$3;
+        return constants$2370.const$3;
     }
     /**
      * Getter for field:
@@ -69,7 +69,7 @@ public class _GtkTextIter {
      * }
      */
     public static MemorySegment dummy2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2365.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2370.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -78,16 +78,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy2$set(MemorySegment seg, MemorySegment x) {
-        constants$2365.const$3.set(seg, x);
+        constants$2370.const$3.set(seg, x);
     }
     public static MemorySegment dummy2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2365.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2370.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2365.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2370.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy3$VH() {
-        return constants$2365.const$4;
+        return constants$2370.const$4;
     }
     /**
      * Getter for field:
@@ -96,7 +96,7 @@ public class _GtkTextIter {
      * }
      */
     public static int dummy3$get(MemorySegment seg) {
-        return (int)constants$2365.const$4.get(seg);
+        return (int)constants$2370.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -105,16 +105,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy3$set(MemorySegment seg, int x) {
-        constants$2365.const$4.set(seg, x);
+        constants$2370.const$4.set(seg, x);
     }
     public static int dummy3$get(MemorySegment seg, long index) {
-        return (int)constants$2365.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2370.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy3$set(MemorySegment seg, long index, int x) {
-        constants$2365.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2370.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy4$VH() {
-        return constants$2365.const$5;
+        return constants$2370.const$5;
     }
     /**
      * Getter for field:
@@ -123,7 +123,7 @@ public class _GtkTextIter {
      * }
      */
     public static int dummy4$get(MemorySegment seg) {
-        return (int)constants$2365.const$5.get(seg);
+        return (int)constants$2370.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -132,16 +132,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy4$set(MemorySegment seg, int x) {
-        constants$2365.const$5.set(seg, x);
+        constants$2370.const$5.set(seg, x);
     }
     public static int dummy4$get(MemorySegment seg, long index) {
-        return (int)constants$2365.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2370.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy4$set(MemorySegment seg, long index, int x) {
-        constants$2365.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2370.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy5$VH() {
-        return constants$2366.const$0;
+        return constants$2371.const$0;
     }
     /**
      * Getter for field:
@@ -150,7 +150,7 @@ public class _GtkTextIter {
      * }
      */
     public static int dummy5$get(MemorySegment seg) {
-        return (int)constants$2366.const$0.get(seg);
+        return (int)constants$2371.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -159,16 +159,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy5$set(MemorySegment seg, int x) {
-        constants$2366.const$0.set(seg, x);
+        constants$2371.const$0.set(seg, x);
     }
     public static int dummy5$get(MemorySegment seg, long index) {
-        return (int)constants$2366.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2371.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy5$set(MemorySegment seg, long index, int x) {
-        constants$2366.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2371.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy6$VH() {
-        return constants$2366.const$1;
+        return constants$2371.const$1;
     }
     /**
      * Getter for field:
@@ -177,7 +177,7 @@ public class _GtkTextIter {
      * }
      */
     public static int dummy6$get(MemorySegment seg) {
-        return (int)constants$2366.const$1.get(seg);
+        return (int)constants$2371.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -186,16 +186,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy6$set(MemorySegment seg, int x) {
-        constants$2366.const$1.set(seg, x);
+        constants$2371.const$1.set(seg, x);
     }
     public static int dummy6$get(MemorySegment seg, long index) {
-        return (int)constants$2366.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2371.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy6$set(MemorySegment seg, long index, int x) {
-        constants$2366.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2371.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy7$VH() {
-        return constants$2366.const$2;
+        return constants$2371.const$2;
     }
     /**
      * Getter for field:
@@ -204,7 +204,7 @@ public class _GtkTextIter {
      * }
      */
     public static int dummy7$get(MemorySegment seg) {
-        return (int)constants$2366.const$2.get(seg);
+        return (int)constants$2371.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -213,16 +213,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy7$set(MemorySegment seg, int x) {
-        constants$2366.const$2.set(seg, x);
+        constants$2371.const$2.set(seg, x);
     }
     public static int dummy7$get(MemorySegment seg, long index) {
-        return (int)constants$2366.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2371.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy7$set(MemorySegment seg, long index, int x) {
-        constants$2366.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2371.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy8$VH() {
-        return constants$2366.const$3;
+        return constants$2371.const$3;
     }
     /**
      * Getter for field:
@@ -231,7 +231,7 @@ public class _GtkTextIter {
      * }
      */
     public static int dummy8$get(MemorySegment seg) {
-        return (int)constants$2366.const$3.get(seg);
+        return (int)constants$2371.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -240,16 +240,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy8$set(MemorySegment seg, int x) {
-        constants$2366.const$3.set(seg, x);
+        constants$2371.const$3.set(seg, x);
     }
     public static int dummy8$get(MemorySegment seg, long index) {
-        return (int)constants$2366.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2371.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy8$set(MemorySegment seg, long index, int x) {
-        constants$2366.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2371.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy9$VH() {
-        return constants$2366.const$4;
+        return constants$2371.const$4;
     }
     /**
      * Getter for field:
@@ -258,7 +258,7 @@ public class _GtkTextIter {
      * }
      */
     public static MemorySegment dummy9$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2366.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2371.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -267,16 +267,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy9$set(MemorySegment seg, MemorySegment x) {
-        constants$2366.const$4.set(seg, x);
+        constants$2371.const$4.set(seg, x);
     }
     public static MemorySegment dummy9$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2366.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2371.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy9$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2366.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2371.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy10$VH() {
-        return constants$2366.const$5;
+        return constants$2371.const$5;
     }
     /**
      * Getter for field:
@@ -285,7 +285,7 @@ public class _GtkTextIter {
      * }
      */
     public static MemorySegment dummy10$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2366.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2371.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -294,16 +294,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy10$set(MemorySegment seg, MemorySegment x) {
-        constants$2366.const$5.set(seg, x);
+        constants$2371.const$5.set(seg, x);
     }
     public static MemorySegment dummy10$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2366.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2371.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy10$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2366.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2371.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy11$VH() {
-        return constants$2367.const$0;
+        return constants$2372.const$0;
     }
     /**
      * Getter for field:
@@ -312,7 +312,7 @@ public class _GtkTextIter {
      * }
      */
     public static int dummy11$get(MemorySegment seg) {
-        return (int)constants$2367.const$0.get(seg);
+        return (int)constants$2372.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -321,16 +321,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy11$set(MemorySegment seg, int x) {
-        constants$2367.const$0.set(seg, x);
+        constants$2372.const$0.set(seg, x);
     }
     public static int dummy11$get(MemorySegment seg, long index) {
-        return (int)constants$2367.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2372.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy11$set(MemorySegment seg, long index, int x) {
-        constants$2367.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2372.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy12$VH() {
-        return constants$2367.const$1;
+        return constants$2372.const$1;
     }
     /**
      * Getter for field:
@@ -339,7 +339,7 @@ public class _GtkTextIter {
      * }
      */
     public static int dummy12$get(MemorySegment seg) {
-        return (int)constants$2367.const$1.get(seg);
+        return (int)constants$2372.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -348,16 +348,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy12$set(MemorySegment seg, int x) {
-        constants$2367.const$1.set(seg, x);
+        constants$2372.const$1.set(seg, x);
     }
     public static int dummy12$get(MemorySegment seg, long index) {
-        return (int)constants$2367.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2372.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy12$set(MemorySegment seg, long index, int x) {
-        constants$2367.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2372.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy13$VH() {
-        return constants$2367.const$2;
+        return constants$2372.const$2;
     }
     /**
      * Getter for field:
@@ -366,7 +366,7 @@ public class _GtkTextIter {
      * }
      */
     public static int dummy13$get(MemorySegment seg) {
-        return (int)constants$2367.const$2.get(seg);
+        return (int)constants$2372.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -375,16 +375,16 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy13$set(MemorySegment seg, int x) {
-        constants$2367.const$2.set(seg, x);
+        constants$2372.const$2.set(seg, x);
     }
     public static int dummy13$get(MemorySegment seg, long index) {
-        return (int)constants$2367.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2372.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy13$set(MemorySegment seg, long index, int x) {
-        constants$2367.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2372.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy14$VH() {
-        return constants$2367.const$3;
+        return constants$2372.const$3;
     }
     /**
      * Getter for field:
@@ -393,7 +393,7 @@ public class _GtkTextIter {
      * }
      */
     public static MemorySegment dummy14$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2367.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2372.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -402,13 +402,13 @@ public class _GtkTextIter {
      * }
      */
     public static void dummy14$set(MemorySegment seg, MemorySegment x) {
-        constants$2367.const$3.set(seg, x);
+        constants$2372.const$3.set(seg, x);
     }
     public static MemorySegment dummy14$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2367.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2372.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy14$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2367.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2372.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

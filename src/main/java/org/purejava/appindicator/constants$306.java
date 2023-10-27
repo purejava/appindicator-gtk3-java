@@ -2,31 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$306 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$306() {}
-    static final VarHandle const$0 = constants$305.const$4.varHandle(MemoryLayout.PathElement.groupElement("len"));
-    static final VarHandle const$1 = constants$305.const$4.varHandle(MemoryLayout.PathElement.groupElement("allocated_len"));
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_ascii_string_to_signed",
+        constants$306.const$0
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_string_new",
-        constants$5.const$2
+        "g_ascii_string_to_unsigned",
+        constants$306.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_string_new_len",
-        constants$21.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_string_sized_new",
-        constants$63.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_string_free",
-        constants$21.const$3
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("str"),
+        JAVA_LONG.withName("len"),
+        JAVA_LONG.withName("allocated_len")
+    ).withName("_GString");
+    static final VarHandle const$4 = constants$306.const$3.varHandle(MemoryLayout.PathElement.groupElement("str"));
+    static final VarHandle const$5 = constants$306.const$3.varHandle(MemoryLayout.PathElement.groupElement("len"));
 }
 
 

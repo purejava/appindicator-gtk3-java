@@ -13,7 +13,7 @@ public interface g_binding_group_bind_full$user_data_destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_binding_group_bind_full$user_data_destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$647.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$650.const$0, fi, constants$13.const$1, scope);
     }
     static g_binding_group_bind_full$user_data_destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

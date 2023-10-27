@@ -7,56 +7,33 @@ import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2061 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2061() {}
-    static final VarHandle const$0 = constants$2060.const$4.varHandle(MemoryLayout.PathElement.groupElement("embed"));
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_socket_new",
-        constants$35.const$2
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_relation_set_add_relation_by_type",
+        constants$42.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_socket_embed",
-        constants$13.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_socket_is_occupied",
-        constants$10.const$5
-    );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
+    static final StructLayout const$1 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent")
-    ).withName("_AtkStateSet");
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent")
-    ).withName("_AtkStateSetClass");
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("add_selection"),
+        RuntimeHelper.POINTER.withName("clear_selection"),
+        RuntimeHelper.POINTER.withName("ref_selection"),
+        RuntimeHelper.POINTER.withName("get_selection_count"),
+        RuntimeHelper.POINTER.withName("is_child_selected"),
+        RuntimeHelper.POINTER.withName("remove_selection"),
+        RuntimeHelper.POINTER.withName("select_all_selection"),
+        RuntimeHelper.POINTER.withName("selection_changed")
+    ).withName("_AtkSelectionIface");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkSelectionIface.add_selection.class, "apply", constants$11.const$4);
+    static final VarHandle const$3 = constants$2061.const$1.varHandle(MemoryLayout.PathElement.groupElement("add_selection"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkSelectionIface.clear_selection.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$2061.const$1.varHandle(MemoryLayout.PathElement.groupElement("clear_selection"));
 }
 
 

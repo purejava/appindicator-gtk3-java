@@ -2,29 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$685 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$685() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_value_array_remove",
-        constants$21.const$3
+        "g_type_plugin_use",
+        constants$13.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_value_array_sort$compare_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_plugin_unuse",
+        constants$13.const$1
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_value_array_sort",
-        constants$5.const$5
+        "g_type_plugin_complete_type_info",
+        constants$682.const$3
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_value_array_sort_with_data$compare_func.class, "apply", constants$12.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_value_array_sort_with_data",
-        constants$23.const$0
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_type_plugin_complete_interface_info",
+        constants$94.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_value_set_char",
-        constants$188.const$5
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("n_values"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("values"),
+        JAVA_INT.withName("n_prealloced"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GValueArray");
+    static final VarHandle const$5 = constants$685.const$4.varHandle(MemoryLayout.PathElement.groupElement("n_values"));
 }
 
 

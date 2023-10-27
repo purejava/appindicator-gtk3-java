@@ -2,52 +2,25 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$629 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$629() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_object_get_type",
+    static final VarHandle const$0 = constants$625.const$1.varHandle(MemoryLayout.PathElement.groupElement("pspecs"));
+    static final VarHandle const$1 = constants$625.const$1.varHandle(MemoryLayout.PathElement.groupElement("n_pspecs"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("pspec"),
+        RuntimeHelper.POINTER.withName("value")
+    ).withName("_GObjectConstructParam");
+    static final VarHandle const$3 = constants$629.const$2.varHandle(MemoryLayout.PathElement.groupElement("pspec"));
+    static final VarHandle const$4 = constants$629.const$2.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_initially_unowned_get_type",
         constants$3.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "g_object_new",
-        constants$407.const$2
-    );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_object_new_with_properties",
-        constants$629.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_object_newv",
-        constants$623.const$1
-    );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("__stack"),
-            RuntimeHelper.POINTER.withName("__gr_top"),
-            RuntimeHelper.POINTER.withName("__vr_top"),
-            JAVA_INT.withName("__gr_offs"),
-            JAVA_INT.withName("__vr_offs")
-        ).withName("__va_list")
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_object_new_valist",
-        constants$629.const$5
     );
 }
 

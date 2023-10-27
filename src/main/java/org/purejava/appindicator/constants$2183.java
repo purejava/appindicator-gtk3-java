@@ -2,46 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2183 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2183() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("__stack"),
-            RuntimeHelper.POINTER.withName("__gr_top"),
-            RuntimeHelper.POINTER.withName("__vr_top"),
-            JAVA_INT.withName("__gr_offs"),
-            JAVA_INT.withName("__vr_offs")
-        ).withName("__va_list")
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_container_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_container_child_set_valist",
-        constants$2183.const$0
+        "gtk_container_set_border_width",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_container_child_get_valist",
-        constants$2183.const$0
+        "gtk_container_get_border_width",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_container_child_set_property",
-        constants$42.const$1
+        "gtk_container_add",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_container_child_get_property",
-        constants$42.const$1
+        "gtk_container_remove",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_container_child_notify",
-        constants$14.const$3
+        "gtk_container_set_resize_mode",
+        constants$40.const$2
     );
 }
 

@@ -7,25 +7,13 @@ import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1378 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1378() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GTlsPassword");
-    static final VarHandle const$1 = constants$1378.const$0.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    static final StructLayout const$2 = MemoryLayout.structLayout(
+    static final VarHandle const$0 = constants$1377.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 JAVA_LONG.withName("g_type")
@@ -45,14 +33,18 @@ final class constants$1378 {
             JAVA_LONG.withName("n_pspecs"),
             MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
         ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("get_value"),
-        RuntimeHelper.POINTER.withName("set_value"),
-        RuntimeHelper.POINTER.withName("get_default_warning"),
-        MemoryLayout.sequenceLayout(4, RuntimeHelper.POINTER).withName("padding")
-    ).withName("_GTlsPasswordClass");
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTlsPasswordClass.get_value.class, "apply", constants$5.const$5);
-    static final VarHandle const$4 = constants$1378.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_value"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTlsPasswordClass.set_value.class, "apply", constants$1139.const$5);
+        RuntimeHelper.POINTER.withName("ask_password"),
+        RuntimeHelper.POINTER.withName("ask_password_async"),
+        RuntimeHelper.POINTER.withName("ask_password_finish"),
+        RuntimeHelper.POINTER.withName("request_certificate"),
+        RuntimeHelper.POINTER.withName("request_certificate_async"),
+        RuntimeHelper.POINTER.withName("request_certificate_finish"),
+        MemoryLayout.sequenceLayout(21, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GTlsInteractionClass");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTlsInteractionClass.ask_password.class, "apply", constants$34.const$5);
+    static final VarHandle const$3 = constants$1378.const$1.varHandle(MemoryLayout.PathElement.groupElement("ask_password"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTlsInteractionClass.ask_password_async.class, "apply", constants$332.const$1);
+    static final VarHandle const$5 = constants$1378.const$1.varHandle(MemoryLayout.PathElement.groupElement("ask_password_async"));
 }
 
 

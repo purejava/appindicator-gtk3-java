@@ -4,46 +4,33 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$1564 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1564() {}
-    static final VarHandle const$0 = constants$1563.const$5.varHandle(MemoryLayout.PathElement.groupElement("value"));
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("klass"),
-            JAVA_INT.withName("start_index"),
-            JAVA_INT.withName("end_index")
-        ).withName("attr"),
-        JAVA_INT.withName("value"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_PangoAttrInt");
-    static final VarHandle const$2 = constants$1564.const$1.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_font_get_languages",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_serialize",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_deserialize",
+        constants$23.const$0
+    );
     static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("klass"),
-            JAVA_INT.withName("start_index"),
-            JAVA_INT.withName("end_index")
-        ).withName("attr"),
-        JAVA_DOUBLE.withName("value")
-    ).withName("_PangoAttrFloat");
-    static final VarHandle const$4 = constants$1564.const$3.varHandle(MemoryLayout.PathElement.groupElement("value"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("klass"),
-            JAVA_INT.withName("start_index"),
-            JAVA_INT.withName("end_index")
-        ).withName("attr"),
-        MemoryLayout.structLayout(
-            JAVA_SHORT.withName("red"),
-            JAVA_SHORT.withName("green"),
-            JAVA_SHORT.withName("blue")
-        ).withName("color"),
-        MemoryLayout.paddingLayout(2)
-    ).withName("_PangoAttrColor");
+        JAVA_SHORT.withName("red"),
+        JAVA_SHORT.withName("green"),
+        JAVA_SHORT.withName("blue")
+    ).withName("_PangoColor");
+    static final VarHandle const$4 = constants$1564.const$3.varHandle(MemoryLayout.PathElement.groupElement("red"));
+    static final VarHandle const$5 = constants$1564.const$3.varHandle(MemoryLayout.PathElement.groupElement("green"));
 }
 
 

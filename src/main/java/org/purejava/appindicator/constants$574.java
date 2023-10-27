@@ -3,18 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$574 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$574() {}
-    static final VarHandle const$0 = constants$573.const$1.varHandle(MemoryLayout.PathElement.groupElement("value_set_default"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GParamSpecClass.value_validate.class, "apply", constants$9.const$0);
-    static final VarHandle const$2 = constants$573.const$1.varHandle(MemoryLayout.PathElement.groupElement("value_validate"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GParamSpecClass.values_cmp.class, "apply", constants$12.const$2);
-    static final VarHandle const$4 = constants$573.const$1.varHandle(MemoryLayout.PathElement.groupElement("values_cmp"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GParamSpecClass.value_is_valid.class, "apply", constants$9.const$0);
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("g_class")
+        ).withName("g_type_instance"),
+        RuntimeHelper.POINTER.withName("name"),
+        JAVA_INT.withName("flags"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_LONG.withName("value_type"),
+        JAVA_LONG.withName("owner_type"),
+        RuntimeHelper.POINTER.withName("_nick"),
+        RuntimeHelper.POINTER.withName("_blurb"),
+        RuntimeHelper.POINTER.withName("qdata"),
+        JAVA_INT.withName("ref_count"),
+        JAVA_INT.withName("param_id")
+    ).withName("_GParamSpec");
+    static final VarHandle const$1 = constants$574.const$0.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final VarHandle const$2 = constants$574.const$0.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+    static final VarHandle const$3 = constants$574.const$0.varHandle(MemoryLayout.PathElement.groupElement("value_type"));
+    static final VarHandle const$4 = constants$574.const$0.varHandle(MemoryLayout.PathElement.groupElement("owner_type"));
+    static final VarHandle const$5 = constants$574.const$0.varHandle(MemoryLayout.PathElement.groupElement("_nick"));
 }
 
 

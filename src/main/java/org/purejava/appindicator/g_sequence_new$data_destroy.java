@@ -13,7 +13,7 @@ public interface g_sequence_new$data_destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_sequence_new$data_destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$431.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$432.const$2, fi, constants$13.const$1, scope);
     }
     static g_sequence_new$data_destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

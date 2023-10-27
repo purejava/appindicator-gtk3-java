@@ -2,35 +2,55 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2499 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2499() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_column_span_column",
-        constants$40.const$2
+        "gtk_tree_view_set_tooltip_row",
+        constants$14.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_add_tearoffs",
-        constants$10.const$5
+        "gtk_tree_view_set_tooltip_cell",
+        constants$332.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_add_tearoffs",
-        constants$40.const$2
+        "gtk_tree_view_get_tooltip_context",
+        constants$870.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_title",
-        constants$5.const$2
+        "gtk_tree_view_set_tooltip_column",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_title",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_focus_on_click",
+        "gtk_tree_view_get_tooltip_column",
         constants$10.const$5
     );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        MemoryLayout.structLayout(
+                            RuntimeHelper.POINTER.withName("g_class")
+                        ).withName("g_type_instance"),
+                        JAVA_INT.withName("ref_count"),
+                        MemoryLayout.paddingLayout(4),
+                        RuntimeHelper.POINTER.withName("qdata")
+                    ).withName("parent_instance"),
+                    RuntimeHelper.POINTER.withName("priv")
+                ).withName("widget"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("container"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkComboBox");
 }
 
 

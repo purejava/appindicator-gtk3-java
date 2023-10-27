@@ -2,7 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
@@ -10,40 +11,37 @@ final class constants$928 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$928() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_dbus_proxy_new_for_bus$callback.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_skeleton_flush",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_skeleton_add_interface",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_new_for_bus",
-        constants$928.const$1
+        "g_dbus_object_skeleton_remove_interface",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_new_for_bus_finish",
-        constants$5.const$5
+        "g_dbus_object_skeleton_remove_interface_by_name",
+        constants$13.const$4
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_skeleton_set_object_path",
+        constants$13.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_new_for_bus_sync",
-        constants$928.const$4
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GDBusProxy");
 }
 
 

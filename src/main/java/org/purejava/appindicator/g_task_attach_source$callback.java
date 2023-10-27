@@ -13,7 +13,7 @@ public interface g_task_attach_source$callback {
 
     int apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_task_attach_source$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1335.const$5, fi, constants$10.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$1339.const$5, fi, constants$10.const$5, scope);
     }
     static g_task_attach_source$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

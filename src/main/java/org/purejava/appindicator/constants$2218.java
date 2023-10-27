@@ -8,28 +8,28 @@ final class constants$2218 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2218() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_type",
+        "gtk_dialog_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_new",
+        "gtk_dialog_new",
         constants$35.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_show_about_dialog",
-        constants$13.const$4
+        "gtk_dialog_new_with_buttons",
+        constants$484.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_program_name",
-        constants$5.const$2
+        "gtk_dialog_add_action_widget",
+        constants$164.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_program_name",
-        constants$13.const$4
+        "gtk_dialog_add_button",
+        constants$32.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_version",
-        constants$5.const$2
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_dialog_add_buttons",
+        constants$13.const$4
     );
 }
 

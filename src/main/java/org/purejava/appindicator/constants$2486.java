@@ -8,25 +8,28 @@ final class constants$2486 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2486() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_enable_search",
-        constants$40.const$2
+        "gtk_tree_view_row_activated",
+        constants$14.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_enable_search",
-        constants$10.const$5
+        "gtk_tree_view_expand_all",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_search_column",
-        constants$10.const$5
+        "gtk_tree_view_collapse_all",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_search_column",
-        constants$40.const$2
+        "gtk_tree_view_expand_to_path",
+        constants$13.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_tree_view_get_search_equal_func$return.class, "apply", constants$373.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_expand_row",
+        constants$62.const$0
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_search_equal_func",
-        constants$5.const$2
+        "gtk_tree_view_collapse_row",
+        constants$9.const$0
     );
 }
 

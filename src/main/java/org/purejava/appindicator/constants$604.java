@@ -2,48 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$604 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$604() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "g_signal_new",
-        constants$604.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_signal_new_class_handler$class_handler.class, "apply", constants$7.const$5);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_signal_new_class_handler$accumulator.class, "apply", constants$34.const$5);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_new_class_handler$c_marshaller.class, "apply", constants$584.const$3);
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandleVariadic(
-        "g_signal_new_class_handler",
-        constants$604.const$5
-    );
+    static final VarHandle const$0 = constants$603.const$3.varHandle(MemoryLayout.PathElement.groupElement("itype"));
+    static final VarHandle const$1 = constants$603.const$3.varHandle(MemoryLayout.PathElement.groupElement("signal_flags"));
+    static final VarHandle const$2 = constants$603.const$3.varHandle(MemoryLayout.PathElement.groupElement("return_type"));
+    static final VarHandle const$3 = constants$603.const$3.varHandle(MemoryLayout.PathElement.groupElement("n_params"));
+    static final VarHandle const$4 = constants$603.const$3.varHandle(MemoryLayout.PathElement.groupElement("param_types"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_signal_newv$accumulator.class, "apply", constants$34.const$5);
 }
 
 

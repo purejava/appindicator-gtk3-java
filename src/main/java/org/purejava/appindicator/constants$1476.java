@@ -2,18 +2,44 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1476 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1476() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_get_font_extents_func_t.class, "apply", constants$34.const$5);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_font_h_extents_func_t.class, "apply", constants$34.const$5);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_get_font_v_extents_func_t.class, "apply", constants$34.const$5);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_get_nominal_glyph_func_t.class, "apply", constants$859.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_get_variation_glyph_func_t.class, "apply", constants$1029.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_paint_color",
+        constants$1046.const$2
+    );
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_paint_image",
+        constants$1476.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_paint_linear_gradient",
+        constants$1457.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_paint_radial_gradient",
+        constants$1457.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        constants$1029.const$4
+        "hb_paint_sweep_gradient",
+        constants$1457.const$3
     );
 }
 

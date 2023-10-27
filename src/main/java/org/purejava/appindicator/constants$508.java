@@ -2,34 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$508 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$508() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GThreadFunctions.thread_create.class, "apply", constants$508.const$0);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$508.const$0
-    );
-    static final VarHandle const$3 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("thread_create"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GThreadFunctions.thread_yield.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("thread_yield"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GThreadFunctions.cond_timed_wait.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("cond_timed_wait"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GThreadFunctions.cond_free.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("cond_free"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GThreadFunctions.private_new.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("private_new"));
 }
 
 

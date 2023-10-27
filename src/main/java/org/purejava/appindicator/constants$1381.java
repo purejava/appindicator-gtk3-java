@@ -2,40 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1381 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1381() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_password_get_description",
-        constants$5.const$2
+        "g_tls_interaction_ask_password_async",
+        constants$332.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_password_set_description",
-        constants$13.const$4
+        "g_tls_interaction_ask_password_finish",
+        constants$12.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_password_get_warning",
-        constants$5.const$2
+        "g_tls_interaction_invoke_request_certificate",
+        constants$862.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_password_set_warning",
-        constants$13.const$4
+        "g_tls_interaction_request_certificate",
+        constants$862.const$1
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface")
-    ).withName("_GTlsServerConnectionInterface");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_tls_interaction_request_certificate_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_server_connection_get_type",
-        constants$3.const$5
+        "g_tls_interaction_request_certificate_async",
+        constants$587.const$0
     );
 }
 

@@ -7,17 +7,29 @@ final class constants$2322 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2322() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_tree_sortable_set_sort_func$sort_func.class, "apply", constants$34.const$5);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_tree_sortable_set_sort_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_set_sort_func",
-        constants$281.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_get_padding",
+        constants$14.const$3
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_tree_sortable_set_default_sort_func$sort_func.class, "apply", constants$34.const$5);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_tree_sortable_set_default_sort_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_set_visible",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_get_visible",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_set_sensitive",
+        constants$40.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_cell_renderer_get_sensitive",
+        constants$10.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_set_default_sort_func",
-        constants$42.const$1
+        "gtk_cell_renderer_is_activatable",
+        constants$10.const$5
     );
 }
 

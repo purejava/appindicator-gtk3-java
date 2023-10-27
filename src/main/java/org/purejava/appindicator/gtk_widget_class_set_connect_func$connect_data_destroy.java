@@ -13,7 +13,7 @@ public interface gtk_widget_class_set_connect_func$connect_data_destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_widget_class_set_connect_func$connect_data_destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2165.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2170.const$3, fi, constants$13.const$1, scope);
     }
     static gtk_widget_class_set_connect_func$connect_data_destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

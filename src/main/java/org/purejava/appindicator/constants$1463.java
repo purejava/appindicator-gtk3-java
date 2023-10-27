@@ -2,20 +2,36 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1463 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1463() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_paint_pop_group_func_t.class, "apply", constants$464.const$4);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_paint_custom_palette_color_func_t.class, "apply", constants$859.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_transform_func$func.class, "apply", constants$1455.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_transform_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_set_push_transform_func",
-        constants$42.const$1
+    static final VarHandle const$0 = constants$1462.const$3.varHandle(MemoryLayout.PathElement.groupElement("color"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_color_line_get_color_stops_func_t.class, "apply", constants$1247.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$1247.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_transform_func$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_color_line_get_extend_func_t.class, "apply", constants$12.const$2);
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("data"),
+        RuntimeHelper.POINTER.withName("get_color_stops"),
+        RuntimeHelper.POINTER.withName("get_color_stops_user_data"),
+        RuntimeHelper.POINTER.withName("get_extend"),
+        RuntimeHelper.POINTER.withName("get_extend_user_data"),
+        RuntimeHelper.POINTER.withName("reserved0"),
+        RuntimeHelper.POINTER.withName("reserved1"),
+        RuntimeHelper.POINTER.withName("reserved2"),
+        RuntimeHelper.POINTER.withName("reserved3"),
+        RuntimeHelper.POINTER.withName("reserved5"),
+        RuntimeHelper.POINTER.withName("reserved6"),
+        RuntimeHelper.POINTER.withName("reserved7"),
+        RuntimeHelper.POINTER.withName("reserved8")
+    ).withName("hb_color_line_t");
+    static final VarHandle const$5 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("data"));
 }
 
 

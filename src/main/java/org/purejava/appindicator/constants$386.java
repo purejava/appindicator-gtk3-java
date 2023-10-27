@@ -8,22 +8,28 @@ final class constants$386 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$386() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_option_context_add_main_entries",
-        constants$14.const$3
+        "g_option_context_set_help_enabled",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_option_context_parse",
-        constants$34.const$5
+        "g_option_context_get_help_enabled",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_option_context_parse_strv",
-        constants$12.const$2
+        "g_option_context_set_ignore_unknown_options",
+        constants$40.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_option_context_set_translate_func$func.class, "apply", constants$5.const$5);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_option_context_set_translate_func$destroy_notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_option_context_get_ignore_unknown_options",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_option_context_set_strict_posix",
+        constants$40.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_option_context_set_translate_func",
-        constants$42.const$1
+        "g_option_context_get_strict_posix",
+        constants$10.const$5
     );
 }
 

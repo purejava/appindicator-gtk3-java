@@ -2,29 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$623 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$623() {}
-    static final VarHandle const$0 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("construct_properties"));
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_dup_boxed",
+        constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GObjectClass.constructor.class, "apply", constants$623.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_boxed_type_register_static$boxed_copy.class, "apply", constants$5.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_boxed_type_register_static$boxed_free.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        constants$623.const$1
+        "g_boxed_type_register_static",
+        constants$166.const$0
     );
-    static final VarHandle const$4 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("constructor"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GObjectClass.set_property.class, "apply", constants$179.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_closure_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_get_type",
+        constants$3.const$5
+    );
 }
 
 

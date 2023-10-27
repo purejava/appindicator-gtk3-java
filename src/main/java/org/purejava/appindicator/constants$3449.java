@@ -7,12 +7,12 @@ final class constants$3449 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3449() {}
-    static final MemorySegment const$0 = MemorySegment.ofAddress(31L);
-    static final MemorySegment const$1 = MemorySegment.ofAddress(4L);
-    static final MemorySegment const$2 = MemorySegment.ofAddress(19L);
-    static final MemorySegment const$3 = MemorySegment.ofAddress(33L);
-    static final MemorySegment const$4 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("background-color");
-    static final MemorySegment const$5 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("color");
+    static final MemorySegment const$0 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("uuid");
+    static final MemorySegment const$1 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("nfs-mount");
+    static final MemorySegment const$2 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("class");
+    static final MemorySegment const$3 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("1.51.0");
+    static final MemorySegment const$4 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("8.2.2");
+    static final MemorySegment const$5 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PangoRenderNone");
 }
 
 

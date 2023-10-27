@@ -13,7 +13,7 @@ public interface g_task_set_task_data$task_data_destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_task_set_task_data$task_data_destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1332.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1336.const$0, fi, constants$13.const$1, scope);
     }
     static g_task_set_task_data$task_data_destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GCharsetConverterClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$804.const$3;
+        return constants$807.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);

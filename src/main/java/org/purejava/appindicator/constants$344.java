@@ -8,28 +8,28 @@ final class constants$344 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$344() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_variant_type_free",
-        constants$13.const$1
+        "g_markup_escape_text",
+        constants$21.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_variant_type_copy",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_markup_printf_escaped",
         constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_type_new",
-        constants$5.const$2
+        "g_markup_vprintf_escaped",
+        constants$302.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_type_get_string_length",
-        constants$4.const$0
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_markup_collect_attributes",
+        constants$329.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_variant_type_peek_string",
-        constants$5.const$2
+        "g_variant_type_string_is_valid",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_type_dup_string",
-        constants$5.const$2
+        "g_variant_type_string_scan",
+        constants$12.const$2
     );
 }
 

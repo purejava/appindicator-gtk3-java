@@ -13,7 +13,7 @@ public interface g_value_register_transform_func$transform_func {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_value_register_transform_func$transform_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$571.const$1, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$573.const$4, fi, constants$13.const$4, scope);
     }
     static g_value_register_transform_func$transform_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

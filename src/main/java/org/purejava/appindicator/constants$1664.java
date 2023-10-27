@@ -7,29 +7,29 @@ final class constants$1664 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1664() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "fscanf",
-        constants$9.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "scanf",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "fclose",
         constants$10.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "sscanf",
-        constants$9.const$0
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "tmpfile",
+        constants$35.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "tmpnam",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "vfscanf",
-        constants$1662.const$2
+        "tmpnam_r",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "vscanf",
-        constants$1662.const$4
+        "tempnam",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "vsscanf",
-        constants$1662.const$2
+        "fflush",
+        constants$10.const$5
     );
 }
 

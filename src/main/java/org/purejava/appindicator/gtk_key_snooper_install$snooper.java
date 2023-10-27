@@ -13,7 +13,7 @@ public interface gtk_key_snooper_install$snooper {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_key_snooper_install$snooper fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2864.const$1, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2869.const$1, fi, constants$12.const$2, scope);
     }
     static gtk_key_snooper_install$snooper ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

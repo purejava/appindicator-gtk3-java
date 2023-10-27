@@ -3,39 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1216 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1216() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_power_profile_monitor_get_power_saver_enabled",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_property_action_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_property_action_new",
-        constants$23.const$0
-    );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("connect"),
-        RuntimeHelper.POINTER.withName("connect_async"),
-        RuntimeHelper.POINTER.withName("connect_finish"),
-        RuntimeHelper.POINTER.withName("supports_hostname")
-    ).withName("_GProxyInterface");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GProxyInterface.connect.class, "apply", constants$330.const$5);
-    static final VarHandle const$5 = constants$1216.const$3.varHandle(MemoryLayout.PathElement.groupElement("connect"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GPollableOutputStreamInterface.create_source.class, "apply", constants$5.const$5);
+    static final VarHandle const$1 = constants$1215.const$1.varHandle(MemoryLayout.PathElement.groupElement("create_source"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GPollableOutputStreamInterface.write_nonblocking.class, "apply", constants$20.const$4);
+    static final VarHandle const$3 = constants$1215.const$1.varHandle(MemoryLayout.PathElement.groupElement("write_nonblocking"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GPollableOutputStreamInterface.writev_nonblocking.class, "apply", constants$316.const$5);
+    static final VarHandle const$5 = constants$1215.const$1.varHandle(MemoryLayout.PathElement.groupElement("writev_nonblocking"));
 }
 
 

@@ -5,38 +5,43 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1527 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1527() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_coverage_get",
-        constants$11.const$4
+        "hb_font_get_glyph_shape",
+        constants$179.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_coverage_set",
-        constants$467.const$3
+        "hb_shape",
+        constants$332.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_coverage_max",
-        constants$13.const$4
+        "hb_shape_full",
+        constants$329.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_coverage_to_bytes",
-        constants$14.const$3
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_coverage_from_bytes",
-        constants$21.const$3
+        "hb_shape_justify",
+        constants$1527.const$3
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_DOUBLE
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "pango_units_from_double",
-        constants$1527.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_shape_list_shapers",
+        constants$35.const$2
     );
 }
 

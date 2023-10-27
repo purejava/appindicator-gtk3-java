@@ -8,28 +8,28 @@ final class constants$1853 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1853() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_offscreen_window_set_embedder",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_offscreen_window_get_embedder",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_geometry_changed",
+        "gdk_window_unfullscreen",
         constants$13.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_support_multidevice",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_keep_above",
         constants$40.const$2
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_keep_below",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_opacity",
+        constants$692.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_support_multidevice",
-        constants$10.const$5
+        "gdk_window_register_dnd",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_frame_clock",
-        constants$5.const$2
+        "gdk_window_get_drag_protocol",
+        constants$9.const$0
     );
 }
 

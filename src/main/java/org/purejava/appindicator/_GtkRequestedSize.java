@@ -19,10 +19,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkRequestedSize {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3094.const$3;
+        return constants$3099.const$3;
     }
     public static VarHandle data$VH() {
-        return constants$3094.const$4;
+        return constants$3099.const$4;
     }
     /**
      * Getter for field:
@@ -31,7 +31,7 @@ public class _GtkRequestedSize {
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3094.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3099.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -40,16 +40,16 @@ public class _GtkRequestedSize {
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        constants$3094.const$4.set(seg, x);
+        constants$3099.const$4.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3094.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3099.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3094.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3099.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle minimum_size$VH() {
-        return constants$3094.const$5;
+        return constants$3099.const$5;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _GtkRequestedSize {
      * }
      */
     public static int minimum_size$get(MemorySegment seg) {
-        return (int)constants$3094.const$5.get(seg);
+        return (int)constants$3099.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -67,16 +67,16 @@ public class _GtkRequestedSize {
      * }
      */
     public static void minimum_size$set(MemorySegment seg, int x) {
-        constants$3094.const$5.set(seg, x);
+        constants$3099.const$5.set(seg, x);
     }
     public static int minimum_size$get(MemorySegment seg, long index) {
-        return (int)constants$3094.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3099.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void minimum_size$set(MemorySegment seg, long index, int x) {
-        constants$3094.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3099.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle natural_size$VH() {
-        return constants$3095.const$0;
+        return constants$3100.const$0;
     }
     /**
      * Getter for field:
@@ -85,7 +85,7 @@ public class _GtkRequestedSize {
      * }
      */
     public static int natural_size$get(MemorySegment seg) {
-        return (int)constants$3095.const$0.get(seg);
+        return (int)constants$3100.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -94,13 +94,13 @@ public class _GtkRequestedSize {
      * }
      */
     public static void natural_size$set(MemorySegment seg, int x) {
-        constants$3095.const$0.set(seg, x);
+        constants$3100.const$0.set(seg, x);
     }
     public static int natural_size$get(MemorySegment seg, long index) {
-        return (int)constants$3095.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3100.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void natural_size$set(MemorySegment seg, long index, int x) {
-        constants$3095.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3100.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

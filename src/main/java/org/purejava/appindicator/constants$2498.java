@@ -8,27 +8,27 @@ final class constants$2498 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2498() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new_with_model_and_entry",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_wrap_width",
+        "gtk_tree_view_get_enable_tree_lines",
         constants$10.const$5
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_enable_tree_lines",
+        constants$40.const$2
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_wrap_width",
+        "gtk_tree_view_set_show_expanders",
         constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_row_span_column",
+        "gtk_tree_view_get_show_expanders",
         constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_row_span_column",
+        "gtk_tree_view_set_level_indentation",
         constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_column_span_column",
+        "gtk_tree_view_get_level_indentation",
         constants$10.const$5
     );
 }

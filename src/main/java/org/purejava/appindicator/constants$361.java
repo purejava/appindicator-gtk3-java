@@ -7,28 +7,28 @@ final class constants$361 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$361() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_variant_store",
-        constants$13.const$4
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_lookup",
+        constants$12.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_variant_print",
-        constants$21.const$3
+        "g_variant_lookup_value",
+        constants$23.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_print_string",
-        constants$32.const$3
+        "g_variant_get_fixed_array",
+        constants$17.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_hash",
-        constants$10.const$5
+        "g_variant_get_size",
+        constants$4.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_variant_equal",
-        constants$9.const$0
+        "g_variant_get_data",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_get_normal_form",
+        "g_variant_get_data_as_bytes",
         constants$5.const$2
     );
 }

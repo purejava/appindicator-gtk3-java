@@ -8,28 +8,28 @@ final class constants$2135 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2135() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_can_default",
-        constants$10.const$5
+        "gtk_widget_get_preferred_height_for_width",
+        constants$179.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_has_default",
-        constants$10.const$5
+        "gtk_widget_get_preferred_height",
+        constants$14.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_grab_default",
-        constants$13.const$1
+        "gtk_widget_get_preferred_width_for_height",
+        constants$179.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_receives_default",
-        constants$40.const$2
+        "gtk_widget_get_preferred_height_and_baseline_for_width",
+        constants$381.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_receives_default",
-        constants$10.const$5
+        "gtk_widget_get_preferred_size",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_has_grab",
-        constants$10.const$5
+        "gtk_widget_get_child_requisition",
+        constants$13.const$4
     );
 }
 

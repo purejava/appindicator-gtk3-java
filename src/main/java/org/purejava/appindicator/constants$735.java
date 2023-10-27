@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$735 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$735() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_setenv",
-        constants$14.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_unsetenv",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_environment",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_display",
-        constants$23.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_startup_notify_id",
-        constants$23.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_launch_failed",
-        constants$13.const$4
-    );
+    static final VarHandle const$0 = constants$734.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_display"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass.get_startup_notify_id.class, "apply", constants$23.const$0);
+    static final VarHandle const$2 = constants$734.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_startup_notify_id"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass.launch_failed.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$734.const$3.varHandle(MemoryLayout.PathElement.groupElement("launch_failed"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass.launched.class, "apply", constants$14.const$3);
 }
 
 

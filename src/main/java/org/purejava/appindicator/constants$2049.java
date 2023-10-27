@@ -2,45 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2049 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2049() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_range_get_description",
-        constants$5.const$2
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_range_new",
-        constants$2049.const$1
-    );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("factory_type_registry"),
-        RuntimeHelper.POINTER.withName("factory_singleton_cache")
-    ).withName("_AtkRegistry");
-    static final VarHandle const$4 = constants$2049.const$3.varHandle(MemoryLayout.PathElement.groupElement("factory_type_registry"));
-    static final VarHandle const$5 = constants$2049.const$3.varHandle(MemoryLayout.PathElement.groupElement("factory_singleton_cache"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.create_accessible.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$2048.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_accessible"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.invalidate.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$2048.const$5.varHandle(MemoryLayout.PathElement.groupElement("invalidate"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.get_accessible_type.class, "apply", constants$3.const$5);
+    static final VarHandle const$5 = constants$2048.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_accessible_type"));
 }
 
 

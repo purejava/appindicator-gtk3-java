@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2912 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2912() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_remove_page",
-        constants$40.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_group_name",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_group_name",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_current_page",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_nth_page",
-        constants$21.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_n_pages",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkNotebookClass.page_reordered.class, "apply", constants$164.const$5);
+    static final VarHandle const$1 = constants$2908.const$5.varHandle(MemoryLayout.PathElement.groupElement("page_reordered"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkNotebookClass.page_removed.class, "apply", constants$164.const$5);
+    static final VarHandle const$3 = constants$2908.const$5.varHandle(MemoryLayout.PathElement.groupElement("page_removed"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkNotebookClass.page_added.class, "apply", constants$164.const$5);
+    static final VarHandle const$5 = constants$2908.const$5.varHandle(MemoryLayout.PathElement.groupElement("page_added"));
 }
 
 

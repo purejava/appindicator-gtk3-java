@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkShortcutsWindowClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2507.const$2;
+        return constants$2512.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1072);
@@ -33,7 +33,7 @@ public class _GtkShortcutsWindowClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(close fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2507.const$3, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2512.const$3, fi, constants$13.const$1, scope);
         }
         static close ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -48,7 +48,7 @@ public class _GtkShortcutsWindowClass {
     }
 
     public static VarHandle close$VH() {
-        return constants$2507.const$4;
+        return constants$2512.const$4;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GtkShortcutsWindowClass {
      * }
      */
     public static MemorySegment close$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2507.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2512.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GtkShortcutsWindowClass {
      * }
      */
     public static void close$set(MemorySegment seg, MemorySegment x) {
-        constants$2507.const$4.set(seg, x);
+        constants$2512.const$4.set(seg, x);
     }
     public static MemorySegment close$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2507.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2512.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void close$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2507.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2512.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static close close(MemorySegment segment, Arena scope) {
         return close.ofAddress(close$get(segment), scope);
@@ -86,7 +86,7 @@ public class _GtkShortcutsWindowClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(search fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2507.const$5, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2512.const$5, fi, constants$13.const$1, scope);
         }
         static search ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -101,7 +101,7 @@ public class _GtkShortcutsWindowClass {
     }
 
     public static VarHandle search$VH() {
-        return constants$2508.const$0;
+        return constants$2513.const$0;
     }
     /**
      * Getter for field:
@@ -110,7 +110,7 @@ public class _GtkShortcutsWindowClass {
      * }
      */
     public static MemorySegment search$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2508.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2513.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -119,13 +119,13 @@ public class _GtkShortcutsWindowClass {
      * }
      */
     public static void search$set(MemorySegment seg, MemorySegment x) {
-        constants$2508.const$0.set(seg, x);
+        constants$2513.const$0.set(seg, x);
     }
     public static MemorySegment search$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2508.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2513.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void search$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2508.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2513.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static search search(MemorySegment segment, Arena scope) {
         return search.ofAddress(search$get(segment), scope);

@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3341 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3341() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_has_tooltip",
-        constants$40.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_tooltip_text",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_tooltip_markup",
-        constants$13.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_title",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_get_title",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_name",
-        constants$13.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkStatusIconClass.query_tooltip.class, "apply", constants$1294.const$1);
+    static final VarHandle const$1 = constants$3338.const$5.varHandle(MemoryLayout.PathElement.groupElement("query_tooltip"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkStatusIconClass.__gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3338.const$5.varHandle(MemoryLayout.PathElement.groupElement("__gtk_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkStatusIconClass.__gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$3338.const$5.varHandle(MemoryLayout.PathElement.groupElement("__gtk_reserved2"));
 }
 
 

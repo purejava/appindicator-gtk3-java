@@ -2,35 +2,33 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1804 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1804() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_event_sequence_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_events_pending",
-        constants$83.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_event_get",
-        constants$35.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_event_peek",
-        constants$35.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_event_put",
-        constants$13.const$1
-    );
+    static final VarHandle const$0 = constants$1802.const$0.varHandle(MemoryLayout.PathElement.groupElement("scale"));
+    static final VarHandle const$1 = constants$1802.const$0.varHandle(MemoryLayout.PathElement.groupElement("x_root"));
+    static final VarHandle const$2 = constants$1802.const$0.varHandle(MemoryLayout.PathElement.groupElement("y_root"));
+    static final VarHandle const$3 = constants$1802.const$0.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("time"),
+        JAVA_INT.withName("group"),
+        JAVA_INT.withName("button"),
+        JAVA_INT.withName("mode"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GdkEventPadButton");
+    static final VarHandle const$5 = constants$1804.const$4.varHandle(MemoryLayout.PathElement.groupElement("type"));
 }
 
 

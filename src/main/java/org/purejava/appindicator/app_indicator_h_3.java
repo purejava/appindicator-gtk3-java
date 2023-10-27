@@ -10,6 +10,22 @@ import java.lang.invoke.MethodHandle;
 import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_3 extends app_indicator_h_2 {
 
+    public static MethodHandle memset$MH() {
+        return RuntimeHelper.requireNonNull(constants$18.const$1,"memset");
+    }
+    /**
+     * {@snippet :
+     * void* memset(void* __s, int __c, unsigned long __n);
+     * }
+     */
+    public static MemorySegment memset(MemorySegment __s, int __c, long __n) {
+        var mh$ = memset$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s, __c, __n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle memcmp$MH() {
         return RuntimeHelper.requireNonNull(constants$18.const$3,"memcmp");
     }
@@ -13410,22 +13426,6 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
      */
     public static MemorySegment g_aligned_alloc(long n_blocks, long n_block_bytes, long alignment) {
         var mh$ = g_aligned_alloc$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(n_blocks, n_block_bytes, alignment);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_aligned_alloc0$MH() {
-        return RuntimeHelper.requireNonNull(constants$207.const$2,"g_aligned_alloc0");
-    }
-    /**
-     * {@snippet :
-     * void* g_aligned_alloc0(unsigned long n_blocks, unsigned long n_block_bytes, unsigned long alignment);
-     * }
-     */
-    public static MemorySegment g_aligned_alloc0(long n_blocks, long n_block_bytes, long alignment) {
-        var mh$ = g_aligned_alloc0$MH();
         try {
             return (java.lang.foreign.MemorySegment)mh$.invokeExact(n_blocks, n_block_bytes, alignment);
         } catch (Throwable ex$) {

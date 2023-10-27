@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1126 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1126() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        JAVA_INT
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_implement",
-        constants$1126.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_io_extension_get_type",
-        constants$4.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_io_extension_get_name",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_io_extension_get_priority",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_module_close",
         constants$10.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_io_extension_ref_class",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_module_make_resident",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_module_error",
+        constants$35.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_module_symbol",
+        constants$12.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_module_name",
         constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_module_build_path",
+        constants$5.const$5
     );
 }
 

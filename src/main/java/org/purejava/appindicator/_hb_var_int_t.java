@@ -22,10 +22,10 @@ import java.lang.invoke.VarHandle;
 public class _hb_var_int_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1413.const$4;
+        return constants$1417.const$5;
     }
     public static VarHandle u32$VH() {
-        return constants$1413.const$5;
+        return constants$1418.const$0;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class _hb_var_int_t {
      * }
      */
     public static int u32$get(MemorySegment seg) {
-        return (int)constants$1413.const$5.get(seg);
+        return (int)constants$1418.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -43,16 +43,16 @@ public class _hb_var_int_t {
      * }
      */
     public static void u32$set(MemorySegment seg, int x) {
-        constants$1413.const$5.set(seg, x);
+        constants$1418.const$0.set(seg, x);
     }
     public static int u32$get(MemorySegment seg, long index) {
-        return (int)constants$1413.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1418.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void u32$set(MemorySegment seg, long index, int x) {
-        constants$1413.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1418.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle i32$VH() {
-        return constants$1414.const$0;
+        return constants$1418.const$1;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _hb_var_int_t {
      * }
      */
     public static int i32$get(MemorySegment seg) {
-        return (int)constants$1414.const$0.get(seg);
+        return (int)constants$1418.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -70,13 +70,13 @@ public class _hb_var_int_t {
      * }
      */
     public static void i32$set(MemorySegment seg, int x) {
-        constants$1414.const$0.set(seg, x);
+        constants$1418.const$1.set(seg, x);
     }
     public static int i32$get(MemorySegment seg, long index) {
-        return (int)constants$1414.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1418.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void i32$set(MemorySegment seg, long index, int x) {
-        constants$1414.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1418.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment u16$slice(MemorySegment seg) {
         return seg.asSlice(0, 4);

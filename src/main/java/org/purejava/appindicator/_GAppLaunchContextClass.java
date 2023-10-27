@@ -25,7 +25,7 @@ import java.lang.invoke.VarHandle;
 public class _GAppLaunchContextClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$731.const$4;
+        return constants$734.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -39,13 +39,13 @@ public class _GAppLaunchContextClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_display fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$731.const$5, fi, constants$23.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$734.const$4, fi, constants$23.const$0, scope);
         }
         static get_display ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$734.const$5.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -54,7 +54,7 @@ public class _GAppLaunchContextClass {
     }
 
     public static VarHandle get_display$VH() {
-        return constants$732.const$1;
+        return constants$735.const$0;
     }
     /**
      * Getter for field:
@@ -63,7 +63,7 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static MemorySegment get_display$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$732.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$735.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -72,13 +72,13 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static void get_display$set(MemorySegment seg, MemorySegment x) {
-        constants$732.const$1.set(seg, x);
+        constants$735.const$0.set(seg, x);
     }
     public static MemorySegment get_display$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$732.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$735.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_display$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$732.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$735.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_display get_display(MemorySegment segment, Arena scope) {
         return get_display.ofAddress(get_display$get(segment), scope);
@@ -92,13 +92,13 @@ public class _GAppLaunchContextClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_startup_notify_id fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$732.const$2, fi, constants$23.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$735.const$1, fi, constants$23.const$0, scope);
         }
         static get_startup_notify_id ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$734.const$5.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -107,7 +107,7 @@ public class _GAppLaunchContextClass {
     }
 
     public static VarHandle get_startup_notify_id$VH() {
-        return constants$732.const$3;
+        return constants$735.const$2;
     }
     /**
      * Getter for field:
@@ -116,7 +116,7 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static MemorySegment get_startup_notify_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$732.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$735.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -125,13 +125,13 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static void get_startup_notify_id$set(MemorySegment seg, MemorySegment x) {
-        constants$732.const$3.set(seg, x);
+        constants$735.const$2.set(seg, x);
     }
     public static MemorySegment get_startup_notify_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$732.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$735.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_startup_notify_id$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$732.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$735.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_startup_notify_id get_startup_notify_id(MemorySegment segment, Arena scope) {
         return get_startup_notify_id.ofAddress(get_startup_notify_id$get(segment), scope);
@@ -145,7 +145,7 @@ public class _GAppLaunchContextClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(launch_failed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$732.const$4, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$735.const$3, fi, constants$13.const$4, scope);
         }
         static launch_failed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -160,7 +160,7 @@ public class _GAppLaunchContextClass {
     }
 
     public static VarHandle launch_failed$VH() {
-        return constants$732.const$5;
+        return constants$735.const$4;
     }
     /**
      * Getter for field:
@@ -169,7 +169,7 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static MemorySegment launch_failed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$732.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$735.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -178,13 +178,13 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static void launch_failed$set(MemorySegment seg, MemorySegment x) {
-        constants$732.const$5.set(seg, x);
+        constants$735.const$4.set(seg, x);
     }
     public static MemorySegment launch_failed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$732.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$735.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void launch_failed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$732.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$735.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static launch_failed launch_failed(MemorySegment segment, Arena scope) {
         return launch_failed.ofAddress(launch_failed$get(segment), scope);
@@ -198,7 +198,7 @@ public class _GAppLaunchContextClass {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(launched fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$733.const$0, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$735.const$5, fi, constants$14.const$3, scope);
         }
         static launched ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -213,7 +213,7 @@ public class _GAppLaunchContextClass {
     }
 
     public static VarHandle launched$VH() {
-        return constants$733.const$1;
+        return constants$736.const$0;
     }
     /**
      * Getter for field:
@@ -222,7 +222,7 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static MemorySegment launched$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$733.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$736.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -231,13 +231,13 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static void launched$set(MemorySegment seg, MemorySegment x) {
-        constants$733.const$1.set(seg, x);
+        constants$736.const$0.set(seg, x);
     }
     public static MemorySegment launched$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$733.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$736.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void launched$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$733.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$736.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static launched launched(MemorySegment segment, Arena scope) {
         return launched.ofAddress(launched$get(segment), scope);
@@ -251,7 +251,7 @@ public class _GAppLaunchContextClass {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(launch_started fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$733.const$2, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$736.const$1, fi, constants$14.const$3, scope);
         }
         static launch_started ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -266,7 +266,7 @@ public class _GAppLaunchContextClass {
     }
 
     public static VarHandle launch_started$VH() {
-        return constants$733.const$3;
+        return constants$736.const$2;
     }
     /**
      * Getter for field:
@@ -275,7 +275,7 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static MemorySegment launch_started$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$733.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$736.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -284,13 +284,13 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static void launch_started$set(MemorySegment seg, MemorySegment x) {
-        constants$733.const$3.set(seg, x);
+        constants$736.const$2.set(seg, x);
     }
     public static MemorySegment launch_started$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$733.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$736.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void launch_started$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$733.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$736.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static launch_started launch_started(MemorySegment segment, Arena scope) {
         return launch_started.ofAddress(launch_started$get(segment), scope);
@@ -304,7 +304,7 @@ public class _GAppLaunchContextClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$733.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$736.const$3, fi, constants$7.const$5, scope);
         }
         static _g_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -319,7 +319,7 @@ public class _GAppLaunchContextClass {
     }
 
     public static VarHandle _g_reserved1$VH() {
-        return constants$733.const$5;
+        return constants$736.const$4;
     }
     /**
      * Getter for field:
@@ -328,7 +328,7 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static MemorySegment _g_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$733.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$736.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -337,13 +337,13 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static void _g_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$733.const$5.set(seg, x);
+        constants$736.const$4.set(seg, x);
     }
     public static MemorySegment _g_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$733.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$736.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$733.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$736.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved1 _g_reserved1(MemorySegment segment, Arena scope) {
         return _g_reserved1.ofAddress(_g_reserved1$get(segment), scope);
@@ -357,7 +357,7 @@ public class _GAppLaunchContextClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$734.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$736.const$5, fi, constants$7.const$5, scope);
         }
         static _g_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -372,7 +372,7 @@ public class _GAppLaunchContextClass {
     }
 
     public static VarHandle _g_reserved2$VH() {
-        return constants$734.const$1;
+        return constants$737.const$0;
     }
     /**
      * Getter for field:
@@ -381,7 +381,7 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static MemorySegment _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$734.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$737.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -390,13 +390,13 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$734.const$1.set(seg, x);
+        constants$737.const$0.set(seg, x);
     }
     public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$734.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$737.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$734.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$737.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved2 _g_reserved2(MemorySegment segment, Arena scope) {
         return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);
@@ -410,7 +410,7 @@ public class _GAppLaunchContextClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$734.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$737.const$1, fi, constants$7.const$5, scope);
         }
         static _g_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -425,7 +425,7 @@ public class _GAppLaunchContextClass {
     }
 
     public static VarHandle _g_reserved3$VH() {
-        return constants$734.const$3;
+        return constants$737.const$2;
     }
     /**
      * Getter for field:
@@ -434,7 +434,7 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static MemorySegment _g_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$734.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$737.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -443,13 +443,13 @@ public class _GAppLaunchContextClass {
      * }
      */
     public static void _g_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$734.const$3.set(seg, x);
+        constants$737.const$2.set(seg, x);
     }
     public static MemorySegment _g_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$734.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$737.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$734.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$737.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved3 _g_reserved3(MemorySegment segment, Arena scope) {
         return _g_reserved3.ofAddress(_g_reserved3$get(segment), scope);

@@ -22,7 +22,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkImageIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2038.const$1;
+        return constants$2043.const$2;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -36,13 +36,13 @@ public class _AtkImageIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3);
         static MemorySegment allocate(get_image_position fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2038.const$2, fi, constants$331.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2043.const$3, fi, constants$332.const$4, scope);
         }
         static get_image_position ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
                 try {
-                    constants$1085.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$1089.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -51,7 +51,7 @@ public class _AtkImageIface {
     }
 
     public static VarHandle get_image_position$VH() {
-        return constants$2038.const$3;
+        return constants$2043.const$4;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _AtkImageIface {
      * }
      */
     public static MemorySegment get_image_position$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2038.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2043.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -69,13 +69,13 @@ public class _AtkImageIface {
      * }
      */
     public static void get_image_position$set(MemorySegment seg, MemorySegment x) {
-        constants$2038.const$3.set(seg, x);
+        constants$2043.const$4.set(seg, x);
     }
     public static MemorySegment get_image_position$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2038.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2043.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_image_position$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2038.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2043.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_image_position get_image_position(MemorySegment segment, Arena scope) {
         return get_image_position.ofAddress(get_image_position$get(segment), scope);
@@ -89,7 +89,7 @@ public class _AtkImageIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_image_description fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2038.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2043.const$5, fi, constants$5.const$2, scope);
         }
         static get_image_description ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -104,7 +104,7 @@ public class _AtkImageIface {
     }
 
     public static VarHandle get_image_description$VH() {
-        return constants$2038.const$5;
+        return constants$2044.const$0;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _AtkImageIface {
      * }
      */
     public static MemorySegment get_image_description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2038.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2044.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _AtkImageIface {
      * }
      */
     public static void get_image_description$set(MemorySegment seg, MemorySegment x) {
-        constants$2038.const$5.set(seg, x);
+        constants$2044.const$0.set(seg, x);
     }
     public static MemorySegment get_image_description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2038.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2044.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_image_description$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2038.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2044.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_image_description get_image_description(MemorySegment segment, Arena scope) {
         return get_image_description.ofAddress(get_image_description$get(segment), scope);
@@ -142,7 +142,7 @@ public class _AtkImageIface {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_image_size fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2039.const$0, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2044.const$1, fi, constants$14.const$3, scope);
         }
         static get_image_size ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -157,7 +157,7 @@ public class _AtkImageIface {
     }
 
     public static VarHandle get_image_size$VH() {
-        return constants$2039.const$1;
+        return constants$2044.const$2;
     }
     /**
      * Getter for field:
@@ -166,7 +166,7 @@ public class _AtkImageIface {
      * }
      */
     public static MemorySegment get_image_size$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2039.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2044.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -175,13 +175,13 @@ public class _AtkImageIface {
      * }
      */
     public static void get_image_size$set(MemorySegment seg, MemorySegment x) {
-        constants$2039.const$1.set(seg, x);
+        constants$2044.const$2.set(seg, x);
     }
     public static MemorySegment get_image_size$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2039.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2044.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_image_size$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2039.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2044.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_image_size get_image_size(MemorySegment segment, Arena scope) {
         return get_image_size.ofAddress(get_image_size$get(segment), scope);
@@ -195,7 +195,7 @@ public class _AtkImageIface {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(set_image_description fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2039.const$2, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$2044.const$3, fi, constants$9.const$0, scope);
         }
         static set_image_description ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -210,7 +210,7 @@ public class _AtkImageIface {
     }
 
     public static VarHandle set_image_description$VH() {
-        return constants$2039.const$3;
+        return constants$2044.const$4;
     }
     /**
      * Getter for field:
@@ -219,7 +219,7 @@ public class _AtkImageIface {
      * }
      */
     public static MemorySegment set_image_description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2039.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2044.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -228,13 +228,13 @@ public class _AtkImageIface {
      * }
      */
     public static void set_image_description$set(MemorySegment seg, MemorySegment x) {
-        constants$2039.const$3.set(seg, x);
+        constants$2044.const$4.set(seg, x);
     }
     public static MemorySegment set_image_description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2039.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2044.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void set_image_description$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2039.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2044.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_image_description set_image_description(MemorySegment segment, Arena scope) {
         return set_image_description.ofAddress(set_image_description$get(segment), scope);
@@ -248,7 +248,7 @@ public class _AtkImageIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_image_locale fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2039.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2044.const$5, fi, constants$5.const$2, scope);
         }
         static get_image_locale ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -263,7 +263,7 @@ public class _AtkImageIface {
     }
 
     public static VarHandle get_image_locale$VH() {
-        return constants$2039.const$5;
+        return constants$2045.const$0;
     }
     /**
      * Getter for field:
@@ -272,7 +272,7 @@ public class _AtkImageIface {
      * }
      */
     public static MemorySegment get_image_locale$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2039.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2045.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -281,13 +281,13 @@ public class _AtkImageIface {
      * }
      */
     public static void get_image_locale$set(MemorySegment seg, MemorySegment x) {
-        constants$2039.const$5.set(seg, x);
+        constants$2045.const$0.set(seg, x);
     }
     public static MemorySegment get_image_locale$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2039.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2045.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_image_locale$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2039.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2045.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_image_locale get_image_locale(MemorySegment segment, Arena scope) {
         return get_image_locale.ofAddress(get_image_locale$get(segment), scope);

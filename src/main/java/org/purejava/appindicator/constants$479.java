@@ -7,24 +7,27 @@ final class constants$479 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$479() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_tree_search_node$search_func.class, "apply", constants$9.const$0);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tree_search_node",
-        constants$23.const$0
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tree_node_key",
+        constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_tree_search$search_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tree_node_value",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tree_lookup_node",
+        constants$5.const$5
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tree_search",
-        constants$23.const$0
+        "g_tree_lookup",
+        constants$5.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tree_lower_bound",
-        constants$5.const$5
+        "g_tree_lookup_extended",
+        constants$34.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tree_upper_bound",
-        constants$5.const$5
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_tree_foreach$func.class, "apply", constants$12.const$2);
 }
 
 

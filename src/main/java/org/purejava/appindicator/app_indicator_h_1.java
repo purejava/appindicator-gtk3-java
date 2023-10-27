@@ -6,6 +6,14 @@ public class app_indicator_h_1 {
 
     /**
      * {@snippet :
+     * #define GDK_KEY_m 109
+     * }
+     */
+    public static int GDK_KEY_m() {
+        return (int)109L;
+    }
+    /**
+     * {@snippet :
      * #define GDK_KEY_n 110
      * }
      */
@@ -7995,14 +8003,6 @@ public class app_indicator_h_1 {
      */
     public static int GDK_KEY_Hangul_WI() {
         return (int)3791L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_YU 3792
-     * }
-     */
-    public static int GDK_KEY_Hangul_YU() {
-        return (int)3792L;
     }
 }
 

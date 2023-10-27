@@ -3,28 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1561 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1561() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_color_to_string",
-        constants$5.const$2
-    );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("klass"),
-        JAVA_INT.withName("start_index"),
-        JAVA_INT.withName("end_index")
-    ).withName("_PangoAttribute");
-    static final VarHandle const$2 = constants$1561.const$1.varHandle(MemoryLayout.PathElement.groupElement("klass"));
-    static final VarHandle const$3 = constants$1561.const$1.varHandle(MemoryLayout.PathElement.groupElement("start_index"));
-    static final VarHandle const$4 = constants$1561.const$1.varHandle(MemoryLayout.PathElement.groupElement("end_index"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(PangoAttrFilterFunc.class, "apply", constants$9.const$0);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoFontClass.describe_absolute.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1559.const$1.varHandle(MemoryLayout.PathElement.groupElement("describe_absolute"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontClass.get_features.class, "apply", constants$466.const$3);
+    static final VarHandle const$3 = constants$1559.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_features"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoFontClass.create_hb_font.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$1559.const$1.varHandle(MemoryLayout.PathElement.groupElement("create_hb_font"));
 }
 
 

@@ -2,21 +2,36 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$841 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$841() {}
-    static final VarHandle const$0 = constants$840.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDataInputStreamClass._g_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$840.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDataInputStreamClass._g_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$840.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_get_type",
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDatagramBasedInterface.condition_wait.class, "apply", constants$841.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$841.const$0
+    );
+    static final VarHandle const$3 = constants$838.const$5.varHandle(MemoryLayout.PathElement.groupElement("condition_wait"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_datagram_based_get_type",
         constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_datagram_based_receive_messages",
+        constants$839.const$0
     );
 }
 

@@ -20,10 +20,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkRcProperty {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3330.const$0;
+        return constants$3335.const$0;
     }
     public static VarHandle type_name$VH() {
-        return constants$3330.const$1;
+        return constants$3335.const$1;
     }
     /**
      * Getter for field:
@@ -32,7 +32,7 @@ public class _GtkRcProperty {
      * }
      */
     public static int type_name$get(MemorySegment seg) {
-        return (int)constants$3330.const$1.get(seg);
+        return (int)constants$3335.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -41,16 +41,16 @@ public class _GtkRcProperty {
      * }
      */
     public static void type_name$set(MemorySegment seg, int x) {
-        constants$3330.const$1.set(seg, x);
+        constants$3335.const$1.set(seg, x);
     }
     public static int type_name$get(MemorySegment seg, long index) {
-        return (int)constants$3330.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3335.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void type_name$set(MemorySegment seg, long index, int x) {
-        constants$3330.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3335.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle property_name$VH() {
-        return constants$3330.const$2;
+        return constants$3335.const$2;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GtkRcProperty {
      * }
      */
     public static int property_name$get(MemorySegment seg) {
-        return (int)constants$3330.const$2.get(seg);
+        return (int)constants$3335.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -68,16 +68,16 @@ public class _GtkRcProperty {
      * }
      */
     public static void property_name$set(MemorySegment seg, int x) {
-        constants$3330.const$2.set(seg, x);
+        constants$3335.const$2.set(seg, x);
     }
     public static int property_name$get(MemorySegment seg, long index) {
-        return (int)constants$3330.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3335.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void property_name$set(MemorySegment seg, long index, int x) {
-        constants$3330.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3335.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle origin$VH() {
-        return constants$3330.const$3;
+        return constants$3335.const$3;
     }
     /**
      * Getter for field:
@@ -86,7 +86,7 @@ public class _GtkRcProperty {
      * }
      */
     public static MemorySegment origin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3330.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3335.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -95,13 +95,13 @@ public class _GtkRcProperty {
      * }
      */
     public static void origin$set(MemorySegment seg, MemorySegment x) {
-        constants$3330.const$3.set(seg, x);
+        constants$3335.const$3.set(seg, x);
     }
     public static MemorySegment origin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3330.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3335.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void origin$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3330.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3335.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment value$slice(MemorySegment seg) {
         return seg.asSlice(16, 24);

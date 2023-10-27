@@ -2,27 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2821 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2821() {}
-    static final VarHandle const$0 = constants$2820.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkIMMulticontextClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2820.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_get_dest_item_at_pos",
+        constants$959.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_create_drag_icon",
+        constants$5.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_convert_widget_to_bin_window_coords",
+        constants$1499.const$5
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_get_type",
-        constants$3.const$5
+        "gtk_icon_view_get_cell_rect",
+        constants$34.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_new",
-        constants$35.const$2
+        "gtk_icon_view_set_tooltip_item",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_append_menuitems",
-        constants$13.const$4
+        "gtk_icon_view_set_tooltip_cell",
+        constants$42.const$1
     );
 }
 

@@ -17,7 +17,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _PangoAttrColor {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1564.const$5;
+        return constants$1569.const$5;
     }
     public static MemorySegment attr$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);

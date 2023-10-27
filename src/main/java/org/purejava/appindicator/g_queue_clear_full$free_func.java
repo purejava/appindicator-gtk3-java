@@ -13,7 +13,7 @@ public interface g_queue_clear_full$free_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_queue_clear_full$free_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$397.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$398.const$1, fi, constants$13.const$1, scope);
     }
     static g_queue_clear_full$free_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

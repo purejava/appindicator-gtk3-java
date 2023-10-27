@@ -13,7 +13,7 @@ public interface gtk_icon_view_selected_foreach$func {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_icon_view_selected_foreach$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2811.const$5, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$2816.const$5, fi, constants$14.const$3, scope);
     }
     static gtk_icon_view_selected_foreach$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

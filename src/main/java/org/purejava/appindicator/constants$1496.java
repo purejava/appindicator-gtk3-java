@@ -11,34 +11,36 @@ final class constants$1496 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1496() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_extents_for_origin",
-        constants$49.const$2
+        "hb_font_funcs_set_paint_glyph_func",
+        constants$42.const$1
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_font_get_h_extents",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_contour_point_for_origin",
-        constants$1496.const$1
+        "hb_font_get_v_extents",
+        constants$9.const$0
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_font_get_nominal_glyph",
+        constants$150.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_font_get_variation_glyph",
+        constants$49.const$2
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
         RuntimeHelper.POINTER,
         JAVA_INT,
         RuntimeHelper.POINTER,
         JAVA_INT
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_font_glyph_to_string",
-        constants$1496.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_font_glyph_from_string",
-        constants$327.const$4
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "hb_font_get_nominal_glyphs",
+        constants$1496.const$5
     );
 }
 

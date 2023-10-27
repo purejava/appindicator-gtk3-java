@@ -22,7 +22,7 @@ import java.lang.invoke.VarHandle;
 public class _GDatagramBasedInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$835.const$5;
+        return constants$838.const$5;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -36,13 +36,13 @@ public class _GDatagramBasedInterface {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, long _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
         static MemorySegment allocate(receive_messages fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$836.const$1, fi, constants$836.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$839.const$1, fi, constants$839.const$0, scope);
         }
         static receive_messages ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, long __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    return (int)constants$836.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
+                    return (int)constants$839.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -51,7 +51,7 @@ public class _GDatagramBasedInterface {
     }
 
     public static VarHandle receive_messages$VH() {
-        return constants$836.const$3;
+        return constants$839.const$3;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _GDatagramBasedInterface {
      * }
      */
     public static MemorySegment receive_messages$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$836.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$839.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -69,13 +69,13 @@ public class _GDatagramBasedInterface {
      * }
      */
     public static void receive_messages$set(MemorySegment seg, MemorySegment x) {
-        constants$836.const$3.set(seg, x);
+        constants$839.const$3.set(seg, x);
     }
     public static MemorySegment receive_messages$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$836.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$839.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void receive_messages$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$836.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$839.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static receive_messages receive_messages(MemorySegment segment, Arena scope) {
         return receive_messages.ofAddress(receive_messages$get(segment), scope);
@@ -89,13 +89,13 @@ public class _GDatagramBasedInterface {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, long _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
         static MemorySegment allocate(send_messages fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$836.const$4, fi, constants$836.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$839.const$4, fi, constants$839.const$0, scope);
         }
         static send_messages ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, long __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
                 try {
-                    return (int)constants$836.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
+                    return (int)constants$839.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -104,7 +104,7 @@ public class _GDatagramBasedInterface {
     }
 
     public static VarHandle send_messages$VH() {
-        return constants$836.const$5;
+        return constants$839.const$5;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GDatagramBasedInterface {
      * }
      */
     public static MemorySegment send_messages$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$836.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$839.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GDatagramBasedInterface {
      * }
      */
     public static void send_messages$set(MemorySegment seg, MemorySegment x) {
-        constants$836.const$5.set(seg, x);
+        constants$839.const$5.set(seg, x);
     }
     public static MemorySegment send_messages$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$836.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$839.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void send_messages$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$836.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$839.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static send_messages send_messages(MemorySegment segment, Arena scope) {
         return send_messages.ofAddress(send_messages$get(segment), scope);
@@ -142,13 +142,13 @@ public class _GDatagramBasedInterface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
         static MemorySegment allocate(create_source fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$837.const$0, fi, constants$196.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$840.const$0, fi, constants$196.const$3, scope);
         }
         static create_source ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$837.const$1.invokeExact(symbol, __x0, __x1, __x2);
+                    return (java.lang.foreign.MemorySegment)constants$840.const$1.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -157,7 +157,7 @@ public class _GDatagramBasedInterface {
     }
 
     public static VarHandle create_source$VH() {
-        return constants$837.const$2;
+        return constants$840.const$2;
     }
     /**
      * Getter for field:
@@ -166,7 +166,7 @@ public class _GDatagramBasedInterface {
      * }
      */
     public static MemorySegment create_source$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$837.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$840.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -175,13 +175,13 @@ public class _GDatagramBasedInterface {
      * }
      */
     public static void create_source$set(MemorySegment seg, MemorySegment x) {
-        constants$837.const$2.set(seg, x);
+        constants$840.const$2.set(seg, x);
     }
     public static MemorySegment create_source$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$837.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$840.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void create_source$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$837.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$840.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static create_source create_source(MemorySegment segment, Arena scope) {
         return create_source.ofAddress(create_source$get(segment), scope);
@@ -195,13 +195,13 @@ public class _GDatagramBasedInterface {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(condition_check fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$837.const$3, fi, constants$11.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$840.const$3, fi, constants$11.const$4, scope);
         }
         static condition_check ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$840.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -210,7 +210,7 @@ public class _GDatagramBasedInterface {
     }
 
     public static VarHandle condition_check$VH() {
-        return constants$837.const$5;
+        return constants$840.const$5;
     }
     /**
      * Getter for field:
@@ -219,7 +219,7 @@ public class _GDatagramBasedInterface {
      * }
      */
     public static MemorySegment condition_check$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$837.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$840.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -228,13 +228,13 @@ public class _GDatagramBasedInterface {
      * }
      */
     public static void condition_check$set(MemorySegment seg, MemorySegment x) {
-        constants$837.const$5.set(seg, x);
+        constants$840.const$5.set(seg, x);
     }
     public static MemorySegment condition_check$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$837.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$840.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void condition_check$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$837.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$840.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static condition_check condition_check(MemorySegment segment, Arena scope) {
         return condition_check.ofAddress(condition_check$get(segment), scope);
@@ -248,13 +248,13 @@ public class _GDatagramBasedInterface {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(condition_wait fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$838.const$1, fi, constants$838.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$841.const$1, fi, constants$841.const$0, scope);
         }
         static condition_wait ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)constants$838.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$841.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -263,7 +263,7 @@ public class _GDatagramBasedInterface {
     }
 
     public static VarHandle condition_wait$VH() {
-        return constants$838.const$3;
+        return constants$841.const$3;
     }
     /**
      * Getter for field:
@@ -272,7 +272,7 @@ public class _GDatagramBasedInterface {
      * }
      */
     public static MemorySegment condition_wait$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$838.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$841.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -281,13 +281,13 @@ public class _GDatagramBasedInterface {
      * }
      */
     public static void condition_wait$set(MemorySegment seg, MemorySegment x) {
-        constants$838.const$3.set(seg, x);
+        constants$841.const$3.set(seg, x);
     }
     public static MemorySegment condition_wait$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$838.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$841.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void condition_wait$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$838.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$841.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static condition_wait condition_wait(MemorySegment segment, Arena scope) {
         return condition_wait.ofAddress(condition_wait$get(segment), scope);

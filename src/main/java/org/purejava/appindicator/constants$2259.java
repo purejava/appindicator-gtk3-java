@@ -8,28 +8,28 @@ final class constants$2259 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2259() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_set_accel_widget",
-        constants$13.const$4
+        "gtk_label_set_single_line_mode",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_set_accel_closure",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_refetch",
+        "gtk_label_get_single_line_mode",
         constants$10.const$5
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_label_get_current_uri",
+        constants$5.const$2
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_set_accel",
-        constants$467.const$3
+        "gtk_label_set_track_visited_links",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_get_accel",
-        constants$14.const$3
+        "gtk_label_get_track_visited_links",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "_gtk_accel_label_class_get_accelerator_label",
-        constants$33.const$5
+        "gtk_label_set_xalign",
+        constants$691.const$5
     );
 }
 

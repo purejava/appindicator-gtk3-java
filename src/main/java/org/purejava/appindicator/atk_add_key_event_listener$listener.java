@@ -13,7 +13,7 @@ public interface atk_add_key_event_listener$listener {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(atk_add_key_event_listener$listener fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1992.const$0, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$1997.const$1, fi, constants$9.const$0, scope);
     }
     static atk_add_key_event_listener$listener ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

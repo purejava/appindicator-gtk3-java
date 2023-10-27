@@ -22,7 +22,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkColorChooserInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2637.const$0;
+        return constants$2642.const$0;
     }
     public static MemorySegment base_interface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -36,7 +36,7 @@ public class _GtkColorChooserInterface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(get_rgba fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2637.const$1, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2642.const$1, fi, constants$13.const$4, scope);
         }
         static get_rgba ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -51,7 +51,7 @@ public class _GtkColorChooserInterface {
     }
 
     public static VarHandle get_rgba$VH() {
-        return constants$2637.const$2;
+        return constants$2642.const$2;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _GtkColorChooserInterface {
      * }
      */
     public static MemorySegment get_rgba$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2637.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2642.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -69,13 +69,13 @@ public class _GtkColorChooserInterface {
      * }
      */
     public static void get_rgba$set(MemorySegment seg, MemorySegment x) {
-        constants$2637.const$2.set(seg, x);
+        constants$2642.const$2.set(seg, x);
     }
     public static MemorySegment get_rgba$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2637.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2642.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_rgba$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2637.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2642.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_rgba get_rgba(MemorySegment segment, Arena scope) {
         return get_rgba.ofAddress(get_rgba$get(segment), scope);
@@ -89,7 +89,7 @@ public class _GtkColorChooserInterface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_rgba fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2637.const$3, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2642.const$3, fi, constants$13.const$4, scope);
         }
         static set_rgba ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -104,7 +104,7 @@ public class _GtkColorChooserInterface {
     }
 
     public static VarHandle set_rgba$VH() {
-        return constants$2637.const$4;
+        return constants$2642.const$4;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GtkColorChooserInterface {
      * }
      */
     public static MemorySegment set_rgba$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2637.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2642.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GtkColorChooserInterface {
      * }
      */
     public static void set_rgba$set(MemorySegment seg, MemorySegment x) {
-        constants$2637.const$4.set(seg, x);
+        constants$2642.const$4.set(seg, x);
     }
     public static MemorySegment set_rgba$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2637.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2642.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void set_rgba$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2637.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2642.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_rgba set_rgba(MemorySegment segment, Arena scope) {
         return set_rgba.ofAddress(set_rgba$get(segment), scope);
@@ -142,13 +142,13 @@ public class _GtkColorChooserInterface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(add_palette fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2637.const$5, fi, constants$1954.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2642.const$5, fi, constants$1959.const$1, scope);
         }
         static add_palette ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    constants$2018.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$2023.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -157,7 +157,7 @@ public class _GtkColorChooserInterface {
     }
 
     public static VarHandle add_palette$VH() {
-        return constants$2638.const$0;
+        return constants$2643.const$0;
     }
     /**
      * Getter for field:
@@ -166,7 +166,7 @@ public class _GtkColorChooserInterface {
      * }
      */
     public static MemorySegment add_palette$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2638.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2643.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -175,13 +175,13 @@ public class _GtkColorChooserInterface {
      * }
      */
     public static void add_palette$set(MemorySegment seg, MemorySegment x) {
-        constants$2638.const$0.set(seg, x);
+        constants$2643.const$0.set(seg, x);
     }
     public static MemorySegment add_palette$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2638.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2643.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void add_palette$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2638.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2643.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static add_palette add_palette(MemorySegment segment, Arena scope) {
         return add_palette.ofAddress(add_palette$get(segment), scope);
@@ -195,7 +195,7 @@ public class _GtkColorChooserInterface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(color_activated fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2638.const$1, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2643.const$1, fi, constants$13.const$4, scope);
         }
         static color_activated ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -210,7 +210,7 @@ public class _GtkColorChooserInterface {
     }
 
     public static VarHandle color_activated$VH() {
-        return constants$2638.const$2;
+        return constants$2643.const$2;
     }
     /**
      * Getter for field:
@@ -219,7 +219,7 @@ public class _GtkColorChooserInterface {
      * }
      */
     public static MemorySegment color_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2638.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2643.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -228,13 +228,13 @@ public class _GtkColorChooserInterface {
      * }
      */
     public static void color_activated$set(MemorySegment seg, MemorySegment x) {
-        constants$2638.const$2.set(seg, x);
+        constants$2643.const$2.set(seg, x);
     }
     public static MemorySegment color_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2638.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2643.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void color_activated$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2638.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2643.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static color_activated color_activated(MemorySegment segment, Arena scope) {
         return color_activated.ofAddress(color_activated$get(segment), scope);

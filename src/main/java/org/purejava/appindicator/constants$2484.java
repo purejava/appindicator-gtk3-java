@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2484 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2484() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_visible_rect",
-        constants$13.const$4
+        "gtk_tree_view_insert_column_with_data_func",
+        constants$1752.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_visible_range",
-        constants$12.const$2
+        "gtk_tree_view_get_n_columns",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_is_blank_at_pos",
-        constants$1640.const$2
+        "gtk_tree_view_get_column",
+        constants$21.const$3
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_columns",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_enable_model_drag_source",
-        constants$2484.const$3
+        "gtk_tree_view_move_column_after",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_enable_model_drag_dest",
-        constants$1043.const$2
+        "gtk_tree_view_set_expander_column",
+        constants$13.const$4
     );
 }
 

@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class _GDBusInterfaceVTable {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$863.const$5;
+        return constants$866.const$5;
     }
     /**
      * {@snippet :
@@ -31,13 +31,13 @@ public class _GDBusInterfaceVTable {
 
         void apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment method_name, java.lang.foreign.MemorySegment parameters, java.lang.foreign.MemorySegment invocation, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(method_call fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$864.const$0, fi, constants$862.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$867.const$0, fi, constants$865.const$3, scope);
         }
         static method_call ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _method_name, java.lang.foreign.MemorySegment _parameters, java.lang.foreign.MemorySegment _invocation, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    constants$862.const$5.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _method_name, _parameters, _invocation, _user_data);
+                    constants$865.const$5.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _method_name, _parameters, _invocation, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -46,7 +46,7 @@ public class _GDBusInterfaceVTable {
     }
 
     public static VarHandle method_call$VH() {
-        return constants$864.const$1;
+        return constants$867.const$1;
     }
     /**
      * Getter for field:
@@ -55,7 +55,7 @@ public class _GDBusInterfaceVTable {
      * }
      */
     public static MemorySegment method_call$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$864.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$867.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -64,13 +64,13 @@ public class _GDBusInterfaceVTable {
      * }
      */
     public static void method_call$set(MemorySegment seg, MemorySegment x) {
-        constants$864.const$1.set(seg, x);
+        constants$867.const$1.set(seg, x);
     }
     public static MemorySegment method_call$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$864.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$867.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void method_call$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$864.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$867.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static method_call method_call(MemorySegment segment, Arena scope) {
         return method_call.ofAddress(method_call$get(segment), scope);
@@ -84,13 +84,13 @@ public class _GDBusInterfaceVTable {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment out_user_data, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_property fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$864.const$2, fi, constants$494.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$867.const$2, fi, constants$496.const$1, scope);
         }
         static get_property ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _out_user_data, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$863.const$1.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _node, _out_user_data, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$866.const$1.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _node, _out_user_data, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -99,7 +99,7 @@ public class _GDBusInterfaceVTable {
     }
 
     public static VarHandle get_property$VH() {
-        return constants$864.const$3;
+        return constants$867.const$3;
     }
     /**
      * Getter for field:
@@ -108,7 +108,7 @@ public class _GDBusInterfaceVTable {
      * }
      */
     public static MemorySegment get_property$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$864.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$867.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -117,13 +117,13 @@ public class _GDBusInterfaceVTable {
      * }
      */
     public static void get_property$set(MemorySegment seg, MemorySegment x) {
-        constants$864.const$3.set(seg, x);
+        constants$867.const$3.set(seg, x);
     }
     public static MemorySegment get_property$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$864.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$867.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_property$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$864.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$867.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_property get_property(MemorySegment segment, Arena scope) {
         return get_property.ofAddress(get_property$get(segment), scope);
@@ -137,13 +137,13 @@ public class _GDBusInterfaceVTable {
 
         int apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment property_name, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment error, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(set_property fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$864.const$4, fi, constants$863.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$867.const$4, fi, constants$866.const$2, scope);
         }
         static set_property ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _property_name, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _error, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)constants$863.const$4.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _property_name, _value, _error, _user_data);
+                    return (int)constants$866.const$4.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _property_name, _value, _error, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -152,7 +152,7 @@ public class _GDBusInterfaceVTable {
     }
 
     public static VarHandle set_property$VH() {
-        return constants$864.const$5;
+        return constants$867.const$5;
     }
     /**
      * Getter for field:
@@ -161,7 +161,7 @@ public class _GDBusInterfaceVTable {
      * }
      */
     public static MemorySegment set_property$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$864.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$867.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -170,13 +170,13 @@ public class _GDBusInterfaceVTable {
      * }
      */
     public static void set_property$set(MemorySegment seg, MemorySegment x) {
-        constants$864.const$5.set(seg, x);
+        constants$867.const$5.set(seg, x);
     }
     public static MemorySegment set_property$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$864.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$867.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void set_property$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$864.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$867.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_property set_property(MemorySegment segment, Arena scope) {
         return set_property.ofAddress(set_property$get(segment), scope);

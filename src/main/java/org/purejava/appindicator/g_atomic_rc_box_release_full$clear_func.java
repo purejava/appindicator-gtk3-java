@@ -13,7 +13,7 @@ public interface g_atomic_rc_box_release_full$clear_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_atomic_rc_box_release_full$clear_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$409.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$410.const$2, fi, constants$13.const$1, scope);
     }
     static g_atomic_rc_box_release_full$clear_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

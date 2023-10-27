@@ -2,34 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$686 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$686() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_value_get_char",
-        constants$186.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_value_set_schar",
-        constants$188.const$5
-    );
+    static final VarHandle const$0 = constants$685.const$4.varHandle(MemoryLayout.PathElement.groupElement("values"));
+    static final VarHandle const$1 = constants$685.const$4.varHandle(MemoryLayout.PathElement.groupElement("n_prealloced"));
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_value_get_schar",
-        constants$186.const$4
+        "g_value_array_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_value_set_uchar",
-        constants$188.const$5
+        "g_value_array_get_nth",
+        constants$21.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_value_get_uchar",
-        constants$186.const$4
+        "g_value_array_new",
+        constants$24.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_value_set_boolean",
-        constants$40.const$2
+        "g_value_array_free",
+        constants$13.const$1
     );
 }
 

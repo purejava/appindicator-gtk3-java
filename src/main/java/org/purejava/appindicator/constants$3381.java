@@ -2,23 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3381 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3381() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$3043.const$5
+        "gtk_table_get_default_row_spacing",
+        constants$10.const$5
     );
-    static final VarHandle const$1 = constants$3379.const$3.varHandle(MemoryLayout.PathElement.groupElement("render_frame_gap"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkThemingEngineClass.render_extension.class, "apply", constants$3043.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_table_set_col_spacings",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_table_get_default_col_spacing",
+        constants$10.const$5
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        constants$3043.const$3
+        "gtk_table_set_homogeneous",
+        constants$40.const$2
     );
-    static final VarHandle const$4 = constants$3379.const$3.varHandle(MemoryLayout.PathElement.groupElement("render_extension"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkThemingEngineClass.render_check.class, "apply", constants$3041.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_table_get_homogeneous",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_table_get_size",
+        constants$14.const$3
+    );
 }
 
 

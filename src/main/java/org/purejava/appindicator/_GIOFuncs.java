@@ -24,7 +24,7 @@ import java.lang.invoke.VarHandle;
 public class _GIOFuncs {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$315.const$4;
+        return constants$316.const$4;
     }
     /**
      * {@snippet :
@@ -35,13 +35,13 @@ public class _GIOFuncs {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(io_read fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$316.const$0, fi, constants$315.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$317.const$0, fi, constants$316.const$5, scope);
         }
         static io_read ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)constants$316.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$317.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -50,7 +50,7 @@ public class _GIOFuncs {
     }
 
     public static VarHandle io_read$VH() {
-        return constants$316.const$2;
+        return constants$317.const$2;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GIOFuncs {
      * }
      */
     public static MemorySegment io_read$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$316.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$317.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -68,13 +68,13 @@ public class _GIOFuncs {
      * }
      */
     public static void io_read$set(MemorySegment seg, MemorySegment x) {
-        constants$316.const$2.set(seg, x);
+        constants$317.const$2.set(seg, x);
     }
     public static MemorySegment io_read$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$316.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$317.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void io_read$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$316.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$317.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static io_read io_read(MemorySegment segment, Arena scope) {
         return io_read.ofAddress(io_read$get(segment), scope);
@@ -88,13 +88,13 @@ public class _GIOFuncs {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(io_write fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$316.const$3, fi, constants$315.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$317.const$3, fi, constants$316.const$5, scope);
         }
         static io_write ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)constants$316.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$317.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -103,7 +103,7 @@ public class _GIOFuncs {
     }
 
     public static VarHandle io_write$VH() {
-        return constants$316.const$4;
+        return constants$317.const$4;
     }
     /**
      * Getter for field:
@@ -112,7 +112,7 @@ public class _GIOFuncs {
      * }
      */
     public static MemorySegment io_write$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$316.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$317.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -121,13 +121,13 @@ public class _GIOFuncs {
      * }
      */
     public static void io_write$set(MemorySegment seg, MemorySegment x) {
-        constants$316.const$4.set(seg, x);
+        constants$317.const$4.set(seg, x);
     }
     public static MemorySegment io_write$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$316.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$317.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void io_write$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$316.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$317.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static io_write io_write(MemorySegment segment, Arena scope) {
         return io_write.ofAddress(io_write$get(segment), scope);
@@ -141,13 +141,13 @@ public class _GIOFuncs {
 
         int apply(java.lang.foreign.MemorySegment _x0, long _x1, int _x2, java.lang.foreign.MemorySegment _x3);
         static MemorySegment allocate(io_seek fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$317.const$0, fi, constants$316.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$318.const$0, fi, constants$317.const$5, scope);
         }
         static io_seek ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, long __x1, int __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)constants$317.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (int)constants$318.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -156,7 +156,7 @@ public class _GIOFuncs {
     }
 
     public static VarHandle io_seek$VH() {
-        return constants$317.const$2;
+        return constants$318.const$2;
     }
     /**
      * Getter for field:
@@ -165,7 +165,7 @@ public class _GIOFuncs {
      * }
      */
     public static MemorySegment io_seek$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$317.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$318.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -174,13 +174,13 @@ public class _GIOFuncs {
      * }
      */
     public static void io_seek$set(MemorySegment seg, MemorySegment x) {
-        constants$317.const$2.set(seg, x);
+        constants$318.const$2.set(seg, x);
     }
     public static MemorySegment io_seek$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$317.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$318.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void io_seek$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$317.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$318.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static io_seek io_seek(MemorySegment segment, Arena scope) {
         return io_seek.ofAddress(io_seek$get(segment), scope);
@@ -194,7 +194,7 @@ public class _GIOFuncs {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
         static MemorySegment allocate(io_close fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$317.const$3, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$318.const$3, fi, constants$9.const$0, scope);
         }
         static io_close ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -209,7 +209,7 @@ public class _GIOFuncs {
     }
 
     public static VarHandle io_close$VH() {
-        return constants$317.const$4;
+        return constants$318.const$4;
     }
     /**
      * Getter for field:
@@ -218,7 +218,7 @@ public class _GIOFuncs {
      * }
      */
     public static MemorySegment io_close$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$317.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$318.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -227,13 +227,13 @@ public class _GIOFuncs {
      * }
      */
     public static void io_close$set(MemorySegment seg, MemorySegment x) {
-        constants$317.const$4.set(seg, x);
+        constants$318.const$4.set(seg, x);
     }
     public static MemorySegment io_close$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$317.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$318.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void io_close$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$317.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$318.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static io_close io_close(MemorySegment segment, Arena scope) {
         return io_close.ofAddress(io_close$get(segment), scope);
@@ -247,13 +247,13 @@ public class _GIOFuncs {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(io_create_watch fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$317.const$5, fi, constants$21.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$318.const$5, fi, constants$21.const$3, scope);
         }
         static io_create_watch ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$318.const$0.invokeExact(symbol, __x0, __x1);
+                    return (java.lang.foreign.MemorySegment)constants$319.const$0.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -262,7 +262,7 @@ public class _GIOFuncs {
     }
 
     public static VarHandle io_create_watch$VH() {
-        return constants$318.const$1;
+        return constants$319.const$1;
     }
     /**
      * Getter for field:
@@ -271,7 +271,7 @@ public class _GIOFuncs {
      * }
      */
     public static MemorySegment io_create_watch$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$318.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$319.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -280,13 +280,13 @@ public class _GIOFuncs {
      * }
      */
     public static void io_create_watch$set(MemorySegment seg, MemorySegment x) {
-        constants$318.const$1.set(seg, x);
+        constants$319.const$1.set(seg, x);
     }
     public static MemorySegment io_create_watch$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$318.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$319.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void io_create_watch$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$318.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$319.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static io_create_watch io_create_watch(MemorySegment segment, Arena scope) {
         return io_create_watch.ofAddress(io_create_watch$get(segment), scope);
@@ -300,7 +300,7 @@ public class _GIOFuncs {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(io_free fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$318.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$319.const$2, fi, constants$13.const$1, scope);
         }
         static io_free ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -315,7 +315,7 @@ public class _GIOFuncs {
     }
 
     public static VarHandle io_free$VH() {
-        return constants$318.const$3;
+        return constants$319.const$3;
     }
     /**
      * Getter for field:
@@ -324,7 +324,7 @@ public class _GIOFuncs {
      * }
      */
     public static MemorySegment io_free$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$318.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$319.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -333,13 +333,13 @@ public class _GIOFuncs {
      * }
      */
     public static void io_free$set(MemorySegment seg, MemorySegment x) {
-        constants$318.const$3.set(seg, x);
+        constants$319.const$3.set(seg, x);
     }
     public static MemorySegment io_free$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$318.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$319.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void io_free$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$318.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$319.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static io_free io_free(MemorySegment segment, Arena scope) {
         return io_free.ofAddress(io_free$get(segment), scope);
@@ -353,13 +353,13 @@ public class _GIOFuncs {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
         static MemorySegment allocate(io_set_flags fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$318.const$4, fi, constants$150.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$319.const$4, fi, constants$150.const$0, scope);
         }
         static io_set_flags ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)constants$315.const$3.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$316.const$3.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -368,7 +368,7 @@ public class _GIOFuncs {
     }
 
     public static VarHandle io_set_flags$VH() {
-        return constants$318.const$5;
+        return constants$319.const$5;
     }
     /**
      * Getter for field:
@@ -377,7 +377,7 @@ public class _GIOFuncs {
      * }
      */
     public static MemorySegment io_set_flags$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$318.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$319.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -386,13 +386,13 @@ public class _GIOFuncs {
      * }
      */
     public static void io_set_flags$set(MemorySegment seg, MemorySegment x) {
-        constants$318.const$5.set(seg, x);
+        constants$319.const$5.set(seg, x);
     }
     public static MemorySegment io_set_flags$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$318.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$319.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void io_set_flags$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$318.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$319.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static io_set_flags io_set_flags(MemorySegment segment, Arena scope) {
         return io_set_flags.ofAddress(io_set_flags$get(segment), scope);
@@ -406,7 +406,7 @@ public class _GIOFuncs {
 
         int apply(java.lang.foreign.MemorySegment _x0);
         static MemorySegment allocate(io_get_flags fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$319.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$320.const$0, fi, constants$10.const$5, scope);
         }
         static io_get_flags ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -421,7 +421,7 @@ public class _GIOFuncs {
     }
 
     public static VarHandle io_get_flags$VH() {
-        return constants$319.const$1;
+        return constants$320.const$1;
     }
     /**
      * Getter for field:
@@ -430,7 +430,7 @@ public class _GIOFuncs {
      * }
      */
     public static MemorySegment io_get_flags$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$319.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$320.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -439,13 +439,13 @@ public class _GIOFuncs {
      * }
      */
     public static void io_get_flags$set(MemorySegment seg, MemorySegment x) {
-        constants$319.const$1.set(seg, x);
+        constants$320.const$1.set(seg, x);
     }
     public static MemorySegment io_get_flags$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$319.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$320.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void io_get_flags$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$319.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$320.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static io_get_flags io_get_flags(MemorySegment segment, Arena scope) {
         return io_get_flags.ofAddress(io_get_flags$get(segment), scope);

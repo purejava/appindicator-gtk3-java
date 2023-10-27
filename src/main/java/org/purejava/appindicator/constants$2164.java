@@ -8,25 +8,28 @@ final class constants$2164 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2164() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_init_template",
-        constants$13.const$1
+        "gtk_widget_is_composited",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_template_child",
-        constants$36.const$1
+        "gtk_widget_shape_combine_region",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_template",
+        "gtk_widget_input_shape_combine_region",
         constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_template_from_resource",
+        "gtk_widget_list_mnemonic_labels",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_widget_add_mnemonic_label",
         constants$13.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_widget_class_bind_template_callback_full$callback_symbol.class, "apply", constants$7.const$5);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_bind_template_callback_full",
-        constants$14.const$3
+        "gtk_widget_remove_mnemonic_label",
+        constants$13.const$4
     );
 }
 

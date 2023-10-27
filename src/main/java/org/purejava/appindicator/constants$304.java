@@ -8,28 +8,28 @@ final class constants$304 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$304() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_stpcpy",
-        constants$5.const$5
+        "g_strsplit_set",
+        constants$32.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_str_to_ascii",
+        "g_strjoinv",
         constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_str_tokenize_and_fold",
-        constants$23.const$0
+        "g_strfreev",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_str_match_string",
-        constants$62.const$0
+        "g_strdupv",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_strv_contains",
-        constants$9.const$0
+        "g_strv_length",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_strv_equal",
-        constants$9.const$0
+        "g_stpcpy",
+        constants$5.const$5
     );
 }
 

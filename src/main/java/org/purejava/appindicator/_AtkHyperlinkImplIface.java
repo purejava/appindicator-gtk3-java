@@ -18,7 +18,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkHyperlinkImplIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2035.const$1;
+        return constants$2040.const$2;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -32,7 +32,7 @@ public class _AtkHyperlinkImplIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_hyperlink fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2035.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2040.const$3, fi, constants$5.const$2, scope);
         }
         static get_hyperlink ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -47,7 +47,7 @@ public class _AtkHyperlinkImplIface {
     }
 
     public static VarHandle get_hyperlink$VH() {
-        return constants$2035.const$3;
+        return constants$2040.const$4;
     }
     /**
      * Getter for field:
@@ -56,7 +56,7 @@ public class _AtkHyperlinkImplIface {
      * }
      */
     public static MemorySegment get_hyperlink$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2035.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2040.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -65,13 +65,13 @@ public class _AtkHyperlinkImplIface {
      * }
      */
     public static void get_hyperlink$set(MemorySegment seg, MemorySegment x) {
-        constants$2035.const$3.set(seg, x);
+        constants$2040.const$4.set(seg, x);
     }
     public static MemorySegment get_hyperlink$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2035.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2040.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_hyperlink$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2035.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2040.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_hyperlink get_hyperlink(MemorySegment segment, Arena scope) {
         return get_hyperlink.ofAddress(get_hyperlink$get(segment), scope);

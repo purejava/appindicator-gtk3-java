@@ -2,31 +2,45 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$858 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$858() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_close",
-        constants$42.const$1
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_close_finish",
-        constants$12.const$2
+        "g_dbus_connection_new_sync",
+        constants$858.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_close_sync",
-        constants$12.const$2
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_dbus_connection_new_for_address$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_new_for_address",
+        constants$381.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_dbus_connection_flush$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_flush",
-        constants$42.const$1
+        "g_dbus_connection_new_for_address_finish",
+        constants$5.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_flush_finish",
-        constants$12.const$2
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_new_for_address_sync",
+        constants$858.const$5
     );
 }
 

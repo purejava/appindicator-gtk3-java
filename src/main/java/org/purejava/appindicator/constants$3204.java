@@ -7,29 +7,26 @@ final class constants$3204 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3204() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_set_valist",
-        constants$311.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_tree_selection_selected_foreach$func.class, "apply", constants$42.const$1);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_remove",
-        constants$9.const$0
+        "gtk_tree_selection_selected_foreach",
+        constants$14.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_insert",
-        constants$331.const$4
+        "gtk_tree_selection_select_path",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_insert_before",
-        constants$42.const$1
+        "gtk_tree_selection_unselect_path",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_insert_after",
-        constants$42.const$1
+        "gtk_tree_selection_select_iter",
+        constants$13.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_store_insert_with_values",
-        constants$331.const$4
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tree_selection_unselect_iter",
+        constants$13.const$4
     );
 }
 

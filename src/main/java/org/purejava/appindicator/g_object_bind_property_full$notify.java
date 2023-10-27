@@ -13,7 +13,7 @@ public interface g_object_bind_property_full$notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_object_bind_property_full$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$645.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$647.const$5, fi, constants$13.const$1, scope);
     }
     static g_object_bind_property_full$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

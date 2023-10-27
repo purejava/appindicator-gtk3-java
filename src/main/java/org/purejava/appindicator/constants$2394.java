@@ -2,42 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2394 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2394() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_drag_finish",
-        constants$1131.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_drag_get_source_widget",
+        "gtk_selection_data_get_data_type",
         constants$5.const$2
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_format",
+        constants$10.const$5
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_drag_highlight",
-        constants$13.const$1
+        "gtk_selection_data_get_data",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_drag_unhighlight",
-        constants$13.const$1
+        "gtk_selection_data_get_length",
+        constants$10.const$5
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_get_data_with_length",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_drag_begin_with_coordinates",
-        constants$2394.const$4
+        "gtk_selection_data_get_display",
+        constants$5.const$2
     );
 }
 

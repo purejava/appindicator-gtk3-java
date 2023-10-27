@@ -2,38 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$3295 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3295() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_font_selection_get_face",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_gradient_add_color_stop",
-        constants$3295.const$0
+        "gtk_font_selection_get_size",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_gradient_ref",
+        "gtk_font_selection_get_font_name",
         constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_gradient_unref",
-        constants$13.const$1
+        "gtk_font_selection_set_font_name",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_gradient_resolve",
-        constants$12.const$2
+        "gtk_font_selection_get_preview_text",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_gradient_resolve_for_context",
-        constants$5.const$5
+        "gtk_font_selection_set_preview_text",
+        constants$13.const$4
     );
 }
 

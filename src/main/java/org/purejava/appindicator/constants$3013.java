@@ -8,28 +8,28 @@ final class constants$3013 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3013() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_new",
-        constants$35.const$2
+        "gtk_range_get_show_fill_level",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_get_default",
-        constants$35.const$2
+        "gtk_range_set_restrict_to_fill_level",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_add_item",
-        constants$9.const$0
+        "gtk_range_get_restrict_to_fill_level",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_add_full",
-        constants$12.const$2
+        "gtk_range_set_fill_level",
+        constants$692.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_remove_item",
-        constants$12.const$2
+        "gtk_range_get_fill_level",
+        constants$67.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_lookup_item",
-        constants$23.const$0
+        "gtk_range_set_round_digits",
+        constants$40.const$2
     );
 }
 

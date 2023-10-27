@@ -2,35 +2,34 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$606 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$606() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "g_signal_emit",
-        constants$467.const$3
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_new$accumulator.class, "apply", constants$34.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_signal_new$c_marshaller.class, "apply", constants$587.const$0);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "g_signal_emit_by_name",
-        constants$13.const$4
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_new",
+        constants$606.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_signal_lookup",
-        constants$97.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_signal_name",
-        constants$24.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_signal_query",
-        constants$90.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_signal_list_ids",
-        constants$407.const$2
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_new_class_handler$class_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_signal_new_class_handler$accumulator.class, "apply", constants$34.const$5);
 }
 
 

@@ -7,6 +7,222 @@ import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 public class app_indicator_h_12 extends app_indicator_h_11 {
 
+    public static MethodHandle cairo_restore$MH() {
+        return RuntimeHelper.requireNonNull(constants$1686.const$4,"cairo_restore");
+    }
+    /**
+     * {@snippet :
+     * void cairo_restore(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_restore(MemorySegment cr) {
+        var mh$ = cairo_restore$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_push_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$1686.const$5,"cairo_push_group");
+    }
+    /**
+     * {@snippet :
+     * void cairo_push_group(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_push_group(MemorySegment cr) {
+        var mh$ = cairo_push_group$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_push_group_with_content$MH() {
+        return RuntimeHelper.requireNonNull(constants$1687.const$0,"cairo_push_group_with_content");
+    }
+    /**
+     * {@snippet :
+     * void cairo_push_group_with_content(struct _cairo* cr, enum _cairo_content content);
+     * }
+     */
+    public static void cairo_push_group_with_content(MemorySegment cr, int content) {
+        var mh$ = cairo_push_group_with_content$MH();
+        try {
+            mh$.invokeExact(cr, content);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_pop_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$1687.const$1,"cairo_pop_group");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo_pattern* cairo_pop_group(struct _cairo* cr);
+     * }
+     */
+    public static MemorySegment cairo_pop_group(MemorySegment cr) {
+        var mh$ = cairo_pop_group$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_pop_group_to_source$MH() {
+        return RuntimeHelper.requireNonNull(constants$1687.const$2,"cairo_pop_group_to_source");
+    }
+    /**
+     * {@snippet :
+     * void cairo_pop_group_to_source(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_pop_group_to_source(MemorySegment cr) {
+        var mh$ = cairo_pop_group_to_source$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_CLEAR = 0;
+     * }
+     */
+    public static int CAIRO_OPERATOR_CLEAR() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_SOURCE = 1;
+     * }
+     */
+    public static int CAIRO_OPERATOR_SOURCE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_OVER = 2;
+     * }
+     */
+    public static int CAIRO_OPERATOR_OVER() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_IN = 3;
+     * }
+     */
+    public static int CAIRO_OPERATOR_IN() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_OUT = 4;
+     * }
+     */
+    public static int CAIRO_OPERATOR_OUT() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_ATOP = 5;
+     * }
+     */
+    public static int CAIRO_OPERATOR_ATOP() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DEST = 6;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DEST() {
+        return (int)6L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DEST_OVER = 7;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DEST_OVER() {
+        return (int)7L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DEST_IN = 8;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DEST_IN() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DEST_OUT = 9;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DEST_OUT() {
+        return (int)9L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DEST_ATOP = 10;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DEST_ATOP() {
+        return (int)10L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_XOR = 11;
+     * }
+     */
+    public static int CAIRO_OPERATOR_XOR() {
+        return (int)11L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_ADD = 12;
+     * }
+     */
+    public static int CAIRO_OPERATOR_ADD() {
+        return (int)12L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_SATURATE = 13;
+     * }
+     */
+    public static int CAIRO_OPERATOR_SATURATE() {
+        return (int)13L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_MULTIPLY = 14;
+     * }
+     */
+    public static int CAIRO_OPERATOR_MULTIPLY() {
+        return (int)14L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_SCREEN = 15;
+     * }
+     */
+    public static int CAIRO_OPERATOR_SCREEN() {
+        return (int)15L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_OVERLAY = 16;
+     * }
+     */
+    public static int CAIRO_OPERATOR_OVERLAY() {
+        return (int)16L;
+    }
     /**
      * {@snippet :
      * enum _cairo_operator.CAIRO_OPERATOR_DARKEN = 17;
@@ -104,7 +320,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)28L;
     }
     public static MethodHandle cairo_set_operator$MH() {
-        return RuntimeHelper.requireNonNull(constants$1682.const$1,"cairo_set_operator");
+        return RuntimeHelper.requireNonNull(constants$1687.const$3,"cairo_set_operator");
     }
     /**
      * {@snippet :
@@ -120,7 +336,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$1682.const$2,"cairo_set_source");
+        return RuntimeHelper.requireNonNull(constants$1687.const$4,"cairo_set_source");
     }
     /**
      * {@snippet :
@@ -136,7 +352,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_source_rgb$MH() {
-        return RuntimeHelper.requireNonNull(constants$1682.const$4,"cairo_set_source_rgb");
+        return RuntimeHelper.requireNonNull(constants$1687.const$6,"cairo_set_source_rgb");
     }
     /**
      * {@snippet :
@@ -152,7 +368,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_source_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1682.const$6,"cairo_set_source_rgba");
+        return RuntimeHelper.requireNonNull(constants$1688.const$1,"cairo_set_source_rgba");
     }
     /**
      * {@snippet :
@@ -168,7 +384,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_source_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1683.const$1,"cairo_set_source_surface");
+        return RuntimeHelper.requireNonNull(constants$1688.const$3,"cairo_set_source_surface");
     }
     /**
      * {@snippet :
@@ -184,7 +400,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_tolerance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1683.const$2,"cairo_set_tolerance");
+        return RuntimeHelper.requireNonNull(constants$1688.const$4,"cairo_set_tolerance");
     }
     /**
      * {@snippet :
@@ -256,7 +472,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)6L;
     }
     public static MethodHandle cairo_set_antialias$MH() {
-        return RuntimeHelper.requireNonNull(constants$1683.const$3,"cairo_set_antialias");
+        return RuntimeHelper.requireNonNull(constants$1688.const$5,"cairo_set_antialias");
     }
     /**
      * {@snippet :
@@ -288,7 +504,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)1L;
     }
     public static MethodHandle cairo_set_fill_rule$MH() {
-        return RuntimeHelper.requireNonNull(constants$1683.const$4,"cairo_set_fill_rule");
+        return RuntimeHelper.requireNonNull(constants$1689.const$0,"cairo_set_fill_rule");
     }
     /**
      * {@snippet :
@@ -304,7 +520,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_line_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1683.const$5,"cairo_set_line_width");
+        return RuntimeHelper.requireNonNull(constants$1689.const$1,"cairo_set_line_width");
     }
     /**
      * {@snippet :
@@ -320,7 +536,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_hairline$MH() {
-        return RuntimeHelper.requireNonNull(constants$1684.const$0,"cairo_set_hairline");
+        return RuntimeHelper.requireNonNull(constants$1689.const$2,"cairo_set_hairline");
     }
     /**
      * {@snippet :
@@ -360,7 +576,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)2L;
     }
     public static MethodHandle cairo_set_line_cap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1684.const$1,"cairo_set_line_cap");
+        return RuntimeHelper.requireNonNull(constants$1689.const$3,"cairo_set_line_cap");
     }
     /**
      * {@snippet :
@@ -400,7 +616,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)2L;
     }
     public static MethodHandle cairo_set_line_join$MH() {
-        return RuntimeHelper.requireNonNull(constants$1684.const$2,"cairo_set_line_join");
+        return RuntimeHelper.requireNonNull(constants$1689.const$4,"cairo_set_line_join");
     }
     /**
      * {@snippet :
@@ -416,7 +632,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_dash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1684.const$4,"cairo_set_dash");
+        return RuntimeHelper.requireNonNull(constants$1689.const$6,"cairo_set_dash");
     }
     /**
      * {@snippet :
@@ -432,7 +648,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_miter_limit$MH() {
-        return RuntimeHelper.requireNonNull(constants$1684.const$5,"cairo_set_miter_limit");
+        return RuntimeHelper.requireNonNull(constants$1690.const$0,"cairo_set_miter_limit");
     }
     /**
      * {@snippet :
@@ -448,7 +664,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1685.const$0,"cairo_translate");
+        return RuntimeHelper.requireNonNull(constants$1690.const$1,"cairo_translate");
     }
     /**
      * {@snippet :
@@ -464,7 +680,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1685.const$1,"cairo_scale");
+        return RuntimeHelper.requireNonNull(constants$1690.const$2,"cairo_scale");
     }
     /**
      * {@snippet :
@@ -480,7 +696,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_rotate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1685.const$2,"cairo_rotate");
+        return RuntimeHelper.requireNonNull(constants$1690.const$3,"cairo_rotate");
     }
     /**
      * {@snippet :
@@ -496,7 +712,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_transform$MH() {
-        return RuntimeHelper.requireNonNull(constants$1685.const$3,"cairo_transform");
+        return RuntimeHelper.requireNonNull(constants$1690.const$4,"cairo_transform");
     }
     /**
      * {@snippet :
@@ -512,7 +728,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1685.const$4,"cairo_set_matrix");
+        return RuntimeHelper.requireNonNull(constants$1690.const$5,"cairo_set_matrix");
     }
     /**
      * {@snippet :
@@ -528,7 +744,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_identity_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1685.const$5,"cairo_identity_matrix");
+        return RuntimeHelper.requireNonNull(constants$1691.const$0,"cairo_identity_matrix");
     }
     /**
      * {@snippet :
@@ -544,7 +760,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_to_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1686.const$0,"cairo_user_to_device");
+        return RuntimeHelper.requireNonNull(constants$1691.const$1,"cairo_user_to_device");
     }
     /**
      * {@snippet :
@@ -560,7 +776,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_to_device_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1686.const$1,"cairo_user_to_device_distance");
+        return RuntimeHelper.requireNonNull(constants$1691.const$2,"cairo_user_to_device_distance");
     }
     /**
      * {@snippet :
@@ -576,7 +792,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_to_user$MH() {
-        return RuntimeHelper.requireNonNull(constants$1686.const$2,"cairo_device_to_user");
+        return RuntimeHelper.requireNonNull(constants$1691.const$3,"cairo_device_to_user");
     }
     /**
      * {@snippet :
@@ -592,7 +808,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_to_user_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1686.const$3,"cairo_device_to_user_distance");
+        return RuntimeHelper.requireNonNull(constants$1691.const$4,"cairo_device_to_user_distance");
     }
     /**
      * {@snippet :
@@ -608,7 +824,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_new_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1686.const$4,"cairo_new_path");
+        return RuntimeHelper.requireNonNull(constants$1691.const$5,"cairo_new_path");
     }
     /**
      * {@snippet :
@@ -624,7 +840,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_move_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1686.const$5,"cairo_move_to");
+        return RuntimeHelper.requireNonNull(constants$1692.const$0,"cairo_move_to");
     }
     /**
      * {@snippet :
@@ -640,7 +856,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_new_sub_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1687.const$0,"cairo_new_sub_path");
+        return RuntimeHelper.requireNonNull(constants$1692.const$1,"cairo_new_sub_path");
     }
     /**
      * {@snippet :
@@ -656,7 +872,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_line_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1687.const$1,"cairo_line_to");
+        return RuntimeHelper.requireNonNull(constants$1692.const$2,"cairo_line_to");
     }
     /**
      * {@snippet :
@@ -672,7 +888,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_curve_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1687.const$3,"cairo_curve_to");
+        return RuntimeHelper.requireNonNull(constants$1692.const$4,"cairo_curve_to");
     }
     /**
      * {@snippet :
@@ -688,7 +904,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_arc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1687.const$5,"cairo_arc");
+        return RuntimeHelper.requireNonNull(constants$1692.const$6,"cairo_arc");
     }
     /**
      * {@snippet :
@@ -704,7 +920,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_arc_negative$MH() {
-        return RuntimeHelper.requireNonNull(constants$1688.const$0,"cairo_arc_negative");
+        return RuntimeHelper.requireNonNull(constants$1693.const$0,"cairo_arc_negative");
     }
     /**
      * {@snippet :
@@ -720,7 +936,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_rel_move_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1688.const$1,"cairo_rel_move_to");
+        return RuntimeHelper.requireNonNull(constants$1693.const$1,"cairo_rel_move_to");
     }
     /**
      * {@snippet :
@@ -736,7 +952,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_rel_line_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1688.const$2,"cairo_rel_line_to");
+        return RuntimeHelper.requireNonNull(constants$1693.const$2,"cairo_rel_line_to");
     }
     /**
      * {@snippet :
@@ -752,7 +968,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_rel_curve_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1688.const$3,"cairo_rel_curve_to");
+        return RuntimeHelper.requireNonNull(constants$1693.const$3,"cairo_rel_curve_to");
     }
     /**
      * {@snippet :
@@ -768,7 +984,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1688.const$4,"cairo_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1693.const$4,"cairo_rectangle");
     }
     /**
      * {@snippet :
@@ -784,7 +1000,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_close_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1688.const$5,"cairo_close_path");
+        return RuntimeHelper.requireNonNull(constants$1693.const$5,"cairo_close_path");
     }
     /**
      * {@snippet :
@@ -800,7 +1016,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_path_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1689.const$0,"cairo_path_extents");
+        return RuntimeHelper.requireNonNull(constants$1694.const$0,"cairo_path_extents");
     }
     /**
      * {@snippet :
@@ -816,7 +1032,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_paint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1689.const$1,"cairo_paint");
+        return RuntimeHelper.requireNonNull(constants$1694.const$1,"cairo_paint");
     }
     /**
      * {@snippet :
@@ -832,7 +1048,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_paint_with_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1689.const$2,"cairo_paint_with_alpha");
+        return RuntimeHelper.requireNonNull(constants$1694.const$2,"cairo_paint_with_alpha");
     }
     /**
      * {@snippet :
@@ -848,7 +1064,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mask$MH() {
-        return RuntimeHelper.requireNonNull(constants$1689.const$3,"cairo_mask");
+        return RuntimeHelper.requireNonNull(constants$1694.const$3,"cairo_mask");
     }
     /**
      * {@snippet :
@@ -864,7 +1080,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mask_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1689.const$4,"cairo_mask_surface");
+        return RuntimeHelper.requireNonNull(constants$1694.const$4,"cairo_mask_surface");
     }
     /**
      * {@snippet :
@@ -880,7 +1096,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_stroke$MH() {
-        return RuntimeHelper.requireNonNull(constants$1689.const$5,"cairo_stroke");
+        return RuntimeHelper.requireNonNull(constants$1694.const$5,"cairo_stroke");
     }
     /**
      * {@snippet :
@@ -896,7 +1112,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_stroke_preserve$MH() {
-        return RuntimeHelper.requireNonNull(constants$1690.const$0,"cairo_stroke_preserve");
+        return RuntimeHelper.requireNonNull(constants$1695.const$0,"cairo_stroke_preserve");
     }
     /**
      * {@snippet :
@@ -912,7 +1128,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_fill$MH() {
-        return RuntimeHelper.requireNonNull(constants$1690.const$1,"cairo_fill");
+        return RuntimeHelper.requireNonNull(constants$1695.const$1,"cairo_fill");
     }
     /**
      * {@snippet :
@@ -928,7 +1144,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_fill_preserve$MH() {
-        return RuntimeHelper.requireNonNull(constants$1690.const$2,"cairo_fill_preserve");
+        return RuntimeHelper.requireNonNull(constants$1695.const$2,"cairo_fill_preserve");
     }
     /**
      * {@snippet :
@@ -944,7 +1160,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_copy_page$MH() {
-        return RuntimeHelper.requireNonNull(constants$1690.const$3,"cairo_copy_page");
+        return RuntimeHelper.requireNonNull(constants$1695.const$3,"cairo_copy_page");
     }
     /**
      * {@snippet :
@@ -960,7 +1176,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_show_page$MH() {
-        return RuntimeHelper.requireNonNull(constants$1690.const$4,"cairo_show_page");
+        return RuntimeHelper.requireNonNull(constants$1695.const$4,"cairo_show_page");
     }
     /**
      * {@snippet :
@@ -976,7 +1192,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_in_stroke$MH() {
-        return RuntimeHelper.requireNonNull(constants$1690.const$6,"cairo_in_stroke");
+        return RuntimeHelper.requireNonNull(constants$1695.const$6,"cairo_in_stroke");
     }
     /**
      * {@snippet :
@@ -992,7 +1208,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_in_fill$MH() {
-        return RuntimeHelper.requireNonNull(constants$1691.const$0,"cairo_in_fill");
+        return RuntimeHelper.requireNonNull(constants$1696.const$0,"cairo_in_fill");
     }
     /**
      * {@snippet :
@@ -1008,7 +1224,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_in_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1691.const$1,"cairo_in_clip");
+        return RuntimeHelper.requireNonNull(constants$1696.const$1,"cairo_in_clip");
     }
     /**
      * {@snippet :
@@ -1024,7 +1240,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_stroke_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1691.const$2,"cairo_stroke_extents");
+        return RuntimeHelper.requireNonNull(constants$1696.const$2,"cairo_stroke_extents");
     }
     /**
      * {@snippet :
@@ -1040,7 +1256,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_fill_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1691.const$3,"cairo_fill_extents");
+        return RuntimeHelper.requireNonNull(constants$1696.const$3,"cairo_fill_extents");
     }
     /**
      * {@snippet :
@@ -1056,7 +1272,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_reset_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1691.const$4,"cairo_reset_clip");
+        return RuntimeHelper.requireNonNull(constants$1696.const$4,"cairo_reset_clip");
     }
     /**
      * {@snippet :
@@ -1072,7 +1288,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1691.const$5,"cairo_clip");
+        return RuntimeHelper.requireNonNull(constants$1696.const$5,"cairo_clip");
     }
     /**
      * {@snippet :
@@ -1088,7 +1304,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_clip_preserve$MH() {
-        return RuntimeHelper.requireNonNull(constants$1692.const$0,"cairo_clip_preserve");
+        return RuntimeHelper.requireNonNull(constants$1697.const$0,"cairo_clip_preserve");
     }
     /**
      * {@snippet :
@@ -1104,7 +1320,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_clip_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1692.const$1,"cairo_clip_extents");
+        return RuntimeHelper.requireNonNull(constants$1697.const$1,"cairo_clip_extents");
     }
     /**
      * {@snippet :
@@ -1120,7 +1336,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_copy_clip_rectangle_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1693.const$5,"cairo_copy_clip_rectangle_list");
+        return RuntimeHelper.requireNonNull(constants$1698.const$5,"cairo_copy_clip_rectangle_list");
     }
     /**
      * {@snippet :
@@ -1136,7 +1352,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_rectangle_list_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1694.const$0,"cairo_rectangle_list_destroy");
+        return RuntimeHelper.requireNonNull(constants$1699.const$0,"cairo_rectangle_list_destroy");
     }
     /**
      * {@snippet :
@@ -1152,7 +1368,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_tag_begin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1694.const$1,"cairo_tag_begin");
+        return RuntimeHelper.requireNonNull(constants$1699.const$1,"cairo_tag_begin");
     }
     /**
      * {@snippet :
@@ -1168,7 +1384,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_tag_end$MH() {
-        return RuntimeHelper.requireNonNull(constants$1694.const$2,"cairo_tag_end");
+        return RuntimeHelper.requireNonNull(constants$1699.const$2,"cairo_tag_end");
     }
     /**
      * {@snippet :
@@ -1184,7 +1400,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_glyph_allocate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1695.const$1,"cairo_glyph_allocate");
+        return RuntimeHelper.requireNonNull(constants$1700.const$1,"cairo_glyph_allocate");
     }
     /**
      * {@snippet :
@@ -1200,7 +1416,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_glyph_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1695.const$2,"cairo_glyph_free");
+        return RuntimeHelper.requireNonNull(constants$1700.const$2,"cairo_glyph_free");
     }
     /**
      * {@snippet :
@@ -1216,7 +1432,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_text_cluster_allocate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1696.const$0,"cairo_text_cluster_allocate");
+        return RuntimeHelper.requireNonNull(constants$1701.const$0,"cairo_text_cluster_allocate");
     }
     /**
      * {@snippet :
@@ -1232,7 +1448,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_text_cluster_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1696.const$1,"cairo_text_cluster_free");
+        return RuntimeHelper.requireNonNull(constants$1701.const$1,"cairo_text_cluster_free");
     }
     /**
      * {@snippet :
@@ -1424,7 +1640,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)2L;
     }
     public static MethodHandle cairo_font_options_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1698.const$3,"cairo_font_options_create");
+        return RuntimeHelper.requireNonNull(constants$1703.const$3,"cairo_font_options_create");
     }
     /**
      * {@snippet :
@@ -1440,7 +1656,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1698.const$4,"cairo_font_options_copy");
+        return RuntimeHelper.requireNonNull(constants$1703.const$4,"cairo_font_options_copy");
     }
     /**
      * {@snippet :
@@ -1456,7 +1672,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1698.const$5,"cairo_font_options_destroy");
+        return RuntimeHelper.requireNonNull(constants$1703.const$5,"cairo_font_options_destroy");
     }
     /**
      * {@snippet :
@@ -1472,7 +1688,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1699.const$0,"cairo_font_options_status");
+        return RuntimeHelper.requireNonNull(constants$1704.const$0,"cairo_font_options_status");
     }
     /**
      * {@snippet :
@@ -1488,7 +1704,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_merge$MH() {
-        return RuntimeHelper.requireNonNull(constants$1699.const$1,"cairo_font_options_merge");
+        return RuntimeHelper.requireNonNull(constants$1704.const$1,"cairo_font_options_merge");
     }
     /**
      * {@snippet :
@@ -1504,7 +1720,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1699.const$2,"cairo_font_options_equal");
+        return RuntimeHelper.requireNonNull(constants$1704.const$2,"cairo_font_options_equal");
     }
     /**
      * {@snippet :
@@ -1520,7 +1736,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1699.const$3,"cairo_font_options_hash");
+        return RuntimeHelper.requireNonNull(constants$1704.const$3,"cairo_font_options_hash");
     }
     /**
      * {@snippet :
@@ -1536,7 +1752,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_set_antialias$MH() {
-        return RuntimeHelper.requireNonNull(constants$1699.const$4,"cairo_font_options_set_antialias");
+        return RuntimeHelper.requireNonNull(constants$1704.const$4,"cairo_font_options_set_antialias");
     }
     /**
      * {@snippet :
@@ -1552,7 +1768,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_get_antialias$MH() {
-        return RuntimeHelper.requireNonNull(constants$1699.const$5,"cairo_font_options_get_antialias");
+        return RuntimeHelper.requireNonNull(constants$1704.const$5,"cairo_font_options_get_antialias");
     }
     /**
      * {@snippet :
@@ -1568,7 +1784,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_set_subpixel_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$1700.const$0,"cairo_font_options_set_subpixel_order");
+        return RuntimeHelper.requireNonNull(constants$1705.const$0,"cairo_font_options_set_subpixel_order");
     }
     /**
      * {@snippet :
@@ -1584,7 +1800,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_get_subpixel_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$1700.const$1,"cairo_font_options_get_subpixel_order");
+        return RuntimeHelper.requireNonNull(constants$1705.const$1,"cairo_font_options_get_subpixel_order");
     }
     /**
      * {@snippet :
@@ -1600,7 +1816,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_set_hint_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1700.const$2,"cairo_font_options_set_hint_style");
+        return RuntimeHelper.requireNonNull(constants$1705.const$2,"cairo_font_options_set_hint_style");
     }
     /**
      * {@snippet :
@@ -1616,7 +1832,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_get_hint_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1700.const$3,"cairo_font_options_get_hint_style");
+        return RuntimeHelper.requireNonNull(constants$1705.const$3,"cairo_font_options_get_hint_style");
     }
     /**
      * {@snippet :
@@ -1632,7 +1848,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_set_hint_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$1700.const$4,"cairo_font_options_set_hint_metrics");
+        return RuntimeHelper.requireNonNull(constants$1705.const$4,"cairo_font_options_set_hint_metrics");
     }
     /**
      * {@snippet :
@@ -1648,7 +1864,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_get_hint_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$1700.const$5,"cairo_font_options_get_hint_metrics");
+        return RuntimeHelper.requireNonNull(constants$1705.const$5,"cairo_font_options_get_hint_metrics");
     }
     /**
      * {@snippet :
@@ -1664,7 +1880,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_get_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1701.const$0,"cairo_font_options_get_variations");
+        return RuntimeHelper.requireNonNull(constants$1706.const$0,"cairo_font_options_get_variations");
     }
     /**
      * {@snippet :
@@ -1680,7 +1896,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_set_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1701.const$1,"cairo_font_options_set_variations");
+        return RuntimeHelper.requireNonNull(constants$1706.const$1,"cairo_font_options_set_variations");
     }
     /**
      * {@snippet :
@@ -1696,7 +1912,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_set_color_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1701.const$2,"cairo_font_options_set_color_mode");
+        return RuntimeHelper.requireNonNull(constants$1706.const$2,"cairo_font_options_set_color_mode");
     }
     /**
      * {@snippet :
@@ -1712,7 +1928,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_get_color_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1701.const$3,"cairo_font_options_get_color_mode");
+        return RuntimeHelper.requireNonNull(constants$1706.const$3,"cairo_font_options_get_color_mode");
     }
     /**
      * {@snippet :
@@ -1728,7 +1944,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_get_color_palette$MH() {
-        return RuntimeHelper.requireNonNull(constants$1701.const$4,"cairo_font_options_get_color_palette");
+        return RuntimeHelper.requireNonNull(constants$1706.const$4,"cairo_font_options_get_color_palette");
     }
     /**
      * {@snippet :
@@ -1744,7 +1960,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_set_color_palette$MH() {
-        return RuntimeHelper.requireNonNull(constants$1701.const$5,"cairo_font_options_set_color_palette");
+        return RuntimeHelper.requireNonNull(constants$1706.const$5,"cairo_font_options_set_color_palette");
     }
     /**
      * {@snippet :
@@ -1760,7 +1976,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_set_custom_palette_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1702.const$1,"cairo_font_options_set_custom_palette_color");
+        return RuntimeHelper.requireNonNull(constants$1707.const$1,"cairo_font_options_set_custom_palette_color");
     }
     /**
      * {@snippet :
@@ -1776,7 +1992,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_options_get_custom_palette_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1702.const$2,"cairo_font_options_get_custom_palette_color");
+        return RuntimeHelper.requireNonNull(constants$1707.const$2,"cairo_font_options_get_custom_palette_color");
     }
     /**
      * {@snippet :
@@ -1792,7 +2008,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_select_font_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1702.const$3,"cairo_select_font_face");
+        return RuntimeHelper.requireNonNull(constants$1707.const$3,"cairo_select_font_face");
     }
     /**
      * {@snippet :
@@ -1808,7 +2024,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_font_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1702.const$4,"cairo_set_font_size");
+        return RuntimeHelper.requireNonNull(constants$1707.const$4,"cairo_set_font_size");
     }
     /**
      * {@snippet :
@@ -1824,7 +2040,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_font_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1702.const$5,"cairo_set_font_matrix");
+        return RuntimeHelper.requireNonNull(constants$1707.const$5,"cairo_set_font_matrix");
     }
     /**
      * {@snippet :
@@ -1840,7 +2056,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_font_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1703.const$0,"cairo_get_font_matrix");
+        return RuntimeHelper.requireNonNull(constants$1708.const$0,"cairo_get_font_matrix");
     }
     /**
      * {@snippet :
@@ -1856,7 +2072,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_font_options$MH() {
-        return RuntimeHelper.requireNonNull(constants$1703.const$1,"cairo_set_font_options");
+        return RuntimeHelper.requireNonNull(constants$1708.const$1,"cairo_set_font_options");
     }
     /**
      * {@snippet :
@@ -1872,7 +2088,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_font_options$MH() {
-        return RuntimeHelper.requireNonNull(constants$1703.const$2,"cairo_get_font_options");
+        return RuntimeHelper.requireNonNull(constants$1708.const$2,"cairo_get_font_options");
     }
     /**
      * {@snippet :
@@ -1888,7 +2104,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_font_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1703.const$3,"cairo_set_font_face");
+        return RuntimeHelper.requireNonNull(constants$1708.const$3,"cairo_set_font_face");
     }
     /**
      * {@snippet :
@@ -1904,7 +2120,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_font_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1703.const$4,"cairo_get_font_face");
+        return RuntimeHelper.requireNonNull(constants$1708.const$4,"cairo_get_font_face");
     }
     /**
      * {@snippet :
@@ -1920,7 +2136,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_set_scaled_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1703.const$5,"cairo_set_scaled_font");
+        return RuntimeHelper.requireNonNull(constants$1708.const$5,"cairo_set_scaled_font");
     }
     /**
      * {@snippet :
@@ -1936,7 +2152,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_scaled_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1704.const$0,"cairo_get_scaled_font");
+        return RuntimeHelper.requireNonNull(constants$1709.const$0,"cairo_get_scaled_font");
     }
     /**
      * {@snippet :
@@ -1952,7 +2168,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_show_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$1704.const$1,"cairo_show_text");
+        return RuntimeHelper.requireNonNull(constants$1709.const$1,"cairo_show_text");
     }
     /**
      * {@snippet :
@@ -1968,7 +2184,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_show_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1704.const$2,"cairo_show_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1709.const$2,"cairo_show_glyphs");
     }
     /**
      * {@snippet :
@@ -1984,7 +2200,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_show_text_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1704.const$4,"cairo_show_text_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1709.const$4,"cairo_show_text_glyphs");
     }
     /**
      * {@snippet :
@@ -2000,7 +2216,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_text_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1704.const$5,"cairo_text_path");
+        return RuntimeHelper.requireNonNull(constants$1709.const$5,"cairo_text_path");
     }
     /**
      * {@snippet :
@@ -2016,7 +2232,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_glyph_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1705.const$0,"cairo_glyph_path");
+        return RuntimeHelper.requireNonNull(constants$1710.const$0,"cairo_glyph_path");
     }
     /**
      * {@snippet :
@@ -2032,7 +2248,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_text_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1705.const$1,"cairo_text_extents");
+        return RuntimeHelper.requireNonNull(constants$1710.const$1,"cairo_text_extents");
     }
     /**
      * {@snippet :
@@ -2048,7 +2264,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_glyph_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1705.const$2,"cairo_glyph_extents");
+        return RuntimeHelper.requireNonNull(constants$1710.const$2,"cairo_glyph_extents");
     }
     /**
      * {@snippet :
@@ -2064,7 +2280,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1705.const$3,"cairo_font_extents");
+        return RuntimeHelper.requireNonNull(constants$1710.const$3,"cairo_font_extents");
     }
     /**
      * {@snippet :
@@ -2080,7 +2296,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_face_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1705.const$4,"cairo_font_face_reference");
+        return RuntimeHelper.requireNonNull(constants$1710.const$4,"cairo_font_face_reference");
     }
     /**
      * {@snippet :
@@ -2096,7 +2312,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_face_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1705.const$5,"cairo_font_face_destroy");
+        return RuntimeHelper.requireNonNull(constants$1710.const$5,"cairo_font_face_destroy");
     }
     /**
      * {@snippet :
@@ -2112,7 +2328,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_face_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1706.const$0,"cairo_font_face_get_reference_count");
+        return RuntimeHelper.requireNonNull(constants$1711.const$0,"cairo_font_face_get_reference_count");
     }
     /**
      * {@snippet :
@@ -2128,7 +2344,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_face_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1706.const$1,"cairo_font_face_status");
+        return RuntimeHelper.requireNonNull(constants$1711.const$1,"cairo_font_face_status");
     }
     /**
      * {@snippet :
@@ -2192,7 +2408,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)5L;
     }
     public static MethodHandle cairo_font_face_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1706.const$2,"cairo_font_face_get_type");
+        return RuntimeHelper.requireNonNull(constants$1711.const$2,"cairo_font_face_get_type");
     }
     /**
      * {@snippet :
@@ -2208,7 +2424,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_face_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1706.const$3,"cairo_font_face_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1711.const$3,"cairo_font_face_get_user_data");
     }
     /**
      * {@snippet :
@@ -2224,7 +2440,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_font_face_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1706.const$5,"cairo_font_face_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1711.const$5,"cairo_font_face_set_user_data");
     }
     /**
      * {@snippet :
@@ -2240,7 +2456,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1707.const$0,"cairo_scaled_font_create");
+        return RuntimeHelper.requireNonNull(constants$1712.const$0,"cairo_scaled_font_create");
     }
     /**
      * {@snippet :
@@ -2256,7 +2472,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1707.const$1,"cairo_scaled_font_reference");
+        return RuntimeHelper.requireNonNull(constants$1712.const$1,"cairo_scaled_font_reference");
     }
     /**
      * {@snippet :
@@ -2272,7 +2488,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1707.const$2,"cairo_scaled_font_destroy");
+        return RuntimeHelper.requireNonNull(constants$1712.const$2,"cairo_scaled_font_destroy");
     }
     /**
      * {@snippet :
@@ -2288,7 +2504,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1707.const$3,"cairo_scaled_font_get_reference_count");
+        return RuntimeHelper.requireNonNull(constants$1712.const$3,"cairo_scaled_font_get_reference_count");
     }
     /**
      * {@snippet :
@@ -2304,7 +2520,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1707.const$4,"cairo_scaled_font_status");
+        return RuntimeHelper.requireNonNull(constants$1712.const$4,"cairo_scaled_font_status");
     }
     /**
      * {@snippet :
@@ -2320,7 +2536,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1707.const$5,"cairo_scaled_font_get_type");
+        return RuntimeHelper.requireNonNull(constants$1712.const$5,"cairo_scaled_font_get_type");
     }
     /**
      * {@snippet :
@@ -2336,7 +2552,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1708.const$0,"cairo_scaled_font_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1713.const$0,"cairo_scaled_font_get_user_data");
     }
     /**
      * {@snippet :
@@ -2352,7 +2568,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1708.const$2,"cairo_scaled_font_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1713.const$2,"cairo_scaled_font_set_user_data");
     }
     /**
      * {@snippet :
@@ -2368,7 +2584,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1708.const$3,"cairo_scaled_font_extents");
+        return RuntimeHelper.requireNonNull(constants$1713.const$3,"cairo_scaled_font_extents");
     }
     /**
      * {@snippet :
@@ -2384,7 +2600,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_text_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1708.const$4,"cairo_scaled_font_text_extents");
+        return RuntimeHelper.requireNonNull(constants$1713.const$4,"cairo_scaled_font_text_extents");
     }
     /**
      * {@snippet :
@@ -2400,7 +2616,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_glyph_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1708.const$5,"cairo_scaled_font_glyph_extents");
+        return RuntimeHelper.requireNonNull(constants$1713.const$5,"cairo_scaled_font_glyph_extents");
     }
     /**
      * {@snippet :
@@ -2416,7 +2632,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_text_to_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1709.const$1,"cairo_scaled_font_text_to_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1714.const$1,"cairo_scaled_font_text_to_glyphs");
     }
     /**
      * {@snippet :
@@ -2432,7 +2648,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_font_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1709.const$2,"cairo_scaled_font_get_font_face");
+        return RuntimeHelper.requireNonNull(constants$1714.const$2,"cairo_scaled_font_get_font_face");
     }
     /**
      * {@snippet :
@@ -2448,7 +2664,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_font_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1709.const$3,"cairo_scaled_font_get_font_matrix");
+        return RuntimeHelper.requireNonNull(constants$1714.const$3,"cairo_scaled_font_get_font_matrix");
     }
     /**
      * {@snippet :
@@ -2464,7 +2680,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_ctm$MH() {
-        return RuntimeHelper.requireNonNull(constants$1709.const$4,"cairo_scaled_font_get_ctm");
+        return RuntimeHelper.requireNonNull(constants$1714.const$4,"cairo_scaled_font_get_ctm");
     }
     /**
      * {@snippet :
@@ -2480,7 +2696,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_scale_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1709.const$5,"cairo_scaled_font_get_scale_matrix");
+        return RuntimeHelper.requireNonNull(constants$1714.const$5,"cairo_scaled_font_get_scale_matrix");
     }
     /**
      * {@snippet :
@@ -2496,7 +2712,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_font_options$MH() {
-        return RuntimeHelper.requireNonNull(constants$1710.const$0,"cairo_scaled_font_get_font_options");
+        return RuntimeHelper.requireNonNull(constants$1715.const$0,"cairo_scaled_font_get_font_options");
     }
     /**
      * {@snippet :
@@ -2512,7 +2728,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_toy_font_face_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1710.const$1,"cairo_toy_font_face_create");
+        return RuntimeHelper.requireNonNull(constants$1715.const$1,"cairo_toy_font_face_create");
     }
     /**
      * {@snippet :
@@ -2528,7 +2744,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_toy_font_face_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$1710.const$2,"cairo_toy_font_face_get_family");
+        return RuntimeHelper.requireNonNull(constants$1715.const$2,"cairo_toy_font_face_get_family");
     }
     /**
      * {@snippet :
@@ -2544,7 +2760,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_toy_font_face_get_slant$MH() {
-        return RuntimeHelper.requireNonNull(constants$1710.const$3,"cairo_toy_font_face_get_slant");
+        return RuntimeHelper.requireNonNull(constants$1715.const$3,"cairo_toy_font_face_get_slant");
     }
     /**
      * {@snippet :
@@ -2560,7 +2776,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_toy_font_face_get_weight$MH() {
-        return RuntimeHelper.requireNonNull(constants$1710.const$4,"cairo_toy_font_face_get_weight");
+        return RuntimeHelper.requireNonNull(constants$1715.const$4,"cairo_toy_font_face_get_weight");
     }
     /**
      * {@snippet :
@@ -2576,7 +2792,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1710.const$5,"cairo_user_font_face_create");
+        return RuntimeHelper.requireNonNull(constants$1715.const$5,"cairo_user_font_face_create");
     }
     /**
      * {@snippet :
@@ -2592,7 +2808,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_set_init_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1712.const$1,"cairo_user_font_face_set_init_func");
+        return RuntimeHelper.requireNonNull(constants$1717.const$1,"cairo_user_font_face_set_init_func");
     }
     /**
      * {@snippet :
@@ -2608,7 +2824,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_set_render_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1712.const$3,"cairo_user_font_face_set_render_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1717.const$3,"cairo_user_font_face_set_render_glyph_func");
     }
     /**
      * {@snippet :
@@ -2624,7 +2840,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_set_render_color_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1712.const$5,"cairo_user_font_face_set_render_color_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1717.const$5,"cairo_user_font_face_set_render_color_glyph_func");
     }
     /**
      * {@snippet :
@@ -2640,7 +2856,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_set_text_to_glyphs_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1713.const$1,"cairo_user_font_face_set_text_to_glyphs_func");
+        return RuntimeHelper.requireNonNull(constants$1718.const$1,"cairo_user_font_face_set_text_to_glyphs_func");
     }
     /**
      * {@snippet :
@@ -2656,7 +2872,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_set_unicode_to_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1713.const$3,"cairo_user_font_face_set_unicode_to_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1718.const$3,"cairo_user_font_face_set_unicode_to_glyph_func");
     }
     /**
      * {@snippet :
@@ -2672,7 +2888,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_get_init_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1713.const$5,"cairo_user_font_face_get_init_func");
+        return RuntimeHelper.requireNonNull(constants$1718.const$5,"cairo_user_font_face_get_init_func");
     }
     /**
      * {@snippet :
@@ -2688,7 +2904,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_get_render_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1714.const$1,"cairo_user_font_face_get_render_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1719.const$1,"cairo_user_font_face_get_render_glyph_func");
     }
     /**
      * {@snippet :
@@ -2704,7 +2920,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_get_render_color_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1714.const$3,"cairo_user_font_face_get_render_color_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1719.const$3,"cairo_user_font_face_get_render_color_glyph_func");
     }
     /**
      * {@snippet :
@@ -2720,7 +2936,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_get_text_to_glyphs_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1714.const$5,"cairo_user_font_face_get_text_to_glyphs_func");
+        return RuntimeHelper.requireNonNull(constants$1719.const$5,"cairo_user_font_face_get_text_to_glyphs_func");
     }
     /**
      * {@snippet :
@@ -2736,7 +2952,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_get_unicode_to_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1715.const$1,"cairo_user_font_face_get_unicode_to_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1720.const$1,"cairo_user_font_face_get_unicode_to_glyph_func");
     }
     /**
      * {@snippet :
@@ -2752,7 +2968,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_scaled_font_get_foreground_marker$MH() {
-        return RuntimeHelper.requireNonNull(constants$1715.const$2,"cairo_user_scaled_font_get_foreground_marker");
+        return RuntimeHelper.requireNonNull(constants$1720.const$2,"cairo_user_scaled_font_get_foreground_marker");
     }
     /**
      * {@snippet :
@@ -2768,7 +2984,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_scaled_font_get_foreground_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$1715.const$3,"cairo_user_scaled_font_get_foreground_source");
+        return RuntimeHelper.requireNonNull(constants$1720.const$3,"cairo_user_scaled_font_get_foreground_source");
     }
     /**
      * {@snippet :
@@ -2784,7 +3000,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_operator$MH() {
-        return RuntimeHelper.requireNonNull(constants$1715.const$4,"cairo_get_operator");
+        return RuntimeHelper.requireNonNull(constants$1720.const$4,"cairo_get_operator");
     }
     /**
      * {@snippet :
@@ -2800,7 +3016,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$1715.const$5,"cairo_get_source");
+        return RuntimeHelper.requireNonNull(constants$1720.const$5,"cairo_get_source");
     }
     /**
      * {@snippet :
@@ -2816,7 +3032,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_tolerance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1716.const$0,"cairo_get_tolerance");
+        return RuntimeHelper.requireNonNull(constants$1721.const$0,"cairo_get_tolerance");
     }
     /**
      * {@snippet :
@@ -2832,7 +3048,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_antialias$MH() {
-        return RuntimeHelper.requireNonNull(constants$1716.const$1,"cairo_get_antialias");
+        return RuntimeHelper.requireNonNull(constants$1721.const$1,"cairo_get_antialias");
     }
     /**
      * {@snippet :
@@ -2848,7 +3064,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_has_current_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1716.const$2,"cairo_has_current_point");
+        return RuntimeHelper.requireNonNull(constants$1721.const$2,"cairo_has_current_point");
     }
     /**
      * {@snippet :
@@ -2864,7 +3080,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_current_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1716.const$3,"cairo_get_current_point");
+        return RuntimeHelper.requireNonNull(constants$1721.const$3,"cairo_get_current_point");
     }
     /**
      * {@snippet :
@@ -2880,7 +3096,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_fill_rule$MH() {
-        return RuntimeHelper.requireNonNull(constants$1716.const$4,"cairo_get_fill_rule");
+        return RuntimeHelper.requireNonNull(constants$1721.const$4,"cairo_get_fill_rule");
     }
     /**
      * {@snippet :
@@ -2896,7 +3112,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_line_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1716.const$5,"cairo_get_line_width");
+        return RuntimeHelper.requireNonNull(constants$1721.const$5,"cairo_get_line_width");
     }
     /**
      * {@snippet :
@@ -2912,7 +3128,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_hairline$MH() {
-        return RuntimeHelper.requireNonNull(constants$1717.const$0,"cairo_get_hairline");
+        return RuntimeHelper.requireNonNull(constants$1722.const$0,"cairo_get_hairline");
     }
     /**
      * {@snippet :
@@ -2928,7 +3144,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_line_cap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1717.const$1,"cairo_get_line_cap");
+        return RuntimeHelper.requireNonNull(constants$1722.const$1,"cairo_get_line_cap");
     }
     /**
      * {@snippet :
@@ -2944,7 +3160,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_line_join$MH() {
-        return RuntimeHelper.requireNonNull(constants$1717.const$2,"cairo_get_line_join");
+        return RuntimeHelper.requireNonNull(constants$1722.const$2,"cairo_get_line_join");
     }
     /**
      * {@snippet :
@@ -2960,7 +3176,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_miter_limit$MH() {
-        return RuntimeHelper.requireNonNull(constants$1717.const$3,"cairo_get_miter_limit");
+        return RuntimeHelper.requireNonNull(constants$1722.const$3,"cairo_get_miter_limit");
     }
     /**
      * {@snippet :
@@ -2976,7 +3192,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_dash_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1717.const$4,"cairo_get_dash_count");
+        return RuntimeHelper.requireNonNull(constants$1722.const$4,"cairo_get_dash_count");
     }
     /**
      * {@snippet :
@@ -2992,7 +3208,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_dash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1717.const$5,"cairo_get_dash");
+        return RuntimeHelper.requireNonNull(constants$1722.const$5,"cairo_get_dash");
     }
     /**
      * {@snippet :
@@ -3008,7 +3224,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1718.const$0,"cairo_get_matrix");
+        return RuntimeHelper.requireNonNull(constants$1723.const$0,"cairo_get_matrix");
     }
     /**
      * {@snippet :
@@ -3024,7 +3240,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$1718.const$1,"cairo_get_target");
+        return RuntimeHelper.requireNonNull(constants$1723.const$1,"cairo_get_target");
     }
     /**
      * {@snippet :
@@ -3040,7 +3256,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_group_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$1718.const$2,"cairo_get_group_target");
+        return RuntimeHelper.requireNonNull(constants$1723.const$2,"cairo_get_group_target");
     }
     /**
      * {@snippet :
@@ -3088,7 +3304,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)3L;
     }
     public static MethodHandle cairo_copy_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1720.const$2,"cairo_copy_path");
+        return RuntimeHelper.requireNonNull(constants$1725.const$2,"cairo_copy_path");
     }
     /**
      * {@snippet :
@@ -3104,7 +3320,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_copy_path_flat$MH() {
-        return RuntimeHelper.requireNonNull(constants$1720.const$3,"cairo_copy_path_flat");
+        return RuntimeHelper.requireNonNull(constants$1725.const$3,"cairo_copy_path_flat");
     }
     /**
      * {@snippet :
@@ -3120,7 +3336,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_append_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1720.const$4,"cairo_append_path");
+        return RuntimeHelper.requireNonNull(constants$1725.const$4,"cairo_append_path");
     }
     /**
      * {@snippet :
@@ -3136,7 +3352,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_path_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1720.const$5,"cairo_path_destroy");
+        return RuntimeHelper.requireNonNull(constants$1725.const$5,"cairo_path_destroy");
     }
     /**
      * {@snippet :
@@ -3152,7 +3368,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1721.const$0,"cairo_status");
+        return RuntimeHelper.requireNonNull(constants$1726.const$0,"cairo_status");
     }
     /**
      * {@snippet :
@@ -3168,7 +3384,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_status_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1721.const$1,"cairo_status_to_string");
+        return RuntimeHelper.requireNonNull(constants$1726.const$1,"cairo_status_to_string");
     }
     /**
      * {@snippet :
@@ -3184,7 +3400,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1721.const$2,"cairo_device_reference");
+        return RuntimeHelper.requireNonNull(constants$1726.const$2,"cairo_device_reference");
     }
     /**
      * {@snippet :
@@ -3272,7 +3488,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)-1L;
     }
     public static MethodHandle cairo_device_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1721.const$3,"cairo_device_get_type");
+        return RuntimeHelper.requireNonNull(constants$1726.const$3,"cairo_device_get_type");
     }
     /**
      * {@snippet :
@@ -3288,7 +3504,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1721.const$4,"cairo_device_status");
+        return RuntimeHelper.requireNonNull(constants$1726.const$4,"cairo_device_status");
     }
     /**
      * {@snippet :
@@ -3304,7 +3520,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_acquire$MH() {
-        return RuntimeHelper.requireNonNull(constants$1721.const$5,"cairo_device_acquire");
+        return RuntimeHelper.requireNonNull(constants$1726.const$5,"cairo_device_acquire");
     }
     /**
      * {@snippet :
@@ -3320,7 +3536,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_release$MH() {
-        return RuntimeHelper.requireNonNull(constants$1722.const$0,"cairo_device_release");
+        return RuntimeHelper.requireNonNull(constants$1727.const$0,"cairo_device_release");
     }
     /**
      * {@snippet :
@@ -3336,7 +3552,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$1722.const$1,"cairo_device_flush");
+        return RuntimeHelper.requireNonNull(constants$1727.const$1,"cairo_device_flush");
     }
     /**
      * {@snippet :
@@ -3352,7 +3568,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1722.const$2,"cairo_device_finish");
+        return RuntimeHelper.requireNonNull(constants$1727.const$2,"cairo_device_finish");
     }
     /**
      * {@snippet :
@@ -3368,7 +3584,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1722.const$3,"cairo_device_destroy");
+        return RuntimeHelper.requireNonNull(constants$1727.const$3,"cairo_device_destroy");
     }
     /**
      * {@snippet :
@@ -3384,7 +3600,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1722.const$4,"cairo_device_get_reference_count");
+        return RuntimeHelper.requireNonNull(constants$1727.const$4,"cairo_device_get_reference_count");
     }
     /**
      * {@snippet :
@@ -3400,7 +3616,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1722.const$5,"cairo_device_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1727.const$5,"cairo_device_get_user_data");
     }
     /**
      * {@snippet :
@@ -3416,7 +3632,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1723.const$1,"cairo_device_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1728.const$1,"cairo_device_set_user_data");
     }
     /**
      * {@snippet :
@@ -3432,7 +3648,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_create_similar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1723.const$3,"cairo_surface_create_similar");
+        return RuntimeHelper.requireNonNull(constants$1728.const$3,"cairo_surface_create_similar");
     }
     /**
      * {@snippet :
@@ -3448,7 +3664,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_create_similar_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$1723.const$4,"cairo_surface_create_similar_image");
+        return RuntimeHelper.requireNonNull(constants$1728.const$4,"cairo_surface_create_similar_image");
     }
     /**
      * {@snippet :
@@ -3464,7 +3680,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_map_to_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$1723.const$5,"cairo_surface_map_to_image");
+        return RuntimeHelper.requireNonNull(constants$1728.const$5,"cairo_surface_map_to_image");
     }
     /**
      * {@snippet :
@@ -3480,7 +3696,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_unmap_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$1724.const$0,"cairo_surface_unmap_image");
+        return RuntimeHelper.requireNonNull(constants$1729.const$0,"cairo_surface_unmap_image");
     }
     /**
      * {@snippet :
@@ -3496,7 +3712,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_create_for_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1724.const$2,"cairo_surface_create_for_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1729.const$2,"cairo_surface_create_for_rectangle");
     }
     /**
      * {@snippet :
@@ -3528,7 +3744,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)1L;
     }
     public static MethodHandle cairo_surface_create_observer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1724.const$3,"cairo_surface_create_observer");
+        return RuntimeHelper.requireNonNull(constants$1729.const$3,"cairo_surface_create_observer");
     }
     /**
      * {@snippet :
@@ -3544,7 +3760,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_paint_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1725.const$0,"cairo_surface_observer_add_paint_callback");
+        return RuntimeHelper.requireNonNull(constants$1730.const$0,"cairo_surface_observer_add_paint_callback");
     }
     /**
      * {@snippet :
@@ -3560,7 +3776,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_mask_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1725.const$2,"cairo_surface_observer_add_mask_callback");
+        return RuntimeHelper.requireNonNull(constants$1730.const$2,"cairo_surface_observer_add_mask_callback");
     }
     /**
      * {@snippet :
@@ -3576,7 +3792,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_fill_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1725.const$4,"cairo_surface_observer_add_fill_callback");
+        return RuntimeHelper.requireNonNull(constants$1730.const$4,"cairo_surface_observer_add_fill_callback");
     }
     /**
      * {@snippet :
@@ -3592,7 +3808,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_stroke_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1726.const$0,"cairo_surface_observer_add_stroke_callback");
+        return RuntimeHelper.requireNonNull(constants$1731.const$0,"cairo_surface_observer_add_stroke_callback");
     }
     /**
      * {@snippet :
@@ -3608,7 +3824,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_glyphs_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1726.const$2,"cairo_surface_observer_add_glyphs_callback");
+        return RuntimeHelper.requireNonNull(constants$1731.const$2,"cairo_surface_observer_add_glyphs_callback");
     }
     /**
      * {@snippet :
@@ -3624,7 +3840,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_flush_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1726.const$4,"cairo_surface_observer_add_flush_callback");
+        return RuntimeHelper.requireNonNull(constants$1731.const$4,"cairo_surface_observer_add_flush_callback");
     }
     /**
      * {@snippet :
@@ -3640,7 +3856,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_finish_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1727.const$0,"cairo_surface_observer_add_finish_callback");
+        return RuntimeHelper.requireNonNull(constants$1732.const$0,"cairo_surface_observer_add_finish_callback");
     }
     /**
      * {@snippet :
@@ -3656,151 +3872,151 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_print$MH() {
-        return RuntimeHelper.requireNonNull(constants$1727.const$2,"cairo_surface_observer_print");
+        return RuntimeHelper.requireNonNull(constants$1732.const$2,"cairo_surface_observer_print");
     }
     /**
      * {@snippet :
-     * enum _cairo_status cairo_surface_observer_print(struct _cairo_surface* surface, enum _cairo_status (*write_func)(void*,unsigned char*,unsigned int), void* closure);
+     * enum _cairo_status cairo_surface_observer_print(struct _cairo_surface* abstract_surface, enum _cairo_status (*write_func)(void*,unsigned char*,unsigned int), void* closure);
      * }
      */
-    public static int cairo_surface_observer_print(MemorySegment surface, MemorySegment write_func, MemorySegment closure) {
+    public static int cairo_surface_observer_print(MemorySegment abstract_surface, MemorySegment write_func, MemorySegment closure) {
         var mh$ = cairo_surface_observer_print$MH();
         try {
-            return (int)mh$.invokeExact(surface, write_func, closure);
+            return (int)mh$.invokeExact(abstract_surface, write_func, closure);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle cairo_surface_observer_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1727.const$3,"cairo_surface_observer_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1732.const$3,"cairo_surface_observer_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_surface_observer_elapsed(struct _cairo_surface* surface);
+     * double cairo_surface_observer_elapsed(struct _cairo_surface* abstract_surface);
      * }
      */
-    public static double cairo_surface_observer_elapsed(MemorySegment surface) {
+    public static double cairo_surface_observer_elapsed(MemorySegment abstract_surface) {
         var mh$ = cairo_surface_observer_elapsed$MH();
         try {
-            return (double)mh$.invokeExact(surface);
+            return (double)mh$.invokeExact(abstract_surface);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle cairo_device_observer_print$MH() {
-        return RuntimeHelper.requireNonNull(constants$1727.const$5,"cairo_device_observer_print");
+        return RuntimeHelper.requireNonNull(constants$1732.const$5,"cairo_device_observer_print");
     }
     /**
      * {@snippet :
-     * enum _cairo_status cairo_device_observer_print(struct _cairo_device* device, enum _cairo_status (*write_func)(void*,unsigned char*,unsigned int), void* closure);
+     * enum _cairo_status cairo_device_observer_print(struct _cairo_device* abstract_device, enum _cairo_status (*write_func)(void*,unsigned char*,unsigned int), void* closure);
      * }
      */
-    public static int cairo_device_observer_print(MemorySegment device, MemorySegment write_func, MemorySegment closure) {
+    public static int cairo_device_observer_print(MemorySegment abstract_device, MemorySegment write_func, MemorySegment closure) {
         var mh$ = cairo_device_observer_print$MH();
         try {
-            return (int)mh$.invokeExact(device, write_func, closure);
+            return (int)mh$.invokeExact(abstract_device, write_func, closure);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle cairo_device_observer_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1728.const$0,"cairo_device_observer_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1733.const$0,"cairo_device_observer_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_elapsed(struct _cairo_device* device);
+     * double cairo_device_observer_elapsed(struct _cairo_device* abstract_device);
      * }
      */
-    public static double cairo_device_observer_elapsed(MemorySegment device) {
+    public static double cairo_device_observer_elapsed(MemorySegment abstract_device) {
         var mh$ = cairo_device_observer_elapsed$MH();
         try {
-            return (double)mh$.invokeExact(device);
+            return (double)mh$.invokeExact(abstract_device);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle cairo_device_observer_paint_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1728.const$1,"cairo_device_observer_paint_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1733.const$1,"cairo_device_observer_paint_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_paint_elapsed(struct _cairo_device* device);
+     * double cairo_device_observer_paint_elapsed(struct _cairo_device* abstract_device);
      * }
      */
-    public static double cairo_device_observer_paint_elapsed(MemorySegment device) {
+    public static double cairo_device_observer_paint_elapsed(MemorySegment abstract_device) {
         var mh$ = cairo_device_observer_paint_elapsed$MH();
         try {
-            return (double)mh$.invokeExact(device);
+            return (double)mh$.invokeExact(abstract_device);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle cairo_device_observer_mask_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1728.const$2,"cairo_device_observer_mask_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1733.const$2,"cairo_device_observer_mask_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_mask_elapsed(struct _cairo_device* device);
+     * double cairo_device_observer_mask_elapsed(struct _cairo_device* abstract_device);
      * }
      */
-    public static double cairo_device_observer_mask_elapsed(MemorySegment device) {
+    public static double cairo_device_observer_mask_elapsed(MemorySegment abstract_device) {
         var mh$ = cairo_device_observer_mask_elapsed$MH();
         try {
-            return (double)mh$.invokeExact(device);
+            return (double)mh$.invokeExact(abstract_device);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle cairo_device_observer_fill_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1728.const$3,"cairo_device_observer_fill_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1733.const$3,"cairo_device_observer_fill_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_fill_elapsed(struct _cairo_device* device);
+     * double cairo_device_observer_fill_elapsed(struct _cairo_device* abstract_device);
      * }
      */
-    public static double cairo_device_observer_fill_elapsed(MemorySegment device) {
+    public static double cairo_device_observer_fill_elapsed(MemorySegment abstract_device) {
         var mh$ = cairo_device_observer_fill_elapsed$MH();
         try {
-            return (double)mh$.invokeExact(device);
+            return (double)mh$.invokeExact(abstract_device);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle cairo_device_observer_stroke_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1728.const$4,"cairo_device_observer_stroke_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1733.const$4,"cairo_device_observer_stroke_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_stroke_elapsed(struct _cairo_device* device);
+     * double cairo_device_observer_stroke_elapsed(struct _cairo_device* abstract_device);
      * }
      */
-    public static double cairo_device_observer_stroke_elapsed(MemorySegment device) {
+    public static double cairo_device_observer_stroke_elapsed(MemorySegment abstract_device) {
         var mh$ = cairo_device_observer_stroke_elapsed$MH();
         try {
-            return (double)mh$.invokeExact(device);
+            return (double)mh$.invokeExact(abstract_device);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle cairo_device_observer_glyphs_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1728.const$5,"cairo_device_observer_glyphs_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1733.const$5,"cairo_device_observer_glyphs_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_glyphs_elapsed(struct _cairo_device* device);
+     * double cairo_device_observer_glyphs_elapsed(struct _cairo_device* abstract_device);
      * }
      */
-    public static double cairo_device_observer_glyphs_elapsed(MemorySegment device) {
+    public static double cairo_device_observer_glyphs_elapsed(MemorySegment abstract_device) {
         var mh$ = cairo_device_observer_glyphs_elapsed$MH();
         try {
-            return (double)mh$.invokeExact(device);
+            return (double)mh$.invokeExact(abstract_device);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle cairo_surface_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1729.const$0,"cairo_surface_reference");
+        return RuntimeHelper.requireNonNull(constants$1734.const$0,"cairo_surface_reference");
     }
     /**
      * {@snippet :
@@ -3816,7 +4032,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1729.const$1,"cairo_surface_finish");
+        return RuntimeHelper.requireNonNull(constants$1734.const$1,"cairo_surface_finish");
     }
     /**
      * {@snippet :
@@ -3832,7 +4048,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1729.const$2,"cairo_surface_destroy");
+        return RuntimeHelper.requireNonNull(constants$1734.const$2,"cairo_surface_destroy");
     }
     /**
      * {@snippet :
@@ -3848,7 +4064,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1729.const$3,"cairo_surface_get_device");
+        return RuntimeHelper.requireNonNull(constants$1734.const$3,"cairo_surface_get_device");
     }
     /**
      * {@snippet :
@@ -3864,7 +4080,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1729.const$4,"cairo_surface_get_reference_count");
+        return RuntimeHelper.requireNonNull(constants$1734.const$4,"cairo_surface_get_reference_count");
     }
     /**
      * {@snippet :
@@ -3880,7 +4096,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1729.const$5,"cairo_surface_status");
+        return RuntimeHelper.requireNonNull(constants$1734.const$5,"cairo_surface_status");
     }
     /**
      * {@snippet :
@@ -4096,7 +4312,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)24L;
     }
     public static MethodHandle cairo_surface_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1730.const$0,"cairo_surface_get_type");
+        return RuntimeHelper.requireNonNull(constants$1735.const$0,"cairo_surface_get_type");
     }
     /**
      * {@snippet :
@@ -4112,7 +4328,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_content$MH() {
-        return RuntimeHelper.requireNonNull(constants$1730.const$1,"cairo_surface_get_content");
+        return RuntimeHelper.requireNonNull(constants$1735.const$1,"cairo_surface_get_content");
     }
     /**
      * {@snippet :
@@ -4128,7 +4344,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_write_to_png$MH() {
-        return RuntimeHelper.requireNonNull(constants$1730.const$2,"cairo_surface_write_to_png");
+        return RuntimeHelper.requireNonNull(constants$1735.const$2,"cairo_surface_write_to_png");
     }
     /**
      * {@snippet :
@@ -4144,7 +4360,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_write_to_png_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$1730.const$4,"cairo_surface_write_to_png_stream");
+        return RuntimeHelper.requireNonNull(constants$1735.const$4,"cairo_surface_write_to_png_stream");
     }
     /**
      * {@snippet :
@@ -4160,7 +4376,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1730.const$5,"cairo_surface_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1735.const$5,"cairo_surface_get_user_data");
     }
     /**
      * {@snippet :
@@ -4176,7 +4392,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1731.const$1,"cairo_surface_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1736.const$1,"cairo_surface_set_user_data");
     }
     /**
      * {@snippet :
@@ -4192,7 +4408,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_mime_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1731.const$2,"cairo_surface_get_mime_data");
+        return RuntimeHelper.requireNonNull(constants$1736.const$2,"cairo_surface_get_mime_data");
     }
     /**
      * {@snippet :
@@ -4208,7 +4424,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_set_mime_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1731.const$5,"cairo_surface_set_mime_data");
+        return RuntimeHelper.requireNonNull(constants$1736.const$5,"cairo_surface_set_mime_data");
     }
     /**
      * {@snippet :
@@ -4224,7 +4440,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_supports_mime_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1732.const$0,"cairo_surface_supports_mime_type");
+        return RuntimeHelper.requireNonNull(constants$1737.const$0,"cairo_surface_supports_mime_type");
     }
     /**
      * {@snippet :
@@ -4240,7 +4456,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_font_options$MH() {
-        return RuntimeHelper.requireNonNull(constants$1732.const$1,"cairo_surface_get_font_options");
+        return RuntimeHelper.requireNonNull(constants$1737.const$1,"cairo_surface_get_font_options");
     }
     /**
      * {@snippet :
@@ -4256,7 +4472,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$1732.const$2,"cairo_surface_flush");
+        return RuntimeHelper.requireNonNull(constants$1737.const$2,"cairo_surface_flush");
     }
     /**
      * {@snippet :
@@ -4272,7 +4488,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_mark_dirty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1732.const$3,"cairo_surface_mark_dirty");
+        return RuntimeHelper.requireNonNull(constants$1737.const$3,"cairo_surface_mark_dirty");
     }
     /**
      * {@snippet :
@@ -4288,7 +4504,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_mark_dirty_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1732.const$4,"cairo_surface_mark_dirty_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1737.const$4,"cairo_surface_mark_dirty_rectangle");
     }
     /**
      * {@snippet :
@@ -4304,7 +4520,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_set_device_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1732.const$5,"cairo_surface_set_device_scale");
+        return RuntimeHelper.requireNonNull(constants$1737.const$5,"cairo_surface_set_device_scale");
     }
     /**
      * {@snippet :
@@ -4320,7 +4536,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_device_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1733.const$0,"cairo_surface_get_device_scale");
+        return RuntimeHelper.requireNonNull(constants$1738.const$0,"cairo_surface_get_device_scale");
     }
     /**
      * {@snippet :
@@ -4336,7 +4552,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_set_device_offset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1733.const$1,"cairo_surface_set_device_offset");
+        return RuntimeHelper.requireNonNull(constants$1738.const$1,"cairo_surface_set_device_offset");
     }
     /**
      * {@snippet :
@@ -4352,7 +4568,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_device_offset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1733.const$2,"cairo_surface_get_device_offset");
+        return RuntimeHelper.requireNonNull(constants$1738.const$2,"cairo_surface_get_device_offset");
     }
     /**
      * {@snippet :
@@ -4368,7 +4584,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_set_fallback_resolution$MH() {
-        return RuntimeHelper.requireNonNull(constants$1733.const$3,"cairo_surface_set_fallback_resolution");
+        return RuntimeHelper.requireNonNull(constants$1738.const$3,"cairo_surface_set_fallback_resolution");
     }
     /**
      * {@snippet :
@@ -4384,7 +4600,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_fallback_resolution$MH() {
-        return RuntimeHelper.requireNonNull(constants$1733.const$4,"cairo_surface_get_fallback_resolution");
+        return RuntimeHelper.requireNonNull(constants$1738.const$4,"cairo_surface_get_fallback_resolution");
     }
     /**
      * {@snippet :
@@ -4400,7 +4616,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_copy_page$MH() {
-        return RuntimeHelper.requireNonNull(constants$1733.const$5,"cairo_surface_copy_page");
+        return RuntimeHelper.requireNonNull(constants$1738.const$5,"cairo_surface_copy_page");
     }
     /**
      * {@snippet :
@@ -4416,7 +4632,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_show_page$MH() {
-        return RuntimeHelper.requireNonNull(constants$1734.const$0,"cairo_surface_show_page");
+        return RuntimeHelper.requireNonNull(constants$1739.const$0,"cairo_surface_show_page");
     }
     /**
      * {@snippet :
@@ -4432,7 +4648,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_has_show_text_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1734.const$1,"cairo_surface_has_show_text_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1739.const$1,"cairo_surface_has_show_text_glyphs");
     }
     /**
      * {@snippet :
@@ -4448,7 +4664,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1734.const$2,"cairo_image_surface_create");
+        return RuntimeHelper.requireNonNull(constants$1739.const$2,"cairo_image_surface_create");
     }
     /**
      * {@snippet :
@@ -4464,7 +4680,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_format_stride_for_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1734.const$3,"cairo_format_stride_for_width");
+        return RuntimeHelper.requireNonNull(constants$1739.const$3,"cairo_format_stride_for_width");
     }
     /**
      * {@snippet :
@@ -4480,7 +4696,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_create_for_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1734.const$5,"cairo_image_surface_create_for_data");
+        return RuntimeHelper.requireNonNull(constants$1739.const$5,"cairo_image_surface_create_for_data");
     }
     /**
      * {@snippet :
@@ -4496,7 +4712,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_get_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1735.const$0,"cairo_image_surface_get_data");
+        return RuntimeHelper.requireNonNull(constants$1740.const$0,"cairo_image_surface_get_data");
     }
     /**
      * {@snippet :
@@ -4512,7 +4728,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_get_format$MH() {
-        return RuntimeHelper.requireNonNull(constants$1735.const$1,"cairo_image_surface_get_format");
+        return RuntimeHelper.requireNonNull(constants$1740.const$1,"cairo_image_surface_get_format");
     }
     /**
      * {@snippet :
@@ -4528,7 +4744,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_get_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1735.const$2,"cairo_image_surface_get_width");
+        return RuntimeHelper.requireNonNull(constants$1740.const$2,"cairo_image_surface_get_width");
     }
     /**
      * {@snippet :
@@ -4544,7 +4760,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_get_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1735.const$3,"cairo_image_surface_get_height");
+        return RuntimeHelper.requireNonNull(constants$1740.const$3,"cairo_image_surface_get_height");
     }
     /**
      * {@snippet :
@@ -4560,7 +4776,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_get_stride$MH() {
-        return RuntimeHelper.requireNonNull(constants$1735.const$4,"cairo_image_surface_get_stride");
+        return RuntimeHelper.requireNonNull(constants$1740.const$4,"cairo_image_surface_get_stride");
     }
     /**
      * {@snippet :
@@ -4576,7 +4792,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_create_from_png$MH() {
-        return RuntimeHelper.requireNonNull(constants$1735.const$5,"cairo_image_surface_create_from_png");
+        return RuntimeHelper.requireNonNull(constants$1740.const$5,"cairo_image_surface_create_from_png");
     }
     /**
      * {@snippet :
@@ -4592,7 +4808,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_create_from_png_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$1736.const$1,"cairo_image_surface_create_from_png_stream");
+        return RuntimeHelper.requireNonNull(constants$1741.const$1,"cairo_image_surface_create_from_png_stream");
     }
     /**
      * {@snippet :
@@ -4608,7 +4824,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_recording_surface_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1736.const$2,"cairo_recording_surface_create");
+        return RuntimeHelper.requireNonNull(constants$1741.const$2,"cairo_recording_surface_create");
     }
     /**
      * {@snippet :
@@ -4624,7 +4840,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_recording_surface_ink_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1736.const$3,"cairo_recording_surface_ink_extents");
+        return RuntimeHelper.requireNonNull(constants$1741.const$3,"cairo_recording_surface_ink_extents");
     }
     /**
      * {@snippet :
@@ -4640,7 +4856,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_recording_surface_get_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1736.const$4,"cairo_recording_surface_get_extents");
+        return RuntimeHelper.requireNonNull(constants$1741.const$4,"cairo_recording_surface_get_extents");
     }
     /**
      * {@snippet :
@@ -4656,7 +4872,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_raster_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$1737.const$4,"cairo_pattern_create_raster_source");
+        return RuntimeHelper.requireNonNull(constants$1742.const$4,"cairo_pattern_create_raster_source");
     }
     /**
      * {@snippet :
@@ -4672,7 +4888,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_set_callback_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1737.const$5,"cairo_raster_source_pattern_set_callback_data");
+        return RuntimeHelper.requireNonNull(constants$1742.const$5,"cairo_raster_source_pattern_set_callback_data");
     }
     /**
      * {@snippet :
@@ -4688,7 +4904,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_get_callback_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1738.const$0,"cairo_raster_source_pattern_get_callback_data");
+        return RuntimeHelper.requireNonNull(constants$1743.const$0,"cairo_raster_source_pattern_get_callback_data");
     }
     /**
      * {@snippet :
@@ -4704,7 +4920,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_set_acquire$MH() {
-        return RuntimeHelper.requireNonNull(constants$1738.const$3,"cairo_raster_source_pattern_set_acquire");
+        return RuntimeHelper.requireNonNull(constants$1743.const$3,"cairo_raster_source_pattern_set_acquire");
     }
     /**
      * {@snippet :
@@ -4720,7 +4936,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_get_acquire$MH() {
-        return RuntimeHelper.requireNonNull(constants$1739.const$0,"cairo_raster_source_pattern_get_acquire");
+        return RuntimeHelper.requireNonNull(constants$1744.const$0,"cairo_raster_source_pattern_get_acquire");
     }
     /**
      * {@snippet :
@@ -4736,7 +4952,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_set_snapshot$MH() {
-        return RuntimeHelper.requireNonNull(constants$1739.const$2,"cairo_raster_source_pattern_set_snapshot");
+        return RuntimeHelper.requireNonNull(constants$1744.const$2,"cairo_raster_source_pattern_set_snapshot");
     }
     /**
      * {@snippet :
@@ -4752,7 +4968,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_get_snapshot$MH() {
-        return RuntimeHelper.requireNonNull(constants$1739.const$4,"cairo_raster_source_pattern_get_snapshot");
+        return RuntimeHelper.requireNonNull(constants$1744.const$4,"cairo_raster_source_pattern_get_snapshot");
     }
     /**
      * {@snippet :
@@ -4768,7 +4984,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_set_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1740.const$0,"cairo_raster_source_pattern_set_copy");
+        return RuntimeHelper.requireNonNull(constants$1745.const$0,"cairo_raster_source_pattern_set_copy");
     }
     /**
      * {@snippet :
@@ -4784,7 +5000,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_get_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1740.const$2,"cairo_raster_source_pattern_get_copy");
+        return RuntimeHelper.requireNonNull(constants$1745.const$2,"cairo_raster_source_pattern_get_copy");
     }
     /**
      * {@snippet :
@@ -4800,7 +5016,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_set_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1740.const$4,"cairo_raster_source_pattern_set_finish");
+        return RuntimeHelper.requireNonNull(constants$1745.const$4,"cairo_raster_source_pattern_set_finish");
     }
     /**
      * {@snippet :
@@ -4816,7 +5032,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_get_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1741.const$0,"cairo_raster_source_pattern_get_finish");
+        return RuntimeHelper.requireNonNull(constants$1746.const$0,"cairo_raster_source_pattern_get_finish");
     }
     /**
      * {@snippet :
@@ -4832,7 +5048,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_rgb$MH() {
-        return RuntimeHelper.requireNonNull(constants$1741.const$2,"cairo_pattern_create_rgb");
+        return RuntimeHelper.requireNonNull(constants$1746.const$2,"cairo_pattern_create_rgb");
     }
     /**
      * {@snippet :
@@ -4848,7 +5064,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1741.const$4,"cairo_pattern_create_rgba");
+        return RuntimeHelper.requireNonNull(constants$1746.const$4,"cairo_pattern_create_rgba");
     }
     /**
      * {@snippet :
@@ -4864,7 +5080,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_for_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1741.const$5,"cairo_pattern_create_for_surface");
+        return RuntimeHelper.requireNonNull(constants$1746.const$5,"cairo_pattern_create_for_surface");
     }
     /**
      * {@snippet :
@@ -4880,7 +5096,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_linear$MH() {
-        return RuntimeHelper.requireNonNull(constants$1742.const$0,"cairo_pattern_create_linear");
+        return RuntimeHelper.requireNonNull(constants$1747.const$0,"cairo_pattern_create_linear");
     }
     /**
      * {@snippet :
@@ -4896,7 +5112,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_radial$MH() {
-        return RuntimeHelper.requireNonNull(constants$1742.const$2,"cairo_pattern_create_radial");
+        return RuntimeHelper.requireNonNull(constants$1747.const$2,"cairo_pattern_create_radial");
     }
     /**
      * {@snippet :
@@ -4912,7 +5128,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_mesh$MH() {
-        return RuntimeHelper.requireNonNull(constants$1742.const$3,"cairo_pattern_create_mesh");
+        return RuntimeHelper.requireNonNull(constants$1747.const$3,"cairo_pattern_create_mesh");
     }
     /**
      * {@snippet :
@@ -4928,7 +5144,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1742.const$4,"cairo_pattern_reference");
+        return RuntimeHelper.requireNonNull(constants$1747.const$4,"cairo_pattern_reference");
     }
     /**
      * {@snippet :
@@ -4944,7 +5160,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1742.const$5,"cairo_pattern_destroy");
+        return RuntimeHelper.requireNonNull(constants$1747.const$5,"cairo_pattern_destroy");
     }
     /**
      * {@snippet :
@@ -4960,7 +5176,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1743.const$0,"cairo_pattern_get_reference_count");
+        return RuntimeHelper.requireNonNull(constants$1748.const$0,"cairo_pattern_get_reference_count");
     }
     /**
      * {@snippet :
@@ -4976,7 +5192,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1743.const$1,"cairo_pattern_status");
+        return RuntimeHelper.requireNonNull(constants$1748.const$1,"cairo_pattern_status");
     }
     /**
      * {@snippet :
@@ -4992,7 +5208,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1743.const$2,"cairo_pattern_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1748.const$2,"cairo_pattern_get_user_data");
     }
     /**
      * {@snippet :
@@ -5008,7 +5224,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1743.const$4,"cairo_pattern_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1748.const$4,"cairo_pattern_set_user_data");
     }
     /**
      * {@snippet :
@@ -5072,7 +5288,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)5L;
     }
     public static MethodHandle cairo_pattern_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1743.const$5,"cairo_pattern_get_type");
+        return RuntimeHelper.requireNonNull(constants$1748.const$5,"cairo_pattern_get_type");
     }
     /**
      * {@snippet :
@@ -5088,7 +5304,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_add_color_stop_rgb$MH() {
-        return RuntimeHelper.requireNonNull(constants$1744.const$0,"cairo_pattern_add_color_stop_rgb");
+        return RuntimeHelper.requireNonNull(constants$1749.const$0,"cairo_pattern_add_color_stop_rgb");
     }
     /**
      * {@snippet :
@@ -5104,7 +5320,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_add_color_stop_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1744.const$1,"cairo_pattern_add_color_stop_rgba");
+        return RuntimeHelper.requireNonNull(constants$1749.const$1,"cairo_pattern_add_color_stop_rgba");
     }
     /**
      * {@snippet :
@@ -5120,7 +5336,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_begin_patch$MH() {
-        return RuntimeHelper.requireNonNull(constants$1744.const$2,"cairo_mesh_pattern_begin_patch");
+        return RuntimeHelper.requireNonNull(constants$1749.const$2,"cairo_mesh_pattern_begin_patch");
     }
     /**
      * {@snippet :
@@ -5136,7 +5352,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_end_patch$MH() {
-        return RuntimeHelper.requireNonNull(constants$1744.const$3,"cairo_mesh_pattern_end_patch");
+        return RuntimeHelper.requireNonNull(constants$1749.const$3,"cairo_mesh_pattern_end_patch");
     }
     /**
      * {@snippet :
@@ -5152,7 +5368,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_curve_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1744.const$4,"cairo_mesh_pattern_curve_to");
+        return RuntimeHelper.requireNonNull(constants$1749.const$4,"cairo_mesh_pattern_curve_to");
     }
     /**
      * {@snippet :
@@ -5168,7 +5384,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_line_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1744.const$5,"cairo_mesh_pattern_line_to");
+        return RuntimeHelper.requireNonNull(constants$1749.const$5,"cairo_mesh_pattern_line_to");
     }
     /**
      * {@snippet :
@@ -5184,7 +5400,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_move_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1745.const$0,"cairo_mesh_pattern_move_to");
+        return RuntimeHelper.requireNonNull(constants$1750.const$0,"cairo_mesh_pattern_move_to");
     }
     /**
      * {@snippet :
@@ -5200,7 +5416,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_set_control_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1745.const$2,"cairo_mesh_pattern_set_control_point");
+        return RuntimeHelper.requireNonNull(constants$1750.const$2,"cairo_mesh_pattern_set_control_point");
     }
     /**
      * {@snippet :
@@ -5216,7 +5432,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_set_corner_color_rgb$MH() {
-        return RuntimeHelper.requireNonNull(constants$1745.const$4,"cairo_mesh_pattern_set_corner_color_rgb");
+        return RuntimeHelper.requireNonNull(constants$1750.const$4,"cairo_mesh_pattern_set_corner_color_rgb");
     }
     /**
      * {@snippet :
@@ -5232,7 +5448,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_set_corner_color_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1745.const$5,"cairo_mesh_pattern_set_corner_color_rgba");
+        return RuntimeHelper.requireNonNull(constants$1750.const$5,"cairo_mesh_pattern_set_corner_color_rgba");
     }
     /**
      * {@snippet :
@@ -5248,7 +5464,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_set_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1746.const$0,"cairo_pattern_set_matrix");
+        return RuntimeHelper.requireNonNull(constants$1751.const$0,"cairo_pattern_set_matrix");
     }
     /**
      * {@snippet :
@@ -5264,7 +5480,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1746.const$1,"cairo_pattern_get_matrix");
+        return RuntimeHelper.requireNonNull(constants$1751.const$1,"cairo_pattern_get_matrix");
     }
     /**
      * {@snippet :
@@ -5312,7 +5528,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)3L;
     }
     public static MethodHandle cairo_pattern_set_extend$MH() {
-        return RuntimeHelper.requireNonNull(constants$1746.const$2,"cairo_pattern_set_extend");
+        return RuntimeHelper.requireNonNull(constants$1751.const$2,"cairo_pattern_set_extend");
     }
     /**
      * {@snippet :
@@ -5328,7 +5544,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_extend$MH() {
-        return RuntimeHelper.requireNonNull(constants$1746.const$3,"cairo_pattern_get_extend");
+        return RuntimeHelper.requireNonNull(constants$1751.const$3,"cairo_pattern_get_extend");
     }
     /**
      * {@snippet :
@@ -5392,7 +5608,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)5L;
     }
     public static MethodHandle cairo_pattern_set_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1746.const$4,"cairo_pattern_set_filter");
+        return RuntimeHelper.requireNonNull(constants$1751.const$4,"cairo_pattern_set_filter");
     }
     /**
      * {@snippet :
@@ -5408,7 +5624,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1746.const$5,"cairo_pattern_get_filter");
+        return RuntimeHelper.requireNonNull(constants$1751.const$5,"cairo_pattern_get_filter");
     }
     /**
      * {@snippet :
@@ -5424,7 +5640,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1747.const$0,"cairo_pattern_get_rgba");
+        return RuntimeHelper.requireNonNull(constants$1752.const$0,"cairo_pattern_get_rgba");
     }
     /**
      * {@snippet :
@@ -5440,7 +5656,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1747.const$1,"cairo_pattern_get_surface");
+        return RuntimeHelper.requireNonNull(constants$1752.const$1,"cairo_pattern_get_surface");
     }
     /**
      * {@snippet :
@@ -5456,7 +5672,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_color_stop_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1747.const$3,"cairo_pattern_get_color_stop_rgba");
+        return RuntimeHelper.requireNonNull(constants$1752.const$3,"cairo_pattern_get_color_stop_rgba");
     }
     /**
      * {@snippet :
@@ -5472,7 +5688,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_color_stop_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1747.const$4,"cairo_pattern_get_color_stop_count");
+        return RuntimeHelper.requireNonNull(constants$1752.const$4,"cairo_pattern_get_color_stop_count");
     }
     /**
      * {@snippet :
@@ -5488,7 +5704,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_linear_points$MH() {
-        return RuntimeHelper.requireNonNull(constants$1747.const$5,"cairo_pattern_get_linear_points");
+        return RuntimeHelper.requireNonNull(constants$1752.const$5,"cairo_pattern_get_linear_points");
     }
     /**
      * {@snippet :
@@ -5504,7 +5720,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_radial_circles$MH() {
-        return RuntimeHelper.requireNonNull(constants$1748.const$0,"cairo_pattern_get_radial_circles");
+        return RuntimeHelper.requireNonNull(constants$1753.const$0,"cairo_pattern_get_radial_circles");
     }
     /**
      * {@snippet :
@@ -5520,7 +5736,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_get_patch_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1748.const$1,"cairo_mesh_pattern_get_patch_count");
+        return RuntimeHelper.requireNonNull(constants$1753.const$1,"cairo_mesh_pattern_get_patch_count");
     }
     /**
      * {@snippet :
@@ -5536,7 +5752,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_get_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1748.const$2,"cairo_mesh_pattern_get_path");
+        return RuntimeHelper.requireNonNull(constants$1753.const$2,"cairo_mesh_pattern_get_path");
     }
     /**
      * {@snippet :
@@ -5552,7 +5768,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_get_corner_color_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1748.const$3,"cairo_mesh_pattern_get_corner_color_rgba");
+        return RuntimeHelper.requireNonNull(constants$1753.const$3,"cairo_mesh_pattern_get_corner_color_rgba");
     }
     /**
      * {@snippet :
@@ -5568,7 +5784,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_get_control_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1748.const$4,"cairo_mesh_pattern_get_control_point");
+        return RuntimeHelper.requireNonNull(constants$1753.const$4,"cairo_mesh_pattern_get_control_point");
     }
     /**
      * {@snippet :
@@ -5584,7 +5800,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$1748.const$5,"cairo_matrix_init");
+        return RuntimeHelper.requireNonNull(constants$1753.const$5,"cairo_matrix_init");
     }
     /**
      * {@snippet :
@@ -5600,7 +5816,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_init_identity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1749.const$0,"cairo_matrix_init_identity");
+        return RuntimeHelper.requireNonNull(constants$1754.const$0,"cairo_matrix_init_identity");
     }
     /**
      * {@snippet :
@@ -5616,7 +5832,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_init_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1749.const$1,"cairo_matrix_init_translate");
+        return RuntimeHelper.requireNonNull(constants$1754.const$1,"cairo_matrix_init_translate");
     }
     /**
      * {@snippet :
@@ -5632,7 +5848,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_init_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1749.const$2,"cairo_matrix_init_scale");
+        return RuntimeHelper.requireNonNull(constants$1754.const$2,"cairo_matrix_init_scale");
     }
     /**
      * {@snippet :
@@ -5648,7 +5864,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_init_rotate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1749.const$3,"cairo_matrix_init_rotate");
+        return RuntimeHelper.requireNonNull(constants$1754.const$3,"cairo_matrix_init_rotate");
     }
     /**
      * {@snippet :
@@ -5664,7 +5880,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1749.const$4,"cairo_matrix_translate");
+        return RuntimeHelper.requireNonNull(constants$1754.const$4,"cairo_matrix_translate");
     }
     /**
      * {@snippet :
@@ -5680,7 +5896,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1749.const$5,"cairo_matrix_scale");
+        return RuntimeHelper.requireNonNull(constants$1754.const$5,"cairo_matrix_scale");
     }
     /**
      * {@snippet :
@@ -5696,7 +5912,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_rotate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1750.const$0,"cairo_matrix_rotate");
+        return RuntimeHelper.requireNonNull(constants$1755.const$0,"cairo_matrix_rotate");
     }
     /**
      * {@snippet :
@@ -5712,7 +5928,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_invert$MH() {
-        return RuntimeHelper.requireNonNull(constants$1750.const$1,"cairo_matrix_invert");
+        return RuntimeHelper.requireNonNull(constants$1755.const$1,"cairo_matrix_invert");
     }
     /**
      * {@snippet :
@@ -5728,7 +5944,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_multiply$MH() {
-        return RuntimeHelper.requireNonNull(constants$1750.const$2,"cairo_matrix_multiply");
+        return RuntimeHelper.requireNonNull(constants$1755.const$2,"cairo_matrix_multiply");
     }
     /**
      * {@snippet :
@@ -5744,7 +5960,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_transform_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1750.const$3,"cairo_matrix_transform_distance");
+        return RuntimeHelper.requireNonNull(constants$1755.const$3,"cairo_matrix_transform_distance");
     }
     /**
      * {@snippet :
@@ -5760,7 +5976,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_transform_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1750.const$4,"cairo_matrix_transform_point");
+        return RuntimeHelper.requireNonNull(constants$1755.const$4,"cairo_matrix_transform_point");
     }
     /**
      * {@snippet :
@@ -5800,7 +6016,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)2L;
     }
     public static MethodHandle cairo_region_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1750.const$5,"cairo_region_create");
+        return RuntimeHelper.requireNonNull(constants$1755.const$5,"cairo_region_create");
     }
     /**
      * {@snippet :
@@ -5816,7 +6032,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_create_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1751.const$0,"cairo_region_create_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1756.const$0,"cairo_region_create_rectangle");
     }
     /**
      * {@snippet :
@@ -5832,7 +6048,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_create_rectangles$MH() {
-        return RuntimeHelper.requireNonNull(constants$1751.const$1,"cairo_region_create_rectangles");
+        return RuntimeHelper.requireNonNull(constants$1756.const$1,"cairo_region_create_rectangles");
     }
     /**
      * {@snippet :
@@ -5848,7 +6064,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1751.const$2,"cairo_region_copy");
+        return RuntimeHelper.requireNonNull(constants$1756.const$2,"cairo_region_copy");
     }
     /**
      * {@snippet :
@@ -5864,7 +6080,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1751.const$3,"cairo_region_reference");
+        return RuntimeHelper.requireNonNull(constants$1756.const$3,"cairo_region_reference");
     }
     /**
      * {@snippet :
@@ -5880,7 +6096,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1751.const$4,"cairo_region_destroy");
+        return RuntimeHelper.requireNonNull(constants$1756.const$4,"cairo_region_destroy");
     }
     /**
      * {@snippet :
@@ -5896,7 +6112,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1751.const$5,"cairo_region_equal");
+        return RuntimeHelper.requireNonNull(constants$1756.const$5,"cairo_region_equal");
     }
     /**
      * {@snippet :
@@ -5912,7 +6128,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1752.const$0,"cairo_region_status");
+        return RuntimeHelper.requireNonNull(constants$1757.const$0,"cairo_region_status");
     }
     /**
      * {@snippet :
@@ -5928,7 +6144,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_get_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1752.const$1,"cairo_region_get_extents");
+        return RuntimeHelper.requireNonNull(constants$1757.const$1,"cairo_region_get_extents");
     }
     /**
      * {@snippet :
@@ -5944,7 +6160,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_num_rectangles$MH() {
-        return RuntimeHelper.requireNonNull(constants$1752.const$2,"cairo_region_num_rectangles");
+        return RuntimeHelper.requireNonNull(constants$1757.const$2,"cairo_region_num_rectangles");
     }
     /**
      * {@snippet :
@@ -5960,7 +6176,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_get_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1752.const$3,"cairo_region_get_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1757.const$3,"cairo_region_get_rectangle");
     }
     /**
      * {@snippet :
@@ -5976,7 +6192,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_is_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1752.const$4,"cairo_region_is_empty");
+        return RuntimeHelper.requireNonNull(constants$1757.const$4,"cairo_region_is_empty");
     }
     /**
      * {@snippet :
@@ -5992,7 +6208,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_contains_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1752.const$5,"cairo_region_contains_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1757.const$5,"cairo_region_contains_rectangle");
     }
     /**
      * {@snippet :
@@ -6008,7 +6224,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_contains_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1753.const$0,"cairo_region_contains_point");
+        return RuntimeHelper.requireNonNull(constants$1758.const$0,"cairo_region_contains_point");
     }
     /**
      * {@snippet :
@@ -6024,7 +6240,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1753.const$1,"cairo_region_translate");
+        return RuntimeHelper.requireNonNull(constants$1758.const$1,"cairo_region_translate");
     }
     /**
      * {@snippet :
@@ -6040,7 +6256,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_subtract$MH() {
-        return RuntimeHelper.requireNonNull(constants$1753.const$2,"cairo_region_subtract");
+        return RuntimeHelper.requireNonNull(constants$1758.const$2,"cairo_region_subtract");
     }
     /**
      * {@snippet :
@@ -6056,7 +6272,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_subtract_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1753.const$3,"cairo_region_subtract_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1758.const$3,"cairo_region_subtract_rectangle");
     }
     /**
      * {@snippet :
@@ -6072,7 +6288,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_intersect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1753.const$4,"cairo_region_intersect");
+        return RuntimeHelper.requireNonNull(constants$1758.const$4,"cairo_region_intersect");
     }
     /**
      * {@snippet :
@@ -6088,7 +6304,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_intersect_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1753.const$5,"cairo_region_intersect_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1758.const$5,"cairo_region_intersect_rectangle");
     }
     /**
      * {@snippet :
@@ -6104,7 +6320,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_union$MH() {
-        return RuntimeHelper.requireNonNull(constants$1754.const$0,"cairo_region_union");
+        return RuntimeHelper.requireNonNull(constants$1759.const$0,"cairo_region_union");
     }
     /**
      * {@snippet :
@@ -6120,7 +6336,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_union_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1754.const$1,"cairo_region_union_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1759.const$1,"cairo_region_union_rectangle");
     }
     /**
      * {@snippet :
@@ -6136,7 +6352,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_xor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1754.const$2,"cairo_region_xor");
+        return RuntimeHelper.requireNonNull(constants$1759.const$2,"cairo_region_xor");
     }
     /**
      * {@snippet :
@@ -6152,7 +6368,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_xor_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1754.const$3,"cairo_region_xor_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1759.const$3,"cairo_region_xor_rectangle");
     }
     /**
      * {@snippet :
@@ -6168,7 +6384,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_debug_reset_static_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1754.const$4,"cairo_debug_reset_static_data");
+        return RuntimeHelper.requireNonNull(constants$1759.const$4,"cairo_debug_reset_static_data");
     }
     /**
      * {@snippet :
@@ -7254,7 +7470,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)2L;
     }
     public static MethodHandle gdk_device_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1755.const$4,"gdk_device_get_type");
+        return RuntimeHelper.requireNonNull(constants$1760.const$4,"gdk_device_get_type");
     }
     /**
      * {@snippet :
@@ -7270,7 +7486,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1755.const$5,"gdk_device_get_name");
+        return RuntimeHelper.requireNonNull(constants$1760.const$5,"gdk_device_get_name");
     }
     /**
      * {@snippet :
@@ -7286,7 +7502,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_has_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1756.const$0,"gdk_device_get_has_cursor");
+        return RuntimeHelper.requireNonNull(constants$1761.const$0,"gdk_device_get_has_cursor");
     }
     /**
      * {@snippet :
@@ -7302,7 +7518,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$1756.const$1,"gdk_device_get_source");
+        return RuntimeHelper.requireNonNull(constants$1761.const$1,"gdk_device_get_source");
     }
     /**
      * {@snippet :
@@ -7318,7 +7534,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1756.const$2,"gdk_device_get_mode");
+        return RuntimeHelper.requireNonNull(constants$1761.const$2,"gdk_device_get_mode");
     }
     /**
      * {@snippet :
@@ -7334,7 +7550,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_set_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1756.const$3,"gdk_device_set_mode");
+        return RuntimeHelper.requireNonNull(constants$1761.const$3,"gdk_device_set_mode");
     }
     /**
      * {@snippet :
@@ -7350,7 +7566,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_n_keys$MH() {
-        return RuntimeHelper.requireNonNull(constants$1756.const$4,"gdk_device_get_n_keys");
+        return RuntimeHelper.requireNonNull(constants$1761.const$4,"gdk_device_get_n_keys");
     }
     /**
      * {@snippet :
@@ -7366,7 +7582,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_key$MH() {
-        return RuntimeHelper.requireNonNull(constants$1756.const$5,"gdk_device_get_key");
+        return RuntimeHelper.requireNonNull(constants$1761.const$5,"gdk_device_get_key");
     }
     /**
      * {@snippet :
@@ -7382,7 +7598,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_set_key$MH() {
-        return RuntimeHelper.requireNonNull(constants$1757.const$0,"gdk_device_set_key");
+        return RuntimeHelper.requireNonNull(constants$1762.const$0,"gdk_device_set_key");
     }
     /**
      * {@snippet :
@@ -7398,7 +7614,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_axis_use$MH() {
-        return RuntimeHelper.requireNonNull(constants$1757.const$1,"gdk_device_get_axis_use");
+        return RuntimeHelper.requireNonNull(constants$1762.const$1,"gdk_device_get_axis_use");
     }
     /**
      * {@snippet :
@@ -7414,7 +7630,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_set_axis_use$MH() {
-        return RuntimeHelper.requireNonNull(constants$1757.const$2,"gdk_device_set_axis_use");
+        return RuntimeHelper.requireNonNull(constants$1762.const$2,"gdk_device_set_axis_use");
     }
     /**
      * {@snippet :
@@ -7430,7 +7646,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$1757.const$3,"gdk_device_get_state");
+        return RuntimeHelper.requireNonNull(constants$1762.const$3,"gdk_device_get_state");
     }
     /**
      * {@snippet :
@@ -7446,7 +7662,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1757.const$4,"gdk_device_get_position");
+        return RuntimeHelper.requireNonNull(constants$1762.const$4,"gdk_device_get_position");
     }
     /**
      * {@snippet :
@@ -7462,7 +7678,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_window_at_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1757.const$5,"gdk_device_get_window_at_position");
+        return RuntimeHelper.requireNonNull(constants$1762.const$5,"gdk_device_get_window_at_position");
     }
     /**
      * {@snippet :
@@ -7478,7 +7694,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_position_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$1758.const$0,"gdk_device_get_position_double");
+        return RuntimeHelper.requireNonNull(constants$1763.const$0,"gdk_device_get_position_double");
     }
     /**
      * {@snippet :
@@ -7494,7 +7710,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_window_at_position_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$1758.const$1,"gdk_device_get_window_at_position_double");
+        return RuntimeHelper.requireNonNull(constants$1763.const$1,"gdk_device_get_window_at_position_double");
     }
     /**
      * {@snippet :
@@ -7510,7 +7726,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_history$MH() {
-        return RuntimeHelper.requireNonNull(constants$1758.const$2,"gdk_device_get_history");
+        return RuntimeHelper.requireNonNull(constants$1763.const$2,"gdk_device_get_history");
     }
     /**
      * {@snippet :
@@ -7526,7 +7742,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_free_history$MH() {
-        return RuntimeHelper.requireNonNull(constants$1758.const$3,"gdk_device_free_history");
+        return RuntimeHelper.requireNonNull(constants$1763.const$3,"gdk_device_free_history");
     }
     /**
      * {@snippet :
@@ -7542,7 +7758,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_n_axes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1758.const$4,"gdk_device_get_n_axes");
+        return RuntimeHelper.requireNonNull(constants$1763.const$4,"gdk_device_get_n_axes");
     }
     /**
      * {@snippet :
@@ -7558,7 +7774,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_list_axes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1758.const$5,"gdk_device_list_axes");
+        return RuntimeHelper.requireNonNull(constants$1763.const$5,"gdk_device_list_axes");
     }
     /**
      * {@snippet :
@@ -7574,7 +7790,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_axis_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1759.const$0,"gdk_device_get_axis_value");
+        return RuntimeHelper.requireNonNull(constants$1764.const$0,"gdk_device_get_axis_value");
     }
     /**
      * {@snippet :
@@ -7590,7 +7806,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_axis$MH() {
-        return RuntimeHelper.requireNonNull(constants$1759.const$1,"gdk_device_get_axis");
+        return RuntimeHelper.requireNonNull(constants$1764.const$1,"gdk_device_get_axis");
     }
     /**
      * {@snippet :
@@ -7606,7 +7822,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$1759.const$2,"gdk_device_get_display");
+        return RuntimeHelper.requireNonNull(constants$1764.const$2,"gdk_device_get_display");
     }
     /**
      * {@snippet :
@@ -7622,7 +7838,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_associated_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1759.const$3,"gdk_device_get_associated_device");
+        return RuntimeHelper.requireNonNull(constants$1764.const$3,"gdk_device_get_associated_device");
     }
     /**
      * {@snippet :
@@ -7638,7 +7854,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_list_slave_devices$MH() {
-        return RuntimeHelper.requireNonNull(constants$1759.const$4,"gdk_device_list_slave_devices");
+        return RuntimeHelper.requireNonNull(constants$1764.const$4,"gdk_device_list_slave_devices");
     }
     /**
      * {@snippet :
@@ -7654,7 +7870,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_device_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1759.const$5,"gdk_device_get_device_type");
+        return RuntimeHelper.requireNonNull(constants$1764.const$5,"gdk_device_get_device_type");
     }
     /**
      * {@snippet :
@@ -7670,7 +7886,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_grab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1760.const$1,"gdk_device_grab");
+        return RuntimeHelper.requireNonNull(constants$1765.const$1,"gdk_device_grab");
     }
     /**
      * {@snippet :
@@ -7686,7 +7902,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_ungrab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1760.const$2,"gdk_device_ungrab");
+        return RuntimeHelper.requireNonNull(constants$1765.const$2,"gdk_device_ungrab");
     }
     /**
      * {@snippet :
@@ -7702,7 +7918,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_warp$MH() {
-        return RuntimeHelper.requireNonNull(constants$1760.const$3,"gdk_device_warp");
+        return RuntimeHelper.requireNonNull(constants$1765.const$3,"gdk_device_warp");
     }
     /**
      * {@snippet :
@@ -7718,7 +7934,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_grab_info_libgtk_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$1760.const$4,"gdk_device_grab_info_libgtk_only");
+        return RuntimeHelper.requireNonNull(constants$1765.const$4,"gdk_device_grab_info_libgtk_only");
     }
     /**
      * {@snippet :
@@ -7734,7 +7950,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_last_event_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1760.const$5,"gdk_device_get_last_event_window");
+        return RuntimeHelper.requireNonNull(constants$1765.const$5,"gdk_device_get_last_event_window");
     }
     /**
      * {@snippet :
@@ -7750,7 +7966,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_vendor_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1761.const$0,"gdk_device_get_vendor_id");
+        return RuntimeHelper.requireNonNull(constants$1766.const$0,"gdk_device_get_vendor_id");
     }
     /**
      * {@snippet :
@@ -7766,7 +7982,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_product_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1761.const$1,"gdk_device_get_product_id");
+        return RuntimeHelper.requireNonNull(constants$1766.const$1,"gdk_device_get_product_id");
     }
     /**
      * {@snippet :
@@ -7782,7 +7998,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_seat$MH() {
-        return RuntimeHelper.requireNonNull(constants$1761.const$2,"gdk_device_get_seat");
+        return RuntimeHelper.requireNonNull(constants$1766.const$2,"gdk_device_get_seat");
     }
     /**
      * {@snippet :
@@ -7798,7 +8014,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_axes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1761.const$3,"gdk_device_get_axes");
+        return RuntimeHelper.requireNonNull(constants$1766.const$3,"gdk_device_get_axes");
     }
     /**
      * {@snippet :
@@ -7950,7 +8166,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)7L;
     }
     public static MethodHandle gdk_drag_context_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1761.const$4,"gdk_drag_context_get_type");
+        return RuntimeHelper.requireNonNull(constants$1766.const$4,"gdk_drag_context_get_type");
     }
     /**
      * {@snippet :
@@ -7966,7 +8182,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_set_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1761.const$5,"gdk_drag_context_set_device");
+        return RuntimeHelper.requireNonNull(constants$1766.const$5,"gdk_drag_context_set_device");
     }
     /**
      * {@snippet :
@@ -7982,7 +8198,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1762.const$0,"gdk_drag_context_get_device");
+        return RuntimeHelper.requireNonNull(constants$1767.const$0,"gdk_drag_context_get_device");
     }
     /**
      * {@snippet :
@@ -7998,7 +8214,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_list_targets$MH() {
-        return RuntimeHelper.requireNonNull(constants$1762.const$1,"gdk_drag_context_list_targets");
+        return RuntimeHelper.requireNonNull(constants$1767.const$1,"gdk_drag_context_list_targets");
     }
     /**
      * {@snippet :
@@ -8014,7 +8230,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1762.const$2,"gdk_drag_context_get_actions");
+        return RuntimeHelper.requireNonNull(constants$1767.const$2,"gdk_drag_context_get_actions");
     }
     /**
      * {@snippet :
@@ -8030,7 +8246,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_suggested_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1762.const$3,"gdk_drag_context_get_suggested_action");
+        return RuntimeHelper.requireNonNull(constants$1767.const$3,"gdk_drag_context_get_suggested_action");
     }
     /**
      * {@snippet :
@@ -8046,7 +8262,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_selected_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1762.const$4,"gdk_drag_context_get_selected_action");
+        return RuntimeHelper.requireNonNull(constants$1767.const$4,"gdk_drag_context_get_selected_action");
     }
     /**
      * {@snippet :
@@ -8062,7 +8278,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_source_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1762.const$5,"gdk_drag_context_get_source_window");
+        return RuntimeHelper.requireNonNull(constants$1767.const$5,"gdk_drag_context_get_source_window");
     }
     /**
      * {@snippet :
@@ -8078,7 +8294,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_dest_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1763.const$0,"gdk_drag_context_get_dest_window");
+        return RuntimeHelper.requireNonNull(constants$1768.const$0,"gdk_drag_context_get_dest_window");
     }
     /**
      * {@snippet :
@@ -8094,7 +8310,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_protocol$MH() {
-        return RuntimeHelper.requireNonNull(constants$1763.const$1,"gdk_drag_context_get_protocol");
+        return RuntimeHelper.requireNonNull(constants$1768.const$1,"gdk_drag_context_get_protocol");
     }
     /**
      * {@snippet :
@@ -8110,7 +8326,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1763.const$2,"gdk_drag_status");
+        return RuntimeHelper.requireNonNull(constants$1768.const$2,"gdk_drag_status");
     }
     /**
      * {@snippet :
@@ -8126,7 +8342,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drop_reply$MH() {
-        return RuntimeHelper.requireNonNull(constants$1763.const$3,"gdk_drop_reply");
+        return RuntimeHelper.requireNonNull(constants$1768.const$3,"gdk_drop_reply");
     }
     /**
      * {@snippet :
@@ -8142,7 +8358,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drop_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1763.const$4,"gdk_drop_finish");
+        return RuntimeHelper.requireNonNull(constants$1768.const$4,"gdk_drop_finish");
     }
     /**
      * {@snippet :
@@ -8158,7 +8374,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_get_selection$MH() {
-        return RuntimeHelper.requireNonNull(constants$1763.const$5,"gdk_drag_get_selection");
+        return RuntimeHelper.requireNonNull(constants$1768.const$5,"gdk_drag_get_selection");
     }
     /**
      * {@snippet :
@@ -8174,7 +8390,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_begin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1764.const$0,"gdk_drag_begin");
+        return RuntimeHelper.requireNonNull(constants$1769.const$0,"gdk_drag_begin");
     }
     /**
      * {@snippet :
@@ -8190,7 +8406,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_begin_for_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1764.const$1,"gdk_drag_begin_for_device");
+        return RuntimeHelper.requireNonNull(constants$1769.const$1,"gdk_drag_begin_for_device");
     }
     /**
      * {@snippet :
@@ -8206,7 +8422,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_begin_from_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1764.const$2,"gdk_drag_begin_from_point");
+        return RuntimeHelper.requireNonNull(constants$1769.const$2,"gdk_drag_begin_from_point");
     }
     /**
      * {@snippet :
@@ -8222,7 +8438,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_find_window_for_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1764.const$4,"gdk_drag_find_window_for_screen");
+        return RuntimeHelper.requireNonNull(constants$1769.const$4,"gdk_drag_find_window_for_screen");
     }
     /**
      * {@snippet :
@@ -8238,7 +8454,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_motion$MH() {
-        return RuntimeHelper.requireNonNull(constants$1764.const$6,"gdk_drag_motion");
+        return RuntimeHelper.requireNonNull(constants$1769.const$6,"gdk_drag_motion");
     }
     /**
      * {@snippet :
@@ -8254,7 +8470,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_drop$MH() {
-        return RuntimeHelper.requireNonNull(constants$1765.const$0,"gdk_drag_drop");
+        return RuntimeHelper.requireNonNull(constants$1770.const$0,"gdk_drag_drop");
     }
     /**
      * {@snippet :
@@ -8270,7 +8486,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_abort$MH() {
-        return RuntimeHelper.requireNonNull(constants$1765.const$1,"gdk_drag_abort");
+        return RuntimeHelper.requireNonNull(constants$1770.const$1,"gdk_drag_abort");
     }
     /**
      * {@snippet :
@@ -8286,7 +8502,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_drop_succeeded$MH() {
-        return RuntimeHelper.requireNonNull(constants$1765.const$2,"gdk_drag_drop_succeeded");
+        return RuntimeHelper.requireNonNull(constants$1770.const$2,"gdk_drag_drop_succeeded");
     }
     /**
      * {@snippet :
@@ -8302,7 +8518,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_drop_done$MH() {
-        return RuntimeHelper.requireNonNull(constants$1765.const$3,"gdk_drag_drop_done");
+        return RuntimeHelper.requireNonNull(constants$1770.const$3,"gdk_drag_drop_done");
     }
     /**
      * {@snippet :
@@ -8318,7 +8534,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_drag_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1765.const$4,"gdk_drag_context_get_drag_window");
+        return RuntimeHelper.requireNonNull(constants$1770.const$4,"gdk_drag_context_get_drag_window");
     }
     /**
      * {@snippet :
@@ -8334,7 +8550,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_set_hotspot$MH() {
-        return RuntimeHelper.requireNonNull(constants$1765.const$5,"gdk_drag_context_set_hotspot");
+        return RuntimeHelper.requireNonNull(constants$1770.const$5,"gdk_drag_context_set_hotspot");
     }
     /**
      * {@snippet :
@@ -8350,7 +8566,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_manage_dnd$MH() {
-        return RuntimeHelper.requireNonNull(constants$1766.const$0,"gdk_drag_context_manage_dnd");
+        return RuntimeHelper.requireNonNull(constants$1771.const$0,"gdk_drag_context_manage_dnd");
     }
     /**
      * {@snippet :
@@ -8430,7 +8646,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)7L;
     }
     public static MethodHandle gdk_device_tool_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1766.const$1,"gdk_device_tool_get_type");
+        return RuntimeHelper.requireNonNull(constants$1771.const$1,"gdk_device_tool_get_type");
     }
     /**
      * {@snippet :
@@ -8446,7 +8662,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_tool_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$1766.const$2,"gdk_device_tool_get_serial");
+        return RuntimeHelper.requireNonNull(constants$1771.const$2,"gdk_device_tool_get_serial");
     }
     /**
      * {@snippet :
@@ -8462,7 +8678,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_tool_get_hardware_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1766.const$3,"gdk_device_tool_get_hardware_id");
+        return RuntimeHelper.requireNonNull(constants$1771.const$3,"gdk_device_tool_get_hardware_id");
     }
     /**
      * {@snippet :
@@ -8478,7 +8694,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_tool_get_tool_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1766.const$4,"gdk_device_tool_get_tool_type");
+        return RuntimeHelper.requireNonNull(constants$1771.const$4,"gdk_device_tool_get_tool_type");
     }
     /**
      * {@snippet :
@@ -9342,7 +9558,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)2L;
     }
     public static MethodHandle gdk_event_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.const$0,"gdk_event_get_type");
+        return RuntimeHelper.requireNonNull(constants$1809.const$0,"gdk_event_get_type");
     }
     /**
      * {@snippet :
@@ -9358,7 +9574,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_sequence_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.const$1,"gdk_event_sequence_get_type");
+        return RuntimeHelper.requireNonNull(constants$1809.const$1,"gdk_event_sequence_get_type");
     }
     /**
      * {@snippet :
@@ -9374,7 +9590,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_events_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.const$2,"gdk_events_pending");
+        return RuntimeHelper.requireNonNull(constants$1809.const$2,"gdk_events_pending");
     }
     /**
      * {@snippet :
@@ -9390,7 +9606,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.const$3,"gdk_event_get");
+        return RuntimeHelper.requireNonNull(constants$1809.const$3,"gdk_event_get");
     }
     /**
      * {@snippet :
@@ -9406,7 +9622,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_peek$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.const$4,"gdk_event_peek");
+        return RuntimeHelper.requireNonNull(constants$1809.const$4,"gdk_event_peek");
     }
     /**
      * {@snippet :
@@ -9422,7 +9638,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_put$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.const$5,"gdk_event_put");
+        return RuntimeHelper.requireNonNull(constants$1809.const$5,"gdk_event_put");
     }
     /**
      * {@snippet :
@@ -9438,7 +9654,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.const$0,"gdk_event_new");
+        return RuntimeHelper.requireNonNull(constants$1810.const$0,"gdk_event_new");
     }
     /**
      * {@snippet :
@@ -9454,7 +9670,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.const$1,"gdk_event_copy");
+        return RuntimeHelper.requireNonNull(constants$1810.const$1,"gdk_event_copy");
     }
     /**
      * {@snippet :
@@ -9470,7 +9686,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.const$2,"gdk_event_free");
+        return RuntimeHelper.requireNonNull(constants$1810.const$2,"gdk_event_free");
     }
     /**
      * {@snippet :
@@ -9486,7 +9702,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.const$3,"gdk_event_get_window");
+        return RuntimeHelper.requireNonNull(constants$1810.const$3,"gdk_event_get_window");
     }
     /**
      * {@snippet :
@@ -9502,7 +9718,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.const$4,"gdk_event_get_time");
+        return RuntimeHelper.requireNonNull(constants$1810.const$4,"gdk_event_get_time");
     }
     /**
      * {@snippet :
@@ -9518,7 +9734,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.const$5,"gdk_event_get_state");
+        return RuntimeHelper.requireNonNull(constants$1810.const$5,"gdk_event_get_state");
     }
     /**
      * {@snippet :
@@ -9534,7 +9750,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_coords$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.const$0,"gdk_event_get_coords");
+        return RuntimeHelper.requireNonNull(constants$1811.const$0,"gdk_event_get_coords");
     }
     /**
      * {@snippet :
@@ -9550,7 +9766,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_root_coords$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.const$1,"gdk_event_get_root_coords");
+        return RuntimeHelper.requireNonNull(constants$1811.const$1,"gdk_event_get_root_coords");
     }
     /**
      * {@snippet :
@@ -9566,7 +9782,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_button$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.const$2,"gdk_event_get_button");
+        return RuntimeHelper.requireNonNull(constants$1811.const$2,"gdk_event_get_button");
     }
     /**
      * {@snippet :
@@ -9582,7 +9798,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_click_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.const$3,"gdk_event_get_click_count");
+        return RuntimeHelper.requireNonNull(constants$1811.const$3,"gdk_event_get_click_count");
     }
     /**
      * {@snippet :
@@ -9598,7 +9814,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_keyval$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.const$4,"gdk_event_get_keyval");
+        return RuntimeHelper.requireNonNull(constants$1811.const$4,"gdk_event_get_keyval");
     }
     /**
      * {@snippet :
@@ -9614,7 +9830,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_keycode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.const$5,"gdk_event_get_keycode");
+        return RuntimeHelper.requireNonNull(constants$1811.const$5,"gdk_event_get_keycode");
     }
     /**
      * {@snippet :
@@ -9630,7 +9846,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_scroll_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.const$0,"gdk_event_get_scroll_direction");
+        return RuntimeHelper.requireNonNull(constants$1812.const$0,"gdk_event_get_scroll_direction");
     }
     /**
      * {@snippet :
@@ -9646,7 +9862,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_scroll_deltas$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.const$1,"gdk_event_get_scroll_deltas");
+        return RuntimeHelper.requireNonNull(constants$1812.const$1,"gdk_event_get_scroll_deltas");
     }
     /**
      * {@snippet :
@@ -9662,7 +9878,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_is_scroll_stop_event$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.const$2,"gdk_event_is_scroll_stop_event");
+        return RuntimeHelper.requireNonNull(constants$1812.const$2,"gdk_event_is_scroll_stop_event");
     }
     /**
      * {@snippet :
@@ -9678,7 +9894,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_axis$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.const$3,"gdk_event_get_axis");
+        return RuntimeHelper.requireNonNull(constants$1812.const$3,"gdk_event_get_axis");
     }
     /**
      * {@snippet :
@@ -9694,7 +9910,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_set_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.const$4,"gdk_event_set_device");
+        return RuntimeHelper.requireNonNull(constants$1812.const$4,"gdk_event_set_device");
     }
     /**
      * {@snippet :
@@ -9710,7 +9926,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.const$5,"gdk_event_get_device");
+        return RuntimeHelper.requireNonNull(constants$1812.const$5,"gdk_event_get_device");
     }
     /**
      * {@snippet :
@@ -9726,7 +9942,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_set_source_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.const$0,"gdk_event_set_source_device");
+        return RuntimeHelper.requireNonNull(constants$1813.const$0,"gdk_event_set_source_device");
     }
     /**
      * {@snippet :
@@ -9742,7 +9958,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_source_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.const$1,"gdk_event_get_source_device");
+        return RuntimeHelper.requireNonNull(constants$1813.const$1,"gdk_event_get_source_device");
     }
     /**
      * {@snippet :
@@ -9758,7 +9974,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_request_motions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.const$2,"gdk_event_request_motions");
+        return RuntimeHelper.requireNonNull(constants$1813.const$2,"gdk_event_request_motions");
     }
     /**
      * {@snippet :
@@ -9774,7 +9990,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_triggers_context_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.const$3,"gdk_event_triggers_context_menu");
+        return RuntimeHelper.requireNonNull(constants$1813.const$3,"gdk_event_triggers_context_menu");
     }
     /**
      * {@snippet :
@@ -9790,7 +10006,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_events_get_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.const$4,"gdk_events_get_distance");
+        return RuntimeHelper.requireNonNull(constants$1813.const$4,"gdk_events_get_distance");
     }
     /**
      * {@snippet :
@@ -9806,7 +10022,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_events_get_angle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.const$5,"gdk_events_get_angle");
+        return RuntimeHelper.requireNonNull(constants$1813.const$5,"gdk_events_get_angle");
     }
     /**
      * {@snippet :
@@ -9822,7 +10038,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_events_get_center$MH() {
-        return RuntimeHelper.requireNonNull(constants$1809.const$0,"gdk_events_get_center");
+        return RuntimeHelper.requireNonNull(constants$1814.const$0,"gdk_events_get_center");
     }
     /**
      * {@snippet :
@@ -9838,7 +10054,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_handler_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1809.const$3,"gdk_event_handler_set");
+        return RuntimeHelper.requireNonNull(constants$1814.const$3,"gdk_event_handler_set");
     }
     /**
      * {@snippet :
@@ -9854,7 +10070,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_set_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1809.const$4,"gdk_event_set_screen");
+        return RuntimeHelper.requireNonNull(constants$1814.const$4,"gdk_event_set_screen");
     }
     /**
      * {@snippet :
@@ -9870,7 +10086,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1809.const$5,"gdk_event_get_screen");
+        return RuntimeHelper.requireNonNull(constants$1814.const$5,"gdk_event_get_screen");
     }
     /**
      * {@snippet :
@@ -9886,7 +10102,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_event_sequence$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.const$0,"gdk_event_get_event_sequence");
+        return RuntimeHelper.requireNonNull(constants$1815.const$0,"gdk_event_get_event_sequence");
     }
     /**
      * {@snippet :
@@ -9902,7 +10118,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_event_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.const$1,"gdk_event_get_event_type");
+        return RuntimeHelper.requireNonNull(constants$1815.const$1,"gdk_event_get_event_type");
     }
     /**
      * {@snippet :
@@ -9918,7 +10134,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_seat$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.const$2,"gdk_event_get_seat");
+        return RuntimeHelper.requireNonNull(constants$1815.const$2,"gdk_event_get_seat");
     }
     /**
      * {@snippet :
@@ -9934,7 +10150,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_set_show_events$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.const$3,"gdk_set_show_events");
+        return RuntimeHelper.requireNonNull(constants$1815.const$3,"gdk_set_show_events");
     }
     /**
      * {@snippet :
@@ -9950,7 +10166,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_get_show_events$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.const$4,"gdk_get_show_events");
+        return RuntimeHelper.requireNonNull(constants$1815.const$4,"gdk_get_show_events");
     }
     /**
      * {@snippet :
@@ -9966,7 +10182,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_setting_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.const$5,"gdk_setting_get");
+        return RuntimeHelper.requireNonNull(constants$1815.const$5,"gdk_setting_get");
     }
     /**
      * {@snippet :
@@ -9982,7 +10198,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_device_tool$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.const$0,"gdk_event_get_device_tool");
+        return RuntimeHelper.requireNonNull(constants$1816.const$0,"gdk_event_get_device_tool");
     }
     /**
      * {@snippet :
@@ -9998,7 +10214,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_set_device_tool$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.const$1,"gdk_event_set_device_tool");
+        return RuntimeHelper.requireNonNull(constants$1816.const$1,"gdk_event_set_device_tool");
     }
     /**
      * {@snippet :
@@ -10014,7 +10230,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_scancode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.const$2,"gdk_event_get_scancode");
+        return RuntimeHelper.requireNonNull(constants$1816.const$2,"gdk_event_get_scancode");
     }
     /**
      * {@snippet :
@@ -10030,7 +10246,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_pointer_emulated$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.const$3,"gdk_event_get_pointer_emulated");
+        return RuntimeHelper.requireNonNull(constants$1816.const$3,"gdk_event_get_pointer_emulated");
     }
     /**
      * {@snippet :
@@ -10046,7 +10262,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_manager_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.const$4,"gdk_device_manager_get_type");
+        return RuntimeHelper.requireNonNull(constants$1816.const$4,"gdk_device_manager_get_type");
     }
     /**
      * {@snippet :
@@ -10062,7 +10278,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_manager_get_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.const$5,"gdk_device_manager_get_display");
+        return RuntimeHelper.requireNonNull(constants$1816.const$5,"gdk_device_manager_get_display");
     }
     /**
      * {@snippet :
@@ -10078,7 +10294,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_manager_list_devices$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.const$0,"gdk_device_manager_list_devices");
+        return RuntimeHelper.requireNonNull(constants$1817.const$0,"gdk_device_manager_list_devices");
     }
     /**
      * {@snippet :
@@ -10094,7 +10310,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_manager_get_client_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.const$1,"gdk_device_manager_get_client_pointer");
+        return RuntimeHelper.requireNonNull(constants$1817.const$1,"gdk_device_manager_get_client_pointer");
     }
     /**
      * {@snippet :
@@ -10110,7 +10326,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drawing_context_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.const$2,"gdk_drawing_context_get_type");
+        return RuntimeHelper.requireNonNull(constants$1817.const$2,"gdk_drawing_context_get_type");
     }
     /**
      * {@snippet :
@@ -10126,7 +10342,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drawing_context_get_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.const$3,"gdk_drawing_context_get_window");
+        return RuntimeHelper.requireNonNull(constants$1817.const$3,"gdk_drawing_context_get_window");
     }
     /**
      * {@snippet :
@@ -10142,7 +10358,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drawing_context_get_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.const$4,"gdk_drawing_context_get_clip");
+        return RuntimeHelper.requireNonNull(constants$1817.const$4,"gdk_drawing_context_get_clip");
     }
     /**
      * {@snippet :
@@ -10158,7 +10374,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drawing_context_is_valid$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.const$5,"gdk_drawing_context_is_valid");
+        return RuntimeHelper.requireNonNull(constants$1817.const$5,"gdk_drawing_context_is_valid");
     }
     /**
      * {@snippet :
@@ -10174,7 +10390,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drawing_context_get_cairo_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.const$0,"gdk_drawing_context_get_cairo_context");
+        return RuntimeHelper.requireNonNull(constants$1818.const$0,"gdk_drawing_context_get_cairo_context");
     }
     /**
      * {@snippet :
@@ -10190,7 +10406,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.const$1,"gdk_frame_timings_get_type");
+        return RuntimeHelper.requireNonNull(constants$1818.const$1,"gdk_frame_timings_get_type");
     }
     /**
      * {@snippet :
@@ -10206,7 +10422,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.const$2,"gdk_frame_timings_ref");
+        return RuntimeHelper.requireNonNull(constants$1818.const$2,"gdk_frame_timings_ref");
     }
     /**
      * {@snippet :
@@ -10222,7 +10438,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.const$3,"gdk_frame_timings_unref");
+        return RuntimeHelper.requireNonNull(constants$1818.const$3,"gdk_frame_timings_unref");
     }
     /**
      * {@snippet :
@@ -10238,7 +10454,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_frame_counter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.const$4,"gdk_frame_timings_get_frame_counter");
+        return RuntimeHelper.requireNonNull(constants$1818.const$4,"gdk_frame_timings_get_frame_counter");
     }
     /**
      * {@snippet :
@@ -10254,7 +10470,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_complete$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.const$5,"gdk_frame_timings_get_complete");
+        return RuntimeHelper.requireNonNull(constants$1818.const$5,"gdk_frame_timings_get_complete");
     }
     /**
      * {@snippet :
@@ -10270,7 +10486,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_frame_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.const$0,"gdk_frame_timings_get_frame_time");
+        return RuntimeHelper.requireNonNull(constants$1819.const$0,"gdk_frame_timings_get_frame_time");
     }
     /**
      * {@snippet :
@@ -10286,7 +10502,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_presentation_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.const$1,"gdk_frame_timings_get_presentation_time");
+        return RuntimeHelper.requireNonNull(constants$1819.const$1,"gdk_frame_timings_get_presentation_time");
     }
     /**
      * {@snippet :
@@ -10302,7 +10518,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_refresh_interval$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.const$2,"gdk_frame_timings_get_refresh_interval");
+        return RuntimeHelper.requireNonNull(constants$1819.const$2,"gdk_frame_timings_get_refresh_interval");
     }
     /**
      * {@snippet :
@@ -10318,7 +10534,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_predicted_presentation_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.const$3,"gdk_frame_timings_get_predicted_presentation_time");
+        return RuntimeHelper.requireNonNull(constants$1819.const$3,"gdk_frame_timings_get_predicted_presentation_time");
     }
     /**
      * {@snippet :
@@ -10398,7 +10614,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)64L;
     }
     public static MethodHandle gdk_frame_clock_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.const$4,"gdk_frame_clock_get_type");
+        return RuntimeHelper.requireNonNull(constants$1819.const$4,"gdk_frame_clock_get_type");
     }
     /**
      * {@snippet :
@@ -10414,7 +10630,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_frame_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.const$5,"gdk_frame_clock_get_frame_time");
+        return RuntimeHelper.requireNonNull(constants$1819.const$5,"gdk_frame_clock_get_frame_time");
     }
     /**
      * {@snippet :
@@ -10430,7 +10646,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_request_phase$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.const$0,"gdk_frame_clock_request_phase");
+        return RuntimeHelper.requireNonNull(constants$1820.const$0,"gdk_frame_clock_request_phase");
     }
     /**
      * {@snippet :
@@ -10446,7 +10662,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_begin_updating$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.const$1,"gdk_frame_clock_begin_updating");
+        return RuntimeHelper.requireNonNull(constants$1820.const$1,"gdk_frame_clock_begin_updating");
     }
     /**
      * {@snippet :
@@ -10462,7 +10678,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_end_updating$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.const$2,"gdk_frame_clock_end_updating");
+        return RuntimeHelper.requireNonNull(constants$1820.const$2,"gdk_frame_clock_end_updating");
     }
     /**
      * {@snippet :
@@ -10478,7 +10694,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_frame_counter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.const$3,"gdk_frame_clock_get_frame_counter");
+        return RuntimeHelper.requireNonNull(constants$1820.const$3,"gdk_frame_clock_get_frame_counter");
     }
     /**
      * {@snippet :
@@ -10494,7 +10710,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_history_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.const$4,"gdk_frame_clock_get_history_start");
+        return RuntimeHelper.requireNonNull(constants$1820.const$4,"gdk_frame_clock_get_history_start");
     }
     /**
      * {@snippet :
@@ -10510,7 +10726,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_timings$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.const$5,"gdk_frame_clock_get_timings");
+        return RuntimeHelper.requireNonNull(constants$1820.const$5,"gdk_frame_clock_get_timings");
     }
     /**
      * {@snippet :
@@ -10526,7 +10742,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_current_timings$MH() {
-        return RuntimeHelper.requireNonNull(constants$1816.const$0,"gdk_frame_clock_get_current_timings");
+        return RuntimeHelper.requireNonNull(constants$1821.const$0,"gdk_frame_clock_get_current_timings");
     }
     /**
      * {@snippet :
@@ -10542,7 +10758,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_refresh_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$1816.const$1,"gdk_frame_clock_get_refresh_info");
+        return RuntimeHelper.requireNonNull(constants$1821.const$1,"gdk_frame_clock_get_refresh_info");
     }
     /**
      * {@snippet :
@@ -11102,7 +11318,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)1L;
     }
     public static MethodHandle gdk_window_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1825.const$5,"gdk_window_get_type");
+        return RuntimeHelper.requireNonNull(constants$1830.const$5,"gdk_window_get_type");
     }
     /**
      * {@snippet :
@@ -11118,7 +11334,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.const$0,"gdk_window_new");
+        return RuntimeHelper.requireNonNull(constants$1831.const$0,"gdk_window_new");
     }
     /**
      * {@snippet :
@@ -11134,7 +11350,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.const$1,"gdk_window_destroy");
+        return RuntimeHelper.requireNonNull(constants$1831.const$1,"gdk_window_destroy");
     }
     /**
      * {@snippet :
@@ -11150,7 +11366,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_window_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.const$2,"gdk_window_get_window_type");
+        return RuntimeHelper.requireNonNull(constants$1831.const$2,"gdk_window_get_window_type");
     }
     /**
      * {@snippet :
@@ -11166,7 +11382,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_is_destroyed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.const$3,"gdk_window_is_destroyed");
+        return RuntimeHelper.requireNonNull(constants$1831.const$3,"gdk_window_is_destroyed");
     }
     /**
      * {@snippet :
@@ -11182,7 +11398,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_visual$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.const$4,"gdk_window_get_visual");
+        return RuntimeHelper.requireNonNull(constants$1831.const$4,"gdk_window_get_visual");
     }
     /**
      * {@snippet :
@@ -11198,7 +11414,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.const$5,"gdk_window_get_screen");
+        return RuntimeHelper.requireNonNull(constants$1831.const$5,"gdk_window_get_screen");
     }
     /**
      * {@snippet :
@@ -11214,7 +11430,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.const$0,"gdk_window_get_display");
+        return RuntimeHelper.requireNonNull(constants$1832.const$0,"gdk_window_get_display");
     }
     /**
      * {@snippet :
@@ -11230,7 +11446,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_at_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.const$1,"gdk_window_at_pointer");
+        return RuntimeHelper.requireNonNull(constants$1832.const$1,"gdk_window_at_pointer");
     }
     /**
      * {@snippet :
@@ -11246,7 +11462,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_show$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.const$2,"gdk_window_show");
+        return RuntimeHelper.requireNonNull(constants$1832.const$2,"gdk_window_show");
     }
     /**
      * {@snippet :
@@ -11262,7 +11478,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_hide$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.const$3,"gdk_window_hide");
+        return RuntimeHelper.requireNonNull(constants$1832.const$3,"gdk_window_hide");
     }
     /**
      * {@snippet :
@@ -11278,7 +11494,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_withdraw$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.const$4,"gdk_window_withdraw");
+        return RuntimeHelper.requireNonNull(constants$1832.const$4,"gdk_window_withdraw");
     }
     /**
      * {@snippet :
@@ -11294,7 +11510,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_show_unraised$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.const$5,"gdk_window_show_unraised");
+        return RuntimeHelper.requireNonNull(constants$1832.const$5,"gdk_window_show_unraised");
     }
     /**
      * {@snippet :
@@ -11310,7 +11526,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_move$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.const$0,"gdk_window_move");
+        return RuntimeHelper.requireNonNull(constants$1833.const$0,"gdk_window_move");
     }
     /**
      * {@snippet :
@@ -11326,7 +11542,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_resize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.const$1,"gdk_window_resize");
+        return RuntimeHelper.requireNonNull(constants$1833.const$1,"gdk_window_resize");
     }
     /**
      * {@snippet :
@@ -11342,7 +11558,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_move_resize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.const$2,"gdk_window_move_resize");
+        return RuntimeHelper.requireNonNull(constants$1833.const$2,"gdk_window_move_resize");
     }
     /**
      * {@snippet :
@@ -11358,7 +11574,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_move_to_rect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.const$4,"gdk_window_move_to_rect");
+        return RuntimeHelper.requireNonNull(constants$1833.const$4,"gdk_window_move_to_rect");
     }
     /**
      * {@snippet :
@@ -11374,7 +11590,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_reparent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.const$5,"gdk_window_reparent");
+        return RuntimeHelper.requireNonNull(constants$1833.const$5,"gdk_window_reparent");
     }
     /**
      * {@snippet :
@@ -11390,7 +11606,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_raise$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.const$0,"gdk_window_raise");
+        return RuntimeHelper.requireNonNull(constants$1834.const$0,"gdk_window_raise");
     }
     /**
      * {@snippet :
@@ -11406,7 +11622,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_lower$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.const$1,"gdk_window_lower");
+        return RuntimeHelper.requireNonNull(constants$1834.const$1,"gdk_window_lower");
     }
     /**
      * {@snippet :
@@ -11422,7 +11638,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_restack$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.const$2,"gdk_window_restack");
+        return RuntimeHelper.requireNonNull(constants$1834.const$2,"gdk_window_restack");
     }
     /**
      * {@snippet :
@@ -11438,7 +11654,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_focus$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.const$3,"gdk_window_focus");
+        return RuntimeHelper.requireNonNull(constants$1834.const$3,"gdk_window_focus");
     }
     /**
      * {@snippet :
@@ -11454,7 +11670,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.const$4,"gdk_window_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1834.const$4,"gdk_window_set_user_data");
     }
     /**
      * {@snippet :
@@ -11470,7 +11686,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_override_redirect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.const$5,"gdk_window_set_override_redirect");
+        return RuntimeHelper.requireNonNull(constants$1834.const$5,"gdk_window_set_override_redirect");
     }
     /**
      * {@snippet :
@@ -11486,7 +11702,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_accept_focus$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.const$0,"gdk_window_get_accept_focus");
+        return RuntimeHelper.requireNonNull(constants$1835.const$0,"gdk_window_get_accept_focus");
     }
     /**
      * {@snippet :
@@ -11502,7 +11718,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_accept_focus$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.const$1,"gdk_window_set_accept_focus");
+        return RuntimeHelper.requireNonNull(constants$1835.const$1,"gdk_window_set_accept_focus");
     }
     /**
      * {@snippet :
@@ -11518,7 +11734,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_focus_on_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.const$2,"gdk_window_get_focus_on_map");
+        return RuntimeHelper.requireNonNull(constants$1835.const$2,"gdk_window_get_focus_on_map");
     }
     /**
      * {@snippet :
@@ -11534,7 +11750,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_focus_on_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.const$3,"gdk_window_set_focus_on_map");
+        return RuntimeHelper.requireNonNull(constants$1835.const$3,"gdk_window_set_focus_on_map");
     }
     /**
      * {@snippet :
@@ -11550,7 +11766,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_add_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.const$5,"gdk_window_add_filter");
+        return RuntimeHelper.requireNonNull(constants$1835.const$5,"gdk_window_add_filter");
     }
     /**
      * {@snippet :
@@ -11566,7 +11782,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_remove_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.const$1,"gdk_window_remove_filter");
+        return RuntimeHelper.requireNonNull(constants$1836.const$1,"gdk_window_remove_filter");
     }
     /**
      * {@snippet :
@@ -11582,7 +11798,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_scroll$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.const$2,"gdk_window_scroll");
+        return RuntimeHelper.requireNonNull(constants$1836.const$2,"gdk_window_scroll");
     }
     /**
      * {@snippet :
@@ -11598,7 +11814,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_move_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.const$3,"gdk_window_move_region");
+        return RuntimeHelper.requireNonNull(constants$1836.const$3,"gdk_window_move_region");
     }
     /**
      * {@snippet :
@@ -11614,7 +11830,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_ensure_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.const$4,"gdk_window_ensure_native");
+        return RuntimeHelper.requireNonNull(constants$1836.const$4,"gdk_window_ensure_native");
     }
     /**
      * {@snippet :
@@ -11630,7 +11846,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_shape_combine_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.const$5,"gdk_window_shape_combine_region");
+        return RuntimeHelper.requireNonNull(constants$1836.const$5,"gdk_window_shape_combine_region");
     }
     /**
      * {@snippet :
@@ -11646,7 +11862,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_child_shapes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.const$0,"gdk_window_set_child_shapes");
+        return RuntimeHelper.requireNonNull(constants$1837.const$0,"gdk_window_set_child_shapes");
     }
     /**
      * {@snippet :
@@ -11662,7 +11878,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_composited$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.const$1,"gdk_window_get_composited");
+        return RuntimeHelper.requireNonNull(constants$1837.const$1,"gdk_window_get_composited");
     }
     /**
      * {@snippet :
@@ -11678,7 +11894,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_composited$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.const$2,"gdk_window_set_composited");
+        return RuntimeHelper.requireNonNull(constants$1837.const$2,"gdk_window_set_composited");
     }
     /**
      * {@snippet :
@@ -11694,7 +11910,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_merge_child_shapes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.const$3,"gdk_window_merge_child_shapes");
+        return RuntimeHelper.requireNonNull(constants$1837.const$3,"gdk_window_merge_child_shapes");
     }
     /**
      * {@snippet :
@@ -11710,7 +11926,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_input_shape_combine_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.const$4,"gdk_window_input_shape_combine_region");
+        return RuntimeHelper.requireNonNull(constants$1837.const$4,"gdk_window_input_shape_combine_region");
     }
     /**
      * {@snippet :
@@ -11726,7 +11942,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_child_input_shapes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.const$5,"gdk_window_set_child_input_shapes");
+        return RuntimeHelper.requireNonNull(constants$1837.const$5,"gdk_window_set_child_input_shapes");
     }
     /**
      * {@snippet :
@@ -11742,7 +11958,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_merge_child_input_shapes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.const$0,"gdk_window_merge_child_input_shapes");
+        return RuntimeHelper.requireNonNull(constants$1838.const$0,"gdk_window_merge_child_input_shapes");
     }
     /**
      * {@snippet :
@@ -11758,7 +11974,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_pass_through$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.const$1,"gdk_window_set_pass_through");
+        return RuntimeHelper.requireNonNull(constants$1838.const$1,"gdk_window_set_pass_through");
     }
     /**
      * {@snippet :
@@ -11774,7 +11990,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_pass_through$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.const$2,"gdk_window_get_pass_through");
+        return RuntimeHelper.requireNonNull(constants$1838.const$2,"gdk_window_get_pass_through");
     }
     /**
      * {@snippet :
@@ -11790,7 +12006,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_is_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.const$3,"gdk_window_is_visible");
+        return RuntimeHelper.requireNonNull(constants$1838.const$3,"gdk_window_is_visible");
     }
     /**
      * {@snippet :
@@ -11806,7 +12022,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_is_viewable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.const$4,"gdk_window_is_viewable");
+        return RuntimeHelper.requireNonNull(constants$1838.const$4,"gdk_window_is_viewable");
     }
     /**
      * {@snippet :
@@ -11822,7 +12038,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_is_input_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.const$5,"gdk_window_is_input_only");
+        return RuntimeHelper.requireNonNull(constants$1838.const$5,"gdk_window_is_input_only");
     }
     /**
      * {@snippet :
@@ -11838,7 +12054,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_is_shaped$MH() {
-        return RuntimeHelper.requireNonNull(constants$1834.const$0,"gdk_window_is_shaped");
+        return RuntimeHelper.requireNonNull(constants$1839.const$0,"gdk_window_is_shaped");
     }
     /**
      * {@snippet :
@@ -11854,7 +12070,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$1834.const$1,"gdk_window_get_state");
+        return RuntimeHelper.requireNonNull(constants$1839.const$1,"gdk_window_get_state");
     }
     /**
      * {@snippet :
@@ -11870,7 +12086,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_static_gravities$MH() {
-        return RuntimeHelper.requireNonNull(constants$1834.const$2,"gdk_window_set_static_gravities");
+        return RuntimeHelper.requireNonNull(constants$1839.const$2,"gdk_window_set_static_gravities");
     }
     /**
      * {@snippet :
@@ -11886,7 +12102,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_invalidate_handler$MH() {
-        return RuntimeHelper.requireNonNull(constants$1834.const$5,"gdk_window_set_invalidate_handler");
+        return RuntimeHelper.requireNonNull(constants$1839.const$5,"gdk_window_set_invalidate_handler");
     }
     /**
      * {@snippet :
@@ -11902,7 +12118,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_has_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.const$0,"gdk_window_has_native");
+        return RuntimeHelper.requireNonNull(constants$1840.const$0,"gdk_window_has_native");
     }
     /**
      * {@snippet :
@@ -11918,7 +12134,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_type_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.const$1,"gdk_window_set_type_hint");
+        return RuntimeHelper.requireNonNull(constants$1840.const$1,"gdk_window_set_type_hint");
     }
     /**
      * {@snippet :
@@ -11934,7 +12150,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_type_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.const$2,"gdk_window_get_type_hint");
+        return RuntimeHelper.requireNonNull(constants$1840.const$2,"gdk_window_get_type_hint");
     }
     /**
      * {@snippet :
@@ -11950,7 +12166,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_modal_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.const$3,"gdk_window_get_modal_hint");
+        return RuntimeHelper.requireNonNull(constants$1840.const$3,"gdk_window_get_modal_hint");
     }
     /**
      * {@snippet :
@@ -11966,7 +12182,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_modal_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.const$4,"gdk_window_set_modal_hint");
+        return RuntimeHelper.requireNonNull(constants$1840.const$4,"gdk_window_set_modal_hint");
     }
     /**
      * {@snippet :
@@ -11982,7 +12198,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_skip_taskbar_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.const$5,"gdk_window_set_skip_taskbar_hint");
+        return RuntimeHelper.requireNonNull(constants$1840.const$5,"gdk_window_set_skip_taskbar_hint");
     }
     /**
      * {@snippet :
@@ -11993,358 +12209,6 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         var mh$ = gdk_window_set_skip_taskbar_hint$MH();
         try {
             mh$.invokeExact(window, skips_taskbar);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_skip_pager_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1836.const$0,"gdk_window_set_skip_pager_hint");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_skip_pager_hint(struct _GdkWindow* window, int skips_pager);
-     * }
-     */
-    public static void gdk_window_set_skip_pager_hint(MemorySegment window, int skips_pager) {
-        var mh$ = gdk_window_set_skip_pager_hint$MH();
-        try {
-            mh$.invokeExact(window, skips_pager);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_urgency_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1836.const$1,"gdk_window_set_urgency_hint");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_urgency_hint(struct _GdkWindow* window, int urgent);
-     * }
-     */
-    public static void gdk_window_set_urgency_hint(MemorySegment window, int urgent) {
-        var mh$ = gdk_window_set_urgency_hint$MH();
-        try {
-            mh$.invokeExact(window, urgent);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_geometry_hints$MH() {
-        return RuntimeHelper.requireNonNull(constants$1836.const$2,"gdk_window_set_geometry_hints");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_geometry_hints(struct _GdkWindow* window, struct _GdkGeometry* geometry, enum GdkWindowHints geom_mask);
-     * }
-     */
-    public static void gdk_window_set_geometry_hints(MemorySegment window, MemorySegment geometry, int geom_mask) {
-        var mh$ = gdk_window_set_geometry_hints$MH();
-        try {
-            mh$.invokeExact(window, geometry, geom_mask);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_clip_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1836.const$3,"gdk_window_get_clip_region");
-    }
-    /**
-     * {@snippet :
-     * struct _cairo_region* gdk_window_get_clip_region(struct _GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_clip_region(MemorySegment window) {
-        var mh$ = gdk_window_get_clip_region$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_visible_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1836.const$4,"gdk_window_get_visible_region");
-    }
-    /**
-     * {@snippet :
-     * struct _cairo_region* gdk_window_get_visible_region(struct _GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_visible_region(MemorySegment window) {
-        var mh$ = gdk_window_get_visible_region$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_begin_paint_rect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1836.const$5,"gdk_window_begin_paint_rect");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_begin_paint_rect(struct _GdkWindow* window, struct _cairo_rectangle_int* rectangle);
-     * }
-     */
-    public static void gdk_window_begin_paint_rect(MemorySegment window, MemorySegment rectangle) {
-        var mh$ = gdk_window_begin_paint_rect$MH();
-        try {
-            mh$.invokeExact(window, rectangle);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_mark_paint_from_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1837.const$0,"gdk_window_mark_paint_from_clip");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_mark_paint_from_clip(struct _GdkWindow* window, struct _cairo* cr);
-     * }
-     */
-    public static void gdk_window_mark_paint_from_clip(MemorySegment window, MemorySegment cr) {
-        var mh$ = gdk_window_mark_paint_from_clip$MH();
-        try {
-            mh$.invokeExact(window, cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_begin_paint_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1837.const$1,"gdk_window_begin_paint_region");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_begin_paint_region(struct _GdkWindow* window, struct _cairo_region* region);
-     * }
-     */
-    public static void gdk_window_begin_paint_region(MemorySegment window, MemorySegment region) {
-        var mh$ = gdk_window_begin_paint_region$MH();
-        try {
-            mh$.invokeExact(window, region);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_end_paint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1837.const$2,"gdk_window_end_paint");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_end_paint(struct _GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_end_paint(MemorySegment window) {
-        var mh$ = gdk_window_end_paint$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_begin_draw_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$1837.const$3,"gdk_window_begin_draw_frame");
-    }
-    /**
-     * {@snippet :
-     * struct _GdkDrawingContext* gdk_window_begin_draw_frame(struct _GdkWindow* window, struct _cairo_region* region);
-     * }
-     */
-    public static MemorySegment gdk_window_begin_draw_frame(MemorySegment window, MemorySegment region) {
-        var mh$ = gdk_window_begin_draw_frame$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window, region);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_end_draw_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$1837.const$4,"gdk_window_end_draw_frame");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_end_draw_frame(struct _GdkWindow* window, struct _GdkDrawingContext* context);
-     * }
-     */
-    public static void gdk_window_end_draw_frame(MemorySegment window, MemorySegment context) {
-        var mh$ = gdk_window_end_draw_frame$MH();
-        try {
-            mh$.invokeExact(window, context);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$1837.const$5,"gdk_window_flush");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_flush(struct _GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_flush(MemorySegment window) {
-        var mh$ = gdk_window_flush$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.const$0,"gdk_window_set_title");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_title(struct _GdkWindow* window, char* title);
-     * }
-     */
-    public static void gdk_window_set_title(MemorySegment window, MemorySegment title) {
-        var mh$ = gdk_window_set_title$MH();
-        try {
-            mh$.invokeExact(window, title);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_role$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.const$1,"gdk_window_set_role");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_role(struct _GdkWindow* window, char* role);
-     * }
-     */
-    public static void gdk_window_set_role(MemorySegment window, MemorySegment role) {
-        var mh$ = gdk_window_set_role$MH();
-        try {
-            mh$.invokeExact(window, role);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_startup_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.const$2,"gdk_window_set_startup_id");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_startup_id(struct _GdkWindow* window, char* startup_id);
-     * }
-     */
-    public static void gdk_window_set_startup_id(MemorySegment window, MemorySegment startup_id) {
-        var mh$ = gdk_window_set_startup_id$MH();
-        try {
-            mh$.invokeExact(window, startup_id);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_transient_for$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.const$3,"gdk_window_set_transient_for");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_transient_for(struct _GdkWindow* window, struct _GdkWindow* parent);
-     * }
-     */
-    public static void gdk_window_set_transient_for(MemorySegment window, MemorySegment parent) {
-        var mh$ = gdk_window_set_transient_for$MH();
-        try {
-            mh$.invokeExact(window, parent);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_background$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.const$4,"gdk_window_set_background");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_background(struct _GdkWindow* window, struct _GdkColor* color);
-     * }
-     */
-    public static void gdk_window_set_background(MemorySegment window, MemorySegment color) {
-        var mh$ = gdk_window_set_background$MH();
-        try {
-            mh$.invokeExact(window, color);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_background_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.const$5,"gdk_window_set_background_rgba");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_background_rgba(struct _GdkWindow* window, struct _GdkRGBA* rgba);
-     * }
-     */
-    public static void gdk_window_set_background_rgba(MemorySegment window, MemorySegment rgba) {
-        var mh$ = gdk_window_set_background_rgba$MH();
-        try {
-            mh$.invokeExact(window, rgba);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_background_pattern$MH() {
-        return RuntimeHelper.requireNonNull(constants$1839.const$0,"gdk_window_set_background_pattern");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_background_pattern(struct _GdkWindow* window, struct _cairo_pattern* pattern);
-     * }
-     */
-    public static void gdk_window_set_background_pattern(MemorySegment window, MemorySegment pattern) {
-        var mh$ = gdk_window_set_background_pattern$MH();
-        try {
-            mh$.invokeExact(window, pattern);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_background_pattern$MH() {
-        return RuntimeHelper.requireNonNull(constants$1839.const$1,"gdk_window_get_background_pattern");
-    }
-    /**
-     * {@snippet :
-     * struct _cairo_pattern* gdk_window_get_background_pattern(struct _GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_background_pattern(MemorySegment window) {
-        var mh$ = gdk_window_get_background_pattern$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1839.const$2,"gdk_window_set_cursor");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_cursor(struct _GdkWindow* window, struct _GdkCursor* cursor);
-     * }
-     */
-    public static void gdk_window_set_cursor(MemorySegment window, MemorySegment cursor) {
-        var mh$ = gdk_window_set_cursor$MH();
-        try {
-            mh$.invokeExact(window, cursor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1839.const$3,"gdk_window_get_cursor");
-    }
-    /**
-     * {@snippet :
-     * struct _GdkCursor* gdk_window_get_cursor(struct _GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_cursor(MemorySegment window) {
-        var mh$ = gdk_window_get_cursor$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

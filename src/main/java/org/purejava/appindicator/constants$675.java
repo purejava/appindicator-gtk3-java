@@ -2,62 +2,26 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.MethodHandle;
 final class constants$675 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$675() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        JAVA_INT.withName("use_count"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("type_infos"),
-        RuntimeHelper.POINTER.withName("interface_infos"),
-        RuntimeHelper.POINTER.withName("name")
-    ).withName("_GTypeModule");
-    static final VarHandle const$1 = constants$675.const$0.varHandle(MemoryLayout.PathElement.groupElement("use_count"));
-    static final VarHandle const$2 = constants$675.const$0.varHandle(MemoryLayout.PathElement.groupElement("type_infos"));
-    static final VarHandle const$3 = constants$675.const$0.varHandle(MemoryLayout.PathElement.groupElement("interface_infos"));
-    static final VarHandle const$4 = constants$675.const$0.varHandle(MemoryLayout.PathElement.groupElement("name"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("load"),
-        RuntimeHelper.POINTER.withName("unload"),
-        RuntimeHelper.POINTER.withName("reserved1"),
-        RuntimeHelper.POINTER.withName("reserved2"),
-        RuntimeHelper.POINTER.withName("reserved3"),
-        RuntimeHelper.POINTER.withName("reserved4")
-    ).withName("_GTypeModuleClass");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_signal_group_unblock",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_closure",
+        constants$332.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_signal_group_connect_object$c_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_object",
+        constants$649.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_group_connect_data$c_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_signal_group_connect_data$notify.class, "apply", constants$13.const$4);
 }
 
 

@@ -4,7 +4,6 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
-import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
@@ -12,27 +11,15 @@ final class constants$699 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$699() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GDBusProxyTypeFunc.class, "apply", constants$332.const$2);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$332.const$2
-    );
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("get_name"),
-        RuntimeHelper.POINTER.withName("get_parameter_type"),
-        RuntimeHelper.POINTER.withName("get_state_type"),
-        RuntimeHelper.POINTER.withName("get_state_hint"),
-        RuntimeHelper.POINTER.withName("get_enabled"),
-        RuntimeHelper.POINTER.withName("get_state"),
-        RuntimeHelper.POINTER.withName("change_state"),
-        RuntimeHelper.POINTER.withName("activate")
-    ).withName("_GActionInterface");
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GActionInterface.get_name.class, "apply", constants$5.const$2);
-    static final VarHandle const$4 = constants$699.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_name"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GActionInterface.get_parameter_type.class, "apply", constants$5.const$2);
+    static final VarHandle const$0 = constants$698.const$2.varHandle(MemoryLayout.PathElement.groupElement("bytes_received"));
+    static final VarHandle const$1 = constants$698.const$2.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+    static final VarHandle const$2 = constants$698.const$2.varHandle(MemoryLayout.PathElement.groupElement("control_messages"));
+    static final VarHandle const$3 = constants$698.const$2.varHandle(MemoryLayout.PathElement.groupElement("num_control_messages"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("buffer"),
+        JAVA_LONG.withName("size")
+    ).withName("_GOutputVector");
+    static final VarHandle const$5 = constants$699.const$4.varHandle(MemoryLayout.PathElement.groupElement("buffer"));
 }
 
 

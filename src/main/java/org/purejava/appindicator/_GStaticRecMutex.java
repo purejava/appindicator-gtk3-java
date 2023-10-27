@@ -19,13 +19,13 @@ import java.lang.invoke.VarHandle;
 public class _GStaticRecMutex {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$537.const$4;
+        return constants$539.const$1;
     }
     public static MemorySegment mutex$slice(MemorySegment seg) {
         return seg.asSlice(0, 56);
     }
     public static VarHandle depth$VH() {
-        return constants$537.const$5;
+        return constants$539.const$2;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class _GStaticRecMutex {
      * }
      */
     public static int depth$get(MemorySegment seg) {
-        return (int)constants$537.const$5.get(seg);
+        return (int)constants$539.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -43,13 +43,13 @@ public class _GStaticRecMutex {
      * }
      */
     public static void depth$set(MemorySegment seg, int x) {
-        constants$537.const$5.set(seg, x);
+        constants$539.const$2.set(seg, x);
     }
     public static int depth$get(MemorySegment seg, long index) {
-        return (int)constants$537.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$539.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void depth$set(MemorySegment seg, long index, int x) {
-        constants$537.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$539.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -64,10 +64,10 @@ public class _GStaticRecMutex {
         // Suppresses default constructor, ensuring non-instantiability.
         private unused() {}
         public static MemoryLayout $LAYOUT() {
-            return constants$538.const$0;
+            return constants$539.const$3;
         }
         public static VarHandle owner$VH() {
-            return constants$538.const$1;
+            return constants$539.const$4;
         }
         /**
          * Getter for field:
@@ -76,7 +76,7 @@ public class _GStaticRecMutex {
          * }
          */
         public static long owner$get(MemorySegment seg) {
-            return (long)constants$538.const$1.get(seg);
+            return (long)constants$539.const$4.get(seg);
         }
         /**
          * Setter for field:
@@ -85,16 +85,16 @@ public class _GStaticRecMutex {
          * }
          */
         public static void owner$set(MemorySegment seg, long x) {
-            constants$538.const$1.set(seg, x);
+            constants$539.const$4.set(seg, x);
         }
         public static long owner$get(MemorySegment seg, long index) {
-            return (long)constants$538.const$1.get(seg.asSlice(index*sizeof()));
+            return (long)constants$539.const$4.get(seg.asSlice(index*sizeof()));
         }
         public static void owner$set(MemorySegment seg, long index, long x) {
-            constants$538.const$1.set(seg.asSlice(index*sizeof()), x);
+            constants$539.const$4.set(seg.asSlice(index*sizeof()), x);
         }
         public static VarHandle dummy$VH() {
-            return constants$538.const$2;
+            return constants$539.const$5;
         }
         /**
          * Getter for field:
@@ -103,7 +103,7 @@ public class _GStaticRecMutex {
          * }
          */
         public static double dummy$get(MemorySegment seg) {
-            return (double)constants$538.const$2.get(seg);
+            return (double)constants$539.const$5.get(seg);
         }
         /**
          * Setter for field:
@@ -112,13 +112,13 @@ public class _GStaticRecMutex {
          * }
          */
         public static void dummy$set(MemorySegment seg, double x) {
-            constants$538.const$2.set(seg, x);
+            constants$539.const$5.set(seg, x);
         }
         public static double dummy$get(MemorySegment seg, long index) {
-            return (double)constants$538.const$2.get(seg.asSlice(index*sizeof()));
+            return (double)constants$539.const$5.get(seg.asSlice(index*sizeof()));
         }
         public static void dummy$set(MemorySegment seg, long index, double x) {
-            constants$538.const$2.set(seg.asSlice(index*sizeof()), x);
+            constants$539.const$5.set(seg.asSlice(index*sizeof()), x);
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

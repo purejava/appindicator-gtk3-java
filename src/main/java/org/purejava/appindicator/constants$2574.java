@@ -3,35 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2574 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2574() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GtkCellLayoutDataFunc.class, "apply", constants$331.const$1);
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("pack_start"),
-        RuntimeHelper.POINTER.withName("pack_end"),
-        RuntimeHelper.POINTER.withName("clear"),
-        RuntimeHelper.POINTER.withName("add_attribute"),
-        RuntimeHelper.POINTER.withName("set_cell_data_func"),
-        RuntimeHelper.POINTER.withName("clear_attributes"),
-        RuntimeHelper.POINTER.withName("reorder"),
-        RuntimeHelper.POINTER.withName("get_cells"),
-        RuntimeHelper.POINTER.withName("get_area")
-    ).withName("_GtkCellLayoutIface");
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCellLayoutIface.pack_start.class, "apply", constants$164.const$5);
-    static final VarHandle const$3 = constants$2574.const$1.varHandle(MemoryLayout.PathElement.groupElement("pack_start"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellLayoutIface.pack_end.class, "apply", constants$164.const$5);
-    static final VarHandle const$5 = constants$2574.const$1.varHandle(MemoryLayout.PathElement.groupElement("pack_end"));
+    static final VarHandle const$0 = constants$2573.const$4.varHandle(MemoryLayout.PathElement.groupElement("allocate"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellAreaContextClass.reset.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$2573.const$4.varHandle(MemoryLayout.PathElement.groupElement("reset"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkCellAreaContextClass.get_preferred_height_for_width.class, "apply", constants$179.const$1);
+    static final VarHandle const$4 = constants$2573.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_height_for_width"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkCellAreaContextClass.get_preferred_width_for_height.class, "apply", constants$179.const$1);
 }
 
 

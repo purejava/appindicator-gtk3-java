@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$972 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$972() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.dup.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("dup"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.hash.class, "apply", constants$10.const$5);
-    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("hash"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.equal.class, "apply", constants$9.const$0);
-    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("equal"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_icon_new_for_string",
+        constants$5.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_icon_serialize",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_icon_deserialize",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_emblem_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_emblem_new",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_emblem_new_with_origin",
+        constants$21.const$3
+    );
 }
 
 

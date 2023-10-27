@@ -8,27 +8,27 @@ final class constants$3226 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3226() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_drag_targets_get_type",
+        "gtk_image_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_flags_get_type",
+        "gtk_arrow_placement_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_drop_position_get_type",
+        "gtk_buttons_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_sizing_get_type",
+        "gtk_button_role_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_help_type_get_type",
+        "gtk_notebook_tab_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_window_type_get_type",
+        "gtk_pad_action_type_get_type",
         constants$3.const$5
     );
 }

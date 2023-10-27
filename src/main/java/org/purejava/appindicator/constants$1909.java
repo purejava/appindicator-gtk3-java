@@ -7,26 +7,29 @@ final class constants$1909 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1909() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(pango_cairo_context_get_shape_renderer$return.class, "apply", constants$464.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_get_animation",
+        constants$5.const$2
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_get_shape_renderer",
-        constants$5.const$5
+        "gdk_pixbuf_loader_close",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_cairo_create_context",
+        "gdk_pixbuf_loader_get_format",
         constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_cairo_create_layout",
-        constants$5.const$2
+        "gdk_pixbuf_alpha_mode_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_cairo_update_layout",
-        constants$13.const$4
+        "gdk_colorspace_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_cairo_show_glyph_string",
-        constants$14.const$3
+        "gdk_pixbuf_error_get_type",
+        constants$3.const$5
     );
 }
 

@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1978 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1978() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_object_get_role",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_object_get_layer",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_object_get_mdi_zorder",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_object_get_attributes",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_object_ref_state_set",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_object_get_index_in_parent",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkObjectClass.children_changed.class, "apply", constants$42.const$4);
+    static final VarHandle const$1 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("children_changed"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkObjectClass.focus_event.class, "apply", constants$40.const$2);
+    static final VarHandle const$3 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("focus_event"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkObjectClass.property_change.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("property_change"));
 }
 
 

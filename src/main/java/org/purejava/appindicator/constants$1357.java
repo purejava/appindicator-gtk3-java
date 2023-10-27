@@ -2,30 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1357 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1357() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTlsConnectionClass.get_negotiated_protocol.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$1355.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_negotiated_protocol"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_new_from_files",
+        constants$23.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_new_from_pkcs11_uris",
+        constants$23.const$0
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_type",
-        constants$3.const$5
+        "g_tls_certificate_list_new_from_file",
+        constants$5.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_use_system_certdb",
-        constants$40.const$2
+        "g_tls_certificate_get_issuer",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_use_system_certdb",
-        constants$10.const$5
+        "g_tls_certificate_verify",
+        constants$12.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_database",
-        constants$13.const$4
+        "g_tls_certificate_is_same",
+        constants$9.const$0
     );
 }
 

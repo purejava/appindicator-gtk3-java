@@ -3,66 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$2695 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2695() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_dialog_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_file_chooser_dialog_new",
-        constants$482.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_get_type",
-        constants$3.const$5
-    );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance")
-    ).withName("_GtkNativeDialog");
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("response"),
-        RuntimeHelper.POINTER.withName("show"),
-        RuntimeHelper.POINTER.withName("hide"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved1"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved2"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved3"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved4")
-    ).withName("_GtkNativeDialogClass");
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkNativeDialogClass.response.class, "apply", constants$40.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkFileChooserButtonClass.file_set.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$2694.const$5.varHandle(MemoryLayout.PathElement.groupElement("file_set"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkFileChooserButtonClass.__gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$2694.const$5.varHandle(MemoryLayout.PathElement.groupElement("__gtk_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkFileChooserButtonClass.__gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2694.const$5.varHandle(MemoryLayout.PathElement.groupElement("__gtk_reserved2"));
 }
 
 

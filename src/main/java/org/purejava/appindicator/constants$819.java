@@ -2,34 +2,42 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$819 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$819() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "execv",
-        constants$9.const$0
+        "sleep",
+        constants$8.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "execle",
-        constants$9.const$0
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "ualarm",
+        constants$123.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "execl",
-        constants$9.const$0
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "usleep",
+        constants$8.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "execvp",
-        constants$9.const$0
+        "pause",
+        constants$83.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "execlp",
-        constants$9.const$0
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "chown",
+        constants$49.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "nice",
-        constants$8.const$4
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "fchown",
+        constants$819.const$5
     );
 }
 

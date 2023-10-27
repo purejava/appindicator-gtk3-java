@@ -17,7 +17,7 @@ import java.lang.invoke.VarHandle;
 public class _GVariantBuilder {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$364.const$3;
+        return constants$365.const$3;
     }
     /**
      * {@snippet :
@@ -32,7 +32,7 @@ public class _GVariantBuilder {
         // Suppresses default constructor, ensuring non-instantiability.
         private u() {}
         public static MemoryLayout $LAYOUT() {
-            return constants$364.const$4;
+            return constants$365.const$4;
         }
         /**
          * {@snippet :
@@ -48,10 +48,10 @@ public class _GVariantBuilder {
             // Suppresses default constructor, ensuring non-instantiability.
             private s() {}
             public static MemoryLayout $LAYOUT() {
-                return constants$364.const$5;
+                return constants$365.const$5;
             }
             public static VarHandle partial_magic$VH() {
-                return constants$365.const$0;
+                return constants$366.const$0;
             }
             /**
              * Getter for field:
@@ -60,7 +60,7 @@ public class _GVariantBuilder {
              * }
              */
             public static long partial_magic$get(MemorySegment seg) {
-                return (long)constants$365.const$0.get(seg);
+                return (long)constants$366.const$0.get(seg);
             }
             /**
              * Setter for field:
@@ -69,16 +69,16 @@ public class _GVariantBuilder {
              * }
              */
             public static void partial_magic$set(MemorySegment seg, long x) {
-                constants$365.const$0.set(seg, x);
+                constants$366.const$0.set(seg, x);
             }
             public static long partial_magic$get(MemorySegment seg, long index) {
-                return (long)constants$365.const$0.get(seg.asSlice(index*sizeof()));
+                return (long)constants$366.const$0.get(seg.asSlice(index*sizeof()));
             }
             public static void partial_magic$set(MemorySegment seg, long index, long x) {
-                constants$365.const$0.set(seg.asSlice(index*sizeof()), x);
+                constants$366.const$0.set(seg.asSlice(index*sizeof()), x);
             }
             public static VarHandle type$VH() {
-                return constants$365.const$1;
+                return constants$366.const$1;
             }
             /**
              * Getter for field:
@@ -87,7 +87,7 @@ public class _GVariantBuilder {
              * }
              */
             public static MemorySegment type$get(MemorySegment seg) {
-                return (java.lang.foreign.MemorySegment)constants$365.const$1.get(seg);
+                return (java.lang.foreign.MemorySegment)constants$366.const$1.get(seg);
             }
             /**
              * Setter for field:
@@ -96,13 +96,13 @@ public class _GVariantBuilder {
              * }
              */
             public static void type$set(MemorySegment seg, MemorySegment x) {
-                constants$365.const$1.set(seg, x);
+                constants$366.const$1.set(seg, x);
             }
             public static MemorySegment type$get(MemorySegment seg, long index) {
-                return (java.lang.foreign.MemorySegment)constants$365.const$1.get(seg.asSlice(index*sizeof()));
+                return (java.lang.foreign.MemorySegment)constants$366.const$1.get(seg.asSlice(index*sizeof()));
             }
             public static void type$set(MemorySegment seg, long index, MemorySegment x) {
-                constants$365.const$1.set(seg.asSlice(index*sizeof()), x);
+                constants$366.const$1.set(seg.asSlice(index*sizeof()), x);
             }
             public static MemorySegment y$slice(MemorySegment seg) {
                 return seg.asSlice(16, 112);

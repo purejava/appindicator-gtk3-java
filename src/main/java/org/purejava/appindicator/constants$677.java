@@ -3,18 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$677 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$677() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTypeModuleClass.reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$675.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTypeModuleClass.reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$675.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved3"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTypeModuleClass.reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$675.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_group_connect_swapped$c_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_swapped",
+        constants$42.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_source_set_closure",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_source_set_dummy_callback",
+        constants$13.const$1
+    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        JAVA_INT.withName("use_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("type_infos"),
+        RuntimeHelper.POINTER.withName("interface_infos"),
+        RuntimeHelper.POINTER.withName("name")
+    ).withName("_GTypeModule");
+    static final VarHandle const$5 = constants$677.const$4.varHandle(MemoryLayout.PathElement.groupElement("use_count"));
 }
 
 

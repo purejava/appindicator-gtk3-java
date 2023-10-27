@@ -20,10 +20,10 @@ import java.lang.invoke.VarHandle;
 public class _GDBusAnnotationInfo {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$879.const$5;
+        return constants$882.const$5;
     }
     public static VarHandle ref_count$VH() {
-        return constants$880.const$0;
+        return constants$883.const$0;
     }
     /**
      * Getter for field:
@@ -32,7 +32,7 @@ public class _GDBusAnnotationInfo {
      * }
      */
     public static int ref_count$get(MemorySegment seg) {
-        return (int)constants$880.const$0.get(seg);
+        return (int)constants$883.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -41,16 +41,16 @@ public class _GDBusAnnotationInfo {
      * }
      */
     public static void ref_count$set(MemorySegment seg, int x) {
-        constants$880.const$0.set(seg, x);
+        constants$883.const$0.set(seg, x);
     }
     public static int ref_count$get(MemorySegment seg, long index) {
-        return (int)constants$880.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$883.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void ref_count$set(MemorySegment seg, long index, int x) {
-        constants$880.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$883.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle key$VH() {
-        return constants$880.const$1;
+        return constants$883.const$1;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GDBusAnnotationInfo {
      * }
      */
     public static MemorySegment key$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$880.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$883.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -68,16 +68,16 @@ public class _GDBusAnnotationInfo {
      * }
      */
     public static void key$set(MemorySegment seg, MemorySegment x) {
-        constants$880.const$1.set(seg, x);
+        constants$883.const$1.set(seg, x);
     }
     public static MemorySegment key$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$880.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$883.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void key$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$880.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$883.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle value$VH() {
-        return constants$880.const$2;
+        return constants$883.const$2;
     }
     /**
      * Getter for field:
@@ -86,7 +86,7 @@ public class _GDBusAnnotationInfo {
      * }
      */
     public static MemorySegment value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$880.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$883.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -95,16 +95,16 @@ public class _GDBusAnnotationInfo {
      * }
      */
     public static void value$set(MemorySegment seg, MemorySegment x) {
-        constants$880.const$2.set(seg, x);
+        constants$883.const$2.set(seg, x);
     }
     public static MemorySegment value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$880.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$883.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$880.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$883.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle annotations$VH() {
-        return constants$880.const$3;
+        return constants$883.const$3;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GDBusAnnotationInfo {
      * }
      */
     public static MemorySegment annotations$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$880.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$883.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GDBusAnnotationInfo {
      * }
      */
     public static void annotations$set(MemorySegment seg, MemorySegment x) {
-        constants$880.const$3.set(seg, x);
+        constants$883.const$3.set(seg, x);
     }
     public static MemorySegment annotations$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$880.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$883.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void annotations$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$880.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$883.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

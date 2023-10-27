@@ -2,35 +2,26 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$831 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$831() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "endusershell",
-        constants$7.const$5
+        "getlogin_r",
+        constants$97.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "setusershell",
-        constants$7.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "daemon",
-        constants$123.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "chroot",
+        "setlogin",
         constants$10.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "getpass",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "fsync",
-        constants$8.const$4
-    );
+    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("optarg", RuntimeHelper.POINTER);
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("optind", JAVA_INT);
+    static final MemorySegment const$4 = RuntimeHelper.lookupGlobalVariable("opterr", JAVA_INT);
+    static final MemorySegment const$5 = RuntimeHelper.lookupGlobalVariable("optopt", JAVA_INT);
 }
 
 

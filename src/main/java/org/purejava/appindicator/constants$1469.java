@@ -2,39 +2,23 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 final class constants$1469 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1469() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_group_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_set_pop_group_func",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_color_glyph_func",
         constants$42.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_custom_palette_color_func$func.class, "apply", constants$859.const$1);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_custom_palette_color_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_set_custom_palette_color_func",
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_clip_glyph_func$func.class, "apply", constants$380.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_clip_glyph_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_push_clip_glyph_func",
         constants$42.const$1
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "hb_paint_push_transform",
-        constants$1469.const$5
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_clip_rectangle_func$func.class, "apply", constants$1460.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_clip_rectangle_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

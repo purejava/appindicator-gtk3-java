@@ -8,28 +8,28 @@ final class constants$297 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$297() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_strsignal",
+        constants$24.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_strreverse",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_strlcpy",
+        constants$20.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_strlcat",
+        constants$20.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
         "g_strstr_len",
         constants$36.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
         "g_strrstr",
         constants$5.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_strrstr_len",
-        constants$36.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_str_has_suffix",
-        constants$9.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_str_has_prefix",
-        constants$9.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_strtod",
-        constants$67.const$5
     );
 }
 

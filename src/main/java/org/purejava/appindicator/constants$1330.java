@@ -7,21 +7,24 @@ final class constants$1330 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1330() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_close",
-        constants$13.const$1
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_subprocess_communicate_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_async",
+        constants$332.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_subprocess_launcher_set_child_setup$child_setup.class, "apply", constants$13.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_subprocess_launcher_set_child_setup$destroy_notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_finish",
+        constants$165.const$2
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_child_setup",
-        constants$42.const$1
+        "g_subprocess_communicate_utf8",
+        constants$640.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_task_get_type",
-        constants$3.const$5
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_subprocess_communicate_utf8_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_utf8_async",
+        constants$332.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_task_new$callback.class, "apply", constants$14.const$3);
 }
 
 

@@ -8,28 +8,28 @@ final class constants$1329 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1329() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_stdin_fd",
-        constants$40.const$2
+        "g_subprocess_get_successful",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_stdout_file_path",
-        constants$13.const$4
+        "g_subprocess_get_if_exited",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_stdout_fd",
-        constants$40.const$2
+        "g_subprocess_get_exit_status",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_stderr_file_path",
-        constants$13.const$4
+        "g_subprocess_get_if_signaled",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_stderr_fd",
-        constants$40.const$2
+        "g_subprocess_get_term_sig",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_fd",
-        constants$467.const$3
+        "g_subprocess_communicate",
+        constants$640.const$4
     );
 }
 

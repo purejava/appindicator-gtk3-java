@@ -2,49 +2,22 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 final class constants$1453 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1453() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_draw_line_to",
-        constants$1452.const$5
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_move_to_func$func.class, "apply", constants$1451.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_move_to_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_draw_quadratic_to",
-        constants$1453.const$1
+        "hb_draw_funcs_set_move_to_func",
+        constants$42.const$1
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_draw_cubic_to",
-        constants$1453.const$3
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_line_to_func$func.class, "apply", constants$1451.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_line_to_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_draw_close_path",
-        constants$14.const$3
+        "hb_draw_funcs_set_line_to_func",
+        constants$42.const$1
     );
 }
 

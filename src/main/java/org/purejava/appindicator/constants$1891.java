@@ -2,57 +2,25 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1891 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1891() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_options",
-        constants$5.const$2
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GdkPixbufSaveFunc.class, "apply", constants$394.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_pixbuf_save_to_callback$save_func.class, "apply", constants$394.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "gdk_pixbuf_save_to_callback",
+        constants$165.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_copy_options",
-        constants$9.const$0
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_pixbuf_save_to_callbackv$save_func.class, "apply", constants$394.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_save_to_callbackv",
+        constants$164.const$2
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_INT
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_scale",
-        constants$1891.const$2
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_INT,
-        JAVA_INT
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_composite",
-        constants$1891.const$4
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "gdk_pixbuf_save_to_buffer",
+        constants$165.const$2
     );
 }
 

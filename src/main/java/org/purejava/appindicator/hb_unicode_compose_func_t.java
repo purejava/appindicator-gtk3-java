@@ -13,13 +13,13 @@ public interface hb_unicode_compose_func_t {
 
     int apply(java.lang.foreign.MemorySegment ufuncs, int a, int b, java.lang.foreign.MemorySegment ab, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_unicode_compose_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1427.const$0, fi, constants$956.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$1431.const$1, fi, constants$959.const$4, scope);
     }
     static hb_unicode_compose_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _ufuncs, int _a, int _b, java.lang.foreign.MemorySegment _ab, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$957.const$0.invokeExact(symbol, _ufuncs, _a, _b, _ab, _user_data);
+                return (int)constants$960.const$0.invokeExact(symbol, _ufuncs, _a, _b, _ab, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

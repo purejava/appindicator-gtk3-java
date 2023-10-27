@@ -10,28 +10,26 @@ final class constants$281 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$281() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_idle_add_once$function.class, "apply", constants$13.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_idle_add_once",
-        constants$9.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_idle_remove_by_data",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_main_context_invoke_full$function.class, "apply", constants$10.const$5);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_main_context_invoke_full$notify.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
         JAVA_INT,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_main_context_invoke_full",
-        constants$281.const$5
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_idle_add_full",
+        constants$281.const$0
     );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_idle_add_once$function.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_idle_add_once",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_idle_remove_by_data",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_main_context_invoke_full$function.class, "apply", constants$10.const$5);
 }
 
 

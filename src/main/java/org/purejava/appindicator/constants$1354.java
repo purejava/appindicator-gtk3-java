@@ -2,49 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1354 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1354() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_not_valid_after",
-        constants$5.const$2
+        "g_tls_backend_supports_tls",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_subject_name",
-        constants$5.const$2
+        "g_tls_backend_supports_dtls",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_issuer_name",
-        constants$5.const$2
+        "g_tls_backend_get_certificate_type",
+        constants$4.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_dns_names",
-        constants$5.const$2
+        "g_tls_backend_get_client_connection_type",
+        constants$4.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_ip_addresses",
-        constants$5.const$2
+        "g_tls_backend_get_server_connection_type",
+        constants$4.const$0
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    RuntimeHelper.POINTER.withName("g_class")
-                ).withName("g_type_instance"),
-                JAVA_INT.withName("ref_count"),
-                MemoryLayout.paddingLayout(4),
-                RuntimeHelper.POINTER.withName("qdata")
-            ).withName("parent_instance"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GTlsConnection");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_backend_get_file_database_type",
+        constants$4.const$0
+    );
 }
 
 

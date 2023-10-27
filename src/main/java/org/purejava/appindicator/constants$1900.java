@@ -2,44 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1900 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1900() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_file_info_async",
-        constants$42.const$1
+        "gdk_pixbuf_animation_is_static_image",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_file_info_finish",
-        constants$39.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_copy",
+        "gdk_pixbuf_animation_get_static_image",
         constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_free",
-        constants$13.const$1
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_get_iter",
+        constants$5.const$5
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GdkPixbufLoader");
-    static final VarHandle const$5 = constants$1900.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_get_delay_time",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_get_pixbuf",
+        constants$5.const$2
+    );
 }
 
 

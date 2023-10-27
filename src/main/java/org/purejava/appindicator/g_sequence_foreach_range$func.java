@@ -13,7 +13,7 @@ public interface g_sequence_foreach_range$func {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_sequence_foreach_range$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$432.const$2, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$433.const$2, fi, constants$13.const$4, scope);
     }
     static g_sequence_foreach_range$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

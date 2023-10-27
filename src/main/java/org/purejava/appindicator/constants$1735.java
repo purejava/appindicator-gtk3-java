@@ -8,28 +8,25 @@ final class constants$1735 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1735() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_data",
-        constants$5.const$2
+        "cairo_surface_get_type",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_format",
+        "cairo_surface_get_content",
         constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_width",
-        constants$10.const$5
+        "cairo_surface_write_to_png",
+        constants$9.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_height",
-        constants$10.const$5
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(cairo_surface_write_to_png_stream$write_func.class, "apply", constants$62.const$0);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_stride",
-        constants$10.const$5
+        "cairo_surface_write_to_png_stream",
+        constants$12.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_create_from_png",
-        constants$5.const$2
+        "cairo_surface_get_user_data",
+        constants$5.const$5
     );
 }
 

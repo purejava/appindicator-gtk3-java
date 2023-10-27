@@ -38,7 +38,7 @@ import java.lang.invoke.VarHandle;
 public class _GVolumeIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1401.const$0;
+        return constants$1405.const$1;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -52,7 +52,7 @@ public class _GVolumeIface {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1401.const$1, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1405.const$2, fi, constants$13.const$1, scope);
         }
         static changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -67,7 +67,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle changed$VH() {
-        return constants$1401.const$2;
+        return constants$1405.const$3;
     }
     /**
      * Getter for field:
@@ -76,7 +76,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1401.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1405.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -85,13 +85,13 @@ public class _GVolumeIface {
      * }
      */
     public static void changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1401.const$2.set(seg, x);
+        constants$1405.const$3.set(seg, x);
     }
     public static MemorySegment changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1401.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1405.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1401.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1405.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static changed changed(MemorySegment segment, Arena scope) {
         return changed.ofAddress(changed$get(segment), scope);
@@ -105,7 +105,7 @@ public class _GVolumeIface {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(removed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1401.const$3, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1405.const$4, fi, constants$13.const$1, scope);
         }
         static removed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -120,7 +120,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle removed$VH() {
-        return constants$1401.const$4;
+        return constants$1405.const$5;
     }
     /**
      * Getter for field:
@@ -129,7 +129,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1401.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1405.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -138,13 +138,13 @@ public class _GVolumeIface {
      * }
      */
     public static void removed$set(MemorySegment seg, MemorySegment x) {
-        constants$1401.const$4.set(seg, x);
+        constants$1405.const$5.set(seg, x);
     }
     public static MemorySegment removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1401.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1405.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void removed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1401.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1405.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static removed removed(MemorySegment segment, Arena scope) {
         return removed.ofAddress(removed$get(segment), scope);
@@ -158,7 +158,7 @@ public class _GVolumeIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_name fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1401.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1406.const$0, fi, constants$5.const$2, scope);
         }
         static get_name ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -173,7 +173,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle get_name$VH() {
-        return constants$1402.const$0;
+        return constants$1406.const$1;
     }
     /**
      * Getter for field:
@@ -182,7 +182,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment get_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1402.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1406.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -191,13 +191,13 @@ public class _GVolumeIface {
      * }
      */
     public static void get_name$set(MemorySegment seg, MemorySegment x) {
-        constants$1402.const$0.set(seg, x);
+        constants$1406.const$1.set(seg, x);
     }
     public static MemorySegment get_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1402.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1406.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1402.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1406.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_name get_name(MemorySegment segment, Arena scope) {
         return get_name.ofAddress(get_name$get(segment), scope);
@@ -211,7 +211,7 @@ public class _GVolumeIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_icon fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1402.const$1, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1406.const$2, fi, constants$5.const$2, scope);
         }
         static get_icon ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -226,7 +226,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle get_icon$VH() {
-        return constants$1402.const$2;
+        return constants$1406.const$3;
     }
     /**
      * Getter for field:
@@ -235,7 +235,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment get_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1402.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1406.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -244,13 +244,13 @@ public class _GVolumeIface {
      * }
      */
     public static void get_icon$set(MemorySegment seg, MemorySegment x) {
-        constants$1402.const$2.set(seg, x);
+        constants$1406.const$3.set(seg, x);
     }
     public static MemorySegment get_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1402.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1406.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_icon$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1402.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1406.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_icon get_icon(MemorySegment segment, Arena scope) {
         return get_icon.ofAddress(get_icon$get(segment), scope);
@@ -264,7 +264,7 @@ public class _GVolumeIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_uuid fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1402.const$3, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1406.const$4, fi, constants$5.const$2, scope);
         }
         static get_uuid ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -279,7 +279,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle get_uuid$VH() {
-        return constants$1402.const$4;
+        return constants$1406.const$5;
     }
     /**
      * Getter for field:
@@ -288,7 +288,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment get_uuid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1402.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1406.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -297,13 +297,13 @@ public class _GVolumeIface {
      * }
      */
     public static void get_uuid$set(MemorySegment seg, MemorySegment x) {
-        constants$1402.const$4.set(seg, x);
+        constants$1406.const$5.set(seg, x);
     }
     public static MemorySegment get_uuid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1402.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1406.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_uuid$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1402.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1406.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_uuid get_uuid(MemorySegment segment, Arena scope) {
         return get_uuid.ofAddress(get_uuid$get(segment), scope);
@@ -317,7 +317,7 @@ public class _GVolumeIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_drive fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1402.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1407.const$0, fi, constants$5.const$2, scope);
         }
         static get_drive ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -332,7 +332,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle get_drive$VH() {
-        return constants$1403.const$0;
+        return constants$1407.const$1;
     }
     /**
      * Getter for field:
@@ -341,7 +341,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment get_drive$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1403.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1407.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -350,13 +350,13 @@ public class _GVolumeIface {
      * }
      */
     public static void get_drive$set(MemorySegment seg, MemorySegment x) {
-        constants$1403.const$0.set(seg, x);
+        constants$1407.const$1.set(seg, x);
     }
     public static MemorySegment get_drive$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1403.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1407.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_drive$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1403.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1407.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_drive get_drive(MemorySegment segment, Arena scope) {
         return get_drive.ofAddress(get_drive$get(segment), scope);
@@ -370,7 +370,7 @@ public class _GVolumeIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_mount fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1403.const$1, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1407.const$2, fi, constants$5.const$2, scope);
         }
         static get_mount ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -385,7 +385,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle get_mount$VH() {
-        return constants$1403.const$2;
+        return constants$1407.const$3;
     }
     /**
      * Getter for field:
@@ -394,7 +394,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment get_mount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1403.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1407.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -403,13 +403,13 @@ public class _GVolumeIface {
      * }
      */
     public static void get_mount$set(MemorySegment seg, MemorySegment x) {
-        constants$1403.const$2.set(seg, x);
+        constants$1407.const$3.set(seg, x);
     }
     public static MemorySegment get_mount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1403.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1407.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_mount$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1403.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1407.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_mount get_mount(MemorySegment segment, Arena scope) {
         return get_mount.ofAddress(get_mount$get(segment), scope);
@@ -423,7 +423,7 @@ public class _GVolumeIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(can_mount fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1403.const$3, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1407.const$4, fi, constants$10.const$5, scope);
         }
         static can_mount ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -438,7 +438,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle can_mount$VH() {
-        return constants$1403.const$4;
+        return constants$1407.const$5;
     }
     /**
      * Getter for field:
@@ -447,7 +447,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment can_mount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1403.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1407.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -456,13 +456,13 @@ public class _GVolumeIface {
      * }
      */
     public static void can_mount$set(MemorySegment seg, MemorySegment x) {
-        constants$1403.const$4.set(seg, x);
+        constants$1407.const$5.set(seg, x);
     }
     public static MemorySegment can_mount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1403.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1407.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void can_mount$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1403.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1407.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static can_mount can_mount(MemorySegment segment, Arena scope) {
         return can_mount.ofAddress(can_mount$get(segment), scope);
@@ -476,7 +476,7 @@ public class _GVolumeIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(can_eject fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1403.const$5, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1408.const$0, fi, constants$10.const$5, scope);
         }
         static can_eject ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -491,7 +491,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle can_eject$VH() {
-        return constants$1404.const$0;
+        return constants$1408.const$1;
     }
     /**
      * Getter for field:
@@ -500,7 +500,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment can_eject$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1404.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1408.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -509,13 +509,13 @@ public class _GVolumeIface {
      * }
      */
     public static void can_eject$set(MemorySegment seg, MemorySegment x) {
-        constants$1404.const$0.set(seg, x);
+        constants$1408.const$1.set(seg, x);
     }
     public static MemorySegment can_eject$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1404.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1408.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void can_eject$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1404.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1408.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static can_eject can_eject(MemorySegment segment, Arena scope) {
         return can_eject.ofAddress(can_eject$get(segment), scope);
@@ -529,13 +529,13 @@ public class _GVolumeIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
         static MemorySegment allocate(mount_fn fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1404.const$1, fi, constants$380.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1408.const$2, fi, constants$381.const$0, scope);
         }
         static mount_fn ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    constants$945.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$948.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -544,7 +544,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle mount_fn$VH() {
-        return constants$1404.const$2;
+        return constants$1408.const$3;
     }
     /**
      * Getter for field:
@@ -553,7 +553,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment mount_fn$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1404.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1408.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -562,13 +562,13 @@ public class _GVolumeIface {
      * }
      */
     public static void mount_fn$set(MemorySegment seg, MemorySegment x) {
-        constants$1404.const$2.set(seg, x);
+        constants$1408.const$3.set(seg, x);
     }
     public static MemorySegment mount_fn$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1404.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1408.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void mount_fn$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1404.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1408.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static mount_fn mount_fn(MemorySegment segment, Arena scope) {
         return mount_fn.ofAddress(mount_fn$get(segment), scope);
@@ -582,7 +582,7 @@ public class _GVolumeIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(mount_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1404.const$3, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1408.const$4, fi, constants$12.const$2, scope);
         }
         static mount_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -597,7 +597,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle mount_finish$VH() {
-        return constants$1404.const$4;
+        return constants$1408.const$5;
     }
     /**
      * Getter for field:
@@ -606,7 +606,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment mount_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1404.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1408.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -615,13 +615,13 @@ public class _GVolumeIface {
      * }
      */
     public static void mount_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1404.const$4.set(seg, x);
+        constants$1408.const$5.set(seg, x);
     }
     public static MemorySegment mount_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1404.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1408.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void mount_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1404.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1408.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static mount_finish mount_finish(MemorySegment segment, Arena scope) {
         return mount_finish.ofAddress(mount_finish$get(segment), scope);
@@ -635,13 +635,13 @@ public class _GVolumeIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(eject fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1404.const$5, fi, constants$281.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1409.const$0, fi, constants$282.const$1, scope);
         }
         static eject ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    constants$754.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$757.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -650,7 +650,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle eject$VH() {
-        return constants$1405.const$0;
+        return constants$1409.const$1;
     }
     /**
      * Getter for field:
@@ -659,7 +659,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment eject$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1405.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1409.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -668,13 +668,13 @@ public class _GVolumeIface {
      * }
      */
     public static void eject$set(MemorySegment seg, MemorySegment x) {
-        constants$1405.const$0.set(seg, x);
+        constants$1409.const$1.set(seg, x);
     }
     public static MemorySegment eject$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1405.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1409.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void eject$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1405.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1409.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static eject eject(MemorySegment segment, Arena scope) {
         return eject.ofAddress(eject$get(segment), scope);
@@ -688,7 +688,7 @@ public class _GVolumeIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(eject_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1405.const$1, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1409.const$2, fi, constants$12.const$2, scope);
         }
         static eject_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -703,7 +703,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle eject_finish$VH() {
-        return constants$1405.const$2;
+        return constants$1409.const$3;
     }
     /**
      * Getter for field:
@@ -712,7 +712,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment eject_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1405.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1409.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -721,13 +721,13 @@ public class _GVolumeIface {
      * }
      */
     public static void eject_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1405.const$2.set(seg, x);
+        constants$1409.const$3.set(seg, x);
     }
     public static MemorySegment eject_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1405.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1409.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void eject_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1405.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1409.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static eject_finish eject_finish(MemorySegment segment, Arena scope) {
         return eject_finish.ofAddress(eject_finish$get(segment), scope);
@@ -741,7 +741,7 @@ public class _GVolumeIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(get_identifier fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1405.const$3, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1409.const$4, fi, constants$5.const$5, scope);
         }
         static get_identifier ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -756,7 +756,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle get_identifier$VH() {
-        return constants$1405.const$4;
+        return constants$1409.const$5;
     }
     /**
      * Getter for field:
@@ -765,7 +765,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment get_identifier$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1405.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1409.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -774,13 +774,13 @@ public class _GVolumeIface {
      * }
      */
     public static void get_identifier$set(MemorySegment seg, MemorySegment x) {
-        constants$1405.const$4.set(seg, x);
+        constants$1409.const$5.set(seg, x);
     }
     public static MemorySegment get_identifier$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1405.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1409.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_identifier$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1405.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1409.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_identifier get_identifier(MemorySegment segment, Arena scope) {
         return get_identifier.ofAddress(get_identifier$get(segment), scope);
@@ -794,7 +794,7 @@ public class _GVolumeIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(enumerate_identifiers fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1405.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1410.const$0, fi, constants$5.const$2, scope);
         }
         static enumerate_identifiers ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -809,7 +809,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle enumerate_identifiers$VH() {
-        return constants$1406.const$0;
+        return constants$1410.const$1;
     }
     /**
      * Getter for field:
@@ -818,7 +818,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment enumerate_identifiers$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1406.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1410.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -827,13 +827,13 @@ public class _GVolumeIface {
      * }
      */
     public static void enumerate_identifiers$set(MemorySegment seg, MemorySegment x) {
-        constants$1406.const$0.set(seg, x);
+        constants$1410.const$1.set(seg, x);
     }
     public static MemorySegment enumerate_identifiers$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1406.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1410.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void enumerate_identifiers$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1406.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1410.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static enumerate_identifiers enumerate_identifiers(MemorySegment segment, Arena scope) {
         return enumerate_identifiers.ofAddress(enumerate_identifiers$get(segment), scope);
@@ -847,7 +847,7 @@ public class _GVolumeIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(should_automount fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1406.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1410.const$2, fi, constants$10.const$5, scope);
         }
         static should_automount ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -862,7 +862,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle should_automount$VH() {
-        return constants$1406.const$2;
+        return constants$1410.const$3;
     }
     /**
      * Getter for field:
@@ -871,7 +871,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment should_automount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1406.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1410.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -880,13 +880,13 @@ public class _GVolumeIface {
      * }
      */
     public static void should_automount$set(MemorySegment seg, MemorySegment x) {
-        constants$1406.const$2.set(seg, x);
+        constants$1410.const$3.set(seg, x);
     }
     public static MemorySegment should_automount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1406.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1410.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void should_automount$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1406.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1410.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static should_automount should_automount(MemorySegment segment, Arena scope) {
         return should_automount.ofAddress(should_automount$get(segment), scope);
@@ -900,7 +900,7 @@ public class _GVolumeIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_activation_root fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1406.const$3, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1410.const$4, fi, constants$5.const$2, scope);
         }
         static get_activation_root ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -915,7 +915,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle get_activation_root$VH() {
-        return constants$1406.const$4;
+        return constants$1410.const$5;
     }
     /**
      * Getter for field:
@@ -924,7 +924,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment get_activation_root$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1406.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1410.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -933,13 +933,13 @@ public class _GVolumeIface {
      * }
      */
     public static void get_activation_root$set(MemorySegment seg, MemorySegment x) {
-        constants$1406.const$4.set(seg, x);
+        constants$1410.const$5.set(seg, x);
     }
     public static MemorySegment get_activation_root$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1406.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1410.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_activation_root$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1406.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1410.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_activation_root get_activation_root(MemorySegment segment, Arena scope) {
         return get_activation_root.ofAddress(get_activation_root$get(segment), scope);
@@ -953,13 +953,13 @@ public class _GVolumeIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
         static MemorySegment allocate(eject_with_operation fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1406.const$5, fi, constants$380.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1411.const$0, fi, constants$381.const$0, scope);
         }
         static eject_with_operation ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    constants$945.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$948.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -968,7 +968,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle eject_with_operation$VH() {
-        return constants$1407.const$0;
+        return constants$1411.const$1;
     }
     /**
      * Getter for field:
@@ -977,7 +977,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment eject_with_operation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1407.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1411.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -986,13 +986,13 @@ public class _GVolumeIface {
      * }
      */
     public static void eject_with_operation$set(MemorySegment seg, MemorySegment x) {
-        constants$1407.const$0.set(seg, x);
+        constants$1411.const$1.set(seg, x);
     }
     public static MemorySegment eject_with_operation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1407.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1411.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void eject_with_operation$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1407.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1411.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static eject_with_operation eject_with_operation(MemorySegment segment, Arena scope) {
         return eject_with_operation.ofAddress(eject_with_operation$get(segment), scope);
@@ -1006,7 +1006,7 @@ public class _GVolumeIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(eject_with_operation_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1407.const$1, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1411.const$2, fi, constants$12.const$2, scope);
         }
         static eject_with_operation_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1021,7 +1021,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle eject_with_operation_finish$VH() {
-        return constants$1407.const$2;
+        return constants$1411.const$3;
     }
     /**
      * Getter for field:
@@ -1030,7 +1030,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment eject_with_operation_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1407.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1411.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -1039,13 +1039,13 @@ public class _GVolumeIface {
      * }
      */
     public static void eject_with_operation_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1407.const$2.set(seg, x);
+        constants$1411.const$3.set(seg, x);
     }
     public static MemorySegment eject_with_operation_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1407.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1411.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void eject_with_operation_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1407.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1411.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static eject_with_operation_finish eject_with_operation_finish(MemorySegment segment, Arena scope) {
         return eject_with_operation_finish.ofAddress(eject_with_operation_finish$get(segment), scope);
@@ -1059,7 +1059,7 @@ public class _GVolumeIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_sort_key fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1407.const$3, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1411.const$4, fi, constants$5.const$2, scope);
         }
         static get_sort_key ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1074,7 +1074,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle get_sort_key$VH() {
-        return constants$1407.const$4;
+        return constants$1411.const$5;
     }
     /**
      * Getter for field:
@@ -1083,7 +1083,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment get_sort_key$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1407.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1411.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -1092,13 +1092,13 @@ public class _GVolumeIface {
      * }
      */
     public static void get_sort_key$set(MemorySegment seg, MemorySegment x) {
-        constants$1407.const$4.set(seg, x);
+        constants$1411.const$5.set(seg, x);
     }
     public static MemorySegment get_sort_key$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1407.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1411.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_sort_key$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1407.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1411.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_sort_key get_sort_key(MemorySegment segment, Arena scope) {
         return get_sort_key.ofAddress(get_sort_key$get(segment), scope);
@@ -1112,7 +1112,7 @@ public class _GVolumeIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_symbolic_icon fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1407.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1412.const$0, fi, constants$5.const$2, scope);
         }
         static get_symbolic_icon ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1127,7 +1127,7 @@ public class _GVolumeIface {
     }
 
     public static VarHandle get_symbolic_icon$VH() {
-        return constants$1408.const$0;
+        return constants$1412.const$1;
     }
     /**
      * Getter for field:
@@ -1136,7 +1136,7 @@ public class _GVolumeIface {
      * }
      */
     public static MemorySegment get_symbolic_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1408.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1412.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -1145,13 +1145,13 @@ public class _GVolumeIface {
      * }
      */
     public static void get_symbolic_icon$set(MemorySegment seg, MemorySegment x) {
-        constants$1408.const$0.set(seg, x);
+        constants$1412.const$1.set(seg, x);
     }
     public static MemorySegment get_symbolic_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1408.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1412.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_symbolic_icon$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1408.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1412.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_symbolic_icon get_symbolic_icon(MemorySegment segment, Arena scope) {
         return get_symbolic_icon.ofAddress(get_symbolic_icon$get(segment), scope);

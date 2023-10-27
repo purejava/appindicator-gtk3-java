@@ -7,26 +7,20 @@ final class constants$1028 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1028() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_query_settable_attributes",
-        constants$23.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_query_writable_namespaces",
-        constants$23.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_copy_async$progress_callback.class, "apply", constants$564.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_copy_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute",
-        constants$984.const$2
+        "g_file_copy_async",
+        constants$998.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_set_attributes_from_info",
-        constants$859.const$1
+        "g_file_copy_finish",
+        constants$12.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_set_attributes_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_move$progress_callback.class, "apply", constants$564.const$0);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_set_attributes_async",
-        constants$780.const$3
+        "g_file_move",
+        constants$909.const$0
     );
 }
 

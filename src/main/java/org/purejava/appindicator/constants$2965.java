@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2965 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2965() {}
-    static final VarHandle const$0 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("got_page_size"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface.render_page.class, "apply", constants$40.const$2);
-    static final VarHandle const$2 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("render_page"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface.is_selected.class, "apply", constants$11.const$4);
-    static final VarHandle const$4 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("is_selected"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface.end_preview.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_resolution",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_resolution_x",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_resolution_y",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_resolution_xy",
+        constants$469.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_printer_lpi",
+        constants$67.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_printer_lpi",
+        constants$692.const$2
+    );
 }
 
 

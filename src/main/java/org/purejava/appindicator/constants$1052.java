@@ -7,29 +7,23 @@ final class constants$1052 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1052() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_info_copy_into",
-        constants$13.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_enumerator_next_files_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_info_has_attribute",
-        constants$9.const$0
+        "g_file_enumerator_next_files_async",
+        constants$990.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_info_has_namespace",
-        constants$9.const$0
+        "g_file_enumerator_next_files_finish",
+        constants$23.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_info_list_attributes",
-        constants$5.const$5
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_enumerator_close_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_data",
-        constants$165.const$2
+        "g_file_enumerator_close_async",
+        constants$282.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_type",
-        constants$9.const$0
+        "g_file_enumerator_close_finish",
+        constants$12.const$2
     );
 }
 

@@ -8,28 +8,25 @@ final class constants$1203 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1203() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_notification_set_urgent",
-        constants$40.const$2
+        "g_network_monitor_get_network_metered",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_notification_set_priority",
-        constants$40.const$2
+        "g_network_monitor_get_connectivity",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_notification_set_category",
-        constants$13.const$4
+        "g_network_monitor_can_reach",
+        constants$34.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_notification_add_button",
-        constants$14.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "g_notification_add_button_with_target",
-        constants$42.const$1
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_network_monitor_can_reach_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_network_monitor_can_reach_async",
+        constants$332.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_notification_add_button_with_target_value",
-        constants$42.const$1
+        "g_network_monitor_can_reach_finish",
+        constants$12.const$2
     );
 }
 

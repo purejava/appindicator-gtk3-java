@@ -23,7 +23,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkDialogClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2210.const$4;
+        return constants$2215.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1072);
@@ -37,13 +37,13 @@ public class _GtkDialogClass {
 
         void apply(java.lang.foreign.MemorySegment colors, int n_colors);
         static MemorySegment allocate(response fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2210.const$5, fi, constants$40.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2216.const$0, fi, constants$40.const$2, scope);
         }
         static response ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
                 try {
-                    constants$509.const$5.invokeExact(symbol, _colors, _n_colors);
+                    constants$511.const$3.invokeExact(symbol, _colors, _n_colors);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -52,7 +52,7 @@ public class _GtkDialogClass {
     }
 
     public static VarHandle response$VH() {
-        return constants$2211.const$0;
+        return constants$2216.const$1;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _GtkDialogClass {
      * }
      */
     public static MemorySegment response$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2211.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2216.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -70,13 +70,13 @@ public class _GtkDialogClass {
      * }
      */
     public static void response$set(MemorySegment seg, MemorySegment x) {
-        constants$2211.const$0.set(seg, x);
+        constants$2216.const$1.set(seg, x);
     }
     public static MemorySegment response$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2211.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2216.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void response$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2211.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2216.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static response response(MemorySegment segment, Arena scope) {
         return response.ofAddress(response$get(segment), scope);
@@ -90,7 +90,7 @@ public class _GtkDialogClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(close fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2211.const$1, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2216.const$2, fi, constants$13.const$1, scope);
         }
         static close ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -105,7 +105,7 @@ public class _GtkDialogClass {
     }
 
     public static VarHandle close$VH() {
-        return constants$2211.const$2;
+        return constants$2216.const$3;
     }
     /**
      * Getter for field:
@@ -114,7 +114,7 @@ public class _GtkDialogClass {
      * }
      */
     public static MemorySegment close$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2211.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2216.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -123,13 +123,13 @@ public class _GtkDialogClass {
      * }
      */
     public static void close$set(MemorySegment seg, MemorySegment x) {
-        constants$2211.const$2.set(seg, x);
+        constants$2216.const$3.set(seg, x);
     }
     public static MemorySegment close$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2211.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2216.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void close$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2211.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2216.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static close close(MemorySegment segment, Arena scope) {
         return close.ofAddress(close$get(segment), scope);
@@ -143,7 +143,7 @@ public class _GtkDialogClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2211.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2216.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -158,7 +158,7 @@ public class _GtkDialogClass {
     }
 
     public static VarHandle _gtk_reserved1$VH() {
-        return constants$2211.const$4;
+        return constants$2216.const$5;
     }
     /**
      * Getter for field:
@@ -167,7 +167,7 @@ public class _GtkDialogClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2211.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2216.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -176,13 +176,13 @@ public class _GtkDialogClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$2211.const$4.set(seg, x);
+        constants$2216.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2211.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2216.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2211.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2216.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
@@ -196,7 +196,7 @@ public class _GtkDialogClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2211.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2217.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -211,7 +211,7 @@ public class _GtkDialogClass {
     }
 
     public static VarHandle _gtk_reserved2$VH() {
-        return constants$2212.const$0;
+        return constants$2217.const$1;
     }
     /**
      * Getter for field:
@@ -220,7 +220,7 @@ public class _GtkDialogClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2212.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2217.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -229,13 +229,13 @@ public class _GtkDialogClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$2212.const$0.set(seg, x);
+        constants$2217.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2212.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2217.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2212.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2217.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
@@ -249,7 +249,7 @@ public class _GtkDialogClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2212.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2217.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -264,7 +264,7 @@ public class _GtkDialogClass {
     }
 
     public static VarHandle _gtk_reserved3$VH() {
-        return constants$2212.const$2;
+        return constants$2217.const$3;
     }
     /**
      * Getter for field:
@@ -273,7 +273,7 @@ public class _GtkDialogClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2212.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2217.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -282,13 +282,13 @@ public class _GtkDialogClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$2212.const$2.set(seg, x);
+        constants$2217.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2212.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2217.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2212.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2217.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
@@ -302,7 +302,7 @@ public class _GtkDialogClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2212.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2217.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -317,7 +317,7 @@ public class _GtkDialogClass {
     }
 
     public static VarHandle _gtk_reserved4$VH() {
-        return constants$2212.const$4;
+        return constants$2217.const$5;
     }
     /**
      * Getter for field:
@@ -326,7 +326,7 @@ public class _GtkDialogClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2212.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2217.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -335,13 +335,13 @@ public class _GtkDialogClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$2212.const$4.set(seg, x);
+        constants$2217.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2212.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2217.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2212.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2217.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);

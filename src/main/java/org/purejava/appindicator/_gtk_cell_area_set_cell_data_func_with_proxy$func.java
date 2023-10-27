@@ -13,7 +13,7 @@ public interface _gtk_cell_area_set_cell_data_func_with_proxy$func {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(_gtk_cell_area_set_cell_data_func_with_proxy$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2342.const$5, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$2347.const$5, fi, constants$13.const$4, scope);
     }
     static _gtk_cell_area_set_cell_data_func_with_proxy$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

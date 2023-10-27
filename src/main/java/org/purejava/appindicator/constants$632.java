@@ -2,34 +2,46 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$632 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$632() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_object_notify_by_pspec",
-        constants$13.const$4
+        "g_object_newv",
+        constants$625.const$3
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_object_thaw_notify",
-        constants$13.const$1
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_object_is_floating",
-        constants$10.const$5
+        "g_object_new_valist",
+        constants$632.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_object_ref_sink",
-        constants$5.const$2
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_object_set",
+        constants$13.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_object_take_ref",
-        constants$5.const$2
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_object_get",
+        constants$13.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_object_ref",
-        constants$5.const$2
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_object_connect",
+        constants$5.const$5
     );
 }
 

@@ -7,21 +7,24 @@ final class constants$621 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$621() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_boxed_type_register_static$boxed_free.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_pattern_spec_get_type",
+        constants$3.const$5
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_boxed_type_register_static",
-        constants$166.const$0
+        "g_bookmark_file_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_closure_get_type",
+        "g_variant_get_gtype",
         constants$3.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_value_get_type",
-        constants$3.const$5
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GBoxedCopyFunc.class, "apply", constants$5.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GBoxedFreeFunc.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_boxed_copy",
+        constants$408.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GObjectGetPropertyFunc.class, "apply", constants$179.const$1);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GObjectSetPropertyFunc.class, "apply", constants$179.const$1);
 }
 
 

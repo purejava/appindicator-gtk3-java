@@ -8,28 +8,28 @@ final class constants$3238 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3238() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_clear_regions",
-        constants$40.const$2
+        "gtk_widget_path_copy",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_list_regions",
-        constants$21.const$3
+        "gtk_widget_path_ref",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_has_region",
-        constants$11.const$0
+        "gtk_widget_path_unref",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_has_qregion",
-        constants$49.const$2
+        "gtk_widget_path_free",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_get_object_type",
-        constants$4.const$0
+        "gtk_widget_path_to_string",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_is_type",
-        constants$97.const$1
+        "gtk_widget_path_length",
+        constants$10.const$5
     );
 }
 

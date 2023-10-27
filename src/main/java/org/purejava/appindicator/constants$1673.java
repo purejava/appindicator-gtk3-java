@@ -2,34 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1673 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1673() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "funlockfile",
-        constants$13.const$1
+        "getline",
+        constants$166.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "__uflow",
-        constants$10.const$5
+        "fputs",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "__overflow",
-        constants$11.const$4
+        "puts",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_split_file_list",
-        constants$5.const$2
+        "ungetc",
+        constants$9.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_trim_string",
-        constants$5.const$2
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_read_line",
-        constants$9.const$0
+        "fread",
+        constants$1673.const$4
     );
 }
 

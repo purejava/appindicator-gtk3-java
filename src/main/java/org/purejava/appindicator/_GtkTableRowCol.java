@@ -24,10 +24,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkTableRowCol {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3373.const$3;
+        return constants$3378.const$3;
     }
     public static VarHandle requisition$VH() {
-        return constants$3373.const$4;
+        return constants$3378.const$4;
     }
     /**
      * Getter for field:
@@ -36,7 +36,7 @@ public class _GtkTableRowCol {
      * }
      */
     public static short requisition$get(MemorySegment seg) {
-        return (short)constants$3373.const$4.get(seg);
+        return (short)constants$3378.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -45,16 +45,16 @@ public class _GtkTableRowCol {
      * }
      */
     public static void requisition$set(MemorySegment seg, short x) {
-        constants$3373.const$4.set(seg, x);
+        constants$3378.const$4.set(seg, x);
     }
     public static short requisition$get(MemorySegment seg, long index) {
-        return (short)constants$3373.const$4.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3378.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void requisition$set(MemorySegment seg, long index, short x) {
-        constants$3373.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3378.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle allocation$VH() {
-        return constants$3373.const$5;
+        return constants$3378.const$5;
     }
     /**
      * Getter for field:
@@ -63,7 +63,7 @@ public class _GtkTableRowCol {
      * }
      */
     public static short allocation$get(MemorySegment seg) {
-        return (short)constants$3373.const$5.get(seg);
+        return (short)constants$3378.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -72,16 +72,16 @@ public class _GtkTableRowCol {
      * }
      */
     public static void allocation$set(MemorySegment seg, short x) {
-        constants$3373.const$5.set(seg, x);
+        constants$3378.const$5.set(seg, x);
     }
     public static short allocation$get(MemorySegment seg, long index) {
-        return (short)constants$3373.const$5.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3378.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void allocation$set(MemorySegment seg, long index, short x) {
-        constants$3373.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3378.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle spacing$VH() {
-        return constants$3374.const$0;
+        return constants$3379.const$0;
     }
     /**
      * Getter for field:
@@ -90,7 +90,7 @@ public class _GtkTableRowCol {
      * }
      */
     public static short spacing$get(MemorySegment seg) {
-        return (short)constants$3374.const$0.get(seg);
+        return (short)constants$3379.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -99,13 +99,13 @@ public class _GtkTableRowCol {
      * }
      */
     public static void spacing$set(MemorySegment seg, short x) {
-        constants$3374.const$0.set(seg, x);
+        constants$3379.const$0.set(seg, x);
     }
     public static short spacing$get(MemorySegment seg, long index) {
-        return (short)constants$3374.const$0.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3379.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void spacing$set(MemorySegment seg, long index, short x) {
-        constants$3374.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3379.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

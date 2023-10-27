@@ -2,8 +2,7 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
@@ -11,37 +10,29 @@ final class constants$922 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$922() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_set_connection",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_export",
-        constants$13.const$4
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_dbus_object_manager_client_new_for_bus$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_export_uniquely",
-        constants$13.const$4
+        "g_dbus_object_manager_client_new_for_bus",
+        constants$922.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_is_exported",
-        constants$9.const$0
+        "g_dbus_object_manager_client_new_for_bus_finish",
+        constants$5.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_unexport",
-        constants$9.const$0
-    );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GDBusObjectProxy");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_dbus_object_manager_client_new_for_bus_sync$get_proxy_type_func.class, "apply", constants$333.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_dbus_object_manager_client_new_for_bus_sync$get_proxy_type_destroy_notify.class, "apply", constants$13.const$1);
 }
 
 

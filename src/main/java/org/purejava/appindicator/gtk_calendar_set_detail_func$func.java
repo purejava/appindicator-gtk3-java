@@ -13,13 +13,13 @@ public interface gtk_calendar_set_detail_func$func {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment calendar, int year, int month, int day, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_calendar_set_detail_func$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2564.const$0, fi, constants$1883.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$2569.const$0, fi, constants$1888.const$3, scope);
     }
     static gtk_calendar_set_detail_func$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _calendar, int _year, int _month, int _day, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.MemorySegment)constants$2558.const$0.invokeExact(symbol, _calendar, _year, _month, _day, _user_data);
+                return (java.lang.foreign.MemorySegment)constants$2563.const$0.invokeExact(symbol, _calendar, _year, _month, _day, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

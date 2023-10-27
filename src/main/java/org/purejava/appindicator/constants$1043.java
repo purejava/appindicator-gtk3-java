@@ -2,47 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1043 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1043() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_dup",
-        constants$5.const$2
+        "g_file_replace_contents_bytes_async",
+        constants$934.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_lookup",
-        constants$5.const$5
+        "g_file_replace_contents_finish",
+        constants$34.const$5
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_supports_thread_contexts",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_add",
-        constants$1043.const$2
+        "g_file_load_bytes",
+        constants$39.const$1
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GFileEnumerator");
-    static final VarHandle const$5 = constants$1043.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_load_bytes_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_load_bytes_async",
+        constants$42.const$1
+    );
 }
 
 

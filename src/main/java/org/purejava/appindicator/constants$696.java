@@ -2,18 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$696 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$696() {}
-    static final VarHandle const$0 = constants$695.const$4.varHandle(MemoryLayout.PathElement.groupElement("vectors"));
-    static final VarHandle const$1 = constants$695.const$4.varHandle(MemoryLayout.PathElement.groupElement("num_vectors"));
-    static final VarHandle const$2 = constants$695.const$4.varHandle(MemoryLayout.PathElement.groupElement("bytes_received"));
-    static final VarHandle const$3 = constants$695.const$4.varHandle(MemoryLayout.PathElement.groupElement("flags"));
-    static final VarHandle const$4 = constants$695.const$4.varHandle(MemoryLayout.PathElement.groupElement("control_messages"));
-    static final VarHandle const$5 = constants$695.const$4.varHandle(MemoryLayout.PathElement.groupElement("num_control_messages"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GFileProgressCallback.class, "apply", constants$564.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$564.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GFileReadMoreCallback.class, "apply", constants$62.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$62.const$2
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        JAVA_INT,
+        JAVA_LONG,
+        JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GFileMeasureProgressCallback.class, "apply", constants$696.const$4);
 }
 
 

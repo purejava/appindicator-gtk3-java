@@ -8,23 +8,23 @@ final class constants$1037 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1037() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_query_default_handler",
-        constants$23.const$0
+        "g_file_monitor_directory",
+        constants$180.const$0
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_query_default_handler_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_file",
+        constants$180.const$0
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_query_default_handler_async",
-        constants$281.const$5
+        "g_file_monitor",
+        constants$180.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_query_default_handler_finish",
-        constants$23.const$0
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_measure_disk_usage$progress_callback.class, "apply", constants$696.const$4);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_load_contents",
-        constants$638.const$1
+        "g_file_measure_disk_usage",
+        constants$1010.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_load_contents_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_measure_disk_usage_async$progress_callback.class, "apply", constants$696.const$4);
 }
 
 

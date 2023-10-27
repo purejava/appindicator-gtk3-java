@@ -13,7 +13,7 @@ public interface g_static_private_set$notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_static_private_set$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$543.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$544.const$4, fi, constants$13.const$1, scope);
     }
     static g_static_private_set$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

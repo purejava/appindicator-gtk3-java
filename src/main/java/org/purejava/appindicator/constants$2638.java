@@ -9,21 +9,12 @@ final class constants$2638 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2638() {}
-    static final VarHandle const$0 = constants$2637.const$0.varHandle(MemoryLayout.PathElement.groupElement("add_palette"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkColorChooserInterface.color_activated.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$2637.const$0.varHandle(MemoryLayout.PathElement.groupElement("color_activated"));
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_color_chooser_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_color_chooser_get_rgba",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_color_chooser_set_rgba",
-        constants$13.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkColorButtonClass.color_set.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$2637.const$5.varHandle(MemoryLayout.PathElement.groupElement("color_set"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkColorButtonClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$2637.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkColorButtonClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2637.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
 }
 
 

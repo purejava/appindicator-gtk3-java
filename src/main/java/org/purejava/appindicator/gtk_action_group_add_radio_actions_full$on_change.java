@@ -13,7 +13,7 @@ public interface gtk_action_group_add_radio_actions_full$on_change {
 
     void apply();
     static MemorySegment allocate(gtk_action_group_add_radio_actions_full$on_change fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3271.const$1, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$3276.const$1, fi, constants$7.const$5, scope);
     }
     static gtk_action_group_add_radio_actions_full$on_change ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

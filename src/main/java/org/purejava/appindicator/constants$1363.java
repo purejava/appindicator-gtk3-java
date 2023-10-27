@@ -8,28 +8,28 @@ final class constants$1363 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1363() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_get_server_identity",
+        "g_tls_connection_get_peer_certificate",
         constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_set_server_identity",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_get_use_ssl3",
+        "g_tls_connection_get_peer_certificate_errors",
         constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_set_use_ssl3",
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_require_close_notify",
         constants$40.const$2
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_require_close_notify",
+        constants$10.const$5
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_get_accepted_cas",
-        constants$5.const$2
+        "g_tls_connection_set_rehandshake_mode",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_copy_session_state",
-        constants$13.const$4
+        "g_tls_connection_get_rehandshake_mode",
+        constants$10.const$5
     );
 }
 

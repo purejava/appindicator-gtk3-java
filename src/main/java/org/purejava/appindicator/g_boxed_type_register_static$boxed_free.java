@@ -13,7 +13,7 @@ public interface g_boxed_type_register_static$boxed_free {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_boxed_type_register_static$boxed_free fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$621.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$623.const$2, fi, constants$13.const$1, scope);
     }
     static g_boxed_type_register_static$boxed_free ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

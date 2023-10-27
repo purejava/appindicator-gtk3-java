@@ -13,7 +13,7 @@ public interface cairo_user_font_face_set_init_func$init_func {
 
     int apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment other);
     static MemorySegment allocate(cairo_user_font_face_set_init_func$init_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1712.const$0, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1717.const$0, fi, constants$12.const$2, scope);
     }
     static cairo_user_font_face_set_init_func$init_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

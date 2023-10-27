@@ -2,25 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$586 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$586() {}
-    static final VarHandle const$0 = constants$585.const$3.varHandle(MemoryLayout.PathElement.groupElement("notify"));
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.paddingLayout(8),
-        RuntimeHelper.POINTER.withName("marshal"),
-        RuntimeHelper.POINTER.withName("data"),
-        RuntimeHelper.POINTER.withName("notifiers")
-    ).withName("_GClosure");
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GClosure.marshal.class, "apply", constants$584.const$3);
-    static final VarHandle const$3 = constants$586.const$1.varHandle(MemoryLayout.PathElement.groupElement("marshal"));
-    static final VarHandle const$4 = constants$586.const$1.varHandle(MemoryLayout.PathElement.groupElement("data"));
-    static final VarHandle const$5 = constants$586.const$1.varHandle(MemoryLayout.PathElement.groupElement("notifiers"));
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_lookup",
+        constants$586.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_list_owned",
+        constants$21.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_list",
+        constants$36.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GCallback.class, "apply", constants$7.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GClosureNotify.class, "apply", constants$13.const$4);
 }
 
 

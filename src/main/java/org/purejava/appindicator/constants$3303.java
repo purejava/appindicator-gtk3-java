@@ -9,12 +9,18 @@ final class constants$3303 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3303() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkHSVClass.move.class, "apply", constants$40.const$2);
-    static final VarHandle const$1 = constants$3302.const$3.varHandle(MemoryLayout.PathElement.groupElement("move"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkHSVClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$3302.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkHSVClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$3302.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkHandleBoxClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$3301.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkHandleBoxClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3301.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_handle_box_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_handle_box_new",
+        constants$35.const$2
+    );
 }
 
 

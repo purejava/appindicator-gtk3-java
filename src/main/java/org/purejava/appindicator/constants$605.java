@@ -12,23 +12,34 @@ final class constants$605 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$605() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_set_va_marshaller$va_marshaller.class, "apply", constants$585.const$0);
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        JAVA_INT,
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_newv$c_marshaller.class, "apply", constants$587.const$0);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
         JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
         RuntimeHelper.POINTER
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_signal_set_va_marshaller",
+        "g_signal_newv",
         constants$605.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_signal_emitv",
-        constants$57.const$0
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_signal_new_valist$accumulator.class, "apply", constants$34.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_new_valist$c_marshaller.class, "apply", constants$587.const$0);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
         RuntimeHelper.POINTER,
+        JAVA_LONG,
         JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
         JAVA_INT,
         MemoryLayout.structLayout(
             RuntimeHelper.POINTER.withName("__stack"),
@@ -38,9 +49,9 @@ final class constants$605 {
             JAVA_INT.withName("__vr_offs")
         ).withName("__va_list")
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_signal_emit_valist",
-        constants$605.const$4
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_signal_new_valist",
+        constants$605.const$5
     );
 }
 

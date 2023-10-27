@@ -8,28 +8,28 @@ final class constants$3161 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3161() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_bottom_margin",
-        constants$40.const$2
+        "gtk_text_view_backward_display_line_start",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_bottom_margin",
-        constants$10.const$5
+        "gtk_text_view_starts_display_line",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_indent",
-        constants$40.const$2
+        "gtk_text_view_move_visually",
+        constants$62.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_indent",
-        constants$10.const$5
+        "gtk_text_view_im_context_filter_keypress",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_tabs",
-        constants$13.const$4
+        "gtk_text_view_reset_im_context",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_tabs",
-        constants$5.const$2
+        "gtk_text_view_add_child_at_anchor",
+        constants$14.const$3
     );
 }
 

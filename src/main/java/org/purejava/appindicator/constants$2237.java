@@ -2,38 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2237 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2237() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_menu_popup_for_device$func.class, "apply", constants$331.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_menu_popup_for_device$destroy.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_insert",
+        constants$164.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_deactivate",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_menu_shell_select_item",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_menu_popup_for_device",
-        constants$2237.const$2
+        "gtk_menu_shell_deselect",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_menu_popup_at_rect",
-        constants$1271.const$2
+        "gtk_menu_shell_activate_item",
+        constants$164.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_menu_popup_at_widget",
-        constants$1457.const$1
+        "gtk_menu_shell_select_first",
+        constants$40.const$2
     );
 }
 

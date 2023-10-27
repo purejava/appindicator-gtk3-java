@@ -8,27 +8,27 @@ final class constants$1119 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1119() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_database_verify_flags_get_type",
+        "g_dbus_message_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_flags_get_type",
+        "g_dbus_message_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_request_flags_get_type",
+        "g_dbus_message_header_field_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_protocol_version_get_type",
+        "g_dbus_property_info_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_io_module_scope_flags_get_type",
+        "g_dbus_subtree_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_client_event_get_type",
+        "g_dbus_server_flags_get_type",
         constants$3.const$5
     );
 }

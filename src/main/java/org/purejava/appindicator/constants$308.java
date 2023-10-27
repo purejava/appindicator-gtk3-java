@@ -2,44 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$308 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$308() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_string_set_size",
-        constants$21.const$1
+        "g_string_free_and_steal",
+        constants$5.const$2
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        JAVA_LONG
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_string_free_to_bytes",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_string_insert_len",
-        constants$308.const$1
+        "g_string_equal",
+        constants$9.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_string_append",
-        constants$5.const$5
+        "g_string_hash",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_string_append_len",
-        constants$17.const$1
+        "g_string_assign",
+        constants$5.const$5
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_BYTE
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_string_append_c",
-        constants$308.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_string_truncate",
+        constants$21.const$1
     );
 }
 

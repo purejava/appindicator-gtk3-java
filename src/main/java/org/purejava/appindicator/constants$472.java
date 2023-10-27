@@ -2,33 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$472 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$472() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_time_val_to_iso8601",
-        constants$5.const$2
+        "g_timer_new",
+        constants$35.const$2
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("next")
-    ).withName("_GTrashStack");
-    static final VarHandle const$2 = constants$472.const$1.varHandle(MemoryLayout.PathElement.groupElement("next"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_timer_destroy",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_timer_start",
+        constants$13.const$1
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_trash_stack_push",
-        constants$13.const$4
+        "g_timer_stop",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_trash_stack_pop",
-        constants$5.const$2
+        "g_timer_reset",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_trash_stack_peek",
-        constants$5.const$2
+        "g_timer_continue",
+        constants$13.const$1
     );
 }
 

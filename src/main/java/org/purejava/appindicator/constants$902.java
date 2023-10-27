@@ -2,34 +2,44 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$902 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$902() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_message",
+        "g_dbus_message_get_signature",
         constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_parameters",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_user_data",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_value",
+        "g_dbus_message_set_signature",
         constants$13.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_value_with_unix_fd_list",
-        constants$14.const$3
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_num_unix_fds",
+        constants$10.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
-        "g_dbus_method_invocation_return_error",
-        constants$57.const$0
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_num_unix_fds",
+        constants$40.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_arg0",
+        constants$5.const$2
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_new_from_blob",
+        constants$902.const$5
     );
 }
 

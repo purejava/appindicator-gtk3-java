@@ -9,18 +9,12 @@ final class constants$1592 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1592() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoFontMapClass.get_family.class, "apply", constants$5.const$5);
-    static final VarHandle const$1 = constants$1590.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_family"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontMapClass.get_face.class, "apply", constants$5.const$5);
-    static final VarHandle const$3 = constants$1590.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_face"));
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_font_map_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_font_map_create_context",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$1591.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_metrics"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoFontsetClass.get_language.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$1591.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_language"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoFontsetClass.foreach.class, "apply", constants$14.const$3);
+    static final VarHandle const$4 = constants$1591.const$2.varHandle(MemoryLayout.PathElement.groupElement("foreach"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_PangoFontsetClass._pango_reserved1.class, "apply", constants$7.const$5);
 }
 
 

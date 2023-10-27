@@ -8,22 +8,28 @@ final class constants$1809 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1809() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_events_get_center",
-        constants$34.const$5
+        "gdk_event_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_event_handler_set$func.class, "apply", constants$13.const$4);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gdk_event_handler_set$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_event_sequence_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_events_pending",
+        constants$83.const$1
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_event_handler_set",
-        constants$14.const$3
+        "gdk_event_get",
+        constants$35.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_event_set_screen",
-        constants$13.const$4
+        "gdk_event_peek",
+        constants$35.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_screen",
-        constants$5.const$2
+        "gdk_event_put",
+        constants$13.const$1
     );
 }
 

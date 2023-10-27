@@ -19,10 +19,10 @@ import java.lang.invoke.VarHandle;
 public class _AtkPropertyValues {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1964.const$5;
+        return constants$1970.const$0;
     }
     public static VarHandle property_name$VH() {
-        return constants$1965.const$0;
+        return constants$1970.const$1;
     }
     /**
      * Getter for field:
@@ -31,7 +31,7 @@ public class _AtkPropertyValues {
      * }
      */
     public static MemorySegment property_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1965.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1970.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -40,13 +40,13 @@ public class _AtkPropertyValues {
      * }
      */
     public static void property_name$set(MemorySegment seg, MemorySegment x) {
-        constants$1965.const$0.set(seg, x);
+        constants$1970.const$1.set(seg, x);
     }
     public static MemorySegment property_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1965.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1970.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void property_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1965.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1970.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment old_value$slice(MemorySegment seg) {
         return seg.asSlice(8, 24);

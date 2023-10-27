@@ -2,33 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1275 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1275() {}
-    static final VarHandle const$0 = constants$1273.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_get_type",
-        constants$3.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_is_valid",
+        constants$12.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_new",
-        constants$5.const$5
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_simple_async_report_error_in_idle$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_set_default_proxy",
-        constants$13.const$4
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_simple_async_report_error_in_idle",
+        constants$1275.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_set_ignore_hosts",
-        constants$13.const$4
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_simple_async_report_gerror_in_idle$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_set_uri_proxy",
-        constants$14.const$3
+        "g_simple_async_report_gerror_in_idle",
+        constants$42.const$1
     );
 }
 

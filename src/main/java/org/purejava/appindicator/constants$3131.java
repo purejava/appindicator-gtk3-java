@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3131 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3131() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_at_cursor",
-        constants$164.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_interactive",
-        constants$1941.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_interactive_at_cursor",
-        constants$414.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_range",
-        constants$42.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_range_interactive",
-        constants$1423.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_text_buffer_insert_with_tags",
-        constants$1127.const$5
-    );
+    static final VarHandle const$0 = constants$3129.const$0.varHandle(MemoryLayout.PathElement.groupElement("modified_changed"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextBufferClass.mark_set.class, "apply", constants$14.const$3);
+    static final VarHandle const$2 = constants$3129.const$0.varHandle(MemoryLayout.PathElement.groupElement("mark_set"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextBufferClass.mark_deleted.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$3129.const$0.varHandle(MemoryLayout.PathElement.groupElement("mark_deleted"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextBufferClass.apply_tag.class, "apply", constants$42.const$1);
 }
 
 

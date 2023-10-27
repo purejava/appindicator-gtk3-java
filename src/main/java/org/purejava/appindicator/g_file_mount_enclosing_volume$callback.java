@@ -13,7 +13,7 @@ public interface g_file_mount_enclosing_volume$callback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_file_mount_enclosing_volume$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1030.const$4, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1033.const$4, fi, constants$14.const$3, scope);
     }
     static g_file_mount_enclosing_volume$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

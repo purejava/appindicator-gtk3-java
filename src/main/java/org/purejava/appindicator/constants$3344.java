@@ -2,18 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 final class constants$3344 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3344() {}
-    static final VarHandle const$0 = constants$3343.const$3.varHandle(MemoryLayout.PathElement.groupElement("ythickness"));
-    static final VarHandle const$1 = constants$3343.const$3.varHandle(MemoryLayout.PathElement.groupElement("attach_count"));
-    static final VarHandle const$2 = constants$3343.const$3.varHandle(MemoryLayout.PathElement.groupElement("visual"));
-    static final VarHandle const$3 = constants$3343.const$3.varHandle(MemoryLayout.PathElement.groupElement("private_font_desc"));
-    static final VarHandle const$4 = constants$3343.const$3.varHandle(MemoryLayout.PathElement.groupElement("rc_style"));
-    static final VarHandle const$5 = constants$3343.const$3.varHandle(MemoryLayout.PathElement.groupElement("styles"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_from_file",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_from_stock",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_from_icon_name",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_from_gicon",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_get_storage_type",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_get_pixbuf",
+        constants$5.const$2
+    );
 }
 
 

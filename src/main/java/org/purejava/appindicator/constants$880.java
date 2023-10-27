@@ -3,26 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$880 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$880() {}
-    static final VarHandle const$0 = constants$879.const$5.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
-    static final VarHandle const$1 = constants$879.const$5.varHandle(MemoryLayout.PathElement.groupElement("key"));
-    static final VarHandle const$2 = constants$879.const$5.varHandle(MemoryLayout.PathElement.groupElement("value"));
-    static final VarHandle const$3 = constants$879.const$5.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        JAVA_INT.withName("ref_count"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("name"),
-        RuntimeHelper.POINTER.withName("signature"),
-        RuntimeHelper.POINTER.withName("annotations")
-    ).withName("_GDBusArgInfo");
-    static final VarHandle const$5 = constants$880.const$4.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$0 = constants$878.const$4.varHandle(MemoryLayout.PathElement.groupElement("flush"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusInterfaceSkeletonClass.g_authorize_method.class, "apply", constants$9.const$0);
+    static final VarHandle const$2 = constants$878.const$4.varHandle(MemoryLayout.PathElement.groupElement("g_authorize_method"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_flags",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_set_flags",
+        constants$40.const$2
+    );
 }
 
 

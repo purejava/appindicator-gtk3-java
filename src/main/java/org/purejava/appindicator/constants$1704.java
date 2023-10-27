@@ -2,43 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1704 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1704() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_get_scaled_font",
-        constants$5.const$2
+        "cairo_font_options_status",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_show_text",
+        "cairo_font_options_merge",
         constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_show_glyphs",
-        constants$164.const$5
+        "cairo_font_options_equal",
+        constants$9.const$0
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_font_options_hash",
+        constants$4.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_show_text_glyphs",
-        constants$1704.const$3
+        "cairo_font_options_set_antialias",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_text_path",
-        constants$13.const$4
+        "cairo_font_options_get_antialias",
+        constants$10.const$5
     );
 }
 

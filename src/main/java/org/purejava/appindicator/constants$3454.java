@@ -7,12 +7,12 @@ final class constants$3454 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3454() {}
-    static final MemorySegment const$0 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("menubar");
-    static final MemorySegment const$1 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("menuitem");
-    static final MemorySegment const$2 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("toolbar");
-    static final MemorySegment const$3 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("primary-toolbar");
-    static final MemorySegment const$4 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("inline-toolbar");
-    static final MemorySegment const$5 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("statusbar");
+    static final MemorySegment const$0 = MemorySegment.ofAddress(17L);
+    static final MemorySegment const$1 = MemorySegment.ofAddress(20L);
+    static final MemorySegment const$2 = MemorySegment.ofAddress(31L);
+    static final MemorySegment const$3 = MemorySegment.ofAddress(4L);
+    static final MemorySegment const$4 = MemorySegment.ofAddress(19L);
+    static final MemorySegment const$5 = MemorySegment.ofAddress(33L);
 }
 
 

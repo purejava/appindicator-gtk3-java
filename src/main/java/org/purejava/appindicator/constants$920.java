@@ -10,9 +10,13 @@ final class constants$920 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$920() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_dbus_object_manager_client_new$get_proxy_type_func.class, "apply", constants$333.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_dbus_object_manager_client_new$get_proxy_type_destroy_notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_dbus_object_manager_client_new$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
         JAVA_INT,
-        JAVA_INT,
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
@@ -21,25 +25,13 @@ final class constants$920 {
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new_for_bus_sync",
-        constants$920.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_get_connection",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_get_flags",
-        constants$10.const$5
-    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_get_name",
-        constants$5.const$2
+        "g_dbus_object_manager_client_new",
+        constants$920.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_get_name_owner",
-        constants$5.const$2
+        "g_dbus_object_manager_client_new_finish",
+        constants$5.const$5
     );
 }
 

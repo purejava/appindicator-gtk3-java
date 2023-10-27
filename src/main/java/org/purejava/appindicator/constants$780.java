@@ -2,8 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
@@ -12,22 +12,31 @@ final class constants$780 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$780() {}
-    static final VarHandle const$0 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("write_async"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GOutputStreamClass.write_finish.class, "apply", constants$166.const$0);
-    static final VarHandle const$2 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("write_finish"));
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_buffered_input_stream_fill_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_fill_async",
+        constants$765.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GOutputStreamClass.splice_async.class, "apply", constants$780.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        constants$780.const$3
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_fill_finish",
+        constants$166.const$0
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_read_byte",
+        constants$12.const$2
+    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GOutputStream");
+    static final VarHandle const$5 = constants$780.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

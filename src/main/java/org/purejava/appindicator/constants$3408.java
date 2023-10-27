@@ -3,42 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3408 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3408() {}
-    static final VarHandle const$0 = constants$3402.const$4.varHandle(MemoryLayout.PathElement.groupElement("app_indicator_reserved_6"));
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent")
-    ).withName("_AppIndicator");
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "app_indicator_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "app_indicator_new",
-        constants$32.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "app_indicator_new_with_path",
-        constants$482.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "app_indicator_set_status",
-        constants$40.const$2
-    );
+    static final VarHandle const$0 = constants$3407.const$4.varHandle(MemoryLayout.PathElement.groupElement("new_icon"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AppIndicatorClass.new_attention_icon.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$3407.const$4.varHandle(MemoryLayout.PathElement.groupElement("new_attention_icon"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AppIndicatorClass.new_status.class, "apply", constants$14.const$3);
+    static final VarHandle const$4 = constants$3407.const$4.varHandle(MemoryLayout.PathElement.groupElement("new_status"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AppIndicatorClass.new_icon_theme_path.class, "apply", constants$14.const$3);
 }
 
 

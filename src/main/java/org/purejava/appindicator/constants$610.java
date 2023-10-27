@@ -11,33 +11,30 @@ final class constants$610 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$610() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_signal_get_invocation_hint",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_signal_connect_data",
-        constants$610.const$0
+        "g_signal_stop_emission",
+        constants$469.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_signal_handler_block",
-        constants$25.const$3
+        "g_signal_stop_emission_by_name",
+        constants$13.const$4
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_signal_handler_unblock",
-        constants$25.const$3
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_signal_add_emission_hook$hook_func.class, "apply", constants$11.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_add_emission_hook$data_destroy.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_signal_handler_disconnect",
-        constants$25.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_signal_handler_is_connected",
-        constants$97.const$1
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_signal_add_emission_hook",
+        constants$610.const$5
     );
 }
 

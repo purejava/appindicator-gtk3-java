@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3346 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3346() {}
-    static final VarHandle const$0 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("unrealize"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkStyleClass.copy.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("copy"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkStyleClass.clone.class, "apply", constants$5.const$2);
-    static final VarHandle const$4 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("clone"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkStyleClass.init_from_rc.class, "apply", constants$13.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_has_tooltip",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_tooltip_text",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_tooltip_markup",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_title",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_get_title",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_status_icon_set_name",
+        constants$13.const$4
+    );
 }
 
 

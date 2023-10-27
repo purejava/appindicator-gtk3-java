@@ -9,6 +9,162 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
 
     /**
      * {@snippet :
+     * typedef struct _GQueue* GtkPrintSettings_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkPrintSettings_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkProgressBar* GtkProgressBar_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkProgressBar_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkProgressBar_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkProgressBar_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkProgressBar_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkProgressBar_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkProgressBar_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkProgressBar_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRadioButton* GtkRadioButton_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioButton_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRadioButton_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioButton_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRadioButton_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioButton_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRadioButton_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioButton_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRadioMenuItem* GtkRadioMenuItem_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioMenuItem_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRadioMenuItem_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioMenuItem_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRadioMenuItem_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioMenuItem_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRadioMenuItem_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioMenuItem_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRadioToolButton* GtkRadioToolButton_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioToolButton_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRadioToolButton_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioToolButton_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRadioToolButton_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioToolButton_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRadioToolButton_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRadioToolButton_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRange* GtkRange_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRange_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRange_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRange_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRange_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRange_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRange_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRange_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRcStyle* GtkRcStyle_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRcStyle_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRcStyle_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRcStyle_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRcStyle_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRcStyle_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRcStyle_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRcStyle_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRecentChooser* GtkRecentChooser_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooser_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
      * typedef struct _GList* GtkRecentChooser_listautoptr;
      * }
      */
@@ -1674,7 +1830,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         return (int)2L;
     }
     public static MethodHandle app_indicator_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3408.const$2,"app_indicator_get_type");
+        return RuntimeHelper.requireNonNull(constants$3413.const$2,"app_indicator_get_type");
     }
     /**
      * {@snippet :
@@ -1690,7 +1846,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3408.const$3,"app_indicator_new");
+        return RuntimeHelper.requireNonNull(constants$3413.const$3,"app_indicator_new");
     }
     /**
      * {@snippet :
@@ -1706,7 +1862,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_new_with_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3408.const$4,"app_indicator_new_with_path");
+        return RuntimeHelper.requireNonNull(constants$3413.const$4,"app_indicator_new_with_path");
     }
     /**
      * {@snippet :
@@ -1722,7 +1878,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$3408.const$5,"app_indicator_set_status");
+        return RuntimeHelper.requireNonNull(constants$3413.const$5,"app_indicator_set_status");
     }
     /**
      * {@snippet :
@@ -1738,7 +1894,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_attention_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$0,"app_indicator_set_attention_icon");
+        return RuntimeHelper.requireNonNull(constants$3414.const$0,"app_indicator_set_attention_icon");
     }
     /**
      * {@snippet :
@@ -1754,7 +1910,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_attention_icon_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$1,"app_indicator_set_attention_icon_full");
+        return RuntimeHelper.requireNonNull(constants$3414.const$1,"app_indicator_set_attention_icon_full");
     }
     /**
      * {@snippet :
@@ -1770,7 +1926,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$2,"app_indicator_set_menu");
+        return RuntimeHelper.requireNonNull(constants$3414.const$2,"app_indicator_set_menu");
     }
     /**
      * {@snippet :
@@ -1786,7 +1942,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$3,"app_indicator_set_icon");
+        return RuntimeHelper.requireNonNull(constants$3414.const$3,"app_indicator_set_icon");
     }
     /**
      * {@snippet :
@@ -1802,7 +1958,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_icon_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$4,"app_indicator_set_icon_full");
+        return RuntimeHelper.requireNonNull(constants$3414.const$4,"app_indicator_set_icon_full");
     }
     /**
      * {@snippet :
@@ -1818,7 +1974,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$5,"app_indicator_set_label");
+        return RuntimeHelper.requireNonNull(constants$3414.const$5,"app_indicator_set_label");
     }
     /**
      * {@snippet :
@@ -1834,7 +1990,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_icon_theme_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$0,"app_indicator_set_icon_theme_path");
+        return RuntimeHelper.requireNonNull(constants$3415.const$0,"app_indicator_set_icon_theme_path");
     }
     /**
      * {@snippet :
@@ -1850,7 +2006,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_ordering_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$1,"app_indicator_set_ordering_index");
+        return RuntimeHelper.requireNonNull(constants$3415.const$1,"app_indicator_set_ordering_index");
     }
     /**
      * {@snippet :
@@ -1866,7 +2022,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_secondary_activate_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$2,"app_indicator_set_secondary_activate_target");
+        return RuntimeHelper.requireNonNull(constants$3415.const$2,"app_indicator_set_secondary_activate_target");
     }
     /**
      * {@snippet :
@@ -1882,7 +2038,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$3,"app_indicator_set_title");
+        return RuntimeHelper.requireNonNull(constants$3415.const$3,"app_indicator_set_title");
     }
     /**
      * {@snippet :
@@ -1898,7 +2054,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$4,"app_indicator_get_id");
+        return RuntimeHelper.requireNonNull(constants$3415.const$4,"app_indicator_get_id");
     }
     /**
      * {@snippet :
@@ -1914,7 +2070,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_category$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$5,"app_indicator_get_category");
+        return RuntimeHelper.requireNonNull(constants$3415.const$5,"app_indicator_get_category");
     }
     /**
      * {@snippet :
@@ -1930,7 +2086,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$0,"app_indicator_get_status");
+        return RuntimeHelper.requireNonNull(constants$3416.const$0,"app_indicator_get_status");
     }
     /**
      * {@snippet :
@@ -1946,7 +2102,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$1,"app_indicator_get_icon");
+        return RuntimeHelper.requireNonNull(constants$3416.const$1,"app_indicator_get_icon");
     }
     /**
      * {@snippet :
@@ -1962,7 +2118,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_icon_desc$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$2,"app_indicator_get_icon_desc");
+        return RuntimeHelper.requireNonNull(constants$3416.const$2,"app_indicator_get_icon_desc");
     }
     /**
      * {@snippet :
@@ -1978,7 +2134,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_icon_theme_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$3,"app_indicator_get_icon_theme_path");
+        return RuntimeHelper.requireNonNull(constants$3416.const$3,"app_indicator_get_icon_theme_path");
     }
     /**
      * {@snippet :
@@ -1994,7 +2150,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_attention_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$4,"app_indicator_get_attention_icon");
+        return RuntimeHelper.requireNonNull(constants$3416.const$4,"app_indicator_get_attention_icon");
     }
     /**
      * {@snippet :
@@ -2010,7 +2166,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_attention_icon_desc$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$5,"app_indicator_get_attention_icon_desc");
+        return RuntimeHelper.requireNonNull(constants$3416.const$5,"app_indicator_get_attention_icon_desc");
     }
     /**
      * {@snippet :
@@ -2026,7 +2182,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$0,"app_indicator_get_title");
+        return RuntimeHelper.requireNonNull(constants$3417.const$0,"app_indicator_get_title");
     }
     /**
      * {@snippet :
@@ -2042,7 +2198,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$1,"app_indicator_get_menu");
+        return RuntimeHelper.requireNonNull(constants$3417.const$1,"app_indicator_get_menu");
     }
     /**
      * {@snippet :
@@ -2058,7 +2214,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$2,"app_indicator_get_label");
+        return RuntimeHelper.requireNonNull(constants$3417.const$2,"app_indicator_get_label");
     }
     /**
      * {@snippet :
@@ -2074,7 +2230,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_label_guide$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$3,"app_indicator_get_label_guide");
+        return RuntimeHelper.requireNonNull(constants$3417.const$3,"app_indicator_get_label_guide");
     }
     /**
      * {@snippet :
@@ -2090,7 +2246,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_ordering_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$4,"app_indicator_get_ordering_index");
+        return RuntimeHelper.requireNonNull(constants$3417.const$4,"app_indicator_get_ordering_index");
     }
     /**
      * {@snippet :
@@ -2106,7 +2262,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_secondary_activate_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$5,"app_indicator_get_secondary_activate_target");
+        return RuntimeHelper.requireNonNull(constants$3417.const$5,"app_indicator_get_secondary_activate_target");
     }
     /**
      * {@snippet :
@@ -2122,7 +2278,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_build_menu_from_desktop$MH() {
-        return RuntimeHelper.requireNonNull(constants$3413.const$0,"app_indicator_build_menu_from_desktop");
+        return RuntimeHelper.requireNonNull(constants$3418.const$0,"app_indicator_build_menu_from_desktop");
     }
     /**
      * {@snippet :
@@ -2143,7 +2299,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment NULL() {
-        return constants$3413.const$1;
+        return constants$3418.const$1;
     }
     /**
      * {@snippet :
@@ -2191,7 +2347,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GNUC_FUNCTION() {
-        return constants$3413.const$2;
+        return constants$3418.const$2;
     }
     /**
      * {@snippet :
@@ -2199,15 +2355,15 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GNUC_PRETTY_FUNCTION() {
-        return constants$3413.const$2;
+        return constants$3418.const$2;
     }
     /**
      * {@snippet :
-     * #define G_STRLOC "/tmp/jextract$15660584015488211082.h:49"
+     * #define G_STRLOC "/tmp/jextract$10630276371927626169.h:49"
      * }
      */
     public static MemorySegment G_STRLOC() {
-        return constants$3413.const$3;
+        return constants$3418.const$3;
     }
     /**
      * {@snippet :
@@ -2863,7 +3019,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT16_MODIFIER() {
-        return constants$3413.const$4;
+        return constants$3418.const$4;
     }
     /**
      * {@snippet :
@@ -2871,7 +3027,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT16_FORMAT() {
-        return constants$3413.const$5;
+        return constants$3418.const$5;
     }
     /**
      * {@snippet :
@@ -2879,7 +3035,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GUINT16_FORMAT() {
-        return constants$3414.const$0;
+        return constants$3419.const$0;
     }
     /**
      * {@snippet :
@@ -2887,7 +3043,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT32_MODIFIER() {
-        return constants$3413.const$2;
+        return constants$3418.const$2;
     }
     /**
      * {@snippet :
@@ -2895,7 +3051,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT32_FORMAT() {
-        return constants$3414.const$1;
+        return constants$3419.const$1;
     }
     /**
      * {@snippet :
@@ -2903,7 +3059,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GUINT32_FORMAT() {
-        return constants$3414.const$2;
+        return constants$3419.const$2;
     }
     /**
      * {@snippet :
@@ -2911,7 +3067,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT64_MODIFIER() {
-        return constants$3414.const$3;
+        return constants$3419.const$3;
     }
     /**
      * {@snippet :
@@ -2919,7 +3075,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT64_FORMAT() {
-        return constants$3414.const$4;
+        return constants$3419.const$4;
     }
     /**
      * {@snippet :
@@ -2927,7 +3083,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GUINT64_FORMAT() {
-        return constants$3414.const$5;
+        return constants$3419.const$5;
     }
     /**
      * {@snippet :
@@ -2935,7 +3091,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GSIZE_MODIFIER() {
-        return constants$3414.const$3;
+        return constants$3419.const$3;
     }
     /**
      * {@snippet :
@@ -2943,7 +3099,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GSSIZE_MODIFIER() {
-        return constants$3414.const$3;
+        return constants$3419.const$3;
     }
     /**
      * {@snippet :
@@ -2951,7 +3107,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GSIZE_FORMAT() {
-        return constants$3414.const$5;
+        return constants$3419.const$5;
     }
     /**
      * {@snippet :
@@ -2959,7 +3115,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GSSIZE_FORMAT() {
-        return constants$3414.const$4;
+        return constants$3419.const$4;
     }
     /**
      * {@snippet :
@@ -3007,7 +3163,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GOFFSET_MODIFIER() {
-        return constants$3414.const$3;
+        return constants$3419.const$3;
     }
     /**
      * {@snippet :
@@ -3015,7 +3171,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GOFFSET_FORMAT() {
-        return constants$3414.const$4;
+        return constants$3419.const$4;
     }
     /**
      * {@snippet :
@@ -3023,7 +3179,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_POLLFD_FORMAT() {
-        return constants$3415.const$0;
+        return constants$3420.const$0;
     }
     /**
      * {@snippet :
@@ -3031,7 +3187,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINTPTR_MODIFIER() {
-        return constants$3414.const$3;
+        return constants$3419.const$3;
     }
     /**
      * {@snippet :
@@ -3039,7 +3195,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINTPTR_FORMAT() {
-        return constants$3414.const$4;
+        return constants$3419.const$4;
     }
     /**
      * {@snippet :
@@ -3047,7 +3203,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GUINTPTR_FORMAT() {
-        return constants$3414.const$5;
+        return constants$3419.const$5;
     }
     /**
      * {@snippet :
@@ -3063,7 +3219,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MODULE_SUFFIX() {
-        return constants$3415.const$1;
+        return constants$3420.const$1;
     }
     /**
      * {@snippet :
@@ -3071,7 +3227,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_PID_FORMAT() {
-        return constants$3414.const$1;
+        return constants$3419.const$1;
     }
     /**
      * {@snippet :
@@ -3087,7 +3243,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_DIR_SEPARATOR_S() {
-        return constants$3415.const$2;
+        return constants$3420.const$2;
     }
     /**
      * {@snippet :
@@ -3103,7 +3259,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_SEARCHPATH_SEPARATOR_S() {
-        return constants$3415.const$3;
+        return constants$3420.const$3;
     }
     /**
      * {@snippet :
@@ -3411,35 +3567,43 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define GLIB_VERSION_CUR_STABLE 150528
+     * #define GLIB_VERSION_2_78 151040
+     * }
+     */
+    public static int GLIB_VERSION_2_78() {
+        return (int)151040L;
+    }
+    /**
+     * {@snippet :
+     * #define GLIB_VERSION_CUR_STABLE 151040
      * }
      */
     public static int GLIB_VERSION_CUR_STABLE() {
-        return (int)150528L;
+        return (int)151040L;
     }
     /**
      * {@snippet :
-     * #define GLIB_VERSION_PREV_STABLE 150016
+     * #define GLIB_VERSION_PREV_STABLE 150528
      * }
      */
     public static int GLIB_VERSION_PREV_STABLE() {
-        return (int)150016L;
+        return (int)150528L;
     }
     /**
      * {@snippet :
-     * #define GLIB_VERSION_MIN_REQUIRED 150528
+     * #define GLIB_VERSION_MIN_REQUIRED 151040
      * }
      */
     public static int GLIB_VERSION_MIN_REQUIRED() {
-        return (int)150528L;
+        return (int)151040L;
     }
     /**
      * {@snippet :
-     * #define GLIB_VERSION_MAX_ALLOWED 150528
+     * #define GLIB_VERSION_MAX_ALLOWED 151040
      * }
      */
     public static int GLIB_VERSION_MAX_ALLOWED() {
-        return (int)150528L;
+        return (int)151040L;
     }
     /**
      * {@snippet :
@@ -3655,7 +3819,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_NAME() {
-        return constants$3415.const$4;
+        return constants$3420.const$4;
     }
     /**
      * {@snippet :
@@ -3663,7 +3827,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_PRETTY_NAME() {
-        return constants$3415.const$5;
+        return constants$3420.const$5;
     }
     /**
      * {@snippet :
@@ -3671,7 +3835,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_VERSION() {
-        return constants$3416.const$0;
+        return constants$3421.const$0;
     }
     /**
      * {@snippet :
@@ -3679,7 +3843,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_VERSION_CODENAME() {
-        return constants$3416.const$1;
+        return constants$3421.const$1;
     }
     /**
      * {@snippet :
@@ -3687,7 +3851,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_VERSION_ID() {
-        return constants$3416.const$2;
+        return constants$3421.const$2;
     }
     /**
      * {@snippet :
@@ -3695,7 +3859,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_ID() {
-        return constants$3416.const$3;
+        return constants$3421.const$3;
     }
     /**
      * {@snippet :
@@ -3703,7 +3867,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_HOME_URL() {
-        return constants$3416.const$4;
+        return constants$3421.const$4;
     }
     /**
      * {@snippet :
@@ -3711,7 +3875,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_DOCUMENTATION_URL() {
-        return constants$3416.const$5;
+        return constants$3421.const$5;
     }
     /**
      * {@snippet :
@@ -3719,7 +3883,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_SUPPORT_URL() {
-        return constants$3417.const$0;
+        return constants$3422.const$0;
     }
     /**
      * {@snippet :
@@ -3727,7 +3891,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_BUG_REPORT_URL() {
-        return constants$3417.const$1;
+        return constants$3422.const$1;
     }
     /**
      * {@snippet :
@@ -3735,7 +3899,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_PRIVACY_POLICY_URL() {
-        return constants$3417.const$2;
+        return constants$3422.const$2;
     }
     /**
      * {@snippet :
@@ -3855,7 +4019,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment SIG_ERR() {
-        return constants$3417.const$3;
+        return constants$3422.const$3;
     }
     /**
      * {@snippet :
@@ -3863,7 +4027,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment SIG_DFL() {
-        return constants$3413.const$1;
+        return constants$3418.const$1;
     }
     /**
      * {@snippet :
@@ -3871,7 +4035,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment SIG_IGN() {
-        return constants$3417.const$4;
+        return constants$3422.const$4;
     }
     /**
      * {@snippet :
@@ -4215,7 +4379,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_STR_DELIMITERS() {
-        return constants$3417.const$5;
+        return constants$3422.const$5;
     }
     /**
      * {@snippet :
@@ -4231,7 +4395,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_GROUP() {
-        return constants$3418.const$0;
+        return constants$3423.const$0;
     }
     /**
      * {@snippet :
@@ -4239,7 +4403,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_TYPE() {
-        return constants$3418.const$1;
+        return constants$3423.const$1;
     }
     /**
      * {@snippet :
@@ -4247,7 +4411,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_VERSION() {
-        return constants$3418.const$2;
+        return constants$3423.const$2;
     }
     /**
      * {@snippet :
@@ -4255,7 +4419,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_NAME() {
-        return constants$3418.const$3;
+        return constants$3423.const$3;
     }
     /**
      * {@snippet :
@@ -4263,7 +4427,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME() {
-        return constants$3418.const$4;
+        return constants$3423.const$4;
     }
     /**
      * {@snippet :
@@ -4271,7 +4435,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY() {
-        return constants$3418.const$5;
+        return constants$3423.const$5;
     }
     /**
      * {@snippet :
@@ -4279,7 +4443,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_COMMENT() {
-        return constants$3419.const$0;
+        return constants$3424.const$0;
     }
     /**
      * {@snippet :
@@ -4287,7 +4451,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_ICON() {
-        return constants$3419.const$1;
+        return constants$3424.const$1;
     }
     /**
      * {@snippet :
@@ -4295,7 +4459,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_HIDDEN() {
-        return constants$3419.const$2;
+        return constants$3424.const$2;
     }
     /**
      * {@snippet :
@@ -4303,7 +4467,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN() {
-        return constants$3419.const$3;
+        return constants$3424.const$3;
     }
     /**
      * {@snippet :
@@ -4311,7 +4475,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN() {
-        return constants$3419.const$4;
+        return constants$3424.const$4;
     }
     /**
      * {@snippet :
@@ -4319,7 +4483,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_TRY_EXEC() {
-        return constants$3419.const$5;
+        return constants$3424.const$5;
     }
     /**
      * {@snippet :
@@ -4327,7 +4491,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_EXEC() {
-        return constants$3420.const$0;
+        return constants$3425.const$0;
     }
     /**
      * {@snippet :
@@ -4335,7 +4499,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_PATH() {
-        return constants$3420.const$1;
+        return constants$3425.const$1;
     }
     /**
      * {@snippet :
@@ -4343,7 +4507,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_TERMINAL() {
-        return constants$3420.const$2;
+        return constants$3425.const$2;
     }
     /**
      * {@snippet :
@@ -4351,7 +4515,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_MIME_TYPE() {
-        return constants$3420.const$3;
+        return constants$3425.const$3;
     }
     /**
      * {@snippet :
@@ -4359,7 +4523,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_CATEGORIES() {
-        return constants$3420.const$4;
+        return constants$3425.const$4;
     }
     /**
      * {@snippet :
@@ -4367,7 +4531,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY() {
-        return constants$3420.const$5;
+        return constants$3425.const$5;
     }
     /**
      * {@snippet :
@@ -4375,7 +4539,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS() {
-        return constants$3421.const$0;
+        return constants$3426.const$0;
     }
     /**
      * {@snippet :
@@ -4383,7 +4547,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_URL() {
-        return constants$3421.const$1;
+        return constants$3426.const$1;
     }
     /**
      * {@snippet :
@@ -4391,7 +4555,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE() {
-        return constants$3421.const$2;
+        return constants$3426.const$2;
     }
     /**
      * {@snippet :
@@ -4399,7 +4563,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_ACTIONS() {
-        return constants$3421.const$3;
+        return constants$3426.const$3;
     }
     /**
      * {@snippet :
@@ -4407,7 +4571,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_TYPE_APPLICATION() {
-        return constants$3421.const$4;
+        return constants$3426.const$4;
     }
     /**
      * {@snippet :
@@ -4415,7 +4579,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_TYPE_LINK() {
-        return constants$3421.const$5;
+        return constants$3426.const$5;
     }
     /**
      * {@snippet :
@@ -4423,7 +4587,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_TYPE_DIRECTORY() {
-        return constants$3422.const$0;
+        return constants$3427.const$0;
     }
     /**
      * {@snippet :
@@ -4447,7 +4611,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_LOG_DOMAIN() {
-        return constants$3413.const$1;
+        return constants$3418.const$1;
     }
     /**
      * {@snippet :
@@ -4455,7 +4619,23 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OPTION_REMAINING() {
-        return constants$3413.const$2;
+        return constants$3418.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define G_REF_COUNT_INIT -1
+     * }
+     */
+    public static int G_REF_COUNT_INIT() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
+     * #define G_ATOMIC_REF_COUNT_INIT 1
+     * }
+     */
+    public static int G_ATOMIC_REF_COUNT_INIT() {
+        return (int)1L;
     }
     /**
      * {@snippet :
@@ -4463,7 +4643,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_CSET_A_2_Z() {
-        return constants$3422.const$1;
+        return constants$3427.const$1;
     }
     /**
      * {@snippet :
@@ -4471,7 +4651,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_CSET_a_2_z() {
-        return constants$3422.const$2;
+        return constants$3427.const$2;
     }
     /**
      * {@snippet :
@@ -4479,7 +4659,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_CSET_DIGITS() {
-        return constants$3422.const$3;
+        return constants$3427.const$3;
     }
     /**
      * {@snippet :
@@ -4487,7 +4667,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_CSET_LATINC() {
-        return constants$3422.const$4;
+        return constants$3427.const$4;
     }
     /**
      * {@snippet :
@@ -4495,7 +4675,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_CSET_LATINS() {
-        return constants$3422.const$5;
+        return constants$3427.const$5;
     }
     /**
      * {@snippet :
@@ -4527,7 +4707,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_TEST_OPTION_ISOLATE_DIRS() {
-        return constants$3423.const$0;
+        return constants$3428.const$0;
     }
     /**
      * {@snippet :
@@ -4535,7 +4715,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_URI_RESERVED_CHARS_GENERIC_DELIMITERS() {
-        return constants$3423.const$1;
+        return constants$3428.const$1;
     }
     /**
      * {@snippet :
@@ -4543,7 +4723,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS() {
-        return constants$3423.const$2;
+        return constants$3428.const$2;
     }
     /**
      * {@snippet :
@@ -4551,7 +4731,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT() {
-        return constants$3423.const$3;
+        return constants$3428.const$3;
     }
     /**
      * {@snippet :
@@ -4559,7 +4739,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_PATH() {
-        return constants$3423.const$4;
+        return constants$3428.const$4;
     }
     /**
      * {@snippet :
@@ -4567,7 +4747,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_USERINFO() {
-        return constants$3423.const$5;
+        return constants$3428.const$5;
     }
     /**
      * {@snippet :
@@ -4583,7 +4763,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment PTHREAD_CANCELED() {
-        return constants$3417.const$3;
+        return constants$3422.const$3;
     }
     /**
      * {@snippet :
@@ -5591,7 +5771,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME() {
-        return constants$3424.const$0;
+        return constants$3429.const$0;
     }
     /**
      * {@snippet :
@@ -5599,7 +5779,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE() {
-        return constants$3424.const$1;
+        return constants$3429.const$1;
     }
     /**
      * {@snippet :
@@ -5607,7 +5787,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_TYPE() {
-        return constants$3424.const$2;
+        return constants$3429.const$2;
     }
     /**
      * {@snippet :
@@ -5615,7 +5795,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN() {
-        return constants$3424.const$3;
+        return constants$3429.const$3;
     }
     /**
      * {@snippet :
@@ -5623,7 +5803,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP() {
-        return constants$3424.const$4;
+        return constants$3429.const$4;
     }
     /**
      * {@snippet :
@@ -5631,7 +5811,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK() {
-        return constants$3424.const$5;
+        return constants$3429.const$5;
     }
     /**
      * {@snippet :
@@ -5639,7 +5819,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL() {
-        return constants$3425.const$0;
+        return constants$3430.const$0;
     }
     /**
      * {@snippet :
@@ -5647,7 +5827,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE() {
-        return constants$3425.const$1;
+        return constants$3430.const$1;
     }
     /**
      * {@snippet :
@@ -5655,7 +5835,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_NAME() {
-        return constants$3425.const$2;
+        return constants$3430.const$2;
     }
     /**
      * {@snippet :
@@ -5663,7 +5843,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME() {
-        return constants$3425.const$3;
+        return constants$3430.const$3;
     }
     /**
      * {@snippet :
@@ -5671,7 +5851,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME() {
-        return constants$3425.const$4;
+        return constants$3430.const$4;
     }
     /**
      * {@snippet :
@@ -5679,7 +5859,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_COPY_NAME() {
-        return constants$3425.const$5;
+        return constants$3430.const$5;
     }
     /**
      * {@snippet :
@@ -5687,7 +5867,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION() {
-        return constants$3426.const$0;
+        return constants$3431.const$0;
     }
     /**
      * {@snippet :
@@ -5695,7 +5875,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_ICON() {
-        return constants$3426.const$1;
+        return constants$3431.const$1;
     }
     /**
      * {@snippet :
@@ -5703,7 +5883,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON() {
-        return constants$3426.const$2;
+        return constants$3431.const$2;
     }
     /**
      * {@snippet :
@@ -5711,7 +5891,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE() {
-        return constants$3426.const$3;
+        return constants$3431.const$3;
     }
     /**
      * {@snippet :
@@ -5719,7 +5899,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE() {
-        return constants$3426.const$4;
+        return constants$3431.const$4;
     }
     /**
      * {@snippet :
@@ -5727,7 +5907,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SIZE() {
-        return constants$3426.const$5;
+        return constants$3431.const$5;
     }
     /**
      * {@snippet :
@@ -5735,7 +5915,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE() {
-        return constants$3427.const$0;
+        return constants$3432.const$0;
     }
     /**
      * {@snippet :
@@ -5743,7 +5923,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET() {
-        return constants$3427.const$1;
+        return constants$3432.const$1;
     }
     /**
      * {@snippet :
@@ -5751,7 +5931,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_TARGET_URI() {
-        return constants$3427.const$2;
+        return constants$3432.const$2;
     }
     /**
      * {@snippet :
@@ -5759,7 +5939,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER() {
-        return constants$3427.const$3;
+        return constants$3432.const$3;
     }
     /**
      * {@snippet :
@@ -5767,7 +5947,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ETAG_VALUE() {
-        return constants$3427.const$4;
+        return constants$3432.const$4;
     }
     /**
      * {@snippet :
@@ -5775,7 +5955,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ID_FILE() {
-        return constants$3427.const$5;
+        return constants$3432.const$5;
     }
     /**
      * {@snippet :
@@ -5783,7 +5963,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ID_FILESYSTEM() {
-        return constants$3428.const$0;
+        return constants$3433.const$0;
     }
     /**
      * {@snippet :
@@ -5791,7 +5971,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_READ() {
-        return constants$3428.const$1;
+        return constants$3433.const$1;
     }
     /**
      * {@snippet :
@@ -5799,7 +5979,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE() {
-        return constants$3428.const$2;
+        return constants$3433.const$2;
     }
     /**
      * {@snippet :
@@ -5807,7 +5987,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE() {
-        return constants$3428.const$3;
+        return constants$3433.const$3;
     }
     /**
      * {@snippet :
@@ -5815,7 +5995,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE() {
-        return constants$3428.const$4;
+        return constants$3433.const$4;
     }
     /**
      * {@snippet :
@@ -5823,7 +6003,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH() {
-        return constants$3428.const$5;
+        return constants$3433.const$5;
     }
     /**
      * {@snippet :
@@ -5831,7 +6011,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME() {
-        return constants$3429.const$0;
+        return constants$3434.const$0;
     }
     /**
      * {@snippet :
@@ -5839,7 +6019,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT() {
-        return constants$3429.const$1;
+        return constants$3434.const$1;
     }
     /**
      * {@snippet :
@@ -5847,7 +6027,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT() {
-        return constants$3429.const$2;
+        return constants$3434.const$2;
     }
     /**
      * {@snippet :
@@ -5855,7 +6035,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT() {
-        return constants$3429.const$3;
+        return constants$3434.const$3;
     }
     /**
      * {@snippet :
@@ -5863,7 +6043,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE() {
-        return constants$3429.const$4;
+        return constants$3434.const$4;
     }
     /**
      * {@snippet :
@@ -5871,7 +6051,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE() {
-        return constants$3429.const$5;
+        return constants$3434.const$5;
     }
     /**
      * {@snippet :
@@ -5879,7 +6059,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI() {
-        return constants$3430.const$0;
+        return constants$3435.const$0;
     }
     /**
      * {@snippet :
@@ -5887,7 +6067,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START() {
-        return constants$3430.const$1;
+        return constants$3435.const$1;
     }
     /**
      * {@snippet :
@@ -5895,7 +6075,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED() {
-        return constants$3430.const$2;
+        return constants$3435.const$2;
     }
     /**
      * {@snippet :
@@ -5903,7 +6083,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP() {
-        return constants$3430.const$3;
+        return constants$3435.const$3;
     }
     /**
      * {@snippet :
@@ -5911,7 +6091,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE() {
-        return constants$3430.const$4;
+        return constants$3435.const$4;
     }
     /**
      * {@snippet :
@@ -5919,7 +6099,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL() {
-        return constants$3430.const$5;
+        return constants$3435.const$5;
     }
     /**
      * {@snippet :
@@ -5927,7 +6107,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC() {
-        return constants$3431.const$0;
+        return constants$3436.const$0;
     }
     /**
      * {@snippet :
@@ -5935,7 +6115,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED() {
-        return constants$3431.const$1;
+        return constants$3436.const$1;
     }
     /**
      * {@snippet :
@@ -5943,7 +6123,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC() {
-        return constants$3431.const$2;
+        return constants$3436.const$2;
     }
     /**
      * {@snippet :
@@ -5951,7 +6131,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC() {
-        return constants$3431.const$3;
+        return constants$3436.const$3;
     }
     /**
      * {@snippet :
@@ -5959,7 +6139,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS() {
-        return constants$3431.const$4;
+        return constants$3436.const$4;
     }
     /**
      * {@snippet :
@@ -5967,7 +6147,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_USEC() {
-        return constants$3431.const$5;
+        return constants$3436.const$5;
     }
     /**
      * {@snippet :
@@ -5975,7 +6155,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC() {
-        return constants$3432.const$0;
+        return constants$3437.const$0;
     }
     /**
      * {@snippet :
@@ -5983,7 +6163,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED() {
-        return constants$3432.const$1;
+        return constants$3437.const$1;
     }
     /**
      * {@snippet :
@@ -5991,7 +6171,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_USEC() {
-        return constants$3432.const$2;
+        return constants$3437.const$2;
     }
     /**
      * {@snippet :
@@ -5999,7 +6179,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC() {
-        return constants$3432.const$3;
+        return constants$3437.const$3;
     }
     /**
      * {@snippet :
@@ -6007,7 +6187,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED() {
-        return constants$3432.const$4;
+        return constants$3437.const$4;
     }
     /**
      * {@snippet :
@@ -6015,7 +6195,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_USEC() {
-        return constants$3432.const$5;
+        return constants$3437.const$5;
     }
     /**
      * {@snippet :
@@ -6023,7 +6203,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_NSEC() {
-        return constants$3433.const$0;
+        return constants$3438.const$0;
     }
     /**
      * {@snippet :
@@ -6031,7 +6211,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_DEVICE() {
-        return constants$3433.const$1;
+        return constants$3438.const$1;
     }
     /**
      * {@snippet :
@@ -6039,7 +6219,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_INODE() {
-        return constants$3433.const$2;
+        return constants$3438.const$2;
     }
     /**
      * {@snippet :
@@ -6047,7 +6227,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_MODE() {
-        return constants$3433.const$3;
+        return constants$3438.const$3;
     }
     /**
      * {@snippet :
@@ -6055,7 +6235,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_NLINK() {
-        return constants$3433.const$4;
+        return constants$3438.const$4;
     }
     /**
      * {@snippet :
@@ -6063,7 +6243,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_UID() {
-        return constants$3433.const$5;
+        return constants$3438.const$5;
     }
     /**
      * {@snippet :
@@ -6071,7 +6251,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_GID() {
-        return constants$3434.const$0;
+        return constants$3439.const$0;
     }
     /**
      * {@snippet :
@@ -6079,7 +6259,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_RDEV() {
-        return constants$3434.const$1;
+        return constants$3439.const$1;
     }
     /**
      * {@snippet :
@@ -6087,7 +6267,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE() {
-        return constants$3434.const$2;
+        return constants$3439.const$2;
     }
     /**
      * {@snippet :
@@ -6095,7 +6275,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCKS() {
-        return constants$3434.const$3;
+        return constants$3439.const$3;
     }
     /**
      * {@snippet :
@@ -6103,7 +6283,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT() {
-        return constants$3434.const$4;
+        return constants$3439.const$4;
     }
     /**
      * {@snippet :
@@ -6111,7 +6291,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE() {
-        return constants$3434.const$5;
+        return constants$3439.const$5;
     }
     /**
      * {@snippet :
@@ -6119,7 +6299,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_SYSTEM() {
-        return constants$3435.const$0;
+        return constants$3440.const$0;
     }
     /**
      * {@snippet :
@@ -6127,7 +6307,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT() {
-        return constants$3435.const$1;
+        return constants$3440.const$1;
     }
     /**
      * {@snippet :
@@ -6135,7 +6315,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG() {
-        return constants$3435.const$2;
+        return constants$3440.const$2;
     }
     /**
      * {@snippet :
@@ -6143,7 +6323,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_OWNER_USER() {
-        return constants$3435.const$3;
+        return constants$3440.const$3;
     }
     /**
      * {@snippet :
@@ -6151,7 +6331,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_OWNER_USER_REAL() {
-        return constants$3435.const$4;
+        return constants$3440.const$4;
     }
     /**
      * {@snippet :
@@ -6159,7 +6339,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_OWNER_GROUP() {
-        return constants$3435.const$5;
+        return constants$3440.const$5;
     }
     /**
      * {@snippet :
@@ -6167,7 +6347,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH() {
-        return constants$3436.const$0;
+        return constants$3441.const$0;
     }
     /**
      * {@snippet :
@@ -6175,7 +6355,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED() {
-        return constants$3436.const$1;
+        return constants$3441.const$1;
     }
     /**
      * {@snippet :
@@ -6183,7 +6363,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID() {
-        return constants$3436.const$2;
+        return constants$3441.const$2;
     }
     /**
      * {@snippet :
@@ -6191,7 +6371,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL() {
-        return constants$3436.const$3;
+        return constants$3441.const$3;
     }
     /**
      * {@snippet :
@@ -6199,7 +6379,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL() {
-        return constants$3436.const$4;
+        return constants$3441.const$4;
     }
     /**
      * {@snippet :
@@ -6207,7 +6387,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL() {
-        return constants$3436.const$5;
+        return constants$3441.const$5;
     }
     /**
      * {@snippet :
@@ -6215,7 +6395,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE() {
-        return constants$3437.const$0;
+        return constants$3442.const$0;
     }
     /**
      * {@snippet :
@@ -6223,7 +6403,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE() {
-        return constants$3437.const$1;
+        return constants$3442.const$1;
     }
     /**
      * {@snippet :
@@ -6231,7 +6411,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE() {
-        return constants$3437.const$2;
+        return constants$3442.const$2;
     }
     /**
      * {@snippet :
@@ -6239,7 +6419,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE() {
-        return constants$3437.const$3;
+        return constants$3442.const$3;
     }
     /**
      * {@snippet :
@@ -6247,7 +6427,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE() {
-        return constants$3437.const$4;
+        return constants$3442.const$4;
     }
     /**
      * {@snippet :
@@ -6255,7 +6435,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE() {
-        return constants$3437.const$5;
+        return constants$3442.const$5;
     }
     /**
      * {@snippet :
@@ -6263,7 +6443,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE() {
-        return constants$3438.const$0;
+        return constants$3443.const$0;
     }
     /**
      * {@snippet :
@@ -6271,7 +6451,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE() {
-        return constants$3438.const$1;
+        return constants$3443.const$1;
     }
     /**
      * {@snippet :
@@ -6279,7 +6459,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE() {
-        return constants$3438.const$2;
+        return constants$3443.const$2;
     }
     /**
      * {@snippet :
@@ -6287,7 +6467,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_PREVIEW_ICON() {
-        return constants$3438.const$3;
+        return constants$3443.const$3;
     }
     /**
      * {@snippet :
@@ -6295,7 +6475,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_SIZE() {
-        return constants$3438.const$4;
+        return constants$3443.const$4;
     }
     /**
      * {@snippet :
@@ -6303,7 +6483,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_FREE() {
-        return constants$3438.const$5;
+        return constants$3443.const$5;
     }
     /**
      * {@snippet :
@@ -6311,7 +6491,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USED() {
-        return constants$3439.const$0;
+        return constants$3444.const$0;
     }
     /**
      * {@snippet :
@@ -6319,7 +6499,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_TYPE() {
-        return constants$3439.const$1;
+        return constants$3444.const$1;
     }
     /**
      * {@snippet :
@@ -6327,7 +6507,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_READONLY() {
-        return constants$3439.const$2;
+        return constants$3444.const$2;
     }
     /**
      * {@snippet :
@@ -6335,7 +6515,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW() {
-        return constants$3439.const$3;
+        return constants$3444.const$3;
     }
     /**
      * {@snippet :
@@ -6343,7 +6523,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE() {
-        return constants$3439.const$4;
+        return constants$3444.const$4;
     }
     /**
      * {@snippet :
@@ -6351,7 +6531,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_GVFS_BACKEND() {
-        return constants$3439.const$5;
+        return constants$3444.const$5;
     }
     /**
      * {@snippet :
@@ -6359,7 +6539,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_SELINUX_CONTEXT() {
-        return constants$3440.const$0;
+        return constants$3445.const$0;
     }
     /**
      * {@snippet :
@@ -6367,7 +6547,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT() {
-        return constants$3440.const$1;
+        return constants$3445.const$1;
     }
     /**
      * {@snippet :
@@ -6375,7 +6555,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TRASH_ORIG_PATH() {
-        return constants$3440.const$2;
+        return constants$3445.const$2;
     }
     /**
      * {@snippet :
@@ -6383,7 +6563,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TRASH_DELETION_DATE() {
-        return constants$3440.const$3;
+        return constants$3445.const$3;
     }
     /**
      * {@snippet :
@@ -6391,7 +6571,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_RECENT_MODIFIED() {
-        return constants$3440.const$4;
+        return constants$3445.const$4;
     }
     /**
      * {@snippet :
@@ -6399,7 +6579,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MEMORY_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$3440.const$5;
+        return constants$3445.const$5;
     }
     /**
      * {@snippet :
@@ -6407,7 +6587,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_ATTRIBUTE_ACTION() {
-        return constants$3441.const$0;
+        return constants$3446.const$0;
     }
     /**
      * {@snippet :
@@ -6415,7 +6595,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_ATTRIBUTE_ACTION_NAMESPACE() {
-        return constants$3441.const$1;
+        return constants$3446.const$1;
     }
     /**
      * {@snippet :
@@ -6423,7 +6603,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_ATTRIBUTE_TARGET() {
-        return constants$3441.const$2;
+        return constants$3446.const$2;
     }
     /**
      * {@snippet :
@@ -6431,7 +6611,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_ATTRIBUTE_LABEL() {
-        return constants$3441.const$3;
+        return constants$3446.const$3;
     }
     /**
      * {@snippet :
@@ -6439,7 +6619,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_ATTRIBUTE_ICON() {
-        return constants$3441.const$4;
+        return constants$3446.const$4;
     }
     /**
      * {@snippet :
@@ -6447,7 +6627,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_LINK_SUBMENU() {
-        return constants$3441.const$5;
+        return constants$3446.const$5;
     }
     /**
      * {@snippet :
@@ -6455,7 +6635,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_LINK_SECTION() {
-        return constants$3442.const$0;
+        return constants$3447.const$0;
     }
     /**
      * {@snippet :
@@ -6471,7 +6651,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$3442.const$1;
+        return constants$3447.const$1;
     }
     /**
      * {@snippet :
@@ -6479,7 +6659,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$3442.const$2;
+        return constants$3447.const$2;
     }
     /**
      * {@snippet :
@@ -6487,7 +6667,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_NETWORK_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$3442.const$3;
+        return constants$3447.const$3;
     }
     /**
      * {@snippet :
@@ -6495,7 +6675,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$3442.const$4;
+        return constants$3447.const$4;
     }
     /**
      * {@snippet :
@@ -6503,7 +6683,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_PROXY_EXTENSION_POINT_NAME() {
-        return constants$3442.const$5;
+        return constants$3447.const$5;
     }
     /**
      * {@snippet :
@@ -6511,7 +6691,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_PROXY_RESOLVER_EXTENSION_POINT_NAME() {
-        return constants$3443.const$0;
+        return constants$3448.const$0;
     }
     /**
      * {@snippet :
@@ -6519,7 +6699,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_TLS_BACKEND_EXTENSION_POINT_NAME() {
-        return constants$3443.const$1;
+        return constants$3448.const$1;
     }
     /**
      * {@snippet :
@@ -6527,7 +6707,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER() {
-        return constants$3443.const$2;
+        return constants$3448.const$2;
     }
     /**
      * {@snippet :
@@ -6535,7 +6715,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT() {
-        return constants$3443.const$3;
+        return constants$3448.const$3;
     }
     /**
      * {@snippet :
@@ -6543,7 +6723,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VFS_EXTENSION_POINT_NAME() {
-        return constants$3443.const$4;
+        return constants$3448.const$4;
     }
     /**
      * {@snippet :
@@ -6551,7 +6731,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_HAL_UDI() {
-        return constants$3443.const$5;
+        return constants$3448.const$5;
     }
     /**
      * {@snippet :
@@ -6559,7 +6739,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE() {
-        return constants$3424.const$1;
+        return constants$3429.const$1;
     }
     /**
      * {@snippet :
@@ -6567,7 +6747,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_LABEL() {
-        return constants$3441.const$3;
+        return constants$3446.const$3;
     }
     /**
      * {@snippet :
@@ -6575,7 +6755,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_UUID() {
-        return constants$3444.const$0;
+        return constants$3449.const$0;
     }
     /**
      * {@snippet :
@@ -6583,7 +6763,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT() {
-        return constants$3444.const$1;
+        return constants$3449.const$1;
     }
     /**
      * {@snippet :
@@ -6591,15 +6771,15 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_CLASS() {
-        return constants$3444.const$2;
+        return constants$3449.const$2;
     }
     /**
      * {@snippet :
-     * #define PANGO_VERSION_STRING "1.50.14"
+     * #define PANGO_VERSION_STRING "1.51.0"
      * }
      */
     public static MemorySegment PANGO_VERSION_STRING() {
-        return constants$3444.const$3;
+        return constants$3449.const$3;
     }
     /**
      * {@snippet :
@@ -6811,35 +6991,35 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define PANGO_VERSION_CUR_STABLE 78336
+     * #define PANGO_VERSION_CUR_STABLE 78848
      * }
      */
     public static int PANGO_VERSION_CUR_STABLE() {
-        return (int)78336L;
+        return (int)78848L;
     }
     /**
      * {@snippet :
-     * #define PANGO_VERSION_PREV_STABLE 77824
+     * #define PANGO_VERSION_PREV_STABLE 78336
      * }
      */
     public static int PANGO_VERSION_PREV_STABLE() {
-        return (int)77824L;
+        return (int)78336L;
     }
     /**
      * {@snippet :
-     * #define PANGO_VERSION_MIN_REQUIRED 78336
+     * #define PANGO_VERSION_MIN_REQUIRED 78848
      * }
      */
     public static int PANGO_VERSION_MIN_REQUIRED() {
-        return (int)78336L;
+        return (int)78848L;
     }
     /**
      * {@snippet :
-     * #define PANGO_VERSION_MAX_ALLOWED 78336
+     * #define PANGO_VERSION_MAX_ALLOWED 78848
      * }
      */
     public static int PANGO_VERSION_MAX_ALLOWED() {
-        return (int)78336L;
+        return (int)78848L;
     }
     /**
      * {@snippet :
@@ -7303,7 +7483,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment HB_LANGUAGE_INVALID() {
-        return constants$3413.const$1;
+        return constants$3418.const$1;
     }
     /**
      * {@snippet :
@@ -7411,11 +7591,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define HB_VERSION_STRING "8.1.1"
+     * #define HB_VERSION_STRING "8.2.2"
      * }
      */
     public static MemorySegment HB_VERSION_STRING() {
-        return constants$3444.const$4;
+        return constants$3449.const$4;
     }
     /**
      * {@snippet :
@@ -7472,238 +7652,6 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      */
     public static double PANGO_SCALE_XX_LARGE() {
         return 1.728d;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_GLYPH_EMPTY 268435455
-     * }
-     */
-    public static int PANGO_GLYPH_EMPTY() {
-        return (int)268435455L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_GLYPH_INVALID_INPUT 4294967295
-     * }
-     */
-    public static int PANGO_GLYPH_INVALID_INPUT() {
-        return (int)4294967295L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_GLYPH_UNKNOWN_FLAG 268435456
-     * }
-     */
-    public static int PANGO_GLYPH_UNKNOWN_FLAG() {
-        return (int)268435456L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING 0
-     * }
-     */
-    public static int PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_ATTR_INDEX_TO_TEXT_END 4294967295
-     * }
-     */
-    public static int PANGO_ATTR_INDEX_TO_TEXT_END() {
-        return (int)4294967295L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_ANALYSIS_FLAG_CENTERED_BASELINE 1
-     * }
-     */
-    public static int PANGO_ANALYSIS_FLAG_CENTERED_BASELINE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_ANALYSIS_FLAG_IS_ELLIPSIS 2
-     * }
-     */
-    public static int PANGO_ANALYSIS_FLAG_IS_ELLIPSIS() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_ANALYSIS_FLAG_NEED_HYPHEN 4
-     * }
-     */
-    public static int PANGO_ANALYSIS_FLAG_NEED_HYPHEN() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_RENDER_TYPE_NONE "PangoRenderNone"
-     * }
-     */
-    public static MemorySegment PANGO_RENDER_TYPE_NONE() {
-        return constants$3444.const$5;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_ENGINE_TYPE_LANG "PangoEngineLang"
-     * }
-     */
-    public static MemorySegment PANGO_ENGINE_TYPE_LANG() {
-        return constants$3445.const$0;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_ENGINE_TYPE_SHAPE "PangoEngineShape"
-     * }
-     */
-    public static MemorySegment PANGO_ENGINE_TYPE_SHAPE() {
-        return constants$3445.const$1;
-    }
-    /**
-     * {@snippet :
-     * #define EOF -1
-     * }
-     */
-    public static int EOF() {
-        return (int)-1L;
-    }
-    /**
-     * {@snippet :
-     * #define P_tmpdir "/tmp"
-     * }
-     */
-    public static MemorySegment P_tmpdir() {
-        return constants$3445.const$2;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_VERSION 15014
-     * }
-     */
-    public static int PANGO_VERSION() {
-        return (int)15014L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_FONT_TYPE_ATSUI 3
-     * }
-     */
-    public static int CAIRO_FONT_TYPE_ATSUI() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_VERSION 11708
-     * }
-     */
-    public static int CAIRO_VERSION() {
-        return (int)11708L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_VERSION_STRING "1.17.8"
-     * }
-     */
-    public static MemorySegment CAIRO_VERSION_STRING() {
-        return constants$3445.const$3;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_TAG_DEST "cairo.dest"
-     * }
-     */
-    public static MemorySegment CAIRO_TAG_DEST() {
-        return constants$3445.const$4;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_TAG_LINK "Link"
-     * }
-     */
-    public static MemorySegment CAIRO_TAG_LINK() {
-        return constants$3421.const$5;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_JPEG "image/jpeg"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_JPEG() {
-        return constants$3445.const$5;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_PNG "image/png"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_PNG() {
-        return constants$3446.const$0;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_JP2 "image/jp2"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_JP2() {
-        return constants$3446.const$1;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_URI "text/x-uri"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_URI() {
-        return constants$3446.const$2;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_UNIQUE_ID "application/x-cairo.uuid"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_UNIQUE_ID() {
-        return constants$3446.const$3;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_JBIG2 "application/x-cairo.jbig2"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_JBIG2() {
-        return constants$3446.const$4;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_JBIG2_GLOBAL "application/x-cairo.jbig2-global"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL() {
-        return constants$3446.const$5;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID "application/x-cairo.jbig2-global-id"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID() {
-        return constants$3447.const$0;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_CCITT_FAX "image/g3fax"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX() {
-        return constants$3447.const$1;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_CCITT_FAX_PARAMS "application/x-cairo.ccitt.params"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX_PARAMS() {
-        return constants$3447.const$2;
     }
 }
 

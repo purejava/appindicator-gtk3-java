@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2448 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2448() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkEntryClass.delete_from_cursor.class, "apply", constants$467.const$3);
-    static final VarHandle const$1 = constants$2446.const$3.varHandle(MemoryLayout.PathElement.groupElement("delete_from_cursor"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkEntryClass.backspace.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$2446.const$3.varHandle(MemoryLayout.PathElement.groupElement("backspace"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkEntryClass.cut_clipboard.class, "apply", constants$13.const$1);
-    static final VarHandle const$5 = constants$2446.const$3.varHandle(MemoryLayout.PathElement.groupElement("cut_clipboard"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_image_clear",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_image_set_from_file",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_image_set_from_resource",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_image_set_from_pixbuf",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_image_set_from_stock",
+        constants$164.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_image_set_from_icon_set",
+        constants$164.const$5
+    );
 }
 
 

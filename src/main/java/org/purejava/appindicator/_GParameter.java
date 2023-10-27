@@ -18,10 +18,10 @@ import java.lang.invoke.VarHandle;
 public class _GParameter {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$575.const$1;
+        return constants$577.const$4;
     }
     public static VarHandle name$VH() {
-        return constants$575.const$2;
+        return constants$577.const$5;
     }
     /**
      * Getter for field:
@@ -30,7 +30,7 @@ public class _GParameter {
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$575.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$577.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -39,13 +39,13 @@ public class _GParameter {
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        constants$575.const$2.set(seg, x);
+        constants$577.const$5.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$575.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$577.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$575.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$577.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment value$slice(MemorySegment seg) {
         return seg.asSlice(8, 24);

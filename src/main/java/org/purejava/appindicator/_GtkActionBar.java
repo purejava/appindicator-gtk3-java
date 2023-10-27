@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkActionBar {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2268.const$4;
+        return constants$2273.const$4;
     }
     public static MemorySegment bin$slice(MemorySegment seg) {
         return seg.asSlice(0, 48);

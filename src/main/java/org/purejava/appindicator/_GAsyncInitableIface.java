@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _GAsyncInitableIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$754.const$0;
+        return constants$757.const$0;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -33,13 +33,13 @@ public class _GAsyncInitableIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(init_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$754.const$1, fi, constants$281.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$757.const$1, fi, constants$282.const$1, scope);
         }
         static init_async ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    constants$754.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$757.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -48,7 +48,7 @@ public class _GAsyncInitableIface {
     }
 
     public static VarHandle init_async$VH() {
-        return constants$754.const$3;
+        return constants$757.const$3;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GAsyncInitableIface {
      * }
      */
     public static MemorySegment init_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$754.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$757.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GAsyncInitableIface {
      * }
      */
     public static void init_async$set(MemorySegment seg, MemorySegment x) {
-        constants$754.const$3.set(seg, x);
+        constants$757.const$3.set(seg, x);
     }
     public static MemorySegment init_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$754.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$757.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void init_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$754.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$757.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static init_async init_async(MemorySegment segment, Arena scope) {
         return init_async.ofAddress(init_async$get(segment), scope);
@@ -86,7 +86,7 @@ public class _GAsyncInitableIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(init_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$754.const$4, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$757.const$4, fi, constants$12.const$2, scope);
         }
         static init_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -101,7 +101,7 @@ public class _GAsyncInitableIface {
     }
 
     public static VarHandle init_finish$VH() {
-        return constants$754.const$5;
+        return constants$757.const$5;
     }
     /**
      * Getter for field:
@@ -110,7 +110,7 @@ public class _GAsyncInitableIface {
      * }
      */
     public static MemorySegment init_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$754.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$757.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -119,13 +119,13 @@ public class _GAsyncInitableIface {
      * }
      */
     public static void init_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$754.const$5.set(seg, x);
+        constants$757.const$5.set(seg, x);
     }
     public static MemorySegment init_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$754.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$757.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void init_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$754.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$757.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static init_finish init_finish(MemorySegment segment, Arena scope) {
         return init_finish.ofAddress(init_finish$get(segment), scope);

@@ -2,26 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_SHORT;
+import java.lang.invoke.MethodHandle;
 final class constants$3373 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3373() {}
-    static final VarHandle const$0 = constants$3372.const$1.varHandle(MemoryLayout.PathElement.groupElement("bottom_attach"));
-    static final VarHandle const$1 = constants$3372.const$1.varHandle(MemoryLayout.PathElement.groupElement("xpadding"));
-    static final VarHandle const$2 = constants$3372.const$1.varHandle(MemoryLayout.PathElement.groupElement("ypadding"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        JAVA_SHORT.withName("requisition"),
-        JAVA_SHORT.withName("allocation"),
-        JAVA_SHORT.withName("spacing"),
-        MemoryLayout.paddingLayout(2)
-    ).withName("_GtkTableRowCol");
-    static final VarHandle const$4 = constants$3373.const$3.varHandle(MemoryLayout.PathElement.groupElement("requisition"));
-    static final VarHandle const$5 = constants$3373.const$3.varHandle(MemoryLayout.PathElement.groupElement("allocation"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_style",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_widget_modify_style",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_modifier_style",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_widget_modify_fg",
+        constants$42.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_widget_modify_bg",
+        constants$42.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_widget_modify_text",
+        constants$42.const$4
+    );
 }
 
 

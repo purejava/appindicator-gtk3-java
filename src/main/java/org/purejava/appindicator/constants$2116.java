@@ -2,28 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2116 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2116() {}
-    static final VarHandle const$0 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("drag_data_get"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkWidgetClass.drag_data_delete.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("drag_data_delete"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass.drag_leave.class, "apply", constants$164.const$5);
-    static final VarHandle const$4 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("drag_leave"));
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass.unmap_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$1 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("unmap_event"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkWidgetClass.property_notify_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$3 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("property_notify_event"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWidgetClass.selection_clear_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$5 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("selection_clear_event"));
 }
 
 

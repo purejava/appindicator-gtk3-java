@@ -8,28 +8,28 @@ final class constants$2253 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2253() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_label_set_angle",
-        constants$689.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_label_get_angle",
-        constants$67.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_label_select_region",
-        constants$467.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_label_get_selection_bounds",
-        constants$12.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_label_get_layout",
+        "gtk_label_get_attributes",
         constants$5.const$2
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_label_set_label",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_label_get_label",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_label_set_markup",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_label_set_use_markup",
+        constants$40.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_label_get_layout_offsets",
-        constants$14.const$3
+        "gtk_label_get_use_markup",
+        constants$10.const$5
     );
 }
 

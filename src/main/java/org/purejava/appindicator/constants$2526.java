@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2526 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2526() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkButtonBoxClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2525.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkButtonBoxClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$2525.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkButtonBoxClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$2525.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_get_n_pages",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_get_nth_page",
+        constants$21.const$3
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_prepend_page",
+        constants$9.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_append_page",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_insert_page",
+        constants$62.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_remove_page",
+        constants$40.const$2
+    );
 }
 
 

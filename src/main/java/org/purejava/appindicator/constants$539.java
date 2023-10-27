@@ -4,6 +4,7 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
+import java.lang.foreign.UnionLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
@@ -13,22 +14,10 @@ final class constants$539 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$539() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_unlock",
-        constants$13.const$1
+        "g_static_mutex_get_mutex_impl",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_lock_full",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_unlock_full",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_free",
-        constants$13.const$1
-    );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
+    static final StructLayout const$1 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             RuntimeHelper.POINTER.withName("mutex"),
             MemoryLayout.unionLayout(
@@ -48,14 +37,20 @@ final class constants$539 {
                 JAVA_LONG.withName("__align")
             ).withName("unused")
         ).withName("mutex"),
-        RuntimeHelper.POINTER.withName("read_cond"),
-        RuntimeHelper.POINTER.withName("write_cond"),
-        JAVA_INT.withName("read_counter"),
-        JAVA_INT.withName("have_writer"),
-        JAVA_INT.withName("want_to_read"),
-        JAVA_INT.withName("want_to_write")
-    ).withName("_GStaticRWLock");
-    static final VarHandle const$5 = constants$539.const$4.varHandle(MemoryLayout.PathElement.groupElement("read_cond"));
+        JAVA_INT.withName("depth"),
+        MemoryLayout.paddingLayout(4),
+        MemoryLayout.unionLayout(
+            JAVA_LONG.withName("owner"),
+            JAVA_DOUBLE.withName("dummy")
+        ).withName("unused")
+    ).withName("_GStaticRecMutex");
+    static final VarHandle const$2 = constants$539.const$1.varHandle(MemoryLayout.PathElement.groupElement("depth"));
+    static final UnionLayout const$3 = MemoryLayout.unionLayout(
+        JAVA_LONG.withName("owner"),
+        JAVA_DOUBLE.withName("dummy")
+    ).withName("");
+    static final VarHandle const$4 = constants$539.const$3.varHandle(MemoryLayout.PathElement.groupElement("owner"));
+    static final VarHandle const$5 = constants$539.const$3.varHandle(MemoryLayout.PathElement.groupElement("dummy"));
 }
 
 

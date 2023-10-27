@@ -4,60 +4,36 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
-import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1604 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1604() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_engine_get_type",
-        constants$3.const$5
-    );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("glyph"),
         MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    RuntimeHelper.POINTER.withName("g_class")
-                ).withName("g_type_instance"),
-                JAVA_INT.withName("ref_count"),
-                MemoryLayout.paddingLayout(4),
-                RuntimeHelper.POINTER.withName("qdata")
-            ).withName("parent_instance")
-        ).withName("parent_instance")
-    ).withName("_PangoEngineLang");
+            JAVA_INT.withName("width"),
+            JAVA_INT.withName("x_offset"),
+            JAVA_INT.withName("y_offset")
+        ).withName("geometry"),
+        MemoryLayout.structLayout(
+            MemoryLayout.paddingLayout(4)
+        ).withName("attr")
+    ).withName("_PangoGlyphInfo");
+    static final VarHandle const$1 = constants$1604.const$0.varHandle(MemoryLayout.PathElement.groupElement("glyph"));
     static final StructLayout const$2 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    JAVA_LONG.withName("g_type")
-                ).withName("g_type_class"),
-                RuntimeHelper.POINTER.withName("construct_properties"),
-                RuntimeHelper.POINTER.withName("constructor"),
-                RuntimeHelper.POINTER.withName("set_property"),
-                RuntimeHelper.POINTER.withName("get_property"),
-                RuntimeHelper.POINTER.withName("dispose"),
-                RuntimeHelper.POINTER.withName("finalize"),
-                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-                RuntimeHelper.POINTER.withName("notify"),
-                RuntimeHelper.POINTER.withName("constructed"),
-                JAVA_LONG.withName("flags"),
-                JAVA_LONG.withName("n_construct_properties"),
-                RuntimeHelper.POINTER.withName("pspecs"),
-                JAVA_LONG.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-            ).withName("parent_class")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("script_break")
-    ).withName("_PangoEngineLangClass");
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoEngineLangClass.script_break.class, "apply", constants$1603.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$1603.const$2
-    );
-    static final VarHandle const$5 = constants$1604.const$2.varHandle(MemoryLayout.PathElement.groupElement("script_break"));
+        JAVA_INT.withName("num_glyphs"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("glyphs"),
+        RuntimeHelper.POINTER.withName("log_clusters"),
+        JAVA_INT.withName("space"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_PangoGlyphString");
+    static final VarHandle const$3 = constants$1604.const$2.varHandle(MemoryLayout.PathElement.groupElement("num_glyphs"));
+    static final VarHandle const$4 = constants$1604.const$2.varHandle(MemoryLayout.PathElement.groupElement("glyphs"));
+    static final VarHandle const$5 = constants$1604.const$2.varHandle(MemoryLayout.PathElement.groupElement("log_clusters"));
 }
 
 

@@ -8,28 +8,28 @@ final class constants$2951 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2951() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_type",
-        constants$3.const$5
+        "gtk_places_sidebar_remove_shortcut",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_new",
-        constants$35.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_copy",
+        "gtk_places_sidebar_list_shortcuts",
         constants$5.const$2
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_places_sidebar_get_nth_bookmark",
+        constants$21.const$3
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_new_from_file",
-        constants$5.const$5
+        "gtk_places_sidebar_set_drop_targets_visible",
+        constants$42.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_load_file",
-        constants$12.const$2
+        "gtk_places_sidebar_get_show_trash",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_to_file",
-        constants$12.const$2
+        "gtk_places_sidebar_set_show_trash",
+        constants$40.const$2
     );
 }
 

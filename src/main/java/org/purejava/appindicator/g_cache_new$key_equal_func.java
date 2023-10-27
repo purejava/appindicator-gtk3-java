@@ -13,7 +13,7 @@ public interface g_cache_new$key_equal_func {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_cache_new$key_equal_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$494.const$2, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$496.const$0, fi, constants$9.const$0, scope);
     }
     static g_cache_new$key_equal_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

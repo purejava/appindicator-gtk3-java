@@ -13,7 +13,7 @@ public interface gtk_tree_view_insert_column_with_data_func$dnotify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_tree_view_insert_column_with_data_func$dnotify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2478.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2483.const$5, fi, constants$13.const$1, scope);
     }
     static gtk_tree_view_insert_column_with_data_func$dnotify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

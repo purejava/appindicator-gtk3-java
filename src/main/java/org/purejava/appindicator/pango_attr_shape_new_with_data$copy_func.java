@@ -13,7 +13,7 @@ public interface pango_attr_shape_new_with_data$copy_func {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(pango_attr_shape_new_with_data$copy_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1572.const$0, fi, constants$5.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1577.const$0, fi, constants$5.const$2, scope);
     }
     static pango_attr_shape_new_with_data$copy_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

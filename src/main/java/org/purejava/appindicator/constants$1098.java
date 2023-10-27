@@ -9,21 +9,12 @@ final class constants$1098 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1098() {}
-    static final VarHandle const$0 = constants$1097.const$4.varHandle(MemoryLayout.PathElement.groupElement("to_string"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GInetAddressClass.to_bytes.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$1097.const$4.varHandle(MemoryLayout.PathElement.groupElement("to_bytes"));
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_from_string",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_from_bytes",
-        constants$21.const$3
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1094.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1094.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1094.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
 }
 
 

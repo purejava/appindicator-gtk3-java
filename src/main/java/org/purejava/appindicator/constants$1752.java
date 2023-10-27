@@ -2,34 +2,42 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1752 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1752() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_region_status",
-        constants$10.const$5
+        "cairo_pattern_get_rgba",
+        constants$165.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_region_get_extents",
-        constants$13.const$4
+        "cairo_pattern_get_surface",
+        constants$9.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_region_num_rectangles",
-        constants$10.const$5
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_region_get_rectangle",
-        constants$42.const$4
+        "cairo_pattern_get_color_stop_rgba",
+        constants$1752.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_region_is_empty",
-        constants$10.const$5
+        "cairo_pattern_get_color_stop_count",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_region_contains_rectangle",
-        constants$9.const$0
+        "cairo_pattern_get_linear_points",
+        constants$165.const$2
     );
 }
 

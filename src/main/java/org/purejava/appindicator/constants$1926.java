@@ -8,28 +8,28 @@ final class constants$1926 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1926() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_version",
-        constants$14.const$3
+        "gdk_subpixel_layout_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_is_legacy",
-        constants$10.const$5
+        "gdk_prop_mode_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_set_required_version",
-        constants$467.const$3
+        "gdk_seat_capabilities_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_required_version",
-        constants$14.const$3
+        "gdk_byte_order_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_set_debug_enabled",
-        constants$40.const$2
+        "gdk_modifier_type_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_debug_enabled",
-        constants$10.const$5
+        "gdk_modifier_intent_get_type",
+        constants$3.const$5
     );
 }
 

@@ -3,26 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$874 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$874() {}
-    static final VarHandle const$0 = constants$873.const$0.varHandle(MemoryLayout.PathElement.groupElement("set_object"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusInterfaceIface.dup_object.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$873.const$0.varHandle(MemoryLayout.PathElement.groupElement("dup_object"));
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_get_type",
-        constants$3.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_error_strip_remote_error",
+        constants$10.const$5
     );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("error_code"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("dbus_error_name")
+    ).withName("_GDBusErrorEntry");
+    static final VarHandle const$2 = constants$874.const$1.varHandle(MemoryLayout.PathElement.groupElement("error_code"));
+    static final VarHandle const$3 = constants$874.const$1.varHandle(MemoryLayout.PathElement.groupElement("dbus_error_name"));
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_get_info",
-        constants$5.const$2
+        "g_dbus_error_register_error",
+        constants$288.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_get_object",
-        constants$5.const$2
+        "g_dbus_error_unregister_error",
+        constants$288.const$4
     );
 }
 

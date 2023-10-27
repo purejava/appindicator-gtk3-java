@@ -9,12 +9,12 @@ final class constants$2017 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2017() {}
-    static final VarHandle const$0 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("text_caret_moved"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTextIface.text_selection_changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("text_selection_changed"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTextIface.text_attributes_changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$4 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("text_attributes_changed"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTextIface.get_range_extents.class, "apply", constants$1954.const$1);
+    static final VarHandle const$0 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_character_at_offset"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTextIface.get_text_before_offset.class, "apply", constants$1425.const$2);
+    static final VarHandle const$2 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_text_before_offset"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTextIface.get_caret_offset.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_caret_offset"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTextIface.get_run_attributes.class, "apply", constants$180.const$0);
 }
 
 

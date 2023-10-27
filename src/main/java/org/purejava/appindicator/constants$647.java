@@ -10,37 +10,24 @@ final class constants$647 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$647() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_binding_group_bind_full$transform_to.class, "apply", constants$34.const$5);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_binding_group_bind_full$transform_from.class, "apply", constants$34.const$5);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_binding_group_bind_full$user_data_destroy.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_binding_unbind",
+        constants$13.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_binding_group_bind_full",
-        constants$647.const$3
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_object_bind_property",
+        constants$647.const$1
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_binding_group_bind_with_closures",
-        constants$647.const$5
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_object_bind_property_full$transform_to.class, "apply", constants$34.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_object_bind_property_full$transform_from.class, "apply", constants$34.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_object_bind_property_full$notify.class, "apply", constants$13.const$1);
 }
 
 

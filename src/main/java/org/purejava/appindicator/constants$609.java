@@ -11,29 +11,33 @@ final class constants$609 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$609() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_signal_name",
+        constants$24.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_signal_connect_closure_by_id",
-        constants$609.const$0
+        "g_signal_query",
+        constants$90.const$2
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_signal_list_ids",
+        constants$408.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_signal_is_valid_name",
+        constants$10.const$5
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
         RuntimeHelper.POINTER,
+        JAVA_LONG,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_signal_connect_closure",
-        constants$609.const$2
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_signal_parse_name",
+        constants$609.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_connect_data$c_handler.class, "apply", constants$7.const$5);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_signal_connect_data$destroy_data.class, "apply", constants$13.const$4);
 }
 
 

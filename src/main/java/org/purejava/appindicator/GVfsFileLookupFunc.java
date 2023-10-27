@@ -13,13 +13,13 @@ public interface GVfsFileLookupFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GVfsFileLookupFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1392.const$0, fi, constants$23.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$1396.const$1, fi, constants$23.const$0, scope);
     }
     static GVfsFileLookupFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
+                return (java.lang.foreign.MemorySegment)constants$734.const$5.invokeExact(symbol, _vfs, _identifier, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

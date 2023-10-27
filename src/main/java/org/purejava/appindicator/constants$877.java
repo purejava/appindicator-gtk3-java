@@ -9,20 +9,20 @@ final class constants$877 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$877() {}
-    static final VarHandle const$0 = constants$875.const$4.varHandle(MemoryLayout.PathElement.groupElement("flush"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusInterfaceSkeletonClass.g_authorize_method.class, "apply", constants$9.const$0);
-    static final VarHandle const$2 = constants$875.const$4.varHandle(MemoryLayout.PathElement.groupElement("g_authorize_method"));
+    static final VarHandle const$0 = constants$876.const$0.varHandle(MemoryLayout.PathElement.groupElement("set_object"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusInterfaceIface.dup_object.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$876.const$0.varHandle(MemoryLayout.PathElement.groupElement("dup_object"));
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_get_type",
+        "g_dbus_interface_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_get_flags",
-        constants$10.const$5
+        "g_dbus_interface_get_info",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_set_flags",
-        constants$40.const$2
+        "g_dbus_interface_get_object",
+        constants$5.const$2
     );
 }
 

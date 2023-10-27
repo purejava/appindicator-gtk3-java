@@ -6,12 +6,14 @@ import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$663 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$663() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
+    static final VarHandle const$0 = constants$662.const$5.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 RuntimeHelper.POINTER.withName("g_class")
@@ -27,17 +29,13 @@ final class constants$663 {
             JAVA_INT.withName("ref_count"),
             JAVA_INT.withName("param_id")
         ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("default_value"),
-        RuntimeHelper.POINTER.withName("cset_first"),
-        RuntimeHelper.POINTER.withName("cset_nth"),
-        JAVA_BYTE.withName("substitutor"),
-        MemoryLayout.paddingLayout(7)
-    ).withName("_GParamSpecString");
-    static final VarHandle const$1 = constants$663.const$0.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
-    static final VarHandle const$2 = constants$663.const$0.varHandle(MemoryLayout.PathElement.groupElement("cset_first"));
-    static final VarHandle const$3 = constants$663.const$0.varHandle(MemoryLayout.PathElement.groupElement("cset_nth"));
-    static final VarHandle const$4 = constants$663.const$0.varHandle(MemoryLayout.PathElement.groupElement("substitutor"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("enum_class"),
+        JAVA_INT.withName("default_value"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GParamSpecEnum");
+    static final VarHandle const$2 = constants$663.const$1.varHandle(MemoryLayout.PathElement.groupElement("enum_class"));
+    static final VarHandle const$3 = constants$663.const$1.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 RuntimeHelper.POINTER.withName("g_class")
@@ -52,8 +50,12 @@ final class constants$663 {
             RuntimeHelper.POINTER.withName("qdata"),
             JAVA_INT.withName("ref_count"),
             JAVA_INT.withName("param_id")
-        ).withName("parent_instance")
-    ).withName("_GParamSpecParam");
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("flags_class"),
+        JAVA_INT.withName("default_value"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GParamSpecFlags");
+    static final VarHandle const$5 = constants$663.const$4.varHandle(MemoryLayout.PathElement.groupElement("flags_class"));
 }
 
 

@@ -2,37 +2,26 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1731 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1731() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_surface_set_user_data$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_surface_set_user_data",
-        constants$34.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_stroke_callback",
+        constants$12.const$2
     );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_glyphs_callback$func.class, "apply", constants$14.const$3);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_mime_data",
-        constants$42.const$1
+        "cairo_surface_observer_add_glyphs_callback",
+        constants$12.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(cairo_surface_set_mime_data$destroy.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_flush_callback$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_flush_callback",
+        constants$12.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_surface_set_mime_data",
-        constants$1731.const$4
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_finish_callback$func.class, "apply", constants$14.const$3);
 }
 
 

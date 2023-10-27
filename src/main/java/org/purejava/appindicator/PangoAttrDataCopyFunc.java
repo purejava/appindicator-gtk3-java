@@ -13,7 +13,7 @@ public interface PangoAttrDataCopyFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(PangoAttrDataCopyFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1562.const$0, fi, constants$5.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1567.const$0, fi, constants$5.const$2, scope);
     }
     static PangoAttrDataCopyFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -9,21 +9,12 @@ final class constants$2037 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2037() {}
-    static final VarHandle const$0 = constants$2036.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_link_index"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkHypertextIface.link_selected.class, "apply", constants$40.const$2);
-    static final VarHandle const$2 = constants$2036.const$0.varHandle(MemoryLayout.PathElement.groupElement("link_selected"));
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_hypertext_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_hypertext_get_link",
-        constants$21.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_hypertext_get_n_links",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$2035.const$2.varHandle(MemoryLayout.PathElement.groupElement("is_valid"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_n_anchors.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$2035.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_n_anchors"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.link_state.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$2035.const$2.varHandle(MemoryLayout.PathElement.groupElement("link_state"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.is_selected_link.class, "apply", constants$10.const$5);
 }
 
 

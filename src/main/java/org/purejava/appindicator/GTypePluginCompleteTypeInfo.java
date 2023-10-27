@@ -13,13 +13,13 @@ public interface GTypePluginCompleteTypeInfo {
 
     void apply(java.lang.foreign.MemorySegment plugin, long g_type, java.lang.foreign.MemorySegment info, java.lang.foreign.MemorySegment value_table);
     static MemorySegment allocate(GTypePluginCompleteTypeInfo fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$680.const$0, fi, constants$679.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$682.const$4, fi, constants$682.const$3, scope);
     }
     static GTypePluginCompleteTypeInfo ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _plugin, long _g_type, java.lang.foreign.MemorySegment _info, java.lang.foreign.MemorySegment _value_table) -> {
             try {
-                constants$680.const$1.invokeExact(symbol, _plugin, _g_type, _info, _value_table);
+                constants$682.const$5.invokeExact(symbol, _plugin, _g_type, _info, _value_table);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

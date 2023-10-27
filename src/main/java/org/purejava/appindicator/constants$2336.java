@@ -3,42 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2336 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2336() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_cell_allocation",
-        constants$338.const$3
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+        JAVA_INT
     );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.activate.class, "apply", constants$2336.const$0);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_cell_at_position",
-        constants$2336.const$1
+        constants$2336.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_create_context",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_copy_context",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_request_mode",
-        constants$10.const$5
-    );
+    static final VarHandle const$3 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("activate"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellAreaClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
 }
 
 

@@ -13,7 +13,7 @@ public interface g_cclosure_new$destroy_data {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_cclosure_new$destroy_data fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$587.const$3, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$590.const$0, fi, constants$13.const$4, scope);
     }
     static g_cclosure_new$destroy_data ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

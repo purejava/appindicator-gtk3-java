@@ -8,28 +8,28 @@ final class constants$2200 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2200() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_icon",
-        constants$13.const$4
+        "gtk_window_set_skip_pager_hint",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_icon_name",
-        constants$13.const$4
+        "gtk_window_get_skip_pager_hint",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_icon_from_file",
-        constants$12.const$2
+        "gtk_window_set_urgency_hint",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_window_get_icon",
-        constants$5.const$2
+        "gtk_window_get_urgency_hint",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_window_get_icon_name",
-        constants$5.const$2
+        "gtk_window_set_accept_focus",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_default_icon_list",
-        constants$13.const$1
+        "gtk_window_get_accept_focus",
+        constants$10.const$5
     );
 }
 

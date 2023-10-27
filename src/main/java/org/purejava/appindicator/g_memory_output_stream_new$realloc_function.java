@@ -13,7 +13,7 @@ public interface g_memory_output_stream_new$realloc_function {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment data, long size);
     static MemorySegment allocate(g_memory_output_stream_new$realloc_function fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1143.const$3, fi, constants$21.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1147.const$0, fi, constants$21.const$1, scope);
     }
     static g_memory_output_stream_new$realloc_function ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

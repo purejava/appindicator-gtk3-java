@@ -9,12 +9,21 @@ final class constants$1231 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1231() {}
-    static final VarHandle const$0 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("reload"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name.class, "apply", constants$39.const$1);
-    static final VarHandle const$2 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_async.class, "apply", constants$331.const$1);
-    static final VarHandle const$4 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_async"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$0 = constants$1230.const$0.varHandle(MemoryLayout.PathElement.groupElement("lookup_async"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GProxyResolverInterface.lookup_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$2 = constants$1230.const$0.varHandle(MemoryLayout.PathElement.groupElement("lookup_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_proxy_resolver_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_proxy_resolver_get_default",
+        constants$35.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_proxy_resolver_is_supported",
+        constants$10.const$5
+    );
 }
 
 

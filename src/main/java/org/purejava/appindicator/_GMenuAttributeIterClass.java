@@ -18,7 +18,7 @@ import java.lang.invoke.VarHandle;
 public class _GMenuAttributeIterClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1150.const$0;
+        return constants$1153.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -32,7 +32,7 @@ public class _GMenuAttributeIterClass {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_next fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1150.const$1, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1153.const$4, fi, constants$12.const$2, scope);
         }
         static get_next ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -47,7 +47,7 @@ public class _GMenuAttributeIterClass {
     }
 
     public static VarHandle get_next$VH() {
-        return constants$1150.const$2;
+        return constants$1153.const$5;
     }
     /**
      * Getter for field:
@@ -56,7 +56,7 @@ public class _GMenuAttributeIterClass {
      * }
      */
     public static MemorySegment get_next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1150.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1153.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -65,13 +65,13 @@ public class _GMenuAttributeIterClass {
      * }
      */
     public static void get_next$set(MemorySegment seg, MemorySegment x) {
-        constants$1150.const$2.set(seg, x);
+        constants$1153.const$5.set(seg, x);
     }
     public static MemorySegment get_next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1150.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1153.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_next$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1150.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1153.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_next get_next(MemorySegment segment, Arena scope) {
         return get_next.ofAddress(get_next$get(segment), scope);

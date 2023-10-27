@@ -2,44 +2,26 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1745 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1745() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_move_to",
-        constants$1531.const$0
+        "cairo_raster_source_pattern_set_copy",
+        constants$13.const$4
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_get_copy$return.class, "apply", constants$12.const$2);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_set_control_point",
-        constants$1745.const$1
+        "cairo_raster_source_pattern_get_copy",
+        constants$5.const$2
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_set_finish$finish.class, "apply", constants$13.const$4);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_set_corner_color_rgb",
-        constants$1745.const$3
+        "cairo_raster_source_pattern_set_finish",
+        constants$13.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_set_corner_color_rgba",
-        constants$1702.const$0
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_get_finish$return.class, "apply", constants$13.const$4);
 }
 
 

@@ -2,33 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$289 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$289() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_unichar_decompose",
+        constants$10.const$3
+    );
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_unichar_fully_decompose",
+        constants$289.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
         "g_unicode_canonical_ordering",
         constants$25.const$3
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
         "g_unicode_canonical_decomposition",
         constants$24.const$4
     );
-    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("g_utf8_skip", RuntimeHelper.POINTER);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_utf8_get_char",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_utf8_get_char_validated",
-        constants$97.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_utf8_offset_to_pointer",
-        constants$21.const$1
-    );
+    static final MemorySegment const$5 = RuntimeHelper.lookupGlobalVariable("g_utf8_skip", RuntimeHelper.POINTER);
 }
 
 

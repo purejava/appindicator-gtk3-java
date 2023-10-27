@@ -9,12 +9,12 @@ final class constants$2970 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2970() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkPrintOperationClass.done.class, "apply", constants$40.const$2);
-    static final VarHandle const$1 = constants$2969.const$5.varHandle(MemoryLayout.PathElement.groupElement("done"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkPrintOperationClass.begin_print.class, "apply", constants$13.const$4);
-    static final VarHandle const$3 = constants$2969.const$5.varHandle(MemoryLayout.PathElement.groupElement("begin_print"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkPrintOperationClass.paginate.class, "apply", constants$9.const$0);
-    static final VarHandle const$5 = constants$2969.const$5.varHandle(MemoryLayout.PathElement.groupElement("paginate"));
+    static final VarHandle const$0 = constants$2969.const$2.varHandle(MemoryLayout.PathElement.groupElement("got_page_size"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface.render_page.class, "apply", constants$40.const$2);
+    static final VarHandle const$2 = constants$2969.const$2.varHandle(MemoryLayout.PathElement.groupElement("render_page"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface.is_selected.class, "apply", constants$11.const$4);
+    static final VarHandle const$4 = constants$2969.const$2.varHandle(MemoryLayout.PathElement.groupElement("is_selected"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface.end_preview.class, "apply", constants$13.const$1);
 }
 
 

@@ -2,27 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$502 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$502() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("func"),
-        RuntimeHelper.POINTER.withName("data"),
-        JAVA_INT.withName("joinable"),
-        JAVA_INT.withName("priority")
-    ).withName("_GThread");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GThread.func.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$502.const$0.varHandle(MemoryLayout.PathElement.groupElement("func"));
-    static final VarHandle const$3 = constants$502.const$0.varHandle(MemoryLayout.PathElement.groupElement("data"));
-    static final VarHandle const$4 = constants$502.const$0.varHandle(MemoryLayout.PathElement.groupElement("joinable"));
-    static final VarHandle const$5 = constants$502.const$0.varHandle(MemoryLayout.PathElement.groupElement("priority"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_relation_index$key_equal_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_relation_index",
+        constants$179.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_relation_insert",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_relation_delete",
+        constants$62.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_relation_select",
+        constants$32.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_relation_count",
+        constants$62.const$0
+    );
 }
 
 

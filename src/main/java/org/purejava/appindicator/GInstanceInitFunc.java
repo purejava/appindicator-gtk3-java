@@ -13,7 +13,7 @@ public interface GInstanceInitFunc {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GInstanceInitFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$552.const$3, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$554.const$0, fi, constants$13.const$4, scope);
     }
     static GInstanceInitFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

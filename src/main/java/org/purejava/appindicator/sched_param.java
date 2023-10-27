@@ -17,10 +17,10 @@ import java.lang.invoke.VarHandle;
 public class sched_param {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$512.const$5;
+        return constants$514.const$3;
     }
     public static VarHandle sched_priority$VH() {
-        return constants$513.const$0;
+        return constants$514.const$4;
     }
     /**
      * Getter for field:
@@ -29,7 +29,7 @@ public class sched_param {
      * }
      */
     public static int sched_priority$get(MemorySegment seg) {
-        return (int)constants$513.const$0.get(seg);
+        return (int)constants$514.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -38,13 +38,13 @@ public class sched_param {
      * }
      */
     public static void sched_priority$set(MemorySegment seg, int x) {
-        constants$513.const$0.set(seg, x);
+        constants$514.const$4.set(seg, x);
     }
     public static int sched_priority$get(MemorySegment seg, long index) {
-        return (int)constants$513.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$514.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void sched_priority$set(MemorySegment seg, long index, int x) {
-        constants$513.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$514.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -13,13 +13,13 @@ public interface gtk_tree_view_set_search_equal_func$search_equal_func {
 
     int apply(java.lang.foreign.MemorySegment model, int column, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment search_data);
     static MemorySegment allocate(gtk_tree_view_set_search_equal_func$search_equal_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2487.const$0, fi, constants$373.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2492.const$0, fi, constants$374.const$2, scope);
     }
     static gtk_tree_view_set_search_equal_func$search_equal_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _model, int _column, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _search_data) -> {
             try {
-                return (int)constants$1427.const$2.invokeExact(symbol, _model, _column, _key, _iter, _search_data);
+                return (int)constants$1431.const$3.invokeExact(symbol, _model, _column, _key, _iter, _search_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

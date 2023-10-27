@@ -8,28 +8,28 @@ final class constants$2481 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2481() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_row_activated",
-        constants$14.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_expand_all",
-        constants$13.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_collapse_all",
-        constants$13.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_expand_to_path",
+        "gtk_tree_view_set_hadjustment",
         constants$13.const$4
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_vadjustment",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_vadjustment",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_headers_visible",
+        constants$10.const$5
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_expand_row",
-        constants$62.const$0
+        "gtk_tree_view_set_headers_visible",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_collapse_row",
-        constants$9.const$0
+        "gtk_tree_view_columns_autosize",
+        constants$13.const$1
     );
 }
 

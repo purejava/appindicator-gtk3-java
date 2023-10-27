@@ -8,26 +8,23 @@ final class constants$1023 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1023() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_set_display_name_finish",
+        "g_file_query_info",
+        constants$980.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_query_info_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_query_info_async",
+        constants$783.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_query_info_finish",
         constants$23.const$0
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_delete",
-        constants$12.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_file_delete_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_delete_async",
-        constants$281.const$5
-    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_delete_finish",
-        constants$12.const$2
+        "g_file_query_filesystem_info",
+        constants$39.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_trash",
-        constants$12.const$2
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_query_filesystem_info_async$callback.class, "apply", constants$14.const$3);
 }
 
 

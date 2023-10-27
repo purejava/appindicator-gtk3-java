@@ -2,33 +2,25 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2547 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2547() {}
-    static final VarHandle const$0 = constants$2543.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_internal_child"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_builder_add_callback_symbol$callback_symbol.class, "apply", constants$7.const$5);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_buildable_get_type",
-        constants$3.const$5
+        "gtk_builder_add_callback_symbol",
+        constants$14.const$3
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_buildable_set_name",
-        constants$13.const$4
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_builder_add_callback_symbols$first_callback_symbol.class, "apply", constants$7.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_builder_add_callback_symbols",
+        constants$14.const$3
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_buildable_get_name",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_buildable_add_child",
-        constants$42.const$1
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_builder_lookup_callback_symbol$return.class, "apply", constants$7.const$5);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_buildable_set_buildable_property",
-        constants$42.const$1
+        "gtk_builder_lookup_callback_symbol",
+        constants$5.const$5
     );
 }
 

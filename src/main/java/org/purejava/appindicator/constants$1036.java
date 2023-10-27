@@ -7,23 +7,26 @@ final class constants$1036 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1036() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_stop_mountable$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_stop_mountable",
-        constants$380.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_stop_mountable_finish",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_eject_mountable_finish",
         constants$12.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_poll_mountable$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_eject_mountable_with_operation$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_eject_mountable_with_operation",
+        constants$381.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_eject_mountable_with_operation_finish",
+        constants$12.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_poll_mountable",
-        constants$42.const$1
+        "g_file_build_attribute_list_for_copy",
+        constants$180.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_poll_mountable_finish",
-        constants$12.const$2
+        "g_file_copy_attributes",
+        constants$862.const$1
     );
 }
 

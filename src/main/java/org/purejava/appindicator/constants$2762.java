@@ -8,28 +8,28 @@ final class constants$2762 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2762() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_icon_factory_remove_default",
-        constants$13.const$1
+        "gtk_header_bar_set_title",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_icon_factory_lookup_default",
+        "gtk_header_bar_get_title",
         constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_lookup",
-        constants$10.const$3
+        "gtk_header_bar_set_subtitle",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_lookup_for_settings",
-        constants$11.const$0
+        "gtk_header_bar_get_subtitle",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_register",
-        constants$49.const$0
+        "gtk_header_bar_set_custom_title",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_register_alias",
-        constants$40.const$2
+        "gtk_header_bar_get_custom_title",
+        constants$5.const$2
     );
 }
 

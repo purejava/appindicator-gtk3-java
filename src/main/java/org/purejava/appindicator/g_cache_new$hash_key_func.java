@@ -13,7 +13,7 @@ public interface g_cache_new$hash_key_func {
 
     int apply(java.lang.foreign.MemorySegment key);
     static MemorySegment allocate(g_cache_new$hash_key_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$494.const$0, fi, constants$10.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$495.const$4, fi, constants$10.const$5, scope);
     }
     static g_cache_new$hash_key_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

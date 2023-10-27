@@ -13,7 +13,7 @@ public interface g_bus_own_name_on_connection$user_data_free_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_bus_own_name_on_connection$user_data_free_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$905.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$908.const$5, fi, constants$13.const$1, scope);
     }
     static g_bus_own_name_on_connection$user_data_free_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,27 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.MethodHandle;
 final class constants$1505 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1505() {}
-    static final VarHandle const$0 = constants$1504.const$3.varHandle(MemoryLayout.PathElement.groupElement("x_offset"));
-    static final VarHandle const$1 = constants$1504.const$3.varHandle(MemoryLayout.PathElement.groupElement("y_offset"));
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        JAVA_INT.withName("direction"),
-        JAVA_INT.withName("script"),
-        RuntimeHelper.POINTER.withName("language"),
-        RuntimeHelper.POINTER.withName("reserved1"),
-        RuntimeHelper.POINTER.withName("reserved2")
-    ).withName("hb_segment_properties_t");
-    static final VarHandle const$3 = constants$1505.const$2.varHandle(MemoryLayout.PathElement.groupElement("direction"));
-    static final VarHandle const$4 = constants$1505.const$2.varHandle(MemoryLayout.PathElement.groupElement("script"));
-    static final VarHandle const$5 = constants$1505.const$2.varHandle(MemoryLayout.PathElement.groupElement("language"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_set_funcs_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_font_set_funcs_data",
+        constants$14.const$3
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_set_scale",
+        constants$469.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_font_get_scale",
+        constants$14.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_font_set_ppem",
+        constants$469.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_get_ppem",
+        constants$14.const$3
+    );
 }
 
 

@@ -13,7 +13,7 @@ public interface g_io_scheduler_job_send_to_mainloop_async$func {
 
     int apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_io_scheduler_job_send_to_mainloop_async$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1128.const$4, fi, constants$10.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$1132.const$2, fi, constants$10.const$5, scope);
     }
     static g_io_scheduler_job_send_to_mainloop_async$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

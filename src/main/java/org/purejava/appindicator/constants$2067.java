@@ -5,66 +5,53 @@ package org.purejava.appindicator;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2067 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2067() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_stream",
-        constants$5.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_uri",
-        constants$5.const$5
-    );
-    static final StructLayout const$2 = MemoryLayout.structLayout(
+    static final StructLayout const$0 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("ref_at"),
-        RuntimeHelper.POINTER.withName("get_index_at"),
-        RuntimeHelper.POINTER.withName("get_column_at_index"),
-        RuntimeHelper.POINTER.withName("get_row_at_index"),
-        RuntimeHelper.POINTER.withName("get_n_columns"),
-        RuntimeHelper.POINTER.withName("get_n_rows"),
-        RuntimeHelper.POINTER.withName("get_column_extent_at"),
-        RuntimeHelper.POINTER.withName("get_row_extent_at"),
-        RuntimeHelper.POINTER.withName("get_caption"),
-        RuntimeHelper.POINTER.withName("get_column_description"),
-        RuntimeHelper.POINTER.withName("get_column_header"),
-        RuntimeHelper.POINTER.withName("get_row_description"),
-        RuntimeHelper.POINTER.withName("get_row_header"),
-        RuntimeHelper.POINTER.withName("get_summary"),
-        RuntimeHelper.POINTER.withName("set_caption"),
-        RuntimeHelper.POINTER.withName("set_column_description"),
-        RuntimeHelper.POINTER.withName("set_column_header"),
-        RuntimeHelper.POINTER.withName("set_row_description"),
-        RuntimeHelper.POINTER.withName("set_row_header"),
-        RuntimeHelper.POINTER.withName("set_summary"),
-        RuntimeHelper.POINTER.withName("get_selected_columns"),
-        RuntimeHelper.POINTER.withName("get_selected_rows"),
-        RuntimeHelper.POINTER.withName("is_column_selected"),
-        RuntimeHelper.POINTER.withName("is_row_selected"),
-        RuntimeHelper.POINTER.withName("is_selected"),
-        RuntimeHelper.POINTER.withName("add_row_selection"),
-        RuntimeHelper.POINTER.withName("remove_row_selection"),
-        RuntimeHelper.POINTER.withName("add_column_selection"),
-        RuntimeHelper.POINTER.withName("remove_column_selection"),
-        RuntimeHelper.POINTER.withName("row_inserted"),
-        RuntimeHelper.POINTER.withName("column_inserted"),
-        RuntimeHelper.POINTER.withName("row_deleted"),
-        RuntimeHelper.POINTER.withName("column_deleted"),
-        RuntimeHelper.POINTER.withName("row_reordered"),
-        RuntimeHelper.POINTER.withName("column_reordered"),
-        RuntimeHelper.POINTER.withName("model_changed")
-    ).withName("_AtkTableIface");
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTableIface.ref_at.class, "apply", constants$33.const$5);
-    static final VarHandle const$4 = constants$2067.const$2.varHandle(MemoryLayout.PathElement.groupElement("ref_at"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTableIface.get_index_at.class, "apply", constants$49.const$0);
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent")
+    ).withName("_AtkStateSetClass");
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_state_set_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_state_set_new",
+        constants$35.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_state_set_is_empty",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_state_set_add_state",
+        constants$11.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_state_set_add_states",
+        constants$164.const$5
+    );
 }
 
 

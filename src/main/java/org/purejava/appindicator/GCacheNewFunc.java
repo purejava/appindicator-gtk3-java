@@ -13,7 +13,7 @@ public interface GCacheNewFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GCacheNewFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$492.const$5, fi, constants$5.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$494.const$3, fi, constants$5.const$2, scope);
     }
     static GCacheNewFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

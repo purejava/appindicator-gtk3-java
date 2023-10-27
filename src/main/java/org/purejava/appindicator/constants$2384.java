@@ -2,25 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.MethodHandle;
 final class constants$2384 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2384() {}
-    static final VarHandle const$0 = constants$2383.const$5.varHandle(MemoryLayout.PathElement.groupElement("target"));
-    static final VarHandle const$1 = constants$2383.const$5.varHandle(MemoryLayout.PathElement.groupElement("flags"));
-    static final VarHandle const$2 = constants$2383.const$5.varHandle(MemoryLayout.PathElement.groupElement("info"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("target"),
-        JAVA_INT.withName("flags"),
-        JAVA_INT.withName("info")
-    ).withName("_GtkTargetEntry");
-    static final VarHandle const$4 = constants$2384.const$3.varHandle(MemoryLayout.PathElement.groupElement("target"));
-    static final VarHandle const$5 = constants$2384.const$3.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_cursor_position",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_cursor_positions",
+        constants$11.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_cursor_positions",
+        constants$11.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_visible_cursor_position",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_backward_visible_cursor_position",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_visible_cursor_positions",
+        constants$11.const$4
+    );
 }
 
 

@@ -2,30 +2,56 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$650 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$650() {}
-    static final VarHandle const$0 = constants$649.const$3.varHandle(MemoryLayout.PathElement.groupElement("value_nick"));
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        JAVA_INT.withName("value"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("value_name"),
-        RuntimeHelper.POINTER.withName("value_nick")
-    ).withName("_GFlagsValue");
-    static final VarHandle const$2 = constants$650.const$1.varHandle(MemoryLayout.PathElement.groupElement("value"));
-    static final VarHandle const$3 = constants$650.const$1.varHandle(MemoryLayout.PathElement.groupElement("value_name"));
-    static final VarHandle const$4 = constants$650.const$1.varHandle(MemoryLayout.PathElement.groupElement("value_nick"));
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_enum_get_value",
-        constants$21.const$3
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_binding_group_bind_full$user_data_destroy.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_binding_group_bind_full",
+        constants$650.const$1
+    );
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_binding_group_bind_with_closures",
+        constants$650.const$3
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type")
+        ).withName("g_type_class"),
+        JAVA_INT.withName("minimum"),
+        JAVA_INT.withName("maximum"),
+        JAVA_INT.withName("n_values"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("values")
+    ).withName("_GEnumClass");
 }
 
 

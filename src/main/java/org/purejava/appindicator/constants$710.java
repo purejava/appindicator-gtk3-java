@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$710 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$710() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_action_group_get_action_state_hint",
-        constants$5.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_action_group_get_action_enabled",
-        constants$9.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_action_group_get_action_state",
-        constants$5.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_action_group_change_action_state",
-        constants$14.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_action_group_activate_action",
-        constants$14.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_action_group_action_added",
-        constants$13.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GActionGroupInterface.action_added.class, "apply", constants$13.const$4);
+    static final VarHandle const$1 = constants$706.const$5.varHandle(MemoryLayout.PathElement.groupElement("action_added"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GActionGroupInterface.action_removed.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$706.const$5.varHandle(MemoryLayout.PathElement.groupElement("action_removed"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GActionGroupInterface.action_enabled_changed.class, "apply", constants$164.const$5);
+    static final VarHandle const$5 = constants$706.const$5.varHandle(MemoryLayout.PathElement.groupElement("action_enabled_changed"));
 }
 
 

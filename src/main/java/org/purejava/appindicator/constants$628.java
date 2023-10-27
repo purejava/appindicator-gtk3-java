@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$628 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$628() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_object_class_list_properties",
-        constants$5.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_object_class_override_property",
-        constants$42.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_object_class_install_properties",
-        constants$42.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_object_interface_install_property",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_object_interface_find_property",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_object_interface_list_properties",
-        constants$5.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GObjectClass.notify.class, "apply", constants$13.const$4);
+    static final VarHandle const$1 = constants$625.const$1.varHandle(MemoryLayout.PathElement.groupElement("notify"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GObjectClass.constructed.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$625.const$1.varHandle(MemoryLayout.PathElement.groupElement("constructed"));
+    static final VarHandle const$4 = constants$625.const$1.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+    static final VarHandle const$5 = constants$625.const$1.varHandle(MemoryLayout.PathElement.groupElement("n_construct_properties"));
 }
 
 

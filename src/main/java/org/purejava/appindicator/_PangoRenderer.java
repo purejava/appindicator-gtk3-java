@@ -22,13 +22,13 @@ import java.lang.invoke.VarHandle;
 public class _PangoRenderer {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1640.const$4;
+        return constants$1645.const$4;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);
     }
     public static VarHandle underline$VH() {
-        return constants$1640.const$5;
+        return constants$1645.const$5;
     }
     /**
      * Getter for field:
@@ -37,7 +37,7 @@ public class _PangoRenderer {
      * }
      */
     public static int underline$get(MemorySegment seg) {
-        return (int)constants$1640.const$5.get(seg);
+        return (int)constants$1645.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -46,16 +46,16 @@ public class _PangoRenderer {
      * }
      */
     public static void underline$set(MemorySegment seg, int x) {
-        constants$1640.const$5.set(seg, x);
+        constants$1645.const$5.set(seg, x);
     }
     public static int underline$get(MemorySegment seg, long index) {
-        return (int)constants$1640.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1645.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void underline$set(MemorySegment seg, long index, int x) {
-        constants$1640.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1645.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle strikethrough$VH() {
-        return constants$1641.const$0;
+        return constants$1646.const$0;
     }
     /**
      * Getter for field:
@@ -64,7 +64,7 @@ public class _PangoRenderer {
      * }
      */
     public static int strikethrough$get(MemorySegment seg) {
-        return (int)constants$1641.const$0.get(seg);
+        return (int)constants$1646.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -73,16 +73,16 @@ public class _PangoRenderer {
      * }
      */
     public static void strikethrough$set(MemorySegment seg, int x) {
-        constants$1641.const$0.set(seg, x);
+        constants$1646.const$0.set(seg, x);
     }
     public static int strikethrough$get(MemorySegment seg, long index) {
-        return (int)constants$1641.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1646.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void strikethrough$set(MemorySegment seg, long index, int x) {
-        constants$1641.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1646.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle active_count$VH() {
-        return constants$1641.const$1;
+        return constants$1646.const$1;
     }
     /**
      * Getter for field:
@@ -91,7 +91,7 @@ public class _PangoRenderer {
      * }
      */
     public static int active_count$get(MemorySegment seg) {
-        return (int)constants$1641.const$1.get(seg);
+        return (int)constants$1646.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -100,16 +100,16 @@ public class _PangoRenderer {
      * }
      */
     public static void active_count$set(MemorySegment seg, int x) {
-        constants$1641.const$1.set(seg, x);
+        constants$1646.const$1.set(seg, x);
     }
     public static int active_count$get(MemorySegment seg, long index) {
-        return (int)constants$1641.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1646.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void active_count$set(MemorySegment seg, long index, int x) {
-        constants$1641.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1646.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle matrix$VH() {
-        return constants$1641.const$2;
+        return constants$1646.const$2;
     }
     /**
      * Getter for field:
@@ -118,7 +118,7 @@ public class _PangoRenderer {
      * }
      */
     public static MemorySegment matrix$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1641.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1646.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -127,16 +127,16 @@ public class _PangoRenderer {
      * }
      */
     public static void matrix$set(MemorySegment seg, MemorySegment x) {
-        constants$1641.const$2.set(seg, x);
+        constants$1646.const$2.set(seg, x);
     }
     public static MemorySegment matrix$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1641.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1646.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void matrix$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1641.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1646.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle priv$VH() {
-        return constants$1641.const$3;
+        return constants$1646.const$3;
     }
     /**
      * Getter for field:
@@ -145,7 +145,7 @@ public class _PangoRenderer {
      * }
      */
     public static MemorySegment priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1641.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1646.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -154,13 +154,13 @@ public class _PangoRenderer {
      * }
      */
     public static void priv$set(MemorySegment seg, MemorySegment x) {
-        constants$1641.const$3.set(seg, x);
+        constants$1646.const$3.set(seg, x);
     }
     public static MemorySegment priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1641.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1646.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void priv$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1641.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1646.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

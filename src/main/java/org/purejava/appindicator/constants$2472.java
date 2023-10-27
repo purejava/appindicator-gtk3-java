@@ -9,12 +9,12 @@ final class constants$2472 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2472() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTreeViewClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2466.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeViewClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$2466.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeViewClass._gtk_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$2466.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.test_collapse_row.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$2471.const$1.varHandle(MemoryLayout.PathElement.groupElement("test_collapse_row"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.row_expanded.class, "apply", constants$14.const$3);
+    static final VarHandle const$3 = constants$2471.const$1.varHandle(MemoryLayout.PathElement.groupElement("row_expanded"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeViewClass.row_collapsed.class, "apply", constants$14.const$3);
+    static final VarHandle const$5 = constants$2471.const$1.varHandle(MemoryLayout.PathElement.groupElement("row_collapsed"));
 }
 
 

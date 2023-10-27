@@ -2,33 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$682 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$682() {}
-    static final VarHandle const$0 = constants$680.const$4.varHandle(MemoryLayout.PathElement.groupElement("complete_interface_info"));
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_type_plugin_get_type",
-        constants$3.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_type_module_register_flags",
+        constants$166.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_plugin_use",
-        constants$13.const$1
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GTypePluginUse.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GTypePluginUnuse.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_type_plugin_unuse",
-        constants$13.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_plugin_complete_type_info",
-        constants$679.const$5
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GTypePluginCompleteTypeInfo.class, "apply", constants$682.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_type_plugin_complete_interface_info",
-        constants$94.const$1
+        constants$682.const$3
     );
 }
 

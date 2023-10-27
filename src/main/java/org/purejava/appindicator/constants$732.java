@@ -2,21 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$732 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$732() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$23.const$0
+        "g_app_info_reset_type_associations",
+        constants$13.const$1
     );
-    static final VarHandle const$1 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_display"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass.get_startup_notify_id.class, "apply", constants$23.const$0);
-    static final VarHandle const$3 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_startup_notify_id"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass.launch_failed.class, "apply", constants$13.const$4);
-    static final VarHandle const$5 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("launch_failed"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_default_for_type",
+        constants$21.const$3
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_app_info_get_default_for_type_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_default_for_type_async",
+        constants$282.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_default_for_type_finish",
+        constants$5.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_default_for_uri_scheme",
+        constants$5.const$2
+    );
 }
 
 

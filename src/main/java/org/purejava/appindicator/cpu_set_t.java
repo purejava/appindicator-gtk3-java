@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class cpu_set_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$513.const$1;
+        return constants$514.const$5;
     }
     public static MemorySegment __bits$slice(MemorySegment seg) {
         return seg.asSlice(0, 128);

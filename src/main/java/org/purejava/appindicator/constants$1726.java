@@ -8,20 +8,29 @@ final class constants$1726 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1726() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_stroke_callback",
-        constants$12.const$2
+        "cairo_status",
+        constants$10.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_glyphs_callback$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_status_to_string",
+        constants$24.const$0
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_glyphs_callback",
-        constants$12.const$2
+        "cairo_device_reference",
+        constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_flush_callback$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_device_get_type",
+        constants$10.const$5
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_flush_callback",
-        constants$12.const$2
+        "cairo_device_status",
+        constants$10.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_finish_callback$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_device_acquire",
+        constants$10.const$5
+    );
 }
 
 

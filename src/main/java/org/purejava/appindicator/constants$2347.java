@@ -7,24 +7,27 @@ final class constants$2347 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2347() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_view_column_set_attributes",
-        constants$13.const$4
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_get_edit_widget",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_tree_view_column_set_cell_data_func$func.class, "apply", constants$331.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_tree_view_column_set_cell_data_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_cell_data_func",
-        constants$331.const$1
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_activate_cell",
+        constants$2330.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_clear_attributes",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_spacing",
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_stop_editing",
         constants$40.const$2
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_inner_cell_area",
+        constants$42.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_request_renderer",
+        constants$1607.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_gtk_cell_area_set_cell_data_func_with_proxy$func.class, "apply", constants$13.const$4);
 }
 
 

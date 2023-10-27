@@ -18,10 +18,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkPageRange {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2950.const$3;
+        return constants$2955.const$3;
     }
     public static VarHandle start$VH() {
-        return constants$2950.const$4;
+        return constants$2955.const$4;
     }
     /**
      * Getter for field:
@@ -30,7 +30,7 @@ public class _GtkPageRange {
      * }
      */
     public static int start$get(MemorySegment seg) {
-        return (int)constants$2950.const$4.get(seg);
+        return (int)constants$2955.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -39,16 +39,16 @@ public class _GtkPageRange {
      * }
      */
     public static void start$set(MemorySegment seg, int x) {
-        constants$2950.const$4.set(seg, x);
+        constants$2955.const$4.set(seg, x);
     }
     public static int start$get(MemorySegment seg, long index) {
-        return (int)constants$2950.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2955.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void start$set(MemorySegment seg, long index, int x) {
-        constants$2950.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2955.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle end$VH() {
-        return constants$2950.const$5;
+        return constants$2955.const$5;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GtkPageRange {
      * }
      */
     public static int end$get(MemorySegment seg) {
-        return (int)constants$2950.const$5.get(seg);
+        return (int)constants$2955.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GtkPageRange {
      * }
      */
     public static void end$set(MemorySegment seg, int x) {
-        constants$2950.const$5.set(seg, x);
+        constants$2955.const$5.set(seg, x);
     }
     public static int end$get(MemorySegment seg, long index) {
-        return (int)constants$2950.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2955.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void end$set(MemorySegment seg, long index, int x) {
-        constants$2950.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2955.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

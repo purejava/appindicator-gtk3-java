@@ -9,12 +9,27 @@ final class constants$717 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$717() {}
-    static final VarHandle const$0 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_description"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_executable.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_executable"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_icon.class, "apply", constants$5.const$2);
-    static final VarHandle const$4 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_icon"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GAppInfoIface.launch.class, "apply", constants$34.const$5);
+    static final VarHandle const$0 = constants$715.const$5.varHandle(MemoryLayout.PathElement.groupElement("change_state"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_action_map_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_action_map_lookup_action",
+        constants$5.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_action_map_add_action",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_action_map_remove_action",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_action_map_add_action_entries",
+        constants$466.const$3
+    );
 }
 
 

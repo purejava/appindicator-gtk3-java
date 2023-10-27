@@ -2,32 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1979 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1979() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_object_set_name",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_object_set_description",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_object_set_parent",
-        constants$13.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_object_set_role",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(atk_object_connect_property_change_handler$handler.class, "apply", constants$13.const$4);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_object_connect_property_change_handler",
-        constants$9.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkObjectClass.state_change.class, "apply", constants$164.const$5);
+    static final VarHandle const$1 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("state_change"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkObjectClass.visible_data_changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("visible_data_changed"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkObjectClass.active_descendant_changed.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("active_descendant_changed"));
 }
 
 

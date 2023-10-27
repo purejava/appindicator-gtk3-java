@@ -3,27 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$524 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$524() {}
-    static final VarHandle const$0 = constants$523.const$3.varHandle(MemoryLayout.PathElement.groupElement("__cancel_arg"));
-    static final VarHandle const$1 = constants$523.const$3.varHandle(MemoryLayout.PathElement.groupElement("__do_it"));
-    static final VarHandle const$2 = constants$523.const$3.varHandle(MemoryLayout.PathElement.groupElement("__cancel_type"));
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "__pthread_register_cancel",
-        constants$13.const$1
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_setcanceltype",
+        constants$9.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "__pthread_unregister_cancel",
-        constants$13.const$1
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_cancel",
+        constants$26.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "__pthread_unwind_next",
-        constants$13.const$1
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_testcancel",
+        constants$7.const$5
     );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(22, JAVA_LONG).withName("__cancel_jmp_buf"),
+        JAVA_INT.withName("__mask_was_saved"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("__cancel_jmp_buf_tag");
+    static final VarHandle const$4 = constants$524.const$3.varHandle(MemoryLayout.PathElement.groupElement("__mask_was_saved"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(1, MemoryLayout.structLayout(
+            MemoryLayout.sequenceLayout(22, JAVA_LONG).withName("__cancel_jmp_buf"),
+            JAVA_INT.withName("__mask_was_saved"),
+            MemoryLayout.paddingLayout(4)
+        ).withName("__cancel_jmp_buf_tag")).withName("__cancel_jmp_buf"),
+        MemoryLayout.sequenceLayout(4, RuntimeHelper.POINTER).withName("__pad")
+    ).withName("__pthread_unwind_buf_t");
 }
 
 

@@ -8,27 +8,27 @@ final class constants$3222 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3222() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_places_open_flags_get_type",
+        "gtk_drag_result_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_print_status_get_type",
+        "gtk_size_group_mode_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_result_get_type",
+        "gtk_size_request_mode_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_action_get_type",
+        "gtk_scrollable_policy_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_print_error_get_type",
+        "gtk_state_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_sort_type_get_type",
+        "gtk_region_flags_get_type",
         constants$3.const$5
     );
 }

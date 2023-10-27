@@ -7,18 +7,30 @@ final class constants$1449 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1449() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_move_to_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_face_collect_unicodes",
+        constants$13.const$4
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_draw_funcs_set_move_to_func",
-        constants$42.const$1
+        "hb_face_collect_nominal_glyph_mapping",
+        constants$14.const$3
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_line_to_func$func.class, "apply", constants$1447.const$0);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_line_to_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_face_collect_variation_selectors",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_face_collect_variation_unicodes",
+        constants$42.const$4
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_draw_funcs_set_line_to_func",
-        constants$42.const$1
+        "hb_face_builder_create",
+        constants$35.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_quadratic_to_func$func.class, "apply", constants$1447.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_face_builder_add_table",
+        constants$150.const$0
+    );
 }
 
 

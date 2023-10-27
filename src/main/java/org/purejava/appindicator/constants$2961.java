@@ -8,28 +8,28 @@ final class constants$2961 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2961() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_scale",
-        constants$67.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_scale",
-        constants$689.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_print_pages",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_print_pages",
+        "gtk_print_settings_set_orientation",
         constants$40.const$2
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_paper_size",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_paper_size",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_paper_width",
+        constants$2934.const$4
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_page_ranges",
-        constants$5.const$5
+        "gtk_print_settings_set_paper_width",
+        constants$2938.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_page_ranges",
-        constants$164.const$5
+        "gtk_print_settings_get_paper_height",
+        constants$2934.const$4
     );
 }
 

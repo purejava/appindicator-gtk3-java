@@ -8,28 +8,22 @@ final class constants$2493 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2493() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_enable_tree_lines",
-        constants$10.const$5
+        "gtk_tree_view_get_search_position_func",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_enable_tree_lines",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_show_expanders",
-        constants$40.const$2
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_tree_view_set_search_position_func$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_tree_view_set_search_position_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_show_expanders",
-        constants$10.const$5
+        "gtk_tree_view_set_search_position_func",
+        constants$42.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_level_indentation",
-        constants$40.const$2
+        "gtk_tree_view_convert_widget_to_tree_coords",
+        constants$1499.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_level_indentation",
-        constants$10.const$5
+        "gtk_tree_view_convert_tree_to_widget_coords",
+        constants$1499.const$5
     );
 }
 

@@ -13,13 +13,13 @@ public interface GFileMeasureProgressCallback {
 
     void apply(int reporting, long current_size, long num_dirs, long num_files, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GFileMeasureProgressCallback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$694.const$1, fi, constants$694.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$696.const$5, fi, constants$696.const$4, scope);
     }
     static GFileMeasureProgressCallback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (int _reporting, long _current_size, long _num_dirs, long _num_files, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$694.const$2.invokeExact(symbol, _reporting, _current_size, _num_dirs, _num_files, _data);
+                constants$697.const$0.invokeExact(symbol, _reporting, _current_size, _num_dirs, _num_files, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

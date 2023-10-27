@@ -3,30 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3028 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3028() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.selection_changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$3023.const$3.varHandle(MemoryLayout.PathElement.groupElement("selection_changed"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_filter",
+        constants$9.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkRecentSortFunc.class, "apply", constants$12.const$2);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_type",
-        constants$3.const$5
+        "gtk_recent_chooser_error_quark",
+        constants$83.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_show_private",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_show_private",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_show_not_found",
-        constants$40.const$2
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("base_iface"),
+        RuntimeHelper.POINTER.withName("set_current_uri"),
+        RuntimeHelper.POINTER.withName("get_current_uri"),
+        RuntimeHelper.POINTER.withName("select_uri"),
+        RuntimeHelper.POINTER.withName("unselect_uri"),
+        RuntimeHelper.POINTER.withName("select_all"),
+        RuntimeHelper.POINTER.withName("unselect_all"),
+        RuntimeHelper.POINTER.withName("get_items"),
+        RuntimeHelper.POINTER.withName("get_recent_manager"),
+        RuntimeHelper.POINTER.withName("add_filter"),
+        RuntimeHelper.POINTER.withName("remove_filter"),
+        RuntimeHelper.POINTER.withName("list_filters"),
+        RuntimeHelper.POINTER.withName("set_sort_func"),
+        RuntimeHelper.POINTER.withName("item_activated"),
+        RuntimeHelper.POINTER.withName("selection_changed")
+    ).withName("_GtkRecentChooserIface");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.set_current_uri.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$3028.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_current_uri"));
 }
 
 

@@ -21,10 +21,10 @@ import java.lang.invoke.VarHandle;
 public class _GdkEventSetting {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1790.const$1;
+        return constants$1795.const$1;
     }
     public static VarHandle type$VH() {
-        return constants$1790.const$2;
+        return constants$1795.const$2;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class _GdkEventSetting {
      * }
      */
     public static int type$get(MemorySegment seg) {
-        return (int)constants$1790.const$2.get(seg);
+        return (int)constants$1795.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -42,16 +42,16 @@ public class _GdkEventSetting {
      * }
      */
     public static void type$set(MemorySegment seg, int x) {
-        constants$1790.const$2.set(seg, x);
+        constants$1795.const$2.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
-        return (int)constants$1790.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1795.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void type$set(MemorySegment seg, long index, int x) {
-        constants$1790.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1795.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle window$VH() {
-        return constants$1790.const$3;
+        return constants$1795.const$3;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _GdkEventSetting {
      * }
      */
     public static MemorySegment window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1790.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1795.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -69,16 +69,16 @@ public class _GdkEventSetting {
      * }
      */
     public static void window$set(MemorySegment seg, MemorySegment x) {
-        constants$1790.const$3.set(seg, x);
+        constants$1795.const$3.set(seg, x);
     }
     public static MemorySegment window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1790.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1795.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void window$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1790.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1795.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle send_event$VH() {
-        return constants$1790.const$4;
+        return constants$1795.const$4;
     }
     /**
      * Getter for field:
@@ -87,7 +87,7 @@ public class _GdkEventSetting {
      * }
      */
     public static byte send_event$get(MemorySegment seg) {
-        return (byte)constants$1790.const$4.get(seg);
+        return (byte)constants$1795.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -96,16 +96,16 @@ public class _GdkEventSetting {
      * }
      */
     public static void send_event$set(MemorySegment seg, byte x) {
-        constants$1790.const$4.set(seg, x);
+        constants$1795.const$4.set(seg, x);
     }
     public static byte send_event$get(MemorySegment seg, long index) {
-        return (byte)constants$1790.const$4.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$1795.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void send_event$set(MemorySegment seg, long index, byte x) {
-        constants$1790.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1795.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle action$VH() {
-        return constants$1790.const$5;
+        return constants$1795.const$5;
     }
     /**
      * Getter for field:
@@ -114,7 +114,7 @@ public class _GdkEventSetting {
      * }
      */
     public static int action$get(MemorySegment seg) {
-        return (int)constants$1790.const$5.get(seg);
+        return (int)constants$1795.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -123,16 +123,16 @@ public class _GdkEventSetting {
      * }
      */
     public static void action$set(MemorySegment seg, int x) {
-        constants$1790.const$5.set(seg, x);
+        constants$1795.const$5.set(seg, x);
     }
     public static int action$get(MemorySegment seg, long index) {
-        return (int)constants$1790.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1795.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void action$set(MemorySegment seg, long index, int x) {
-        constants$1790.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1795.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle name$VH() {
-        return constants$1791.const$0;
+        return constants$1796.const$0;
     }
     /**
      * Getter for field:
@@ -141,7 +141,7 @@ public class _GdkEventSetting {
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1791.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1796.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -150,13 +150,13 @@ public class _GdkEventSetting {
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        constants$1791.const$0.set(seg, x);
+        constants$1796.const$0.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1791.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1796.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1791.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1796.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

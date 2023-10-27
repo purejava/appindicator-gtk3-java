@@ -28,10 +28,10 @@ import java.lang.invoke.VarHandle;
 public class _GTokenValue {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$420.const$3;
+        return constants$421.const$3;
     }
     public static VarHandle v_symbol$VH() {
-        return constants$420.const$4;
+        return constants$421.const$4;
     }
     /**
      * Getter for field:
@@ -40,7 +40,7 @@ public class _GTokenValue {
      * }
      */
     public static MemorySegment v_symbol$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$420.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$421.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -49,16 +49,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_symbol$set(MemorySegment seg, MemorySegment x) {
-        constants$420.const$4.set(seg, x);
+        constants$421.const$4.set(seg, x);
     }
     public static MemorySegment v_symbol$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$420.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$421.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void v_symbol$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$420.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$421.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_identifier$VH() {
-        return constants$420.const$5;
+        return constants$421.const$5;
     }
     /**
      * Getter for field:
@@ -67,7 +67,7 @@ public class _GTokenValue {
      * }
      */
     public static MemorySegment v_identifier$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$420.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$421.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -76,16 +76,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_identifier$set(MemorySegment seg, MemorySegment x) {
-        constants$420.const$5.set(seg, x);
+        constants$421.const$5.set(seg, x);
     }
     public static MemorySegment v_identifier$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$420.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$421.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void v_identifier$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$420.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$421.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_binary$VH() {
-        return constants$421.const$0;
+        return constants$422.const$0;
     }
     /**
      * Getter for field:
@@ -94,7 +94,7 @@ public class _GTokenValue {
      * }
      */
     public static long v_binary$get(MemorySegment seg) {
-        return (long)constants$421.const$0.get(seg);
+        return (long)constants$422.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -103,16 +103,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_binary$set(MemorySegment seg, long x) {
-        constants$421.const$0.set(seg, x);
+        constants$422.const$0.set(seg, x);
     }
     public static long v_binary$get(MemorySegment seg, long index) {
-        return (long)constants$421.const$0.get(seg.asSlice(index*sizeof()));
+        return (long)constants$422.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void v_binary$set(MemorySegment seg, long index, long x) {
-        constants$421.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$422.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_octal$VH() {
-        return constants$421.const$1;
+        return constants$422.const$1;
     }
     /**
      * Getter for field:
@@ -121,7 +121,7 @@ public class _GTokenValue {
      * }
      */
     public static long v_octal$get(MemorySegment seg) {
-        return (long)constants$421.const$1.get(seg);
+        return (long)constants$422.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -130,16 +130,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_octal$set(MemorySegment seg, long x) {
-        constants$421.const$1.set(seg, x);
+        constants$422.const$1.set(seg, x);
     }
     public static long v_octal$get(MemorySegment seg, long index) {
-        return (long)constants$421.const$1.get(seg.asSlice(index*sizeof()));
+        return (long)constants$422.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void v_octal$set(MemorySegment seg, long index, long x) {
-        constants$421.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$422.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_int$VH() {
-        return constants$421.const$2;
+        return constants$422.const$2;
     }
     /**
      * Getter for field:
@@ -148,7 +148,7 @@ public class _GTokenValue {
      * }
      */
     public static long v_int$get(MemorySegment seg) {
-        return (long)constants$421.const$2.get(seg);
+        return (long)constants$422.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -157,16 +157,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_int$set(MemorySegment seg, long x) {
-        constants$421.const$2.set(seg, x);
+        constants$422.const$2.set(seg, x);
     }
     public static long v_int$get(MemorySegment seg, long index) {
-        return (long)constants$421.const$2.get(seg.asSlice(index*sizeof()));
+        return (long)constants$422.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void v_int$set(MemorySegment seg, long index, long x) {
-        constants$421.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$422.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_int64$VH() {
-        return constants$421.const$3;
+        return constants$422.const$3;
     }
     /**
      * Getter for field:
@@ -175,7 +175,7 @@ public class _GTokenValue {
      * }
      */
     public static long v_int64$get(MemorySegment seg) {
-        return (long)constants$421.const$3.get(seg);
+        return (long)constants$422.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -184,16 +184,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_int64$set(MemorySegment seg, long x) {
-        constants$421.const$3.set(seg, x);
+        constants$422.const$3.set(seg, x);
     }
     public static long v_int64$get(MemorySegment seg, long index) {
-        return (long)constants$421.const$3.get(seg.asSlice(index*sizeof()));
+        return (long)constants$422.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void v_int64$set(MemorySegment seg, long index, long x) {
-        constants$421.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$422.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_float$VH() {
-        return constants$421.const$4;
+        return constants$422.const$4;
     }
     /**
      * Getter for field:
@@ -202,7 +202,7 @@ public class _GTokenValue {
      * }
      */
     public static double v_float$get(MemorySegment seg) {
-        return (double)constants$421.const$4.get(seg);
+        return (double)constants$422.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -211,16 +211,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_float$set(MemorySegment seg, double x) {
-        constants$421.const$4.set(seg, x);
+        constants$422.const$4.set(seg, x);
     }
     public static double v_float$get(MemorySegment seg, long index) {
-        return (double)constants$421.const$4.get(seg.asSlice(index*sizeof()));
+        return (double)constants$422.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void v_float$set(MemorySegment seg, long index, double x) {
-        constants$421.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$422.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_hex$VH() {
-        return constants$421.const$5;
+        return constants$422.const$5;
     }
     /**
      * Getter for field:
@@ -229,7 +229,7 @@ public class _GTokenValue {
      * }
      */
     public static long v_hex$get(MemorySegment seg) {
-        return (long)constants$421.const$5.get(seg);
+        return (long)constants$422.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -238,16 +238,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_hex$set(MemorySegment seg, long x) {
-        constants$421.const$5.set(seg, x);
+        constants$422.const$5.set(seg, x);
     }
     public static long v_hex$get(MemorySegment seg, long index) {
-        return (long)constants$421.const$5.get(seg.asSlice(index*sizeof()));
+        return (long)constants$422.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void v_hex$set(MemorySegment seg, long index, long x) {
-        constants$421.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$422.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_string$VH() {
-        return constants$422.const$0;
+        return constants$423.const$0;
     }
     /**
      * Getter for field:
@@ -256,7 +256,7 @@ public class _GTokenValue {
      * }
      */
     public static MemorySegment v_string$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$423.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -265,16 +265,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_string$set(MemorySegment seg, MemorySegment x) {
-        constants$422.const$0.set(seg, x);
+        constants$423.const$0.set(seg, x);
     }
     public static MemorySegment v_string$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$423.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void v_string$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$422.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$423.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_comment$VH() {
-        return constants$422.const$1;
+        return constants$423.const$1;
     }
     /**
      * Getter for field:
@@ -283,7 +283,7 @@ public class _GTokenValue {
      * }
      */
     public static MemorySegment v_comment$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$423.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -292,16 +292,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_comment$set(MemorySegment seg, MemorySegment x) {
-        constants$422.const$1.set(seg, x);
+        constants$423.const$1.set(seg, x);
     }
     public static MemorySegment v_comment$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$423.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void v_comment$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$422.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$423.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_char$VH() {
-        return constants$422.const$2;
+        return constants$423.const$2;
     }
     /**
      * Getter for field:
@@ -310,7 +310,7 @@ public class _GTokenValue {
      * }
      */
     public static byte v_char$get(MemorySegment seg) {
-        return (byte)constants$422.const$2.get(seg);
+        return (byte)constants$423.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -319,16 +319,16 @@ public class _GTokenValue {
      * }
      */
     public static void v_char$set(MemorySegment seg, byte x) {
-        constants$422.const$2.set(seg, x);
+        constants$423.const$2.set(seg, x);
     }
     public static byte v_char$get(MemorySegment seg, long index) {
-        return (byte)constants$422.const$2.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$423.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void v_char$set(MemorySegment seg, long index, byte x) {
-        constants$422.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$423.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle v_error$VH() {
-        return constants$422.const$3;
+        return constants$423.const$3;
     }
     /**
      * Getter for field:
@@ -337,7 +337,7 @@ public class _GTokenValue {
      * }
      */
     public static int v_error$get(MemorySegment seg) {
-        return (int)constants$422.const$3.get(seg);
+        return (int)constants$423.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -346,13 +346,13 @@ public class _GTokenValue {
      * }
      */
     public static void v_error$set(MemorySegment seg, int x) {
-        constants$422.const$3.set(seg, x);
+        constants$423.const$3.set(seg, x);
     }
     public static int v_error$get(MemorySegment seg, long index) {
-        return (int)constants$422.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$423.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void v_error$set(MemorySegment seg, long index, int x) {
-        constants$422.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$423.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

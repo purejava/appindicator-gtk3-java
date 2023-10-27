@@ -32,7 +32,7 @@ import java.lang.invoke.VarHandle;
 public class _GIOStreamClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1071.const$1;
+        return constants$1074.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -46,7 +46,7 @@ public class _GIOStreamClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_input_stream fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1071.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1074.const$4, fi, constants$5.const$2, scope);
         }
         static get_input_stream ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -61,7 +61,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle get_input_stream$VH() {
-        return constants$1071.const$3;
+        return constants$1074.const$5;
     }
     /**
      * Getter for field:
@@ -70,7 +70,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment get_input_stream$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1071.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1074.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -79,13 +79,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void get_input_stream$set(MemorySegment seg, MemorySegment x) {
-        constants$1071.const$3.set(seg, x);
+        constants$1074.const$5.set(seg, x);
     }
     public static MemorySegment get_input_stream$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1071.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1074.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_input_stream$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1071.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1074.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_input_stream get_input_stream(MemorySegment segment, Arena scope) {
         return get_input_stream.ofAddress(get_input_stream$get(segment), scope);
@@ -99,7 +99,7 @@ public class _GIOStreamClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_output_stream fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1071.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1075.const$0, fi, constants$5.const$2, scope);
         }
         static get_output_stream ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -114,7 +114,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle get_output_stream$VH() {
-        return constants$1071.const$5;
+        return constants$1075.const$1;
     }
     /**
      * Getter for field:
@@ -123,7 +123,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment get_output_stream$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1071.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1075.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -132,13 +132,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void get_output_stream$set(MemorySegment seg, MemorySegment x) {
-        constants$1071.const$5.set(seg, x);
+        constants$1075.const$1.set(seg, x);
     }
     public static MemorySegment get_output_stream$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1071.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1075.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_output_stream$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1071.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1075.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_output_stream get_output_stream(MemorySegment segment, Arena scope) {
         return get_output_stream.ofAddress(get_output_stream$get(segment), scope);
@@ -152,7 +152,7 @@ public class _GIOStreamClass {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(close_fn fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1072.const$0, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1075.const$2, fi, constants$12.const$2, scope);
         }
         static close_fn ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -167,7 +167,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle close_fn$VH() {
-        return constants$1072.const$1;
+        return constants$1075.const$3;
     }
     /**
      * Getter for field:
@@ -176,7 +176,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment close_fn$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1072.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1075.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -185,13 +185,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void close_fn$set(MemorySegment seg, MemorySegment x) {
-        constants$1072.const$1.set(seg, x);
+        constants$1075.const$3.set(seg, x);
     }
     public static MemorySegment close_fn$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1072.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1075.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void close_fn$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1072.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1075.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static close_fn close_fn(MemorySegment segment, Arena scope) {
         return close_fn.ofAddress(close_fn$get(segment), scope);
@@ -205,13 +205,13 @@ public class _GIOStreamClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(close_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1072.const$2, fi, constants$281.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1075.const$4, fi, constants$282.const$1, scope);
         }
         static close_async ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    constants$754.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$757.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -220,7 +220,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle close_async$VH() {
-        return constants$1072.const$3;
+        return constants$1075.const$5;
     }
     /**
      * Getter for field:
@@ -229,7 +229,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment close_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1072.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1075.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -238,13 +238,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void close_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1072.const$3.set(seg, x);
+        constants$1075.const$5.set(seg, x);
     }
     public static MemorySegment close_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1072.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1075.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void close_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1072.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1075.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static close_async close_async(MemorySegment segment, Arena scope) {
         return close_async.ofAddress(close_async$get(segment), scope);
@@ -258,7 +258,7 @@ public class _GIOStreamClass {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(close_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1072.const$4, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1076.const$0, fi, constants$12.const$2, scope);
         }
         static close_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -273,7 +273,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle close_finish$VH() {
-        return constants$1072.const$5;
+        return constants$1076.const$1;
     }
     /**
      * Getter for field:
@@ -282,7 +282,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment close_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1072.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1076.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -291,13 +291,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void close_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1072.const$5.set(seg, x);
+        constants$1076.const$1.set(seg, x);
     }
     public static MemorySegment close_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1072.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1076.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void close_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1072.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1076.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static close_finish close_finish(MemorySegment segment, Arena scope) {
         return close_finish.ofAddress(close_finish$get(segment), scope);
@@ -311,7 +311,7 @@ public class _GIOStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1073.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1076.const$2, fi, constants$7.const$5, scope);
         }
         static _g_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -326,7 +326,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle _g_reserved1$VH() {
-        return constants$1073.const$1;
+        return constants$1076.const$3;
     }
     /**
      * Getter for field:
@@ -335,7 +335,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment _g_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1073.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1076.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -344,13 +344,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void _g_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$1073.const$1.set(seg, x);
+        constants$1076.const$3.set(seg, x);
     }
     public static MemorySegment _g_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1073.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1076.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1073.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1076.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved1 _g_reserved1(MemorySegment segment, Arena scope) {
         return _g_reserved1.ofAddress(_g_reserved1$get(segment), scope);
@@ -364,7 +364,7 @@ public class _GIOStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1073.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1076.const$4, fi, constants$7.const$5, scope);
         }
         static _g_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -379,7 +379,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle _g_reserved2$VH() {
-        return constants$1073.const$3;
+        return constants$1076.const$5;
     }
     /**
      * Getter for field:
@@ -388,7 +388,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1073.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1076.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -397,13 +397,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1073.const$3.set(seg, x);
+        constants$1076.const$5.set(seg, x);
     }
     public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1073.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1076.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1073.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1076.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved2 _g_reserved2(MemorySegment segment, Arena scope) {
         return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);
@@ -417,7 +417,7 @@ public class _GIOStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1073.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1077.const$0, fi, constants$7.const$5, scope);
         }
         static _g_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -432,7 +432,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle _g_reserved3$VH() {
-        return constants$1073.const$5;
+        return constants$1077.const$1;
     }
     /**
      * Getter for field:
@@ -441,7 +441,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment _g_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1073.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1077.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -450,13 +450,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void _g_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$1073.const$5.set(seg, x);
+        constants$1077.const$1.set(seg, x);
     }
     public static MemorySegment _g_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1073.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1077.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1073.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1077.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved3 _g_reserved3(MemorySegment segment, Arena scope) {
         return _g_reserved3.ofAddress(_g_reserved3$get(segment), scope);
@@ -470,7 +470,7 @@ public class _GIOStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1074.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1077.const$2, fi, constants$7.const$5, scope);
         }
         static _g_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -485,7 +485,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle _g_reserved4$VH() {
-        return constants$1074.const$1;
+        return constants$1077.const$3;
     }
     /**
      * Getter for field:
@@ -494,7 +494,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment _g_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1074.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1077.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -503,13 +503,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void _g_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$1074.const$1.set(seg, x);
+        constants$1077.const$3.set(seg, x);
     }
     public static MemorySegment _g_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1074.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1077.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1074.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1077.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved4 _g_reserved4(MemorySegment segment, Arena scope) {
         return _g_reserved4.ofAddress(_g_reserved4$get(segment), scope);
@@ -523,7 +523,7 @@ public class _GIOStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1074.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1077.const$4, fi, constants$7.const$5, scope);
         }
         static _g_reserved5 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -538,7 +538,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle _g_reserved5$VH() {
-        return constants$1074.const$3;
+        return constants$1077.const$5;
     }
     /**
      * Getter for field:
@@ -547,7 +547,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment _g_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1074.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1077.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -556,13 +556,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void _g_reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$1074.const$3.set(seg, x);
+        constants$1077.const$5.set(seg, x);
     }
     public static MemorySegment _g_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1074.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1077.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1074.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1077.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved5 _g_reserved5(MemorySegment segment, Arena scope) {
         return _g_reserved5.ofAddress(_g_reserved5$get(segment), scope);
@@ -576,7 +576,7 @@ public class _GIOStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved6 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1074.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1078.const$0, fi, constants$7.const$5, scope);
         }
         static _g_reserved6 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -591,7 +591,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle _g_reserved6$VH() {
-        return constants$1074.const$5;
+        return constants$1078.const$1;
     }
     /**
      * Getter for field:
@@ -600,7 +600,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment _g_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1074.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1078.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -609,13 +609,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void _g_reserved6$set(MemorySegment seg, MemorySegment x) {
-        constants$1074.const$5.set(seg, x);
+        constants$1078.const$1.set(seg, x);
     }
     public static MemorySegment _g_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1074.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1078.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1074.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1078.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved6 _g_reserved6(MemorySegment segment, Arena scope) {
         return _g_reserved6.ofAddress(_g_reserved6$get(segment), scope);
@@ -629,7 +629,7 @@ public class _GIOStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved7 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1075.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1078.const$2, fi, constants$7.const$5, scope);
         }
         static _g_reserved7 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -644,7 +644,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle _g_reserved7$VH() {
-        return constants$1075.const$1;
+        return constants$1078.const$3;
     }
     /**
      * Getter for field:
@@ -653,7 +653,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment _g_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1075.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1078.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -662,13 +662,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void _g_reserved7$set(MemorySegment seg, MemorySegment x) {
-        constants$1075.const$1.set(seg, x);
+        constants$1078.const$3.set(seg, x);
     }
     public static MemorySegment _g_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1075.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1078.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1075.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1078.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved7 _g_reserved7(MemorySegment segment, Arena scope) {
         return _g_reserved7.ofAddress(_g_reserved7$get(segment), scope);
@@ -682,7 +682,7 @@ public class _GIOStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved8 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1075.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1078.const$4, fi, constants$7.const$5, scope);
         }
         static _g_reserved8 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -697,7 +697,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle _g_reserved8$VH() {
-        return constants$1075.const$3;
+        return constants$1078.const$5;
     }
     /**
      * Getter for field:
@@ -706,7 +706,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment _g_reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1075.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1078.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -715,13 +715,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void _g_reserved8$set(MemorySegment seg, MemorySegment x) {
-        constants$1075.const$3.set(seg, x);
+        constants$1078.const$5.set(seg, x);
     }
     public static MemorySegment _g_reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1075.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1078.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved8$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1075.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1078.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved8 _g_reserved8(MemorySegment segment, Arena scope) {
         return _g_reserved8.ofAddress(_g_reserved8$get(segment), scope);
@@ -735,7 +735,7 @@ public class _GIOStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved9 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1075.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1079.const$0, fi, constants$7.const$5, scope);
         }
         static _g_reserved9 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -750,7 +750,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle _g_reserved9$VH() {
-        return constants$1075.const$5;
+        return constants$1079.const$1;
     }
     /**
      * Getter for field:
@@ -759,7 +759,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment _g_reserved9$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1075.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1079.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -768,13 +768,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void _g_reserved9$set(MemorySegment seg, MemorySegment x) {
-        constants$1075.const$5.set(seg, x);
+        constants$1079.const$1.set(seg, x);
     }
     public static MemorySegment _g_reserved9$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1075.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1079.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved9$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1075.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1079.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved9 _g_reserved9(MemorySegment segment, Arena scope) {
         return _g_reserved9.ofAddress(_g_reserved9$get(segment), scope);
@@ -788,7 +788,7 @@ public class _GIOStreamClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved10 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1076.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1079.const$2, fi, constants$7.const$5, scope);
         }
         static _g_reserved10 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -803,7 +803,7 @@ public class _GIOStreamClass {
     }
 
     public static VarHandle _g_reserved10$VH() {
-        return constants$1076.const$1;
+        return constants$1079.const$3;
     }
     /**
      * Getter for field:
@@ -812,7 +812,7 @@ public class _GIOStreamClass {
      * }
      */
     public static MemorySegment _g_reserved10$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1076.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1079.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -821,13 +821,13 @@ public class _GIOStreamClass {
      * }
      */
     public static void _g_reserved10$set(MemorySegment seg, MemorySegment x) {
-        constants$1076.const$1.set(seg, x);
+        constants$1079.const$3.set(seg, x);
     }
     public static MemorySegment _g_reserved10$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1076.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1079.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved10$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1076.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1079.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved10 _g_reserved10(MemorySegment segment, Arena scope) {
         return _g_reserved10.ofAddress(_g_reserved10$get(segment), scope);

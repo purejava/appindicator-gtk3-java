@@ -2,29 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$989 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$989() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.create_async.class, "apply", constants$987.const$4);
-    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_async"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.create_finish.class, "apply", constants$23.const$0);
-    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_finish"));
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.replace.class, "apply", constants$989.const$4);
+    static final VarHandle const$0 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("set_attributes_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.read_fn.class, "apply", constants$23.const$0);
+    static final VarHandle const$2 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("read_fn"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.read_async.class, "apply", constants$282.const$1);
+    static final VarHandle const$4 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("read_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.read_finish.class, "apply", constants$23.const$0);
 }
 
 

@@ -2,34 +2,42 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1707 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1707() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_create",
-        constants$39.const$1
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_reference",
-        constants$5.const$2
+        "cairo_font_options_set_custom_palette_color",
+        constants$1707.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_destroy",
-        constants$13.const$1
+        "cairo_font_options_get_custom_palette_color",
+        constants$180.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_reference_count",
-        constants$10.const$5
+        "cairo_select_font_face",
+        constants$1046.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_status",
-        constants$10.const$5
+        "cairo_set_font_size",
+        constants$692.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_type",
-        constants$10.const$5
+        "cairo_set_font_matrix",
+        constants$13.const$4
     );
 }
 

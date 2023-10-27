@@ -9,12 +9,12 @@ final class constants$1974 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1974() {}
-    static final VarHandle const$0 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("state_change"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectClass.visible_data_changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("visible_data_changed"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkObjectClass.active_descendant_changed.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("active_descendant_changed"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkObjectClass.get_attributes.class, "apply", constants$5.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkObjectClass.ref_relation_set.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("ref_relation_set"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkObjectClass.get_role.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_role"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkObjectClass.get_layer.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_layer"));
 }
 
 

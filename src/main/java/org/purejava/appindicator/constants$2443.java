@@ -8,28 +8,28 @@ final class constants$2443 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2443() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_image_clear",
-        constants$13.const$1
+        "gtk_entry_completion_get_popup_completion",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_file",
-        constants$13.const$4
+        "gtk_entry_completion_set_popup_set_width",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_resource",
-        constants$13.const$4
+        "gtk_entry_completion_get_popup_set_width",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_pixbuf",
-        constants$13.const$4
+        "gtk_entry_completion_set_popup_single_match",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_stock",
-        constants$164.const$5
+        "gtk_entry_completion_get_popup_single_match",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_icon_set",
-        constants$164.const$5
+        "gtk_entry_completion_get_completion_prefix",
+        constants$5.const$2
     );
 }
 

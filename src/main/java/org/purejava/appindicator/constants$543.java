@@ -8,25 +8,25 @@ final class constants$543 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$543() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_static_private_get",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_static_private_set$notify.class, "apply", constants$13.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_static_private_set",
-        constants$14.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_static_private_free",
+        "g_static_rw_lock_writer_lock",
         constants$13.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_once_init_enter_impl",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_writer_trylock",
         constants$10.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_thread_init",
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_writer_unlock",
         constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_free",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_private_new$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_private_new",
+        constants$5.const$2
     );
 }
 

@@ -8,25 +8,16 @@ final class constants$283 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$283() {}
-    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("g_unix_fd_source_funcs", constants$260.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("g_child_watch_funcs", constants$260.const$1);
+    static final MemorySegment const$1 = RuntimeHelper.lookupGlobalVariable("g_idle_funcs", constants$260.const$1);
+    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("g_unix_signal_funcs", constants$260.const$1);
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("g_unix_fd_source_funcs", constants$260.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
         "g_unicode_script_to_iso15924",
         constants$8.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_unicode_script_from_iso15924",
-        constants$8.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_unichar_isalnum",
-        constants$8.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_unichar_isalpha",
-        constants$8.const$4
-    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_unichar_iscntrl",
+        "g_unicode_script_from_iso15924",
         constants$8.const$4
     );
 }

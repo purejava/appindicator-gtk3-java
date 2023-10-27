@@ -13,7 +13,7 @@ public interface GTaskThreadFunc {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GTaskThreadFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1334.const$4, fi, constants$42.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1338.const$4, fi, constants$42.const$1, scope);
     }
     static GTaskThreadFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

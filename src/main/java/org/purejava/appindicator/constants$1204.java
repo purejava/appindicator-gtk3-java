@@ -13,19 +13,7 @@ final class constants$1204 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1204() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_notification_set_default_action",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "g_notification_set_default_action_and_target",
-        constants$14.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_notification_set_default_action_and_target_value",
-        constants$14.const$3
-    );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
+    static final StructLayout const$0 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 RuntimeHelper.POINTER.withName("g_class")
@@ -35,9 +23,9 @@ final class constants$1204 {
             RuntimeHelper.POINTER.withName("qdata")
         ).withName("parent_instance"),
         RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GPermission");
-    static final VarHandle const$4 = constants$1204.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
+    ).withName("_GNetworkService");
+    static final VarHandle const$1 = constants$1204.const$0.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 JAVA_LONG.withName("g_type")
@@ -56,15 +44,20 @@ final class constants$1204 {
             RuntimeHelper.POINTER.withName("pspecs"),
             JAVA_LONG.withName("n_pspecs"),
             MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("acquire"),
-        RuntimeHelper.POINTER.withName("acquire_async"),
-        RuntimeHelper.POINTER.withName("acquire_finish"),
-        RuntimeHelper.POINTER.withName("release"),
-        RuntimeHelper.POINTER.withName("release_async"),
-        RuntimeHelper.POINTER.withName("release_finish"),
-        MemoryLayout.sequenceLayout(16, RuntimeHelper.POINTER).withName("reserved")
-    ).withName("_GPermissionClass");
+        ).withName("parent_class")
+    ).withName("_GNetworkServiceClass");
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_network_service_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_network_service_new",
+        constants$23.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_network_service_get_service",
+        constants$5.const$2
+    );
 }
 
 

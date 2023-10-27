@@ -2,34 +2,43 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1750 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1750() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_rotate",
-        constants$689.const$5
+        "cairo_mesh_pattern_move_to",
+        constants$1536.const$0
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_invert",
-        constants$10.const$5
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_multiply",
-        constants$14.const$3
+        "cairo_mesh_pattern_set_control_point",
+        constants$1750.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_transform_distance",
-        constants$14.const$3
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_matrix_transform_point",
-        constants$14.const$3
+        "cairo_mesh_pattern_set_corner_color_rgb",
+        constants$1750.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_region_create",
-        constants$35.const$2
+        "cairo_mesh_pattern_set_corner_color_rgba",
+        constants$1707.const$0
     );
 }
 

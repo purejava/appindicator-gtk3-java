@@ -13,7 +13,7 @@ public interface g_signal_group_connect_swapped$c_handler {
 
     void apply();
     static MemorySegment allocate(g_signal_group_connect_swapped$c_handler fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$674.const$2, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$677.const$0, fi, constants$7.const$5, scope);
     }
     static g_signal_group_connect_swapped$c_handler ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -30,7 +30,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkMenuItemClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2612.const$0;
+        return constants$2617.const$0;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1008);
@@ -44,7 +44,7 @@ public class _GtkMenuItemClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(activate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2612.const$1, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2617.const$1, fi, constants$13.const$1, scope);
         }
         static activate ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -59,7 +59,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle activate$VH() {
-        return constants$2612.const$2;
+        return constants$2617.const$2;
     }
     /**
      * Getter for field:
@@ -68,7 +68,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment activate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2612.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2617.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -77,13 +77,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void activate$set(MemorySegment seg, MemorySegment x) {
-        constants$2612.const$2.set(seg, x);
+        constants$2617.const$2.set(seg, x);
     }
     public static MemorySegment activate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2612.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2617.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void activate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2612.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2617.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static activate activate(MemorySegment segment, Arena scope) {
         return activate.ofAddress(activate$get(segment), scope);
@@ -97,7 +97,7 @@ public class _GtkMenuItemClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(activate_item fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2612.const$3, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2617.const$3, fi, constants$13.const$1, scope);
         }
         static activate_item ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -112,7 +112,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle activate_item$VH() {
-        return constants$2612.const$4;
+        return constants$2617.const$4;
     }
     /**
      * Getter for field:
@@ -121,7 +121,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment activate_item$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2612.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2617.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -130,13 +130,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void activate_item$set(MemorySegment seg, MemorySegment x) {
-        constants$2612.const$4.set(seg, x);
+        constants$2617.const$4.set(seg, x);
     }
     public static MemorySegment activate_item$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2612.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2617.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void activate_item$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2612.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2617.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static activate_item activate_item(MemorySegment segment, Arena scope) {
         return activate_item.ofAddress(activate_item$get(segment), scope);
@@ -150,7 +150,7 @@ public class _GtkMenuItemClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(toggle_size_request fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2612.const$5, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2617.const$5, fi, constants$13.const$4, scope);
         }
         static toggle_size_request ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -165,7 +165,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle toggle_size_request$VH() {
-        return constants$2613.const$0;
+        return constants$2618.const$0;
     }
     /**
      * Getter for field:
@@ -174,7 +174,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment toggle_size_request$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2613.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2618.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -183,13 +183,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void toggle_size_request$set(MemorySegment seg, MemorySegment x) {
-        constants$2613.const$0.set(seg, x);
+        constants$2618.const$0.set(seg, x);
     }
     public static MemorySegment toggle_size_request$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2613.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2618.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void toggle_size_request$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2613.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2618.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static toggle_size_request toggle_size_request(MemorySegment segment, Arena scope) {
         return toggle_size_request.ofAddress(toggle_size_request$get(segment), scope);
@@ -203,13 +203,13 @@ public class _GtkMenuItemClass {
 
         void apply(java.lang.foreign.MemorySegment colors, int n_colors);
         static MemorySegment allocate(toggle_size_allocate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2613.const$1, fi, constants$40.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2618.const$1, fi, constants$40.const$2, scope);
         }
         static toggle_size_allocate ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
                 try {
-                    constants$509.const$5.invokeExact(symbol, _colors, _n_colors);
+                    constants$511.const$3.invokeExact(symbol, _colors, _n_colors);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -218,7 +218,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle toggle_size_allocate$VH() {
-        return constants$2613.const$2;
+        return constants$2618.const$2;
     }
     /**
      * Getter for field:
@@ -227,7 +227,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment toggle_size_allocate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2613.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2618.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -236,13 +236,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void toggle_size_allocate$set(MemorySegment seg, MemorySegment x) {
-        constants$2613.const$2.set(seg, x);
+        constants$2618.const$2.set(seg, x);
     }
     public static MemorySegment toggle_size_allocate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2613.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2618.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void toggle_size_allocate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2613.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2618.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static toggle_size_allocate toggle_size_allocate(MemorySegment segment, Arena scope) {
         return toggle_size_allocate.ofAddress(toggle_size_allocate$get(segment), scope);
@@ -256,7 +256,7 @@ public class _GtkMenuItemClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_label fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2613.const$3, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2618.const$3, fi, constants$13.const$4, scope);
         }
         static set_label ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -271,7 +271,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle set_label$VH() {
-        return constants$2613.const$4;
+        return constants$2618.const$4;
     }
     /**
      * Getter for field:
@@ -280,7 +280,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment set_label$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2613.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2618.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -289,13 +289,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void set_label$set(MemorySegment seg, MemorySegment x) {
-        constants$2613.const$4.set(seg, x);
+        constants$2618.const$4.set(seg, x);
     }
     public static MemorySegment set_label$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2613.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2618.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void set_label$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2613.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2618.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_label set_label(MemorySegment segment, Arena scope) {
         return set_label.ofAddress(set_label$get(segment), scope);
@@ -309,7 +309,7 @@ public class _GtkMenuItemClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_label fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2613.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2618.const$5, fi, constants$5.const$2, scope);
         }
         static get_label ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -324,7 +324,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle get_label$VH() {
-        return constants$2614.const$0;
+        return constants$2619.const$0;
     }
     /**
      * Getter for field:
@@ -333,7 +333,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment get_label$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2614.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2619.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -342,13 +342,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void get_label$set(MemorySegment seg, MemorySegment x) {
-        constants$2614.const$0.set(seg, x);
+        constants$2619.const$0.set(seg, x);
     }
     public static MemorySegment get_label$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2614.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2619.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_label$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2614.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2619.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_label get_label(MemorySegment segment, Arena scope) {
         return get_label.ofAddress(get_label$get(segment), scope);
@@ -362,7 +362,7 @@ public class _GtkMenuItemClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(select fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2614.const$1, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2619.const$1, fi, constants$13.const$1, scope);
         }
         static select ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -377,7 +377,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle select$VH() {
-        return constants$2614.const$2;
+        return constants$2619.const$2;
     }
     /**
      * Getter for field:
@@ -386,7 +386,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment select$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2614.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2619.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -395,13 +395,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void select$set(MemorySegment seg, MemorySegment x) {
-        constants$2614.const$2.set(seg, x);
+        constants$2619.const$2.set(seg, x);
     }
     public static MemorySegment select$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2614.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2619.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void select$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2614.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2619.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static select select(MemorySegment segment, Arena scope) {
         return select.ofAddress(select$get(segment), scope);
@@ -415,7 +415,7 @@ public class _GtkMenuItemClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(deselect fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2614.const$3, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2619.const$3, fi, constants$13.const$1, scope);
         }
         static deselect ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -430,7 +430,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle deselect$VH() {
-        return constants$2614.const$4;
+        return constants$2619.const$4;
     }
     /**
      * Getter for field:
@@ -439,7 +439,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment deselect$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2614.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2619.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -448,13 +448,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void deselect$set(MemorySegment seg, MemorySegment x) {
-        constants$2614.const$4.set(seg, x);
+        constants$2619.const$4.set(seg, x);
     }
     public static MemorySegment deselect$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2614.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2619.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void deselect$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2614.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2619.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static deselect deselect(MemorySegment segment, Arena scope) {
         return deselect.ofAddress(deselect$get(segment), scope);
@@ -468,7 +468,7 @@ public class _GtkMenuItemClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2614.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2619.const$5, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -483,7 +483,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle _gtk_reserved1$VH() {
-        return constants$2615.const$0;
+        return constants$2620.const$0;
     }
     /**
      * Getter for field:
@@ -492,7 +492,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2615.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2620.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -501,13 +501,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$2615.const$0.set(seg, x);
+        constants$2620.const$0.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2615.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2620.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2615.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2620.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
@@ -521,7 +521,7 @@ public class _GtkMenuItemClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2615.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2620.const$1, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -536,7 +536,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle _gtk_reserved2$VH() {
-        return constants$2615.const$2;
+        return constants$2620.const$2;
     }
     /**
      * Getter for field:
@@ -545,7 +545,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2615.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2620.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -554,13 +554,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$2615.const$2.set(seg, x);
+        constants$2620.const$2.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2615.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2620.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2615.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2620.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
@@ -574,7 +574,7 @@ public class _GtkMenuItemClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2615.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2620.const$3, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -589,7 +589,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle _gtk_reserved3$VH() {
-        return constants$2615.const$4;
+        return constants$2620.const$4;
     }
     /**
      * Getter for field:
@@ -598,7 +598,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2615.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2620.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -607,13 +607,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$2615.const$4.set(seg, x);
+        constants$2620.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2615.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2620.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2615.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2620.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
@@ -627,7 +627,7 @@ public class _GtkMenuItemClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2615.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2620.const$5, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -642,7 +642,7 @@ public class _GtkMenuItemClass {
     }
 
     public static VarHandle _gtk_reserved4$VH() {
-        return constants$2616.const$0;
+        return constants$2621.const$0;
     }
     /**
      * Getter for field:
@@ -651,7 +651,7 @@ public class _GtkMenuItemClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2616.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2621.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -660,13 +660,13 @@ public class _GtkMenuItemClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$2616.const$0.set(seg, x);
+        constants$2621.const$0.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2616.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2621.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2616.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2621.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);

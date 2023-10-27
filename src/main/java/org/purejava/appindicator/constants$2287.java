@@ -2,34 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2287 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2287() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_set_default_text",
-        constants$13.const$4
+        "gtk_box_set_spacing",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_get_default_text",
-        constants$5.const$2
+        "gtk_box_get_spacing",
+        constants$10.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GtkTreeModelForeachFunc.class, "apply", constants$34.const$5);
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        JAVA_INT.withName("stamp"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("user_data"),
-        RuntimeHelper.POINTER.withName("user_data2"),
-        RuntimeHelper.POINTER.withName("user_data3")
-    ).withName("_GtkTreeIter");
-    static final VarHandle const$4 = constants$2287.const$3.varHandle(MemoryLayout.PathElement.groupElement("stamp"));
-    static final VarHandle const$5 = constants$2287.const$3.varHandle(MemoryLayout.PathElement.groupElement("user_data"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_box_set_baseline_position",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_box_get_baseline_position",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_box_reorder_child",
+        constants$164.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_box_query_child_packing",
+        constants$339.const$3
+    );
 }
 
 

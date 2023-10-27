@@ -2,18 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 final class constants$572 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$572() {}
-    static final VarHandle const$0 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("value_type"));
-    static final VarHandle const$1 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("owner_type"));
-    static final VarHandle const$2 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("_nick"));
-    static final VarHandle const$3 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("_blurb"));
-    static final VarHandle const$4 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("qdata"));
-    static final VarHandle const$5 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_copy",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_value_reset",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_value_unset",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_value_set_instance",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_init_from_instance",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_fits_pointer",
+        constants$10.const$5
+    );
 }
 
 

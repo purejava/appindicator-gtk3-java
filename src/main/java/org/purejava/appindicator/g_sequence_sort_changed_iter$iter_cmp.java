@@ -13,7 +13,7 @@ public interface g_sequence_sort_changed_iter$iter_cmp {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_sequence_sort_changed_iter$iter_cmp fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$435.const$5, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$436.const$5, fi, constants$12.const$2, scope);
     }
     static g_sequence_sort_changed_iter$iter_cmp ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

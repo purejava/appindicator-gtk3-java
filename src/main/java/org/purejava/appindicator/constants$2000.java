@@ -9,14 +9,16 @@ final class constants$2000 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2000() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkComponentIface.get_alpha.class, "apply", constants$67.const$0);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$67.const$0
+    static final VarHandle const$0 = constants$1999.const$4.varHandle(MemoryLayout.PathElement.groupElement("add_focus_handler"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkComponentIface.contains.class, "apply", constants$611.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$611.const$1
     );
-    static final VarHandle const$2 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_alpha"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkComponentIface.scroll_to.class, "apply", constants$11.const$4);
-    static final VarHandle const$4 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("scroll_to"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkComponentIface.scroll_to_point.class, "apply", constants$608.const$5);
+    static final VarHandle const$3 = constants$1999.const$4.varHandle(MemoryLayout.PathElement.groupElement("contains"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkComponentIface.ref_accessible_at_point.class, "apply", constants$1728.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$1728.const$2
+    );
 }
 
 

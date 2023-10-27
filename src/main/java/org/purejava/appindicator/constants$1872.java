@@ -8,28 +8,28 @@ final class constants$1872 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1872() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_default",
-        constants$35.const$2
+        "gdk_display_list_seats",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_setting",
-        constants$12.const$2
+        "gdk_display_get_n_monitors",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_screen_set_font_options",
-        constants$13.const$4
+        "gdk_display_get_monitor",
+        constants$21.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_font_options",
+        "gdk_display_get_primary_monitor",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_screen_set_resolution",
-        constants$689.const$5
+        "gdk_display_get_monitor_at_point",
+        constants$33.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_resolution",
-        constants$67.const$0
+        "gdk_display_get_monitor_at_window",
+        constants$5.const$5
     );
 }
 

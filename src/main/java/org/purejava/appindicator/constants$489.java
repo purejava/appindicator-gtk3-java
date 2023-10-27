@@ -2,32 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$489 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$489() {}
-    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("glib_micro_version", JAVA_INT);
-    static final MemorySegment const$1 = RuntimeHelper.lookupGlobalVariable("glib_interface_age", JAVA_INT);
-    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("glib_binary_age", JAVA_INT);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "glib_check_version",
-        constants$30.const$2
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_uri_unescape_segment",
+        constants$23.const$0
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_LONG,
-        JAVA_INT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_uri_parse_scheme",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_uri_peek_scheme",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_uri_escape_string",
+        constants$32.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_uri_unescape_bytes",
+        constants$169.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_new",
-        constants$489.const$4
+        "g_uri_escape_bytes",
+        constants$36.const$1
     );
 }
 

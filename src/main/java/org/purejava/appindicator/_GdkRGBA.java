@@ -20,10 +20,10 @@ import java.lang.invoke.VarHandle;
 public class _GdkRGBA {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1876.const$4;
+        return constants$1881.const$4;
     }
     public static VarHandle red$VH() {
-        return constants$1876.const$5;
+        return constants$1881.const$5;
     }
     /**
      * Getter for field:
@@ -32,7 +32,7 @@ public class _GdkRGBA {
      * }
      */
     public static double red$get(MemorySegment seg) {
-        return (double)constants$1876.const$5.get(seg);
+        return (double)constants$1881.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -41,16 +41,16 @@ public class _GdkRGBA {
      * }
      */
     public static void red$set(MemorySegment seg, double x) {
-        constants$1876.const$5.set(seg, x);
+        constants$1881.const$5.set(seg, x);
     }
     public static double red$get(MemorySegment seg, long index) {
-        return (double)constants$1876.const$5.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1881.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void red$set(MemorySegment seg, long index, double x) {
-        constants$1876.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1881.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle green$VH() {
-        return constants$1877.const$0;
+        return constants$1882.const$0;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GdkRGBA {
      * }
      */
     public static double green$get(MemorySegment seg) {
-        return (double)constants$1877.const$0.get(seg);
+        return (double)constants$1882.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -68,16 +68,16 @@ public class _GdkRGBA {
      * }
      */
     public static void green$set(MemorySegment seg, double x) {
-        constants$1877.const$0.set(seg, x);
+        constants$1882.const$0.set(seg, x);
     }
     public static double green$get(MemorySegment seg, long index) {
-        return (double)constants$1877.const$0.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1882.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void green$set(MemorySegment seg, long index, double x) {
-        constants$1877.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1882.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle blue$VH() {
-        return constants$1877.const$1;
+        return constants$1882.const$1;
     }
     /**
      * Getter for field:
@@ -86,7 +86,7 @@ public class _GdkRGBA {
      * }
      */
     public static double blue$get(MemorySegment seg) {
-        return (double)constants$1877.const$1.get(seg);
+        return (double)constants$1882.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -95,16 +95,16 @@ public class _GdkRGBA {
      * }
      */
     public static void blue$set(MemorySegment seg, double x) {
-        constants$1877.const$1.set(seg, x);
+        constants$1882.const$1.set(seg, x);
     }
     public static double blue$get(MemorySegment seg, long index) {
-        return (double)constants$1877.const$1.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1882.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void blue$set(MemorySegment seg, long index, double x) {
-        constants$1877.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1882.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle alpha$VH() {
-        return constants$1877.const$2;
+        return constants$1882.const$2;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GdkRGBA {
      * }
      */
     public static double alpha$get(MemorySegment seg) {
-        return (double)constants$1877.const$2.get(seg);
+        return (double)constants$1882.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GdkRGBA {
      * }
      */
     public static void alpha$set(MemorySegment seg, double x) {
-        constants$1877.const$2.set(seg, x);
+        constants$1882.const$2.set(seg, x);
     }
     public static double alpha$get(MemorySegment seg, long index) {
-        return (double)constants$1877.const$2.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1882.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void alpha$set(MemorySegment seg, long index, double x) {
-        constants$1877.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1882.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

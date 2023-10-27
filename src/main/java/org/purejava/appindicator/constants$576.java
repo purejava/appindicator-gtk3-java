@@ -2,32 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$576 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$576() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_param_spec_ref_sink",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_qdata",
-        constants$21.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_param_spec_set_qdata",
-        constants$42.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_param_spec_set_qdata_full$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_param_spec_set_qdata_full",
-        constants$179.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_param_spec_steal_qdata",
-        constants$21.const$3
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GParamSpecClass.finalize.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$575.const$4.varHandle(MemoryLayout.PathElement.groupElement("finalize"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GParamSpecClass.value_set_default.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$575.const$4.varHandle(MemoryLayout.PathElement.groupElement("value_set_default"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GParamSpecClass.value_validate.class, "apply", constants$9.const$0);
+    static final VarHandle const$5 = constants$575.const$4.varHandle(MemoryLayout.PathElement.groupElement("value_validate"));
 }
 
 

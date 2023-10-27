@@ -8,28 +8,28 @@ final class constants$570 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$570() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_value_set_instance",
-        constants$13.const$4
+        "g_type_check_class_cast",
+        constants$21.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_value_init_from_instance",
-        constants$13.const$4
+        "g_type_check_class_is_a",
+        constants$97.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_value_fits_pointer",
-        constants$10.const$5
+        "g_type_check_is_value_type",
+        constants$26.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_value_peek_pointer",
-        constants$5.const$2
+        "g_type_check_value",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_value_type_compatible",
-        constants$517.const$3
+        "g_type_check_value_holds",
+        constants$97.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_value_type_transformable",
-        constants$517.const$3
+        "g_type_test_flags",
+        constants$64.const$5
     );
 }
 

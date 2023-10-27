@@ -37,7 +37,7 @@ import java.lang.invoke.VarHandle;
 public class _GThreadFunctions {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$503.const$0;
+        return constants$504.const$4;
     }
     /**
      * {@snippet :
@@ -48,13 +48,13 @@ public class _GThreadFunctions {
 
         java.lang.foreign.MemorySegment apply();
         static MemorySegment allocate(mutex_new fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$503.const$1, fi, constants$35.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$504.const$5, fi, constants$35.const$2, scope);
         }
         static mutex_new ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$503.const$2.invokeExact(symbol);
+                    return (java.lang.foreign.MemorySegment)constants$505.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -63,7 +63,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle mutex_new$VH() {
-        return constants$503.const$3;
+        return constants$505.const$1;
     }
     /**
      * Getter for field:
@@ -72,7 +72,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment mutex_new$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$503.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$505.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -81,13 +81,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void mutex_new$set(MemorySegment seg, MemorySegment x) {
-        constants$503.const$3.set(seg, x);
+        constants$505.const$1.set(seg, x);
     }
     public static MemorySegment mutex_new$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$503.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$505.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void mutex_new$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$503.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$505.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static mutex_new mutex_new(MemorySegment segment, Arena scope) {
         return mutex_new.ofAddress(mutex_new$get(segment), scope);
@@ -101,7 +101,7 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(mutex_lock fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$503.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$505.const$2, fi, constants$13.const$1, scope);
         }
         static mutex_lock ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -116,7 +116,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle mutex_lock$VH() {
-        return constants$503.const$5;
+        return constants$505.const$3;
     }
     /**
      * Getter for field:
@@ -125,7 +125,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment mutex_lock$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$503.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$505.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -134,13 +134,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void mutex_lock$set(MemorySegment seg, MemorySegment x) {
-        constants$503.const$5.set(seg, x);
+        constants$505.const$3.set(seg, x);
     }
     public static MemorySegment mutex_lock$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$503.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$505.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void mutex_lock$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$503.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$505.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static mutex_lock mutex_lock(MemorySegment segment, Arena scope) {
         return mutex_lock.ofAddress(mutex_lock$get(segment), scope);
@@ -154,7 +154,7 @@ public class _GThreadFunctions {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(mutex_trylock fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$504.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$505.const$4, fi, constants$10.const$5, scope);
         }
         static mutex_trylock ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -169,7 +169,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle mutex_trylock$VH() {
-        return constants$504.const$1;
+        return constants$505.const$5;
     }
     /**
      * Getter for field:
@@ -178,7 +178,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment mutex_trylock$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$504.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$505.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -187,13 +187,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void mutex_trylock$set(MemorySegment seg, MemorySegment x) {
-        constants$504.const$1.set(seg, x);
+        constants$505.const$5.set(seg, x);
     }
     public static MemorySegment mutex_trylock$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$504.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$505.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void mutex_trylock$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$504.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$505.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static mutex_trylock mutex_trylock(MemorySegment segment, Arena scope) {
         return mutex_trylock.ofAddress(mutex_trylock$get(segment), scope);
@@ -207,7 +207,7 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(mutex_unlock fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$504.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$506.const$0, fi, constants$13.const$1, scope);
         }
         static mutex_unlock ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -222,7 +222,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle mutex_unlock$VH() {
-        return constants$504.const$3;
+        return constants$506.const$1;
     }
     /**
      * Getter for field:
@@ -231,7 +231,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment mutex_unlock$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$504.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$506.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -240,13 +240,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void mutex_unlock$set(MemorySegment seg, MemorySegment x) {
-        constants$504.const$3.set(seg, x);
+        constants$506.const$1.set(seg, x);
     }
     public static MemorySegment mutex_unlock$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$504.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$506.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void mutex_unlock$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$504.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$506.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static mutex_unlock mutex_unlock(MemorySegment segment, Arena scope) {
         return mutex_unlock.ofAddress(mutex_unlock$get(segment), scope);
@@ -260,7 +260,7 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(mutex_free fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$504.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$506.const$2, fi, constants$13.const$1, scope);
         }
         static mutex_free ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -275,7 +275,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle mutex_free$VH() {
-        return constants$504.const$5;
+        return constants$506.const$3;
     }
     /**
      * Getter for field:
@@ -284,7 +284,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment mutex_free$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$504.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$506.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -293,13 +293,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void mutex_free$set(MemorySegment seg, MemorySegment x) {
-        constants$504.const$5.set(seg, x);
+        constants$506.const$3.set(seg, x);
     }
     public static MemorySegment mutex_free$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$504.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$506.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void mutex_free$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$504.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$506.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static mutex_free mutex_free(MemorySegment segment, Arena scope) {
         return mutex_free.ofAddress(mutex_free$get(segment), scope);
@@ -313,13 +313,13 @@ public class _GThreadFunctions {
 
         java.lang.foreign.MemorySegment apply();
         static MemorySegment allocate(cond_new fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$505.const$0, fi, constants$35.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$506.const$4, fi, constants$35.const$2, scope);
         }
         static cond_new ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$503.const$2.invokeExact(symbol);
+                    return (java.lang.foreign.MemorySegment)constants$505.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -328,7 +328,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle cond_new$VH() {
-        return constants$505.const$1;
+        return constants$506.const$5;
     }
     /**
      * Getter for field:
@@ -337,7 +337,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment cond_new$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$505.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$506.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -346,13 +346,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void cond_new$set(MemorySegment seg, MemorySegment x) {
-        constants$505.const$1.set(seg, x);
+        constants$506.const$5.set(seg, x);
     }
     public static MemorySegment cond_new$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$505.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$506.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void cond_new$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$505.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$506.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static cond_new cond_new(MemorySegment segment, Arena scope) {
         return cond_new.ofAddress(cond_new$get(segment), scope);
@@ -366,7 +366,7 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(cond_signal fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$505.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$507.const$0, fi, constants$13.const$1, scope);
         }
         static cond_signal ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -381,7 +381,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle cond_signal$VH() {
-        return constants$505.const$3;
+        return constants$507.const$1;
     }
     /**
      * Getter for field:
@@ -390,7 +390,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment cond_signal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$505.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$507.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -399,13 +399,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void cond_signal$set(MemorySegment seg, MemorySegment x) {
-        constants$505.const$3.set(seg, x);
+        constants$507.const$1.set(seg, x);
     }
     public static MemorySegment cond_signal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$505.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$507.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void cond_signal$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$505.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$507.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static cond_signal cond_signal(MemorySegment segment, Arena scope) {
         return cond_signal.ofAddress(cond_signal$get(segment), scope);
@@ -419,7 +419,7 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(cond_broadcast fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$505.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$507.const$2, fi, constants$13.const$1, scope);
         }
         static cond_broadcast ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -434,7 +434,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle cond_broadcast$VH() {
-        return constants$505.const$5;
+        return constants$507.const$3;
     }
     /**
      * Getter for field:
@@ -443,7 +443,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment cond_broadcast$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$505.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$507.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -452,13 +452,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void cond_broadcast$set(MemorySegment seg, MemorySegment x) {
-        constants$505.const$5.set(seg, x);
+        constants$507.const$3.set(seg, x);
     }
     public static MemorySegment cond_broadcast$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$505.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$507.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void cond_broadcast$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$505.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$507.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static cond_broadcast cond_broadcast(MemorySegment segment, Arena scope) {
         return cond_broadcast.ofAddress(cond_broadcast$get(segment), scope);
@@ -472,7 +472,7 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(cond_wait fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$506.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$507.const$4, fi, constants$13.const$4, scope);
         }
         static cond_wait ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -487,7 +487,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle cond_wait$VH() {
-        return constants$506.const$1;
+        return constants$507.const$5;
     }
     /**
      * Getter for field:
@@ -496,7 +496,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment cond_wait$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$506.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$507.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -505,13 +505,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void cond_wait$set(MemorySegment seg, MemorySegment x) {
-        constants$506.const$1.set(seg, x);
+        constants$507.const$5.set(seg, x);
     }
     public static MemorySegment cond_wait$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$506.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$507.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void cond_wait$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$506.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$507.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static cond_wait cond_wait(MemorySegment segment, Arena scope) {
         return cond_wait.ofAddress(cond_wait$get(segment), scope);
@@ -525,7 +525,7 @@ public class _GThreadFunctions {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(cond_timed_wait fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$506.const$2, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$508.const$0, fi, constants$12.const$2, scope);
         }
         static cond_timed_wait ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -540,7 +540,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle cond_timed_wait$VH() {
-        return constants$506.const$3;
+        return constants$508.const$1;
     }
     /**
      * Getter for field:
@@ -549,7 +549,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment cond_timed_wait$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$506.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$508.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -558,13 +558,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void cond_timed_wait$set(MemorySegment seg, MemorySegment x) {
-        constants$506.const$3.set(seg, x);
+        constants$508.const$1.set(seg, x);
     }
     public static MemorySegment cond_timed_wait$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$506.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$508.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void cond_timed_wait$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$506.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$508.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static cond_timed_wait cond_timed_wait(MemorySegment segment, Arena scope) {
         return cond_timed_wait.ofAddress(cond_timed_wait$get(segment), scope);
@@ -578,7 +578,7 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(cond_free fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$506.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$508.const$2, fi, constants$13.const$1, scope);
         }
         static cond_free ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -593,7 +593,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle cond_free$VH() {
-        return constants$506.const$5;
+        return constants$508.const$3;
     }
     /**
      * Getter for field:
@@ -602,7 +602,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment cond_free$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$506.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$508.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -611,13 +611,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void cond_free$set(MemorySegment seg, MemorySegment x) {
-        constants$506.const$5.set(seg, x);
+        constants$508.const$3.set(seg, x);
     }
     public static MemorySegment cond_free$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$506.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$508.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void cond_free$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$506.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$508.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static cond_free cond_free(MemorySegment segment, Arena scope) {
         return cond_free.ofAddress(cond_free$get(segment), scope);
@@ -631,7 +631,7 @@ public class _GThreadFunctions {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(private_new fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$507.const$0, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$508.const$4, fi, constants$5.const$2, scope);
         }
         static private_new ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -646,7 +646,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle private_new$VH() {
-        return constants$507.const$1;
+        return constants$508.const$5;
     }
     /**
      * Getter for field:
@@ -655,7 +655,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment private_new$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$507.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$508.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -664,13 +664,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void private_new$set(MemorySegment seg, MemorySegment x) {
-        constants$507.const$1.set(seg, x);
+        constants$508.const$5.set(seg, x);
     }
     public static MemorySegment private_new$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$507.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$508.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void private_new$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$507.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$508.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static private_new private_new(MemorySegment segment, Arena scope) {
         return private_new.ofAddress(private_new$get(segment), scope);
@@ -684,7 +684,7 @@ public class _GThreadFunctions {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(private_get fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$507.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$509.const$0, fi, constants$5.const$2, scope);
         }
         static private_get ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -699,7 +699,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle private_get$VH() {
-        return constants$507.const$3;
+        return constants$509.const$1;
     }
     /**
      * Getter for field:
@@ -708,7 +708,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment private_get$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$507.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$509.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -717,13 +717,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void private_get$set(MemorySegment seg, MemorySegment x) {
-        constants$507.const$3.set(seg, x);
+        constants$509.const$1.set(seg, x);
     }
     public static MemorySegment private_get$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$507.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$509.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void private_get$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$507.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$509.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static private_get private_get(MemorySegment segment, Arena scope) {
         return private_get.ofAddress(private_get$get(segment), scope);
@@ -737,7 +737,7 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(private_set fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$507.const$4, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$509.const$2, fi, constants$13.const$4, scope);
         }
         static private_set ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -752,7 +752,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle private_set$VH() {
-        return constants$507.const$5;
+        return constants$509.const$3;
     }
     /**
      * Getter for field:
@@ -761,7 +761,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment private_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$507.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$509.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -770,13 +770,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void private_set$set(MemorySegment seg, MemorySegment x) {
-        constants$507.const$5.set(seg, x);
+        constants$509.const$3.set(seg, x);
     }
     public static MemorySegment private_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$507.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$509.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void private_set$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$507.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$509.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static private_set private_set(MemorySegment segment, Arena scope) {
         return private_set.ofAddress(private_set$get(segment), scope);
@@ -790,13 +790,13 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, int _x3, int _x4, int _x5, java.lang.foreign.MemorySegment _x6, java.lang.foreign.MemorySegment _x7);
         static MemorySegment allocate(thread_create fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$508.const$1, fi, constants$508.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$509.const$5, fi, constants$509.const$4, scope);
         }
         static thread_create ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, int __x3, int __x4, int __x5, java.lang.foreign.MemorySegment __x6, java.lang.foreign.MemorySegment __x7) -> {
                 try {
-                    constants$508.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
+                    constants$510.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -805,7 +805,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle thread_create$VH() {
-        return constants$508.const$3;
+        return constants$510.const$1;
     }
     /**
      * Getter for field:
@@ -814,7 +814,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment thread_create$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$508.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$510.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -823,13 +823,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void thread_create$set(MemorySegment seg, MemorySegment x) {
-        constants$508.const$3.set(seg, x);
+        constants$510.const$1.set(seg, x);
     }
     public static MemorySegment thread_create$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$508.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$510.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void thread_create$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$508.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$510.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static thread_create thread_create(MemorySegment segment, Arena scope) {
         return thread_create.ofAddress(thread_create$get(segment), scope);
@@ -843,7 +843,7 @@ public class _GThreadFunctions {
 
         void apply();
         static MemorySegment allocate(thread_yield fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$508.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$510.const$2, fi, constants$7.const$5, scope);
         }
         static thread_yield ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -858,7 +858,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle thread_yield$VH() {
-        return constants$508.const$5;
+        return constants$510.const$3;
     }
     /**
      * Getter for field:
@@ -867,7 +867,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment thread_yield$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$508.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$510.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -876,13 +876,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void thread_yield$set(MemorySegment seg, MemorySegment x) {
-        constants$508.const$5.set(seg, x);
+        constants$510.const$3.set(seg, x);
     }
     public static MemorySegment thread_yield$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$508.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$510.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void thread_yield$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$508.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$510.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static thread_yield thread_yield(MemorySegment segment, Arena scope) {
         return thread_yield.ofAddress(thread_yield$get(segment), scope);
@@ -896,7 +896,7 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(thread_join fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$509.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$510.const$4, fi, constants$13.const$1, scope);
         }
         static thread_join ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -911,7 +911,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle thread_join$VH() {
-        return constants$509.const$1;
+        return constants$510.const$5;
     }
     /**
      * Getter for field:
@@ -920,7 +920,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment thread_join$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$509.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$510.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -929,13 +929,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void thread_join$set(MemorySegment seg, MemorySegment x) {
-        constants$509.const$1.set(seg, x);
+        constants$510.const$5.set(seg, x);
     }
     public static MemorySegment thread_join$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$509.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$510.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void thread_join$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$509.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$510.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static thread_join thread_join(MemorySegment segment, Arena scope) {
         return thread_join.ofAddress(thread_join$get(segment), scope);
@@ -949,7 +949,7 @@ public class _GThreadFunctions {
 
         void apply();
         static MemorySegment allocate(thread_exit fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$509.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$511.const$0, fi, constants$7.const$5, scope);
         }
         static thread_exit ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -964,7 +964,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle thread_exit$VH() {
-        return constants$509.const$3;
+        return constants$511.const$1;
     }
     /**
      * Getter for field:
@@ -973,7 +973,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment thread_exit$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$509.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$511.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -982,13 +982,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void thread_exit$set(MemorySegment seg, MemorySegment x) {
-        constants$509.const$3.set(seg, x);
+        constants$511.const$1.set(seg, x);
     }
     public static MemorySegment thread_exit$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$509.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$511.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void thread_exit$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$509.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$511.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static thread_exit thread_exit(MemorySegment segment, Arena scope) {
         return thread_exit.ofAddress(thread_exit$get(segment), scope);
@@ -1002,13 +1002,13 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(thread_set_priority fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$509.const$4, fi, constants$40.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$511.const$2, fi, constants$40.const$2, scope);
         }
         static thread_set_priority ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    constants$509.const$5.invokeExact(symbol, __x0, __x1);
+                    constants$511.const$3.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1017,7 +1017,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle thread_set_priority$VH() {
-        return constants$510.const$0;
+        return constants$511.const$4;
     }
     /**
      * Getter for field:
@@ -1026,7 +1026,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment thread_set_priority$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$510.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$511.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -1035,13 +1035,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void thread_set_priority$set(MemorySegment seg, MemorySegment x) {
-        constants$510.const$0.set(seg, x);
+        constants$511.const$4.set(seg, x);
     }
     public static MemorySegment thread_set_priority$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$510.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$511.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void thread_set_priority$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$510.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$511.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static thread_set_priority thread_set_priority(MemorySegment segment, Arena scope) {
         return thread_set_priority.ofAddress(thread_set_priority$get(segment), scope);
@@ -1055,7 +1055,7 @@ public class _GThreadFunctions {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(thread_self fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$510.const$1, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$511.const$5, fi, constants$13.const$1, scope);
         }
         static thread_self ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1070,7 +1070,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle thread_self$VH() {
-        return constants$510.const$2;
+        return constants$512.const$0;
     }
     /**
      * Getter for field:
@@ -1079,7 +1079,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment thread_self$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$510.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$512.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -1088,13 +1088,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void thread_self$set(MemorySegment seg, MemorySegment x) {
-        constants$510.const$2.set(seg, x);
+        constants$512.const$0.set(seg, x);
     }
     public static MemorySegment thread_self$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$510.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$512.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void thread_self$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$510.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$512.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static thread_self thread_self(MemorySegment segment, Arena scope) {
         return thread_self.ofAddress(thread_self$get(segment), scope);
@@ -1108,7 +1108,7 @@ public class _GThreadFunctions {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(thread_equal fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$510.const$3, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$512.const$1, fi, constants$9.const$0, scope);
         }
         static thread_equal ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1123,7 +1123,7 @@ public class _GThreadFunctions {
     }
 
     public static VarHandle thread_equal$VH() {
-        return constants$510.const$4;
+        return constants$512.const$2;
     }
     /**
      * Getter for field:
@@ -1132,7 +1132,7 @@ public class _GThreadFunctions {
      * }
      */
     public static MemorySegment thread_equal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$510.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$512.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -1141,13 +1141,13 @@ public class _GThreadFunctions {
      * }
      */
     public static void thread_equal$set(MemorySegment seg, MemorySegment x) {
-        constants$510.const$4.set(seg, x);
+        constants$512.const$2.set(seg, x);
     }
     public static MemorySegment thread_equal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$510.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$512.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void thread_equal$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$510.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$512.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static thread_equal thread_equal(MemorySegment segment, Arena scope) {
         return thread_equal.ofAddress(thread_equal$get(segment), scope);

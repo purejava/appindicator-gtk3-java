@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkOrientableIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2920.const$4;
+        return constants$2925.const$4;
     }
     public static MemorySegment base_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);

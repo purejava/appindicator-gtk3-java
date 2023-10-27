@@ -8,28 +8,25 @@ final class constants$688 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$688() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_value_get_long",
-        constants$4.const$0
+        "g_value_array_sort",
+        constants$5.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_value_set_ulong",
-        constants$25.const$3
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_value_array_sort_with_data$compare_func.class, "apply", constants$12.const$2);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_value_get_ulong",
-        constants$4.const$0
+        "g_value_array_sort_with_data",
+        constants$23.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_value_set_int64",
-        constants$25.const$3
+        "g_value_set_char",
+        constants$188.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_value_get_int64",
-        constants$4.const$0
+        "g_value_get_char",
+        constants$186.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_value_set_uint64",
-        constants$25.const$3
+        "g_value_set_schar",
+        constants$188.const$5
     );
 }
 

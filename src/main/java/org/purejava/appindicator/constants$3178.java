@@ -2,35 +2,50 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3178 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3178() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_get_drop_group",
-        constants$33.const$5
+        "gtk_tool_item_group_get_item_position",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_get_drag_item",
-        constants$5.const$5
+        "gtk_tool_item_group_get_n_items",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_set_drag_source",
-        constants$40.const$2
+        "gtk_tool_item_group_get_nth_item",
+        constants$21.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_add_drag_dest",
-        constants$1513.const$2
+        "gtk_tool_item_group_get_drop_item",
+        constants$33.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_get_hadjustment",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_get_vadjustment",
-        constants$5.const$2
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        RuntimeHelper.POINTER.withName("g_class")
+                    ).withName("g_type_instance"),
+                    JAVA_INT.withName("ref_count"),
+                    MemoryLayout.paddingLayout(4),
+                    RuntimeHelper.POINTER.withName("qdata")
+                ).withName("parent_instance"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("widget"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkToolPalette");
+    static final VarHandle const$5 = constants$3178.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

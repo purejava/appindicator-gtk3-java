@@ -22,7 +22,7 @@ import java.lang.invoke.VarHandle;
 public class _GSeekableIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1244.const$5;
+        return constants$1248.const$5;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -36,13 +36,13 @@ public class _GSeekableIface {
 
         long apply(java.lang.foreign.MemorySegment _x0);
         static MemorySegment allocate(tell fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1245.const$0, fi, constants$4.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1249.const$0, fi, constants$4.const$0, scope);
         }
         static tell ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (long)constants$1065.const$3.invokeExact(symbol, __x0);
+                    return (long)constants$1068.const$5.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -51,7 +51,7 @@ public class _GSeekableIface {
     }
 
     public static VarHandle tell$VH() {
-        return constants$1245.const$1;
+        return constants$1249.const$1;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _GSeekableIface {
      * }
      */
     public static MemorySegment tell$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1245.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1249.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -69,13 +69,13 @@ public class _GSeekableIface {
      * }
      */
     public static void tell$set(MemorySegment seg, MemorySegment x) {
-        constants$1245.const$1.set(seg, x);
+        constants$1249.const$1.set(seg, x);
     }
     public static MemorySegment tell$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1245.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1249.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void tell$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1245.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1249.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static tell tell(MemorySegment segment, Arena scope) {
         return tell.ofAddress(tell$get(segment), scope);
@@ -89,7 +89,7 @@ public class _GSeekableIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(can_seek fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1245.const$2, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1249.const$2, fi, constants$10.const$5, scope);
         }
         static can_seek ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -104,7 +104,7 @@ public class _GSeekableIface {
     }
 
     public static VarHandle can_seek$VH() {
-        return constants$1245.const$3;
+        return constants$1249.const$3;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GSeekableIface {
      * }
      */
     public static MemorySegment can_seek$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1245.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1249.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GSeekableIface {
      * }
      */
     public static void can_seek$set(MemorySegment seg, MemorySegment x) {
-        constants$1245.const$3.set(seg, x);
+        constants$1249.const$3.set(seg, x);
     }
     public static MemorySegment can_seek$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1245.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1249.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void can_seek$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1245.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1249.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static can_seek can_seek(MemorySegment segment, Arena scope) {
         return can_seek.ofAddress(can_seek$get(segment), scope);
@@ -142,13 +142,13 @@ public class _GSeekableIface {
 
         int apply(java.lang.foreign.MemorySegment _x0, long _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(seek fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1245.const$4, fi, constants$1066.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1249.const$4, fi, constants$1069.const$3, scope);
         }
         static seek ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, long __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)constants$1066.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$1069.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -157,7 +157,7 @@ public class _GSeekableIface {
     }
 
     public static VarHandle seek$VH() {
-        return constants$1245.const$5;
+        return constants$1249.const$5;
     }
     /**
      * Getter for field:
@@ -166,7 +166,7 @@ public class _GSeekableIface {
      * }
      */
     public static MemorySegment seek$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1245.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1249.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -175,13 +175,13 @@ public class _GSeekableIface {
      * }
      */
     public static void seek$set(MemorySegment seg, MemorySegment x) {
-        constants$1245.const$5.set(seg, x);
+        constants$1249.const$5.set(seg, x);
     }
     public static MemorySegment seek$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1245.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1249.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void seek$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1245.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1249.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static seek seek(MemorySegment segment, Arena scope) {
         return seek.ofAddress(seek$get(segment), scope);
@@ -195,7 +195,7 @@ public class _GSeekableIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(can_truncate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1246.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1250.const$0, fi, constants$10.const$5, scope);
         }
         static can_truncate ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -210,7 +210,7 @@ public class _GSeekableIface {
     }
 
     public static VarHandle can_truncate$VH() {
-        return constants$1246.const$1;
+        return constants$1250.const$1;
     }
     /**
      * Getter for field:
@@ -219,7 +219,7 @@ public class _GSeekableIface {
      * }
      */
     public static MemorySegment can_truncate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1246.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1250.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -228,13 +228,13 @@ public class _GSeekableIface {
      * }
      */
     public static void can_truncate$set(MemorySegment seg, MemorySegment x) {
-        constants$1246.const$1.set(seg, x);
+        constants$1250.const$1.set(seg, x);
     }
     public static MemorySegment can_truncate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1246.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1250.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void can_truncate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1246.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1250.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static can_truncate can_truncate(MemorySegment segment, Arena scope) {
         return can_truncate.ofAddress(can_truncate$get(segment), scope);
@@ -248,13 +248,13 @@ public class _GSeekableIface {
 
         int apply(java.lang.foreign.MemorySegment _x0, long _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
         static MemorySegment allocate(truncate_fn fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1246.const$2, fi, constants$393.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1250.const$2, fi, constants$394.const$4, scope);
         }
         static truncate_fn ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, long __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)constants$1080.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (int)constants$1084.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -263,7 +263,7 @@ public class _GSeekableIface {
     }
 
     public static VarHandle truncate_fn$VH() {
-        return constants$1246.const$3;
+        return constants$1250.const$3;
     }
     /**
      * Getter for field:
@@ -272,7 +272,7 @@ public class _GSeekableIface {
      * }
      */
     public static MemorySegment truncate_fn$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1246.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1250.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -281,13 +281,13 @@ public class _GSeekableIface {
      * }
      */
     public static void truncate_fn$set(MemorySegment seg, MemorySegment x) {
-        constants$1246.const$3.set(seg, x);
+        constants$1250.const$3.set(seg, x);
     }
     public static MemorySegment truncate_fn$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1246.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1250.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void truncate_fn$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1246.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1250.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static truncate_fn truncate_fn(MemorySegment segment, Arena scope) {
         return truncate_fn.ofAddress(truncate_fn$get(segment), scope);

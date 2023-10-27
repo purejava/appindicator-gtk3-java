@@ -2,31 +2,33 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1425 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1425() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_reference",
-        constants$5.const$2
+    static final VarHandle const$0 = constants$1424.const$2.varHandle(MemoryLayout.PathElement.groupElement("height"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_blob_create$destroy.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_destroy",
-        constants$13.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_user_data$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_user_data",
-        constants$1423.const$1
+        "hb_blob_create",
+        constants$1425.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_get_user_data",
-        constants$5.const$5
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_blob_create_or_fail$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_make_immutable",
-        constants$13.const$1
+        "hb_blob_create_or_fail",
+        constants$1425.const$2
     );
 }
 

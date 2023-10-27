@@ -7,23 +7,29 @@ final class constants$633 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$633() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_object_unref",
-        constants$13.const$1
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_object_disconnect",
+        constants$13.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_object_weak_ref$notify.class, "apply", constants$13.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_object_setv",
+        constants$179.const$1
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_object_weak_ref",
-        constants$14.const$3
+        "g_object_set_valist",
+        constants$312.const$4
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_object_weak_unref$notify.class, "apply", constants$13.const$4);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_object_getv",
+        constants$179.const$1
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_object_weak_unref",
-        constants$14.const$3
+        "g_object_get_valist",
+        constants$312.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_object_add_weak_pointer",
-        constants$13.const$4
+        "g_object_set_property",
+        constants$14.const$3
     );
 }
 

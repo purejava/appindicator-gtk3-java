@@ -4,40 +4,40 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$331 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$331() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_key_file_get_locale_for_key",
+        "g_key_file_has_key",
+        constants$34.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_key_file_get_value",
         constants$39.const$1
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_key_file_set_value",
+        constants$42.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_key_file_get_string",
+        constants$39.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_key_file_set_string",
+        constants$42.const$1
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_key_file_set_locale_string",
-        constants$331.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_key_file_get_boolean",
-        constants$34.const$5
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_key_file_set_boolean",
-        constants$331.const$4
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_key_file_get_locale_string",
+        constants$331.const$5
     );
 }
 

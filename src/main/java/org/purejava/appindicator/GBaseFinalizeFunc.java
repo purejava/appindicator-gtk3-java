@@ -13,7 +13,7 @@ public interface GBaseFinalizeFunc {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(GBaseFinalizeFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$552.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$553.const$3, fi, constants$13.const$1, scope);
     }
     static GBaseFinalizeFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

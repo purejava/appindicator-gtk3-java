@@ -8,28 +8,28 @@ final class constants$2813 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2813() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_row",
-        constants$9.const$0
+        "gtk_icon_view_set_pixbuf_column",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_column",
-        constants$9.const$0
+        "gtk_icon_view_get_pixbuf_column",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_selected_items",
-        constants$5.const$2
+        "gtk_icon_view_set_item_orientation",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_select_all",
-        constants$13.const$1
+        "gtk_icon_view_get_item_orientation",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_unselect_all",
-        constants$13.const$1
+        "gtk_icon_view_set_columns",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_item_activated",
-        constants$13.const$4
+        "gtk_icon_view_get_columns",
+        constants$10.const$5
     );
 }
 

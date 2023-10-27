@@ -22,7 +22,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkRecentManagerClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3010.const$5;
+        return constants$3015.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -36,7 +36,7 @@ public class _GtkRecentManagerClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3011.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$3016.const$0, fi, constants$13.const$1, scope);
         }
         static changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -51,7 +51,7 @@ public class _GtkRecentManagerClass {
     }
 
     public static VarHandle changed$VH() {
-        return constants$3011.const$1;
+        return constants$3016.const$1;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _GtkRecentManagerClass {
      * }
      */
     public static MemorySegment changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3011.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3016.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -69,13 +69,13 @@ public class _GtkRecentManagerClass {
      * }
      */
     public static void changed$set(MemorySegment seg, MemorySegment x) {
-        constants$3011.const$1.set(seg, x);
+        constants$3016.const$1.set(seg, x);
     }
     public static MemorySegment changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3011.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3016.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3011.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3016.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static changed changed(MemorySegment segment, Arena scope) {
         return changed.ofAddress(changed$get(segment), scope);
@@ -89,7 +89,7 @@ public class _GtkRecentManagerClass {
 
         void apply();
         static MemorySegment allocate(_gtk_recent1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3011.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3016.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_recent1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -104,7 +104,7 @@ public class _GtkRecentManagerClass {
     }
 
     public static VarHandle _gtk_recent1$VH() {
-        return constants$3011.const$3;
+        return constants$3016.const$3;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GtkRecentManagerClass {
      * }
      */
     public static MemorySegment _gtk_recent1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3011.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3016.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GtkRecentManagerClass {
      * }
      */
     public static void _gtk_recent1$set(MemorySegment seg, MemorySegment x) {
-        constants$3011.const$3.set(seg, x);
+        constants$3016.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_recent1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3011.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3016.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_recent1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3011.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3016.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_recent1 _gtk_recent1(MemorySegment segment, Arena scope) {
         return _gtk_recent1.ofAddress(_gtk_recent1$get(segment), scope);
@@ -142,7 +142,7 @@ public class _GtkRecentManagerClass {
 
         void apply();
         static MemorySegment allocate(_gtk_recent2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3011.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3016.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_recent2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -157,7 +157,7 @@ public class _GtkRecentManagerClass {
     }
 
     public static VarHandle _gtk_recent2$VH() {
-        return constants$3011.const$5;
+        return constants$3016.const$5;
     }
     /**
      * Getter for field:
@@ -166,7 +166,7 @@ public class _GtkRecentManagerClass {
      * }
      */
     public static MemorySegment _gtk_recent2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3011.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3016.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -175,13 +175,13 @@ public class _GtkRecentManagerClass {
      * }
      */
     public static void _gtk_recent2$set(MemorySegment seg, MemorySegment x) {
-        constants$3011.const$5.set(seg, x);
+        constants$3016.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_recent2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3011.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3016.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_recent2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3011.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3016.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_recent2 _gtk_recent2(MemorySegment segment, Arena scope) {
         return _gtk_recent2.ofAddress(_gtk_recent2$get(segment), scope);
@@ -195,7 +195,7 @@ public class _GtkRecentManagerClass {
 
         void apply();
         static MemorySegment allocate(_gtk_recent3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3012.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3017.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_recent3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -210,7 +210,7 @@ public class _GtkRecentManagerClass {
     }
 
     public static VarHandle _gtk_recent3$VH() {
-        return constants$3012.const$1;
+        return constants$3017.const$1;
     }
     /**
      * Getter for field:
@@ -219,7 +219,7 @@ public class _GtkRecentManagerClass {
      * }
      */
     public static MemorySegment _gtk_recent3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3012.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3017.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -228,13 +228,13 @@ public class _GtkRecentManagerClass {
      * }
      */
     public static void _gtk_recent3$set(MemorySegment seg, MemorySegment x) {
-        constants$3012.const$1.set(seg, x);
+        constants$3017.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_recent3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3012.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3017.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_recent3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3012.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3017.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_recent3 _gtk_recent3(MemorySegment segment, Arena scope) {
         return _gtk_recent3.ofAddress(_gtk_recent3$get(segment), scope);
@@ -248,7 +248,7 @@ public class _GtkRecentManagerClass {
 
         void apply();
         static MemorySegment allocate(_gtk_recent4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3012.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3017.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_recent4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -263,7 +263,7 @@ public class _GtkRecentManagerClass {
     }
 
     public static VarHandle _gtk_recent4$VH() {
-        return constants$3012.const$3;
+        return constants$3017.const$3;
     }
     /**
      * Getter for field:
@@ -272,7 +272,7 @@ public class _GtkRecentManagerClass {
      * }
      */
     public static MemorySegment _gtk_recent4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3012.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3017.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -281,13 +281,13 @@ public class _GtkRecentManagerClass {
      * }
      */
     public static void _gtk_recent4$set(MemorySegment seg, MemorySegment x) {
-        constants$3012.const$3.set(seg, x);
+        constants$3017.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_recent4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3012.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3017.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_recent4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3012.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3017.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_recent4 _gtk_recent4(MemorySegment segment, Arena scope) {
         return _gtk_recent4.ofAddress(_gtk_recent4$get(segment), scope);

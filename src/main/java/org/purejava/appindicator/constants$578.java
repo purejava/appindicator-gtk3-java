@@ -8,28 +8,28 @@ final class constants$578 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$578() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_param_values_cmp",
-        constants$12.const$2
+        "g_param_spec_ref",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_name",
-        constants$5.const$2
+        "g_param_spec_unref",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_nick",
-        constants$5.const$2
+        "g_param_spec_sink",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_blurb",
+        "g_param_spec_ref_sink",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_value_set_param",
-        constants$13.const$4
+        "g_param_spec_get_qdata",
+        constants$21.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_value_get_param",
-        constants$5.const$2
+        "g_param_spec_set_qdata",
+        constants$42.const$4
     );
 }
 

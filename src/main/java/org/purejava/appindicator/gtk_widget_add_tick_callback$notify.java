@@ -13,7 +13,7 @@ public interface gtk_widget_add_tick_callback$notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_widget_add_tick_callback$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2163.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2168.const$5, fi, constants$13.const$1, scope);
     }
     static gtk_widget_add_tick_callback$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

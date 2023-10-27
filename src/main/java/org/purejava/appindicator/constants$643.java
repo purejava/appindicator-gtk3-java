@@ -2,34 +2,37 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$643 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$643() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_binding_flags_get_type",
-        constants$3.const$5
+        "g_object_force_floating",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_binding_get_type",
-        constants$3.const$5
+        "g_object_run_dispose",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_binding_get_flags",
-        constants$10.const$5
+        "g_value_take_object",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_binding_get_source",
-        constants$5.const$2
+        "g_value_set_object_take_ownership",
+        constants$13.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_binding_dup_source",
-        constants$5.const$2
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_binding_get_target",
-        constants$5.const$2
+        "g_object_compat_control",
+        constants$643.const$4
     );
 }
 

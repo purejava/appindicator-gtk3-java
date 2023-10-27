@@ -2,32 +2,50 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1377 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1377() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_ask_password_finish",
-        constants$12.const$2
+        "g_tls_database_lookup_certificates_issued_by_async",
+        constants$1371.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_invoke_request_certificate",
-        constants$859.const$1
+        "g_tls_database_lookup_certificates_issued_by_finish",
+        constants$23.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_request_certificate",
-        constants$859.const$1
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        MemoryLayout.sequenceLayout(8, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GTlsFileDatabaseInterface");
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_file_database_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_tls_interaction_request_certificate_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_request_certificate_async",
-        constants$584.const$3
+        "g_tls_file_database_new",
+        constants$5.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_request_certificate_finish",
-        constants$12.const$2
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GTlsInteraction");
 }
 
 

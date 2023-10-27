@@ -13,7 +13,7 @@ public interface g_regex_replace_eval$eval {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_regex_replace_eval$eval fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$417.const$0, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$418.const$0, fi, constants$12.const$2, scope);
     }
     static g_regex_replace_eval$eval ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,19 +2,23 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2327 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2327() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.create_context.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_context"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.copy_context.class, "apply", constants$5.const$5);
-    static final VarHandle const$3 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("copy_context"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.get_request_mode.class, "apply", constants$10.const$5);
-    static final VarHandle const$5 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_request_mode"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_tree_sortable_set_sort_func$sort_func.class, "apply", constants$34.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_tree_sortable_set_sort_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_set_sort_func",
+        constants$282.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_tree_sortable_set_default_sort_func$sort_func.class, "apply", constants$34.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_tree_sortable_set_default_sort_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_set_default_sort_func",
+        constants$42.const$1
+    );
 }
 
 

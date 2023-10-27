@@ -2,34 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$3046 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3046() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_revealer_set_reveal_child",
-        constants$40.const$2
+        "gtk_recent_chooser_widget_new",
+        constants$35.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_revealer_get_child_revealed",
-        constants$10.const$5
+        "gtk_recent_chooser_widget_new_for_manager",
+        constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_revealer_get_transition_duration",
-        constants$10.const$5
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_revealer_set_transition_duration",
-        constants$40.const$2
+        "gtk_render_check",
+        constants$3046.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_revealer_set_transition_type",
-        constants$40.const$2
+        "gtk_render_option",
+        constants$3046.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_revealer_get_transition_type",
-        constants$10.const$5
+        "gtk_render_arrow",
+        constants$3046.const$2
     );
 }
 

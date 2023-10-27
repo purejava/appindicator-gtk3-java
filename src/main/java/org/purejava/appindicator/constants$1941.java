@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1941 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1941() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_get",
-        constants$5.const$2
+        "gdk_keyboard_grab",
+        constants$49.const$0
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pointer_ungrab",
+        constants$80.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_set_for_display",
-        constants$1941.const$1
+        "gdk_keyboard_ungrab",
+        constants$80.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_get_for_display",
-        constants$5.const$5
+        "gdk_pointer_is_grabbed",
+        constants$83.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_selection_convert",
-        constants$331.const$4
+        "gdk_screen_width",
+        constants$83.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_selection_property_get",
-        constants$34.const$5
+        "gdk_screen_height",
+        constants$83.const$1
     );
 }
 

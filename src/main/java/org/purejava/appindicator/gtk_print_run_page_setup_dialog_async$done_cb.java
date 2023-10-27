@@ -13,7 +13,7 @@ public interface gtk_print_run_page_setup_dialog_async$done_cb {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gtk_print_run_page_setup_dialog_async$done_cb fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2982.const$0, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$2987.const$0, fi, constants$13.const$4, scope);
     }
     static gtk_print_run_page_setup_dialog_async$done_cb ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

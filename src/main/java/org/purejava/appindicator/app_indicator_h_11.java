@@ -12,8 +12,208 @@ import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.OfInt;
 public class app_indicator_h_11 extends app_indicator_h_10 {
 
+    /**
+     * {@snippet :
+     * enum hb_style_tag_t._HB_STYLE_TAG_MAX_VALUE = 2147483647;
+     * }
+     */
+    public static int _HB_STYLE_TAG_MAX_VALUE() {
+        return (int)2147483647L;
+    }
+    public static MethodHandle hb_style_get_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$1530.const$3,"hb_style_get_value");
+    }
+    /**
+     * {@snippet :
+     * float hb_style_get_value(struct hb_font_t* font, enum hb_style_tag_t style_tag);
+     * }
+     */
+    public static float hb_style_get_value(MemorySegment font, int style_tag) {
+        var mh$ = hb_style_get_value$MH();
+        try {
+            return (float)mh$.invokeExact(font, style_tag);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_version$MH() {
+        return RuntimeHelper.requireNonNull(constants$1530.const$4,"hb_version");
+    }
+    /**
+     * {@snippet :
+     * void hb_version(unsigned int* major, unsigned int* minor, unsigned int* micro);
+     * }
+     */
+    public static void hb_version(MemorySegment major, MemorySegment minor, MemorySegment micro) {
+        var mh$ = hb_version$MH();
+        try {
+            mh$.invokeExact(major, minor, micro);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_version_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$1530.const$5,"hb_version_string");
+    }
+    /**
+     * {@snippet :
+     * char* hb_version_string();
+     * }
+     */
+    public static MemorySegment hb_version_string() {
+        var mh$ = hb_version_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_version_atleast$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$0,"hb_version_atleast");
+    }
+    /**
+     * {@snippet :
+     * int hb_version_atleast(unsigned int major, unsigned int minor, unsigned int micro);
+     * }
+     */
+    public static int hb_version_atleast(int major, int minor, int micro) {
+        var mh$ = hb_version_atleast$MH();
+        try {
+            return (int)mh$.invokeExact(major, minor, micro);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum PangoCoverageLevel.PANGO_COVERAGE_NONE = 0;
+     * }
+     */
+    public static int PANGO_COVERAGE_NONE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoCoverageLevel.PANGO_COVERAGE_FALLBACK = 1;
+     * }
+     */
+    public static int PANGO_COVERAGE_FALLBACK() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoCoverageLevel.PANGO_COVERAGE_APPROXIMATE = 2;
+     * }
+     */
+    public static int PANGO_COVERAGE_APPROXIMATE() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoCoverageLevel.PANGO_COVERAGE_EXACT = 3;
+     * }
+     */
+    public static int PANGO_COVERAGE_EXACT() {
+        return (int)3L;
+    }
+    public static MethodHandle pango_coverage_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$1,"pango_coverage_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long pango_coverage_get_type();
+     * }
+     */
+    public static long pango_coverage_get_type() {
+        var mh$ = pango_coverage_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_coverage_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$2,"pango_coverage_new");
+    }
+    /**
+     * {@snippet :
+     * struct _PangoCoverage* pango_coverage_new();
+     * }
+     */
+    public static MemorySegment pango_coverage_new() {
+        var mh$ = pango_coverage_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_coverage_ref$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$3,"pango_coverage_ref");
+    }
+    /**
+     * {@snippet :
+     * struct _PangoCoverage* pango_coverage_ref(struct _PangoCoverage* coverage);
+     * }
+     */
+    public static MemorySegment pango_coverage_ref(MemorySegment coverage) {
+        var mh$ = pango_coverage_ref$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(coverage);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_coverage_unref$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$4,"pango_coverage_unref");
+    }
+    /**
+     * {@snippet :
+     * void pango_coverage_unref(struct _PangoCoverage* coverage);
+     * }
+     */
+    public static void pango_coverage_unref(MemorySegment coverage) {
+        var mh$ = pango_coverage_unref$MH();
+        try {
+            mh$.invokeExact(coverage);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_coverage_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$5,"pango_coverage_copy");
+    }
+    /**
+     * {@snippet :
+     * struct _PangoCoverage* pango_coverage_copy(struct _PangoCoverage* coverage);
+     * }
+     */
+    public static MemorySegment pango_coverage_copy(MemorySegment coverage) {
+        var mh$ = pango_coverage_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(coverage);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_coverage_get$MH() {
+        return RuntimeHelper.requireNonNull(constants$1532.const$0,"pango_coverage_get");
+    }
+    /**
+     * {@snippet :
+     * enum PangoCoverageLevel pango_coverage_get(struct _PangoCoverage* coverage, int index_);
+     * }
+     */
+    public static int pango_coverage_get(MemorySegment coverage, int index_) {
+        var mh$ = pango_coverage_get$MH();
+        try {
+            return (int)mh$.invokeExact(coverage, index_);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle pango_coverage_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1527.const$1,"pango_coverage_set");
+        return RuntimeHelper.requireNonNull(constants$1532.const$1,"pango_coverage_set");
     }
     /**
      * {@snippet :
@@ -29,7 +229,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_coverage_max$MH() {
-        return RuntimeHelper.requireNonNull(constants$1527.const$2,"pango_coverage_max");
+        return RuntimeHelper.requireNonNull(constants$1532.const$2,"pango_coverage_max");
     }
     /**
      * {@snippet :
@@ -45,7 +245,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_coverage_to_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1527.const$3,"pango_coverage_to_bytes");
+        return RuntimeHelper.requireNonNull(constants$1532.const$3,"pango_coverage_to_bytes");
     }
     /**
      * {@snippet :
@@ -61,7 +261,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_coverage_from_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1527.const$4,"pango_coverage_from_bytes");
+        return RuntimeHelper.requireNonNull(constants$1532.const$4,"pango_coverage_from_bytes");
     }
     /**
      * {@snippet :
@@ -107,7 +307,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      */
     public static final OfInt PangoGlyph = JAVA_INT;
     public static MethodHandle pango_units_from_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$1527.const$6,"pango_units_from_double");
+        return RuntimeHelper.requireNonNull(constants$1532.const$6,"pango_units_from_double");
     }
     /**
      * {@snippet :
@@ -123,7 +323,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_units_to_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$1528.const$1,"pango_units_to_double");
+        return RuntimeHelper.requireNonNull(constants$1533.const$1,"pango_units_to_double");
     }
     /**
      * {@snippet :
@@ -139,7 +339,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_extents_to_pixels$MH() {
-        return RuntimeHelper.requireNonNull(constants$1529.const$1,"pango_extents_to_pixels");
+        return RuntimeHelper.requireNonNull(constants$1534.const$1,"pango_extents_to_pixels");
     }
     /**
      * {@snippet :
@@ -219,7 +419,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)2L;
     }
     public static MethodHandle pango_matrix_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1530.const$3,"pango_matrix_get_type");
+        return RuntimeHelper.requireNonNull(constants$1535.const$3,"pango_matrix_get_type");
     }
     /**
      * {@snippet :
@@ -235,7 +435,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1530.const$4,"pango_matrix_copy");
+        return RuntimeHelper.requireNonNull(constants$1535.const$4,"pango_matrix_copy");
     }
     /**
      * {@snippet :
@@ -251,7 +451,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1530.const$5,"pango_matrix_free");
+        return RuntimeHelper.requireNonNull(constants$1535.const$5,"pango_matrix_free");
     }
     /**
      * {@snippet :
@@ -267,7 +467,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1531.const$1,"pango_matrix_translate");
+        return RuntimeHelper.requireNonNull(constants$1536.const$1,"pango_matrix_translate");
     }
     /**
      * {@snippet :
@@ -283,7 +483,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1531.const$2,"pango_matrix_scale");
+        return RuntimeHelper.requireNonNull(constants$1536.const$2,"pango_matrix_scale");
     }
     /**
      * {@snippet :
@@ -299,7 +499,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_rotate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1531.const$3,"pango_matrix_rotate");
+        return RuntimeHelper.requireNonNull(constants$1536.const$3,"pango_matrix_rotate");
     }
     /**
      * {@snippet :
@@ -315,7 +515,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_concat$MH() {
-        return RuntimeHelper.requireNonNull(constants$1531.const$4,"pango_matrix_concat");
+        return RuntimeHelper.requireNonNull(constants$1536.const$4,"pango_matrix_concat");
     }
     /**
      * {@snippet :
@@ -331,7 +531,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_transform_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1531.const$5,"pango_matrix_transform_point");
+        return RuntimeHelper.requireNonNull(constants$1536.const$5,"pango_matrix_transform_point");
     }
     /**
      * {@snippet :
@@ -347,7 +547,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_transform_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1532.const$0,"pango_matrix_transform_distance");
+        return RuntimeHelper.requireNonNull(constants$1537.const$0,"pango_matrix_transform_distance");
     }
     /**
      * {@snippet :
@@ -363,7 +563,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_transform_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1532.const$1,"pango_matrix_transform_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1537.const$1,"pango_matrix_transform_rectangle");
     }
     /**
      * {@snippet :
@@ -379,7 +579,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_transform_pixel_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1532.const$2,"pango_matrix_transform_pixel_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1537.const$2,"pango_matrix_transform_pixel_rectangle");
     }
     /**
      * {@snippet :
@@ -395,7 +595,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_get_font_scale_factor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1532.const$3,"pango_matrix_get_font_scale_factor");
+        return RuntimeHelper.requireNonNull(constants$1537.const$3,"pango_matrix_get_font_scale_factor");
     }
     /**
      * {@snippet :
@@ -411,7 +611,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_get_font_scale_factors$MH() {
-        return RuntimeHelper.requireNonNull(constants$1532.const$4,"pango_matrix_get_font_scale_factors");
+        return RuntimeHelper.requireNonNull(constants$1537.const$4,"pango_matrix_get_font_scale_factors");
     }
     /**
      * {@snippet :
@@ -427,7 +627,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_matrix_get_slant_ratio$MH() {
-        return RuntimeHelper.requireNonNull(constants$1532.const$5,"pango_matrix_get_slant_ratio");
+        return RuntimeHelper.requireNonNull(constants$1537.const$5,"pango_matrix_get_slant_ratio");
     }
     /**
      * {@snippet :
@@ -1387,7 +1587,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)116L;
     }
     public static MethodHandle pango_script_for_unichar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1533.const$0,"pango_script_for_unichar");
+        return RuntimeHelper.requireNonNull(constants$1538.const$0,"pango_script_for_unichar");
     }
     /**
      * {@snippet :
@@ -1403,7 +1603,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_script_iter_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1533.const$1,"pango_script_iter_get_type");
+        return RuntimeHelper.requireNonNull(constants$1538.const$1,"pango_script_iter_get_type");
     }
     /**
      * {@snippet :
@@ -1419,7 +1619,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_script_iter_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1533.const$2,"pango_script_iter_new");
+        return RuntimeHelper.requireNonNull(constants$1538.const$2,"pango_script_iter_new");
     }
     /**
      * {@snippet :
@@ -1435,7 +1635,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_script_iter_get_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1533.const$3,"pango_script_iter_get_range");
+        return RuntimeHelper.requireNonNull(constants$1538.const$3,"pango_script_iter_get_range");
     }
     /**
      * {@snippet :
@@ -1451,7 +1651,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_script_iter_next$MH() {
-        return RuntimeHelper.requireNonNull(constants$1533.const$4,"pango_script_iter_next");
+        return RuntimeHelper.requireNonNull(constants$1538.const$4,"pango_script_iter_next");
     }
     /**
      * {@snippet :
@@ -1467,7 +1667,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_script_iter_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1533.const$5,"pango_script_iter_free");
+        return RuntimeHelper.requireNonNull(constants$1538.const$5,"pango_script_iter_free");
     }
     /**
      * {@snippet :
@@ -1483,7 +1683,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1534.const$0,"pango_language_get_type");
+        return RuntimeHelper.requireNonNull(constants$1539.const$0,"pango_language_get_type");
     }
     /**
      * {@snippet :
@@ -1499,7 +1699,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$1534.const$1,"pango_language_get_default");
+        return RuntimeHelper.requireNonNull(constants$1539.const$1,"pango_language_get_default");
     }
     /**
      * {@snippet :
@@ -1515,7 +1715,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_get_preferred$MH() {
-        return RuntimeHelper.requireNonNull(constants$1534.const$2,"pango_language_get_preferred");
+        return RuntimeHelper.requireNonNull(constants$1539.const$2,"pango_language_get_preferred");
     }
     /**
      * {@snippet :
@@ -1531,7 +1731,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1534.const$3,"pango_language_from_string");
+        return RuntimeHelper.requireNonNull(constants$1539.const$3,"pango_language_from_string");
     }
     /**
      * {@snippet :
@@ -1547,7 +1747,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1534.const$4,"pango_language_to_string");
+        return RuntimeHelper.requireNonNull(constants$1539.const$4,"pango_language_to_string");
     }
     /**
      * {@snippet :
@@ -1563,7 +1763,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_get_sample_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1534.const$5,"pango_language_get_sample_string");
+        return RuntimeHelper.requireNonNull(constants$1539.const$5,"pango_language_get_sample_string");
     }
     /**
      * {@snippet :
@@ -1579,7 +1779,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_matches$MH() {
-        return RuntimeHelper.requireNonNull(constants$1535.const$0,"pango_language_matches");
+        return RuntimeHelper.requireNonNull(constants$1540.const$0,"pango_language_matches");
     }
     /**
      * {@snippet :
@@ -1595,7 +1795,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_includes_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$1535.const$1,"pango_language_includes_script");
+        return RuntimeHelper.requireNonNull(constants$1540.const$1,"pango_language_includes_script");
     }
     /**
      * {@snippet :
@@ -1611,7 +1811,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_get_scripts$MH() {
-        return RuntimeHelper.requireNonNull(constants$1535.const$2,"pango_language_get_scripts");
+        return RuntimeHelper.requireNonNull(constants$1540.const$2,"pango_language_get_scripts");
     }
     /**
      * {@snippet :
@@ -1627,7 +1827,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_script_get_sample_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$1535.const$3,"pango_script_get_sample_language");
+        return RuntimeHelper.requireNonNull(constants$1540.const$3,"pango_script_get_sample_language");
     }
     /**
      * {@snippet :
@@ -1643,7 +1843,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_to_rotation$MH() {
-        return RuntimeHelper.requireNonNull(constants$1535.const$4,"pango_gravity_to_rotation");
+        return RuntimeHelper.requireNonNull(constants$1540.const$4,"pango_gravity_to_rotation");
     }
     /**
      * {@snippet :
@@ -1659,7 +1859,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_get_for_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1535.const$5,"pango_gravity_get_for_matrix");
+        return RuntimeHelper.requireNonNull(constants$1540.const$5,"pango_gravity_get_for_matrix");
     }
     /**
      * {@snippet :
@@ -1675,7 +1875,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_get_for_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$1536.const$0,"pango_gravity_get_for_script");
+        return RuntimeHelper.requireNonNull(constants$1541.const$0,"pango_gravity_get_for_script");
     }
     /**
      * {@snippet :
@@ -1691,7 +1891,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_get_for_script_and_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1536.const$2,"pango_gravity_get_for_script_and_width");
+        return RuntimeHelper.requireNonNull(constants$1541.const$2,"pango_gravity_get_for_script_and_width");
     }
     /**
      * {@snippet :
@@ -1947,7 +2147,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)22L;
     }
     public static MethodHandle pango_bidi_type_for_unichar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1536.const$3,"pango_bidi_type_for_unichar");
+        return RuntimeHelper.requireNonNull(constants$1541.const$3,"pango_bidi_type_for_unichar");
     }
     /**
      * {@snippet :
@@ -1963,7 +2163,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_unichar_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1536.const$4,"pango_unichar_direction");
+        return RuntimeHelper.requireNonNull(constants$1541.const$4,"pango_unichar_direction");
     }
     /**
      * {@snippet :
@@ -1979,7 +2179,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_find_base_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$1536.const$5,"pango_find_base_dir");
+        return RuntimeHelper.requireNonNull(constants$1541.const$5,"pango_find_base_dir");
     }
     /**
      * {@snippet :
@@ -1995,7 +2195,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_get_mirror_char$MH() {
-        return RuntimeHelper.requireNonNull(constants$1537.const$0,"pango_get_mirror_char");
+        return RuntimeHelper.requireNonNull(constants$1542.const$0,"pango_get_mirror_char");
     }
     /**
      * {@snippet :
@@ -2323,7 +2523,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)128L;
     }
     public static MethodHandle pango_font_description_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1537.const$1,"pango_font_description_get_type");
+        return RuntimeHelper.requireNonNull(constants$1542.const$1,"pango_font_description_get_type");
     }
     /**
      * {@snippet :
@@ -2339,7 +2539,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1537.const$2,"pango_font_description_new");
+        return RuntimeHelper.requireNonNull(constants$1542.const$2,"pango_font_description_new");
     }
     /**
      * {@snippet :
@@ -2355,7 +2555,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1537.const$3,"pango_font_description_copy");
+        return RuntimeHelper.requireNonNull(constants$1542.const$3,"pango_font_description_copy");
     }
     /**
      * {@snippet :
@@ -2371,7 +2571,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_copy_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$1537.const$4,"pango_font_description_copy_static");
+        return RuntimeHelper.requireNonNull(constants$1542.const$4,"pango_font_description_copy_static");
     }
     /**
      * {@snippet :
@@ -2387,7 +2587,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1537.const$5,"pango_font_description_hash");
+        return RuntimeHelper.requireNonNull(constants$1542.const$5,"pango_font_description_hash");
     }
     /**
      * {@snippet :
@@ -2403,7 +2603,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1538.const$0,"pango_font_description_equal");
+        return RuntimeHelper.requireNonNull(constants$1543.const$0,"pango_font_description_equal");
     }
     /**
      * {@snippet :
@@ -2419,7 +2619,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1538.const$1,"pango_font_description_free");
+        return RuntimeHelper.requireNonNull(constants$1543.const$1,"pango_font_description_free");
     }
     /**
      * {@snippet :
@@ -2435,7 +2635,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_descriptions_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1538.const$2,"pango_font_descriptions_free");
+        return RuntimeHelper.requireNonNull(constants$1543.const$2,"pango_font_descriptions_free");
     }
     /**
      * {@snippet :
@@ -2451,7 +2651,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$1538.const$3,"pango_font_description_set_family");
+        return RuntimeHelper.requireNonNull(constants$1543.const$3,"pango_font_description_set_family");
     }
     /**
      * {@snippet :
@@ -2467,7 +2667,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_family_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$1538.const$4,"pango_font_description_set_family_static");
+        return RuntimeHelper.requireNonNull(constants$1543.const$4,"pango_font_description_set_family_static");
     }
     /**
      * {@snippet :
@@ -2483,7 +2683,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$1538.const$5,"pango_font_description_get_family");
+        return RuntimeHelper.requireNonNull(constants$1543.const$5,"pango_font_description_get_family");
     }
     /**
      * {@snippet :
@@ -2499,7 +2699,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1539.const$0,"pango_font_description_set_style");
+        return RuntimeHelper.requireNonNull(constants$1544.const$0,"pango_font_description_set_style");
     }
     /**
      * {@snippet :
@@ -2515,7 +2715,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1539.const$1,"pango_font_description_get_style");
+        return RuntimeHelper.requireNonNull(constants$1544.const$1,"pango_font_description_get_style");
     }
     /**
      * {@snippet :
@@ -2531,7 +2731,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_variant$MH() {
-        return RuntimeHelper.requireNonNull(constants$1539.const$2,"pango_font_description_set_variant");
+        return RuntimeHelper.requireNonNull(constants$1544.const$2,"pango_font_description_set_variant");
     }
     /**
      * {@snippet :
@@ -2547,7 +2747,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_variant$MH() {
-        return RuntimeHelper.requireNonNull(constants$1539.const$3,"pango_font_description_get_variant");
+        return RuntimeHelper.requireNonNull(constants$1544.const$3,"pango_font_description_get_variant");
     }
     /**
      * {@snippet :
@@ -2563,7 +2763,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_weight$MH() {
-        return RuntimeHelper.requireNonNull(constants$1539.const$4,"pango_font_description_set_weight");
+        return RuntimeHelper.requireNonNull(constants$1544.const$4,"pango_font_description_set_weight");
     }
     /**
      * {@snippet :
@@ -2579,7 +2779,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_weight$MH() {
-        return RuntimeHelper.requireNonNull(constants$1539.const$5,"pango_font_description_get_weight");
+        return RuntimeHelper.requireNonNull(constants$1544.const$5,"pango_font_description_get_weight");
     }
     /**
      * {@snippet :
@@ -2595,7 +2795,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_stretch$MH() {
-        return RuntimeHelper.requireNonNull(constants$1540.const$0,"pango_font_description_set_stretch");
+        return RuntimeHelper.requireNonNull(constants$1545.const$0,"pango_font_description_set_stretch");
     }
     /**
      * {@snippet :
@@ -2611,7 +2811,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_stretch$MH() {
-        return RuntimeHelper.requireNonNull(constants$1540.const$1,"pango_font_description_get_stretch");
+        return RuntimeHelper.requireNonNull(constants$1545.const$1,"pango_font_description_get_stretch");
     }
     /**
      * {@snippet :
@@ -2627,7 +2827,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1540.const$2,"pango_font_description_set_size");
+        return RuntimeHelper.requireNonNull(constants$1545.const$2,"pango_font_description_set_size");
     }
     /**
      * {@snippet :
@@ -2643,7 +2843,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1540.const$3,"pango_font_description_get_size");
+        return RuntimeHelper.requireNonNull(constants$1545.const$3,"pango_font_description_get_size");
     }
     /**
      * {@snippet :
@@ -2659,7 +2859,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_absolute_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1540.const$4,"pango_font_description_set_absolute_size");
+        return RuntimeHelper.requireNonNull(constants$1545.const$4,"pango_font_description_set_absolute_size");
     }
     /**
      * {@snippet :
@@ -2675,7 +2875,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_size_is_absolute$MH() {
-        return RuntimeHelper.requireNonNull(constants$1540.const$5,"pango_font_description_get_size_is_absolute");
+        return RuntimeHelper.requireNonNull(constants$1545.const$5,"pango_font_description_get_size_is_absolute");
     }
     /**
      * {@snippet :
@@ -2691,7 +2891,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1541.const$0,"pango_font_description_set_gravity");
+        return RuntimeHelper.requireNonNull(constants$1546.const$0,"pango_font_description_set_gravity");
     }
     /**
      * {@snippet :
@@ -2707,7 +2907,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1541.const$1,"pango_font_description_get_gravity");
+        return RuntimeHelper.requireNonNull(constants$1546.const$1,"pango_font_description_get_gravity");
     }
     /**
      * {@snippet :
@@ -2723,7 +2923,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_variations_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$1541.const$2,"pango_font_description_set_variations_static");
+        return RuntimeHelper.requireNonNull(constants$1546.const$2,"pango_font_description_set_variations_static");
     }
     /**
      * {@snippet :
@@ -2739,7 +2939,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1541.const$3,"pango_font_description_set_variations");
+        return RuntimeHelper.requireNonNull(constants$1546.const$3,"pango_font_description_set_variations");
     }
     /**
      * {@snippet :
@@ -2755,7 +2955,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1541.const$4,"pango_font_description_get_variations");
+        return RuntimeHelper.requireNonNull(constants$1546.const$4,"pango_font_description_get_variations");
     }
     /**
      * {@snippet :
@@ -2771,7 +2971,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_set_fields$MH() {
-        return RuntimeHelper.requireNonNull(constants$1541.const$5,"pango_font_description_get_set_fields");
+        return RuntimeHelper.requireNonNull(constants$1546.const$5,"pango_font_description_get_set_fields");
     }
     /**
      * {@snippet :
@@ -2787,7 +2987,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_unset_fields$MH() {
-        return RuntimeHelper.requireNonNull(constants$1542.const$0,"pango_font_description_unset_fields");
+        return RuntimeHelper.requireNonNull(constants$1547.const$0,"pango_font_description_unset_fields");
     }
     /**
      * {@snippet :
@@ -2803,7 +3003,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_merge$MH() {
-        return RuntimeHelper.requireNonNull(constants$1542.const$1,"pango_font_description_merge");
+        return RuntimeHelper.requireNonNull(constants$1547.const$1,"pango_font_description_merge");
     }
     /**
      * {@snippet :
@@ -2819,7 +3019,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_merge_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$1542.const$2,"pango_font_description_merge_static");
+        return RuntimeHelper.requireNonNull(constants$1547.const$2,"pango_font_description_merge_static");
     }
     /**
      * {@snippet :
@@ -2835,7 +3035,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_better_match$MH() {
-        return RuntimeHelper.requireNonNull(constants$1542.const$3,"pango_font_description_better_match");
+        return RuntimeHelper.requireNonNull(constants$1547.const$3,"pango_font_description_better_match");
     }
     /**
      * {@snippet :
@@ -2851,7 +3051,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1542.const$4,"pango_font_description_from_string");
+        return RuntimeHelper.requireNonNull(constants$1547.const$4,"pango_font_description_from_string");
     }
     /**
      * {@snippet :
@@ -2867,7 +3067,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1542.const$5,"pango_font_description_to_string");
+        return RuntimeHelper.requireNonNull(constants$1547.const$5,"pango_font_description_to_string");
     }
     /**
      * {@snippet :
@@ -2883,7 +3083,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_to_filename$MH() {
-        return RuntimeHelper.requireNonNull(constants$1543.const$0,"pango_font_description_to_filename");
+        return RuntimeHelper.requireNonNull(constants$1548.const$0,"pango_font_description_to_filename");
     }
     /**
      * {@snippet :
@@ -2899,7 +3099,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1545.const$0,"pango_font_metrics_get_type");
+        return RuntimeHelper.requireNonNull(constants$1550.const$0,"pango_font_metrics_get_type");
     }
     /**
      * {@snippet :
@@ -2915,7 +3115,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1545.const$1,"pango_font_metrics_ref");
+        return RuntimeHelper.requireNonNull(constants$1550.const$1,"pango_font_metrics_ref");
     }
     /**
      * {@snippet :
@@ -2931,7 +3131,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1545.const$2,"pango_font_metrics_unref");
+        return RuntimeHelper.requireNonNull(constants$1550.const$2,"pango_font_metrics_unref");
     }
     /**
      * {@snippet :
@@ -2947,7 +3147,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_ascent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1545.const$3,"pango_font_metrics_get_ascent");
+        return RuntimeHelper.requireNonNull(constants$1550.const$3,"pango_font_metrics_get_ascent");
     }
     /**
      * {@snippet :
@@ -2963,7 +3163,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_descent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1545.const$4,"pango_font_metrics_get_descent");
+        return RuntimeHelper.requireNonNull(constants$1550.const$4,"pango_font_metrics_get_descent");
     }
     /**
      * {@snippet :
@@ -2979,7 +3179,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1545.const$5,"pango_font_metrics_get_height");
+        return RuntimeHelper.requireNonNull(constants$1550.const$5,"pango_font_metrics_get_height");
     }
     /**
      * {@snippet :
@@ -2995,7 +3195,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_approximate_char_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1546.const$0,"pango_font_metrics_get_approximate_char_width");
+        return RuntimeHelper.requireNonNull(constants$1551.const$0,"pango_font_metrics_get_approximate_char_width");
     }
     /**
      * {@snippet :
@@ -3011,7 +3211,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_approximate_digit_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1546.const$1,"pango_font_metrics_get_approximate_digit_width");
+        return RuntimeHelper.requireNonNull(constants$1551.const$1,"pango_font_metrics_get_approximate_digit_width");
     }
     /**
      * {@snippet :
@@ -3027,7 +3227,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_underline_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1546.const$2,"pango_font_metrics_get_underline_position");
+        return RuntimeHelper.requireNonNull(constants$1551.const$2,"pango_font_metrics_get_underline_position");
     }
     /**
      * {@snippet :
@@ -3043,7 +3243,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_underline_thickness$MH() {
-        return RuntimeHelper.requireNonNull(constants$1546.const$3,"pango_font_metrics_get_underline_thickness");
+        return RuntimeHelper.requireNonNull(constants$1551.const$3,"pango_font_metrics_get_underline_thickness");
     }
     /**
      * {@snippet :
@@ -3059,7 +3259,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_strikethrough_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1546.const$4,"pango_font_metrics_get_strikethrough_position");
+        return RuntimeHelper.requireNonNull(constants$1551.const$4,"pango_font_metrics_get_strikethrough_position");
     }
     /**
      * {@snippet :
@@ -3075,7 +3275,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_strikethrough_thickness$MH() {
-        return RuntimeHelper.requireNonNull(constants$1546.const$5,"pango_font_metrics_get_strikethrough_thickness");
+        return RuntimeHelper.requireNonNull(constants$1551.const$5,"pango_font_metrics_get_strikethrough_thickness");
     }
     /**
      * {@snippet :
@@ -3091,7 +3291,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1549.const$2,"pango_font_family_get_type");
+        return RuntimeHelper.requireNonNull(constants$1554.const$2,"pango_font_family_get_type");
     }
     /**
      * {@snippet :
@@ -3107,7 +3307,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_list_faces$MH() {
-        return RuntimeHelper.requireNonNull(constants$1549.const$3,"pango_font_family_list_faces");
+        return RuntimeHelper.requireNonNull(constants$1554.const$3,"pango_font_family_list_faces");
     }
     /**
      * {@snippet :
@@ -3123,7 +3323,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1549.const$4,"pango_font_family_get_name");
+        return RuntimeHelper.requireNonNull(constants$1554.const$4,"pango_font_family_get_name");
     }
     /**
      * {@snippet :
@@ -3139,7 +3339,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_is_monospace$MH() {
-        return RuntimeHelper.requireNonNull(constants$1549.const$5,"pango_font_family_is_monospace");
+        return RuntimeHelper.requireNonNull(constants$1554.const$5,"pango_font_family_is_monospace");
     }
     /**
      * {@snippet :
@@ -3155,7 +3355,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_is_variable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1550.const$0,"pango_font_family_is_variable");
+        return RuntimeHelper.requireNonNull(constants$1555.const$0,"pango_font_family_is_variable");
     }
     /**
      * {@snippet :
@@ -3171,7 +3371,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1550.const$1,"pango_font_family_get_face");
+        return RuntimeHelper.requireNonNull(constants$1555.const$1,"pango_font_family_get_face");
     }
     /**
      * {@snippet :
@@ -3187,7 +3387,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1553.const$0,"pango_font_face_get_type");
+        return RuntimeHelper.requireNonNull(constants$1558.const$0,"pango_font_face_get_type");
     }
     /**
      * {@snippet :
@@ -3203,7 +3403,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_describe$MH() {
-        return RuntimeHelper.requireNonNull(constants$1553.const$1,"pango_font_face_describe");
+        return RuntimeHelper.requireNonNull(constants$1558.const$1,"pango_font_face_describe");
     }
     /**
      * {@snippet :
@@ -3219,7 +3419,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_get_face_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1553.const$2,"pango_font_face_get_face_name");
+        return RuntimeHelper.requireNonNull(constants$1558.const$2,"pango_font_face_get_face_name");
     }
     /**
      * {@snippet :
@@ -3235,7 +3435,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_list_sizes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1553.const$3,"pango_font_face_list_sizes");
+        return RuntimeHelper.requireNonNull(constants$1558.const$3,"pango_font_face_list_sizes");
     }
     /**
      * {@snippet :
@@ -3251,7 +3451,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_is_synthesized$MH() {
-        return RuntimeHelper.requireNonNull(constants$1553.const$4,"pango_font_face_is_synthesized");
+        return RuntimeHelper.requireNonNull(constants$1558.const$4,"pango_font_face_is_synthesized");
     }
     /**
      * {@snippet :
@@ -3267,7 +3467,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$1553.const$5,"pango_font_face_get_family");
+        return RuntimeHelper.requireNonNull(constants$1558.const$5,"pango_font_face_get_family");
     }
     /**
      * {@snippet :
@@ -3283,7 +3483,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1557.const$0,"pango_font_get_type");
+        return RuntimeHelper.requireNonNull(constants$1562.const$0,"pango_font_get_type");
     }
     /**
      * {@snippet :
@@ -3299,7 +3499,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_describe$MH() {
-        return RuntimeHelper.requireNonNull(constants$1557.const$1,"pango_font_describe");
+        return RuntimeHelper.requireNonNull(constants$1562.const$1,"pango_font_describe");
     }
     /**
      * {@snippet :
@@ -3315,7 +3515,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_describe_with_absolute_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1557.const$2,"pango_font_describe_with_absolute_size");
+        return RuntimeHelper.requireNonNull(constants$1562.const$2,"pango_font_describe_with_absolute_size");
     }
     /**
      * {@snippet :
@@ -3331,7 +3531,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_coverage$MH() {
-        return RuntimeHelper.requireNonNull(constants$1557.const$3,"pango_font_get_coverage");
+        return RuntimeHelper.requireNonNull(constants$1562.const$3,"pango_font_get_coverage");
     }
     /**
      * {@snippet :
@@ -3347,7 +3547,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_find_shaper$MH() {
-        return RuntimeHelper.requireNonNull(constants$1557.const$4,"pango_font_find_shaper");
+        return RuntimeHelper.requireNonNull(constants$1562.const$4,"pango_font_find_shaper");
     }
     /**
      * {@snippet :
@@ -3363,7 +3563,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$1557.const$5,"pango_font_get_metrics");
+        return RuntimeHelper.requireNonNull(constants$1562.const$5,"pango_font_get_metrics");
     }
     /**
      * {@snippet :
@@ -3379,7 +3579,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_glyph_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1558.const$0,"pango_font_get_glyph_extents");
+        return RuntimeHelper.requireNonNull(constants$1563.const$0,"pango_font_get_glyph_extents");
     }
     /**
      * {@snippet :
@@ -3395,7 +3595,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_font_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$1558.const$1,"pango_font_get_font_map");
+        return RuntimeHelper.requireNonNull(constants$1563.const$1,"pango_font_get_font_map");
     }
     /**
      * {@snippet :
@@ -3411,7 +3611,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1558.const$2,"pango_font_get_face");
+        return RuntimeHelper.requireNonNull(constants$1563.const$2,"pango_font_get_face");
     }
     /**
      * {@snippet :
@@ -3427,7 +3627,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_has_char$MH() {
-        return RuntimeHelper.requireNonNull(constants$1558.const$3,"pango_font_has_char");
+        return RuntimeHelper.requireNonNull(constants$1563.const$3,"pango_font_has_char");
     }
     /**
      * {@snippet :
@@ -3443,7 +3643,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_features$MH() {
-        return RuntimeHelper.requireNonNull(constants$1558.const$4,"pango_font_get_features");
+        return RuntimeHelper.requireNonNull(constants$1563.const$4,"pango_font_get_features");
     }
     /**
      * {@snippet :
@@ -3459,7 +3659,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_hb_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1558.const$5,"pango_font_get_hb_font");
+        return RuntimeHelper.requireNonNull(constants$1563.const$5,"pango_font_get_hb_font");
     }
     /**
      * {@snippet :
@@ -3475,7 +3675,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_languages$MH() {
-        return RuntimeHelper.requireNonNull(constants$1559.const$0,"pango_font_get_languages");
+        return RuntimeHelper.requireNonNull(constants$1564.const$0,"pango_font_get_languages");
     }
     /**
      * {@snippet :
@@ -3491,7 +3691,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_serialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1559.const$1,"pango_font_serialize");
+        return RuntimeHelper.requireNonNull(constants$1564.const$1,"pango_font_serialize");
     }
     /**
      * {@snippet :
@@ -3507,7 +3707,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_deserialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1559.const$2,"pango_font_deserialize");
+        return RuntimeHelper.requireNonNull(constants$1564.const$2,"pango_font_deserialize");
     }
     /**
      * {@snippet :
@@ -3619,7 +3819,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      */
     public static final AddressLayout PangoFontDescription_queueautoptr = RuntimeHelper.POINTER;
     public static MethodHandle pango_color_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1560.const$1,"pango_color_get_type");
+        return RuntimeHelper.requireNonNull(constants$1565.const$1,"pango_color_get_type");
     }
     /**
      * {@snippet :
@@ -3635,7 +3835,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_color_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1560.const$2,"pango_color_copy");
+        return RuntimeHelper.requireNonNull(constants$1565.const$2,"pango_color_copy");
     }
     /**
      * {@snippet :
@@ -3651,7 +3851,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_color_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1560.const$3,"pango_color_free");
+        return RuntimeHelper.requireNonNull(constants$1565.const$3,"pango_color_free");
     }
     /**
      * {@snippet :
@@ -3667,7 +3867,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_color_parse$MH() {
-        return RuntimeHelper.requireNonNull(constants$1560.const$4,"pango_color_parse");
+        return RuntimeHelper.requireNonNull(constants$1565.const$4,"pango_color_parse");
     }
     /**
      * {@snippet :
@@ -3683,7 +3883,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_color_parse_with_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1560.const$5,"pango_color_parse_with_alpha");
+        return RuntimeHelper.requireNonNull(constants$1565.const$5,"pango_color_parse_with_alpha");
     }
     /**
      * {@snippet :
@@ -3699,7 +3899,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_color_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1561.const$0,"pango_color_to_string");
+        return RuntimeHelper.requireNonNull(constants$1566.const$0,"pango_color_to_string");
     }
     /**
      * {@snippet :
@@ -4219,7 +4419,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)3L;
     }
     public static MethodHandle pango_attribute_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1567.const$0,"pango_attribute_get_type");
+        return RuntimeHelper.requireNonNull(constants$1572.const$0,"pango_attribute_get_type");
     }
     /**
      * {@snippet :
@@ -4235,7 +4435,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_type_register$MH() {
-        return RuntimeHelper.requireNonNull(constants$1567.const$1,"pango_attr_type_register");
+        return RuntimeHelper.requireNonNull(constants$1572.const$1,"pango_attr_type_register");
     }
     /**
      * {@snippet :
@@ -4251,7 +4451,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_type_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1567.const$2,"pango_attr_type_get_name");
+        return RuntimeHelper.requireNonNull(constants$1572.const$2,"pango_attr_type_get_name");
     }
     /**
      * {@snippet :
@@ -4267,7 +4467,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$1567.const$3,"pango_attribute_init");
+        return RuntimeHelper.requireNonNull(constants$1572.const$3,"pango_attribute_init");
     }
     /**
      * {@snippet :
@@ -4283,7 +4483,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1567.const$4,"pango_attribute_copy");
+        return RuntimeHelper.requireNonNull(constants$1572.const$4,"pango_attribute_copy");
     }
     /**
      * {@snippet :
@@ -4299,7 +4499,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1567.const$5,"pango_attribute_destroy");
+        return RuntimeHelper.requireNonNull(constants$1572.const$5,"pango_attribute_destroy");
     }
     /**
      * {@snippet :
@@ -4315,7 +4515,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1568.const$0,"pango_attribute_equal");
+        return RuntimeHelper.requireNonNull(constants$1573.const$0,"pango_attribute_equal");
     }
     /**
      * {@snippet :
@@ -4331,7 +4531,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_language_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1568.const$1,"pango_attr_language_new");
+        return RuntimeHelper.requireNonNull(constants$1573.const$1,"pango_attr_language_new");
     }
     /**
      * {@snippet :
@@ -4347,7 +4547,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_family_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1568.const$2,"pango_attr_family_new");
+        return RuntimeHelper.requireNonNull(constants$1573.const$2,"pango_attr_family_new");
     }
     /**
      * {@snippet :
@@ -4363,7 +4563,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_foreground_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1568.const$4,"pango_attr_foreground_new");
+        return RuntimeHelper.requireNonNull(constants$1573.const$4,"pango_attr_foreground_new");
     }
     /**
      * {@snippet :
@@ -4379,7 +4579,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_background_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1568.const$5,"pango_attr_background_new");
+        return RuntimeHelper.requireNonNull(constants$1573.const$5,"pango_attr_background_new");
     }
     /**
      * {@snippet :
@@ -4395,7 +4595,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_size_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1569.const$0,"pango_attr_size_new");
+        return RuntimeHelper.requireNonNull(constants$1574.const$0,"pango_attr_size_new");
     }
     /**
      * {@snippet :
@@ -4411,7 +4611,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_size_new_absolute$MH() {
-        return RuntimeHelper.requireNonNull(constants$1569.const$1,"pango_attr_size_new_absolute");
+        return RuntimeHelper.requireNonNull(constants$1574.const$1,"pango_attr_size_new_absolute");
     }
     /**
      * {@snippet :
@@ -4427,7 +4627,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_style_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1569.const$2,"pango_attr_style_new");
+        return RuntimeHelper.requireNonNull(constants$1574.const$2,"pango_attr_style_new");
     }
     /**
      * {@snippet :
@@ -4443,7 +4643,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_weight_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1569.const$3,"pango_attr_weight_new");
+        return RuntimeHelper.requireNonNull(constants$1574.const$3,"pango_attr_weight_new");
     }
     /**
      * {@snippet :
@@ -4459,7 +4659,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_variant_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1569.const$4,"pango_attr_variant_new");
+        return RuntimeHelper.requireNonNull(constants$1574.const$4,"pango_attr_variant_new");
     }
     /**
      * {@snippet :
@@ -4475,7 +4675,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_stretch_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1569.const$5,"pango_attr_stretch_new");
+        return RuntimeHelper.requireNonNull(constants$1574.const$5,"pango_attr_stretch_new");
     }
     /**
      * {@snippet :
@@ -4491,7 +4691,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_font_desc_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1570.const$0,"pango_attr_font_desc_new");
+        return RuntimeHelper.requireNonNull(constants$1575.const$0,"pango_attr_font_desc_new");
     }
     /**
      * {@snippet :
@@ -4507,7 +4707,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_underline_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1570.const$1,"pango_attr_underline_new");
+        return RuntimeHelper.requireNonNull(constants$1575.const$1,"pango_attr_underline_new");
     }
     /**
      * {@snippet :
@@ -4523,7 +4723,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_underline_color_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1570.const$2,"pango_attr_underline_color_new");
+        return RuntimeHelper.requireNonNull(constants$1575.const$2,"pango_attr_underline_color_new");
     }
     /**
      * {@snippet :
@@ -4539,7 +4739,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_strikethrough_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1570.const$3,"pango_attr_strikethrough_new");
+        return RuntimeHelper.requireNonNull(constants$1575.const$3,"pango_attr_strikethrough_new");
     }
     /**
      * {@snippet :
@@ -4555,7 +4755,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_strikethrough_color_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1570.const$4,"pango_attr_strikethrough_color_new");
+        return RuntimeHelper.requireNonNull(constants$1575.const$4,"pango_attr_strikethrough_color_new");
     }
     /**
      * {@snippet :
@@ -4571,7 +4771,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_rise_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1570.const$5,"pango_attr_rise_new");
+        return RuntimeHelper.requireNonNull(constants$1575.const$5,"pango_attr_rise_new");
     }
     /**
      * {@snippet :
@@ -4587,7 +4787,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_baseline_shift_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1571.const$0,"pango_attr_baseline_shift_new");
+        return RuntimeHelper.requireNonNull(constants$1576.const$0,"pango_attr_baseline_shift_new");
     }
     /**
      * {@snippet :
@@ -4603,7 +4803,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_font_scale_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1571.const$1,"pango_attr_font_scale_new");
+        return RuntimeHelper.requireNonNull(constants$1576.const$1,"pango_attr_font_scale_new");
     }
     /**
      * {@snippet :
@@ -4619,7 +4819,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_scale_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1571.const$2,"pango_attr_scale_new");
+        return RuntimeHelper.requireNonNull(constants$1576.const$2,"pango_attr_scale_new");
     }
     /**
      * {@snippet :
@@ -4635,7 +4835,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_fallback_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1571.const$3,"pango_attr_fallback_new");
+        return RuntimeHelper.requireNonNull(constants$1576.const$3,"pango_attr_fallback_new");
     }
     /**
      * {@snippet :
@@ -4651,7 +4851,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_letter_spacing_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1571.const$4,"pango_attr_letter_spacing_new");
+        return RuntimeHelper.requireNonNull(constants$1576.const$4,"pango_attr_letter_spacing_new");
     }
     /**
      * {@snippet :
@@ -4667,7 +4867,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_shape_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1571.const$5,"pango_attr_shape_new");
+        return RuntimeHelper.requireNonNull(constants$1576.const$5,"pango_attr_shape_new");
     }
     /**
      * {@snippet :
@@ -4683,7 +4883,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_shape_new_with_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1572.const$2,"pango_attr_shape_new_with_data");
+        return RuntimeHelper.requireNonNull(constants$1577.const$2,"pango_attr_shape_new_with_data");
     }
     /**
      * {@snippet :
@@ -4699,7 +4899,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_gravity_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1572.const$3,"pango_attr_gravity_new");
+        return RuntimeHelper.requireNonNull(constants$1577.const$3,"pango_attr_gravity_new");
     }
     /**
      * {@snippet :
@@ -4715,7 +4915,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_gravity_hint_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1572.const$4,"pango_attr_gravity_hint_new");
+        return RuntimeHelper.requireNonNull(constants$1577.const$4,"pango_attr_gravity_hint_new");
     }
     /**
      * {@snippet :
@@ -4731,7 +4931,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_font_features_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1572.const$5,"pango_attr_font_features_new");
+        return RuntimeHelper.requireNonNull(constants$1577.const$5,"pango_attr_font_features_new");
     }
     /**
      * {@snippet :
@@ -4747,7 +4947,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_foreground_alpha_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1573.const$0,"pango_attr_foreground_alpha_new");
+        return RuntimeHelper.requireNonNull(constants$1578.const$0,"pango_attr_foreground_alpha_new");
     }
     /**
      * {@snippet :
@@ -4763,7 +4963,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_background_alpha_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1573.const$1,"pango_attr_background_alpha_new");
+        return RuntimeHelper.requireNonNull(constants$1578.const$1,"pango_attr_background_alpha_new");
     }
     /**
      * {@snippet :
@@ -4779,7 +4979,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_allow_breaks_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1573.const$2,"pango_attr_allow_breaks_new");
+        return RuntimeHelper.requireNonNull(constants$1578.const$2,"pango_attr_allow_breaks_new");
     }
     /**
      * {@snippet :
@@ -4795,7 +4995,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_word_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1573.const$3,"pango_attr_word_new");
+        return RuntimeHelper.requireNonNull(constants$1578.const$3,"pango_attr_word_new");
     }
     /**
      * {@snippet :
@@ -4811,7 +5011,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_sentence_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1573.const$4,"pango_attr_sentence_new");
+        return RuntimeHelper.requireNonNull(constants$1578.const$4,"pango_attr_sentence_new");
     }
     /**
      * {@snippet :
@@ -4827,7 +5027,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_insert_hyphens_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1573.const$5,"pango_attr_insert_hyphens_new");
+        return RuntimeHelper.requireNonNull(constants$1578.const$5,"pango_attr_insert_hyphens_new");
     }
     /**
      * {@snippet :
@@ -4843,7 +5043,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_overline_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1574.const$0,"pango_attr_overline_new");
+        return RuntimeHelper.requireNonNull(constants$1579.const$0,"pango_attr_overline_new");
     }
     /**
      * {@snippet :
@@ -4859,7 +5059,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_overline_color_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1574.const$1,"pango_attr_overline_color_new");
+        return RuntimeHelper.requireNonNull(constants$1579.const$1,"pango_attr_overline_color_new");
     }
     /**
      * {@snippet :
@@ -4875,7 +5075,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_show_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1574.const$2,"pango_attr_show_new");
+        return RuntimeHelper.requireNonNull(constants$1579.const$2,"pango_attr_show_new");
     }
     /**
      * {@snippet :
@@ -4891,7 +5091,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_line_height_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1574.const$3,"pango_attr_line_height_new");
+        return RuntimeHelper.requireNonNull(constants$1579.const$3,"pango_attr_line_height_new");
     }
     /**
      * {@snippet :
@@ -4907,7 +5107,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_line_height_new_absolute$MH() {
-        return RuntimeHelper.requireNonNull(constants$1574.const$4,"pango_attr_line_height_new_absolute");
+        return RuntimeHelper.requireNonNull(constants$1579.const$4,"pango_attr_line_height_new_absolute");
     }
     /**
      * {@snippet :
@@ -4923,7 +5123,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_text_transform_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1574.const$5,"pango_attr_text_transform_new");
+        return RuntimeHelper.requireNonNull(constants$1579.const$5,"pango_attr_text_transform_new");
     }
     /**
      * {@snippet :
@@ -4939,7 +5139,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1575.const$0,"pango_attribute_as_string");
+        return RuntimeHelper.requireNonNull(constants$1580.const$0,"pango_attribute_as_string");
     }
     /**
      * {@snippet :
@@ -4955,7 +5155,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$1575.const$1,"pango_attribute_as_language");
+        return RuntimeHelper.requireNonNull(constants$1580.const$1,"pango_attribute_as_language");
     }
     /**
      * {@snippet :
@@ -4971,7 +5171,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_int$MH() {
-        return RuntimeHelper.requireNonNull(constants$1575.const$2,"pango_attribute_as_int");
+        return RuntimeHelper.requireNonNull(constants$1580.const$2,"pango_attribute_as_int");
     }
     /**
      * {@snippet :
@@ -4987,7 +5187,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1575.const$3,"pango_attribute_as_size");
+        return RuntimeHelper.requireNonNull(constants$1580.const$3,"pango_attribute_as_size");
     }
     /**
      * {@snippet :
@@ -5003,7 +5203,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_float$MH() {
-        return RuntimeHelper.requireNonNull(constants$1575.const$4,"pango_attribute_as_float");
+        return RuntimeHelper.requireNonNull(constants$1580.const$4,"pango_attribute_as_float");
     }
     /**
      * {@snippet :
@@ -5019,7 +5219,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1575.const$5,"pango_attribute_as_color");
+        return RuntimeHelper.requireNonNull(constants$1580.const$5,"pango_attribute_as_color");
     }
     /**
      * {@snippet :
@@ -5035,7 +5235,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_font_desc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1576.const$0,"pango_attribute_as_font_desc");
+        return RuntimeHelper.requireNonNull(constants$1581.const$0,"pango_attribute_as_font_desc");
     }
     /**
      * {@snippet :
@@ -5051,7 +5251,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_shape$MH() {
-        return RuntimeHelper.requireNonNull(constants$1576.const$1,"pango_attribute_as_shape");
+        return RuntimeHelper.requireNonNull(constants$1581.const$1,"pango_attribute_as_shape");
     }
     /**
      * {@snippet :
@@ -5067,7 +5267,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_font_features$MH() {
-        return RuntimeHelper.requireNonNull(constants$1576.const$2,"pango_attribute_as_font_features");
+        return RuntimeHelper.requireNonNull(constants$1581.const$2,"pango_attribute_as_font_features");
     }
     /**
      * {@snippet :
@@ -5083,7 +5283,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1576.const$3,"pango_attr_list_get_type");
+        return RuntimeHelper.requireNonNull(constants$1581.const$3,"pango_attr_list_get_type");
     }
     /**
      * {@snippet :
@@ -5099,7 +5299,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1576.const$4,"pango_attr_list_new");
+        return RuntimeHelper.requireNonNull(constants$1581.const$4,"pango_attr_list_new");
     }
     /**
      * {@snippet :
@@ -5115,7 +5315,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1576.const$5,"pango_attr_list_ref");
+        return RuntimeHelper.requireNonNull(constants$1581.const$5,"pango_attr_list_ref");
     }
     /**
      * {@snippet :
@@ -5131,7 +5331,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1577.const$0,"pango_attr_list_unref");
+        return RuntimeHelper.requireNonNull(constants$1582.const$0,"pango_attr_list_unref");
     }
     /**
      * {@snippet :
@@ -5147,7 +5347,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1577.const$1,"pango_attr_list_copy");
+        return RuntimeHelper.requireNonNull(constants$1582.const$1,"pango_attr_list_copy");
     }
     /**
      * {@snippet :
@@ -5163,7 +5363,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$1577.const$2,"pango_attr_list_insert");
+        return RuntimeHelper.requireNonNull(constants$1582.const$2,"pango_attr_list_insert");
     }
     /**
      * {@snippet :
@@ -5179,7 +5379,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_insert_before$MH() {
-        return RuntimeHelper.requireNonNull(constants$1577.const$3,"pango_attr_list_insert_before");
+        return RuntimeHelper.requireNonNull(constants$1582.const$3,"pango_attr_list_insert_before");
     }
     /**
      * {@snippet :
@@ -5195,7 +5395,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_change$MH() {
-        return RuntimeHelper.requireNonNull(constants$1577.const$4,"pango_attr_list_change");
+        return RuntimeHelper.requireNonNull(constants$1582.const$4,"pango_attr_list_change");
     }
     /**
      * {@snippet :
@@ -5211,7 +5411,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_splice$MH() {
-        return RuntimeHelper.requireNonNull(constants$1577.const$5,"pango_attr_list_splice");
+        return RuntimeHelper.requireNonNull(constants$1582.const$5,"pango_attr_list_splice");
     }
     /**
      * {@snippet :
@@ -5227,7 +5427,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_update$MH() {
-        return RuntimeHelper.requireNonNull(constants$1578.const$0,"pango_attr_list_update");
+        return RuntimeHelper.requireNonNull(constants$1583.const$0,"pango_attr_list_update");
     }
     /**
      * {@snippet :
@@ -5243,7 +5443,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1578.const$2,"pango_attr_list_filter");
+        return RuntimeHelper.requireNonNull(constants$1583.const$2,"pango_attr_list_filter");
     }
     /**
      * {@snippet :
@@ -5259,7 +5459,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_get_attributes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1578.const$3,"pango_attr_list_get_attributes");
+        return RuntimeHelper.requireNonNull(constants$1583.const$3,"pango_attr_list_get_attributes");
     }
     /**
      * {@snippet :
@@ -5275,7 +5475,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1578.const$4,"pango_attr_list_equal");
+        return RuntimeHelper.requireNonNull(constants$1583.const$4,"pango_attr_list_equal");
     }
     /**
      * {@snippet :
@@ -5291,7 +5491,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1578.const$5,"pango_attr_list_to_string");
+        return RuntimeHelper.requireNonNull(constants$1583.const$5,"pango_attr_list_to_string");
     }
     /**
      * {@snippet :
@@ -5307,7 +5507,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1579.const$0,"pango_attr_list_from_string");
+        return RuntimeHelper.requireNonNull(constants$1584.const$0,"pango_attr_list_from_string");
     }
     /**
      * {@snippet :
@@ -5323,7 +5523,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1579.const$1,"pango_attr_iterator_get_type");
+        return RuntimeHelper.requireNonNull(constants$1584.const$1,"pango_attr_iterator_get_type");
     }
     /**
      * {@snippet :
@@ -5339,7 +5539,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_get_iterator$MH() {
-        return RuntimeHelper.requireNonNull(constants$1579.const$2,"pango_attr_list_get_iterator");
+        return RuntimeHelper.requireNonNull(constants$1584.const$2,"pango_attr_list_get_iterator");
     }
     /**
      * {@snippet :
@@ -5355,7 +5555,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1579.const$3,"pango_attr_iterator_range");
+        return RuntimeHelper.requireNonNull(constants$1584.const$3,"pango_attr_iterator_range");
     }
     /**
      * {@snippet :
@@ -5371,7 +5571,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_next$MH() {
-        return RuntimeHelper.requireNonNull(constants$1579.const$4,"pango_attr_iterator_next");
+        return RuntimeHelper.requireNonNull(constants$1584.const$4,"pango_attr_iterator_next");
     }
     /**
      * {@snippet :
@@ -5387,7 +5587,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1579.const$5,"pango_attr_iterator_copy");
+        return RuntimeHelper.requireNonNull(constants$1584.const$5,"pango_attr_iterator_copy");
     }
     /**
      * {@snippet :
@@ -5403,7 +5603,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1580.const$0,"pango_attr_iterator_destroy");
+        return RuntimeHelper.requireNonNull(constants$1585.const$0,"pango_attr_iterator_destroy");
     }
     /**
      * {@snippet :
@@ -5419,7 +5619,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1580.const$1,"pango_attr_iterator_get");
+        return RuntimeHelper.requireNonNull(constants$1585.const$1,"pango_attr_iterator_get");
     }
     /**
      * {@snippet :
@@ -5435,7 +5635,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_get_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1580.const$2,"pango_attr_iterator_get_font");
+        return RuntimeHelper.requireNonNull(constants$1585.const$2,"pango_attr_iterator_get_font");
     }
     /**
      * {@snippet :
@@ -5451,7 +5651,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_get_attrs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1580.const$3,"pango_attr_iterator_get_attrs");
+        return RuntimeHelper.requireNonNull(constants$1585.const$3,"pango_attr_iterator_get_attrs");
     }
     /**
      * {@snippet :
@@ -5539,7 +5739,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      */
     public static final AddressLayout PangoAttrIterator_queueautoptr = RuntimeHelper.POINTER;
     public static MethodHandle pango_item_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1583.const$0,"pango_item_get_type");
+        return RuntimeHelper.requireNonNull(constants$1588.const$0,"pango_item_get_type");
     }
     /**
      * {@snippet :
@@ -5555,7 +5755,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_item_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1583.const$1,"pango_item_new");
+        return RuntimeHelper.requireNonNull(constants$1588.const$1,"pango_item_new");
     }
     /**
      * {@snippet :
@@ -5571,7 +5771,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_item_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1583.const$2,"pango_item_copy");
+        return RuntimeHelper.requireNonNull(constants$1588.const$2,"pango_item_copy");
     }
     /**
      * {@snippet :
@@ -5587,7 +5787,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_item_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1583.const$3,"pango_item_free");
+        return RuntimeHelper.requireNonNull(constants$1588.const$3,"pango_item_free");
     }
     /**
      * {@snippet :
@@ -5603,7 +5803,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_item_split$MH() {
-        return RuntimeHelper.requireNonNull(constants$1583.const$4,"pango_item_split");
+        return RuntimeHelper.requireNonNull(constants$1588.const$4,"pango_item_split");
     }
     /**
      * {@snippet :
@@ -5619,7 +5819,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_item_apply_attrs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1583.const$5,"pango_item_apply_attrs");
+        return RuntimeHelper.requireNonNull(constants$1588.const$5,"pango_item_apply_attrs");
     }
     /**
      * {@snippet :
@@ -5635,7 +5835,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_reorder_items$MH() {
-        return RuntimeHelper.requireNonNull(constants$1584.const$0,"pango_reorder_items");
+        return RuntimeHelper.requireNonNull(constants$1589.const$0,"pango_reorder_items");
     }
     /**
      * {@snippet :
@@ -5651,7 +5851,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_itemize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1584.const$1,"pango_itemize");
+        return RuntimeHelper.requireNonNull(constants$1589.const$1,"pango_itemize");
     }
     /**
      * {@snippet :
@@ -5667,7 +5867,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_itemize_with_base_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$1584.const$3,"pango_itemize_with_base_dir");
+        return RuntimeHelper.requireNonNull(constants$1589.const$3,"pango_itemize_with_base_dir");
     }
     /**
      * {@snippet :
@@ -5683,7 +5883,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_break$MH() {
-        return RuntimeHelper.requireNonNull(constants$1584.const$6,"pango_break");
+        return RuntimeHelper.requireNonNull(constants$1589.const$6,"pango_break");
     }
     /**
      * {@snippet :
@@ -5699,7 +5899,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_get_log_attrs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1585.const$1,"pango_get_log_attrs");
+        return RuntimeHelper.requireNonNull(constants$1590.const$1,"pango_get_log_attrs");
     }
     /**
      * {@snippet :
@@ -5715,7 +5915,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_default_break$MH() {
-        return RuntimeHelper.requireNonNull(constants$1585.const$2,"pango_default_break");
+        return RuntimeHelper.requireNonNull(constants$1590.const$2,"pango_default_break");
     }
     /**
      * {@snippet :
@@ -5731,7 +5931,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tailor_break$MH() {
-        return RuntimeHelper.requireNonNull(constants$1585.const$3,"pango_tailor_break");
+        return RuntimeHelper.requireNonNull(constants$1590.const$3,"pango_tailor_break");
     }
     /**
      * {@snippet :
@@ -5747,7 +5947,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_break$MH() {
-        return RuntimeHelper.requireNonNull(constants$1585.const$4,"pango_attr_break");
+        return RuntimeHelper.requireNonNull(constants$1590.const$4,"pango_attr_break");
     }
     /**
      * {@snippet :
@@ -5763,7 +5963,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1585.const$5,"pango_fontset_get_type");
+        return RuntimeHelper.requireNonNull(constants$1590.const$5,"pango_fontset_get_type");
     }
     /**
      * {@snippet :
@@ -5779,7 +5979,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_get_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1589.const$1,"pango_fontset_get_font");
+        return RuntimeHelper.requireNonNull(constants$1594.const$1,"pango_fontset_get_font");
     }
     /**
      * {@snippet :
@@ -5795,7 +5995,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_get_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$1589.const$2,"pango_fontset_get_metrics");
+        return RuntimeHelper.requireNonNull(constants$1594.const$2,"pango_fontset_get_metrics");
     }
     /**
      * {@snippet :
@@ -5811,7 +6011,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_foreach$MH() {
-        return RuntimeHelper.requireNonNull(constants$1589.const$4,"pango_fontset_foreach");
+        return RuntimeHelper.requireNonNull(constants$1594.const$4,"pango_fontset_foreach");
     }
     /**
      * {@snippet :
@@ -5827,7 +6027,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1592.const$4,"pango_font_map_get_type");
+        return RuntimeHelper.requireNonNull(constants$1597.const$4,"pango_font_map_get_type");
     }
     /**
      * {@snippet :
@@ -5843,7 +6043,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_create_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$1592.const$5,"pango_font_map_create_context");
+        return RuntimeHelper.requireNonNull(constants$1597.const$5,"pango_font_map_create_context");
     }
     /**
      * {@snippet :
@@ -5859,7 +6059,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_load_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1593.const$0,"pango_font_map_load_font");
+        return RuntimeHelper.requireNonNull(constants$1598.const$0,"pango_font_map_load_font");
     }
     /**
      * {@snippet :
@@ -5875,7 +6075,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_load_fontset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1593.const$1,"pango_font_map_load_fontset");
+        return RuntimeHelper.requireNonNull(constants$1598.const$1,"pango_font_map_load_fontset");
     }
     /**
      * {@snippet :
@@ -5891,7 +6091,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_list_families$MH() {
-        return RuntimeHelper.requireNonNull(constants$1593.const$2,"pango_font_map_list_families");
+        return RuntimeHelper.requireNonNull(constants$1598.const$2,"pango_font_map_list_families");
     }
     /**
      * {@snippet :
@@ -5907,7 +6107,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$1593.const$3,"pango_font_map_get_serial");
+        return RuntimeHelper.requireNonNull(constants$1598.const$3,"pango_font_map_get_serial");
     }
     /**
      * {@snippet :
@@ -5923,7 +6123,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1593.const$4,"pango_font_map_changed");
+        return RuntimeHelper.requireNonNull(constants$1598.const$4,"pango_font_map_changed");
     }
     /**
      * {@snippet :
@@ -5939,7 +6139,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$1593.const$5,"pango_font_map_get_family");
+        return RuntimeHelper.requireNonNull(constants$1598.const$5,"pango_font_map_get_family");
     }
     /**
      * {@snippet :
@@ -5979,7 +6179,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      */
     public static final AddressLayout PangoFontMap_queueautoptr = RuntimeHelper.POINTER;
     public static MethodHandle pango_context_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1594.const$0,"pango_context_get_type");
+        return RuntimeHelper.requireNonNull(constants$1599.const$0,"pango_context_get_type");
     }
     /**
      * {@snippet :
@@ -5995,7 +6195,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1594.const$1,"pango_context_new");
+        return RuntimeHelper.requireNonNull(constants$1599.const$1,"pango_context_new");
     }
     /**
      * {@snippet :
@@ -6011,7 +6211,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1594.const$2,"pango_context_changed");
+        return RuntimeHelper.requireNonNull(constants$1599.const$2,"pango_context_changed");
     }
     /**
      * {@snippet :
@@ -6027,7 +6227,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_font_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$1594.const$3,"pango_context_set_font_map");
+        return RuntimeHelper.requireNonNull(constants$1599.const$3,"pango_context_set_font_map");
     }
     /**
      * {@snippet :
@@ -6043,7 +6243,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_font_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$1594.const$4,"pango_context_get_font_map");
+        return RuntimeHelper.requireNonNull(constants$1599.const$4,"pango_context_get_font_map");
     }
     /**
      * {@snippet :
@@ -6059,7 +6259,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$1594.const$5,"pango_context_get_serial");
+        return RuntimeHelper.requireNonNull(constants$1599.const$5,"pango_context_get_serial");
     }
     /**
      * {@snippet :
@@ -6075,7 +6275,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_list_families$MH() {
-        return RuntimeHelper.requireNonNull(constants$1595.const$0,"pango_context_list_families");
+        return RuntimeHelper.requireNonNull(constants$1600.const$0,"pango_context_list_families");
     }
     /**
      * {@snippet :
@@ -6091,7 +6291,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_load_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1595.const$1,"pango_context_load_font");
+        return RuntimeHelper.requireNonNull(constants$1600.const$1,"pango_context_load_font");
     }
     /**
      * {@snippet :
@@ -6107,7 +6307,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_load_fontset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1595.const$2,"pango_context_load_fontset");
+        return RuntimeHelper.requireNonNull(constants$1600.const$2,"pango_context_load_fontset");
     }
     /**
      * {@snippet :
@@ -6123,7 +6323,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$1595.const$3,"pango_context_get_metrics");
+        return RuntimeHelper.requireNonNull(constants$1600.const$3,"pango_context_get_metrics");
     }
     /**
      * {@snippet :
@@ -6139,7 +6339,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_font_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$1595.const$4,"pango_context_set_font_description");
+        return RuntimeHelper.requireNonNull(constants$1600.const$4,"pango_context_set_font_description");
     }
     /**
      * {@snippet :
@@ -6155,7 +6355,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_font_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$1595.const$5,"pango_context_get_font_description");
+        return RuntimeHelper.requireNonNull(constants$1600.const$5,"pango_context_get_font_description");
     }
     /**
      * {@snippet :
@@ -6171,7 +6371,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$1596.const$0,"pango_context_get_language");
+        return RuntimeHelper.requireNonNull(constants$1601.const$0,"pango_context_get_language");
     }
     /**
      * {@snippet :
@@ -6187,7 +6387,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$1596.const$1,"pango_context_set_language");
+        return RuntimeHelper.requireNonNull(constants$1601.const$1,"pango_context_set_language");
     }
     /**
      * {@snippet :
@@ -6203,7 +6403,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_base_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$1596.const$2,"pango_context_set_base_dir");
+        return RuntimeHelper.requireNonNull(constants$1601.const$2,"pango_context_set_base_dir");
     }
     /**
      * {@snippet :
@@ -6219,7 +6419,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_base_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$1596.const$3,"pango_context_get_base_dir");
+        return RuntimeHelper.requireNonNull(constants$1601.const$3,"pango_context_get_base_dir");
     }
     /**
      * {@snippet :
@@ -6235,7 +6435,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_base_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1596.const$4,"pango_context_set_base_gravity");
+        return RuntimeHelper.requireNonNull(constants$1601.const$4,"pango_context_set_base_gravity");
     }
     /**
      * {@snippet :
@@ -6251,7 +6451,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_base_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1596.const$5,"pango_context_get_base_gravity");
+        return RuntimeHelper.requireNonNull(constants$1601.const$5,"pango_context_get_base_gravity");
     }
     /**
      * {@snippet :
@@ -6267,7 +6467,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1597.const$0,"pango_context_get_gravity");
+        return RuntimeHelper.requireNonNull(constants$1602.const$0,"pango_context_get_gravity");
     }
     /**
      * {@snippet :
@@ -6283,7 +6483,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_gravity_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1597.const$1,"pango_context_set_gravity_hint");
+        return RuntimeHelper.requireNonNull(constants$1602.const$1,"pango_context_set_gravity_hint");
     }
     /**
      * {@snippet :
@@ -6299,7 +6499,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_gravity_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1597.const$2,"pango_context_get_gravity_hint");
+        return RuntimeHelper.requireNonNull(constants$1602.const$2,"pango_context_get_gravity_hint");
     }
     /**
      * {@snippet :
@@ -6315,7 +6515,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1597.const$3,"pango_context_set_matrix");
+        return RuntimeHelper.requireNonNull(constants$1602.const$3,"pango_context_set_matrix");
     }
     /**
      * {@snippet :
@@ -6331,7 +6531,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1597.const$4,"pango_context_get_matrix");
+        return RuntimeHelper.requireNonNull(constants$1602.const$4,"pango_context_get_matrix");
     }
     /**
      * {@snippet :
@@ -6347,7 +6547,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_round_glyph_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1597.const$5,"pango_context_set_round_glyph_positions");
+        return RuntimeHelper.requireNonNull(constants$1602.const$5,"pango_context_set_round_glyph_positions");
     }
     /**
      * {@snippet :
@@ -6363,7 +6563,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_round_glyph_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1598.const$0,"pango_context_get_round_glyph_positions");
+        return RuntimeHelper.requireNonNull(constants$1603.const$0,"pango_context_get_round_glyph_positions");
     }
     /**
      * {@snippet :
@@ -6385,7 +6585,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      */
     public static final OfInt PangoGlyphUnit = JAVA_INT;
     public static MethodHandle pango_glyph_string_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1600.const$1,"pango_glyph_string_get_type");
+        return RuntimeHelper.requireNonNull(constants$1605.const$1,"pango_glyph_string_get_type");
     }
     /**
      * {@snippet :
@@ -6401,7 +6601,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1600.const$2,"pango_glyph_string_new");
+        return RuntimeHelper.requireNonNull(constants$1605.const$2,"pango_glyph_string_new");
     }
     /**
      * {@snippet :
@@ -6417,7 +6617,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_set_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1600.const$3,"pango_glyph_string_set_size");
+        return RuntimeHelper.requireNonNull(constants$1605.const$3,"pango_glyph_string_set_size");
     }
     /**
      * {@snippet :
@@ -6433,7 +6633,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1600.const$4,"pango_glyph_string_copy");
+        return RuntimeHelper.requireNonNull(constants$1605.const$4,"pango_glyph_string_copy");
     }
     /**
      * {@snippet :
@@ -6449,7 +6649,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1600.const$5,"pango_glyph_string_free");
+        return RuntimeHelper.requireNonNull(constants$1605.const$5,"pango_glyph_string_free");
     }
     /**
      * {@snippet :
@@ -6465,7 +6665,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1601.const$0,"pango_glyph_string_extents");
+        return RuntimeHelper.requireNonNull(constants$1606.const$0,"pango_glyph_string_extents");
     }
     /**
      * {@snippet :
@@ -6481,7 +6681,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_get_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1601.const$1,"pango_glyph_string_get_width");
+        return RuntimeHelper.requireNonNull(constants$1606.const$1,"pango_glyph_string_get_width");
     }
     /**
      * {@snippet :
@@ -6497,7 +6697,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_extents_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1601.const$2,"pango_glyph_string_extents_range");
+        return RuntimeHelper.requireNonNull(constants$1606.const$2,"pango_glyph_string_extents_range");
     }
     /**
      * {@snippet :
@@ -6513,7 +6713,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_get_logical_widths$MH() {
-        return RuntimeHelper.requireNonNull(constants$1601.const$3,"pango_glyph_string_get_logical_widths");
+        return RuntimeHelper.requireNonNull(constants$1606.const$3,"pango_glyph_string_get_logical_widths");
     }
     /**
      * {@snippet :
@@ -6529,7 +6729,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_index_to_x$MH() {
-        return RuntimeHelper.requireNonNull(constants$1601.const$5,"pango_glyph_string_index_to_x");
+        return RuntimeHelper.requireNonNull(constants$1606.const$5,"pango_glyph_string_index_to_x");
     }
     /**
      * {@snippet :
@@ -6545,7 +6745,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_x_to_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1602.const$1,"pango_glyph_string_x_to_index");
+        return RuntimeHelper.requireNonNull(constants$1607.const$1,"pango_glyph_string_x_to_index");
     }
     /**
      * {@snippet :
@@ -6561,7 +6761,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_index_to_x_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1602.const$2,"pango_glyph_string_index_to_x_full");
+        return RuntimeHelper.requireNonNull(constants$1607.const$2,"pango_glyph_string_index_to_x_full");
     }
     /**
      * {@snippet :
@@ -6593,7 +6793,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)1L;
     }
     public static MethodHandle pango_shape$MH() {
-        return RuntimeHelper.requireNonNull(constants$1602.const$3,"pango_shape");
+        return RuntimeHelper.requireNonNull(constants$1607.const$3,"pango_shape");
     }
     /**
      * {@snippet :
@@ -6609,7 +6809,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_shape_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1602.const$5,"pango_shape_full");
+        return RuntimeHelper.requireNonNull(constants$1607.const$5,"pango_shape_full");
     }
     /**
      * {@snippet :
@@ -6625,7 +6825,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_shape_with_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1603.const$1,"pango_shape_with_flags");
+        return RuntimeHelper.requireNonNull(constants$1608.const$1,"pango_shape_with_flags");
     }
     /**
      * {@snippet :
@@ -6641,7 +6841,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_shape_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1603.const$3,"pango_shape_item");
+        return RuntimeHelper.requireNonNull(constants$1608.const$3,"pango_shape_item");
     }
     /**
      * {@snippet :
@@ -6657,7 +6857,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_engine_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1604.const$0,"pango_engine_get_type");
+        return RuntimeHelper.requireNonNull(constants$1609.const$0,"pango_engine_get_type");
     }
     /**
      * {@snippet :
@@ -6673,7 +6873,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_engine_lang_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1605.const$0,"pango_engine_lang_get_type");
+        return RuntimeHelper.requireNonNull(constants$1610.const$0,"pango_engine_lang_get_type");
     }
     /**
      * {@snippet :
@@ -6689,7 +6889,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_engine_shape_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1606.const$4,"pango_engine_shape_get_type");
+        return RuntimeHelper.requireNonNull(constants$1611.const$4,"pango_engine_shape_get_type");
     }
     /**
      * {@snippet :
@@ -6705,7 +6905,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle script_engine_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1608.const$2,"script_engine_list");
+        return RuntimeHelper.requireNonNull(constants$1613.const$2,"script_engine_list");
     }
     /**
      * {@snippet :
@@ -6721,7 +6921,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle script_engine_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$1608.const$3,"script_engine_init");
+        return RuntimeHelper.requireNonNull(constants$1613.const$3,"script_engine_init");
     }
     /**
      * {@snippet :
@@ -6737,7 +6937,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle script_engine_exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$1608.const$4,"script_engine_exit");
+        return RuntimeHelper.requireNonNull(constants$1613.const$4,"script_engine_exit");
     }
     /**
      * {@snippet :
@@ -6753,7 +6953,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle script_engine_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1608.const$5,"script_engine_create");
+        return RuntimeHelper.requireNonNull(constants$1613.const$5,"script_engine_create");
     }
     /**
      * {@snippet :
@@ -6769,7 +6969,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1609.const$0,"pango_attr_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$1614.const$0,"pango_attr_type_get_type");
     }
     /**
      * {@snippet :
@@ -6785,7 +6985,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_underline_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1609.const$1,"pango_underline_get_type");
+        return RuntimeHelper.requireNonNull(constants$1614.const$1,"pango_underline_get_type");
     }
     /**
      * {@snippet :
@@ -6801,7 +7001,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_overline_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1609.const$2,"pango_overline_get_type");
+        return RuntimeHelper.requireNonNull(constants$1614.const$2,"pango_overline_get_type");
     }
     /**
      * {@snippet :
@@ -6817,7 +7017,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_show_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1609.const$3,"pango_show_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$1614.const$3,"pango_show_flags_get_type");
     }
     /**
      * {@snippet :
@@ -6833,7 +7033,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_text_transform_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1609.const$4,"pango_text_transform_get_type");
+        return RuntimeHelper.requireNonNull(constants$1614.const$4,"pango_text_transform_get_type");
     }
     /**
      * {@snippet :
@@ -6849,7 +7049,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_baseline_shift_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1609.const$5,"pango_baseline_shift_get_type");
+        return RuntimeHelper.requireNonNull(constants$1614.const$5,"pango_baseline_shift_get_type");
     }
     /**
      * {@snippet :
@@ -6865,7 +7065,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_scale_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1610.const$0,"pango_font_scale_get_type");
+        return RuntimeHelper.requireNonNull(constants$1615.const$0,"pango_font_scale_get_type");
     }
     /**
      * {@snippet :
@@ -6881,7 +7081,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_bidi_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1610.const$1,"pango_bidi_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$1615.const$1,"pango_bidi_type_get_type");
     }
     /**
      * {@snippet :
@@ -6897,7 +7097,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_coverage_level_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1610.const$2,"pango_coverage_level_get_type");
+        return RuntimeHelper.requireNonNull(constants$1615.const$2,"pango_coverage_level_get_type");
     }
     /**
      * {@snippet :
@@ -6913,7 +7113,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_direction_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1610.const$3,"pango_direction_get_type");
+        return RuntimeHelper.requireNonNull(constants$1615.const$3,"pango_direction_get_type");
     }
     /**
      * {@snippet :
@@ -6929,7 +7129,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1610.const$4,"pango_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$1615.const$4,"pango_style_get_type");
     }
     /**
      * {@snippet :
@@ -6945,7 +7145,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_variant_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1610.const$5,"pango_variant_get_type");
+        return RuntimeHelper.requireNonNull(constants$1615.const$5,"pango_variant_get_type");
     }
     /**
      * {@snippet :
@@ -6961,7 +7161,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_weight_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1611.const$0,"pango_weight_get_type");
+        return RuntimeHelper.requireNonNull(constants$1616.const$0,"pango_weight_get_type");
     }
     /**
      * {@snippet :
@@ -6977,7 +7177,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_stretch_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1611.const$1,"pango_stretch_get_type");
+        return RuntimeHelper.requireNonNull(constants$1616.const$1,"pango_stretch_get_type");
     }
     /**
      * {@snippet :
@@ -6993,7 +7193,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_mask_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1611.const$2,"pango_font_mask_get_type");
+        return RuntimeHelper.requireNonNull(constants$1616.const$2,"pango_font_mask_get_type");
     }
     /**
      * {@snippet :
@@ -7009,7 +7209,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_shape_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1611.const$3,"pango_shape_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$1616.const$3,"pango_shape_flags_get_type");
     }
     /**
      * {@snippet :
@@ -7025,7 +7225,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1611.const$4,"pango_gravity_get_type");
+        return RuntimeHelper.requireNonNull(constants$1616.const$4,"pango_gravity_get_type");
     }
     /**
      * {@snippet :
@@ -7041,7 +7241,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_hint_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1611.const$5,"pango_gravity_hint_get_type");
+        return RuntimeHelper.requireNonNull(constants$1616.const$5,"pango_gravity_hint_get_type");
     }
     /**
      * {@snippet :
@@ -7057,7 +7257,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_alignment_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1612.const$0,"pango_alignment_get_type");
+        return RuntimeHelper.requireNonNull(constants$1617.const$0,"pango_alignment_get_type");
     }
     /**
      * {@snippet :
@@ -7073,7 +7273,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_wrap_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1612.const$1,"pango_wrap_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$1617.const$1,"pango_wrap_mode_get_type");
     }
     /**
      * {@snippet :
@@ -7089,7 +7289,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_ellipsize_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1612.const$2,"pango_ellipsize_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$1617.const$2,"pango_ellipsize_mode_get_type");
     }
     /**
      * {@snippet :
@@ -7105,7 +7305,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_serialize_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1612.const$3,"pango_layout_serialize_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$1617.const$3,"pango_layout_serialize_flags_get_type");
     }
     /**
      * {@snippet :
@@ -7121,7 +7321,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_deserialize_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1612.const$4,"pango_layout_deserialize_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$1617.const$4,"pango_layout_deserialize_error_get_type");
     }
     /**
      * {@snippet :
@@ -7137,7 +7337,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_deserialize_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1612.const$5,"pango_layout_deserialize_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$1617.const$5,"pango_layout_deserialize_flags_get_type");
     }
     /**
      * {@snippet :
@@ -7153,7 +7353,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_render_part_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1613.const$0,"pango_render_part_get_type");
+        return RuntimeHelper.requireNonNull(constants$1618.const$0,"pango_render_part_get_type");
     }
     /**
      * {@snippet :
@@ -7169,7 +7369,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_script_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1613.const$1,"pango_script_get_type");
+        return RuntimeHelper.requireNonNull(constants$1618.const$1,"pango_script_get_type");
     }
     /**
      * {@snippet :
@@ -7185,7 +7385,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_align_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1613.const$2,"pango_tab_align_get_type");
+        return RuntimeHelper.requireNonNull(constants$1618.const$2,"pango_tab_align_get_type");
     }
     /**
      * {@snippet :
@@ -7201,7 +7401,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_simple_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1613.const$3,"pango_fontset_simple_get_type");
+        return RuntimeHelper.requireNonNull(constants$1618.const$3,"pango_fontset_simple_get_type");
     }
     /**
      * {@snippet :
@@ -7217,7 +7417,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_simple_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1613.const$4,"pango_fontset_simple_new");
+        return RuntimeHelper.requireNonNull(constants$1618.const$4,"pango_fontset_simple_new");
     }
     /**
      * {@snippet :
@@ -7233,7 +7433,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_simple_append$MH() {
-        return RuntimeHelper.requireNonNull(constants$1613.const$5,"pango_fontset_simple_append");
+        return RuntimeHelper.requireNonNull(constants$1618.const$5,"pango_fontset_simple_append");
     }
     /**
      * {@snippet :
@@ -7249,7 +7449,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_simple_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1614.const$0,"pango_fontset_simple_size");
+        return RuntimeHelper.requireNonNull(constants$1619.const$0,"pango_fontset_simple_size");
     }
     /**
      * {@snippet :
@@ -7265,7 +7465,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1615.const$1,"pango_glyph_item_get_type");
+        return RuntimeHelper.requireNonNull(constants$1620.const$1,"pango_glyph_item_get_type");
     }
     /**
      * {@snippet :
@@ -7281,7 +7481,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_split$MH() {
-        return RuntimeHelper.requireNonNull(constants$1615.const$2,"pango_glyph_item_split");
+        return RuntimeHelper.requireNonNull(constants$1620.const$2,"pango_glyph_item_split");
     }
     /**
      * {@snippet :
@@ -7297,7 +7497,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1615.const$3,"pango_glyph_item_copy");
+        return RuntimeHelper.requireNonNull(constants$1620.const$3,"pango_glyph_item_copy");
     }
     /**
      * {@snippet :
@@ -7313,7 +7513,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1615.const$4,"pango_glyph_item_free");
+        return RuntimeHelper.requireNonNull(constants$1620.const$4,"pango_glyph_item_free");
     }
     /**
      * {@snippet :
@@ -7329,7 +7529,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_apply_attrs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1615.const$5,"pango_glyph_item_apply_attrs");
+        return RuntimeHelper.requireNonNull(constants$1620.const$5,"pango_glyph_item_apply_attrs");
     }
     /**
      * {@snippet :
@@ -7345,7 +7545,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_letter_space$MH() {
-        return RuntimeHelper.requireNonNull(constants$1616.const$0,"pango_glyph_item_letter_space");
+        return RuntimeHelper.requireNonNull(constants$1621.const$0,"pango_glyph_item_letter_space");
     }
     /**
      * {@snippet :
@@ -7361,7 +7561,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_get_logical_widths$MH() {
-        return RuntimeHelper.requireNonNull(constants$1616.const$1,"pango_glyph_item_get_logical_widths");
+        return RuntimeHelper.requireNonNull(constants$1621.const$1,"pango_glyph_item_get_logical_widths");
     }
     /**
      * {@snippet :
@@ -7377,7 +7577,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1617.const$5,"pango_glyph_item_iter_get_type");
+        return RuntimeHelper.requireNonNull(constants$1622.const$5,"pango_glyph_item_iter_get_type");
     }
     /**
      * {@snippet :
@@ -7393,7 +7593,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1618.const$0,"pango_glyph_item_iter_copy");
+        return RuntimeHelper.requireNonNull(constants$1623.const$0,"pango_glyph_item_iter_copy");
     }
     /**
      * {@snippet :
@@ -7409,7 +7609,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1618.const$1,"pango_glyph_item_iter_free");
+        return RuntimeHelper.requireNonNull(constants$1623.const$1,"pango_glyph_item_iter_free");
     }
     /**
      * {@snippet :
@@ -7425,7 +7625,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_init_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$1618.const$2,"pango_glyph_item_iter_init_start");
+        return RuntimeHelper.requireNonNull(constants$1623.const$2,"pango_glyph_item_iter_init_start");
     }
     /**
      * {@snippet :
@@ -7441,7 +7641,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_init_end$MH() {
-        return RuntimeHelper.requireNonNull(constants$1618.const$3,"pango_glyph_item_iter_init_end");
+        return RuntimeHelper.requireNonNull(constants$1623.const$3,"pango_glyph_item_iter_init_end");
     }
     /**
      * {@snippet :
@@ -7457,7 +7657,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_next_cluster$MH() {
-        return RuntimeHelper.requireNonNull(constants$1618.const$4,"pango_glyph_item_iter_next_cluster");
+        return RuntimeHelper.requireNonNull(constants$1623.const$4,"pango_glyph_item_iter_next_cluster");
     }
     /**
      * {@snippet :
@@ -7473,7 +7673,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_prev_cluster$MH() {
-        return RuntimeHelper.requireNonNull(constants$1618.const$5,"pango_glyph_item_iter_prev_cluster");
+        return RuntimeHelper.requireNonNull(constants$1623.const$5,"pango_glyph_item_iter_prev_cluster");
     }
     /**
      * {@snippet :
@@ -7521,7 +7721,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)3L;
     }
     public static MethodHandle pango_tab_array_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1619.const$0,"pango_tab_array_new");
+        return RuntimeHelper.requireNonNull(constants$1624.const$0,"pango_tab_array_new");
     }
     /**
      * {@snippet :
@@ -7537,7 +7737,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_new_with_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1619.const$1,"pango_tab_array_new_with_positions");
+        return RuntimeHelper.requireNonNull(constants$1624.const$1,"pango_tab_array_new_with_positions");
     }
     /**
      * {@snippet :
@@ -7553,7 +7753,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1619.const$2,"pango_tab_array_get_type");
+        return RuntimeHelper.requireNonNull(constants$1624.const$2,"pango_tab_array_get_type");
     }
     /**
      * {@snippet :
@@ -7569,7 +7769,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1619.const$3,"pango_tab_array_copy");
+        return RuntimeHelper.requireNonNull(constants$1624.const$3,"pango_tab_array_copy");
     }
     /**
      * {@snippet :
@@ -7585,7 +7785,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1619.const$4,"pango_tab_array_free");
+        return RuntimeHelper.requireNonNull(constants$1624.const$4,"pango_tab_array_free");
     }
     /**
      * {@snippet :
@@ -7601,7 +7801,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1619.const$5,"pango_tab_array_get_size");
+        return RuntimeHelper.requireNonNull(constants$1624.const$5,"pango_tab_array_get_size");
     }
     /**
      * {@snippet :
@@ -7617,7 +7817,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_resize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1620.const$0,"pango_tab_array_resize");
+        return RuntimeHelper.requireNonNull(constants$1625.const$0,"pango_tab_array_resize");
     }
     /**
      * {@snippet :
@@ -7633,7 +7833,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_set_tab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1620.const$1,"pango_tab_array_set_tab");
+        return RuntimeHelper.requireNonNull(constants$1625.const$1,"pango_tab_array_set_tab");
     }
     /**
      * {@snippet :
@@ -7649,7 +7849,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_tab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1620.const$2,"pango_tab_array_get_tab");
+        return RuntimeHelper.requireNonNull(constants$1625.const$2,"pango_tab_array_get_tab");
     }
     /**
      * {@snippet :
@@ -7665,7 +7865,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_tabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1620.const$3,"pango_tab_array_get_tabs");
+        return RuntimeHelper.requireNonNull(constants$1625.const$3,"pango_tab_array_get_tabs");
     }
     /**
      * {@snippet :
@@ -7681,7 +7881,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_positions_in_pixels$MH() {
-        return RuntimeHelper.requireNonNull(constants$1620.const$4,"pango_tab_array_get_positions_in_pixels");
+        return RuntimeHelper.requireNonNull(constants$1625.const$4,"pango_tab_array_get_positions_in_pixels");
     }
     /**
      * {@snippet :
@@ -7697,7 +7897,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_set_positions_in_pixels$MH() {
-        return RuntimeHelper.requireNonNull(constants$1620.const$5,"pango_tab_array_set_positions_in_pixels");
+        return RuntimeHelper.requireNonNull(constants$1625.const$5,"pango_tab_array_set_positions_in_pixels");
     }
     /**
      * {@snippet :
@@ -7713,7 +7913,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1621.const$0,"pango_tab_array_to_string");
+        return RuntimeHelper.requireNonNull(constants$1626.const$0,"pango_tab_array_to_string");
     }
     /**
      * {@snippet :
@@ -7729,7 +7929,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1621.const$1,"pango_tab_array_from_string");
+        return RuntimeHelper.requireNonNull(constants$1626.const$1,"pango_tab_array_from_string");
     }
     /**
      * {@snippet :
@@ -7745,7 +7945,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_set_decimal_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1621.const$2,"pango_tab_array_set_decimal_point");
+        return RuntimeHelper.requireNonNull(constants$1626.const$2,"pango_tab_array_set_decimal_point");
     }
     /**
      * {@snippet :
@@ -7761,7 +7961,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_decimal_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1621.const$3,"pango_tab_array_get_decimal_point");
+        return RuntimeHelper.requireNonNull(constants$1626.const$3,"pango_tab_array_get_decimal_point");
     }
     /**
      * {@snippet :
@@ -7777,7 +7977,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_sort$MH() {
-        return RuntimeHelper.requireNonNull(constants$1621.const$4,"pango_tab_array_sort");
+        return RuntimeHelper.requireNonNull(constants$1626.const$4,"pango_tab_array_sort");
     }
     /**
      * {@snippet :
@@ -7897,7 +8097,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)3L;
     }
     public static MethodHandle pango_layout_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1622.const$4,"pango_layout_get_type");
+        return RuntimeHelper.requireNonNull(constants$1627.const$4,"pango_layout_get_type");
     }
     /**
      * {@snippet :
@@ -7913,7 +8113,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1622.const$5,"pango_layout_new");
+        return RuntimeHelper.requireNonNull(constants$1627.const$5,"pango_layout_new");
     }
     /**
      * {@snippet :
@@ -7929,7 +8129,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1623.const$0,"pango_layout_copy");
+        return RuntimeHelper.requireNonNull(constants$1628.const$0,"pango_layout_copy");
     }
     /**
      * {@snippet :
@@ -7945,7 +8145,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$1623.const$1,"pango_layout_get_context");
+        return RuntimeHelper.requireNonNull(constants$1628.const$1,"pango_layout_get_context");
     }
     /**
      * {@snippet :
@@ -7961,7 +8161,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_attributes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1623.const$2,"pango_layout_set_attributes");
+        return RuntimeHelper.requireNonNull(constants$1628.const$2,"pango_layout_set_attributes");
     }
     /**
      * {@snippet :
@@ -7977,7 +8177,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_attributes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1623.const$3,"pango_layout_get_attributes");
+        return RuntimeHelper.requireNonNull(constants$1628.const$3,"pango_layout_get_attributes");
     }
     /**
      * {@snippet :
@@ -7993,7 +8193,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$1623.const$4,"pango_layout_set_text");
+        return RuntimeHelper.requireNonNull(constants$1628.const$4,"pango_layout_set_text");
     }
     /**
      * {@snippet :
@@ -8009,7 +8209,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$1623.const$5,"pango_layout_get_text");
+        return RuntimeHelper.requireNonNull(constants$1628.const$5,"pango_layout_get_text");
     }
     /**
      * {@snippet :
@@ -8025,7 +8225,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_character_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1624.const$0,"pango_layout_get_character_count");
+        return RuntimeHelper.requireNonNull(constants$1629.const$0,"pango_layout_get_character_count");
     }
     /**
      * {@snippet :
@@ -8041,7 +8241,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_markup$MH() {
-        return RuntimeHelper.requireNonNull(constants$1624.const$1,"pango_layout_set_markup");
+        return RuntimeHelper.requireNonNull(constants$1629.const$1,"pango_layout_set_markup");
     }
     /**
      * {@snippet :
@@ -8057,7 +8257,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_markup_with_accel$MH() {
-        return RuntimeHelper.requireNonNull(constants$1624.const$2,"pango_layout_set_markup_with_accel");
+        return RuntimeHelper.requireNonNull(constants$1629.const$2,"pango_layout_set_markup_with_accel");
     }
     /**
      * {@snippet :
@@ -8073,7 +8273,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_font_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$1624.const$3,"pango_layout_set_font_description");
+        return RuntimeHelper.requireNonNull(constants$1629.const$3,"pango_layout_set_font_description");
     }
     /**
      * {@snippet :
@@ -8089,7 +8289,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_font_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$1624.const$4,"pango_layout_get_font_description");
+        return RuntimeHelper.requireNonNull(constants$1629.const$4,"pango_layout_get_font_description");
     }
     /**
      * {@snippet :
@@ -8105,7 +8305,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1624.const$5,"pango_layout_set_width");
+        return RuntimeHelper.requireNonNull(constants$1629.const$5,"pango_layout_set_width");
     }
     /**
      * {@snippet :
@@ -8121,7 +8321,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1625.const$0,"pango_layout_get_width");
+        return RuntimeHelper.requireNonNull(constants$1630.const$0,"pango_layout_get_width");
     }
     /**
      * {@snippet :
@@ -8137,7 +8337,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1625.const$1,"pango_layout_set_height");
+        return RuntimeHelper.requireNonNull(constants$1630.const$1,"pango_layout_set_height");
     }
     /**
      * {@snippet :
@@ -8153,7 +8353,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1625.const$2,"pango_layout_get_height");
+        return RuntimeHelper.requireNonNull(constants$1630.const$2,"pango_layout_get_height");
     }
     /**
      * {@snippet :
@@ -8169,7 +8369,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_wrap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1625.const$3,"pango_layout_set_wrap");
+        return RuntimeHelper.requireNonNull(constants$1630.const$3,"pango_layout_set_wrap");
     }
     /**
      * {@snippet :
@@ -8185,7 +8385,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_wrap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1625.const$4,"pango_layout_get_wrap");
+        return RuntimeHelper.requireNonNull(constants$1630.const$4,"pango_layout_get_wrap");
     }
     /**
      * {@snippet :
@@ -8201,7 +8401,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_is_wrapped$MH() {
-        return RuntimeHelper.requireNonNull(constants$1625.const$5,"pango_layout_is_wrapped");
+        return RuntimeHelper.requireNonNull(constants$1630.const$5,"pango_layout_is_wrapped");
     }
     /**
      * {@snippet :
@@ -8217,7 +8417,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_indent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1626.const$0,"pango_layout_set_indent");
+        return RuntimeHelper.requireNonNull(constants$1631.const$0,"pango_layout_set_indent");
     }
     /**
      * {@snippet :
@@ -8233,7 +8433,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_indent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1626.const$1,"pango_layout_get_indent");
+        return RuntimeHelper.requireNonNull(constants$1631.const$1,"pango_layout_get_indent");
     }
     /**
      * {@snippet :
@@ -8249,7 +8449,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$1626.const$2,"pango_layout_set_spacing");
+        return RuntimeHelper.requireNonNull(constants$1631.const$2,"pango_layout_set_spacing");
     }
     /**
      * {@snippet :
@@ -8265,7 +8465,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$1626.const$3,"pango_layout_get_spacing");
+        return RuntimeHelper.requireNonNull(constants$1631.const$3,"pango_layout_get_spacing");
     }
     /**
      * {@snippet :
@@ -8281,7 +8481,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_line_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$1626.const$4,"pango_layout_set_line_spacing");
+        return RuntimeHelper.requireNonNull(constants$1631.const$4,"pango_layout_set_line_spacing");
     }
     /**
      * {@snippet :
@@ -8297,7 +8497,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_line_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$1626.const$5,"pango_layout_get_line_spacing");
+        return RuntimeHelper.requireNonNull(constants$1631.const$5,"pango_layout_get_line_spacing");
     }
     /**
      * {@snippet :
@@ -8313,7 +8513,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_justify$MH() {
-        return RuntimeHelper.requireNonNull(constants$1627.const$0,"pango_layout_set_justify");
+        return RuntimeHelper.requireNonNull(constants$1632.const$0,"pango_layout_set_justify");
     }
     /**
      * {@snippet :
@@ -8329,7 +8529,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_justify$MH() {
-        return RuntimeHelper.requireNonNull(constants$1627.const$1,"pango_layout_get_justify");
+        return RuntimeHelper.requireNonNull(constants$1632.const$1,"pango_layout_get_justify");
     }
     /**
      * {@snippet :
@@ -8345,7 +8545,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_justify_last_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1627.const$2,"pango_layout_set_justify_last_line");
+        return RuntimeHelper.requireNonNull(constants$1632.const$2,"pango_layout_set_justify_last_line");
     }
     /**
      * {@snippet :
@@ -8361,7 +8561,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_justify_last_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1627.const$3,"pango_layout_get_justify_last_line");
+        return RuntimeHelper.requireNonNull(constants$1632.const$3,"pango_layout_get_justify_last_line");
     }
     /**
      * {@snippet :
@@ -8377,7 +8577,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_auto_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$1627.const$4,"pango_layout_set_auto_dir");
+        return RuntimeHelper.requireNonNull(constants$1632.const$4,"pango_layout_set_auto_dir");
     }
     /**
      * {@snippet :
@@ -8393,7 +8593,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_auto_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$1627.const$5,"pango_layout_get_auto_dir");
+        return RuntimeHelper.requireNonNull(constants$1632.const$5,"pango_layout_get_auto_dir");
     }
     /**
      * {@snippet :
@@ -8409,7 +8609,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_alignment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1628.const$0,"pango_layout_set_alignment");
+        return RuntimeHelper.requireNonNull(constants$1633.const$0,"pango_layout_set_alignment");
     }
     /**
      * {@snippet :
@@ -8425,7 +8625,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_alignment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1628.const$1,"pango_layout_get_alignment");
+        return RuntimeHelper.requireNonNull(constants$1633.const$1,"pango_layout_get_alignment");
     }
     /**
      * {@snippet :
@@ -8441,7 +8641,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_tabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1628.const$2,"pango_layout_set_tabs");
+        return RuntimeHelper.requireNonNull(constants$1633.const$2,"pango_layout_set_tabs");
     }
     /**
      * {@snippet :
@@ -8457,7 +8657,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_tabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1628.const$3,"pango_layout_get_tabs");
+        return RuntimeHelper.requireNonNull(constants$1633.const$3,"pango_layout_get_tabs");
     }
     /**
      * {@snippet :
@@ -8473,7 +8673,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_single_paragraph_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1628.const$4,"pango_layout_set_single_paragraph_mode");
+        return RuntimeHelper.requireNonNull(constants$1633.const$4,"pango_layout_set_single_paragraph_mode");
     }
     /**
      * {@snippet :
@@ -8489,7 +8689,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_single_paragraph_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1628.const$5,"pango_layout_get_single_paragraph_mode");
+        return RuntimeHelper.requireNonNull(constants$1633.const$5,"pango_layout_get_single_paragraph_mode");
     }
     /**
      * {@snippet :
@@ -8505,7 +8705,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_ellipsize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1629.const$0,"pango_layout_set_ellipsize");
+        return RuntimeHelper.requireNonNull(constants$1634.const$0,"pango_layout_set_ellipsize");
     }
     /**
      * {@snippet :
@@ -8521,7 +8721,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_ellipsize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1629.const$1,"pango_layout_get_ellipsize");
+        return RuntimeHelper.requireNonNull(constants$1634.const$1,"pango_layout_get_ellipsize");
     }
     /**
      * {@snippet :
@@ -8537,7 +8737,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_is_ellipsized$MH() {
-        return RuntimeHelper.requireNonNull(constants$1629.const$2,"pango_layout_is_ellipsized");
+        return RuntimeHelper.requireNonNull(constants$1634.const$2,"pango_layout_is_ellipsized");
     }
     /**
      * {@snippet :
@@ -8553,7 +8753,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_unknown_glyphs_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1629.const$3,"pango_layout_get_unknown_glyphs_count");
+        return RuntimeHelper.requireNonNull(constants$1634.const$3,"pango_layout_get_unknown_glyphs_count");
     }
     /**
      * {@snippet :
@@ -8569,7 +8769,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1629.const$4,"pango_layout_get_direction");
+        return RuntimeHelper.requireNonNull(constants$1634.const$4,"pango_layout_get_direction");
     }
     /**
      * {@snippet :
@@ -8585,7 +8785,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_context_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1629.const$5,"pango_layout_context_changed");
+        return RuntimeHelper.requireNonNull(constants$1634.const$5,"pango_layout_context_changed");
     }
     /**
      * {@snippet :
@@ -8601,7 +8801,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$1630.const$0,"pango_layout_get_serial");
+        return RuntimeHelper.requireNonNull(constants$1635.const$0,"pango_layout_get_serial");
     }
     /**
      * {@snippet :
@@ -8617,7 +8817,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_log_attrs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1630.const$1,"pango_layout_get_log_attrs");
+        return RuntimeHelper.requireNonNull(constants$1635.const$1,"pango_layout_get_log_attrs");
     }
     /**
      * {@snippet :
@@ -8633,7 +8833,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_log_attrs_readonly$MH() {
-        return RuntimeHelper.requireNonNull(constants$1630.const$2,"pango_layout_get_log_attrs_readonly");
+        return RuntimeHelper.requireNonNull(constants$1635.const$2,"pango_layout_get_log_attrs_readonly");
     }
     /**
      * {@snippet :
@@ -8649,7 +8849,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_index_to_pos$MH() {
-        return RuntimeHelper.requireNonNull(constants$1630.const$3,"pango_layout_index_to_pos");
+        return RuntimeHelper.requireNonNull(constants$1635.const$3,"pango_layout_index_to_pos");
     }
     /**
      * {@snippet :
@@ -8665,7 +8865,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_index_to_line_x$MH() {
-        return RuntimeHelper.requireNonNull(constants$1630.const$4,"pango_layout_index_to_line_x");
+        return RuntimeHelper.requireNonNull(constants$1635.const$4,"pango_layout_index_to_line_x");
     }
     /**
      * {@snippet :
@@ -8681,7 +8881,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_cursor_pos$MH() {
-        return RuntimeHelper.requireNonNull(constants$1630.const$5,"pango_layout_get_cursor_pos");
+        return RuntimeHelper.requireNonNull(constants$1635.const$5,"pango_layout_get_cursor_pos");
     }
     /**
      * {@snippet :
@@ -8697,7 +8897,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_caret_pos$MH() {
-        return RuntimeHelper.requireNonNull(constants$1631.const$0,"pango_layout_get_caret_pos");
+        return RuntimeHelper.requireNonNull(constants$1636.const$0,"pango_layout_get_caret_pos");
     }
     /**
      * {@snippet :
@@ -8713,7 +8913,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_move_cursor_visually$MH() {
-        return RuntimeHelper.requireNonNull(constants$1631.const$2,"pango_layout_move_cursor_visually");
+        return RuntimeHelper.requireNonNull(constants$1636.const$2,"pango_layout_move_cursor_visually");
     }
     /**
      * {@snippet :
@@ -8729,7 +8929,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_xy_to_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1631.const$3,"pango_layout_xy_to_index");
+        return RuntimeHelper.requireNonNull(constants$1636.const$3,"pango_layout_xy_to_index");
     }
     /**
      * {@snippet :
@@ -8745,7 +8945,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1631.const$4,"pango_layout_get_extents");
+        return RuntimeHelper.requireNonNull(constants$1636.const$4,"pango_layout_get_extents");
     }
     /**
      * {@snippet :
@@ -8761,7 +8961,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_pixel_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1631.const$5,"pango_layout_get_pixel_extents");
+        return RuntimeHelper.requireNonNull(constants$1636.const$5,"pango_layout_get_pixel_extents");
     }
     /**
      * {@snippet :
@@ -8777,7 +8977,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1632.const$0,"pango_layout_get_size");
+        return RuntimeHelper.requireNonNull(constants$1637.const$0,"pango_layout_get_size");
     }
     /**
      * {@snippet :
@@ -8793,7 +8993,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_pixel_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1632.const$1,"pango_layout_get_pixel_size");
+        return RuntimeHelper.requireNonNull(constants$1637.const$1,"pango_layout_get_pixel_size");
     }
     /**
      * {@snippet :
@@ -8809,7 +9009,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_baseline$MH() {
-        return RuntimeHelper.requireNonNull(constants$1632.const$2,"pango_layout_get_baseline");
+        return RuntimeHelper.requireNonNull(constants$1637.const$2,"pango_layout_get_baseline");
     }
     /**
      * {@snippet :
@@ -8825,7 +9025,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_line_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1632.const$3,"pango_layout_get_line_count");
+        return RuntimeHelper.requireNonNull(constants$1637.const$3,"pango_layout_get_line_count");
     }
     /**
      * {@snippet :
@@ -8841,7 +9041,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1632.const$4,"pango_layout_get_line");
+        return RuntimeHelper.requireNonNull(constants$1637.const$4,"pango_layout_get_line");
     }
     /**
      * {@snippet :
@@ -8857,7 +9057,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_line_readonly$MH() {
-        return RuntimeHelper.requireNonNull(constants$1632.const$5,"pango_layout_get_line_readonly");
+        return RuntimeHelper.requireNonNull(constants$1637.const$5,"pango_layout_get_line_readonly");
     }
     /**
      * {@snippet :
@@ -8873,7 +9073,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_lines$MH() {
-        return RuntimeHelper.requireNonNull(constants$1633.const$0,"pango_layout_get_lines");
+        return RuntimeHelper.requireNonNull(constants$1638.const$0,"pango_layout_get_lines");
     }
     /**
      * {@snippet :
@@ -8889,7 +9089,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_lines_readonly$MH() {
-        return RuntimeHelper.requireNonNull(constants$1633.const$1,"pango_layout_get_lines_readonly");
+        return RuntimeHelper.requireNonNull(constants$1638.const$1,"pango_layout_get_lines_readonly");
     }
     /**
      * {@snippet :
@@ -8929,7 +9129,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)2L;
     }
     public static MethodHandle pango_layout_serialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1633.const$2,"pango_layout_serialize");
+        return RuntimeHelper.requireNonNull(constants$1638.const$2,"pango_layout_serialize");
     }
     /**
      * {@snippet :
@@ -8945,7 +9145,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_write_to_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$1633.const$3,"pango_layout_write_to_file");
+        return RuntimeHelper.requireNonNull(constants$1638.const$3,"pango_layout_write_to_file");
     }
     /**
      * {@snippet :
@@ -8985,7 +9185,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)2L;
     }
     public static MethodHandle pango_layout_deserialize_error_quark$MH() {
-        return RuntimeHelper.requireNonNull(constants$1633.const$4,"pango_layout_deserialize_error_quark");
+        return RuntimeHelper.requireNonNull(constants$1638.const$4,"pango_layout_deserialize_error_quark");
     }
     /**
      * {@snippet :
@@ -9017,7 +9217,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)1L;
     }
     public static MethodHandle pango_layout_deserialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1633.const$5,"pango_layout_deserialize");
+        return RuntimeHelper.requireNonNull(constants$1638.const$5,"pango_layout_deserialize");
     }
     /**
      * {@snippet :
@@ -9033,7 +9233,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1634.const$0,"pango_layout_line_get_type");
+        return RuntimeHelper.requireNonNull(constants$1639.const$0,"pango_layout_line_get_type");
     }
     /**
      * {@snippet :
@@ -9049,7 +9249,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1634.const$1,"pango_layout_line_ref");
+        return RuntimeHelper.requireNonNull(constants$1639.const$1,"pango_layout_line_ref");
     }
     /**
      * {@snippet :
@@ -9065,7 +9265,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1634.const$2,"pango_layout_line_unref");
+        return RuntimeHelper.requireNonNull(constants$1639.const$2,"pango_layout_line_unref");
     }
     /**
      * {@snippet :
@@ -9081,7 +9281,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_start_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1634.const$3,"pango_layout_line_get_start_index");
+        return RuntimeHelper.requireNonNull(constants$1639.const$3,"pango_layout_line_get_start_index");
     }
     /**
      * {@snippet :
@@ -9097,7 +9297,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$1634.const$4,"pango_layout_line_get_length");
+        return RuntimeHelper.requireNonNull(constants$1639.const$4,"pango_layout_line_get_length");
     }
     /**
      * {@snippet :
@@ -9113,7 +9313,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_is_paragraph_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$1634.const$5,"pango_layout_line_is_paragraph_start");
+        return RuntimeHelper.requireNonNull(constants$1639.const$5,"pango_layout_line_is_paragraph_start");
     }
     /**
      * {@snippet :
@@ -9129,7 +9329,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_resolved_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1635.const$0,"pango_layout_line_get_resolved_direction");
+        return RuntimeHelper.requireNonNull(constants$1640.const$0,"pango_layout_line_get_resolved_direction");
     }
     /**
      * {@snippet :
@@ -9145,7 +9345,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_x_to_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1635.const$1,"pango_layout_line_x_to_index");
+        return RuntimeHelper.requireNonNull(constants$1640.const$1,"pango_layout_line_x_to_index");
     }
     /**
      * {@snippet :
@@ -9161,7 +9361,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_index_to_x$MH() {
-        return RuntimeHelper.requireNonNull(constants$1635.const$2,"pango_layout_line_index_to_x");
+        return RuntimeHelper.requireNonNull(constants$1640.const$2,"pango_layout_line_index_to_x");
     }
     /**
      * {@snippet :
@@ -9177,7 +9377,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_x_ranges$MH() {
-        return RuntimeHelper.requireNonNull(constants$1635.const$3,"pango_layout_line_get_x_ranges");
+        return RuntimeHelper.requireNonNull(constants$1640.const$3,"pango_layout_line_get_x_ranges");
     }
     /**
      * {@snippet :
@@ -9193,7 +9393,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1635.const$4,"pango_layout_line_get_extents");
+        return RuntimeHelper.requireNonNull(constants$1640.const$4,"pango_layout_line_get_extents");
     }
     /**
      * {@snippet :
@@ -9209,7 +9409,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1635.const$5,"pango_layout_line_get_height");
+        return RuntimeHelper.requireNonNull(constants$1640.const$5,"pango_layout_line_get_height");
     }
     /**
      * {@snippet :
@@ -9225,7 +9425,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_pixel_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1636.const$0,"pango_layout_line_get_pixel_extents");
+        return RuntimeHelper.requireNonNull(constants$1641.const$0,"pango_layout_line_get_pixel_extents");
     }
     /**
      * {@snippet :
@@ -9241,7 +9441,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1636.const$1,"pango_layout_iter_get_type");
+        return RuntimeHelper.requireNonNull(constants$1641.const$1,"pango_layout_iter_get_type");
     }
     /**
      * {@snippet :
@@ -9257,7 +9457,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_iter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1636.const$2,"pango_layout_get_iter");
+        return RuntimeHelper.requireNonNull(constants$1641.const$2,"pango_layout_get_iter");
     }
     /**
      * {@snippet :
@@ -9273,7 +9473,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1636.const$3,"pango_layout_iter_copy");
+        return RuntimeHelper.requireNonNull(constants$1641.const$3,"pango_layout_iter_copy");
     }
     /**
      * {@snippet :
@@ -9289,7 +9489,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1636.const$4,"pango_layout_iter_free");
+        return RuntimeHelper.requireNonNull(constants$1641.const$4,"pango_layout_iter_free");
     }
     /**
      * {@snippet :
@@ -9305,7 +9505,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1636.const$5,"pango_layout_iter_get_index");
+        return RuntimeHelper.requireNonNull(constants$1641.const$5,"pango_layout_iter_get_index");
     }
     /**
      * {@snippet :
@@ -9321,7 +9521,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_run$MH() {
-        return RuntimeHelper.requireNonNull(constants$1637.const$0,"pango_layout_iter_get_run");
+        return RuntimeHelper.requireNonNull(constants$1642.const$0,"pango_layout_iter_get_run");
     }
     /**
      * {@snippet :
@@ -9337,7 +9537,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_run_readonly$MH() {
-        return RuntimeHelper.requireNonNull(constants$1637.const$1,"pango_layout_iter_get_run_readonly");
+        return RuntimeHelper.requireNonNull(constants$1642.const$1,"pango_layout_iter_get_run_readonly");
     }
     /**
      * {@snippet :
@@ -9353,7 +9553,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1637.const$2,"pango_layout_iter_get_line");
+        return RuntimeHelper.requireNonNull(constants$1642.const$2,"pango_layout_iter_get_line");
     }
     /**
      * {@snippet :
@@ -9369,7 +9569,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_line_readonly$MH() {
-        return RuntimeHelper.requireNonNull(constants$1637.const$3,"pango_layout_iter_get_line_readonly");
+        return RuntimeHelper.requireNonNull(constants$1642.const$3,"pango_layout_iter_get_line_readonly");
     }
     /**
      * {@snippet :
@@ -9385,7 +9585,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_at_last_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1637.const$4,"pango_layout_iter_at_last_line");
+        return RuntimeHelper.requireNonNull(constants$1642.const$4,"pango_layout_iter_at_last_line");
     }
     /**
      * {@snippet :
@@ -9401,7 +9601,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_layout$MH() {
-        return RuntimeHelper.requireNonNull(constants$1637.const$5,"pango_layout_iter_get_layout");
+        return RuntimeHelper.requireNonNull(constants$1642.const$5,"pango_layout_iter_get_layout");
     }
     /**
      * {@snippet :
@@ -9417,7 +9617,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_next_char$MH() {
-        return RuntimeHelper.requireNonNull(constants$1638.const$0,"pango_layout_iter_next_char");
+        return RuntimeHelper.requireNonNull(constants$1643.const$0,"pango_layout_iter_next_char");
     }
     /**
      * {@snippet :
@@ -9433,7 +9633,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_next_cluster$MH() {
-        return RuntimeHelper.requireNonNull(constants$1638.const$1,"pango_layout_iter_next_cluster");
+        return RuntimeHelper.requireNonNull(constants$1643.const$1,"pango_layout_iter_next_cluster");
     }
     /**
      * {@snippet :
@@ -9449,7 +9649,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_next_run$MH() {
-        return RuntimeHelper.requireNonNull(constants$1638.const$2,"pango_layout_iter_next_run");
+        return RuntimeHelper.requireNonNull(constants$1643.const$2,"pango_layout_iter_next_run");
     }
     /**
      * {@snippet :
@@ -9465,7 +9665,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_next_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1638.const$3,"pango_layout_iter_next_line");
+        return RuntimeHelper.requireNonNull(constants$1643.const$3,"pango_layout_iter_next_line");
     }
     /**
      * {@snippet :
@@ -9481,7 +9681,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_char_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1638.const$4,"pango_layout_iter_get_char_extents");
+        return RuntimeHelper.requireNonNull(constants$1643.const$4,"pango_layout_iter_get_char_extents");
     }
     /**
      * {@snippet :
@@ -9497,7 +9697,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_cluster_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1638.const$5,"pango_layout_iter_get_cluster_extents");
+        return RuntimeHelper.requireNonNull(constants$1643.const$5,"pango_layout_iter_get_cluster_extents");
     }
     /**
      * {@snippet :
@@ -9513,7 +9713,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_run_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1639.const$0,"pango_layout_iter_get_run_extents");
+        return RuntimeHelper.requireNonNull(constants$1644.const$0,"pango_layout_iter_get_run_extents");
     }
     /**
      * {@snippet :
@@ -9529,7 +9729,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_line_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1639.const$1,"pango_layout_iter_get_line_extents");
+        return RuntimeHelper.requireNonNull(constants$1644.const$1,"pango_layout_iter_get_line_extents");
     }
     /**
      * {@snippet :
@@ -9545,7 +9745,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_line_yrange$MH() {
-        return RuntimeHelper.requireNonNull(constants$1639.const$2,"pango_layout_iter_get_line_yrange");
+        return RuntimeHelper.requireNonNull(constants$1644.const$2,"pango_layout_iter_get_line_yrange");
     }
     /**
      * {@snippet :
@@ -9561,7 +9761,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_layout_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1639.const$3,"pango_layout_iter_get_layout_extents");
+        return RuntimeHelper.requireNonNull(constants$1644.const$3,"pango_layout_iter_get_layout_extents");
     }
     /**
      * {@snippet :
@@ -9577,7 +9777,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_baseline$MH() {
-        return RuntimeHelper.requireNonNull(constants$1639.const$4,"pango_layout_iter_get_baseline");
+        return RuntimeHelper.requireNonNull(constants$1644.const$4,"pango_layout_iter_get_baseline");
     }
     /**
      * {@snippet :
@@ -9593,7 +9793,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_run_baseline$MH() {
-        return RuntimeHelper.requireNonNull(constants$1639.const$5,"pango_layout_iter_get_run_baseline");
+        return RuntimeHelper.requireNonNull(constants$1644.const$5,"pango_layout_iter_get_run_baseline");
     }
     /**
      * {@snippet :
@@ -9657,7 +9857,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      */
     public static final AddressLayout PangoLayoutIter_queueautoptr = RuntimeHelper.POINTER;
     public static MethodHandle pango_markup_parser_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1640.const$0,"pango_markup_parser_new");
+        return RuntimeHelper.requireNonNull(constants$1645.const$0,"pango_markup_parser_new");
     }
     /**
      * {@snippet :
@@ -9673,7 +9873,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_markup_parser_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1640.const$1,"pango_markup_parser_finish");
+        return RuntimeHelper.requireNonNull(constants$1645.const$1,"pango_markup_parser_finish");
     }
     /**
      * {@snippet :
@@ -9689,7 +9889,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_markup$MH() {
-        return RuntimeHelper.requireNonNull(constants$1640.const$3,"pango_parse_markup");
+        return RuntimeHelper.requireNonNull(constants$1645.const$3,"pango_parse_markup");
     }
     /**
      * {@snippet :
@@ -9745,7 +9945,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return (int)4L;
     }
     public static MethodHandle pango_renderer_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1648.const$2,"pango_renderer_get_type");
+        return RuntimeHelper.requireNonNull(constants$1653.const$2,"pango_renderer_get_type");
     }
     /**
      * {@snippet :
@@ -9761,7 +9961,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_layout$MH() {
-        return RuntimeHelper.requireNonNull(constants$1648.const$3,"pango_renderer_draw_layout");
+        return RuntimeHelper.requireNonNull(constants$1653.const$3,"pango_renderer_draw_layout");
     }
     /**
      * {@snippet :
@@ -9777,7 +9977,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_layout_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1648.const$4,"pango_renderer_draw_layout_line");
+        return RuntimeHelper.requireNonNull(constants$1653.const$4,"pango_renderer_draw_layout_line");
     }
     /**
      * {@snippet :
@@ -9793,7 +9993,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1648.const$5,"pango_renderer_draw_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1653.const$5,"pango_renderer_draw_glyphs");
     }
     /**
      * {@snippet :
@@ -9809,7 +10009,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_glyph_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1649.const$0,"pango_renderer_draw_glyph_item");
+        return RuntimeHelper.requireNonNull(constants$1654.const$0,"pango_renderer_draw_glyph_item");
     }
     /**
      * {@snippet :
@@ -9825,7 +10025,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1649.const$1,"pango_renderer_draw_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1654.const$1,"pango_renderer_draw_rectangle");
     }
     /**
      * {@snippet :
@@ -9841,7 +10041,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_error_underline$MH() {
-        return RuntimeHelper.requireNonNull(constants$1649.const$2,"pango_renderer_draw_error_underline");
+        return RuntimeHelper.requireNonNull(constants$1654.const$2,"pango_renderer_draw_error_underline");
     }
     /**
      * {@snippet :
@@ -9857,7 +10057,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_trapezoid$MH() {
-        return RuntimeHelper.requireNonNull(constants$1649.const$3,"pango_renderer_draw_trapezoid");
+        return RuntimeHelper.requireNonNull(constants$1654.const$3,"pango_renderer_draw_trapezoid");
     }
     /**
      * {@snippet :
@@ -9873,7 +10073,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1649.const$4,"pango_renderer_draw_glyph");
+        return RuntimeHelper.requireNonNull(constants$1654.const$4,"pango_renderer_draw_glyph");
     }
     /**
      * {@snippet :
@@ -9889,7 +10089,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1649.const$5,"pango_renderer_activate");
+        return RuntimeHelper.requireNonNull(constants$1654.const$5,"pango_renderer_activate");
     }
     /**
      * {@snippet :
@@ -9905,7 +10105,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_deactivate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1650.const$0,"pango_renderer_deactivate");
+        return RuntimeHelper.requireNonNull(constants$1655.const$0,"pango_renderer_deactivate");
     }
     /**
      * {@snippet :
@@ -9921,7 +10121,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_part_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1650.const$1,"pango_renderer_part_changed");
+        return RuntimeHelper.requireNonNull(constants$1655.const$1,"pango_renderer_part_changed");
     }
     /**
      * {@snippet :
@@ -9937,7 +10137,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_set_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1650.const$2,"pango_renderer_set_color");
+        return RuntimeHelper.requireNonNull(constants$1655.const$2,"pango_renderer_set_color");
     }
     /**
      * {@snippet :
@@ -9953,7 +10153,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_get_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1650.const$3,"pango_renderer_get_color");
+        return RuntimeHelper.requireNonNull(constants$1655.const$3,"pango_renderer_get_color");
     }
     /**
      * {@snippet :
@@ -9969,7 +10169,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_set_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1650.const$5,"pango_renderer_set_alpha");
+        return RuntimeHelper.requireNonNull(constants$1655.const$5,"pango_renderer_set_alpha");
     }
     /**
      * {@snippet :
@@ -9985,7 +10185,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_get_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1651.const$1,"pango_renderer_get_alpha");
+        return RuntimeHelper.requireNonNull(constants$1656.const$1,"pango_renderer_get_alpha");
     }
     /**
      * {@snippet :
@@ -10001,7 +10201,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_set_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1651.const$2,"pango_renderer_set_matrix");
+        return RuntimeHelper.requireNonNull(constants$1656.const$2,"pango_renderer_set_matrix");
     }
     /**
      * {@snippet :
@@ -10017,7 +10217,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_get_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1651.const$3,"pango_renderer_get_matrix");
+        return RuntimeHelper.requireNonNull(constants$1656.const$3,"pango_renderer_get_matrix");
     }
     /**
      * {@snippet :
@@ -10033,7 +10233,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_get_layout$MH() {
-        return RuntimeHelper.requireNonNull(constants$1651.const$4,"pango_renderer_get_layout");
+        return RuntimeHelper.requireNonNull(constants$1656.const$4,"pango_renderer_get_layout");
     }
     /**
      * {@snippet :
@@ -10049,7 +10249,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_get_layout_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1651.const$5,"pango_renderer_get_layout_line");
+        return RuntimeHelper.requireNonNull(constants$1656.const$5,"pango_renderer_get_layout_line");
     }
     /**
      * {@snippet :
@@ -10071,7 +10271,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return constants$211.const$1;
     }
     public static MemorySegment stdin$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$1658.const$0,"stdin");
+        return RuntimeHelper.requireNonNull(constants$1663.const$0,"stdin");
     }
     /**
      * Getter for variable:
@@ -10080,7 +10280,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * }
      */
     public static MemorySegment stdin$get() {
-        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$1658.const$0, "stdin"));
+        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$1663.const$0, "stdin"));
     }
     /**
      * Setter for variable:
@@ -10089,7 +10289,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * }
      */
     public static void stdin$set(MemorySegment x) {
-        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$1658.const$0, "stdin"), x);
+        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$1663.const$0, "stdin"), x);
     }
     public static MemoryLayout stdout$LAYOUT() {
         return RuntimeHelper.POINTER;
@@ -10098,7 +10298,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return constants$211.const$1;
     }
     public static MemorySegment stdout$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$1658.const$1,"stdout");
+        return RuntimeHelper.requireNonNull(constants$1663.const$1,"stdout");
     }
     /**
      * Getter for variable:
@@ -10107,7 +10307,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * }
      */
     public static MemorySegment stdout$get() {
-        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$1658.const$1, "stdout"));
+        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$1663.const$1, "stdout"));
     }
     /**
      * Setter for variable:
@@ -10116,7 +10316,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * }
      */
     public static void stdout$set(MemorySegment x) {
-        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$1658.const$1, "stdout"), x);
+        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$1663.const$1, "stdout"), x);
     }
     public static MemoryLayout stderr$LAYOUT() {
         return RuntimeHelper.POINTER;
@@ -10125,7 +10325,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         return constants$211.const$1;
     }
     public static MemorySegment stderr$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$1658.const$2,"stderr");
+        return RuntimeHelper.requireNonNull(constants$1663.const$2,"stderr");
     }
     /**
      * Getter for variable:
@@ -10134,7 +10334,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * }
      */
     public static MemorySegment stderr$get() {
-        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$1658.const$2, "stderr"));
+        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$1663.const$2, "stderr"));
     }
     /**
      * Setter for variable:
@@ -10143,10 +10343,10 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * }
      */
     public static void stderr$set(MemorySegment x) {
-        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$1658.const$2, "stderr"), x);
+        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$1663.const$2, "stderr"), x);
     }
     public static MethodHandle remove$MH() {
-        return RuntimeHelper.requireNonNull(constants$1658.const$3,"remove");
+        return RuntimeHelper.requireNonNull(constants$1663.const$3,"remove");
     }
     /**
      * {@snippet :
@@ -10162,7 +10362,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle rename$MH() {
-        return RuntimeHelper.requireNonNull(constants$1658.const$4,"rename");
+        return RuntimeHelper.requireNonNull(constants$1663.const$4,"rename");
     }
     /**
      * {@snippet :
@@ -10178,7 +10378,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle renameat$MH() {
-        return RuntimeHelper.requireNonNull(constants$1658.const$6,"renameat");
+        return RuntimeHelper.requireNonNull(constants$1663.const$6,"renameat");
     }
     /**
      * {@snippet :
@@ -10194,7 +10394,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fclose$MH() {
-        return RuntimeHelper.requireNonNull(constants$1659.const$0,"fclose");
+        return RuntimeHelper.requireNonNull(constants$1664.const$0,"fclose");
     }
     /**
      * {@snippet :
@@ -10210,7 +10410,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle tmpfile$MH() {
-        return RuntimeHelper.requireNonNull(constants$1659.const$1,"tmpfile");
+        return RuntimeHelper.requireNonNull(constants$1664.const$1,"tmpfile");
     }
     /**
      * {@snippet :
@@ -10226,7 +10426,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle tmpnam$MH() {
-        return RuntimeHelper.requireNonNull(constants$1659.const$2,"tmpnam");
+        return RuntimeHelper.requireNonNull(constants$1664.const$2,"tmpnam");
     }
     /**
      * {@snippet :
@@ -10242,7 +10442,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle tmpnam_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$1659.const$3,"tmpnam_r");
+        return RuntimeHelper.requireNonNull(constants$1664.const$3,"tmpnam_r");
     }
     /**
      * {@snippet :
@@ -10258,7 +10458,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle tempnam$MH() {
-        return RuntimeHelper.requireNonNull(constants$1659.const$4,"tempnam");
+        return RuntimeHelper.requireNonNull(constants$1664.const$4,"tempnam");
     }
     /**
      * {@snippet :
@@ -10274,7 +10474,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fflush$MH() {
-        return RuntimeHelper.requireNonNull(constants$1659.const$5,"fflush");
+        return RuntimeHelper.requireNonNull(constants$1664.const$5,"fflush");
     }
     /**
      * {@snippet :
@@ -10290,7 +10490,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fflush_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1660.const$0,"fflush_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1665.const$0,"fflush_unlocked");
     }
     /**
      * {@snippet :
@@ -10306,7 +10506,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fopen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1660.const$1,"fopen");
+        return RuntimeHelper.requireNonNull(constants$1665.const$1,"fopen");
     }
     /**
      * {@snippet :
@@ -10322,7 +10522,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle freopen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1660.const$2,"freopen");
+        return RuntimeHelper.requireNonNull(constants$1665.const$2,"freopen");
     }
     /**
      * {@snippet :
@@ -10338,7 +10538,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fdopen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1660.const$3,"fdopen");
+        return RuntimeHelper.requireNonNull(constants$1665.const$3,"fdopen");
     }
     /**
      * {@snippet :
@@ -10354,7 +10554,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fmemopen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1660.const$4,"fmemopen");
+        return RuntimeHelper.requireNonNull(constants$1665.const$4,"fmemopen");
     }
     /**
      * {@snippet :
@@ -10370,7 +10570,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle open_memstream$MH() {
-        return RuntimeHelper.requireNonNull(constants$1660.const$5,"open_memstream");
+        return RuntimeHelper.requireNonNull(constants$1665.const$5,"open_memstream");
     }
     /**
      * {@snippet :
@@ -10386,7 +10586,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle setbuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1661.const$0,"setbuf");
+        return RuntimeHelper.requireNonNull(constants$1666.const$0,"setbuf");
     }
     /**
      * {@snippet :
@@ -10402,7 +10602,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle setvbuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1661.const$2,"setvbuf");
+        return RuntimeHelper.requireNonNull(constants$1666.const$2,"setvbuf");
     }
     /**
      * {@snippet :
@@ -10418,7 +10618,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle setbuffer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1661.const$3,"setbuffer");
+        return RuntimeHelper.requireNonNull(constants$1666.const$3,"setbuffer");
     }
     /**
      * {@snippet :
@@ -10434,7 +10634,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle setlinebuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1661.const$4,"setlinebuf");
+        return RuntimeHelper.requireNonNull(constants$1666.const$4,"setlinebuf");
     }
     /**
      * {@snippet :
@@ -10450,7 +10650,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1661.const$5,"fprintf");
+        return RuntimeHelper.requireNonNull(constants$1666.const$5,"fprintf");
     }
     /**
      * {@snippet :
@@ -10466,7 +10666,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle printf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1662.const$0,"printf");
+        return RuntimeHelper.requireNonNull(constants$1667.const$0,"printf");
     }
     /**
      * {@snippet :
@@ -10482,7 +10682,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle sprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1662.const$1,"sprintf");
+        return RuntimeHelper.requireNonNull(constants$1667.const$1,"sprintf");
     }
     /**
      * {@snippet :
@@ -10498,7 +10698,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vfprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1662.const$3,"vfprintf");
+        return RuntimeHelper.requireNonNull(constants$1667.const$3,"vfprintf");
     }
     /**
      * {@snippet :
@@ -10514,7 +10714,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1662.const$5,"vprintf");
+        return RuntimeHelper.requireNonNull(constants$1667.const$5,"vprintf");
     }
     /**
      * {@snippet :
@@ -10530,7 +10730,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vsprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1663.const$0,"vsprintf");
+        return RuntimeHelper.requireNonNull(constants$1668.const$0,"vsprintf");
     }
     /**
      * {@snippet :
@@ -10546,7 +10746,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle snprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1663.const$1,"snprintf");
+        return RuntimeHelper.requireNonNull(constants$1668.const$1,"snprintf");
     }
     /**
      * {@snippet :
@@ -10562,7 +10762,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vsnprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1663.const$2,"vsnprintf");
+        return RuntimeHelper.requireNonNull(constants$1668.const$2,"vsnprintf");
     }
     /**
      * {@snippet :
@@ -10578,7 +10778,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vdprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1663.const$4,"vdprintf");
+        return RuntimeHelper.requireNonNull(constants$1668.const$4,"vdprintf");
     }
     /**
      * {@snippet :
@@ -10594,7 +10794,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle dprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1663.const$5,"dprintf");
+        return RuntimeHelper.requireNonNull(constants$1668.const$5,"dprintf");
     }
     /**
      * {@snippet :
@@ -10610,7 +10810,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fscanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1664.const$0,"fscanf");
+        return RuntimeHelper.requireNonNull(constants$1669.const$0,"fscanf");
     }
     /**
      * {@snippet :
@@ -10626,7 +10826,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle scanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1664.const$1,"scanf");
+        return RuntimeHelper.requireNonNull(constants$1669.const$1,"scanf");
     }
     /**
      * {@snippet :
@@ -10642,7 +10842,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle sscanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1664.const$2,"sscanf");
+        return RuntimeHelper.requireNonNull(constants$1669.const$2,"sscanf");
     }
     /**
      * {@snippet :
@@ -10658,7 +10858,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vfscanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1664.const$3,"vfscanf");
+        return RuntimeHelper.requireNonNull(constants$1669.const$3,"vfscanf");
     }
     /**
      * {@snippet :
@@ -10674,7 +10874,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vscanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1664.const$4,"vscanf");
+        return RuntimeHelper.requireNonNull(constants$1669.const$4,"vscanf");
     }
     /**
      * {@snippet :
@@ -10690,7 +10890,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vsscanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1664.const$5,"vsscanf");
+        return RuntimeHelper.requireNonNull(constants$1669.const$5,"vsscanf");
     }
     /**
      * {@snippet :
@@ -10706,7 +10906,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fgetc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1665.const$0,"fgetc");
+        return RuntimeHelper.requireNonNull(constants$1670.const$0,"fgetc");
     }
     /**
      * {@snippet :
@@ -10722,7 +10922,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1665.const$1,"getc");
+        return RuntimeHelper.requireNonNull(constants$1670.const$1,"getc");
     }
     /**
      * {@snippet :
@@ -10738,7 +10938,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getchar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1665.const$2,"getchar");
+        return RuntimeHelper.requireNonNull(constants$1670.const$2,"getchar");
     }
     /**
      * {@snippet :
@@ -10754,7 +10954,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getc_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1665.const$3,"getc_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1670.const$3,"getc_unlocked");
     }
     /**
      * {@snippet :
@@ -10770,7 +10970,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getchar_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1665.const$4,"getchar_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1670.const$4,"getchar_unlocked");
     }
     /**
      * {@snippet :
@@ -10786,7 +10986,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fgetc_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1665.const$5,"fgetc_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1670.const$5,"fgetc_unlocked");
     }
     /**
      * {@snippet :
@@ -10802,7 +11002,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fputc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1666.const$0,"fputc");
+        return RuntimeHelper.requireNonNull(constants$1671.const$0,"fputc");
     }
     /**
      * {@snippet :
@@ -10818,7 +11018,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle putc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1666.const$1,"putc");
+        return RuntimeHelper.requireNonNull(constants$1671.const$1,"putc");
     }
     /**
      * {@snippet :
@@ -10834,7 +11034,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle putchar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1666.const$2,"putchar");
+        return RuntimeHelper.requireNonNull(constants$1671.const$2,"putchar");
     }
     /**
      * {@snippet :
@@ -10850,7 +11050,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fputc_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1666.const$3,"fputc_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1671.const$3,"fputc_unlocked");
     }
     /**
      * {@snippet :
@@ -10866,7 +11066,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle putc_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1666.const$4,"putc_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1671.const$4,"putc_unlocked");
     }
     /**
      * {@snippet :
@@ -10882,7 +11082,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle putchar_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1666.const$5,"putchar_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1671.const$5,"putchar_unlocked");
     }
     /**
      * {@snippet :
@@ -10898,7 +11098,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getw$MH() {
-        return RuntimeHelper.requireNonNull(constants$1667.const$0,"getw");
+        return RuntimeHelper.requireNonNull(constants$1672.const$0,"getw");
     }
     /**
      * {@snippet :
@@ -10914,7 +11114,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle putw$MH() {
-        return RuntimeHelper.requireNonNull(constants$1667.const$1,"putw");
+        return RuntimeHelper.requireNonNull(constants$1672.const$1,"putw");
     }
     /**
      * {@snippet :
@@ -10930,7 +11130,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fgets$MH() {
-        return RuntimeHelper.requireNonNull(constants$1667.const$2,"fgets");
+        return RuntimeHelper.requireNonNull(constants$1672.const$2,"fgets");
     }
     /**
      * {@snippet :
@@ -10946,7 +11146,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle __getdelim$MH() {
-        return RuntimeHelper.requireNonNull(constants$1667.const$4,"__getdelim");
+        return RuntimeHelper.requireNonNull(constants$1672.const$4,"__getdelim");
     }
     /**
      * {@snippet :
@@ -10962,7 +11162,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getdelim$MH() {
-        return RuntimeHelper.requireNonNull(constants$1667.const$5,"getdelim");
+        return RuntimeHelper.requireNonNull(constants$1672.const$5,"getdelim");
     }
     /**
      * {@snippet :
@@ -10978,7 +11178,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getline$MH() {
-        return RuntimeHelper.requireNonNull(constants$1668.const$0,"getline");
+        return RuntimeHelper.requireNonNull(constants$1673.const$0,"getline");
     }
     /**
      * {@snippet :
@@ -10994,7 +11194,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fputs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1668.const$1,"fputs");
+        return RuntimeHelper.requireNonNull(constants$1673.const$1,"fputs");
     }
     /**
      * {@snippet :
@@ -11010,7 +11210,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle puts$MH() {
-        return RuntimeHelper.requireNonNull(constants$1668.const$2,"puts");
+        return RuntimeHelper.requireNonNull(constants$1673.const$2,"puts");
     }
     /**
      * {@snippet :
@@ -11026,7 +11226,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ungetc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1668.const$3,"ungetc");
+        return RuntimeHelper.requireNonNull(constants$1673.const$3,"ungetc");
     }
     /**
      * {@snippet :
@@ -11042,7 +11242,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fread$MH() {
-        return RuntimeHelper.requireNonNull(constants$1668.const$5,"fread");
+        return RuntimeHelper.requireNonNull(constants$1673.const$5,"fread");
     }
     /**
      * {@snippet :
@@ -11058,7 +11258,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fwrite$MH() {
-        return RuntimeHelper.requireNonNull(constants$1669.const$0,"fwrite");
+        return RuntimeHelper.requireNonNull(constants$1674.const$0,"fwrite");
     }
     /**
      * {@snippet :
@@ -11074,7 +11274,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fread_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1669.const$1,"fread_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1674.const$1,"fread_unlocked");
     }
     /**
      * {@snippet :
@@ -11090,7 +11290,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fwrite_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1669.const$2,"fwrite_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1674.const$2,"fwrite_unlocked");
     }
     /**
      * {@snippet :
@@ -11106,7 +11306,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fseek$MH() {
-        return RuntimeHelper.requireNonNull(constants$1669.const$3,"fseek");
+        return RuntimeHelper.requireNonNull(constants$1674.const$3,"fseek");
     }
     /**
      * {@snippet :
@@ -11122,7 +11322,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ftell$MH() {
-        return RuntimeHelper.requireNonNull(constants$1669.const$4,"ftell");
+        return RuntimeHelper.requireNonNull(constants$1674.const$4,"ftell");
     }
     /**
      * {@snippet :
@@ -11138,7 +11338,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle rewind$MH() {
-        return RuntimeHelper.requireNonNull(constants$1669.const$5,"rewind");
+        return RuntimeHelper.requireNonNull(constants$1674.const$5,"rewind");
     }
     /**
      * {@snippet :
@@ -11154,7 +11354,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fseeko$MH() {
-        return RuntimeHelper.requireNonNull(constants$1670.const$0,"fseeko");
+        return RuntimeHelper.requireNonNull(constants$1675.const$0,"fseeko");
     }
     /**
      * {@snippet :
@@ -11170,7 +11370,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ftello$MH() {
-        return RuntimeHelper.requireNonNull(constants$1670.const$1,"ftello");
+        return RuntimeHelper.requireNonNull(constants$1675.const$1,"ftello");
     }
     /**
      * {@snippet :
@@ -11186,7 +11386,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fgetpos$MH() {
-        return RuntimeHelper.requireNonNull(constants$1670.const$2,"fgetpos");
+        return RuntimeHelper.requireNonNull(constants$1675.const$2,"fgetpos");
     }
     /**
      * {@snippet :
@@ -11202,7 +11402,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fsetpos$MH() {
-        return RuntimeHelper.requireNonNull(constants$1670.const$3,"fsetpos");
+        return RuntimeHelper.requireNonNull(constants$1675.const$3,"fsetpos");
     }
     /**
      * {@snippet :
@@ -11218,7 +11418,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle clearerr$MH() {
-        return RuntimeHelper.requireNonNull(constants$1670.const$4,"clearerr");
+        return RuntimeHelper.requireNonNull(constants$1675.const$4,"clearerr");
     }
     /**
      * {@snippet :
@@ -11234,7 +11434,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle feof$MH() {
-        return RuntimeHelper.requireNonNull(constants$1670.const$5,"feof");
+        return RuntimeHelper.requireNonNull(constants$1675.const$5,"feof");
     }
     /**
      * {@snippet :
@@ -11250,7 +11450,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ferror$MH() {
-        return RuntimeHelper.requireNonNull(constants$1671.const$0,"ferror");
+        return RuntimeHelper.requireNonNull(constants$1676.const$0,"ferror");
     }
     /**
      * {@snippet :
@@ -11266,7 +11466,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle clearerr_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1671.const$1,"clearerr_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1676.const$1,"clearerr_unlocked");
     }
     /**
      * {@snippet :
@@ -11282,7 +11482,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle feof_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1671.const$2,"feof_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1676.const$2,"feof_unlocked");
     }
     /**
      * {@snippet :
@@ -11298,7 +11498,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ferror_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1671.const$3,"ferror_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1676.const$3,"ferror_unlocked");
     }
     /**
      * {@snippet :
@@ -11314,7 +11514,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle perror$MH() {
-        return RuntimeHelper.requireNonNull(constants$1671.const$4,"perror");
+        return RuntimeHelper.requireNonNull(constants$1676.const$4,"perror");
     }
     /**
      * {@snippet :
@@ -11330,7 +11530,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fileno$MH() {
-        return RuntimeHelper.requireNonNull(constants$1671.const$5,"fileno");
+        return RuntimeHelper.requireNonNull(constants$1676.const$5,"fileno");
     }
     /**
      * {@snippet :
@@ -11346,7 +11546,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fileno_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$1672.const$0,"fileno_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1677.const$0,"fileno_unlocked");
     }
     /**
      * {@snippet :
@@ -11362,7 +11562,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pclose$MH() {
-        return RuntimeHelper.requireNonNull(constants$1672.const$1,"pclose");
+        return RuntimeHelper.requireNonNull(constants$1677.const$1,"pclose");
     }
     /**
      * {@snippet :
@@ -11378,7 +11578,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle popen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1672.const$2,"popen");
+        return RuntimeHelper.requireNonNull(constants$1677.const$2,"popen");
     }
     /**
      * {@snippet :
@@ -11394,7 +11594,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ctermid$MH() {
-        return RuntimeHelper.requireNonNull(constants$1672.const$3,"ctermid");
+        return RuntimeHelper.requireNonNull(constants$1677.const$3,"ctermid");
     }
     /**
      * {@snippet :
@@ -11410,7 +11610,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle flockfile$MH() {
-        return RuntimeHelper.requireNonNull(constants$1672.const$4,"flockfile");
+        return RuntimeHelper.requireNonNull(constants$1677.const$4,"flockfile");
     }
     /**
      * {@snippet :
@@ -11426,7 +11626,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ftrylockfile$MH() {
-        return RuntimeHelper.requireNonNull(constants$1672.const$5,"ftrylockfile");
+        return RuntimeHelper.requireNonNull(constants$1677.const$5,"ftrylockfile");
     }
     /**
      * {@snippet :
@@ -11442,7 +11642,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle funlockfile$MH() {
-        return RuntimeHelper.requireNonNull(constants$1673.const$0,"funlockfile");
+        return RuntimeHelper.requireNonNull(constants$1678.const$0,"funlockfile");
     }
     /**
      * {@snippet :
@@ -11458,7 +11658,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle __uflow$MH() {
-        return RuntimeHelper.requireNonNull(constants$1673.const$1,"__uflow");
+        return RuntimeHelper.requireNonNull(constants$1678.const$1,"__uflow");
     }
     /**
      * {@snippet :
@@ -11474,7 +11674,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle __overflow$MH() {
-        return RuntimeHelper.requireNonNull(constants$1673.const$2,"__overflow");
+        return RuntimeHelper.requireNonNull(constants$1678.const$2,"__overflow");
     }
     /**
      * {@snippet :
@@ -11490,7 +11690,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_split_file_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1673.const$3,"pango_split_file_list");
+        return RuntimeHelper.requireNonNull(constants$1678.const$3,"pango_split_file_list");
     }
     /**
      * {@snippet :
@@ -11506,7 +11706,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_trim_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1673.const$4,"pango_trim_string");
+        return RuntimeHelper.requireNonNull(constants$1678.const$4,"pango_trim_string");
     }
     /**
      * {@snippet :
@@ -11522,7 +11722,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_read_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1673.const$5,"pango_read_line");
+        return RuntimeHelper.requireNonNull(constants$1678.const$5,"pango_read_line");
     }
     /**
      * {@snippet :
@@ -11538,7 +11738,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_skip_space$MH() {
-        return RuntimeHelper.requireNonNull(constants$1674.const$0,"pango_skip_space");
+        return RuntimeHelper.requireNonNull(constants$1679.const$0,"pango_skip_space");
     }
     /**
      * {@snippet :
@@ -11554,7 +11754,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_scan_word$MH() {
-        return RuntimeHelper.requireNonNull(constants$1674.const$1,"pango_scan_word");
+        return RuntimeHelper.requireNonNull(constants$1679.const$1,"pango_scan_word");
     }
     /**
      * {@snippet :
@@ -11570,7 +11770,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_scan_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1674.const$2,"pango_scan_string");
+        return RuntimeHelper.requireNonNull(constants$1679.const$2,"pango_scan_string");
     }
     /**
      * {@snippet :
@@ -11586,7 +11786,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_scan_int$MH() {
-        return RuntimeHelper.requireNonNull(constants$1674.const$3,"pango_scan_int");
+        return RuntimeHelper.requireNonNull(constants$1679.const$3,"pango_scan_int");
     }
     /**
      * {@snippet :
@@ -11602,7 +11802,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_enum$MH() {
-        return RuntimeHelper.requireNonNull(constants$1674.const$5,"pango_parse_enum");
+        return RuntimeHelper.requireNonNull(constants$1679.const$5,"pango_parse_enum");
     }
     /**
      * {@snippet :
@@ -11618,7 +11818,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1675.const$0,"pango_parse_style");
+        return RuntimeHelper.requireNonNull(constants$1680.const$0,"pango_parse_style");
     }
     /**
      * {@snippet :
@@ -11634,7 +11834,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_variant$MH() {
-        return RuntimeHelper.requireNonNull(constants$1675.const$1,"pango_parse_variant");
+        return RuntimeHelper.requireNonNull(constants$1680.const$1,"pango_parse_variant");
     }
     /**
      * {@snippet :
@@ -11650,7 +11850,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_weight$MH() {
-        return RuntimeHelper.requireNonNull(constants$1675.const$2,"pango_parse_weight");
+        return RuntimeHelper.requireNonNull(constants$1680.const$2,"pango_parse_weight");
     }
     /**
      * {@snippet :
@@ -11666,7 +11866,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_stretch$MH() {
-        return RuntimeHelper.requireNonNull(constants$1675.const$3,"pango_parse_stretch");
+        return RuntimeHelper.requireNonNull(constants$1680.const$3,"pango_parse_stretch");
     }
     /**
      * {@snippet :
@@ -11682,7 +11882,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_quantize_line_geometry$MH() {
-        return RuntimeHelper.requireNonNull(constants$1675.const$4,"pango_quantize_line_geometry");
+        return RuntimeHelper.requireNonNull(constants$1680.const$4,"pango_quantize_line_geometry");
     }
     /**
      * {@snippet :
@@ -11698,7 +11898,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_log2vis_get_embedding_levels$MH() {
-        return RuntimeHelper.requireNonNull(constants$1675.const$5,"pango_log2vis_get_embedding_levels");
+        return RuntimeHelper.requireNonNull(constants$1680.const$5,"pango_log2vis_get_embedding_levels");
     }
     /**
      * {@snippet :
@@ -11714,7 +11914,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_is_zero_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1676.const$0,"pango_is_zero_width");
+        return RuntimeHelper.requireNonNull(constants$1681.const$0,"pango_is_zero_width");
     }
     /**
      * {@snippet :
@@ -11730,7 +11930,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_find_paragraph_boundary$MH() {
-        return RuntimeHelper.requireNonNull(constants$1676.const$1,"pango_find_paragraph_boundary");
+        return RuntimeHelper.requireNonNull(constants$1681.const$1,"pango_find_paragraph_boundary");
     }
     /**
      * {@snippet :
@@ -11746,7 +11946,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_version$MH() {
-        return RuntimeHelper.requireNonNull(constants$1676.const$2,"pango_version");
+        return RuntimeHelper.requireNonNull(constants$1681.const$2,"pango_version");
     }
     /**
      * {@snippet :
@@ -11762,7 +11962,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_version_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1676.const$3,"pango_version_string");
+        return RuntimeHelper.requireNonNull(constants$1681.const$3,"pango_version_string");
     }
     /**
      * {@snippet :
@@ -11778,7 +11978,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_version_check$MH() {
-        return RuntimeHelper.requireNonNull(constants$1676.const$4,"pango_version_check");
+        return RuntimeHelper.requireNonNull(constants$1681.const$4,"pango_version_check");
     }
     /**
      * {@snippet :
@@ -11794,7 +11994,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_version$MH() {
-        return RuntimeHelper.requireNonNull(constants$1676.const$5,"cairo_version");
+        return RuntimeHelper.requireNonNull(constants$1681.const$5,"cairo_version");
     }
     /**
      * {@snippet :
@@ -11810,7 +12010,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_version_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1677.const$0,"cairo_version_string");
+        return RuntimeHelper.requireNonNull(constants$1682.const$0,"cairo_version_string");
     }
     /**
      * {@snippet :
@@ -12295,8 +12495,80 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     public static int CAIRO_FORMAT_RGBA128F() {
         return (int)7L;
     }
+    /**
+     * {@snippet :
+     * enum _cairo_dither.CAIRO_DITHER_NONE = 0;
+     * }
+     */
+    public static int CAIRO_DITHER_NONE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_dither.CAIRO_DITHER_DEFAULT = 1;
+     * }
+     */
+    public static int CAIRO_DITHER_DEFAULT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_dither.CAIRO_DITHER_FAST = 2;
+     * }
+     */
+    public static int CAIRO_DITHER_FAST() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_dither.CAIRO_DITHER_GOOD = 3;
+     * }
+     */
+    public static int CAIRO_DITHER_GOOD() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_dither.CAIRO_DITHER_BEST = 4;
+     * }
+     */
+    public static int CAIRO_DITHER_BEST() {
+        return (int)4L;
+    }
+    public static MethodHandle cairo_pattern_set_dither$MH() {
+        return RuntimeHelper.requireNonNull(constants$1683.const$5,"cairo_pattern_set_dither");
+    }
+    /**
+     * {@snippet :
+     * void cairo_pattern_set_dither(struct _cairo_pattern* pattern, enum _cairo_dither dither);
+     * }
+     */
+    public static void cairo_pattern_set_dither(MemorySegment pattern, int dither) {
+        var mh$ = cairo_pattern_set_dither$MH();
+        try {
+            mh$.invokeExact(pattern, dither);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_pattern_get_dither$MH() {
+        return RuntimeHelper.requireNonNull(constants$1684.const$0,"cairo_pattern_get_dither");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_dither cairo_pattern_get_dither(struct _cairo_pattern* pattern);
+     * }
+     */
+    public static int cairo_pattern_get_dither(MemorySegment pattern) {
+        var mh$ = cairo_pattern_get_dither$MH();
+        try {
+            return (int)mh$.invokeExact(pattern);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle cairo_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1680.const$0,"cairo_create");
+        return RuntimeHelper.requireNonNull(constants$1685.const$2,"cairo_create");
     }
     /**
      * {@snippet :
@@ -12312,7 +12584,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1680.const$1,"cairo_reference");
+        return RuntimeHelper.requireNonNull(constants$1685.const$3,"cairo_reference");
     }
     /**
      * {@snippet :
@@ -12328,7 +12600,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1680.const$2,"cairo_destroy");
+        return RuntimeHelper.requireNonNull(constants$1685.const$4,"cairo_destroy");
     }
     /**
      * {@snippet :
@@ -12344,7 +12616,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1680.const$3,"cairo_get_reference_count");
+        return RuntimeHelper.requireNonNull(constants$1685.const$5,"cairo_get_reference_count");
     }
     /**
      * {@snippet :
@@ -12360,7 +12632,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1680.const$4,"cairo_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1686.const$0,"cairo_get_user_data");
     }
     /**
      * {@snippet :
@@ -12376,7 +12648,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1681.const$0,"cairo_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1686.const$2,"cairo_set_user_data");
     }
     /**
      * {@snippet :
@@ -12392,7 +12664,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_save$MH() {
-        return RuntimeHelper.requireNonNull(constants$1681.const$1,"cairo_save");
+        return RuntimeHelper.requireNonNull(constants$1686.const$3,"cairo_save");
     }
     /**
      * {@snippet :
@@ -12406,222 +12678,6 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
-    }
-    public static MethodHandle cairo_restore$MH() {
-        return RuntimeHelper.requireNonNull(constants$1681.const$2,"cairo_restore");
-    }
-    /**
-     * {@snippet :
-     * void cairo_restore(struct _cairo* cr);
-     * }
-     */
-    public static void cairo_restore(MemorySegment cr) {
-        var mh$ = cairo_restore$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_push_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1681.const$3,"cairo_push_group");
-    }
-    /**
-     * {@snippet :
-     * void cairo_push_group(struct _cairo* cr);
-     * }
-     */
-    public static void cairo_push_group(MemorySegment cr) {
-        var mh$ = cairo_push_group$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_push_group_with_content$MH() {
-        return RuntimeHelper.requireNonNull(constants$1681.const$4,"cairo_push_group_with_content");
-    }
-    /**
-     * {@snippet :
-     * void cairo_push_group_with_content(struct _cairo* cr, enum _cairo_content content);
-     * }
-     */
-    public static void cairo_push_group_with_content(MemorySegment cr, int content) {
-        var mh$ = cairo_push_group_with_content$MH();
-        try {
-            mh$.invokeExact(cr, content);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_pop_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1681.const$5,"cairo_pop_group");
-    }
-    /**
-     * {@snippet :
-     * struct _cairo_pattern* cairo_pop_group(struct _cairo* cr);
-     * }
-     */
-    public static MemorySegment cairo_pop_group(MemorySegment cr) {
-        var mh$ = cairo_pop_group$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_pop_group_to_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$1682.const$0,"cairo_pop_group_to_source");
-    }
-    /**
-     * {@snippet :
-     * void cairo_pop_group_to_source(struct _cairo* cr);
-     * }
-     */
-    public static void cairo_pop_group_to_source(MemorySegment cr) {
-        var mh$ = cairo_pop_group_to_source$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_CLEAR = 0;
-     * }
-     */
-    public static int CAIRO_OPERATOR_CLEAR() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_SOURCE = 1;
-     * }
-     */
-    public static int CAIRO_OPERATOR_SOURCE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_OVER = 2;
-     * }
-     */
-    public static int CAIRO_OPERATOR_OVER() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_IN = 3;
-     * }
-     */
-    public static int CAIRO_OPERATOR_IN() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_OUT = 4;
-     * }
-     */
-    public static int CAIRO_OPERATOR_OUT() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_ATOP = 5;
-     * }
-     */
-    public static int CAIRO_OPERATOR_ATOP() {
-        return (int)5L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_DEST = 6;
-     * }
-     */
-    public static int CAIRO_OPERATOR_DEST() {
-        return (int)6L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_DEST_OVER = 7;
-     * }
-     */
-    public static int CAIRO_OPERATOR_DEST_OVER() {
-        return (int)7L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_DEST_IN = 8;
-     * }
-     */
-    public static int CAIRO_OPERATOR_DEST_IN() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_DEST_OUT = 9;
-     * }
-     */
-    public static int CAIRO_OPERATOR_DEST_OUT() {
-        return (int)9L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_DEST_ATOP = 10;
-     * }
-     */
-    public static int CAIRO_OPERATOR_DEST_ATOP() {
-        return (int)10L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_XOR = 11;
-     * }
-     */
-    public static int CAIRO_OPERATOR_XOR() {
-        return (int)11L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_ADD = 12;
-     * }
-     */
-    public static int CAIRO_OPERATOR_ADD() {
-        return (int)12L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_SATURATE = 13;
-     * }
-     */
-    public static int CAIRO_OPERATOR_SATURATE() {
-        return (int)13L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_MULTIPLY = 14;
-     * }
-     */
-    public static int CAIRO_OPERATOR_MULTIPLY() {
-        return (int)14L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_SCREEN = 15;
-     * }
-     */
-    public static int CAIRO_OPERATOR_SCREEN() {
-        return (int)15L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_OVERLAY = 16;
-     * }
-     */
-    public static int CAIRO_OPERATOR_OVERLAY() {
-        return (int)16L;
     }
 }
 

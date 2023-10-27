@@ -13,7 +13,7 @@ public interface GTypePluginUse {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(GTypePluginUse fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$679.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$682.const$1, fi, constants$13.const$1, scope);
     }
     static GTypePluginUse ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -17,7 +17,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _PangoGlyphVisAttr {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1598.const$5;
+        return constants$1603.const$5;
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

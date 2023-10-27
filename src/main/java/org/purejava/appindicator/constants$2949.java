@@ -8,28 +8,28 @@ final class constants$2949 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2949() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_height",
-        constants$67.const$0
+        "gtk_places_sidebar_set_location",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_dpi_x",
-        constants$67.const$0
+        "gtk_places_sidebar_get_show_recent",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_dpi_y",
-        constants$67.const$0
+        "gtk_places_sidebar_set_show_recent",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_hard_margins",
-        constants$165.const$2
+        "gtk_places_sidebar_get_show_desktop",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_pango_fontmap",
-        constants$5.const$2
+        "gtk_places_sidebar_set_show_desktop",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_print_context_create_pango_context",
-        constants$5.const$2
+        "gtk_places_sidebar_get_show_connect_to_server",
+        constants$10.const$5
     );
 }
 

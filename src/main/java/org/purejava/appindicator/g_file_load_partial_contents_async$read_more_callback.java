@@ -13,13 +13,13 @@ public interface g_file_load_partial_contents_async$read_more_callback {
 
     int apply(java.lang.foreign.MemorySegment file_contents, long file_size, java.lang.foreign.MemorySegment callback_data);
     static MemorySegment allocate(g_file_load_partial_contents_async$read_more_callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1038.const$2, fi, constants$62.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1041.const$2, fi, constants$62.const$2, scope);
     }
     static g_file_load_partial_contents_async$read_more_callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _file_contents, long _file_size, java.lang.foreign.MemorySegment _callback_data) -> {
             try {
-                return (int)constants$693.const$5.invokeExact(symbol, _file_contents, _file_size, _callback_data);
+                return (int)constants$696.const$3.invokeExact(symbol, _file_contents, _file_size, _callback_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -8,28 +8,28 @@ final class constants$2739 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2739() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_drag_new",
-        constants$5.const$2
+        "gtk_gesture_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_drag_get_start_point",
-        constants$12.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_drag_get_offset",
-        constants$12.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_long_press_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_long_press_new",
+        "gtk_gesture_get_device",
         constants$5.const$2
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_gesture_set_state",
+        constants$11.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_gesture_get_sequence_state",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_gesture_set_sequence_state",
+        constants$62.const$0
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_gesture_multi_press_get_type",
-        constants$3.const$5
+        "gtk_gesture_get_sequences",
+        constants$5.const$2
     );
 }
 

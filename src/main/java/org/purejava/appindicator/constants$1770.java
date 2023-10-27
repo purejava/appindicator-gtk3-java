@@ -2,18 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 final class constants$1770 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1770() {}
-    static final VarHandle const$0 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("window"));
-    static final VarHandle const$1 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
-    static final VarHandle const$2 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("time"));
-    static final VarHandle const$3 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("x"));
-    static final VarHandle const$4 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("y"));
-    static final VarHandle const$5 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("axes"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_drag_drop",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_drag_abort",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_drag_drop_succeeded",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_drag_drop_done",
+        constants$40.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_drag_window",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_set_hotspot",
+        constants$469.const$2
+    );
 }
 
 

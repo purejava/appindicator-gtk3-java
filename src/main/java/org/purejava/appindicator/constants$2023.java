@@ -2,34 +2,31 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2023 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2023() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_text_set_caret_offset",
-        constants$11.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkTextIface.get_range_extents.class, "apply", constants$1959.const$1);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_text_get_range_extents",
-        constants$1954.const$1
+        constants$1959.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_text_get_bounded_ranges",
-        constants$2018.const$2
+    static final VarHandle const$2 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_range_extents"));
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_text_free_ranges",
-        constants$13.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_attribute_set_free",
-        constants$13.const$1
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkTextIface.get_bounded_ranges.class, "apply", constants$2023.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_text_attribute_get_name",
-        constants$24.const$0
+        constants$2023.const$3
     );
 }
 

@@ -13,7 +13,7 @@ public interface pango_fontset_foreach$func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(pango_fontset_foreach$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1589.const$3, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1594.const$3, fi, constants$12.const$2, scope);
     }
     static pango_fontset_foreach$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

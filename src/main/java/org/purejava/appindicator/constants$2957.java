@@ -8,28 +8,28 @@ final class constants$2957 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2957() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_paper_height",
-        constants$2933.const$4
+        "gtk_print_settings_new_from_key_file",
+        constants$23.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_use_color",
-        constants$10.const$5
+        "gtk_print_settings_load_key_file",
+        constants$34.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_use_color",
-        constants$40.const$2
+        "gtk_print_settings_to_key_file",
+        constants$14.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_collate",
-        constants$10.const$5
+        "gtk_print_settings_has_key",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_collate",
-        constants$40.const$2
+        "gtk_print_settings_get",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_reverse",
-        constants$10.const$5
+        "gtk_print_settings_set",
+        constants$14.const$3
     );
 }
 

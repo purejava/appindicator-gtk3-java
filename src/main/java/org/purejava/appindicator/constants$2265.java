@@ -2,29 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2265 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2265() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkAccessibleClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2263.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GtkAccelMapForeach.class, "apply", constants$1518.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$1518.const$2
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_accessible_get_type",
-        constants$3.const$5
+        "gtk_accel_map_add_entry",
+        constants$469.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_accessible_set_widget",
-        constants$13.const$4
+        "gtk_accel_map_lookup_entry",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_accessible_get_widget",
-        constants$5.const$2
+        "gtk_accel_map_change_entry",
+        constants$611.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_accessible_connect_widget_destroyed",
+        "gtk_accel_map_load",
         constants$13.const$1
     );
 }

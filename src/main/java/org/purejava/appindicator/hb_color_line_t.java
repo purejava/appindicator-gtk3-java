@@ -29,10 +29,10 @@ import java.lang.invoke.VarHandle;
 public class hb_color_line_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1459.const$2;
+        return constants$1463.const$4;
     }
     public static VarHandle data$VH() {
-        return constants$1459.const$3;
+        return constants$1463.const$5;
     }
     /**
      * Getter for field:
@@ -41,7 +41,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1459.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1463.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -50,13 +50,13 @@ public class hb_color_line_t {
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        constants$1459.const$3.set(seg, x);
+        constants$1463.const$5.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1459.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1463.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1459.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1463.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -67,13 +67,13 @@ public class hb_color_line_t {
 
         int apply(java.lang.foreign.MemorySegment color_line, java.lang.foreign.MemorySegment color_line_data, int start, java.lang.foreign.MemorySegment count, java.lang.foreign.MemorySegment color_stops, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_color_stops fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1459.const$4, fi, constants$1243.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1464.const$0, fi, constants$1247.const$0, scope);
         }
         static get_color_stops ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _color_line, java.lang.foreign.MemorySegment _color_line_data, int _start, java.lang.foreign.MemorySegment _count, java.lang.foreign.MemorySegment _color_stops, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)constants$1459.const$0.invokeExact(symbol, _color_line, _color_line_data, _start, _count, _color_stops, _user_data);
+                    return (int)constants$1463.const$2.invokeExact(symbol, _color_line, _color_line_data, _start, _count, _color_stops, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -82,7 +82,7 @@ public class hb_color_line_t {
     }
 
     public static VarHandle get_color_stops$VH() {
-        return constants$1459.const$5;
+        return constants$1464.const$1;
     }
     /**
      * Getter for field:
@@ -91,7 +91,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment get_color_stops$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1459.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1464.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -100,19 +100,19 @@ public class hb_color_line_t {
      * }
      */
     public static void get_color_stops$set(MemorySegment seg, MemorySegment x) {
-        constants$1459.const$5.set(seg, x);
+        constants$1464.const$1.set(seg, x);
     }
     public static MemorySegment get_color_stops$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1459.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1464.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_color_stops$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1459.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1464.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_color_stops get_color_stops(MemorySegment segment, Arena scope) {
         return get_color_stops.ofAddress(get_color_stops$get(segment), scope);
     }
     public static VarHandle get_color_stops_user_data$VH() {
-        return constants$1460.const$0;
+        return constants$1464.const$2;
     }
     /**
      * Getter for field:
@@ -121,7 +121,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment get_color_stops_user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1464.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -130,13 +130,13 @@ public class hb_color_line_t {
      * }
      */
     public static void get_color_stops_user_data$set(MemorySegment seg, MemorySegment x) {
-        constants$1460.const$0.set(seg, x);
+        constants$1464.const$2.set(seg, x);
     }
     public static MemorySegment get_color_stops_user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1464.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_color_stops_user_data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1460.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1464.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -147,7 +147,7 @@ public class hb_color_line_t {
 
         int apply(java.lang.foreign.MemorySegment color_line, java.lang.foreign.MemorySegment color_line_data, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_extend fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1460.const$1, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1464.const$3, fi, constants$12.const$2, scope);
         }
         static get_extend ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -162,7 +162,7 @@ public class hb_color_line_t {
     }
 
     public static VarHandle get_extend$VH() {
-        return constants$1460.const$2;
+        return constants$1464.const$4;
     }
     /**
      * Getter for field:
@@ -171,7 +171,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment get_extend$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1464.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -180,19 +180,19 @@ public class hb_color_line_t {
      * }
      */
     public static void get_extend$set(MemorySegment seg, MemorySegment x) {
-        constants$1460.const$2.set(seg, x);
+        constants$1464.const$4.set(seg, x);
     }
     public static MemorySegment get_extend$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1464.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_extend$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1460.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1464.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_extend get_extend(MemorySegment segment, Arena scope) {
         return get_extend.ofAddress(get_extend$get(segment), scope);
     }
     public static VarHandle get_extend_user_data$VH() {
-        return constants$1460.const$3;
+        return constants$1464.const$5;
     }
     /**
      * Getter for field:
@@ -201,7 +201,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment get_extend_user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1464.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -210,16 +210,16 @@ public class hb_color_line_t {
      * }
      */
     public static void get_extend_user_data$set(MemorySegment seg, MemorySegment x) {
-        constants$1460.const$3.set(seg, x);
+        constants$1464.const$5.set(seg, x);
     }
     public static MemorySegment get_extend_user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1464.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_extend_user_data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1460.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1464.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved0$VH() {
-        return constants$1460.const$4;
+        return constants$1465.const$0;
     }
     /**
      * Getter for field:
@@ -228,7 +228,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment reserved0$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1465.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -237,16 +237,16 @@ public class hb_color_line_t {
      * }
      */
     public static void reserved0$set(MemorySegment seg, MemorySegment x) {
-        constants$1460.const$4.set(seg, x);
+        constants$1465.const$0.set(seg, x);
     }
     public static MemorySegment reserved0$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1465.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved0$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1460.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1465.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved1$VH() {
-        return constants$1460.const$5;
+        return constants$1465.const$1;
     }
     /**
      * Getter for field:
@@ -255,7 +255,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1465.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -264,16 +264,16 @@ public class hb_color_line_t {
      * }
      */
     public static void reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$1460.const$5.set(seg, x);
+        constants$1465.const$1.set(seg, x);
     }
     public static MemorySegment reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1465.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1460.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1465.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved2$VH() {
-        return constants$1461.const$0;
+        return constants$1465.const$2;
     }
     /**
      * Getter for field:
@@ -282,7 +282,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1465.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -291,16 +291,16 @@ public class hb_color_line_t {
      * }
      */
     public static void reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$0.set(seg, x);
+        constants$1465.const$2.set(seg, x);
     }
     public static MemorySegment reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1465.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1465.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved3$VH() {
-        return constants$1461.const$1;
+        return constants$1465.const$3;
     }
     /**
      * Getter for field:
@@ -309,7 +309,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1465.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -318,16 +318,16 @@ public class hb_color_line_t {
      * }
      */
     public static void reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$1.set(seg, x);
+        constants$1465.const$3.set(seg, x);
     }
     public static MemorySegment reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1465.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1465.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved5$VH() {
-        return constants$1461.const$2;
+        return constants$1465.const$4;
     }
     /**
      * Getter for field:
@@ -336,7 +336,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1465.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -345,16 +345,16 @@ public class hb_color_line_t {
      * }
      */
     public static void reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$2.set(seg, x);
+        constants$1465.const$4.set(seg, x);
     }
     public static MemorySegment reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1465.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1465.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved6$VH() {
-        return constants$1461.const$3;
+        return constants$1465.const$5;
     }
     /**
      * Getter for field:
@@ -363,7 +363,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1465.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -372,16 +372,16 @@ public class hb_color_line_t {
      * }
      */
     public static void reserved6$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$3.set(seg, x);
+        constants$1465.const$5.set(seg, x);
     }
     public static MemorySegment reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1465.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1465.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved7$VH() {
-        return constants$1461.const$4;
+        return constants$1466.const$0;
     }
     /**
      * Getter for field:
@@ -390,7 +390,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1466.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -399,16 +399,16 @@ public class hb_color_line_t {
      * }
      */
     public static void reserved7$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$4.set(seg, x);
+        constants$1466.const$0.set(seg, x);
     }
     public static MemorySegment reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1466.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved7$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1466.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved8$VH() {
-        return constants$1461.const$5;
+        return constants$1466.const$1;
     }
     /**
      * Getter for field:
@@ -417,7 +417,7 @@ public class hb_color_line_t {
      * }
      */
     public static MemorySegment reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1466.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -426,13 +426,13 @@ public class hb_color_line_t {
      * }
      */
     public static void reserved8$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$5.set(seg, x);
+        constants$1466.const$1.set(seg, x);
     }
     public static MemorySegment reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1466.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved8$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1466.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -31,7 +31,7 @@ import java.lang.invoke.VarHandle;
 public class _PangoRendererClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1641.const$4;
+        return constants$1646.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -45,13 +45,13 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, int _x4);
         static MemorySegment allocate(draw_glyphs fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1642.const$0, fi, constants$1641.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1647.const$0, fi, constants$1646.const$5, scope);
         }
         static draw_glyphs ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, int __x4) -> {
                 try {
-                    constants$1642.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$1647.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -60,7 +60,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle draw_glyphs$VH() {
-        return constants$1642.const$2;
+        return constants$1647.const$2;
     }
     /**
      * Getter for field:
@@ -69,7 +69,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment draw_glyphs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1642.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1647.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -78,13 +78,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void draw_glyphs$set(MemorySegment seg, MemorySegment x) {
-        constants$1642.const$2.set(seg, x);
+        constants$1647.const$2.set(seg, x);
     }
     public static MemorySegment draw_glyphs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1642.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1647.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void draw_glyphs$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1642.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1647.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static draw_glyphs draw_glyphs(MemorySegment segment, Arena scope) {
         return draw_glyphs.ofAddress(draw_glyphs$get(segment), scope);
@@ -98,13 +98,13 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, int _x4, int _x5);
         static MemorySegment allocate(draw_rectangle fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1642.const$4, fi, constants$1642.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$1647.const$4, fi, constants$1647.const$3, scope);
         }
         static draw_rectangle ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, int __x4, int __x5) -> {
                 try {
-                    constants$1642.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$1647.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -113,7 +113,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle draw_rectangle$VH() {
-        return constants$1643.const$0;
+        return constants$1648.const$0;
     }
     /**
      * Getter for field:
@@ -122,7 +122,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment draw_rectangle$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1643.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1648.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -131,13 +131,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void draw_rectangle$set(MemorySegment seg, MemorySegment x) {
-        constants$1643.const$0.set(seg, x);
+        constants$1648.const$0.set(seg, x);
     }
     public static MemorySegment draw_rectangle$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1643.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1648.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void draw_rectangle$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1643.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1648.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static draw_rectangle draw_rectangle(MemorySegment segment, Arena scope) {
         return draw_rectangle.ofAddress(draw_rectangle$get(segment), scope);
@@ -151,13 +151,13 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, int _x4);
         static MemorySegment allocate(draw_error_underline fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1643.const$2, fi, constants$1643.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1648.const$2, fi, constants$1648.const$1, scope);
         }
         static draw_error_underline ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, int __x4) -> {
                 try {
-                    constants$1643.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$1648.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -166,7 +166,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle draw_error_underline$VH() {
-        return constants$1643.const$4;
+        return constants$1648.const$4;
     }
     /**
      * Getter for field:
@@ -175,7 +175,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment draw_error_underline$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1643.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1648.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -184,13 +184,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void draw_error_underline$set(MemorySegment seg, MemorySegment x) {
-        constants$1643.const$4.set(seg, x);
+        constants$1648.const$4.set(seg, x);
     }
     public static MemorySegment draw_error_underline$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1643.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1648.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void draw_error_underline$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1643.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1648.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static draw_error_underline draw_error_underline(MemorySegment segment, Arena scope) {
         return draw_error_underline.ofAddress(draw_error_underline$get(segment), scope);
@@ -204,13 +204,13 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3);
         static MemorySegment allocate(draw_shape fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1643.const$5, fi, constants$1043.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1648.const$5, fi, constants$1046.const$2, scope);
         }
         static draw_shape ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3) -> {
                 try {
-                    constants$1644.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$1649.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -219,7 +219,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle draw_shape$VH() {
-        return constants$1644.const$1;
+        return constants$1649.const$1;
     }
     /**
      * Getter for field:
@@ -228,7 +228,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment draw_shape$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1644.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1649.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -237,13 +237,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void draw_shape$set(MemorySegment seg, MemorySegment x) {
-        constants$1644.const$1.set(seg, x);
+        constants$1649.const$1.set(seg, x);
     }
     public static MemorySegment draw_shape$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1644.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1649.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void draw_shape$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1644.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1649.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static draw_shape draw_shape(MemorySegment segment, Arena scope) {
         return draw_shape.ofAddress(draw_shape$get(segment), scope);
@@ -257,13 +257,13 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, double _x2, double _x3, double _x4, double _x5, double _x6, double _x7);
         static MemorySegment allocate(draw_trapezoid fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1644.const$3, fi, constants$1644.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1649.const$3, fi, constants$1649.const$2, scope);
         }
         static draw_trapezoid ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, double __x2, double __x3, double __x4, double __x5, double __x6, double __x7) -> {
                 try {
-                    constants$1644.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
+                    constants$1649.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -272,7 +272,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle draw_trapezoid$VH() {
-        return constants$1644.const$5;
+        return constants$1649.const$5;
     }
     /**
      * Getter for field:
@@ -281,7 +281,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment draw_trapezoid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1644.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1649.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -290,13 +290,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void draw_trapezoid$set(MemorySegment seg, MemorySegment x) {
-        constants$1644.const$5.set(seg, x);
+        constants$1649.const$5.set(seg, x);
     }
     public static MemorySegment draw_trapezoid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1644.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1649.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void draw_trapezoid$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1644.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1649.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static draw_trapezoid draw_trapezoid(MemorySegment segment, Arena scope) {
         return draw_trapezoid.ofAddress(draw_trapezoid$get(segment), scope);
@@ -310,13 +310,13 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, double _x3, double _x4);
         static MemorySegment allocate(draw_glyph fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1645.const$1, fi, constants$1645.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1650.const$1, fi, constants$1650.const$0, scope);
         }
         static draw_glyph ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, double __x3, double __x4) -> {
                 try {
-                    constants$1645.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$1650.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -325,7 +325,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle draw_glyph$VH() {
-        return constants$1645.const$3;
+        return constants$1650.const$3;
     }
     /**
      * Getter for field:
@@ -334,7 +334,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment draw_glyph$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1645.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1650.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -343,13 +343,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void draw_glyph$set(MemorySegment seg, MemorySegment x) {
-        constants$1645.const$3.set(seg, x);
+        constants$1650.const$3.set(seg, x);
     }
     public static MemorySegment draw_glyph$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1645.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1650.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void draw_glyph$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1645.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1650.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static draw_glyph draw_glyph(MemorySegment segment, Arena scope) {
         return draw_glyph.ofAddress(draw_glyph$get(segment), scope);
@@ -363,13 +363,13 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(part_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1645.const$4, fi, constants$40.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1650.const$4, fi, constants$40.const$2, scope);
         }
         static part_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    constants$509.const$5.invokeExact(symbol, __x0, __x1);
+                    constants$511.const$3.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -378,7 +378,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle part_changed$VH() {
-        return constants$1645.const$5;
+        return constants$1650.const$5;
     }
     /**
      * Getter for field:
@@ -387,7 +387,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment part_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1645.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1650.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -396,13 +396,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void part_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1645.const$5.set(seg, x);
+        constants$1650.const$5.set(seg, x);
     }
     public static MemorySegment part_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1645.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1650.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void part_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1645.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1650.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static part_changed part_changed(MemorySegment segment, Arena scope) {
         return part_changed.ofAddress(part_changed$get(segment), scope);
@@ -416,7 +416,7 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(begin fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1646.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1651.const$0, fi, constants$13.const$1, scope);
         }
         static begin ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -431,7 +431,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle begin$VH() {
-        return constants$1646.const$1;
+        return constants$1651.const$1;
     }
     /**
      * Getter for field:
@@ -440,7 +440,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment begin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1646.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1651.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -449,13 +449,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void begin$set(MemorySegment seg, MemorySegment x) {
-        constants$1646.const$1.set(seg, x);
+        constants$1651.const$1.set(seg, x);
     }
     public static MemorySegment begin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1646.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1651.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void begin$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1646.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1651.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static begin begin(MemorySegment segment, Arena scope) {
         return begin.ofAddress(begin$get(segment), scope);
@@ -469,7 +469,7 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(end fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1646.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1651.const$2, fi, constants$13.const$1, scope);
         }
         static end ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -484,7 +484,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle end$VH() {
-        return constants$1646.const$3;
+        return constants$1651.const$3;
     }
     /**
      * Getter for field:
@@ -493,7 +493,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment end$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1646.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1651.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -502,13 +502,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void end$set(MemorySegment seg, MemorySegment x) {
-        constants$1646.const$3.set(seg, x);
+        constants$1651.const$3.set(seg, x);
     }
     public static MemorySegment end$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1646.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1651.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void end$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1646.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1651.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static end end(MemorySegment segment, Arena scope) {
         return end.ofAddress(end$get(segment), scope);
@@ -522,7 +522,7 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(prepare_run fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1646.const$4, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1651.const$4, fi, constants$13.const$4, scope);
         }
         static prepare_run ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -537,7 +537,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle prepare_run$VH() {
-        return constants$1646.const$5;
+        return constants$1651.const$5;
     }
     /**
      * Getter for field:
@@ -546,7 +546,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment prepare_run$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1646.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1651.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -555,13 +555,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void prepare_run$set(MemorySegment seg, MemorySegment x) {
-        constants$1646.const$5.set(seg, x);
+        constants$1651.const$5.set(seg, x);
     }
     public static MemorySegment prepare_run$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1646.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1651.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void prepare_run$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1646.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1651.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static prepare_run prepare_run(MemorySegment segment, Arena scope) {
         return prepare_run.ofAddress(prepare_run$get(segment), scope);
@@ -575,13 +575,13 @@ public class _PangoRendererClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, int _x4);
         static MemorySegment allocate(draw_glyph_item fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1647.const$0, fi, constants$1641.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1652.const$0, fi, constants$1646.const$5, scope);
         }
         static draw_glyph_item ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, int __x4) -> {
                 try {
-                    constants$1642.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$1647.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -590,7 +590,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle draw_glyph_item$VH() {
-        return constants$1647.const$1;
+        return constants$1652.const$1;
     }
     /**
      * Getter for field:
@@ -599,7 +599,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment draw_glyph_item$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1647.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1652.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -608,13 +608,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void draw_glyph_item$set(MemorySegment seg, MemorySegment x) {
-        constants$1647.const$1.set(seg, x);
+        constants$1652.const$1.set(seg, x);
     }
     public static MemorySegment draw_glyph_item$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1647.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1652.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void draw_glyph_item$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1647.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1652.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static draw_glyph_item draw_glyph_item(MemorySegment segment, Arena scope) {
         return draw_glyph_item.ofAddress(draw_glyph_item$get(segment), scope);
@@ -628,7 +628,7 @@ public class _PangoRendererClass {
 
         void apply();
         static MemorySegment allocate(_pango_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1647.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1652.const$2, fi, constants$7.const$5, scope);
         }
         static _pango_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -643,7 +643,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle _pango_reserved2$VH() {
-        return constants$1647.const$3;
+        return constants$1652.const$3;
     }
     /**
      * Getter for field:
@@ -652,7 +652,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment _pango_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1647.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1652.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -661,13 +661,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void _pango_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1647.const$3.set(seg, x);
+        constants$1652.const$3.set(seg, x);
     }
     public static MemorySegment _pango_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1647.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1652.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _pango_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1647.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1652.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _pango_reserved2 _pango_reserved2(MemorySegment segment, Arena scope) {
         return _pango_reserved2.ofAddress(_pango_reserved2$get(segment), scope);
@@ -681,7 +681,7 @@ public class _PangoRendererClass {
 
         void apply();
         static MemorySegment allocate(_pango_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1647.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1652.const$4, fi, constants$7.const$5, scope);
         }
         static _pango_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -696,7 +696,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle _pango_reserved3$VH() {
-        return constants$1647.const$5;
+        return constants$1652.const$5;
     }
     /**
      * Getter for field:
@@ -705,7 +705,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment _pango_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1647.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1652.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -714,13 +714,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void _pango_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$1647.const$5.set(seg, x);
+        constants$1652.const$5.set(seg, x);
     }
     public static MemorySegment _pango_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1647.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1652.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _pango_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1647.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1652.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _pango_reserved3 _pango_reserved3(MemorySegment segment, Arena scope) {
         return _pango_reserved3.ofAddress(_pango_reserved3$get(segment), scope);
@@ -734,7 +734,7 @@ public class _PangoRendererClass {
 
         void apply();
         static MemorySegment allocate(_pango_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1648.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1653.const$0, fi, constants$7.const$5, scope);
         }
         static _pango_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -749,7 +749,7 @@ public class _PangoRendererClass {
     }
 
     public static VarHandle _pango_reserved4$VH() {
-        return constants$1648.const$1;
+        return constants$1653.const$1;
     }
     /**
      * Getter for field:
@@ -758,7 +758,7 @@ public class _PangoRendererClass {
      * }
      */
     public static MemorySegment _pango_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1648.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1653.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -767,13 +767,13 @@ public class _PangoRendererClass {
      * }
      */
     public static void _pango_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$1648.const$1.set(seg, x);
+        constants$1653.const$1.set(seg, x);
     }
     public static MemorySegment _pango_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1648.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1653.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _pango_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1648.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1653.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _pango_reserved4 _pango_reserved4(MemorySegment segment, Arena scope) {
         return _pango_reserved4.ofAddress(_pango_reserved4$get(segment), scope);

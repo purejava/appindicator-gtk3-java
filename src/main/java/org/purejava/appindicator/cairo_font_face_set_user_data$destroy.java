@@ -13,7 +13,7 @@ public interface cairo_font_face_set_user_data$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(cairo_font_face_set_user_data$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1706.const$4, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1711.const$4, fi, constants$13.const$1, scope);
     }
     static cairo_font_face_set_user_data$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

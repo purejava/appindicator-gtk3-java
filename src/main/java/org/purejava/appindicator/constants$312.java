@@ -2,34 +2,47 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$312 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$312() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "g_string_printf",
-        constants$13.const$4
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_string_append_vprintf",
-        constants$311.const$4
+        "g_string_replace",
+        constants$312.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "g_string_append_printf",
-        constants$13.const$4
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_string_ascii_down",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_string_append_uri_escaped",
-        constants$198.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_string_down",
+        "g_string_ascii_up",
         constants$5.const$2
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_string_up",
-        constants$5.const$2
+        "g_string_vprintf",
+        constants$312.const$4
     );
 }
 

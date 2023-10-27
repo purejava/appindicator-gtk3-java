@@ -2,43 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$2318 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2318() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_stop_editing",
-        constants$40.const$2
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "_gtk_cell_renderer_calc_offset",
-        constants$2318.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_state",
-        constants$62.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_class_set_accessible_type",
-        constants$25.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "_gtk_cell_renderer_get_accessible_type",
-        constants$4.const$0
-    );
+    static final VarHandle const$0 = constants$2313.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellRendererClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$2313.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkCellRendererClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$2313.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkCellRendererClass._gtk_reserved4.class, "apply", constants$7.const$5);
 }
 
 

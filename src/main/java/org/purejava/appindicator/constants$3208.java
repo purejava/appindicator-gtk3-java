@@ -7,29 +7,29 @@ final class constants$3208 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3208() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_ui_manager_item_type_get_type",
-        constants$3.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_tree_store_new",
+        constants$24.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_license_get_type",
-        constants$3.const$5
+        "gtk_tree_store_newv",
+        constants$24.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_accel_flags_get_type",
-        constants$3.const$5
+        "gtk_tree_store_set_column_types",
+        constants$42.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_application_inhibit_flags_get_type",
-        constants$3.const$5
+        "gtk_tree_store_set_value",
+        constants$466.const$3
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_assistant_page_type_get_type",
-        constants$3.const$5
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_tree_store_set",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_button_box_style_get_type",
-        constants$3.const$5
+        "gtk_tree_store_set_valuesv",
+        constants$649.const$2
     );
 }
 

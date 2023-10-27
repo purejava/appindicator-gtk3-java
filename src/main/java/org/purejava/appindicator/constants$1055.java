@@ -8,28 +8,28 @@ final class constants$1055 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1055() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_info_get_attribute_stringv",
-        constants$5.const$5
+        "g_file_info_copy_into",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute",
-        constants$464.const$4
+        "g_file_info_has_attribute",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_string",
-        constants$14.const$3
+        "g_file_info_has_namespace",
+        constants$9.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_byte_string",
-        constants$14.const$3
+        "g_file_info_list_attributes",
+        constants$5.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_boolean",
-        constants$164.const$5
+        "g_file_info_get_attribute_data",
+        constants$165.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_uint32",
-        constants$164.const$5
+        "g_file_info_get_attribute_type",
+        constants$9.const$0
     );
 }
 

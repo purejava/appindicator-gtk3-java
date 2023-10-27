@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$825 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$825() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "ttyname_r",
-        constants$24.const$2
+        "setpgid",
+        constants$123.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "isatty",
-        constants$8.const$4
+        "setpgrp",
+        constants$83.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "ttyslot",
+        "setsid",
         constants$83.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "link",
-        constants$9.const$0
+        "getsid",
+        constants$8.const$4
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "getuid",
+        constants$83.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "linkat",
-        constants$825.const$4
+        "geteuid",
+        constants$83.const$1
     );
 }
 

@@ -2,34 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$957 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$957() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$956.const$4
+        "g_drive_stop",
+        constants$381.const$0
     );
-    static final VarHandle const$1 = constants$955.const$0.varHandle(MemoryLayout.PathElement.groupElement("shutdown"));
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_drive_stop_finish",
+        constants$12.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDtlsConnectionInterface.shutdown_async.class, "apply", constants$957.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_drive_eject_with_operation$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_drive_eject_with_operation",
+        constants$381.const$0
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$957.const$2
+        "g_drive_eject_with_operation_finish",
+        constants$12.const$2
     );
-    static final VarHandle const$5 = constants$955.const$0.varHandle(MemoryLayout.PathElement.groupElement("shutdown_async"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_drive_get_sort_key",
+        constants$5.const$2
+    );
 }
 
 

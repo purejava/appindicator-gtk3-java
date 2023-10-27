@@ -13,7 +13,7 @@ public interface g_log_set_writer_func$user_data_free {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_log_set_writer_func$user_data_free fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$377.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$378.const$1, fi, constants$13.const$1, scope);
     }
     static g_log_set_writer_func$user_data_free ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

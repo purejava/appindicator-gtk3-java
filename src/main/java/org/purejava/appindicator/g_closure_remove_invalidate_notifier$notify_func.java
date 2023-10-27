@@ -13,7 +13,7 @@ public interface g_closure_remove_invalidate_notifier$notify_func {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_closure_remove_invalidate_notifier$notify_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$590.const$1, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$592.const$4, fi, constants$13.const$4, scope);
     }
     static g_closure_remove_invalidate_notifier$notify_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,35 +2,38 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1509 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1509() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_direction",
-        constants$40.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_direction",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$1508.const$4.varHandle(MemoryLayout.PathElement.groupElement("mask"));
+    static final VarHandle const$1 = constants$1508.const$4.varHandle(MemoryLayout.PathElement.groupElement("cluster"));
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_script",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_script",
+        "hb_glyph_info_get_glyph_flags",
         constants$10.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_language",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_language",
-        constants$5.const$2
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("x_advance"),
+        JAVA_INT.withName("y_advance"),
+        JAVA_INT.withName("x_offset"),
+        JAVA_INT.withName("y_offset"),
+        MemoryLayout.unionLayout(
+            JAVA_INT.withName("u32"),
+            JAVA_INT.withName("i32"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+        ).withName("var")
+    ).withName("hb_glyph_position_t");
+    static final VarHandle const$4 = constants$1509.const$3.varHandle(MemoryLayout.PathElement.groupElement("x_advance"));
+    static final VarHandle const$5 = constants$1509.const$3.varHandle(MemoryLayout.PathElement.groupElement("y_advance"));
 }
 
 

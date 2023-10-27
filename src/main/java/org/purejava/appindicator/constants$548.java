@@ -2,37 +2,30 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$548 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$548() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_type_from_name",
-        constants$4.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_type_parent",
-        constants$94.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_depth",
-        constants$26.const$2
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_LONG,
-        JAVA_LONG,
-        JAVA_LONG
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_next_base",
-        constants$548.const$3
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("type"),
+        RuntimeHelper.POINTER.withName("type_name"),
+        JAVA_INT.withName("class_size"),
+        JAVA_INT.withName("instance_size")
+    ).withName("_GTypeQuery");
+    static final VarHandle const$1 = constants$548.const$0.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$2 = constants$548.const$0.varHandle(MemoryLayout.PathElement.groupElement("type_name"));
+    static final VarHandle const$3 = constants$548.const$0.varHandle(MemoryLayout.PathElement.groupElement("class_size"));
+    static final VarHandle const$4 = constants$548.const$0.varHandle(MemoryLayout.PathElement.groupElement("instance_size"));
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_type_is_a",
-        constants$517.const$3
+        "g_type_init",
+        constants$7.const$5
     );
 }
 

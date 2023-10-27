@@ -3,40 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$608 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$608() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_add_emission_hook$hook_func.class, "apply", constants$11.const$0);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_signal_add_emission_hook$data_destroy.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_signal_emitv",
+        constants$57.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_signal_add_emission_hook",
-        constants$608.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_signal_remove_emission_hook",
-        constants$441.const$4
-    );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
         JAVA_INT,
         JAVA_INT,
-        JAVA_INT
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_signal_has_handler_pending",
-        constants$608.const$5
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_signal_emit_valist",
+        constants$608.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_emit",
+        constants$469.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_emit_by_name",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_signal_lookup",
+        constants$97.const$1
     );
 }
 

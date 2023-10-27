@@ -9,14 +9,12 @@ final class constants$2118 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2118() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass.drag_data_received.class, "apply", constants$2117.const$5);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$2117.const$5
-    );
-    static final VarHandle const$2 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("drag_data_received"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass.drag_failed.class, "apply", constants$62.const$0);
-    static final VarHandle const$4 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("drag_failed"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkWidgetClass.popup_menu.class, "apply", constants$10.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass.proximity_out_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$1 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("proximity_out_event"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkWidgetClass.visibility_notify_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$3 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("visibility_notify_event"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWidgetClass.window_state_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$5 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("window_state_event"));
 }
 
 

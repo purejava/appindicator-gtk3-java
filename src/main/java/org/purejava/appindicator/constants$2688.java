@@ -8,28 +8,28 @@ final class constants$2688 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2688() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_remove_shortcut_folder",
-        constants$12.const$2
+        "gtk_file_chooser_set_uri",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_list_shortcut_folders",
-        constants$5.const$2
+        "gtk_file_chooser_select_uri",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_add_shortcut_folder_uri",
-        constants$12.const$2
+        "gtk_file_chooser_unselect_uri",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_remove_shortcut_folder_uri",
-        constants$12.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_list_shortcut_folder_uris",
+        "gtk_file_chooser_get_uris",
         constants$5.const$2
     );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_set_current_folder_uri",
+        constants$9.const$0
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_add_choice",
-        constants$331.const$1
+        "gtk_file_chooser_get_current_folder_uri",
+        constants$5.const$2
     );
 }
 

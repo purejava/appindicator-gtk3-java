@@ -8,28 +8,28 @@ final class constants$1921 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1921() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_subpixel_layout_get_type",
-        constants$3.const$5
+        "gdk_device_pad_get_group_n_modes",
+        constants$11.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_prop_mode_get_type",
-        constants$3.const$5
+        "gdk_device_pad_get_n_features",
+        constants$11.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_seat_capabilities_get_type",
-        constants$3.const$5
+        "gdk_device_pad_get_feature_group",
+        constants$49.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_byte_order_get_type",
+        "gdk_display_manager_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_modifier_type_get_type",
-        constants$3.const$5
+        "gdk_display_manager_get",
+        constants$35.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_modifier_intent_get_type",
-        constants$3.const$5
+        "gdk_display_manager_get_default_display",
+        constants$5.const$2
     );
 }
 

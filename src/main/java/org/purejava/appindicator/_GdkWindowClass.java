@@ -29,7 +29,7 @@ import java.lang.invoke.VarHandle;
 public class _GdkWindowClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1820.const$5;
+        return constants$1825.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -43,13 +43,13 @@ public class _GdkWindowClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, double _x1, double _x2);
         static MemorySegment allocate(pick_embedded_child fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1821.const$1, fi, constants$1821.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$1826.const$1, fi, constants$1826.const$0, scope);
         }
         static pick_embedded_child ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, double __x1, double __x2) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$1821.const$2.invokeExact(symbol, __x0, __x1, __x2);
+                    return (java.lang.foreign.MemorySegment)constants$1826.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -58,7 +58,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle pick_embedded_child$VH() {
-        return constants$1821.const$3;
+        return constants$1826.const$3;
     }
     /**
      * Getter for field:
@@ -67,7 +67,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment pick_embedded_child$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1821.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1826.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -76,13 +76,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void pick_embedded_child$set(MemorySegment seg, MemorySegment x) {
-        constants$1821.const$3.set(seg, x);
+        constants$1826.const$3.set(seg, x);
     }
     public static MemorySegment pick_embedded_child$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1821.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1826.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void pick_embedded_child$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1821.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1826.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static pick_embedded_child pick_embedded_child(MemorySegment segment, Arena scope) {
         return pick_embedded_child.ofAddress(pick_embedded_child$get(segment), scope);
@@ -96,13 +96,13 @@ public class _GdkWindowClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, double _x1, double _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(to_embedder fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1821.const$5, fi, constants$1821.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1826.const$5, fi, constants$1826.const$4, scope);
         }
         static to_embedder ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, double __x1, double __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    constants$1822.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$1827.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -111,7 +111,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle to_embedder$VH() {
-        return constants$1822.const$1;
+        return constants$1827.const$1;
     }
     /**
      * Getter for field:
@@ -120,7 +120,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment to_embedder$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1822.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1827.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -129,13 +129,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void to_embedder$set(MemorySegment seg, MemorySegment x) {
-        constants$1822.const$1.set(seg, x);
+        constants$1827.const$1.set(seg, x);
     }
     public static MemorySegment to_embedder$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1822.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1827.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void to_embedder$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1822.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1827.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static to_embedder to_embedder(MemorySegment segment, Arena scope) {
         return to_embedder.ofAddress(to_embedder$get(segment), scope);
@@ -149,13 +149,13 @@ public class _GdkWindowClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, double _x1, double _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(from_embedder fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1822.const$2, fi, constants$1821.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1827.const$2, fi, constants$1826.const$4, scope);
         }
         static from_embedder ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, double __x1, double __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    constants$1822.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$1827.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -164,7 +164,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle from_embedder$VH() {
-        return constants$1822.const$3;
+        return constants$1827.const$3;
     }
     /**
      * Getter for field:
@@ -173,7 +173,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment from_embedder$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1822.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1827.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -182,13 +182,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void from_embedder$set(MemorySegment seg, MemorySegment x) {
-        constants$1822.const$3.set(seg, x);
+        constants$1827.const$3.set(seg, x);
     }
     public static MemorySegment from_embedder$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1822.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1827.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void from_embedder$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1822.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1827.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static from_embedder from_embedder(MemorySegment segment, Arena scope) {
         return from_embedder.ofAddress(from_embedder$get(segment), scope);
@@ -202,13 +202,13 @@ public class _GdkWindowClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
         static MemorySegment allocate(create_surface fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1822.const$4, fi, constants$33.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1827.const$4, fi, constants$33.const$5, scope);
         }
         static create_surface ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$1822.const$5.invokeExact(symbol, __x0, __x1, __x2);
+                    return (java.lang.foreign.MemorySegment)constants$1827.const$5.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -217,7 +217,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle create_surface$VH() {
-        return constants$1823.const$0;
+        return constants$1828.const$0;
     }
     /**
      * Getter for field:
@@ -226,7 +226,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment create_surface$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1823.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1828.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -235,13 +235,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void create_surface$set(MemorySegment seg, MemorySegment x) {
-        constants$1823.const$0.set(seg, x);
+        constants$1828.const$0.set(seg, x);
     }
     public static MemorySegment create_surface$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1823.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1828.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void create_surface$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1823.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1828.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static create_surface create_surface(MemorySegment segment, Arena scope) {
         return create_surface.ofAddress(create_surface$get(segment), scope);
@@ -255,7 +255,7 @@ public class _GdkWindowClass {
 
         void apply();
         static MemorySegment allocate(_gdk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1823.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1828.const$1, fi, constants$7.const$5, scope);
         }
         static _gdk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -270,7 +270,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle _gdk_reserved1$VH() {
-        return constants$1823.const$2;
+        return constants$1828.const$2;
     }
     /**
      * Getter for field:
@@ -279,7 +279,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment _gdk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1823.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1828.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -288,13 +288,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void _gdk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$1823.const$2.set(seg, x);
+        constants$1828.const$2.set(seg, x);
     }
     public static MemorySegment _gdk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1823.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1828.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gdk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1823.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1828.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gdk_reserved1 _gdk_reserved1(MemorySegment segment, Arena scope) {
         return _gdk_reserved1.ofAddress(_gdk_reserved1$get(segment), scope);
@@ -308,7 +308,7 @@ public class _GdkWindowClass {
 
         void apply();
         static MemorySegment allocate(_gdk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1823.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1828.const$3, fi, constants$7.const$5, scope);
         }
         static _gdk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -323,7 +323,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle _gdk_reserved2$VH() {
-        return constants$1823.const$4;
+        return constants$1828.const$4;
     }
     /**
      * Getter for field:
@@ -332,7 +332,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment _gdk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1823.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1828.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -341,13 +341,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void _gdk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1823.const$4.set(seg, x);
+        constants$1828.const$4.set(seg, x);
     }
     public static MemorySegment _gdk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1823.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1828.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gdk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1823.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1828.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gdk_reserved2 _gdk_reserved2(MemorySegment segment, Arena scope) {
         return _gdk_reserved2.ofAddress(_gdk_reserved2$get(segment), scope);
@@ -361,7 +361,7 @@ public class _GdkWindowClass {
 
         void apply();
         static MemorySegment allocate(_gdk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1823.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1828.const$5, fi, constants$7.const$5, scope);
         }
         static _gdk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -376,7 +376,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle _gdk_reserved3$VH() {
-        return constants$1824.const$0;
+        return constants$1829.const$0;
     }
     /**
      * Getter for field:
@@ -385,7 +385,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment _gdk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1824.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1829.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -394,13 +394,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void _gdk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$1824.const$0.set(seg, x);
+        constants$1829.const$0.set(seg, x);
     }
     public static MemorySegment _gdk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1824.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1829.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gdk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1824.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1829.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gdk_reserved3 _gdk_reserved3(MemorySegment segment, Arena scope) {
         return _gdk_reserved3.ofAddress(_gdk_reserved3$get(segment), scope);
@@ -414,7 +414,7 @@ public class _GdkWindowClass {
 
         void apply();
         static MemorySegment allocate(_gdk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1824.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1829.const$1, fi, constants$7.const$5, scope);
         }
         static _gdk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -429,7 +429,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle _gdk_reserved4$VH() {
-        return constants$1824.const$2;
+        return constants$1829.const$2;
     }
     /**
      * Getter for field:
@@ -438,7 +438,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment _gdk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1824.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1829.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -447,13 +447,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void _gdk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$1824.const$2.set(seg, x);
+        constants$1829.const$2.set(seg, x);
     }
     public static MemorySegment _gdk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1824.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1829.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gdk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1824.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1829.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gdk_reserved4 _gdk_reserved4(MemorySegment segment, Arena scope) {
         return _gdk_reserved4.ofAddress(_gdk_reserved4$get(segment), scope);
@@ -467,7 +467,7 @@ public class _GdkWindowClass {
 
         void apply();
         static MemorySegment allocate(_gdk_reserved5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1824.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1829.const$3, fi, constants$7.const$5, scope);
         }
         static _gdk_reserved5 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -482,7 +482,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle _gdk_reserved5$VH() {
-        return constants$1824.const$4;
+        return constants$1829.const$4;
     }
     /**
      * Getter for field:
@@ -491,7 +491,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment _gdk_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1824.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1829.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -500,13 +500,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void _gdk_reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$1824.const$4.set(seg, x);
+        constants$1829.const$4.set(seg, x);
     }
     public static MemorySegment _gdk_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1824.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1829.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gdk_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1824.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1829.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gdk_reserved5 _gdk_reserved5(MemorySegment segment, Arena scope) {
         return _gdk_reserved5.ofAddress(_gdk_reserved5$get(segment), scope);
@@ -520,7 +520,7 @@ public class _GdkWindowClass {
 
         void apply();
         static MemorySegment allocate(_gdk_reserved6 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1824.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1829.const$5, fi, constants$7.const$5, scope);
         }
         static _gdk_reserved6 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -535,7 +535,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle _gdk_reserved6$VH() {
-        return constants$1825.const$0;
+        return constants$1830.const$0;
     }
     /**
      * Getter for field:
@@ -544,7 +544,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment _gdk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1825.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1830.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -553,13 +553,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void _gdk_reserved6$set(MemorySegment seg, MemorySegment x) {
-        constants$1825.const$0.set(seg, x);
+        constants$1830.const$0.set(seg, x);
     }
     public static MemorySegment _gdk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1825.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1830.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gdk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1825.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1830.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gdk_reserved6 _gdk_reserved6(MemorySegment segment, Arena scope) {
         return _gdk_reserved6.ofAddress(_gdk_reserved6$get(segment), scope);
@@ -573,7 +573,7 @@ public class _GdkWindowClass {
 
         void apply();
         static MemorySegment allocate(_gdk_reserved7 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1825.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1830.const$1, fi, constants$7.const$5, scope);
         }
         static _gdk_reserved7 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -588,7 +588,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle _gdk_reserved7$VH() {
-        return constants$1825.const$2;
+        return constants$1830.const$2;
     }
     /**
      * Getter for field:
@@ -597,7 +597,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment _gdk_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1825.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1830.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -606,13 +606,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void _gdk_reserved7$set(MemorySegment seg, MemorySegment x) {
-        constants$1825.const$2.set(seg, x);
+        constants$1830.const$2.set(seg, x);
     }
     public static MemorySegment _gdk_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1825.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1830.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gdk_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1825.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1830.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gdk_reserved7 _gdk_reserved7(MemorySegment segment, Arena scope) {
         return _gdk_reserved7.ofAddress(_gdk_reserved7$get(segment), scope);
@@ -626,7 +626,7 @@ public class _GdkWindowClass {
 
         void apply();
         static MemorySegment allocate(_gdk_reserved8 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1825.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1830.const$3, fi, constants$7.const$5, scope);
         }
         static _gdk_reserved8 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -641,7 +641,7 @@ public class _GdkWindowClass {
     }
 
     public static VarHandle _gdk_reserved8$VH() {
-        return constants$1825.const$4;
+        return constants$1830.const$4;
     }
     /**
      * Getter for field:
@@ -650,7 +650,7 @@ public class _GdkWindowClass {
      * }
      */
     public static MemorySegment _gdk_reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1825.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1830.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -659,13 +659,13 @@ public class _GdkWindowClass {
      * }
      */
     public static void _gdk_reserved8$set(MemorySegment seg, MemorySegment x) {
-        constants$1825.const$4.set(seg, x);
+        constants$1830.const$4.set(seg, x);
     }
     public static MemorySegment _gdk_reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1825.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1830.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gdk_reserved8$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1825.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1830.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gdk_reserved8 _gdk_reserved8(MemorySegment segment, Arena scope) {
         return _gdk_reserved8.ofAddress(_gdk_reserved8$get(segment), scope);

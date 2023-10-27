@@ -24,7 +24,7 @@ import java.lang.invoke.VarHandle;
 public class _GTypeValueTable {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$557.const$2;
+        return constants$560.const$0;
     }
     /**
      * {@snippet :
@@ -35,7 +35,7 @@ public class _GTypeValueTable {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(value_init fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$557.const$3, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$560.const$1, fi, constants$13.const$1, scope);
         }
         static value_init ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -50,7 +50,7 @@ public class _GTypeValueTable {
     }
 
     public static VarHandle value_init$VH() {
-        return constants$557.const$4;
+        return constants$560.const$2;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GTypeValueTable {
      * }
      */
     public static MemorySegment value_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$557.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$560.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -68,13 +68,13 @@ public class _GTypeValueTable {
      * }
      */
     public static void value_init$set(MemorySegment seg, MemorySegment x) {
-        constants$557.const$4.set(seg, x);
+        constants$560.const$2.set(seg, x);
     }
     public static MemorySegment value_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$557.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$560.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void value_init$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$557.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$560.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static value_init value_init(MemorySegment segment, Arena scope) {
         return value_init.ofAddress(value_init$get(segment), scope);
@@ -88,7 +88,7 @@ public class _GTypeValueTable {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(value_free fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$557.const$5, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$560.const$3, fi, constants$13.const$1, scope);
         }
         static value_free ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -103,7 +103,7 @@ public class _GTypeValueTable {
     }
 
     public static VarHandle value_free$VH() {
-        return constants$558.const$0;
+        return constants$560.const$4;
     }
     /**
      * Getter for field:
@@ -112,7 +112,7 @@ public class _GTypeValueTable {
      * }
      */
     public static MemorySegment value_free$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$560.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -121,13 +121,13 @@ public class _GTypeValueTable {
      * }
      */
     public static void value_free$set(MemorySegment seg, MemorySegment x) {
-        constants$558.const$0.set(seg, x);
+        constants$560.const$4.set(seg, x);
     }
     public static MemorySegment value_free$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$560.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void value_free$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$558.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$560.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static value_free value_free(MemorySegment segment, Arena scope) {
         return value_free.ofAddress(value_free$get(segment), scope);
@@ -141,7 +141,7 @@ public class _GTypeValueTable {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(value_copy fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$558.const$1, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$560.const$5, fi, constants$13.const$4, scope);
         }
         static value_copy ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -156,7 +156,7 @@ public class _GTypeValueTable {
     }
 
     public static VarHandle value_copy$VH() {
-        return constants$558.const$2;
+        return constants$561.const$0;
     }
     /**
      * Getter for field:
@@ -165,7 +165,7 @@ public class _GTypeValueTable {
      * }
      */
     public static MemorySegment value_copy$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$561.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -174,13 +174,13 @@ public class _GTypeValueTable {
      * }
      */
     public static void value_copy$set(MemorySegment seg, MemorySegment x) {
-        constants$558.const$2.set(seg, x);
+        constants$561.const$0.set(seg, x);
     }
     public static MemorySegment value_copy$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$561.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void value_copy$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$558.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$561.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static value_copy value_copy(MemorySegment segment, Arena scope) {
         return value_copy.ofAddress(value_copy$get(segment), scope);
@@ -194,7 +194,7 @@ public class _GTypeValueTable {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(value_peek_pointer fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$558.const$3, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$561.const$1, fi, constants$5.const$2, scope);
         }
         static value_peek_pointer ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -209,7 +209,7 @@ public class _GTypeValueTable {
     }
 
     public static VarHandle value_peek_pointer$VH() {
-        return constants$558.const$4;
+        return constants$561.const$2;
     }
     /**
      * Getter for field:
@@ -218,7 +218,7 @@ public class _GTypeValueTable {
      * }
      */
     public static MemorySegment value_peek_pointer$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$561.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -227,19 +227,19 @@ public class _GTypeValueTable {
      * }
      */
     public static void value_peek_pointer$set(MemorySegment seg, MemorySegment x) {
-        constants$558.const$4.set(seg, x);
+        constants$561.const$2.set(seg, x);
     }
     public static MemorySegment value_peek_pointer$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$561.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void value_peek_pointer$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$558.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$561.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static value_peek_pointer value_peek_pointer(MemorySegment segment, Arena scope) {
         return value_peek_pointer.ofAddress(value_peek_pointer$get(segment), scope);
     }
     public static VarHandle collect_format$VH() {
-        return constants$558.const$5;
+        return constants$561.const$3;
     }
     /**
      * Getter for field:
@@ -248,7 +248,7 @@ public class _GTypeValueTable {
      * }
      */
     public static MemorySegment collect_format$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$561.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -257,13 +257,13 @@ public class _GTypeValueTable {
      * }
      */
     public static void collect_format$set(MemorySegment seg, MemorySegment x) {
-        constants$558.const$5.set(seg, x);
+        constants$561.const$3.set(seg, x);
     }
     public static MemorySegment collect_format$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$561.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void collect_format$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$558.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$561.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -272,15 +272,15 @@ public class _GTypeValueTable {
      */
     public interface collect_value {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, int _x3);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment value, int n_collect_values, java.lang.foreign.MemorySegment collect_values, int collect_flags);
         static MemorySegment allocate(collect_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$559.const$0, fi, constants$33.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$561.const$4, fi, constants$33.const$0, scope);
         }
         static collect_value ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
+            return (java.lang.foreign.MemorySegment _value, int _n_collect_values, java.lang.foreign.MemorySegment _collect_values, int _collect_flags) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$559.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (java.lang.foreign.MemorySegment)constants$559.const$4.invokeExact(symbol, _value, _n_collect_values, _collect_values, _collect_flags);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -289,7 +289,7 @@ public class _GTypeValueTable {
     }
 
     public static VarHandle collect_value$VH() {
-        return constants$559.const$2;
+        return constants$561.const$5;
     }
     /**
      * Getter for field:
@@ -298,7 +298,7 @@ public class _GTypeValueTable {
      * }
      */
     public static MemorySegment collect_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$561.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -307,19 +307,19 @@ public class _GTypeValueTable {
      * }
      */
     public static void collect_value$set(MemorySegment seg, MemorySegment x) {
-        constants$559.const$2.set(seg, x);
+        constants$561.const$5.set(seg, x);
     }
     public static MemorySegment collect_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$561.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void collect_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$559.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$561.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static collect_value collect_value(MemorySegment segment, Arena scope) {
         return collect_value.ofAddress(collect_value$get(segment), scope);
     }
     public static VarHandle lcopy_format$VH() {
-        return constants$559.const$3;
+        return constants$562.const$0;
     }
     /**
      * Getter for field:
@@ -328,7 +328,7 @@ public class _GTypeValueTable {
      * }
      */
     public static MemorySegment lcopy_format$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$562.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -337,13 +337,13 @@ public class _GTypeValueTable {
      * }
      */
     public static void lcopy_format$set(MemorySegment seg, MemorySegment x) {
-        constants$559.const$3.set(seg, x);
+        constants$562.const$0.set(seg, x);
     }
     public static MemorySegment lcopy_format$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$562.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lcopy_format$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$559.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$562.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -352,15 +352,15 @@ public class _GTypeValueTable {
      */
     public interface lcopy_value {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, int _x3);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment value, int n_collect_values, java.lang.foreign.MemorySegment collect_values, int collect_flags);
         static MemorySegment allocate(lcopy_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$559.const$4, fi, constants$33.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$562.const$1, fi, constants$33.const$0, scope);
         }
         static lcopy_value ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
+            return (java.lang.foreign.MemorySegment _value, int _n_collect_values, java.lang.foreign.MemorySegment _collect_values, int _collect_flags) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$559.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (java.lang.foreign.MemorySegment)constants$559.const$4.invokeExact(symbol, _value, _n_collect_values, _collect_values, _collect_flags);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -369,7 +369,7 @@ public class _GTypeValueTable {
     }
 
     public static VarHandle lcopy_value$VH() {
-        return constants$559.const$5;
+        return constants$562.const$2;
     }
     /**
      * Getter for field:
@@ -378,7 +378,7 @@ public class _GTypeValueTable {
      * }
      */
     public static MemorySegment lcopy_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$562.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -387,13 +387,13 @@ public class _GTypeValueTable {
      * }
      */
     public static void lcopy_value$set(MemorySegment seg, MemorySegment x) {
-        constants$559.const$5.set(seg, x);
+        constants$562.const$2.set(seg, x);
     }
     public static MemorySegment lcopy_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$562.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lcopy_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$559.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$562.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static lcopy_value lcopy_value(MemorySegment segment, Arena scope) {
         return lcopy_value.ofAddress(lcopy_value$get(segment), scope);

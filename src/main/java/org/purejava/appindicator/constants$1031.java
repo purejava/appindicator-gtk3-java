@@ -8,23 +8,26 @@ final class constants$1031 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1031() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_mount_enclosing_volume_finish",
+        "g_file_make_symbolic_link_finish",
         constants$12.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_mount_mountable$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_mount_mountable",
-        constants$380.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_mount_mountable_finish",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_query_settable_attributes",
         constants$23.const$0
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_unmount_mountable$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable",
-        constants$281.const$5
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_query_writable_namespaces",
+        constants$23.const$0
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_set_attribute",
+        constants$987.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_set_attributes_from_info",
+        constants$862.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_set_attributes_async$callback.class, "apply", constants$14.const$3);
 }
 
 

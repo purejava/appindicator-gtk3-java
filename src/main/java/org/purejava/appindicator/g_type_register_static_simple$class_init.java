@@ -13,7 +13,7 @@ public interface g_type_register_static_simple$class_init {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_type_register_static_simple$class_init fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$560.const$2, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$562.const$5, fi, constants$13.const$4, scope);
     }
     static g_type_register_static_simple$class_init ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

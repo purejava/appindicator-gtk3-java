@@ -2,47 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3286 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3286() {}
-    static final VarHandle const$0 = constants$3285.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkFontSelectionClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$3285.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkFontSelectionClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$3285.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        MemoryLayout.structLayout(
-                            MemoryLayout.structLayout(
-                                MemoryLayout.structLayout(
-                                    RuntimeHelper.POINTER.withName("g_class")
-                                ).withName("g_type_instance"),
-                                JAVA_INT.withName("ref_count"),
-                                MemoryLayout.paddingLayout(4),
-                                RuntimeHelper.POINTER.withName("qdata")
-                            ).withName("parent_instance"),
-                            RuntimeHelper.POINTER.withName("priv")
-                        ).withName("widget"),
-                        RuntimeHelper.POINTER.withName("priv")
-                    ).withName("container"),
-                    RuntimeHelper.POINTER.withName("priv")
-                ).withName("bin"),
-                RuntimeHelper.POINTER.withName("priv")
-            ).withName("window"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkFontSelectionDialog");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_color_selection_is_adjusting",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_color_selection_palette_from_string",
+        constants$12.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_color_selection_palette_to_string",
+        constants$21.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_color_selection_set_change_palette_with_screen_hook$func.class, "apply", constants$164.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_color_selection_set_change_palette_with_screen_hook$return.class, "apply", constants$164.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_color_selection_set_change_palette_with_screen_hook",
+        constants$5.const$2
+    );
 }
 
 

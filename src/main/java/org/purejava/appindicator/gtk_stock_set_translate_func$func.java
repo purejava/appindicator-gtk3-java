@@ -13,7 +13,7 @@ public interface gtk_stock_set_translate_func$func {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
     static MemorySegment allocate(gtk_stock_set_translate_func$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3260.const$4, fi, constants$5.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$3265.const$4, fi, constants$5.const$5, scope);
     }
     static gtk_stock_set_translate_func$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

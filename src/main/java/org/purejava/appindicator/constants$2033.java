@@ -3,23 +3,53 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2033 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2033() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.link_activated.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("link_activated"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.pad1.class, "apply", constants$10.const$5);
-    static final VarHandle const$3 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("pad1"));
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_type",
-        constants$3.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_editable_text_copy_text",
+        constants$469.const$2
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_editable_text_cut_text",
+        constants$469.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_editable_text_delete_text",
+        constants$469.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_editable_text_paste_text",
+        constants$40.const$2
+    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent"),
+            RuntimeHelper.POINTER.withName("description"),
+            RuntimeHelper.POINTER.withName("name"),
+            RuntimeHelper.POINTER.withName("accessible_parent"),
+            JAVA_INT.withName("role"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("relation_set"),
+            JAVA_INT.withName("layer"),
+            MemoryLayout.paddingLayout(4)
+        ).withName("parent")
+    ).withName("_AtkGObjectAccessible");
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_uri",
-        constants$21.const$3
+        "atk_gobject_accessible_get_type",
+        constants$3.const$5
     );
 }
 

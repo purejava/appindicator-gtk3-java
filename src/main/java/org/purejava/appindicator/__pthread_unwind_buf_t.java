@@ -17,7 +17,7 @@ import java.lang.foreign.SegmentAllocator;
 public class __pthread_unwind_buf_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$523.const$2;
+        return constants$524.const$5;
     }
     public static MemorySegment __cancel_jmp_buf$slice(MemorySegment seg) {
         return seg.asSlice(0, 184);

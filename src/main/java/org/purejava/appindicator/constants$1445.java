@@ -8,29 +8,20 @@ final class constants$1445 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1445() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_face_collect_nominal_glyph_mapping",
-        constants$14.const$3
+        "hb_map_values",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_face_collect_variation_selectors",
-        constants$13.const$4
+        "hb_face_count",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_face_collect_variation_unicodes",
-        constants$42.const$4
+        "hb_face_create",
+        constants$21.const$3
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_face_builder_create",
-        constants$35.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_face_builder_add_table",
-        constants$150.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_face_builder_sort_tables",
-        constants$13.const$4
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_reference_table_func_t.class, "apply", constants$196.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_face_create_for_tables$reference_table_func.class, "apply", constants$196.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_face_create_for_tables$destroy.class, "apply", constants$13.const$1);
 }
 
 

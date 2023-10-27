@@ -2,35 +2,95 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1342 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1342() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_themed_icon_get_type",
-        constants$3.const$5
+        "g_task_propagate_value",
+        constants$12.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_themed_icon_new",
-        constants$5.const$2
+        "g_task_had_error",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_themed_icon_new_with_default_fallbacks",
-        constants$5.const$2
+        "g_task_get_completed",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_themed_icon_new_from_names",
-        constants$21.const$3
+        "g_task_print_alive_tasks",
+        constants$7.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_themed_icon_prepend_name",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_themed_icon_append_name",
-        constants$13.const$4
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        JAVA_LONG.withName("g_type")
+                    ).withName("g_type_class"),
+                    RuntimeHelper.POINTER.withName("construct_properties"),
+                    RuntimeHelper.POINTER.withName("constructor"),
+                    RuntimeHelper.POINTER.withName("set_property"),
+                    RuntimeHelper.POINTER.withName("get_property"),
+                    RuntimeHelper.POINTER.withName("dispose"),
+                    RuntimeHelper.POINTER.withName("finalize"),
+                    RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                    RuntimeHelper.POINTER.withName("notify"),
+                    RuntimeHelper.POINTER.withName("constructed"),
+                    JAVA_LONG.withName("flags"),
+                    JAVA_LONG.withName("n_construct_properties"),
+                    RuntimeHelper.POINTER.withName("pspecs"),
+                    JAVA_LONG.withName("n_pspecs"),
+                    MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+                ).withName("parent_class"),
+                RuntimeHelper.POINTER.withName("get_input_stream"),
+                RuntimeHelper.POINTER.withName("get_output_stream"),
+                RuntimeHelper.POINTER.withName("close_fn"),
+                RuntimeHelper.POINTER.withName("close_async"),
+                RuntimeHelper.POINTER.withName("close_finish"),
+                RuntimeHelper.POINTER.withName("_g_reserved1"),
+                RuntimeHelper.POINTER.withName("_g_reserved2"),
+                RuntimeHelper.POINTER.withName("_g_reserved3"),
+                RuntimeHelper.POINTER.withName("_g_reserved4"),
+                RuntimeHelper.POINTER.withName("_g_reserved5"),
+                RuntimeHelper.POINTER.withName("_g_reserved6"),
+                RuntimeHelper.POINTER.withName("_g_reserved7"),
+                RuntimeHelper.POINTER.withName("_g_reserved8"),
+                RuntimeHelper.POINTER.withName("_g_reserved9"),
+                RuntimeHelper.POINTER.withName("_g_reserved10")
+            ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("_g_reserved1"),
+            RuntimeHelper.POINTER.withName("_g_reserved2"),
+            RuntimeHelper.POINTER.withName("_g_reserved3"),
+            RuntimeHelper.POINTER.withName("_g_reserved4"),
+            RuntimeHelper.POINTER.withName("_g_reserved5"),
+            RuntimeHelper.POINTER.withName("_g_reserved6")
+        ).withName("parent_class")
+    ).withName("_GTcpConnectionClass");
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        RuntimeHelper.POINTER.withName("g_class")
+                    ).withName("g_type_instance"),
+                    JAVA_INT.withName("ref_count"),
+                    MemoryLayout.paddingLayout(4),
+                    RuntimeHelper.POINTER.withName("qdata")
+                ).withName("parent_instance"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GTcpConnection");
 }
 
 

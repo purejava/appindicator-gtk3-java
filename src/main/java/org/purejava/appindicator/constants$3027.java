@@ -2,19 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3027 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3027() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.list_filters.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$3023.const$3.varHandle(MemoryLayout.PathElement.groupElement("list_filters"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.set_sort_func.class, "apply", constants$42.const$1);
-    static final VarHandle const$3 = constants$3023.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_sort_func"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.item_activated.class, "apply", constants$13.const$1);
-    static final VarHandle const$5 = constants$3023.const$3.varHandle(MemoryLayout.PathElement.groupElement("item_activated"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_add_group",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_add_age",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_recent_filter_add_custom$func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_recent_filter_add_custom$data_destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_add_custom",
+        constants$282.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_recent_filter_get_needed",
+        constants$10.const$5
+    );
 }
 
 

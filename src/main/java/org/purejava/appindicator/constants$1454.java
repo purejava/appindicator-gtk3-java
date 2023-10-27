@@ -7,26 +7,17 @@ final class constants$1454 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1454() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_create",
-        constants$35.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_get_empty",
-        constants$35.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_quadratic_to_func$func.class, "apply", constants$1451.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_quadratic_to_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_reference",
-        constants$5.const$2
+        "hb_draw_funcs_set_quadratic_to_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_destroy",
-        constants$13.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_cubic_to_func$func.class, "apply", constants$1452.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_cubic_to_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_set_user_data",
-        constants$1423.const$1
+        "hb_draw_funcs_set_cubic_to_func",
+        constants$42.const$1
     );
 }
 

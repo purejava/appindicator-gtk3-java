@@ -2,33 +2,26 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3289 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3289() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_get_family_list",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_get_face_list",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_get_size_entry",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$3288.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkColorSelectionDialogClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$3288.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_get_size_list",
-        constants$5.const$2
+        "gtk_color_selection_dialog_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_get_preview_entry",
+        "gtk_color_selection_dialog_new",
         constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_get_family",
+        "gtk_color_selection_dialog_get_color_selection",
         constants$5.const$2
     );
 }

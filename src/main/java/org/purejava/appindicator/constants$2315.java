@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2315 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2315() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_preferred_width_for_height",
-        constants$379.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_preferred_size",
-        constants$42.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_aligned_area",
-        constants$379.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_size",
-        constants$868.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_render",
-        constants$673.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_activate",
-        constants$2311.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellRendererClass.get_aligned_area.class, "apply", constants$380.const$3);
+    static final VarHandle const$1 = constants$2313.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_aligned_area"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCellRendererClass.get_size.class, "apply", constants$871.const$1);
+    static final VarHandle const$3 = constants$2313.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_size"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellRendererClass.render.class, "apply", constants$676.const$0);
+    static final VarHandle const$5 = constants$2313.const$1.varHandle(MemoryLayout.PathElement.groupElement("render"));
 }
 
 

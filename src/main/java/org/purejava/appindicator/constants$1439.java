@@ -8,28 +8,28 @@ final class constants$1439 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1439() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_map_is_empty",
+        "hb_set_hash",
         constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_map_get_population",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_map_is_equal",
+        "hb_set_is_subset",
         constants$9.const$0
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_set_set",
+        constants$13.const$4
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_map_hash",
-        constants$10.const$5
+        "hb_set_union",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_map_set",
-        constants$467.const$3
+        "hb_set_intersect",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_map_get",
-        constants$11.const$4
+        "hb_set_subtract",
+        constants$13.const$4
     );
 }
 

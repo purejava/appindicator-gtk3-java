@@ -17,7 +17,7 @@ import java.lang.invoke.VarHandle;
 public class _GVariantDict {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$369.const$1;
+        return constants$370.const$1;
     }
     /**
      * {@snippet :
@@ -32,7 +32,7 @@ public class _GVariantDict {
         // Suppresses default constructor, ensuring non-instantiability.
         private u() {}
         public static MemoryLayout $LAYOUT() {
-            return constants$369.const$2;
+            return constants$370.const$2;
         }
         /**
          * {@snippet :
@@ -48,10 +48,10 @@ public class _GVariantDict {
             // Suppresses default constructor, ensuring non-instantiability.
             private s() {}
             public static MemoryLayout $LAYOUT() {
-                return constants$369.const$3;
+                return constants$370.const$3;
             }
             public static VarHandle asv$VH() {
-                return constants$369.const$4;
+                return constants$370.const$4;
             }
             /**
              * Getter for field:
@@ -60,7 +60,7 @@ public class _GVariantDict {
              * }
              */
             public static MemorySegment asv$get(MemorySegment seg) {
-                return (java.lang.foreign.MemorySegment)constants$369.const$4.get(seg);
+                return (java.lang.foreign.MemorySegment)constants$370.const$4.get(seg);
             }
             /**
              * Setter for field:
@@ -69,16 +69,16 @@ public class _GVariantDict {
              * }
              */
             public static void asv$set(MemorySegment seg, MemorySegment x) {
-                constants$369.const$4.set(seg, x);
+                constants$370.const$4.set(seg, x);
             }
             public static MemorySegment asv$get(MemorySegment seg, long index) {
-                return (java.lang.foreign.MemorySegment)constants$369.const$4.get(seg.asSlice(index*sizeof()));
+                return (java.lang.foreign.MemorySegment)constants$370.const$4.get(seg.asSlice(index*sizeof()));
             }
             public static void asv$set(MemorySegment seg, long index, MemorySegment x) {
-                constants$369.const$4.set(seg.asSlice(index*sizeof()), x);
+                constants$370.const$4.set(seg.asSlice(index*sizeof()), x);
             }
             public static VarHandle partial_magic$VH() {
-                return constants$369.const$5;
+                return constants$370.const$5;
             }
             /**
              * Getter for field:
@@ -87,7 +87,7 @@ public class _GVariantDict {
              * }
              */
             public static long partial_magic$get(MemorySegment seg) {
-                return (long)constants$369.const$5.get(seg);
+                return (long)constants$370.const$5.get(seg);
             }
             /**
              * Setter for field:
@@ -96,13 +96,13 @@ public class _GVariantDict {
              * }
              */
             public static void partial_magic$set(MemorySegment seg, long x) {
-                constants$369.const$5.set(seg, x);
+                constants$370.const$5.set(seg, x);
             }
             public static long partial_magic$get(MemorySegment seg, long index) {
-                return (long)constants$369.const$5.get(seg.asSlice(index*sizeof()));
+                return (long)constants$370.const$5.get(seg.asSlice(index*sizeof()));
             }
             public static void partial_magic$set(MemorySegment seg, long index, long x) {
-                constants$369.const$5.set(seg.asSlice(index*sizeof()), x);
+                constants$370.const$5.set(seg.asSlice(index*sizeof()), x);
             }
             public static MemorySegment y$slice(MemorySegment seg) {
                 return seg.asSlice(16, 112);

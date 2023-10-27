@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkSeparatorMenuItem {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3076.const$4;
+        return constants$3081.const$4;
     }
     public static MemorySegment menu_item$slice(MemorySegment seg) {
         return seg.asSlice(0, 56);

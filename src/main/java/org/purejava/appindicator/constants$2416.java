@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2416 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2416() {}
-    static final VarHandle const$0 = constants$2412.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2412.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass._gtk_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2412.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass._gtk_reserved6.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_im_context_focus_in",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_im_context_focus_out",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_im_context_reset",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_im_context_set_cursor_location",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_im_context_set_use_preedit",
+        constants$40.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_im_context_set_surrounding",
+        constants$1046.const$2
+    );
 }
 
 

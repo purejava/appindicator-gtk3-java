@@ -10,24 +10,24 @@ final class constants$908 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$908() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_bus_watch_name_on_connection$name_appeared_handler.class, "apply", constants$42.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_bus_watch_name_on_connection$name_vanished_handler.class, "apply", constants$14.const$3);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_bus_watch_name_on_connection$user_data_free_func.class, "apply", constants$13.const$1);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_bus_watch_name_on_connection",
-        constants$906.const$0
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_bus_own_name$user_data_free_func.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
         JAVA_INT,
         RuntimeHelper.POINTER,
         JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_bus_watch_name_with_closures",
-        constants$908.const$4
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_bus_own_name",
+        constants$908.const$1
     );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_bus_own_name_on_connection$name_acquired_handler.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_bus_own_name_on_connection$name_lost_handler.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_bus_own_name_on_connection$user_data_free_func.class, "apply", constants$13.const$1);
 }
 
 

@@ -2,43 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$1828 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1828() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_move",
-        constants$467.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_resize",
-        constants$467.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_move_resize",
-        constants$1643.const$1
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_move_to_rect",
-        constants$1828.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_reparent",
-        constants$1043.const$2
-    );
+    static final VarHandle const$0 = constants$1825.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_surface"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1825.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gdk_reserved1"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1825.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gdk_reserved2"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved3.class, "apply", constants$7.const$5);
 }
 
 

@@ -8,28 +8,28 @@ final class constants$337 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$337() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_mapped_file_new_from_fd",
-        constants$55.const$4
+        "g_key_file_set_comment",
+        constants$165.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_mapped_file_get_length",
-        constants$4.const$0
+        "g_key_file_get_comment",
+        constants$39.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_mapped_file_get_contents",
-        constants$5.const$2
+        "g_key_file_remove_comment",
+        constants$34.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_mapped_file_get_bytes",
-        constants$5.const$2
+        "g_key_file_remove_key",
+        constants$34.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_mapped_file_ref",
-        constants$5.const$2
+        "g_key_file_remove_group",
+        constants$12.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_mapped_file_unref",
-        constants$13.const$1
+        "g_mapped_file_new",
+        constants$196.const$3
     );
 }
 

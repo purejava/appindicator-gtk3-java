@@ -8,27 +8,27 @@ final class constants$1112 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1112() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_io_stream_splice_flags_get_type",
+        "g_data_stream_newline_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_emblem_origin_get_type",
+        "g_file_attribute_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_resolver_error_get_type",
+        "g_file_attribute_info_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_resolver_record_type_get_type",
+        "g_file_attribute_status_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_resource_error_get_type",
+        "g_file_query_info_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_resource_flags_get_type",
+        "g_file_create_flags_get_type",
         constants$3.const$5
     );
 }

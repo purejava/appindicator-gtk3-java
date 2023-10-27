@@ -13,7 +13,7 @@ public interface hb_paint_funcs_set_pop_transform_func$func {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_paint_funcs_set_pop_transform_func$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1463.const$5, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1468.const$1, fi, constants$14.const$3, scope);
     }
     static hb_paint_funcs_set_pop_transform_func$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

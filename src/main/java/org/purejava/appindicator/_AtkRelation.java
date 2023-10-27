@@ -19,13 +19,13 @@ import java.lang.invoke.VarHandle;
 public class _AtkRelation {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2051.const$0;
+        return constants$2056.const$1;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);
     }
     public static VarHandle target$VH() {
-        return constants$2051.const$1;
+        return constants$2056.const$2;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class _AtkRelation {
      * }
      */
     public static MemorySegment target$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2051.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2056.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -43,16 +43,16 @@ public class _AtkRelation {
      * }
      */
     public static void target$set(MemorySegment seg, MemorySegment x) {
-        constants$2051.const$1.set(seg, x);
+        constants$2056.const$2.set(seg, x);
     }
     public static MemorySegment target$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2051.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2056.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void target$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2051.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2056.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle relationship$VH() {
-        return constants$2051.const$2;
+        return constants$2056.const$3;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _AtkRelation {
      * }
      */
     public static int relationship$get(MemorySegment seg) {
-        return (int)constants$2051.const$2.get(seg);
+        return (int)constants$2056.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -70,13 +70,13 @@ public class _AtkRelation {
      * }
      */
     public static void relationship$set(MemorySegment seg, int x) {
-        constants$2051.const$2.set(seg, x);
+        constants$2056.const$3.set(seg, x);
     }
     public static int relationship$get(MemorySegment seg, long index) {
-        return (int)constants$2051.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2056.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void relationship$set(MemorySegment seg, long index, int x) {
-        constants$2051.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2056.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

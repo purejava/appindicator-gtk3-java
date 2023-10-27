@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GInetSocketAddressClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1106.const$3;
+        return constants$1109.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 160);

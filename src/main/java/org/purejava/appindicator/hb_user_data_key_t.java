@@ -17,10 +17,10 @@ import java.lang.invoke.VarHandle;
 public class hb_user_data_key_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1416.const$5;
+        return constants$1421.const$0;
     }
     public static VarHandle unused$VH() {
-        return constants$1417.const$0;
+        return constants$1421.const$1;
     }
     /**
      * Getter for field:
@@ -29,7 +29,7 @@ public class hb_user_data_key_t {
      * }
      */
     public static byte unused$get(MemorySegment seg) {
-        return (byte)constants$1417.const$0.get(seg);
+        return (byte)constants$1421.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -38,13 +38,13 @@ public class hb_user_data_key_t {
      * }
      */
     public static void unused$set(MemorySegment seg, byte x) {
-        constants$1417.const$0.set(seg, x);
+        constants$1421.const$1.set(seg, x);
     }
     public static byte unused$get(MemorySegment seg, long index) {
-        return (byte)constants$1417.const$0.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$1421.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void unused$set(MemorySegment seg, long index, byte x) {
-        constants$1417.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1421.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

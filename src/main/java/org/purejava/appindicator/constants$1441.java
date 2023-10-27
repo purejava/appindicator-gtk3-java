@@ -8,19 +8,28 @@ final class constants$1441 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1441() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_face_count",
-        constants$10.const$5
+        "hb_set_next_range",
+        constants$12.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_face_create",
-        constants$21.const$3
+        "hb_set_previous_range",
+        constants$12.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_reference_table_func_t.class, "apply", constants$196.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_face_create_for_tables$reference_table_func.class, "apply", constants$196.const$3);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_face_create_for_tables$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_set_next_many",
+        constants$265.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_map_create",
+        constants$35.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_map_get_empty",
+        constants$35.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_face_create_for_tables",
-        constants$23.const$0
+        "hb_map_reference",
+        constants$5.const$2
     );
 }
 

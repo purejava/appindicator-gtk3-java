@@ -9,12 +9,12 @@ final class constants$784 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$784() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved6.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
+    static final VarHandle const$0 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("splice_async"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GOutputStreamClass.splice_finish.class, "apply", constants$166.const$0);
+    static final VarHandle const$2 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("splice_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GOutputStreamClass.flush_async.class, "apply", constants$282.const$1);
+    static final VarHandle const$4 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("flush_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GOutputStreamClass.flush_finish.class, "apply", constants$12.const$2);
 }
 
 

@@ -7,29 +7,20 @@ final class constants$438 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$438() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_sequence_get",
-        constants$5.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_sequence_search_iter$iter_cmp.class, "apply", constants$12.const$2);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_sequence_set",
-        constants$13.const$4
+        "g_sequence_search_iter",
+        constants$39.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_is_begin",
-        constants$10.const$5
-    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_sequence_lookup$cmp_func.class, "apply", constants$12.const$2);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_is_end",
-        constants$10.const$5
+        "g_sequence_lookup",
+        constants$39.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_next",
-        constants$5.const$2
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_sequence_lookup_iter$iter_cmp.class, "apply", constants$12.const$2);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_prev",
-        constants$5.const$2
+        "g_sequence_lookup_iter",
+        constants$39.const$1
     );
 }
 

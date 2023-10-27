@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3132 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3132() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_text_buffer_insert_with_tags_by_name",
-        constants$1127.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_markup",
-        constants$331.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_delete",
-        constants$14.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_delete_interactive",
-        constants$311.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_backspace",
-        constants$414.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_text",
-        constants$198.const$2
-    );
+    static final VarHandle const$0 = constants$3129.const$0.varHandle(MemoryLayout.PathElement.groupElement("apply_tag"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextBufferClass.remove_tag.class, "apply", constants$42.const$1);
+    static final VarHandle const$2 = constants$3129.const$0.varHandle(MemoryLayout.PathElement.groupElement("remove_tag"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextBufferClass.begin_user_action.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$3129.const$0.varHandle(MemoryLayout.PathElement.groupElement("begin_user_action"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextBufferClass.end_user_action.class, "apply", constants$13.const$1);
 }
 
 

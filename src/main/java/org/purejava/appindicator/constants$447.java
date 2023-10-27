@@ -8,28 +8,28 @@ final class constants$447 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$447() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_string_chunk_insert_len",
-        constants$17.const$1
+        "g_spawn_check_exit_status",
+        constants$9.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_string_chunk_insert_const",
-        constants$5.const$5
+        "g_spawn_close_pid",
+        constants$80.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_strv_builder_new",
-        constants$35.const$2
+        "g_string_chunk_new",
+        constants$63.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_strv_builder_unref",
+        "g_string_chunk_free",
         constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_strv_builder_ref",
-        constants$5.const$2
+        "g_string_chunk_clear",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_strv_builder_add",
-        constants$13.const$4
+        "g_string_chunk_insert",
+        constants$5.const$5
     );
 }
 

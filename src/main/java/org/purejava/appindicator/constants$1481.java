@@ -2,33 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$1481 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1481() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$1480.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_glyph_from_name_func_t.class, "apply", constants$1029.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_draw_glyph_func_t.class, "apply", constants$584.const$3);
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_paint_glyph_func_t.class, "apply", constants$1481.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        constants$1481.const$3
-    );
+    static final VarHandle const$0 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_font_extents_func_t.class, "apply", constants$34.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_get_font_h_extents_func_t.class, "apply", constants$34.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_get_font_v_extents_func_t.class, "apply", constants$34.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_get_nominal_glyph_func_t.class, "apply", constants$862.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_font_get_variation_glyph_func_t.class, "apply", constants$1032.const$5);
 }
 
 

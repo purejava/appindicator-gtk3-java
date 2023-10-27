@@ -13,7 +13,7 @@ public interface gtk_recent_chooser_set_sort_func$data_destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_recent_chooser_set_sort_func$data_destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3031.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$3036.const$2, fi, constants$13.const$1, scope);
     }
     static gtk_recent_chooser_set_sort_func$data_destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

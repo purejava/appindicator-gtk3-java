@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2063 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2063() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_state_set_contains_state",
-        constants$11.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_state_set_contains_states",
-        constants$62.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_state_set_remove_state",
-        constants$11.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_state_set_and_sets",
-        constants$5.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_state_set_or_sets",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_state_set_xor_sets",
-        constants$5.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkSelectionIface.remove_selection.class, "apply", constants$11.const$4);
+    static final VarHandle const$1 = constants$2061.const$1.varHandle(MemoryLayout.PathElement.groupElement("remove_selection"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkSelectionIface.select_all_selection.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$2061.const$1.varHandle(MemoryLayout.PathElement.groupElement("select_all_selection"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkSelectionIface.selection_changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$2061.const$1.varHandle(MemoryLayout.PathElement.groupElement("selection_changed"));
 }
 
 

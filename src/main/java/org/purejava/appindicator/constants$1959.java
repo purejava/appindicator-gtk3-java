@@ -2,27 +2,40 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1959 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1959() {}
-    static final VarHandle const$0 = constants$1958.const$4.varHandle(MemoryLayout.PathElement.groupElement("right"));
-    static final VarHandle const$1 = constants$1958.const$4.varHandle(MemoryLayout.PathElement.groupElement("top"));
-    static final VarHandle const$2 = constants$1958.const$4.varHandle(MemoryLayout.PathElement.groupElement("bottom"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_unlock",
+        constants$13.const$1
+    );
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_connect",
+        constants$1959.const$1
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_border_get_type",
-        constants$3.const$5
+        "gtk_accel_group_connect_by_path",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_border_new",
-        constants$35.const$2
+        "gtk_accel_group_disconnect",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_border_copy",
-        constants$5.const$2
+        "gtk_accel_group_disconnect_key",
+        constants$49.const$0
     );
 }
 

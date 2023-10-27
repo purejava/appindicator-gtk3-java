@@ -2,39 +2,23 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1525 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1525() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_execute",
-        constants$1423.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_decompose_compatibility_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_get_shaper",
-        constants$5.const$2
+        "hb_unicode_funcs_set_decompose_compatibility_func",
+        constants$42.const$1
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_FLOAT,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_unicode_decompose_compatibility",
+        constants$150.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_style_get_value",
-        constants$1525.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_version",
-        constants$14.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_version_string",
-        constants$35.const$2
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_get_glyph_v_kerning_func_t.class, "apply", constants$1484.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_kerning_func$func.class, "apply", constants$1484.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_kerning_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

@@ -2,32 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1878 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1878() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_rgba_hash",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_rgba_equal",
-        constants$9.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_rgba_parse",
-        constants$9.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_rgba_to_string",
+        "gdk_screen_get_active_window",
         constants$5.const$2
     );
-    static final MemorySegment const$4 = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_major_version", JAVA_INT);
-    static final MemorySegment const$5 = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_minor_version", JAVA_INT);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_window_stack",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_new",
+        constants$35.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_display",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_screen",
+        constants$13.const$4
+    );
 }
 
 

@@ -3,33 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1279 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1279() {}
-    static final VarHandle const$0 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved9"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved10.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved10"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GSocket");
-    static final VarHandle const$4 = constants$1279.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_get_type",
+    static final VarHandle const$0 = constants$1277.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_simple_proxy_resolver_get_type",
         constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_simple_proxy_resolver_new",
+        constants$5.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_simple_proxy_resolver_set_default_proxy",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_simple_proxy_resolver_set_ignore_hosts",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_simple_proxy_resolver_set_uri_proxy",
+        constants$14.const$3
     );
 }
 

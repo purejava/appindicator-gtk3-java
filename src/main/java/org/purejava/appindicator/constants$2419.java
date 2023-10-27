@@ -3,45 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$2419 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2419() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_get_max_length",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_insert_text",
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass.get_length.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$2417.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_length"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass.insert_text.class, "apply", constants$265.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
         constants$265.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_delete_text",
-        constants$49.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_emit_inserted_text",
-        constants$1496.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_emit_deleted_text",
-        constants$467.const$3
-    );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkListStore");
+    static final VarHandle const$4 = constants$2417.const$4.varHandle(MemoryLayout.PathElement.groupElement("insert_text"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass.delete_text.class, "apply", constants$49.const$0);
 }
 
 

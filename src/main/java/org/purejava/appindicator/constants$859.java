@@ -2,43 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$859 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$859() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_flush_sync",
-        constants$12.const$2
+        "g_dbus_connection_start_message_processing",
+        constants$13.const$1
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_is_closed",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_send_message",
-        constants$859.const$1
+        "g_dbus_connection_get_stream",
+        constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_dbus_connection_send_message_with_reply$callback.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_guid",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_unique_name",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_send_message_with_reply",
-        constants$859.const$4
+        "g_dbus_connection_get_peer_credentials",
+        constants$5.const$2
     );
 }
 

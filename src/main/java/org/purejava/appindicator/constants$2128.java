@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2128 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2128() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_draw_area",
-        constants$1643.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_draw_region",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_resize",
-        constants$13.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_resize_no_redraw",
-        constants$13.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_allocate",
-        constants$13.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_frame_clock",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("touch_event"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkWidgetClass.get_preferred_height_and_baseline_for_width.class, "apply", constants$381.const$0);
+    static final VarHandle const$2 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_height_and_baseline_for_width"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass.adjust_baseline_request.class, "apply", constants$14.const$3);
+    static final VarHandle const$4 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("adjust_baseline_request"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkWidgetClass.adjust_baseline_allocation.class, "apply", constants$13.const$4);
 }
 
 

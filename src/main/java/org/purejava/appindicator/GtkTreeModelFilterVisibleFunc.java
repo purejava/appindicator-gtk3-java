@@ -13,7 +13,7 @@ public interface GtkTreeModelFilterVisibleFunc {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GtkTreeModelFilterVisibleFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2425.const$2, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2430.const$2, fi, constants$12.const$2, scope);
     }
     static GtkTreeModelFilterVisibleFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

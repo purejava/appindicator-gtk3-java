@@ -3,18 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$939 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$939() {}
-    static final VarHandle const$0 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("disconnected"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDriveIface.eject_button.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("eject_button"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDriveIface.get_name.class, "apply", constants$5.const$2);
-    static final VarHandle const$4 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_name"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDriveIface.get_icon.class, "apply", constants$5.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_escape_object_path_bytestring",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_escape_object_path",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_unescape_object_path",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_debug_controller_get_type",
+        constants$3.const$5
+    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface")
+    ).withName("_GDebugControllerInterface");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_debug_controller_get_debug_enabled",
+        constants$10.const$5
+    );
 }
 
 

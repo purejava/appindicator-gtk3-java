@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkListBoxRow {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2845.const$1;
+        return constants$2850.const$1;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 48);

@@ -21,10 +21,10 @@ import java.lang.invoke.VarHandle;
 public class _GCompletion {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$496.const$3;
+        return constants$498.const$1;
     }
     public static VarHandle items$VH() {
-        return constants$496.const$4;
+        return constants$498.const$2;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class _GCompletion {
      * }
      */
     public static MemorySegment items$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$496.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$498.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -42,13 +42,13 @@ public class _GCompletion {
      * }
      */
     public static void items$set(MemorySegment seg, MemorySegment x) {
-        constants$496.const$4.set(seg, x);
+        constants$498.const$2.set(seg, x);
     }
     public static MemorySegment items$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$496.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$498.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void items$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$496.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$498.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -59,7 +59,7 @@ public class _GCompletion {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$496.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$498.const$3, fi, constants$5.const$2, scope);
         }
         static func ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -74,7 +74,7 @@ public class _GCompletion {
     }
 
     public static VarHandle func$VH() {
-        return constants$497.const$0;
+        return constants$498.const$4;
     }
     /**
      * Getter for field:
@@ -83,7 +83,7 @@ public class _GCompletion {
      * }
      */
     public static MemorySegment func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$497.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$498.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -92,19 +92,19 @@ public class _GCompletion {
      * }
      */
     public static void func$set(MemorySegment seg, MemorySegment x) {
-        constants$497.const$0.set(seg, x);
+        constants$498.const$4.set(seg, x);
     }
     public static MemorySegment func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$497.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$498.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$497.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$498.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static func func(MemorySegment segment, Arena scope) {
         return func.ofAddress(func$get(segment), scope);
     }
     public static VarHandle prefix$VH() {
-        return constants$497.const$1;
+        return constants$498.const$5;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GCompletion {
      * }
      */
     public static MemorySegment prefix$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$497.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$498.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -122,16 +122,16 @@ public class _GCompletion {
      * }
      */
     public static void prefix$set(MemorySegment seg, MemorySegment x) {
-        constants$497.const$1.set(seg, x);
+        constants$498.const$5.set(seg, x);
     }
     public static MemorySegment prefix$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$497.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$498.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void prefix$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$497.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$498.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle cache$VH() {
-        return constants$497.const$2;
+        return constants$499.const$0;
     }
     /**
      * Getter for field:
@@ -140,7 +140,7 @@ public class _GCompletion {
      * }
      */
     public static MemorySegment cache$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$497.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$499.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -149,13 +149,13 @@ public class _GCompletion {
      * }
      */
     public static void cache$set(MemorySegment seg, MemorySegment x) {
-        constants$497.const$2.set(seg, x);
+        constants$499.const$0.set(seg, x);
     }
     public static MemorySegment cache$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$497.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$499.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void cache$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$497.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$499.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -166,13 +166,13 @@ public class _GCompletion {
 
         int apply(java.lang.foreign.MemorySegment s1, java.lang.foreign.MemorySegment s2, long n);
         static MemorySegment allocate(strncmp_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$497.const$3, fi, constants$18.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$499.const$1, fi, constants$18.const$2, scope);
         }
         static strncmp_func ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _s1, java.lang.foreign.MemorySegment _s2, long _n) -> {
                 try {
-                    return (int)constants$496.const$2.invokeExact(symbol, _s1, _s2, _n);
+                    return (int)constants$498.const$0.invokeExact(symbol, _s1, _s2, _n);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -181,7 +181,7 @@ public class _GCompletion {
     }
 
     public static VarHandle strncmp_func$VH() {
-        return constants$497.const$4;
+        return constants$499.const$2;
     }
     /**
      * Getter for field:
@@ -190,7 +190,7 @@ public class _GCompletion {
      * }
      */
     public static MemorySegment strncmp_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$497.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$499.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -199,13 +199,13 @@ public class _GCompletion {
      * }
      */
     public static void strncmp_func$set(MemorySegment seg, MemorySegment x) {
-        constants$497.const$4.set(seg, x);
+        constants$499.const$2.set(seg, x);
     }
     public static MemorySegment strncmp_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$497.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$499.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void strncmp_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$497.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$499.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static strncmp_func strncmp_func(MemorySegment segment, Arena scope) {
         return strncmp_func.ofAddress(strncmp_func$get(segment), scope);

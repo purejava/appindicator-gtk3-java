@@ -9,12 +9,14 @@ final class constants$505 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$505() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GThreadFunctions.cond_new.class, "apply", constants$35.const$2);
-    static final VarHandle const$1 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("cond_new"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GThreadFunctions.cond_signal.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("cond_signal"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GThreadFunctions.cond_broadcast.class, "apply", constants$13.const$1);
-    static final VarHandle const$5 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("cond_broadcast"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$35.const$2
+    );
+    static final VarHandle const$1 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("mutex_new"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GThreadFunctions.mutex_lock.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("mutex_lock"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GThreadFunctions.mutex_trylock.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$504.const$4.varHandle(MemoryLayout.PathElement.groupElement("mutex_trylock"));
 }
 
 

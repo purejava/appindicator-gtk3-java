@@ -2,56 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2396 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2396() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_name",
-        constants$1043.const$2
+        "gtk_selection_data_get_uris",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_gicon",
-        constants$1043.const$2
+        "gtk_selection_data_get_targets",
+        constants$12.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_default",
-        constants$13.const$1
+        "gtk_selection_data_targets_include_text",
+        constants$10.const$5
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_targets_include_rich_text",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_drag_check_threshold",
-        constants$2396.const$3
+        "gtk_selection_data_targets_include_image",
+        constants$11.const$4
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("base_iface"),
-        RuntimeHelper.POINTER.withName("insert_text"),
-        RuntimeHelper.POINTER.withName("delete_text"),
-        RuntimeHelper.POINTER.withName("changed"),
-        RuntimeHelper.POINTER.withName("do_insert_text"),
-        RuntimeHelper.POINTER.withName("do_delete_text"),
-        RuntimeHelper.POINTER.withName("get_chars"),
-        RuntimeHelper.POINTER.withName("set_selection_bounds"),
-        RuntimeHelper.POINTER.withName("get_selection_bounds"),
-        RuntimeHelper.POINTER.withName("set_position"),
-        RuntimeHelper.POINTER.withName("get_position")
-    ).withName("_GtkEditableInterface");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_selection_data_targets_include_uri",
+        constants$10.const$5
+    );
 }
 
 

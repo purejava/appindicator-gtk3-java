@@ -2,29 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2335 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2335() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_cell_area_foreach$callback.class, "apply", constants$9.const$0);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_foreach",
-        constants$14.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_cell_area_foreach_alloc$callback.class, "apply", constants$34.const$5);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_foreach_alloc",
-        constants$868.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_event",
-        constants$2325.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_render",
-        constants$2326.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.get_cell_property.class, "apply", constants$380.const$3);
+    static final VarHandle const$1 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_cell_property"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.focus.class, "apply", constants$11.const$4);
+    static final VarHandle const$3 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("focus"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.is_activatable.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("is_activatable"));
 }
 
 

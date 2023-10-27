@@ -9,12 +9,21 @@ final class constants$3180 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3180() {}
-    static final VarHandle const$0 = constants$3179.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_orientation"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkToolShellIface.get_style.class, "apply", constants$10.const$5);
-    static final VarHandle const$2 = constants$3179.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_style"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkToolShellIface.get_relief_style.class, "apply", constants$10.const$5);
-    static final VarHandle const$4 = constants$3179.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_relief_style"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkToolShellIface.rebuild_menu.class, "apply", constants$13.const$1);
+    static final VarHandle const$0 = constants$3179.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkToolPaletteClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$3179.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_new",
+        constants$35.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tool_palette_set_group_position",
+        constants$164.const$5
+    );
 }
 
 

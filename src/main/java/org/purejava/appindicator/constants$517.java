@@ -2,39 +2,28 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$517 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$517() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pthread_join",
-        constants$87.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pthread_detach",
-        constants$26.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pthread_self",
-        constants$3.const$5
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_LONG,
-        JAVA_LONG
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pthread_equal",
-        constants$517.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pthread_attr_init",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$516.const$5.varHandle(MemoryLayout.PathElement.groupElement("__mask_was_saved"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("__routine"),
+        RuntimeHelper.POINTER.withName("__arg"),
+        JAVA_INT.withName("__canceltype"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("__prev")
+    ).withName("_pthread_cleanup_buffer");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_pthread_cleanup_buffer.__routine.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$517.const$1.varHandle(MemoryLayout.PathElement.groupElement("__routine"));
+    static final VarHandle const$4 = constants$517.const$1.varHandle(MemoryLayout.PathElement.groupElement("__arg"));
+    static final VarHandle const$5 = constants$517.const$1.varHandle(MemoryLayout.PathElement.groupElement("__canceltype"));
 }
 
 

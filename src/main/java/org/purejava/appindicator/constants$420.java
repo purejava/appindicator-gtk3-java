@@ -2,40 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.UnionLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.*;
 final class constants$420 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$420() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_all",
-        constants$5.const$2
+        "g_match_info_is_partial_match",
+        constants$10.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GScannerMsgFunc.class, "apply", constants$164.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_match_info_expand_references",
+        constants$23.const$0
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$164.const$5
+        "g_match_info_fetch",
+        constants$21.const$3
     );
-    static final UnionLayout const$3 = MemoryLayout.unionLayout(
-        RuntimeHelper.POINTER.withName("v_symbol"),
-        RuntimeHelper.POINTER.withName("v_identifier"),
-        JAVA_LONG.withName("v_binary"),
-        JAVA_LONG.withName("v_octal"),
-        JAVA_LONG.withName("v_int"),
-        JAVA_LONG.withName("v_int64"),
-        JAVA_DOUBLE.withName("v_float"),
-        JAVA_LONG.withName("v_hex"),
-        RuntimeHelper.POINTER.withName("v_string"),
-        RuntimeHelper.POINTER.withName("v_comment"),
-        JAVA_BYTE.withName("v_char"),
-        JAVA_INT.withName("v_error")
-    ).withName("_GTokenValue");
-    static final VarHandle const$4 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_symbol"));
-    static final VarHandle const$5 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_identifier"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch_pos",
+        constants$11.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch_named",
+        constants$5.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch_named_pos",
+        constants$34.const$5
+    );
 }
 
 

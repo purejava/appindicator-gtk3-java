@@ -8,26 +8,29 @@ final class constants$1985 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1985() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_action_get_description",
-        constants$21.const$3
+        "atk_object_connect_property_change_handler",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_action_get_name",
-        constants$21.const$3
+        "atk_object_remove_property_change_handler",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_action_get_keybinding",
-        constants$21.const$3
+        "atk_object_notify_state_change",
+        constants$456.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_action_set_description",
-        constants$150.const$0
+        "atk_object_initialize",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_action_get_localized_name",
-        constants$21.const$3
+        "atk_role_get_name",
+        constants$24.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(AtkEventListener.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_role_for_name",
+        constants$10.const$5
+    );
 }
 
 

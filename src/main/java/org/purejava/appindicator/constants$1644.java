@@ -2,36 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1644 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1644() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$1043.const$2
+        "pango_layout_iter_get_run_extents",
+        constants$14.const$3
     );
-    static final VarHandle const$1 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_shape"));
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_line_extents",
+        constants$14.const$3
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_trapezoid.class, "apply", constants$1644.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_line_yrange",
+        constants$14.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_layout_extents",
+        constants$14.const$3
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$1644.const$2
+        "pango_layout_iter_get_baseline",
+        constants$10.const$5
     );
-    static final VarHandle const$5 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_trapezoid"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_run_baseline",
+        constants$10.const$5
+    );
 }
 
 

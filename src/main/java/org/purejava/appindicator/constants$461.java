@@ -2,29 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
 import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$461 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$461() {}
-    static final VarHandle const$0 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_undefined"));
-    static final MemorySegment const$1 = RuntimeHelper.lookupGlobalVariable("g_test_config_vars", RuntimeHelper.POINTER);
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        JAVA_INT.withName("log_type"),
-        JAVA_INT.withName("n_strings"),
-        RuntimeHelper.POINTER.withName("strings"),
-        JAVA_INT.withName("n_nums"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("nums")
-    ).withName("GTestLogMsg");
-    static final VarHandle const$3 = constants$461.const$2.varHandle(MemoryLayout.PathElement.groupElement("log_type"));
-    static final VarHandle const$4 = constants$461.const$2.varHandle(MemoryLayout.PathElement.groupElement("n_strings"));
-    static final VarHandle const$5 = constants$461.const$2.varHandle(MemoryLayout.PathElement.groupElement("strings"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_test_add_vtable$data_setup.class, "apply", constants$13.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_test_add_vtable$data_test.class, "apply", constants$13.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_test_add_vtable$data_teardown.class, "apply", constants$13.const$4);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_test_add_vtable",
+        constants$461.const$3
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("test_initialized"),
+        JAVA_INT.withName("test_quick"),
+        JAVA_INT.withName("test_perf"),
+        JAVA_INT.withName("test_verbose"),
+        JAVA_INT.withName("test_quiet"),
+        JAVA_INT.withName("test_undefined")
+    ).withName("GTestConfig");
 }
 
 

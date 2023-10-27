@@ -19,10 +19,10 @@ import java.lang.invoke.VarHandle;
 public class cairo_path {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1719.const$4;
+        return constants$1724.const$4;
     }
     public static VarHandle status$VH() {
-        return constants$1719.const$5;
+        return constants$1724.const$5;
     }
     /**
      * Getter for field:
@@ -31,7 +31,7 @@ public class cairo_path {
      * }
      */
     public static int status$get(MemorySegment seg) {
-        return (int)constants$1719.const$5.get(seg);
+        return (int)constants$1724.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -40,16 +40,16 @@ public class cairo_path {
      * }
      */
     public static void status$set(MemorySegment seg, int x) {
-        constants$1719.const$5.set(seg, x);
+        constants$1724.const$5.set(seg, x);
     }
     public static int status$get(MemorySegment seg, long index) {
-        return (int)constants$1719.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1724.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void status$set(MemorySegment seg, long index, int x) {
-        constants$1719.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1724.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle data$VH() {
-        return constants$1720.const$0;
+        return constants$1725.const$0;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class cairo_path {
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1720.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1725.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -67,16 +67,16 @@ public class cairo_path {
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        constants$1720.const$0.set(seg, x);
+        constants$1725.const$0.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1720.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1725.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1720.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1725.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle num_data$VH() {
-        return constants$1720.const$1;
+        return constants$1725.const$1;
     }
     /**
      * Getter for field:
@@ -85,7 +85,7 @@ public class cairo_path {
      * }
      */
     public static int num_data$get(MemorySegment seg) {
-        return (int)constants$1720.const$1.get(seg);
+        return (int)constants$1725.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -94,13 +94,13 @@ public class cairo_path {
      * }
      */
     public static void num_data$set(MemorySegment seg, int x) {
-        constants$1720.const$1.set(seg, x);
+        constants$1725.const$1.set(seg, x);
     }
     public static int num_data$get(MemorySegment seg, long index) {
-        return (int)constants$1720.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1725.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void num_data$set(MemorySegment seg, long index, int x) {
-        constants$1720.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1725.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3334 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3334() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkStatusIconClass.activate.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$3333.const$5.varHandle(MemoryLayout.PathElement.groupElement("activate"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkStatusIconClass.popup_menu.class, "apply", constants$467.const$3);
-    static final VarHandle const$3 = constants$3333.const$5.varHandle(MemoryLayout.PathElement.groupElement("popup_menu"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkStatusIconClass.size_changed.class, "apply", constants$11.const$4);
-    static final VarHandle const$5 = constants$3333.const$5.varHandle(MemoryLayout.PathElement.groupElement("size_changed"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_rc_get_im_module_file",
+        constants$35.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_rc_scanner_new",
+        constants$35.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_rc_parse_color",
+        constants$9.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_rc_parse_color_full",
+        constants$12.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_rc_parse_state",
+        constants$9.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_rc_parse_priority",
+        constants$9.const$0
+    );
 }
 
 

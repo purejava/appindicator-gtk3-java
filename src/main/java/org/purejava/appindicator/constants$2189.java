@@ -2,19 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2189 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2189() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWindowClass.enable_debugging.class, "apply", constants$11.const$4);
-    static final VarHandle const$1 = constants$2187.const$3.varHandle(MemoryLayout.PathElement.groupElement("enable_debugging"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkWindowClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$2187.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWindowClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$2187.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_container_child_notify",
+        constants$14.const$3
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_container_child_notify_by_pspec",
+        constants$14.const$3
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_container_forall$callback.class, "apply", constants$13.const$4);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_container_forall",
+        constants$14.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_container_class_handle_border_width",
+        constants$13.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_container_get_path_for_child",
+        constants$5.const$5
+    );
 }
 
 

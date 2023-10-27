@@ -13,7 +13,7 @@ public interface g_main_context_invoke$function {
 
     int apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_main_context_invoke$function fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$282.const$0, fi, constants$10.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$282.const$3, fi, constants$10.const$5, scope);
     }
     static g_main_context_invoke$function ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

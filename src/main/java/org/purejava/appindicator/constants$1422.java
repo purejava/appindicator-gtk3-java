@@ -2,35 +2,32 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1422 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1422() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_blob_create_from_file_or_fail",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_blob_create_sub_blob",
-        constants$33.const$5
-    );
+    static final VarHandle const$0 = constants$1421.const$3.varHandle(MemoryLayout.PathElement.groupElement("start"));
+    static final VarHandle const$1 = constants$1421.const$3.varHandle(MemoryLayout.PathElement.groupElement("end"));
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_blob_copy_writable_or_fail",
-        constants$5.const$2
+        "hb_feature_from_string",
+        constants$150.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_blob_get_empty",
-        constants$35.const$2
+        "hb_feature_to_string",
+        constants$164.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_blob_reference",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_blob_destroy",
-        constants$13.const$1
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("tag"),
+        JAVA_FLOAT.withName("value")
+    ).withName("hb_variation_t");
+    static final VarHandle const$5 = constants$1422.const$4.varHandle(MemoryLayout.PathElement.groupElement("tag"));
 }
 
 

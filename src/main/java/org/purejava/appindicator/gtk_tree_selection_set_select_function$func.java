@@ -13,13 +13,13 @@ public interface gtk_tree_selection_set_select_function$func {
 
     int apply(java.lang.foreign.MemorySegment selection, java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, int path_currently_selected, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gtk_tree_selection_set_select_function$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3197.const$2, fi, constants$328.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$3202.const$2, fi, constants$329.const$5, scope);
     }
     static gtk_tree_selection_set_select_function$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _selection, java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, int _path_currently_selected, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$3194.const$2.invokeExact(symbol, _selection, _model, _path, _path_currently_selected, _data);
+                return (int)constants$3199.const$2.invokeExact(symbol, _selection, _model, _path, _path_currently_selected, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

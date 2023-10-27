@@ -8,22 +8,28 @@ final class constants$2578 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2578() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_cell_layout_clear",
-        constants$13.const$1
+        "gtk_cell_area_context_get_preferred_height",
+        constants$14.const$3
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_cell_layout_set_attributes",
-        constants$13.const$4
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_context_get_preferred_height_for_width",
+        constants$179.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_cell_layout_add_attribute",
-        constants$331.const$4
+        "gtk_cell_area_context_get_preferred_width_for_height",
+        constants$179.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_cell_layout_set_cell_data_func$func.class, "apply", constants$331.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_cell_layout_set_cell_data_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_context_get_allocation",
+        constants$14.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_cell_area_context_push_preferred_width",
+        constants$469.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_cell_layout_set_cell_data_func",
-        constants$331.const$1
+        "gtk_cell_area_context_push_preferred_height",
+        constants$469.const$2
     );
 }
 

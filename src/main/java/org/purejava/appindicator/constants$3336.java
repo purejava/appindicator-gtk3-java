@@ -3,18 +3,59 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3336 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3336() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkStatusIconClass.query_tooltip.class, "apply", constants$1290.const$1);
-    static final VarHandle const$1 = constants$3333.const$5.varHandle(MemoryLayout.PathElement.groupElement("query_tooltip"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkStatusIconClass.__gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$3333.const$5.varHandle(MemoryLayout.PathElement.groupElement("__gtk_reserved1"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkStatusIconClass.__gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$3333.const$5.varHandle(MemoryLayout.PathElement.groupElement("__gtk_reserved2"));
+    static final VarHandle const$0 = constants$3335.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    JAVA_LONG.withName("g_type")
+                ).withName("g_type_class"),
+                RuntimeHelper.POINTER.withName("construct_properties"),
+                RuntimeHelper.POINTER.withName("constructor"),
+                RuntimeHelper.POINTER.withName("set_property"),
+                RuntimeHelper.POINTER.withName("get_property"),
+                RuntimeHelper.POINTER.withName("dispose"),
+                RuntimeHelper.POINTER.withName("finalize"),
+                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                RuntimeHelper.POINTER.withName("notify"),
+                RuntimeHelper.POINTER.withName("constructed"),
+                JAVA_LONG.withName("flags"),
+                JAVA_LONG.withName("n_construct_properties"),
+                RuntimeHelper.POINTER.withName("pspecs"),
+                JAVA_LONG.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+            ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("activate"),
+            JAVA_LONG.withName("menu_item_type"),
+            JAVA_LONG.withName("toolbar_item_type"),
+            RuntimeHelper.POINTER.withName("create_menu_item"),
+            RuntimeHelper.POINTER.withName("create_tool_item"),
+            RuntimeHelper.POINTER.withName("connect_proxy"),
+            RuntimeHelper.POINTER.withName("disconnect_proxy"),
+            RuntimeHelper.POINTER.withName("create_menu"),
+            RuntimeHelper.POINTER.withName("_gtk_reserved1"),
+            RuntimeHelper.POINTER.withName("_gtk_reserved2"),
+            RuntimeHelper.POINTER.withName("_gtk_reserved3"),
+            RuntimeHelper.POINTER.withName("_gtk_reserved4")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved1"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved2"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved3"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved4")
+    ).withName("_GtkRecentActionClass");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkRecentActionClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3336.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkRecentActionClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$3336.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
 }
 
 

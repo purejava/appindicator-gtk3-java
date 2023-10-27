@@ -8,27 +8,27 @@ final class constants$3219 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3219() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_event_sequence_state_get_type",
+        "gtk_scroll_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_pan_direction_get_type",
+        "gtk_selection_mode_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_popover_constraint_get_type",
+        "gtk_shadow_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_scroll_flags_get_type",
+        "gtk_state_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_action_get_type",
+        "gtk_toolbar_style_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_confirmation_get_type",
+        "gtk_wrap_mode_get_type",
         constants$3.const$5
     );
 }

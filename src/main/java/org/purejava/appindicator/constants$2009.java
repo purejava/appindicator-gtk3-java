@@ -4,29 +4,39 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2009 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2009() {}
-    static final VarHandle const$0 = constants$2008.const$4.varHandle(MemoryLayout.PathElement.groupElement("y"));
-    static final VarHandle const$1 = constants$2008.const$4.varHandle(MemoryLayout.PathElement.groupElement("width"));
-    static final VarHandle const$2 = constants$2008.const$4.varHandle(MemoryLayout.PathElement.groupElement("height"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_component_scroll_to",
+        constants$11.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_component_scroll_to_point",
+        constants$611.const$1
+    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
-            JAVA_INT.withName("x"),
-            JAVA_INT.withName("y"),
-            JAVA_INT.withName("width"),
-            JAVA_INT.withName("height")
-        ).withName("bounds"),
-        JAVA_INT.withName("start_offset"),
-        JAVA_INT.withName("end_offset"),
-        RuntimeHelper.POINTER.withName("content")
-    ).withName("_AtkTextRange");
-    static final VarHandle const$4 = constants$2009.const$3.varHandle(MemoryLayout.PathElement.groupElement("start_offset"));
-    static final VarHandle const$5 = constants$2009.const$3.varHandle(MemoryLayout.PathElement.groupElement("end_offset"));
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("get_document_type"),
+        RuntimeHelper.POINTER.withName("get_document"),
+        RuntimeHelper.POINTER.withName("get_document_locale"),
+        RuntimeHelper.POINTER.withName("get_document_attributes"),
+        RuntimeHelper.POINTER.withName("get_document_attribute_value"),
+        RuntimeHelper.POINTER.withName("set_document_attribute"),
+        RuntimeHelper.POINTER.withName("get_current_page_number"),
+        RuntimeHelper.POINTER.withName("get_page_count")
+    ).withName("_AtkDocumentIface");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_document_type.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$2009.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_document_type"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_document.class, "apply", constants$5.const$2);
 }
 
 

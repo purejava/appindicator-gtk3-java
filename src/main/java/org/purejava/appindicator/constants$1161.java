@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1161 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1161() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountIface.get_uuid.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_uuid"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMountIface.get_volume.class, "apply", constants$5.const$2);
-    static final VarHandle const$3 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_volume"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMountIface.get_drive.class, "apply", constants$5.const$2);
-    static final VarHandle const$5 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_drive"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_link",
+        constants$14.const$3
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_label",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_submenu",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_section",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_action_and_target_value",
+        constants$14.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_menu_item_set_action_and_target",
+        constants$14.const$3
+    );
 }
 
 

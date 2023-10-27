@@ -2,40 +2,36 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$755 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$755() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_async_initable_get_type",
+        "g_application_command_line_create_file_for_arg",
+        constants$5.const$5
+    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("init")
+    ).withName("_GInitableIface");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GInitableIface.init.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$755.const$1.varHandle(MemoryLayout.PathElement.groupElement("init"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_initable_get_type",
         constants$3.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_async_initable_init_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_async_initable_init_async",
-        constants$281.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_async_initable_init_finish",
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_initable_init",
         constants$12.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_async_initable_new_async$callback.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandleVariadic(
-        "g_async_initable_new_async",
-        constants$755.const$5
     );
 }
 

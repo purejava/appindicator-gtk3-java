@@ -13,7 +13,7 @@ public interface g_object_set_qdata_full$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_object_set_qdata_full$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$635.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$637.const$5, fi, constants$13.const$1, scope);
     }
     static g_object_set_qdata_full$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

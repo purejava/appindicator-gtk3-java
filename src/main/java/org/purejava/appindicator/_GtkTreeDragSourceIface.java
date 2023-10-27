@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkTreeDragSourceIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3187.const$1;
+        return constants$3192.const$1;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -34,7 +34,7 @@ public class _GtkTreeDragSourceIface {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(row_draggable fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3187.const$2, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$3192.const$2, fi, constants$9.const$0, scope);
         }
         static row_draggable ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -49,7 +49,7 @@ public class _GtkTreeDragSourceIface {
     }
 
     public static VarHandle row_draggable$VH() {
-        return constants$3187.const$3;
+        return constants$3192.const$3;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _GtkTreeDragSourceIface {
      * }
      */
     public static MemorySegment row_draggable$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3187.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3192.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -67,13 +67,13 @@ public class _GtkTreeDragSourceIface {
      * }
      */
     public static void row_draggable$set(MemorySegment seg, MemorySegment x) {
-        constants$3187.const$3.set(seg, x);
+        constants$3192.const$3.set(seg, x);
     }
     public static MemorySegment row_draggable$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3187.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3192.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void row_draggable$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3187.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3192.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static row_draggable row_draggable(MemorySegment segment, Arena scope) {
         return row_draggable.ofAddress(row_draggable$get(segment), scope);
@@ -87,7 +87,7 @@ public class _GtkTreeDragSourceIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(drag_data_get fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3187.const$4, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3192.const$4, fi, constants$12.const$2, scope);
         }
         static drag_data_get ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -102,7 +102,7 @@ public class _GtkTreeDragSourceIface {
     }
 
     public static VarHandle drag_data_get$VH() {
-        return constants$3187.const$5;
+        return constants$3192.const$5;
     }
     /**
      * Getter for field:
@@ -111,7 +111,7 @@ public class _GtkTreeDragSourceIface {
      * }
      */
     public static MemorySegment drag_data_get$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3187.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3192.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -120,13 +120,13 @@ public class _GtkTreeDragSourceIface {
      * }
      */
     public static void drag_data_get$set(MemorySegment seg, MemorySegment x) {
-        constants$3187.const$5.set(seg, x);
+        constants$3192.const$5.set(seg, x);
     }
     public static MemorySegment drag_data_get$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3187.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3192.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_data_get$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3187.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3192.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static drag_data_get drag_data_get(MemorySegment segment, Arena scope) {
         return drag_data_get.ofAddress(drag_data_get$get(segment), scope);
@@ -140,7 +140,7 @@ public class _GtkTreeDragSourceIface {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(drag_data_delete fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3188.const$0, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$3193.const$0, fi, constants$9.const$0, scope);
         }
         static drag_data_delete ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -155,7 +155,7 @@ public class _GtkTreeDragSourceIface {
     }
 
     public static VarHandle drag_data_delete$VH() {
-        return constants$3188.const$1;
+        return constants$3193.const$1;
     }
     /**
      * Getter for field:
@@ -164,7 +164,7 @@ public class _GtkTreeDragSourceIface {
      * }
      */
     public static MemorySegment drag_data_delete$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3188.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3193.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -173,13 +173,13 @@ public class _GtkTreeDragSourceIface {
      * }
      */
     public static void drag_data_delete$set(MemorySegment seg, MemorySegment x) {
-        constants$3188.const$1.set(seg, x);
+        constants$3193.const$1.set(seg, x);
     }
     public static MemorySegment drag_data_delete$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3188.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3193.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_data_delete$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3188.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3193.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static drag_data_delete drag_data_delete(MemorySegment segment, Arena scope) {
         return drag_data_delete.ofAddress(drag_data_delete$get(segment), scope);

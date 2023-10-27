@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$341 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$341() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_new",
-        constants$180.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_unref",
-        constants$13.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_free",
-        constants$13.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_parse",
-        constants$27.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_push",
-        constants$14.const$3
-    );
+    static final VarHandle const$0 = constants$339.const$2.varHandle(MemoryLayout.PathElement.groupElement("text"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMarkupParser.passthrough.class, "apply", constants$340.const$3);
+    static final VarHandle const$2 = constants$339.const$2.varHandle(MemoryLayout.PathElement.groupElement("passthrough"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMarkupParser.error.class, "apply", constants$14.const$3);
+    static final VarHandle const$4 = constants$339.const$2.varHandle(MemoryLayout.PathElement.groupElement("error"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_markup_parse_context_new$user_data_dnotify.class, "apply", constants$13.const$1);
 }
 
 

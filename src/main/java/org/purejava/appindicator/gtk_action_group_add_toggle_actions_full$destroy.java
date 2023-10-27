@@ -13,7 +13,7 @@ public interface gtk_action_group_add_toggle_actions_full$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_action_group_add_toggle_actions_full$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3270.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$3275.const$5, fi, constants$13.const$1, scope);
     }
     static gtk_action_group_add_toggle_actions_full$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

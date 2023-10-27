@@ -3,30 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2036 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2036() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("get_link"),
-        RuntimeHelper.POINTER.withName("get_n_links"),
-        RuntimeHelper.POINTER.withName("get_link_index"),
-        RuntimeHelper.POINTER.withName("link_selected")
-    ).withName("_AtkHypertextIface");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkHypertextIface.get_link.class, "apply", constants$21.const$3);
-    static final VarHandle const$2 = constants$2036.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_link"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkHypertextIface.get_n_links.class, "apply", constants$10.const$5);
-    static final VarHandle const$4 = constants$2036.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_n_links"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkHypertextIface.get_link_index.class, "apply", constants$11.const$4);
+    static final VarHandle const$0 = constants$2035.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_object"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_end_index.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$2035.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_end_index"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_start_index.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$2035.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_start_index"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.is_valid.class, "apply", constants$10.const$5);
 }
 
 

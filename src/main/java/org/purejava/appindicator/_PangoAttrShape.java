@@ -22,7 +22,7 @@ import java.lang.invoke.VarHandle;
 public class _PangoAttrShape {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1565.const$2;
+        return constants$1570.const$2;
     }
     public static MemorySegment attr$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -34,7 +34,7 @@ public class _PangoAttrShape {
         return seg.asSlice(32, 16);
     }
     public static VarHandle data$VH() {
-        return constants$1565.const$3;
+        return constants$1570.const$3;
     }
     /**
      * Getter for field:
@@ -43,7 +43,7 @@ public class _PangoAttrShape {
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1565.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1570.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -52,13 +52,13 @@ public class _PangoAttrShape {
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        constants$1565.const$3.set(seg, x);
+        constants$1570.const$3.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1565.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1570.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1565.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1570.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -69,7 +69,7 @@ public class _PangoAttrShape {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(copy_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1565.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1570.const$4, fi, constants$5.const$2, scope);
         }
         static copy_func ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -84,7 +84,7 @@ public class _PangoAttrShape {
     }
 
     public static VarHandle copy_func$VH() {
-        return constants$1565.const$5;
+        return constants$1570.const$5;
     }
     /**
      * Getter for field:
@@ -93,7 +93,7 @@ public class _PangoAttrShape {
      * }
      */
     public static MemorySegment copy_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1565.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1570.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -102,13 +102,13 @@ public class _PangoAttrShape {
      * }
      */
     public static void copy_func$set(MemorySegment seg, MemorySegment x) {
-        constants$1565.const$5.set(seg, x);
+        constants$1570.const$5.set(seg, x);
     }
     public static MemorySegment copy_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1565.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1570.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void copy_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1565.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1570.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static copy_func copy_func(MemorySegment segment, Arena scope) {
         return copy_func.ofAddress(copy_func$get(segment), scope);
@@ -122,7 +122,7 @@ public class _PangoAttrShape {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(destroy_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1566.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1571.const$0, fi, constants$13.const$1, scope);
         }
         static destroy_func ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -137,7 +137,7 @@ public class _PangoAttrShape {
     }
 
     public static VarHandle destroy_func$VH() {
-        return constants$1566.const$1;
+        return constants$1571.const$1;
     }
     /**
      * Getter for field:
@@ -146,7 +146,7 @@ public class _PangoAttrShape {
      * }
      */
     public static MemorySegment destroy_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1566.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1571.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -155,13 +155,13 @@ public class _PangoAttrShape {
      * }
      */
     public static void destroy_func$set(MemorySegment seg, MemorySegment x) {
-        constants$1566.const$1.set(seg, x);
+        constants$1571.const$1.set(seg, x);
     }
     public static MemorySegment destroy_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1566.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1571.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void destroy_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1566.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1571.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static destroy_func destroy_func(MemorySegment segment, Arena scope) {
         return destroy_func.ofAddress(destroy_func$get(segment), scope);

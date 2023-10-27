@@ -10,25 +10,33 @@ final class constants$380 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$380() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_log_set_debug_enabled",
+        constants$80.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "_g_log_fallback_handler",
+        constants$179.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_return_if_fail_warning",
+        constants$14.const$3
+    );
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT,
         RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "g_log_structured_standard",
-        constants$380.const$0
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_warn_message",
+        constants$380.const$3
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GPrintFunc.class, "apply", constants$13.const$1);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
-        "g_print",
-        constants$13.const$1
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_assert_warning",
+        constants$380.const$3
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_set_print_handler$func.class, "apply", constants$13.const$1);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_set_print_handler$return.class, "apply", constants$13.const$1);
 }
 
 

@@ -7,20 +7,29 @@ final class constants$1886 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1886() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GdkPixbufSaveFunc.class, "apply", constants$393.const$4);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_pixbuf_save_to_callback$save_func.class, "apply", constants$393.const$4);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "gdk_pixbuf_save_to_callback",
-        constants$165.const$2
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_width",
+        constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_pixbuf_save_to_callbackv$save_func.class, "apply", constants$393.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_height",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_rowstride",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_byte_length",
+        constants$4.const$0
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_save_to_callbackv",
-        constants$164.const$2
+        "gdk_pixbuf_get_pixels_with_length",
+        constants$5.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
-        "gdk_pixbuf_save_to_buffer",
-        constants$165.const$2
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_read_pixels",
+        constants$5.const$2
     );
 }
 

@@ -8,28 +8,28 @@ final class constants$2374 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2374() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_bytes_in_line",
+        "gtk_text_iter_get_line_index",
         constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_attributes",
-        constants$9.const$0
+        "gtk_text_iter_get_visible_line_offset",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_language",
-        constants$5.const$2
+        "gtk_text_iter_get_visible_line_index",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_is_end",
+        "gtk_text_iter_get_char",
         constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_is_start",
-        constants$10.const$5
+        "gtk_text_iter_get_slice",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_char",
-        constants$10.const$5
+        "gtk_text_iter_get_text",
+        constants$5.const$5
     );
 }
 

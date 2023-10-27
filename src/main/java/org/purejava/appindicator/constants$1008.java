@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1008 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1008() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$1007.const$4
-    );
-    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("measure_disk_usage"));
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.measure_disk_usage_async.class, "apply", constants$1008.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$1008.const$2
-    );
-    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("measure_disk_usage_async"));
+    static final VarHandle const$0 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("stop_mountable"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.stop_mountable_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("stop_mountable_finish"));
+    static final VarHandle const$3 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("supports_thread_contexts"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.unmount_mountable_with_operation.class, "apply", constants$381.const$0);
+    static final VarHandle const$5 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("unmount_mountable_with_operation"));
 }
 
 

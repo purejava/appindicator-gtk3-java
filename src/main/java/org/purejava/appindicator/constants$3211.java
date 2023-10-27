@@ -8,28 +8,28 @@ final class constants$3211 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3211() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_entry_icon_position_get_type",
-        constants$3.const$5
+        "gtk_tree_store_clear",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_align_get_type",
-        constants$3.const$5
+        "gtk_tree_store_iter_is_valid",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_arrow_type_get_type",
-        constants$3.const$5
+        "gtk_tree_store_reorder",
+        constants$14.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_baseline_position_get_type",
-        constants$3.const$5
+        "gtk_tree_store_swap",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_delete_type_get_type",
-        constants$3.const$5
+        "gtk_tree_store_move_before",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_direction_type_get_type",
-        constants$3.const$5
+        "gtk_tree_store_move_after",
+        constants$14.const$3
     );
 }
 

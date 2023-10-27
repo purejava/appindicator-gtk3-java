@@ -13,7 +13,7 @@ public interface g_tree_new_full$key_compare_func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_tree_new_full$key_compare_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$474.const$1, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$476.const$0, fi, constants$12.const$2, scope);
     }
     static g_tree_new_full$key_compare_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -9,12 +9,12 @@ final class constants$555 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$555() {}
-    static final VarHandle const$0 = constants$553.const$2.varHandle(MemoryLayout.PathElement.groupElement("class_data"));
-    static final VarHandle const$1 = constants$553.const$2.varHandle(MemoryLayout.PathElement.groupElement("instance_size"));
-    static final VarHandle const$2 = constants$553.const$2.varHandle(MemoryLayout.PathElement.groupElement("n_preallocs"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTypeInfo.instance_init.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$553.const$2.varHandle(MemoryLayout.PathElement.groupElement("instance_init"));
-    static final VarHandle const$5 = constants$553.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_table"));
+    static final VarHandle const$0 = constants$554.const$5.varHandle(MemoryLayout.PathElement.groupElement("class_size"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GTypeInfo.base_init.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$554.const$5.varHandle(MemoryLayout.PathElement.groupElement("base_init"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTypeInfo.base_finalize.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$554.const$5.varHandle(MemoryLayout.PathElement.groupElement("base_finalize"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTypeInfo.class_init.class, "apply", constants$13.const$4);
 }
 
 

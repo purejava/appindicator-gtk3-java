@@ -13,13 +13,13 @@ public interface GDBusSubtreeIntrospectFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GDBusSubtreeIntrospectFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$866.const$0, fi, constants$330.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$869.const$0, fi, constants$331.const$5, scope);
     }
     static GDBusSubtreeIntrospectFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.MemorySegment)constants$866.const$1.invokeExact(symbol, _connection, _sender, _object_path, _node, _user_data);
+                return (java.lang.foreign.MemorySegment)constants$869.const$1.invokeExact(symbol, _connection, _sender, _object_path, _node, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

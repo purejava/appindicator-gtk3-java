@@ -2,34 +2,46 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2959 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2959() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_n_copies",
-        constants$40.const$2
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_DOUBLE,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_number_up",
-        constants$10.const$5
+        "gtk_print_settings_get_double_with_default",
+        constants$2959.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_number_up",
-        constants$40.const$2
+        "gtk_print_settings_set_double",
+        constants$2842.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_number_up_layout",
-        constants$10.const$5
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_DOUBLE,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_number_up_layout",
-        constants$40.const$2
+        "gtk_print_settings_get_length",
+        constants$2959.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_resolution",
-        constants$10.const$5
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_INT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_length",
+        constants$2959.const$5
     );
 }
 

@@ -2,24 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1246 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1246() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSeekableIface.can_truncate.class, "apply", constants$10.const$5);
-    static final VarHandle const$1 = constants$1244.const$5.varHandle(MemoryLayout.PathElement.groupElement("can_truncate"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GSeekableIface.truncate_fn.class, "apply", constants$393.const$4);
-    static final VarHandle const$3 = constants$1244.const$5.varHandle(MemoryLayout.PathElement.groupElement("truncate_fn"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_resource_ref",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_resource_unref",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_resource_load",
+        constants$5.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_resource_open_stream",
+        constants$484.const$1
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_seekable_get_type",
-        constants$3.const$5
+        "g_resource_lookup_data",
+        constants$484.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_seekable_tell",
-        constants$4.const$0
+        "g_resource_enumerate_children",
+        constants$484.const$1
     );
 }
 

@@ -8,29 +8,26 @@ final class constants$1512 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1512() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_not_found_glyph",
-        constants$10.const$5
+        "hb_buffer_create_similar",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_buffer_clear_contents",
+        "hb_buffer_reset",
         constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_buffer_pre_allocate",
-        constants$11.const$4
+        "hb_buffer_get_empty",
+        constants$35.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_buffer_allocation_successful",
-        constants$10.const$5
+        "hb_buffer_reference",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_buffer_reverse",
+        "hb_buffer_destroy",
         constants$13.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_buffer_reverse_range",
-        constants$467.const$3
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_buffer_set_user_data$destroy.class, "apply", constants$13.const$1);
 }
 
 

@@ -9,20 +9,12 @@ final class constants$1379 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1379() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$1139.const$5
-    );
-    static final VarHandle const$1 = constants$1378.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_value"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTlsPasswordClass.get_default_warning.class, "apply", constants$5.const$2);
-    static final VarHandle const$3 = constants$1378.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_default_warning"));
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_password_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_password_new",
-        constants$24.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTlsInteractionClass.ask_password_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$1378.const$1.varHandle(MemoryLayout.PathElement.groupElement("ask_password_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTlsInteractionClass.request_certificate.class, "apply", constants$862.const$1);
+    static final VarHandle const$3 = constants$1378.const$1.varHandle(MemoryLayout.PathElement.groupElement("request_certificate"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTlsInteractionClass.request_certificate_async.class, "apply", constants$587.const$0);
+    static final VarHandle const$5 = constants$1378.const$1.varHandle(MemoryLayout.PathElement.groupElement("request_certificate_async"));
 }
 
 

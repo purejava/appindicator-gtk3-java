@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3029 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3029() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_show_not_found",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_select_multiple",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_select_multiple",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_limit",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_limit",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_local_only",
-        constants$40.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.get_current_uri.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$3028.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_current_uri"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.select_uri.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$3028.const$3.varHandle(MemoryLayout.PathElement.groupElement("select_uri"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.unselect_uri.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$3028.const$3.varHandle(MemoryLayout.PathElement.groupElement("unselect_uri"));
 }
 
 

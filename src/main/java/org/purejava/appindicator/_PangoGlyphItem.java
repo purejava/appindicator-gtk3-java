@@ -21,10 +21,10 @@ import java.lang.invoke.VarHandle;
 public class _PangoGlyphItem {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1614.const$1;
+        return constants$1619.const$1;
     }
     public static VarHandle item$VH() {
-        return constants$1614.const$2;
+        return constants$1619.const$2;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class _PangoGlyphItem {
      * }
      */
     public static MemorySegment item$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1614.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1619.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -42,16 +42,16 @@ public class _PangoGlyphItem {
      * }
      */
     public static void item$set(MemorySegment seg, MemorySegment x) {
-        constants$1614.const$2.set(seg, x);
+        constants$1619.const$2.set(seg, x);
     }
     public static MemorySegment item$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1614.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1619.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void item$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1614.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1619.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle glyphs$VH() {
-        return constants$1614.const$3;
+        return constants$1619.const$3;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _PangoGlyphItem {
      * }
      */
     public static MemorySegment glyphs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1614.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1619.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -69,16 +69,16 @@ public class _PangoGlyphItem {
      * }
      */
     public static void glyphs$set(MemorySegment seg, MemorySegment x) {
-        constants$1614.const$3.set(seg, x);
+        constants$1619.const$3.set(seg, x);
     }
     public static MemorySegment glyphs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1614.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1619.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void glyphs$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1614.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1619.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle y_offset$VH() {
-        return constants$1614.const$4;
+        return constants$1619.const$4;
     }
     /**
      * Getter for field:
@@ -87,7 +87,7 @@ public class _PangoGlyphItem {
      * }
      */
     public static int y_offset$get(MemorySegment seg) {
-        return (int)constants$1614.const$4.get(seg);
+        return (int)constants$1619.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -96,16 +96,16 @@ public class _PangoGlyphItem {
      * }
      */
     public static void y_offset$set(MemorySegment seg, int x) {
-        constants$1614.const$4.set(seg, x);
+        constants$1619.const$4.set(seg, x);
     }
     public static int y_offset$get(MemorySegment seg, long index) {
-        return (int)constants$1614.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1619.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void y_offset$set(MemorySegment seg, long index, int x) {
-        constants$1614.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1619.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle start_x_offset$VH() {
-        return constants$1614.const$5;
+        return constants$1619.const$5;
     }
     /**
      * Getter for field:
@@ -114,7 +114,7 @@ public class _PangoGlyphItem {
      * }
      */
     public static int start_x_offset$get(MemorySegment seg) {
-        return (int)constants$1614.const$5.get(seg);
+        return (int)constants$1619.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -123,16 +123,16 @@ public class _PangoGlyphItem {
      * }
      */
     public static void start_x_offset$set(MemorySegment seg, int x) {
-        constants$1614.const$5.set(seg, x);
+        constants$1619.const$5.set(seg, x);
     }
     public static int start_x_offset$get(MemorySegment seg, long index) {
-        return (int)constants$1614.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1619.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void start_x_offset$set(MemorySegment seg, long index, int x) {
-        constants$1614.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1619.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle end_x_offset$VH() {
-        return constants$1615.const$0;
+        return constants$1620.const$0;
     }
     /**
      * Getter for field:
@@ -141,7 +141,7 @@ public class _PangoGlyphItem {
      * }
      */
     public static int end_x_offset$get(MemorySegment seg) {
-        return (int)constants$1615.const$0.get(seg);
+        return (int)constants$1620.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -150,13 +150,13 @@ public class _PangoGlyphItem {
      * }
      */
     public static void end_x_offset$set(MemorySegment seg, int x) {
-        constants$1615.const$0.set(seg, x);
+        constants$1620.const$0.set(seg, x);
     }
     public static int end_x_offset$get(MemorySegment seg, long index) {
-        return (int)constants$1615.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1620.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void end_x_offset$set(MemorySegment seg, long index, int x) {
-        constants$1615.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1620.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

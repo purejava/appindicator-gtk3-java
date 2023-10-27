@@ -2,35 +2,26 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$652 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$652() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_flags_to_string",
-        constants$63.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_value_set_enum",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_value_get_enum",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_value_set_flags",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_value_get_flags",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_enum_register_static",
-        constants$22.const$0
-    );
+    static final VarHandle const$0 = constants$651.const$4.varHandle(MemoryLayout.PathElement.groupElement("n_values"));
+    static final VarHandle const$1 = constants$651.const$4.varHandle(MemoryLayout.PathElement.groupElement("values"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("value"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("value_name"),
+        RuntimeHelper.POINTER.withName("value_nick")
+    ).withName("_GEnumValue");
+    static final VarHandle const$3 = constants$652.const$2.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final VarHandle const$4 = constants$652.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_name"));
+    static final VarHandle const$5 = constants$652.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_nick"));
 }
 
 

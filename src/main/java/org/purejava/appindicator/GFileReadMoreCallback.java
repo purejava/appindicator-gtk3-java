@@ -13,13 +13,13 @@ public interface GFileReadMoreCallback {
 
     int apply(java.lang.foreign.MemorySegment file_contents, long file_size, java.lang.foreign.MemorySegment callback_data);
     static MemorySegment allocate(GFileReadMoreCallback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$693.const$4, fi, constants$62.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$696.const$2, fi, constants$62.const$2, scope);
     }
     static GFileReadMoreCallback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _file_contents, long _file_size, java.lang.foreign.MemorySegment _callback_data) -> {
             try {
-                return (int)constants$693.const$5.invokeExact(symbol, _file_contents, _file_size, _callback_data);
+                return (int)constants$696.const$3.invokeExact(symbol, _file_contents, _file_size, _callback_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

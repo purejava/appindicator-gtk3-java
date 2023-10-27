@@ -3,43 +3,21 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$704 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$704() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_action_print_detailed_name",
-        constants$5.const$5
+    static final VarHandle const$0 = constants$702.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_state"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GActionInterface.change_state.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$702.const$0.varHandle(MemoryLayout.PathElement.groupElement("change_state"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GActionInterface.activate.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$702.const$0.varHandle(MemoryLayout.PathElement.groupElement("activate"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_action_get_type",
+        constants$3.const$5
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("has_action"),
-        RuntimeHelper.POINTER.withName("list_actions"),
-        RuntimeHelper.POINTER.withName("get_action_enabled"),
-        RuntimeHelper.POINTER.withName("get_action_parameter_type"),
-        RuntimeHelper.POINTER.withName("get_action_state_type"),
-        RuntimeHelper.POINTER.withName("get_action_state_hint"),
-        RuntimeHelper.POINTER.withName("get_action_state"),
-        RuntimeHelper.POINTER.withName("change_action_state"),
-        RuntimeHelper.POINTER.withName("activate_action"),
-        RuntimeHelper.POINTER.withName("action_added"),
-        RuntimeHelper.POINTER.withName("action_removed"),
-        RuntimeHelper.POINTER.withName("action_enabled_changed"),
-        RuntimeHelper.POINTER.withName("action_state_changed"),
-        RuntimeHelper.POINTER.withName("query_action")
-    ).withName("_GActionGroupInterface");
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GActionGroupInterface.has_action.class, "apply", constants$9.const$0);
-    static final VarHandle const$3 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("has_action"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GActionGroupInterface.list_actions.class, "apply", constants$5.const$2);
-    static final VarHandle const$5 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("list_actions"));
 }
 
 

@@ -12,10 +12,11 @@ final class constants$1313 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1313() {}
-    static final VarHandle const$0 = constants$1311.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketListenerClass._g_reserved6.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$1311.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSocketControlMessageClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1309.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GSocketControlMessageClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1309.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 RuntimeHelper.POINTER.withName("g_class")
@@ -25,12 +26,8 @@ final class constants$1313 {
             RuntimeHelper.POINTER.withName("qdata")
         ).withName("parent_instance"),
         RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GSocketListener");
-    static final VarHandle const$4 = constants$1313.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_listener_get_type",
-        constants$3.const$5
-    );
+    ).withName("_GSocketControlMessage");
+    static final VarHandle const$5 = constants$1313.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

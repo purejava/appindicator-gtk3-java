@@ -7,12 +7,12 @@ final class constants$3453 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3453() {}
-    static final MemorySegment const$0 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("rubberband");
-    static final MemorySegment const$1 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("csd");
-    static final MemorySegment const$2 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("tooltip");
-    static final MemorySegment const$3 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("menu");
-    static final MemorySegment const$4 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("context-menu");
-    static final MemorySegment const$5 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("touch-selection");
+    static final MemorySegment const$0 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.eps.params");
+    static final MemorySegment const$1 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("2.42.10");
+    static final MemorySegment const$2 = MemorySegment.ofAddress(2L);
+    static final MemorySegment const$3 = MemorySegment.ofAddress(69L);
+    static final MemorySegment const$4 = MemorySegment.ofAddress(5L);
+    static final MemorySegment const$5 = MemorySegment.ofAddress(7L);
 }
 
 

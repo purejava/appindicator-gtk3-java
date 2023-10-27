@@ -7,29 +7,29 @@ final class constants$630 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$630() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "g_object_set",
-        constants$13.const$4
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_object_class_install_property",
+        constants$42.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "g_object_get",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "g_object_connect",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_object_class_find_property",
         constants$5.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
-        "g_object_disconnect",
-        constants$13.const$4
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_object_class_list_properties",
+        constants$5.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_object_class_override_property",
+        constants$42.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_object_setv",
-        constants$179.const$1
+        "g_object_class_install_properties",
+        constants$42.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_object_set_valist",
-        constants$311.const$4
+        "g_object_interface_install_property",
+        constants$13.const$4
     );
 }
 

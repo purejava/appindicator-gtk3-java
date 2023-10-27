@@ -9,12 +9,12 @@ final class constants$2403 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2403() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkIMContextClass.preedit_start.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$2402.const$5.varHandle(MemoryLayout.PathElement.groupElement("preedit_start"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkIMContextClass.preedit_end.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$2402.const$5.varHandle(MemoryLayout.PathElement.groupElement("preedit_end"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkIMContextClass.preedit_changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$5 = constants$2402.const$5.varHandle(MemoryLayout.PathElement.groupElement("preedit_changed"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkEditableInterface.do_insert_text.class, "apply", constants$466.const$3);
+    static final VarHandle const$1 = constants$2401.const$5.varHandle(MemoryLayout.PathElement.groupElement("do_insert_text"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkEditableInterface.do_delete_text.class, "apply", constants$469.const$2);
+    static final VarHandle const$3 = constants$2401.const$5.varHandle(MemoryLayout.PathElement.groupElement("do_delete_text"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkEditableInterface.get_chars.class, "apply", constants$33.const$5);
+    static final VarHandle const$5 = constants$2401.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_chars"));
 }
 
 

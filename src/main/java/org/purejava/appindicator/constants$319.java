@@ -9,24 +9,14 @@ final class constants$319 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$319() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GIOFuncs.io_get_flags.class, "apply", constants$10.const$5);
-    static final VarHandle const$1 = constants$315.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_get_flags"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_io_channel_init",
-        constants$13.const$1
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$21.const$3
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_io_channel_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_io_channel_unref",
-        constants$13.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_io_channel_read",
-        constants$27.const$2
-    );
+    static final VarHandle const$1 = constants$316.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_create_watch"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GIOFuncs.io_free.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$316.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_free"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GIOFuncs.io_set_flags.class, "apply", constants$150.const$0);
+    static final VarHandle const$5 = constants$316.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_set_flags"));
 }
 
 

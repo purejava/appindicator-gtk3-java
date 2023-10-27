@@ -2,34 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$418 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$418() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_match_info_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_match_info_unref",
-        constants$13.const$1
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_regex_replace_eval$eval.class, "apply", constants$12.const$2);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_match_info_free",
-        constants$13.const$1
+        "g_regex_replace_eval",
+        constants$418.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_match_info_next",
-        constants$9.const$0
+        "g_regex_check_replacement",
+        constants$12.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_match_info_matches",
-        constants$10.const$5
+        "g_match_info_get_regex",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_match_info_get_match_count",
-        constants$10.const$5
+        "g_match_info_get_string",
+        constants$5.const$2
     );
 }
 

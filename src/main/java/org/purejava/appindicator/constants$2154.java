@@ -8,28 +8,28 @@ final class constants$2154 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2154() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_override_color",
-        constants$42.const$4
+        "gtk_widget_get_vexpand_set",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_override_background_color",
-        constants$42.const$4
+        "gtk_widget_set_vexpand_set",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_override_font",
-        constants$13.const$4
+        "gtk_widget_queue_compute_expand",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_override_symbolic_color",
-        constants$14.const$3
+        "gtk_widget_compute_expand",
+        constants$11.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_override_cursor",
-        constants$14.const$3
+        "gtk_widget_get_support_multidevice",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_reset_style",
-        constants$13.const$1
+        "gtk_widget_set_support_multidevice",
+        constants$40.const$2
     );
 }
 

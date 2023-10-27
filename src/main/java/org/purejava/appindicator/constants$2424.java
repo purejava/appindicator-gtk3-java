@@ -2,35 +2,46 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2424 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2424() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_prepend",
-        constants$13.const$4
+        "gtk_entry_buffer_get_max_length",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_append",
-        constants$13.const$4
+        "gtk_entry_buffer_insert_text",
+        constants$265.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_clear",
-        constants$13.const$1
+        "gtk_entry_buffer_delete_text",
+        constants$49.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_iter_is_valid",
-        constants$9.const$0
+        "gtk_entry_buffer_emit_inserted_text",
+        constants$1501.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_reorder",
-        constants$13.const$4
+        "gtk_entry_buffer_emit_deleted_text",
+        constants$469.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_swap",
-        constants$14.const$3
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkListStore");
 }
 
 

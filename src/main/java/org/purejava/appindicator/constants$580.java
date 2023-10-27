@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$580 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$580() {}
-    static final VarHandle const$0 = constants$579.const$5.varHandle(MemoryLayout.PathElement.groupElement("instance_size"));
-    static final VarHandle const$1 = constants$579.const$5.varHandle(MemoryLayout.PathElement.groupElement("n_preallocs"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GParamSpecTypeInfo.instance_init.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$579.const$5.varHandle(MemoryLayout.PathElement.groupElement("instance_init"));
-    static final VarHandle const$4 = constants$579.const$5.varHandle(MemoryLayout.PathElement.groupElement("value_type"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GParamSpecTypeInfo.finalize.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_param_value_validate",
+        constants$9.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_value_is_valid",
+        constants$9.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_param_value_convert",
+        constants$312.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_param_values_cmp",
+        constants$12.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_param_spec_get_name",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_param_spec_get_nick",
+        constants$5.const$2
+    );
 }
 
 

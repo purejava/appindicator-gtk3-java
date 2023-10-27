@@ -13,7 +13,7 @@ public interface g_scanner_scope_foreach_symbol$func {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_scanner_scope_foreach_symbol$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$430.const$0, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$431.const$0, fi, constants$14.const$3, scope);
     }
     static g_scanner_scope_foreach_symbol$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

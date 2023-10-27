@@ -2,39 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$955 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$955() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("accept_certificate"),
-        RuntimeHelper.POINTER.withName("handshake"),
-        RuntimeHelper.POINTER.withName("handshake_async"),
-        RuntimeHelper.POINTER.withName("handshake_finish"),
-        RuntimeHelper.POINTER.withName("shutdown"),
-        RuntimeHelper.POINTER.withName("shutdown_async"),
-        RuntimeHelper.POINTER.withName("shutdown_finish"),
-        RuntimeHelper.POINTER.withName("set_advertised_protocols"),
-        RuntimeHelper.POINTER.withName("get_negotiated_protocol"),
-        RuntimeHelper.POINTER.withName("get_binding_data")
-    ).withName("_GDtlsConnectionInterface");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDtlsConnectionInterface.accept_certificate.class, "apply", constants$62.const$0);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$62.const$0
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_drive_poll_for_media",
+        constants$42.const$1
     );
-    static final VarHandle const$3 = constants$955.const$0.varHandle(MemoryLayout.PathElement.groupElement("accept_certificate"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDtlsConnectionInterface.handshake.class, "apply", constants$12.const$2);
-    static final VarHandle const$5 = constants$955.const$0.varHandle(MemoryLayout.PathElement.groupElement("handshake"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_drive_poll_for_media_finish",
+        constants$12.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_drive_get_identifier",
+        constants$5.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_drive_enumerate_identifiers",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_drive_get_start_stop_type",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_drive_can_start",
+        constants$10.const$5
+    );
 }
 
 

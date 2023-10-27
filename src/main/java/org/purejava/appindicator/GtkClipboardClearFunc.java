@@ -13,7 +13,7 @@ public interface GtkClipboardClearFunc {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GtkClipboardClearFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2625.const$3, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$2630.const$3, fi, constants$13.const$4, scope);
     }
     static GtkClipboardClearFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

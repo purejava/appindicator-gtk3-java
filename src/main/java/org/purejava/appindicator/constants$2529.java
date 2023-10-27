@@ -2,29 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.MethodHandle;
 final class constants$2529 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2529() {}
-    static final VarHandle const$0 = constants$2528.const$2.varHandle(MemoryLayout.PathElement.groupElement("widget_class_pspecs"));
-    static final VarHandle const$1 = constants$2528.const$2.varHandle(MemoryLayout.PathElement.groupElement("class_branch_pspecs"));
-    static final VarHandle const$2 = constants$2528.const$2.varHandle(MemoryLayout.PathElement.groupElement("entries"));
-    static final VarHandle const$3 = constants$2528.const$2.varHandle(MemoryLayout.PathElement.groupElement("current"));
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        JAVA_INT.withName("keyval"),
-        JAVA_INT.withName("modifiers"),
-        RuntimeHelper.POINTER.withName("binding_set"),
-        MemoryLayout.paddingLayout(8),
-        RuntimeHelper.POINTER.withName("set_next"),
-        RuntimeHelper.POINTER.withName("hash_next"),
-        RuntimeHelper.POINTER.withName("signals")
-    ).withName("_GtkBindingEntry");
-    static final VarHandle const$5 = constants$2529.const$4.varHandle(MemoryLayout.PathElement.groupElement("keyval"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_get_page_complete",
+        constants$9.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_add_action_widget",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_remove_action_widget",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_update_buttons_state",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_commit",
+        constants$13.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_assistant_set_page_has_padding",
+        constants$164.const$5
+    );
 }
 
 

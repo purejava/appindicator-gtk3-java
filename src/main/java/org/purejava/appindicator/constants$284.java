@@ -8,27 +8,27 @@ final class constants$284 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$284() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_unichar_isdigit",
+        "g_unichar_isalnum",
         constants$8.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_unichar_isgraph",
+        "g_unichar_isalpha",
         constants$8.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_unichar_islower",
+        "g_unichar_iscntrl",
         constants$8.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_unichar_isprint",
+        "g_unichar_isdigit",
         constants$8.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_unichar_ispunct",
+        "g_unichar_isgraph",
         constants$8.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_unichar_isspace",
+        "g_unichar_islower",
         constants$8.const$4
     );
 }

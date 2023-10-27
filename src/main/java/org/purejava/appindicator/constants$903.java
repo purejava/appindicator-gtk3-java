@@ -3,46 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$903 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$903() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
         RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("__stack"),
-            RuntimeHelper.POINTER.withName("__gr_top"),
-            RuntimeHelper.POINTER.withName("__vr_top"),
-            JAVA_INT.withName("__gr_offs"),
-            JAVA_INT.withName("__vr_offs")
-        ).withName("__va_list")
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_error_valist",
+        "g_dbus_message_bytes_needed",
         constants$903.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_error_literal",
-        constants$57.const$0
+        "g_dbus_message_to_blob",
+        constants$484.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_gerror",
-        constants$13.const$4
+        "g_dbus_message_to_gerror",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_take_error",
-        constants$13.const$4
+        "g_dbus_method_invocation_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_dbus_error",
-        constants$14.const$3
+        "g_dbus_method_invocation_get_sender",
+        constants$5.const$2
     );
 }
 

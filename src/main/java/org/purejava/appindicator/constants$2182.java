@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2182 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2182() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_container_class_install_child_properties",
-        constants$42.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_container_class_find_child_property",
-        constants$5.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_container_class_list_child_properties",
-        constants$5.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_container_add_with_properties",
-        constants$14.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_container_child_set",
-        constants$14.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_container_child_get",
-        constants$14.const$3
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkContainerClass._gtk_reserved6.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$2176.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkContainerClass._gtk_reserved7.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$2176.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved7"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkContainerClass._gtk_reserved8.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2176.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved8"));
 }
 
 

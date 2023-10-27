@@ -8,28 +8,28 @@ final class constants$2209 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2209() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_has_resize_grip",
-        constants$40.const$2
+        "gtk_window_present",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_window_get_has_resize_grip",
-        constants$10.const$5
+        "gtk_window_present_with_time",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_window_resize_grip_is_visible",
-        constants$10.const$5
+        "gtk_window_iconify",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_window_get_resize_grip_area",
-        constants$9.const$0
+        "gtk_window_deiconify",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_titlebar",
-        constants$13.const$4
+        "gtk_window_stick",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_window_get_titlebar",
-        constants$5.const$2
+        "gtk_window_unstick",
+        constants$13.const$1
     );
 }
 

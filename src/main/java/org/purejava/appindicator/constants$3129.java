@@ -3,21 +3,58 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3129 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3129() {}
-    static final VarHandle const$0 = constants$3124.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextBufferClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$3124.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextBufferClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$3124.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_type",
-        constants$3.const$5
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("insert_text"),
+        RuntimeHelper.POINTER.withName("insert_pixbuf"),
+        RuntimeHelper.POINTER.withName("insert_child_anchor"),
+        RuntimeHelper.POINTER.withName("delete_range"),
+        RuntimeHelper.POINTER.withName("changed"),
+        RuntimeHelper.POINTER.withName("modified_changed"),
+        RuntimeHelper.POINTER.withName("mark_set"),
+        RuntimeHelper.POINTER.withName("mark_deleted"),
+        RuntimeHelper.POINTER.withName("apply_tag"),
+        RuntimeHelper.POINTER.withName("remove_tag"),
+        RuntimeHelper.POINTER.withName("begin_user_action"),
+        RuntimeHelper.POINTER.withName("end_user_action"),
+        RuntimeHelper.POINTER.withName("paste_done"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved1"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved2"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved3"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved4")
+    ).withName("_GtkTextBufferClass");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextBufferClass.insert_text.class, "apply", constants$332.const$4);
+    static final VarHandle const$2 = constants$3129.const$0.varHandle(MemoryLayout.PathElement.groupElement("insert_text"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextBufferClass.insert_pixbuf.class, "apply", constants$14.const$3);
+    static final VarHandle const$4 = constants$3129.const$0.varHandle(MemoryLayout.PathElement.groupElement("insert_pixbuf"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextBufferClass.insert_child_anchor.class, "apply", constants$14.const$3);
 }
 
 

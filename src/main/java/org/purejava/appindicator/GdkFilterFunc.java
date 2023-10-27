@@ -13,7 +13,7 @@ public interface GdkFilterFunc {
 
     int apply(java.lang.foreign.MemorySegment xevent, java.lang.foreign.MemorySegment event, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GdkFilterFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1767.const$0, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1772.const$0, fi, constants$12.const$2, scope);
     }
     static GdkFilterFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

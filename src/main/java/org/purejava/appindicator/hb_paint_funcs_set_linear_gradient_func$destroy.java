@@ -13,7 +13,7 @@ public interface hb_paint_funcs_set_linear_gradient_func$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(hb_paint_funcs_set_linear_gradient_func$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1467.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1471.const$5, fi, constants$13.const$1, scope);
     }
     static hb_paint_funcs_set_linear_gradient_func$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

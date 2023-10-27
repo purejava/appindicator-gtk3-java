@@ -8,29 +8,23 @@ final class constants$1270 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1270() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_run_in_thread",
-        constants$464.const$4
+        "g_simple_action_group_remove",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_from_error",
-        constants$13.const$4
+        "g_simple_action_group_add_entries",
+        constants$466.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_take_error",
-        constants$13.const$4
+        "g_simple_async_result_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_propagate_error",
-        constants$9.const$0
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_simple_async_result_new$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_new",
+        constants$39.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "g_simple_async_result_set_error",
-        constants$57.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_error_va",
-        constants$903.const$0
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_simple_async_result_new_error$callback.class, "apply", constants$14.const$3);
 }
 
 

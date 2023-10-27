@@ -8,28 +8,28 @@ final class constants$3136 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3136() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_remove_tag_by_name",
-        constants$42.const$1
+        "gtk_text_buffer_insert_at_cursor",
+        constants$164.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_remove_all_tags",
-        constants$14.const$3
+        "gtk_text_buffer_insert_interactive",
+        constants$1946.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_text_buffer_create_tag",
-        constants$23.const$0
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_insert_interactive_at_cursor",
+        constants$415.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_iter_at_line_offset",
-        constants$1043.const$2
+        "gtk_text_buffer_insert_range",
+        constants$42.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_iter_at_line_index",
-        constants$1043.const$2
+        "gtk_text_buffer_insert_range_interactive",
+        constants$1427.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_iter_at_offset",
-        constants$164.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_text_buffer_insert_with_tags",
+        constants$1131.const$2
     );
 }
 

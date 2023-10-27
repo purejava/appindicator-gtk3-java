@@ -2,19 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2718 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2718() {}
-    static final VarHandle const$0 = constants$2717.const$4.varHandle(MemoryLayout.PathElement.groupElement("font_set"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkFontButtonClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2717.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkFontButtonClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2717.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkFontButtonClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_get_activate_on_single_click",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_insert",
+        constants$164.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_get_child_at_index",
+        constants$21.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_get_child_at_pos",
+        constants$33.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GtkFlowBoxForeachFunc.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_flow_box_selected_foreach$func.class, "apply", constants$14.const$3);
 }
 
 

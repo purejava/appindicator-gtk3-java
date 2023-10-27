@@ -2,46 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.foreign.UnionLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$369 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$369() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_variant_compare",
-        constants$9.const$0
+        "g_variant_get_va",
+        constants$42.const$1
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.unionLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("asv"),
-                JAVA_LONG.withName("partial_magic"),
-                MemoryLayout.sequenceLayout(14, JAVA_LONG).withName("y")
-            ).withName("s"),
-            MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("x")
-        ).withName("u")
-    ).withName("_GVariantDict");
-    static final UnionLayout const$2 = MemoryLayout.unionLayout(
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("asv"),
-            JAVA_LONG.withName("partial_magic"),
-            MemoryLayout.sequenceLayout(14, JAVA_LONG).withName("y")
-        ).withName("s"),
-        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("x")
-    ).withName("");
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("asv"),
-        JAVA_LONG.withName("partial_magic"),
-        MemoryLayout.sequenceLayout(14, JAVA_LONG).withName("y")
-    ).withName("");
-    static final VarHandle const$4 = constants$369.const$3.varHandle(MemoryLayout.PathElement.groupElement("asv"));
-    static final VarHandle const$5 = constants$369.const$3.varHandle(MemoryLayout.PathElement.groupElement("partial_magic"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_check_format_string",
+        constants$62.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_parse",
+        constants$331.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_new_parsed",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_new_parsed_va",
+        constants$5.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_parse_error_print_context",
+        constants$5.const$5
+    );
 }
 
 

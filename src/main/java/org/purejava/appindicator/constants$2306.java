@@ -2,30 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2306 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2306() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("editing_done"),
-        RuntimeHelper.POINTER.withName("remove_widget"),
-        RuntimeHelper.POINTER.withName("start_editing")
-    ).withName("_GtkCellEditableIface");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellEditableIface.editing_done.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$2306.const$0.varHandle(MemoryLayout.PathElement.groupElement("editing_done"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkCellEditableIface.remove_widget.class, "apply", constants$13.const$1);
-    static final VarHandle const$4 = constants$2306.const$0.varHandle(MemoryLayout.PathElement.groupElement("remove_widget"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkCellEditableIface.start_editing.class, "apply", constants$13.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_iter_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_flags",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_n_columns",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_column_type",
+        constants$823.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_get_iter",
+        constants$12.const$2
+    );
 }
 
 

@@ -13,7 +13,7 @@ public interface GSpawnChildSetupFunc {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(GSpawnChildSetupFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$442.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$443.const$3, fi, constants$13.const$1, scope);
     }
     static GSpawnChildSetupFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

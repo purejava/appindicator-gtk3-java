@@ -7,26 +7,26 @@ final class constants$639 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$639() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_cclosure_new_object_swap$callback_func.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_object_replace_qdata",
+        constants$180.const$4
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_cclosure_new_object_swap",
+        "g_object_get_data",
         constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_closure_new_object",
-        constants$24.const$4
+        "g_object_set_data",
+        constants$14.const$3
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_value_set_object",
-        constants$13.const$4
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_object_set_data_full$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_value_get_object",
-        constants$5.const$2
+        "g_object_set_data_full",
+        constants$42.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_value_dup_object",
-        constants$5.const$2
+        "g_object_steal_data",
+        constants$5.const$5
     );
 }
 

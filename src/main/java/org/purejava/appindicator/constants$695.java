@@ -2,36 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$695 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$695() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GDatagramBasedSourceFunc.class, "apply", constants$150.const$0);
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("buffer"),
-        JAVA_LONG.withName("size")
-    ).withName("_GInputVector");
-    static final VarHandle const$2 = constants$695.const$1.varHandle(MemoryLayout.PathElement.groupElement("buffer"));
-    static final VarHandle const$3 = constants$695.const$1.varHandle(MemoryLayout.PathElement.groupElement("size"));
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("address"),
-        RuntimeHelper.POINTER.withName("vectors"),
-        JAVA_INT.withName("num_vectors"),
-        MemoryLayout.paddingLayout(4),
-        JAVA_LONG.withName("bytes_received"),
-        JAVA_INT.withName("flags"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("control_messages"),
-        RuntimeHelper.POINTER.withName("num_control_messages")
-    ).withName("_GInputMessage");
-    static final VarHandle const$5 = constants$695.const$4.varHandle(MemoryLayout.PathElement.groupElement("address"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_dup_variant",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_pointer_type_register_static",
+        constants$4.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_strdup_value_contents",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_value_take_string",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_set_string_take_ownership",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GAsyncReadyCallback.class, "apply", constants$14.const$3);
 }
 
 

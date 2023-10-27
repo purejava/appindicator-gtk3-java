@@ -13,7 +13,7 @@ public interface g_object_dup_qdata$dup_func {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
     static MemorySegment allocate(g_object_dup_qdata$dup_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$635.const$5, fi, constants$5.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$638.const$2, fi, constants$5.const$5, scope);
     }
     static g_object_dup_qdata$dup_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,34 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1666 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1666() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "fputc",
-        constants$9.const$2
+        "setbuf",
+        constants$13.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "putc",
-        constants$9.const$2
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_LONG
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "putchar",
-        constants$8.const$4
+        "setvbuf",
+        constants$1666.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "fputc_unlocked",
-        constants$9.const$2
+        "setbuffer",
+        constants$25.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "putc_unlocked",
-        constants$9.const$2
+        "setlinebuf",
+        constants$13.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "putchar_unlocked",
-        constants$8.const$4
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "fprintf",
+        constants$9.const$0
     );
 }
 

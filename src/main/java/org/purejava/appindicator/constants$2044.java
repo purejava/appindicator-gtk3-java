@@ -9,12 +9,12 @@ final class constants$2044 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2044() {}
-    static final VarHandle const$0 = constants$2043.const$4.varHandle(MemoryLayout.PathElement.groupElement("create_accessible"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.invalidate.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$2043.const$4.varHandle(MemoryLayout.PathElement.groupElement("invalidate"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.get_accessible_type.class, "apply", constants$3.const$5);
-    static final VarHandle const$4 = constants$2043.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_accessible_type"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.pad1.class, "apply", constants$10.const$5);
+    static final VarHandle const$0 = constants$2043.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_image_description"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkImageIface.get_image_size.class, "apply", constants$14.const$3);
+    static final VarHandle const$2 = constants$2043.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_image_size"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkImageIface.set_image_description.class, "apply", constants$9.const$0);
+    static final VarHandle const$4 = constants$2043.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_image_description"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkImageIface.get_image_locale.class, "apply", constants$5.const$2);
 }
 
 

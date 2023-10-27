@@ -2,19 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2440 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2440() {}
-    static final VarHandle const$0 = constants$2439.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkImageClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2439.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkImageClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2439.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkImageClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_model",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_get_model",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_entry_completion_set_match_func$func.class, "apply", constants$34.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_entry_completion_set_match_func$func_notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_match_func",
+        constants$42.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_entry_completion_set_minimum_key_length",
+        constants$40.const$2
+    );
 }
 
 

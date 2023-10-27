@@ -11,7 +11,11 @@ final class constants$1774 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1774() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
+    static final VarHandle const$0 = constants$1773.const$5.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$1 = constants$1773.const$5.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$2 = constants$1773.const$5.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$3 = constants$1773.const$5.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
         JAVA_INT.withName("type"),
         MemoryLayout.paddingLayout(4),
         RuntimeHelper.POINTER.withName("window"),
@@ -22,19 +26,13 @@ final class constants$1774 {
         JAVA_DOUBLE.withName("y"),
         RuntimeHelper.POINTER.withName("axes"),
         JAVA_INT.withName("state"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("sequence"),
-        JAVA_INT.withName("emulating_pointer"),
-        MemoryLayout.paddingLayout(4),
+        JAVA_SHORT.withName("is_hint"),
+        MemoryLayout.paddingLayout(2),
         RuntimeHelper.POINTER.withName("device"),
         JAVA_DOUBLE.withName("x_root"),
         JAVA_DOUBLE.withName("y_root")
-    ).withName("_GdkEventTouch");
-    static final VarHandle const$1 = constants$1774.const$0.varHandle(MemoryLayout.PathElement.groupElement("type"));
-    static final VarHandle const$2 = constants$1774.const$0.varHandle(MemoryLayout.PathElement.groupElement("window"));
-    static final VarHandle const$3 = constants$1774.const$0.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
-    static final VarHandle const$4 = constants$1774.const$0.varHandle(MemoryLayout.PathElement.groupElement("time"));
-    static final VarHandle const$5 = constants$1774.const$0.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    ).withName("_GdkEventMotion");
+    static final VarHandle const$5 = constants$1774.const$4.varHandle(MemoryLayout.PathElement.groupElement("type"));
 }
 
 

@@ -3,18 +3,70 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1074 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1074() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GIOStreamClass._g_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$1071.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GIOStreamClass._g_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$1071.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GIOStreamClass._g_reserved6.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$1071.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_error_from_file_error",
+        constants$8.const$4
+    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GIOStream");
+    static final VarHandle const$2 = constants$1074.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("get_input_stream"),
+        RuntimeHelper.POINTER.withName("get_output_stream"),
+        RuntimeHelper.POINTER.withName("close_fn"),
+        RuntimeHelper.POINTER.withName("close_async"),
+        RuntimeHelper.POINTER.withName("close_finish"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5"),
+        RuntimeHelper.POINTER.withName("_g_reserved6"),
+        RuntimeHelper.POINTER.withName("_g_reserved7"),
+        RuntimeHelper.POINTER.withName("_g_reserved8"),
+        RuntimeHelper.POINTER.withName("_g_reserved9"),
+        RuntimeHelper.POINTER.withName("_g_reserved10")
+    ).withName("_GIOStreamClass");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GIOStreamClass.get_input_stream.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$1074.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_input_stream"));
 }
 
 

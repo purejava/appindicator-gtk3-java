@@ -2,39 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1030 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1030() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_int32",
-        constants$1029.const$4
+        "g_file_make_directory_async",
+        constants$282.const$1
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_make_directory_finish",
+        constants$12.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_uint64",
-        constants$1030.const$1
+        "g_file_make_directory_with_parents",
+        constants$12.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_int64",
-        constants$1030.const$1
+        "g_file_make_symbolic_link",
+        constants$34.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_mount_enclosing_volume$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_make_symbolic_link_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_mount_enclosing_volume",
-        constants$380.const$0
+        "g_file_make_symbolic_link_async",
+        constants$587.const$0
     );
 }
 

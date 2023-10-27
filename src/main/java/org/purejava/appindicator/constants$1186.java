@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1186 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1186() {}
-    static final VarHandle const$0 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("mount_added"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.mount_removed.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("mount_removed"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.mount_pre_unmount.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("mount_pre_unmount"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.mount_changed.class, "apply", constants$13.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_is_tcrypt_hidden_volume",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_is_tcrypt_hidden_volume",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_is_tcrypt_system_volume",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_is_tcrypt_system_volume",
+        constants$40.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_pim",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_pim",
+        constants$40.const$2
+    );
 }
 
 

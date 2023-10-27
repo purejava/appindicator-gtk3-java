@@ -2,50 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1584 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1584() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_reorder_items",
+        "pango_attr_list_from_string",
         constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_itemize",
-        constants$989.const$4
+        "pango_attr_iterator_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_get_iterator",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_itemize_with_base_dir",
-        constants$1584.const$2
+        "pango_attr_iterator_range",
+        constants$14.const$3
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.paddingLayout(4)
-    ).withName("_PangoLogAttr");
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_next",
+        constants$10.const$5
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "pango_break",
-        constants$1584.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_copy",
+        constants$5.const$2
     );
 }
 

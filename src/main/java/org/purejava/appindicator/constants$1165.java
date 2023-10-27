@@ -9,12 +9,12 @@ final class constants$1165 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1165() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountIface.guess_content_type_finish.class, "apply", constants$23.const$0);
-    static final VarHandle const$1 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("guess_content_type_finish"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMountIface.guess_content_type_sync.class, "apply", constants$180.const$0);
-    static final VarHandle const$3 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("guess_content_type_sync"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMountIface.pre_unmount.class, "apply", constants$13.const$1);
-    static final VarHandle const$5 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("pre_unmount"));
+    static final VarHandle const$0 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_volume"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMountIface.get_drive.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_drive"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMountIface.can_unmount.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("can_unmount"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GMountIface.can_eject.class, "apply", constants$10.const$5);
 }
 
 

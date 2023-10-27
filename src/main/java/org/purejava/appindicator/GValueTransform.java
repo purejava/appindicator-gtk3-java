@@ -13,7 +13,7 @@ public interface GValueTransform {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GValueTransform fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$568.const$5, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$571.const$2, fi, constants$13.const$4, scope);
     }
     static GValueTransform ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

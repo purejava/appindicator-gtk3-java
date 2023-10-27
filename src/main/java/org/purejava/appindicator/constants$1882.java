@@ -2,43 +2,27 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$1882 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1882() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_read_pixel_bytes",
-        constants$5.const$2
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new",
-        constants$1882.const$1
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final VarHandle const$0 = constants$1881.const$4.varHandle(MemoryLayout.PathElement.groupElement("green"));
+    static final VarHandle const$1 = constants$1881.const$4.varHandle(MemoryLayout.PathElement.groupElement("blue"));
+    static final VarHandle const$2 = constants$1881.const$4.varHandle(MemoryLayout.PathElement.groupElement("alpha"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_rgba_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_calculate_rowstride",
-        constants$1882.const$3
+        "gdk_rgba_copy",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_copy",
-        constants$5.const$2
+        "gdk_rgba_free",
+        constants$13.const$1
     );
 }
 

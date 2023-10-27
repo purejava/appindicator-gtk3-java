@@ -9,12 +9,12 @@ final class constants$1278 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1278() {}
-    static final VarHandle const$0 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved7.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved7"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved8.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved8"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved9.class, "apply", constants$7.const$5);
+    static final VarHandle const$0 = constants$1277.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1277.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1277.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved5.class, "apply", constants$7.const$5);
 }
 
 

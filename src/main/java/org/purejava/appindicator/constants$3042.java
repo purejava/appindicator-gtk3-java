@@ -2,42 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import java.lang.invoke.VarHandle;
 final class constants$3042 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3042() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_render_background",
-        constants$3041.const$2
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_render_background_get_clip",
-        constants$3042.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_render_frame",
-        constants$3041.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_render_expander",
-        constants$3041.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_render_focus",
-        constants$3041.const$2
-    );
+    static final VarHandle const$0 = constants$3041.const$4.varHandle(MemoryLayout.PathElement.groupElement("gtk_recent1"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkRecentChooserMenuClass.gtk_recent2.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$3041.const$4.varHandle(MemoryLayout.PathElement.groupElement("gtk_recent2"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkRecentChooserMenuClass.gtk_recent3.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$3041.const$4.varHandle(MemoryLayout.PathElement.groupElement("gtk_recent3"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkRecentChooserMenuClass.gtk_recent4.class, "apply", constants$7.const$5);
 }
 
 

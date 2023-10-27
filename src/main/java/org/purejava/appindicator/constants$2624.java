@@ -2,28 +2,56 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2624 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2624() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GtkClipboardReceivedFunc.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkClipboardTextReceivedFunc.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_set_use_underline",
+        constants$40.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GtkClipboardRichTextReceivedFunc.class, "apply", constants$2624.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$2624.const$2
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_get_use_underline",
+        constants$10.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GtkClipboardImageReceivedFunc.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_set_reserve_indicator",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_get_reserve_indicator",
+        constants$10.const$5
+    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        MemoryLayout.structLayout(
+                            MemoryLayout.structLayout(
+                                RuntimeHelper.POINTER.withName("g_class")
+                            ).withName("g_type_instance"),
+                            JAVA_INT.withName("ref_count"),
+                            MemoryLayout.paddingLayout(4),
+                            RuntimeHelper.POINTER.withName("qdata")
+                        ).withName("parent_instance"),
+                        RuntimeHelper.POINTER.withName("priv")
+                    ).withName("widget"),
+                    RuntimeHelper.POINTER.withName("priv")
+                ).withName("container"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("bin"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("menu_item"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkCheckMenuItem");
+    static final VarHandle const$5 = constants$2624.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

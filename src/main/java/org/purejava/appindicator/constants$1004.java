@@ -9,12 +9,12 @@ final class constants$1004 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1004() {}
-    static final VarHandle const$0 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("replace_readwrite_finish"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.start_mountable.class, "apply", constants$380.const$0);
-    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("start_mountable"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.start_mountable_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("start_mountable_finish"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.stop_mountable.class, "apply", constants$380.const$0);
+    static final VarHandle const$0 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("monitor_file"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.open_readwrite.class, "apply", constants$23.const$0);
+    static final VarHandle const$2 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("open_readwrite"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.open_readwrite_async.class, "apply", constants$282.const$1);
+    static final VarHandle const$4 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("open_readwrite_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.open_readwrite_finish.class, "apply", constants$23.const$0);
 }
 
 

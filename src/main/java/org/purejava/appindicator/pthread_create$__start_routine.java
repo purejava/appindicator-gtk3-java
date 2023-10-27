@@ -13,7 +13,7 @@ public interface pthread_create$__start_routine {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(pthread_create$__start_routine fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$516.const$3, fi, constants$5.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$518.const$1, fi, constants$5.const$2, scope);
     }
     static pthread_create$__start_routine ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

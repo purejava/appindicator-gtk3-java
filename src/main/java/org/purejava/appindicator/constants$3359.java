@@ -2,19 +2,34 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3359 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3359() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkStyleClass._gtk_reserved6.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkStyleClass._gtk_reserved7.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved7"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkStyleClass._gtk_reserved8.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved8"));
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_focus.class, "apply", constants$3359.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$3359.const$0
+    );
+    static final VarHandle const$3 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_focus"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_slider.class, "apply", constants$3358.const$2);
+    static final VarHandle const$5 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_slider"));
 }
 
 

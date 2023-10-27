@@ -3,24 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$914 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$914() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDBusObjectManagerIface.interface_added.class, "apply", constants$14.const$3);
-    static final VarHandle const$1 = constants$911.const$5.varHandle(MemoryLayout.PathElement.groupElement("interface_added"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDBusObjectManagerIface.interface_removed.class, "apply", constants$14.const$3);
-    static final VarHandle const$3 = constants$911.const$5.varHandle(MemoryLayout.PathElement.groupElement("interface_removed"));
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_get_type",
+    static final VarHandle const$0 = constants$912.const$2.varHandle(MemoryLayout.PathElement.groupElement("interface_removed"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_type",
         constants$3.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_get_object_path",
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_object_path",
         constants$5.const$2
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_interfaces",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_interface",
+        constants$5.const$5
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent_iface"),
+        RuntimeHelper.POINTER.withName("get_object_path"),
+        RuntimeHelper.POINTER.withName("get_objects"),
+        RuntimeHelper.POINTER.withName("get_object"),
+        RuntimeHelper.POINTER.withName("get_interface"),
+        RuntimeHelper.POINTER.withName("object_added"),
+        RuntimeHelper.POINTER.withName("object_removed"),
+        RuntimeHelper.POINTER.withName("interface_added"),
+        RuntimeHelper.POINTER.withName("interface_removed")
+    ).withName("_GDBusObjectManagerIface");
 }
 
 

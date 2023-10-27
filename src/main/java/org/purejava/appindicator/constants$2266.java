@@ -2,31 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2266 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2266() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("get_action_name"),
-        RuntimeHelper.POINTER.withName("set_action_name"),
-        RuntimeHelper.POINTER.withName("get_action_target_value"),
-        RuntimeHelper.POINTER.withName("set_action_target_value")
-    ).withName("_GtkActionableInterface");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkActionableInterface.get_action_name.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$2266.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_action_name"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkActionableInterface.set_action_name.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$2266.const$0.varHandle(MemoryLayout.PathElement.groupElement("set_action_name"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkActionableInterface.get_action_target_value.class, "apply", constants$5.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_save",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_accel_map_foreach$foreach_func.class, "apply", constants$1518.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_foreach",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_load_fd",
+        constants$80.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_load_scanner",
+        constants$13.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_accel_map_save_fd",
+        constants$80.const$1
+    );
 }
 
 

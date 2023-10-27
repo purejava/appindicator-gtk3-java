@@ -37,7 +37,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkTreeModelIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2288.const$2;
+        return constants$2293.const$2;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -51,7 +51,7 @@ public class _GtkTreeModelIface {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(row_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2288.const$3, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2293.const$3, fi, constants$14.const$3, scope);
         }
         static row_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -66,7 +66,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle row_changed$VH() {
-        return constants$2288.const$4;
+        return constants$2293.const$4;
     }
     /**
      * Getter for field:
@@ -75,7 +75,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment row_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2288.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2293.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -84,13 +84,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void row_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$2288.const$4.set(seg, x);
+        constants$2293.const$4.set(seg, x);
     }
     public static MemorySegment row_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2288.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2293.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void row_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2288.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2293.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static row_changed row_changed(MemorySegment segment, Arena scope) {
         return row_changed.ofAddress(row_changed$get(segment), scope);
@@ -104,7 +104,7 @@ public class _GtkTreeModelIface {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(row_inserted fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2288.const$5, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2293.const$5, fi, constants$14.const$3, scope);
         }
         static row_inserted ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -119,7 +119,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle row_inserted$VH() {
-        return constants$2289.const$0;
+        return constants$2294.const$0;
     }
     /**
      * Getter for field:
@@ -128,7 +128,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment row_inserted$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2289.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2294.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -137,13 +137,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void row_inserted$set(MemorySegment seg, MemorySegment x) {
-        constants$2289.const$0.set(seg, x);
+        constants$2294.const$0.set(seg, x);
     }
     public static MemorySegment row_inserted$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2289.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2294.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void row_inserted$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2289.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2294.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static row_inserted row_inserted(MemorySegment segment, Arena scope) {
         return row_inserted.ofAddress(row_inserted$get(segment), scope);
@@ -157,7 +157,7 @@ public class _GtkTreeModelIface {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(row_has_child_toggled fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2289.const$1, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2294.const$1, fi, constants$14.const$3, scope);
         }
         static row_has_child_toggled ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -172,7 +172,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle row_has_child_toggled$VH() {
-        return constants$2289.const$2;
+        return constants$2294.const$2;
     }
     /**
      * Getter for field:
@@ -181,7 +181,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment row_has_child_toggled$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2289.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2294.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -190,13 +190,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void row_has_child_toggled$set(MemorySegment seg, MemorySegment x) {
-        constants$2289.const$2.set(seg, x);
+        constants$2294.const$2.set(seg, x);
     }
     public static MemorySegment row_has_child_toggled$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2289.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2294.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void row_has_child_toggled$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2289.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2294.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static row_has_child_toggled row_has_child_toggled(MemorySegment segment, Arena scope) {
         return row_has_child_toggled.ofAddress(row_has_child_toggled$get(segment), scope);
@@ -210,7 +210,7 @@ public class _GtkTreeModelIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(row_deleted fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2289.const$3, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2294.const$3, fi, constants$13.const$4, scope);
         }
         static row_deleted ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -225,7 +225,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle row_deleted$VH() {
-        return constants$2289.const$4;
+        return constants$2294.const$4;
     }
     /**
      * Getter for field:
@@ -234,7 +234,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment row_deleted$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2289.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2294.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -243,13 +243,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void row_deleted$set(MemorySegment seg, MemorySegment x) {
-        constants$2289.const$4.set(seg, x);
+        constants$2294.const$4.set(seg, x);
     }
     public static MemorySegment row_deleted$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2289.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2294.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void row_deleted$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2289.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2294.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static row_deleted row_deleted(MemorySegment segment, Arena scope) {
         return row_deleted.ofAddress(row_deleted$get(segment), scope);
@@ -263,7 +263,7 @@ public class _GtkTreeModelIface {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(rows_reordered fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2289.const$5, fi, constants$42.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2294.const$5, fi, constants$42.const$1, scope);
         }
         static rows_reordered ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -278,7 +278,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle rows_reordered$VH() {
-        return constants$2290.const$0;
+        return constants$2295.const$0;
     }
     /**
      * Getter for field:
@@ -287,7 +287,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment rows_reordered$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2290.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2295.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -296,13 +296,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void rows_reordered$set(MemorySegment seg, MemorySegment x) {
-        constants$2290.const$0.set(seg, x);
+        constants$2295.const$0.set(seg, x);
     }
     public static MemorySegment rows_reordered$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2290.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2295.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void rows_reordered$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2290.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2295.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static rows_reordered rows_reordered(MemorySegment segment, Arena scope) {
         return rows_reordered.ofAddress(rows_reordered$get(segment), scope);
@@ -316,7 +316,7 @@ public class _GtkTreeModelIface {
 
         int apply(java.lang.foreign.MemorySegment _x0);
         static MemorySegment allocate(get_flags fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2290.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2295.const$1, fi, constants$10.const$5, scope);
         }
         static get_flags ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -331,7 +331,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle get_flags$VH() {
-        return constants$2290.const$2;
+        return constants$2295.const$2;
     }
     /**
      * Getter for field:
@@ -340,7 +340,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment get_flags$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2290.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2295.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -349,13 +349,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void get_flags$set(MemorySegment seg, MemorySegment x) {
-        constants$2290.const$2.set(seg, x);
+        constants$2295.const$2.set(seg, x);
     }
     public static MemorySegment get_flags$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2290.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2295.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_flags$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2290.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2295.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_flags get_flags(MemorySegment segment, Arena scope) {
         return get_flags.ofAddress(get_flags$get(segment), scope);
@@ -369,7 +369,7 @@ public class _GtkTreeModelIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_n_columns fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2290.const$3, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2295.const$3, fi, constants$10.const$5, scope);
         }
         static get_n_columns ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -384,7 +384,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle get_n_columns$VH() {
-        return constants$2290.const$4;
+        return constants$2295.const$4;
     }
     /**
      * Getter for field:
@@ -393,7 +393,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment get_n_columns$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2290.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2295.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -402,13 +402,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void get_n_columns$set(MemorySegment seg, MemorySegment x) {
-        constants$2290.const$4.set(seg, x);
+        constants$2295.const$4.set(seg, x);
     }
     public static MemorySegment get_n_columns$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2290.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2295.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_n_columns$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2290.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2295.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_n_columns get_n_columns(MemorySegment segment, Arena scope) {
         return get_n_columns.ofAddress(get_n_columns$get(segment), scope);
@@ -422,13 +422,13 @@ public class _GtkTreeModelIface {
 
         long apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(get_column_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2290.const$5, fi, constants$820.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2295.const$5, fi, constants$823.const$1, scope);
         }
         static get_column_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (long)constants$2291.const$0.invokeExact(symbol, __x0, __x1);
+                    return (long)constants$2296.const$0.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -437,7 +437,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle get_column_type$VH() {
-        return constants$2291.const$1;
+        return constants$2296.const$1;
     }
     /**
      * Getter for field:
@@ -446,7 +446,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment get_column_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2291.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2296.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -455,13 +455,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void get_column_type$set(MemorySegment seg, MemorySegment x) {
-        constants$2291.const$1.set(seg, x);
+        constants$2296.const$1.set(seg, x);
     }
     public static MemorySegment get_column_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2291.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2296.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_column_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2291.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2296.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_column_type get_column_type(MemorySegment segment, Arena scope) {
         return get_column_type.ofAddress(get_column_type$get(segment), scope);
@@ -475,7 +475,7 @@ public class _GtkTreeModelIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_iter fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2291.const$2, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2296.const$2, fi, constants$12.const$2, scope);
         }
         static get_iter ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -490,7 +490,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle get_iter$VH() {
-        return constants$2291.const$3;
+        return constants$2296.const$3;
     }
     /**
      * Getter for field:
@@ -499,7 +499,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment get_iter$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2291.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2296.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -508,13 +508,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void get_iter$set(MemorySegment seg, MemorySegment x) {
-        constants$2291.const$3.set(seg, x);
+        constants$2296.const$3.set(seg, x);
     }
     public static MemorySegment get_iter$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2291.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2296.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_iter$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2291.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2296.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_iter get_iter(MemorySegment segment, Arena scope) {
         return get_iter.ofAddress(get_iter$get(segment), scope);
@@ -528,7 +528,7 @@ public class _GtkTreeModelIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(get_path fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2291.const$4, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2296.const$4, fi, constants$5.const$5, scope);
         }
         static get_path ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -543,7 +543,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle get_path$VH() {
-        return constants$2291.const$5;
+        return constants$2296.const$5;
     }
     /**
      * Getter for field:
@@ -552,7 +552,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment get_path$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2291.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2296.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -561,13 +561,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void get_path$set(MemorySegment seg, MemorySegment x) {
-        constants$2291.const$5.set(seg, x);
+        constants$2296.const$5.set(seg, x);
     }
     public static MemorySegment get_path$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2291.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2296.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_path$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2291.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2296.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_path get_path(MemorySegment segment, Arena scope) {
         return get_path.ofAddress(get_path$get(segment), scope);
@@ -581,13 +581,13 @@ public class _GtkTreeModelIface {
 
         void apply(java.lang.foreign.MemorySegment clipboard, java.lang.foreign.MemorySegment atoms, int n_atoms, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(get_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2292.const$0, fi, constants$464.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2297.const$0, fi, constants$466.const$3, scope);
         }
         static get_value ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _clipboard, java.lang.foreign.MemorySegment _atoms, int _n_atoms, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    constants$737.const$4.invokeExact(symbol, _clipboard, _atoms, _n_atoms, _data);
+                    constants$740.const$3.invokeExact(symbol, _clipboard, _atoms, _n_atoms, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -596,7 +596,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle get_value$VH() {
-        return constants$2292.const$1;
+        return constants$2297.const$1;
     }
     /**
      * Getter for field:
@@ -605,7 +605,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment get_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2292.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2297.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -614,13 +614,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void get_value$set(MemorySegment seg, MemorySegment x) {
-        constants$2292.const$1.set(seg, x);
+        constants$2297.const$1.set(seg, x);
     }
     public static MemorySegment get_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2292.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2297.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2292.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2297.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_value get_value(MemorySegment segment, Arena scope) {
         return get_value.ofAddress(get_value$get(segment), scope);
@@ -634,7 +634,7 @@ public class _GtkTreeModelIface {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(iter_next fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2292.const$2, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$2297.const$2, fi, constants$9.const$0, scope);
         }
         static iter_next ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -649,7 +649,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle iter_next$VH() {
-        return constants$2292.const$3;
+        return constants$2297.const$3;
     }
     /**
      * Getter for field:
@@ -658,7 +658,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment iter_next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2292.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2297.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -667,13 +667,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void iter_next$set(MemorySegment seg, MemorySegment x) {
-        constants$2292.const$3.set(seg, x);
+        constants$2297.const$3.set(seg, x);
     }
     public static MemorySegment iter_next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2292.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2297.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void iter_next$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2292.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2297.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static iter_next iter_next(MemorySegment segment, Arena scope) {
         return iter_next.ofAddress(iter_next$get(segment), scope);
@@ -687,7 +687,7 @@ public class _GtkTreeModelIface {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(iter_previous fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2292.const$4, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$2297.const$4, fi, constants$9.const$0, scope);
         }
         static iter_previous ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -702,7 +702,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle iter_previous$VH() {
-        return constants$2292.const$5;
+        return constants$2297.const$5;
     }
     /**
      * Getter for field:
@@ -711,7 +711,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment iter_previous$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2292.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2297.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -720,13 +720,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void iter_previous$set(MemorySegment seg, MemorySegment x) {
-        constants$2292.const$5.set(seg, x);
+        constants$2297.const$5.set(seg, x);
     }
     public static MemorySegment iter_previous$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2292.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2297.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void iter_previous$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2292.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2297.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static iter_previous iter_previous(MemorySegment segment, Arena scope) {
         return iter_previous.ofAddress(iter_previous$get(segment), scope);
@@ -740,7 +740,7 @@ public class _GtkTreeModelIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(iter_children fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2293.const$0, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2298.const$0, fi, constants$12.const$2, scope);
         }
         static iter_children ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -755,7 +755,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle iter_children$VH() {
-        return constants$2293.const$1;
+        return constants$2298.const$1;
     }
     /**
      * Getter for field:
@@ -764,7 +764,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment iter_children$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2293.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2298.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -773,13 +773,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void iter_children$set(MemorySegment seg, MemorySegment x) {
-        constants$2293.const$1.set(seg, x);
+        constants$2298.const$1.set(seg, x);
     }
     public static MemorySegment iter_children$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2293.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2298.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void iter_children$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2293.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2298.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static iter_children iter_children(MemorySegment segment, Arena scope) {
         return iter_children.ofAddress(iter_children$get(segment), scope);
@@ -793,7 +793,7 @@ public class _GtkTreeModelIface {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(iter_has_child fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2293.const$2, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$2298.const$2, fi, constants$9.const$0, scope);
         }
         static iter_has_child ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -808,7 +808,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle iter_has_child$VH() {
-        return constants$2293.const$3;
+        return constants$2298.const$3;
     }
     /**
      * Getter for field:
@@ -817,7 +817,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment iter_has_child$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2293.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2298.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -826,13 +826,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void iter_has_child$set(MemorySegment seg, MemorySegment x) {
-        constants$2293.const$3.set(seg, x);
+        constants$2298.const$3.set(seg, x);
     }
     public static MemorySegment iter_has_child$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2293.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2298.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void iter_has_child$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2293.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2298.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static iter_has_child iter_has_child(MemorySegment segment, Arena scope) {
         return iter_has_child.ofAddress(iter_has_child$get(segment), scope);
@@ -846,7 +846,7 @@ public class _GtkTreeModelIface {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(iter_n_children fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2293.const$4, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$2298.const$4, fi, constants$9.const$0, scope);
         }
         static iter_n_children ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -861,7 +861,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle iter_n_children$VH() {
-        return constants$2293.const$5;
+        return constants$2298.const$5;
     }
     /**
      * Getter for field:
@@ -870,7 +870,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment iter_n_children$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2293.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2298.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -879,13 +879,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void iter_n_children$set(MemorySegment seg, MemorySegment x) {
-        constants$2293.const$5.set(seg, x);
+        constants$2298.const$5.set(seg, x);
     }
     public static MemorySegment iter_n_children$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2293.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2298.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void iter_n_children$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2293.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2298.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static iter_n_children iter_n_children(MemorySegment segment, Arena scope) {
         return iter_n_children.ofAddress(iter_n_children$get(segment), scope);
@@ -899,13 +899,13 @@ public class _GtkTreeModelIface {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3);
         static MemorySegment allocate(iter_nth_child fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2294.const$0, fi, constants$311.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$2299.const$0, fi, constants$312.const$0, scope);
         }
         static iter_nth_child ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
                 try {
-                    return (int)constants$1606.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (int)constants$1611.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -914,7 +914,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle iter_nth_child$VH() {
-        return constants$2294.const$1;
+        return constants$2299.const$1;
     }
     /**
      * Getter for field:
@@ -923,7 +923,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment iter_nth_child$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2294.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2299.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -932,13 +932,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void iter_nth_child$set(MemorySegment seg, MemorySegment x) {
-        constants$2294.const$1.set(seg, x);
+        constants$2299.const$1.set(seg, x);
     }
     public static MemorySegment iter_nth_child$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2294.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2299.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void iter_nth_child$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2294.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2299.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static iter_nth_child iter_nth_child(MemorySegment segment, Arena scope) {
         return iter_nth_child.ofAddress(iter_nth_child$get(segment), scope);
@@ -952,7 +952,7 @@ public class _GtkTreeModelIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(iter_parent fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2294.const$2, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2299.const$2, fi, constants$12.const$2, scope);
         }
         static iter_parent ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -967,7 +967,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle iter_parent$VH() {
-        return constants$2294.const$3;
+        return constants$2299.const$3;
     }
     /**
      * Getter for field:
@@ -976,7 +976,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment iter_parent$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2294.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2299.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -985,13 +985,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void iter_parent$set(MemorySegment seg, MemorySegment x) {
-        constants$2294.const$3.set(seg, x);
+        constants$2299.const$3.set(seg, x);
     }
     public static MemorySegment iter_parent$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2294.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2299.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void iter_parent$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2294.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2299.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static iter_parent iter_parent(MemorySegment segment, Arena scope) {
         return iter_parent.ofAddress(iter_parent$get(segment), scope);
@@ -1005,7 +1005,7 @@ public class _GtkTreeModelIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(ref_node fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2294.const$4, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2299.const$4, fi, constants$13.const$4, scope);
         }
         static ref_node ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1020,7 +1020,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle ref_node$VH() {
-        return constants$2294.const$5;
+        return constants$2299.const$5;
     }
     /**
      * Getter for field:
@@ -1029,7 +1029,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment ref_node$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2294.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2299.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -1038,13 +1038,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void ref_node$set(MemorySegment seg, MemorySegment x) {
-        constants$2294.const$5.set(seg, x);
+        constants$2299.const$5.set(seg, x);
     }
     public static MemorySegment ref_node$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2294.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2299.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void ref_node$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2294.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2299.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static ref_node ref_node(MemorySegment segment, Arena scope) {
         return ref_node.ofAddress(ref_node$get(segment), scope);
@@ -1058,7 +1058,7 @@ public class _GtkTreeModelIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(unref_node fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2295.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2300.const$0, fi, constants$13.const$4, scope);
         }
         static unref_node ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1073,7 +1073,7 @@ public class _GtkTreeModelIface {
     }
 
     public static VarHandle unref_node$VH() {
-        return constants$2295.const$1;
+        return constants$2300.const$1;
     }
     /**
      * Getter for field:
@@ -1082,7 +1082,7 @@ public class _GtkTreeModelIface {
      * }
      */
     public static MemorySegment unref_node$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2295.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2300.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -1091,13 +1091,13 @@ public class _GtkTreeModelIface {
      * }
      */
     public static void unref_node$set(MemorySegment seg, MemorySegment x) {
-        constants$2295.const$1.set(seg, x);
+        constants$2300.const$1.set(seg, x);
     }
     public static MemorySegment unref_node$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2295.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2300.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void unref_node$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2295.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2300.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static unref_node unref_node(MemorySegment segment, Arena scope) {
         return unref_node.ofAddress(unref_node$get(segment), scope);

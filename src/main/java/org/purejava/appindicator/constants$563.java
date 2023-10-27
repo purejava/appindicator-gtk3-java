@@ -2,34 +2,43 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$563 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$563() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_type_instance_get_private",
-        constants$21.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_type_class_adjust_private_offset",
-        constants$13.const$4
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_type_register_static_simple$instance_init.class, "apply", constants$13.const$4);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_add_class_private",
-        constants$562.const$0
+        "g_type_register_static_simple",
+        constants$563.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_type_class_get_private",
-        constants$21.const$1
+        "g_type_register_dynamic",
+        constants$562.const$3
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_class_get_instance_private_offset",
-        constants$10.const$5
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_type_ensure",
-        constants$84.const$5
+        "g_type_register_fundamental",
+        constants$563.const$4
     );
 }
 

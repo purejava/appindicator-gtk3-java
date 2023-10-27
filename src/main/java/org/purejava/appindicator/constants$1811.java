@@ -8,28 +8,28 @@ final class constants$1811 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1811() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_device_tool",
-        constants$5.const$2
+        "gdk_event_get_coords",
+        constants$12.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_event_set_device_tool",
-        constants$13.const$4
+        "gdk_event_get_root_coords",
+        constants$12.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_scancode",
-        constants$10.const$5
+        "gdk_event_get_button",
+        constants$9.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_pointer_emulated",
-        constants$10.const$5
+        "gdk_event_get_click_count",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_device_manager_get_type",
-        constants$3.const$5
+        "gdk_event_get_keyval",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_device_manager_get_display",
-        constants$5.const$2
+        "gdk_event_get_keycode",
+        constants$9.const$0
     );
 }
 

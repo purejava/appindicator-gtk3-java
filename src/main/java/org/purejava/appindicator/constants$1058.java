@@ -8,28 +8,28 @@ final class constants$1058 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1058() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_info_get_display_name",
-        constants$5.const$2
+        "g_file_info_get_attribute_stringv",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_info_get_edit_name",
-        constants$5.const$2
+        "g_file_info_get_attribute_file_path",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_info_get_icon",
-        constants$5.const$2
+        "g_file_info_set_attribute",
+        constants$466.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_info_get_symbolic_icon",
-        constants$5.const$2
+        "g_file_info_set_attribute_string",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_info_get_content_type",
-        constants$5.const$2
+        "g_file_info_set_attribute_byte_string",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_info_get_size",
-        constants$4.const$0
+        "g_file_info_set_attribute_boolean",
+        constants$164.const$5
     );
 }
 

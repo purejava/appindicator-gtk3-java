@@ -2,34 +2,35 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2170 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2170() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_application_get_window_by_id",
-        constants$21.const$3
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_widget_class_bind_template_callback_full$callback_symbol.class, "apply", constants$7.const$5);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_application_get_active_window",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_application_list_action_descriptions",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_application_get_accels_for_action",
-        constants$5.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_application_get_actions_for_accel",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_application_set_accels_for_action",
+        "gtk_widget_class_bind_template_callback_full",
         constants$14.const$3
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_widget_class_set_connect_func$connect_func.class, "apply", constants$1965.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_widget_class_set_connect_func$connect_data_destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_set_connect_func",
+        constants$42.const$1
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_LONG
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_bind_template_child_full",
+        constants$2170.const$5
     );
 }
 

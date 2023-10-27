@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1513 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1513() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_buffer_reverse_clusters",
-        constants$13.const$1
+        "hb_buffer_set_user_data",
+        constants$1427.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_buffer_add",
-        constants$467.const$3
+        "hb_buffer_get_user_data",
+        constants$5.const$5
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_content_type",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_utf8",
-        constants$1513.const$2
+        "hb_buffer_get_content_type",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_utf16",
-        constants$1513.const$2
+        "hb_buffer_set_unicode_funcs",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_utf32",
-        constants$1513.const$2
+        "hb_buffer_get_unicode_funcs",
+        constants$5.const$2
     );
 }
 

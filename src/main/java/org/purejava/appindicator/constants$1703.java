@@ -2,34 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1703 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1703() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_get_font_matrix",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_set_font_options",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_get_font_options",
-        constants$13.const$4
-    );
+    static final VarHandle const$0 = constants$1702.const$3.varHandle(MemoryLayout.PathElement.groupElement("height"));
+    static final VarHandle const$1 = constants$1702.const$3.varHandle(MemoryLayout.PathElement.groupElement("max_x_advance"));
+    static final VarHandle const$2 = constants$1702.const$3.varHandle(MemoryLayout.PathElement.groupElement("max_y_advance"));
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_set_font_face",
-        constants$13.const$4
+        "cairo_font_options_create",
+        constants$35.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_get_font_face",
+        "cairo_font_options_copy",
         constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_set_scaled_font",
-        constants$13.const$4
+        "cairo_font_options_destroy",
+        constants$13.const$1
     );
 }
 

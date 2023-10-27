@@ -2,29 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1458 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1458() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$1457.const$4
+        "hb_draw_close_path",
+        constants$14.const$3
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        JAVA_FLOAT.withName("offset"),
-        JAVA_INT.withName("is_foreground"),
-        JAVA_INT.withName("color")
-    ).withName("hb_color_stop_t");
-    static final VarHandle const$2 = constants$1458.const$1.varHandle(MemoryLayout.PathElement.groupElement("offset"));
-    static final VarHandle const$3 = constants$1458.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_foreground"));
-    static final VarHandle const$4 = constants$1458.const$1.varHandle(MemoryLayout.PathElement.groupElement("color"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_color_line_get_color_stops_func_t.class, "apply", constants$1243.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_create",
+        constants$35.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_get_empty",
+        constants$35.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_reference",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_destroy",
+        constants$13.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_user_data$destroy.class, "apply", constants$13.const$1);
 }
 
 

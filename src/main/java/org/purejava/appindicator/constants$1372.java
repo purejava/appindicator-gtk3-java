@@ -2,29 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1372 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1372() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_tls_database_lookup_certificate_issuer_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_issuer_async",
-        constants$1367.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_issuer_finish",
-        constants$23.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificates_issued_by",
-        constants$1366.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_tls_database_lookup_certificates_issued_by_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificates_issued_by_async",
-        constants$1367.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.lookup_certificate_for_handle_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$1 = constants$1368.const$3.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificate_for_handle_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.lookup_certificate_issuer.class, "apply", constants$1370.const$4);
+    static final VarHandle const$3 = constants$1368.const$3.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificate_issuer"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.lookup_certificate_issuer_async.class, "apply", constants$1371.const$2);
+    static final VarHandle const$5 = constants$1368.const$3.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificate_issuer_async"));
 }
 
 

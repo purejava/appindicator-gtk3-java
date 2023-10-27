@@ -13,7 +13,7 @@ public interface g_queue_insert_sorted$func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_queue_insert_sorted$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$401.const$5, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$402.const$5, fi, constants$12.const$2, scope);
     }
     static g_queue_insert_sorted$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -8,28 +8,28 @@ final class constants$3166 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3166() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_type",
-        constants$3.const$5
+        "gtk_text_view_set_bottom_margin",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_new",
-        constants$35.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_insert",
-        constants$164.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_item_index",
-        constants$9.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_n_items",
+        "gtk_text_view_get_bottom_margin",
         constants$10.const$5
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_indent",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_text_view_get_indent",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_text_view_set_tabs",
+        constants$13.const$4
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_nth_item",
-        constants$21.const$3
+        "gtk_text_view_get_tabs",
+        constants$5.const$2
     );
 }
 

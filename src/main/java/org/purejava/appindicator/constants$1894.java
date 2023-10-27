@@ -2,34 +2,48 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1894 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1894() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_new_from_stream_finish",
-        constants$5.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gdk_pixbuf_save_to_streamv_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_new_from_resource",
-        constants$5.const$5
+        "gdk_pixbuf_save_to_streamv_async",
+        constants$865.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_ref",
-        constants$5.const$2
+        "gdk_pixbuf_save_to_streamv",
+        constants$164.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_unref",
-        constants$13.const$1
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_BYTE,
+        JAVA_BYTE,
+        JAVA_BYTE
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_get_width",
-        constants$10.const$5
+        "gdk_pixbuf_add_alpha",
+        constants$1894.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_get_height",
-        constants$10.const$5
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_copy_area",
+        constants$1894.const$5
     );
 }
 

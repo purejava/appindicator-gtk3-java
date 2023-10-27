@@ -9,12 +9,14 @@ final class constants$991 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$991() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.replace_finish.class, "apply", constants$23.const$0);
-    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("replace_finish"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.delete_file.class, "apply", constants$12.const$2);
-    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("delete_file"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.delete_file_async.class, "apply", constants$281.const$5);
-    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("delete_file_async"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$990.const$4
+    );
+    static final VarHandle const$1 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("append_to_async"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.append_to_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$3 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("append_to_finish"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.create.class, "apply", constants$180.const$0);
+    static final VarHandle const$5 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("create"));
 }
 
 

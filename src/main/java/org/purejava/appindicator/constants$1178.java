@@ -9,12 +9,14 @@ final class constants$1178 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1178() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved6.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountOperationClass.ask_password.class, "apply", constants$649.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$649.const$2
+    );
+    static final VarHandle const$2 = constants$1177.const$5.varHandle(MemoryLayout.PathElement.groupElement("ask_password"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMountOperationClass.ask_question.class, "apply", constants$14.const$3);
+    static final VarHandle const$4 = constants$1177.const$5.varHandle(MemoryLayout.PathElement.groupElement("ask_question"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GMountOperationClass.reply.class, "apply", constants$40.const$2);
 }
 
 

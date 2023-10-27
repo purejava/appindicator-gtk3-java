@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class _GDBusObjectManagerClientClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$915.const$5;
+        return constants$918.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -34,13 +34,13 @@ public class _GDBusObjectManagerClientClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
         static MemorySegment allocate(interface_proxy_signal fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$916.const$0, fi, constants$338.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$919.const$0, fi, constants$339.const$3, scope);
         }
         static interface_proxy_signal ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    constants$338.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$339.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -49,7 +49,7 @@ public class _GDBusObjectManagerClientClass {
     }
 
     public static VarHandle interface_proxy_signal$VH() {
-        return constants$916.const$1;
+        return constants$919.const$1;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _GDBusObjectManagerClientClass {
      * }
      */
     public static MemorySegment interface_proxy_signal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$916.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$919.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -67,13 +67,13 @@ public class _GDBusObjectManagerClientClass {
      * }
      */
     public static void interface_proxy_signal$set(MemorySegment seg, MemorySegment x) {
-        constants$916.const$1.set(seg, x);
+        constants$919.const$1.set(seg, x);
     }
     public static MemorySegment interface_proxy_signal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$916.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$919.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void interface_proxy_signal$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$916.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$919.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static interface_proxy_signal interface_proxy_signal(MemorySegment segment, Arena scope) {
         return interface_proxy_signal.ofAddress(interface_proxy_signal$get(segment), scope);
@@ -87,13 +87,13 @@ public class _GDBusObjectManagerClientClass {
 
         void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(interface_proxy_properties_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$916.const$2, fi, constants$331.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$919.const$2, fi, constants$332.const$1, scope);
         }
         static interface_proxy_properties_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
+                    constants$919.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -102,7 +102,7 @@ public class _GDBusObjectManagerClientClass {
     }
 
     public static VarHandle interface_proxy_properties_changed$VH() {
-        return constants$916.const$4;
+        return constants$919.const$4;
     }
     /**
      * Getter for field:
@@ -111,7 +111,7 @@ public class _GDBusObjectManagerClientClass {
      * }
      */
     public static MemorySegment interface_proxy_properties_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$916.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$919.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -120,13 +120,13 @@ public class _GDBusObjectManagerClientClass {
      * }
      */
     public static void interface_proxy_properties_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$916.const$4.set(seg, x);
+        constants$919.const$4.set(seg, x);
     }
     public static MemorySegment interface_proxy_properties_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$916.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$919.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void interface_proxy_properties_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$916.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$919.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static interface_proxy_properties_changed interface_proxy_properties_changed(MemorySegment segment, Arena scope) {
         return interface_proxy_properties_changed.ofAddress(interface_proxy_properties_changed$get(segment), scope);

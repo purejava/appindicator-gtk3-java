@@ -2,46 +2,26 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1029 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1029() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_set_attributes_finish",
-        constants$34.const$5
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_move_async$progress_callback.class, "apply", constants$564.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_move_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_string",
-        constants$1029.const$1
+        "g_file_move_async",
+        constants$998.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_byte_string",
-        constants$1029.const$1
+        "g_file_move_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_make_directory",
+        constants$12.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_uint32",
-        constants$1029.const$4
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_make_directory_async$callback.class, "apply", constants$14.const$3);
 }
 
 

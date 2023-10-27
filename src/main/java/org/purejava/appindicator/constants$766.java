@@ -2,40 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$766 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$766() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_all",
-        constants$766.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_bytes",
-        constants$169.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_input_stream_skip",
-        constants$4.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_input_stream_close",
-        constants$12.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_input_stream_read_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GInputStreamClass.skip_finish.class, "apply", constants$166.const$0);
+    static final VarHandle const$1 = constants$762.const$3.varHandle(MemoryLayout.PathElement.groupElement("skip_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GInputStreamClass.close_async.class, "apply", constants$282.const$1);
+    static final VarHandle const$3 = constants$762.const$3.varHandle(MemoryLayout.PathElement.groupElement("close_async"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GInputStreamClass.close_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$762.const$3.varHandle(MemoryLayout.PathElement.groupElement("close_finish"));
 }
 
 

@@ -13,7 +13,7 @@ public interface GBusNameAppearedCallback {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GBusNameAppearedCallback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$907.const$0, fi, constants$42.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$910.const$0, fi, constants$42.const$1, scope);
     }
     static GBusNameAppearedCallback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

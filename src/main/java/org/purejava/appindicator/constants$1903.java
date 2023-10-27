@@ -8,28 +8,28 @@ final class constants$1903 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1903() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_new_with_type",
-        constants$5.const$5
+        "gdk_pixbuf_format_get_name",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_new_with_mime_type",
-        constants$5.const$5
+        "gdk_pixbuf_format_get_description",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_set_size",
-        constants$467.const$3
+        "gdk_pixbuf_format_get_mime_types",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_write",
-        constants$27.const$2
+        "gdk_pixbuf_format_get_extensions",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_write_bytes",
-        constants$12.const$2
+        "gdk_pixbuf_format_is_save_option_supported",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_get_pixbuf",
-        constants$5.const$2
+        "gdk_pixbuf_format_is_writable",
+        constants$10.const$5
     );
 }
 

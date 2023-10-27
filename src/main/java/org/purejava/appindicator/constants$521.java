@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$521 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$521() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pthread_attr_setstack",
-        constants$18.const$2
+        "pthread_attr_setschedpolicy",
+        constants$11.const$4
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getinheritsched",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pthread_setschedparam",
-        constants$521.const$1
+        "pthread_attr_setinheritsched",
+        constants$11.const$4
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getscope",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pthread_getschedparam",
-        constants$521.const$3
+        "pthread_attr_setscope",
+        constants$11.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pthread_setschedprio",
-        constants$64.const$5
+        "pthread_attr_getstackaddr",
+        constants$9.const$0
     );
 }
 

@@ -2,35 +2,35 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1729 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1729() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_surface_reference",
-        constants$5.const$2
+        "cairo_surface_unmap_image",
+        constants$13.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_surface_finish",
-        constants$13.const$1
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_surface_destroy",
-        constants$13.const$1
+        "cairo_surface_create_for_rectangle",
+        constants$1729.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_device",
-        constants$5.const$2
+        "cairo_surface_create_observer",
+        constants$21.const$3
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_reference_count",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_surface_status",
-        constants$10.const$5
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(cairo_surface_observer_callback_t.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_paint_callback$func.class, "apply", constants$14.const$3);
 }
 
 

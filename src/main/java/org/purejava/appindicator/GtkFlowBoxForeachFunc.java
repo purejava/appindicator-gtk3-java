@@ -13,7 +13,7 @@ public interface GtkFlowBoxForeachFunc {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GtkFlowBoxForeachFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2713.const$4, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$2718.const$4, fi, constants$14.const$3, scope);
     }
     static GtkFlowBoxForeachFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

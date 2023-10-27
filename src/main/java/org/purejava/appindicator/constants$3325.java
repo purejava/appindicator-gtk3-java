@@ -9,20 +9,26 @@ final class constants$3325 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3325() {}
-    static final VarHandle const$0 = constants$3322.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkRcStyleClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$3322.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final VarHandle const$0 = constants$3323.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_radio_action_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_radio_action_new",
+        constants$647.const$1
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "_gtk_rc_parse_widget_class_path",
+        "gtk_radio_action_get_group",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "_gtk_rc_free_widget_class_path",
-        constants$13.const$1
+        "gtk_radio_action_set_group",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "_gtk_rc_match_widget_class",
-        constants$11.const$0
+        "gtk_radio_action_join_group",
+        constants$13.const$4
     );
 }
 

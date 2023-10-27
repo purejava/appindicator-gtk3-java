@@ -8,27 +8,27 @@ final class constants$287 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$287() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_unichar_xdigit_value",
+        "g_unichar_tolower",
         constants$8.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_unichar_type",
+        "g_unichar_totitle",
         constants$8.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_unichar_break_type",
+        "g_unichar_digit_value",
         constants$8.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_unichar_combining_class",
+        "g_unichar_xdigit_value",
         constants$8.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_unichar_get_mirror_char",
-        constants$9.const$2
+        "g_unichar_type",
+        constants$8.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_unichar_get_script",
+        "g_unichar_break_type",
         constants$8.const$4
     );
 }

@@ -13,7 +13,7 @@ public interface g_set_print_handler$return {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_set_print_handler$return fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$380.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$381.const$5, fi, constants$13.const$1, scope);
     }
     static g_set_print_handler$return ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -9,14 +9,14 @@ final class constants$318 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$318() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$21.const$3
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GIOFuncs.io_seek.class, "apply", constants$317.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$317.const$5
     );
-    static final VarHandle const$1 = constants$315.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_create_watch"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GIOFuncs.io_free.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$315.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_free"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GIOFuncs.io_set_flags.class, "apply", constants$150.const$0);
-    static final VarHandle const$5 = constants$315.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_set_flags"));
+    static final VarHandle const$2 = constants$316.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_seek"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GIOFuncs.io_close.class, "apply", constants$9.const$0);
+    static final VarHandle const$4 = constants$316.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_close"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GIOFuncs.io_create_watch.class, "apply", constants$21.const$3);
 }
 
 

@@ -2,45 +2,28 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1855 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1855() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GdkSeatGrabPrepareFunc.class, "apply", constants$14.const$3);
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance")
-    ).withName("_GdkSeat");
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_seat_get_type",
-        constants$3.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_invalidate_rect",
+        constants$164.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_seat_grab$prepare_func.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_invalidate_region",
+        constants$164.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GdkWindowChildFunc.class, "apply", constants$9.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_window_invalidate_maybe_recurse$child_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_invalidate_maybe_recurse",
+        constants$42.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_seat_grab",
-        constants$1855.const$4
+        "gdk_window_get_update_area",
+        constants$5.const$2
     );
 }
 

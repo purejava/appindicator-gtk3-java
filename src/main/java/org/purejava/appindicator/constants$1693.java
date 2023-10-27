@@ -2,30 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1693 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1693() {}
-    static final VarHandle const$0 = constants$1692.const$2.varHandle(MemoryLayout.PathElement.groupElement("height"));
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        JAVA_INT.withName("status"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("rectangles"),
-        JAVA_INT.withName("num_rectangles"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_cairo_rectangle_list");
-    static final VarHandle const$2 = constants$1693.const$1.varHandle(MemoryLayout.PathElement.groupElement("status"));
-    static final VarHandle const$3 = constants$1693.const$1.varHandle(MemoryLayout.PathElement.groupElement("rectangles"));
-    static final VarHandle const$4 = constants$1693.const$1.varHandle(MemoryLayout.PathElement.groupElement("num_rectangles"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_arc_negative",
+        constants$1692.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_rel_move_to",
+        constants$1536.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_rel_line_to",
+        constants$1536.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_rel_curve_to",
+        constants$1692.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_rectangle",
+        constants$1688.const$0
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_copy_clip_rectangle_list",
-        constants$5.const$2
+        "cairo_close_path",
+        constants$13.const$1
     );
 }
 

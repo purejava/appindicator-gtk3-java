@@ -25,7 +25,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkLockButtonClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2855.const$5;
+        return constants$2860.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1088);
@@ -39,7 +39,7 @@ public class _GtkLockButtonClass {
 
         void apply();
         static MemorySegment allocate(reserved0 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2856.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2861.const$0, fi, constants$7.const$5, scope);
         }
         static reserved0 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -54,7 +54,7 @@ public class _GtkLockButtonClass {
     }
 
     public static VarHandle reserved0$VH() {
-        return constants$2856.const$1;
+        return constants$2861.const$1;
     }
     /**
      * Getter for field:
@@ -63,7 +63,7 @@ public class _GtkLockButtonClass {
      * }
      */
     public static MemorySegment reserved0$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2856.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2861.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -72,13 +72,13 @@ public class _GtkLockButtonClass {
      * }
      */
     public static void reserved0$set(MemorySegment seg, MemorySegment x) {
-        constants$2856.const$1.set(seg, x);
+        constants$2861.const$1.set(seg, x);
     }
     public static MemorySegment reserved0$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2856.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2861.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved0$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2856.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2861.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved0 reserved0(MemorySegment segment, Arena scope) {
         return reserved0.ofAddress(reserved0$get(segment), scope);
@@ -92,7 +92,7 @@ public class _GtkLockButtonClass {
 
         void apply();
         static MemorySegment allocate(reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2856.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2861.const$2, fi, constants$7.const$5, scope);
         }
         static reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -107,7 +107,7 @@ public class _GtkLockButtonClass {
     }
 
     public static VarHandle reserved1$VH() {
-        return constants$2856.const$3;
+        return constants$2861.const$3;
     }
     /**
      * Getter for field:
@@ -116,7 +116,7 @@ public class _GtkLockButtonClass {
      * }
      */
     public static MemorySegment reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2856.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2861.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -125,13 +125,13 @@ public class _GtkLockButtonClass {
      * }
      */
     public static void reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$2856.const$3.set(seg, x);
+        constants$2861.const$3.set(seg, x);
     }
     public static MemorySegment reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2856.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2861.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2856.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2861.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved1 reserved1(MemorySegment segment, Arena scope) {
         return reserved1.ofAddress(reserved1$get(segment), scope);
@@ -145,7 +145,7 @@ public class _GtkLockButtonClass {
 
         void apply();
         static MemorySegment allocate(reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2856.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2861.const$4, fi, constants$7.const$5, scope);
         }
         static reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -160,7 +160,7 @@ public class _GtkLockButtonClass {
     }
 
     public static VarHandle reserved2$VH() {
-        return constants$2856.const$5;
+        return constants$2861.const$5;
     }
     /**
      * Getter for field:
@@ -169,7 +169,7 @@ public class _GtkLockButtonClass {
      * }
      */
     public static MemorySegment reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2856.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2861.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -178,13 +178,13 @@ public class _GtkLockButtonClass {
      * }
      */
     public static void reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$2856.const$5.set(seg, x);
+        constants$2861.const$5.set(seg, x);
     }
     public static MemorySegment reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2856.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2861.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2856.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2861.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved2 reserved2(MemorySegment segment, Arena scope) {
         return reserved2.ofAddress(reserved2$get(segment), scope);
@@ -198,7 +198,7 @@ public class _GtkLockButtonClass {
 
         void apply();
         static MemorySegment allocate(reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2857.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2862.const$0, fi, constants$7.const$5, scope);
         }
         static reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -213,7 +213,7 @@ public class _GtkLockButtonClass {
     }
 
     public static VarHandle reserved3$VH() {
-        return constants$2857.const$1;
+        return constants$2862.const$1;
     }
     /**
      * Getter for field:
@@ -222,7 +222,7 @@ public class _GtkLockButtonClass {
      * }
      */
     public static MemorySegment reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2857.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2862.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -231,13 +231,13 @@ public class _GtkLockButtonClass {
      * }
      */
     public static void reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$2857.const$1.set(seg, x);
+        constants$2862.const$1.set(seg, x);
     }
     public static MemorySegment reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2857.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2862.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2857.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2862.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved3 reserved3(MemorySegment segment, Arena scope) {
         return reserved3.ofAddress(reserved3$get(segment), scope);
@@ -251,7 +251,7 @@ public class _GtkLockButtonClass {
 
         void apply();
         static MemorySegment allocate(reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2857.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2862.const$2, fi, constants$7.const$5, scope);
         }
         static reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -266,7 +266,7 @@ public class _GtkLockButtonClass {
     }
 
     public static VarHandle reserved4$VH() {
-        return constants$2857.const$3;
+        return constants$2862.const$3;
     }
     /**
      * Getter for field:
@@ -275,7 +275,7 @@ public class _GtkLockButtonClass {
      * }
      */
     public static MemorySegment reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2857.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2862.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -284,13 +284,13 @@ public class _GtkLockButtonClass {
      * }
      */
     public static void reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$2857.const$3.set(seg, x);
+        constants$2862.const$3.set(seg, x);
     }
     public static MemorySegment reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2857.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2862.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2857.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2862.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved4 reserved4(MemorySegment segment, Arena scope) {
         return reserved4.ofAddress(reserved4$get(segment), scope);
@@ -304,7 +304,7 @@ public class _GtkLockButtonClass {
 
         void apply();
         static MemorySegment allocate(reserved5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2857.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2862.const$4, fi, constants$7.const$5, scope);
         }
         static reserved5 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -319,7 +319,7 @@ public class _GtkLockButtonClass {
     }
 
     public static VarHandle reserved5$VH() {
-        return constants$2857.const$5;
+        return constants$2862.const$5;
     }
     /**
      * Getter for field:
@@ -328,7 +328,7 @@ public class _GtkLockButtonClass {
      * }
      */
     public static MemorySegment reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2857.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2862.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -337,13 +337,13 @@ public class _GtkLockButtonClass {
      * }
      */
     public static void reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$2857.const$5.set(seg, x);
+        constants$2862.const$5.set(seg, x);
     }
     public static MemorySegment reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2857.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2862.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2857.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2862.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved5 reserved5(MemorySegment segment, Arena scope) {
         return reserved5.ofAddress(reserved5$get(segment), scope);
@@ -357,7 +357,7 @@ public class _GtkLockButtonClass {
 
         void apply();
         static MemorySegment allocate(reserved6 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2858.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2863.const$0, fi, constants$7.const$5, scope);
         }
         static reserved6 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -372,7 +372,7 @@ public class _GtkLockButtonClass {
     }
 
     public static VarHandle reserved6$VH() {
-        return constants$2858.const$1;
+        return constants$2863.const$1;
     }
     /**
      * Getter for field:
@@ -381,7 +381,7 @@ public class _GtkLockButtonClass {
      * }
      */
     public static MemorySegment reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2858.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2863.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -390,13 +390,13 @@ public class _GtkLockButtonClass {
      * }
      */
     public static void reserved6$set(MemorySegment seg, MemorySegment x) {
-        constants$2858.const$1.set(seg, x);
+        constants$2863.const$1.set(seg, x);
     }
     public static MemorySegment reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2858.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2863.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2858.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2863.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved6 reserved6(MemorySegment segment, Arena scope) {
         return reserved6.ofAddress(reserved6$get(segment), scope);
@@ -410,7 +410,7 @@ public class _GtkLockButtonClass {
 
         void apply();
         static MemorySegment allocate(reserved7 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2858.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2863.const$2, fi, constants$7.const$5, scope);
         }
         static reserved7 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -425,7 +425,7 @@ public class _GtkLockButtonClass {
     }
 
     public static VarHandle reserved7$VH() {
-        return constants$2858.const$3;
+        return constants$2863.const$3;
     }
     /**
      * Getter for field:
@@ -434,7 +434,7 @@ public class _GtkLockButtonClass {
      * }
      */
     public static MemorySegment reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2858.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2863.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -443,13 +443,13 @@ public class _GtkLockButtonClass {
      * }
      */
     public static void reserved7$set(MemorySegment seg, MemorySegment x) {
-        constants$2858.const$3.set(seg, x);
+        constants$2863.const$3.set(seg, x);
     }
     public static MemorySegment reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2858.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2863.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved7$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2858.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2863.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static reserved7 reserved7(MemorySegment segment, Arena scope) {
         return reserved7.ofAddress(reserved7$get(segment), scope);

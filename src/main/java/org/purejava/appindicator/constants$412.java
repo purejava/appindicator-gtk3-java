@@ -8,24 +8,27 @@ final class constants$412 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$412() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_ref_string_length",
-        constants$4.const$0
+        "g_atomic_ref_count_compare",
+        constants$11.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_regex_error_quark",
-        constants$83.const$1
+        "g_ref_string_new",
+        constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GRegexEvalCallback.class, "apply", constants$12.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_ref_string_new_len",
+        constants$21.const$1
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_regex_new",
-        constants$215.const$2
+        "g_ref_string_new_intern",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_regex_ref",
+        "g_ref_string_acquire",
         constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_regex_unref",
+        "g_ref_string_release",
         constants$13.const$1
     );
 }

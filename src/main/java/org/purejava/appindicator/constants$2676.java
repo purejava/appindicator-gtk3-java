@@ -2,30 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2676 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2676() {}
-    static final VarHandle const$0 = constants$2675.const$2.varHandle(MemoryLayout.PathElement.groupElement("display_name"));
-    static final VarHandle const$1 = constants$2675.const$2.varHandle(MemoryLayout.PathElement.groupElement("mime_type"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_new",
-        constants$35.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_set_name",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_expander_set_label_widget",
         constants$13.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_get_name",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_expander_get_label_widget",
         constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_expander_set_label_fill",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_expander_get_label_fill",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_expander_set_resize_toplevel",
+        constants$40.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_expander_get_resize_toplevel",
+        constants$10.const$5
     );
 }
 

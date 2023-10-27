@@ -8,28 +8,22 @@ final class constants$1434 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1434() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_set_add_range",
-        constants$467.const$3
+        "hb_unicode_funcs_set_compose_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_set_add_sorted_array",
-        constants$164.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_set_del",
-        constants$40.const$2
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_decompose_func$func.class, "apply", constants$374.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_decompose_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_set_del_range",
-        constants$467.const$3
+        "hb_unicode_funcs_set_decompose_func",
+        constants$42.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_set_is_equal",
-        constants$9.const$0
+        "hb_unicode_combining_class",
+        constants$11.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_set_hash",
-        constants$10.const$5
+        "hb_unicode_general_category",
+        constants$11.const$4
     );
 }
 

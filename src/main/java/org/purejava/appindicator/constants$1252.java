@@ -2,47 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1252 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1252() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("writable_changed"),
-        RuntimeHelper.POINTER.withName("changed"),
-        RuntimeHelper.POINTER.withName("writable_change_event"),
-        RuntimeHelper.POINTER.withName("change_event"),
-        MemoryLayout.sequenceLayout(20, RuntimeHelper.POINTER).withName("padding")
-    ).withName("_GSettingsClass");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSettingsClass.writable_changed.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$1252.const$0.varHandle(MemoryLayout.PathElement.groupElement("writable_changed"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSettingsClass.changed.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$1252.const$0.varHandle(MemoryLayout.PathElement.groupElement("changed"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSettingsClass.writable_change_event.class, "apply", constants$11.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_ref",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_unref",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_new_from_directory",
+        constants$484.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_lookup",
+        constants$32.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_list_schemas",
+        constants$179.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_get_type",
+        constants$3.const$5
+    );
 }
 
 

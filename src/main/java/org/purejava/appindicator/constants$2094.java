@@ -3,34 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$2094 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2094() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_value_type_get_name",
-        constants$24.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_value_type_get_localized_name",
-        constants$24.const$0
-    );
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("parent")
-    ).withName("_AtkWindowIface");
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_window_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GtkCallback.class, "apply", constants$13.const$4);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GtkTickCallback.class, "apply", constants$12.const$2);
+    static final VarHandle const$0 = constants$2093.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_current_value"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkValueIface.get_maximum_value.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$2093.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_maximum_value"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkValueIface.get_minimum_value.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$2093.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_minimum_value"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkValueIface.set_current_value.class, "apply", constants$9.const$0);
 }
 
 

@@ -8,28 +8,28 @@ final class constants$2462 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2462() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_activatable",
-        constants$467.const$3
+        "gtk_entry_set_max_width_chars",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_activatable",
-        constants$11.const$4
+        "gtk_entry_get_max_width_chars",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_sensitive",
-        constants$467.const$3
+        "gtk_entry_set_text",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_sensitive",
-        constants$11.const$4
+        "gtk_entry_get_text",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_at_pos",
-        constants$49.const$0
+        "gtk_entry_get_layout",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_tooltip_text",
-        constants$42.const$4
+        "gtk_entry_get_layout_offsets",
+        constants$14.const$3
     );
 }
 

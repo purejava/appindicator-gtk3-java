@@ -3,94 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1091 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1091() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_filename_completer_set_dirs_only",
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileMonitorClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1088.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_cancel",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_is_cancelled",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_set_rate_limit",
         constants$40.const$2
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    RuntimeHelper.POINTER.withName("g_class")
-                ).withName("g_type_instance"),
-                JAVA_INT.withName("ref_count"),
-                MemoryLayout.paddingLayout(4),
-                RuntimeHelper.POINTER.withName("qdata")
-            ).withName("parent_instance"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GFileOutputStream");
-    static final VarHandle const$2 = constants$1091.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    JAVA_LONG.withName("g_type")
-                ).withName("g_type_class"),
-                RuntimeHelper.POINTER.withName("construct_properties"),
-                RuntimeHelper.POINTER.withName("constructor"),
-                RuntimeHelper.POINTER.withName("set_property"),
-                RuntimeHelper.POINTER.withName("get_property"),
-                RuntimeHelper.POINTER.withName("dispose"),
-                RuntimeHelper.POINTER.withName("finalize"),
-                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-                RuntimeHelper.POINTER.withName("notify"),
-                RuntimeHelper.POINTER.withName("constructed"),
-                JAVA_LONG.withName("flags"),
-                JAVA_LONG.withName("n_construct_properties"),
-                RuntimeHelper.POINTER.withName("pspecs"),
-                JAVA_LONG.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-            ).withName("parent_class"),
-            RuntimeHelper.POINTER.withName("write_fn"),
-            RuntimeHelper.POINTER.withName("splice"),
-            RuntimeHelper.POINTER.withName("flush"),
-            RuntimeHelper.POINTER.withName("close_fn"),
-            RuntimeHelper.POINTER.withName("write_async"),
-            RuntimeHelper.POINTER.withName("write_finish"),
-            RuntimeHelper.POINTER.withName("splice_async"),
-            RuntimeHelper.POINTER.withName("splice_finish"),
-            RuntimeHelper.POINTER.withName("flush_async"),
-            RuntimeHelper.POINTER.withName("flush_finish"),
-            RuntimeHelper.POINTER.withName("close_async"),
-            RuntimeHelper.POINTER.withName("close_finish"),
-            RuntimeHelper.POINTER.withName("writev_fn"),
-            RuntimeHelper.POINTER.withName("writev_async"),
-            RuntimeHelper.POINTER.withName("writev_finish"),
-            RuntimeHelper.POINTER.withName("_g_reserved4"),
-            RuntimeHelper.POINTER.withName("_g_reserved5"),
-            RuntimeHelper.POINTER.withName("_g_reserved6"),
-            RuntimeHelper.POINTER.withName("_g_reserved7"),
-            RuntimeHelper.POINTER.withName("_g_reserved8")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("tell"),
-        RuntimeHelper.POINTER.withName("can_seek"),
-        RuntimeHelper.POINTER.withName("seek"),
-        RuntimeHelper.POINTER.withName("can_truncate"),
-        RuntimeHelper.POINTER.withName("truncate_fn"),
-        RuntimeHelper.POINTER.withName("query_info"),
-        RuntimeHelper.POINTER.withName("query_info_async"),
-        RuntimeHelper.POINTER.withName("query_info_finish"),
-        RuntimeHelper.POINTER.withName("get_etag"),
-        RuntimeHelper.POINTER.withName("_g_reserved1"),
-        RuntimeHelper.POINTER.withName("_g_reserved2"),
-        RuntimeHelper.POINTER.withName("_g_reserved3"),
-        RuntimeHelper.POINTER.withName("_g_reserved4"),
-        RuntimeHelper.POINTER.withName("_g_reserved5")
-    ).withName("_GFileOutputStreamClass");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass.tell.class, "apply", constants$4.const$0);
-    static final VarHandle const$5 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("tell"));
 }
 
 

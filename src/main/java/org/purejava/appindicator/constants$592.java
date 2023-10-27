@@ -7,29 +7,20 @@ final class constants$592 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$592() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_generic",
-        constants$584.const$3
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_closure_remove_finalize_notifier$notify_func.class, "apply", constants$13.const$4);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_generic_va",
-        constants$585.const$0
+        "g_closure_remove_finalize_notifier",
+        constants$14.const$3
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__VOID",
-        constants$584.const$3
-    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_closure_add_invalidate_notifier$notify_func.class, "apply", constants$13.const$4);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__VOIDv",
-        constants$585.const$0
+        "g_closure_add_invalidate_notifier",
+        constants$14.const$3
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__BOOLEAN",
-        constants$584.const$3
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_closure_remove_invalidate_notifier$notify_func.class, "apply", constants$13.const$4);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__BOOLEANv",
-        constants$585.const$0
+        "g_closure_remove_invalidate_notifier",
+        constants$14.const$3
     );
 }
 

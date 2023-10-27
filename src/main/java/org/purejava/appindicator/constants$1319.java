@@ -2,43 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1319 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1319() {}
-    static final VarHandle const$0 = constants$1316.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    RuntimeHelper.POINTER.withName("g_class")
-                ).withName("g_type_instance"),
-                JAVA_INT.withName("ref_count"),
-                MemoryLayout.paddingLayout(4),
-                RuntimeHelper.POINTER.withName("qdata")
-            ).withName("parent_instance"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GSocketService");
-    static final VarHandle const$2 = constants$1319.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_listener_add_any_inet_port",
+        constants$846.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_listener_accept_socket",
+        constants$39.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_socket_listener_accept_socket_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_socket_service_get_type",
-        constants$3.const$5
+        "g_socket_listener_accept_socket_async",
+        constants$42.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_socket_service_new",
-        constants$35.const$2
+        "g_socket_listener_accept_socket_finish",
+        constants$39.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_service_start",
-        constants$13.const$1
+        "g_socket_listener_accept",
+        constants$39.const$1
     );
 }
 

@@ -13,7 +13,7 @@ public interface g_subprocess_launcher_set_child_setup$child_setup {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_subprocess_launcher_set_child_setup$child_setup fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1330.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1334.const$1, fi, constants$13.const$1, scope);
     }
     static g_subprocess_launcher_set_child_setup$child_setup ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

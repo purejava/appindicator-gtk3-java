@@ -2,34 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2779 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2779() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_section",
-        constants$5.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_property",
-        constants$464.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_valist",
-        constants$2772.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_style_context_get",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_state",
-        constants$40.const$2
-    );
+    static final VarHandle const$0 = constants$2778.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_style"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkStyleProviderIface.get_style_property.class, "apply", constants$862.const$1);
+    static final VarHandle const$2 = constants$2778.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_style_property"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkStyleProviderIface.get_icon_factory.class, "apply", constants$5.const$5);
+    static final VarHandle const$4 = constants$2778.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_icon_factory"));
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_state",
-        constants$10.const$5
+        "gtk_style_provider_get_type",
+        constants$3.const$5
     );
 }
 

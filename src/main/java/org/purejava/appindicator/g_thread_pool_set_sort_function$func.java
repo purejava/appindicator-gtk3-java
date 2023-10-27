@@ -13,7 +13,7 @@ public interface g_thread_pool_set_sort_function$func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_thread_pool_set_sort_function$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$468.const$1, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$470.const$0, fi, constants$12.const$2, scope);
     }
     static g_thread_pool_set_sort_function$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

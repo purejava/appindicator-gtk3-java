@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class _GActionMapInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$712.const$0;
+        return constants$714.const$4;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -34,7 +34,7 @@ public class _GActionMapInterface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(lookup_action fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$712.const$1, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$714.const$5, fi, constants$5.const$5, scope);
         }
         static lookup_action ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -49,7 +49,7 @@ public class _GActionMapInterface {
     }
 
     public static VarHandle lookup_action$VH() {
-        return constants$712.const$2;
+        return constants$715.const$0;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _GActionMapInterface {
      * }
      */
     public static MemorySegment lookup_action$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$712.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$715.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -67,13 +67,13 @@ public class _GActionMapInterface {
      * }
      */
     public static void lookup_action$set(MemorySegment seg, MemorySegment x) {
-        constants$712.const$2.set(seg, x);
+        constants$715.const$0.set(seg, x);
     }
     public static MemorySegment lookup_action$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$712.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$715.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_action$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$712.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$715.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static lookup_action lookup_action(MemorySegment segment, Arena scope) {
         return lookup_action.ofAddress(lookup_action$get(segment), scope);
@@ -87,7 +87,7 @@ public class _GActionMapInterface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(add_action fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$712.const$3, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$715.const$1, fi, constants$13.const$4, scope);
         }
         static add_action ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -102,7 +102,7 @@ public class _GActionMapInterface {
     }
 
     public static VarHandle add_action$VH() {
-        return constants$712.const$4;
+        return constants$715.const$2;
     }
     /**
      * Getter for field:
@@ -111,7 +111,7 @@ public class _GActionMapInterface {
      * }
      */
     public static MemorySegment add_action$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$712.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$715.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -120,13 +120,13 @@ public class _GActionMapInterface {
      * }
      */
     public static void add_action$set(MemorySegment seg, MemorySegment x) {
-        constants$712.const$4.set(seg, x);
+        constants$715.const$2.set(seg, x);
     }
     public static MemorySegment add_action$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$712.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$715.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void add_action$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$712.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$715.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static add_action add_action(MemorySegment segment, Arena scope) {
         return add_action.ofAddress(add_action$get(segment), scope);
@@ -140,7 +140,7 @@ public class _GActionMapInterface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(remove_action fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$712.const$5, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$715.const$3, fi, constants$13.const$4, scope);
         }
         static remove_action ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -155,7 +155,7 @@ public class _GActionMapInterface {
     }
 
     public static VarHandle remove_action$VH() {
-        return constants$713.const$0;
+        return constants$715.const$4;
     }
     /**
      * Getter for field:
@@ -164,7 +164,7 @@ public class _GActionMapInterface {
      * }
      */
     public static MemorySegment remove_action$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$713.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$715.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -173,13 +173,13 @@ public class _GActionMapInterface {
      * }
      */
     public static void remove_action$set(MemorySegment seg, MemorySegment x) {
-        constants$713.const$0.set(seg, x);
+        constants$715.const$4.set(seg, x);
     }
     public static MemorySegment remove_action$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$713.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$715.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void remove_action$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$713.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$715.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static remove_action remove_action(MemorySegment segment, Arena scope) {
         return remove_action.ofAddress(remove_action$get(segment), scope);

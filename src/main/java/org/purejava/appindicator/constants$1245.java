@@ -9,12 +9,18 @@ final class constants$1245 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1245() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSeekableIface.tell.class, "apply", constants$4.const$0);
-    static final VarHandle const$1 = constants$1244.const$5.varHandle(MemoryLayout.PathElement.groupElement("tell"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GSeekableIface.can_seek.class, "apply", constants$10.const$5);
-    static final VarHandle const$3 = constants$1244.const$5.varHandle(MemoryLayout.PathElement.groupElement("can_seek"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GSeekableIface.seek.class, "apply", constants$1066.const$1);
-    static final VarHandle const$5 = constants$1244.const$5.varHandle(MemoryLayout.PathElement.groupElement("seek"));
+    static final VarHandle const$0 = constants$1244.const$4.varHandle(MemoryLayout.PathElement.groupElement("data_len"));
+    static final VarHandle const$1 = constants$1244.const$4.varHandle(MemoryLayout.PathElement.groupElement("resource"));
+    static final VarHandle const$2 = constants$1244.const$4.varHandle(MemoryLayout.PathElement.groupElement("next"));
+    static final VarHandle const$3 = constants$1244.const$4.varHandle(MemoryLayout.PathElement.groupElement("padding"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_resource_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_resource_new_from_data",
+        constants$5.const$5
+    );
 }
 
 

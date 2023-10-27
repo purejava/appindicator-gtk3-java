@@ -9,12 +9,12 @@ final class constants$975 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$975() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.get_parse_name.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_parse_name"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.get_parent.class, "apply", constants$5.const$2);
-    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_parent"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.prefix_matches.class, "apply", constants$9.const$0);
-    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("prefix_matches"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.dup.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("dup"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.hash.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("hash"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.equal.class, "apply", constants$9.const$0);
+    static final VarHandle const$5 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("equal"));
 }
 
 

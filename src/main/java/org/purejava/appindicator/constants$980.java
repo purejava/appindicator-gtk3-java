@@ -2,19 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$980 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$980() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.query_filesystem_info_finish.class, "apply", constants$23.const$0);
-    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("query_filesystem_info_finish"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.find_enclosing_mount.class, "apply", constants$23.const$0);
-    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("find_enclosing_mount"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.find_enclosing_mount_async.class, "apply", constants$281.const$5);
-    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("find_enclosing_mount_async"));
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.enumerate_children.class, "apply", constants$980.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$980.const$0
+    );
+    static final VarHandle const$3 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("enumerate_children"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.enumerate_children_async.class, "apply", constants$783.const$3);
+    static final VarHandle const$5 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("enumerate_children_async"));
 }
 
 

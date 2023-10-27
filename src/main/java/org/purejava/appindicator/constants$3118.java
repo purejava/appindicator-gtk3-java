@@ -9,12 +9,12 @@ final class constants$3118 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3118() {}
-    static final VarHandle const$0 = constants$3116.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextTagTableClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$3116.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextTagTableClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$3116.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextTagTableClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$0 = constants$3117.const$4.varHandle(MemoryLayout.PathElement.groupElement("activate"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkSwitchClass.state_set.class, "apply", constants$11.const$4);
+    static final VarHandle const$2 = constants$3117.const$4.varHandle(MemoryLayout.PathElement.groupElement("state_set"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkSwitchClass._switch_padding_1.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$3117.const$4.varHandle(MemoryLayout.PathElement.groupElement("_switch_padding_1"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkSwitchClass._switch_padding_2.class, "apply", constants$7.const$5);
 }
 
 

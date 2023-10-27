@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _GDebugControllerDBusClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$937.const$3;
+        return constants$940.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -33,7 +33,7 @@ public class _GDebugControllerDBusClass {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(authorize fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$937.const$4, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$940.const$4, fi, constants$9.const$0, scope);
         }
         static authorize ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -48,7 +48,7 @@ public class _GDebugControllerDBusClass {
     }
 
     public static VarHandle authorize$VH() {
-        return constants$937.const$5;
+        return constants$940.const$5;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GDebugControllerDBusClass {
      * }
      */
     public static MemorySegment authorize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$937.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$940.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GDebugControllerDBusClass {
      * }
      */
     public static void authorize$set(MemorySegment seg, MemorySegment x) {
-        constants$937.const$5.set(seg, x);
+        constants$940.const$5.set(seg, x);
     }
     public static MemorySegment authorize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$937.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$940.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void authorize$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$937.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$940.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static authorize authorize(MemorySegment segment, Arena scope) {
         return authorize.ofAddress(authorize$get(segment), scope);

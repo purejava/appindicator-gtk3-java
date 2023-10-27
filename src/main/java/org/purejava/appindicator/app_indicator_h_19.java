@@ -7,8 +7,424 @@ import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 public class app_indicator_h_19 extends app_indicator_h_18 {
 
+    public static MethodHandle gtk_text_buffer_target_info_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3230.const$0,"gtk_text_buffer_target_info_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_text_buffer_target_info_get_type();
+     * }
+     */
+    public static long gtk_text_buffer_target_info_get_type() {
+        var mh$ = gtk_text_buffer_target_info_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_text_search_flags_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3230.const$1,"gtk_text_search_flags_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_text_search_flags_get_type();
+     * }
+     */
+    public static long gtk_text_search_flags_get_type() {
+        var mh$ = gtk_text_search_flags_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_text_window_type_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3230.const$2,"gtk_text_window_type_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_text_window_type_get_type();
+     * }
+     */
+    public static long gtk_text_window_type_get_type() {
+        var mh$ = gtk_text_window_type_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_text_view_layer_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3230.const$3,"gtk_text_view_layer_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_text_view_layer_get_type();
+     * }
+     */
+    public static long gtk_text_view_layer_get_type() {
+        var mh$ = gtk_text_view_layer_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_text_extend_selection_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3230.const$4,"gtk_text_extend_selection_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_text_extend_selection_get_type();
+     * }
+     */
+    public static long gtk_text_extend_selection_get_type() {
+        var mh$ = gtk_text_extend_selection_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_toolbar_space_style_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3230.const$5,"gtk_toolbar_space_style_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_toolbar_space_style_get_type();
+     * }
+     */
+    public static long gtk_toolbar_space_style_get_type() {
+        var mh$ = gtk_toolbar_space_style_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_tool_palette_drag_targets_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3231.const$0,"gtk_tool_palette_drag_targets_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_tool_palette_drag_targets_get_type();
+     * }
+     */
+    public static long gtk_tool_palette_drag_targets_get_type() {
+        var mh$ = gtk_tool_palette_drag_targets_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_tree_model_flags_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3231.const$1,"gtk_tree_model_flags_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_tree_model_flags_get_type();
+     * }
+     */
+    public static long gtk_tree_model_flags_get_type() {
+        var mh$ = gtk_tree_model_flags_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_tree_view_drop_position_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3231.const$2,"gtk_tree_view_drop_position_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_tree_view_drop_position_get_type();
+     * }
+     */
+    public static long gtk_tree_view_drop_position_get_type() {
+        var mh$ = gtk_tree_view_drop_position_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_tree_view_column_sizing_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3231.const$3,"gtk_tree_view_column_sizing_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_tree_view_column_sizing_get_type();
+     * }
+     */
+    public static long gtk_tree_view_column_sizing_get_type() {
+        var mh$ = gtk_tree_view_column_sizing_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_widget_help_type_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3231.const$4,"gtk_widget_help_type_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_widget_help_type_get_type();
+     * }
+     */
+    public static long gtk_widget_help_type_get_type() {
+        var mh$ = gtk_widget_help_type_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_window_type_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3231.const$5,"gtk_window_type_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_window_type_get_type();
+     * }
+     */
+    public static long gtk_window_type_get_type() {
+        var mh$ = gtk_window_type_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_window_position_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3232.const$0,"gtk_window_position_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_window_position_get_type();
+     * }
+     */
+    public static long gtk_window_position_get_type() {
+        var mh$ = gtk_window_position_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_viewport_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3234.const$0,"gtk_viewport_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_viewport_get_type();
+     * }
+     */
+    public static long gtk_viewport_get_type() {
+        var mh$ = gtk_viewport_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_viewport_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$3234.const$1,"gtk_viewport_new");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_viewport_new(struct _GtkAdjustment* hadjustment, struct _GtkAdjustment* vadjustment);
+     * }
+     */
+    public static MemorySegment gtk_viewport_new(MemorySegment hadjustment, MemorySegment vadjustment) {
+        var mh$ = gtk_viewport_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(hadjustment, vadjustment);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_viewport_get_hadjustment$MH() {
+        return RuntimeHelper.requireNonNull(constants$3234.const$2,"gtk_viewport_get_hadjustment");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkAdjustment* gtk_viewport_get_hadjustment(struct _GtkViewport* viewport);
+     * }
+     */
+    public static MemorySegment gtk_viewport_get_hadjustment(MemorySegment viewport) {
+        var mh$ = gtk_viewport_get_hadjustment$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(viewport);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_viewport_get_vadjustment$MH() {
+        return RuntimeHelper.requireNonNull(constants$3234.const$3,"gtk_viewport_get_vadjustment");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkAdjustment* gtk_viewport_get_vadjustment(struct _GtkViewport* viewport);
+     * }
+     */
+    public static MemorySegment gtk_viewport_get_vadjustment(MemorySegment viewport) {
+        var mh$ = gtk_viewport_get_vadjustment$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(viewport);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_viewport_set_hadjustment$MH() {
+        return RuntimeHelper.requireNonNull(constants$3234.const$4,"gtk_viewport_set_hadjustment");
+    }
+    /**
+     * {@snippet :
+     * void gtk_viewport_set_hadjustment(struct _GtkViewport* viewport, struct _GtkAdjustment* adjustment);
+     * }
+     */
+    public static void gtk_viewport_set_hadjustment(MemorySegment viewport, MemorySegment adjustment) {
+        var mh$ = gtk_viewport_set_hadjustment$MH();
+        try {
+            mh$.invokeExact(viewport, adjustment);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_viewport_set_vadjustment$MH() {
+        return RuntimeHelper.requireNonNull(constants$3234.const$5,"gtk_viewport_set_vadjustment");
+    }
+    /**
+     * {@snippet :
+     * void gtk_viewport_set_vadjustment(struct _GtkViewport* viewport, struct _GtkAdjustment* adjustment);
+     * }
+     */
+    public static void gtk_viewport_set_vadjustment(MemorySegment viewport, MemorySegment adjustment) {
+        var mh$ = gtk_viewport_set_vadjustment$MH();
+        try {
+            mh$.invokeExact(viewport, adjustment);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_viewport_set_shadow_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3235.const$0,"gtk_viewport_set_shadow_type");
+    }
+    /**
+     * {@snippet :
+     * void gtk_viewport_set_shadow_type(struct _GtkViewport* viewport, enum GtkShadowType type);
+     * }
+     */
+    public static void gtk_viewport_set_shadow_type(MemorySegment viewport, int type) {
+        var mh$ = gtk_viewport_set_shadow_type$MH();
+        try {
+            mh$.invokeExact(viewport, type);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_viewport_get_shadow_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3235.const$1,"gtk_viewport_get_shadow_type");
+    }
+    /**
+     * {@snippet :
+     * enum GtkShadowType gtk_viewport_get_shadow_type(struct _GtkViewport* viewport);
+     * }
+     */
+    public static int gtk_viewport_get_shadow_type(MemorySegment viewport) {
+        var mh$ = gtk_viewport_get_shadow_type$MH();
+        try {
+            return (int)mh$.invokeExact(viewport);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_viewport_get_bin_window$MH() {
+        return RuntimeHelper.requireNonNull(constants$3235.const$2,"gtk_viewport_get_bin_window");
+    }
+    /**
+     * {@snippet :
+     * struct _GdkWindow* gtk_viewport_get_bin_window(struct _GtkViewport* viewport);
+     * }
+     */
+    public static MemorySegment gtk_viewport_get_bin_window(MemorySegment viewport) {
+        var mh$ = gtk_viewport_get_bin_window$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(viewport);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_viewport_get_view_window$MH() {
+        return RuntimeHelper.requireNonNull(constants$3235.const$3,"gtk_viewport_get_view_window");
+    }
+    /**
+     * {@snippet :
+     * struct _GdkWindow* gtk_viewport_get_view_window(struct _GtkViewport* viewport);
+     * }
+     */
+    public static MemorySegment gtk_viewport_get_view_window(MemorySegment viewport) {
+        var mh$ = gtk_viewport_get_view_window$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(viewport);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_volume_button_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3237.const$2,"gtk_volume_button_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_volume_button_get_type();
+     * }
+     */
+    public static long gtk_volume_button_get_type() {
+        var mh$ = gtk_volume_button_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_volume_button_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$3237.const$3,"gtk_volume_button_new");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_volume_button_new();
+     * }
+     */
+    public static MemorySegment gtk_volume_button_new() {
+        var mh$ = gtk_volume_button_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_widget_path_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3237.const$4,"gtk_widget_path_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_widget_path_get_type();
+     * }
+     */
+    public static long gtk_widget_path_get_type() {
+        var mh$ = gtk_widget_path_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle gtk_widget_path_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3232.const$5,"gtk_widget_path_new");
+        return RuntimeHelper.requireNonNull(constants$3237.const$5,"gtk_widget_path_new");
     }
     /**
      * {@snippet :
@@ -24,7 +440,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$3233.const$0,"gtk_widget_path_copy");
+        return RuntimeHelper.requireNonNull(constants$3238.const$0,"gtk_widget_path_copy");
     }
     /**
      * {@snippet :
@@ -40,7 +456,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$3233.const$1,"gtk_widget_path_ref");
+        return RuntimeHelper.requireNonNull(constants$3238.const$1,"gtk_widget_path_ref");
     }
     /**
      * {@snippet :
@@ -56,7 +472,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$3233.const$2,"gtk_widget_path_unref");
+        return RuntimeHelper.requireNonNull(constants$3238.const$2,"gtk_widget_path_unref");
     }
     /**
      * {@snippet :
@@ -72,7 +488,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$3233.const$3,"gtk_widget_path_free");
+        return RuntimeHelper.requireNonNull(constants$3238.const$3,"gtk_widget_path_free");
     }
     /**
      * {@snippet :
@@ -88,7 +504,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$3233.const$4,"gtk_widget_path_to_string");
+        return RuntimeHelper.requireNonNull(constants$3238.const$4,"gtk_widget_path_to_string");
     }
     /**
      * {@snippet :
@@ -104,7 +520,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$3233.const$5,"gtk_widget_path_length");
+        return RuntimeHelper.requireNonNull(constants$3238.const$5,"gtk_widget_path_length");
     }
     /**
      * {@snippet :
@@ -120,7 +536,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_append_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3234.const$0,"gtk_widget_path_append_type");
+        return RuntimeHelper.requireNonNull(constants$3239.const$0,"gtk_widget_path_append_type");
     }
     /**
      * {@snippet :
@@ -136,7 +552,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_prepend_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3234.const$1,"gtk_widget_path_prepend_type");
+        return RuntimeHelper.requireNonNull(constants$3239.const$1,"gtk_widget_path_prepend_type");
     }
     /**
      * {@snippet :
@@ -152,7 +568,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_append_with_siblings$MH() {
-        return RuntimeHelper.requireNonNull(constants$3234.const$2,"gtk_widget_path_append_with_siblings");
+        return RuntimeHelper.requireNonNull(constants$3239.const$2,"gtk_widget_path_append_with_siblings");
     }
     /**
      * {@snippet :
@@ -168,7 +584,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_append_for_widget$MH() {
-        return RuntimeHelper.requireNonNull(constants$3234.const$3,"gtk_widget_path_append_for_widget");
+        return RuntimeHelper.requireNonNull(constants$3239.const$3,"gtk_widget_path_append_for_widget");
     }
     /**
      * {@snippet :
@@ -184,7 +600,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_get_object_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3234.const$4,"gtk_widget_path_iter_get_object_type");
+        return RuntimeHelper.requireNonNull(constants$3239.const$4,"gtk_widget_path_iter_get_object_type");
     }
     /**
      * {@snippet :
@@ -200,7 +616,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_set_object_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3234.const$6,"gtk_widget_path_iter_set_object_type");
+        return RuntimeHelper.requireNonNull(constants$3239.const$6,"gtk_widget_path_iter_set_object_type");
     }
     /**
      * {@snippet :
@@ -216,7 +632,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_get_object_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3235.const$0,"gtk_widget_path_iter_get_object_name");
+        return RuntimeHelper.requireNonNull(constants$3240.const$0,"gtk_widget_path_iter_get_object_name");
     }
     /**
      * {@snippet :
@@ -232,7 +648,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_set_object_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3235.const$1,"gtk_widget_path_iter_set_object_name");
+        return RuntimeHelper.requireNonNull(constants$3240.const$1,"gtk_widget_path_iter_set_object_name");
     }
     /**
      * {@snippet :
@@ -248,7 +664,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_get_siblings$MH() {
-        return RuntimeHelper.requireNonNull(constants$3235.const$2,"gtk_widget_path_iter_get_siblings");
+        return RuntimeHelper.requireNonNull(constants$3240.const$2,"gtk_widget_path_iter_get_siblings");
     }
     /**
      * {@snippet :
@@ -264,7 +680,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_get_sibling_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$3235.const$3,"gtk_widget_path_iter_get_sibling_index");
+        return RuntimeHelper.requireNonNull(constants$3240.const$3,"gtk_widget_path_iter_get_sibling_index");
     }
     /**
      * {@snippet :
@@ -280,7 +696,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3235.const$4,"gtk_widget_path_iter_get_name");
+        return RuntimeHelper.requireNonNull(constants$3240.const$4,"gtk_widget_path_iter_get_name");
     }
     /**
      * {@snippet :
@@ -296,7 +712,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_set_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3235.const$5,"gtk_widget_path_iter_set_name");
+        return RuntimeHelper.requireNonNull(constants$3240.const$5,"gtk_widget_path_iter_set_name");
     }
     /**
      * {@snippet :
@@ -312,7 +728,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_has_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3236.const$0,"gtk_widget_path_iter_has_name");
+        return RuntimeHelper.requireNonNull(constants$3241.const$0,"gtk_widget_path_iter_has_name");
     }
     /**
      * {@snippet :
@@ -328,7 +744,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_has_qname$MH() {
-        return RuntimeHelper.requireNonNull(constants$3236.const$1,"gtk_widget_path_iter_has_qname");
+        return RuntimeHelper.requireNonNull(constants$3241.const$1,"gtk_widget_path_iter_has_qname");
     }
     /**
      * {@snippet :
@@ -344,7 +760,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$3236.const$2,"gtk_widget_path_iter_get_state");
+        return RuntimeHelper.requireNonNull(constants$3241.const$2,"gtk_widget_path_iter_get_state");
     }
     /**
      * {@snippet :
@@ -360,7 +776,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_set_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$3236.const$3,"gtk_widget_path_iter_set_state");
+        return RuntimeHelper.requireNonNull(constants$3241.const$3,"gtk_widget_path_iter_set_state");
     }
     /**
      * {@snippet :
@@ -376,7 +792,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_add_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$3236.const$4,"gtk_widget_path_iter_add_class");
+        return RuntimeHelper.requireNonNull(constants$3241.const$4,"gtk_widget_path_iter_add_class");
     }
     /**
      * {@snippet :
@@ -392,7 +808,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_remove_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$3236.const$5,"gtk_widget_path_iter_remove_class");
+        return RuntimeHelper.requireNonNull(constants$3241.const$5,"gtk_widget_path_iter_remove_class");
     }
     /**
      * {@snippet :
@@ -408,7 +824,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_clear_classes$MH() {
-        return RuntimeHelper.requireNonNull(constants$3237.const$0,"gtk_widget_path_iter_clear_classes");
+        return RuntimeHelper.requireNonNull(constants$3242.const$0,"gtk_widget_path_iter_clear_classes");
     }
     /**
      * {@snippet :
@@ -424,7 +840,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_list_classes$MH() {
-        return RuntimeHelper.requireNonNull(constants$3237.const$1,"gtk_widget_path_iter_list_classes");
+        return RuntimeHelper.requireNonNull(constants$3242.const$1,"gtk_widget_path_iter_list_classes");
     }
     /**
      * {@snippet :
@@ -440,7 +856,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_has_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$3237.const$2,"gtk_widget_path_iter_has_class");
+        return RuntimeHelper.requireNonNull(constants$3242.const$2,"gtk_widget_path_iter_has_class");
     }
     /**
      * {@snippet :
@@ -456,7 +872,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_has_qclass$MH() {
-        return RuntimeHelper.requireNonNull(constants$3237.const$3,"gtk_widget_path_iter_has_qclass");
+        return RuntimeHelper.requireNonNull(constants$3242.const$3,"gtk_widget_path_iter_has_qclass");
     }
     /**
      * {@snippet :
@@ -472,7 +888,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_add_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$3237.const$4,"gtk_widget_path_iter_add_region");
+        return RuntimeHelper.requireNonNull(constants$3242.const$4,"gtk_widget_path_iter_add_region");
     }
     /**
      * {@snippet :
@@ -488,7 +904,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_remove_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$3237.const$5,"gtk_widget_path_iter_remove_region");
+        return RuntimeHelper.requireNonNull(constants$3242.const$5,"gtk_widget_path_iter_remove_region");
     }
     /**
      * {@snippet :
@@ -504,7 +920,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_clear_regions$MH() {
-        return RuntimeHelper.requireNonNull(constants$3238.const$0,"gtk_widget_path_iter_clear_regions");
+        return RuntimeHelper.requireNonNull(constants$3243.const$0,"gtk_widget_path_iter_clear_regions");
     }
     /**
      * {@snippet :
@@ -520,7 +936,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_list_regions$MH() {
-        return RuntimeHelper.requireNonNull(constants$3238.const$1,"gtk_widget_path_iter_list_regions");
+        return RuntimeHelper.requireNonNull(constants$3243.const$1,"gtk_widget_path_iter_list_regions");
     }
     /**
      * {@snippet :
@@ -536,7 +952,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_has_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$3238.const$2,"gtk_widget_path_iter_has_region");
+        return RuntimeHelper.requireNonNull(constants$3243.const$2,"gtk_widget_path_iter_has_region");
     }
     /**
      * {@snippet :
@@ -552,7 +968,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_iter_has_qregion$MH() {
-        return RuntimeHelper.requireNonNull(constants$3238.const$3,"gtk_widget_path_iter_has_qregion");
+        return RuntimeHelper.requireNonNull(constants$3243.const$3,"gtk_widget_path_iter_has_qregion");
     }
     /**
      * {@snippet :
@@ -568,7 +984,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_get_object_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3238.const$4,"gtk_widget_path_get_object_type");
+        return RuntimeHelper.requireNonNull(constants$3243.const$4,"gtk_widget_path_get_object_type");
     }
     /**
      * {@snippet :
@@ -584,7 +1000,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_is_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3238.const$5,"gtk_widget_path_is_type");
+        return RuntimeHelper.requireNonNull(constants$3243.const$5,"gtk_widget_path_is_type");
     }
     /**
      * {@snippet :
@@ -600,7 +1016,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path_has_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$3239.const$0,"gtk_widget_path_has_parent");
+        return RuntimeHelper.requireNonNull(constants$3244.const$0,"gtk_widget_path_has_parent");
     }
     /**
      * {@snippet :
@@ -616,7 +1032,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_window_group_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3241.const$0,"gtk_window_group_get_type");
+        return RuntimeHelper.requireNonNull(constants$3246.const$0,"gtk_window_group_get_type");
     }
     /**
      * {@snippet :
@@ -632,7 +1048,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_window_group_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3241.const$1,"gtk_window_group_new");
+        return RuntimeHelper.requireNonNull(constants$3246.const$1,"gtk_window_group_new");
     }
     /**
      * {@snippet :
@@ -648,7 +1064,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_window_group_add_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$3241.const$2,"gtk_window_group_add_window");
+        return RuntimeHelper.requireNonNull(constants$3246.const$2,"gtk_window_group_add_window");
     }
     /**
      * {@snippet :
@@ -664,7 +1080,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_window_group_remove_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$3241.const$3,"gtk_window_group_remove_window");
+        return RuntimeHelper.requireNonNull(constants$3246.const$3,"gtk_window_group_remove_window");
     }
     /**
      * {@snippet :
@@ -680,7 +1096,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_window_group_list_windows$MH() {
-        return RuntimeHelper.requireNonNull(constants$3241.const$4,"gtk_window_group_list_windows");
+        return RuntimeHelper.requireNonNull(constants$3246.const$4,"gtk_window_group_list_windows");
     }
     /**
      * {@snippet :
@@ -696,7 +1112,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_window_group_get_current_grab$MH() {
-        return RuntimeHelper.requireNonNull(constants$3241.const$5,"gtk_window_group_get_current_grab");
+        return RuntimeHelper.requireNonNull(constants$3246.const$5,"gtk_window_group_get_current_grab");
     }
     /**
      * {@snippet :
@@ -712,7 +1128,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_window_group_get_current_device_grab$MH() {
-        return RuntimeHelper.requireNonNull(constants$3242.const$0,"gtk_window_group_get_current_device_grab");
+        return RuntimeHelper.requireNonNull(constants$3247.const$0,"gtk_window_group_get_current_device_grab");
     }
     /**
      * {@snippet :
@@ -728,7 +1144,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_arrow_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3244.const$0,"gtk_arrow_get_type");
+        return RuntimeHelper.requireNonNull(constants$3249.const$0,"gtk_arrow_get_type");
     }
     /**
      * {@snippet :
@@ -744,7 +1160,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_arrow_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3244.const$1,"gtk_arrow_new");
+        return RuntimeHelper.requireNonNull(constants$3249.const$1,"gtk_arrow_new");
     }
     /**
      * {@snippet :
@@ -760,7 +1176,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_arrow_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$3244.const$2,"gtk_arrow_set");
+        return RuntimeHelper.requireNonNull(constants$3249.const$2,"gtk_arrow_set");
     }
     /**
      * {@snippet :
@@ -776,7 +1192,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3248.const$4,"gtk_action_get_type");
+        return RuntimeHelper.requireNonNull(constants$3253.const$4,"gtk_action_get_type");
     }
     /**
      * {@snippet :
@@ -792,7 +1208,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3248.const$5,"gtk_action_new");
+        return RuntimeHelper.requireNonNull(constants$3253.const$5,"gtk_action_new");
     }
     /**
      * {@snippet :
@@ -808,7 +1224,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3249.const$0,"gtk_action_get_name");
+        return RuntimeHelper.requireNonNull(constants$3254.const$0,"gtk_action_get_name");
     }
     /**
      * {@snippet :
@@ -824,7 +1240,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_is_sensitive$MH() {
-        return RuntimeHelper.requireNonNull(constants$3249.const$1,"gtk_action_is_sensitive");
+        return RuntimeHelper.requireNonNull(constants$3254.const$1,"gtk_action_is_sensitive");
     }
     /**
      * {@snippet :
@@ -840,7 +1256,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_sensitive$MH() {
-        return RuntimeHelper.requireNonNull(constants$3249.const$2,"gtk_action_get_sensitive");
+        return RuntimeHelper.requireNonNull(constants$3254.const$2,"gtk_action_get_sensitive");
     }
     /**
      * {@snippet :
@@ -856,7 +1272,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_sensitive$MH() {
-        return RuntimeHelper.requireNonNull(constants$3249.const$3,"gtk_action_set_sensitive");
+        return RuntimeHelper.requireNonNull(constants$3254.const$3,"gtk_action_set_sensitive");
     }
     /**
      * {@snippet :
@@ -872,7 +1288,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_is_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$3249.const$4,"gtk_action_is_visible");
+        return RuntimeHelper.requireNonNull(constants$3254.const$4,"gtk_action_is_visible");
     }
     /**
      * {@snippet :
@@ -888,7 +1304,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$3249.const$5,"gtk_action_get_visible");
+        return RuntimeHelper.requireNonNull(constants$3254.const$5,"gtk_action_get_visible");
     }
     /**
      * {@snippet :
@@ -904,7 +1320,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$3250.const$0,"gtk_action_set_visible");
+        return RuntimeHelper.requireNonNull(constants$3255.const$0,"gtk_action_set_visible");
     }
     /**
      * {@snippet :
@@ -920,7 +1336,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$3250.const$1,"gtk_action_activate");
+        return RuntimeHelper.requireNonNull(constants$3255.const$1,"gtk_action_activate");
     }
     /**
      * {@snippet :
@@ -936,7 +1352,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_create_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3250.const$2,"gtk_action_create_icon");
+        return RuntimeHelper.requireNonNull(constants$3255.const$2,"gtk_action_create_icon");
     }
     /**
      * {@snippet :
@@ -952,7 +1368,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_create_menu_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$3250.const$3,"gtk_action_create_menu_item");
+        return RuntimeHelper.requireNonNull(constants$3255.const$3,"gtk_action_create_menu_item");
     }
     /**
      * {@snippet :
@@ -968,7 +1384,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_create_tool_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$3250.const$4,"gtk_action_create_tool_item");
+        return RuntimeHelper.requireNonNull(constants$3255.const$4,"gtk_action_create_tool_item");
     }
     /**
      * {@snippet :
@@ -984,7 +1400,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_create_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$3250.const$5,"gtk_action_create_menu");
+        return RuntimeHelper.requireNonNull(constants$3255.const$5,"gtk_action_create_menu");
     }
     /**
      * {@snippet :
@@ -1000,7 +1416,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_proxies$MH() {
-        return RuntimeHelper.requireNonNull(constants$3251.const$0,"gtk_action_get_proxies");
+        return RuntimeHelper.requireNonNull(constants$3256.const$0,"gtk_action_get_proxies");
     }
     /**
      * {@snippet :
@@ -1016,7 +1432,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_connect_accelerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$3251.const$1,"gtk_action_connect_accelerator");
+        return RuntimeHelper.requireNonNull(constants$3256.const$1,"gtk_action_connect_accelerator");
     }
     /**
      * {@snippet :
@@ -1032,7 +1448,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_disconnect_accelerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$3251.const$2,"gtk_action_disconnect_accelerator");
+        return RuntimeHelper.requireNonNull(constants$3256.const$2,"gtk_action_disconnect_accelerator");
     }
     /**
      * {@snippet :
@@ -1048,7 +1464,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_accel_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3251.const$3,"gtk_action_get_accel_path");
+        return RuntimeHelper.requireNonNull(constants$3256.const$3,"gtk_action_get_accel_path");
     }
     /**
      * {@snippet :
@@ -1064,7 +1480,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_accel_closure$MH() {
-        return RuntimeHelper.requireNonNull(constants$3251.const$4,"gtk_action_get_accel_closure");
+        return RuntimeHelper.requireNonNull(constants$3256.const$4,"gtk_action_get_accel_closure");
     }
     /**
      * {@snippet :
@@ -1080,7 +1496,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_block_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$3251.const$5,"gtk_action_block_activate");
+        return RuntimeHelper.requireNonNull(constants$3256.const$5,"gtk_action_block_activate");
     }
     /**
      * {@snippet :
@@ -1096,7 +1512,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_unblock_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$3252.const$0,"gtk_action_unblock_activate");
+        return RuntimeHelper.requireNonNull(constants$3257.const$0,"gtk_action_unblock_activate");
     }
     /**
      * {@snippet :
@@ -1112,7 +1528,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_action_add_to_proxy_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$3252.const$1,"_gtk_action_add_to_proxy_list");
+        return RuntimeHelper.requireNonNull(constants$3257.const$1,"_gtk_action_add_to_proxy_list");
     }
     /**
      * {@snippet :
@@ -1128,7 +1544,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_action_remove_from_proxy_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$3252.const$2,"_gtk_action_remove_from_proxy_list");
+        return RuntimeHelper.requireNonNull(constants$3257.const$2,"_gtk_action_remove_from_proxy_list");
     }
     /**
      * {@snippet :
@@ -1144,7 +1560,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_action_emit_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$3252.const$3,"_gtk_action_emit_activate");
+        return RuntimeHelper.requireNonNull(constants$3257.const$3,"_gtk_action_emit_activate");
     }
     /**
      * {@snippet :
@@ -1160,7 +1576,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_accel_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3252.const$4,"gtk_action_set_accel_path");
+        return RuntimeHelper.requireNonNull(constants$3257.const$4,"gtk_action_set_accel_path");
     }
     /**
      * {@snippet :
@@ -1176,7 +1592,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_accel_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3252.const$5,"gtk_action_set_accel_group");
+        return RuntimeHelper.requireNonNull(constants$3257.const$5,"gtk_action_set_accel_group");
     }
     /**
      * {@snippet :
@@ -1192,7 +1608,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_action_sync_menu_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$3253.const$0,"_gtk_action_sync_menu_visible");
+        return RuntimeHelper.requireNonNull(constants$3258.const$0,"_gtk_action_sync_menu_visible");
     }
     /**
      * {@snippet :
@@ -1208,7 +1624,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3253.const$1,"gtk_action_set_label");
+        return RuntimeHelper.requireNonNull(constants$3258.const$1,"gtk_action_set_label");
     }
     /**
      * {@snippet :
@@ -1224,7 +1640,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3253.const$2,"gtk_action_get_label");
+        return RuntimeHelper.requireNonNull(constants$3258.const$2,"gtk_action_get_label");
     }
     /**
      * {@snippet :
@@ -1240,7 +1656,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_short_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3253.const$3,"gtk_action_set_short_label");
+        return RuntimeHelper.requireNonNull(constants$3258.const$3,"gtk_action_set_short_label");
     }
     /**
      * {@snippet :
@@ -1256,7 +1672,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_short_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3253.const$4,"gtk_action_get_short_label");
+        return RuntimeHelper.requireNonNull(constants$3258.const$4,"gtk_action_get_short_label");
     }
     /**
      * {@snippet :
@@ -1272,7 +1688,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_tooltip$MH() {
-        return RuntimeHelper.requireNonNull(constants$3253.const$5,"gtk_action_set_tooltip");
+        return RuntimeHelper.requireNonNull(constants$3258.const$5,"gtk_action_set_tooltip");
     }
     /**
      * {@snippet :
@@ -1288,7 +1704,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_tooltip$MH() {
-        return RuntimeHelper.requireNonNull(constants$3254.const$0,"gtk_action_get_tooltip");
+        return RuntimeHelper.requireNonNull(constants$3259.const$0,"gtk_action_get_tooltip");
     }
     /**
      * {@snippet :
@@ -1304,7 +1720,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_stock_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$3254.const$1,"gtk_action_set_stock_id");
+        return RuntimeHelper.requireNonNull(constants$3259.const$1,"gtk_action_set_stock_id");
     }
     /**
      * {@snippet :
@@ -1320,7 +1736,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_stock_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$3254.const$2,"gtk_action_get_stock_id");
+        return RuntimeHelper.requireNonNull(constants$3259.const$2,"gtk_action_get_stock_id");
     }
     /**
      * {@snippet :
@@ -1336,7 +1752,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_gicon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3254.const$3,"gtk_action_set_gicon");
+        return RuntimeHelper.requireNonNull(constants$3259.const$3,"gtk_action_set_gicon");
     }
     /**
      * {@snippet :
@@ -1352,7 +1768,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_gicon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3254.const$4,"gtk_action_get_gicon");
+        return RuntimeHelper.requireNonNull(constants$3259.const$4,"gtk_action_get_gicon");
     }
     /**
      * {@snippet :
@@ -1368,7 +1784,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3254.const$5,"gtk_action_set_icon_name");
+        return RuntimeHelper.requireNonNull(constants$3259.const$5,"gtk_action_set_icon_name");
     }
     /**
      * {@snippet :
@@ -1384,7 +1800,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3255.const$0,"gtk_action_get_icon_name");
+        return RuntimeHelper.requireNonNull(constants$3260.const$0,"gtk_action_get_icon_name");
     }
     /**
      * {@snippet :
@@ -1400,7 +1816,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_visible_horizontal$MH() {
-        return RuntimeHelper.requireNonNull(constants$3255.const$1,"gtk_action_set_visible_horizontal");
+        return RuntimeHelper.requireNonNull(constants$3260.const$1,"gtk_action_set_visible_horizontal");
     }
     /**
      * {@snippet :
@@ -1416,7 +1832,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_visible_horizontal$MH() {
-        return RuntimeHelper.requireNonNull(constants$3255.const$2,"gtk_action_get_visible_horizontal");
+        return RuntimeHelper.requireNonNull(constants$3260.const$2,"gtk_action_get_visible_horizontal");
     }
     /**
      * {@snippet :
@@ -1432,7 +1848,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_visible_vertical$MH() {
-        return RuntimeHelper.requireNonNull(constants$3255.const$3,"gtk_action_set_visible_vertical");
+        return RuntimeHelper.requireNonNull(constants$3260.const$3,"gtk_action_set_visible_vertical");
     }
     /**
      * {@snippet :
@@ -1448,7 +1864,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_visible_vertical$MH() {
-        return RuntimeHelper.requireNonNull(constants$3255.const$4,"gtk_action_get_visible_vertical");
+        return RuntimeHelper.requireNonNull(constants$3260.const$4,"gtk_action_get_visible_vertical");
     }
     /**
      * {@snippet :
@@ -1464,7 +1880,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_is_important$MH() {
-        return RuntimeHelper.requireNonNull(constants$3255.const$5,"gtk_action_set_is_important");
+        return RuntimeHelper.requireNonNull(constants$3260.const$5,"gtk_action_set_is_important");
     }
     /**
      * {@snippet :
@@ -1480,7 +1896,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_is_important$MH() {
-        return RuntimeHelper.requireNonNull(constants$3256.const$0,"gtk_action_get_is_important");
+        return RuntimeHelper.requireNonNull(constants$3261.const$0,"gtk_action_get_is_important");
     }
     /**
      * {@snippet :
@@ -1496,7 +1912,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_set_always_show_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$3256.const$1,"gtk_action_set_always_show_image");
+        return RuntimeHelper.requireNonNull(constants$3261.const$1,"gtk_action_set_always_show_image");
     }
     /**
      * {@snippet :
@@ -1512,7 +1928,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_get_always_show_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$3256.const$2,"gtk_action_get_always_show_image");
+        return RuntimeHelper.requireNonNull(constants$3261.const$2,"gtk_action_get_always_show_image");
     }
     /**
      * {@snippet :
@@ -1528,7 +1944,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_activatable_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3257.const$2,"gtk_activatable_get_type");
+        return RuntimeHelper.requireNonNull(constants$3262.const$2,"gtk_activatable_get_type");
     }
     /**
      * {@snippet :
@@ -1544,7 +1960,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_activatable_sync_action_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$3257.const$3,"gtk_activatable_sync_action_properties");
+        return RuntimeHelper.requireNonNull(constants$3262.const$3,"gtk_activatable_sync_action_properties");
     }
     /**
      * {@snippet :
@@ -1560,7 +1976,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_activatable_set_related_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$3257.const$4,"gtk_activatable_set_related_action");
+        return RuntimeHelper.requireNonNull(constants$3262.const$4,"gtk_activatable_set_related_action");
     }
     /**
      * {@snippet :
@@ -1576,7 +1992,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_activatable_get_related_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$3257.const$5,"gtk_activatable_get_related_action");
+        return RuntimeHelper.requireNonNull(constants$3262.const$5,"gtk_activatable_get_related_action");
     }
     /**
      * {@snippet :
@@ -1592,7 +2008,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_activatable_set_use_action_appearance$MH() {
-        return RuntimeHelper.requireNonNull(constants$3258.const$0,"gtk_activatable_set_use_action_appearance");
+        return RuntimeHelper.requireNonNull(constants$3263.const$0,"gtk_activatable_set_use_action_appearance");
     }
     /**
      * {@snippet :
@@ -1608,7 +2024,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_activatable_get_use_action_appearance$MH() {
-        return RuntimeHelper.requireNonNull(constants$3258.const$1,"gtk_activatable_get_use_action_appearance");
+        return RuntimeHelper.requireNonNull(constants$3263.const$1,"gtk_activatable_get_use_action_appearance");
     }
     /**
      * {@snippet :
@@ -1624,7 +2040,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_activatable_do_set_related_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$3258.const$2,"gtk_activatable_do_set_related_action");
+        return RuntimeHelper.requireNonNull(constants$3263.const$2,"gtk_activatable_do_set_related_action");
     }
     /**
      * {@snippet :
@@ -1640,7 +2056,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_stock_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$3259.const$4,"gtk_stock_add");
+        return RuntimeHelper.requireNonNull(constants$3264.const$4,"gtk_stock_add");
     }
     /**
      * {@snippet :
@@ -1656,7 +2072,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_stock_add_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$3259.const$5,"gtk_stock_add_static");
+        return RuntimeHelper.requireNonNull(constants$3264.const$5,"gtk_stock_add_static");
     }
     /**
      * {@snippet :
@@ -1672,7 +2088,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_stock_lookup$MH() {
-        return RuntimeHelper.requireNonNull(constants$3260.const$0,"gtk_stock_lookup");
+        return RuntimeHelper.requireNonNull(constants$3265.const$0,"gtk_stock_lookup");
     }
     /**
      * {@snippet :
@@ -1688,7 +2104,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_stock_list_ids$MH() {
-        return RuntimeHelper.requireNonNull(constants$3260.const$1,"gtk_stock_list_ids");
+        return RuntimeHelper.requireNonNull(constants$3265.const$1,"gtk_stock_list_ids");
     }
     /**
      * {@snippet :
@@ -1704,7 +2120,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_stock_item_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$3260.const$2,"gtk_stock_item_copy");
+        return RuntimeHelper.requireNonNull(constants$3265.const$2,"gtk_stock_item_copy");
     }
     /**
      * {@snippet :
@@ -1720,7 +2136,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_stock_item_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$3260.const$3,"gtk_stock_item_free");
+        return RuntimeHelper.requireNonNull(constants$3265.const$3,"gtk_stock_item_free");
     }
     /**
      * {@snippet :
@@ -1736,7 +2152,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_stock_set_translate_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$3261.const$0,"gtk_stock_set_translate_func");
+        return RuntimeHelper.requireNonNull(constants$3266.const$0,"gtk_stock_set_translate_func");
     }
     /**
      * {@snippet :
@@ -1758,7 +2174,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
      */
     public static final AddressLayout GtkStock = RuntimeHelper.POINTER;
     public static MethodHandle gtk_action_group_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3267.const$2,"gtk_action_group_get_type");
+        return RuntimeHelper.requireNonNull(constants$3272.const$2,"gtk_action_group_get_type");
     }
     /**
      * {@snippet :
@@ -1774,7 +2190,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3267.const$3,"gtk_action_group_new");
+        return RuntimeHelper.requireNonNull(constants$3272.const$3,"gtk_action_group_new");
     }
     /**
      * {@snippet :
@@ -1790,7 +2206,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3267.const$4,"gtk_action_group_get_name");
+        return RuntimeHelper.requireNonNull(constants$3272.const$4,"gtk_action_group_get_name");
     }
     /**
      * {@snippet :
@@ -1806,7 +2222,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_get_sensitive$MH() {
-        return RuntimeHelper.requireNonNull(constants$3267.const$5,"gtk_action_group_get_sensitive");
+        return RuntimeHelper.requireNonNull(constants$3272.const$5,"gtk_action_group_get_sensitive");
     }
     /**
      * {@snippet :
@@ -1822,7 +2238,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_set_sensitive$MH() {
-        return RuntimeHelper.requireNonNull(constants$3268.const$0,"gtk_action_group_set_sensitive");
+        return RuntimeHelper.requireNonNull(constants$3273.const$0,"gtk_action_group_set_sensitive");
     }
     /**
      * {@snippet :
@@ -1838,7 +2254,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_get_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$3268.const$1,"gtk_action_group_get_visible");
+        return RuntimeHelper.requireNonNull(constants$3273.const$1,"gtk_action_group_get_visible");
     }
     /**
      * {@snippet :
@@ -1854,7 +2270,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_set_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$3268.const$2,"gtk_action_group_set_visible");
+        return RuntimeHelper.requireNonNull(constants$3273.const$2,"gtk_action_group_set_visible");
     }
     /**
      * {@snippet :
@@ -1870,7 +2286,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_get_accel_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3268.const$3,"gtk_action_group_get_accel_group");
+        return RuntimeHelper.requireNonNull(constants$3273.const$3,"gtk_action_group_get_accel_group");
     }
     /**
      * {@snippet :
@@ -1886,7 +2302,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_set_accel_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3268.const$4,"gtk_action_group_set_accel_group");
+        return RuntimeHelper.requireNonNull(constants$3273.const$4,"gtk_action_group_set_accel_group");
     }
     /**
      * {@snippet :
@@ -1902,7 +2318,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_get_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$3268.const$5,"gtk_action_group_get_action");
+        return RuntimeHelper.requireNonNull(constants$3273.const$5,"gtk_action_group_get_action");
     }
     /**
      * {@snippet :
@@ -1918,7 +2334,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_list_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$3269.const$0,"gtk_action_group_list_actions");
+        return RuntimeHelper.requireNonNull(constants$3274.const$0,"gtk_action_group_list_actions");
     }
     /**
      * {@snippet :
@@ -1934,7 +2350,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_add_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$3269.const$1,"gtk_action_group_add_action");
+        return RuntimeHelper.requireNonNull(constants$3274.const$1,"gtk_action_group_add_action");
     }
     /**
      * {@snippet :
@@ -1950,7 +2366,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_add_action_with_accel$MH() {
-        return RuntimeHelper.requireNonNull(constants$3269.const$2,"gtk_action_group_add_action_with_accel");
+        return RuntimeHelper.requireNonNull(constants$3274.const$2,"gtk_action_group_add_action_with_accel");
     }
     /**
      * {@snippet :
@@ -1966,7 +2382,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_remove_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$3269.const$3,"gtk_action_group_remove_action");
+        return RuntimeHelper.requireNonNull(constants$3274.const$3,"gtk_action_group_remove_action");
     }
     /**
      * {@snippet :
@@ -1982,7 +2398,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_add_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$3269.const$4,"gtk_action_group_add_actions");
+        return RuntimeHelper.requireNonNull(constants$3274.const$4,"gtk_action_group_add_actions");
     }
     /**
      * {@snippet :
@@ -1998,7 +2414,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_add_toggle_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$3269.const$5,"gtk_action_group_add_toggle_actions");
+        return RuntimeHelper.requireNonNull(constants$3274.const$5,"gtk_action_group_add_toggle_actions");
     }
     /**
      * {@snippet :
@@ -2014,7 +2430,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_add_radio_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$3270.const$2,"gtk_action_group_add_radio_actions");
+        return RuntimeHelper.requireNonNull(constants$3275.const$2,"gtk_action_group_add_radio_actions");
     }
     /**
      * {@snippet :
@@ -2030,7 +2446,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_add_actions_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$3270.const$4,"gtk_action_group_add_actions_full");
+        return RuntimeHelper.requireNonNull(constants$3275.const$4,"gtk_action_group_add_actions_full");
     }
     /**
      * {@snippet :
@@ -2046,7 +2462,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_add_toggle_actions_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$3271.const$0,"gtk_action_group_add_toggle_actions_full");
+        return RuntimeHelper.requireNonNull(constants$3276.const$0,"gtk_action_group_add_toggle_actions_full");
     }
     /**
      * {@snippet :
@@ -2062,7 +2478,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_add_radio_actions_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$3271.const$3,"gtk_action_group_add_radio_actions_full");
+        return RuntimeHelper.requireNonNull(constants$3276.const$3,"gtk_action_group_add_radio_actions_full");
     }
     /**
      * {@snippet :
@@ -2078,7 +2494,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_set_translate_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$3272.const$0,"gtk_action_group_set_translate_func");
+        return RuntimeHelper.requireNonNull(constants$3277.const$0,"gtk_action_group_set_translate_func");
     }
     /**
      * {@snippet :
@@ -2094,7 +2510,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_set_translation_domain$MH() {
-        return RuntimeHelper.requireNonNull(constants$3272.const$1,"gtk_action_group_set_translation_domain");
+        return RuntimeHelper.requireNonNull(constants$3277.const$1,"gtk_action_group_set_translation_domain");
     }
     /**
      * {@snippet :
@@ -2110,7 +2526,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_action_group_translate_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$3272.const$2,"gtk_action_group_translate_string");
+        return RuntimeHelper.requireNonNull(constants$3277.const$2,"gtk_action_group_translate_string");
     }
     /**
      * {@snippet :
@@ -2126,7 +2542,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_action_group_emit_connect_proxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$3272.const$3,"_gtk_action_group_emit_connect_proxy");
+        return RuntimeHelper.requireNonNull(constants$3277.const$3,"_gtk_action_group_emit_connect_proxy");
     }
     /**
      * {@snippet :
@@ -2142,7 +2558,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_action_group_emit_disconnect_proxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$3272.const$4,"_gtk_action_group_emit_disconnect_proxy");
+        return RuntimeHelper.requireNonNull(constants$3277.const$4,"_gtk_action_group_emit_disconnect_proxy");
     }
     /**
      * {@snippet :
@@ -2158,7 +2574,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_action_group_emit_pre_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$3272.const$5,"_gtk_action_group_emit_pre_activate");
+        return RuntimeHelper.requireNonNull(constants$3277.const$5,"_gtk_action_group_emit_pre_activate");
     }
     /**
      * {@snippet :
@@ -2174,7 +2590,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_action_group_emit_post_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$3273.const$0,"_gtk_action_group_emit_post_activate");
+        return RuntimeHelper.requireNonNull(constants$3278.const$0,"_gtk_action_group_emit_post_activate");
     }
     /**
      * {@snippet :
@@ -2190,7 +2606,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_alignment_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3275.const$0,"gtk_alignment_get_type");
+        return RuntimeHelper.requireNonNull(constants$3280.const$0,"gtk_alignment_get_type");
     }
     /**
      * {@snippet :
@@ -2206,7 +2622,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_alignment_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3275.const$2,"gtk_alignment_new");
+        return RuntimeHelper.requireNonNull(constants$3280.const$2,"gtk_alignment_new");
     }
     /**
      * {@snippet :
@@ -2222,7 +2638,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_alignment_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$3275.const$4,"gtk_alignment_set");
+        return RuntimeHelper.requireNonNull(constants$3280.const$4,"gtk_alignment_set");
     }
     /**
      * {@snippet :
@@ -2238,7 +2654,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_alignment_set_padding$MH() {
-        return RuntimeHelper.requireNonNull(constants$3275.const$5,"gtk_alignment_set_padding");
+        return RuntimeHelper.requireNonNull(constants$3280.const$5,"gtk_alignment_set_padding");
     }
     /**
      * {@snippet :
@@ -2254,7 +2670,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_alignment_get_padding$MH() {
-        return RuntimeHelper.requireNonNull(constants$3276.const$0,"gtk_alignment_get_padding");
+        return RuntimeHelper.requireNonNull(constants$3281.const$0,"gtk_alignment_get_padding");
     }
     /**
      * {@snippet :
@@ -2270,7 +2686,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3278.const$4,"gtk_color_selection_get_type");
+        return RuntimeHelper.requireNonNull(constants$3283.const$4,"gtk_color_selection_get_type");
     }
     /**
      * {@snippet :
@@ -2286,7 +2702,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3278.const$5,"gtk_color_selection_new");
+        return RuntimeHelper.requireNonNull(constants$3283.const$5,"gtk_color_selection_new");
     }
     /**
      * {@snippet :
@@ -2302,7 +2718,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_get_has_opacity_control$MH() {
-        return RuntimeHelper.requireNonNull(constants$3279.const$0,"gtk_color_selection_get_has_opacity_control");
+        return RuntimeHelper.requireNonNull(constants$3284.const$0,"gtk_color_selection_get_has_opacity_control");
     }
     /**
      * {@snippet :
@@ -2318,7 +2734,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_set_has_opacity_control$MH() {
-        return RuntimeHelper.requireNonNull(constants$3279.const$1,"gtk_color_selection_set_has_opacity_control");
+        return RuntimeHelper.requireNonNull(constants$3284.const$1,"gtk_color_selection_set_has_opacity_control");
     }
     /**
      * {@snippet :
@@ -2334,7 +2750,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_get_has_palette$MH() {
-        return RuntimeHelper.requireNonNull(constants$3279.const$2,"gtk_color_selection_get_has_palette");
+        return RuntimeHelper.requireNonNull(constants$3284.const$2,"gtk_color_selection_get_has_palette");
     }
     /**
      * {@snippet :
@@ -2350,7 +2766,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_set_has_palette$MH() {
-        return RuntimeHelper.requireNonNull(constants$3279.const$3,"gtk_color_selection_set_has_palette");
+        return RuntimeHelper.requireNonNull(constants$3284.const$3,"gtk_color_selection_set_has_palette");
     }
     /**
      * {@snippet :
@@ -2366,7 +2782,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_set_current_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$3279.const$4,"gtk_color_selection_set_current_alpha");
+        return RuntimeHelper.requireNonNull(constants$3284.const$4,"gtk_color_selection_set_current_alpha");
     }
     /**
      * {@snippet :
@@ -2382,7 +2798,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_get_current_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$3279.const$5,"gtk_color_selection_get_current_alpha");
+        return RuntimeHelper.requireNonNull(constants$3284.const$5,"gtk_color_selection_get_current_alpha");
     }
     /**
      * {@snippet :
@@ -2398,7 +2814,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_set_previous_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$3280.const$0,"gtk_color_selection_set_previous_alpha");
+        return RuntimeHelper.requireNonNull(constants$3285.const$0,"gtk_color_selection_set_previous_alpha");
     }
     /**
      * {@snippet :
@@ -2414,7 +2830,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_get_previous_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$3280.const$1,"gtk_color_selection_get_previous_alpha");
+        return RuntimeHelper.requireNonNull(constants$3285.const$1,"gtk_color_selection_get_previous_alpha");
     }
     /**
      * {@snippet :
@@ -2430,7 +2846,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_set_current_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$3280.const$2,"gtk_color_selection_set_current_rgba");
+        return RuntimeHelper.requireNonNull(constants$3285.const$2,"gtk_color_selection_set_current_rgba");
     }
     /**
      * {@snippet :
@@ -2446,7 +2862,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_get_current_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$3280.const$3,"gtk_color_selection_get_current_rgba");
+        return RuntimeHelper.requireNonNull(constants$3285.const$3,"gtk_color_selection_get_current_rgba");
     }
     /**
      * {@snippet :
@@ -2462,7 +2878,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_set_previous_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$3280.const$4,"gtk_color_selection_set_previous_rgba");
+        return RuntimeHelper.requireNonNull(constants$3285.const$4,"gtk_color_selection_set_previous_rgba");
     }
     /**
      * {@snippet :
@@ -2478,7 +2894,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_get_previous_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$3280.const$5,"gtk_color_selection_get_previous_rgba");
+        return RuntimeHelper.requireNonNull(constants$3285.const$5,"gtk_color_selection_get_previous_rgba");
     }
     /**
      * {@snippet :
@@ -2494,7 +2910,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_is_adjusting$MH() {
-        return RuntimeHelper.requireNonNull(constants$3281.const$0,"gtk_color_selection_is_adjusting");
+        return RuntimeHelper.requireNonNull(constants$3286.const$0,"gtk_color_selection_is_adjusting");
     }
     /**
      * {@snippet :
@@ -2510,7 +2926,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_palette_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$3281.const$1,"gtk_color_selection_palette_from_string");
+        return RuntimeHelper.requireNonNull(constants$3286.const$1,"gtk_color_selection_palette_from_string");
     }
     /**
      * {@snippet :
@@ -2526,7 +2942,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_palette_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$3281.const$2,"gtk_color_selection_palette_to_string");
+        return RuntimeHelper.requireNonNull(constants$3286.const$2,"gtk_color_selection_palette_to_string");
     }
     /**
      * {@snippet :
@@ -2542,7 +2958,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_set_change_palette_with_screen_hook$MH() {
-        return RuntimeHelper.requireNonNull(constants$3281.const$5,"gtk_color_selection_set_change_palette_with_screen_hook");
+        return RuntimeHelper.requireNonNull(constants$3286.const$5,"gtk_color_selection_set_change_palette_with_screen_hook");
     }
     /**
      * {@snippet :
@@ -2558,7 +2974,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_set_current_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3282.const$0,"gtk_color_selection_set_current_color");
+        return RuntimeHelper.requireNonNull(constants$3287.const$0,"gtk_color_selection_set_current_color");
     }
     /**
      * {@snippet :
@@ -2574,7 +2990,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_get_current_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3282.const$1,"gtk_color_selection_get_current_color");
+        return RuntimeHelper.requireNonNull(constants$3287.const$1,"gtk_color_selection_get_current_color");
     }
     /**
      * {@snippet :
@@ -2590,7 +3006,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_set_previous_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3282.const$2,"gtk_color_selection_set_previous_color");
+        return RuntimeHelper.requireNonNull(constants$3287.const$2,"gtk_color_selection_set_previous_color");
     }
     /**
      * {@snippet :
@@ -2606,7 +3022,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_get_previous_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3282.const$3,"gtk_color_selection_get_previous_color");
+        return RuntimeHelper.requireNonNull(constants$3287.const$3,"gtk_color_selection_get_previous_color");
     }
     /**
      * {@snippet :
@@ -2622,7 +3038,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_dialog_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3284.const$3,"gtk_color_selection_dialog_get_type");
+        return RuntimeHelper.requireNonNull(constants$3289.const$3,"gtk_color_selection_dialog_get_type");
     }
     /**
      * {@snippet :
@@ -2638,7 +3054,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_dialog_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3284.const$4,"gtk_color_selection_dialog_new");
+        return RuntimeHelper.requireNonNull(constants$3289.const$4,"gtk_color_selection_dialog_new");
     }
     /**
      * {@snippet :
@@ -2654,7 +3070,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_color_selection_dialog_get_color_selection$MH() {
-        return RuntimeHelper.requireNonNull(constants$3284.const$5,"gtk_color_selection_dialog_get_color_selection");
+        return RuntimeHelper.requireNonNull(constants$3289.const$5,"gtk_color_selection_dialog_get_color_selection");
     }
     /**
      * {@snippet :
@@ -2670,7 +3086,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3288.const$4,"gtk_font_selection_get_type");
+        return RuntimeHelper.requireNonNull(constants$3293.const$4,"gtk_font_selection_get_type");
     }
     /**
      * {@snippet :
@@ -2686,7 +3102,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3288.const$5,"gtk_font_selection_new");
+        return RuntimeHelper.requireNonNull(constants$3293.const$5,"gtk_font_selection_new");
     }
     /**
      * {@snippet :
@@ -2702,7 +3118,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_family_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$3289.const$0,"gtk_font_selection_get_family_list");
+        return RuntimeHelper.requireNonNull(constants$3294.const$0,"gtk_font_selection_get_family_list");
     }
     /**
      * {@snippet :
@@ -2718,7 +3134,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_face_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$3289.const$1,"gtk_font_selection_get_face_list");
+        return RuntimeHelper.requireNonNull(constants$3294.const$1,"gtk_font_selection_get_face_list");
     }
     /**
      * {@snippet :
@@ -2734,7 +3150,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_size_entry$MH() {
-        return RuntimeHelper.requireNonNull(constants$3289.const$2,"gtk_font_selection_get_size_entry");
+        return RuntimeHelper.requireNonNull(constants$3294.const$2,"gtk_font_selection_get_size_entry");
     }
     /**
      * {@snippet :
@@ -2750,7 +3166,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_size_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$3289.const$3,"gtk_font_selection_get_size_list");
+        return RuntimeHelper.requireNonNull(constants$3294.const$3,"gtk_font_selection_get_size_list");
     }
     /**
      * {@snippet :
@@ -2766,7 +3182,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_preview_entry$MH() {
-        return RuntimeHelper.requireNonNull(constants$3289.const$4,"gtk_font_selection_get_preview_entry");
+        return RuntimeHelper.requireNonNull(constants$3294.const$4,"gtk_font_selection_get_preview_entry");
     }
     /**
      * {@snippet :
@@ -2782,7 +3198,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$3289.const$5,"gtk_font_selection_get_family");
+        return RuntimeHelper.requireNonNull(constants$3294.const$5,"gtk_font_selection_get_family");
     }
     /**
      * {@snippet :
@@ -2798,7 +3214,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$3290.const$0,"gtk_font_selection_get_face");
+        return RuntimeHelper.requireNonNull(constants$3295.const$0,"gtk_font_selection_get_face");
     }
     /**
      * {@snippet :
@@ -2814,7 +3230,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$3290.const$1,"gtk_font_selection_get_size");
+        return RuntimeHelper.requireNonNull(constants$3295.const$1,"gtk_font_selection_get_size");
     }
     /**
      * {@snippet :
@@ -2830,7 +3246,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_font_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3290.const$2,"gtk_font_selection_get_font_name");
+        return RuntimeHelper.requireNonNull(constants$3295.const$2,"gtk_font_selection_get_font_name");
     }
     /**
      * {@snippet :
@@ -2846,7 +3262,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_set_font_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3290.const$3,"gtk_font_selection_set_font_name");
+        return RuntimeHelper.requireNonNull(constants$3295.const$3,"gtk_font_selection_set_font_name");
     }
     /**
      * {@snippet :
@@ -2862,7 +3278,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_get_preview_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$3290.const$4,"gtk_font_selection_get_preview_text");
+        return RuntimeHelper.requireNonNull(constants$3295.const$4,"gtk_font_selection_get_preview_text");
     }
     /**
      * {@snippet :
@@ -2878,7 +3294,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_set_preview_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$3290.const$5,"gtk_font_selection_set_preview_text");
+        return RuntimeHelper.requireNonNull(constants$3295.const$5,"gtk_font_selection_set_preview_text");
     }
     /**
      * {@snippet :
@@ -2894,7 +3310,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_dialog_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3291.const$0,"gtk_font_selection_dialog_get_type");
+        return RuntimeHelper.requireNonNull(constants$3296.const$0,"gtk_font_selection_dialog_get_type");
     }
     /**
      * {@snippet :
@@ -2910,7 +3326,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_dialog_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3291.const$1,"gtk_font_selection_dialog_new");
+        return RuntimeHelper.requireNonNull(constants$3296.const$1,"gtk_font_selection_dialog_new");
     }
     /**
      * {@snippet :
@@ -2926,7 +3342,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_dialog_get_ok_button$MH() {
-        return RuntimeHelper.requireNonNull(constants$3291.const$2,"gtk_font_selection_dialog_get_ok_button");
+        return RuntimeHelper.requireNonNull(constants$3296.const$2,"gtk_font_selection_dialog_get_ok_button");
     }
     /**
      * {@snippet :
@@ -2942,7 +3358,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_dialog_get_cancel_button$MH() {
-        return RuntimeHelper.requireNonNull(constants$3291.const$3,"gtk_font_selection_dialog_get_cancel_button");
+        return RuntimeHelper.requireNonNull(constants$3296.const$3,"gtk_font_selection_dialog_get_cancel_button");
     }
     /**
      * {@snippet :
@@ -2958,7 +3374,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_dialog_get_font_selection$MH() {
-        return RuntimeHelper.requireNonNull(constants$3291.const$4,"gtk_font_selection_dialog_get_font_selection");
+        return RuntimeHelper.requireNonNull(constants$3296.const$4,"gtk_font_selection_dialog_get_font_selection");
     }
     /**
      * {@snippet :
@@ -2974,7 +3390,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_dialog_get_font_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3291.const$5,"gtk_font_selection_dialog_get_font_name");
+        return RuntimeHelper.requireNonNull(constants$3296.const$5,"gtk_font_selection_dialog_get_font_name");
     }
     /**
      * {@snippet :
@@ -2990,7 +3406,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_dialog_set_font_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3292.const$0,"gtk_font_selection_dialog_set_font_name");
+        return RuntimeHelper.requireNonNull(constants$3297.const$0,"gtk_font_selection_dialog_set_font_name");
     }
     /**
      * {@snippet :
@@ -3006,7 +3422,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_dialog_get_preview_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$3292.const$1,"gtk_font_selection_dialog_get_preview_text");
+        return RuntimeHelper.requireNonNull(constants$3297.const$1,"gtk_font_selection_dialog_get_preview_text");
     }
     /**
      * {@snippet :
@@ -3022,7 +3438,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_font_selection_dialog_set_preview_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$3292.const$2,"gtk_font_selection_dialog_set_preview_text");
+        return RuntimeHelper.requireNonNull(constants$3297.const$2,"gtk_font_selection_dialog_set_preview_text");
     }
     /**
      * {@snippet :
@@ -3038,7 +3454,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3292.const$3,"gtk_symbolic_color_get_type");
+        return RuntimeHelper.requireNonNull(constants$3297.const$3,"gtk_symbolic_color_get_type");
     }
     /**
      * {@snippet :
@@ -3054,7 +3470,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_new_literal$MH() {
-        return RuntimeHelper.requireNonNull(constants$3292.const$4,"gtk_symbolic_color_new_literal");
+        return RuntimeHelper.requireNonNull(constants$3297.const$4,"gtk_symbolic_color_new_literal");
     }
     /**
      * {@snippet :
@@ -3070,7 +3486,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_new_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3292.const$5,"gtk_symbolic_color_new_name");
+        return RuntimeHelper.requireNonNull(constants$3297.const$5,"gtk_symbolic_color_new_name");
     }
     /**
      * {@snippet :
@@ -3086,7 +3502,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_new_shade$MH() {
-        return RuntimeHelper.requireNonNull(constants$3293.const$0,"gtk_symbolic_color_new_shade");
+        return RuntimeHelper.requireNonNull(constants$3298.const$0,"gtk_symbolic_color_new_shade");
     }
     /**
      * {@snippet :
@@ -3102,7 +3518,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_new_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$3293.const$1,"gtk_symbolic_color_new_alpha");
+        return RuntimeHelper.requireNonNull(constants$3298.const$1,"gtk_symbolic_color_new_alpha");
     }
     /**
      * {@snippet :
@@ -3118,7 +3534,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_new_mix$MH() {
-        return RuntimeHelper.requireNonNull(constants$3293.const$3,"gtk_symbolic_color_new_mix");
+        return RuntimeHelper.requireNonNull(constants$3298.const$3,"gtk_symbolic_color_new_mix");
     }
     /**
      * {@snippet :
@@ -3134,7 +3550,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_new_win32$MH() {
-        return RuntimeHelper.requireNonNull(constants$3293.const$4,"gtk_symbolic_color_new_win32");
+        return RuntimeHelper.requireNonNull(constants$3298.const$4,"gtk_symbolic_color_new_win32");
     }
     /**
      * {@snippet :
@@ -3150,7 +3566,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$3293.const$5,"gtk_symbolic_color_ref");
+        return RuntimeHelper.requireNonNull(constants$3298.const$5,"gtk_symbolic_color_ref");
     }
     /**
      * {@snippet :
@@ -3166,7 +3582,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$3294.const$0,"gtk_symbolic_color_unref");
+        return RuntimeHelper.requireNonNull(constants$3299.const$0,"gtk_symbolic_color_unref");
     }
     /**
      * {@snippet :
@@ -3182,7 +3598,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$3294.const$1,"gtk_symbolic_color_to_string");
+        return RuntimeHelper.requireNonNull(constants$3299.const$1,"gtk_symbolic_color_to_string");
     }
     /**
      * {@snippet :
@@ -3198,7 +3614,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_symbolic_color_resolve$MH() {
-        return RuntimeHelper.requireNonNull(constants$3294.const$2,"gtk_symbolic_color_resolve");
+        return RuntimeHelper.requireNonNull(constants$3299.const$2,"gtk_symbolic_color_resolve");
     }
     /**
      * {@snippet :
@@ -3214,7 +3630,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_gradient_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3294.const$3,"gtk_gradient_get_type");
+        return RuntimeHelper.requireNonNull(constants$3299.const$3,"gtk_gradient_get_type");
     }
     /**
      * {@snippet :
@@ -3230,7 +3646,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_gradient_new_linear$MH() {
-        return RuntimeHelper.requireNonNull(constants$3294.const$4,"gtk_gradient_new_linear");
+        return RuntimeHelper.requireNonNull(constants$3299.const$4,"gtk_gradient_new_linear");
     }
     /**
      * {@snippet :
@@ -3246,7 +3662,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_gradient_new_radial$MH() {
-        return RuntimeHelper.requireNonNull(constants$3294.const$5,"gtk_gradient_new_radial");
+        return RuntimeHelper.requireNonNull(constants$3299.const$5,"gtk_gradient_new_radial");
     }
     /**
      * {@snippet :
@@ -3262,7 +3678,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_gradient_add_color_stop$MH() {
-        return RuntimeHelper.requireNonNull(constants$3295.const$1,"gtk_gradient_add_color_stop");
+        return RuntimeHelper.requireNonNull(constants$3300.const$1,"gtk_gradient_add_color_stop");
     }
     /**
      * {@snippet :
@@ -3278,7 +3694,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_gradient_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$3295.const$2,"gtk_gradient_ref");
+        return RuntimeHelper.requireNonNull(constants$3300.const$2,"gtk_gradient_ref");
     }
     /**
      * {@snippet :
@@ -3294,7 +3710,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_gradient_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$3295.const$3,"gtk_gradient_unref");
+        return RuntimeHelper.requireNonNull(constants$3300.const$3,"gtk_gradient_unref");
     }
     /**
      * {@snippet :
@@ -3310,7 +3726,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_gradient_resolve$MH() {
-        return RuntimeHelper.requireNonNull(constants$3295.const$4,"gtk_gradient_resolve");
+        return RuntimeHelper.requireNonNull(constants$3300.const$4,"gtk_gradient_resolve");
     }
     /**
      * {@snippet :
@@ -3326,7 +3742,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_gradient_resolve_for_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$3295.const$5,"gtk_gradient_resolve_for_context");
+        return RuntimeHelper.requireNonNull(constants$3300.const$5,"gtk_gradient_resolve_for_context");
     }
     /**
      * {@snippet :
@@ -3342,7 +3758,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_gradient_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$3296.const$0,"gtk_gradient_to_string");
+        return RuntimeHelper.requireNonNull(constants$3301.const$0,"gtk_gradient_to_string");
     }
     /**
      * {@snippet :
@@ -3358,7 +3774,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_handle_box_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3298.const$4,"gtk_handle_box_get_type");
+        return RuntimeHelper.requireNonNull(constants$3303.const$4,"gtk_handle_box_get_type");
     }
     /**
      * {@snippet :
@@ -3374,7 +3790,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_handle_box_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3298.const$5,"gtk_handle_box_new");
+        return RuntimeHelper.requireNonNull(constants$3303.const$5,"gtk_handle_box_new");
     }
     /**
      * {@snippet :
@@ -3390,7 +3806,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_handle_box_set_shadow_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3299.const$0,"gtk_handle_box_set_shadow_type");
+        return RuntimeHelper.requireNonNull(constants$3304.const$0,"gtk_handle_box_set_shadow_type");
     }
     /**
      * {@snippet :
@@ -3406,7 +3822,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_handle_box_get_shadow_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3299.const$1,"gtk_handle_box_get_shadow_type");
+        return RuntimeHelper.requireNonNull(constants$3304.const$1,"gtk_handle_box_get_shadow_type");
     }
     /**
      * {@snippet :
@@ -3422,7 +3838,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_handle_box_set_handle_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$3299.const$2,"gtk_handle_box_set_handle_position");
+        return RuntimeHelper.requireNonNull(constants$3304.const$2,"gtk_handle_box_set_handle_position");
     }
     /**
      * {@snippet :
@@ -3438,7 +3854,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_handle_box_get_handle_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$3299.const$3,"gtk_handle_box_get_handle_position");
+        return RuntimeHelper.requireNonNull(constants$3304.const$3,"gtk_handle_box_get_handle_position");
     }
     /**
      * {@snippet :
@@ -3454,7 +3870,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_handle_box_set_snap_edge$MH() {
-        return RuntimeHelper.requireNonNull(constants$3299.const$4,"gtk_handle_box_set_snap_edge");
+        return RuntimeHelper.requireNonNull(constants$3304.const$4,"gtk_handle_box_set_snap_edge");
     }
     /**
      * {@snippet :
@@ -3470,7 +3886,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_handle_box_get_snap_edge$MH() {
-        return RuntimeHelper.requireNonNull(constants$3299.const$5,"gtk_handle_box_get_snap_edge");
+        return RuntimeHelper.requireNonNull(constants$3304.const$5,"gtk_handle_box_get_snap_edge");
     }
     /**
      * {@snippet :
@@ -3486,7 +3902,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_handle_box_get_child_detached$MH() {
-        return RuntimeHelper.requireNonNull(constants$3300.const$0,"gtk_handle_box_get_child_detached");
+        return RuntimeHelper.requireNonNull(constants$3305.const$0,"gtk_handle_box_get_child_detached");
     }
     /**
      * {@snippet :
@@ -3502,7 +3918,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hbutton_box_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3300.const$3,"gtk_hbutton_box_get_type");
+        return RuntimeHelper.requireNonNull(constants$3305.const$3,"gtk_hbutton_box_get_type");
     }
     /**
      * {@snippet :
@@ -3518,7 +3934,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hbutton_box_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3300.const$4,"gtk_hbutton_box_new");
+        return RuntimeHelper.requireNonNull(constants$3305.const$4,"gtk_hbutton_box_new");
     }
     /**
      * {@snippet :
@@ -3534,7 +3950,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hbox_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3301.const$1,"gtk_hbox_get_type");
+        return RuntimeHelper.requireNonNull(constants$3306.const$1,"gtk_hbox_get_type");
     }
     /**
      * {@snippet :
@@ -3550,7 +3966,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hbox_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3301.const$2,"gtk_hbox_new");
+        return RuntimeHelper.requireNonNull(constants$3306.const$2,"gtk_hbox_new");
     }
     /**
      * {@snippet :
@@ -3566,7 +3982,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hpaned_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3301.const$5,"gtk_hpaned_get_type");
+        return RuntimeHelper.requireNonNull(constants$3306.const$5,"gtk_hpaned_get_type");
     }
     /**
      * {@snippet :
@@ -3582,7 +3998,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hpaned_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3302.const$0,"gtk_hpaned_new");
+        return RuntimeHelper.requireNonNull(constants$3307.const$0,"gtk_hpaned_new");
     }
     /**
      * {@snippet :
@@ -3598,7 +4014,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hsv_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3304.const$4,"gtk_hsv_get_type");
+        return RuntimeHelper.requireNonNull(constants$3309.const$4,"gtk_hsv_get_type");
     }
     /**
      * {@snippet :
@@ -3614,7 +4030,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hsv_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3304.const$5,"gtk_hsv_new");
+        return RuntimeHelper.requireNonNull(constants$3309.const$5,"gtk_hsv_new");
     }
     /**
      * {@snippet :
@@ -3630,7 +4046,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hsv_set_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3305.const$0,"gtk_hsv_set_color");
+        return RuntimeHelper.requireNonNull(constants$3310.const$0,"gtk_hsv_set_color");
     }
     /**
      * {@snippet :
@@ -3646,7 +4062,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hsv_get_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3305.const$1,"gtk_hsv_get_color");
+        return RuntimeHelper.requireNonNull(constants$3310.const$1,"gtk_hsv_get_color");
     }
     /**
      * {@snippet :
@@ -3662,7 +4078,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hsv_set_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$3305.const$2,"gtk_hsv_set_metrics");
+        return RuntimeHelper.requireNonNull(constants$3310.const$2,"gtk_hsv_set_metrics");
     }
     /**
      * {@snippet :
@@ -3678,7 +4094,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hsv_get_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$3305.const$3,"gtk_hsv_get_metrics");
+        return RuntimeHelper.requireNonNull(constants$3310.const$3,"gtk_hsv_get_metrics");
     }
     /**
      * {@snippet :
@@ -3694,7 +4110,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hsv_is_adjusting$MH() {
-        return RuntimeHelper.requireNonNull(constants$3305.const$4,"gtk_hsv_is_adjusting");
+        return RuntimeHelper.requireNonNull(constants$3310.const$4,"gtk_hsv_is_adjusting");
     }
     /**
      * {@snippet :
@@ -3710,7 +4126,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hscale_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3306.const$1,"gtk_hscale_get_type");
+        return RuntimeHelper.requireNonNull(constants$3311.const$1,"gtk_hscale_get_type");
     }
     /**
      * {@snippet :
@@ -3726,7 +4142,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hscale_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3306.const$2,"gtk_hscale_new");
+        return RuntimeHelper.requireNonNull(constants$3311.const$2,"gtk_hscale_new");
     }
     /**
      * {@snippet :
@@ -3742,7 +4158,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hscale_new_with_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$3306.const$3,"gtk_hscale_new_with_range");
+        return RuntimeHelper.requireNonNull(constants$3311.const$3,"gtk_hscale_new_with_range");
     }
     /**
      * {@snippet :
@@ -3758,7 +4174,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hscrollbar_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3307.const$0,"gtk_hscrollbar_get_type");
+        return RuntimeHelper.requireNonNull(constants$3312.const$0,"gtk_hscrollbar_get_type");
     }
     /**
      * {@snippet :
@@ -3774,7 +4190,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hscrollbar_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3307.const$1,"gtk_hscrollbar_new");
+        return RuntimeHelper.requireNonNull(constants$3312.const$1,"gtk_hscrollbar_new");
     }
     /**
      * {@snippet :
@@ -3790,7 +4206,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hseparator_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3307.const$4,"gtk_hseparator_get_type");
+        return RuntimeHelper.requireNonNull(constants$3312.const$4,"gtk_hseparator_get_type");
     }
     /**
      * {@snippet :
@@ -3806,7 +4222,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_hseparator_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3307.const$5,"gtk_hseparator_new");
+        return RuntimeHelper.requireNonNull(constants$3312.const$5,"gtk_hseparator_new");
     }
     /**
      * {@snippet :
@@ -3822,7 +4238,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3309.const$5,"gtk_image_menu_item_get_type");
+        return RuntimeHelper.requireNonNull(constants$3314.const$5,"gtk_image_menu_item_get_type");
     }
     /**
      * {@snippet :
@@ -3838,7 +4254,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3310.const$0,"gtk_image_menu_item_new");
+        return RuntimeHelper.requireNonNull(constants$3315.const$0,"gtk_image_menu_item_new");
     }
     /**
      * {@snippet :
@@ -3854,7 +4270,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_new_with_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3310.const$1,"gtk_image_menu_item_new_with_label");
+        return RuntimeHelper.requireNonNull(constants$3315.const$1,"gtk_image_menu_item_new_with_label");
     }
     /**
      * {@snippet :
@@ -3870,7 +4286,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_new_with_mnemonic$MH() {
-        return RuntimeHelper.requireNonNull(constants$3310.const$2,"gtk_image_menu_item_new_with_mnemonic");
+        return RuntimeHelper.requireNonNull(constants$3315.const$2,"gtk_image_menu_item_new_with_mnemonic");
     }
     /**
      * {@snippet :
@@ -3886,7 +4302,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_new_from_stock$MH() {
-        return RuntimeHelper.requireNonNull(constants$3310.const$3,"gtk_image_menu_item_new_from_stock");
+        return RuntimeHelper.requireNonNull(constants$3315.const$3,"gtk_image_menu_item_new_from_stock");
     }
     /**
      * {@snippet :
@@ -3902,7 +4318,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_set_always_show_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$3310.const$4,"gtk_image_menu_item_set_always_show_image");
+        return RuntimeHelper.requireNonNull(constants$3315.const$4,"gtk_image_menu_item_set_always_show_image");
     }
     /**
      * {@snippet :
@@ -3918,7 +4334,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_get_always_show_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$3310.const$5,"gtk_image_menu_item_get_always_show_image");
+        return RuntimeHelper.requireNonNull(constants$3315.const$5,"gtk_image_menu_item_get_always_show_image");
     }
     /**
      * {@snippet :
@@ -3934,7 +4350,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_set_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$3311.const$0,"gtk_image_menu_item_set_image");
+        return RuntimeHelper.requireNonNull(constants$3316.const$0,"gtk_image_menu_item_set_image");
     }
     /**
      * {@snippet :
@@ -3950,7 +4366,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_get_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$3311.const$1,"gtk_image_menu_item_get_image");
+        return RuntimeHelper.requireNonNull(constants$3316.const$1,"gtk_image_menu_item_get_image");
     }
     /**
      * {@snippet :
@@ -3966,7 +4382,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_set_use_stock$MH() {
-        return RuntimeHelper.requireNonNull(constants$3311.const$2,"gtk_image_menu_item_set_use_stock");
+        return RuntimeHelper.requireNonNull(constants$3316.const$2,"gtk_image_menu_item_set_use_stock");
     }
     /**
      * {@snippet :
@@ -3982,7 +4398,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_get_use_stock$MH() {
-        return RuntimeHelper.requireNonNull(constants$3311.const$3,"gtk_image_menu_item_get_use_stock");
+        return RuntimeHelper.requireNonNull(constants$3316.const$3,"gtk_image_menu_item_get_use_stock");
     }
     /**
      * {@snippet :
@@ -3998,7 +4414,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_image_menu_item_set_accel_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3311.const$4,"gtk_image_menu_item_set_accel_group");
+        return RuntimeHelper.requireNonNull(constants$3316.const$4,"gtk_image_menu_item_set_accel_group");
     }
     /**
      * {@snippet :
@@ -4014,7 +4430,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3312.const$2,"gtk_numerable_icon_get_type");
+        return RuntimeHelper.requireNonNull(constants$3317.const$2,"gtk_numerable_icon_get_type");
     }
     /**
      * {@snippet :
@@ -4030,7 +4446,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3312.const$3,"gtk_numerable_icon_new");
+        return RuntimeHelper.requireNonNull(constants$3317.const$3,"gtk_numerable_icon_new");
     }
     /**
      * {@snippet :
@@ -4046,7 +4462,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_new_with_style_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$3312.const$4,"gtk_numerable_icon_new_with_style_context");
+        return RuntimeHelper.requireNonNull(constants$3317.const$4,"gtk_numerable_icon_new_with_style_context");
     }
     /**
      * {@snippet :
@@ -4062,7 +4478,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_get_style_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$3312.const$5,"gtk_numerable_icon_get_style_context");
+        return RuntimeHelper.requireNonNull(constants$3317.const$5,"gtk_numerable_icon_get_style_context");
     }
     /**
      * {@snippet :
@@ -4078,7 +4494,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_set_style_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$3313.const$0,"gtk_numerable_icon_set_style_context");
+        return RuntimeHelper.requireNonNull(constants$3318.const$0,"gtk_numerable_icon_set_style_context");
     }
     /**
      * {@snippet :
@@ -4094,7 +4510,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_get_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$3313.const$1,"gtk_numerable_icon_get_count");
+        return RuntimeHelper.requireNonNull(constants$3318.const$1,"gtk_numerable_icon_get_count");
     }
     /**
      * {@snippet :
@@ -4110,7 +4526,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_set_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$3313.const$2,"gtk_numerable_icon_set_count");
+        return RuntimeHelper.requireNonNull(constants$3318.const$2,"gtk_numerable_icon_set_count");
     }
     /**
      * {@snippet :
@@ -4126,7 +4542,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_get_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3313.const$3,"gtk_numerable_icon_get_label");
+        return RuntimeHelper.requireNonNull(constants$3318.const$3,"gtk_numerable_icon_get_label");
     }
     /**
      * {@snippet :
@@ -4142,7 +4558,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3313.const$4,"gtk_numerable_icon_set_label");
+        return RuntimeHelper.requireNonNull(constants$3318.const$4,"gtk_numerable_icon_set_label");
     }
     /**
      * {@snippet :
@@ -4158,7 +4574,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_set_background_gicon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3313.const$5,"gtk_numerable_icon_set_background_gicon");
+        return RuntimeHelper.requireNonNull(constants$3318.const$5,"gtk_numerable_icon_set_background_gicon");
     }
     /**
      * {@snippet :
@@ -4174,7 +4590,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_get_background_gicon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3314.const$0,"gtk_numerable_icon_get_background_gicon");
+        return RuntimeHelper.requireNonNull(constants$3319.const$0,"gtk_numerable_icon_get_background_gicon");
     }
     /**
      * {@snippet :
@@ -4190,7 +4606,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_set_background_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3314.const$1,"gtk_numerable_icon_set_background_icon_name");
+        return RuntimeHelper.requireNonNull(constants$3319.const$1,"gtk_numerable_icon_set_background_icon_name");
     }
     /**
      * {@snippet :
@@ -4206,7 +4622,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_numerable_icon_get_background_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3314.const$2,"gtk_numerable_icon_get_background_icon_name");
+        return RuntimeHelper.requireNonNull(constants$3319.const$2,"gtk_numerable_icon_get_background_icon_name");
     }
     /**
      * {@snippet :
@@ -4222,7 +4638,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_toggle_action_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3316.const$4,"gtk_toggle_action_get_type");
+        return RuntimeHelper.requireNonNull(constants$3321.const$4,"gtk_toggle_action_get_type");
     }
     /**
      * {@snippet :
@@ -4238,7 +4654,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_toggle_action_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3316.const$5,"gtk_toggle_action_new");
+        return RuntimeHelper.requireNonNull(constants$3321.const$5,"gtk_toggle_action_new");
     }
     /**
      * {@snippet :
@@ -4254,7 +4670,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_toggle_action_toggled$MH() {
-        return RuntimeHelper.requireNonNull(constants$3317.const$0,"gtk_toggle_action_toggled");
+        return RuntimeHelper.requireNonNull(constants$3322.const$0,"gtk_toggle_action_toggled");
     }
     /**
      * {@snippet :
@@ -4270,7 +4686,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_toggle_action_set_active$MH() {
-        return RuntimeHelper.requireNonNull(constants$3317.const$1,"gtk_toggle_action_set_active");
+        return RuntimeHelper.requireNonNull(constants$3322.const$1,"gtk_toggle_action_set_active");
     }
     /**
      * {@snippet :
@@ -4286,7 +4702,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_toggle_action_get_active$MH() {
-        return RuntimeHelper.requireNonNull(constants$3317.const$2,"gtk_toggle_action_get_active");
+        return RuntimeHelper.requireNonNull(constants$3322.const$2,"gtk_toggle_action_get_active");
     }
     /**
      * {@snippet :
@@ -4302,7 +4718,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_toggle_action_set_draw_as_radio$MH() {
-        return RuntimeHelper.requireNonNull(constants$3317.const$3,"gtk_toggle_action_set_draw_as_radio");
+        return RuntimeHelper.requireNonNull(constants$3322.const$3,"gtk_toggle_action_set_draw_as_radio");
     }
     /**
      * {@snippet :
@@ -4318,7 +4734,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_toggle_action_get_draw_as_radio$MH() {
-        return RuntimeHelper.requireNonNull(constants$3317.const$4,"gtk_toggle_action_get_draw_as_radio");
+        return RuntimeHelper.requireNonNull(constants$3322.const$4,"gtk_toggle_action_get_draw_as_radio");
     }
     /**
      * {@snippet :
@@ -4334,7 +4750,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_toggle_action_set_active$MH() {
-        return RuntimeHelper.requireNonNull(constants$3317.const$5,"_gtk_toggle_action_set_active");
+        return RuntimeHelper.requireNonNull(constants$3322.const$5,"_gtk_toggle_action_set_active");
     }
     /**
      * {@snippet :
@@ -4350,7 +4766,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_radio_action_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3320.const$1,"gtk_radio_action_get_type");
+        return RuntimeHelper.requireNonNull(constants$3325.const$1,"gtk_radio_action_get_type");
     }
     /**
      * {@snippet :
@@ -4366,7 +4782,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_radio_action_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3320.const$2,"gtk_radio_action_new");
+        return RuntimeHelper.requireNonNull(constants$3325.const$2,"gtk_radio_action_new");
     }
     /**
      * {@snippet :
@@ -4382,7 +4798,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_radio_action_get_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3320.const$3,"gtk_radio_action_get_group");
+        return RuntimeHelper.requireNonNull(constants$3325.const$3,"gtk_radio_action_get_group");
     }
     /**
      * {@snippet :
@@ -4398,7 +4814,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_radio_action_set_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3320.const$4,"gtk_radio_action_set_group");
+        return RuntimeHelper.requireNonNull(constants$3325.const$4,"gtk_radio_action_set_group");
     }
     /**
      * {@snippet :
@@ -4414,7 +4830,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_radio_action_join_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3320.const$5,"gtk_radio_action_join_group");
+        return RuntimeHelper.requireNonNull(constants$3325.const$5,"gtk_radio_action_join_group");
     }
     /**
      * {@snippet :
@@ -4430,7 +4846,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_radio_action_get_current_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$3321.const$0,"gtk_radio_action_get_current_value");
+        return RuntimeHelper.requireNonNull(constants$3326.const$0,"gtk_radio_action_get_current_value");
     }
     /**
      * {@snippet :
@@ -4446,7 +4862,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_radio_action_set_current_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$3321.const$1,"gtk_radio_action_set_current_value");
+        return RuntimeHelper.requireNonNull(constants$3326.const$1,"gtk_radio_action_set_current_value");
     }
     /**
      * {@snippet :
@@ -4494,7 +4910,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         return (int)8L;
     }
     public static MethodHandle _gtk_rc_parse_widget_class_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3325.const$3,"_gtk_rc_parse_widget_class_path");
+        return RuntimeHelper.requireNonNull(constants$3330.const$3,"_gtk_rc_parse_widget_class_path");
     }
     /**
      * {@snippet :
@@ -4510,7 +4926,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_rc_free_widget_class_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3325.const$4,"_gtk_rc_free_widget_class_path");
+        return RuntimeHelper.requireNonNull(constants$3330.const$4,"_gtk_rc_free_widget_class_path");
     }
     /**
      * {@snippet :
@@ -4526,7 +4942,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_rc_match_widget_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$3325.const$5,"_gtk_rc_match_widget_class");
+        return RuntimeHelper.requireNonNull(constants$3330.const$5,"_gtk_rc_match_widget_class");
     }
     /**
      * {@snippet :
@@ -4542,7 +4958,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_add_default_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$3326.const$0,"gtk_rc_add_default_file");
+        return RuntimeHelper.requireNonNull(constants$3331.const$0,"gtk_rc_add_default_file");
     }
     /**
      * {@snippet :
@@ -4558,7 +4974,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_set_default_files$MH() {
-        return RuntimeHelper.requireNonNull(constants$3326.const$1,"gtk_rc_set_default_files");
+        return RuntimeHelper.requireNonNull(constants$3331.const$1,"gtk_rc_set_default_files");
     }
     /**
      * {@snippet :
@@ -4574,7 +4990,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_get_default_files$MH() {
-        return RuntimeHelper.requireNonNull(constants$3326.const$2,"gtk_rc_get_default_files");
+        return RuntimeHelper.requireNonNull(constants$3331.const$2,"gtk_rc_get_default_files");
     }
     /**
      * {@snippet :
@@ -4590,7 +5006,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_get_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$3326.const$3,"gtk_rc_get_style");
+        return RuntimeHelper.requireNonNull(constants$3331.const$3,"gtk_rc_get_style");
     }
     /**
      * {@snippet :
@@ -4606,7 +5022,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_get_style_by_paths$MH() {
-        return RuntimeHelper.requireNonNull(constants$3326.const$4,"gtk_rc_get_style_by_paths");
+        return RuntimeHelper.requireNonNull(constants$3331.const$4,"gtk_rc_get_style_by_paths");
     }
     /**
      * {@snippet :
@@ -4622,7 +5038,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_reparse_all_for_settings$MH() {
-        return RuntimeHelper.requireNonNull(constants$3326.const$5,"gtk_rc_reparse_all_for_settings");
+        return RuntimeHelper.requireNonNull(constants$3331.const$5,"gtk_rc_reparse_all_for_settings");
     }
     /**
      * {@snippet :
@@ -4638,7 +5054,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_reset_styles$MH() {
-        return RuntimeHelper.requireNonNull(constants$3327.const$0,"gtk_rc_reset_styles");
+        return RuntimeHelper.requireNonNull(constants$3332.const$0,"gtk_rc_reset_styles");
     }
     /**
      * {@snippet :
@@ -4654,7 +5070,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_find_pixmap_in_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3327.const$1,"gtk_rc_find_pixmap_in_path");
+        return RuntimeHelper.requireNonNull(constants$3332.const$1,"gtk_rc_find_pixmap_in_path");
     }
     /**
      * {@snippet :
@@ -4670,7 +5086,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_parse$MH() {
-        return RuntimeHelper.requireNonNull(constants$3327.const$2,"gtk_rc_parse");
+        return RuntimeHelper.requireNonNull(constants$3332.const$2,"gtk_rc_parse");
     }
     /**
      * {@snippet :
@@ -4686,7 +5102,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_parse_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$3327.const$3,"gtk_rc_parse_string");
+        return RuntimeHelper.requireNonNull(constants$3332.const$3,"gtk_rc_parse_string");
     }
     /**
      * {@snippet :
@@ -4702,7 +5118,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_reparse_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$3327.const$4,"gtk_rc_reparse_all");
+        return RuntimeHelper.requireNonNull(constants$3332.const$4,"gtk_rc_reparse_all");
     }
     /**
      * {@snippet :
@@ -4718,7 +5134,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3327.const$5,"gtk_rc_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$3332.const$5,"gtk_rc_style_get_type");
     }
     /**
      * {@snippet :
@@ -4734,7 +5150,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_style_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3328.const$0,"gtk_rc_style_new");
+        return RuntimeHelper.requireNonNull(constants$3333.const$0,"gtk_rc_style_new");
     }
     /**
      * {@snippet :
@@ -4750,7 +5166,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_style_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$3328.const$1,"gtk_rc_style_copy");
+        return RuntimeHelper.requireNonNull(constants$3333.const$1,"gtk_rc_style_copy");
     }
     /**
      * {@snippet :
@@ -4766,7 +5182,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_find_module_in_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3328.const$2,"gtk_rc_find_module_in_path");
+        return RuntimeHelper.requireNonNull(constants$3333.const$2,"gtk_rc_find_module_in_path");
     }
     /**
      * {@snippet :
@@ -4782,7 +5198,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_get_theme_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$3328.const$3,"gtk_rc_get_theme_dir");
+        return RuntimeHelper.requireNonNull(constants$3333.const$3,"gtk_rc_get_theme_dir");
     }
     /**
      * {@snippet :
@@ -4798,7 +5214,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_get_module_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$3328.const$4,"gtk_rc_get_module_dir");
+        return RuntimeHelper.requireNonNull(constants$3333.const$4,"gtk_rc_get_module_dir");
     }
     /**
      * {@snippet :
@@ -4814,7 +5230,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_get_im_module_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3328.const$5,"gtk_rc_get_im_module_path");
+        return RuntimeHelper.requireNonNull(constants$3333.const$5,"gtk_rc_get_im_module_path");
     }
     /**
      * {@snippet :
@@ -4830,7 +5246,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_get_im_module_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$3329.const$0,"gtk_rc_get_im_module_file");
+        return RuntimeHelper.requireNonNull(constants$3334.const$0,"gtk_rc_get_im_module_file");
     }
     /**
      * {@snippet :
@@ -5238,7 +5654,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         return (int)2L;
     }
     public static MethodHandle gtk_rc_scanner_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3329.const$1,"gtk_rc_scanner_new");
+        return RuntimeHelper.requireNonNull(constants$3334.const$1,"gtk_rc_scanner_new");
     }
     /**
      * {@snippet :
@@ -5254,7 +5670,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_parse_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3329.const$2,"gtk_rc_parse_color");
+        return RuntimeHelper.requireNonNull(constants$3334.const$2,"gtk_rc_parse_color");
     }
     /**
      * {@snippet :
@@ -5270,7 +5686,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_parse_color_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$3329.const$3,"gtk_rc_parse_color_full");
+        return RuntimeHelper.requireNonNull(constants$3334.const$3,"gtk_rc_parse_color_full");
     }
     /**
      * {@snippet :
@@ -5286,7 +5702,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_parse_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$3329.const$4,"gtk_rc_parse_state");
+        return RuntimeHelper.requireNonNull(constants$3334.const$4,"gtk_rc_parse_state");
     }
     /**
      * {@snippet :
@@ -5302,7 +5718,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_rc_parse_priority$MH() {
-        return RuntimeHelper.requireNonNull(constants$3329.const$5,"gtk_rc_parse_priority");
+        return RuntimeHelper.requireNonNull(constants$3334.const$5,"gtk_rc_parse_priority");
     }
     /**
      * {@snippet :
@@ -5318,7 +5734,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_binding_set_add_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3330.const$4,"gtk_binding_set_add_path");
+        return RuntimeHelper.requireNonNull(constants$3335.const$4,"gtk_binding_set_add_path");
     }
     /**
      * {@snippet :
@@ -5334,7 +5750,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_recent_action_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3332.const$4,"gtk_recent_action_get_type");
+        return RuntimeHelper.requireNonNull(constants$3337.const$4,"gtk_recent_action_get_type");
     }
     /**
      * {@snippet :
@@ -5350,7 +5766,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_recent_action_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3332.const$5,"gtk_recent_action_new");
+        return RuntimeHelper.requireNonNull(constants$3337.const$5,"gtk_recent_action_new");
     }
     /**
      * {@snippet :
@@ -5366,7 +5782,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_recent_action_new_for_manager$MH() {
-        return RuntimeHelper.requireNonNull(constants$3333.const$0,"gtk_recent_action_new_for_manager");
+        return RuntimeHelper.requireNonNull(constants$3338.const$0,"gtk_recent_action_new_for_manager");
     }
     /**
      * {@snippet :
@@ -5382,7 +5798,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_recent_action_get_show_numbers$MH() {
-        return RuntimeHelper.requireNonNull(constants$3333.const$1,"gtk_recent_action_get_show_numbers");
+        return RuntimeHelper.requireNonNull(constants$3338.const$1,"gtk_recent_action_get_show_numbers");
     }
     /**
      * {@snippet :
@@ -5398,7 +5814,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_recent_action_set_show_numbers$MH() {
-        return RuntimeHelper.requireNonNull(constants$3333.const$2,"gtk_recent_action_set_show_numbers");
+        return RuntimeHelper.requireNonNull(constants$3338.const$2,"gtk_recent_action_set_show_numbers");
     }
     /**
      * {@snippet :
@@ -5414,7 +5830,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3337.const$4,"gtk_status_icon_get_type");
+        return RuntimeHelper.requireNonNull(constants$3342.const$4,"gtk_status_icon_get_type");
     }
     /**
      * {@snippet :
@@ -5430,7 +5846,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3337.const$5,"gtk_status_icon_new");
+        return RuntimeHelper.requireNonNull(constants$3342.const$5,"gtk_status_icon_new");
     }
     /**
      * {@snippet :
@@ -5446,7 +5862,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_new_from_pixbuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$3338.const$0,"gtk_status_icon_new_from_pixbuf");
+        return RuntimeHelper.requireNonNull(constants$3343.const$0,"gtk_status_icon_new_from_pixbuf");
     }
     /**
      * {@snippet :
@@ -5462,7 +5878,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_new_from_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$3338.const$1,"gtk_status_icon_new_from_file");
+        return RuntimeHelper.requireNonNull(constants$3343.const$1,"gtk_status_icon_new_from_file");
     }
     /**
      * {@snippet :
@@ -5478,7 +5894,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_new_from_stock$MH() {
-        return RuntimeHelper.requireNonNull(constants$3338.const$2,"gtk_status_icon_new_from_stock");
+        return RuntimeHelper.requireNonNull(constants$3343.const$2,"gtk_status_icon_new_from_stock");
     }
     /**
      * {@snippet :
@@ -5494,7 +5910,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_new_from_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3338.const$3,"gtk_status_icon_new_from_icon_name");
+        return RuntimeHelper.requireNonNull(constants$3343.const$3,"gtk_status_icon_new_from_icon_name");
     }
     /**
      * {@snippet :
@@ -5510,7 +5926,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_new_from_gicon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3338.const$4,"gtk_status_icon_new_from_gicon");
+        return RuntimeHelper.requireNonNull(constants$3343.const$4,"gtk_status_icon_new_from_gicon");
     }
     /**
      * {@snippet :
@@ -5526,7 +5942,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_from_pixbuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$3338.const$5,"gtk_status_icon_set_from_pixbuf");
+        return RuntimeHelper.requireNonNull(constants$3343.const$5,"gtk_status_icon_set_from_pixbuf");
     }
     /**
      * {@snippet :
@@ -5542,7 +5958,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_from_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$3339.const$0,"gtk_status_icon_set_from_file");
+        return RuntimeHelper.requireNonNull(constants$3344.const$0,"gtk_status_icon_set_from_file");
     }
     /**
      * {@snippet :
@@ -5558,7 +5974,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_from_stock$MH() {
-        return RuntimeHelper.requireNonNull(constants$3339.const$1,"gtk_status_icon_set_from_stock");
+        return RuntimeHelper.requireNonNull(constants$3344.const$1,"gtk_status_icon_set_from_stock");
     }
     /**
      * {@snippet :
@@ -5574,7 +5990,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_from_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3339.const$2,"gtk_status_icon_set_from_icon_name");
+        return RuntimeHelper.requireNonNull(constants$3344.const$2,"gtk_status_icon_set_from_icon_name");
     }
     /**
      * {@snippet :
@@ -5590,7 +6006,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_from_gicon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3339.const$3,"gtk_status_icon_set_from_gicon");
+        return RuntimeHelper.requireNonNull(constants$3344.const$3,"gtk_status_icon_set_from_gicon");
     }
     /**
      * {@snippet :
@@ -5606,7 +6022,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_storage_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3339.const$4,"gtk_status_icon_get_storage_type");
+        return RuntimeHelper.requireNonNull(constants$3344.const$4,"gtk_status_icon_get_storage_type");
     }
     /**
      * {@snippet :
@@ -5622,7 +6038,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_pixbuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$3339.const$5,"gtk_status_icon_get_pixbuf");
+        return RuntimeHelper.requireNonNull(constants$3344.const$5,"gtk_status_icon_get_pixbuf");
     }
     /**
      * {@snippet :
@@ -5638,7 +6054,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_stock$MH() {
-        return RuntimeHelper.requireNonNull(constants$3340.const$0,"gtk_status_icon_get_stock");
+        return RuntimeHelper.requireNonNull(constants$3345.const$0,"gtk_status_icon_get_stock");
     }
     /**
      * {@snippet :
@@ -5654,7 +6070,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3340.const$1,"gtk_status_icon_get_icon_name");
+        return RuntimeHelper.requireNonNull(constants$3345.const$1,"gtk_status_icon_get_icon_name");
     }
     /**
      * {@snippet :
@@ -5670,7 +6086,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_gicon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3340.const$2,"gtk_status_icon_get_gicon");
+        return RuntimeHelper.requireNonNull(constants$3345.const$2,"gtk_status_icon_get_gicon");
     }
     /**
      * {@snippet :
@@ -5686,7 +6102,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$3340.const$3,"gtk_status_icon_get_size");
+        return RuntimeHelper.requireNonNull(constants$3345.const$3,"gtk_status_icon_get_size");
     }
     /**
      * {@snippet :
@@ -5702,7 +6118,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$3340.const$4,"gtk_status_icon_set_screen");
+        return RuntimeHelper.requireNonNull(constants$3345.const$4,"gtk_status_icon_set_screen");
     }
     /**
      * {@snippet :
@@ -5718,7 +6134,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$3340.const$5,"gtk_status_icon_get_screen");
+        return RuntimeHelper.requireNonNull(constants$3345.const$5,"gtk_status_icon_get_screen");
     }
     /**
      * {@snippet :
@@ -5734,7 +6150,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_has_tooltip$MH() {
-        return RuntimeHelper.requireNonNull(constants$3341.const$0,"gtk_status_icon_set_has_tooltip");
+        return RuntimeHelper.requireNonNull(constants$3346.const$0,"gtk_status_icon_set_has_tooltip");
     }
     /**
      * {@snippet :
@@ -5750,7 +6166,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_tooltip_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$3341.const$1,"gtk_status_icon_set_tooltip_text");
+        return RuntimeHelper.requireNonNull(constants$3346.const$1,"gtk_status_icon_set_tooltip_text");
     }
     /**
      * {@snippet :
@@ -5766,7 +6182,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_tooltip_markup$MH() {
-        return RuntimeHelper.requireNonNull(constants$3341.const$2,"gtk_status_icon_set_tooltip_markup");
+        return RuntimeHelper.requireNonNull(constants$3346.const$2,"gtk_status_icon_set_tooltip_markup");
     }
     /**
      * {@snippet :
@@ -5782,7 +6198,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$3341.const$3,"gtk_status_icon_set_title");
+        return RuntimeHelper.requireNonNull(constants$3346.const$3,"gtk_status_icon_set_title");
     }
     /**
      * {@snippet :
@@ -5798,7 +6214,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$3341.const$4,"gtk_status_icon_get_title");
+        return RuntimeHelper.requireNonNull(constants$3346.const$4,"gtk_status_icon_get_title");
     }
     /**
      * {@snippet :
@@ -5814,7 +6230,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$3341.const$5,"gtk_status_icon_set_name");
+        return RuntimeHelper.requireNonNull(constants$3346.const$5,"gtk_status_icon_set_name");
     }
     /**
      * {@snippet :
@@ -5830,7 +6246,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_set_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$3342.const$0,"gtk_status_icon_set_visible");
+        return RuntimeHelper.requireNonNull(constants$3347.const$0,"gtk_status_icon_set_visible");
     }
     /**
      * {@snippet :
@@ -5846,7 +6262,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$3342.const$1,"gtk_status_icon_get_visible");
+        return RuntimeHelper.requireNonNull(constants$3347.const$1,"gtk_status_icon_get_visible");
     }
     /**
      * {@snippet :
@@ -5862,7 +6278,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_is_embedded$MH() {
-        return RuntimeHelper.requireNonNull(constants$3342.const$2,"gtk_status_icon_is_embedded");
+        return RuntimeHelper.requireNonNull(constants$3347.const$2,"gtk_status_icon_is_embedded");
     }
     /**
      * {@snippet :
@@ -5878,7 +6294,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_position_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$3342.const$3,"gtk_status_icon_position_menu");
+        return RuntimeHelper.requireNonNull(constants$3347.const$3,"gtk_status_icon_position_menu");
     }
     /**
      * {@snippet :
@@ -5894,7 +6310,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_geometry$MH() {
-        return RuntimeHelper.requireNonNull(constants$3342.const$4,"gtk_status_icon_get_geometry");
+        return RuntimeHelper.requireNonNull(constants$3347.const$4,"gtk_status_icon_get_geometry");
     }
     /**
      * {@snippet :
@@ -5910,7 +6326,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_has_tooltip$MH() {
-        return RuntimeHelper.requireNonNull(constants$3342.const$5,"gtk_status_icon_get_has_tooltip");
+        return RuntimeHelper.requireNonNull(constants$3347.const$5,"gtk_status_icon_get_has_tooltip");
     }
     /**
      * {@snippet :
@@ -5926,7 +6342,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_tooltip_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$3343.const$0,"gtk_status_icon_get_tooltip_text");
+        return RuntimeHelper.requireNonNull(constants$3348.const$0,"gtk_status_icon_get_tooltip_text");
     }
     /**
      * {@snippet :
@@ -5942,7 +6358,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_tooltip_markup$MH() {
-        return RuntimeHelper.requireNonNull(constants$3343.const$1,"gtk_status_icon_get_tooltip_markup");
+        return RuntimeHelper.requireNonNull(constants$3348.const$1,"gtk_status_icon_get_tooltip_markup");
     }
     /**
      * {@snippet :
@@ -5958,7 +6374,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_status_icon_get_x11_window_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$3343.const$2,"gtk_status_icon_get_x11_window_id");
+        return RuntimeHelper.requireNonNull(constants$3348.const$2,"gtk_status_icon_get_x11_window_id");
     }
     /**
      * {@snippet :
@@ -6006,7 +6422,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         return (int)3L;
     }
     public static MethodHandle gtk_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3361.const$0,"gtk_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$3366.const$0,"gtk_style_get_type");
     }
     /**
      * {@snippet :
@@ -6022,7 +6438,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3361.const$1,"gtk_style_new");
+        return RuntimeHelper.requireNonNull(constants$3366.const$1,"gtk_style_new");
     }
     /**
      * {@snippet :
@@ -6038,7 +6454,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$3361.const$2,"gtk_style_copy");
+        return RuntimeHelper.requireNonNull(constants$3366.const$2,"gtk_style_copy");
     }
     /**
      * {@snippet :
@@ -6054,7 +6470,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_attach$MH() {
-        return RuntimeHelper.requireNonNull(constants$3361.const$3,"gtk_style_attach");
+        return RuntimeHelper.requireNonNull(constants$3366.const$3,"gtk_style_attach");
     }
     /**
      * {@snippet :
@@ -6070,7 +6486,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_detach$MH() {
-        return RuntimeHelper.requireNonNull(constants$3361.const$4,"gtk_style_detach");
+        return RuntimeHelper.requireNonNull(constants$3366.const$4,"gtk_style_detach");
     }
     /**
      * {@snippet :
@@ -6086,7 +6502,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_set_background$MH() {
-        return RuntimeHelper.requireNonNull(constants$3361.const$5,"gtk_style_set_background");
+        return RuntimeHelper.requireNonNull(constants$3366.const$5,"gtk_style_set_background");
     }
     /**
      * {@snippet :
@@ -6102,7 +6518,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_apply_default_background$MH() {
-        return RuntimeHelper.requireNonNull(constants$3362.const$1,"gtk_style_apply_default_background");
+        return RuntimeHelper.requireNonNull(constants$3367.const$1,"gtk_style_apply_default_background");
     }
     /**
      * {@snippet :
@@ -6118,7 +6534,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_lookup_icon_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$3362.const$2,"gtk_style_lookup_icon_set");
+        return RuntimeHelper.requireNonNull(constants$3367.const$2,"gtk_style_lookup_icon_set");
     }
     /**
      * {@snippet :
@@ -6134,7 +6550,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_lookup_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3362.const$3,"gtk_style_lookup_color");
+        return RuntimeHelper.requireNonNull(constants$3367.const$3,"gtk_style_lookup_color");
     }
     /**
      * {@snippet :
@@ -6150,7 +6566,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_render_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3362.const$4,"gtk_style_render_icon");
+        return RuntimeHelper.requireNonNull(constants$3367.const$4,"gtk_style_render_icon");
     }
     /**
      * {@snippet :
@@ -6166,7 +6582,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_hline$MH() {
-        return RuntimeHelper.requireNonNull(constants$3362.const$5,"gtk_paint_hline");
+        return RuntimeHelper.requireNonNull(constants$3367.const$5,"gtk_paint_hline");
     }
     /**
      * {@snippet :
@@ -6182,7 +6598,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_vline$MH() {
-        return RuntimeHelper.requireNonNull(constants$3363.const$0,"gtk_paint_vline");
+        return RuntimeHelper.requireNonNull(constants$3368.const$0,"gtk_paint_vline");
     }
     /**
      * {@snippet :
@@ -6198,7 +6614,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_shadow$MH() {
-        return RuntimeHelper.requireNonNull(constants$3363.const$1,"gtk_paint_shadow");
+        return RuntimeHelper.requireNonNull(constants$3368.const$1,"gtk_paint_shadow");
     }
     /**
      * {@snippet :
@@ -6214,7 +6630,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_arrow$MH() {
-        return RuntimeHelper.requireNonNull(constants$3363.const$2,"gtk_paint_arrow");
+        return RuntimeHelper.requireNonNull(constants$3368.const$2,"gtk_paint_arrow");
     }
     /**
      * {@snippet :
@@ -6230,7 +6646,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_diamond$MH() {
-        return RuntimeHelper.requireNonNull(constants$3363.const$3,"gtk_paint_diamond");
+        return RuntimeHelper.requireNonNull(constants$3368.const$3,"gtk_paint_diamond");
     }
     /**
      * {@snippet :
@@ -6246,7 +6662,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_box$MH() {
-        return RuntimeHelper.requireNonNull(constants$3363.const$4,"gtk_paint_box");
+        return RuntimeHelper.requireNonNull(constants$3368.const$4,"gtk_paint_box");
     }
     /**
      * {@snippet :
@@ -6262,7 +6678,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_flat_box$MH() {
-        return RuntimeHelper.requireNonNull(constants$3363.const$5,"gtk_paint_flat_box");
+        return RuntimeHelper.requireNonNull(constants$3368.const$5,"gtk_paint_flat_box");
     }
     /**
      * {@snippet :
@@ -6278,7 +6694,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_check$MH() {
-        return RuntimeHelper.requireNonNull(constants$3364.const$0,"gtk_paint_check");
+        return RuntimeHelper.requireNonNull(constants$3369.const$0,"gtk_paint_check");
     }
     /**
      * {@snippet :
@@ -6294,7 +6710,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_option$MH() {
-        return RuntimeHelper.requireNonNull(constants$3364.const$1,"gtk_paint_option");
+        return RuntimeHelper.requireNonNull(constants$3369.const$1,"gtk_paint_option");
     }
     /**
      * {@snippet :
@@ -6310,7 +6726,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_tab$MH() {
-        return RuntimeHelper.requireNonNull(constants$3364.const$2,"gtk_paint_tab");
+        return RuntimeHelper.requireNonNull(constants$3369.const$2,"gtk_paint_tab");
     }
     /**
      * {@snippet :
@@ -6326,7 +6742,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_shadow_gap$MH() {
-        return RuntimeHelper.requireNonNull(constants$3364.const$3,"gtk_paint_shadow_gap");
+        return RuntimeHelper.requireNonNull(constants$3369.const$3,"gtk_paint_shadow_gap");
     }
     /**
      * {@snippet :
@@ -6342,7 +6758,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_box_gap$MH() {
-        return RuntimeHelper.requireNonNull(constants$3364.const$4,"gtk_paint_box_gap");
+        return RuntimeHelper.requireNonNull(constants$3369.const$4,"gtk_paint_box_gap");
     }
     /**
      * {@snippet :
@@ -6358,7 +6774,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_extension$MH() {
-        return RuntimeHelper.requireNonNull(constants$3364.const$5,"gtk_paint_extension");
+        return RuntimeHelper.requireNonNull(constants$3369.const$5,"gtk_paint_extension");
     }
     /**
      * {@snippet :
@@ -6374,7 +6790,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_focus$MH() {
-        return RuntimeHelper.requireNonNull(constants$3365.const$0,"gtk_paint_focus");
+        return RuntimeHelper.requireNonNull(constants$3370.const$0,"gtk_paint_focus");
     }
     /**
      * {@snippet :
@@ -6390,7 +6806,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_slider$MH() {
-        return RuntimeHelper.requireNonNull(constants$3365.const$1,"gtk_paint_slider");
+        return RuntimeHelper.requireNonNull(constants$3370.const$1,"gtk_paint_slider");
     }
     /**
      * {@snippet :
@@ -6406,7 +6822,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_handle$MH() {
-        return RuntimeHelper.requireNonNull(constants$3365.const$2,"gtk_paint_handle");
+        return RuntimeHelper.requireNonNull(constants$3370.const$2,"gtk_paint_handle");
     }
     /**
      * {@snippet :
@@ -6422,7 +6838,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_expander$MH() {
-        return RuntimeHelper.requireNonNull(constants$3365.const$3,"gtk_paint_expander");
+        return RuntimeHelper.requireNonNull(constants$3370.const$3,"gtk_paint_expander");
     }
     /**
      * {@snippet :
@@ -6438,7 +6854,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_layout$MH() {
-        return RuntimeHelper.requireNonNull(constants$3365.const$4,"gtk_paint_layout");
+        return RuntimeHelper.requireNonNull(constants$3370.const$4,"gtk_paint_layout");
     }
     /**
      * {@snippet :
@@ -6454,7 +6870,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_resize_grip$MH() {
-        return RuntimeHelper.requireNonNull(constants$3365.const$5,"gtk_paint_resize_grip");
+        return RuntimeHelper.requireNonNull(constants$3370.const$5,"gtk_paint_resize_grip");
     }
     /**
      * {@snippet :
@@ -6470,7 +6886,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_paint_spinner$MH() {
-        return RuntimeHelper.requireNonNull(constants$3366.const$0,"gtk_paint_spinner");
+        return RuntimeHelper.requireNonNull(constants$3371.const$0,"gtk_paint_spinner");
     }
     /**
      * {@snippet :
@@ -6486,7 +6902,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_get_style_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$3366.const$1,"gtk_style_get_style_property");
+        return RuntimeHelper.requireNonNull(constants$3371.const$1,"gtk_style_get_style_property");
     }
     /**
      * {@snippet :
@@ -6502,7 +6918,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_get_valist$MH() {
-        return RuntimeHelper.requireNonNull(constants$3366.const$3,"gtk_style_get_valist");
+        return RuntimeHelper.requireNonNull(constants$3371.const$3,"gtk_style_get_valist");
     }
     /**
      * {@snippet :
@@ -6518,7 +6934,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$3366.const$4,"gtk_style_get");
+        return RuntimeHelper.requireNonNull(constants$3371.const$4,"gtk_style_get");
     }
     /**
      * {@snippet :
@@ -6534,7 +6950,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_style_new_for_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3366.const$5,"_gtk_style_new_for_path");
+        return RuntimeHelper.requireNonNull(constants$3371.const$5,"_gtk_style_new_for_path");
     }
     /**
      * {@snippet :
@@ -6550,7 +6966,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle _gtk_style_shade$MH() {
-        return RuntimeHelper.requireNonNull(constants$3367.const$0,"_gtk_style_shade");
+        return RuntimeHelper.requireNonNull(constants$3372.const$0,"_gtk_style_shade");
     }
     /**
      * {@snippet :
@@ -6566,7 +6982,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_style_has_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$3367.const$1,"gtk_style_has_context");
+        return RuntimeHelper.requireNonNull(constants$3372.const$1,"gtk_style_has_context");
     }
     /**
      * {@snippet :
@@ -6582,7 +6998,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_style_attach$MH() {
-        return RuntimeHelper.requireNonNull(constants$3367.const$2,"gtk_widget_style_attach");
+        return RuntimeHelper.requireNonNull(constants$3372.const$2,"gtk_widget_style_attach");
     }
     /**
      * {@snippet :
@@ -6598,7 +7014,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_has_rc_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$3367.const$3,"gtk_widget_has_rc_style");
+        return RuntimeHelper.requireNonNull(constants$3372.const$3,"gtk_widget_has_rc_style");
     }
     /**
      * {@snippet :
@@ -6614,7 +7030,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_set_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$3367.const$4,"gtk_widget_set_style");
+        return RuntimeHelper.requireNonNull(constants$3372.const$4,"gtk_widget_set_style");
     }
     /**
      * {@snippet :
@@ -6630,7 +7046,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_ensure_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$3367.const$5,"gtk_widget_ensure_style");
+        return RuntimeHelper.requireNonNull(constants$3372.const$5,"gtk_widget_ensure_style");
     }
     /**
      * {@snippet :
@@ -6646,7 +7062,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_get_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$3368.const$0,"gtk_widget_get_style");
+        return RuntimeHelper.requireNonNull(constants$3373.const$0,"gtk_widget_get_style");
     }
     /**
      * {@snippet :
@@ -6662,7 +7078,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_modify_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$3368.const$1,"gtk_widget_modify_style");
+        return RuntimeHelper.requireNonNull(constants$3373.const$1,"gtk_widget_modify_style");
     }
     /**
      * {@snippet :
@@ -6678,7 +7094,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_get_modifier_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$3368.const$2,"gtk_widget_get_modifier_style");
+        return RuntimeHelper.requireNonNull(constants$3373.const$2,"gtk_widget_get_modifier_style");
     }
     /**
      * {@snippet :
@@ -6694,7 +7110,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_modify_fg$MH() {
-        return RuntimeHelper.requireNonNull(constants$3368.const$3,"gtk_widget_modify_fg");
+        return RuntimeHelper.requireNonNull(constants$3373.const$3,"gtk_widget_modify_fg");
     }
     /**
      * {@snippet :
@@ -6710,7 +7126,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_modify_bg$MH() {
-        return RuntimeHelper.requireNonNull(constants$3368.const$4,"gtk_widget_modify_bg");
+        return RuntimeHelper.requireNonNull(constants$3373.const$4,"gtk_widget_modify_bg");
     }
     /**
      * {@snippet :
@@ -6726,7 +7142,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_modify_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$3368.const$5,"gtk_widget_modify_text");
+        return RuntimeHelper.requireNonNull(constants$3373.const$5,"gtk_widget_modify_text");
     }
     /**
      * {@snippet :
@@ -6742,7 +7158,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_modify_base$MH() {
-        return RuntimeHelper.requireNonNull(constants$3369.const$0,"gtk_widget_modify_base");
+        return RuntimeHelper.requireNonNull(constants$3374.const$0,"gtk_widget_modify_base");
     }
     /**
      * {@snippet :
@@ -6758,7 +7174,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_modify_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$3369.const$1,"gtk_widget_modify_cursor");
+        return RuntimeHelper.requireNonNull(constants$3374.const$1,"gtk_widget_modify_cursor");
     }
     /**
      * {@snippet :
@@ -6774,7 +7190,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_modify_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$3369.const$2,"gtk_widget_modify_font");
+        return RuntimeHelper.requireNonNull(constants$3374.const$2,"gtk_widget_modify_font");
     }
     /**
      * {@snippet :
@@ -6790,7 +7206,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_reset_rc_styles$MH() {
-        return RuntimeHelper.requireNonNull(constants$3369.const$3,"gtk_widget_reset_rc_styles");
+        return RuntimeHelper.requireNonNull(constants$3374.const$3,"gtk_widget_reset_rc_styles");
     }
     /**
      * {@snippet :
@@ -6806,7 +7222,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_get_default_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$3369.const$4,"gtk_widget_get_default_style");
+        return RuntimeHelper.requireNonNull(constants$3374.const$4,"gtk_widget_get_default_style");
     }
     /**
      * {@snippet :
@@ -6822,7 +7238,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3369.const$5,"gtk_widget_path");
+        return RuntimeHelper.requireNonNull(constants$3374.const$5,"gtk_widget_path");
     }
     /**
      * {@snippet :
@@ -6838,7 +7254,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_class_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3370.const$0,"gtk_widget_class_path");
+        return RuntimeHelper.requireNonNull(constants$3375.const$0,"gtk_widget_class_path");
     }
     /**
      * {@snippet :
@@ -6854,7 +7270,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_widget_render_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3370.const$1,"gtk_widget_render_icon");
+        return RuntimeHelper.requireNonNull(constants$3375.const$1,"gtk_widget_render_icon");
     }
     /**
      * {@snippet :
@@ -6894,7 +7310,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         return (int)4L;
     }
     public static MethodHandle gtk_table_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3374.const$1,"gtk_table_get_type");
+        return RuntimeHelper.requireNonNull(constants$3379.const$1,"gtk_table_get_type");
     }
     /**
      * {@snippet :
@@ -6910,7 +7326,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3374.const$2,"gtk_table_new");
+        return RuntimeHelper.requireNonNull(constants$3379.const$2,"gtk_table_new");
     }
     /**
      * {@snippet :
@@ -6926,7 +7342,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_resize$MH() {
-        return RuntimeHelper.requireNonNull(constants$3374.const$3,"gtk_table_resize");
+        return RuntimeHelper.requireNonNull(constants$3379.const$3,"gtk_table_resize");
     }
     /**
      * {@snippet :
@@ -6942,7 +7358,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_attach$MH() {
-        return RuntimeHelper.requireNonNull(constants$3374.const$5,"gtk_table_attach");
+        return RuntimeHelper.requireNonNull(constants$3379.const$5,"gtk_table_attach");
     }
     /**
      * {@snippet :
@@ -6958,7 +7374,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_attach_defaults$MH() {
-        return RuntimeHelper.requireNonNull(constants$3375.const$0,"gtk_table_attach_defaults");
+        return RuntimeHelper.requireNonNull(constants$3380.const$0,"gtk_table_attach_defaults");
     }
     /**
      * {@snippet :
@@ -6974,7 +7390,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_set_row_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$3375.const$1,"gtk_table_set_row_spacing");
+        return RuntimeHelper.requireNonNull(constants$3380.const$1,"gtk_table_set_row_spacing");
     }
     /**
      * {@snippet :
@@ -6990,7 +7406,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_get_row_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$3375.const$2,"gtk_table_get_row_spacing");
+        return RuntimeHelper.requireNonNull(constants$3380.const$2,"gtk_table_get_row_spacing");
     }
     /**
      * {@snippet :
@@ -7006,7 +7422,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_set_col_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$3375.const$3,"gtk_table_set_col_spacing");
+        return RuntimeHelper.requireNonNull(constants$3380.const$3,"gtk_table_set_col_spacing");
     }
     /**
      * {@snippet :
@@ -7022,7 +7438,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_get_col_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$3375.const$4,"gtk_table_get_col_spacing");
+        return RuntimeHelper.requireNonNull(constants$3380.const$4,"gtk_table_get_col_spacing");
     }
     /**
      * {@snippet :
@@ -7038,7 +7454,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_set_row_spacings$MH() {
-        return RuntimeHelper.requireNonNull(constants$3375.const$5,"gtk_table_set_row_spacings");
+        return RuntimeHelper.requireNonNull(constants$3380.const$5,"gtk_table_set_row_spacings");
     }
     /**
      * {@snippet :
@@ -7054,7 +7470,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_get_default_row_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$3376.const$0,"gtk_table_get_default_row_spacing");
+        return RuntimeHelper.requireNonNull(constants$3381.const$0,"gtk_table_get_default_row_spacing");
     }
     /**
      * {@snippet :
@@ -7070,7 +7486,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_set_col_spacings$MH() {
-        return RuntimeHelper.requireNonNull(constants$3376.const$1,"gtk_table_set_col_spacings");
+        return RuntimeHelper.requireNonNull(constants$3381.const$1,"gtk_table_set_col_spacings");
     }
     /**
      * {@snippet :
@@ -7086,7 +7502,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_get_default_col_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$3376.const$2,"gtk_table_get_default_col_spacing");
+        return RuntimeHelper.requireNonNull(constants$3381.const$2,"gtk_table_get_default_col_spacing");
     }
     /**
      * {@snippet :
@@ -7102,7 +7518,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_set_homogeneous$MH() {
-        return RuntimeHelper.requireNonNull(constants$3376.const$3,"gtk_table_set_homogeneous");
+        return RuntimeHelper.requireNonNull(constants$3381.const$3,"gtk_table_set_homogeneous");
     }
     /**
      * {@snippet :
@@ -7118,7 +7534,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_get_homogeneous$MH() {
-        return RuntimeHelper.requireNonNull(constants$3376.const$4,"gtk_table_get_homogeneous");
+        return RuntimeHelper.requireNonNull(constants$3381.const$4,"gtk_table_get_homogeneous");
     }
     /**
      * {@snippet :
@@ -7134,7 +7550,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_table_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$3376.const$5,"gtk_table_get_size");
+        return RuntimeHelper.requireNonNull(constants$3381.const$5,"gtk_table_get_size");
     }
     /**
      * {@snippet :
@@ -7150,7 +7566,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_tearoff_menu_item_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3378.const$5,"gtk_tearoff_menu_item_get_type");
+        return RuntimeHelper.requireNonNull(constants$3383.const$5,"gtk_tearoff_menu_item_get_type");
     }
     /**
      * {@snippet :
@@ -7166,7 +7582,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_tearoff_menu_item_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3379.const$0,"gtk_tearoff_menu_item_new");
+        return RuntimeHelper.requireNonNull(constants$3384.const$0,"gtk_tearoff_menu_item_new");
     }
     /**
      * {@snippet :
@@ -7182,7 +7598,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3386.const$2,"gtk_theming_engine_get_type");
+        return RuntimeHelper.requireNonNull(constants$3391.const$2,"gtk_theming_engine_get_type");
     }
     /**
      * {@snippet :
@@ -7198,7 +7614,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_register_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$3386.const$4,"gtk_theming_engine_register_property");
+        return RuntimeHelper.requireNonNull(constants$3391.const$4,"gtk_theming_engine_register_property");
     }
     /**
      * {@snippet :
@@ -7214,7 +7630,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$3386.const$5,"gtk_theming_engine_get_property");
+        return RuntimeHelper.requireNonNull(constants$3391.const$5,"gtk_theming_engine_get_property");
     }
     /**
      * {@snippet :
@@ -7230,7 +7646,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_valist$MH() {
-        return RuntimeHelper.requireNonNull(constants$3387.const$0,"gtk_theming_engine_get_valist");
+        return RuntimeHelper.requireNonNull(constants$3392.const$0,"gtk_theming_engine_get_valist");
     }
     /**
      * {@snippet :
@@ -7246,7 +7662,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$3387.const$1,"gtk_theming_engine_get");
+        return RuntimeHelper.requireNonNull(constants$3392.const$1,"gtk_theming_engine_get");
     }
     /**
      * {@snippet :
@@ -7262,7 +7678,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_style_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$3387.const$2,"gtk_theming_engine_get_style_property");
+        return RuntimeHelper.requireNonNull(constants$3392.const$2,"gtk_theming_engine_get_style_property");
     }
     /**
      * {@snippet :
@@ -7278,7 +7694,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_style_valist$MH() {
-        return RuntimeHelper.requireNonNull(constants$3387.const$3,"gtk_theming_engine_get_style_valist");
+        return RuntimeHelper.requireNonNull(constants$3392.const$3,"gtk_theming_engine_get_style_valist");
     }
     /**
      * {@snippet :
@@ -7294,7 +7710,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$3387.const$4,"gtk_theming_engine_get_style");
+        return RuntimeHelper.requireNonNull(constants$3392.const$4,"gtk_theming_engine_get_style");
     }
     /**
      * {@snippet :
@@ -7310,7 +7726,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_lookup_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3387.const$5,"gtk_theming_engine_lookup_color");
+        return RuntimeHelper.requireNonNull(constants$3392.const$5,"gtk_theming_engine_lookup_color");
     }
     /**
      * {@snippet :
@@ -7326,7 +7742,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3388.const$0,"gtk_theming_engine_get_path");
+        return RuntimeHelper.requireNonNull(constants$3393.const$0,"gtk_theming_engine_get_path");
     }
     /**
      * {@snippet :
@@ -7342,7 +7758,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_has_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$3388.const$1,"gtk_theming_engine_has_class");
+        return RuntimeHelper.requireNonNull(constants$3393.const$1,"gtk_theming_engine_has_class");
     }
     /**
      * {@snippet :
@@ -7358,7 +7774,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_has_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$3388.const$2,"gtk_theming_engine_has_region");
+        return RuntimeHelper.requireNonNull(constants$3393.const$2,"gtk_theming_engine_has_region");
     }
     /**
      * {@snippet :
@@ -7374,7 +7790,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$3388.const$3,"gtk_theming_engine_get_state");
+        return RuntimeHelper.requireNonNull(constants$3393.const$3,"gtk_theming_engine_get_state");
     }
     /**
      * {@snippet :
@@ -7390,7 +7806,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_state_is_running$MH() {
-        return RuntimeHelper.requireNonNull(constants$3388.const$4,"gtk_theming_engine_state_is_running");
+        return RuntimeHelper.requireNonNull(constants$3393.const$4,"gtk_theming_engine_state_is_running");
     }
     /**
      * {@snippet :
@@ -7406,7 +7822,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$3388.const$5,"gtk_theming_engine_get_direction");
+        return RuntimeHelper.requireNonNull(constants$3393.const$5,"gtk_theming_engine_get_direction");
     }
     /**
      * {@snippet :
@@ -7422,7 +7838,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_junction_sides$MH() {
-        return RuntimeHelper.requireNonNull(constants$3389.const$0,"gtk_theming_engine_get_junction_sides");
+        return RuntimeHelper.requireNonNull(constants$3394.const$0,"gtk_theming_engine_get_junction_sides");
     }
     /**
      * {@snippet :
@@ -7438,7 +7854,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3389.const$1,"gtk_theming_engine_get_color");
+        return RuntimeHelper.requireNonNull(constants$3394.const$1,"gtk_theming_engine_get_color");
     }
     /**
      * {@snippet :
@@ -7454,7 +7870,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_background_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3389.const$2,"gtk_theming_engine_get_background_color");
+        return RuntimeHelper.requireNonNull(constants$3394.const$2,"gtk_theming_engine_get_background_color");
     }
     /**
      * {@snippet :
@@ -7470,7 +7886,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_border_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$3389.const$3,"gtk_theming_engine_get_border_color");
+        return RuntimeHelper.requireNonNull(constants$3394.const$3,"gtk_theming_engine_get_border_color");
     }
     /**
      * {@snippet :
@@ -7486,7 +7902,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_border$MH() {
-        return RuntimeHelper.requireNonNull(constants$3389.const$4,"gtk_theming_engine_get_border");
+        return RuntimeHelper.requireNonNull(constants$3394.const$4,"gtk_theming_engine_get_border");
     }
     /**
      * {@snippet :
@@ -7502,7 +7918,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_padding$MH() {
-        return RuntimeHelper.requireNonNull(constants$3389.const$5,"gtk_theming_engine_get_padding");
+        return RuntimeHelper.requireNonNull(constants$3394.const$5,"gtk_theming_engine_get_padding");
     }
     /**
      * {@snippet :
@@ -7518,7 +7934,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_margin$MH() {
-        return RuntimeHelper.requireNonNull(constants$3390.const$0,"gtk_theming_engine_get_margin");
+        return RuntimeHelper.requireNonNull(constants$3395.const$0,"gtk_theming_engine_get_margin");
     }
     /**
      * {@snippet :
@@ -7534,7 +7950,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$3390.const$1,"gtk_theming_engine_get_font");
+        return RuntimeHelper.requireNonNull(constants$3395.const$1,"gtk_theming_engine_get_font");
     }
     /**
      * {@snippet :
@@ -7550,7 +7966,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_load$MH() {
-        return RuntimeHelper.requireNonNull(constants$3390.const$2,"gtk_theming_engine_load");
+        return RuntimeHelper.requireNonNull(constants$3395.const$2,"gtk_theming_engine_load");
     }
     /**
      * {@snippet :
@@ -7566,7 +7982,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_theming_engine_get_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$3390.const$3,"gtk_theming_engine_get_screen");
+        return RuntimeHelper.requireNonNull(constants$3395.const$3,"gtk_theming_engine_get_screen");
     }
     /**
      * {@snippet :
@@ -7670,7 +8086,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         return (int)512L;
     }
     public static MethodHandle gtk_ui_manager_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3395.const$1,"gtk_ui_manager_get_type");
+        return RuntimeHelper.requireNonNull(constants$3400.const$1,"gtk_ui_manager_get_type");
     }
     /**
      * {@snippet :
@@ -7686,7 +8102,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3395.const$2,"gtk_ui_manager_new");
+        return RuntimeHelper.requireNonNull(constants$3400.const$2,"gtk_ui_manager_new");
     }
     /**
      * {@snippet :
@@ -7702,7 +8118,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_set_add_tearoffs$MH() {
-        return RuntimeHelper.requireNonNull(constants$3395.const$3,"gtk_ui_manager_set_add_tearoffs");
+        return RuntimeHelper.requireNonNull(constants$3400.const$3,"gtk_ui_manager_set_add_tearoffs");
     }
     /**
      * {@snippet :
@@ -7718,7 +8134,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_get_add_tearoffs$MH() {
-        return RuntimeHelper.requireNonNull(constants$3395.const$4,"gtk_ui_manager_get_add_tearoffs");
+        return RuntimeHelper.requireNonNull(constants$3400.const$4,"gtk_ui_manager_get_add_tearoffs");
     }
     /**
      * {@snippet :
@@ -7734,7 +8150,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_insert_action_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3395.const$5,"gtk_ui_manager_insert_action_group");
+        return RuntimeHelper.requireNonNull(constants$3400.const$5,"gtk_ui_manager_insert_action_group");
     }
     /**
      * {@snippet :
@@ -7750,7 +8166,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_remove_action_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3396.const$0,"gtk_ui_manager_remove_action_group");
+        return RuntimeHelper.requireNonNull(constants$3401.const$0,"gtk_ui_manager_remove_action_group");
     }
     /**
      * {@snippet :
@@ -7766,7 +8182,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_get_action_groups$MH() {
-        return RuntimeHelper.requireNonNull(constants$3396.const$1,"gtk_ui_manager_get_action_groups");
+        return RuntimeHelper.requireNonNull(constants$3401.const$1,"gtk_ui_manager_get_action_groups");
     }
     /**
      * {@snippet :
@@ -7782,7 +8198,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_get_accel_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3396.const$2,"gtk_ui_manager_get_accel_group");
+        return RuntimeHelper.requireNonNull(constants$3401.const$2,"gtk_ui_manager_get_accel_group");
     }
     /**
      * {@snippet :
@@ -7798,7 +8214,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_get_widget$MH() {
-        return RuntimeHelper.requireNonNull(constants$3396.const$3,"gtk_ui_manager_get_widget");
+        return RuntimeHelper.requireNonNull(constants$3401.const$3,"gtk_ui_manager_get_widget");
     }
     /**
      * {@snippet :
@@ -7814,7 +8230,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_get_toplevels$MH() {
-        return RuntimeHelper.requireNonNull(constants$3396.const$4,"gtk_ui_manager_get_toplevels");
+        return RuntimeHelper.requireNonNull(constants$3401.const$4,"gtk_ui_manager_get_toplevels");
     }
     /**
      * {@snippet :
@@ -7830,7 +8246,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_get_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$3396.const$5,"gtk_ui_manager_get_action");
+        return RuntimeHelper.requireNonNull(constants$3401.const$5,"gtk_ui_manager_get_action");
     }
     /**
      * {@snippet :
@@ -7846,7 +8262,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_add_ui_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$3397.const$0,"gtk_ui_manager_add_ui_from_string");
+        return RuntimeHelper.requireNonNull(constants$3402.const$0,"gtk_ui_manager_add_ui_from_string");
     }
     /**
      * {@snippet :
@@ -7862,7 +8278,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_add_ui_from_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$3397.const$1,"gtk_ui_manager_add_ui_from_file");
+        return RuntimeHelper.requireNonNull(constants$3402.const$1,"gtk_ui_manager_add_ui_from_file");
     }
     /**
      * {@snippet :
@@ -7878,7 +8294,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_add_ui_from_resource$MH() {
-        return RuntimeHelper.requireNonNull(constants$3397.const$2,"gtk_ui_manager_add_ui_from_resource");
+        return RuntimeHelper.requireNonNull(constants$3402.const$2,"gtk_ui_manager_add_ui_from_resource");
     }
     /**
      * {@snippet :
@@ -7894,7 +8310,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_add_ui$MH() {
-        return RuntimeHelper.requireNonNull(constants$3397.const$4,"gtk_ui_manager_add_ui");
+        return RuntimeHelper.requireNonNull(constants$3402.const$4,"gtk_ui_manager_add_ui");
     }
     /**
      * {@snippet :
@@ -7910,7 +8326,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_remove_ui$MH() {
-        return RuntimeHelper.requireNonNull(constants$3397.const$5,"gtk_ui_manager_remove_ui");
+        return RuntimeHelper.requireNonNull(constants$3402.const$5,"gtk_ui_manager_remove_ui");
     }
     /**
      * {@snippet :
@@ -7926,7 +8342,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_get_ui$MH() {
-        return RuntimeHelper.requireNonNull(constants$3398.const$0,"gtk_ui_manager_get_ui");
+        return RuntimeHelper.requireNonNull(constants$3403.const$0,"gtk_ui_manager_get_ui");
     }
     /**
      * {@snippet :
@@ -7942,7 +8358,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_ensure_update$MH() {
-        return RuntimeHelper.requireNonNull(constants$3398.const$1,"gtk_ui_manager_ensure_update");
+        return RuntimeHelper.requireNonNull(constants$3403.const$1,"gtk_ui_manager_ensure_update");
     }
     /**
      * {@snippet :
@@ -7958,7 +8374,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_ui_manager_new_merge_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$3398.const$2,"gtk_ui_manager_new_merge_id");
+        return RuntimeHelper.requireNonNull(constants$3403.const$2,"gtk_ui_manager_new_merge_id");
     }
     /**
      * {@snippet :
@@ -7974,7 +8390,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vbutton_box_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3398.const$5,"gtk_vbutton_box_get_type");
+        return RuntimeHelper.requireNonNull(constants$3403.const$5,"gtk_vbutton_box_get_type");
     }
     /**
      * {@snippet :
@@ -7990,7 +8406,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vbutton_box_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3399.const$0,"gtk_vbutton_box_new");
+        return RuntimeHelper.requireNonNull(constants$3404.const$0,"gtk_vbutton_box_new");
     }
     /**
      * {@snippet :
@@ -8006,7 +8422,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vbox_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3399.const$3,"gtk_vbox_get_type");
+        return RuntimeHelper.requireNonNull(constants$3404.const$3,"gtk_vbox_get_type");
     }
     /**
      * {@snippet :
@@ -8022,7 +8438,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vbox_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3399.const$4,"gtk_vbox_new");
+        return RuntimeHelper.requireNonNull(constants$3404.const$4,"gtk_vbox_new");
     }
     /**
      * {@snippet :
@@ -8038,7 +8454,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vpaned_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3400.const$1,"gtk_vpaned_get_type");
+        return RuntimeHelper.requireNonNull(constants$3405.const$1,"gtk_vpaned_get_type");
     }
     /**
      * {@snippet :
@@ -8054,7 +8470,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vpaned_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3400.const$2,"gtk_vpaned_new");
+        return RuntimeHelper.requireNonNull(constants$3405.const$2,"gtk_vpaned_new");
     }
     /**
      * {@snippet :
@@ -8070,7 +8486,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vscale_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3400.const$5,"gtk_vscale_get_type");
+        return RuntimeHelper.requireNonNull(constants$3405.const$5,"gtk_vscale_get_type");
     }
     /**
      * {@snippet :
@@ -8086,7 +8502,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vscale_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3401.const$0,"gtk_vscale_new");
+        return RuntimeHelper.requireNonNull(constants$3406.const$0,"gtk_vscale_new");
     }
     /**
      * {@snippet :
@@ -8102,7 +8518,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vscale_new_with_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$3401.const$1,"gtk_vscale_new_with_range");
+        return RuntimeHelper.requireNonNull(constants$3406.const$1,"gtk_vscale_new_with_range");
     }
     /**
      * {@snippet :
@@ -8118,7 +8534,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vscrollbar_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3401.const$4,"gtk_vscrollbar_get_type");
+        return RuntimeHelper.requireNonNull(constants$3406.const$4,"gtk_vscrollbar_get_type");
     }
     /**
      * {@snippet :
@@ -8134,7 +8550,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vscrollbar_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3401.const$5,"gtk_vscrollbar_new");
+        return RuntimeHelper.requireNonNull(constants$3406.const$5,"gtk_vscrollbar_new");
     }
     /**
      * {@snippet :
@@ -8150,7 +8566,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vseparator_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3402.const$2,"gtk_vseparator_get_type");
+        return RuntimeHelper.requireNonNull(constants$3407.const$2,"gtk_vseparator_get_type");
     }
     /**
      * {@snippet :
@@ -8166,7 +8582,7 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
         }
     }
     public static MethodHandle gtk_vseparator_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3402.const$3,"gtk_vseparator_new");
+        return RuntimeHelper.requireNonNull(constants$3407.const$3,"gtk_vseparator_new");
     }
     /**
      * {@snippet :
@@ -10743,162 +11159,6 @@ public class app_indicator_h_19 extends app_indicator_h_18 {
      * }
      */
     public static final AddressLayout GtkPrintSettings_slistautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkPrintSettings_queueautoptr;
-     * }
-     */
-    public static final AddressLayout GtkPrintSettings_queueautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GtkProgressBar* GtkProgressBar_autoptr;
-     * }
-     */
-    public static final AddressLayout GtkProgressBar_autoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GList* GtkProgressBar_listautoptr;
-     * }
-     */
-    public static final AddressLayout GtkProgressBar_listautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GSList* GtkProgressBar_slistautoptr;
-     * }
-     */
-    public static final AddressLayout GtkProgressBar_slistautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkProgressBar_queueautoptr;
-     * }
-     */
-    public static final AddressLayout GtkProgressBar_queueautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GtkRadioButton* GtkRadioButton_autoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioButton_autoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GList* GtkRadioButton_listautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioButton_listautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRadioButton_slistautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioButton_slistautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRadioButton_queueautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioButton_queueautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GtkRadioMenuItem* GtkRadioMenuItem_autoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioMenuItem_autoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GList* GtkRadioMenuItem_listautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioMenuItem_listautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRadioMenuItem_slistautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioMenuItem_slistautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRadioMenuItem_queueautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioMenuItem_queueautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GtkRadioToolButton* GtkRadioToolButton_autoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioToolButton_autoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GList* GtkRadioToolButton_listautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioToolButton_listautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRadioToolButton_slistautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioToolButton_slistautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRadioToolButton_queueautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRadioToolButton_queueautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GtkRange* GtkRange_autoptr;
-     * }
-     */
-    public static final AddressLayout GtkRange_autoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GList* GtkRange_listautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRange_listautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRange_slistautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRange_slistautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRange_queueautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRange_queueautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GtkRcStyle* GtkRcStyle_autoptr;
-     * }
-     */
-    public static final AddressLayout GtkRcStyle_autoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GList* GtkRcStyle_listautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRcStyle_listautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRcStyle_slistautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRcStyle_slistautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRcStyle_queueautoptr;
-     * }
-     */
-    public static final AddressLayout GtkRcStyle_queueautoptr = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * typedef struct _GtkRecentChooser* GtkRecentChooser_autoptr;
-     * }
-     */
-    public static final AddressLayout GtkRecentChooser_autoptr = RuntimeHelper.POINTER;
 }
 
 

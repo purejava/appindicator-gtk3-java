@@ -2,25 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$456 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$456() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_test_create_case$data_setup.class, "apply", constants$13.const$4);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_test_create_case$data_test.class, "apply", constants$13.const$4);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_test_create_case$data_teardown.class, "apply", constants$13.const$4);
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_trap_subprocess",
+        constants$456.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_trap_has_passed",
+        constants$83.const$1
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_test_create_case",
-        constants$176.const$0
+        "g_test_trap_reached_timeout",
+        constants$83.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_test_create_suite",
-        constants$5.const$2
+        "g_test_rand_int",
+        constants$83.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_test_get_root",
-        constants$35.const$2
+        "g_test_rand_int_range",
+        constants$123.const$5
     );
 }
 

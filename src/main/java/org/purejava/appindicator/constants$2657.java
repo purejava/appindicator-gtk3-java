@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2657 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2657() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_unset",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_get_target_list",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_set_target_list",
-        constants$13.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_add_text_targets",
-        constants$13.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_add_image_targets",
-        constants$13.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_add_uri_targets",
-        constants$13.const$1
-    );
+    static final VarHandle const$0 = constants$2656.const$4.varHandle(MemoryLayout.PathElement.groupElement("parsing_error"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCssProviderClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$2656.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkCssProviderClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$2656.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkCssProviderClass._gtk_reserved4.class, "apply", constants$7.const$5);
 }
 
 

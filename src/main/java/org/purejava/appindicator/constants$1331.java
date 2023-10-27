@@ -2,36 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1331 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1331() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_task_new",
-        constants$39.const$1
+        "g_subprocess_communicate_utf8_finish",
+        constants$165.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_task_report_error$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_get_type",
+        constants$3.const$5
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_task_report_error",
-        constants$331.const$1
+        "g_subprocess_launcher_new",
+        constants$24.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_task_report_new_error$callback.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_subprocess_launcher_spawn",
+        constants$23.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
-        "g_task_report_new_error",
-        constants$1331.const$4
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_spawnv",
+        constants$23.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_set_environ",
+        constants$13.const$4
     );
 }
 

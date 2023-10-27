@@ -2,35 +2,18 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.invoke.VarHandle;
 final class constants$2371 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2371() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_starts_tag",
-        constants$9.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_begins_tag",
-        constants$9.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_ends_tag",
-        constants$9.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_toggles_tag",
-        constants$9.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_has_tag",
-        constants$9.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_tags",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$2370.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy5"));
+    static final VarHandle const$1 = constants$2370.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy6"));
+    static final VarHandle const$2 = constants$2370.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy7"));
+    static final VarHandle const$3 = constants$2370.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy8"));
+    static final VarHandle const$4 = constants$2370.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy9"));
+    static final VarHandle const$5 = constants$2370.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy10"));
 }
 
 

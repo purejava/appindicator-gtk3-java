@@ -2,35 +2,38 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2533 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2533() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_binding_set_find",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_bindings_activate",
-        constants$49.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_bindings_activate_event",
+        "gtk_button_box_get_child_non_homogeneous",
         constants$9.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_binding_set_activate",
-        constants$49.const$2
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_button_box_set_child_non_homogeneous",
+        constants$164.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_binding_entry_skip",
-        constants$467.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_binding_entry_add_signal",
-        constants$1133.const$2
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("set_name"),
+        JAVA_INT.withName("priority"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("widget_path_pspecs"),
+        RuntimeHelper.POINTER.withName("widget_class_pspecs"),
+        RuntimeHelper.POINTER.withName("class_branch_pspecs"),
+        RuntimeHelper.POINTER.withName("entries"),
+        RuntimeHelper.POINTER.withName("current"),
+        MemoryLayout.paddingLayout(8)
+    ).withName("_GtkBindingSet");
+    static final VarHandle const$3 = constants$2533.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_name"));
+    static final VarHandle const$4 = constants$2533.const$2.varHandle(MemoryLayout.PathElement.groupElement("priority"));
+    static final VarHandle const$5 = constants$2533.const$2.varHandle(MemoryLayout.PathElement.groupElement("widget_path_pspecs"));
 }
 
 

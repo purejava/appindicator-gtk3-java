@@ -24,10 +24,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkBindingSet {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2528.const$2;
+        return constants$2533.const$2;
     }
     public static VarHandle set_name$VH() {
-        return constants$2528.const$3;
+        return constants$2533.const$3;
     }
     /**
      * Getter for field:
@@ -36,7 +36,7 @@ public class _GtkBindingSet {
      * }
      */
     public static MemorySegment set_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2528.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2533.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -45,16 +45,16 @@ public class _GtkBindingSet {
      * }
      */
     public static void set_name$set(MemorySegment seg, MemorySegment x) {
-        constants$2528.const$3.set(seg, x);
+        constants$2533.const$3.set(seg, x);
     }
     public static MemorySegment set_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2528.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2533.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void set_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2528.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2533.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle priority$VH() {
-        return constants$2528.const$4;
+        return constants$2533.const$4;
     }
     /**
      * Getter for field:
@@ -63,7 +63,7 @@ public class _GtkBindingSet {
      * }
      */
     public static int priority$get(MemorySegment seg) {
-        return (int)constants$2528.const$4.get(seg);
+        return (int)constants$2533.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -72,16 +72,16 @@ public class _GtkBindingSet {
      * }
      */
     public static void priority$set(MemorySegment seg, int x) {
-        constants$2528.const$4.set(seg, x);
+        constants$2533.const$4.set(seg, x);
     }
     public static int priority$get(MemorySegment seg, long index) {
-        return (int)constants$2528.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2533.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void priority$set(MemorySegment seg, long index, int x) {
-        constants$2528.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2533.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle widget_path_pspecs$VH() {
-        return constants$2528.const$5;
+        return constants$2533.const$5;
     }
     /**
      * Getter for field:
@@ -90,7 +90,7 @@ public class _GtkBindingSet {
      * }
      */
     public static MemorySegment widget_path_pspecs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2528.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2533.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -99,16 +99,16 @@ public class _GtkBindingSet {
      * }
      */
     public static void widget_path_pspecs$set(MemorySegment seg, MemorySegment x) {
-        constants$2528.const$5.set(seg, x);
+        constants$2533.const$5.set(seg, x);
     }
     public static MemorySegment widget_path_pspecs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2528.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2533.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void widget_path_pspecs$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2528.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2533.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle widget_class_pspecs$VH() {
-        return constants$2529.const$0;
+        return constants$2534.const$0;
     }
     /**
      * Getter for field:
@@ -117,7 +117,7 @@ public class _GtkBindingSet {
      * }
      */
     public static MemorySegment widget_class_pspecs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2529.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2534.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -126,16 +126,16 @@ public class _GtkBindingSet {
      * }
      */
     public static void widget_class_pspecs$set(MemorySegment seg, MemorySegment x) {
-        constants$2529.const$0.set(seg, x);
+        constants$2534.const$0.set(seg, x);
     }
     public static MemorySegment widget_class_pspecs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2529.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2534.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void widget_class_pspecs$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2529.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2534.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle class_branch_pspecs$VH() {
-        return constants$2529.const$1;
+        return constants$2534.const$1;
     }
     /**
      * Getter for field:
@@ -144,7 +144,7 @@ public class _GtkBindingSet {
      * }
      */
     public static MemorySegment class_branch_pspecs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2529.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2534.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -153,16 +153,16 @@ public class _GtkBindingSet {
      * }
      */
     public static void class_branch_pspecs$set(MemorySegment seg, MemorySegment x) {
-        constants$2529.const$1.set(seg, x);
+        constants$2534.const$1.set(seg, x);
     }
     public static MemorySegment class_branch_pspecs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2529.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2534.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void class_branch_pspecs$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2529.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2534.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle entries$VH() {
-        return constants$2529.const$2;
+        return constants$2534.const$2;
     }
     /**
      * Getter for field:
@@ -171,7 +171,7 @@ public class _GtkBindingSet {
      * }
      */
     public static MemorySegment entries$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2529.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2534.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -180,16 +180,16 @@ public class _GtkBindingSet {
      * }
      */
     public static void entries$set(MemorySegment seg, MemorySegment x) {
-        constants$2529.const$2.set(seg, x);
+        constants$2534.const$2.set(seg, x);
     }
     public static MemorySegment entries$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2529.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2534.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void entries$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2529.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2534.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle current$VH() {
-        return constants$2529.const$3;
+        return constants$2534.const$3;
     }
     /**
      * Getter for field:
@@ -198,7 +198,7 @@ public class _GtkBindingSet {
      * }
      */
     public static MemorySegment current$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2529.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2534.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -207,13 +207,13 @@ public class _GtkBindingSet {
      * }
      */
     public static void current$set(MemorySegment seg, MemorySegment x) {
-        constants$2529.const$3.set(seg, x);
+        constants$2534.const$3.set(seg, x);
     }
     public static MemorySegment current$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2529.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2534.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void current$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2529.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2534.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -9,23 +9,23 @@ final class constants$2270 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2270() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkActionBarClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2268.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkAccessibleClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$2268.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_action_bar_get_type",
+        "gtk_accessible_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_action_bar_new",
-        constants$35.const$2
+        "gtk_accessible_set_widget",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_action_bar_get_center_widget",
+        "gtk_accessible_get_widget",
         constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_action_bar_set_center_widget",
-        constants$13.const$4
+        "gtk_accessible_connect_widget_destroyed",
+        constants$13.const$1
     );
 }
 

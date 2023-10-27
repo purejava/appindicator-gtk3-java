@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2002 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2002() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_component_get_extents",
-        constants$673.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_component_get_position",
-        constants$331.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_component_get_size",
-        constants$14.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_component_get_layer",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_component_get_mdi_zorder",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_component_grab_focus",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkComponentIface.get_size.class, "apply", constants$14.const$3);
+    static final VarHandle const$1 = constants$1999.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_size"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkComponentIface.grab_focus.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$1999.const$4.varHandle(MemoryLayout.PathElement.groupElement("grab_focus"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkComponentIface.remove_focus_handler.class, "apply", constants$40.const$2);
+    static final VarHandle const$5 = constants$1999.const$4.varHandle(MemoryLayout.PathElement.groupElement("remove_focus_handler"));
 }
 
 

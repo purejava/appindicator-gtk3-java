@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3365 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3365() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_paint_focus",
-        constants$3354.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_paint_slider",
-        constants$3353.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_paint_handle",
-        constants$3353.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_paint_expander",
-        constants$3348.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_paint_layout",
-        constants$3355.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_paint_resize_grip",
-        constants$3356.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkStyleClass._gtk_reserved9.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved9"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkStyleClass._gtk_reserved10.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved10"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkStyleClass._gtk_reserved11.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved11"));
 }
 
 

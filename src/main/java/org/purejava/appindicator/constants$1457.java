@@ -6,35 +6,53 @@ import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1457 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1457() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_paint_pop_clip_func_t.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_color_func_t.class, "apply", constants$1457.const$1);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        constants$1457.const$1
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
         JAVA_FLOAT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+        JAVA_FLOAT
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_image_func_t.class, "apply", constants$1457.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_draw_move_to",
+        constants$1457.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_draw_line_to",
+        constants$1457.const$0
+    );
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_draw_quadratic_to",
+        constants$1457.const$3
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "hb_draw_cubic_to",
+        constants$1457.const$5
+    );
 }
 
 

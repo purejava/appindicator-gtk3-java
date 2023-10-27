@@ -8,28 +8,25 @@ final class constants$1340 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1340() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tcp_wrapper_connection_get_type",
-        constants$3.const$5
+        "g_task_attach_source",
+        constants$14.const$3
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tcp_wrapper_connection_new",
-        constants$5.const$5
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_task_return_pointer$result_destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tcp_wrapper_connection_get_base_io_stream",
-        constants$5.const$2
+        "g_task_return_pointer",
+        constants$14.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_test_dbus_get_type",
-        constants$3.const$5
+        "g_task_return_boolean",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_test_dbus_new",
-        constants$24.const$0
+        "g_task_return_int",
+        constants$25.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_test_dbus_get_flags",
-        constants$10.const$5
+        "g_task_return_error",
+        constants$13.const$4
     );
 }
 

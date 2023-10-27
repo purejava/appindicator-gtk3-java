@@ -2,34 +2,48 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1155 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1155() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_menu_prepend_section",
-        constants$14.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_menu_append_section",
-        constants$14.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_menu_insert_submenu",
-        constants$179.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_menu_prepend_submenu",
-        constants$14.const$3
-    );
+    static final VarHandle const$0 = constants$1154.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("get_next")
+    ).withName("_GMenuLinkIterClass");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMenuLinkIterClass.get_next.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$1155.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_next"));
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_menu_append_submenu",
-        constants$14.const$3
+        "g_menu_link_iter_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_menu_item_get_type",
-        constants$3.const$5
+        "g_menu_link_iter_get_next",
+        constants$12.const$2
     );
 }
 

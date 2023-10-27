@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2559 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2559() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCalendarClass.day_selected.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$2558.const$3.varHandle(MemoryLayout.PathElement.groupElement("day_selected"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCalendarClass.day_selected_double_click.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$2558.const$3.varHandle(MemoryLayout.PathElement.groupElement("day_selected_double_click"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCalendarClass.prev_month.class, "apply", constants$13.const$1);
-    static final VarHandle const$5 = constants$2558.const$3.varHandle(MemoryLayout.PathElement.groupElement("prev_month"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_button_pressed",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_button_released",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_button_enter",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_button_leave",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_button_set_relief",
+        constants$40.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_button_get_relief",
+        constants$10.const$5
+    );
 }
 
 

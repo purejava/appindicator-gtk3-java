@@ -7,26 +7,29 @@ final class constants$2490 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2490() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_tree_view_set_destroy_count_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_unset_rows_drag_source",
+        constants$13.const$1
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_destroy_count_func",
-        constants$42.const$1
+        "gtk_tree_view_unset_rows_drag_dest",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_fixed_height_mode",
-        constants$40.const$2
+        "gtk_tree_view_set_drag_dest_row",
+        constants$164.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_fixed_height_mode",
-        constants$10.const$5
+        "gtk_tree_view_get_drag_dest_row",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_hover_selection",
-        constants$40.const$2
+        "gtk_tree_view_get_dest_row_at_pos",
+        constants$959.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_hover_selection",
-        constants$10.const$5
+        "gtk_tree_view_create_row_drag_icon",
+        constants$5.const$5
     );
 }
 

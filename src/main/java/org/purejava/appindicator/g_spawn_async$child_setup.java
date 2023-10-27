@@ -13,7 +13,7 @@ public interface g_spawn_async$child_setup {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_spawn_async$child_setup fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$443.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$444.const$0, fi, constants$13.const$1, scope);
     }
     static g_spawn_async$child_setup ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

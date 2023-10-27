@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2057 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2057() {}
-    static final VarHandle const$0 = constants$2056.const$0.varHandle(MemoryLayout.PathElement.groupElement("ref_selection"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkSelectionIface.get_selection_count.class, "apply", constants$10.const$5);
-    static final VarHandle const$2 = constants$2056.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_selection_count"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkSelectionIface.is_child_selected.class, "apply", constants$11.const$4);
-    static final VarHandle const$4 = constants$2056.const$0.varHandle(MemoryLayout.PathElement.groupElement("is_child_selected"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkSelectionIface.remove_selection.class, "apply", constants$11.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_relation_type_register",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_relation_type_get_name",
+        constants$24.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_relation_type_for_name",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_relation_new",
+        constants$33.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_relation_get_relation_type",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_relation_get_target",
+        constants$5.const$2
+    );
 }
 
 

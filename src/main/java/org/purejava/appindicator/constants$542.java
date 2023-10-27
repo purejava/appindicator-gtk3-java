@@ -3,30 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$542 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$542() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_free",
+    static final VarHandle const$0 = constants$541.const$1.varHandle(MemoryLayout.PathElement.groupElement("want_to_read"));
+    static final VarHandle const$1 = constants$541.const$1.varHandle(MemoryLayout.PathElement.groupElement("want_to_write"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_init",
         constants$13.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_private_new$notify.class, "apply", constants$13.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_private_new",
-        constants$5.const$2
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_reader_lock",
+        constants$13.const$1
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        JAVA_INT.withName("index")
-    ).withName("_GStaticPrivate");
-    static final VarHandle const$4 = constants$542.const$3.varHandle(MemoryLayout.PathElement.groupElement("index"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_reader_trylock",
+        constants$10.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_static_private_init",
+        "g_static_rw_lock_reader_unlock",
         constants$13.const$1
     );
 }

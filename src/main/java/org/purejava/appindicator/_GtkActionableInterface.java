@@ -21,7 +21,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkActionableInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2266.const$0;
+        return constants$2271.const$0;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -35,7 +35,7 @@ public class _GtkActionableInterface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_action_name fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2266.const$1, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2271.const$1, fi, constants$5.const$2, scope);
         }
         static get_action_name ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -50,7 +50,7 @@ public class _GtkActionableInterface {
     }
 
     public static VarHandle get_action_name$VH() {
-        return constants$2266.const$2;
+        return constants$2271.const$2;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GtkActionableInterface {
      * }
      */
     public static MemorySegment get_action_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2266.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2271.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -68,13 +68,13 @@ public class _GtkActionableInterface {
      * }
      */
     public static void get_action_name$set(MemorySegment seg, MemorySegment x) {
-        constants$2266.const$2.set(seg, x);
+        constants$2271.const$2.set(seg, x);
     }
     public static MemorySegment get_action_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2266.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2271.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_action_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2266.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2271.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_action_name get_action_name(MemorySegment segment, Arena scope) {
         return get_action_name.ofAddress(get_action_name$get(segment), scope);
@@ -88,7 +88,7 @@ public class _GtkActionableInterface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_action_name fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2266.const$3, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2271.const$3, fi, constants$13.const$4, scope);
         }
         static set_action_name ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -103,7 +103,7 @@ public class _GtkActionableInterface {
     }
 
     public static VarHandle set_action_name$VH() {
-        return constants$2266.const$4;
+        return constants$2271.const$4;
     }
     /**
      * Getter for field:
@@ -112,7 +112,7 @@ public class _GtkActionableInterface {
      * }
      */
     public static MemorySegment set_action_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2266.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2271.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -121,13 +121,13 @@ public class _GtkActionableInterface {
      * }
      */
     public static void set_action_name$set(MemorySegment seg, MemorySegment x) {
-        constants$2266.const$4.set(seg, x);
+        constants$2271.const$4.set(seg, x);
     }
     public static MemorySegment set_action_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2266.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2271.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void set_action_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2266.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2271.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_action_name set_action_name(MemorySegment segment, Arena scope) {
         return set_action_name.ofAddress(set_action_name$get(segment), scope);
@@ -141,7 +141,7 @@ public class _GtkActionableInterface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_action_target_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2266.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2271.const$5, fi, constants$5.const$2, scope);
         }
         static get_action_target_value ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -156,7 +156,7 @@ public class _GtkActionableInterface {
     }
 
     public static VarHandle get_action_target_value$VH() {
-        return constants$2267.const$0;
+        return constants$2272.const$0;
     }
     /**
      * Getter for field:
@@ -165,7 +165,7 @@ public class _GtkActionableInterface {
      * }
      */
     public static MemorySegment get_action_target_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2267.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2272.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -174,13 +174,13 @@ public class _GtkActionableInterface {
      * }
      */
     public static void get_action_target_value$set(MemorySegment seg, MemorySegment x) {
-        constants$2267.const$0.set(seg, x);
+        constants$2272.const$0.set(seg, x);
     }
     public static MemorySegment get_action_target_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2267.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2272.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_action_target_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2267.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2272.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_action_target_value get_action_target_value(MemorySegment segment, Arena scope) {
         return get_action_target_value.ofAddress(get_action_target_value$get(segment), scope);
@@ -194,7 +194,7 @@ public class _GtkActionableInterface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_action_target_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2267.const$1, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2272.const$1, fi, constants$13.const$4, scope);
         }
         static set_action_target_value ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -209,7 +209,7 @@ public class _GtkActionableInterface {
     }
 
     public static VarHandle set_action_target_value$VH() {
-        return constants$2267.const$2;
+        return constants$2272.const$2;
     }
     /**
      * Getter for field:
@@ -218,7 +218,7 @@ public class _GtkActionableInterface {
      * }
      */
     public static MemorySegment set_action_target_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2267.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2272.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -227,13 +227,13 @@ public class _GtkActionableInterface {
      * }
      */
     public static void set_action_target_value$set(MemorySegment seg, MemorySegment x) {
-        constants$2267.const$2.set(seg, x);
+        constants$2272.const$2.set(seg, x);
     }
     public static MemorySegment set_action_target_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2267.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2272.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void set_action_target_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2267.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2272.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_action_target_value set_action_target_value(MemorySegment segment, Arena scope) {
         return set_action_target_value.ofAddress(set_action_target_value$get(segment), scope);

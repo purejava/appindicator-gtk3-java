@@ -9,12 +9,12 @@ final class constants$741 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$741() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GApplicationClass.dbus_unregister.class, "apply", constants$14.const$3);
-    static final VarHandle const$1 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("dbus_unregister"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GApplicationClass.handle_local_options.class, "apply", constants$9.const$0);
-    static final VarHandle const$3 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("handle_local_options"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GApplicationClass.name_lost.class, "apply", constants$10.const$5);
-    static final VarHandle const$5 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("name_lost"));
+    static final VarHandle const$0 = constants$739.const$3.varHandle(MemoryLayout.PathElement.groupElement("command_line"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GApplicationClass.local_command_line.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$739.const$3.varHandle(MemoryLayout.PathElement.groupElement("local_command_line"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GApplicationClass.before_emit.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$739.const$3.varHandle(MemoryLayout.PathElement.groupElement("before_emit"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GApplicationClass.after_emit.class, "apply", constants$13.const$4);
 }
 
 

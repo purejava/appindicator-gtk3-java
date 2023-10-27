@@ -2,34 +2,22 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1827 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1827() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_display",
-        constants$5.const$2
+        constants$1826.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_at_pointer",
-        constants$5.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_show",
-        constants$13.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_hide",
-        constants$13.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_withdraw",
-        constants$13.const$1
-    );
+    static final VarHandle const$1 = constants$1825.const$5.varHandle(MemoryLayout.PathElement.groupElement("to_embedder"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GdkWindowClass.from_embedder.class, "apply", constants$1826.const$4);
+    static final VarHandle const$3 = constants$1825.const$5.varHandle(MemoryLayout.PathElement.groupElement("from_embedder"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GdkWindowClass.create_surface.class, "apply", constants$33.const$5);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_show_unraised",
-        constants$13.const$1
+        constants$33.const$5
     );
 }
 

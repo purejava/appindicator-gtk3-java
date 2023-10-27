@@ -13,7 +13,7 @@ public interface AtkPropertyChangeHandler {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(AtkPropertyChangeHandler fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1965.const$2, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$1970.const$3, fi, constants$13.const$4, scope);
     }
     static AtkPropertyChangeHandler ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

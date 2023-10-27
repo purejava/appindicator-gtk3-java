@@ -2,32 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1507 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1507() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_buffer_create_similar",
-        constants$5.const$2
+        "hb_font_get_synthetic_slant",
+        constants$692.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_buffer_reset",
-        constants$13.const$1
+        "hb_font_set_variations",
+        constants$164.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_empty",
-        constants$35.const$2
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_FLOAT
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_buffer_reference",
-        constants$5.const$2
+        "hb_font_set_variation",
+        constants$1507.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_buffer_destroy",
-        constants$13.const$1
+        "hb_font_set_var_coords_design",
+        constants$164.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_buffer_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_get_var_coords_design",
+        constants$5.const$5
+    );
 }
 
 

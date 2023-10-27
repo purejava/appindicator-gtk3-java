@@ -961,19 +961,19 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define GLIB_MINOR_VERSION 76
+     * #define GLIB_MINOR_VERSION 78
      * }
      */
     public static int GLIB_MINOR_VERSION() {
-        return (int)76L;
+        return (int)78L;
     }
     /**
      * {@snippet :
-     * #define GLIB_MICRO_VERSION 4
+     * #define GLIB_MICRO_VERSION 0
      * }
      */
     public static int GLIB_MICRO_VERSION() {
-        return (int)4L;
+        return (int)0L;
     }
     /**
      * {@snippet :
@@ -4169,19 +4169,19 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define PANGO_VERSION_MINOR 50
+     * #define PANGO_VERSION_MINOR 51
      * }
      */
     public static int PANGO_VERSION_MINOR() {
-        return (int)50L;
+        return (int)51L;
     }
     /**
      * {@snippet :
-     * #define PANGO_VERSION_MICRO 14
+     * #define PANGO_VERSION_MICRO 0
      * }
      */
     public static int PANGO_VERSION_MICRO() {
-        return (int)14L;
+        return (int)0L;
     }
     /**
      * {@snippet :
@@ -4233,19 +4233,19 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define HB_VERSION_MINOR 1
+     * #define HB_VERSION_MINOR 2
      * }
      */
     public static int HB_VERSION_MINOR() {
-        return (int)1L;
+        return (int)2L;
     }
     /**
      * {@snippet :
-     * #define HB_VERSION_MICRO 1
+     * #define HB_VERSION_MICRO 2
      * }
      */
     public static int HB_VERSION_MICRO() {
-        return (int)1L;
+        return (int)2L;
     }
     /**
      * {@snippet :
@@ -4441,19 +4441,19 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define CAIRO_VERSION_MINOR 17
+     * #define CAIRO_VERSION_MINOR 18
      * }
      */
     public static int CAIRO_VERSION_MINOR() {
-        return (int)17L;
+        return (int)18L;
     }
     /**
      * {@snippet :
-     * #define CAIRO_VERSION_MICRO 8
+     * #define CAIRO_VERSION_MICRO 0
      * }
      */
     public static int CAIRO_VERSION_MICRO() {
-        return (int)8L;
+        return (int)0L;
     }
     /**
      * {@snippet :
@@ -4549,6 +4549,14 @@ public class app_indicator_h extends app_indicator_h_21 {
      * }
      */
     public static int CAIRO_HAS_SVG_SURFACE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_HAS_TEE_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_TEE_SURFACE() {
         return (int)1L;
     }
     /**
@@ -8006,14 +8014,6 @@ public class app_indicator_h extends app_indicator_h_21 {
      */
     public static int GDK_KEY_l() {
         return (int)108L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_m 109
-     * }
-     */
-    public static int GDK_KEY_m() {
-        return (int)109L;
     }
 }
 

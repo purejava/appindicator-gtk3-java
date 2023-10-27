@@ -13,7 +13,7 @@ public interface gtk_text_tag_table_foreach$func {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gtk_text_tag_table_foreach$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3120.const$0, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$3125.const$0, fi, constants$13.const$4, scope);
     }
     static gtk_text_tag_table_foreach$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

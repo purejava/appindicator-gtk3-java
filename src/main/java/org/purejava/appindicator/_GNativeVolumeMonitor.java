@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GNativeVolumeMonitor {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1194.const$4;
+        return constants$1198.const$1;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 32);

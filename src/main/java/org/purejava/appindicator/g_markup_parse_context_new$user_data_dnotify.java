@@ -13,7 +13,7 @@ public interface g_markup_parse_context_new$user_data_dnotify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_markup_parse_context_new$user_data_dnotify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$340.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$341.const$5, fi, constants$13.const$1, scope);
     }
     static g_markup_parse_context_new$user_data_dnotify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

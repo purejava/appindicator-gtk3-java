@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2920 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2920() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_offscreen_window_get_type",
-        constants$3.const$5
+        "gtk_notebook_get_tab_hborder",
+        constants$186.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_offscreen_window_new",
-        constants$35.const$2
+        "gtk_notebook_get_tab_vborder",
+        constants$186.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_offscreen_window_get_surface",
-        constants$5.const$2
+        "gtk_notebook_popup_enable",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_offscreen_window_get_pixbuf",
-        constants$5.const$2
+        "gtk_notebook_popup_disable",
+        constants$13.const$1
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("base_iface")
-    ).withName("_GtkOrientableIface");
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_notebook_get_tab_label",
+        constants$5.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_orientable_get_type",
-        constants$3.const$5
+        "gtk_notebook_set_tab_label",
+        constants$14.const$3
     );
 }
 

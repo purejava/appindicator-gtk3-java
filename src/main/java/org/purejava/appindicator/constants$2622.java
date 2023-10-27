@@ -2,32 +2,33 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2622 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2622() {}
-    static final VarHandle const$0 = constants$2620.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_get_submenu",
+        constants$5.const$2
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_get_type",
-        constants$3.const$5
+        "gtk_menu_item_select",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_new",
-        constants$35.const$2
+        "gtk_menu_item_deselect",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_new_with_label",
-        constants$5.const$2
+        "gtk_menu_item_activate",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_new_with_mnemonic",
-        constants$5.const$2
+        "gtk_menu_item_toggle_size_request",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_set_active",
+        "gtk_menu_item_toggle_size_allocate",
         constants$40.const$2
     );
 }

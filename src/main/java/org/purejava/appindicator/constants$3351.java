@@ -9,12 +9,12 @@ final class constants$3351 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3351() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_flat_box.class, "apply", constants$3349.const$0);
-    static final VarHandle const$1 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_flat_box"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_check.class, "apply", constants$3349.const$0);
-    static final VarHandle const$3 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_check"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_option.class, "apply", constants$3349.const$0);
-    static final VarHandle const$5 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_option"));
+    static final VarHandle const$0 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("unrealize"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkStyleClass.copy.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("copy"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkStyleClass.clone.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("clone"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkStyleClass.init_from_rc.class, "apply", constants$13.const$4);
 }
 
 

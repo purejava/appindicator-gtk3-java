@@ -6,36 +6,36 @@ import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$817 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$817() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "lchown",
-        constants$49.const$0
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
         JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
+        JAVA_LONG,
         JAVA_INT
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "lseek",
+        constants$817.const$0
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "fchownat",
-        constants$817.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "chdir",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "fchdir",
+        "close",
         constants$8.const$4
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "closefrom",
+        constants$80.const$1
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "getcwd",
-        constants$21.const$1
+        "read",
+        constants$817.const$4
     );
 }
 

@@ -13,7 +13,7 @@ public interface hb_unicode_funcs_set_decompose_compatibility_func$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(hb_unicode_funcs_set_decompose_compatibility_func$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1520.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1525.const$0, fi, constants$13.const$1, scope);
     }
     static hb_unicode_funcs_set_decompose_compatibility_func$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

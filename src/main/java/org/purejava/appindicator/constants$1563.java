@@ -2,36 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1563 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1563() {}
-    static final VarHandle const$0 = constants$1562.const$1.varHandle(MemoryLayout.PathElement.groupElement("destroy"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoAttrClass.equal.class, "apply", constants$9.const$0);
-    static final VarHandle const$2 = constants$1562.const$1.varHandle(MemoryLayout.PathElement.groupElement("equal"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("klass"),
-            JAVA_INT.withName("start_index"),
-            JAVA_INT.withName("end_index")
-        ).withName("attr"),
-        RuntimeHelper.POINTER.withName("value")
-    ).withName("_PangoAttrString");
-    static final VarHandle const$4 = constants$1563.const$3.varHandle(MemoryLayout.PathElement.groupElement("value"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("klass"),
-            JAVA_INT.withName("start_index"),
-            JAVA_INT.withName("end_index")
-        ).withName("attr"),
-        RuntimeHelper.POINTER.withName("value")
-    ).withName("_PangoAttrLanguage");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_font_get_glyph_extents",
+        constants$179.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_get_font_map",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_get_face",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_font_has_char",
+        constants$11.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_get_features",
+        constants$466.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_get_hb_font",
+        constants$5.const$2
+    );
 }
 
 

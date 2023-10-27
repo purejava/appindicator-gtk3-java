@@ -2,35 +2,32 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1933 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1933() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_keyval_to_unicode",
-        constants$8.const$4
+        "gdk_gl_context_get_current",
+        constants$35.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_unicode_to_keyval",
-        constants$8.const$4
+        "gdk_gl_context_clear_current",
+        constants$7.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_parse_args",
-        constants$13.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_init",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_init_check",
-        constants$9.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_add_option_entries_libgtk_only",
-        constants$13.const$1
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("keycode"),
+        JAVA_INT.withName("group"),
+        JAVA_INT.withName("level")
+    ).withName("_GdkKeymapKey");
+    static final VarHandle const$3 = constants$1933.const$2.varHandle(MemoryLayout.PathElement.groupElement("keycode"));
+    static final VarHandle const$4 = constants$1933.const$2.varHandle(MemoryLayout.PathElement.groupElement("group"));
+    static final VarHandle const$5 = constants$1933.const$2.varHandle(MemoryLayout.PathElement.groupElement("level"));
 }
 
 

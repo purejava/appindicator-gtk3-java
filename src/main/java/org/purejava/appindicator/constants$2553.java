@@ -8,28 +8,28 @@ final class constants$2553 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2553() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_button_new",
-        constants$35.const$2
+        "gtk_buildable_construct_child",
+        constants$23.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_button_new_with_label",
-        constants$5.const$2
+        "gtk_buildable_custom_tag_start",
+        constants$640.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_button_new_from_icon_name",
-        constants$21.const$3
+        "gtk_buildable_custom_tag_end",
+        constants$332.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_button_new_from_stock",
-        constants$5.const$2
+        "gtk_buildable_custom_finished",
+        constants$332.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_button_new_with_mnemonic",
-        constants$5.const$2
+        "gtk_buildable_parser_finished",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_button_clicked",
-        constants$13.const$1
+        "gtk_buildable_get_internal_child",
+        constants$23.const$0
     );
 }
 

@@ -3,61 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2030 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2030() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent")
-    ).withName("_AtkHyperlink");
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("get_uri"),
-        RuntimeHelper.POINTER.withName("get_object"),
-        RuntimeHelper.POINTER.withName("get_end_index"),
-        RuntimeHelper.POINTER.withName("get_start_index"),
-        RuntimeHelper.POINTER.withName("is_valid"),
-        RuntimeHelper.POINTER.withName("get_n_anchors"),
-        RuntimeHelper.POINTER.withName("link_state"),
-        RuntimeHelper.POINTER.withName("is_selected_link"),
-        RuntimeHelper.POINTER.withName("link_activated"),
-        RuntimeHelper.POINTER.withName("pad1")
-    ).withName("_AtkHyperlinkClass");
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_uri.class, "apply", constants$21.const$3);
-    static final VarHandle const$3 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_uri"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_object.class, "apply", constants$21.const$3);
-    static final VarHandle const$5 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_object"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.set_run_attributes.class, "apply", constants$415.const$4);
+    static final VarHandle const$1 = constants$2029.const$5.varHandle(MemoryLayout.PathElement.groupElement("set_run_attributes"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.set_text_contents.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$2029.const$5.varHandle(MemoryLayout.PathElement.groupElement("set_text_contents"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.insert_text.class, "apply", constants$466.const$3);
+    static final VarHandle const$5 = constants$2029.const$5.varHandle(MemoryLayout.PathElement.groupElement("insert_text"));
 }
 
 

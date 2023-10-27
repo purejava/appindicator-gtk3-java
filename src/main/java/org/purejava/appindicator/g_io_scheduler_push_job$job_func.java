@@ -13,7 +13,7 @@ public interface g_io_scheduler_push_job$job_func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_io_scheduler_push_job$job_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1127.const$3, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1131.const$0, fi, constants$12.const$2, scope);
     }
     static g_io_scheduler_push_job$job_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

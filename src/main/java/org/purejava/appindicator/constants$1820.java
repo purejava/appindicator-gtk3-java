@@ -2,53 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.MethodHandle;
 final class constants$1820 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1820() {}
-    static final VarHandle const$0 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("width_inc"));
-    static final VarHandle const$1 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("height_inc"));
-    static final VarHandle const$2 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("min_aspect"));
-    static final VarHandle const$3 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("max_aspect"));
-    static final VarHandle const$4 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("win_gravity"));
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("pick_embedded_child"),
-        RuntimeHelper.POINTER.withName("to_embedder"),
-        RuntimeHelper.POINTER.withName("from_embedder"),
-        RuntimeHelper.POINTER.withName("create_surface"),
-        RuntimeHelper.POINTER.withName("_gdk_reserved1"),
-        RuntimeHelper.POINTER.withName("_gdk_reserved2"),
-        RuntimeHelper.POINTER.withName("_gdk_reserved3"),
-        RuntimeHelper.POINTER.withName("_gdk_reserved4"),
-        RuntimeHelper.POINTER.withName("_gdk_reserved5"),
-        RuntimeHelper.POINTER.withName("_gdk_reserved6"),
-        RuntimeHelper.POINTER.withName("_gdk_reserved7"),
-        RuntimeHelper.POINTER.withName("_gdk_reserved8")
-    ).withName("_GdkWindowClass");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_request_phase",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_begin_updating",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_end_updating",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_frame_counter",
+        constants$4.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_history_start",
+        constants$4.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_timings",
+        constants$21.const$1
+    );
 }
 
 

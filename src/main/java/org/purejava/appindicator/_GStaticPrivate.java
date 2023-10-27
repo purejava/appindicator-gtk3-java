@@ -17,10 +17,10 @@ import java.lang.invoke.VarHandle;
 public class _GStaticPrivate {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$542.const$3;
+        return constants$544.const$0;
     }
     public static VarHandle index$VH() {
-        return constants$542.const$4;
+        return constants$544.const$1;
     }
     /**
      * Getter for field:
@@ -29,7 +29,7 @@ public class _GStaticPrivate {
      * }
      */
     public static int index$get(MemorySegment seg) {
-        return (int)constants$542.const$4.get(seg);
+        return (int)constants$544.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -38,13 +38,13 @@ public class _GStaticPrivate {
      * }
      */
     public static void index$set(MemorySegment seg, int x) {
-        constants$542.const$4.set(seg, x);
+        constants$544.const$1.set(seg, x);
     }
     public static int index$get(MemorySegment seg, long index) {
-        return (int)constants$542.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$544.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void index$set(MemorySegment seg, long index, int x) {
-        constants$542.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$544.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

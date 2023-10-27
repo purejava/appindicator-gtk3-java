@@ -5,39 +5,38 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1747 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1747() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_rgba",
-        constants$165.const$2
+        "cairo_pattern_create_linear",
+        constants$1746.const$3
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_surface",
-        constants$9.const$0
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_pattern_create_radial",
+        constants$1747.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_color_stop_rgba",
-        constants$1747.const$2
+        "cairo_pattern_create_mesh",
+        constants$35.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_color_stop_count",
-        constants$9.const$0
+        "cairo_pattern_reference",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_linear_points",
-        constants$165.const$2
+        "cairo_pattern_destroy",
+        constants$13.const$1
     );
 }
 

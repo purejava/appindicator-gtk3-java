@@ -8,28 +8,28 @@ final class constants$2423 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2423() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_remove",
-        constants$9.const$0
+        "gtk_entry_buffer_new",
+        constants$21.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_insert",
-        constants$164.const$5
+        "gtk_entry_buffer_get_bytes",
+        constants$4.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_insert_before",
-        constants$14.const$3
+        "gtk_entry_buffer_get_length",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_insert_after",
-        constants$14.const$3
+        "gtk_entry_buffer_get_text",
+        constants$5.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_list_store_insert_with_values",
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_entry_buffer_set_text",
         constants$164.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_insert_with_valuesv",
-        constants$1603.const$2
+        "gtk_entry_buffer_set_max_length",
+        constants$40.const$2
     );
 }
 

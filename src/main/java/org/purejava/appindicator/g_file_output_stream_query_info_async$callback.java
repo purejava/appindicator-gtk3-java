@@ -13,7 +13,7 @@ public interface g_file_output_stream_query_info_async$callback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_file_output_stream_query_info_async$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1096.const$4, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1100.const$0, fi, constants$14.const$3, scope);
     }
     static g_file_output_stream_query_info_async$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

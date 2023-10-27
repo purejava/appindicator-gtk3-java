@@ -13,7 +13,7 @@ public interface GtkListBoxSortFunc {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GtkListBoxSortFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2846.const$4, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2851.const$4, fi, constants$12.const$2, scope);
     }
     static GtkListBoxSortFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

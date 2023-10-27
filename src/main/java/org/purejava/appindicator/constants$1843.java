@@ -8,28 +8,28 @@ final class constants$1843 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1843() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_effective_toplevel",
-        constants$5.const$2
+        "gdk_window_set_title",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_children",
-        constants$5.const$2
+        "gdk_window_set_role",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_peek_children",
-        constants$5.const$2
+        "gdk_window_set_startup_id",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_children_with_user_data",
-        constants$5.const$5
+        "gdk_window_set_transient_for",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_events",
-        constants$10.const$5
+        "gdk_window_set_background",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_events",
-        constants$40.const$2
+        "gdk_window_set_background_rgba",
+        constants$13.const$4
     );
 }
 

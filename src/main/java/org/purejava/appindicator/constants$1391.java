@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1391 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1391() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_new_with_type",
-        constants$33.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_get_path",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_get_path_len",
-        constants$4.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_get_address_type",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_get_is_abstract",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_abstract_names_supported",
-        constants$83.const$1
-    );
+    static final VarHandle const$0 = constants$1390.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GUnixFDListClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1390.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GUnixFDListClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1390.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GUnixFDListClass._g_reserved4.class, "apply", constants$7.const$5);
 }
 
 

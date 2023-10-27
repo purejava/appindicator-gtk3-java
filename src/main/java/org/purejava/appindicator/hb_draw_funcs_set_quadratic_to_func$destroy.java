@@ -13,7 +13,7 @@ public interface hb_draw_funcs_set_quadratic_to_func$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(hb_draw_funcs_set_quadratic_to_func$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1450.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1454.const$1, fi, constants$13.const$1, scope);
     }
     static hb_draw_funcs_set_quadratic_to_func$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

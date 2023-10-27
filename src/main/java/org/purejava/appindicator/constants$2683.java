@@ -8,28 +8,28 @@ final class constants$2683 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2683() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_uri",
-        constants$9.const$0
+        "gtk_file_filter_get_needed",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_select_uri",
+        "gtk_file_filter_filter",
         constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_unselect_uri",
-        constants$13.const$4
+        "gtk_file_filter_to_gvariant",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_uris",
+        "gtk_file_filter_new_from_gvariant",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_current_folder_uri",
-        constants$9.const$0
+        "gtk_file_chooser_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_current_folder_uri",
-        constants$5.const$2
+        "gtk_file_chooser_error_quark",
+        constants$83.const$1
     );
 }
 

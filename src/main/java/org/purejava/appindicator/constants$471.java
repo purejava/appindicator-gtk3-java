@@ -8,28 +8,28 @@ final class constants$471 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$471() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_timer_continue",
-        constants$13.const$1
+        "g_thread_pool_set_max_unused_threads",
+        constants$80.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_timer_elapsed",
-        constants$67.const$5
+        "g_thread_pool_get_max_unused_threads",
+        constants$83.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_timer_is_active",
-        constants$10.const$5
+        "g_thread_pool_get_num_unused_threads",
+        constants$83.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_usleep",
-        constants$84.const$5
+        "g_thread_pool_stop_unused_threads",
+        constants$7.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_time_val_add",
-        constants$25.const$3
+        "g_thread_pool_set_max_idle_time",
+        constants$80.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_time_val_from_iso8601",
-        constants$9.const$0
+        "g_thread_pool_get_max_idle_time",
+        constants$83.const$1
     );
 }
 

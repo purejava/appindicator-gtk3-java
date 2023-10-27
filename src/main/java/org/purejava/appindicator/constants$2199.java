@@ -8,28 +8,28 @@ final class constants$2199 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2199() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_decorated",
-        constants$40.const$2
+        "gtk_window_set_opacity",
+        constants$692.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_window_get_decorated",
-        constants$10.const$5
+        "gtk_window_get_opacity",
+        constants$67.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_deletable",
+        "gtk_window_set_type_hint",
         constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_window_get_deletable",
+        "gtk_window_get_type_hint",
         constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_window_set_icon_list",
-        constants$13.const$4
+        "gtk_window_set_skip_taskbar_hint",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_window_get_icon_list",
-        constants$5.const$2
+        "gtk_window_get_skip_taskbar_hint",
+        constants$10.const$5
     );
 }
 

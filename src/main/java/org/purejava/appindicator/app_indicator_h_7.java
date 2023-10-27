@@ -12,6 +12,54 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
 
     /**
      * {@snippet :
+     * enum GResourceFlags.G_RESOURCE_FLAGS_COMPRESSED = 1;
+     * }
+     */
+    public static int G_RESOURCE_FLAGS_COMPRESSED() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum GResourceLookupFlags.G_RESOURCE_LOOKUP_FLAGS_NONE = 0;
+     * }
+     */
+    public static int G_RESOURCE_LOOKUP_FLAGS_NONE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum GSocketFamily.G_SOCKET_FAMILY_INVALID = 0;
+     * }
+     */
+    public static int G_SOCKET_FAMILY_INVALID() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum GSocketFamily.G_SOCKET_FAMILY_UNIX = 1;
+     * }
+     */
+    public static int G_SOCKET_FAMILY_UNIX() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum GSocketFamily.G_SOCKET_FAMILY_IPV4 = 2;
+     * }
+     */
+    public static int G_SOCKET_FAMILY_IPV4() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum GSocketFamily.G_SOCKET_FAMILY_IPV6 = 10;
+     * }
+     */
+    public static int G_SOCKET_FAMILY_IPV6() {
+        return (int)10L;
+    }
+    /**
+     * {@snippet :
      * enum GSocketType.G_SOCKET_TYPE_INVALID = 0;
      * }
      */
@@ -2003,7 +2051,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         return (int)255L;
     }
     public static MethodHandle g_action_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.const$1,"g_action_get_type");
+        return RuntimeHelper.requireNonNull(constants$704.const$5,"g_action_get_type");
     }
     /**
      * {@snippet :
@@ -2019,7 +2067,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.const$2,"g_action_get_name");
+        return RuntimeHelper.requireNonNull(constants$705.const$0,"g_action_get_name");
     }
     /**
      * {@snippet :
@@ -2035,7 +2083,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_get_parameter_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.const$3,"g_action_get_parameter_type");
+        return RuntimeHelper.requireNonNull(constants$705.const$1,"g_action_get_parameter_type");
     }
     /**
      * {@snippet :
@@ -2051,7 +2099,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_get_state_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.const$4,"g_action_get_state_type");
+        return RuntimeHelper.requireNonNull(constants$705.const$2,"g_action_get_state_type");
     }
     /**
      * {@snippet :
@@ -2067,7 +2115,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_get_state_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$702.const$5,"g_action_get_state_hint");
+        return RuntimeHelper.requireNonNull(constants$705.const$3,"g_action_get_state_hint");
     }
     /**
      * {@snippet :
@@ -2083,7 +2131,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_get_enabled$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.const$0,"g_action_get_enabled");
+        return RuntimeHelper.requireNonNull(constants$705.const$4,"g_action_get_enabled");
     }
     /**
      * {@snippet :
@@ -2099,7 +2147,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.const$1,"g_action_get_state");
+        return RuntimeHelper.requireNonNull(constants$705.const$5,"g_action_get_state");
     }
     /**
      * {@snippet :
@@ -2115,7 +2163,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_change_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.const$2,"g_action_change_state");
+        return RuntimeHelper.requireNonNull(constants$706.const$0,"g_action_change_state");
     }
     /**
      * {@snippet :
@@ -2131,7 +2179,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.const$3,"g_action_activate");
+        return RuntimeHelper.requireNonNull(constants$706.const$1,"g_action_activate");
     }
     /**
      * {@snippet :
@@ -2147,7 +2195,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_name_is_valid$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.const$4,"g_action_name_is_valid");
+        return RuntimeHelper.requireNonNull(constants$706.const$2,"g_action_name_is_valid");
     }
     /**
      * {@snippet :
@@ -2163,7 +2211,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_parse_detailed_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$703.const$5,"g_action_parse_detailed_name");
+        return RuntimeHelper.requireNonNull(constants$706.const$3,"g_action_parse_detailed_name");
     }
     /**
      * {@snippet :
@@ -2179,7 +2227,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_print_detailed_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$704.const$0,"g_action_print_detailed_name");
+        return RuntimeHelper.requireNonNull(constants$706.const$4,"g_action_print_detailed_name");
     }
     /**
      * {@snippet :
@@ -2195,7 +2243,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.const$1,"g_action_group_get_type");
+        return RuntimeHelper.requireNonNull(constants$711.const$5,"g_action_group_get_type");
     }
     /**
      * {@snippet :
@@ -2211,7 +2259,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_has_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.const$2,"g_action_group_has_action");
+        return RuntimeHelper.requireNonNull(constants$712.const$0,"g_action_group_has_action");
     }
     /**
      * {@snippet :
@@ -2227,7 +2275,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_list_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.const$3,"g_action_group_list_actions");
+        return RuntimeHelper.requireNonNull(constants$712.const$1,"g_action_group_list_actions");
     }
     /**
      * {@snippet :
@@ -2243,7 +2291,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_get_action_parameter_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.const$4,"g_action_group_get_action_parameter_type");
+        return RuntimeHelper.requireNonNull(constants$712.const$2,"g_action_group_get_action_parameter_type");
     }
     /**
      * {@snippet :
@@ -2259,7 +2307,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_get_action_state_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$709.const$5,"g_action_group_get_action_state_type");
+        return RuntimeHelper.requireNonNull(constants$712.const$3,"g_action_group_get_action_state_type");
     }
     /**
      * {@snippet :
@@ -2275,7 +2323,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_get_action_state_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.const$0,"g_action_group_get_action_state_hint");
+        return RuntimeHelper.requireNonNull(constants$712.const$4,"g_action_group_get_action_state_hint");
     }
     /**
      * {@snippet :
@@ -2291,7 +2339,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_get_action_enabled$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.const$1,"g_action_group_get_action_enabled");
+        return RuntimeHelper.requireNonNull(constants$712.const$5,"g_action_group_get_action_enabled");
     }
     /**
      * {@snippet :
@@ -2307,7 +2355,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_get_action_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.const$2,"g_action_group_get_action_state");
+        return RuntimeHelper.requireNonNull(constants$713.const$0,"g_action_group_get_action_state");
     }
     /**
      * {@snippet :
@@ -2323,7 +2371,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_change_action_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.const$3,"g_action_group_change_action_state");
+        return RuntimeHelper.requireNonNull(constants$713.const$1,"g_action_group_change_action_state");
     }
     /**
      * {@snippet :
@@ -2339,7 +2387,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_activate_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.const$4,"g_action_group_activate_action");
+        return RuntimeHelper.requireNonNull(constants$713.const$2,"g_action_group_activate_action");
     }
     /**
      * {@snippet :
@@ -2355,7 +2403,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_action_added$MH() {
-        return RuntimeHelper.requireNonNull(constants$710.const$5,"g_action_group_action_added");
+        return RuntimeHelper.requireNonNull(constants$713.const$3,"g_action_group_action_added");
     }
     /**
      * {@snippet :
@@ -2371,7 +2419,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_action_removed$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.const$0,"g_action_group_action_removed");
+        return RuntimeHelper.requireNonNull(constants$713.const$4,"g_action_group_action_removed");
     }
     /**
      * {@snippet :
@@ -2387,7 +2435,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_action_enabled_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.const$1,"g_action_group_action_enabled_changed");
+        return RuntimeHelper.requireNonNull(constants$713.const$5,"g_action_group_action_enabled_changed");
     }
     /**
      * {@snippet :
@@ -2403,7 +2451,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_action_state_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.const$2,"g_action_group_action_state_changed");
+        return RuntimeHelper.requireNonNull(constants$714.const$0,"g_action_group_action_state_changed");
     }
     /**
      * {@snippet :
@@ -2419,7 +2467,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_group_query_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.const$3,"g_action_group_query_action");
+        return RuntimeHelper.requireNonNull(constants$714.const$1,"g_action_group_query_action");
     }
     /**
      * {@snippet :
@@ -2435,7 +2483,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_dbus_connection_export_action_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.const$4,"g_dbus_connection_export_action_group");
+        return RuntimeHelper.requireNonNull(constants$714.const$2,"g_dbus_connection_export_action_group");
     }
     /**
      * {@snippet :
@@ -2451,7 +2499,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_dbus_connection_unexport_action_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$711.const$5,"g_dbus_connection_unexport_action_group");
+        return RuntimeHelper.requireNonNull(constants$714.const$3,"g_dbus_connection_unexport_action_group");
     }
     /**
      * {@snippet :
@@ -2467,7 +2515,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_map_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$714.const$3,"g_action_map_get_type");
+        return RuntimeHelper.requireNonNull(constants$717.const$1,"g_action_map_get_type");
     }
     /**
      * {@snippet :
@@ -2483,7 +2531,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_map_lookup_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$714.const$4,"g_action_map_lookup_action");
+        return RuntimeHelper.requireNonNull(constants$717.const$2,"g_action_map_lookup_action");
     }
     /**
      * {@snippet :
@@ -2499,7 +2547,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_map_add_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$714.const$5,"g_action_map_add_action");
+        return RuntimeHelper.requireNonNull(constants$717.const$3,"g_action_map_add_action");
     }
     /**
      * {@snippet :
@@ -2515,7 +2563,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_map_remove_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$715.const$0,"g_action_map_remove_action");
+        return RuntimeHelper.requireNonNull(constants$717.const$4,"g_action_map_remove_action");
     }
     /**
      * {@snippet :
@@ -2531,7 +2579,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_action_map_add_action_entries$MH() {
-        return RuntimeHelper.requireNonNull(constants$715.const$1,"g_action_map_add_action_entries");
+        return RuntimeHelper.requireNonNull(constants$717.const$5,"g_action_map_add_action_entries");
     }
     /**
      * {@snippet :
@@ -2546,8 +2594,24 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    public static MethodHandle g_action_map_remove_action_entries$MH() {
+        return RuntimeHelper.requireNonNull(constants$718.const$0,"g_action_map_remove_action_entries");
+    }
+    /**
+     * {@snippet :
+     * void g_action_map_remove_action_entries(struct _GActionMap* action_map, struct _GActionEntry* entries, int n_entries);
+     * }
+     */
+    public static void g_action_map_remove_action_entries(MemorySegment action_map, MemorySegment entries, int n_entries) {
+        var mh$ = g_action_map_remove_action_entries$MH();
+        try {
+            mh$.invokeExact(action_map, entries, n_entries);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle g_app_info_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$723.const$5,"g_app_info_get_type");
+        return RuntimeHelper.requireNonNull(constants$726.const$4,"g_app_info_get_type");
     }
     /**
      * {@snippet :
@@ -2563,7 +2627,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_create_from_commandline$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.const$0,"g_app_info_create_from_commandline");
+        return RuntimeHelper.requireNonNull(constants$726.const$5,"g_app_info_create_from_commandline");
     }
     /**
      * {@snippet :
@@ -2579,7 +2643,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_dup$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.const$1,"g_app_info_dup");
+        return RuntimeHelper.requireNonNull(constants$727.const$0,"g_app_info_dup");
     }
     /**
      * {@snippet :
@@ -2595,7 +2659,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.const$2,"g_app_info_equal");
+        return RuntimeHelper.requireNonNull(constants$727.const$1,"g_app_info_equal");
     }
     /**
      * {@snippet :
@@ -2611,7 +2675,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.const$3,"g_app_info_get_id");
+        return RuntimeHelper.requireNonNull(constants$727.const$2,"g_app_info_get_id");
     }
     /**
      * {@snippet :
@@ -2627,7 +2691,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.const$4,"g_app_info_get_name");
+        return RuntimeHelper.requireNonNull(constants$727.const$3,"g_app_info_get_name");
     }
     /**
      * {@snippet :
@@ -2643,7 +2707,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_display_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$724.const$5,"g_app_info_get_display_name");
+        return RuntimeHelper.requireNonNull(constants$727.const$4,"g_app_info_get_display_name");
     }
     /**
      * {@snippet :
@@ -2659,7 +2723,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.const$0,"g_app_info_get_description");
+        return RuntimeHelper.requireNonNull(constants$727.const$5,"g_app_info_get_description");
     }
     /**
      * {@snippet :
@@ -2675,7 +2739,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_executable$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.const$1,"g_app_info_get_executable");
+        return RuntimeHelper.requireNonNull(constants$728.const$0,"g_app_info_get_executable");
     }
     /**
      * {@snippet :
@@ -2691,7 +2755,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_commandline$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.const$2,"g_app_info_get_commandline");
+        return RuntimeHelper.requireNonNull(constants$728.const$1,"g_app_info_get_commandline");
     }
     /**
      * {@snippet :
@@ -2707,7 +2771,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.const$3,"g_app_info_get_icon");
+        return RuntimeHelper.requireNonNull(constants$728.const$2,"g_app_info_get_icon");
     }
     /**
      * {@snippet :
@@ -2723,7 +2787,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_launch$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.const$4,"g_app_info_launch");
+        return RuntimeHelper.requireNonNull(constants$728.const$3,"g_app_info_launch");
     }
     /**
      * {@snippet :
@@ -2739,7 +2803,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_supports_uris$MH() {
-        return RuntimeHelper.requireNonNull(constants$725.const$5,"g_app_info_supports_uris");
+        return RuntimeHelper.requireNonNull(constants$728.const$4,"g_app_info_supports_uris");
     }
     /**
      * {@snippet :
@@ -2755,7 +2819,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_supports_files$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.const$0,"g_app_info_supports_files");
+        return RuntimeHelper.requireNonNull(constants$728.const$5,"g_app_info_supports_files");
     }
     /**
      * {@snippet :
@@ -2771,7 +2835,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_launch_uris$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.const$1,"g_app_info_launch_uris");
+        return RuntimeHelper.requireNonNull(constants$729.const$0,"g_app_info_launch_uris");
     }
     /**
      * {@snippet :
@@ -2787,7 +2851,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_launch_uris_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.const$3,"g_app_info_launch_uris_async");
+        return RuntimeHelper.requireNonNull(constants$729.const$2,"g_app_info_launch_uris_async");
     }
     /**
      * {@snippet :
@@ -2803,7 +2867,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_launch_uris_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.const$4,"g_app_info_launch_uris_finish");
+        return RuntimeHelper.requireNonNull(constants$729.const$3,"g_app_info_launch_uris_finish");
     }
     /**
      * {@snippet :
@@ -2819,7 +2883,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_should_show$MH() {
-        return RuntimeHelper.requireNonNull(constants$726.const$5,"g_app_info_should_show");
+        return RuntimeHelper.requireNonNull(constants$729.const$4,"g_app_info_should_show");
     }
     /**
      * {@snippet :
@@ -2835,7 +2899,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_set_as_default_for_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.const$0,"g_app_info_set_as_default_for_type");
+        return RuntimeHelper.requireNonNull(constants$729.const$5,"g_app_info_set_as_default_for_type");
     }
     /**
      * {@snippet :
@@ -2851,7 +2915,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_set_as_default_for_extension$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.const$1,"g_app_info_set_as_default_for_extension");
+        return RuntimeHelper.requireNonNull(constants$730.const$0,"g_app_info_set_as_default_for_extension");
     }
     /**
      * {@snippet :
@@ -2867,7 +2931,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_add_supports_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.const$2,"g_app_info_add_supports_type");
+        return RuntimeHelper.requireNonNull(constants$730.const$1,"g_app_info_add_supports_type");
     }
     /**
      * {@snippet :
@@ -2883,7 +2947,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_can_remove_supports_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.const$3,"g_app_info_can_remove_supports_type");
+        return RuntimeHelper.requireNonNull(constants$730.const$2,"g_app_info_can_remove_supports_type");
     }
     /**
      * {@snippet :
@@ -2899,7 +2963,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_remove_supports_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.const$4,"g_app_info_remove_supports_type");
+        return RuntimeHelper.requireNonNull(constants$730.const$3,"g_app_info_remove_supports_type");
     }
     /**
      * {@snippet :
@@ -2915,7 +2979,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_supported_types$MH() {
-        return RuntimeHelper.requireNonNull(constants$727.const$5,"g_app_info_get_supported_types");
+        return RuntimeHelper.requireNonNull(constants$730.const$4,"g_app_info_get_supported_types");
     }
     /**
      * {@snippet :
@@ -2931,7 +2995,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_can_delete$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.const$0,"g_app_info_can_delete");
+        return RuntimeHelper.requireNonNull(constants$730.const$5,"g_app_info_can_delete");
     }
     /**
      * {@snippet :
@@ -2947,7 +3011,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_delete$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.const$1,"g_app_info_delete");
+        return RuntimeHelper.requireNonNull(constants$731.const$0,"g_app_info_delete");
     }
     /**
      * {@snippet :
@@ -2963,7 +3027,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_set_as_last_used_for_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.const$2,"g_app_info_set_as_last_used_for_type");
+        return RuntimeHelper.requireNonNull(constants$731.const$1,"g_app_info_set_as_last_used_for_type");
     }
     /**
      * {@snippet :
@@ -2979,7 +3043,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.const$3,"g_app_info_get_all");
+        return RuntimeHelper.requireNonNull(constants$731.const$2,"g_app_info_get_all");
     }
     /**
      * {@snippet :
@@ -2995,7 +3059,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_all_for_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.const$4,"g_app_info_get_all_for_type");
+        return RuntimeHelper.requireNonNull(constants$731.const$3,"g_app_info_get_all_for_type");
     }
     /**
      * {@snippet :
@@ -3011,7 +3075,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_recommended_for_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$728.const$5,"g_app_info_get_recommended_for_type");
+        return RuntimeHelper.requireNonNull(constants$731.const$4,"g_app_info_get_recommended_for_type");
     }
     /**
      * {@snippet :
@@ -3027,7 +3091,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_fallback_for_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.const$0,"g_app_info_get_fallback_for_type");
+        return RuntimeHelper.requireNonNull(constants$731.const$5,"g_app_info_get_fallback_for_type");
     }
     /**
      * {@snippet :
@@ -3043,7 +3107,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_reset_type_associations$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.const$1,"g_app_info_reset_type_associations");
+        return RuntimeHelper.requireNonNull(constants$732.const$0,"g_app_info_reset_type_associations");
     }
     /**
      * {@snippet :
@@ -3059,7 +3123,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_default_for_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.const$2,"g_app_info_get_default_for_type");
+        return RuntimeHelper.requireNonNull(constants$732.const$1,"g_app_info_get_default_for_type");
     }
     /**
      * {@snippet :
@@ -3075,7 +3139,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_default_for_type_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.const$4,"g_app_info_get_default_for_type_async");
+        return RuntimeHelper.requireNonNull(constants$732.const$3,"g_app_info_get_default_for_type_async");
     }
     /**
      * {@snippet :
@@ -3091,7 +3155,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_default_for_type_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$729.const$5,"g_app_info_get_default_for_type_finish");
+        return RuntimeHelper.requireNonNull(constants$732.const$4,"g_app_info_get_default_for_type_finish");
     }
     /**
      * {@snippet :
@@ -3107,7 +3171,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_default_for_uri_scheme$MH() {
-        return RuntimeHelper.requireNonNull(constants$730.const$0,"g_app_info_get_default_for_uri_scheme");
+        return RuntimeHelper.requireNonNull(constants$732.const$5,"g_app_info_get_default_for_uri_scheme");
     }
     /**
      * {@snippet :
@@ -3123,7 +3187,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_default_for_uri_scheme_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$730.const$2,"g_app_info_get_default_for_uri_scheme_async");
+        return RuntimeHelper.requireNonNull(constants$733.const$1,"g_app_info_get_default_for_uri_scheme_async");
     }
     /**
      * {@snippet :
@@ -3139,7 +3203,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_get_default_for_uri_scheme_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$730.const$3,"g_app_info_get_default_for_uri_scheme_finish");
+        return RuntimeHelper.requireNonNull(constants$733.const$2,"g_app_info_get_default_for_uri_scheme_finish");
     }
     /**
      * {@snippet :
@@ -3155,7 +3219,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_launch_default_for_uri$MH() {
-        return RuntimeHelper.requireNonNull(constants$730.const$4,"g_app_info_launch_default_for_uri");
+        return RuntimeHelper.requireNonNull(constants$733.const$3,"g_app_info_launch_default_for_uri");
     }
     /**
      * {@snippet :
@@ -3171,7 +3235,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_launch_default_for_uri_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$731.const$0,"g_app_info_launch_default_for_uri_async");
+        return RuntimeHelper.requireNonNull(constants$733.const$5,"g_app_info_launch_default_for_uri_async");
     }
     /**
      * {@snippet :
@@ -3187,7 +3251,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_launch_default_for_uri_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$731.const$1,"g_app_info_launch_default_for_uri_finish");
+        return RuntimeHelper.requireNonNull(constants$734.const$0,"g_app_info_launch_default_for_uri_finish");
     }
     /**
      * {@snippet :
@@ -3203,7 +3267,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_launch_context_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$734.const$4,"g_app_launch_context_get_type");
+        return RuntimeHelper.requireNonNull(constants$737.const$3,"g_app_launch_context_get_type");
     }
     /**
      * {@snippet :
@@ -3219,7 +3283,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_launch_context_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$734.const$5,"g_app_launch_context_new");
+        return RuntimeHelper.requireNonNull(constants$737.const$4,"g_app_launch_context_new");
     }
     /**
      * {@snippet :
@@ -3235,7 +3299,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_launch_context_setenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.const$0,"g_app_launch_context_setenv");
+        return RuntimeHelper.requireNonNull(constants$737.const$5,"g_app_launch_context_setenv");
     }
     /**
      * {@snippet :
@@ -3251,7 +3315,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_launch_context_unsetenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.const$1,"g_app_launch_context_unsetenv");
+        return RuntimeHelper.requireNonNull(constants$738.const$0,"g_app_launch_context_unsetenv");
     }
     /**
      * {@snippet :
@@ -3267,7 +3331,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_launch_context_get_environment$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.const$2,"g_app_launch_context_get_environment");
+        return RuntimeHelper.requireNonNull(constants$738.const$1,"g_app_launch_context_get_environment");
     }
     /**
      * {@snippet :
@@ -3283,7 +3347,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_launch_context_get_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.const$3,"g_app_launch_context_get_display");
+        return RuntimeHelper.requireNonNull(constants$738.const$2,"g_app_launch_context_get_display");
     }
     /**
      * {@snippet :
@@ -3299,7 +3363,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_launch_context_get_startup_notify_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.const$4,"g_app_launch_context_get_startup_notify_id");
+        return RuntimeHelper.requireNonNull(constants$738.const$3,"g_app_launch_context_get_startup_notify_id");
     }
     /**
      * {@snippet :
@@ -3315,7 +3379,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_launch_context_launch_failed$MH() {
-        return RuntimeHelper.requireNonNull(constants$735.const$5,"g_app_launch_context_launch_failed");
+        return RuntimeHelper.requireNonNull(constants$738.const$4,"g_app_launch_context_launch_failed");
     }
     /**
      * {@snippet :
@@ -3331,7 +3395,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_monitor_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$736.const$0,"g_app_info_monitor_get_type");
+        return RuntimeHelper.requireNonNull(constants$738.const$5,"g_app_info_monitor_get_type");
     }
     /**
      * {@snippet :
@@ -3347,7 +3411,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_app_info_monitor_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$736.const$1,"g_app_info_monitor_get");
+        return RuntimeHelper.requireNonNull(constants$739.const$0,"g_app_info_monitor_get");
     }
     /**
      * {@snippet :
@@ -3363,7 +3427,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.const$0,"g_application_get_type");
+        return RuntimeHelper.requireNonNull(constants$744.const$5,"g_application_get_type");
     }
     /**
      * {@snippet :
@@ -3379,7 +3443,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_id_is_valid$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.const$1,"g_application_id_is_valid");
+        return RuntimeHelper.requireNonNull(constants$745.const$0,"g_application_id_is_valid");
     }
     /**
      * {@snippet :
@@ -3395,7 +3459,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.const$2,"g_application_new");
+        return RuntimeHelper.requireNonNull(constants$745.const$1,"g_application_new");
     }
     /**
      * {@snippet :
@@ -3411,7 +3475,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_application_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.const$3,"g_application_get_application_id");
+        return RuntimeHelper.requireNonNull(constants$745.const$2,"g_application_get_application_id");
     }
     /**
      * {@snippet :
@@ -3427,7 +3491,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_set_application_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.const$4,"g_application_set_application_id");
+        return RuntimeHelper.requireNonNull(constants$745.const$3,"g_application_set_application_id");
     }
     /**
      * {@snippet :
@@ -3443,7 +3507,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_dbus_connection$MH() {
-        return RuntimeHelper.requireNonNull(constants$742.const$5,"g_application_get_dbus_connection");
+        return RuntimeHelper.requireNonNull(constants$745.const$4,"g_application_get_dbus_connection");
     }
     /**
      * {@snippet :
@@ -3459,7 +3523,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_dbus_object_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$743.const$0,"g_application_get_dbus_object_path");
+        return RuntimeHelper.requireNonNull(constants$745.const$5,"g_application_get_dbus_object_path");
     }
     /**
      * {@snippet :
@@ -3475,7 +3539,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_inactivity_timeout$MH() {
-        return RuntimeHelper.requireNonNull(constants$743.const$1,"g_application_get_inactivity_timeout");
+        return RuntimeHelper.requireNonNull(constants$746.const$0,"g_application_get_inactivity_timeout");
     }
     /**
      * {@snippet :
@@ -3491,7 +3555,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_set_inactivity_timeout$MH() {
-        return RuntimeHelper.requireNonNull(constants$743.const$2,"g_application_set_inactivity_timeout");
+        return RuntimeHelper.requireNonNull(constants$746.const$1,"g_application_set_inactivity_timeout");
     }
     /**
      * {@snippet :
@@ -3507,7 +3571,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$743.const$3,"g_application_get_flags");
+        return RuntimeHelper.requireNonNull(constants$746.const$2,"g_application_get_flags");
     }
     /**
      * {@snippet :
@@ -3523,7 +3587,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_set_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$743.const$4,"g_application_set_flags");
+        return RuntimeHelper.requireNonNull(constants$746.const$3,"g_application_set_flags");
     }
     /**
      * {@snippet :
@@ -3539,7 +3603,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_resource_base_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$743.const$5,"g_application_get_resource_base_path");
+        return RuntimeHelper.requireNonNull(constants$746.const$4,"g_application_get_resource_base_path");
     }
     /**
      * {@snippet :
@@ -3555,7 +3619,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_set_resource_base_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$744.const$0,"g_application_set_resource_base_path");
+        return RuntimeHelper.requireNonNull(constants$746.const$5,"g_application_set_resource_base_path");
     }
     /**
      * {@snippet :
@@ -3571,7 +3635,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_set_action_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$744.const$1,"g_application_set_action_group");
+        return RuntimeHelper.requireNonNull(constants$747.const$0,"g_application_set_action_group");
     }
     /**
      * {@snippet :
@@ -3587,7 +3651,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_add_main_option_entries$MH() {
-        return RuntimeHelper.requireNonNull(constants$744.const$2,"g_application_add_main_option_entries");
+        return RuntimeHelper.requireNonNull(constants$747.const$1,"g_application_add_main_option_entries");
     }
     /**
      * {@snippet :
@@ -3603,7 +3667,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_add_main_option$MH() {
-        return RuntimeHelper.requireNonNull(constants$744.const$4,"g_application_add_main_option");
+        return RuntimeHelper.requireNonNull(constants$747.const$3,"g_application_add_main_option");
     }
     /**
      * {@snippet :
@@ -3619,7 +3683,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_add_option_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$744.const$5,"g_application_add_option_group");
+        return RuntimeHelper.requireNonNull(constants$747.const$4,"g_application_add_option_group");
     }
     /**
      * {@snippet :
@@ -3635,7 +3699,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_set_option_context_parameter_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$745.const$0,"g_application_set_option_context_parameter_string");
+        return RuntimeHelper.requireNonNull(constants$747.const$5,"g_application_set_option_context_parameter_string");
     }
     /**
      * {@snippet :
@@ -3651,7 +3715,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_set_option_context_summary$MH() {
-        return RuntimeHelper.requireNonNull(constants$745.const$1,"g_application_set_option_context_summary");
+        return RuntimeHelper.requireNonNull(constants$748.const$0,"g_application_set_option_context_summary");
     }
     /**
      * {@snippet :
@@ -3667,7 +3731,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_set_option_context_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$745.const$2,"g_application_set_option_context_description");
+        return RuntimeHelper.requireNonNull(constants$748.const$1,"g_application_set_option_context_description");
     }
     /**
      * {@snippet :
@@ -3683,7 +3747,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_is_registered$MH() {
-        return RuntimeHelper.requireNonNull(constants$745.const$3,"g_application_get_is_registered");
+        return RuntimeHelper.requireNonNull(constants$748.const$2,"g_application_get_is_registered");
     }
     /**
      * {@snippet :
@@ -3699,7 +3763,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_is_remote$MH() {
-        return RuntimeHelper.requireNonNull(constants$745.const$4,"g_application_get_is_remote");
+        return RuntimeHelper.requireNonNull(constants$748.const$3,"g_application_get_is_remote");
     }
     /**
      * {@snippet :
@@ -3715,7 +3779,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_register$MH() {
-        return RuntimeHelper.requireNonNull(constants$745.const$5,"g_application_register");
+        return RuntimeHelper.requireNonNull(constants$748.const$4,"g_application_register");
     }
     /**
      * {@snippet :
@@ -3731,7 +3795,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_hold$MH() {
-        return RuntimeHelper.requireNonNull(constants$746.const$0,"g_application_hold");
+        return RuntimeHelper.requireNonNull(constants$748.const$5,"g_application_hold");
     }
     /**
      * {@snippet :
@@ -3747,7 +3811,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_release$MH() {
-        return RuntimeHelper.requireNonNull(constants$746.const$1,"g_application_release");
+        return RuntimeHelper.requireNonNull(constants$749.const$0,"g_application_release");
     }
     /**
      * {@snippet :
@@ -3763,7 +3827,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$746.const$2,"g_application_activate");
+        return RuntimeHelper.requireNonNull(constants$749.const$1,"g_application_activate");
     }
     /**
      * {@snippet :
@@ -3779,7 +3843,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_open$MH() {
-        return RuntimeHelper.requireNonNull(constants$746.const$3,"g_application_open");
+        return RuntimeHelper.requireNonNull(constants$749.const$2,"g_application_open");
     }
     /**
      * {@snippet :
@@ -3795,7 +3859,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_run$MH() {
-        return RuntimeHelper.requireNonNull(constants$746.const$4,"g_application_run");
+        return RuntimeHelper.requireNonNull(constants$749.const$3,"g_application_run");
     }
     /**
      * {@snippet :
@@ -3811,7 +3875,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_quit$MH() {
-        return RuntimeHelper.requireNonNull(constants$746.const$5,"g_application_quit");
+        return RuntimeHelper.requireNonNull(constants$749.const$4,"g_application_quit");
     }
     /**
      * {@snippet :
@@ -3827,7 +3891,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$747.const$0,"g_application_get_default");
+        return RuntimeHelper.requireNonNull(constants$749.const$5,"g_application_get_default");
     }
     /**
      * {@snippet :
@@ -3843,7 +3907,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_set_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$747.const$1,"g_application_set_default");
+        return RuntimeHelper.requireNonNull(constants$750.const$0,"g_application_set_default");
     }
     /**
      * {@snippet :
@@ -3859,7 +3923,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_mark_busy$MH() {
-        return RuntimeHelper.requireNonNull(constants$747.const$2,"g_application_mark_busy");
+        return RuntimeHelper.requireNonNull(constants$750.const$1,"g_application_mark_busy");
     }
     /**
      * {@snippet :
@@ -3875,7 +3939,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_unmark_busy$MH() {
-        return RuntimeHelper.requireNonNull(constants$747.const$3,"g_application_unmark_busy");
+        return RuntimeHelper.requireNonNull(constants$750.const$2,"g_application_unmark_busy");
     }
     /**
      * {@snippet :
@@ -3891,7 +3955,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_get_is_busy$MH() {
-        return RuntimeHelper.requireNonNull(constants$747.const$4,"g_application_get_is_busy");
+        return RuntimeHelper.requireNonNull(constants$750.const$3,"g_application_get_is_busy");
     }
     /**
      * {@snippet :
@@ -3907,7 +3971,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_send_notification$MH() {
-        return RuntimeHelper.requireNonNull(constants$747.const$5,"g_application_send_notification");
+        return RuntimeHelper.requireNonNull(constants$750.const$4,"g_application_send_notification");
     }
     /**
      * {@snippet :
@@ -3923,7 +3987,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_withdraw_notification$MH() {
-        return RuntimeHelper.requireNonNull(constants$748.const$0,"g_application_withdraw_notification");
+        return RuntimeHelper.requireNonNull(constants$750.const$5,"g_application_withdraw_notification");
     }
     /**
      * {@snippet :
@@ -3939,7 +4003,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_bind_busy_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$748.const$1,"g_application_bind_busy_property");
+        return RuntimeHelper.requireNonNull(constants$751.const$0,"g_application_bind_busy_property");
     }
     /**
      * {@snippet :
@@ -3955,7 +4019,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_unbind_busy_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$748.const$2,"g_application_unbind_busy_property");
+        return RuntimeHelper.requireNonNull(constants$751.const$1,"g_application_unbind_busy_property");
     }
     /**
      * {@snippet :
@@ -3971,7 +4035,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$750.const$0,"g_application_command_line_get_type");
+        return RuntimeHelper.requireNonNull(constants$752.const$5,"g_application_command_line_get_type");
     }
     /**
      * {@snippet :
@@ -3987,7 +4051,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_get_arguments$MH() {
-        return RuntimeHelper.requireNonNull(constants$750.const$1,"g_application_command_line_get_arguments");
+        return RuntimeHelper.requireNonNull(constants$753.const$0,"g_application_command_line_get_arguments");
     }
     /**
      * {@snippet :
@@ -4003,7 +4067,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_get_options_dict$MH() {
-        return RuntimeHelper.requireNonNull(constants$750.const$2,"g_application_command_line_get_options_dict");
+        return RuntimeHelper.requireNonNull(constants$753.const$1,"g_application_command_line_get_options_dict");
     }
     /**
      * {@snippet :
@@ -4019,7 +4083,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_get_stdin$MH() {
-        return RuntimeHelper.requireNonNull(constants$750.const$3,"g_application_command_line_get_stdin");
+        return RuntimeHelper.requireNonNull(constants$753.const$2,"g_application_command_line_get_stdin");
     }
     /**
      * {@snippet :
@@ -4035,7 +4099,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_get_environ$MH() {
-        return RuntimeHelper.requireNonNull(constants$750.const$4,"g_application_command_line_get_environ");
+        return RuntimeHelper.requireNonNull(constants$753.const$3,"g_application_command_line_get_environ");
     }
     /**
      * {@snippet :
@@ -4051,7 +4115,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_getenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$750.const$5,"g_application_command_line_getenv");
+        return RuntimeHelper.requireNonNull(constants$753.const$4,"g_application_command_line_getenv");
     }
     /**
      * {@snippet :
@@ -4067,7 +4131,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_get_cwd$MH() {
-        return RuntimeHelper.requireNonNull(constants$751.const$0,"g_application_command_line_get_cwd");
+        return RuntimeHelper.requireNonNull(constants$753.const$5,"g_application_command_line_get_cwd");
     }
     /**
      * {@snippet :
@@ -4083,7 +4147,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_get_is_remote$MH() {
-        return RuntimeHelper.requireNonNull(constants$751.const$1,"g_application_command_line_get_is_remote");
+        return RuntimeHelper.requireNonNull(constants$754.const$0,"g_application_command_line_get_is_remote");
     }
     /**
      * {@snippet :
@@ -4099,7 +4163,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_print$MH() {
-        return RuntimeHelper.requireNonNull(constants$751.const$2,"g_application_command_line_print");
+        return RuntimeHelper.requireNonNull(constants$754.const$1,"g_application_command_line_print");
     }
     /**
      * {@snippet :
@@ -4115,7 +4179,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_printerr$MH() {
-        return RuntimeHelper.requireNonNull(constants$751.const$3,"g_application_command_line_printerr");
+        return RuntimeHelper.requireNonNull(constants$754.const$2,"g_application_command_line_printerr");
     }
     /**
      * {@snippet :
@@ -4131,7 +4195,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_get_exit_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$751.const$4,"g_application_command_line_get_exit_status");
+        return RuntimeHelper.requireNonNull(constants$754.const$3,"g_application_command_line_get_exit_status");
     }
     /**
      * {@snippet :
@@ -4147,7 +4211,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_set_exit_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$751.const$5,"g_application_command_line_set_exit_status");
+        return RuntimeHelper.requireNonNull(constants$754.const$4,"g_application_command_line_set_exit_status");
     }
     /**
      * {@snippet :
@@ -4163,7 +4227,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_get_platform_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$752.const$0,"g_application_command_line_get_platform_data");
+        return RuntimeHelper.requireNonNull(constants$754.const$5,"g_application_command_line_get_platform_data");
     }
     /**
      * {@snippet :
@@ -4179,7 +4243,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_application_command_line_create_file_for_arg$MH() {
-        return RuntimeHelper.requireNonNull(constants$752.const$1,"g_application_command_line_create_file_for_arg");
+        return RuntimeHelper.requireNonNull(constants$755.const$0,"g_application_command_line_create_file_for_arg");
     }
     /**
      * {@snippet :
@@ -4195,7 +4259,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_initable_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$752.const$5,"g_initable_get_type");
+        return RuntimeHelper.requireNonNull(constants$755.const$4,"g_initable_get_type");
     }
     /**
      * {@snippet :
@@ -4211,7 +4275,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_initable_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$753.const$0,"g_initable_init");
+        return RuntimeHelper.requireNonNull(constants$755.const$5,"g_initable_init");
     }
     /**
      * {@snippet :
@@ -4227,7 +4291,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_initable_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$753.const$2,"g_initable_new");
+        return RuntimeHelper.requireNonNull(constants$756.const$1,"g_initable_new");
     }
     /**
      * {@snippet :
@@ -4243,7 +4307,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_initable_newv$MH() {
-        return RuntimeHelper.requireNonNull(constants$753.const$4,"g_initable_newv");
+        return RuntimeHelper.requireNonNull(constants$756.const$3,"g_initable_newv");
     }
     /**
      * {@snippet :
@@ -4259,7 +4323,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_initable_new_valist$MH() {
-        return RuntimeHelper.requireNonNull(constants$753.const$6,"g_initable_new_valist");
+        return RuntimeHelper.requireNonNull(constants$756.const$5,"g_initable_new_valist");
     }
     /**
      * {@snippet :
@@ -4275,7 +4339,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_initable_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$755.const$0,"g_async_initable_get_type");
+        return RuntimeHelper.requireNonNull(constants$758.const$0,"g_async_initable_get_type");
     }
     /**
      * {@snippet :
@@ -4291,7 +4355,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_initable_init_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$755.const$2,"g_async_initable_init_async");
+        return RuntimeHelper.requireNonNull(constants$758.const$2,"g_async_initable_init_async");
     }
     /**
      * {@snippet :
@@ -4307,7 +4371,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_initable_init_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$755.const$3,"g_async_initable_init_finish");
+        return RuntimeHelper.requireNonNull(constants$758.const$3,"g_async_initable_init_finish");
     }
     /**
      * {@snippet :
@@ -4323,7 +4387,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_initable_new_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$755.const$6,"g_async_initable_new_async");
+        return RuntimeHelper.requireNonNull(constants$758.const$6,"g_async_initable_new_async");
     }
     /**
      * {@snippet :
@@ -4339,7 +4403,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_initable_newv_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$756.const$2,"g_async_initable_newv_async");
+        return RuntimeHelper.requireNonNull(constants$759.const$2,"g_async_initable_newv_async");
     }
     /**
      * {@snippet :
@@ -4355,7 +4419,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_initable_new_valist_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$756.const$5,"g_async_initable_new_valist_async");
+        return RuntimeHelper.requireNonNull(constants$759.const$5,"g_async_initable_new_valist_async");
     }
     /**
      * {@snippet :
@@ -4371,7 +4435,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_initable_new_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$757.const$0,"g_async_initable_new_finish");
+        return RuntimeHelper.requireNonNull(constants$760.const$0,"g_async_initable_new_finish");
     }
     /**
      * {@snippet :
@@ -4387,7 +4451,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_result_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$758.const$2,"g_async_result_get_type");
+        return RuntimeHelper.requireNonNull(constants$761.const$2,"g_async_result_get_type");
     }
     /**
      * {@snippet :
@@ -4403,7 +4467,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_result_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$758.const$3,"g_async_result_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$761.const$3,"g_async_result_get_user_data");
     }
     /**
      * {@snippet :
@@ -4419,7 +4483,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_result_get_source_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$758.const$4,"g_async_result_get_source_object");
+        return RuntimeHelper.requireNonNull(constants$761.const$4,"g_async_result_get_source_object");
     }
     /**
      * {@snippet :
@@ -4435,7 +4499,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_result_legacy_propagate_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$758.const$5,"g_async_result_legacy_propagate_error");
+        return RuntimeHelper.requireNonNull(constants$761.const$5,"g_async_result_legacy_propagate_error");
     }
     /**
      * {@snippet :
@@ -4451,7 +4515,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_async_result_is_tagged$MH() {
-        return RuntimeHelper.requireNonNull(constants$759.const$0,"g_async_result_is_tagged");
+        return RuntimeHelper.requireNonNull(constants$762.const$0,"g_async_result_is_tagged");
     }
     /**
      * {@snippet :
@@ -4467,7 +4531,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$765.const$4,"g_input_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$768.const$4,"g_input_stream_get_type");
     }
     /**
      * {@snippet :
@@ -4483,7 +4547,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_read$MH() {
-        return RuntimeHelper.requireNonNull(constants$765.const$5,"g_input_stream_read");
+        return RuntimeHelper.requireNonNull(constants$768.const$5,"g_input_stream_read");
     }
     /**
      * {@snippet :
@@ -4499,7 +4563,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_read_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$766.const$1,"g_input_stream_read_all");
+        return RuntimeHelper.requireNonNull(constants$769.const$1,"g_input_stream_read_all");
     }
     /**
      * {@snippet :
@@ -4515,7 +4579,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_read_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$766.const$2,"g_input_stream_read_bytes");
+        return RuntimeHelper.requireNonNull(constants$769.const$2,"g_input_stream_read_bytes");
     }
     /**
      * {@snippet :
@@ -4531,7 +4595,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_skip$MH() {
-        return RuntimeHelper.requireNonNull(constants$766.const$3,"g_input_stream_skip");
+        return RuntimeHelper.requireNonNull(constants$769.const$3,"g_input_stream_skip");
     }
     /**
      * {@snippet :
@@ -4547,7 +4611,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$766.const$4,"g_input_stream_close");
+        return RuntimeHelper.requireNonNull(constants$769.const$4,"g_input_stream_close");
     }
     /**
      * {@snippet :
@@ -4563,7 +4627,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_read_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$767.const$0,"g_input_stream_read_async");
+        return RuntimeHelper.requireNonNull(constants$770.const$0,"g_input_stream_read_async");
     }
     /**
      * {@snippet :
@@ -4579,7 +4643,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_read_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$767.const$1,"g_input_stream_read_finish");
+        return RuntimeHelper.requireNonNull(constants$770.const$1,"g_input_stream_read_finish");
     }
     /**
      * {@snippet :
@@ -4595,7 +4659,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_read_all_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$767.const$3,"g_input_stream_read_all_async");
+        return RuntimeHelper.requireNonNull(constants$770.const$3,"g_input_stream_read_all_async");
     }
     /**
      * {@snippet :
@@ -4611,7 +4675,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_read_all_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$767.const$4,"g_input_stream_read_all_finish");
+        return RuntimeHelper.requireNonNull(constants$770.const$4,"g_input_stream_read_all_finish");
     }
     /**
      * {@snippet :
@@ -4627,7 +4691,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_read_bytes_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$768.const$0,"g_input_stream_read_bytes_async");
+        return RuntimeHelper.requireNonNull(constants$771.const$0,"g_input_stream_read_bytes_async");
     }
     /**
      * {@snippet :
@@ -4643,7 +4707,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_read_bytes_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$768.const$1,"g_input_stream_read_bytes_finish");
+        return RuntimeHelper.requireNonNull(constants$771.const$1,"g_input_stream_read_bytes_finish");
     }
     /**
      * {@snippet :
@@ -4659,7 +4723,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_skip_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$768.const$3,"g_input_stream_skip_async");
+        return RuntimeHelper.requireNonNull(constants$771.const$3,"g_input_stream_skip_async");
     }
     /**
      * {@snippet :
@@ -4675,7 +4739,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_skip_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$768.const$4,"g_input_stream_skip_finish");
+        return RuntimeHelper.requireNonNull(constants$771.const$4,"g_input_stream_skip_finish");
     }
     /**
      * {@snippet :
@@ -4691,7 +4755,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_close_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$769.const$0,"g_input_stream_close_async");
+        return RuntimeHelper.requireNonNull(constants$772.const$0,"g_input_stream_close_async");
     }
     /**
      * {@snippet :
@@ -4707,7 +4771,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_close_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$769.const$1,"g_input_stream_close_finish");
+        return RuntimeHelper.requireNonNull(constants$772.const$1,"g_input_stream_close_finish");
     }
     /**
      * {@snippet :
@@ -4723,7 +4787,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_is_closed$MH() {
-        return RuntimeHelper.requireNonNull(constants$769.const$2,"g_input_stream_is_closed");
+        return RuntimeHelper.requireNonNull(constants$772.const$2,"g_input_stream_is_closed");
     }
     /**
      * {@snippet :
@@ -4739,7 +4803,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_has_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$769.const$3,"g_input_stream_has_pending");
+        return RuntimeHelper.requireNonNull(constants$772.const$3,"g_input_stream_has_pending");
     }
     /**
      * {@snippet :
@@ -4755,7 +4819,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_set_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$769.const$4,"g_input_stream_set_pending");
+        return RuntimeHelper.requireNonNull(constants$772.const$4,"g_input_stream_set_pending");
     }
     /**
      * {@snippet :
@@ -4771,7 +4835,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_input_stream_clear_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$769.const$5,"g_input_stream_clear_pending");
+        return RuntimeHelper.requireNonNull(constants$772.const$5,"g_input_stream_clear_pending");
     }
     /**
      * {@snippet :
@@ -4787,7 +4851,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_filter_input_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$771.const$3,"g_filter_input_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$774.const$3,"g_filter_input_stream_get_type");
     }
     /**
      * {@snippet :
@@ -4803,7 +4867,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_filter_input_stream_get_base_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$771.const$4,"g_filter_input_stream_get_base_stream");
+        return RuntimeHelper.requireNonNull(constants$774.const$4,"g_filter_input_stream_get_base_stream");
     }
     /**
      * {@snippet :
@@ -4819,7 +4883,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_filter_input_stream_get_close_base_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$771.const$5,"g_filter_input_stream_get_close_base_stream");
+        return RuntimeHelper.requireNonNull(constants$774.const$5,"g_filter_input_stream_get_close_base_stream");
     }
     /**
      * {@snippet :
@@ -4835,7 +4899,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_filter_input_stream_set_close_base_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$772.const$0,"g_filter_input_stream_set_close_base_stream");
+        return RuntimeHelper.requireNonNull(constants$775.const$0,"g_filter_input_stream_set_close_base_stream");
     }
     /**
      * {@snippet :
@@ -4851,7 +4915,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$775.const$2,"g_buffered_input_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$778.const$2,"g_buffered_input_stream_get_type");
     }
     /**
      * {@snippet :
@@ -4867,7 +4931,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$775.const$3,"g_buffered_input_stream_new");
+        return RuntimeHelper.requireNonNull(constants$778.const$3,"g_buffered_input_stream_new");
     }
     /**
      * {@snippet :
@@ -4883,7 +4947,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_new_sized$MH() {
-        return RuntimeHelper.requireNonNull(constants$775.const$4,"g_buffered_input_stream_new_sized");
+        return RuntimeHelper.requireNonNull(constants$778.const$4,"g_buffered_input_stream_new_sized");
     }
     /**
      * {@snippet :
@@ -4899,7 +4963,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_get_buffer_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$775.const$5,"g_buffered_input_stream_get_buffer_size");
+        return RuntimeHelper.requireNonNull(constants$778.const$5,"g_buffered_input_stream_get_buffer_size");
     }
     /**
      * {@snippet :
@@ -4915,7 +4979,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_set_buffer_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$776.const$0,"g_buffered_input_stream_set_buffer_size");
+        return RuntimeHelper.requireNonNull(constants$779.const$0,"g_buffered_input_stream_set_buffer_size");
     }
     /**
      * {@snippet :
@@ -4931,7 +4995,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_get_available$MH() {
-        return RuntimeHelper.requireNonNull(constants$776.const$1,"g_buffered_input_stream_get_available");
+        return RuntimeHelper.requireNonNull(constants$779.const$1,"g_buffered_input_stream_get_available");
     }
     /**
      * {@snippet :
@@ -4947,7 +5011,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_peek$MH() {
-        return RuntimeHelper.requireNonNull(constants$776.const$3,"g_buffered_input_stream_peek");
+        return RuntimeHelper.requireNonNull(constants$779.const$3,"g_buffered_input_stream_peek");
     }
     /**
      * {@snippet :
@@ -4963,7 +5027,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_peek_buffer$MH() {
-        return RuntimeHelper.requireNonNull(constants$776.const$4,"g_buffered_input_stream_peek_buffer");
+        return RuntimeHelper.requireNonNull(constants$779.const$4,"g_buffered_input_stream_peek_buffer");
     }
     /**
      * {@snippet :
@@ -4979,7 +5043,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_fill$MH() {
-        return RuntimeHelper.requireNonNull(constants$776.const$5,"g_buffered_input_stream_fill");
+        return RuntimeHelper.requireNonNull(constants$779.const$5,"g_buffered_input_stream_fill");
     }
     /**
      * {@snippet :
@@ -4995,7 +5059,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_fill_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$777.const$1,"g_buffered_input_stream_fill_async");
+        return RuntimeHelper.requireNonNull(constants$780.const$1,"g_buffered_input_stream_fill_async");
     }
     /**
      * {@snippet :
@@ -5011,7 +5075,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_fill_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$777.const$2,"g_buffered_input_stream_fill_finish");
+        return RuntimeHelper.requireNonNull(constants$780.const$2,"g_buffered_input_stream_fill_finish");
     }
     /**
      * {@snippet :
@@ -5027,7 +5091,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_input_stream_read_byte$MH() {
-        return RuntimeHelper.requireNonNull(constants$777.const$3,"g_buffered_input_stream_read_byte");
+        return RuntimeHelper.requireNonNull(constants$780.const$3,"g_buffered_input_stream_read_byte");
     }
     /**
      * {@snippet :
@@ -5043,7 +5107,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$785.const$4,"g_output_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$788.const$4,"g_output_stream_get_type");
     }
     /**
      * {@snippet :
@@ -5059,7 +5123,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_write$MH() {
-        return RuntimeHelper.requireNonNull(constants$785.const$5,"g_output_stream_write");
+        return RuntimeHelper.requireNonNull(constants$788.const$5,"g_output_stream_write");
     }
     /**
      * {@snippet :
@@ -5075,7 +5139,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_write_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$786.const$0,"g_output_stream_write_all");
+        return RuntimeHelper.requireNonNull(constants$789.const$0,"g_output_stream_write_all");
     }
     /**
      * {@snippet :
@@ -5091,7 +5155,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_writev$MH() {
-        return RuntimeHelper.requireNonNull(constants$786.const$1,"g_output_stream_writev");
+        return RuntimeHelper.requireNonNull(constants$789.const$1,"g_output_stream_writev");
     }
     /**
      * {@snippet :
@@ -5107,7 +5171,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_writev_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$786.const$2,"g_output_stream_writev_all");
+        return RuntimeHelper.requireNonNull(constants$789.const$2,"g_output_stream_writev_all");
     }
     /**
      * {@snippet :
@@ -5123,7 +5187,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_printf$MH() {
-        return RuntimeHelper.requireNonNull(constants$786.const$3,"g_output_stream_printf");
+        return RuntimeHelper.requireNonNull(constants$789.const$3,"g_output_stream_printf");
     }
     /**
      * {@snippet :
@@ -5139,7 +5203,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_vprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$786.const$5,"g_output_stream_vprintf");
+        return RuntimeHelper.requireNonNull(constants$789.const$5,"g_output_stream_vprintf");
     }
     /**
      * {@snippet :
@@ -5155,7 +5219,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_write_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$787.const$0,"g_output_stream_write_bytes");
+        return RuntimeHelper.requireNonNull(constants$790.const$0,"g_output_stream_write_bytes");
     }
     /**
      * {@snippet :
@@ -5171,7 +5235,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_splice$MH() {
-        return RuntimeHelper.requireNonNull(constants$787.const$1,"g_output_stream_splice");
+        return RuntimeHelper.requireNonNull(constants$790.const$1,"g_output_stream_splice");
     }
     /**
      * {@snippet :
@@ -5187,7 +5251,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$787.const$2,"g_output_stream_flush");
+        return RuntimeHelper.requireNonNull(constants$790.const$2,"g_output_stream_flush");
     }
     /**
      * {@snippet :
@@ -5203,7 +5267,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$787.const$3,"g_output_stream_close");
+        return RuntimeHelper.requireNonNull(constants$790.const$3,"g_output_stream_close");
     }
     /**
      * {@snippet :
@@ -5219,7 +5283,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_write_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$787.const$5,"g_output_stream_write_async");
+        return RuntimeHelper.requireNonNull(constants$790.const$5,"g_output_stream_write_async");
     }
     /**
      * {@snippet :
@@ -5235,7 +5299,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_write_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$788.const$0,"g_output_stream_write_finish");
+        return RuntimeHelper.requireNonNull(constants$791.const$0,"g_output_stream_write_finish");
     }
     /**
      * {@snippet :
@@ -5251,7 +5315,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_write_all_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$788.const$2,"g_output_stream_write_all_async");
+        return RuntimeHelper.requireNonNull(constants$791.const$2,"g_output_stream_write_all_async");
     }
     /**
      * {@snippet :
@@ -5267,7 +5331,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_write_all_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$788.const$3,"g_output_stream_write_all_finish");
+        return RuntimeHelper.requireNonNull(constants$791.const$3,"g_output_stream_write_all_finish");
     }
     /**
      * {@snippet :
@@ -5283,7 +5347,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_writev_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$788.const$5,"g_output_stream_writev_async");
+        return RuntimeHelper.requireNonNull(constants$791.const$5,"g_output_stream_writev_async");
     }
     /**
      * {@snippet :
@@ -5299,7 +5363,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_writev_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$789.const$0,"g_output_stream_writev_finish");
+        return RuntimeHelper.requireNonNull(constants$792.const$0,"g_output_stream_writev_finish");
     }
     /**
      * {@snippet :
@@ -5315,7 +5379,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_writev_all_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$789.const$2,"g_output_stream_writev_all_async");
+        return RuntimeHelper.requireNonNull(constants$792.const$2,"g_output_stream_writev_all_async");
     }
     /**
      * {@snippet :
@@ -5331,7 +5395,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_writev_all_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$789.const$3,"g_output_stream_writev_all_finish");
+        return RuntimeHelper.requireNonNull(constants$792.const$3,"g_output_stream_writev_all_finish");
     }
     /**
      * {@snippet :
@@ -5347,7 +5411,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_write_bytes_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$789.const$5,"g_output_stream_write_bytes_async");
+        return RuntimeHelper.requireNonNull(constants$792.const$5,"g_output_stream_write_bytes_async");
     }
     /**
      * {@snippet :
@@ -5363,7 +5427,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_write_bytes_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$790.const$0,"g_output_stream_write_bytes_finish");
+        return RuntimeHelper.requireNonNull(constants$793.const$0,"g_output_stream_write_bytes_finish");
     }
     /**
      * {@snippet :
@@ -5379,7 +5443,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_splice_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$790.const$2,"g_output_stream_splice_async");
+        return RuntimeHelper.requireNonNull(constants$793.const$2,"g_output_stream_splice_async");
     }
     /**
      * {@snippet :
@@ -5395,7 +5459,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_splice_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$790.const$3,"g_output_stream_splice_finish");
+        return RuntimeHelper.requireNonNull(constants$793.const$3,"g_output_stream_splice_finish");
     }
     /**
      * {@snippet :
@@ -5411,7 +5475,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_flush_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$790.const$5,"g_output_stream_flush_async");
+        return RuntimeHelper.requireNonNull(constants$793.const$5,"g_output_stream_flush_async");
     }
     /**
      * {@snippet :
@@ -5427,7 +5491,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_flush_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$791.const$0,"g_output_stream_flush_finish");
+        return RuntimeHelper.requireNonNull(constants$794.const$0,"g_output_stream_flush_finish");
     }
     /**
      * {@snippet :
@@ -5443,7 +5507,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_close_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$791.const$2,"g_output_stream_close_async");
+        return RuntimeHelper.requireNonNull(constants$794.const$2,"g_output_stream_close_async");
     }
     /**
      * {@snippet :
@@ -5459,7 +5523,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_close_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$791.const$3,"g_output_stream_close_finish");
+        return RuntimeHelper.requireNonNull(constants$794.const$3,"g_output_stream_close_finish");
     }
     /**
      * {@snippet :
@@ -5475,7 +5539,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_is_closed$MH() {
-        return RuntimeHelper.requireNonNull(constants$791.const$4,"g_output_stream_is_closed");
+        return RuntimeHelper.requireNonNull(constants$794.const$4,"g_output_stream_is_closed");
     }
     /**
      * {@snippet :
@@ -5491,7 +5555,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_is_closing$MH() {
-        return RuntimeHelper.requireNonNull(constants$791.const$5,"g_output_stream_is_closing");
+        return RuntimeHelper.requireNonNull(constants$794.const$5,"g_output_stream_is_closing");
     }
     /**
      * {@snippet :
@@ -5507,7 +5571,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_has_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$792.const$0,"g_output_stream_has_pending");
+        return RuntimeHelper.requireNonNull(constants$795.const$0,"g_output_stream_has_pending");
     }
     /**
      * {@snippet :
@@ -5523,7 +5587,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_set_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$792.const$1,"g_output_stream_set_pending");
+        return RuntimeHelper.requireNonNull(constants$795.const$1,"g_output_stream_set_pending");
     }
     /**
      * {@snippet :
@@ -5539,7 +5603,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_output_stream_clear_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$792.const$2,"g_output_stream_clear_pending");
+        return RuntimeHelper.requireNonNull(constants$795.const$2,"g_output_stream_clear_pending");
     }
     /**
      * {@snippet :
@@ -5555,7 +5619,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_filter_output_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$794.const$0,"g_filter_output_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$797.const$0,"g_filter_output_stream_get_type");
     }
     /**
      * {@snippet :
@@ -5571,7 +5635,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_filter_output_stream_get_base_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$794.const$1,"g_filter_output_stream_get_base_stream");
+        return RuntimeHelper.requireNonNull(constants$797.const$1,"g_filter_output_stream_get_base_stream");
     }
     /**
      * {@snippet :
@@ -5587,7 +5651,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_filter_output_stream_get_close_base_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$794.const$2,"g_filter_output_stream_get_close_base_stream");
+        return RuntimeHelper.requireNonNull(constants$797.const$2,"g_filter_output_stream_get_close_base_stream");
     }
     /**
      * {@snippet :
@@ -5603,7 +5667,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_filter_output_stream_set_close_base_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$794.const$3,"g_filter_output_stream_set_close_base_stream");
+        return RuntimeHelper.requireNonNull(constants$797.const$3,"g_filter_output_stream_set_close_base_stream");
     }
     /**
      * {@snippet :
@@ -5619,7 +5683,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_output_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$795.const$5,"g_buffered_output_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$798.const$5,"g_buffered_output_stream_get_type");
     }
     /**
      * {@snippet :
@@ -5635,7 +5699,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_output_stream_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$796.const$0,"g_buffered_output_stream_new");
+        return RuntimeHelper.requireNonNull(constants$799.const$0,"g_buffered_output_stream_new");
     }
     /**
      * {@snippet :
@@ -5651,7 +5715,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_output_stream_new_sized$MH() {
-        return RuntimeHelper.requireNonNull(constants$796.const$1,"g_buffered_output_stream_new_sized");
+        return RuntimeHelper.requireNonNull(constants$799.const$1,"g_buffered_output_stream_new_sized");
     }
     /**
      * {@snippet :
@@ -5667,7 +5731,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_output_stream_get_buffer_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$796.const$2,"g_buffered_output_stream_get_buffer_size");
+        return RuntimeHelper.requireNonNull(constants$799.const$2,"g_buffered_output_stream_get_buffer_size");
     }
     /**
      * {@snippet :
@@ -5683,7 +5747,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_output_stream_set_buffer_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$796.const$3,"g_buffered_output_stream_set_buffer_size");
+        return RuntimeHelper.requireNonNull(constants$799.const$3,"g_buffered_output_stream_set_buffer_size");
     }
     /**
      * {@snippet :
@@ -5699,7 +5763,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_output_stream_get_auto_grow$MH() {
-        return RuntimeHelper.requireNonNull(constants$796.const$4,"g_buffered_output_stream_get_auto_grow");
+        return RuntimeHelper.requireNonNull(constants$799.const$4,"g_buffered_output_stream_get_auto_grow");
     }
     /**
      * {@snippet :
@@ -5715,7 +5779,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_buffered_output_stream_set_auto_grow$MH() {
-        return RuntimeHelper.requireNonNull(constants$796.const$5,"g_buffered_output_stream_set_auto_grow");
+        return RuntimeHelper.requireNonNull(constants$799.const$5,"g_buffered_output_stream_set_auto_grow");
     }
     /**
      * {@snippet :
@@ -5731,7 +5795,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_bytes_icon_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$797.const$0,"g_bytes_icon_get_type");
+        return RuntimeHelper.requireNonNull(constants$800.const$0,"g_bytes_icon_get_type");
     }
     /**
      * {@snippet :
@@ -5747,7 +5811,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_bytes_icon_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$797.const$1,"g_bytes_icon_new");
+        return RuntimeHelper.requireNonNull(constants$800.const$1,"g_bytes_icon_new");
     }
     /**
      * {@snippet :
@@ -5763,7 +5827,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_bytes_icon_get_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$797.const$2,"g_bytes_icon_get_bytes");
+        return RuntimeHelper.requireNonNull(constants$800.const$2,"g_bytes_icon_get_bytes");
     }
     /**
      * {@snippet :
@@ -5779,7 +5843,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$800.const$0,"g_cancellable_get_type");
+        return RuntimeHelper.requireNonNull(constants$803.const$0,"g_cancellable_get_type");
     }
     /**
      * {@snippet :
@@ -5795,7 +5859,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$800.const$1,"g_cancellable_new");
+        return RuntimeHelper.requireNonNull(constants$803.const$1,"g_cancellable_new");
     }
     /**
      * {@snippet :
@@ -5811,7 +5875,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_is_cancelled$MH() {
-        return RuntimeHelper.requireNonNull(constants$800.const$2,"g_cancellable_is_cancelled");
+        return RuntimeHelper.requireNonNull(constants$803.const$2,"g_cancellable_is_cancelled");
     }
     /**
      * {@snippet :
@@ -5827,7 +5891,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_set_error_if_cancelled$MH() {
-        return RuntimeHelper.requireNonNull(constants$800.const$3,"g_cancellable_set_error_if_cancelled");
+        return RuntimeHelper.requireNonNull(constants$803.const$3,"g_cancellable_set_error_if_cancelled");
     }
     /**
      * {@snippet :
@@ -5843,7 +5907,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_get_fd$MH() {
-        return RuntimeHelper.requireNonNull(constants$800.const$4,"g_cancellable_get_fd");
+        return RuntimeHelper.requireNonNull(constants$803.const$4,"g_cancellable_get_fd");
     }
     /**
      * {@snippet :
@@ -5859,7 +5923,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_make_pollfd$MH() {
-        return RuntimeHelper.requireNonNull(constants$800.const$5,"g_cancellable_make_pollfd");
+        return RuntimeHelper.requireNonNull(constants$803.const$5,"g_cancellable_make_pollfd");
     }
     /**
      * {@snippet :
@@ -5875,7 +5939,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_release_fd$MH() {
-        return RuntimeHelper.requireNonNull(constants$801.const$0,"g_cancellable_release_fd");
+        return RuntimeHelper.requireNonNull(constants$804.const$0,"g_cancellable_release_fd");
     }
     /**
      * {@snippet :
@@ -5891,7 +5955,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_source_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$801.const$1,"g_cancellable_source_new");
+        return RuntimeHelper.requireNonNull(constants$804.const$1,"g_cancellable_source_new");
     }
     /**
      * {@snippet :
@@ -5907,7 +5971,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_get_current$MH() {
-        return RuntimeHelper.requireNonNull(constants$801.const$2,"g_cancellable_get_current");
+        return RuntimeHelper.requireNonNull(constants$804.const$2,"g_cancellable_get_current");
     }
     /**
      * {@snippet :
@@ -5923,7 +5987,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_push_current$MH() {
-        return RuntimeHelper.requireNonNull(constants$801.const$3,"g_cancellable_push_current");
+        return RuntimeHelper.requireNonNull(constants$804.const$3,"g_cancellable_push_current");
     }
     /**
      * {@snippet :
@@ -5939,7 +6003,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_pop_current$MH() {
-        return RuntimeHelper.requireNonNull(constants$801.const$4,"g_cancellable_pop_current");
+        return RuntimeHelper.requireNonNull(constants$804.const$4,"g_cancellable_pop_current");
     }
     /**
      * {@snippet :
@@ -5955,7 +6019,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_reset$MH() {
-        return RuntimeHelper.requireNonNull(constants$801.const$5,"g_cancellable_reset");
+        return RuntimeHelper.requireNonNull(constants$804.const$5,"g_cancellable_reset");
     }
     /**
      * {@snippet :
@@ -5971,7 +6035,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_connect$MH() {
-        return RuntimeHelper.requireNonNull(constants$802.const$2,"g_cancellable_connect");
+        return RuntimeHelper.requireNonNull(constants$805.const$2,"g_cancellable_connect");
     }
     /**
      * {@snippet :
@@ -5987,7 +6051,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_disconnect$MH() {
-        return RuntimeHelper.requireNonNull(constants$802.const$3,"g_cancellable_disconnect");
+        return RuntimeHelper.requireNonNull(constants$805.const$3,"g_cancellable_disconnect");
     }
     /**
      * {@snippet :
@@ -6003,7 +6067,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_cancellable_cancel$MH() {
-        return RuntimeHelper.requireNonNull(constants$802.const$4,"g_cancellable_cancel");
+        return RuntimeHelper.requireNonNull(constants$805.const$4,"g_cancellable_cancel");
     }
     /**
      * {@snippet :
@@ -6019,7 +6083,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_converter_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$804.const$0,"g_converter_get_type");
+        return RuntimeHelper.requireNonNull(constants$807.const$0,"g_converter_get_type");
     }
     /**
      * {@snippet :
@@ -6035,7 +6099,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_converter_convert$MH() {
-        return RuntimeHelper.requireNonNull(constants$804.const$1,"g_converter_convert");
+        return RuntimeHelper.requireNonNull(constants$807.const$1,"g_converter_convert");
     }
     /**
      * {@snippet :
@@ -6051,7 +6115,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_converter_reset$MH() {
-        return RuntimeHelper.requireNonNull(constants$804.const$2,"g_converter_reset");
+        return RuntimeHelper.requireNonNull(constants$807.const$2,"g_converter_reset");
     }
     /**
      * {@snippet :
@@ -6067,7 +6131,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_charset_converter_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$804.const$4,"g_charset_converter_get_type");
+        return RuntimeHelper.requireNonNull(constants$807.const$4,"g_charset_converter_get_type");
     }
     /**
      * {@snippet :
@@ -6083,7 +6147,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_charset_converter_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$804.const$5,"g_charset_converter_new");
+        return RuntimeHelper.requireNonNull(constants$807.const$5,"g_charset_converter_new");
     }
     /**
      * {@snippet :
@@ -6099,7 +6163,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_charset_converter_set_use_fallback$MH() {
-        return RuntimeHelper.requireNonNull(constants$805.const$0,"g_charset_converter_set_use_fallback");
+        return RuntimeHelper.requireNonNull(constants$808.const$0,"g_charset_converter_set_use_fallback");
     }
     /**
      * {@snippet :
@@ -6115,7 +6179,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_charset_converter_get_use_fallback$MH() {
-        return RuntimeHelper.requireNonNull(constants$805.const$1,"g_charset_converter_get_use_fallback");
+        return RuntimeHelper.requireNonNull(constants$808.const$1,"g_charset_converter_get_use_fallback");
     }
     /**
      * {@snippet :
@@ -6131,7 +6195,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_charset_converter_get_num_fallbacks$MH() {
-        return RuntimeHelper.requireNonNull(constants$805.const$2,"g_charset_converter_get_num_fallbacks");
+        return RuntimeHelper.requireNonNull(constants$808.const$2,"g_charset_converter_get_num_fallbacks");
     }
     /**
      * {@snippet :
@@ -6147,7 +6211,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_equals$MH() {
-        return RuntimeHelper.requireNonNull(constants$805.const$3,"g_content_type_equals");
+        return RuntimeHelper.requireNonNull(constants$808.const$3,"g_content_type_equals");
     }
     /**
      * {@snippet :
@@ -6163,7 +6227,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_is_a$MH() {
-        return RuntimeHelper.requireNonNull(constants$805.const$4,"g_content_type_is_a");
+        return RuntimeHelper.requireNonNull(constants$808.const$4,"g_content_type_is_a");
     }
     /**
      * {@snippet :
@@ -6179,7 +6243,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_is_mime_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$805.const$5,"g_content_type_is_mime_type");
+        return RuntimeHelper.requireNonNull(constants$808.const$5,"g_content_type_is_mime_type");
     }
     /**
      * {@snippet :
@@ -6195,7 +6259,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_is_unknown$MH() {
-        return RuntimeHelper.requireNonNull(constants$806.const$0,"g_content_type_is_unknown");
+        return RuntimeHelper.requireNonNull(constants$809.const$0,"g_content_type_is_unknown");
     }
     /**
      * {@snippet :
@@ -6211,7 +6275,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_get_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$806.const$1,"g_content_type_get_description");
+        return RuntimeHelper.requireNonNull(constants$809.const$1,"g_content_type_get_description");
     }
     /**
      * {@snippet :
@@ -6227,7 +6291,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_get_mime_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$806.const$2,"g_content_type_get_mime_type");
+        return RuntimeHelper.requireNonNull(constants$809.const$2,"g_content_type_get_mime_type");
     }
     /**
      * {@snippet :
@@ -6243,7 +6307,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$806.const$3,"g_content_type_get_icon");
+        return RuntimeHelper.requireNonNull(constants$809.const$3,"g_content_type_get_icon");
     }
     /**
      * {@snippet :
@@ -6259,7 +6323,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_get_symbolic_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$806.const$4,"g_content_type_get_symbolic_icon");
+        return RuntimeHelper.requireNonNull(constants$809.const$4,"g_content_type_get_symbolic_icon");
     }
     /**
      * {@snippet :
@@ -6275,7 +6339,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_get_generic_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$806.const$5,"g_content_type_get_generic_icon_name");
+        return RuntimeHelper.requireNonNull(constants$809.const$5,"g_content_type_get_generic_icon_name");
     }
     /**
      * {@snippet :
@@ -6291,7 +6355,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_can_be_executable$MH() {
-        return RuntimeHelper.requireNonNull(constants$807.const$0,"g_content_type_can_be_executable");
+        return RuntimeHelper.requireNonNull(constants$810.const$0,"g_content_type_can_be_executable");
     }
     /**
      * {@snippet :
@@ -6307,7 +6371,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_from_mime_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$807.const$1,"g_content_type_from_mime_type");
+        return RuntimeHelper.requireNonNull(constants$810.const$1,"g_content_type_from_mime_type");
     }
     /**
      * {@snippet :
@@ -6323,7 +6387,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_guess$MH() {
-        return RuntimeHelper.requireNonNull(constants$807.const$3,"g_content_type_guess");
+        return RuntimeHelper.requireNonNull(constants$810.const$3,"g_content_type_guess");
     }
     /**
      * {@snippet :
@@ -6339,7 +6403,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_guess_for_tree$MH() {
-        return RuntimeHelper.requireNonNull(constants$807.const$4,"g_content_type_guess_for_tree");
+        return RuntimeHelper.requireNonNull(constants$810.const$4,"g_content_type_guess_for_tree");
     }
     /**
      * {@snippet :
@@ -6355,7 +6419,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_types_get_registered$MH() {
-        return RuntimeHelper.requireNonNull(constants$807.const$5,"g_content_types_get_registered");
+        return RuntimeHelper.requireNonNull(constants$810.const$5,"g_content_types_get_registered");
     }
     /**
      * {@snippet :
@@ -6371,7 +6435,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_get_mime_dirs$MH() {
-        return RuntimeHelper.requireNonNull(constants$808.const$0,"g_content_type_get_mime_dirs");
+        return RuntimeHelper.requireNonNull(constants$811.const$0,"g_content_type_get_mime_dirs");
     }
     /**
      * {@snippet :
@@ -6387,7 +6451,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_content_type_set_mime_dirs$MH() {
-        return RuntimeHelper.requireNonNull(constants$808.const$1,"g_content_type_set_mime_dirs");
+        return RuntimeHelper.requireNonNull(constants$811.const$1,"g_content_type_set_mime_dirs");
     }
     /**
      * {@snippet :
@@ -6403,7 +6467,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_converter_input_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$810.const$3,"g_converter_input_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$813.const$3,"g_converter_input_stream_get_type");
     }
     /**
      * {@snippet :
@@ -6419,7 +6483,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_converter_input_stream_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$810.const$4,"g_converter_input_stream_new");
+        return RuntimeHelper.requireNonNull(constants$813.const$4,"g_converter_input_stream_new");
     }
     /**
      * {@snippet :
@@ -6435,7 +6499,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_converter_input_stream_get_converter$MH() {
-        return RuntimeHelper.requireNonNull(constants$810.const$5,"g_converter_input_stream_get_converter");
+        return RuntimeHelper.requireNonNull(constants$813.const$5,"g_converter_input_stream_get_converter");
     }
     /**
      * {@snippet :
@@ -6451,7 +6515,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_converter_output_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$813.const$1,"g_converter_output_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$816.const$1,"g_converter_output_stream_get_type");
     }
     /**
      * {@snippet :
@@ -6467,7 +6531,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_converter_output_stream_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$813.const$2,"g_converter_output_stream_new");
+        return RuntimeHelper.requireNonNull(constants$816.const$2,"g_converter_output_stream_new");
     }
     /**
      * {@snippet :
@@ -6483,7 +6547,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_converter_output_stream_get_converter$MH() {
-        return RuntimeHelper.requireNonNull(constants$813.const$3,"g_converter_output_stream_get_converter");
+        return RuntimeHelper.requireNonNull(constants$816.const$3,"g_converter_output_stream_get_converter");
     }
     /**
      * {@snippet :
@@ -6517,7 +6581,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      */
     public static final OfInt socklen_t = JAVA_INT;
     public static MethodHandle access$MH() {
-        return RuntimeHelper.requireNonNull(constants$813.const$4,"access");
+        return RuntimeHelper.requireNonNull(constants$816.const$4,"access");
     }
     /**
      * {@snippet :
@@ -6533,7 +6597,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle faccessat$MH() {
-        return RuntimeHelper.requireNonNull(constants$813.const$6,"faccessat");
+        return RuntimeHelper.requireNonNull(constants$816.const$6,"faccessat");
     }
     /**
      * {@snippet :
@@ -6549,7 +6613,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle lseek$MH() {
-        return RuntimeHelper.requireNonNull(constants$814.const$1,"lseek");
+        return RuntimeHelper.requireNonNull(constants$817.const$1,"lseek");
     }
     /**
      * {@snippet :
@@ -6565,7 +6629,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle close$MH() {
-        return RuntimeHelper.requireNonNull(constants$814.const$2,"close");
+        return RuntimeHelper.requireNonNull(constants$817.const$2,"close");
     }
     /**
      * {@snippet :
@@ -6581,7 +6645,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle closefrom$MH() {
-        return RuntimeHelper.requireNonNull(constants$814.const$3,"closefrom");
+        return RuntimeHelper.requireNonNull(constants$817.const$3,"closefrom");
     }
     /**
      * {@snippet :
@@ -6597,7 +6661,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle read$MH() {
-        return RuntimeHelper.requireNonNull(constants$814.const$5,"read");
+        return RuntimeHelper.requireNonNull(constants$817.const$5,"read");
     }
     /**
      * {@snippet :
@@ -6613,7 +6677,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle write$MH() {
-        return RuntimeHelper.requireNonNull(constants$815.const$0,"write");
+        return RuntimeHelper.requireNonNull(constants$818.const$0,"write");
     }
     /**
      * {@snippet :
@@ -6629,7 +6693,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle pread$MH() {
-        return RuntimeHelper.requireNonNull(constants$815.const$2,"pread");
+        return RuntimeHelper.requireNonNull(constants$818.const$2,"pread");
     }
     /**
      * {@snippet :
@@ -6645,7 +6709,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle pwrite$MH() {
-        return RuntimeHelper.requireNonNull(constants$815.const$3,"pwrite");
+        return RuntimeHelper.requireNonNull(constants$818.const$3,"pwrite");
     }
     /**
      * {@snippet :
@@ -6661,7 +6725,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle pipe$MH() {
-        return RuntimeHelper.requireNonNull(constants$815.const$4,"pipe");
+        return RuntimeHelper.requireNonNull(constants$818.const$4,"pipe");
     }
     /**
      * {@snippet :
@@ -6677,7 +6741,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle alarm$MH() {
-        return RuntimeHelper.requireNonNull(constants$815.const$5,"alarm");
+        return RuntimeHelper.requireNonNull(constants$818.const$5,"alarm");
     }
     /**
      * {@snippet :
@@ -6693,7 +6757,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle sleep$MH() {
-        return RuntimeHelper.requireNonNull(constants$816.const$0,"sleep");
+        return RuntimeHelper.requireNonNull(constants$819.const$0,"sleep");
     }
     /**
      * {@snippet :
@@ -6709,7 +6773,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle ualarm$MH() {
-        return RuntimeHelper.requireNonNull(constants$816.const$1,"ualarm");
+        return RuntimeHelper.requireNonNull(constants$819.const$1,"ualarm");
     }
     /**
      * {@snippet :
@@ -6725,7 +6789,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle usleep$MH() {
-        return RuntimeHelper.requireNonNull(constants$816.const$2,"usleep");
+        return RuntimeHelper.requireNonNull(constants$819.const$2,"usleep");
     }
     /**
      * {@snippet :
@@ -6741,7 +6805,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle pause$MH() {
-        return RuntimeHelper.requireNonNull(constants$816.const$3,"pause");
+        return RuntimeHelper.requireNonNull(constants$819.const$3,"pause");
     }
     /**
      * {@snippet :
@@ -6757,7 +6821,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle chown$MH() {
-        return RuntimeHelper.requireNonNull(constants$816.const$4,"chown");
+        return RuntimeHelper.requireNonNull(constants$819.const$4,"chown");
     }
     /**
      * {@snippet :
@@ -6773,7 +6837,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle fchown$MH() {
-        return RuntimeHelper.requireNonNull(constants$816.const$6,"fchown");
+        return RuntimeHelper.requireNonNull(constants$819.const$6,"fchown");
     }
     /**
      * {@snippet :
@@ -6789,7 +6853,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle lchown$MH() {
-        return RuntimeHelper.requireNonNull(constants$817.const$0,"lchown");
+        return RuntimeHelper.requireNonNull(constants$820.const$0,"lchown");
     }
     /**
      * {@snippet :
@@ -6805,7 +6869,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle fchownat$MH() {
-        return RuntimeHelper.requireNonNull(constants$817.const$2,"fchownat");
+        return RuntimeHelper.requireNonNull(constants$820.const$2,"fchownat");
     }
     /**
      * {@snippet :
@@ -6821,7 +6885,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle chdir$MH() {
-        return RuntimeHelper.requireNonNull(constants$817.const$3,"chdir");
+        return RuntimeHelper.requireNonNull(constants$820.const$3,"chdir");
     }
     /**
      * {@snippet :
@@ -6837,7 +6901,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle fchdir$MH() {
-        return RuntimeHelper.requireNonNull(constants$817.const$4,"fchdir");
+        return RuntimeHelper.requireNonNull(constants$820.const$4,"fchdir");
     }
     /**
      * {@snippet :
@@ -6853,7 +6917,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getcwd$MH() {
-        return RuntimeHelper.requireNonNull(constants$817.const$5,"getcwd");
+        return RuntimeHelper.requireNonNull(constants$820.const$5,"getcwd");
     }
     /**
      * {@snippet :
@@ -6869,7 +6933,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getwd$MH() {
-        return RuntimeHelper.requireNonNull(constants$818.const$0,"getwd");
+        return RuntimeHelper.requireNonNull(constants$821.const$0,"getwd");
     }
     /**
      * {@snippet :
@@ -6885,7 +6949,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle dup$MH() {
-        return RuntimeHelper.requireNonNull(constants$818.const$1,"dup");
+        return RuntimeHelper.requireNonNull(constants$821.const$1,"dup");
     }
     /**
      * {@snippet :
@@ -6901,7 +6965,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle dup2$MH() {
-        return RuntimeHelper.requireNonNull(constants$818.const$2,"dup2");
+        return RuntimeHelper.requireNonNull(constants$821.const$2,"dup2");
     }
     /**
      * {@snippet :
@@ -6923,7 +6987,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         return constants$211.const$1;
     }
     public static MemorySegment __environ$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$818.const$3,"__environ");
+        return RuntimeHelper.requireNonNull(constants$821.const$3,"__environ");
     }
     /**
      * Getter for variable:
@@ -6932,7 +6996,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      * }
      */
     public static MemorySegment __environ$get() {
-        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$818.const$3, "__environ"));
+        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$821.const$3, "__environ"));
     }
     /**
      * Setter for variable:
@@ -6941,10 +7005,10 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      * }
      */
     public static void __environ$set(MemorySegment x) {
-        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$818.const$3, "__environ"), x);
+        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$821.const$3, "__environ"), x);
     }
     public static MethodHandle execve$MH() {
-        return RuntimeHelper.requireNonNull(constants$818.const$4,"execve");
+        return RuntimeHelper.requireNonNull(constants$821.const$4,"execve");
     }
     /**
      * {@snippet :
@@ -6960,7 +7024,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle fexecve$MH() {
-        return RuntimeHelper.requireNonNull(constants$818.const$5,"fexecve");
+        return RuntimeHelper.requireNonNull(constants$821.const$5,"fexecve");
     }
     /**
      * {@snippet :
@@ -6976,7 +7040,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle execv$MH() {
-        return RuntimeHelper.requireNonNull(constants$819.const$0,"execv");
+        return RuntimeHelper.requireNonNull(constants$822.const$0,"execv");
     }
     /**
      * {@snippet :
@@ -6992,7 +7056,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle execle$MH() {
-        return RuntimeHelper.requireNonNull(constants$819.const$1,"execle");
+        return RuntimeHelper.requireNonNull(constants$822.const$1,"execle");
     }
     /**
      * {@snippet :
@@ -7008,7 +7072,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle execl$MH() {
-        return RuntimeHelper.requireNonNull(constants$819.const$2,"execl");
+        return RuntimeHelper.requireNonNull(constants$822.const$2,"execl");
     }
     /**
      * {@snippet :
@@ -7024,7 +7088,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle execvp$MH() {
-        return RuntimeHelper.requireNonNull(constants$819.const$3,"execvp");
+        return RuntimeHelper.requireNonNull(constants$822.const$3,"execvp");
     }
     /**
      * {@snippet :
@@ -7040,7 +7104,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle execlp$MH() {
-        return RuntimeHelper.requireNonNull(constants$819.const$4,"execlp");
+        return RuntimeHelper.requireNonNull(constants$822.const$4,"execlp");
     }
     /**
      * {@snippet :
@@ -7056,7 +7120,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle nice$MH() {
-        return RuntimeHelper.requireNonNull(constants$819.const$5,"nice");
+        return RuntimeHelper.requireNonNull(constants$822.const$5,"nice");
     }
     /**
      * {@snippet :
@@ -7072,7 +7136,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle _exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$820.const$0,"_exit");
+        return RuntimeHelper.requireNonNull(constants$823.const$0,"_exit");
     }
     /**
      * {@snippet :
@@ -9504,7 +9568,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         return (int)1149L;
     }
     public static MethodHandle pathconf$MH() {
-        return RuntimeHelper.requireNonNull(constants$820.const$2,"pathconf");
+        return RuntimeHelper.requireNonNull(constants$823.const$2,"pathconf");
     }
     /**
      * {@snippet :
@@ -9520,7 +9584,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle fpathconf$MH() {
-        return RuntimeHelper.requireNonNull(constants$820.const$4,"fpathconf");
+        return RuntimeHelper.requireNonNull(constants$823.const$4,"fpathconf");
     }
     /**
      * {@snippet :
@@ -9536,7 +9600,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle sysconf$MH() {
-        return RuntimeHelper.requireNonNull(constants$820.const$5,"sysconf");
+        return RuntimeHelper.requireNonNull(constants$823.const$5,"sysconf");
     }
     /**
      * {@snippet :
@@ -9552,7 +9616,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle confstr$MH() {
-        return RuntimeHelper.requireNonNull(constants$821.const$0,"confstr");
+        return RuntimeHelper.requireNonNull(constants$824.const$0,"confstr");
     }
     /**
      * {@snippet :
@@ -9568,7 +9632,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getpid$MH() {
-        return RuntimeHelper.requireNonNull(constants$821.const$1,"getpid");
+        return RuntimeHelper.requireNonNull(constants$824.const$1,"getpid");
     }
     /**
      * {@snippet :
@@ -9584,7 +9648,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getppid$MH() {
-        return RuntimeHelper.requireNonNull(constants$821.const$2,"getppid");
+        return RuntimeHelper.requireNonNull(constants$824.const$2,"getppid");
     }
     /**
      * {@snippet :
@@ -9600,7 +9664,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getpgrp$MH() {
-        return RuntimeHelper.requireNonNull(constants$821.const$3,"getpgrp");
+        return RuntimeHelper.requireNonNull(constants$824.const$3,"getpgrp");
     }
     /**
      * {@snippet :
@@ -9616,7 +9680,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle __getpgid$MH() {
-        return RuntimeHelper.requireNonNull(constants$821.const$4,"__getpgid");
+        return RuntimeHelper.requireNonNull(constants$824.const$4,"__getpgid");
     }
     /**
      * {@snippet :
@@ -9632,7 +9696,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getpgid$MH() {
-        return RuntimeHelper.requireNonNull(constants$821.const$5,"getpgid");
+        return RuntimeHelper.requireNonNull(constants$824.const$5,"getpgid");
     }
     /**
      * {@snippet :
@@ -9648,7 +9712,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setpgid$MH() {
-        return RuntimeHelper.requireNonNull(constants$822.const$0,"setpgid");
+        return RuntimeHelper.requireNonNull(constants$825.const$0,"setpgid");
     }
     /**
      * {@snippet :
@@ -9664,7 +9728,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setpgrp$MH() {
-        return RuntimeHelper.requireNonNull(constants$822.const$1,"setpgrp");
+        return RuntimeHelper.requireNonNull(constants$825.const$1,"setpgrp");
     }
     /**
      * {@snippet :
@@ -9680,7 +9744,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setsid$MH() {
-        return RuntimeHelper.requireNonNull(constants$822.const$2,"setsid");
+        return RuntimeHelper.requireNonNull(constants$825.const$2,"setsid");
     }
     /**
      * {@snippet :
@@ -9696,7 +9760,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getsid$MH() {
-        return RuntimeHelper.requireNonNull(constants$822.const$3,"getsid");
+        return RuntimeHelper.requireNonNull(constants$825.const$3,"getsid");
     }
     /**
      * {@snippet :
@@ -9712,7 +9776,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getuid$MH() {
-        return RuntimeHelper.requireNonNull(constants$822.const$4,"getuid");
+        return RuntimeHelper.requireNonNull(constants$825.const$4,"getuid");
     }
     /**
      * {@snippet :
@@ -9728,7 +9792,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle geteuid$MH() {
-        return RuntimeHelper.requireNonNull(constants$822.const$5,"geteuid");
+        return RuntimeHelper.requireNonNull(constants$825.const$5,"geteuid");
     }
     /**
      * {@snippet :
@@ -9744,7 +9808,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getgid$MH() {
-        return RuntimeHelper.requireNonNull(constants$823.const$0,"getgid");
+        return RuntimeHelper.requireNonNull(constants$826.const$0,"getgid");
     }
     /**
      * {@snippet :
@@ -9760,7 +9824,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getegid$MH() {
-        return RuntimeHelper.requireNonNull(constants$823.const$1,"getegid");
+        return RuntimeHelper.requireNonNull(constants$826.const$1,"getegid");
     }
     /**
      * {@snippet :
@@ -9776,7 +9840,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getgroups$MH() {
-        return RuntimeHelper.requireNonNull(constants$823.const$2,"getgroups");
+        return RuntimeHelper.requireNonNull(constants$826.const$2,"getgroups");
     }
     /**
      * {@snippet :
@@ -9792,7 +9856,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setuid$MH() {
-        return RuntimeHelper.requireNonNull(constants$823.const$3,"setuid");
+        return RuntimeHelper.requireNonNull(constants$826.const$3,"setuid");
     }
     /**
      * {@snippet :
@@ -9808,7 +9872,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setreuid$MH() {
-        return RuntimeHelper.requireNonNull(constants$823.const$4,"setreuid");
+        return RuntimeHelper.requireNonNull(constants$826.const$4,"setreuid");
     }
     /**
      * {@snippet :
@@ -9824,7 +9888,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle seteuid$MH() {
-        return RuntimeHelper.requireNonNull(constants$823.const$5,"seteuid");
+        return RuntimeHelper.requireNonNull(constants$826.const$5,"seteuid");
     }
     /**
      * {@snippet :
@@ -9840,7 +9904,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setgid$MH() {
-        return RuntimeHelper.requireNonNull(constants$824.const$0,"setgid");
+        return RuntimeHelper.requireNonNull(constants$827.const$0,"setgid");
     }
     /**
      * {@snippet :
@@ -9856,7 +9920,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setregid$MH() {
-        return RuntimeHelper.requireNonNull(constants$824.const$1,"setregid");
+        return RuntimeHelper.requireNonNull(constants$827.const$1,"setregid");
     }
     /**
      * {@snippet :
@@ -9872,7 +9936,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setegid$MH() {
-        return RuntimeHelper.requireNonNull(constants$824.const$2,"setegid");
+        return RuntimeHelper.requireNonNull(constants$827.const$2,"setegid");
     }
     /**
      * {@snippet :
@@ -9888,7 +9952,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle fork$MH() {
-        return RuntimeHelper.requireNonNull(constants$824.const$3,"fork");
+        return RuntimeHelper.requireNonNull(constants$827.const$3,"fork");
     }
     /**
      * {@snippet :
@@ -9904,7 +9968,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle vfork$MH() {
-        return RuntimeHelper.requireNonNull(constants$824.const$4,"vfork");
+        return RuntimeHelper.requireNonNull(constants$827.const$4,"vfork");
     }
     /**
      * {@snippet :
@@ -9920,7 +9984,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle ttyname$MH() {
-        return RuntimeHelper.requireNonNull(constants$824.const$5,"ttyname");
+        return RuntimeHelper.requireNonNull(constants$827.const$5,"ttyname");
     }
     /**
      * {@snippet :
@@ -9936,7 +10000,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle ttyname_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$825.const$0,"ttyname_r");
+        return RuntimeHelper.requireNonNull(constants$828.const$0,"ttyname_r");
     }
     /**
      * {@snippet :
@@ -9952,7 +10016,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle isatty$MH() {
-        return RuntimeHelper.requireNonNull(constants$825.const$1,"isatty");
+        return RuntimeHelper.requireNonNull(constants$828.const$1,"isatty");
     }
     /**
      * {@snippet :
@@ -9968,7 +10032,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle ttyslot$MH() {
-        return RuntimeHelper.requireNonNull(constants$825.const$2,"ttyslot");
+        return RuntimeHelper.requireNonNull(constants$828.const$2,"ttyslot");
     }
     /**
      * {@snippet :
@@ -9984,7 +10048,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle link$MH() {
-        return RuntimeHelper.requireNonNull(constants$825.const$3,"link");
+        return RuntimeHelper.requireNonNull(constants$828.const$3,"link");
     }
     /**
      * {@snippet :
@@ -10000,7 +10064,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle linkat$MH() {
-        return RuntimeHelper.requireNonNull(constants$825.const$5,"linkat");
+        return RuntimeHelper.requireNonNull(constants$828.const$5,"linkat");
     }
     /**
      * {@snippet :
@@ -10016,7 +10080,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle symlink$MH() {
-        return RuntimeHelper.requireNonNull(constants$826.const$0,"symlink");
+        return RuntimeHelper.requireNonNull(constants$829.const$0,"symlink");
     }
     /**
      * {@snippet :
@@ -10032,7 +10096,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle readlink$MH() {
-        return RuntimeHelper.requireNonNull(constants$826.const$1,"readlink");
+        return RuntimeHelper.requireNonNull(constants$829.const$1,"readlink");
     }
     /**
      * {@snippet :
@@ -10048,7 +10112,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle symlinkat$MH() {
-        return RuntimeHelper.requireNonNull(constants$826.const$2,"symlinkat");
+        return RuntimeHelper.requireNonNull(constants$829.const$2,"symlinkat");
     }
     /**
      * {@snippet :
@@ -10064,7 +10128,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle readlinkat$MH() {
-        return RuntimeHelper.requireNonNull(constants$826.const$4,"readlinkat");
+        return RuntimeHelper.requireNonNull(constants$829.const$4,"readlinkat");
     }
     /**
      * {@snippet :
@@ -10080,7 +10144,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle unlink$MH() {
-        return RuntimeHelper.requireNonNull(constants$826.const$5,"unlink");
+        return RuntimeHelper.requireNonNull(constants$829.const$5,"unlink");
     }
     /**
      * {@snippet :
@@ -10096,7 +10160,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle unlinkat$MH() {
-        return RuntimeHelper.requireNonNull(constants$827.const$1,"unlinkat");
+        return RuntimeHelper.requireNonNull(constants$830.const$1,"unlinkat");
     }
     /**
      * {@snippet :
@@ -10112,7 +10176,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle rmdir$MH() {
-        return RuntimeHelper.requireNonNull(constants$827.const$2,"rmdir");
+        return RuntimeHelper.requireNonNull(constants$830.const$2,"rmdir");
     }
     /**
      * {@snippet :
@@ -10128,7 +10192,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle tcgetpgrp$MH() {
-        return RuntimeHelper.requireNonNull(constants$827.const$3,"tcgetpgrp");
+        return RuntimeHelper.requireNonNull(constants$830.const$3,"tcgetpgrp");
     }
     /**
      * {@snippet :
@@ -10144,7 +10208,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle tcsetpgrp$MH() {
-        return RuntimeHelper.requireNonNull(constants$827.const$4,"tcsetpgrp");
+        return RuntimeHelper.requireNonNull(constants$830.const$4,"tcsetpgrp");
     }
     /**
      * {@snippet :
@@ -10160,7 +10224,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getlogin$MH() {
-        return RuntimeHelper.requireNonNull(constants$827.const$5,"getlogin");
+        return RuntimeHelper.requireNonNull(constants$830.const$5,"getlogin");
     }
     /**
      * {@snippet :
@@ -10176,7 +10240,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getlogin_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$828.const$0,"getlogin_r");
+        return RuntimeHelper.requireNonNull(constants$831.const$0,"getlogin_r");
     }
     /**
      * {@snippet :
@@ -10192,7 +10256,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setlogin$MH() {
-        return RuntimeHelper.requireNonNull(constants$828.const$1,"setlogin");
+        return RuntimeHelper.requireNonNull(constants$831.const$1,"setlogin");
     }
     /**
      * {@snippet :
@@ -10214,7 +10278,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         return constants$211.const$1;
     }
     public static MemorySegment optarg$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$828.const$2,"optarg");
+        return RuntimeHelper.requireNonNull(constants$831.const$2,"optarg");
     }
     /**
      * Getter for variable:
@@ -10223,7 +10287,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      * }
      */
     public static MemorySegment optarg$get() {
-        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$828.const$2, "optarg"));
+        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$831.const$2, "optarg"));
     }
     /**
      * Setter for variable:
@@ -10232,7 +10296,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      * }
      */
     public static void optarg$set(MemorySegment x) {
-        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$828.const$2, "optarg"), x);
+        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$831.const$2, "optarg"), x);
     }
     public static MemoryLayout optind$LAYOUT() {
         return JAVA_INT;
@@ -10241,7 +10305,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         return constants$7.const$0;
     }
     public static MemorySegment optind$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$828.const$3,"optind");
+        return RuntimeHelper.requireNonNull(constants$831.const$3,"optind");
     }
     /**
      * Getter for variable:
@@ -10250,7 +10314,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      * }
      */
     public static int optind$get() {
-        return (int) constants$7.const$0.get(RuntimeHelper.requireNonNull(constants$828.const$3, "optind"));
+        return (int) constants$7.const$0.get(RuntimeHelper.requireNonNull(constants$831.const$3, "optind"));
     }
     /**
      * Setter for variable:
@@ -10259,7 +10323,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      * }
      */
     public static void optind$set(int x) {
-        constants$7.const$0.set(RuntimeHelper.requireNonNull(constants$828.const$3, "optind"), x);
+        constants$7.const$0.set(RuntimeHelper.requireNonNull(constants$831.const$3, "optind"), x);
     }
     public static MemoryLayout opterr$LAYOUT() {
         return JAVA_INT;
@@ -10268,7 +10332,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         return constants$7.const$0;
     }
     public static MemorySegment opterr$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$828.const$4,"opterr");
+        return RuntimeHelper.requireNonNull(constants$831.const$4,"opterr");
     }
     /**
      * Getter for variable:
@@ -10277,7 +10341,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      * }
      */
     public static int opterr$get() {
-        return (int) constants$7.const$0.get(RuntimeHelper.requireNonNull(constants$828.const$4, "opterr"));
+        return (int) constants$7.const$0.get(RuntimeHelper.requireNonNull(constants$831.const$4, "opterr"));
     }
     /**
      * Setter for variable:
@@ -10286,7 +10350,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      * }
      */
     public static void opterr$set(int x) {
-        constants$7.const$0.set(RuntimeHelper.requireNonNull(constants$828.const$4, "opterr"), x);
+        constants$7.const$0.set(RuntimeHelper.requireNonNull(constants$831.const$4, "opterr"), x);
     }
     public static MemoryLayout optopt$LAYOUT() {
         return JAVA_INT;
@@ -10295,7 +10359,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         return constants$7.const$0;
     }
     public static MemorySegment optopt$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$828.const$5,"optopt");
+        return RuntimeHelper.requireNonNull(constants$831.const$5,"optopt");
     }
     /**
      * Getter for variable:
@@ -10304,7 +10368,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      * }
      */
     public static int optopt$get() {
-        return (int) constants$7.const$0.get(RuntimeHelper.requireNonNull(constants$828.const$5, "optopt"));
+        return (int) constants$7.const$0.get(RuntimeHelper.requireNonNull(constants$831.const$5, "optopt"));
     }
     /**
      * Setter for variable:
@@ -10313,10 +10377,10 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
      * }
      */
     public static void optopt$set(int x) {
-        constants$7.const$0.set(RuntimeHelper.requireNonNull(constants$828.const$5, "optopt"), x);
+        constants$7.const$0.set(RuntimeHelper.requireNonNull(constants$831.const$5, "optopt"), x);
     }
     public static MethodHandle getopt$MH() {
-        return RuntimeHelper.requireNonNull(constants$829.const$0,"getopt");
+        return RuntimeHelper.requireNonNull(constants$832.const$0,"getopt");
     }
     /**
      * {@snippet :
@@ -10332,7 +10396,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle gethostname$MH() {
-        return RuntimeHelper.requireNonNull(constants$829.const$1,"gethostname");
+        return RuntimeHelper.requireNonNull(constants$832.const$1,"gethostname");
     }
     /**
      * {@snippet :
@@ -10348,7 +10412,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle sethostname$MH() {
-        return RuntimeHelper.requireNonNull(constants$829.const$2,"sethostname");
+        return RuntimeHelper.requireNonNull(constants$832.const$2,"sethostname");
     }
     /**
      * {@snippet :
@@ -10364,7 +10428,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle sethostid$MH() {
-        return RuntimeHelper.requireNonNull(constants$829.const$3,"sethostid");
+        return RuntimeHelper.requireNonNull(constants$832.const$3,"sethostid");
     }
     /**
      * {@snippet :
@@ -10380,7 +10444,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getdomainname$MH() {
-        return RuntimeHelper.requireNonNull(constants$829.const$4,"getdomainname");
+        return RuntimeHelper.requireNonNull(constants$832.const$4,"getdomainname");
     }
     /**
      * {@snippet :
@@ -10396,7 +10460,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setdomainname$MH() {
-        return RuntimeHelper.requireNonNull(constants$829.const$5,"setdomainname");
+        return RuntimeHelper.requireNonNull(constants$832.const$5,"setdomainname");
     }
     /**
      * {@snippet :
@@ -10412,7 +10476,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle vhangup$MH() {
-        return RuntimeHelper.requireNonNull(constants$830.const$0,"vhangup");
+        return RuntimeHelper.requireNonNull(constants$833.const$0,"vhangup");
     }
     /**
      * {@snippet :
@@ -10428,7 +10492,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle revoke$MH() {
-        return RuntimeHelper.requireNonNull(constants$830.const$1,"revoke");
+        return RuntimeHelper.requireNonNull(constants$833.const$1,"revoke");
     }
     /**
      * {@snippet :
@@ -10444,7 +10508,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle profil$MH() {
-        return RuntimeHelper.requireNonNull(constants$830.const$3,"profil");
+        return RuntimeHelper.requireNonNull(constants$833.const$3,"profil");
     }
     /**
      * {@snippet :
@@ -10460,7 +10524,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle acct$MH() {
-        return RuntimeHelper.requireNonNull(constants$830.const$4,"acct");
+        return RuntimeHelper.requireNonNull(constants$833.const$4,"acct");
     }
     /**
      * {@snippet :
@@ -10476,7 +10540,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getusershell$MH() {
-        return RuntimeHelper.requireNonNull(constants$830.const$5,"getusershell");
+        return RuntimeHelper.requireNonNull(constants$833.const$5,"getusershell");
     }
     /**
      * {@snippet :
@@ -10492,7 +10556,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle endusershell$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.const$0,"endusershell");
+        return RuntimeHelper.requireNonNull(constants$834.const$0,"endusershell");
     }
     /**
      * {@snippet :
@@ -10508,7 +10572,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle setusershell$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.const$1,"setusershell");
+        return RuntimeHelper.requireNonNull(constants$834.const$1,"setusershell");
     }
     /**
      * {@snippet :
@@ -10524,7 +10588,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle daemon$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.const$2,"daemon");
+        return RuntimeHelper.requireNonNull(constants$834.const$2,"daemon");
     }
     /**
      * {@snippet :
@@ -10540,7 +10604,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle chroot$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.const$3,"chroot");
+        return RuntimeHelper.requireNonNull(constants$834.const$3,"chroot");
     }
     /**
      * {@snippet :
@@ -10556,7 +10620,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getpass$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.const$4,"getpass");
+        return RuntimeHelper.requireNonNull(constants$834.const$4,"getpass");
     }
     /**
      * {@snippet :
@@ -10572,7 +10636,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle fsync$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.const$5,"fsync");
+        return RuntimeHelper.requireNonNull(constants$834.const$5,"fsync");
     }
     /**
      * {@snippet :
@@ -10588,7 +10652,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle gethostid$MH() {
-        return RuntimeHelper.requireNonNull(constants$832.const$0,"gethostid");
+        return RuntimeHelper.requireNonNull(constants$835.const$0,"gethostid");
     }
     /**
      * {@snippet :
@@ -10604,7 +10668,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$832.const$1,"sync");
+        return RuntimeHelper.requireNonNull(constants$835.const$1,"sync");
     }
     /**
      * {@snippet :
@@ -10620,7 +10684,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getpagesize$MH() {
-        return RuntimeHelper.requireNonNull(constants$832.const$2,"getpagesize");
+        return RuntimeHelper.requireNonNull(constants$835.const$2,"getpagesize");
     }
     /**
      * {@snippet :
@@ -10636,7 +10700,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getdtablesize$MH() {
-        return RuntimeHelper.requireNonNull(constants$832.const$3,"getdtablesize");
+        return RuntimeHelper.requireNonNull(constants$835.const$3,"getdtablesize");
     }
     /**
      * {@snippet :
@@ -10652,7 +10716,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle truncate$MH() {
-        return RuntimeHelper.requireNonNull(constants$832.const$4,"truncate");
+        return RuntimeHelper.requireNonNull(constants$835.const$4,"truncate");
     }
     /**
      * {@snippet :
@@ -10668,7 +10732,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle ftruncate$MH() {
-        return RuntimeHelper.requireNonNull(constants$832.const$6,"ftruncate");
+        return RuntimeHelper.requireNonNull(constants$835.const$6,"ftruncate");
     }
     /**
      * {@snippet :
@@ -10684,7 +10748,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle brk$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.const$0,"brk");
+        return RuntimeHelper.requireNonNull(constants$836.const$0,"brk");
     }
     /**
      * {@snippet :
@@ -10700,7 +10764,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle sbrk$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.const$1,"sbrk");
+        return RuntimeHelper.requireNonNull(constants$836.const$1,"sbrk");
     }
     /**
      * {@snippet :
@@ -10716,7 +10780,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle syscall$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.const$2,"syscall");
+        return RuntimeHelper.requireNonNull(constants$836.const$2,"syscall");
     }
     /**
      * {@snippet :
@@ -10732,7 +10796,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle lockf$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.const$4,"lockf");
+        return RuntimeHelper.requireNonNull(constants$836.const$4,"lockf");
     }
     /**
      * {@snippet :
@@ -10748,7 +10812,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle fdatasync$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.const$5,"fdatasync");
+        return RuntimeHelper.requireNonNull(constants$836.const$5,"fdatasync");
     }
     /**
      * {@snippet :
@@ -10764,7 +10828,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle crypt$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.const$0,"crypt");
+        return RuntimeHelper.requireNonNull(constants$837.const$0,"crypt");
     }
     /**
      * {@snippet :
@@ -10780,7 +10844,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle getentropy$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.const$1,"getentropy");
+        return RuntimeHelper.requireNonNull(constants$837.const$1,"getentropy");
     }
     /**
      * {@snippet :
@@ -10796,7 +10860,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_credentials_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.const$2,"g_credentials_get_type");
+        return RuntimeHelper.requireNonNull(constants$837.const$2,"g_credentials_get_type");
     }
     /**
      * {@snippet :
@@ -10812,7 +10876,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_credentials_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.const$3,"g_credentials_new");
+        return RuntimeHelper.requireNonNull(constants$837.const$3,"g_credentials_new");
     }
     /**
      * {@snippet :
@@ -10828,7 +10892,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_credentials_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.const$4,"g_credentials_to_string");
+        return RuntimeHelper.requireNonNull(constants$837.const$4,"g_credentials_to_string");
     }
     /**
      * {@snippet :
@@ -10844,7 +10908,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_credentials_get_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.const$5,"g_credentials_get_native");
+        return RuntimeHelper.requireNonNull(constants$837.const$5,"g_credentials_get_native");
     }
     /**
      * {@snippet :
@@ -10860,7 +10924,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_credentials_set_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.const$0,"g_credentials_set_native");
+        return RuntimeHelper.requireNonNull(constants$838.const$0,"g_credentials_set_native");
     }
     /**
      * {@snippet :
@@ -10876,7 +10940,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_credentials_is_same_user$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.const$1,"g_credentials_is_same_user");
+        return RuntimeHelper.requireNonNull(constants$838.const$1,"g_credentials_is_same_user");
     }
     /**
      * {@snippet :
@@ -10892,7 +10956,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_credentials_get_unix_pid$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.const$2,"g_credentials_get_unix_pid");
+        return RuntimeHelper.requireNonNull(constants$838.const$2,"g_credentials_get_unix_pid");
     }
     /**
      * {@snippet :
@@ -10908,7 +10972,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_credentials_get_unix_user$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.const$3,"g_credentials_get_unix_user");
+        return RuntimeHelper.requireNonNull(constants$838.const$3,"g_credentials_get_unix_user");
     }
     /**
      * {@snippet :
@@ -10924,7 +10988,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_credentials_set_unix_user$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.const$4,"g_credentials_set_unix_user");
+        return RuntimeHelper.requireNonNull(constants$838.const$4,"g_credentials_set_unix_user");
     }
     /**
      * {@snippet :
@@ -10940,7 +11004,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_datagram_based_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$838.const$4,"g_datagram_based_get_type");
+        return RuntimeHelper.requireNonNull(constants$841.const$4,"g_datagram_based_get_type");
     }
     /**
      * {@snippet :
@@ -10956,7 +11020,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_datagram_based_receive_messages$MH() {
-        return RuntimeHelper.requireNonNull(constants$838.const$5,"g_datagram_based_receive_messages");
+        return RuntimeHelper.requireNonNull(constants$841.const$5,"g_datagram_based_receive_messages");
     }
     /**
      * {@snippet :
@@ -10972,7 +11036,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_datagram_based_send_messages$MH() {
-        return RuntimeHelper.requireNonNull(constants$839.const$0,"g_datagram_based_send_messages");
+        return RuntimeHelper.requireNonNull(constants$842.const$0,"g_datagram_based_send_messages");
     }
     /**
      * {@snippet :
@@ -10988,7 +11052,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_datagram_based_create_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$839.const$1,"g_datagram_based_create_source");
+        return RuntimeHelper.requireNonNull(constants$842.const$1,"g_datagram_based_create_source");
     }
     /**
      * {@snippet :
@@ -11004,7 +11068,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_datagram_based_condition_check$MH() {
-        return RuntimeHelper.requireNonNull(constants$839.const$2,"g_datagram_based_condition_check");
+        return RuntimeHelper.requireNonNull(constants$842.const$2,"g_datagram_based_condition_check");
     }
     /**
      * {@snippet :
@@ -11020,7 +11084,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_datagram_based_condition_wait$MH() {
-        return RuntimeHelper.requireNonNull(constants$839.const$3,"g_datagram_based_condition_wait");
+        return RuntimeHelper.requireNonNull(constants$842.const$3,"g_datagram_based_condition_wait");
     }
     /**
      * {@snippet :
@@ -11036,7 +11100,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$841.const$5,"g_data_input_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$844.const$5,"g_data_input_stream_get_type");
     }
     /**
      * {@snippet :
@@ -11052,7 +11116,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.const$0,"g_data_input_stream_new");
+        return RuntimeHelper.requireNonNull(constants$845.const$0,"g_data_input_stream_new");
     }
     /**
      * {@snippet :
@@ -11068,7 +11132,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_set_byte_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.const$1,"g_data_input_stream_set_byte_order");
+        return RuntimeHelper.requireNonNull(constants$845.const$1,"g_data_input_stream_set_byte_order");
     }
     /**
      * {@snippet :
@@ -11084,7 +11148,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_get_byte_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.const$2,"g_data_input_stream_get_byte_order");
+        return RuntimeHelper.requireNonNull(constants$845.const$2,"g_data_input_stream_get_byte_order");
     }
     /**
      * {@snippet :
@@ -11100,7 +11164,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_set_newline_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.const$3,"g_data_input_stream_set_newline_type");
+        return RuntimeHelper.requireNonNull(constants$845.const$3,"g_data_input_stream_set_newline_type");
     }
     /**
      * {@snippet :
@@ -11116,7 +11180,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_get_newline_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.const$4,"g_data_input_stream_get_newline_type");
+        return RuntimeHelper.requireNonNull(constants$845.const$4,"g_data_input_stream_get_newline_type");
     }
     /**
      * {@snippet :
@@ -11132,7 +11196,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_byte$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.const$6,"g_data_input_stream_read_byte");
+        return RuntimeHelper.requireNonNull(constants$845.const$6,"g_data_input_stream_read_byte");
     }
     /**
      * {@snippet :
@@ -11148,7 +11212,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_int16$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.const$1,"g_data_input_stream_read_int16");
+        return RuntimeHelper.requireNonNull(constants$846.const$1,"g_data_input_stream_read_int16");
     }
     /**
      * {@snippet :
@@ -11164,7 +11228,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_uint16$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.const$2,"g_data_input_stream_read_uint16");
+        return RuntimeHelper.requireNonNull(constants$846.const$2,"g_data_input_stream_read_uint16");
     }
     /**
      * {@snippet :
@@ -11180,7 +11244,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_int32$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.const$3,"g_data_input_stream_read_int32");
+        return RuntimeHelper.requireNonNull(constants$846.const$3,"g_data_input_stream_read_int32");
     }
     /**
      * {@snippet :
@@ -11196,7 +11260,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_uint32$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.const$4,"g_data_input_stream_read_uint32");
+        return RuntimeHelper.requireNonNull(constants$846.const$4,"g_data_input_stream_read_uint32");
     }
     /**
      * {@snippet :
@@ -11212,7 +11276,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_int64$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.const$5,"g_data_input_stream_read_int64");
+        return RuntimeHelper.requireNonNull(constants$846.const$5,"g_data_input_stream_read_int64");
     }
     /**
      * {@snippet :
@@ -11228,7 +11292,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_uint64$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.const$0,"g_data_input_stream_read_uint64");
+        return RuntimeHelper.requireNonNull(constants$847.const$0,"g_data_input_stream_read_uint64");
     }
     /**
      * {@snippet :
@@ -11244,7 +11308,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.const$1,"g_data_input_stream_read_line");
+        return RuntimeHelper.requireNonNull(constants$847.const$1,"g_data_input_stream_read_line");
     }
     /**
      * {@snippet :
@@ -11260,7 +11324,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_line_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.const$2,"g_data_input_stream_read_line_utf8");
+        return RuntimeHelper.requireNonNull(constants$847.const$2,"g_data_input_stream_read_line_utf8");
     }
     /**
      * {@snippet :
@@ -11276,7 +11340,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_line_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.const$4,"g_data_input_stream_read_line_async");
+        return RuntimeHelper.requireNonNull(constants$847.const$4,"g_data_input_stream_read_line_async");
     }
     /**
      * {@snippet :
@@ -11292,7 +11356,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_line_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.const$5,"g_data_input_stream_read_line_finish");
+        return RuntimeHelper.requireNonNull(constants$847.const$5,"g_data_input_stream_read_line_finish");
     }
     /**
      * {@snippet :
@@ -11308,7 +11372,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_line_finish_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.const$0,"g_data_input_stream_read_line_finish_utf8");
+        return RuntimeHelper.requireNonNull(constants$848.const$0,"g_data_input_stream_read_line_finish_utf8");
     }
     /**
      * {@snippet :
@@ -11324,7 +11388,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_until$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.const$1,"g_data_input_stream_read_until");
+        return RuntimeHelper.requireNonNull(constants$848.const$1,"g_data_input_stream_read_until");
     }
     /**
      * {@snippet :
@@ -11340,7 +11404,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_until_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.const$3,"g_data_input_stream_read_until_async");
+        return RuntimeHelper.requireNonNull(constants$848.const$3,"g_data_input_stream_read_until_async");
     }
     /**
      * {@snippet :
@@ -11356,7 +11420,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_until_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.const$4,"g_data_input_stream_read_until_finish");
+        return RuntimeHelper.requireNonNull(constants$848.const$4,"g_data_input_stream_read_until_finish");
     }
     /**
      * {@snippet :
@@ -11372,7 +11436,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_upto$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.const$6,"g_data_input_stream_read_upto");
+        return RuntimeHelper.requireNonNull(constants$848.const$6,"g_data_input_stream_read_upto");
     }
     /**
      * {@snippet :
@@ -11388,7 +11452,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_upto_async$MH() {
-        return RuntimeHelper.requireNonNull(constants$846.const$1,"g_data_input_stream_read_upto_async");
+        return RuntimeHelper.requireNonNull(constants$849.const$1,"g_data_input_stream_read_upto_async");
     }
     /**
      * {@snippet :
@@ -11404,7 +11468,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_input_stream_read_upto_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$846.const$2,"g_data_input_stream_read_upto_finish");
+        return RuntimeHelper.requireNonNull(constants$849.const$2,"g_data_input_stream_read_upto_finish");
     }
     /**
      * {@snippet :
@@ -11420,7 +11484,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_output_stream_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$848.const$4,"g_data_output_stream_get_type");
+        return RuntimeHelper.requireNonNull(constants$851.const$4,"g_data_output_stream_get_type");
     }
     /**
      * {@snippet :
@@ -11436,7 +11500,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_output_stream_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$848.const$5,"g_data_output_stream_new");
+        return RuntimeHelper.requireNonNull(constants$851.const$5,"g_data_output_stream_new");
     }
     /**
      * {@snippet :
@@ -11452,7 +11516,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_output_stream_set_byte_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$849.const$0,"g_data_output_stream_set_byte_order");
+        return RuntimeHelper.requireNonNull(constants$852.const$0,"g_data_output_stream_set_byte_order");
     }
     /**
      * {@snippet :
@@ -11468,7 +11532,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_output_stream_get_byte_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$849.const$1,"g_data_output_stream_get_byte_order");
+        return RuntimeHelper.requireNonNull(constants$852.const$1,"g_data_output_stream_get_byte_order");
     }
     /**
      * {@snippet :
@@ -11484,7 +11548,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_output_stream_put_byte$MH() {
-        return RuntimeHelper.requireNonNull(constants$849.const$3,"g_data_output_stream_put_byte");
+        return RuntimeHelper.requireNonNull(constants$852.const$3,"g_data_output_stream_put_byte");
     }
     /**
      * {@snippet :
@@ -11500,7 +11564,7 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         }
     }
     public static MethodHandle g_data_output_stream_put_int16$MH() {
-        return RuntimeHelper.requireNonNull(constants$849.const$5,"g_data_output_stream_put_int16");
+        return RuntimeHelper.requireNonNull(constants$852.const$5,"g_data_output_stream_put_int16");
     }
     /**
      * {@snippet :
@@ -11511,118 +11575,6 @@ public class app_indicator_h_7 extends app_indicator_h_6 {
         var mh$ = g_data_output_stream_put_int16$MH();
         try {
             return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_uint16$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.const$0,"g_data_output_stream_put_uint16");
-    }
-    /**
-     * {@snippet :
-     * int g_data_output_stream_put_uint16(struct _GDataOutputStream* stream, unsigned short data, struct _GCancellable* cancellable, struct _GError** error);
-     * }
-     */
-    public static int g_data_output_stream_put_uint16(MemorySegment stream, short data, MemorySegment cancellable, MemorySegment error) {
-        var mh$ = g_data_output_stream_put_uint16$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_int32$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.const$1,"g_data_output_stream_put_int32");
-    }
-    /**
-     * {@snippet :
-     * int g_data_output_stream_put_int32(struct _GDataOutputStream* stream, int data, struct _GCancellable* cancellable, struct _GError** error);
-     * }
-     */
-    public static int g_data_output_stream_put_int32(MemorySegment stream, int data, MemorySegment cancellable, MemorySegment error) {
-        var mh$ = g_data_output_stream_put_int32$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_uint32$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.const$2,"g_data_output_stream_put_uint32");
-    }
-    /**
-     * {@snippet :
-     * int g_data_output_stream_put_uint32(struct _GDataOutputStream* stream, unsigned int data, struct _GCancellable* cancellable, struct _GError** error);
-     * }
-     */
-    public static int g_data_output_stream_put_uint32(MemorySegment stream, int data, MemorySegment cancellable, MemorySegment error) {
-        var mh$ = g_data_output_stream_put_uint32$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_int64$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.const$3,"g_data_output_stream_put_int64");
-    }
-    /**
-     * {@snippet :
-     * int g_data_output_stream_put_int64(struct _GDataOutputStream* stream, long data, struct _GCancellable* cancellable, struct _GError** error);
-     * }
-     */
-    public static int g_data_output_stream_put_int64(MemorySegment stream, long data, MemorySegment cancellable, MemorySegment error) {
-        var mh$ = g_data_output_stream_put_int64$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_uint64$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.const$4,"g_data_output_stream_put_uint64");
-    }
-    /**
-     * {@snippet :
-     * int g_data_output_stream_put_uint64(struct _GDataOutputStream* stream, unsigned long data, struct _GCancellable* cancellable, struct _GError** error);
-     * }
-     */
-    public static int g_data_output_stream_put_uint64(MemorySegment stream, long data, MemorySegment cancellable, MemorySegment error) {
-        var mh$ = g_data_output_stream_put_uint64$MH();
-        try {
-            return (int)mh$.invokeExact(stream, data, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_data_output_stream_put_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.const$5,"g_data_output_stream_put_string");
-    }
-    /**
-     * {@snippet :
-     * int g_data_output_stream_put_string(struct _GDataOutputStream* stream, char* str, struct _GCancellable* cancellable, struct _GError** error);
-     * }
-     */
-    public static int g_data_output_stream_put_string(MemorySegment stream, MemorySegment str, MemorySegment cancellable, MemorySegment error) {
-        var mh$ = g_data_output_stream_put_string$MH();
-        try {
-            return (int)mh$.invokeExact(stream, str, cancellable, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_dbus_action_group_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$851.const$0,"g_dbus_action_group_get_type");
-    }
-    /**
-     * {@snippet :
-     * unsigned long g_dbus_action_group_get_type();
-     * }
-     */
-    public static long g_dbus_action_group_get_type() {
-        var mh$ = g_dbus_action_group_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

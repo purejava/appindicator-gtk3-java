@@ -2,27 +2,26 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3197 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3197() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_set_mode",
-        constants$40.const$2
+    static final VarHandle const$0 = constants$3196.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTreeModelSortClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$3196.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_model_sort_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_get_mode",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_tree_selection_set_select_function$func.class, "apply", constants$328.const$5);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_tree_selection_set_select_function$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_set_select_function",
-        constants$42.const$1
+        "gtk_tree_model_sort_new_with_model",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_get_user_data",
+        "gtk_tree_model_sort_get_model",
         constants$5.const$2
     );
 }

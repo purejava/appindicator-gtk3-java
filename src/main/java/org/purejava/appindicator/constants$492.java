@@ -8,26 +8,29 @@ final class constants$492 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$492() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_list_pop_allocator",
-        constants$7.const$5
+        "g_mem_chunk_alloc0",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_slist_push_allocator",
-        constants$13.const$1
+        "g_mem_chunk_free",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_slist_pop_allocator",
-        constants$7.const$5
+        "g_mem_chunk_clean",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_node_push_allocator",
+        "g_mem_chunk_reset",
         constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_node_pop_allocator",
+        "g_mem_chunk_print",
+        constants$13.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_info",
         constants$7.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GCacheNewFunc.class, "apply", constants$5.const$2);
 }
 
 

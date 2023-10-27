@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _AtkStateSet {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2061.const$4;
+        return constants$2066.const$5;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);

@@ -8,27 +8,27 @@ final class constants$1114 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1114() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_type_get_type",
+        "g_file_monitor_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_bus_type_get_type",
+        "g_file_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_bus_name_owner_flags_get_type",
+        "g_filesystem_preview_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_bus_name_watcher_flags_get_type",
+        "g_file_monitor_event_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_flags_get_type",
+        "g_io_error_enum_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_get_type",
+        "g_ask_password_flags_get_type",
         constants$3.const$5
     );
 }

@@ -8,22 +8,25 @@ final class constants$500 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$500() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_relation_destroy",
+        "g_completion_remove_items",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_completion_clear_items",
         constants$13.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_relation_index$hash_func.class, "apply", constants$10.const$5);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_relation_index$key_equal_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_completion_complete",
+        constants$23.const$0
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_relation_index",
-        constants$179.const$1
+        "g_completion_complete_utf8",
+        constants$23.const$0
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "g_relation_insert",
-        constants$13.const$1
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_completion_set_compare$strncmp_func.class, "apply", constants$18.const$2);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_relation_delete",
-        constants$62.const$0
+        "g_completion_set_compare",
+        constants$13.const$4
     );
 }
 

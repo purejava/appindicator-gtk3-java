@@ -3,7 +3,7 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
@@ -11,36 +11,26 @@ final class constants$1663 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1663() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "vsprintf",
-        constants$1662.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "snprintf",
-        constants$62.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "vsnprintf",
-        constants$62.const$4
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("__stack"),
-            RuntimeHelper.POINTER.withName("__gr_top"),
-            RuntimeHelper.POINTER.withName("__vr_top"),
-            JAVA_INT.withName("__gr_offs"),
-            JAVA_INT.withName("__vr_offs")
-        ).withName("__va_list")
+    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("stdin", RuntimeHelper.POINTER);
+    static final MemorySegment const$1 = RuntimeHelper.lookupGlobalVariable("stdout", RuntimeHelper.POINTER);
+    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("stderr", RuntimeHelper.POINTER);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "remove",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "vdprintf",
-        constants$1663.const$3
+        "rename",
+        constants$9.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
-        "dprintf",
-        constants$9.const$2
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "renameat",
+        constants$1663.const$5
     );
 }
 

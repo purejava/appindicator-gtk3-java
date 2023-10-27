@@ -13,7 +13,7 @@ public interface GtkModuleDisplayInitFunc {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(GtkModuleDisplayInitFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2900.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2905.const$2, fi, constants$13.const$1, scope);
     }
     static GtkModuleDisplayInitFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

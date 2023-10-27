@@ -13,7 +13,7 @@ public interface gtk_flow_box_set_sort_func$sort_func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_flow_box_set_sort_func$sort_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2716.const$4, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2721.const$4, fi, constants$12.const$2, scope);
     }
     static gtk_flow_box_set_sort_func$sort_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

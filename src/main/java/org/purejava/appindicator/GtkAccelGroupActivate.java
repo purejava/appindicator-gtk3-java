@@ -13,13 +13,13 @@ public interface GtkAccelGroupActivate {
 
     int apply(java.lang.foreign.MemorySegment accel_group, java.lang.foreign.MemorySegment acceleratable, int keyval, int modifier);
     static MemorySegment allocate(GtkAccelGroupActivate fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1949.const$5, fi, constants$414.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$1954.const$5, fi, constants$415.const$4, scope);
     }
     static GtkAccelGroupActivate ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _accel_group, java.lang.foreign.MemorySegment _acceleratable, int _keyval, int _modifier) -> {
             try {
-                return (int)constants$1950.const$0.invokeExact(symbol, _accel_group, _acceleratable, _keyval, _modifier);
+                return (int)constants$1955.const$0.invokeExact(symbol, _accel_group, _acceleratable, _keyval, _modifier);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

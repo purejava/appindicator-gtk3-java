@@ -2,46 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2954 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2954() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_DOUBLE,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_height",
+        constants$67.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_double_with_default",
-        constants$2954.const$0
+        "gtk_print_context_get_dpi_x",
+        constants$67.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_double",
-        constants$2837.const$1
+        "gtk_print_context_get_dpi_y",
+        constants$67.const$0
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_DOUBLE,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_print_context_get_hard_margins",
+        constants$165.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_length",
-        constants$2954.const$3
+        "gtk_print_context_get_pango_fontmap",
+        constants$5.const$2
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_INT
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_length",
-        constants$2954.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_print_context_create_pango_context",
+        constants$5.const$2
     );
 }
 

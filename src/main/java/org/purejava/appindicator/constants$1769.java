@@ -2,37 +2,53 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1769 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1769() {}
-    static final VarHandle const$0 = constants$1768.const$5.varHandle(MemoryLayout.PathElement.groupElement("type"));
-    static final VarHandle const$1 = constants$1768.const$5.varHandle(MemoryLayout.PathElement.groupElement("window"));
-    static final VarHandle const$2 = constants$1768.const$5.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
-    static final VarHandle const$3 = constants$1768.const$5.varHandle(MemoryLayout.PathElement.groupElement("state"));
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        JAVA_INT.withName("type"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("window"),
-        JAVA_BYTE.withName("send_event"),
-        MemoryLayout.paddingLayout(3),
-        JAVA_INT.withName("time"),
-        JAVA_DOUBLE.withName("x"),
-        JAVA_DOUBLE.withName("y"),
-        RuntimeHelper.POINTER.withName("axes"),
-        JAVA_INT.withName("state"),
-        JAVA_SHORT.withName("is_hint"),
-        MemoryLayout.paddingLayout(2),
-        RuntimeHelper.POINTER.withName("device"),
-        JAVA_DOUBLE.withName("x_root"),
-        JAVA_DOUBLE.withName("y_root")
-    ).withName("_GdkEventMotion");
-    static final VarHandle const$5 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_drag_begin",
+        constants$5.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_drag_begin_for_device",
+        constants$23.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_drag_begin_from_point",
+        constants$669.const$3
+    );
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_drag_find_window_for_screen",
+        constants$1769.const$3
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "gdk_drag_motion",
+        constants$1769.const$5
+    );
 }
 
 

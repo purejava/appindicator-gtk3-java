@@ -2,23 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1518 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1518() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_message_func",
-        constants$42.const$1
+        "hb_buffer_reverse_clusters",
+        constants$13.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_glyph_func_t.class, "apply", constants$1029.const$4);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_func$func.class, "apply", constants$1029.const$4);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_buffer_add",
+        constants$469.const$2
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_utf8",
+        constants$1518.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_glyph_func",
-        constants$42.const$1
+        "hb_buffer_add_utf16",
+        constants$1518.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_unicode_eastasian_width_func_t.class, "apply", constants$150.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_utf32",
+        constants$1518.const$2
+    );
 }
 
 

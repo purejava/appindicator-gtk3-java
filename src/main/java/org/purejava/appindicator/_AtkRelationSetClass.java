@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkRelationSetClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2053.const$3;
+        return constants$2058.const$4;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -33,7 +33,7 @@ public class _AtkRelationSetClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(pad1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2053.const$4, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2058.const$5, fi, constants$10.const$5, scope);
         }
         static pad1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -48,7 +48,7 @@ public class _AtkRelationSetClass {
     }
 
     public static VarHandle pad1$VH() {
-        return constants$2053.const$5;
+        return constants$2059.const$0;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _AtkRelationSetClass {
      * }
      */
     public static MemorySegment pad1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2053.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2059.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _AtkRelationSetClass {
      * }
      */
     public static void pad1$set(MemorySegment seg, MemorySegment x) {
-        constants$2053.const$5.set(seg, x);
+        constants$2059.const$0.set(seg, x);
     }
     public static MemorySegment pad1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2053.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2059.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void pad1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2053.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2059.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static pad1 pad1(MemorySegment segment, Arena scope) {
         return pad1.ofAddress(pad1$get(segment), scope);
@@ -86,7 +86,7 @@ public class _AtkRelationSetClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(pad2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2054.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2059.const$1, fi, constants$10.const$5, scope);
         }
         static pad2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -101,7 +101,7 @@ public class _AtkRelationSetClass {
     }
 
     public static VarHandle pad2$VH() {
-        return constants$2054.const$1;
+        return constants$2059.const$2;
     }
     /**
      * Getter for field:
@@ -110,7 +110,7 @@ public class _AtkRelationSetClass {
      * }
      */
     public static MemorySegment pad2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2054.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2059.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -119,13 +119,13 @@ public class _AtkRelationSetClass {
      * }
      */
     public static void pad2$set(MemorySegment seg, MemorySegment x) {
-        constants$2054.const$1.set(seg, x);
+        constants$2059.const$2.set(seg, x);
     }
     public static MemorySegment pad2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2054.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2059.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void pad2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2054.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2059.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static pad2 pad2(MemorySegment segment, Arena scope) {
         return pad2.ofAddress(pad2$get(segment), scope);

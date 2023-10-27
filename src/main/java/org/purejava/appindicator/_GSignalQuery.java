@@ -23,10 +23,10 @@ import java.lang.invoke.VarHandle;
 public class _GSignalQuery {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$601.const$0;
+        return constants$603.const$3;
     }
     public static VarHandle signal_id$VH() {
-        return constants$601.const$1;
+        return constants$603.const$4;
     }
     /**
      * Getter for field:
@@ -35,7 +35,7 @@ public class _GSignalQuery {
      * }
      */
     public static int signal_id$get(MemorySegment seg) {
-        return (int)constants$601.const$1.get(seg);
+        return (int)constants$603.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -44,16 +44,16 @@ public class _GSignalQuery {
      * }
      */
     public static void signal_id$set(MemorySegment seg, int x) {
-        constants$601.const$1.set(seg, x);
+        constants$603.const$4.set(seg, x);
     }
     public static int signal_id$get(MemorySegment seg, long index) {
-        return (int)constants$601.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$603.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void signal_id$set(MemorySegment seg, long index, int x) {
-        constants$601.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$603.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle signal_name$VH() {
-        return constants$601.const$2;
+        return constants$603.const$5;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _GSignalQuery {
      * }
      */
     public static MemorySegment signal_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$601.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$603.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -71,16 +71,16 @@ public class _GSignalQuery {
      * }
      */
     public static void signal_name$set(MemorySegment seg, MemorySegment x) {
-        constants$601.const$2.set(seg, x);
+        constants$603.const$5.set(seg, x);
     }
     public static MemorySegment signal_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$601.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$603.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void signal_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$601.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$603.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle itype$VH() {
-        return constants$601.const$3;
+        return constants$604.const$0;
     }
     /**
      * Getter for field:
@@ -89,7 +89,7 @@ public class _GSignalQuery {
      * }
      */
     public static long itype$get(MemorySegment seg) {
-        return (long)constants$601.const$3.get(seg);
+        return (long)constants$604.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -98,16 +98,16 @@ public class _GSignalQuery {
      * }
      */
     public static void itype$set(MemorySegment seg, long x) {
-        constants$601.const$3.set(seg, x);
+        constants$604.const$0.set(seg, x);
     }
     public static long itype$get(MemorySegment seg, long index) {
-        return (long)constants$601.const$3.get(seg.asSlice(index*sizeof()));
+        return (long)constants$604.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void itype$set(MemorySegment seg, long index, long x) {
-        constants$601.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$604.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle signal_flags$VH() {
-        return constants$601.const$4;
+        return constants$604.const$1;
     }
     /**
      * Getter for field:
@@ -116,7 +116,7 @@ public class _GSignalQuery {
      * }
      */
     public static int signal_flags$get(MemorySegment seg) {
-        return (int)constants$601.const$4.get(seg);
+        return (int)constants$604.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -125,16 +125,16 @@ public class _GSignalQuery {
      * }
      */
     public static void signal_flags$set(MemorySegment seg, int x) {
-        constants$601.const$4.set(seg, x);
+        constants$604.const$1.set(seg, x);
     }
     public static int signal_flags$get(MemorySegment seg, long index) {
-        return (int)constants$601.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$604.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void signal_flags$set(MemorySegment seg, long index, int x) {
-        constants$601.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$604.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle return_type$VH() {
-        return constants$601.const$5;
+        return constants$604.const$2;
     }
     /**
      * Getter for field:
@@ -143,7 +143,7 @@ public class _GSignalQuery {
      * }
      */
     public static long return_type$get(MemorySegment seg) {
-        return (long)constants$601.const$5.get(seg);
+        return (long)constants$604.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -152,16 +152,16 @@ public class _GSignalQuery {
      * }
      */
     public static void return_type$set(MemorySegment seg, long x) {
-        constants$601.const$5.set(seg, x);
+        constants$604.const$2.set(seg, x);
     }
     public static long return_type$get(MemorySegment seg, long index) {
-        return (long)constants$601.const$5.get(seg.asSlice(index*sizeof()));
+        return (long)constants$604.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void return_type$set(MemorySegment seg, long index, long x) {
-        constants$601.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$604.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle n_params$VH() {
-        return constants$602.const$0;
+        return constants$604.const$3;
     }
     /**
      * Getter for field:
@@ -170,7 +170,7 @@ public class _GSignalQuery {
      * }
      */
     public static int n_params$get(MemorySegment seg) {
-        return (int)constants$602.const$0.get(seg);
+        return (int)constants$604.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -179,16 +179,16 @@ public class _GSignalQuery {
      * }
      */
     public static void n_params$set(MemorySegment seg, int x) {
-        constants$602.const$0.set(seg, x);
+        constants$604.const$3.set(seg, x);
     }
     public static int n_params$get(MemorySegment seg, long index) {
-        return (int)constants$602.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$604.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void n_params$set(MemorySegment seg, long index, int x) {
-        constants$602.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$604.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle param_types$VH() {
-        return constants$602.const$1;
+        return constants$604.const$4;
     }
     /**
      * Getter for field:
@@ -197,7 +197,7 @@ public class _GSignalQuery {
      * }
      */
     public static MemorySegment param_types$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$602.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$604.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -206,13 +206,13 @@ public class _GSignalQuery {
      * }
      */
     public static void param_types$set(MemorySegment seg, MemorySegment x) {
-        constants$602.const$1.set(seg, x);
+        constants$604.const$4.set(seg, x);
     }
     public static MemorySegment param_types$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$602.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$604.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void param_types$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$602.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$604.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

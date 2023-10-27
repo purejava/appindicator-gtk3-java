@@ -2,31 +2,62 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3057 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3057() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkScrollableInterface.get_border.class, "apply", constants$9.const$0);
-    static final VarHandle const$1 = constants$3056.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_border"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_type",
-        constants$3.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_scale_get_layout",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_scale_get_layout_offsets",
+        constants$14.const$3
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_hadjustment",
-        constants$5.const$2
+        "gtk_scale_add_mark",
+        constants$3057.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_set_hadjustment",
-        constants$13.const$4
+        "gtk_scale_clear_marks",
+        constants$13.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_vadjustment",
-        constants$5.const$2
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        MemoryLayout.structLayout(
+                            MemoryLayout.structLayout(
+                                RuntimeHelper.POINTER.withName("g_class")
+                            ).withName("g_type_instance"),
+                            JAVA_INT.withName("ref_count"),
+                            MemoryLayout.paddingLayout(4),
+                            RuntimeHelper.POINTER.withName("qdata")
+                        ).withName("parent_instance"),
+                        RuntimeHelper.POINTER.withName("priv")
+                    ).withName("widget"),
+                    RuntimeHelper.POINTER.withName("priv")
+                ).withName("container"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("bin"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkScaleButton");
 }
 
 

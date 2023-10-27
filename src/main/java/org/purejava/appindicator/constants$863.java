@@ -3,8 +3,6 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
@@ -12,30 +10,46 @@ final class constants$863 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$863() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GDBusInterfaceGetPropertyFunc.class, "apply", constants$494.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$494.const$3
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_send_message_with_reply_finish",
+        constants$23.const$0
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GDBusInterfaceSetPropertyFunc.class, "apply", constants$863.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$863.const$2
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_send_message_with_reply_sync",
+        constants$863.const$1
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("method_call"),
-        RuntimeHelper.POINTER.withName("get_property"),
-        RuntimeHelper.POINTER.withName("set_property"),
-        MemoryLayout.sequenceLayout(8, RuntimeHelper.POINTER).withName("padding")
-    ).withName("_GDBusInterfaceVTable");
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_emit_signal",
+        constants$164.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_dbus_connection_call$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_call",
+        constants$863.const$5
+    );
 }
 
 

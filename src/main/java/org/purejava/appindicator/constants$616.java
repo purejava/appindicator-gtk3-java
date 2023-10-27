@@ -8,27 +8,27 @@ final class constants$616 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$616() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_type",
+        "g_date_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_io_condition_get_type",
+        "g_strv_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_builder_get_type",
+        "g_gstring_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_dict_get_type",
+        "g_hash_table_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_key_file_get_type",
+        "g_array_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_main_loop_get_type",
+        "g_byte_array_get_type",
         constants$3.const$5
     );
 }

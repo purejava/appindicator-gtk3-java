@@ -3,18 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$876 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$876() {}
-    static final VarHandle const$0 = constants$875.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_info"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusInterfaceSkeletonClass.get_vtable.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$875.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_vtable"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDBusInterfaceSkeletonClass.get_properties.class, "apply", constants$5.const$2);
-    static final VarHandle const$4 = constants$875.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_properties"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDBusInterfaceSkeletonClass.flush.class, "apply", constants$13.const$1);
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent_iface"),
+        RuntimeHelper.POINTER.withName("get_info"),
+        RuntimeHelper.POINTER.withName("get_object"),
+        RuntimeHelper.POINTER.withName("set_object"),
+        RuntimeHelper.POINTER.withName("dup_object")
+    ).withName("_GDBusInterfaceIface");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusInterfaceIface.get_info.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$876.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_info"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDBusInterfaceIface.get_object.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$876.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_object"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDBusInterfaceIface.set_object.class, "apply", constants$13.const$4);
 }
 
 

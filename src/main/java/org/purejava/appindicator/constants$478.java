@@ -7,20 +7,29 @@ final class constants$478 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$478() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_tree_foreach$func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tree_insert",
+        constants$14.const$3
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tree_foreach",
+        "g_tree_replace_node",
+        constants$23.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tree_replace",
         constants$14.const$3
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_tree_foreach_node$func.class, "apply", constants$9.const$0);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tree_foreach_node",
-        constants$14.const$3
+        "g_tree_remove",
+        constants$9.const$0
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_tree_traverse$traverse_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tree_remove_all",
+        constants$13.const$1
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tree_traverse",
-        constants$464.const$4
+        "g_tree_steal",
+        constants$9.const$0
     );
 }
 

@@ -2,34 +2,59 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1897 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1897() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_add_frame",
-        constants$13.const$4
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_set_loop",
-        constants$40.const$2
+        "gdk_pixbuf_composite_color",
+        constants$1897.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_get_loop",
-        constants$10.const$5
+        "gdk_pixbuf_scale_simple",
+        constants$1728.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_init_modules",
-        constants$9.const$0
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_type",
-        constants$3.const$5
+        "gdk_pixbuf_composite_color_simple",
+        constants$1897.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_formats",
-        constants$35.const$2
+        "gdk_pixbuf_rotate_simple",
+        constants$21.const$3
     );
 }
 

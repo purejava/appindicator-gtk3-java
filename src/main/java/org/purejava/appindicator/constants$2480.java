@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2480 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2480() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_expander_column",
+        "gtk_tree_view_new",
+        constants$35.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_new_with_model",
         constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_tree_view_set_column_drag_function$func.class, "apply", constants$165.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_tree_view_set_column_drag_function$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_model",
+        constants$5.const$2
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_column_drag_function",
-        constants$42.const$1
+        "gtk_tree_view_set_model",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_scroll_to_point",
-        constants$467.const$3
+        "gtk_tree_view_get_selection",
+        constants$5.const$2
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_FLOAT,
-        JAVA_FLOAT
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_scroll_to_cell",
-        constants$2480.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_hadjustment",
+        constants$5.const$2
     );
 }
 

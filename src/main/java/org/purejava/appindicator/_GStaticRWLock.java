@@ -23,13 +23,13 @@ import java.lang.invoke.VarHandle;
 public class _GStaticRWLock {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$539.const$4;
+        return constants$541.const$1;
     }
     public static MemorySegment mutex$slice(MemorySegment seg) {
         return seg.asSlice(0, 56);
     }
     public static VarHandle read_cond$VH() {
-        return constants$539.const$5;
+        return constants$541.const$2;
     }
     /**
      * Getter for field:
@@ -38,7 +38,7 @@ public class _GStaticRWLock {
      * }
      */
     public static MemorySegment read_cond$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$539.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$541.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -47,16 +47,16 @@ public class _GStaticRWLock {
      * }
      */
     public static void read_cond$set(MemorySegment seg, MemorySegment x) {
-        constants$539.const$5.set(seg, x);
+        constants$541.const$2.set(seg, x);
     }
     public static MemorySegment read_cond$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$539.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$541.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void read_cond$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$539.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$541.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle write_cond$VH() {
-        return constants$540.const$0;
+        return constants$541.const$3;
     }
     /**
      * Getter for field:
@@ -65,7 +65,7 @@ public class _GStaticRWLock {
      * }
      */
     public static MemorySegment write_cond$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$540.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$541.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -74,16 +74,16 @@ public class _GStaticRWLock {
      * }
      */
     public static void write_cond$set(MemorySegment seg, MemorySegment x) {
-        constants$540.const$0.set(seg, x);
+        constants$541.const$3.set(seg, x);
     }
     public static MemorySegment write_cond$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$540.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$541.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void write_cond$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$540.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$541.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle read_counter$VH() {
-        return constants$540.const$1;
+        return constants$541.const$4;
     }
     /**
      * Getter for field:
@@ -92,7 +92,7 @@ public class _GStaticRWLock {
      * }
      */
     public static int read_counter$get(MemorySegment seg) {
-        return (int)constants$540.const$1.get(seg);
+        return (int)constants$541.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -101,16 +101,16 @@ public class _GStaticRWLock {
      * }
      */
     public static void read_counter$set(MemorySegment seg, int x) {
-        constants$540.const$1.set(seg, x);
+        constants$541.const$4.set(seg, x);
     }
     public static int read_counter$get(MemorySegment seg, long index) {
-        return (int)constants$540.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$541.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void read_counter$set(MemorySegment seg, long index, int x) {
-        constants$540.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$541.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle have_writer$VH() {
-        return constants$540.const$2;
+        return constants$541.const$5;
     }
     /**
      * Getter for field:
@@ -119,7 +119,7 @@ public class _GStaticRWLock {
      * }
      */
     public static int have_writer$get(MemorySegment seg) {
-        return (int)constants$540.const$2.get(seg);
+        return (int)constants$541.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -128,16 +128,16 @@ public class _GStaticRWLock {
      * }
      */
     public static void have_writer$set(MemorySegment seg, int x) {
-        constants$540.const$2.set(seg, x);
+        constants$541.const$5.set(seg, x);
     }
     public static int have_writer$get(MemorySegment seg, long index) {
-        return (int)constants$540.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$541.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void have_writer$set(MemorySegment seg, long index, int x) {
-        constants$540.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$541.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle want_to_read$VH() {
-        return constants$540.const$3;
+        return constants$542.const$0;
     }
     /**
      * Getter for field:
@@ -146,7 +146,7 @@ public class _GStaticRWLock {
      * }
      */
     public static int want_to_read$get(MemorySegment seg) {
-        return (int)constants$540.const$3.get(seg);
+        return (int)constants$542.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -155,16 +155,16 @@ public class _GStaticRWLock {
      * }
      */
     public static void want_to_read$set(MemorySegment seg, int x) {
-        constants$540.const$3.set(seg, x);
+        constants$542.const$0.set(seg, x);
     }
     public static int want_to_read$get(MemorySegment seg, long index) {
-        return (int)constants$540.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$542.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void want_to_read$set(MemorySegment seg, long index, int x) {
-        constants$540.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$542.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle want_to_write$VH() {
-        return constants$540.const$4;
+        return constants$542.const$1;
     }
     /**
      * Getter for field:
@@ -173,7 +173,7 @@ public class _GStaticRWLock {
      * }
      */
     public static int want_to_write$get(MemorySegment seg) {
-        return (int)constants$540.const$4.get(seg);
+        return (int)constants$542.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -182,13 +182,13 @@ public class _GStaticRWLock {
      * }
      */
     public static void want_to_write$set(MemorySegment seg, int x) {
-        constants$540.const$4.set(seg, x);
+        constants$542.const$1.set(seg, x);
     }
     public static int want_to_write$get(MemorySegment seg, long index) {
-        return (int)constants$540.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$542.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void want_to_write$set(MemorySegment seg, long index, int x) {
-        constants$540.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$542.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

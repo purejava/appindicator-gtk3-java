@@ -9,15 +9,12 @@ final class constants$723 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$723() {}
-    static final VarHandle const$0 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_supported_types"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GAppInfoIface.launch_uris_async.class, "apply", constants$338.const$3);
-    static final VarHandle const$2 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("launch_uris_async"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GAppInfoIface.launch_uris_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$4 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("launch_uris_finish"));
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_app_info_get_type",
-        constants$3.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GAppInfoIface.add_supports_type.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$718.const$1.varHandle(MemoryLayout.PathElement.groupElement("add_supports_type"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GAppInfoIface.can_remove_supports_type.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$718.const$1.varHandle(MemoryLayout.PathElement.groupElement("can_remove_supports_type"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GAppInfoIface.remove_supports_type.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$718.const$1.varHandle(MemoryLayout.PathElement.groupElement("remove_supports_type"));
 }
 
 

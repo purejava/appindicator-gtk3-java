@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2173 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2173() {}
-    static final VarHandle const$0 = constants$2171.const$4.varHandle(MemoryLayout.PathElement.groupElement("forall"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkContainerClass.set_focus_child.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$2171.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_focus_child"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkContainerClass.child_type.class, "apply", constants$4.const$0);
-    static final VarHandle const$4 = constants$2171.const$4.varHandle(MemoryLayout.PathElement.groupElement("child_type"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkContainerClass.composite_name.class, "apply", constants$5.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_application_new",
+        constants$21.const$3
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_application_add_window",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_application_remove_window",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_application_get_windows",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_application_get_app_menu",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_application_set_app_menu",
+        constants$13.const$4
+    );
 }
 
 

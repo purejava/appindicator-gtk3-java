@@ -9,12 +9,12 @@ final class constants$716 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$716() {}
-    static final VarHandle const$0 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("equal"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_id.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_id"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_name.class, "apply", constants$5.const$2);
-    static final VarHandle const$4 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_name"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_description.class, "apply", constants$5.const$2);
+    static final VarHandle const$0 = constants$715.const$5.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GActionEntry.activate.class, "apply", constants$14.const$3);
+    static final VarHandle const$2 = constants$715.const$5.varHandle(MemoryLayout.PathElement.groupElement("activate"));
+    static final VarHandle const$3 = constants$715.const$5.varHandle(MemoryLayout.PathElement.groupElement("parameter_type"));
+    static final VarHandle const$4 = constants$715.const$5.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GActionEntry.change_state.class, "apply", constants$14.const$3);
 }
 
 

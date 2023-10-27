@@ -2,32 +2,32 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1010 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1010() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_new_for_commandline_arg",
-        constants$5.const$2
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.poll_mountable.class, "apply", constants$42.const$1);
+    static final VarHandle const$1 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("poll_mountable"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.poll_mountable_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("poll_mountable_finish"));
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_new_for_commandline_arg_and_cwd",
-        constants$5.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_new_tmp",
-        constants$23.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_new_tmp_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_new_tmp_async",
-        constants$281.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_new_tmp_finish",
-        constants$23.const$0
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.measure_disk_usage.class, "apply", constants$1010.const$4);
 }
 
 

@@ -8,22 +8,28 @@ final class constants$1908 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1908() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_get_font_options",
-        constants$5.const$2
+        "gdk_pixbuf_loader_new_with_type",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_set_resolution",
-        constants$689.const$5
+        "gdk_pixbuf_loader_new_with_mime_type",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_get_resolution",
-        constants$67.const$0
+        "gdk_pixbuf_loader_set_size",
+        constants$469.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(pango_cairo_context_set_shape_renderer$func.class, "apply", constants$464.const$4);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(pango_cairo_context_set_shape_renderer$dnotify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_write",
+        constants$27.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_write_bytes",
+        constants$12.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_set_shape_renderer",
-        constants$42.const$1
+        "gdk_pixbuf_loader_get_pixbuf",
+        constants$5.const$2
     );
 }
 

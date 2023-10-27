@@ -13,7 +13,7 @@ public interface gdk_pixbuf_new_from_data$destroy_fn {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gdk_pixbuf_new_from_data$destroy_fn fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1884.const$1, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$1889.const$1, fi, constants$13.const$4, scope);
     }
     static gdk_pixbuf_new_from_data$destroy_fn ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

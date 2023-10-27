@@ -13,7 +13,7 @@ public interface gtk_list_box_set_header_func$update_header {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_list_box_set_header_func$update_header fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2852.const$4, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$2857.const$4, fi, constants$14.const$3, scope);
     }
     static gtk_list_box_set_header_func$update_header ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

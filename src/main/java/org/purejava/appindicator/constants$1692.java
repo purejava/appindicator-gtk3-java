@@ -2,10 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1692 {
@@ -13,22 +11,42 @@ final class constants$1692 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1692() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_clip_preserve",
-        constants$13.const$1
+        "cairo_move_to",
+        constants$1536.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_clip_extents",
-        constants$331.const$1
+        "cairo_new_sub_path",
+        constants$13.const$1
     );
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        JAVA_DOUBLE.withName("x"),
-        JAVA_DOUBLE.withName("y"),
-        JAVA_DOUBLE.withName("width"),
-        JAVA_DOUBLE.withName("height")
-    ).withName("_cairo_rectangle");
-    static final VarHandle const$3 = constants$1692.const$2.varHandle(MemoryLayout.PathElement.groupElement("x"));
-    static final VarHandle const$4 = constants$1692.const$2.varHandle(MemoryLayout.PathElement.groupElement("y"));
-    static final VarHandle const$5 = constants$1692.const$2.varHandle(MemoryLayout.PathElement.groupElement("width"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_line_to",
+        constants$1536.const$0
+    );
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_curve_to",
+        constants$1692.const$3
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "cairo_arc",
+        constants$1692.const$5
+    );
 }
 
 

@@ -13,7 +13,7 @@ public interface g_simple_async_result_run_in_thread$func {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_simple_async_result_run_in_thread$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1269.const$5, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1273.const$5, fi, constants$14.const$3, scope);
     }
     static g_simple_async_result_run_in_thread$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,41 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1942 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1942() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_selection_send_notify",
-        constants$646.const$4
+        "gdk_screen_width_mm",
+        constants$83.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_selection_send_notify_for_display",
-        constants$673.const$2
+        "gdk_screen_height_mm",
+        constants$83.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_test_render_sync",
-        constants$13.const$1
+        "gdk_set_double_click_time",
+        constants$80.const$1
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_beep",
+        constants$7.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_test_simulate_key",
-        constants$1942.const$3
+        "gdk_flush",
+        constants$7.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_test_simulate_button",
-        constants$1942.const$3
+        "gdk_disable_multidevice",
+        constants$7.const$5
     );
 }
 

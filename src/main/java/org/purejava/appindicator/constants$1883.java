@@ -2,7 +2,7 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
@@ -11,32 +11,23 @@ final class constants$1883 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1883() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_subpixbuf",
-        constants$1734.const$4
+        "gdk_rgba_hash",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_file",
-        constants$5.const$5
+        "gdk_rgba_equal",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_file_at_size",
-        constants$215.const$2
+        "gdk_rgba_parse",
+        constants$9.const$0
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_rgba_to_string",
+        constants$5.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_file_at_scale",
-        constants$1883.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_resource",
-        constants$5.const$5
-    );
+    static final MemorySegment const$4 = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_major_version", JAVA_INT);
+    static final MemorySegment const$5 = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_minor_version", JAVA_INT);
 }
 
 

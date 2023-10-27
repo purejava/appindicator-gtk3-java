@@ -7,24 +7,12 @@ final class constants$495 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$495() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_cache_insert",
-        constants$5.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_cache_remove",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_cache_key_foreach$func.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_cache_key_foreach",
-        constants$14.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_cache_value_foreach$func.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_cache_value_foreach",
-        constants$14.const$3
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_cache_new$value_new_func.class, "apply", constants$5.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_cache_new$value_destroy_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_cache_new$key_dup_func.class, "apply", constants$5.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_cache_new$key_destroy_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_cache_new$hash_key_func.class, "apply", constants$10.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_cache_new$hash_value_func.class, "apply", constants$10.const$5);
 }
 
 

@@ -8,28 +8,28 @@ final class constants$2636 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2636() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_alpha",
-        constants$189.const$0
+        "gtk_clipboard_wait_for_targets",
+        constants$12.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_alpha",
-        constants$186.const$2
+        "gtk_clipboard_wait_is_text_available",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_use_alpha",
-        constants$40.const$2
+        "gtk_clipboard_wait_is_rich_text_available",
+        constants$9.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_use_alpha",
+        "gtk_clipboard_wait_is_image_available",
         constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_rgba",
-        constants$13.const$4
+        "gtk_clipboard_wait_is_uris_available",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_rgba",
-        constants$13.const$4
+        "gtk_clipboard_wait_is_target_available",
+        constants$9.const$0
     );
 }
 

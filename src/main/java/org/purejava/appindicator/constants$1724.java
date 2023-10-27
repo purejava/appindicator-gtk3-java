@@ -2,35 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1724 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1724() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_surface_unmap_image",
-        constants$13.const$4
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_surface_create_for_rectangle",
-        constants$1724.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_surface_create_observer",
-        constants$21.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(cairo_surface_observer_callback_t.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_paint_callback$func.class, "apply", constants$14.const$3);
+    static final VarHandle const$0 = constants$1723.const$4.varHandle(MemoryLayout.PathElement.groupElement("length"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_DOUBLE.withName("x"),
+        JAVA_DOUBLE.withName("y")
+    ).withName("");
+    static final VarHandle const$2 = constants$1724.const$1.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final VarHandle const$3 = constants$1724.const$1.varHandle(MemoryLayout.PathElement.groupElement("y"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("status"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("data"),
+        JAVA_INT.withName("num_data"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("cairo_path");
+    static final VarHandle const$5 = constants$1724.const$4.varHandle(MemoryLayout.PathElement.groupElement("status"));
 }
 
 

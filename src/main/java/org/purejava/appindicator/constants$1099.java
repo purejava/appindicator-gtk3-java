@@ -2,34 +2,24 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1099 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1099() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_loopback",
-        constants$24.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_any",
-        constants$24.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_inet_address_equal",
-        constants$9.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_inet_address_to_string",
-        constants$5.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1094.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1094.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_inet_address_to_bytes",
-        constants$5.const$2
+        "g_file_output_stream_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_native_size",
-        constants$4.const$0
+        "g_file_output_stream_query_info",
+        constants$39.const$1
     );
 }
 

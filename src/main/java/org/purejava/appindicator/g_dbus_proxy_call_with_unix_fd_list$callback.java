@@ -13,7 +13,7 @@ public interface g_dbus_proxy_call_with_unix_fd_list$callback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_dbus_proxy_call_with_unix_fd_list$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$932.const$0, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$935.const$0, fi, constants$14.const$3, scope);
     }
     static g_dbus_proxy_call_with_unix_fd_list$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

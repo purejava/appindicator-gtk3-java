@@ -19,13 +19,13 @@ import java.lang.invoke.VarHandle;
 public class __jmp_buf_tag {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$515.const$1;
+        return constants$516.const$5;
     }
     public static MemorySegment __jmpbuf$slice(MemorySegment seg) {
         return seg.asSlice(0, 176);
     }
     public static VarHandle __mask_was_saved$VH() {
-        return constants$515.const$2;
+        return constants$517.const$0;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class __jmp_buf_tag {
      * }
      */
     public static int __mask_was_saved$get(MemorySegment seg) {
-        return (int)constants$515.const$2.get(seg);
+        return (int)constants$517.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -43,13 +43,13 @@ public class __jmp_buf_tag {
      * }
      */
     public static void __mask_was_saved$set(MemorySegment seg, int x) {
-        constants$515.const$2.set(seg, x);
+        constants$517.const$0.set(seg, x);
     }
     public static int __mask_was_saved$get(MemorySegment seg, long index) {
-        return (int)constants$515.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$517.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void __mask_was_saved$set(MemorySegment seg, long index, int x) {
-        constants$515.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$517.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment __saved_mask$slice(MemorySegment seg) {
         return seg.asSlice(184, 128);

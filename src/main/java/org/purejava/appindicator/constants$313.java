@@ -2,39 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.invoke.MethodHandle;
 final class constants$313 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$313() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        JAVA_INT.withName("ref_count"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("funcs"),
-        RuntimeHelper.POINTER.withName("encoding"),
-        RuntimeHelper.POINTER.withName("read_cd"),
-        RuntimeHelper.POINTER.withName("write_cd"),
-        RuntimeHelper.POINTER.withName("line_term"),
-        JAVA_INT.withName("line_term_len"),
-        MemoryLayout.paddingLayout(4),
-        JAVA_LONG.withName("buf_size"),
-        RuntimeHelper.POINTER.withName("read_buf"),
-        RuntimeHelper.POINTER.withName("encoded_read_buf"),
-        RuntimeHelper.POINTER.withName("write_buf"),
-        MemoryLayout.sequenceLayout(6, JAVA_BYTE).withName("partial_write_buf"),
-        MemoryLayout.paddingLayout(2),
-        RuntimeHelper.POINTER.withName("reserved1"),
-        RuntimeHelper.POINTER.withName("reserved2")
-    ).withName("_GIOChannel");
-    static final VarHandle const$1 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
-    static final VarHandle const$2 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("funcs"));
-    static final VarHandle const$3 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("encoding"));
-    static final VarHandle const$4 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("read_cd"));
-    static final VarHandle const$5 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("write_cd"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_string_printf",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_string_append_vprintf",
+        constants$312.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_string_append_printf",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_string_append_uri_escaped",
+        constants$198.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_string_down",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_string_up",
+        constants$5.const$2
+    );
 }
 
 

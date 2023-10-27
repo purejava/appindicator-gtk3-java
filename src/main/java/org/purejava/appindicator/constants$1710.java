@@ -8,28 +8,28 @@ final class constants$1710 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1710() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_font_options",
-        constants$13.const$4
+        "cairo_glyph_path",
+        constants$164.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_create",
-        constants$33.const$5
+        "cairo_text_extents",
+        constants$14.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_get_family",
-        constants$5.const$2
+        "cairo_glyph_extents",
+        constants$466.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_get_slant",
-        constants$10.const$5
+        "cairo_font_extents",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_get_weight",
-        constants$10.const$5
+        "cairo_font_face_reference",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_user_font_face_create",
-        constants$35.const$2
+        "cairo_font_face_destroy",
+        constants$13.const$1
     );
 }
 

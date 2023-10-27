@@ -24,7 +24,7 @@ import java.lang.invoke.VarHandle;
 public class _GProxyAddressEnumeratorClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1223.const$4;
+        return constants$1227.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 160);
@@ -38,7 +38,7 @@ public class _GProxyAddressEnumeratorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1223.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1227.const$3, fi, constants$7.const$5, scope);
         }
         static _g_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -53,7 +53,7 @@ public class _GProxyAddressEnumeratorClass {
     }
 
     public static VarHandle _g_reserved1$VH() {
-        return constants$1224.const$0;
+        return constants$1227.const$4;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static MemorySegment _g_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1224.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1227.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -71,13 +71,13 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static void _g_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$1224.const$0.set(seg, x);
+        constants$1227.const$4.set(seg, x);
     }
     public static MemorySegment _g_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1224.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1227.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1224.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1227.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved1 _g_reserved1(MemorySegment segment, Arena scope) {
         return _g_reserved1.ofAddress(_g_reserved1$get(segment), scope);
@@ -91,7 +91,7 @@ public class _GProxyAddressEnumeratorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1224.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1227.const$5, fi, constants$7.const$5, scope);
         }
         static _g_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -106,7 +106,7 @@ public class _GProxyAddressEnumeratorClass {
     }
 
     public static VarHandle _g_reserved2$VH() {
-        return constants$1224.const$2;
+        return constants$1228.const$0;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static MemorySegment _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1224.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1228.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -124,13 +124,13 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1224.const$2.set(seg, x);
+        constants$1228.const$0.set(seg, x);
     }
     public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1224.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1228.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1224.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1228.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved2 _g_reserved2(MemorySegment segment, Arena scope) {
         return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);
@@ -144,7 +144,7 @@ public class _GProxyAddressEnumeratorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1224.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1228.const$1, fi, constants$7.const$5, scope);
         }
         static _g_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -159,7 +159,7 @@ public class _GProxyAddressEnumeratorClass {
     }
 
     public static VarHandle _g_reserved3$VH() {
-        return constants$1224.const$4;
+        return constants$1228.const$2;
     }
     /**
      * Getter for field:
@@ -168,7 +168,7 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static MemorySegment _g_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1224.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1228.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -177,13 +177,13 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static void _g_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$1224.const$4.set(seg, x);
+        constants$1228.const$2.set(seg, x);
     }
     public static MemorySegment _g_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1224.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1228.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1224.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1228.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved3 _g_reserved3(MemorySegment segment, Arena scope) {
         return _g_reserved3.ofAddress(_g_reserved3$get(segment), scope);
@@ -197,7 +197,7 @@ public class _GProxyAddressEnumeratorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1224.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1228.const$3, fi, constants$7.const$5, scope);
         }
         static _g_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -212,7 +212,7 @@ public class _GProxyAddressEnumeratorClass {
     }
 
     public static VarHandle _g_reserved4$VH() {
-        return constants$1225.const$0;
+        return constants$1228.const$4;
     }
     /**
      * Getter for field:
@@ -221,7 +221,7 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static MemorySegment _g_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1225.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1228.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -230,13 +230,13 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static void _g_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$1225.const$0.set(seg, x);
+        constants$1228.const$4.set(seg, x);
     }
     public static MemorySegment _g_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1225.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1228.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1225.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1228.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved4 _g_reserved4(MemorySegment segment, Arena scope) {
         return _g_reserved4.ofAddress(_g_reserved4$get(segment), scope);
@@ -250,7 +250,7 @@ public class _GProxyAddressEnumeratorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1225.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1228.const$5, fi, constants$7.const$5, scope);
         }
         static _g_reserved5 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -265,7 +265,7 @@ public class _GProxyAddressEnumeratorClass {
     }
 
     public static VarHandle _g_reserved5$VH() {
-        return constants$1225.const$2;
+        return constants$1229.const$0;
     }
     /**
      * Getter for field:
@@ -274,7 +274,7 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static MemorySegment _g_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1225.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1229.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -283,13 +283,13 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static void _g_reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$1225.const$2.set(seg, x);
+        constants$1229.const$0.set(seg, x);
     }
     public static MemorySegment _g_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1225.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1229.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1225.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1229.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved5 _g_reserved5(MemorySegment segment, Arena scope) {
         return _g_reserved5.ofAddress(_g_reserved5$get(segment), scope);
@@ -303,7 +303,7 @@ public class _GProxyAddressEnumeratorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved6 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1225.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1229.const$1, fi, constants$7.const$5, scope);
         }
         static _g_reserved6 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -318,7 +318,7 @@ public class _GProxyAddressEnumeratorClass {
     }
 
     public static VarHandle _g_reserved6$VH() {
-        return constants$1225.const$4;
+        return constants$1229.const$2;
     }
     /**
      * Getter for field:
@@ -327,7 +327,7 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static MemorySegment _g_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1225.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1229.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -336,13 +336,13 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static void _g_reserved6$set(MemorySegment seg, MemorySegment x) {
-        constants$1225.const$4.set(seg, x);
+        constants$1229.const$2.set(seg, x);
     }
     public static MemorySegment _g_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1225.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1229.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1225.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1229.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved6 _g_reserved6(MemorySegment segment, Arena scope) {
         return _g_reserved6.ofAddress(_g_reserved6$get(segment), scope);
@@ -356,7 +356,7 @@ public class _GProxyAddressEnumeratorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved7 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1225.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1229.const$3, fi, constants$7.const$5, scope);
         }
         static _g_reserved7 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -371,7 +371,7 @@ public class _GProxyAddressEnumeratorClass {
     }
 
     public static VarHandle _g_reserved7$VH() {
-        return constants$1226.const$0;
+        return constants$1229.const$4;
     }
     /**
      * Getter for field:
@@ -380,7 +380,7 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static MemorySegment _g_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1226.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1229.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -389,13 +389,13 @@ public class _GProxyAddressEnumeratorClass {
      * }
      */
     public static void _g_reserved7$set(MemorySegment seg, MemorySegment x) {
-        constants$1226.const$0.set(seg, x);
+        constants$1229.const$4.set(seg, x);
     }
     public static MemorySegment _g_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1226.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1229.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1226.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1229.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved7 _g_reserved7(MemorySegment segment, Arena scope) {
         return _g_reserved7.ofAddress(_g_reserved7$get(segment), scope);

@@ -6,34 +6,28 @@ import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$640 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$640() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_connect_object$c_handler.class, "apply", constants$7.const$5);
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_object_dup_data$dup_func.class, "apply", constants$5.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_object_dup_data",
+        constants$39.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_signal_connect_object",
-        constants$640.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_object_force_floating",
-        constants$13.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_object_run_dispose",
-        constants$13.const$1
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_object_replace_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_object_replace_data$old_destroy.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_value_take_object",
-        constants$13.const$4
+        "g_object_replace_data",
+        constants$640.const$4
     );
 }
 

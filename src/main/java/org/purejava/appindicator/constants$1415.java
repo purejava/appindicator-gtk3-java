@@ -8,28 +8,25 @@ final class constants$1415 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1415() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_tag_to_string",
-        constants$90.const$2
+        "g_volume_get_identifier",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_direction_from_string",
-        constants$11.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_direction_to_string",
-        constants$24.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_language_from_string",
-        constants$21.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_language_to_string",
+        "g_volume_enumerate_identifiers",
         constants$5.const$2
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_volume_get_activation_root",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_volume_eject_with_operation$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_volume_eject_with_operation",
+        constants$381.const$0
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_language_get_default",
-        constants$35.const$2
+        "g_volume_eject_with_operation_finish",
+        constants$12.const$2
     );
 }
 

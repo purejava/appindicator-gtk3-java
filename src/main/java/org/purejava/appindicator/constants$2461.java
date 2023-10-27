@@ -8,28 +8,28 @@ final class constants$2461 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2461() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_from_gicon",
-        constants$42.const$4
+        "gtk_entry_get_max_length",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_storage_type",
-        constants$11.const$4
+        "gtk_entry_get_text_length",
+        constants$186.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_pixbuf",
-        constants$21.const$3
+        "gtk_entry_set_activates_default",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_stock",
-        constants$21.const$3
+        "gtk_entry_get_activates_default",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_name",
-        constants$21.const$3
+        "gtk_entry_set_width_chars",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_gicon",
-        constants$21.const$3
+        "gtk_entry_get_width_chars",
+        constants$10.const$5
     );
 }
 

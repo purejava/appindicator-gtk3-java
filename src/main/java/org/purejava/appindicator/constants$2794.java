@@ -2,43 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$2794 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2794() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_load_surface",
-        constants$2794.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_lookup_by_gicon",
-        constants$415.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_lookup_by_gicon_for_scale",
-        constants$2018.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_list_icons",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_list_contexts",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$2793.const$4.varHandle(MemoryLayout.PathElement.groupElement("changed"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkIconThemeClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$2793.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkIconThemeClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$2793.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkIconThemeClass._gtk_reserved3.class, "apply", constants$7.const$5);
 }
 
 

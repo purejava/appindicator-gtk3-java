@@ -8,28 +8,25 @@ final class constants$1583 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1583() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_item_get_type",
-        constants$3.const$5
+        "pango_attr_list_update",
+        constants$1134.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_item_new",
-        constants$35.const$2
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(pango_attr_list_filter$func.class, "apply", constants$9.const$0);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_item_copy",
-        constants$5.const$2
+        "pango_attr_list_filter",
+        constants$23.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_item_free",
-        constants$13.const$1
+        "pango_attr_list_get_attributes",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_item_split",
-        constants$33.const$5
+        "pango_attr_list_equal",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_item_apply_attrs",
-        constants$13.const$4
+        "pango_attr_list_to_string",
+        constants$5.const$2
     );
 }
 

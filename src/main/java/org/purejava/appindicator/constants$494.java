@@ -2,32 +2,26 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 final class constants$494 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$494() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_cache_new$hash_key_func.class, "apply", constants$10.const$5);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_cache_new$hash_value_func.class, "apply", constants$10.const$5);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_cache_new$key_equal_func.class, "apply", constants$9.const$0);
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_slist_pop_allocator",
+        constants$7.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_cache_new",
-        constants$494.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_cache_destroy",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_node_push_allocator",
         constants$13.const$1
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_node_pop_allocator",
+        constants$7.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GCacheNewFunc.class, "apply", constants$5.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GCacheDupFunc.class, "apply", constants$5.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GCacheDestroyFunc.class, "apply", constants$13.const$1);
 }
 
 

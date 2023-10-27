@@ -2,43 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3234 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3234() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_append_type",
-        constants$97.const$1
+        "gtk_viewport_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_prepend_type",
-        constants$25.const$3
+        "gtk_viewport_new",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_append_with_siblings",
-        constants$62.const$0
+        "gtk_viewport_get_hadjustment",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_append_for_widget",
-        constants$9.const$0
+        "gtk_viewport_get_vadjustment",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_get_object_type",
-        constants$820.const$1
+        "gtk_viewport_set_hadjustment",
+        constants$13.const$4
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_LONG
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_set_object_type",
-        constants$3234.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_viewport_set_vadjustment",
+        constants$13.const$4
     );
 }
 

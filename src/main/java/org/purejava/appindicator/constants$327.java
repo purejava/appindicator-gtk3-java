@@ -2,39 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$327 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$327() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_key_file_ref",
-        constants$5.const$2
+        "g_io_channel_error_from_errno",
+        constants$8.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_key_file_unref",
-        constants$13.const$1
+        "g_io_channel_unix_new",
+        constants$24.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_key_file_free",
-        constants$13.const$1
+        "g_io_channel_unix_get_fd",
+        constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_key_file_set_list_separator",
-        constants$188.const$5
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("g_io_watch_funcs", constants$260.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_key_file_error_quark",
+        constants$83.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_key_file_load_from_file",
-        constants$327.const$4
+        "g_key_file_new",
+        constants$35.const$2
     );
 }
 

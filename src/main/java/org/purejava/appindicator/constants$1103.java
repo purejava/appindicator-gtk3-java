@@ -2,45 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1103 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1103() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_get_family",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_get_address",
+        "g_inet_address_to_bytes",
         constants$5.const$2
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_native_size",
+        constants$4.const$0
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_get_length",
+        "g_inet_address_get_family",
         constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_matches",
-        constants$9.const$0
+        "g_inet_address_get_is_any",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_equal",
-        constants$9.const$0
+        "g_inet_address_get_is_loopback",
+        constants$10.const$5
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance")
-    ).withName("_GSocketAddress");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_link_local",
+        constants$10.const$5
+    );
 }
 
 

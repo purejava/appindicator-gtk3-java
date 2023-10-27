@@ -13,13 +13,13 @@ public interface g_signal_new_class_handler$c_marshaller {
 
     void apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment draw_funcs, java.lang.foreign.MemorySegment draw_data, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_signal_new_class_handler$c_marshaller fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$604.const$4, fi, constants$584.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$607.const$0, fi, constants$587.const$0, scope);
     }
     static g_signal_new_class_handler$c_marshaller ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _draw_funcs, java.lang.foreign.MemorySegment _draw_data, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$584.const$5.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
+                constants$587.const$2.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

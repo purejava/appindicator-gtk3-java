@@ -8,28 +8,25 @@ final class constants$614 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$614() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_gstring_get_type",
-        constants$3.const$5
+        "g_signal_handlers_unblock_matched",
+        constants$613.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_hash_table_get_type",
-        constants$3.const$5
+        "g_signal_handlers_disconnect_matched",
+        constants$613.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_array_get_type",
-        constants$3.const$5
+        "g_clear_signal_handler",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_byte_array_get_type",
-        constants$3.const$5
+        "g_signal_override_class_closure",
+        constants$607.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_ptr_array_get_type",
-        constants$3.const$5
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_override_class_handler$class_handler.class, "apply", constants$7.const$5);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_bytes_get_type",
-        constants$3.const$5
+        "g_signal_override_class_handler",
+        constants$360.const$3
     );
 }
 

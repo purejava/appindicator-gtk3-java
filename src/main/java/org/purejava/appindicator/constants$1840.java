@@ -8,28 +8,28 @@ final class constants$1840 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1840() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_user_data",
-        constants$13.const$4
+        "gdk_window_has_native",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_geometry",
-        constants$331.const$1
+        "gdk_window_set_type_hint",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_width",
+        "gdk_window_get_type_hint",
         constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_height",
+        "gdk_window_get_modal_hint",
         constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_position",
-        constants$14.const$3
+        "gdk_window_set_modal_hint",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_origin",
-        constants$12.const$2
+        "gdk_window_set_skip_taskbar_hint",
+        constants$40.const$2
     );
 }
 

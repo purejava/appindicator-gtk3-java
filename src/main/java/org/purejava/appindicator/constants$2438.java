@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2438 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2438() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_popup_completion",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_set_popup_set_width",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_popup_set_width",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_set_popup_single_match",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_popup_single_match",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_completion_prefix",
-        constants$5.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkEntryCompletionClass.no_matches.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$2436.const$3.varHandle(MemoryLayout.PathElement.groupElement("no_matches"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkEntryCompletionClass._gtk_reserved0.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$2436.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved0"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkEntryCompletionClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2436.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
 }
 
 

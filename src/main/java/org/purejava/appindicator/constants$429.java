@@ -2,34 +2,50 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.*;
 final class constants$429 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$429() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_scanner_cur_position",
+        "g_scanner_get_next_token",
         constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_scanner_eof",
+        "g_scanner_peek_next_token",
         constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_scanner_set_scope",
-        constants$11.const$4
+        "g_scanner_cur_token",
+        constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_scanner_scope_add_symbol",
-        constants$179.const$1
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(MemoryLayout.unionLayout(
+        RuntimeHelper.POINTER.withName("v_symbol"),
+        RuntimeHelper.POINTER.withName("v_identifier"),
+        JAVA_LONG.withName("v_binary"),
+        JAVA_LONG.withName("v_octal"),
+        JAVA_LONG.withName("v_int"),
+        JAVA_LONG.withName("v_int64"),
+        JAVA_DOUBLE.withName("v_float"),
+        JAVA_LONG.withName("v_hex"),
+        RuntimeHelper.POINTER.withName("v_string"),
+        RuntimeHelper.POINTER.withName("v_comment"),
+        JAVA_BYTE.withName("v_char"),
+        JAVA_INT.withName("v_error")
+    ).withName("_GTokenValue"),
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_scanner_scope_remove_symbol",
-        constants$42.const$4
+        "g_scanner_cur_value",
+        constants$429.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_scanner_scope_lookup_symbol",
-        constants$196.const$3
+        "g_scanner_cur_line",
+        constants$10.const$5
     );
 }
 

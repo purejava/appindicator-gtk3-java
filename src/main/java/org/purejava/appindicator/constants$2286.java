@@ -8,27 +8,27 @@ final class constants$2286 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2286() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_set_show_fallback",
-        constants$40.const$2
+        "gtk_box_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_get_show_fallback",
-        constants$10.const$5
+        "gtk_box_new",
+        constants$1416.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_set_show_other",
-        constants$40.const$2
+        "gtk_box_pack_start",
+        constants$1518.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_get_show_other",
-        constants$10.const$5
+        "gtk_box_pack_end",
+        constants$1518.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_set_show_all",
+        "gtk_box_set_homogeneous",
         constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_widget_get_show_all",
+        "gtk_box_get_homogeneous",
         constants$10.const$5
     );
 }

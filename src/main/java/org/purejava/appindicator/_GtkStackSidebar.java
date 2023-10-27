@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkStackSidebar {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3092.const$1;
+        return constants$3097.const$1;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 48);

@@ -7,29 +7,23 @@ final class constants$2527 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2527() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_button_box_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_button_box_new",
-        constants$24.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_assistant_set_forward_page_func$page_func.class, "apply", constants$9.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_assistant_set_forward_page_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_button_box_get_layout",
-        constants$10.const$5
+        "gtk_assistant_set_forward_page_func",
+        constants$42.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_button_box_set_layout",
-        constants$40.const$2
+        "gtk_assistant_set_page_type",
+        constants$164.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_button_box_get_child_secondary",
+        "gtk_assistant_get_page_type",
         constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_button_box_set_child_secondary",
-        constants$164.const$5
+        "gtk_assistant_set_page_title",
+        constants$14.const$3
     );
 }
 

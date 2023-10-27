@@ -8,28 +8,28 @@ final class constants$2607 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2607() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_get_type",
+        "gtk_cell_view_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_new",
+        "gtk_cell_view_new",
         constants$35.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_new_with_label",
-        constants$5.const$2
+        "gtk_cell_view_new_with_context",
+        constants$5.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_new_with_mnemonic",
+        "gtk_cell_view_new_with_text",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_set_mode",
-        constants$40.const$2
+        "gtk_cell_view_new_with_markup",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_get_mode",
-        constants$10.const$5
+        "gtk_cell_view_new_with_pixbuf",
+        constants$5.const$2
     );
 }
 

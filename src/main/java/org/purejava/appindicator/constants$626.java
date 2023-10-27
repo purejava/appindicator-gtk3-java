@@ -9,12 +9,12 @@ final class constants$626 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$626() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GObjectClass.constructed.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("constructed"));
-    static final VarHandle const$2 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("flags"));
-    static final VarHandle const$3 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("n_construct_properties"));
-    static final VarHandle const$4 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("pspecs"));
-    static final VarHandle const$5 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("n_pspecs"));
+    static final VarHandle const$0 = constants$625.const$1.varHandle(MemoryLayout.PathElement.groupElement("constructor"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GObjectClass.set_property.class, "apply", constants$179.const$1);
+    static final VarHandle const$2 = constants$625.const$1.varHandle(MemoryLayout.PathElement.groupElement("set_property"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GObjectClass.get_property.class, "apply", constants$179.const$1);
+    static final VarHandle const$4 = constants$625.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_property"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GObjectClass.dispose.class, "apply", constants$13.const$1);
 }
 
 

@@ -2,34 +2,37 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1389 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1389() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_unix_fd_list_new_from_array",
-        constants$21.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_unix_fd_list_append",
-        constants$150.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_unix_fd_list_get_length",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_unix_fd_list_get",
-        constants$150.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_unix_fd_list_peek_fds",
-        constants$5.const$5
-    );
+    static final VarHandle const$0 = constants$1388.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GUnixCredentialsMessageClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1388.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GUnixCredentialsMessage");
+    static final VarHandle const$4 = constants$1389.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_unix_fd_list_steal_fds",
-        constants$5.const$5
+        "g_unix_credentials_message_get_type",
+        constants$3.const$5
     );
 }
 

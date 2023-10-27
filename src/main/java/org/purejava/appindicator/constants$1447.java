@@ -2,38 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 final class constants$1447 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1447() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_face_get_user_data",
+        constants$5.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_draw_move_to_func_t.class, "apply", constants$1447.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_face_make_immutable",
+        constants$13.const$1
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$1447.const$0
+        "hb_face_is_immutable",
+        constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_draw_line_to_func_t.class, "apply", constants$1447.const$0);
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_face_reference_table",
+        constants$21.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_draw_quadratic_to_func_t.class, "apply", constants$1447.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_face_reference_blob",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_face_set_index",
+        constants$40.const$2
+    );
 }
 
 

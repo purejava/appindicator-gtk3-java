@@ -8,28 +8,28 @@ final class constants$2142 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2142() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_unregister_window",
-        constants$13.const$4
+        "gtk_widget_get_state",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocated_width",
-        constants$10.const$5
+        "gtk_widget_set_state_flags",
+        constants$469.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocated_height",
-        constants$10.const$5
+        "gtk_widget_unset_state_flags",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocated_baseline",
+        "gtk_widget_get_state_flags",
         constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocated_size",
-        constants$14.const$3
+        "gtk_widget_set_sensitive",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocation",
-        constants$13.const$4
+        "gtk_widget_get_sensitive",
+        constants$10.const$5
     );
 }
 

@@ -8,28 +8,28 @@ final class constants$1443 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1443() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_face_make_immutable",
+        "hb_map_clear",
         constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_face_is_immutable",
+        "hb_map_is_empty",
         constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_face_reference_table",
-        constants$21.const$3
+        "hb_map_get_population",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_face_reference_blob",
-        constants$5.const$2
+        "hb_map_is_equal",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_face_set_index",
-        constants$40.const$2
+        "hb_map_hash",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_face_get_index",
-        constants$10.const$5
+        "hb_map_set",
+        constants$469.const$2
     );
 }
 

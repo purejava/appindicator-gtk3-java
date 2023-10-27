@@ -3,18 +3,65 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2172 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2172() {}
-    static final VarHandle const$0 = constants$2171.const$4.varHandle(MemoryLayout.PathElement.groupElement("add"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkContainerClass.remove.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$2171.const$4.varHandle(MemoryLayout.PathElement.groupElement("remove"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkContainerClass.check_resize.class, "apply", constants$13.const$1);
-    static final VarHandle const$4 = constants$2171.const$4.varHandle(MemoryLayout.PathElement.groupElement("check_resize"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkContainerClass.forall.class, "apply", constants$179.const$1);
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    JAVA_LONG.withName("g_type")
+                ).withName("g_type_class"),
+                RuntimeHelper.POINTER.withName("construct_properties"),
+                RuntimeHelper.POINTER.withName("constructor"),
+                RuntimeHelper.POINTER.withName("set_property"),
+                RuntimeHelper.POINTER.withName("get_property"),
+                RuntimeHelper.POINTER.withName("dispose"),
+                RuntimeHelper.POINTER.withName("finalize"),
+                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                RuntimeHelper.POINTER.withName("notify"),
+                RuntimeHelper.POINTER.withName("constructed"),
+                JAVA_LONG.withName("flags"),
+                JAVA_LONG.withName("n_construct_properties"),
+                RuntimeHelper.POINTER.withName("pspecs"),
+                JAVA_LONG.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+            ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("startup"),
+            RuntimeHelper.POINTER.withName("activate"),
+            RuntimeHelper.POINTER.withName("open"),
+            RuntimeHelper.POINTER.withName("command_line"),
+            RuntimeHelper.POINTER.withName("local_command_line"),
+            RuntimeHelper.POINTER.withName("before_emit"),
+            RuntimeHelper.POINTER.withName("after_emit"),
+            RuntimeHelper.POINTER.withName("add_platform_data"),
+            RuntimeHelper.POINTER.withName("quit_mainloop"),
+            RuntimeHelper.POINTER.withName("run_mainloop"),
+            RuntimeHelper.POINTER.withName("shutdown"),
+            RuntimeHelper.POINTER.withName("dbus_register"),
+            RuntimeHelper.POINTER.withName("dbus_unregister"),
+            RuntimeHelper.POINTER.withName("handle_local_options"),
+            RuntimeHelper.POINTER.withName("name_lost"),
+            MemoryLayout.sequenceLayout(7, RuntimeHelper.POINTER).withName("padding")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("window_added"),
+        RuntimeHelper.POINTER.withName("window_removed"),
+        MemoryLayout.sequenceLayout(12, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GtkApplicationClass");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkApplicationClass.window_added.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$2172.const$0.varHandle(MemoryLayout.PathElement.groupElement("window_added"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkApplicationClass.window_removed.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$2172.const$0.varHandle(MemoryLayout.PathElement.groupElement("window_removed"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_application_get_type",
+        constants$3.const$5
+    );
 }
 
 

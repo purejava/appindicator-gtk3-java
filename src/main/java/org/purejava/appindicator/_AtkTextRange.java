@@ -20,13 +20,13 @@ import java.lang.invoke.VarHandle;
 public class _AtkTextRange {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2009.const$3;
+        return constants$2014.const$4;
     }
     public static MemorySegment bounds$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
     public static VarHandle start_offset$VH() {
-        return constants$2009.const$4;
+        return constants$2014.const$5;
     }
     /**
      * Getter for field:
@@ -35,7 +35,7 @@ public class _AtkTextRange {
      * }
      */
     public static int start_offset$get(MemorySegment seg) {
-        return (int)constants$2009.const$4.get(seg);
+        return (int)constants$2014.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -44,16 +44,16 @@ public class _AtkTextRange {
      * }
      */
     public static void start_offset$set(MemorySegment seg, int x) {
-        constants$2009.const$4.set(seg, x);
+        constants$2014.const$5.set(seg, x);
     }
     public static int start_offset$get(MemorySegment seg, long index) {
-        return (int)constants$2009.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2014.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void start_offset$set(MemorySegment seg, long index, int x) {
-        constants$2009.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2014.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle end_offset$VH() {
-        return constants$2009.const$5;
+        return constants$2015.const$0;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _AtkTextRange {
      * }
      */
     public static int end_offset$get(MemorySegment seg) {
-        return (int)constants$2009.const$5.get(seg);
+        return (int)constants$2015.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -71,16 +71,16 @@ public class _AtkTextRange {
      * }
      */
     public static void end_offset$set(MemorySegment seg, int x) {
-        constants$2009.const$5.set(seg, x);
+        constants$2015.const$0.set(seg, x);
     }
     public static int end_offset$get(MemorySegment seg, long index) {
-        return (int)constants$2009.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2015.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void end_offset$set(MemorySegment seg, long index, int x) {
-        constants$2009.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2015.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle content$VH() {
-        return constants$2010.const$0;
+        return constants$2015.const$1;
     }
     /**
      * Getter for field:
@@ -89,7 +89,7 @@ public class _AtkTextRange {
      * }
      */
     public static MemorySegment content$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2010.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2015.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -98,13 +98,13 @@ public class _AtkTextRange {
      * }
      */
     public static void content$set(MemorySegment seg, MemorySegment x) {
-        constants$2010.const$0.set(seg, x);
+        constants$2015.const$1.set(seg, x);
     }
     public static MemorySegment content$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2010.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2015.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void content$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2010.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2015.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -13,7 +13,7 @@ public interface g_option_group_set_translate_func$destroy_notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_option_group_set_translate_func$destroy_notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$389.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$390.const$5, fi, constants$13.const$1, scope);
     }
     static g_option_group_set_translate_func$destroy_notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

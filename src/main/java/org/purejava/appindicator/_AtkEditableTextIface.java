@@ -24,7 +24,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkEditableTextIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2024.const$4;
+        return constants$2029.const$5;
     }
     public static MemorySegment parent_interface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -38,13 +38,13 @@ public class _AtkEditableTextIface {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3);
         static MemorySegment allocate(set_run_attributes fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2024.const$5, fi, constants$414.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2030.const$0, fi, constants$415.const$4, scope);
         }
         static set_run_attributes ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3) -> {
                 try {
-                    return (int)constants$1950.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (int)constants$1955.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -53,7 +53,7 @@ public class _AtkEditableTextIface {
     }
 
     public static VarHandle set_run_attributes$VH() {
-        return constants$2025.const$0;
+        return constants$2030.const$1;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _AtkEditableTextIface {
      * }
      */
     public static MemorySegment set_run_attributes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2025.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2030.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -71,13 +71,13 @@ public class _AtkEditableTextIface {
      * }
      */
     public static void set_run_attributes$set(MemorySegment seg, MemorySegment x) {
-        constants$2025.const$0.set(seg, x);
+        constants$2030.const$1.set(seg, x);
     }
     public static MemorySegment set_run_attributes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2025.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2030.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void set_run_attributes$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2025.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2030.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_run_attributes set_run_attributes(MemorySegment segment, Arena scope) {
         return set_run_attributes.ofAddress(set_run_attributes$get(segment), scope);
@@ -91,7 +91,7 @@ public class _AtkEditableTextIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_text_contents fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2025.const$1, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2030.const$2, fi, constants$13.const$4, scope);
         }
         static set_text_contents ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -106,7 +106,7 @@ public class _AtkEditableTextIface {
     }
 
     public static VarHandle set_text_contents$VH() {
-        return constants$2025.const$2;
+        return constants$2030.const$3;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _AtkEditableTextIface {
      * }
      */
     public static MemorySegment set_text_contents$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2025.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2030.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -124,13 +124,13 @@ public class _AtkEditableTextIface {
      * }
      */
     public static void set_text_contents$set(MemorySegment seg, MemorySegment x) {
-        constants$2025.const$2.set(seg, x);
+        constants$2030.const$3.set(seg, x);
     }
     public static MemorySegment set_text_contents$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2025.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2030.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void set_text_contents$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2025.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2030.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_text_contents set_text_contents(MemorySegment segment, Arena scope) {
         return set_text_contents.ofAddress(set_text_contents$get(segment), scope);
@@ -144,13 +144,13 @@ public class _AtkEditableTextIface {
 
         void apply(java.lang.foreign.MemorySegment clipboard, java.lang.foreign.MemorySegment atoms, int n_atoms, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(insert_text fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2025.const$3, fi, constants$464.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2030.const$4, fi, constants$466.const$3, scope);
         }
         static insert_text ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _clipboard, java.lang.foreign.MemorySegment _atoms, int _n_atoms, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    constants$737.const$4.invokeExact(symbol, _clipboard, _atoms, _n_atoms, _data);
+                    constants$740.const$3.invokeExact(symbol, _clipboard, _atoms, _n_atoms, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -159,7 +159,7 @@ public class _AtkEditableTextIface {
     }
 
     public static VarHandle insert_text$VH() {
-        return constants$2025.const$4;
+        return constants$2030.const$5;
     }
     /**
      * Getter for field:
@@ -168,7 +168,7 @@ public class _AtkEditableTextIface {
      * }
      */
     public static MemorySegment insert_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2025.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2030.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -177,13 +177,13 @@ public class _AtkEditableTextIface {
      * }
      */
     public static void insert_text$set(MemorySegment seg, MemorySegment x) {
-        constants$2025.const$4.set(seg, x);
+        constants$2030.const$5.set(seg, x);
     }
     public static MemorySegment insert_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2025.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2030.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void insert_text$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2025.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2030.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static insert_text insert_text(MemorySegment segment, Arena scope) {
         return insert_text.ofAddress(insert_text$get(segment), scope);
@@ -197,13 +197,13 @@ public class _AtkEditableTextIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
         static MemorySegment allocate(copy_text fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2025.const$5, fi, constants$467.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2031.const$0, fi, constants$469.const$2, scope);
         }
         static copy_text ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    constants$1901.const$2.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$1906.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -212,7 +212,7 @@ public class _AtkEditableTextIface {
     }
 
     public static VarHandle copy_text$VH() {
-        return constants$2026.const$0;
+        return constants$2031.const$1;
     }
     /**
      * Getter for field:
@@ -221,7 +221,7 @@ public class _AtkEditableTextIface {
      * }
      */
     public static MemorySegment copy_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2026.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2031.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -230,13 +230,13 @@ public class _AtkEditableTextIface {
      * }
      */
     public static void copy_text$set(MemorySegment seg, MemorySegment x) {
-        constants$2026.const$0.set(seg, x);
+        constants$2031.const$1.set(seg, x);
     }
     public static MemorySegment copy_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2026.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2031.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void copy_text$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2026.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2031.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static copy_text copy_text(MemorySegment segment, Arena scope) {
         return copy_text.ofAddress(copy_text$get(segment), scope);
@@ -250,13 +250,13 @@ public class _AtkEditableTextIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
         static MemorySegment allocate(cut_text fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2026.const$1, fi, constants$467.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2031.const$2, fi, constants$469.const$2, scope);
         }
         static cut_text ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    constants$1901.const$2.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$1906.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -265,7 +265,7 @@ public class _AtkEditableTextIface {
     }
 
     public static VarHandle cut_text$VH() {
-        return constants$2026.const$2;
+        return constants$2031.const$3;
     }
     /**
      * Getter for field:
@@ -274,7 +274,7 @@ public class _AtkEditableTextIface {
      * }
      */
     public static MemorySegment cut_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2026.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2031.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -283,13 +283,13 @@ public class _AtkEditableTextIface {
      * }
      */
     public static void cut_text$set(MemorySegment seg, MemorySegment x) {
-        constants$2026.const$2.set(seg, x);
+        constants$2031.const$3.set(seg, x);
     }
     public static MemorySegment cut_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2026.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2031.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void cut_text$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2026.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2031.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static cut_text cut_text(MemorySegment segment, Arena scope) {
         return cut_text.ofAddress(cut_text$get(segment), scope);
@@ -303,13 +303,13 @@ public class _AtkEditableTextIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
         static MemorySegment allocate(delete_text fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2026.const$3, fi, constants$467.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$2031.const$4, fi, constants$469.const$2, scope);
         }
         static delete_text ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    constants$1901.const$2.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$1906.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -318,7 +318,7 @@ public class _AtkEditableTextIface {
     }
 
     public static VarHandle delete_text$VH() {
-        return constants$2026.const$4;
+        return constants$2031.const$5;
     }
     /**
      * Getter for field:
@@ -327,7 +327,7 @@ public class _AtkEditableTextIface {
      * }
      */
     public static MemorySegment delete_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2026.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2031.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -336,13 +336,13 @@ public class _AtkEditableTextIface {
      * }
      */
     public static void delete_text$set(MemorySegment seg, MemorySegment x) {
-        constants$2026.const$4.set(seg, x);
+        constants$2031.const$5.set(seg, x);
     }
     public static MemorySegment delete_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2026.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2031.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void delete_text$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2026.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2031.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static delete_text delete_text(MemorySegment segment, Arena scope) {
         return delete_text.ofAddress(delete_text$get(segment), scope);
@@ -356,13 +356,13 @@ public class _AtkEditableTextIface {
 
         void apply(java.lang.foreign.MemorySegment colors, int n_colors);
         static MemorySegment allocate(paste_text fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2026.const$5, fi, constants$40.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2032.const$0, fi, constants$40.const$2, scope);
         }
         static paste_text ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
                 try {
-                    constants$509.const$5.invokeExact(symbol, _colors, _n_colors);
+                    constants$511.const$3.invokeExact(symbol, _colors, _n_colors);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -371,7 +371,7 @@ public class _AtkEditableTextIface {
     }
 
     public static VarHandle paste_text$VH() {
-        return constants$2027.const$0;
+        return constants$2032.const$1;
     }
     /**
      * Getter for field:
@@ -380,7 +380,7 @@ public class _AtkEditableTextIface {
      * }
      */
     public static MemorySegment paste_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2027.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2032.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -389,13 +389,13 @@ public class _AtkEditableTextIface {
      * }
      */
     public static void paste_text$set(MemorySegment seg, MemorySegment x) {
-        constants$2027.const$0.set(seg, x);
+        constants$2032.const$1.set(seg, x);
     }
     public static MemorySegment paste_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2027.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2032.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void paste_text$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2027.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2032.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static paste_text paste_text(MemorySegment segment, Arena scope) {
         return paste_text.ofAddress(paste_text$get(segment), scope);

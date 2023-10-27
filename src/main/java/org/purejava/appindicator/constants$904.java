@@ -7,12 +7,30 @@ final class constants$904 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$904() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GBusAcquiredCallback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GBusNameAcquiredCallback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GBusNameLostCallback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_bus_own_name$bus_acquired_handler.class, "apply", constants$14.const$3);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_bus_own_name$name_acquired_handler.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_bus_own_name$name_lost_handler.class, "apply", constants$14.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_object_path",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_interface_name",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_method_name",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_method_info",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_property_info",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_connection",
+        constants$5.const$2
+    );
 }
 
 

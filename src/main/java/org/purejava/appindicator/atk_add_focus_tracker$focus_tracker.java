@@ -13,7 +13,7 @@ public interface atk_add_focus_tracker$focus_tracker {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(atk_add_focus_tracker$focus_tracker fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1990.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1995.const$4, fi, constants$13.const$1, scope);
     }
     static atk_add_focus_tracker$focus_tracker ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

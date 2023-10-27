@@ -5,33 +5,35 @@ package org.purejava.appindicator;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1088 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1088() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_monitor_get_type",
-        constants$3.const$5
+        "g_file_io_stream_query_info_finish",
+        constants$23.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_monitor_cancel",
-        constants$10.const$5
+        "g_file_io_stream_get_etag",
+        constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_monitor_is_cancelled",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_monitor_set_rate_limit",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_monitor_emit_event",
-        constants$331.const$4
-    );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GFileMonitor");
+    static final VarHandle const$3 = constants$1088.const$2.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 JAVA_LONG.withName("g_type")
@@ -51,11 +53,15 @@ final class constants$1088 {
             JAVA_LONG.withName("n_pspecs"),
             MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
         ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("got_completion_data"),
+        RuntimeHelper.POINTER.withName("changed"),
+        RuntimeHelper.POINTER.withName("cancel"),
         RuntimeHelper.POINTER.withName("_g_reserved1"),
         RuntimeHelper.POINTER.withName("_g_reserved2"),
-        RuntimeHelper.POINTER.withName("_g_reserved3")
-    ).withName("_GFilenameCompleterClass");
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5")
+    ).withName("_GFileMonitorClass");
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileMonitorClass.changed.class, "apply", constants$332.const$4);
 }
 
 

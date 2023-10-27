@@ -18,10 +18,10 @@ import java.lang.invoke.VarHandle;
 public class _GdkTimeCoord {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1755.const$2;
+        return constants$1760.const$2;
     }
     public static VarHandle time$VH() {
-        return constants$1755.const$3;
+        return constants$1760.const$3;
     }
     /**
      * Getter for field:
@@ -30,7 +30,7 @@ public class _GdkTimeCoord {
      * }
      */
     public static int time$get(MemorySegment seg) {
-        return (int)constants$1755.const$3.get(seg);
+        return (int)constants$1760.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -39,13 +39,13 @@ public class _GdkTimeCoord {
      * }
      */
     public static void time$set(MemorySegment seg, int x) {
-        constants$1755.const$3.set(seg, x);
+        constants$1760.const$3.set(seg, x);
     }
     public static int time$get(MemorySegment seg, long index) {
-        return (int)constants$1755.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1760.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void time$set(MemorySegment seg, long index, int x) {
-        constants$1755.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1760.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment axes$slice(MemorySegment seg) {
         return seg.asSlice(8, 1024);

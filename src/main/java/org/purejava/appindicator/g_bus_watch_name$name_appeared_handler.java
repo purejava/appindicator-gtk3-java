@@ -13,7 +13,7 @@ public interface g_bus_watch_name$name_appeared_handler {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_bus_watch_name$name_appeared_handler fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$907.const$2, fi, constants$42.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$910.const$2, fi, constants$42.const$1, scope);
     }
     static g_bus_watch_name$name_appeared_handler ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

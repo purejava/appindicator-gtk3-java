@@ -2,31 +2,48 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1499 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1499() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_font_set_parent",
-        constants$13.const$4
+        "hb_font_draw_glyph",
+        constants$179.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_font_get_parent",
-        constants$5.const$2
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_font_set_face",
-        constants$13.const$4
+        "hb_font_paint_glyph",
+        constants$1499.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_font_get_face",
-        constants$5.const$2
+        "hb_font_get_glyph",
+        constants$49.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_set_funcs$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_font_set_funcs",
-        constants$42.const$1
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_font_get_extents_for_direction",
+        constants$42.const$4
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_advance_for_direction",
+        constants$1499.const$5
     );
 }
 

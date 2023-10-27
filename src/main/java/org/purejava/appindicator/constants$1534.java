@@ -2,35 +2,32 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1534 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1534() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_language_get_type",
-        constants$3.const$5
-    );
+    static final VarHandle const$0 = constants$1533.const$2.varHandle(MemoryLayout.PathElement.groupElement("height"));
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_language_get_default",
-        constants$35.const$2
+        "pango_extents_to_pixels",
+        constants$13.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_language_get_preferred",
-        constants$35.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_language_from_string",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_language_to_string",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_language_get_sample_string",
-        constants$5.const$2
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_DOUBLE.withName("xx"),
+        JAVA_DOUBLE.withName("xy"),
+        JAVA_DOUBLE.withName("yx"),
+        JAVA_DOUBLE.withName("yy"),
+        JAVA_DOUBLE.withName("x0"),
+        JAVA_DOUBLE.withName("y0")
+    ).withName("_PangoMatrix");
+    static final VarHandle const$3 = constants$1534.const$2.varHandle(MemoryLayout.PathElement.groupElement("xx"));
+    static final VarHandle const$4 = constants$1534.const$2.varHandle(MemoryLayout.PathElement.groupElement("xy"));
+    static final VarHandle const$5 = constants$1534.const$2.varHandle(MemoryLayout.PathElement.groupElement("yx"));
 }
 
 

@@ -13,7 +13,7 @@ public interface GtkMenuDetachFunc {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GtkMenuDetachFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2234.const$1, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$2239.const$1, fi, constants$13.const$4, scope);
     }
     static GtkMenuDetachFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

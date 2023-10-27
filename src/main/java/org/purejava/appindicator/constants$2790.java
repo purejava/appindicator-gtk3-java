@@ -2,27 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2790 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2790() {}
-    static final VarHandle const$0 = constants$2788.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkIconThemeClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2788.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_style_context_lookup_color",
+        constants$12.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_style_context_notify_state_change",
+        constants$1646.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_style_context_cancel_animations",
+        constants$13.const$4
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_error_quark",
-        constants$83.const$1
+        "gtk_style_context_scroll_animations",
+        constants$1046.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_get_type",
-        constants$3.const$5
+        "gtk_style_context_push_animatable_region",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_new",
-        constants$35.const$2
+        "gtk_style_context_pop_animatable_region",
+        constants$13.const$1
     );
 }
 

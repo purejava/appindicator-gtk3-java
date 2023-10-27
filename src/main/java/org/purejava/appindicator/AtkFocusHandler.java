@@ -13,13 +13,13 @@ public interface AtkFocusHandler {
 
     void apply(java.lang.foreign.MemorySegment colors, int n_colors);
     static MemorySegment allocate(AtkFocusHandler fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1993.const$2, fi, constants$40.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1998.const$3, fi, constants$40.const$2, scope);
     }
     static AtkFocusHandler ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
             try {
-                constants$509.const$5.invokeExact(symbol, _colors, _n_colors);
+                constants$511.const$3.invokeExact(symbol, _colors, _n_colors);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

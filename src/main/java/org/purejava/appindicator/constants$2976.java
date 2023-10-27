@@ -9,24 +9,12 @@ final class constants$2976 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2976() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkPrintOperationClass._gtk_reserved8.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2969.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved8"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_print_error_quark",
-        constants$83.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_new",
-        constants$35.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_default_page_setup",
-        constants$13.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkPrintOperationClass.request_page_setup.class, "apply", constants$466.const$3);
+    static final VarHandle const$1 = constants$2974.const$5.varHandle(MemoryLayout.PathElement.groupElement("request_page_setup"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkPrintOperationClass.draw_page.class, "apply", constants$164.const$5);
+    static final VarHandle const$3 = constants$2974.const$5.varHandle(MemoryLayout.PathElement.groupElement("draw_page"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkPrintOperationClass.end_print.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$2974.const$5.varHandle(MemoryLayout.PathElement.groupElement("end_print"));
 }
 
 

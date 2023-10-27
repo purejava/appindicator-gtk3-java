@@ -9,14 +9,21 @@ final class constants$737 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$737() {}
-    static final VarHandle const$0 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("startup"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GApplicationClass.activate.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("activate"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GApplicationClass.open.class, "apply", constants$464.const$4);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$464.const$4
+    static final VarHandle const$0 = constants$734.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$734.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_get_type",
+        constants$3.const$5
     );
-    static final VarHandle const$5 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("open"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_new",
+        constants$35.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_setenv",
+        constants$14.const$3
+    );
 }
 
 

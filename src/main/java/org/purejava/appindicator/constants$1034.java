@@ -8,23 +8,23 @@ final class constants$1034 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1034() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_monitor_directory",
-        constants$180.const$0
+        "g_file_mount_enclosing_volume_finish",
+        constants$12.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_monitor_file",
-        constants$180.const$0
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_mount_mountable$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_monitor",
-        constants$180.const$0
+        "g_file_mount_mountable",
+        constants$381.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_measure_disk_usage$progress_callback.class, "apply", constants$694.const$0);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_measure_disk_usage",
-        constants$1007.const$4
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_mount_mountable_finish",
+        constants$23.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_measure_disk_usage_async$progress_callback.class, "apply", constants$694.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_unmount_mountable$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_unmount_mountable",
+        constants$282.const$1
+    );
 }
 
 

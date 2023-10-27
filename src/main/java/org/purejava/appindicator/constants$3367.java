@@ -2,34 +2,43 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3367 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3367() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "_gtk_style_shade",
-        constants$2837.const$1
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_style_has_context",
-        constants$10.const$5
+        "gtk_style_apply_default_background",
+        constants$3367.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_style_attach",
-        constants$13.const$1
+        "gtk_style_lookup_icon_set",
+        constants$5.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_has_rc_style",
-        constants$10.const$5
+        "gtk_style_lookup_color",
+        constants$12.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_style",
-        constants$13.const$4
+        "gtk_style_render_icon",
+        constants$2769.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_ensure_style",
-        constants$13.const$1
+        "gtk_paint_hline",
+        constants$3353.const$0
     );
 }
 

@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _GUnixCredentialsMessageClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1384.const$3;
+        return constants$1388.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 216);
@@ -33,7 +33,7 @@ public class _GUnixCredentialsMessageClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1384.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1388.const$5, fi, constants$7.const$5, scope);
         }
         static _g_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -48,7 +48,7 @@ public class _GUnixCredentialsMessageClass {
     }
 
     public static VarHandle _g_reserved1$VH() {
-        return constants$1384.const$5;
+        return constants$1389.const$0;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GUnixCredentialsMessageClass {
      * }
      */
     public static MemorySegment _g_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1384.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1389.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GUnixCredentialsMessageClass {
      * }
      */
     public static void _g_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$1384.const$5.set(seg, x);
+        constants$1389.const$0.set(seg, x);
     }
     public static MemorySegment _g_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1384.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1389.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1384.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1389.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved1 _g_reserved1(MemorySegment segment, Arena scope) {
         return _g_reserved1.ofAddress(_g_reserved1$get(segment), scope);
@@ -86,7 +86,7 @@ public class _GUnixCredentialsMessageClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1385.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1389.const$1, fi, constants$7.const$5, scope);
         }
         static _g_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -101,7 +101,7 @@ public class _GUnixCredentialsMessageClass {
     }
 
     public static VarHandle _g_reserved2$VH() {
-        return constants$1385.const$1;
+        return constants$1389.const$2;
     }
     /**
      * Getter for field:
@@ -110,7 +110,7 @@ public class _GUnixCredentialsMessageClass {
      * }
      */
     public static MemorySegment _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1385.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1389.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -119,13 +119,13 @@ public class _GUnixCredentialsMessageClass {
      * }
      */
     public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1385.const$1.set(seg, x);
+        constants$1389.const$2.set(seg, x);
     }
     public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1385.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1389.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1385.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1389.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved2 _g_reserved2(MemorySegment segment, Arena scope) {
         return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);

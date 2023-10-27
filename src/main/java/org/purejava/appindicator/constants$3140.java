@@ -2,38 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3140 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3140() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_copy_target_list",
+        "gtk_text_buffer_get_selection_bound",
         constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_paste_target_list",
-        constants$5.const$2
+        "gtk_text_buffer_place_cursor",
+        constants$13.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GtkTextBufferSerializeFunc.class, "apply", constants$334.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_select_range",
+        constants$14.const$3
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        constants$334.const$2
+        "gtk_text_buffer_apply_tag",
+        constants$42.const$1
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_remove_tag",
+        constants$42.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GtkTextBufferDeserializeFunc.class, "apply", constants$3140.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_apply_tag_by_name",
+        constants$42.const$1
+    );
 }
 
 

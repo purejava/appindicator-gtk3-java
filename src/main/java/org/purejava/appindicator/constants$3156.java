@@ -2,34 +2,46 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3156 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3156() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_backward_display_line_start",
-        constants$9.const$0
+        "gtk_text_view_set_buffer",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_starts_display_line",
-        constants$9.const$0
+        "gtk_text_view_get_buffer",
+        constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_move_visually",
-        constants$62.const$0
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_im_context_filter_keypress",
-        constants$9.const$0
+        "gtk_text_view_scroll_to_iter",
+        constants$3156.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_reset_im_context",
-        constants$13.const$1
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_add_child_at_anchor",
-        constants$14.const$3
+        "gtk_text_view_scroll_to_mark",
+        constants$3156.const$4
     );
 }
 

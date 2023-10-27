@@ -2,31 +2,33 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$870 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$870() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_dbus_connection_add_filter$user_data_free_func.class, "apply", constants$13.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_add_filter",
-        constants$34.const$5
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDBusSubtreeVTable.introspect.class, "apply", constants$331.const$5);
+    static final VarHandle const$1 = constants$869.const$3.varHandle(MemoryLayout.PathElement.groupElement("introspect"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDBusSubtreeVTable.dispatch.class, "apply", constants$496.const$1);
+    static final VarHandle const$3 = constants$869.const$3.varHandle(MemoryLayout.PathElement.groupElement("dispatch"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_dbus_connection_register_subtree$user_data_free_func.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_remove_filter",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_quark",
-        constants$83.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_is_remote_error",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_error_get_remote_error",
-        constants$5.const$2
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_register_subtree",
+        constants$870.const$5
     );
 }
 

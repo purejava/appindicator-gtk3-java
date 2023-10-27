@@ -3,27 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$714 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$714() {}
-    static final VarHandle const$0 = constants$713.const$1.varHandle(MemoryLayout.PathElement.groupElement("state"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GActionEntry.change_state.class, "apply", constants$14.const$3);
-    static final VarHandle const$2 = constants$713.const$1.varHandle(MemoryLayout.PathElement.groupElement("change_state"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_action_group_action_state_changed",
+        constants$14.const$3
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_action_group_query_action",
+        constants$164.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_export_action_group",
+        constants$34.const$5
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_action_map_get_type",
-        constants$3.const$5
+        "g_dbus_connection_unexport_action_group",
+        constants$40.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_action_map_lookup_action",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_action_map_add_action",
-        constants$13.const$4
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("lookup_action"),
+        RuntimeHelper.POINTER.withName("add_action"),
+        RuntimeHelper.POINTER.withName("remove_action")
+    ).withName("_GActionMapInterface");
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GActionMapInterface.lookup_action.class, "apply", constants$5.const$5);
 }
 
 

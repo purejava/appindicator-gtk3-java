@@ -21,7 +21,7 @@ import java.lang.invoke.VarHandle;
 public class _GdkPixbufLoaderClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1901.const$0;
+        return constants$1906.const$0;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -35,13 +35,13 @@ public class _GdkPixbufLoaderClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
         static MemorySegment allocate(size_prepared fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1901.const$1, fi, constants$467.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$1906.const$1, fi, constants$469.const$2, scope);
         }
         static size_prepared ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    constants$1901.const$2.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$1906.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -50,7 +50,7 @@ public class _GdkPixbufLoaderClass {
     }
 
     public static VarHandle size_prepared$VH() {
-        return constants$1901.const$3;
+        return constants$1906.const$3;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GdkPixbufLoaderClass {
      * }
      */
     public static MemorySegment size_prepared$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1901.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1906.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -68,13 +68,13 @@ public class _GdkPixbufLoaderClass {
      * }
      */
     public static void size_prepared$set(MemorySegment seg, MemorySegment x) {
-        constants$1901.const$3.set(seg, x);
+        constants$1906.const$3.set(seg, x);
     }
     public static MemorySegment size_prepared$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1901.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1906.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void size_prepared$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1901.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1906.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static size_prepared size_prepared(MemorySegment segment, Arena scope) {
         return size_prepared.ofAddress(size_prepared$get(segment), scope);
@@ -88,7 +88,7 @@ public class _GdkPixbufLoaderClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(area_prepared fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1901.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1906.const$4, fi, constants$13.const$1, scope);
         }
         static area_prepared ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -103,7 +103,7 @@ public class _GdkPixbufLoaderClass {
     }
 
     public static VarHandle area_prepared$VH() {
-        return constants$1901.const$5;
+        return constants$1906.const$5;
     }
     /**
      * Getter for field:
@@ -112,7 +112,7 @@ public class _GdkPixbufLoaderClass {
      * }
      */
     public static MemorySegment area_prepared$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1901.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1906.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -121,13 +121,13 @@ public class _GdkPixbufLoaderClass {
      * }
      */
     public static void area_prepared$set(MemorySegment seg, MemorySegment x) {
-        constants$1901.const$5.set(seg, x);
+        constants$1906.const$5.set(seg, x);
     }
     public static MemorySegment area_prepared$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1901.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1906.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void area_prepared$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1901.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1906.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static area_prepared area_prepared(MemorySegment segment, Arena scope) {
         return area_prepared.ofAddress(area_prepared$get(segment), scope);
@@ -141,13 +141,13 @@ public class _GdkPixbufLoaderClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, int _x4);
         static MemorySegment allocate(area_updated fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1902.const$0, fi, constants$1643.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1907.const$0, fi, constants$1648.const$1, scope);
         }
         static area_updated ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, int __x4) -> {
                 try {
-                    constants$1643.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$1648.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -156,7 +156,7 @@ public class _GdkPixbufLoaderClass {
     }
 
     public static VarHandle area_updated$VH() {
-        return constants$1902.const$1;
+        return constants$1907.const$1;
     }
     /**
      * Getter for field:
@@ -165,7 +165,7 @@ public class _GdkPixbufLoaderClass {
      * }
      */
     public static MemorySegment area_updated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1902.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1907.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -174,13 +174,13 @@ public class _GdkPixbufLoaderClass {
      * }
      */
     public static void area_updated$set(MemorySegment seg, MemorySegment x) {
-        constants$1902.const$1.set(seg, x);
+        constants$1907.const$1.set(seg, x);
     }
     public static MemorySegment area_updated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1902.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1907.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void area_updated$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1902.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1907.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static area_updated area_updated(MemorySegment segment, Arena scope) {
         return area_updated.ofAddress(area_updated$get(segment), scope);
@@ -194,7 +194,7 @@ public class _GdkPixbufLoaderClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(closed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1902.const$2, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1907.const$2, fi, constants$13.const$1, scope);
         }
         static closed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -209,7 +209,7 @@ public class _GdkPixbufLoaderClass {
     }
 
     public static VarHandle closed$VH() {
-        return constants$1902.const$3;
+        return constants$1907.const$3;
     }
     /**
      * Getter for field:
@@ -218,7 +218,7 @@ public class _GdkPixbufLoaderClass {
      * }
      */
     public static MemorySegment closed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1902.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1907.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -227,13 +227,13 @@ public class _GdkPixbufLoaderClass {
      * }
      */
     public static void closed$set(MemorySegment seg, MemorySegment x) {
-        constants$1902.const$3.set(seg, x);
+        constants$1907.const$3.set(seg, x);
     }
     public static MemorySegment closed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1902.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1907.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void closed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1902.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1907.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static closed closed(MemorySegment segment, Arena scope) {
         return closed.ofAddress(closed$get(segment), scope);

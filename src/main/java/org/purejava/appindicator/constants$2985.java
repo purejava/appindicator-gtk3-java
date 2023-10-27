@@ -8,28 +8,28 @@ final class constants$2985 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2985() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_set_pulse_step",
-        constants$689.const$5
+        "gtk_print_operation_cancel",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_set_inverted",
-        constants$40.const$2
+        "gtk_print_operation_draw_page_finish",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_get_text",
-        constants$5.const$2
+        "gtk_print_operation_set_defer_drawing",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_get_fraction",
-        constants$67.const$0
+        "gtk_print_operation_set_support_selection",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_get_pulse_step",
-        constants$67.const$0
+        "gtk_print_operation_get_support_selection",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_get_inverted",
-        constants$10.const$5
+        "gtk_print_operation_set_has_selection",
+        constants$40.const$2
     );
 }
 

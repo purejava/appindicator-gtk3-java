@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GUnixSocketAddressClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1390.const$2;
+        return constants$1394.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 160);

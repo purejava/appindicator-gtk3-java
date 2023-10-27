@@ -2,30 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1420 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1420() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_color_get_blue",
-        constants$1419.const$2
+        "hb_language_get_default",
+        constants$35.const$2
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        JAVA_INT.withName("x_bearing"),
-        JAVA_INT.withName("y_bearing"),
-        JAVA_INT.withName("width"),
-        JAVA_INT.withName("height")
-    ).withName("hb_glyph_extents_t");
-    static final VarHandle const$2 = constants$1420.const$1.varHandle(MemoryLayout.PathElement.groupElement("x_bearing"));
-    static final VarHandle const$3 = constants$1420.const$1.varHandle(MemoryLayout.PathElement.groupElement("y_bearing"));
-    static final VarHandle const$4 = constants$1420.const$1.varHandle(MemoryLayout.PathElement.groupElement("width"));
-    static final VarHandle const$5 = constants$1420.const$1.varHandle(MemoryLayout.PathElement.groupElement("height"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_language_matches",
+        constants$9.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_script_from_iso15924_tag",
+        constants$8.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_script_from_string",
+        constants$11.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_script_to_iso15924_tag",
+        constants$8.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_script_get_horizontal_direction",
+        constants$8.const$4
+    );
 }
 
 

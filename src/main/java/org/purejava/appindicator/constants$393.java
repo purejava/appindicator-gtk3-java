@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$393 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$393() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_new",
-        constants$5.const$2
+        "g_path_buf_push",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_free",
-        constants$13.const$1
+        "g_path_buf_pop",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_copy",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_equal",
+        "g_path_buf_set_filename",
         constants$9.const$0
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_path_buf_set_extension",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_path_buf_to_path",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_match",
-        constants$393.const$4
+        "g_path_buf_equal",
+        constants$9.const$0
     );
 }
 

@@ -13,7 +13,7 @@ public interface GSequenceIterCompareFunc {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GSequenceIterCompareFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$431.const$1, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$432.const$1, fi, constants$12.const$2, scope);
     }
     static GSequenceIterCompareFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

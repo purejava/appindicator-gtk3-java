@@ -2,46 +2,42 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
+import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2819 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2819() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_im_context_simple_get_type",
-        constants$3.const$5
+        "gtk_icon_view_set_cursor",
+        constants$332.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_im_context_simple_new",
-        constants$35.const$2
+        "gtk_icon_view_get_cursor",
+        constants$12.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_im_context_simple_add_table",
-        constants$1043.const$2
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_im_context_simple_add_compose_file",
-        constants$13.const$4
+        "gtk_icon_view_scroll_to_path",
+        constants$2819.const$2
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    RuntimeHelper.POINTER.withName("g_class")
-                ).withName("g_type_instance"),
-                JAVA_INT.withName("ref_count"),
-                MemoryLayout.paddingLayout(4),
-                RuntimeHelper.POINTER.withName("qdata")
-            ).withName("parent_instance")
-        ).withName("object"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkIMMulticontext");
-    static final VarHandle const$5 = constants$2819.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_enable_model_drag_source",
+        constants$2489.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_enable_model_drag_dest",
+        constants$1046.const$2
+    );
 }
 
 

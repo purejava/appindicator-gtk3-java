@@ -7,29 +7,20 @@ final class constants$1717 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1717() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_get_hairline",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_user_font_face_set_init_func$init_func.class, "apply", constants$12.const$2);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_get_line_cap",
-        constants$10.const$5
+        "cairo_user_font_face_set_init_func",
+        constants$13.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_get_line_join",
-        constants$10.const$5
-    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(cairo_user_font_face_set_render_glyph_func$render_glyph_func.class, "apply", constants$394.const$4);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_get_miter_limit",
-        constants$67.const$0
+        "cairo_user_font_face_set_render_glyph_func",
+        constants$13.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_get_dash_count",
-        constants$10.const$5
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(cairo_user_font_face_set_render_color_glyph_func$render_glyph_func.class, "apply", constants$394.const$4);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_get_dash",
-        constants$14.const$3
+        "cairo_user_font_face_set_render_color_glyph_func",
+        constants$13.const$4
     );
 }
 

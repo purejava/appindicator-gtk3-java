@@ -2,19 +2,63 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1646 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1646() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoRendererClass.begin.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("begin"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoRendererClass.end.class, "apply", constants$13.const$1);
-    static final VarHandle const$3 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("end"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoRendererClass.prepare_run.class, "apply", constants$13.const$4);
-    static final VarHandle const$5 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("prepare_run"));
+    static final VarHandle const$0 = constants$1645.const$4.varHandle(MemoryLayout.PathElement.groupElement("strikethrough"));
+    static final VarHandle const$1 = constants$1645.const$4.varHandle(MemoryLayout.PathElement.groupElement("active_count"));
+    static final VarHandle const$2 = constants$1645.const$4.varHandle(MemoryLayout.PathElement.groupElement("matrix"));
+    static final VarHandle const$3 = constants$1645.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("draw_glyphs"),
+        RuntimeHelper.POINTER.withName("draw_rectangle"),
+        RuntimeHelper.POINTER.withName("draw_error_underline"),
+        RuntimeHelper.POINTER.withName("draw_shape"),
+        RuntimeHelper.POINTER.withName("draw_trapezoid"),
+        RuntimeHelper.POINTER.withName("draw_glyph"),
+        RuntimeHelper.POINTER.withName("part_changed"),
+        RuntimeHelper.POINTER.withName("begin"),
+        RuntimeHelper.POINTER.withName("end"),
+        RuntimeHelper.POINTER.withName("prepare_run"),
+        RuntimeHelper.POINTER.withName("draw_glyph_item"),
+        RuntimeHelper.POINTER.withName("_pango_reserved2"),
+        RuntimeHelper.POINTER.withName("_pango_reserved3"),
+        RuntimeHelper.POINTER.withName("_pango_reserved4")
+    ).withName("_PangoRendererClass");
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
+    );
 }
 
 

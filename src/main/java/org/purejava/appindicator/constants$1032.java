@@ -2,28 +2,49 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1032 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1032() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable_finish",
-        constants$12.const$2
+        "g_file_set_attributes_async",
+        constants$783.const$3
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_unmount_mountable_with_operation$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable_with_operation",
-        constants$380.const$0
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_set_attributes_finish",
+        constants$34.const$5
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable_with_operation_finish",
-        constants$12.const$2
+        "g_file_set_attribute_string",
+        constants$1032.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_eject_mountable$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_eject_mountable",
-        constants$281.const$5
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_set_attribute_byte_string",
+        constants$1032.const$2
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_file_set_attribute_uint32",
+        constants$1032.const$5
     );
 }
 

@@ -3,33 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1209 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1209() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_permission_impl_update",
-        constants$1131.const$1
-    );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("can_poll"),
-        RuntimeHelper.POINTER.withName("is_readable"),
-        RuntimeHelper.POINTER.withName("create_source"),
-        RuntimeHelper.POINTER.withName("read_nonblocking")
-    ).withName("_GPollableInputStreamInterface");
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GPollableInputStreamInterface.can_poll.class, "apply", constants$10.const$5);
-    static final VarHandle const$3 = constants$1209.const$1.varHandle(MemoryLayout.PathElement.groupElement("can_poll"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GPollableInputStreamInterface.is_readable.class, "apply", constants$10.const$5);
-    static final VarHandle const$5 = constants$1209.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_readable"));
+    static final VarHandle const$0 = constants$1208.const$2.varHandle(MemoryLayout.PathElement.groupElement("acquire_async"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GPermissionClass.acquire_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$1208.const$2.varHandle(MemoryLayout.PathElement.groupElement("acquire_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GPermissionClass.release.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$1208.const$2.varHandle(MemoryLayout.PathElement.groupElement("release"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GPermissionClass.release_async.class, "apply", constants$42.const$1);
 }
 
 

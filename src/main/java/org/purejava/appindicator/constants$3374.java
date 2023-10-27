@@ -2,44 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3374 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3374() {}
-    static final VarHandle const$0 = constants$3373.const$3.varHandle(MemoryLayout.PathElement.groupElement("spacing"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_widget_modify_base",
+        constants$42.const$4
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_table_get_type",
-        constants$3.const$5
+        "gtk_widget_modify_cursor",
+        constants$14.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_table_new",
-        constants$30.const$2
+        "gtk_widget_modify_font",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_table_resize",
-        constants$467.const$3
+        "gtk_widget_reset_rc_styles",
+        constants$13.const$1
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_default_style",
+        constants$35.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_table_attach",
-        constants$3374.const$4
+        "gtk_widget_path",
+        constants$42.const$1
     );
 }
 

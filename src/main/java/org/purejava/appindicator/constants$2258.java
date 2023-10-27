@@ -2,30 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2258 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2258() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkAccelLabelClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2255.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_label_set_angle",
+        constants$692.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_label_get_angle",
+        constants$67.const$0
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_get_type",
-        constants$3.const$5
+        "gtk_label_select_region",
+        constants$469.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_new",
-        constants$5.const$2
+        "gtk_label_get_selection_bounds",
+        constants$12.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_get_accel_widget",
+        "gtk_label_get_layout",
         constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_get_accel_width",
-        constants$10.const$5
+        "gtk_label_get_layout_offsets",
+        constants$14.const$3
     );
 }
 

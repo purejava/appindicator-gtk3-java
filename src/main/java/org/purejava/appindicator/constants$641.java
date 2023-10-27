@@ -2,41 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.foreign.UnionLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$641 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$641() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_value_set_object_take_ownership",
+        "g_object_watch_closure",
         constants$13.const$4
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
-        JAVA_LONG,
-        RuntimeHelper.POINTER
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_cclosure_new_object$callback_func.class, "apply", constants$7.const$5);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_object_compat_control",
-        constants$641.const$1
+        "g_cclosure_new_object",
+        constants$5.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_clear_object",
-        constants$13.const$1
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_cclosure_new_object_swap$callback_func.class, "apply", constants$7.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_cclosure_new_object_swap",
+        constants$5.const$5
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.unionLayout(
-            RuntimeHelper.POINTER.withName("p")
-        ).withName("priv")
-    ).withName("GWeakRef");
-    static final UnionLayout const$5 = MemoryLayout.unionLayout(
-        RuntimeHelper.POINTER.withName("p")
-    ).withName("");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_closure_new_object",
+        constants$24.const$4
+    );
 }
 
 

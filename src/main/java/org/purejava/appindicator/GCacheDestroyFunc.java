@@ -13,7 +13,7 @@ public interface GCacheDestroyFunc {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(GCacheDestroyFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$493.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$494.const$5, fi, constants$13.const$1, scope);
     }
     static GCacheDestroyFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

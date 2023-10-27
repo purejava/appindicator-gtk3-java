@@ -13,13 +13,13 @@ public interface cairo_device_observer_print$write_func {
 
     int apply(java.lang.foreign.MemorySegment closure, java.lang.foreign.MemorySegment data, int length);
     static MemorySegment allocate(cairo_device_observer_print$write_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1727.const$4, fi, constants$62.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$1732.const$4, fi, constants$62.const$0, scope);
     }
     static cairo_device_observer_print$write_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _closure, java.lang.foreign.MemorySegment _data, int _length) -> {
             try {
-                return (int)constants$955.const$2.invokeExact(symbol, _closure, _data, _length);
+                return (int)constants$958.const$2.invokeExact(symbol, _closure, _data, _length);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

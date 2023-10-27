@@ -13,7 +13,7 @@ public interface hb_buffer_set_message_func$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(hb_buffer_set_message_func$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1517.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1522.const$5, fi, constants$13.const$1, scope);
     }
     static hb_buffer_set_message_func$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

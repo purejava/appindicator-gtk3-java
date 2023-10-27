@@ -2,37 +2,24 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$919 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$919() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_dbus_object_manager_client_new_for_bus$callback.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new_for_bus",
-        constants$919.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDBusObjectManagerClientClass.interface_proxy_signal.class, "apply", constants$339.const$3);
+    static final VarHandle const$1 = constants$918.const$5.varHandle(MemoryLayout.PathElement.groupElement("interface_proxy_signal"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDBusObjectManagerClientClass.interface_proxy_properties_changed.class, "apply", constants$332.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new_for_bus_finish",
-        constants$5.const$5
+        constants$332.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_dbus_object_manager_client_new_for_bus_sync$get_proxy_type_func.class, "apply", constants$332.const$2);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_dbus_object_manager_client_new_for_bus_sync$get_proxy_type_destroy_notify.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$918.const$5.varHandle(MemoryLayout.PathElement.groupElement("interface_proxy_properties_changed"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_get_type",
+        constants$3.const$5
+    );
 }
 
 

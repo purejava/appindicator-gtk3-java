@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2967 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2967() {}
-    static final VarHandle const$0 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface._gtk_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2964.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkPrintOperationPreviewIface._gtk_reserved6.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_page_set",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_page_set",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_default_source",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_default_source",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_get_media_type",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_print_settings_set_media_type",
+        constants$13.const$4
+    );
 }
 
 

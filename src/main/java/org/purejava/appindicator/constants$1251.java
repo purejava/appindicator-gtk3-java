@@ -8,28 +8,28 @@ final class constants$1251 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1251() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_default_value",
-        constants$5.const$2
+        "g_seekable_can_seek",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_range",
-        constants$5.const$2
+        "g_seekable_seek",
+        constants$1069.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_range_check",
-        constants$9.const$0
+        "g_seekable_can_truncate",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_name",
-        constants$5.const$2
+        "g_seekable_truncate",
+        constants$394.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_summary",
-        constants$5.const$2
+        "g_settings_schema_source_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_description",
-        constants$5.const$2
+        "g_settings_schema_source_get_default",
+        constants$35.const$2
     );
 }
 

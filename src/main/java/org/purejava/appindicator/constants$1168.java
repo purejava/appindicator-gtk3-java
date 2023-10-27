@@ -9,24 +9,12 @@ final class constants$1168 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1168() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountIface.get_symbolic_icon.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_symbolic_icon"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_mount_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_mount_get_root",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_mount_get_default_location",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_mount_get_name",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("remount_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMountIface.guess_content_type.class, "apply", constants$282.const$1);
+    static final VarHandle const$2 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("guess_content_type"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMountIface.guess_content_type_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$4 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("guess_content_type_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GMountIface.guess_content_type_sync.class, "apply", constants$180.const$0);
 }
 
 

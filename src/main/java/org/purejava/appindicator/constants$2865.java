@@ -2,53 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2865 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2865() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_get_current_event_state",
-        constants$10.const$5
+        "gtk_get_binary_age",
+        constants$83.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_get_current_event_device",
-        constants$35.const$2
+        "gtk_get_interface_age",
+        constants$83.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_get_event_widget",
-        constants$5.const$2
+        "gtk_check_version",
+        constants$30.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_propagate_event",
+        "gtk_parse_args",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_init",
         constants$13.const$4
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        MemoryLayout.structLayout(
-                            RuntimeHelper.POINTER.withName("g_class")
-                        ).withName("g_type_instance"),
-                        JAVA_INT.withName("ref_count"),
-                        MemoryLayout.paddingLayout(4),
-                        RuntimeHelper.POINTER.withName("qdata")
-                    ).withName("parent_instance"),
-                    RuntimeHelper.POINTER.withName("priv")
-                ).withName("widget"),
-                RuntimeHelper.POINTER.withName("priv")
-            ).withName("container"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("menu_shell"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkMenuBar");
-    static final VarHandle const$5 = constants$2865.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_init_check",
+        constants$9.const$0
+    );
 }
 
 

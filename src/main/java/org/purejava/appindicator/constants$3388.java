@@ -2,35 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3388 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3388() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_path",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_has_class",
-        constants$9.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_has_region",
-        constants$12.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_state",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$3384.const$3.varHandle(MemoryLayout.PathElement.groupElement("render_expander"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkThemingEngineClass.render_focus.class, "apply", constants$3046.const$2);
+    static final VarHandle const$2 = constants$3384.const$3.varHandle(MemoryLayout.PathElement.groupElement("render_focus"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkThemingEngineClass.render_layout.class, "apply", constants$3048.const$0);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_state_is_running",
-        constants$150.const$0
+        constants$3048.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_direction",
-        constants$10.const$5
-    );
+    static final VarHandle const$5 = constants$3384.const$3.varHandle(MemoryLayout.PathElement.groupElement("render_layout"));
 }
 
 

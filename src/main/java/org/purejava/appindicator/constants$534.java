@@ -8,28 +8,28 @@ final class constants$534 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$534() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pthread_barrier_init",
-        constants$62.const$0
+        "pthread_condattr_getpshared",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pthread_barrier_destroy",
-        constants$10.const$5
+        "pthread_condattr_setpshared",
+        constants$11.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pthread_barrier_wait",
-        constants$10.const$5
+        "pthread_condattr_getclock",
+        constants$9.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_init",
-        constants$10.const$5
+        "pthread_condattr_setclock",
+        constants$11.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_destroy",
-        constants$10.const$5
+        "pthread_spin_init",
+        constants$11.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_getpshared",
-        constants$9.const$0
+        "pthread_spin_destroy",
+        constants$10.const$5
     );
 }
 

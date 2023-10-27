@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1169 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1169() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_mount_get_icon",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_mount_get_symbolic_icon",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_mount_get_uuid",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_mount_get_volume",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_mount_get_drive",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_mount_can_unmount",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("guess_content_type_sync"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMountIface.pre_unmount.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("pre_unmount"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMountIface.unmount_with_operation.class, "apply", constants$381.const$0);
+    static final VarHandle const$4 = constants$1162.const$4.varHandle(MemoryLayout.PathElement.groupElement("unmount_with_operation"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GMountIface.unmount_with_operation_finish.class, "apply", constants$12.const$2);
 }
 
 

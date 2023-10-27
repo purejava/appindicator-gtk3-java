@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$725 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$725() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_app_info_get_description",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_app_info_get_executable",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_app_info_get_commandline",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_app_info_get_icon",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_app_info_launch",
-        constants$34.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_app_info_supports_uris",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_display_name.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$718.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_display_name"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GAppInfoIface.set_as_last_used_for_type.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$718.const$1.varHandle(MemoryLayout.PathElement.groupElement("set_as_last_used_for_type"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_supported_types.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$718.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_supported_types"));
 }
 
 

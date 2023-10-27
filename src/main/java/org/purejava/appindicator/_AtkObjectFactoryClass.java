@@ -22,7 +22,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkObjectFactoryClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2043.const$4;
+        return constants$2048.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -36,7 +36,7 @@ public class _AtkObjectFactoryClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(create_accessible fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2043.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2049.const$0, fi, constants$5.const$2, scope);
         }
         static create_accessible ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -51,7 +51,7 @@ public class _AtkObjectFactoryClass {
     }
 
     public static VarHandle create_accessible$VH() {
-        return constants$2044.const$0;
+        return constants$2049.const$1;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class _AtkObjectFactoryClass {
      * }
      */
     public static MemorySegment create_accessible$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2044.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2049.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -69,13 +69,13 @@ public class _AtkObjectFactoryClass {
      * }
      */
     public static void create_accessible$set(MemorySegment seg, MemorySegment x) {
-        constants$2044.const$0.set(seg, x);
+        constants$2049.const$1.set(seg, x);
     }
     public static MemorySegment create_accessible$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2044.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2049.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void create_accessible$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2044.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2049.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static create_accessible create_accessible(MemorySegment segment, Arena scope) {
         return create_accessible.ofAddress(create_accessible$get(segment), scope);
@@ -89,7 +89,7 @@ public class _AtkObjectFactoryClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(invalidate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2044.const$1, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2049.const$2, fi, constants$13.const$1, scope);
         }
         static invalidate ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -104,7 +104,7 @@ public class _AtkObjectFactoryClass {
     }
 
     public static VarHandle invalidate$VH() {
-        return constants$2044.const$2;
+        return constants$2049.const$3;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _AtkObjectFactoryClass {
      * }
      */
     public static MemorySegment invalidate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2044.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2049.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _AtkObjectFactoryClass {
      * }
      */
     public static void invalidate$set(MemorySegment seg, MemorySegment x) {
-        constants$2044.const$2.set(seg, x);
+        constants$2049.const$3.set(seg, x);
     }
     public static MemorySegment invalidate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2044.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2049.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void invalidate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2044.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2049.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static invalidate invalidate(MemorySegment segment, Arena scope) {
         return invalidate.ofAddress(invalidate$get(segment), scope);
@@ -142,13 +142,13 @@ public class _AtkObjectFactoryClass {
 
         long apply();
         static MemorySegment allocate(get_accessible_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2044.const$3, fi, constants$3.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2049.const$4, fi, constants$3.const$5, scope);
         }
         static get_accessible_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (long)constants$511.const$2.invokeExact(symbol);
+                    return (long)constants$513.const$0.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -157,7 +157,7 @@ public class _AtkObjectFactoryClass {
     }
 
     public static VarHandle get_accessible_type$VH() {
-        return constants$2044.const$4;
+        return constants$2049.const$5;
     }
     /**
      * Getter for field:
@@ -166,7 +166,7 @@ public class _AtkObjectFactoryClass {
      * }
      */
     public static MemorySegment get_accessible_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2044.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2049.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -175,13 +175,13 @@ public class _AtkObjectFactoryClass {
      * }
      */
     public static void get_accessible_type$set(MemorySegment seg, MemorySegment x) {
-        constants$2044.const$4.set(seg, x);
+        constants$2049.const$5.set(seg, x);
     }
     public static MemorySegment get_accessible_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2044.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2049.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_accessible_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2044.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2049.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_accessible_type get_accessible_type(MemorySegment segment, Arena scope) {
         return get_accessible_type.ofAddress(get_accessible_type$get(segment), scope);
@@ -195,7 +195,7 @@ public class _AtkObjectFactoryClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(pad1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2044.const$5, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2050.const$0, fi, constants$10.const$5, scope);
         }
         static pad1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -210,7 +210,7 @@ public class _AtkObjectFactoryClass {
     }
 
     public static VarHandle pad1$VH() {
-        return constants$2045.const$0;
+        return constants$2050.const$1;
     }
     /**
      * Getter for field:
@@ -219,7 +219,7 @@ public class _AtkObjectFactoryClass {
      * }
      */
     public static MemorySegment pad1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2045.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2050.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -228,13 +228,13 @@ public class _AtkObjectFactoryClass {
      * }
      */
     public static void pad1$set(MemorySegment seg, MemorySegment x) {
-        constants$2045.const$0.set(seg, x);
+        constants$2050.const$1.set(seg, x);
     }
     public static MemorySegment pad1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2045.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2050.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void pad1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2045.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2050.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static pad1 pad1(MemorySegment segment, Arena scope) {
         return pad1.ofAddress(pad1$get(segment), scope);
@@ -248,7 +248,7 @@ public class _AtkObjectFactoryClass {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(pad2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2045.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2050.const$2, fi, constants$10.const$5, scope);
         }
         static pad2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -263,7 +263,7 @@ public class _AtkObjectFactoryClass {
     }
 
     public static VarHandle pad2$VH() {
-        return constants$2045.const$2;
+        return constants$2050.const$3;
     }
     /**
      * Getter for field:
@@ -272,7 +272,7 @@ public class _AtkObjectFactoryClass {
      * }
      */
     public static MemorySegment pad2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2045.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2050.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -281,13 +281,13 @@ public class _AtkObjectFactoryClass {
      * }
      */
     public static void pad2$set(MemorySegment seg, MemorySegment x) {
-        constants$2045.const$2.set(seg, x);
+        constants$2050.const$3.set(seg, x);
     }
     public static MemorySegment pad2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2045.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2050.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void pad2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2045.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$2050.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static pad2 pad2(MemorySegment segment, Arena scope) {
         return pad2.ofAddress(pad2$get(segment), scope);

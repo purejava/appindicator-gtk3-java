@@ -8,28 +8,28 @@ final class constants$1936 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1936() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_keyboard_grab",
-        constants$49.const$0
+        "gdk_keymap_get_scroll_lock_state",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pointer_ungrab",
-        constants$80.const$1
+        "gdk_keymap_get_modifier_state",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_keyboard_ungrab",
-        constants$80.const$1
+        "gdk_keymap_add_virtual_modifiers",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pointer_is_grabbed",
-        constants$83.const$1
+        "gdk_keymap_map_virtual_modifiers",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_screen_width",
-        constants$83.const$1
+        "gdk_keymap_get_modifier_mask",
+        constants$11.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_screen_height",
-        constants$83.const$1
+        "gdk_keyval_name",
+        constants$24.const$0
     );
 }
 

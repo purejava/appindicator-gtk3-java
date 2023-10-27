@@ -13,7 +13,7 @@ public interface g_type_add_class_cache_func$cache_func {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_type_add_class_cache_func$cache_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$565.const$1, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$567.const$4, fi, constants$9.const$0, scope);
     }
     static g_type_add_class_cache_func$cache_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

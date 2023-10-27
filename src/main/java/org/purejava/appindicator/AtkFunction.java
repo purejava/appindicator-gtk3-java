@@ -13,7 +13,7 @@ public interface AtkFunction {
 
     int apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(AtkFunction fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1965.const$1, fi, constants$10.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$1970.const$2, fi, constants$10.const$5, scope);
     }
     static AtkFunction ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

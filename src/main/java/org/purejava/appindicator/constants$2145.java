@@ -8,28 +8,28 @@ final class constants$2145 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2145() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_add_device_events",
-        constants$164.const$5
+        "gtk_widget_set_app_paintable",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_opacity",
-        constants$689.const$5
+        "gtk_widget_get_app_paintable",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_opacity",
-        constants$67.const$0
+        "gtk_widget_set_double_buffered",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_device_enabled",
-        constants$164.const$5
+        "gtk_widget_get_double_buffered",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_device_enabled",
-        constants$9.const$0
+        "gtk_widget_set_redraw_on_allocate",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_toplevel",
-        constants$5.const$2
+        "gtk_widget_set_parent",
+        constants$13.const$4
     );
 }
 

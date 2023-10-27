@@ -2,43 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3143 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3143() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_deserialize_get_can_create_tags",
-        constants$9.const$0
+        "gtk_text_buffer_get_modified",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_serialize_formats",
-        constants$5.const$5
+        "gtk_text_buffer_set_modified",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_deserialize_formats",
-        constants$5.const$5
+        "gtk_text_buffer_get_has_selection",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_serialize",
-        constants$334.const$2
+        "gtk_text_buffer_add_selection_clipboard",
+        constants$13.const$4
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_remove_selection_clipboard",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_deserialize",
-        constants$3143.const$4
+        "gtk_text_buffer_cut_clipboard",
+        constants$164.const$5
     );
 }
 

@@ -8,28 +8,28 @@ final class constants$2204 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2204() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_window_present_with_time",
-        constants$40.const$2
+        "gtk_window_has_toplevel_focus",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_window_iconify",
-        constants$13.const$1
+        "gtk_window_set_decorated",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_window_deiconify",
-        constants$13.const$1
+        "gtk_window_get_decorated",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_window_stick",
-        constants$13.const$1
+        "gtk_window_set_deletable",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_window_unstick",
-        constants$13.const$1
+        "gtk_window_get_deletable",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_window_maximize",
-        constants$13.const$1
+        "gtk_window_set_icon_list",
+        constants$13.const$4
     );
 }
 

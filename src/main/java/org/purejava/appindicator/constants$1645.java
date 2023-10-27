@@ -4,29 +4,53 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1645 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1645() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_markup_parser_new",
+        constants$24.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_markup_parser_finish",
+        constants$165.const$2
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
         RuntimeHelper.POINTER,
         JAVA_INT,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_glyph.class, "apply", constants$1645.const$0);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$1645.const$0
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_parse_markup",
+        constants$1645.const$2
     );
-    static final VarHandle const$3 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_glyph"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoRendererClass.part_changed.class, "apply", constants$40.const$2);
-    static final VarHandle const$5 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("part_changed"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        JAVA_INT.withName("underline"),
+        JAVA_INT.withName("strikethrough"),
+        JAVA_INT.withName("active_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("matrix"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_PangoRenderer");
+    static final VarHandle const$5 = constants$1645.const$4.varHandle(MemoryLayout.PathElement.groupElement("underline"));
 }
 
 

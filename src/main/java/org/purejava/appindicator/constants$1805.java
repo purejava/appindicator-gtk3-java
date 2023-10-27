@@ -2,35 +2,18 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.invoke.VarHandle;
 final class constants$1805 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1805() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_event_new",
-        constants$24.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_event_copy",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_event_free",
-        constants$13.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_window",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_time",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_state",
-        constants$9.const$0
-    );
+    static final VarHandle const$0 = constants$1804.const$4.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$1 = constants$1804.const$4.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$2 = constants$1804.const$4.varHandle(MemoryLayout.PathElement.groupElement("time"));
+    static final VarHandle const$3 = constants$1804.const$4.varHandle(MemoryLayout.PathElement.groupElement("group"));
+    static final VarHandle const$4 = constants$1804.const$4.varHandle(MemoryLayout.PathElement.groupElement("button"));
+    static final VarHandle const$5 = constants$1804.const$4.varHandle(MemoryLayout.PathElement.groupElement("mode"));
 }
 
 

@@ -2,34 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$299 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$299() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_strchug",
-        constants$5.const$2
+        "g_ascii_strtoll",
+        constants$68.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_strchomp",
-        constants$5.const$2
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_ascii_strcasecmp",
-        constants$9.const$0
+        "g_ascii_dtostr",
+        constants$299.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_ascii_strncasecmp",
-        constants$18.const$2
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_ascii_strdown",
-        constants$21.const$1
+        "g_ascii_formatd",
+        constants$299.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_ascii_strup",
-        constants$21.const$1
+        "g_strchug",
+        constants$5.const$2
     );
 }
 

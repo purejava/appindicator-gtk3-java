@@ -4,31 +4,24 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$697 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$697() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$696.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GIOSchedulerJobFunc.class, "apply", constants$12.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GSimpleAsyncThreadFunc.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GSocketSourceFunc.class, "apply", constants$150.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GDatagramBasedSourceFunc.class, "apply", constants$150.const$0);
+    static final StructLayout const$5 = MemoryLayout.structLayout(
         RuntimeHelper.POINTER.withName("buffer"),
         JAVA_LONG.withName("size")
-    ).withName("_GOutputVector");
-    static final VarHandle const$1 = constants$697.const$0.varHandle(MemoryLayout.PathElement.groupElement("buffer"));
-    static final VarHandle const$2 = constants$697.const$0.varHandle(MemoryLayout.PathElement.groupElement("size"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("address"),
-        RuntimeHelper.POINTER.withName("vectors"),
-        JAVA_INT.withName("num_vectors"),
-        JAVA_INT.withName("bytes_sent"),
-        RuntimeHelper.POINTER.withName("control_messages"),
-        JAVA_INT.withName("num_control_messages"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GOutputMessage");
-    static final VarHandle const$4 = constants$697.const$3.varHandle(MemoryLayout.PathElement.groupElement("address"));
-    static final VarHandle const$5 = constants$697.const$3.varHandle(MemoryLayout.PathElement.groupElement("vectors"));
+    ).withName("_GInputVector");
 }
 
 

@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2080 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2080() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_table_get_column_at_index",
-        constants$11.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_table_get_row_at_index",
-        constants$11.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_table_get_n_columns",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_table_get_n_rows",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_table_get_column_extent_at",
-        constants$49.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_table_get_row_extent_at",
-        constants$49.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkTableIface.is_column_selected.class, "apply", constants$11.const$4);
+    static final VarHandle const$1 = constants$2072.const$3.varHandle(MemoryLayout.PathElement.groupElement("is_column_selected"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkTableIface.is_row_selected.class, "apply", constants$11.const$4);
+    static final VarHandle const$3 = constants$2072.const$3.varHandle(MemoryLayout.PathElement.groupElement("is_row_selected"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkTableIface.is_selected.class, "apply", constants$49.const$0);
+    static final VarHandle const$5 = constants$2072.const$3.varHandle(MemoryLayout.PathElement.groupElement("is_selected"));
 }
 
 

@@ -7,23 +7,29 @@ final class constants$566 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$566() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_type_add_interface_check$check_func.class, "apply", constants$13.const$4);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_type_add_interface_check",
-        constants$13.const$4
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_type_class_get_private",
+        constants$21.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_type_remove_interface_check$check_func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_class_get_instance_private_offset",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_type_ensure",
+        constants$84.const$5
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_type_remove_interface_check",
-        constants$13.const$4
+        "g_type_get_type_registration_serial",
+        constants$83.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_value_table_peek",
+        "g_type_get_plugin",
         constants$63.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_type_check_instance",
-        constants$10.const$5
+        "g_type_interface_get_plugin",
+        constants$87.const$5
     );
 }
 

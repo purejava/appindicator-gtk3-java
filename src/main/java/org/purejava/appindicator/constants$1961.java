@@ -7,29 +7,26 @@ final class constants$1961 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1961() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_get_minor_version",
-        constants$83.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_accel_group_find$find_func.class, "apply", constants$12.const$2);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_get_micro_version",
-        constants$83.const$1
+        "gtk_accel_group_find",
+        constants$23.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_get_binary_age",
-        constants$83.const$1
+        "gtk_accel_group_from_accel_closure",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_get_interface_age",
-        constants$83.const$1
+        "gtk_accelerator_valid",
+        constants$123.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_scroll_type_get_type",
-        constants$3.const$5
+        "gtk_accelerator_parse",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_state_flags_get_type",
-        constants$3.const$5
+        "gtk_accelerator_parse_with_keycode",
+        constants$42.const$1
     );
 }
 

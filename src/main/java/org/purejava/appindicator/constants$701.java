@@ -9,12 +9,14 @@ final class constants$701 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$701() {}
-    static final VarHandle const$0 = constants$699.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_enabled"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GActionInterface.get_state.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$699.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_state"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GActionInterface.change_state.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$699.const$2.varHandle(MemoryLayout.PathElement.groupElement("change_state"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GActionInterface.activate.class, "apply", constants$13.const$4);
+    static final VarHandle const$0 = constants$700.const$1.varHandle(MemoryLayout.PathElement.groupElement("control_messages"));
+    static final VarHandle const$1 = constants$700.const$1.varHandle(MemoryLayout.PathElement.groupElement("num_control_messages"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GCancellableSourceFunc.class, "apply", constants$9.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GPollableSourceFunc.class, "apply", constants$9.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GDBusProxyTypeFunc.class, "apply", constants$333.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$333.const$2
+    );
 }
 
 

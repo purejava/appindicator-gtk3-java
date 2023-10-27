@@ -2,31 +2,83 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2328 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2328() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.get_preferred_width.class, "apply", constants$331.const$1);
-    static final VarHandle const$1 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_width"));
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_has_default_sort_func",
+        constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.get_preferred_height_for_width.class, "apply", constants$2328.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$2328.const$2
-    );
-    static final VarHandle const$5 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_height_for_width"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkCellCallback.class, "apply", constants$9.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GtkCellAllocCallback.class, "apply", constants$34.const$5);
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkCellArea");
+    static final VarHandle const$4 = constants$2328.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("add"),
+        RuntimeHelper.POINTER.withName("remove"),
+        RuntimeHelper.POINTER.withName("foreach"),
+        RuntimeHelper.POINTER.withName("foreach_alloc"),
+        RuntimeHelper.POINTER.withName("event"),
+        RuntimeHelper.POINTER.withName("render"),
+        RuntimeHelper.POINTER.withName("apply_attributes"),
+        RuntimeHelper.POINTER.withName("create_context"),
+        RuntimeHelper.POINTER.withName("copy_context"),
+        RuntimeHelper.POINTER.withName("get_request_mode"),
+        RuntimeHelper.POINTER.withName("get_preferred_width"),
+        RuntimeHelper.POINTER.withName("get_preferred_height_for_width"),
+        RuntimeHelper.POINTER.withName("get_preferred_height"),
+        RuntimeHelper.POINTER.withName("get_preferred_width_for_height"),
+        RuntimeHelper.POINTER.withName("set_cell_property"),
+        RuntimeHelper.POINTER.withName("get_cell_property"),
+        RuntimeHelper.POINTER.withName("focus"),
+        RuntimeHelper.POINTER.withName("is_activatable"),
+        RuntimeHelper.POINTER.withName("activate"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved1"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved2"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved3"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved4"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved5"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved6"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved7"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved8")
+    ).withName("_GtkCellAreaClass");
 }
 
 

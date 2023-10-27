@@ -2,40 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$854 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$854() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_bus_get_finish",
-        constants$5.const$5
+        "g_dbus_action_group_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_bus_get_sync",
-        constants$237.const$5
+        "g_dbus_action_group_get",
+        constants$23.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_dbus_connection_new$callback.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_address_escape_value",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_is_address",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_new",
-        constants$854.const$3
+        "g_dbus_is_supported_address",
+        constants$9.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_new_finish",
-        constants$5.const$5
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_dbus_address_get_stream$callback.class, "apply", constants$14.const$3);
 }
 
 

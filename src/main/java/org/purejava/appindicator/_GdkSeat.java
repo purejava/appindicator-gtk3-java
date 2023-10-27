@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GdkSeat {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1855.const$1;
+        return constants$1860.const$1;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);

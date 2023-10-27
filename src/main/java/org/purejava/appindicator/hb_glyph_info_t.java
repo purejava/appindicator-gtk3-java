@@ -21,10 +21,10 @@ import java.lang.invoke.VarHandle;
 public class hb_glyph_info_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1503.const$4;
+        return constants$1508.const$4;
     }
     public static VarHandle codepoint$VH() {
-        return constants$1503.const$5;
+        return constants$1508.const$5;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class hb_glyph_info_t {
      * }
      */
     public static int codepoint$get(MemorySegment seg) {
-        return (int)constants$1503.const$5.get(seg);
+        return (int)constants$1508.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -42,16 +42,16 @@ public class hb_glyph_info_t {
      * }
      */
     public static void codepoint$set(MemorySegment seg, int x) {
-        constants$1503.const$5.set(seg, x);
+        constants$1508.const$5.set(seg, x);
     }
     public static int codepoint$get(MemorySegment seg, long index) {
-        return (int)constants$1503.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1508.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void codepoint$set(MemorySegment seg, long index, int x) {
-        constants$1503.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1508.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle mask$VH() {
-        return constants$1504.const$0;
+        return constants$1509.const$0;
     }
     /**
      * Getter for field:
@@ -60,7 +60,7 @@ public class hb_glyph_info_t {
      * }
      */
     public static int mask$get(MemorySegment seg) {
-        return (int)constants$1504.const$0.get(seg);
+        return (int)constants$1509.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -69,16 +69,16 @@ public class hb_glyph_info_t {
      * }
      */
     public static void mask$set(MemorySegment seg, int x) {
-        constants$1504.const$0.set(seg, x);
+        constants$1509.const$0.set(seg, x);
     }
     public static int mask$get(MemorySegment seg, long index) {
-        return (int)constants$1504.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1509.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void mask$set(MemorySegment seg, long index, int x) {
-        constants$1504.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1509.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle cluster$VH() {
-        return constants$1504.const$1;
+        return constants$1509.const$1;
     }
     /**
      * Getter for field:
@@ -87,7 +87,7 @@ public class hb_glyph_info_t {
      * }
      */
     public static int cluster$get(MemorySegment seg) {
-        return (int)constants$1504.const$1.get(seg);
+        return (int)constants$1509.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -96,13 +96,13 @@ public class hb_glyph_info_t {
      * }
      */
     public static void cluster$set(MemorySegment seg, int x) {
-        constants$1504.const$1.set(seg, x);
+        constants$1509.const$1.set(seg, x);
     }
     public static int cluster$get(MemorySegment seg, long index) {
-        return (int)constants$1504.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1509.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void cluster$set(MemorySegment seg, long index, int x) {
-        constants$1504.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1509.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment var1$slice(MemorySegment seg) {
         return seg.asSlice(12, 4);

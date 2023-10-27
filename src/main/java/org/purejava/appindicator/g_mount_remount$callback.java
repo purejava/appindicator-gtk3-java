@@ -13,7 +13,7 @@ public interface g_mount_remount$callback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_mount_remount$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1171.const$1, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1174.const$4, fi, constants$14.const$3, scope);
     }
     static g_mount_remount$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

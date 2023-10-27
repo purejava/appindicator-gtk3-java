@@ -13,7 +13,7 @@ public interface gtk_tree_view_set_search_position_func$func {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_tree_view_set_search_position_func$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2488.const$1, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$2493.const$1, fi, constants$14.const$3, scope);
     }
     static gtk_tree_view_set_search_position_func$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

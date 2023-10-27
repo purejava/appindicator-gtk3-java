@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _GInetAddressClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1097.const$4;
+        return constants$1101.const$0;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -33,7 +33,7 @@ public class _GInetAddressClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(to_string fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1097.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1101.const$1, fi, constants$5.const$2, scope);
         }
         static to_string ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -48,7 +48,7 @@ public class _GInetAddressClass {
     }
 
     public static VarHandle to_string$VH() {
-        return constants$1098.const$0;
+        return constants$1101.const$2;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GInetAddressClass {
      * }
      */
     public static MemorySegment to_string$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1098.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1101.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GInetAddressClass {
      * }
      */
     public static void to_string$set(MemorySegment seg, MemorySegment x) {
-        constants$1098.const$0.set(seg, x);
+        constants$1101.const$2.set(seg, x);
     }
     public static MemorySegment to_string$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1098.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1101.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void to_string$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1098.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1101.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static to_string to_string(MemorySegment segment, Arena scope) {
         return to_string.ofAddress(to_string$get(segment), scope);
@@ -86,7 +86,7 @@ public class _GInetAddressClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(to_bytes fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1098.const$1, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1101.const$3, fi, constants$5.const$2, scope);
         }
         static to_bytes ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -101,7 +101,7 @@ public class _GInetAddressClass {
     }
 
     public static VarHandle to_bytes$VH() {
-        return constants$1098.const$2;
+        return constants$1101.const$4;
     }
     /**
      * Getter for field:
@@ -110,7 +110,7 @@ public class _GInetAddressClass {
      * }
      */
     public static MemorySegment to_bytes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1098.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1101.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -119,13 +119,13 @@ public class _GInetAddressClass {
      * }
      */
     public static void to_bytes$set(MemorySegment seg, MemorySegment x) {
-        constants$1098.const$2.set(seg, x);
+        constants$1101.const$4.set(seg, x);
     }
     public static MemorySegment to_bytes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1098.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1101.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void to_bytes$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1098.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1101.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static to_bytes to_bytes(MemorySegment segment, Arena scope) {
         return to_bytes.ofAddress(to_bytes$get(segment), scope);

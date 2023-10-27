@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1182 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1182() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_choice",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_choice",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_mount_operation_reply",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_is_tcrypt_hidden_volume",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_is_tcrypt_hidden_volume",
-        constants$40.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_is_tcrypt_system_volume",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$1177.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved6.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1177.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved7.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1177.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved7"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved8.class, "apply", constants$7.const$5);
 }
 
 

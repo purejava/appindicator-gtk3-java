@@ -13,7 +13,7 @@ public interface GOptionErrorFunc {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GOptionErrorFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$382.const$2, fi, constants$42.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$383.const$2, fi, constants$42.const$1, scope);
     }
     static GOptionErrorFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

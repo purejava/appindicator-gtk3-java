@@ -7,56 +7,33 @@ import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3261 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3261() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_stock_set_translate_func",
-        constants$42.const$1
+        "gtk_action_get_is_important",
+        constants$10.const$5
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkActionGroup");
-    static final VarHandle const$2 = constants$3261.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_action_set_always_show_image",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_action_get_always_show_image",
+        constants$10.const$5
+    );
     static final StructLayout const$3 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("get_action"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved1"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved2"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved3"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved4")
-    ).withName("_GtkActionGroupClass");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkActionGroupClass.get_action.class, "apply", constants$5.const$5);
-    static final VarHandle const$5 = constants$3261.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_action"));
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("update"),
+        RuntimeHelper.POINTER.withName("sync_action_properties")
+    ).withName("_GtkActivatableIface");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkActivatableIface.update.class, "apply", constants$14.const$3);
+    static final VarHandle const$5 = constants$3261.const$3.varHandle(MemoryLayout.PathElement.groupElement("update"));
 }
 
 

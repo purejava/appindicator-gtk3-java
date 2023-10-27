@@ -2,46 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2088 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2088() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_table_cell_get_row_header_cells",
-        constants$5.const$2
+        "atk_table_set_summary",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_table_cell_get_row_column_span",
-        constants$165.const$2
+        "atk_table_get_selected_columns",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_table_cell_get_table",
-        constants$5.const$2
+        "atk_table_get_selected_rows",
+        constants$9.const$0
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("get_current_value"),
-        RuntimeHelper.POINTER.withName("get_maximum_value"),
-        RuntimeHelper.POINTER.withName("get_minimum_value"),
-        RuntimeHelper.POINTER.withName("set_current_value"),
-        RuntimeHelper.POINTER.withName("get_minimum_increment"),
-        RuntimeHelper.POINTER.withName("get_value_and_text"),
-        RuntimeHelper.POINTER.withName("get_range"),
-        RuntimeHelper.POINTER.withName("get_increment"),
-        RuntimeHelper.POINTER.withName("get_sub_ranges"),
-        RuntimeHelper.POINTER.withName("set_value")
-    ).withName("_AtkValueIface");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkValueIface.get_current_value.class, "apply", constants$13.const$4);
-    static final VarHandle const$5 = constants$2088.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_current_value"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_table_is_column_selected",
+        constants$11.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_table_is_row_selected",
+        constants$11.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_table_is_selected",
+        constants$49.const$0
+    );
 }
 
 

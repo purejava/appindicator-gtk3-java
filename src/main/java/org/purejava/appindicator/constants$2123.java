@@ -2,19 +2,32 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2123 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2123() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass.get_preferred_height_and_baseline_for_width.class, "apply", constants$380.const$0);
-    static final VarHandle const$1 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_height_and_baseline_for_width"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkWidgetClass.adjust_baseline_request.class, "apply", constants$14.const$3);
-    static final VarHandle const$3 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("adjust_baseline_request"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWidgetClass.adjust_baseline_allocation.class, "apply", constants$13.const$4);
-    static final VarHandle const$5 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("adjust_baseline_allocation"));
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkWidgetClass.drag_data_received.class, "apply", constants$2123.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$2123.const$0
+    );
+    static final VarHandle const$3 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("drag_data_received"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWidgetClass.drag_failed.class, "apply", constants$62.const$0);
+    static final VarHandle const$5 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("drag_failed"));
 }
 
 

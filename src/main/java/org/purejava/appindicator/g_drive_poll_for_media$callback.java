@@ -13,7 +13,7 @@ public interface g_drive_poll_for_media$callback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_drive_poll_for_media$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$951.const$5, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$954.const$5, fi, constants$14.const$3, scope);
     }
     static g_drive_poll_for_media$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

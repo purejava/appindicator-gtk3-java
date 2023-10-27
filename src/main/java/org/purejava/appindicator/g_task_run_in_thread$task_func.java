@@ -13,7 +13,7 @@ public interface g_task_run_in_thread$task_func {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_task_run_in_thread$task_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1334.const$5, fi, constants$42.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1338.const$5, fi, constants$42.const$1, scope);
     }
     static g_task_run_in_thread$task_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

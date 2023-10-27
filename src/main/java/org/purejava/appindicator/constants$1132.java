@@ -7,23 +7,20 @@ final class constants$1132 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1132() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_list_store_insert",
-        constants$42.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_list_store_insert_sorted$compare_func.class, "apply", constants$12.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_list_store_insert_sorted",
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_scheduler_job_send_to_mainloop",
         constants$34.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_list_store_sort$compare_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop_async$func.class, "apply", constants$10.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop_async$notify.class, "apply", constants$13.const$1);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_list_store_sort",
-        constants$14.const$3
+        "g_io_scheduler_job_send_to_mainloop_async",
+        constants$42.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_list_store_append",
-        constants$13.const$4
+        "g_list_model_get_type",
+        constants$3.const$5
     );
 }
 

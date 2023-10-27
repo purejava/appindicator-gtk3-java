@@ -13,7 +13,7 @@ public interface gtk_clipboard_set_with_owner$clear_func {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gtk_clipboard_set_with_owner$clear_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2627.const$1, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$2632.const$1, fi, constants$13.const$4, scope);
     }
     static gtk_clipboard_set_with_owner$clear_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

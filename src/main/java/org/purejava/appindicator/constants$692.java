@@ -2,33 +2,36 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 final class constants$692 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$692() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_value_take_variant",
-        constants$13.const$4
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_FLOAT,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_value_get_variant",
-        constants$5.const$2
+        "g_value_get_float",
+        constants$692.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_value_dup_variant",
-        constants$5.const$2
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_pointer_type_register_static",
-        constants$4.const$0
+        "g_value_set_double",
+        constants$692.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_strdup_value_contents",
-        constants$5.const$2
+        "g_value_get_double",
+        constants$67.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_value_take_string",
+        "g_value_set_string",
         constants$13.const$4
     );
 }

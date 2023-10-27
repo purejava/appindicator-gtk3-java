@@ -2,22 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1485 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1485() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_advance_func$func.class, "apply", constants$327.const$4);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_advance_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_glyph_v_advance_func",
-        constants$42.const$1
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1484.const$4
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_h_advances_func$func.class, "apply", constants$1478.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_h_advances_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_glyph_h_advances_func",
-        constants$42.const$1
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_glyph_h_kerning_func_t.class, "apply", constants$1484.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_get_glyph_extents_func_t.class, "apply", constants$862.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_get_glyph_contour_point_func_t.class, "apply", constants$1318.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$1318.const$3
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
 }
 

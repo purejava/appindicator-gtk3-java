@@ -2,31 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1946 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1946() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_threads_add_timeout_seconds_full",
-        constants$277.const$2
+        "gdk_selection_owner_get",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_threads_add_timeout_seconds$function.class, "apply", constants$10.const$5);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_threads_add_timeout_seconds",
-        constants$10.const$3
+        "gdk_selection_owner_set_for_display",
+        constants$1946.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_type",
-        constants$3.const$5
+        "gdk_selection_owner_get_for_display",
+        constants$5.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_depth",
-        constants$83.const$1
+        "gdk_selection_convert",
+        constants$332.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_type",
-        constants$83.const$1
+        "gdk_selection_property_get",
+        constants$34.const$5
     );
 }
 

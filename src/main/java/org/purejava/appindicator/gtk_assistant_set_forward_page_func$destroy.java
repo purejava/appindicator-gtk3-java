@@ -13,7 +13,7 @@ public interface gtk_assistant_set_forward_page_func$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_assistant_set_forward_page_func$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2522.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2527.const$1, fi, constants$13.const$1, scope);
     }
     static gtk_assistant_set_forward_page_func$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

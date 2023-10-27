@@ -2,39 +2,36 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_SHORT;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1568 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1568() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_attribute_equal",
-        constants$9.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_attr_language_new",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_attr_family_new",
-        constants$5.const$2
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_SHORT,
-        JAVA_SHORT,
-        JAVA_SHORT
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_attr_foreground_new",
-        constants$1568.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_attr_background_new",
-        constants$1568.const$3
-    );
+    static final VarHandle const$0 = constants$1567.const$1.varHandle(MemoryLayout.PathElement.groupElement("destroy"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoAttrClass.equal.class, "apply", constants$9.const$0);
+    static final VarHandle const$2 = constants$1567.const$1.varHandle(MemoryLayout.PathElement.groupElement("equal"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("klass"),
+            JAVA_INT.withName("start_index"),
+            JAVA_INT.withName("end_index")
+        ).withName("attr"),
+        RuntimeHelper.POINTER.withName("value")
+    ).withName("_PangoAttrString");
+    static final VarHandle const$4 = constants$1568.const$3.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("klass"),
+            JAVA_INT.withName("start_index"),
+            JAVA_INT.withName("end_index")
+        ).withName("attr"),
+        RuntimeHelper.POINTER.withName("value")
+    ).withName("_PangoAttrLanguage");
 }
 
 

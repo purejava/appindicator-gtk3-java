@@ -13,7 +13,7 @@ public interface g_simple_async_result_set_op_res_gpointer$destroy_op_res {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_simple_async_result_set_op_res_gpointer$destroy_op_res fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1267.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1271.const$5, fi, constants$13.const$1, scope);
     }
     static g_simple_async_result_set_op_res_gpointer$destroy_op_res ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

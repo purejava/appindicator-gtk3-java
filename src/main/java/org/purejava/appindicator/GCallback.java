@@ -4,7 +4,6 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-
 /**
  * {@snippet :
  * void (*GCallback)();
@@ -14,7 +13,7 @@ public interface GCallback {
 
     void apply();
     static MemorySegment allocate(GCallback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$584.const$1, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$586.const$4, fi, constants$7.const$5, scope);
     }
     static GCallback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

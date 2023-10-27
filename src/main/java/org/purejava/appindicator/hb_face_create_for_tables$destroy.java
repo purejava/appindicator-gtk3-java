@@ -13,7 +13,7 @@ public interface hb_face_create_for_tables$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(hb_face_create_for_tables$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1441.const$4, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1445.const$5, fi, constants$13.const$1, scope);
     }
     static hb_face_create_for_tables$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -8,28 +8,28 @@ final class constants$2916 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2916() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_tab_label_text",
-        constants$14.const$3
+        "gtk_notebook_append_page",
+        constants$12.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_tab_label_text",
-        constants$5.const$5
+        "gtk_notebook_append_page_menu",
+        constants$34.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_menu_label",
-        constants$5.const$5
+        "gtk_notebook_prepend_page",
+        constants$12.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_menu_label",
-        constants$14.const$3
+        "gtk_notebook_prepend_page_menu",
+        constants$34.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_menu_label_text",
-        constants$14.const$3
+        "gtk_notebook_insert_page",
+        constants$312.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_menu_label_text",
-        constants$5.const$5
+        "gtk_notebook_insert_page_menu",
+        constants$1427.const$2
     );
 }
 

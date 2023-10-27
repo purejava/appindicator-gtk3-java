@@ -23,10 +23,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkRecentData {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3009.const$1;
+        return constants$3014.const$1;
     }
     public static VarHandle display_name$VH() {
-        return constants$3009.const$2;
+        return constants$3014.const$2;
     }
     /**
      * Getter for field:
@@ -35,7 +35,7 @@ public class _GtkRecentData {
      * }
      */
     public static MemorySegment display_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3009.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3014.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -44,16 +44,16 @@ public class _GtkRecentData {
      * }
      */
     public static void display_name$set(MemorySegment seg, MemorySegment x) {
-        constants$3009.const$2.set(seg, x);
+        constants$3014.const$2.set(seg, x);
     }
     public static MemorySegment display_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3009.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3014.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void display_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3009.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3014.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle description$VH() {
-        return constants$3009.const$3;
+        return constants$3014.const$3;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _GtkRecentData {
      * }
      */
     public static MemorySegment description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3009.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3014.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -71,16 +71,16 @@ public class _GtkRecentData {
      * }
      */
     public static void description$set(MemorySegment seg, MemorySegment x) {
-        constants$3009.const$3.set(seg, x);
+        constants$3014.const$3.set(seg, x);
     }
     public static MemorySegment description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3009.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3014.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void description$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3009.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3014.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle mime_type$VH() {
-        return constants$3009.const$4;
+        return constants$3014.const$4;
     }
     /**
      * Getter for field:
@@ -89,7 +89,7 @@ public class _GtkRecentData {
      * }
      */
     public static MemorySegment mime_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3009.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3014.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -98,16 +98,16 @@ public class _GtkRecentData {
      * }
      */
     public static void mime_type$set(MemorySegment seg, MemorySegment x) {
-        constants$3009.const$4.set(seg, x);
+        constants$3014.const$4.set(seg, x);
     }
     public static MemorySegment mime_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3009.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3014.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void mime_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3009.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3014.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle app_name$VH() {
-        return constants$3009.const$5;
+        return constants$3014.const$5;
     }
     /**
      * Getter for field:
@@ -116,7 +116,7 @@ public class _GtkRecentData {
      * }
      */
     public static MemorySegment app_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3009.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3014.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -125,16 +125,16 @@ public class _GtkRecentData {
      * }
      */
     public static void app_name$set(MemorySegment seg, MemorySegment x) {
-        constants$3009.const$5.set(seg, x);
+        constants$3014.const$5.set(seg, x);
     }
     public static MemorySegment app_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3009.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3014.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void app_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3009.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3014.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle app_exec$VH() {
-        return constants$3010.const$0;
+        return constants$3015.const$0;
     }
     /**
      * Getter for field:
@@ -143,7 +143,7 @@ public class _GtkRecentData {
      * }
      */
     public static MemorySegment app_exec$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3010.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3015.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -152,16 +152,16 @@ public class _GtkRecentData {
      * }
      */
     public static void app_exec$set(MemorySegment seg, MemorySegment x) {
-        constants$3010.const$0.set(seg, x);
+        constants$3015.const$0.set(seg, x);
     }
     public static MemorySegment app_exec$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3010.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3015.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void app_exec$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3010.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3015.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle groups$VH() {
-        return constants$3010.const$1;
+        return constants$3015.const$1;
     }
     /**
      * Getter for field:
@@ -170,7 +170,7 @@ public class _GtkRecentData {
      * }
      */
     public static MemorySegment groups$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3010.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3015.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -179,16 +179,16 @@ public class _GtkRecentData {
      * }
      */
     public static void groups$set(MemorySegment seg, MemorySegment x) {
-        constants$3010.const$1.set(seg, x);
+        constants$3015.const$1.set(seg, x);
     }
     public static MemorySegment groups$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3010.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3015.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void groups$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3010.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3015.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle is_private$VH() {
-        return constants$3010.const$2;
+        return constants$3015.const$2;
     }
     /**
      * Getter for field:
@@ -197,7 +197,7 @@ public class _GtkRecentData {
      * }
      */
     public static int is_private$get(MemorySegment seg) {
-        return (int)constants$3010.const$2.get(seg);
+        return (int)constants$3015.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -206,13 +206,13 @@ public class _GtkRecentData {
      * }
      */
     public static void is_private$set(MemorySegment seg, int x) {
-        constants$3010.const$2.set(seg, x);
+        constants$3015.const$2.set(seg, x);
     }
     public static int is_private$get(MemorySegment seg, long index) {
-        return (int)constants$3010.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3015.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void is_private$set(MemorySegment seg, long index, int x) {
-        constants$3010.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3015.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

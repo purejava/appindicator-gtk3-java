@@ -2,32 +2,21 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2018 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2018() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$1954.const$1
-    );
-    static final VarHandle const$1 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_range_extents"));
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTextIface.get_bounded_ranges.class, "apply", constants$2018.const$2);
+    static final VarHandle const$0 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_run_attributes"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTextIface.get_default_attributes.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_default_attributes"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTextIface.get_character_extents.class, "apply", constants$431.const$3);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$2018.const$2
+        constants$431.const$3
     );
-    static final VarHandle const$5 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_bounded_ranges"));
+    static final VarHandle const$5 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_character_extents"));
 }
 
 

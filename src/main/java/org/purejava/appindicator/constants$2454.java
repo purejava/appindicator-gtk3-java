@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2454 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2454() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_visibility",
-        constants$40.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_visibility",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_invisible_char",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_invisible_char",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_entry_unset_invisible_char",
-        constants$13.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_has_frame",
-        constants$40.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkEntryClass.copy_clipboard.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$2451.const$3.varHandle(MemoryLayout.PathElement.groupElement("copy_clipboard"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkEntryClass.paste_clipboard.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$2451.const$3.varHandle(MemoryLayout.PathElement.groupElement("paste_clipboard"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkEntryClass.toggle_overwrite.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$2451.const$3.varHandle(MemoryLayout.PathElement.groupElement("toggle_overwrite"));
 }
 
 

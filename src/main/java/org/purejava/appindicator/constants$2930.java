@@ -2,41 +2,43 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2930 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2930() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_height",
-        constants$2929.const$4
+        "gtk_overlay_new",
+        constants$35.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_is_custom",
-        constants$10.const$5
+        "gtk_overlay_add_overlay",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_is_ipp",
-        constants$10.const$5
+        "gtk_overlay_reorder_overlay",
+        constants$164.const$5
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_INT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_overlay_get_overlay_pass_through",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_set_size",
-        constants$2930.const$3
+        "gtk_overlay_set_overlay_pass_through",
+        constants$164.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_top_margin",
-        constants$2929.const$4
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        JAVA_INT.withName("index"),
+        JAVA_INT.withName("mode"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("label"),
+        RuntimeHelper.POINTER.withName("action_name")
+    ).withName("_GtkPadActionEntry");
 }
 
 

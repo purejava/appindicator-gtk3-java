@@ -9,12 +9,12 @@ final class constants$1005 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1005() {}
-    static final VarHandle const$0 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("stop_mountable"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.stop_mountable_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("stop_mountable_finish"));
-    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("supports_thread_contexts"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.unmount_mountable_with_operation.class, "apply", constants$380.const$0);
-    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("unmount_mountable_with_operation"));
+    static final VarHandle const$0 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("open_readwrite_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.create_readwrite.class, "apply", constants$180.const$0);
+    static final VarHandle const$2 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_readwrite"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.create_readwrite_async.class, "apply", constants$990.const$4);
+    static final VarHandle const$4 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_readwrite_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.create_readwrite_finish.class, "apply", constants$23.const$0);
 }
 
 

@@ -8,28 +8,28 @@ final class constants$1844 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1844() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_device_events",
-        constants$164.const$5
+        "gdk_window_set_background_pattern",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_device_events",
-        constants$9.const$0
+        "gdk_window_get_background_pattern",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_source_events",
-        constants$467.const$3
+        "gdk_window_set_cursor",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_source_events",
-        constants$11.const$4
+        "gdk_window_get_cursor",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_icon_list",
-        constants$13.const$4
+        "gdk_window_set_device_cursor",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_icon_name",
-        constants$13.const$4
+        "gdk_window_get_device_cursor",
+        constants$5.const$5
     );
 }
 

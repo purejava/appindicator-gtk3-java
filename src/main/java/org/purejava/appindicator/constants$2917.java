@@ -8,28 +8,28 @@ final class constants$2917 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2917() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_reorder_child",
-        constants$164.const$5
+        "gtk_notebook_remove_page",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_tab_reorderable",
-        constants$9.const$0
+        "gtk_notebook_set_group_name",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_tab_reorderable",
-        constants$164.const$5
+        "gtk_notebook_get_group_name",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_get_tab_detachable",
-        constants$9.const$0
+        "gtk_notebook_get_current_page",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_set_tab_detachable",
-        constants$164.const$5
+        "gtk_notebook_get_nth_page",
+        constants$21.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_detach_tab",
-        constants$13.const$4
+        "gtk_notebook_get_n_pages",
+        constants$10.const$5
     );
 }
 

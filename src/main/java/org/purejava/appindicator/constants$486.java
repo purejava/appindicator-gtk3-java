@@ -2,34 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$486 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$486() {}
-    static final VarHandle const$0 = constants$485.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy0"));
-    static final VarHandle const$1 = constants$485.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy1"));
-    static final VarHandle const$2 = constants$485.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy2"));
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_uri_get_auth_params",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_uri_get_host",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_uri_get_port",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_uri_get_path",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_uri_params_iter_init",
-        constants$486.const$3
+        "g_uri_get_query",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_uri_params_iter_next",
-        constants$34.const$5
+        "g_uri_get_fragment",
+        constants$5.const$2
     );
 }
 

@@ -8,28 +8,28 @@ final class constants$419 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$419() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_match_info_is_partial_match",
-        constants$10.const$5
+        "g_match_info_ref",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_match_info_expand_references",
-        constants$23.const$0
+        "g_match_info_unref",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch",
-        constants$21.const$3
+        "g_match_info_free",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_pos",
-        constants$11.const$0
+        "g_match_info_next",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_named",
-        constants$5.const$5
+        "g_match_info_matches",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_named_pos",
-        constants$34.const$5
+        "g_match_info_get_match_count",
+        constants$10.const$5
     );
 }
 

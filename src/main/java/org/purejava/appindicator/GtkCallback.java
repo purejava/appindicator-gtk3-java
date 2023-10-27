@@ -13,7 +13,7 @@ public interface GtkCallback {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GtkCallback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2094.const$4, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$2099.const$5, fi, constants$13.const$4, scope);
     }
     static GtkCallback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

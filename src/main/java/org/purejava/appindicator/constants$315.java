@@ -2,41 +2,18 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$315 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$315() {}
-    static final VarHandle const$0 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
-    static final VarHandle const$1 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GIOFunc.class, "apply", constants$150.const$0);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        constants$150.const$0
-    );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("io_read"),
-        RuntimeHelper.POINTER.withName("io_write"),
-        RuntimeHelper.POINTER.withName("io_seek"),
-        RuntimeHelper.POINTER.withName("io_close"),
-        RuntimeHelper.POINTER.withName("io_create_watch"),
-        RuntimeHelper.POINTER.withName("io_free"),
-        RuntimeHelper.POINTER.withName("io_set_flags"),
-        RuntimeHelper.POINTER.withName("io_get_flags")
-    ).withName("_GIOFuncs");
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
+    static final VarHandle const$0 = constants$314.const$0.varHandle(MemoryLayout.PathElement.groupElement("line_term"));
+    static final VarHandle const$1 = constants$314.const$0.varHandle(MemoryLayout.PathElement.groupElement("line_term_len"));
+    static final VarHandle const$2 = constants$314.const$0.varHandle(MemoryLayout.PathElement.groupElement("buf_size"));
+    static final VarHandle const$3 = constants$314.const$0.varHandle(MemoryLayout.PathElement.groupElement("read_buf"));
+    static final VarHandle const$4 = constants$314.const$0.varHandle(MemoryLayout.PathElement.groupElement("encoded_read_buf"));
+    static final VarHandle const$5 = constants$314.const$0.varHandle(MemoryLayout.PathElement.groupElement("write_buf"));
 }
 
 

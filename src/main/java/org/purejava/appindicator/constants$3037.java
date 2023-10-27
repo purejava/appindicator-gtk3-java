@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3037 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3037() {}
-    static final VarHandle const$0 = constants$3036.const$4.varHandle(MemoryLayout.PathElement.groupElement("gtk_recent1"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkRecentChooserMenuClass.gtk_recent2.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$3036.const$4.varHandle(MemoryLayout.PathElement.groupElement("gtk_recent2"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkRecentChooserMenuClass.gtk_recent3.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$3036.const$4.varHandle(MemoryLayout.PathElement.groupElement("gtk_recent3"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkRecentChooserMenuClass.gtk_recent4.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_get_current_item",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_select_uri",
+        constants$12.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_unselect_uri",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_select_all",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_unselect_all",
+        constants$13.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_recent_chooser_get_items",
+        constants$5.const$2
+    );
 }
 
 

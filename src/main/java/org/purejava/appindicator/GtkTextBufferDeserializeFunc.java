@@ -13,13 +13,13 @@ public interface GtkTextBufferDeserializeFunc {
 
     int apply(java.lang.foreign.MemorySegment register_buffer, java.lang.foreign.MemorySegment content_buffer, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data, long length, int create_tags, java.lang.foreign.MemorySegment user_data, java.lang.foreign.MemorySegment error);
     static MemorySegment allocate(GtkTextBufferDeserializeFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3140.const$5, fi, constants$3140.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$3145.const$5, fi, constants$3145.const$4, scope);
     }
     static GtkTextBufferDeserializeFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _register_buffer, java.lang.foreign.MemorySegment _content_buffer, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data, long _length, int _create_tags, java.lang.foreign.MemorySegment _user_data, java.lang.foreign.MemorySegment _error) -> {
             try {
-                return (int)constants$3141.const$0.invokeExact(symbol, _register_buffer, _content_buffer, _iter, _data, _length, _create_tags, _user_data, _error);
+                return (int)constants$3146.const$0.invokeExact(symbol, _register_buffer, _content_buffer, _iter, _data, _length, _create_tags, _user_data, _error);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

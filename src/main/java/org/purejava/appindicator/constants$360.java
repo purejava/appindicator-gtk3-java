@@ -2,34 +2,38 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$360 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$360() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_lookup",
-        constants$12.const$2
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_new_dict_entry",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_variant_lookup_value",
-        constants$23.const$0
+        "g_variant_get_maybe",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_get_fixed_array",
-        constants$17.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_get_size",
+        "g_variant_n_children",
         constants$4.const$0
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_variant_get_data",
-        constants$5.const$2
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_get_child",
+        constants$360.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_get_data_as_bytes",
-        constants$5.const$2
+        "g_variant_get_child_value",
+        constants$21.const$1
     );
 }
 

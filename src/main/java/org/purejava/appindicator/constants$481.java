@@ -2,53 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$481 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$481() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tree_search_node",
+        constants$23.const$0
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_uri_split_with_user",
-        constants$481.const$0
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_tree_search$search_func.class, "apply", constants$9.const$0);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_uri_split_network",
-        constants$180.const$4
+        "g_tree_search",
+        constants$23.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_uri_is_valid",
-        constants$150.const$0
+        "g_tree_lower_bound",
+        constants$5.const$5
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tree_upper_bound",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_uri_join",
-        constants$481.const$4
+        "g_tree_height",
+        constants$10.const$5
     );
 }
 

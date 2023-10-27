@@ -8,28 +8,28 @@ final class constants$2302 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2302() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_iter_from_string",
-        constants$12.const$2
+        "gtk_tree_path_get_indices_with_depth",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_string_from_iter",
-        constants$5.const$5
+        "gtk_tree_path_free",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_iter_first",
-        constants$9.const$0
+        "gtk_tree_path_copy",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_path",
-        constants$5.const$5
+        "gtk_tree_path_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_value",
-        constants$464.const$4
+        "gtk_tree_path_compare",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_iter_previous",
-        constants$9.const$0
+        "gtk_tree_path_next",
+        constants$13.const$1
     );
 }
 

@@ -2,34 +2,38 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$564 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$564() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_type_get_type_registration_serial",
-        constants$83.const$1
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_type_get_plugin",
-        constants$63.const$3
+        "g_type_add_interface_static",
+        constants$564.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_interface_get_plugin",
-        constants$87.const$5
+        "g_type_add_interface_dynamic",
+        constants$564.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_type_fundamental_next",
-        constants$3.const$5
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        JAVA_LONG
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_fundamental",
-        constants$94.const$4
+        "g_type_interface_add_prerequisite",
+        constants$564.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_type_create_instance",
-        constants$63.const$3
+        "g_type_interface_prerequisites",
+        constants$408.const$2
     );
 }
 

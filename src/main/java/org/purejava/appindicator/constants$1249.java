@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1249 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1249() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_unref",
-        constants$13.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_get_id",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_get_path",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_get_key",
-        constants$5.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_settings_schema_has_key",
-        constants$9.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSeekableIface.tell.class, "apply", constants$4.const$0);
+    static final VarHandle const$1 = constants$1248.const$5.varHandle(MemoryLayout.PathElement.groupElement("tell"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GSeekableIface.can_seek.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$1248.const$5.varHandle(MemoryLayout.PathElement.groupElement("can_seek"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GSeekableIface.seek.class, "apply", constants$1069.const$3);
+    static final VarHandle const$5 = constants$1248.const$5.varHandle(MemoryLayout.PathElement.groupElement("seek"));
 }
 
 

@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1553 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1553() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_font_face_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_font_face_describe",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_font_face_get_face_name",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_font_face_list_sizes",
-        constants$14.const$3
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_font_face_is_synthesized",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_font_face_get_family",
-        constants$5.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoFontFamilyClass.is_monospace.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$1552.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_monospace"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontFamilyClass.is_variable.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$1552.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_variable"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoFontFamilyClass.get_face.class, "apply", constants$5.const$5);
+    static final VarHandle const$5 = constants$1552.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_face"));
 }
 
 

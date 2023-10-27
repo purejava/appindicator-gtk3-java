@@ -13,7 +13,7 @@ public interface g_cancellable_connect$callback {
 
     void apply();
     static MemorySegment allocate(g_cancellable_connect$callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$802.const$0, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$805.const$0, fi, constants$7.const$5, scope);
     }
     static g_cancellable_connect$callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

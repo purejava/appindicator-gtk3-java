@@ -3,18 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2100 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2100() {}
-    static final VarHandle const$0 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("state_flags_changed"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkWidgetClass.parent_set.class, "apply", constants$13.const$4);
-    static final VarHandle const$2 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("parent_set"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass.hierarchy_changed.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("hierarchy_changed"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkWidgetClass.style_set.class, "apply", constants$13.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GtkTickCallback.class, "apply", constants$12.const$2);
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("width"),
+        JAVA_INT.withName("height")
+    ).withName("_GtkRequisition");
+    static final VarHandle const$2 = constants$2100.const$1.varHandle(MemoryLayout.PathElement.groupElement("width"));
+    static final VarHandle const$3 = constants$2100.const$1.varHandle(MemoryLayout.PathElement.groupElement("height"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkWidget");
+    static final VarHandle const$5 = constants$2100.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

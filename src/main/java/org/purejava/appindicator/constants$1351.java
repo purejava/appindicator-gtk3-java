@@ -3,57 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1351 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1351() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_dtls_server_connection_type",
-        constants$4.const$0
-    );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GTlsCertificate");
-    static final VarHandle const$2 = constants$1351.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("verify"),
-        MemoryLayout.sequenceLayout(8, RuntimeHelper.POINTER).withName("padding")
-    ).withName("_GTlsCertificateClass");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTlsCertificateClass.verify.class, "apply", constants$12.const$2);
-    static final VarHandle const$5 = constants$1351.const$3.varHandle(MemoryLayout.PathElement.groupElement("verify"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.get_client_connection_type.class, "apply", constants$3.const$5);
+    static final VarHandle const$1 = constants$1350.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_client_connection_type"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.get_server_connection_type.class, "apply", constants$3.const$5);
+    static final VarHandle const$3 = constants$1350.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_server_connection_type"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.get_file_database_type.class, "apply", constants$3.const$5);
+    static final VarHandle const$5 = constants$1350.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_file_database_type"));
 }
 
 

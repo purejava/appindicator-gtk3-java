@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class GtkFileChooserNativeClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2700.const$1;
+        return constants$2705.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 192);

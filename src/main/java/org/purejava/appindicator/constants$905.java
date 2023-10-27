@@ -2,32 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$905 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$905() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_bus_own_name$user_data_free_func.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_message",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_parameters",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_bus_own_name",
-        constants$905.const$1
+        "g_dbus_method_invocation_get_user_data",
+        constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_bus_own_name_on_connection$name_acquired_handler.class, "apply", constants$14.const$3);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_bus_own_name_on_connection$name_lost_handler.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_bus_own_name_on_connection$user_data_free_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_value",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_value_with_unix_fd_list",
+        constants$14.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_dbus_method_invocation_return_error",
+        constants$57.const$0
+    );
 }
 
 

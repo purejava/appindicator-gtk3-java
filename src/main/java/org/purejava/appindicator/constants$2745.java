@@ -8,27 +8,27 @@ final class constants$2745 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2745() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_new",
-        constants$35.const$2
+        "gtk_gesture_multi_press_new",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_use_es",
-        constants$40.const$2
+        "gtk_gesture_multi_press_set_area",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_use_es",
-        constants$10.const$5
+        "gtk_gesture_multi_press_get_area",
+        constants$9.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_set_required_version",
-        constants$467.const$3
+        "gtk_gesture_pan_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_required_version",
-        constants$14.const$3
+        "gtk_gesture_pan_new",
+        constants$21.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_gl_area_get_has_alpha",
+        "gtk_gesture_pan_get_orientation",
         constants$10.const$5
     );
 }

@@ -8,23 +8,29 @@ final class constants$2853 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2853() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_header_func",
-        constants$42.const$1
+        "gtk_list_box_row_changed",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_invalidate_filter",
-        constants$13.const$1
+        "gtk_list_box_row_is_selected",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_invalidate_sort",
-        constants$13.const$1
+        "gtk_list_box_row_set_selectable",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_invalidate_headers",
-        constants$13.const$1
+        "gtk_list_box_row_get_selectable",
+        constants$10.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_list_box_set_sort_func$sort_func.class, "apply", constants$12.const$2);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_list_box_set_sort_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_list_box_row_set_activatable",
+        constants$40.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_list_box_row_get_activatable",
+        constants$10.const$5
+    );
 }
 
 

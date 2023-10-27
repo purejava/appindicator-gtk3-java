@@ -13,7 +13,7 @@ public interface g_cclosure_new$callback_func {
 
     void apply();
     static MemorySegment allocate(g_cclosure_new$callback_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$587.const$2, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$589.const$5, fi, constants$7.const$5, scope);
     }
     static g_cclosure_new$callback_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

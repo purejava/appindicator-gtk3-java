@@ -9,12 +9,12 @@ final class constants$2110 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2110() {}
-    static final VarHandle const$0 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("focus_in_event"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkWidgetClass.focus_out_event.class, "apply", constants$9.const$0);
-    static final VarHandle const$2 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("focus_out_event"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass.map_event.class, "apply", constants$9.const$0);
-    static final VarHandle const$4 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("map_event"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkWidgetClass.unmap_event.class, "apply", constants$9.const$0);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass.focus.class, "apply", constants$11.const$4);
+    static final VarHandle const$1 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("focus"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkWidgetClass.move_focus.class, "apply", constants$40.const$2);
+    static final VarHandle const$3 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("move_focus"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWidgetClass.keynav_failed.class, "apply", constants$11.const$4);
+    static final VarHandle const$5 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("keynav_failed"));
 }
 
 

@@ -12,26 +12,23 @@ final class constants$3353 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3353() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_box_gap.class, "apply", constants$3352.const$2);
-    static final VarHandle const$1 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_box_gap"));
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT,
-        JAVA_INT,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
         JAVA_INT,
         JAVA_INT,
         JAVA_INT
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_extension.class, "apply", constants$3353.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$3353.const$2
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_hline.class, "apply", constants$3353.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$3353.const$0
     );
-    static final VarHandle const$5 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_extension"));
+    static final VarHandle const$3 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_hline"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_vline.class, "apply", constants$3353.const$0);
+    static final VarHandle const$5 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_vline"));
 }
 
 

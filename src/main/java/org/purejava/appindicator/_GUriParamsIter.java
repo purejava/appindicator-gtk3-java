@@ -20,10 +20,10 @@ import java.lang.invoke.VarHandle;
 public class _GUriParamsIter {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$485.const$5;
+        return constants$487.const$3;
     }
     public static VarHandle dummy0$VH() {
-        return constants$486.const$0;
+        return constants$487.const$4;
     }
     /**
      * Getter for field:
@@ -32,7 +32,7 @@ public class _GUriParamsIter {
      * }
      */
     public static int dummy0$get(MemorySegment seg) {
-        return (int)constants$486.const$0.get(seg);
+        return (int)constants$487.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -41,16 +41,16 @@ public class _GUriParamsIter {
      * }
      */
     public static void dummy0$set(MemorySegment seg, int x) {
-        constants$486.const$0.set(seg, x);
+        constants$487.const$4.set(seg, x);
     }
     public static int dummy0$get(MemorySegment seg, long index) {
-        return (int)constants$486.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$487.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy0$set(MemorySegment seg, long index, int x) {
-        constants$486.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$487.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy1$VH() {
-        return constants$486.const$1;
+        return constants$487.const$5;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GUriParamsIter {
      * }
      */
     public static MemorySegment dummy1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$486.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$487.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -68,16 +68,16 @@ public class _GUriParamsIter {
      * }
      */
     public static void dummy1$set(MemorySegment seg, MemorySegment x) {
-        constants$486.const$1.set(seg, x);
+        constants$487.const$5.set(seg, x);
     }
     public static MemorySegment dummy1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$486.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$487.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$486.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$487.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle dummy2$VH() {
-        return constants$486.const$2;
+        return constants$488.const$0;
     }
     /**
      * Getter for field:
@@ -86,7 +86,7 @@ public class _GUriParamsIter {
      * }
      */
     public static MemorySegment dummy2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$486.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$488.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -95,13 +95,13 @@ public class _GUriParamsIter {
      * }
      */
     public static void dummy2$set(MemorySegment seg, MemorySegment x) {
-        constants$486.const$2.set(seg, x);
+        constants$488.const$0.set(seg, x);
     }
     public static MemorySegment dummy2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$486.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$488.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$486.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$488.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment dummy3$slice(MemorySegment seg) {
         return seg.asSlice(24, 256);

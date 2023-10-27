@@ -13,7 +13,7 @@ public interface cairo_raster_source_release_func_t {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(cairo_raster_source_release_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1737.const$0, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1742.const$0, fi, constants$14.const$3, scope);
     }
     static cairo_raster_source_release_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

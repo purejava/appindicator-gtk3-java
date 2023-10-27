@@ -13,13 +13,13 @@ public interface gtk_tree_view_insert_column_with_data_func$func {
 
     void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gtk_tree_view_insert_column_with_data_func$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2478.const$4, fi, constants$331.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2483.const$4, fi, constants$332.const$1, scope);
     }
     static gtk_tree_view_insert_column_with_data_func$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
+                constants$919.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

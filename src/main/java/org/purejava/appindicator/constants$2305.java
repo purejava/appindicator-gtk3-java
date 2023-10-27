@@ -8,28 +8,28 @@ final class constants$2305 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2305() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_row_changed",
-        constants$14.const$3
+        "gtk_tree_row_reference_free",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_row_inserted",
-        constants$14.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_row_has_child_toggled",
-        constants$14.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_row_deleted",
+        "gtk_tree_row_reference_inserted",
         constants$13.const$4
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_rows_reordered",
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_row_reference_deleted",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_row_reference_reordered",
         constants$42.const$1
     );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_iter_copy",
+        constants$5.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_rows_reordered_with_length",
-        constants$646.const$4
+        "gtk_tree_iter_free",
+        constants$13.const$1
     );
 }
 

@@ -2,35 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2817 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2817() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_tooltip_context",
-        constants$867.const$5
+        "gtk_icon_view_selected_foreach",
+        constants$14.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_tooltip_column",
+        "gtk_icon_view_set_selection_mode",
         constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_tooltip_column",
+        "gtk_icon_view_get_selection_mode",
         constants$10.const$5
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("context_id"),
-        RuntimeHelper.POINTER.withName("context_name"),
-        RuntimeHelper.POINTER.withName("domain"),
-        RuntimeHelper.POINTER.withName("domain_dirname"),
-        RuntimeHelper.POINTER.withName("default_locales")
-    ).withName("_GtkIMContextInfo");
-    static final VarHandle const$4 = constants$2817.const$3.varHandle(MemoryLayout.PathElement.groupElement("context_id"));
-    static final VarHandle const$5 = constants$2817.const$3.varHandle(MemoryLayout.PathElement.groupElement("context_name"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_select_path",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_unselect_path",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_icon_view_path_is_selected",
+        constants$9.const$0
+    );
 }
 
 

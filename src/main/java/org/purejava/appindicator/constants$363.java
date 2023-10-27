@@ -2,37 +2,39 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$363 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$363() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("x")
-    ).withName("_GVariantIter");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_is_normal_form",
+        constants$10.const$5
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_variant_iter_new",
+        "g_variant_byteswap",
         constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_iter_init",
-        constants$22.const$0
+        "g_variant_new_from_bytes",
+        constants$32.const$3
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_iter_copy",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_variant_iter_n_children",
-        constants$4.const$0
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_variant_new_from_data$notify.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_iter_free",
-        constants$13.const$1
+        "g_variant_new_from_data",
+        constants$363.const$4
     );
 }
 

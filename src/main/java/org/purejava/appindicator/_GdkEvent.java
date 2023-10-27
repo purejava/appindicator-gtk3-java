@@ -41,10 +41,10 @@ import java.lang.invoke.VarHandle;
 public class _GdkEvent {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1803.const$4;
+        return constants$1808.const$4;
     }
     public static VarHandle type$VH() {
-        return constants$1803.const$5;
+        return constants$1808.const$5;
     }
     /**
      * Getter for field:
@@ -53,7 +53,7 @@ public class _GdkEvent {
      * }
      */
     public static int type$get(MemorySegment seg) {
-        return (int)constants$1803.const$5.get(seg);
+        return (int)constants$1808.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -62,13 +62,13 @@ public class _GdkEvent {
      * }
      */
     public static void type$set(MemorySegment seg, int x) {
-        constants$1803.const$5.set(seg, x);
+        constants$1808.const$5.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
-        return (int)constants$1803.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1808.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void type$set(MemorySegment seg, long index, int x) {
-        constants$1803.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1808.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment any$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);

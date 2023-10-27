@@ -13,7 +13,7 @@ public interface g_thread_pool_new_full$item_free_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_thread_pool_new_full$item_free_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$467.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$468.const$5, fi, constants$13.const$1, scope);
     }
     static g_thread_pool_new_full$item_free_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

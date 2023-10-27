@@ -9,12 +9,12 @@ final class constants$1988 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1988() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkUtilClass.add_global_event_listener.class, "apply", constants$9.const$0);
-    static final VarHandle const$1 = constants$1987.const$5.varHandle(MemoryLayout.PathElement.groupElement("add_global_event_listener"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkUtilClass.remove_global_event_listener.class, "apply", constants$80.const$1);
-    static final VarHandle const$3 = constants$1987.const$5.varHandle(MemoryLayout.PathElement.groupElement("remove_global_event_listener"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkUtilClass.add_key_event_listener.class, "apply", constants$9.const$0);
-    static final VarHandle const$5 = constants$1987.const$5.varHandle(MemoryLayout.PathElement.groupElement("add_key_event_listener"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkActionIface.get_description.class, "apply", constants$21.const$3);
+    static final VarHandle const$1 = constants$1987.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_description"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkActionIface.get_name.class, "apply", constants$21.const$3);
+    static final VarHandle const$3 = constants$1987.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_name"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkActionIface.get_keybinding.class, "apply", constants$21.const$3);
+    static final VarHandle const$5 = constants$1987.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_keybinding"));
 }
 
 

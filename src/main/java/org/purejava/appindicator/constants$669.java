@@ -5,7 +5,8 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$669 {
 
     // Suppresses default constructor, ensuring non-instantiability.
@@ -14,41 +15,41 @@ final class constants$669 {
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
-        JAVA_FLOAT,
+        JAVA_BYTE,
+        JAVA_BYTE,
+        JAVA_BYTE,
         JAVA_INT
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_param_spec_float",
+        "g_param_spec_char",
         constants$669.const$0
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_param_spec_uchar",
+        constants$669.const$0
+    );
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
+        JAVA_INT,
         JAVA_INT
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_param_spec_double",
-        constants$669.const$2
-    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_param_spec_string",
-        constants$644.const$4
+        "g_param_spec_boolean",
+        constants$669.const$3
     );
     static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
-        JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
         JAVA_INT
     );
     static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_param_spec_param",
+        "g_param_spec_int",
         constants$669.const$5
     );
 }

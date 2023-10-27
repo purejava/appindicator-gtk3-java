@@ -2,35 +2,25 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$513 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$513() {}
-    static final VarHandle const$0 = constants$512.const$5.varHandle(MemoryLayout.PathElement.groupElement("sched_priority"));
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("__bits")
-    ).withName("cpu_set_t");
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "__sched_cpucount",
-        constants$87.const$0
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$3.const$5
     );
+    static final MemorySegment const$1 = RuntimeHelper.lookupGlobalVariable("g_thread_gettime", RuntimeHelper.POINTER);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_thread_create$func.class, "apply", constants$5.const$2);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "__sched_cpualloc",
-        constants$63.const$3
+        "g_thread_create",
+        constants$484.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "__sched_cpufree",
-        constants$13.const$1
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_thread_create_full$func.class, "apply", constants$5.const$2);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "sched_setparam",
-        constants$9.const$2
+        "g_thread_create_full",
+        constants$417.const$1
     );
 }
 

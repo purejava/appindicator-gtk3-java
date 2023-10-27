@@ -8,28 +8,28 @@ final class constants$2007 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2007() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_document_get_type",
-        constants$3.const$5
+        "atk_component_ref_accessible_at_point",
+        constants$1728.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_document_get_document_type",
-        constants$5.const$2
+        "atk_component_get_extents",
+        constants$676.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_document_get_document",
-        constants$5.const$2
+        "atk_component_get_position",
+        constants$332.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_document_get_locale",
-        constants$5.const$2
+        "atk_component_get_size",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_document_get_attributes",
-        constants$5.const$2
+        "atk_component_get_layer",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_document_get_attribute_value",
-        constants$5.const$5
+        "atk_component_get_mdi_zorder",
+        constants$10.const$5
     );
 }
 

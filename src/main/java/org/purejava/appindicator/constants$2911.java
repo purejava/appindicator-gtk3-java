@@ -2,35 +2,23 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2911 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2911() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_append_page",
-        constants$12.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkNotebookClass.insert_page.class, "apply", constants$1427.const$2);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_append_page_menu",
-        constants$34.const$5
+        constants$1427.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_prepend_page",
-        constants$12.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_prepend_page_menu",
-        constants$34.const$5
-    );
+    static final VarHandle const$2 = constants$2908.const$5.varHandle(MemoryLayout.PathElement.groupElement("insert_page"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkNotebookClass.create_window.class, "apply", constants$416.const$5);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_insert_page",
-        constants$311.const$0
+        constants$416.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_notebook_insert_page_menu",
-        constants$1423.const$1
-    );
+    static final VarHandle const$5 = constants$2908.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_window"));
 }
 
 

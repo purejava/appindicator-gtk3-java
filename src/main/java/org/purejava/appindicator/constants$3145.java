@@ -2,19 +2,38 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3145 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3145() {}
-    static final VarHandle const$0 = constants$3144.const$2.varHandle(MemoryLayout.PathElement.groupElement("move_cursor"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextViewClass.set_anchor.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$3144.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_anchor"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextViewClass.insert_at_cursor.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$3144.const$2.varHandle(MemoryLayout.PathElement.groupElement("insert_at_cursor"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextViewClass.delete_from_cursor.class, "apply", constants$467.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_copy_target_list",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_paste_target_list",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GtkTextBufferSerializeFunc.class, "apply", constants$335.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$335.const$2
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GtkTextBufferDeserializeFunc.class, "apply", constants$3145.const$4);
 }
 
 

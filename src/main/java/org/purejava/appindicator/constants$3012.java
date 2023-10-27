@@ -2,24 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3012 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3012() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRecentManagerClass._gtk_recent3.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$3010.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_recent3"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkRecentManagerClass._gtk_recent4.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$3010.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_recent4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_range_get_upper_stepper_sensitivity",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_range_set_increments",
+        constants$1536.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_range_set_range",
+        constants$1536.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_range_set_value",
+        constants$692.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_error_quark",
-        constants$83.const$1
+        "gtk_range_get_value",
+        constants$67.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_get_type",
-        constants$3.const$5
+        "gtk_range_set_show_fill_level",
+        constants$40.const$2
     );
 }
 

@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$738 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$738() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GApplicationClass.command_line.class, "apply", constants$9.const$0);
-    static final VarHandle const$1 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("command_line"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GApplicationClass.local_command_line.class, "apply", constants$12.const$2);
-    static final VarHandle const$3 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("local_command_line"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GApplicationClass.before_emit.class, "apply", constants$13.const$4);
-    static final VarHandle const$5 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("before_emit"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_unsetenv",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_get_environment",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_get_display",
+        constants$23.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_get_startup_notify_id",
+        constants$23.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_launch_failed",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_info_monitor_get_type",
+        constants$3.const$5
+    );
 }
 
 

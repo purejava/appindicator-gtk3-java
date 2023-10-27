@@ -11,32 +11,39 @@ final class constants$417 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$417() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_regex_replace_eval$eval.class, "apply", constants$12.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_regex_split",
+        constants$32.const$3
+    );
     static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_LONG,
         JAVA_INT,
         JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
+        JAVA_INT,
         RuntimeHelper.POINTER
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_regex_replace_eval",
+        "g_regex_split_full",
         constants$417.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_regex_check_replacement",
-        constants$12.const$2
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_match_info_get_regex",
-        constants$5.const$2
+        "g_regex_replace",
+        constants$417.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_match_info_get_string",
-        constants$5.const$2
+        "g_regex_replace_literal",
+        constants$417.const$3
     );
 }
 

@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2427 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2427() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTreeModelFilterClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2426.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeModelFilterClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$2426.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeModelFilterClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$2426.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_list_store_newv",
+        constants$24.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_list_store_set_column_types",
+        constants$42.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_list_store_set_value",
+        constants$466.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_list_store_set",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_list_store_set_valuesv",
+        constants$649.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_list_store_set_valist",
+        constants$312.const$4
+    );
 }
 
 

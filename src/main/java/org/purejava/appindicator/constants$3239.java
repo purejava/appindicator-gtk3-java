@@ -2,10 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
@@ -14,48 +12,34 @@ final class constants$3239 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3239() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_has_parent",
+        "gtk_widget_path_append_type",
         constants$97.const$1
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkWindowGroup");
-    static final VarHandle const$2 = constants$3239.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("g_type")
-            ).withName("g_type_class"),
-            RuntimeHelper.POINTER.withName("construct_properties"),
-            RuntimeHelper.POINTER.withName("constructor"),
-            RuntimeHelper.POINTER.withName("set_property"),
-            RuntimeHelper.POINTER.withName("get_property"),
-            RuntimeHelper.POINTER.withName("dispose"),
-            RuntimeHelper.POINTER.withName("finalize"),
-            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-            RuntimeHelper.POINTER.withName("notify"),
-            RuntimeHelper.POINTER.withName("constructed"),
-            JAVA_LONG.withName("flags"),
-            JAVA_LONG.withName("n_construct_properties"),
-            RuntimeHelper.POINTER.withName("pspecs"),
-            JAVA_LONG.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved1"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved2"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved3"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved4")
-    ).withName("_GtkWindowGroupClass");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWindowGroupClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$3239.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_prepend_type",
+        constants$25.const$3
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_append_with_siblings",
+        constants$62.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_append_for_widget",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_get_object_type",
+        constants$823.const$1
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_LONG
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "gtk_widget_path_iter_set_object_type",
+        constants$3239.const$5
+    );
 }
 
 

@@ -13,13 +13,13 @@ public interface g_signal_set_va_marshaller$va_marshaller {
 
     void apply(java.lang.foreign.MemorySegment closure, java.lang.foreign.MemorySegment return_value, java.lang.foreign.MemorySegment instance, java.lang.foreign.MemorySegment args, java.lang.foreign.MemorySegment marshal_data, int n_params, java.lang.foreign.MemorySegment param_types);
     static MemorySegment allocate(g_signal_set_va_marshaller$va_marshaller fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$605.const$0, fi, constants$585.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$607.const$3, fi, constants$587.const$3, scope);
     }
     static g_signal_set_va_marshaller$va_marshaller ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _closure, java.lang.foreign.MemorySegment _return_value, java.lang.foreign.MemorySegment _instance, java.lang.foreign.MemorySegment _args, java.lang.foreign.MemorySegment _marshal_data, int _n_params, java.lang.foreign.MemorySegment _param_types) -> {
             try {
-                constants$585.const$2.invokeExact(symbol, _closure, _return_value, _instance, _args, _marshal_data, _n_params, _param_types);
+                constants$587.const$5.invokeExact(symbol, _closure, _return_value, _instance, _args, _marshal_data, _n_params, _param_types);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

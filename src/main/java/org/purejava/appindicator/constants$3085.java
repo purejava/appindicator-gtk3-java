@@ -2,39 +2,27 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import java.lang.invoke.VarHandle;
 final class constants$3085 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3085() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_rc_property_parse_border",
-        constants$12.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_settings_set_property_value",
-        constants$14.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_settings_set_string_property",
-        constants$42.const$1
-    );
+    static final VarHandle const$0 = constants$3084.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkSeparatorToolItemClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$3084.const$0.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_settings_set_long_property",
-        constants$1139.const$5
+        "gtk_separator_tool_item_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_separator_tool_item_new",
+        constants$35.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_settings_set_double_property",
-        constants$3085.const$4
+        "gtk_separator_tool_item_get_draw",
+        constants$10.const$5
     );
 }
 

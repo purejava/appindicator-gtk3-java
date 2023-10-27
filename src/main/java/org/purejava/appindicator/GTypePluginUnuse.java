@@ -13,7 +13,7 @@ public interface GTypePluginUnuse {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(GTypePluginUnuse fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$679.const$4, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$682.const$2, fi, constants$13.const$1, scope);
     }
     static GTypePluginUnuse ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

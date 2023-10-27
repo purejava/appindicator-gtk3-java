@@ -13,7 +13,7 @@ public interface GtkTreeViewRowSeparatorFunc {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GtkTreeViewRowSeparatorFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2474.const$3, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2479.const$3, fi, constants$12.const$2, scope);
     }
     static GtkTreeViewRowSeparatorFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

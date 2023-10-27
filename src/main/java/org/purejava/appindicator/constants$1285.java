@@ -8,28 +8,28 @@ final class constants$1285 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1285() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_socket_leave_multicast_group_ssm",
-        constants$165.const$2
+        "g_socket_get_protocol",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_socket_connect",
-        constants$34.const$5
+        "g_socket_get_local_address",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_socket_check_connect_result",
-        constants$9.const$0
+        "g_socket_get_remote_address",
+        constants$5.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_socket_get_available_bytes",
-        constants$4.const$0
+        "g_socket_set_blocking",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_socket_condition_check",
-        constants$11.const$4
+        "g_socket_get_blocking",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_condition_wait",
-        constants$11.const$0
+        "g_socket_set_keepalive",
+        constants$40.const$2
     );
 }
 

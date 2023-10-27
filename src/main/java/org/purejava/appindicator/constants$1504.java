@@ -2,38 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.*;
 final class constants$1504 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1504() {}
-    static final VarHandle const$0 = constants$1503.const$4.varHandle(MemoryLayout.PathElement.groupElement("mask"));
-    static final VarHandle const$1 = constants$1503.const$4.varHandle(MemoryLayout.PathElement.groupElement("cluster"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_glyph_info_get_glyph_flags",
-        constants$10.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_font_set_parent",
+        constants$13.const$4
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        JAVA_INT.withName("x_advance"),
-        JAVA_INT.withName("y_advance"),
-        JAVA_INT.withName("x_offset"),
-        JAVA_INT.withName("y_offset"),
-        MemoryLayout.unionLayout(
-            JAVA_INT.withName("u32"),
-            JAVA_INT.withName("i32"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
-        ).withName("var")
-    ).withName("hb_glyph_position_t");
-    static final VarHandle const$4 = constants$1504.const$3.varHandle(MemoryLayout.PathElement.groupElement("x_advance"));
-    static final VarHandle const$5 = constants$1504.const$3.varHandle(MemoryLayout.PathElement.groupElement("y_advance"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_font_get_parent",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_set_face",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_font_get_face",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_set_funcs$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_set_funcs",
+        constants$42.const$1
+    );
 }
 
 

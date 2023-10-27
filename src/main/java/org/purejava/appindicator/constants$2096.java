@@ -9,12 +9,12 @@ final class constants$2096 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2096() {}
-    static final VarHandle const$0 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("activate_signal"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkWidgetClass.dispatch_child_properties_changed.class, "apply", constants$42.const$4);
-    static final VarHandle const$2 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("dispatch_child_properties_changed"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass.destroy.class, "apply", constants$13.const$1);
-    static final VarHandle const$4 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("destroy"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkWidgetClass.show.class, "apply", constants$13.const$1);
+    static final VarHandle const$0 = constants$2093.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_range"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkValueIface.get_increment.class, "apply", constants$67.const$0);
+    static final VarHandle const$2 = constants$2093.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_increment"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkValueIface.get_sub_ranges.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$2093.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_sub_ranges"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkValueIface.set_value.class, "apply", constants$692.const$2);
 }
 
 

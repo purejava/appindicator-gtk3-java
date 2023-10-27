@@ -19,10 +19,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkAccelKey {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1952.const$4;
+        return constants$1957.const$4;
     }
     public static VarHandle accel_key$VH() {
-        return constants$1952.const$5;
+        return constants$1957.const$5;
     }
     /**
      * Getter for field:
@@ -31,7 +31,7 @@ public class _GtkAccelKey {
      * }
      */
     public static int accel_key$get(MemorySegment seg) {
-        return (int)constants$1952.const$5.get(seg);
+        return (int)constants$1957.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -40,16 +40,16 @@ public class _GtkAccelKey {
      * }
      */
     public static void accel_key$set(MemorySegment seg, int x) {
-        constants$1952.const$5.set(seg, x);
+        constants$1957.const$5.set(seg, x);
     }
     public static int accel_key$get(MemorySegment seg, long index) {
-        return (int)constants$1952.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1957.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void accel_key$set(MemorySegment seg, long index, int x) {
-        constants$1952.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1957.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle accel_mods$VH() {
-        return constants$1953.const$0;
+        return constants$1958.const$0;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _GtkAccelKey {
      * }
      */
     public static int accel_mods$get(MemorySegment seg) {
-        return (int)constants$1953.const$0.get(seg);
+        return (int)constants$1958.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -67,13 +67,13 @@ public class _GtkAccelKey {
      * }
      */
     public static void accel_mods$set(MemorySegment seg, int x) {
-        constants$1953.const$0.set(seg, x);
+        constants$1958.const$0.set(seg, x);
     }
     public static int accel_mods$get(MemorySegment seg, long index) {
-        return (int)constants$1953.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1958.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void accel_mods$set(MemorySegment seg, long index, int x) {
-        constants$1953.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1958.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -22,10 +22,10 @@ import java.lang.invoke.VarHandle;
 public class _GActionEntry {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$713.const$1;
+        return constants$715.const$5;
     }
     public static VarHandle name$VH() {
-        return constants$713.const$2;
+        return constants$716.const$0;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class _GActionEntry {
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$713.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$716.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -43,13 +43,13 @@ public class _GActionEntry {
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        constants$713.const$2.set(seg, x);
+        constants$716.const$0.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$713.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$716.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$713.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$716.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -60,7 +60,7 @@ public class _GActionEntry {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(activate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$713.const$3, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$716.const$1, fi, constants$14.const$3, scope);
         }
         static activate ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -75,7 +75,7 @@ public class _GActionEntry {
     }
 
     public static VarHandle activate$VH() {
-        return constants$713.const$4;
+        return constants$716.const$2;
     }
     /**
      * Getter for field:
@@ -84,7 +84,7 @@ public class _GActionEntry {
      * }
      */
     public static MemorySegment activate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$713.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$716.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -93,19 +93,19 @@ public class _GActionEntry {
      * }
      */
     public static void activate$set(MemorySegment seg, MemorySegment x) {
-        constants$713.const$4.set(seg, x);
+        constants$716.const$2.set(seg, x);
     }
     public static MemorySegment activate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$713.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$716.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void activate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$713.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$716.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static activate activate(MemorySegment segment, Arena scope) {
         return activate.ofAddress(activate$get(segment), scope);
     }
     public static VarHandle parameter_type$VH() {
-        return constants$713.const$5;
+        return constants$716.const$3;
     }
     /**
      * Getter for field:
@@ -114,7 +114,7 @@ public class _GActionEntry {
      * }
      */
     public static MemorySegment parameter_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$713.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$716.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -123,16 +123,16 @@ public class _GActionEntry {
      * }
      */
     public static void parameter_type$set(MemorySegment seg, MemorySegment x) {
-        constants$713.const$5.set(seg, x);
+        constants$716.const$3.set(seg, x);
     }
     public static MemorySegment parameter_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$713.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$716.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void parameter_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$713.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$716.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle state$VH() {
-        return constants$714.const$0;
+        return constants$716.const$4;
     }
     /**
      * Getter for field:
@@ -141,7 +141,7 @@ public class _GActionEntry {
      * }
      */
     public static MemorySegment state$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$714.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$716.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -150,13 +150,13 @@ public class _GActionEntry {
      * }
      */
     public static void state$set(MemorySegment seg, MemorySegment x) {
-        constants$714.const$0.set(seg, x);
+        constants$716.const$4.set(seg, x);
     }
     public static MemorySegment state$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$714.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$716.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void state$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$714.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$716.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -167,7 +167,7 @@ public class _GActionEntry {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(change_state fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$714.const$1, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$716.const$5, fi, constants$14.const$3, scope);
         }
         static change_state ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -182,7 +182,7 @@ public class _GActionEntry {
     }
 
     public static VarHandle change_state$VH() {
-        return constants$714.const$2;
+        return constants$717.const$0;
     }
     /**
      * Getter for field:
@@ -191,7 +191,7 @@ public class _GActionEntry {
      * }
      */
     public static MemorySegment change_state$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$714.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$717.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -200,13 +200,13 @@ public class _GActionEntry {
      * }
      */
     public static void change_state$set(MemorySegment seg, MemorySegment x) {
-        constants$714.const$2.set(seg, x);
+        constants$717.const$0.set(seg, x);
     }
     public static MemorySegment change_state$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$714.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$717.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void change_state$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$714.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$717.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static change_state change_state(MemorySegment segment, Arena scope) {
         return change_state.ofAddress(change_state$get(segment), scope);

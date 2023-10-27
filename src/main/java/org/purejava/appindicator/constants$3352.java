@@ -2,38 +2,21 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3352 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3352() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_tab.class, "apply", constants$3349.const$0);
-    static final VarHandle const$1 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_tab"));
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_shadow_gap.class, "apply", constants$3352.const$2);
+    static final VarHandle const$0 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("init_from_rc"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkStyleClass.set_background.class, "apply", constants$164.const$5);
+    static final VarHandle const$2 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_background"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkStyleClass.render_icon.class, "apply", constants$2769.const$2);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$3352.const$2
+        constants$2769.const$2
     );
-    static final VarHandle const$5 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_shadow_gap"));
+    static final VarHandle const$5 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("render_icon"));
 }
 
 

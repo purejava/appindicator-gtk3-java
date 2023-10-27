@@ -2,37 +2,28 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$602 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$602() {}
-    static final VarHandle const$0 = constants$601.const$0.varHandle(MemoryLayout.PathElement.groupElement("n_params"));
-    static final VarHandle const$1 = constants$601.const$0.varHandle(MemoryLayout.PathElement.groupElement("param_types"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_signal_newv$accumulator.class, "apply", constants$34.const$5);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_signal_newv$c_marshaller.class, "apply", constants$584.const$3);
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv",
+        constants$587.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_signal_newv",
-        constants$602.const$4
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GSignalCMarshaller.class, "apply", constants$587.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GSignalCVaMarshaller.class, "apply", constants$587.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GSignalEmissionHook.class, "apply", constants$11.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GSignalAccumulator.class, "apply", constants$34.const$5);
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("signal_id"),
+        JAVA_INT.withName("detail"),
+        JAVA_INT.withName("run_type")
+    ).withName("_GSignalInvocationHint");
 }
 
 

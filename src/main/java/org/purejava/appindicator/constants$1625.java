@@ -8,28 +8,28 @@ final class constants$1625 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1625() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_layout_get_width",
-        constants$10.const$5
+        "pango_tab_array_resize",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_layout_set_height",
-        constants$40.const$2
+        "pango_tab_array_set_tab",
+        constants$1134.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_layout_get_height",
-        constants$10.const$5
+        "pango_tab_array_get_tab",
+        constants$179.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_layout_set_wrap",
-        constants$40.const$2
+        "pango_tab_array_get_tabs",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_layout_get_wrap",
+        "pango_tab_array_get_positions_in_pixels",
         constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_layout_is_wrapped",
-        constants$10.const$5
+        "pango_tab_array_set_positions_in_pixels",
+        constants$40.const$2
     );
 }
 

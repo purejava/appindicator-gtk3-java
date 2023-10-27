@@ -2,34 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1870 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1870() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_toplevel_windows",
-        constants$5.const$2
+        "gdk_display_supports_selection_notification",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_screen_make_display_name",
-        constants$5.const$2
+        "gdk_display_request_selection_notification",
+        constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_n_monitors",
+        "gdk_display_supports_clipboard_persistence",
         constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_primary_monitor",
-        constants$10.const$5
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_geometry",
-        constants$42.const$4
+        "gdk_display_store_clipboard",
+        constants$1870.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_workarea",
-        constants$42.const$4
+        "gdk_display_supports_shapes",
+        constants$10.const$5
     );
 }
 

@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3392 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3392() {}
-    static final VarHandle const$0 = constants$3391.const$0.varHandle(MemoryLayout.PathElement.groupElement("connect_proxy"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkUIManagerClass.disconnect_proxy.class, "apply", constants$14.const$3);
-    static final VarHandle const$2 = constants$3391.const$0.varHandle(MemoryLayout.PathElement.groupElement("disconnect_proxy"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkUIManagerClass.pre_activate.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$3391.const$0.varHandle(MemoryLayout.PathElement.groupElement("pre_activate"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkUIManagerClass.post_activate.class, "apply", constants$13.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_get_valist",
+        constants$2777.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_theming_engine_get",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_get_style_property",
+        constants$14.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_get_style_valist",
+        constants$2787.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_theming_engine_get_style",
+        constants$13.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_theming_engine_lookup_color",
+        constants$12.const$2
+    );
 }
 
 

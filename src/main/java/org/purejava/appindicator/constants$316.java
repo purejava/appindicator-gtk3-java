@@ -4,6 +4,7 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
@@ -13,17 +14,27 @@ final class constants$316 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$316() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GIOFuncs.io_read.class, "apply", constants$315.const$5);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$315.const$5
+    static final VarHandle const$0 = constants$314.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
+    static final VarHandle const$1 = constants$314.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GIOFunc.class, "apply", constants$150.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$150.const$0
     );
-    static final VarHandle const$2 = constants$315.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_read"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GIOFuncs.io_write.class, "apply", constants$315.const$5);
-    static final VarHandle const$4 = constants$315.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_write"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("io_read"),
+        RuntimeHelper.POINTER.withName("io_write"),
+        RuntimeHelper.POINTER.withName("io_seek"),
+        RuntimeHelper.POINTER.withName("io_close"),
+        RuntimeHelper.POINTER.withName("io_create_watch"),
+        RuntimeHelper.POINTER.withName("io_free"),
+        RuntimeHelper.POINTER.withName("io_set_flags"),
+        RuntimeHelper.POINTER.withName("io_get_flags")
+    ).withName("_GIOFuncs");
     static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
         RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
         JAVA_LONG,
-        JAVA_INT,
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
 }

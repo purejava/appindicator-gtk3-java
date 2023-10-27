@@ -8,28 +8,28 @@ final class constants$2785 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2785() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_lookup_color",
-        constants$12.const$2
+        "gtk_style_context_set_scale",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_notify_state_change",
-        constants$1641.const$5
+        "gtk_style_context_get_scale",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_cancel_animations",
-        constants$13.const$4
+        "gtk_style_context_state_is_running",
+        constants$150.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_scroll_animations",
-        constants$1043.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_push_animatable_region",
+        "gtk_style_context_set_path",
         constants$13.const$4
     );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_style_context_get_path",
+        constants$5.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_pop_animatable_region",
-        constants$13.const$1
+        "gtk_style_context_set_parent",
+        constants$13.const$4
     );
 }
 

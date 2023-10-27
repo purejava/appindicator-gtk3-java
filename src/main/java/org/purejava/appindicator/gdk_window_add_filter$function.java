@@ -13,7 +13,7 @@ public interface gdk_window_add_filter$function {
 
     int apply(java.lang.foreign.MemorySegment xevent, java.lang.foreign.MemorySegment event, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gdk_window_add_filter$function fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1830.const$4, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1835.const$4, fi, constants$12.const$2, scope);
     }
     static gdk_window_add_filter$function ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

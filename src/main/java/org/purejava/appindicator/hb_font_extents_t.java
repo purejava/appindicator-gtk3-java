@@ -28,10 +28,10 @@ import java.lang.invoke.VarHandle;
 public class hb_font_extents_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1473.const$5;
+        return constants$1479.const$0;
     }
     public static VarHandle ascender$VH() {
-        return constants$1474.const$0;
+        return constants$1479.const$1;
     }
     /**
      * Getter for field:
@@ -40,7 +40,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int ascender$get(MemorySegment seg) {
-        return (int)constants$1474.const$0.get(seg);
+        return (int)constants$1479.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -49,16 +49,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void ascender$set(MemorySegment seg, int x) {
-        constants$1474.const$0.set(seg, x);
+        constants$1479.const$1.set(seg, x);
     }
     public static int ascender$get(MemorySegment seg, long index) {
-        return (int)constants$1474.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1479.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void ascender$set(MemorySegment seg, long index, int x) {
-        constants$1474.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1479.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle descender$VH() {
-        return constants$1474.const$1;
+        return constants$1479.const$2;
     }
     /**
      * Getter for field:
@@ -67,7 +67,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int descender$get(MemorySegment seg) {
-        return (int)constants$1474.const$1.get(seg);
+        return (int)constants$1479.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -76,16 +76,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void descender$set(MemorySegment seg, int x) {
-        constants$1474.const$1.set(seg, x);
+        constants$1479.const$2.set(seg, x);
     }
     public static int descender$get(MemorySegment seg, long index) {
-        return (int)constants$1474.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1479.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void descender$set(MemorySegment seg, long index, int x) {
-        constants$1474.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1479.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle line_gap$VH() {
-        return constants$1474.const$2;
+        return constants$1479.const$3;
     }
     /**
      * Getter for field:
@@ -94,7 +94,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int line_gap$get(MemorySegment seg) {
-        return (int)constants$1474.const$2.get(seg);
+        return (int)constants$1479.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -103,16 +103,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void line_gap$set(MemorySegment seg, int x) {
-        constants$1474.const$2.set(seg, x);
+        constants$1479.const$3.set(seg, x);
     }
     public static int line_gap$get(MemorySegment seg, long index) {
-        return (int)constants$1474.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1479.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void line_gap$set(MemorySegment seg, long index, int x) {
-        constants$1474.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1479.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved9$VH() {
-        return constants$1474.const$3;
+        return constants$1479.const$4;
     }
     /**
      * Getter for field:
@@ -121,7 +121,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int reserved9$get(MemorySegment seg) {
-        return (int)constants$1474.const$3.get(seg);
+        return (int)constants$1479.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -130,16 +130,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void reserved9$set(MemorySegment seg, int x) {
-        constants$1474.const$3.set(seg, x);
+        constants$1479.const$4.set(seg, x);
     }
     public static int reserved9$get(MemorySegment seg, long index) {
-        return (int)constants$1474.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1479.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved9$set(MemorySegment seg, long index, int x) {
-        constants$1474.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1479.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved8$VH() {
-        return constants$1474.const$4;
+        return constants$1479.const$5;
     }
     /**
      * Getter for field:
@@ -148,7 +148,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int reserved8$get(MemorySegment seg) {
-        return (int)constants$1474.const$4.get(seg);
+        return (int)constants$1479.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -157,16 +157,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void reserved8$set(MemorySegment seg, int x) {
-        constants$1474.const$4.set(seg, x);
+        constants$1479.const$5.set(seg, x);
     }
     public static int reserved8$get(MemorySegment seg, long index) {
-        return (int)constants$1474.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1479.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved8$set(MemorySegment seg, long index, int x) {
-        constants$1474.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1479.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved7$VH() {
-        return constants$1474.const$5;
+        return constants$1480.const$0;
     }
     /**
      * Getter for field:
@@ -175,7 +175,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int reserved7$get(MemorySegment seg) {
-        return (int)constants$1474.const$5.get(seg);
+        return (int)constants$1480.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -184,16 +184,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void reserved7$set(MemorySegment seg, int x) {
-        constants$1474.const$5.set(seg, x);
+        constants$1480.const$0.set(seg, x);
     }
     public static int reserved7$get(MemorySegment seg, long index) {
-        return (int)constants$1474.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1480.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved7$set(MemorySegment seg, long index, int x) {
-        constants$1474.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1480.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved6$VH() {
-        return constants$1475.const$0;
+        return constants$1480.const$1;
     }
     /**
      * Getter for field:
@@ -202,7 +202,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int reserved6$get(MemorySegment seg) {
-        return (int)constants$1475.const$0.get(seg);
+        return (int)constants$1480.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -211,16 +211,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void reserved6$set(MemorySegment seg, int x) {
-        constants$1475.const$0.set(seg, x);
+        constants$1480.const$1.set(seg, x);
     }
     public static int reserved6$get(MemorySegment seg, long index) {
-        return (int)constants$1475.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1480.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved6$set(MemorySegment seg, long index, int x) {
-        constants$1475.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1480.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved5$VH() {
-        return constants$1475.const$1;
+        return constants$1480.const$2;
     }
     /**
      * Getter for field:
@@ -229,7 +229,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int reserved5$get(MemorySegment seg) {
-        return (int)constants$1475.const$1.get(seg);
+        return (int)constants$1480.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -238,16 +238,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void reserved5$set(MemorySegment seg, int x) {
-        constants$1475.const$1.set(seg, x);
+        constants$1480.const$2.set(seg, x);
     }
     public static int reserved5$get(MemorySegment seg, long index) {
-        return (int)constants$1475.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1480.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved5$set(MemorySegment seg, long index, int x) {
-        constants$1475.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1480.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved4$VH() {
-        return constants$1475.const$2;
+        return constants$1480.const$3;
     }
     /**
      * Getter for field:
@@ -256,7 +256,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int reserved4$get(MemorySegment seg) {
-        return (int)constants$1475.const$2.get(seg);
+        return (int)constants$1480.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -265,16 +265,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void reserved4$set(MemorySegment seg, int x) {
-        constants$1475.const$2.set(seg, x);
+        constants$1480.const$3.set(seg, x);
     }
     public static int reserved4$get(MemorySegment seg, long index) {
-        return (int)constants$1475.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1480.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved4$set(MemorySegment seg, long index, int x) {
-        constants$1475.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1480.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved3$VH() {
-        return constants$1475.const$3;
+        return constants$1480.const$4;
     }
     /**
      * Getter for field:
@@ -283,7 +283,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int reserved3$get(MemorySegment seg) {
-        return (int)constants$1475.const$3.get(seg);
+        return (int)constants$1480.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -292,16 +292,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void reserved3$set(MemorySegment seg, int x) {
-        constants$1475.const$3.set(seg, x);
+        constants$1480.const$4.set(seg, x);
     }
     public static int reserved3$get(MemorySegment seg, long index) {
-        return (int)constants$1475.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1480.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved3$set(MemorySegment seg, long index, int x) {
-        constants$1475.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1480.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved2$VH() {
-        return constants$1475.const$4;
+        return constants$1480.const$5;
     }
     /**
      * Getter for field:
@@ -310,7 +310,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int reserved2$get(MemorySegment seg) {
-        return (int)constants$1475.const$4.get(seg);
+        return (int)constants$1480.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -319,16 +319,16 @@ public class hb_font_extents_t {
      * }
      */
     public static void reserved2$set(MemorySegment seg, int x) {
-        constants$1475.const$4.set(seg, x);
+        constants$1480.const$5.set(seg, x);
     }
     public static int reserved2$get(MemorySegment seg, long index) {
-        return (int)constants$1475.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1480.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved2$set(MemorySegment seg, long index, int x) {
-        constants$1475.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1480.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle reserved1$VH() {
-        return constants$1475.const$5;
+        return constants$1481.const$0;
     }
     /**
      * Getter for field:
@@ -337,7 +337,7 @@ public class hb_font_extents_t {
      * }
      */
     public static int reserved1$get(MemorySegment seg) {
-        return (int)constants$1475.const$5.get(seg);
+        return (int)constants$1481.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -346,13 +346,13 @@ public class hb_font_extents_t {
      * }
      */
     public static void reserved1$set(MemorySegment seg, int x) {
-        constants$1475.const$5.set(seg, x);
+        constants$1481.const$0.set(seg, x);
     }
     public static int reserved1$get(MemorySegment seg, long index) {
-        return (int)constants$1475.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1481.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved1$set(MemorySegment seg, long index, int x) {
-        constants$1475.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1481.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

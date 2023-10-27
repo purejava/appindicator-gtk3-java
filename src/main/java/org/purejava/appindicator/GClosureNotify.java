@@ -13,7 +13,7 @@ public interface GClosureNotify {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GClosureNotify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$584.const$2, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$586.const$5, fi, constants$13.const$4, scope);
     }
     static GClosureNotify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

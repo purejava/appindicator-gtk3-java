@@ -13,7 +13,7 @@ public interface GTraverseNodeFunc {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GTraverseNodeFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$473.const$2, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$475.const$1, fi, constants$9.const$0, scope);
     }
     static GTraverseNodeFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

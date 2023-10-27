@@ -13,7 +13,7 @@ public interface gdk_seat_grab$prepare_func {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gdk_seat_grab$prepare_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1855.const$3, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1860.const$3, fi, constants$14.const$3, scope);
     }
     static gdk_seat_grab$prepare_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

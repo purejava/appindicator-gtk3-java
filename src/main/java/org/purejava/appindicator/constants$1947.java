@@ -2,34 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1947 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1947() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_system",
-        constants$35.const$2
+        "gdk_selection_send_notify",
+        constants$649.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best",
-        constants$35.const$2
+        "gdk_selection_send_notify_for_display",
+        constants$676.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_with_depth",
-        constants$24.const$0
+        "gdk_test_render_sync",
+        constants$13.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_with_type",
-        constants$24.const$0
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_with_both",
-        constants$1412.const$2
+        "gdk_test_simulate_key",
+        constants$1947.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_query_depths",
-        constants$13.const$4
+        "gdk_test_simulate_button",
+        constants$1947.const$3
     );
 }
 

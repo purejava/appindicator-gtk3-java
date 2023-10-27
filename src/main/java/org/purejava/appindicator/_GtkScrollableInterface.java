@@ -18,7 +18,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkScrollableInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3056.const$5;
+        return constants$3061.const$5;
     }
     public static MemorySegment base_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -32,7 +32,7 @@ public class _GtkScrollableInterface {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_border fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3057.const$0, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$3062.const$0, fi, constants$9.const$0, scope);
         }
         static get_border ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -47,7 +47,7 @@ public class _GtkScrollableInterface {
     }
 
     public static VarHandle get_border$VH() {
-        return constants$3057.const$1;
+        return constants$3062.const$1;
     }
     /**
      * Getter for field:
@@ -56,7 +56,7 @@ public class _GtkScrollableInterface {
      * }
      */
     public static MemorySegment get_border$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3057.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3062.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -65,13 +65,13 @@ public class _GtkScrollableInterface {
      * }
      */
     public static void get_border$set(MemorySegment seg, MemorySegment x) {
-        constants$3057.const$1.set(seg, x);
+        constants$3062.const$1.set(seg, x);
     }
     public static MemorySegment get_border$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3057.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3062.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_border$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3057.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3062.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_border get_border(MemorySegment segment, Arena scope) {
         return get_border.ofAddress(get_border$get(segment), scope);

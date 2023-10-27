@@ -3,30 +3,24 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3264 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3264() {}
-    static final VarHandle const$0 = constants$3263.const$2.varHandle(MemoryLayout.PathElement.groupElement("accelerator"));
-    static final VarHandle const$1 = constants$3263.const$2.varHandle(MemoryLayout.PathElement.groupElement("tooltip"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkActionEntry.callback.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$3263.const$2.varHandle(MemoryLayout.PathElement.groupElement("callback"));
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("name"),
-        RuntimeHelper.POINTER.withName("stock_id"),
-        RuntimeHelper.POINTER.withName("label"),
-        RuntimeHelper.POINTER.withName("accelerator"),
-        RuntimeHelper.POINTER.withName("tooltip"),
-        RuntimeHelper.POINTER.withName("callback"),
-        JAVA_INT.withName("is_active"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GtkToggleActionEntry");
-    static final VarHandle const$5 = constants$3264.const$4.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final VarHandle const$0 = constants$3263.const$4.varHandle(MemoryLayout.PathElement.groupElement("label"));
+    static final VarHandle const$1 = constants$3263.const$4.varHandle(MemoryLayout.PathElement.groupElement("modifier"));
+    static final VarHandle const$2 = constants$3263.const$4.varHandle(MemoryLayout.PathElement.groupElement("keyval"));
+    static final VarHandle const$3 = constants$3263.const$4.varHandle(MemoryLayout.PathElement.groupElement("translation_domain"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_stock_add",
+        constants$40.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_stock_add_static",
+        constants$40.const$2
+    );
 }
 
 

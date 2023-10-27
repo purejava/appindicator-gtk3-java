@@ -2,35 +2,48 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2093 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2093() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_value_get_minimum_increment",
-        constants$13.const$4
+        "atk_table_cell_get_row_span",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_value_get_value_and_text",
-        constants$14.const$3
+        "atk_table_cell_get_row_header_cells",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_value_get_range",
-        constants$5.const$2
+        "atk_table_cell_get_row_column_span",
+        constants$165.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_value_get_increment",
-        constants$67.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_value_get_sub_ranges",
+        "atk_table_cell_get_table",
         constants$5.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_value_set_value",
-        constants$689.const$5
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("get_current_value"),
+        RuntimeHelper.POINTER.withName("get_maximum_value"),
+        RuntimeHelper.POINTER.withName("get_minimum_value"),
+        RuntimeHelper.POINTER.withName("set_current_value"),
+        RuntimeHelper.POINTER.withName("get_minimum_increment"),
+        RuntimeHelper.POINTER.withName("get_value_and_text"),
+        RuntimeHelper.POINTER.withName("get_range"),
+        RuntimeHelper.POINTER.withName("get_increment"),
+        RuntimeHelper.POINTER.withName("get_sub_ranges"),
+        RuntimeHelper.POINTER.withName("set_value")
+    ).withName("_AtkValueIface");
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkValueIface.get_current_value.class, "apply", constants$13.const$4);
 }
 
 

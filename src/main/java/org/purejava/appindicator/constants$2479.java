@@ -7,29 +7,14 @@ final class constants$2479 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2479() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_insert_column_with_data_func",
-        constants$1747.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_n_columns",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_column",
-        constants$21.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_columns",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_move_column_after",
-        constants$14.const$3
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GtkTreeViewColumnDropFunc.class, "apply", constants$165.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkTreeViewMappingFunc.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GtkTreeViewSearchEqualFunc.class, "apply", constants$374.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GtkTreeViewRowSeparatorFunc.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GtkTreeViewSearchPositionFunc.class, "apply", constants$14.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_expander_column",
-        constants$13.const$4
+        "gtk_tree_view_get_type",
+        constants$3.const$5
     );
 }
 

@@ -13,13 +13,13 @@ public interface g_log_set_writer_func$func {
 
     int apply(int log_level, java.lang.foreign.MemorySegment fields, long n_fields, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_log_set_writer_func$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$377.const$0, fi, constants$82.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$378.const$0, fi, constants$82.const$4, scope);
     }
     static g_log_set_writer_func$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (int _log_level, java.lang.foreign.MemorySegment _fields, long _n_fields, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$376.const$1.invokeExact(symbol, _log_level, _fields, _n_fields, _user_data);
+                return (int)constants$377.const$1.invokeExact(symbol, _log_level, _fields, _n_fields, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -2,39 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$310 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$310() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_BYTE
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_string_append_unichar",
+        constants$21.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_string_insert_c",
-        constants$310.const$0
+        "g_string_prepend",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_string_insert_unichar",
-        constants$291.const$1
+        "g_string_prepend_c",
+        constants$309.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_string_overwrite",
-        constants$36.const$1
+        "g_string_prepend_unichar",
+        constants$21.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_string_overwrite_len",
-        constants$308.const$1
+        "g_string_prepend_len",
+        constants$17.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_string_erase",
-        constants$88.const$2
+        "g_string_insert",
+        constants$36.const$1
     );
 }
 

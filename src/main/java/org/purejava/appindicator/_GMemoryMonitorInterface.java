@@ -18,7 +18,7 @@ import java.lang.invoke.VarHandle;
 public class _GMemoryMonitorInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1140.const$2;
+        return constants$1143.const$5;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -32,13 +32,13 @@ public class _GMemoryMonitorInterface {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(low_memory_warning fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1140.const$3, fi, constants$40.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1144.const$0, fi, constants$40.const$2, scope);
         }
         static low_memory_warning ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    constants$509.const$5.invokeExact(symbol, __x0, __x1);
+                    constants$511.const$3.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -47,7 +47,7 @@ public class _GMemoryMonitorInterface {
     }
 
     public static VarHandle low_memory_warning$VH() {
-        return constants$1140.const$4;
+        return constants$1144.const$1;
     }
     /**
      * Getter for field:
@@ -56,7 +56,7 @@ public class _GMemoryMonitorInterface {
      * }
      */
     public static MemorySegment low_memory_warning$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1140.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1144.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -65,13 +65,13 @@ public class _GMemoryMonitorInterface {
      * }
      */
     public static void low_memory_warning$set(MemorySegment seg, MemorySegment x) {
-        constants$1140.const$4.set(seg, x);
+        constants$1144.const$1.set(seg, x);
     }
     public static MemorySegment low_memory_warning$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1140.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1144.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void low_memory_warning$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1140.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1144.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static low_memory_warning low_memory_warning(MemorySegment segment, Arena scope) {
         return low_memory_warning.ofAddress(low_memory_warning$get(segment), scope);

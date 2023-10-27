@@ -8,28 +8,28 @@ final class constants$2353 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2353() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_sort_indicator",
-        constants$40.const$2
+        "gtk_tree_view_column_get_spacing",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_sort_indicator",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_sort_order",
+        "gtk_tree_view_column_set_visible",
         constants$40.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_sort_order",
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_visible",
         constants$10.const$5
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_resizable",
+        constants$40.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_cell_set_cell_data",
-        constants$1641.const$5
+        "gtk_tree_view_column_get_resizable",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_cell_get_size",
-        constants$338.const$3
+        "gtk_tree_view_column_set_sizing",
+        constants$40.const$2
     );
 }
 

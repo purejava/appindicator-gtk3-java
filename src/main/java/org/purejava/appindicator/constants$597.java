@@ -8,28 +8,28 @@ final class constants$597 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$597() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__BOXED",
-        constants$584.const$3
+        "g_cclosure_marshal_VOID__LONGv",
+        constants$587.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__BOXEDv",
-        constants$585.const$0
+        "g_cclosure_marshal_VOID__ULONG",
+        constants$587.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__POINTER",
-        constants$584.const$3
+        "g_cclosure_marshal_VOID__ULONGv",
+        constants$587.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__POINTERv",
-        constants$585.const$0
+        "g_cclosure_marshal_VOID__ENUM",
+        constants$587.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__OBJECT",
-        constants$584.const$3
+        "g_cclosure_marshal_VOID__ENUMv",
+        constants$587.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__OBJECTv",
-        constants$585.const$0
+        "g_cclosure_marshal_VOID__FLAGS",
+        constants$587.const$0
     );
 }
 

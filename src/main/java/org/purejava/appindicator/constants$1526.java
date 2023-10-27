@@ -8,28 +8,19 @@ final class constants$1526 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1526() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_version_atleast",
-        constants$816.const$5
+        "hb_font_funcs_set_glyph_v_kerning_func",
+        constants$42.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_coverage_get_type",
-        constants$3.const$5
+        "hb_font_get_glyph_v_kerning",
+        constants$49.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_coverage_new",
-        constants$35.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_coverage_ref",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_coverage_unref",
-        constants$13.const$1
-    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_get_glyph_shape_func_t.class, "apply", constants$587.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_shape_func$func.class, "apply", constants$587.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_shape_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_coverage_copy",
-        constants$5.const$2
+        "hb_font_funcs_set_glyph_shape_func",
+        constants$42.const$1
     );
 }
 

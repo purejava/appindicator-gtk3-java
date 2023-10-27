@@ -2,35 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1100 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1100() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_family",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_output_stream_query_info_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_any",
-        constants$10.const$5
+        "g_file_output_stream_query_info_async",
+        constants$587.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_loopback",
-        constants$10.const$5
+        "g_file_output_stream_query_info_finish",
+        constants$23.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_link_local",
-        constants$10.const$5
+        "g_file_output_stream_get_etag",
+        constants$5.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_site_local",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_multicast",
-        constants$10.const$5
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GInetAddress");
+    static final VarHandle const$5 = constants$1100.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

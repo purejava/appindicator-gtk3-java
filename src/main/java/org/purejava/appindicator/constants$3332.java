@@ -2,24 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3332 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3332() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRecentActionClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$3331.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkRecentActionClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$3331.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_rc_reset_styles",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_rc_find_pixmap_in_path",
+        constants$23.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_rc_parse",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_rc_parse_string",
+        constants$13.const$1
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_action_get_type",
-        constants$3.const$5
+        "gtk_rc_reparse_all",
+        constants$83.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_action_new",
-        constants$39.const$1
+        "gtk_rc_style_get_type",
+        constants$3.const$5
     );
 }
 

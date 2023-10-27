@@ -9,12 +9,12 @@ final class constants$2576 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2576() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellLayoutIface.clear_attributes.class, "apply", constants$13.const$4);
-    static final VarHandle const$1 = constants$2574.const$1.varHandle(MemoryLayout.PathElement.groupElement("clear_attributes"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCellLayoutIface.reorder.class, "apply", constants$164.const$5);
-    static final VarHandle const$3 = constants$2574.const$1.varHandle(MemoryLayout.PathElement.groupElement("reorder"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellLayoutIface.get_cells.class, "apply", constants$5.const$2);
-    static final VarHandle const$5 = constants$2574.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_cells"));
+    static final VarHandle const$0 = constants$2573.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellAreaContextClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$2573.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkCellAreaContextClass._gtk_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$2573.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkCellAreaContextClass._gtk_reserved6.class, "apply", constants$7.const$5);
 }
 
 

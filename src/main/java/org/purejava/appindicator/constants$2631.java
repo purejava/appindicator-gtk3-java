@@ -8,28 +8,22 @@ final class constants$2631 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2631() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_targets",
-        constants$12.const$2
+        "gtk_clipboard_get",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_is_text_available",
-        constants$10.const$5
+        "gtk_clipboard_get_default",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_is_rich_text_available",
-        constants$9.const$0
+        "gtk_clipboard_get_display",
+        constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_is_image_available",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_is_uris_available",
-        constants$10.const$5
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gtk_clipboard_set_with_data$get_func.class, "apply", constants$466.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_clipboard_set_with_data$clear_func.class, "apply", constants$13.const$4);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_is_target_available",
-        constants$9.const$0
+        "gtk_clipboard_set_with_data",
+        constants$1247.const$0
     );
 }
 

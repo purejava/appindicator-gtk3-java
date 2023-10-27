@@ -8,23 +8,29 @@ final class constants$1261 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1261() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_settings_apply",
-        constants$13.const$1
+        "g_settings_get_int",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_settings_revert",
-        constants$13.const$1
+        "g_settings_set_int",
+        constants$62.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_settings_get_has_unapplied",
-        constants$10.const$5
+        "g_settings_get_int64",
+        constants$22.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_settings_sync",
-        constants$7.const$5
+        "g_settings_set_int64",
+        constants$18.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GSettingsBindSetMapping.class, "apply", constants$23.const$0);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GSettingsBindGetMapping.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_get_uint",
+        constants$9.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_set_uint",
+        constants$62.const$0
+    );
 }
 
 

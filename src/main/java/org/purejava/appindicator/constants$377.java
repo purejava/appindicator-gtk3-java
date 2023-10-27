@@ -11,29 +11,26 @@ final class constants$377 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$377() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_log_set_writer_func$func.class, "apply", constants$82.const$4);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_log_set_writer_func$user_data_free.class, "apply", constants$13.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_log_set_writer_func",
-        constants$14.const$3
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GLogWriterFunc.class, "apply", constants$82.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$82.const$4
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_log_writer_supports_color",
-        constants$8.const$4
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_log_structured",
+        constants$40.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_log_writer_is_journald",
-        constants$8.const$4
-    );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
         JAVA_INT,
         RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT
+        JAVA_LONG
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_log_writer_format_fields",
-        constants$377.const$5
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_log_structured_array",
+        constants$377.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_log_variant",
+        constants$42.const$4
     );
 }
 

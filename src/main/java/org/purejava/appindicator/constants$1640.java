@@ -2,55 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1640 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1640() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_markup_parser_new",
-        constants$24.const$0
+        "pango_layout_line_get_resolved_direction",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_markup_parser_finish",
-        constants$165.const$2
+        "pango_layout_line_x_to_index",
+        constants$11.const$0
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_layout_line_index_to_x",
+        constants$57.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_parse_markup",
-        constants$1640.const$2
+        "pango_layout_line_get_x_ranges",
+        constants$1499.const$5
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        JAVA_INT.withName("underline"),
-        JAVA_INT.withName("strikethrough"),
-        JAVA_INT.withName("active_count"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("matrix"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_PangoRenderer");
-    static final VarHandle const$5 = constants$1640.const$4.varHandle(MemoryLayout.PathElement.groupElement("underline"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_layout_line_get_extents",
+        constants$14.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_layout_line_get_height",
+        constants$13.const$4
+    );
 }
 
 

@@ -3,18 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$700 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$700() {}
-    static final VarHandle const$0 = constants$699.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_parameter_type"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GActionInterface.get_state_type.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$699.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_state_type"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GActionInterface.get_state_hint.class, "apply", constants$5.const$2);
-    static final VarHandle const$4 = constants$699.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_state_hint"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GActionInterface.get_enabled.class, "apply", constants$10.const$5);
+    static final VarHandle const$0 = constants$699.const$4.varHandle(MemoryLayout.PathElement.groupElement("size"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("address"),
+        RuntimeHelper.POINTER.withName("vectors"),
+        JAVA_INT.withName("num_vectors"),
+        JAVA_INT.withName("bytes_sent"),
+        RuntimeHelper.POINTER.withName("control_messages"),
+        JAVA_INT.withName("num_control_messages"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GOutputMessage");
+    static final VarHandle const$2 = constants$700.const$1.varHandle(MemoryLayout.PathElement.groupElement("address"));
+    static final VarHandle const$3 = constants$700.const$1.varHandle(MemoryLayout.PathElement.groupElement("vectors"));
+    static final VarHandle const$4 = constants$700.const$1.varHandle(MemoryLayout.PathElement.groupElement("num_vectors"));
+    static final VarHandle const$5 = constants$700.const$1.varHandle(MemoryLayout.PathElement.groupElement("bytes_sent"));
 }
 
 

@@ -2,31 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3189 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3189() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("drag_data_received"),
-        RuntimeHelper.POINTER.withName("row_drop_possible")
-    ).withName("_GtkTreeDragDestIface");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTreeDragDestIface.drag_data_received.class, "apply", constants$12.const$2);
-    static final VarHandle const$2 = constants$3189.const$0.varHandle(MemoryLayout.PathElement.groupElement("drag_data_received"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTreeDragDestIface.row_drop_possible.class, "apply", constants$12.const$2);
-    static final VarHandle const$4 = constants$3189.const$0.varHandle(MemoryLayout.PathElement.groupElement("row_drop_possible"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_ellipsize_mode",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_text_size_group",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_test_init",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_test_register_all_types",
+        constants$7.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_test_list_all_types",
+        constants$5.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_drag_dest_get_type",
-        constants$3.const$5
+        "gtk_test_find_widget",
+        constants$17.const$1
     );
 }
 

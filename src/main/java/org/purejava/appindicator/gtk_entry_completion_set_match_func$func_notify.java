@@ -13,7 +13,7 @@ public interface gtk_entry_completion_set_match_func$func_notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_entry_completion_set_match_func$func_notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2435.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2440.const$3, fi, constants$13.const$1, scope);
     }
     static gtk_entry_completion_set_match_func$func_notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

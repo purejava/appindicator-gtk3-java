@@ -7,32 +7,60 @@ import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2035 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2035() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_is_selected_link",
-        constants$10.const$5
+        "atk_gobject_accessible_get_object",
+        constants$5.const$2
     );
     static final StructLayout const$1 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent")
+    ).withName("_AtkHyperlink");
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
         ).withName("parent"),
-        RuntimeHelper.POINTER.withName("get_hyperlink")
-    ).withName("_AtkHyperlinkImplIface");
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkHyperlinkImplIface.get_hyperlink.class, "apply", constants$5.const$2);
-    static final VarHandle const$3 = constants$2035.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_hyperlink"));
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_impl_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_impl_get_hyperlink",
-        constants$5.const$2
-    );
+        RuntimeHelper.POINTER.withName("get_uri"),
+        RuntimeHelper.POINTER.withName("get_object"),
+        RuntimeHelper.POINTER.withName("get_end_index"),
+        RuntimeHelper.POINTER.withName("get_start_index"),
+        RuntimeHelper.POINTER.withName("is_valid"),
+        RuntimeHelper.POINTER.withName("get_n_anchors"),
+        RuntimeHelper.POINTER.withName("link_state"),
+        RuntimeHelper.POINTER.withName("is_selected_link"),
+        RuntimeHelper.POINTER.withName("link_activated"),
+        RuntimeHelper.POINTER.withName("pad1")
+    ).withName("_AtkHyperlinkClass");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_uri.class, "apply", constants$21.const$3);
+    static final VarHandle const$4 = constants$2035.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_uri"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_object.class, "apply", constants$21.const$3);
 }
 
 

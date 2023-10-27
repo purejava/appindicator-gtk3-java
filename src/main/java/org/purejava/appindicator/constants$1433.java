@@ -8,29 +8,17 @@ final class constants$1433 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1433() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_set_clear",
-        constants$13.const$1
+        "hb_unicode_funcs_set_mirroring_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_set_is_empty",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_set_invert",
-        constants$13.const$1
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_script_func$func.class, "apply", constants$150.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_script_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_set_is_inverted",
-        constants$10.const$5
+        "hb_unicode_funcs_set_script_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_set_has",
-        constants$11.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_set_add",
-        constants$40.const$2
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_compose_func$func.class, "apply", constants$959.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_compose_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

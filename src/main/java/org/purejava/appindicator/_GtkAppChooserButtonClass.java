@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkAppChooserButtonClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2504.const$5;
+        return constants$2509.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1048);
@@ -33,7 +33,7 @@ public class _GtkAppChooserButtonClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(custom_item_activated fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2505.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2510.const$0, fi, constants$13.const$4, scope);
         }
         static custom_item_activated ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -48,7 +48,7 @@ public class _GtkAppChooserButtonClass {
     }
 
     public static VarHandle custom_item_activated$VH() {
-        return constants$2505.const$1;
+        return constants$2510.const$1;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GtkAppChooserButtonClass {
      * }
      */
     public static MemorySegment custom_item_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2505.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2510.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GtkAppChooserButtonClass {
      * }
      */
     public static void custom_item_activated$set(MemorySegment seg, MemorySegment x) {
-        constants$2505.const$1.set(seg, x);
+        constants$2510.const$1.set(seg, x);
     }
     public static MemorySegment custom_item_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2505.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2510.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void custom_item_activated$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2505.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2510.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static custom_item_activated custom_item_activated(MemorySegment segment, Arena scope) {
         return custom_item_activated.ofAddress(custom_item_activated$get(segment), scope);

@@ -2,41 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1674 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1674() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_skip_space",
-        constants$10.const$5
+        "fwrite",
+        constants$1673.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_scan_word",
-        constants$9.const$0
+        "fread_unlocked",
+        constants$1673.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_scan_string",
-        constants$9.const$0
+        "fwrite_unlocked",
+        constants$1673.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_scan_int",
-        constants$9.const$0
+        "fseek",
+        constants$321.const$1
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "ftell",
+        constants$4.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_parse_enum",
-        constants$1674.const$4
+        "rewind",
+        constants$13.const$1
     );
 }
 

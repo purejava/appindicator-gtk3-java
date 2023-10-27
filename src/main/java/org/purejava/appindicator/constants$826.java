@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$826 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$826() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "symlink",
-        constants$9.const$0
+        "getgid",
+        constants$83.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "readlink",
-        constants$20.const$1
+        "getegid",
+        constants$83.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "symlinkat",
-        constants$150.const$0
+        "getgroups",
+        constants$9.const$2
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "setuid",
+        constants$8.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "readlinkat",
-        constants$826.const$3
+        "setreuid",
+        constants$123.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "unlink",
-        constants$10.const$5
+        "seteuid",
+        constants$8.const$4
     );
 }
 

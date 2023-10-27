@@ -5,41 +5,35 @@ package org.purejava.appindicator;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$503 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$503() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("mutex_new"),
-        RuntimeHelper.POINTER.withName("mutex_lock"),
-        RuntimeHelper.POINTER.withName("mutex_trylock"),
-        RuntimeHelper.POINTER.withName("mutex_unlock"),
-        RuntimeHelper.POINTER.withName("mutex_free"),
-        RuntimeHelper.POINTER.withName("cond_new"),
-        RuntimeHelper.POINTER.withName("cond_signal"),
-        RuntimeHelper.POINTER.withName("cond_broadcast"),
-        RuntimeHelper.POINTER.withName("cond_wait"),
-        RuntimeHelper.POINTER.withName("cond_timed_wait"),
-        RuntimeHelper.POINTER.withName("cond_free"),
-        RuntimeHelper.POINTER.withName("private_new"),
-        RuntimeHelper.POINTER.withName("private_get"),
-        RuntimeHelper.POINTER.withName("private_set"),
-        RuntimeHelper.POINTER.withName("thread_create"),
-        RuntimeHelper.POINTER.withName("thread_yield"),
-        RuntimeHelper.POINTER.withName("thread_join"),
-        RuntimeHelper.POINTER.withName("thread_exit"),
-        RuntimeHelper.POINTER.withName("thread_set_priority"),
-        RuntimeHelper.POINTER.withName("thread_self"),
-        RuntimeHelper.POINTER.withName("thread_equal")
-    ).withName("_GThreadFunctions");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GThreadFunctions.mutex_new.class, "apply", constants$35.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$35.const$2
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_relation_exists",
+        constants$10.const$5
     );
-    static final VarHandle const$3 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("mutex_new"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GThreadFunctions.mutex_lock.class, "apply", constants$13.const$1);
-    static final VarHandle const$5 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("mutex_lock"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_relation_print",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tuples_destroy",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tuples_index",
+        constants$33.const$5
+    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("func"),
+        RuntimeHelper.POINTER.withName("data"),
+        JAVA_INT.withName("joinable"),
+        JAVA_INT.withName("priority")
+    ).withName("_GThread");
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GThread.func.class, "apply", constants$5.const$2);
 }
 
 

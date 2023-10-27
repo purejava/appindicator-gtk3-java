@@ -2,23 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1400 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1400() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_vfs_register_uri_scheme$uri_func.class, "apply", constants$23.const$0);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_vfs_register_uri_scheme$uri_destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_vfs_register_uri_scheme$parse_name_func.class, "apply", constants$23.const$0);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_vfs_register_uri_scheme$parse_name_destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_vfs_register_uri_scheme",
-        constants$863.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_vfs_unregister_uri_scheme",
-        constants$9.const$0
-    );
+    static final VarHandle const$0 = constants$1396.const$3.varHandle(MemoryLayout.PathElement.groupElement("local_file_removed"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVfsClass.local_file_moved.class, "apply", constants$14.const$3);
+    static final VarHandle const$2 = constants$1396.const$3.varHandle(MemoryLayout.PathElement.groupElement("local_file_moved"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVfsClass.deserialize_icon.class, "apply", constants$5.const$5);
+    static final VarHandle const$4 = constants$1396.const$3.varHandle(MemoryLayout.PathElement.groupElement("deserialize_icon"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVfsClass._g_reserved1.class, "apply", constants$7.const$5);
 }
 
 

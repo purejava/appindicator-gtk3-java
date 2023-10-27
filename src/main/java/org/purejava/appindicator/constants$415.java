@@ -6,45 +6,35 @@ import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$415 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$415() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_regex_match",
-        constants$327.const$4
+        "g_regex_escape_string",
+        constants$21.const$3
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_regex_escape_nul",
+        constants$21.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_regex_match_full",
-        constants$415.const$1
+        "g_regex_get_compile_flags",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_regex_match_all",
-        constants$327.const$4
+        "g_regex_get_match_flags",
+        constants$10.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_regex_match_all_full",
-        constants$415.const$1
-    );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT,
         JAVA_INT
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_regex_split_simple",
-        constants$415.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_regex_match_simple",
+        constants$415.const$4
     );
 }
 

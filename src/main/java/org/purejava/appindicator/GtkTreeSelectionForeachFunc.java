@@ -13,7 +13,7 @@ public interface GtkTreeSelectionForeachFunc {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GtkTreeSelectionForeachFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3194.const$3, fi, constants$42.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$3199.const$3, fi, constants$42.const$1, scope);
     }
     static GtkTreeSelectionForeachFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

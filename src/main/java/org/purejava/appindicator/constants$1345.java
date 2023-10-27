@@ -2,43 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1345 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1345() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GThreadedSocketServiceClass._g_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$1343.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        RuntimeHelper.POINTER.withName("g_class")
-                    ).withName("g_type_instance"),
-                    JAVA_INT.withName("ref_count"),
-                    MemoryLayout.paddingLayout(4),
-                    RuntimeHelper.POINTER.withName("qdata")
-                ).withName("parent_instance"),
-                RuntimeHelper.POINTER.withName("priv")
-            ).withName("parent_instance"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GThreadedSocketService");
-    static final VarHandle const$3 = constants$1345.const$2.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_get_flags",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_get_bus_address",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_add_service_dir",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_up",
+        constants$13.const$1
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_threaded_socket_service_get_type",
-        constants$3.const$5
+        "g_test_dbus_stop",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_threaded_socket_service_new",
-        constants$24.const$0
+        "g_test_dbus_down",
+        constants$13.const$1
     );
 }
 

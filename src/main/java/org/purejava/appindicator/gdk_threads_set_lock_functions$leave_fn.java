@@ -13,7 +13,7 @@ public interface gdk_threads_set_lock_functions$leave_fn {
 
     void apply();
     static MemorySegment allocate(gdk_threads_set_lock_functions$leave_fn fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1943.const$4, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$1948.const$4, fi, constants$7.const$5, scope);
     }
     static gdk_threads_set_lock_functions$leave_fn ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -8,28 +8,28 @@ final class constants$1665 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1665() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "fgetc",
+        "fflush_unlocked",
         constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "getc",
-        constants$10.const$5
+        "fopen",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "getchar",
-        constants$83.const$1
+        "freopen",
+        constants$23.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "getc_unlocked",
-        constants$10.const$5
+        "fdopen",
+        constants$24.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "getchar_unlocked",
-        constants$83.const$1
+        "fmemopen",
+        constants$36.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "fgetc_unlocked",
-        constants$10.const$5
+        "open_memstream",
+        constants$5.const$5
     );
 }
 

@@ -13,13 +13,13 @@ public interface GTestLogFatalFunc {
 
     int apply(java.lang.foreign.MemorySegment log_domain, int log_level, java.lang.foreign.MemorySegment message, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GTestLogFatalFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$463.const$5, fi, constants$11.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$465.const$4, fi, constants$11.const$0, scope);
     }
     static GTestLogFatalFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _log_domain, int _log_level, java.lang.foreign.MemorySegment _message, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$464.const$0.invokeExact(symbol, _log_domain, _log_level, _message, _user_data);
+                return (int)constants$465.const$5.invokeExact(symbol, _log_domain, _log_level, _message, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -35,7 +35,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkThemingEngineClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3379.const$3;
+        return constants$3384.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -49,13 +49,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5);
         static MemorySegment allocate(render_line fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3379.const$4, fi, constants$3041.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3384.const$4, fi, constants$3046.const$2, scope);
         }
         static render_line ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5) -> {
                 try {
-                    constants$3379.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$3384.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -64,7 +64,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_line$VH() {
-        return constants$3380.const$0;
+        return constants$3385.const$0;
     }
     /**
      * Getter for field:
@@ -73,7 +73,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_line$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3380.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3385.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -82,13 +82,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_line$set(MemorySegment seg, MemorySegment x) {
-        constants$3380.const$0.set(seg, x);
+        constants$3385.const$0.set(seg, x);
     }
     public static MemorySegment render_line$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3380.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3385.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void render_line$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3380.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3385.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_line render_line(MemorySegment segment, Arena scope) {
         return render_line.ofAddress(render_line$get(segment), scope);
@@ -102,13 +102,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5);
         static MemorySegment allocate(render_background fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3380.const$1, fi, constants$3041.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3385.const$1, fi, constants$3046.const$2, scope);
         }
         static render_background ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5) -> {
                 try {
-                    constants$3379.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$3384.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -117,7 +117,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_background$VH() {
-        return constants$3380.const$2;
+        return constants$3385.const$2;
     }
     /**
      * Getter for field:
@@ -126,7 +126,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_background$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3380.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3385.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -135,13 +135,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_background$set(MemorySegment seg, MemorySegment x) {
-        constants$3380.const$2.set(seg, x);
+        constants$3385.const$2.set(seg, x);
     }
     public static MemorySegment render_background$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3380.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3385.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void render_background$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3380.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3385.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_background render_background(MemorySegment segment, Arena scope) {
         return render_background.ofAddress(render_background$get(segment), scope);
@@ -155,13 +155,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5);
         static MemorySegment allocate(render_frame fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3380.const$3, fi, constants$3041.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3385.const$3, fi, constants$3046.const$2, scope);
         }
         static render_frame ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5) -> {
                 try {
-                    constants$3379.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$3384.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -170,7 +170,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_frame$VH() {
-        return constants$3380.const$4;
+        return constants$3385.const$4;
     }
     /**
      * Getter for field:
@@ -179,7 +179,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_frame$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3380.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3385.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -188,13 +188,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_frame$set(MemorySegment seg, MemorySegment x) {
-        constants$3380.const$4.set(seg, x);
+        constants$3385.const$4.set(seg, x);
     }
     public static MemorySegment render_frame$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3380.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3385.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void render_frame$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3380.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3385.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_frame render_frame(MemorySegment segment, Arena scope) {
         return render_frame.ofAddress(render_frame$get(segment), scope);
@@ -208,13 +208,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5, int _x6, double _x7, double _x8);
         static MemorySegment allocate(render_frame_gap fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3380.const$5, fi, constants$3043.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3385.const$5, fi, constants$3048.const$5, scope);
         }
         static render_frame_gap ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5, int __x6, double __x7, double __x8) -> {
                 try {
-                    constants$3381.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8);
+                    constants$3386.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -223,7 +223,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_frame_gap$VH() {
-        return constants$3381.const$1;
+        return constants$3386.const$1;
     }
     /**
      * Getter for field:
@@ -232,7 +232,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_frame_gap$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3381.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3386.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -241,13 +241,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_frame_gap$set(MemorySegment seg, MemorySegment x) {
-        constants$3381.const$1.set(seg, x);
+        constants$3386.const$1.set(seg, x);
     }
     public static MemorySegment render_frame_gap$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3381.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3386.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void render_frame_gap$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3381.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3386.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_frame_gap render_frame_gap(MemorySegment segment, Arena scope) {
         return render_frame_gap.ofAddress(render_frame_gap$get(segment), scope);
@@ -261,13 +261,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5, int _x6);
         static MemorySegment allocate(render_extension fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3381.const$2, fi, constants$3043.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$3386.const$2, fi, constants$3048.const$3, scope);
         }
         static render_extension ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5, int __x6) -> {
                 try {
-                    constants$3381.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
+                    constants$3386.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -276,7 +276,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_extension$VH() {
-        return constants$3381.const$4;
+        return constants$3386.const$4;
     }
     /**
      * Getter for field:
@@ -285,7 +285,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_extension$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3381.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3386.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -294,13 +294,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_extension$set(MemorySegment seg, MemorySegment x) {
-        constants$3381.const$4.set(seg, x);
+        constants$3386.const$4.set(seg, x);
     }
     public static MemorySegment render_extension$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3381.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3386.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void render_extension$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3381.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3386.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_extension render_extension(MemorySegment segment, Arena scope) {
         return render_extension.ofAddress(render_extension$get(segment), scope);
@@ -314,13 +314,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5);
         static MemorySegment allocate(render_check fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3381.const$5, fi, constants$3041.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3386.const$5, fi, constants$3046.const$2, scope);
         }
         static render_check ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5) -> {
                 try {
-                    constants$3379.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$3384.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -329,7 +329,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_check$VH() {
-        return constants$3382.const$0;
+        return constants$3387.const$0;
     }
     /**
      * Getter for field:
@@ -338,7 +338,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_check$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3382.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3387.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -347,13 +347,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_check$set(MemorySegment seg, MemorySegment x) {
-        constants$3382.const$0.set(seg, x);
+        constants$3387.const$0.set(seg, x);
     }
     public static MemorySegment render_check$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3382.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3387.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void render_check$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3382.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3387.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_check render_check(MemorySegment segment, Arena scope) {
         return render_check.ofAddress(render_check$get(segment), scope);
@@ -367,13 +367,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5);
         static MemorySegment allocate(render_option fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3382.const$1, fi, constants$3041.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3387.const$1, fi, constants$3046.const$2, scope);
         }
         static render_option ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5) -> {
                 try {
-                    constants$3379.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$3384.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -382,7 +382,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_option$VH() {
-        return constants$3382.const$2;
+        return constants$3387.const$2;
     }
     /**
      * Getter for field:
@@ -391,7 +391,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_option$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3382.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3387.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -400,13 +400,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_option$set(MemorySegment seg, MemorySegment x) {
-        constants$3382.const$2.set(seg, x);
+        constants$3387.const$2.set(seg, x);
     }
     public static MemorySegment render_option$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3382.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3387.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void render_option$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3382.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3387.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_option render_option(MemorySegment segment, Arena scope) {
         return render_option.ofAddress(render_option$get(segment), scope);
@@ -420,13 +420,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5);
         static MemorySegment allocate(render_arrow fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3382.const$3, fi, constants$3041.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3387.const$3, fi, constants$3046.const$2, scope);
         }
         static render_arrow ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5) -> {
                 try {
-                    constants$3379.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$3384.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -435,7 +435,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_arrow$VH() {
-        return constants$3382.const$4;
+        return constants$3387.const$4;
     }
     /**
      * Getter for field:
@@ -444,7 +444,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_arrow$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3382.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3387.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -453,13 +453,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_arrow$set(MemorySegment seg, MemorySegment x) {
-        constants$3382.const$4.set(seg, x);
+        constants$3387.const$4.set(seg, x);
     }
     public static MemorySegment render_arrow$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3382.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3387.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void render_arrow$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3382.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3387.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_arrow render_arrow(MemorySegment segment, Arena scope) {
         return render_arrow.ofAddress(render_arrow$get(segment), scope);
@@ -473,13 +473,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5);
         static MemorySegment allocate(render_expander fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3382.const$5, fi, constants$3041.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3387.const$5, fi, constants$3046.const$2, scope);
         }
         static render_expander ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5) -> {
                 try {
-                    constants$3379.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$3384.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -488,7 +488,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_expander$VH() {
-        return constants$3383.const$0;
+        return constants$3388.const$0;
     }
     /**
      * Getter for field:
@@ -497,7 +497,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_expander$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3383.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3388.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -506,13 +506,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_expander$set(MemorySegment seg, MemorySegment x) {
-        constants$3383.const$0.set(seg, x);
+        constants$3388.const$0.set(seg, x);
     }
     public static MemorySegment render_expander$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3383.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3388.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void render_expander$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3383.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3388.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_expander render_expander(MemorySegment segment, Arena scope) {
         return render_expander.ofAddress(render_expander$get(segment), scope);
@@ -526,13 +526,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5);
         static MemorySegment allocate(render_focus fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3383.const$1, fi, constants$3041.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3388.const$1, fi, constants$3046.const$2, scope);
         }
         static render_focus ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5) -> {
                 try {
-                    constants$3379.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$3384.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -541,7 +541,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_focus$VH() {
-        return constants$3383.const$2;
+        return constants$3388.const$2;
     }
     /**
      * Getter for field:
@@ -550,7 +550,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_focus$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3383.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3388.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -559,13 +559,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_focus$set(MemorySegment seg, MemorySegment x) {
-        constants$3383.const$2.set(seg, x);
+        constants$3388.const$2.set(seg, x);
     }
     public static MemorySegment render_focus$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3383.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3388.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void render_focus$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3383.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3388.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_focus render_focus(MemorySegment segment, Arena scope) {
         return render_focus.ofAddress(render_focus$get(segment), scope);
@@ -579,13 +579,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, java.lang.foreign.MemorySegment _x4);
         static MemorySegment allocate(render_layout fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3383.const$3, fi, constants$3043.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$3388.const$3, fi, constants$3048.const$0, scope);
         }
         static render_layout ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    constants$3383.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$3388.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -594,7 +594,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_layout$VH() {
-        return constants$3383.const$5;
+        return constants$3388.const$5;
     }
     /**
      * Getter for field:
@@ -603,7 +603,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_layout$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3383.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3388.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -612,13 +612,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_layout$set(MemorySegment seg, MemorySegment x) {
-        constants$3383.const$5.set(seg, x);
+        constants$3388.const$5.set(seg, x);
     }
     public static MemorySegment render_layout$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3383.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3388.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void render_layout$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3383.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3388.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_layout render_layout(MemorySegment segment, Arena scope) {
         return render_layout.ofAddress(render_layout$get(segment), scope);
@@ -632,13 +632,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5, int _x6);
         static MemorySegment allocate(render_slider fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3384.const$0, fi, constants$3043.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$3389.const$0, fi, constants$3048.const$3, scope);
         }
         static render_slider ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5, int __x6) -> {
                 try {
-                    constants$3381.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
+                    constants$3386.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -647,7 +647,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_slider$VH() {
-        return constants$3384.const$1;
+        return constants$3389.const$1;
     }
     /**
      * Getter for field:
@@ -656,7 +656,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_slider$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3384.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3389.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -665,13 +665,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_slider$set(MemorySegment seg, MemorySegment x) {
-        constants$3384.const$1.set(seg, x);
+        constants$3389.const$1.set(seg, x);
     }
     public static MemorySegment render_slider$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3384.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3389.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void render_slider$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3384.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3389.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_slider render_slider(MemorySegment segment, Arena scope) {
         return render_slider.ofAddress(render_slider$get(segment), scope);
@@ -685,13 +685,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5);
         static MemorySegment allocate(render_handle fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3384.const$2, fi, constants$3041.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3389.const$2, fi, constants$3046.const$2, scope);
         }
         static render_handle ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5) -> {
                 try {
-                    constants$3379.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$3384.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -700,7 +700,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_handle$VH() {
-        return constants$3384.const$3;
+        return constants$3389.const$3;
     }
     /**
      * Getter for field:
@@ -709,7 +709,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_handle$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3384.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3389.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -718,13 +718,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_handle$set(MemorySegment seg, MemorySegment x) {
-        constants$3384.const$3.set(seg, x);
+        constants$3389.const$3.set(seg, x);
     }
     public static MemorySegment render_handle$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3384.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3389.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void render_handle$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3384.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3389.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_handle render_handle(MemorySegment segment, Arena scope) {
         return render_handle.ofAddress(render_handle$get(segment), scope);
@@ -738,13 +738,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, double _x2, double _x3, double _x4, double _x5);
         static MemorySegment allocate(render_activity fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3384.const$4, fi, constants$3041.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3389.const$4, fi, constants$3046.const$2, scope);
         }
         static render_activity ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, double __x2, double __x3, double __x4, double __x5) -> {
                 try {
-                    constants$3379.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$3384.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -753,7 +753,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_activity$VH() {
-        return constants$3384.const$5;
+        return constants$3389.const$5;
     }
     /**
      * Getter for field:
@@ -762,7 +762,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_activity$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3384.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3389.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -771,13 +771,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_activity$set(MemorySegment seg, MemorySegment x) {
-        constants$3384.const$5.set(seg, x);
+        constants$3389.const$5.set(seg, x);
     }
     public static MemorySegment render_activity$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3384.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3389.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void render_activity$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3384.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3389.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_activity render_activity(MemorySegment segment, Arena scope) {
         return render_activity.ofAddress(render_activity$get(segment), scope);
@@ -791,13 +791,13 @@ public class _GtkThemingEngineClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
         static MemorySegment allocate(render_icon_pixbuf fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3385.const$0, fi, constants$32.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$3390.const$0, fi, constants$32.const$3, scope);
         }
         static render_icon_pixbuf ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)constants$3385.const$1.invokeExact(symbol, __x0, __x1, __x2);
+                    return (java.lang.foreign.MemorySegment)constants$3390.const$1.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -806,7 +806,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_icon_pixbuf$VH() {
-        return constants$3385.const$2;
+        return constants$3390.const$2;
     }
     /**
      * Getter for field:
@@ -815,7 +815,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_icon_pixbuf$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3385.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3390.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -824,13 +824,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_icon_pixbuf$set(MemorySegment seg, MemorySegment x) {
-        constants$3385.const$2.set(seg, x);
+        constants$3390.const$2.set(seg, x);
     }
     public static MemorySegment render_icon_pixbuf$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3385.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3390.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void render_icon_pixbuf$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3385.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3390.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_icon_pixbuf render_icon_pixbuf(MemorySegment segment, Arena scope) {
         return render_icon_pixbuf.ofAddress(render_icon_pixbuf$get(segment), scope);
@@ -844,13 +844,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, double _x3, double _x4);
         static MemorySegment allocate(render_icon fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3385.const$3, fi, constants$3044.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$3390.const$3, fi, constants$3049.const$4, scope);
         }
         static render_icon ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, double __x3, double __x4) -> {
                 try {
-                    constants$3385.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$3390.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -859,7 +859,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_icon$VH() {
-        return constants$3385.const$5;
+        return constants$3390.const$5;
     }
     /**
      * Getter for field:
@@ -868,7 +868,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3385.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3390.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -877,13 +877,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_icon$set(MemorySegment seg, MemorySegment x) {
-        constants$3385.const$5.set(seg, x);
+        constants$3390.const$5.set(seg, x);
     }
     public static MemorySegment render_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3385.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3390.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void render_icon$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3385.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3390.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_icon render_icon(MemorySegment segment, Arena scope) {
         return render_icon.ofAddress(render_icon$get(segment), scope);
@@ -897,13 +897,13 @@ public class _GtkThemingEngineClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, double _x3, double _x4);
         static MemorySegment allocate(render_icon_surface fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3386.const$0, fi, constants$3044.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$3391.const$0, fi, constants$3049.const$4, scope);
         }
         static render_icon_surface ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, double __x3, double __x4) -> {
                 try {
-                    constants$3385.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$3390.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -912,7 +912,7 @@ public class _GtkThemingEngineClass {
     }
 
     public static VarHandle render_icon_surface$VH() {
-        return constants$3386.const$1;
+        return constants$3391.const$1;
     }
     /**
      * Getter for field:
@@ -921,7 +921,7 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static MemorySegment render_icon_surface$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3386.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3391.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -930,13 +930,13 @@ public class _GtkThemingEngineClass {
      * }
      */
     public static void render_icon_surface$set(MemorySegment seg, MemorySegment x) {
-        constants$3386.const$1.set(seg, x);
+        constants$3391.const$1.set(seg, x);
     }
     public static MemorySegment render_icon_surface$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3386.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3391.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void render_icon_surface$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3386.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3391.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static render_icon_surface render_icon_surface(MemorySegment segment, Arena scope) {
         return render_icon_surface.ofAddress(render_icon_surface$get(segment), scope);

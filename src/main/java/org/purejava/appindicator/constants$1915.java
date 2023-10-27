@@ -8,28 +8,28 @@ final class constants$1915 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1915() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_cursor_unref",
-        constants$13.const$1
+        "pango_cairo_show_glyph_item",
+        constants$14.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_image",
-        constants$5.const$2
+        "pango_cairo_show_layout_line",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_surface",
-        constants$23.const$0
+        "pango_cairo_show_layout",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_cursor_type",
-        constants$10.const$5
+        "pango_cairo_show_error_underline",
+        constants$1688.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_type",
-        constants$3.const$5
+        "pango_cairo_glyph_string_path",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_n_groups",
-        constants$10.const$5
+        "pango_cairo_layout_line_path",
+        constants$13.const$4
     );
 }
 

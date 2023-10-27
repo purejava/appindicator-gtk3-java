@@ -8,28 +8,28 @@ final class constants$356 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$356() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_variant_get_int64",
-        constants$4.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_variant_get_uint64",
-        constants$4.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_get_handle",
+        "g_variant_get_boolean",
         constants$10.const$5
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_get_byte",
+        constants$186.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_get_int16",
+        constants$186.const$2
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_get_double",
-        constants$67.const$0
+        "g_variant_get_uint16",
+        constants$186.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_variant_get_variant",
-        constants$5.const$2
+        "g_variant_get_int32",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_get_string",
-        constants$5.const$5
+        "g_variant_get_uint32",
+        constants$10.const$5
     );
 }
 

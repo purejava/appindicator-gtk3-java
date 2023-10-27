@@ -8,28 +8,28 @@ final class constants$411 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$411() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_atomic_ref_count_compare",
-        constants$11.const$4
+        "g_ref_count_inc",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_ref_string_new",
-        constants$5.const$2
+        "g_ref_count_dec",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_ref_string_new_len",
-        constants$21.const$1
+        "g_ref_count_compare",
+        constants$11.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_ref_string_new_intern",
-        constants$5.const$2
+        "g_atomic_ref_count_init",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_ref_string_acquire",
-        constants$5.const$2
+        "g_atomic_ref_count_inc",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_ref_string_release",
-        constants$13.const$1
+        "g_atomic_ref_count_dec",
+        constants$10.const$5
     );
 }
 

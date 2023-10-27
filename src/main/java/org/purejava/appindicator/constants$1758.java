@@ -8,28 +8,28 @@ final class constants$1758 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1758() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_device_get_position_double",
-        constants$42.const$1
+        "cairo_region_contains_point",
+        constants$49.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_device_get_window_at_position_double",
-        constants$23.const$0
+        "cairo_region_translate",
+        constants$469.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_device_get_history",
-        constants$1029.const$4
+        "cairo_region_subtract",
+        constants$9.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_device_free_history",
-        constants$40.const$2
+        "cairo_region_subtract_rectangle",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_device_get_n_axes",
-        constants$10.const$5
+        "cairo_region_intersect",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_device_list_axes",
-        constants$5.const$2
+        "cairo_region_intersect_rectangle",
+        constants$9.const$0
     );
 }
 

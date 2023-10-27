@@ -2,39 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$414 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$414() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_regex_escape_string",
-        constants$21.const$3
+        "g_regex_get_pattern",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_regex_escape_nul",
-        constants$21.const$3
+        "g_regex_get_max_backref",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_regex_get_compile_flags",
+        "g_regex_get_capture_count",
         constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_regex_get_match_flags",
+        "g_regex_get_has_cr_or_lf",
         constants$10.const$5
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_regex_get_max_lookbehind",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_regex_match_simple",
-        constants$414.const$4
+        "g_regex_get_string_number",
+        constants$9.const$0
     );
 }
 

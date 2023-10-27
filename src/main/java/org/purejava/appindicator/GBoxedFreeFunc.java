@@ -13,7 +13,7 @@ public interface GBoxedFreeFunc {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(GBoxedFreeFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$619.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$621.const$4, fi, constants$13.const$1, scope);
     }
     static GBoxedFreeFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

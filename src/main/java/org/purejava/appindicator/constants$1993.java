@@ -7,28 +7,44 @@ import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1993 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1993() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_get_toolkit_version",
-        constants$35.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_get_version",
-        constants$35.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(AtkFocusHandler.class, "apply", constants$40.const$2);
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        JAVA_INT.withName("x"),
-        JAVA_INT.withName("y"),
-        JAVA_INT.withName("width"),
-        JAVA_INT.withName("height")
-    ).withName("_AtkRectangle");
-    static final VarHandle const$4 = constants$1993.const$3.varHandle(MemoryLayout.PathElement.groupElement("x"));
-    static final VarHandle const$5 = constants$1993.const$3.varHandle(MemoryLayout.PathElement.groupElement("y"));
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("add_global_event_listener"),
+        RuntimeHelper.POINTER.withName("remove_global_event_listener"),
+        RuntimeHelper.POINTER.withName("add_key_event_listener"),
+        RuntimeHelper.POINTER.withName("remove_key_event_listener"),
+        RuntimeHelper.POINTER.withName("get_root"),
+        RuntimeHelper.POINTER.withName("get_toolkit_name"),
+        RuntimeHelper.POINTER.withName("get_toolkit_version")
+    ).withName("_AtkUtilClass");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkUtilClass.add_global_event_listener.class, "apply", constants$9.const$0);
+    static final VarHandle const$2 = constants$1993.const$0.varHandle(MemoryLayout.PathElement.groupElement("add_global_event_listener"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkUtilClass.remove_global_event_listener.class, "apply", constants$80.const$1);
+    static final VarHandle const$4 = constants$1993.const$0.varHandle(MemoryLayout.PathElement.groupElement("remove_global_event_listener"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkUtilClass.add_key_event_listener.class, "apply", constants$9.const$0);
 }
 
 

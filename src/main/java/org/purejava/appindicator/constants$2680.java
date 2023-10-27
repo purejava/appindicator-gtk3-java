@@ -2,35 +2,32 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2680 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2680() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_show_hidden",
-        constants$40.const$2
+        "gtk_fixed_move",
+        constants$1046.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_show_hidden",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_do_overwrite_confirmation",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_do_overwrite_confirmation",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_create_folders",
-        constants$40.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_create_folders",
-        constants$10.const$5
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkFileFilterFunc.class, "apply", constants$9.const$0);
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("contains"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("filename"),
+        RuntimeHelper.POINTER.withName("uri"),
+        RuntimeHelper.POINTER.withName("display_name"),
+        RuntimeHelper.POINTER.withName("mime_type")
+    ).withName("_GtkFileFilterInfo");
+    static final VarHandle const$3 = constants$2680.const$2.varHandle(MemoryLayout.PathElement.groupElement("contains"));
+    static final VarHandle const$4 = constants$2680.const$2.varHandle(MemoryLayout.PathElement.groupElement("filename"));
+    static final VarHandle const$5 = constants$2680.const$2.varHandle(MemoryLayout.PathElement.groupElement("uri"));
 }
 
 

@@ -8,28 +8,28 @@ final class constants$348 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$348() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_variant_type_new_maybe",
+        "g_variant_type_first",
         constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_variant_type_new_tuple",
-        constants$21.const$3
+        "g_variant_type_next",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_type_new_dict_entry",
-        constants$5.const$5
+        "g_variant_type_n_items",
+        constants$4.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_type_checked_",
+        "g_variant_type_key",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_variant_type_string_get_depth_",
-        constants$4.const$0
+        "g_variant_type_value",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_unref",
-        constants$13.const$1
+        "g_variant_type_new_array",
+        constants$5.const$2
     );
 }
 

@@ -31,7 +31,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _PangoLogAttr {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1584.const$4;
+        return constants$1589.const$4;
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

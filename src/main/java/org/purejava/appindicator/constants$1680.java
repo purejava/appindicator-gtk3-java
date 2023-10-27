@@ -8,26 +8,29 @@ final class constants$1680 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1680() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_create",
-        constants$5.const$2
+        "pango_parse_style",
+        constants$62.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_reference",
-        constants$5.const$2
+        "pango_parse_variant",
+        constants$62.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_destroy",
-        constants$13.const$1
+        "pango_parse_weight",
+        constants$62.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_get_reference_count",
-        constants$10.const$5
+        "pango_parse_stretch",
+        constants$62.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_get_user_data",
-        constants$5.const$5
+        "pango_quantize_line_geometry",
+        constants$13.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_log2vis_get_embedding_levels",
+        constants$196.const$3
+    );
 }
 
 

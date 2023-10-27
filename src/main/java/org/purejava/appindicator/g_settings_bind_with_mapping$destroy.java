@@ -13,7 +13,7 @@ public interface g_settings_bind_with_mapping$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_settings_bind_with_mapping$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1262.const$4, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1266.const$4, fi, constants$13.const$1, scope);
     }
     static g_settings_bind_with_mapping$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

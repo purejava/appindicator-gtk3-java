@@ -13,7 +13,7 @@ public interface cairo_raster_source_pattern_get_snapshot$return {
 
     int apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data);
     static MemorySegment allocate(cairo_raster_source_pattern_get_snapshot$return fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1739.const$3, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$1744.const$3, fi, constants$9.const$0, scope);
     }
     static cairo_raster_source_pattern_get_snapshot$return ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

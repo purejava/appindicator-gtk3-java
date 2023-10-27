@@ -13,7 +13,7 @@ public interface GSimpleAsyncThreadFunc {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GSimpleAsyncThreadFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$694.const$4, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$697.const$2, fi, constants$14.const$3, scope);
     }
     static GSimpleAsyncThreadFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1829 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1829() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_raise",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_lower",
-        constants$13.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_restack",
-        constants$164.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_focus",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_user_data",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_override_redirect",
-        constants$40.const$2
-    );
+    static final VarHandle const$0 = constants$1825.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gdk_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1825.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gdk_reserved4"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1825.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gdk_reserved5"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved6.class, "apply", constants$7.const$5);
 }
 
 

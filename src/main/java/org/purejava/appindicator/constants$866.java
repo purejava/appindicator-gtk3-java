@@ -2,27 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$866 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$866() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GDBusSubtreeIntrospectFunc.class, "apply", constants$330.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GDBusInterfaceGetPropertyFunc.class, "apply", constants$496.const$1);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$330.const$5
+        constants$496.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GDBusSubtreeDispatchFunc.class, "apply", constants$494.const$3);
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("enumerate"),
-        RuntimeHelper.POINTER.withName("introspect"),
-        RuntimeHelper.POINTER.withName("dispatch"),
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GDBusInterfaceSetPropertyFunc.class, "apply", constants$866.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$866.const$2
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("method_call"),
+        RuntimeHelper.POINTER.withName("get_property"),
+        RuntimeHelper.POINTER.withName("set_property"),
         MemoryLayout.sequenceLayout(8, RuntimeHelper.POINTER).withName("padding")
-    ).withName("_GDBusSubtreeVTable");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDBusSubtreeVTable.enumerate.class, "apply", constants$39.const$1);
-    static final VarHandle const$5 = constants$866.const$3.varHandle(MemoryLayout.PathElement.groupElement("enumerate"));
+    ).withName("_GDBusInterfaceVTable");
 }
 
 

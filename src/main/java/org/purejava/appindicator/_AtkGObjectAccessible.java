@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _AtkGObjectAccessible {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2028.const$3;
+        return constants$2033.const$4;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);

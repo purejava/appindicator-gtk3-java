@@ -8,28 +8,28 @@ final class constants$532 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$532() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pthread_cond_timedwait",
-        constants$12.const$2
+        "pthread_rwlockattr_getpshared",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pthread_condattr_init",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pthread_condattr_destroy",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pthread_condattr_getpshared",
-        constants$9.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pthread_condattr_setpshared",
+        "pthread_rwlockattr_setpshared",
         constants$11.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pthread_condattr_getclock",
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_rwlockattr_getkind_np",
         constants$9.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_rwlockattr_setkind_np",
+        constants$11.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_cond_init",
+        constants$9.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_cond_destroy",
+        constants$10.const$5
     );
 }
 

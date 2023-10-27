@@ -8,28 +8,28 @@ final class constants$439 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$439() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_get_position",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_move",
-        constants$21.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_get_sequence",
+        "g_sequence_get",
         constants$5.const$2
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_sequence_set",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_sequence_iter_is_begin",
+        constants$10.const$5
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_compare",
-        constants$9.const$0
+        "g_sequence_iter_is_end",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_sequence_range_get_midpoint",
-        constants$5.const$5
+        "g_sequence_iter_next",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_shell_error_quark",
-        constants$83.const$1
+        "g_sequence_iter_prev",
+        constants$5.const$2
     );
 }
 

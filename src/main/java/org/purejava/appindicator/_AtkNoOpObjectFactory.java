@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _AtkNoOpObjectFactory {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2046.const$1;
+        return constants$2051.const$2;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);

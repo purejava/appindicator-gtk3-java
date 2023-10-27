@@ -8,28 +8,28 @@ final class constants$1862 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1862() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_display_is_closed",
-        constants$10.const$5
+        "gdk_rectangle_intersect",
+        constants$12.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_display_list_devices",
-        constants$5.const$2
+        "gdk_rectangle_union",
+        constants$14.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_display_get_event",
-        constants$5.const$2
+        "gdk_rectangle_equal",
+        constants$9.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_display_peek_event",
-        constants$5.const$2
+        "gdk_rectangle_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_display_put_event",
-        constants$13.const$4
+        "gdk_monitor_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_display_has_pending",
-        constants$10.const$5
+        "gdk_monitor_get_display",
+        constants$5.const$2
     );
 }
 

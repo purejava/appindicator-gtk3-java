@@ -2,43 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1690 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1690() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_stroke_preserve",
-        constants$13.const$1
+        "cairo_set_miter_limit",
+        constants$692.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_fill",
-        constants$13.const$1
+        "cairo_translate",
+        constants$1536.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_fill_preserve",
-        constants$13.const$1
+        "cairo_scale",
+        constants$1536.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_copy_page",
-        constants$13.const$1
+        "cairo_rotate",
+        constants$692.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_show_page",
-        constants$13.const$1
+        "cairo_transform",
+        constants$13.const$4
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "cairo_in_stroke",
-        constants$1690.const$5
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_set_matrix",
+        constants$13.const$4
     );
 }
 

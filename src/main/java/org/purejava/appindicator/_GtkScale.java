@@ -18,13 +18,13 @@ import java.lang.invoke.VarHandle;
 public class _GtkScale {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3047.const$0;
+        return constants$3052.const$0;
     }
     public static MemorySegment range$slice(MemorySegment seg) {
         return seg.asSlice(0, 40);
     }
     public static VarHandle priv$VH() {
-        return constants$3047.const$1;
+        return constants$3052.const$1;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class _GtkScale {
      * }
      */
     public static MemorySegment priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3047.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3052.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -42,13 +42,13 @@ public class _GtkScale {
      * }
      */
     public static void priv$set(MemorySegment seg, MemorySegment x) {
-        constants$3047.const$1.set(seg, x);
+        constants$3052.const$1.set(seg, x);
     }
     public static MemorySegment priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3047.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3052.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void priv$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3047.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3052.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

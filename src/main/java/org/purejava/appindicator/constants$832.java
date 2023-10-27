@@ -2,42 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$832 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$832() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gethostid",
-        constants$3.const$5
+        "getopt",
+        constants$10.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "sync",
-        constants$7.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "getpagesize",
-        constants$83.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "getdtablesize",
-        constants$83.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "truncate",
+        "gethostname",
         constants$97.const$1
     );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_INT,
-        JAVA_LONG
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "sethostname",
+        constants$97.const$1
     );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "ftruncate",
-        constants$832.const$5
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "sethostid",
+        constants$26.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "getdomainname",
+        constants$97.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "setdomainname",
+        constants$97.const$1
     );
 }
 

@@ -42,7 +42,7 @@ import java.lang.invoke.VarHandle;
 public class _GAppInfoIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$715.const$2;
+        return constants$718.const$1;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -56,7 +56,7 @@ public class _GAppInfoIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(dup fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$715.const$3, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$718.const$2, fi, constants$5.const$2, scope);
         }
         static dup ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -71,7 +71,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle dup$VH() {
-        return constants$715.const$4;
+        return constants$718.const$3;
     }
     /**
      * Getter for field:
@@ -80,7 +80,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment dup$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$715.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$718.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -89,13 +89,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void dup$set(MemorySegment seg, MemorySegment x) {
-        constants$715.const$4.set(seg, x);
+        constants$718.const$3.set(seg, x);
     }
     public static MemorySegment dup$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$715.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$718.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void dup$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$715.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$718.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static dup dup(MemorySegment segment, Arena scope) {
         return dup.ofAddress(dup$get(segment), scope);
@@ -109,7 +109,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(equal fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$715.const$5, fi, constants$9.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$718.const$4, fi, constants$9.const$0, scope);
         }
         static equal ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -124,7 +124,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle equal$VH() {
-        return constants$716.const$0;
+        return constants$718.const$5;
     }
     /**
      * Getter for field:
@@ -133,7 +133,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment equal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$716.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$718.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -142,13 +142,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void equal$set(MemorySegment seg, MemorySegment x) {
-        constants$716.const$0.set(seg, x);
+        constants$718.const$5.set(seg, x);
     }
     public static MemorySegment equal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$716.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$718.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void equal$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$716.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$718.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static equal equal(MemorySegment segment, Arena scope) {
         return equal.ofAddress(equal$get(segment), scope);
@@ -162,7 +162,7 @@ public class _GAppInfoIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_id fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$716.const$1, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$719.const$0, fi, constants$5.const$2, scope);
         }
         static get_id ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -177,7 +177,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle get_id$VH() {
-        return constants$716.const$2;
+        return constants$719.const$1;
     }
     /**
      * Getter for field:
@@ -186,7 +186,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment get_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$716.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$719.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -195,13 +195,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void get_id$set(MemorySegment seg, MemorySegment x) {
-        constants$716.const$2.set(seg, x);
+        constants$719.const$1.set(seg, x);
     }
     public static MemorySegment get_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$716.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$719.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_id$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$716.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$719.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_id get_id(MemorySegment segment, Arena scope) {
         return get_id.ofAddress(get_id$get(segment), scope);
@@ -215,7 +215,7 @@ public class _GAppInfoIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_name fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$716.const$3, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$719.const$2, fi, constants$5.const$2, scope);
         }
         static get_name ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -230,7 +230,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle get_name$VH() {
-        return constants$716.const$4;
+        return constants$719.const$3;
     }
     /**
      * Getter for field:
@@ -239,7 +239,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment get_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$716.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$719.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -248,13 +248,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void get_name$set(MemorySegment seg, MemorySegment x) {
-        constants$716.const$4.set(seg, x);
+        constants$719.const$3.set(seg, x);
     }
     public static MemorySegment get_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$716.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$719.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$716.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$719.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_name get_name(MemorySegment segment, Arena scope) {
         return get_name.ofAddress(get_name$get(segment), scope);
@@ -268,7 +268,7 @@ public class _GAppInfoIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_description fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$716.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$719.const$4, fi, constants$5.const$2, scope);
         }
         static get_description ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -283,7 +283,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle get_description$VH() {
-        return constants$717.const$0;
+        return constants$719.const$5;
     }
     /**
      * Getter for field:
@@ -292,7 +292,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment get_description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$717.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$719.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -301,13 +301,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void get_description$set(MemorySegment seg, MemorySegment x) {
-        constants$717.const$0.set(seg, x);
+        constants$719.const$5.set(seg, x);
     }
     public static MemorySegment get_description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$717.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$719.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_description$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$717.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$719.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_description get_description(MemorySegment segment, Arena scope) {
         return get_description.ofAddress(get_description$get(segment), scope);
@@ -321,7 +321,7 @@ public class _GAppInfoIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_executable fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$717.const$1, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$720.const$0, fi, constants$5.const$2, scope);
         }
         static get_executable ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -336,7 +336,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle get_executable$VH() {
-        return constants$717.const$2;
+        return constants$720.const$1;
     }
     /**
      * Getter for field:
@@ -345,7 +345,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment get_executable$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$717.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$720.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -354,13 +354,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void get_executable$set(MemorySegment seg, MemorySegment x) {
-        constants$717.const$2.set(seg, x);
+        constants$720.const$1.set(seg, x);
     }
     public static MemorySegment get_executable$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$717.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$720.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_executable$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$717.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$720.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_executable get_executable(MemorySegment segment, Arena scope) {
         return get_executable.ofAddress(get_executable$get(segment), scope);
@@ -374,7 +374,7 @@ public class _GAppInfoIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_icon fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$717.const$3, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$720.const$2, fi, constants$5.const$2, scope);
         }
         static get_icon ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -389,7 +389,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle get_icon$VH() {
-        return constants$717.const$4;
+        return constants$720.const$3;
     }
     /**
      * Getter for field:
@@ -398,7 +398,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment get_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$717.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$720.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -407,13 +407,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void get_icon$set(MemorySegment seg, MemorySegment x) {
-        constants$717.const$4.set(seg, x);
+        constants$720.const$3.set(seg, x);
     }
     public static MemorySegment get_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$717.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$720.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_icon$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$717.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$720.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_icon get_icon(MemorySegment segment, Arena scope) {
         return get_icon.ofAddress(get_icon$get(segment), scope);
@@ -427,13 +427,13 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(launch fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$717.const$5, fi, constants$34.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$720.const$4, fi, constants$34.const$5, scope);
         }
         static launch ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)constants$382.const$0.invokeExact(symbol, _completion, _key, _iter, _user_data);
+                    return (int)constants$383.const$0.invokeExact(symbol, _completion, _key, _iter, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -442,7 +442,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle launch$VH() {
-        return constants$718.const$0;
+        return constants$720.const$5;
     }
     /**
      * Getter for field:
@@ -451,7 +451,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment launch$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$718.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$720.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -460,13 +460,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void launch$set(MemorySegment seg, MemorySegment x) {
-        constants$718.const$0.set(seg, x);
+        constants$720.const$5.set(seg, x);
     }
     public static MemorySegment launch$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$718.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$720.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void launch$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$718.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$720.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static launch launch(MemorySegment segment, Arena scope) {
         return launch.ofAddress(launch$get(segment), scope);
@@ -480,7 +480,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(supports_uris fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$718.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$721.const$0, fi, constants$10.const$5, scope);
         }
         static supports_uris ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -495,7 +495,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle supports_uris$VH() {
-        return constants$718.const$2;
+        return constants$721.const$1;
     }
     /**
      * Getter for field:
@@ -504,7 +504,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment supports_uris$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$718.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$721.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -513,13 +513,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void supports_uris$set(MemorySegment seg, MemorySegment x) {
-        constants$718.const$2.set(seg, x);
+        constants$721.const$1.set(seg, x);
     }
     public static MemorySegment supports_uris$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$718.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$721.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void supports_uris$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$718.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$721.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static supports_uris supports_uris(MemorySegment segment, Arena scope) {
         return supports_uris.ofAddress(supports_uris$get(segment), scope);
@@ -533,7 +533,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(supports_files fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$718.const$3, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$721.const$2, fi, constants$10.const$5, scope);
         }
         static supports_files ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -548,7 +548,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle supports_files$VH() {
-        return constants$718.const$4;
+        return constants$721.const$3;
     }
     /**
      * Getter for field:
@@ -557,7 +557,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment supports_files$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$718.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$721.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -566,13 +566,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void supports_files$set(MemorySegment seg, MemorySegment x) {
-        constants$718.const$4.set(seg, x);
+        constants$721.const$3.set(seg, x);
     }
     public static MemorySegment supports_files$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$718.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$721.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void supports_files$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$718.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$721.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static supports_files supports_files(MemorySegment segment, Arena scope) {
         return supports_files.ofAddress(supports_files$get(segment), scope);
@@ -586,13 +586,13 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(launch_uris fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$718.const$5, fi, constants$34.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$721.const$4, fi, constants$34.const$5, scope);
         }
         static launch_uris ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)constants$382.const$0.invokeExact(symbol, _completion, _key, _iter, _user_data);
+                    return (int)constants$383.const$0.invokeExact(symbol, _completion, _key, _iter, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -601,7 +601,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle launch_uris$VH() {
-        return constants$719.const$0;
+        return constants$721.const$5;
     }
     /**
      * Getter for field:
@@ -610,7 +610,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment launch_uris$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$719.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$721.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -619,13 +619,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void launch_uris$set(MemorySegment seg, MemorySegment x) {
-        constants$719.const$0.set(seg, x);
+        constants$721.const$5.set(seg, x);
     }
     public static MemorySegment launch_uris$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$719.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$721.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void launch_uris$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$719.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$721.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static launch_uris launch_uris(MemorySegment segment, Arena scope) {
         return launch_uris.ofAddress(launch_uris$get(segment), scope);
@@ -639,7 +639,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(should_show fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$719.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$722.const$0, fi, constants$10.const$5, scope);
         }
         static should_show ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -654,7 +654,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle should_show$VH() {
-        return constants$719.const$2;
+        return constants$722.const$1;
     }
     /**
      * Getter for field:
@@ -663,7 +663,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment should_show$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$719.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$722.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -672,13 +672,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void should_show$set(MemorySegment seg, MemorySegment x) {
-        constants$719.const$2.set(seg, x);
+        constants$722.const$1.set(seg, x);
     }
     public static MemorySegment should_show$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$719.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$722.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void should_show$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$719.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$722.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static should_show should_show(MemorySegment segment, Arena scope) {
         return should_show.ofAddress(should_show$get(segment), scope);
@@ -692,7 +692,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(set_as_default_for_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$719.const$3, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$722.const$2, fi, constants$12.const$2, scope);
         }
         static set_as_default_for_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -707,7 +707,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle set_as_default_for_type$VH() {
-        return constants$719.const$4;
+        return constants$722.const$3;
     }
     /**
      * Getter for field:
@@ -716,7 +716,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment set_as_default_for_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$719.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$722.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -725,13 +725,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void set_as_default_for_type$set(MemorySegment seg, MemorySegment x) {
-        constants$719.const$4.set(seg, x);
+        constants$722.const$3.set(seg, x);
     }
     public static MemorySegment set_as_default_for_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$719.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$722.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void set_as_default_for_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$719.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$722.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_as_default_for_type set_as_default_for_type(MemorySegment segment, Arena scope) {
         return set_as_default_for_type.ofAddress(set_as_default_for_type$get(segment), scope);
@@ -745,7 +745,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(set_as_default_for_extension fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$719.const$5, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$722.const$4, fi, constants$12.const$2, scope);
         }
         static set_as_default_for_extension ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -760,7 +760,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle set_as_default_for_extension$VH() {
-        return constants$720.const$0;
+        return constants$722.const$5;
     }
     /**
      * Getter for field:
@@ -769,7 +769,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment set_as_default_for_extension$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$720.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$722.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -778,13 +778,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void set_as_default_for_extension$set(MemorySegment seg, MemorySegment x) {
-        constants$720.const$0.set(seg, x);
+        constants$722.const$5.set(seg, x);
     }
     public static MemorySegment set_as_default_for_extension$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$720.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$722.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void set_as_default_for_extension$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$720.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$722.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_as_default_for_extension set_as_default_for_extension(MemorySegment segment, Arena scope) {
         return set_as_default_for_extension.ofAddress(set_as_default_for_extension$get(segment), scope);
@@ -798,7 +798,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(add_supports_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$720.const$1, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$723.const$0, fi, constants$12.const$2, scope);
         }
         static add_supports_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -813,7 +813,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle add_supports_type$VH() {
-        return constants$720.const$2;
+        return constants$723.const$1;
     }
     /**
      * Getter for field:
@@ -822,7 +822,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment add_supports_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$720.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$723.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -831,13 +831,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void add_supports_type$set(MemorySegment seg, MemorySegment x) {
-        constants$720.const$2.set(seg, x);
+        constants$723.const$1.set(seg, x);
     }
     public static MemorySegment add_supports_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$720.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$723.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void add_supports_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$720.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$723.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static add_supports_type add_supports_type(MemorySegment segment, Arena scope) {
         return add_supports_type.ofAddress(add_supports_type$get(segment), scope);
@@ -851,7 +851,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(can_remove_supports_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$720.const$3, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$723.const$2, fi, constants$10.const$5, scope);
         }
         static can_remove_supports_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -866,7 +866,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle can_remove_supports_type$VH() {
-        return constants$720.const$4;
+        return constants$723.const$3;
     }
     /**
      * Getter for field:
@@ -875,7 +875,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment can_remove_supports_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$720.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$723.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -884,13 +884,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void can_remove_supports_type$set(MemorySegment seg, MemorySegment x) {
-        constants$720.const$4.set(seg, x);
+        constants$723.const$3.set(seg, x);
     }
     public static MemorySegment can_remove_supports_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$720.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$723.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void can_remove_supports_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$720.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$723.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static can_remove_supports_type can_remove_supports_type(MemorySegment segment, Arena scope) {
         return can_remove_supports_type.ofAddress(can_remove_supports_type$get(segment), scope);
@@ -904,7 +904,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(remove_supports_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$720.const$5, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$723.const$4, fi, constants$12.const$2, scope);
         }
         static remove_supports_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -919,7 +919,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle remove_supports_type$VH() {
-        return constants$721.const$0;
+        return constants$723.const$5;
     }
     /**
      * Getter for field:
@@ -928,7 +928,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment remove_supports_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$721.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$723.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -937,13 +937,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void remove_supports_type$set(MemorySegment seg, MemorySegment x) {
-        constants$721.const$0.set(seg, x);
+        constants$723.const$5.set(seg, x);
     }
     public static MemorySegment remove_supports_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$721.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$723.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void remove_supports_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$721.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$723.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static remove_supports_type remove_supports_type(MemorySegment segment, Arena scope) {
         return remove_supports_type.ofAddress(remove_supports_type$get(segment), scope);
@@ -957,7 +957,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(can_delete fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$721.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$724.const$0, fi, constants$10.const$5, scope);
         }
         static can_delete ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -972,7 +972,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle can_delete$VH() {
-        return constants$721.const$2;
+        return constants$724.const$1;
     }
     /**
      * Getter for field:
@@ -981,7 +981,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment can_delete$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$721.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$724.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -990,13 +990,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void can_delete$set(MemorySegment seg, MemorySegment x) {
-        constants$721.const$2.set(seg, x);
+        constants$724.const$1.set(seg, x);
     }
     public static MemorySegment can_delete$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$721.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$724.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void can_delete$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$721.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$724.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static can_delete can_delete(MemorySegment segment, Arena scope) {
         return can_delete.ofAddress(can_delete$get(segment), scope);
@@ -1010,7 +1010,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(do_delete fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$721.const$3, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$724.const$2, fi, constants$10.const$5, scope);
         }
         static do_delete ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1025,7 +1025,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle do_delete$VH() {
-        return constants$721.const$4;
+        return constants$724.const$3;
     }
     /**
      * Getter for field:
@@ -1034,7 +1034,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment do_delete$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$721.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$724.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -1043,13 +1043,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void do_delete$set(MemorySegment seg, MemorySegment x) {
-        constants$721.const$4.set(seg, x);
+        constants$724.const$3.set(seg, x);
     }
     public static MemorySegment do_delete$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$721.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$724.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void do_delete$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$721.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$724.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static do_delete do_delete(MemorySegment segment, Arena scope) {
         return do_delete.ofAddress(do_delete$get(segment), scope);
@@ -1063,7 +1063,7 @@ public class _GAppInfoIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_commandline fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$721.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$724.const$4, fi, constants$5.const$2, scope);
         }
         static get_commandline ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1078,7 +1078,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle get_commandline$VH() {
-        return constants$722.const$0;
+        return constants$724.const$5;
     }
     /**
      * Getter for field:
@@ -1087,7 +1087,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment get_commandline$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$722.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$724.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -1096,13 +1096,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void get_commandline$set(MemorySegment seg, MemorySegment x) {
-        constants$722.const$0.set(seg, x);
+        constants$724.const$5.set(seg, x);
     }
     public static MemorySegment get_commandline$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$722.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$724.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_commandline$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$722.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$724.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_commandline get_commandline(MemorySegment segment, Arena scope) {
         return get_commandline.ofAddress(get_commandline$get(segment), scope);
@@ -1116,7 +1116,7 @@ public class _GAppInfoIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_display_name fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$722.const$1, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$725.const$0, fi, constants$5.const$2, scope);
         }
         static get_display_name ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1131,7 +1131,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle get_display_name$VH() {
-        return constants$722.const$2;
+        return constants$725.const$1;
     }
     /**
      * Getter for field:
@@ -1140,7 +1140,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment get_display_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$722.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$725.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -1149,13 +1149,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void get_display_name$set(MemorySegment seg, MemorySegment x) {
-        constants$722.const$2.set(seg, x);
+        constants$725.const$1.set(seg, x);
     }
     public static MemorySegment get_display_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$722.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$725.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_display_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$722.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$725.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_display_name get_display_name(MemorySegment segment, Arena scope) {
         return get_display_name.ofAddress(get_display_name$get(segment), scope);
@@ -1169,7 +1169,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(set_as_last_used_for_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$722.const$3, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$725.const$2, fi, constants$12.const$2, scope);
         }
         static set_as_last_used_for_type ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1184,7 +1184,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle set_as_last_used_for_type$VH() {
-        return constants$722.const$4;
+        return constants$725.const$3;
     }
     /**
      * Getter for field:
@@ -1193,7 +1193,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment set_as_last_used_for_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$722.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$725.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -1202,13 +1202,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void set_as_last_used_for_type$set(MemorySegment seg, MemorySegment x) {
-        constants$722.const$4.set(seg, x);
+        constants$725.const$3.set(seg, x);
     }
     public static MemorySegment set_as_last_used_for_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$722.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$725.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void set_as_last_used_for_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$722.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$725.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_as_last_used_for_type set_as_last_used_for_type(MemorySegment segment, Arena scope) {
         return set_as_last_used_for_type.ofAddress(set_as_last_used_for_type$get(segment), scope);
@@ -1222,7 +1222,7 @@ public class _GAppInfoIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_supported_types fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$722.const$5, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$725.const$4, fi, constants$5.const$2, scope);
         }
         static get_supported_types ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1237,7 +1237,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle get_supported_types$VH() {
-        return constants$723.const$0;
+        return constants$725.const$5;
     }
     /**
      * Getter for field:
@@ -1246,7 +1246,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment get_supported_types$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$723.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$725.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -1255,13 +1255,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void get_supported_types$set(MemorySegment seg, MemorySegment x) {
-        constants$723.const$0.set(seg, x);
+        constants$725.const$5.set(seg, x);
     }
     public static MemorySegment get_supported_types$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$723.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$725.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_supported_types$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$723.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$725.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_supported_types get_supported_types(MemorySegment segment, Arena scope) {
         return get_supported_types.ofAddress(get_supported_types$get(segment), scope);
@@ -1275,13 +1275,13 @@ public class _GAppInfoIface {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
         static MemorySegment allocate(launch_uris_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$723.const$1, fi, constants$338.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$726.const$0, fi, constants$339.const$3, scope);
         }
         static launch_uris_async ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    constants$338.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$339.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1290,7 +1290,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle launch_uris_async$VH() {
-        return constants$723.const$2;
+        return constants$726.const$1;
     }
     /**
      * Getter for field:
@@ -1299,7 +1299,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment launch_uris_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$723.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$726.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -1308,13 +1308,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void launch_uris_async$set(MemorySegment seg, MemorySegment x) {
-        constants$723.const$2.set(seg, x);
+        constants$726.const$1.set(seg, x);
     }
     public static MemorySegment launch_uris_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$723.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$726.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void launch_uris_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$723.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$726.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static launch_uris_async launch_uris_async(MemorySegment segment, Arena scope) {
         return launch_uris_async.ofAddress(launch_uris_async$get(segment), scope);
@@ -1328,7 +1328,7 @@ public class _GAppInfoIface {
 
         int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(launch_uris_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$723.const$3, fi, constants$12.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$726.const$2, fi, constants$12.const$2, scope);
         }
         static launch_uris_finish ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1343,7 +1343,7 @@ public class _GAppInfoIface {
     }
 
     public static VarHandle launch_uris_finish$VH() {
-        return constants$723.const$4;
+        return constants$726.const$3;
     }
     /**
      * Getter for field:
@@ -1352,7 +1352,7 @@ public class _GAppInfoIface {
      * }
      */
     public static MemorySegment launch_uris_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$723.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$726.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -1361,13 +1361,13 @@ public class _GAppInfoIface {
      * }
      */
     public static void launch_uris_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$723.const$4.set(seg, x);
+        constants$726.const$3.set(seg, x);
     }
     public static MemorySegment launch_uris_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$723.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$726.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void launch_uris_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$723.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$726.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static launch_uris_finish launch_uris_finish(MemorySegment segment, Arena scope) {
         return launch_uris_finish.ofAddress(launch_uris_finish$get(segment), scope);

@@ -8,28 +8,28 @@ final class constants$3159 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3159() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_pixels_below_lines",
-        constants$40.const$2
+        "gtk_text_view_get_line_at_y",
+        constants$466.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_pixels_below_lines",
-        constants$10.const$5
+        "gtk_text_view_buffer_to_window_coords",
+        constants$215.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_pixels_inside_wrap",
-        constants$40.const$2
+        "gtk_text_view_window_to_buffer_coords",
+        constants$215.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_pixels_inside_wrap",
-        constants$10.const$5
+        "gtk_text_view_get_hadjustment",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_justification",
-        constants$40.const$2
+        "gtk_text_view_get_vadjustment",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_justification",
-        constants$10.const$5
+        "gtk_text_view_get_window",
+        constants$21.const$3
     );
 }
 

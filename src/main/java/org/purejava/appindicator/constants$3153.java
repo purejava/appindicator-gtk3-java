@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3153 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3153() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_reset_cursor_blink",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_cursor_locations",
-        constants$42.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_iter_location",
-        constants$14.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_iter_at_location",
-        constants$414.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_iter_at_position",
-        constants$1941.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_line_yrange",
-        constants$42.const$1
-    );
+    static final VarHandle const$0 = constants$3149.const$2.varHandle(MemoryLayout.PathElement.groupElement("create_buffer"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextViewClass.draw_layer.class, "apply", constants$42.const$4);
+    static final VarHandle const$2 = constants$3149.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_layer"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextViewClass.extend_selection.class, "apply", constants$374.const$2);
+    static final VarHandle const$4 = constants$3149.const$2.varHandle(MemoryLayout.PathElement.groupElement("extend_selection"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextViewClass.insert_emoji.class, "apply", constants$13.const$1);
 }
 
 

@@ -20,13 +20,13 @@ import java.lang.invoke.VarHandle;
 public class _GFlagsClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$648.const$5;
+        return constants$651.const$4;
     }
     public static MemorySegment g_type_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 8);
     }
     public static VarHandle mask$VH() {
-        return constants$649.const$0;
+        return constants$651.const$5;
     }
     /**
      * Getter for field:
@@ -35,7 +35,7 @@ public class _GFlagsClass {
      * }
      */
     public static int mask$get(MemorySegment seg) {
-        return (int)constants$649.const$0.get(seg);
+        return (int)constants$651.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -44,16 +44,16 @@ public class _GFlagsClass {
      * }
      */
     public static void mask$set(MemorySegment seg, int x) {
-        constants$649.const$0.set(seg, x);
+        constants$651.const$5.set(seg, x);
     }
     public static int mask$get(MemorySegment seg, long index) {
-        return (int)constants$649.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$651.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void mask$set(MemorySegment seg, long index, int x) {
-        constants$649.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$651.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle n_values$VH() {
-        return constants$649.const$1;
+        return constants$652.const$0;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _GFlagsClass {
      * }
      */
     public static int n_values$get(MemorySegment seg) {
-        return (int)constants$649.const$1.get(seg);
+        return (int)constants$652.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -71,16 +71,16 @@ public class _GFlagsClass {
      * }
      */
     public static void n_values$set(MemorySegment seg, int x) {
-        constants$649.const$1.set(seg, x);
+        constants$652.const$0.set(seg, x);
     }
     public static int n_values$get(MemorySegment seg, long index) {
-        return (int)constants$649.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$652.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void n_values$set(MemorySegment seg, long index, int x) {
-        constants$649.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$652.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle values$VH() {
-        return constants$649.const$2;
+        return constants$652.const$1;
     }
     /**
      * Getter for field:
@@ -89,7 +89,7 @@ public class _GFlagsClass {
      * }
      */
     public static MemorySegment values$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$649.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$652.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -98,13 +98,13 @@ public class _GFlagsClass {
      * }
      */
     public static void values$set(MemorySegment seg, MemorySegment x) {
-        constants$649.const$2.set(seg, x);
+        constants$652.const$1.set(seg, x);
     }
     public static MemorySegment values$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$649.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$652.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void values$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$649.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$652.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

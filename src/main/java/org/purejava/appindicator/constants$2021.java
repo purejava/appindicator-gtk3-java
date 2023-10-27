@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2021 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2021() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_text_get_string_at_offset",
-        constants$1421.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_text_get_caret_offset",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_text_get_character_extents",
-        constants$430.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_text_get_run_attributes",
-        constants$180.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_text_get_default_attributes",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_text_get_character_count",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkTextIface.set_selection.class, "apply", constants$611.const$1);
+    static final VarHandle const$1 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_selection"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkTextIface.set_caret_offset.class, "apply", constants$11.const$4);
+    static final VarHandle const$3 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_caret_offset"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkTextIface.text_changed.class, "apply", constants$469.const$2);
+    static final VarHandle const$5 = constants$2015.const$3.varHandle(MemoryLayout.PathElement.groupElement("text_changed"));
 }
 
 

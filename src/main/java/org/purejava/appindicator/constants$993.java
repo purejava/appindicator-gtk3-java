@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$993 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$993() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.trash_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("trash_finish"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.make_directory.class, "apply", constants$12.const$2);
-    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_directory"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.make_directory_async.class, "apply", constants$281.const$5);
-    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_directory_async"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$992.const$4
+    );
+    static final VarHandle const$1 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("replace"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.replace_async.class, "apply", constants$993.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$993.const$2
+    );
+    static final VarHandle const$5 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("replace_async"));
 }
 
 

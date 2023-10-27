@@ -7,21 +7,24 @@ final class constants$1025 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1025() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_copy_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_copy_async",
-        constants$995.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_enumerate_children",
+        constants$980.const$0
     );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_enumerate_children_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_copy_finish",
-        constants$12.const$2
+        "g_file_enumerate_children_async",
+        constants$783.const$3
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_move$progress_callback.class, "apply", constants$561.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_enumerate_children_finish",
+        constants$23.const$0
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_move",
-        constants$906.const$0
+        "g_file_set_display_name",
+        constants$39.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_move_async$progress_callback.class, "apply", constants$561.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_set_display_name_async$callback.class, "apply", constants$14.const$3);
 }
 
 

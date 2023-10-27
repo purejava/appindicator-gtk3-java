@@ -3,32 +3,24 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3187 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3187() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_test_find_label",
-        constants$5.const$5
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkToolShellIface.get_ellipsize_mode.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$3184.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_ellipsize_mode"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkToolShellIface.get_text_size_group.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$3184.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_text_size_group"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_type",
+        constants$3.const$5
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("row_draggable"),
-        RuntimeHelper.POINTER.withName("drag_data_get"),
-        RuntimeHelper.POINTER.withName("drag_data_delete")
-    ).withName("_GtkTreeDragSourceIface");
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeDragSourceIface.row_draggable.class, "apply", constants$9.const$0);
-    static final VarHandle const$3 = constants$3187.const$1.varHandle(MemoryLayout.PathElement.groupElement("row_draggable"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeDragSourceIface.drag_data_get.class, "apply", constants$12.const$2);
-    static final VarHandle const$5 = constants$3187.const$1.varHandle(MemoryLayout.PathElement.groupElement("drag_data_get"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tool_shell_get_icon_size",
+        constants$10.const$5
+    );
 }
 
 

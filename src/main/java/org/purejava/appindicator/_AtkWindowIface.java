@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _AtkWindowIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2094.const$2;
+        return constants$2099.const$3;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);

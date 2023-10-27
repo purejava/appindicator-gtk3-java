@@ -7,6 +7,7 @@ import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$926 {
 
@@ -33,14 +34,31 @@ final class constants$926 {
             JAVA_LONG.withName("n_pspecs"),
             MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
         ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("g_properties_changed"),
-        RuntimeHelper.POINTER.withName("g_signal"),
-        MemoryLayout.sequenceLayout(32, RuntimeHelper.POINTER).withName("padding")
-    ).withName("_GDBusProxyClass");
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDBusProxyClass.g_properties_changed.class, "apply", constants$14.const$3);
-    static final VarHandle const$3 = constants$926.const$1.varHandle(MemoryLayout.PathElement.groupElement("g_properties_changed"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDBusProxyClass.g_signal.class, "apply", constants$42.const$1);
-    static final VarHandle const$5 = constants$926.const$1.varHandle(MemoryLayout.PathElement.groupElement("g_signal"));
+        MemoryLayout.sequenceLayout(8, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GDBusObjectProxyClass");
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_proxy_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_proxy_new",
+        constants$5.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_proxy_get_connection",
+        constants$5.const$2
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GDBusObjectSkeleton");
 }
 
 

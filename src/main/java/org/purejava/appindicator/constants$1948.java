@@ -8,28 +8,22 @@ final class constants$1948 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1948() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_query_visual_types",
-        constants$13.const$4
+        "gdk_threads_init",
+        constants$7.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_list_visuals",
-        constants$35.const$2
+        "gdk_threads_enter",
+        constants$7.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_screen",
-        constants$5.const$2
+        "gdk_threads_leave",
+        constants$7.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_visual_type",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_depth",
-        constants$10.const$5
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_threads_set_lock_functions$enter_fn.class, "apply", constants$7.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gdk_threads_set_lock_functions$leave_fn.class, "apply", constants$7.const$5);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_byte_order",
-        constants$10.const$5
+        "gdk_threads_set_lock_functions",
+        constants$13.const$4
     );
 }
 

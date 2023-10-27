@@ -8,28 +8,28 @@ final class constants$824 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$824() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "setgid",
-        constants$8.const$4
+        "confstr",
+        constants$817.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "setregid",
-        constants$123.const$5
+        "getpid",
+        constants$83.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "setegid",
-        constants$8.const$4
+        "getppid",
+        constants$83.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "fork",
+        "getpgrp",
         constants$83.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "vfork",
-        constants$83.const$1
+        "__getpgid",
+        constants$8.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "ttyname",
-        constants$24.const$0
+        "getpgid",
+        constants$8.const$4
     );
 }
 

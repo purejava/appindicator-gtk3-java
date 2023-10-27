@@ -3,31 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1418 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1418() {}
-    static final VarHandle const$0 = constants$1417.const$2.varHandle(MemoryLayout.PathElement.groupElement("end"));
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_feature_from_string",
-        constants$150.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_feature_to_string",
-        constants$164.const$5
-    );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        JAVA_INT.withName("tag"),
-        JAVA_FLOAT.withName("value")
-    ).withName("hb_variation_t");
-    static final VarHandle const$4 = constants$1418.const$3.varHandle(MemoryLayout.PathElement.groupElement("tag"));
-    static final VarHandle const$5 = constants$1418.const$3.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final VarHandle const$0 = constants$1417.const$5.varHandle(MemoryLayout.PathElement.groupElement("u32"));
+    static final VarHandle const$1 = constants$1417.const$5.varHandle(MemoryLayout.PathElement.groupElement("i32"));
+    static final UnionLayout const$2 = MemoryLayout.unionLayout(
+        JAVA_FLOAT.withName("f"),
+        JAVA_INT.withName("u32"),
+        JAVA_INT.withName("i32"),
+        MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+        MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+    ).withName("_hb_var_num_t");
+    static final VarHandle const$3 = constants$1418.const$2.varHandle(MemoryLayout.PathElement.groupElement("f"));
+    static final VarHandle const$4 = constants$1418.const$2.varHandle(MemoryLayout.PathElement.groupElement("u32"));
+    static final VarHandle const$5 = constants$1418.const$2.varHandle(MemoryLayout.PathElement.groupElement("i32"));
 }
 
 

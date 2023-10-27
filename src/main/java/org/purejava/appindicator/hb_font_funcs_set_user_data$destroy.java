@@ -13,7 +13,7 @@ public interface hb_font_funcs_set_user_data$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(hb_font_funcs_set_user_data$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1473.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1478.const$1, fi, constants$13.const$1, scope);
     }
     static hb_font_funcs_set_user_data$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

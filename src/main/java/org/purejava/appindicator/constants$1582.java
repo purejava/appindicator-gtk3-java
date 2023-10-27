@@ -2,39 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.MethodHandle;
 final class constants$1582 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1582() {}
-    static final VarHandle const$0 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("language"));
-    static final VarHandle const$1 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("extra_attrs"));
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        JAVA_INT.withName("offset"),
-        JAVA_INT.withName("length"),
-        JAVA_INT.withName("num_chars"),
-        MemoryLayout.paddingLayout(4),
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("shape_engine"),
-            RuntimeHelper.POINTER.withName("lang_engine"),
-            RuntimeHelper.POINTER.withName("font"),
-            JAVA_BYTE.withName("level"),
-            JAVA_BYTE.withName("gravity"),
-            JAVA_BYTE.withName("flags"),
-            JAVA_BYTE.withName("script"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("language"),
-            RuntimeHelper.POINTER.withName("extra_attrs")
-        ).withName("analysis")
-    ).withName("_PangoItem");
-    static final VarHandle const$3 = constants$1582.const$2.varHandle(MemoryLayout.PathElement.groupElement("offset"));
-    static final VarHandle const$4 = constants$1582.const$2.varHandle(MemoryLayout.PathElement.groupElement("length"));
-    static final VarHandle const$5 = constants$1582.const$2.varHandle(MemoryLayout.PathElement.groupElement("num_chars"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_unref",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_copy",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_insert",
+        constants$13.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_insert_before",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_change",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_splice",
+        constants$1046.const$2
+    );
 }
 
 

@@ -14,81 +14,48 @@ final class constants$1382 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1382() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_server_connection_new",
-        constants$23.const$0
+        "g_tls_interaction_request_certificate_finish",
+        constants$12.const$2
     );
     static final StructLayout const$1 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        JAVA_LONG.withName("g_type")
-                    ).withName("g_type_class"),
-                    RuntimeHelper.POINTER.withName("construct_properties"),
-                    RuntimeHelper.POINTER.withName("constructor"),
-                    RuntimeHelper.POINTER.withName("set_property"),
-                    RuntimeHelper.POINTER.withName("get_property"),
-                    RuntimeHelper.POINTER.withName("dispose"),
-                    RuntimeHelper.POINTER.withName("finalize"),
-                    RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-                    RuntimeHelper.POINTER.withName("notify"),
-                    RuntimeHelper.POINTER.withName("constructed"),
-                    JAVA_LONG.withName("flags"),
-                    JAVA_LONG.withName("n_construct_properties"),
-                    RuntimeHelper.POINTER.withName("pspecs"),
-                    JAVA_LONG.withName("n_pspecs"),
-                    MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-                ).withName("parent_class"),
-                RuntimeHelper.POINTER.withName("get_input_stream"),
-                RuntimeHelper.POINTER.withName("get_output_stream"),
-                RuntimeHelper.POINTER.withName("close_fn"),
-                RuntimeHelper.POINTER.withName("close_async"),
-                RuntimeHelper.POINTER.withName("close_finish"),
-                RuntimeHelper.POINTER.withName("_g_reserved1"),
-                RuntimeHelper.POINTER.withName("_g_reserved2"),
-                RuntimeHelper.POINTER.withName("_g_reserved3"),
-                RuntimeHelper.POINTER.withName("_g_reserved4"),
-                RuntimeHelper.POINTER.withName("_g_reserved5"),
-                RuntimeHelper.POINTER.withName("_g_reserved6"),
-                RuntimeHelper.POINTER.withName("_g_reserved7"),
-                RuntimeHelper.POINTER.withName("_g_reserved8"),
-                RuntimeHelper.POINTER.withName("_g_reserved9"),
-                RuntimeHelper.POINTER.withName("_g_reserved10")
-            ).withName("parent_class"),
-            RuntimeHelper.POINTER.withName("_g_reserved1"),
-            RuntimeHelper.POINTER.withName("_g_reserved2"),
-            RuntimeHelper.POINTER.withName("_g_reserved3"),
-            RuntimeHelper.POINTER.withName("_g_reserved4"),
-            RuntimeHelper.POINTER.withName("_g_reserved5"),
-            RuntimeHelper.POINTER.withName("_g_reserved6")
-        ).withName("parent_class")
-    ).withName("_GUnixConnectionClass");
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        RuntimeHelper.POINTER.withName("g_class")
-                    ).withName("g_type_instance"),
-                    JAVA_INT.withName("ref_count"),
-                    MemoryLayout.paddingLayout(4),
-                    RuntimeHelper.POINTER.withName("qdata")
-                ).withName("parent_instance"),
-                RuntimeHelper.POINTER.withName("priv")
-            ).withName("parent_instance"),
-            RuntimeHelper.POINTER.withName("priv")
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
         ).withName("parent_instance"),
         RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GUnixConnection");
-    static final VarHandle const$3 = constants$1382.const$2.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_unix_connection_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_unix_connection_send_fd",
-        constants$11.const$0
-    );
+    ).withName("_GTlsPassword");
+    static final VarHandle const$2 = constants$1382.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("get_value"),
+        RuntimeHelper.POINTER.withName("set_value"),
+        RuntimeHelper.POINTER.withName("get_default_warning"),
+        MemoryLayout.sequenceLayout(4, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GTlsPasswordClass");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTlsPasswordClass.get_value.class, "apply", constants$5.const$5);
+    static final VarHandle const$5 = constants$1382.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_value"));
 }
 
 

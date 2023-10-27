@@ -2,39 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1876 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1876() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_color_hash",
-        constants$10.const$5
+        "gdk_screen_get_monitor_at_point",
+        constants$49.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_color_equal",
+        "gdk_screen_get_monitor_at_window",
         constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_color_parse",
-        constants$9.const$0
+        "gdk_screen_get_monitor_width_mm",
+        constants$11.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_color_to_string",
-        constants$5.const$2
+        "gdk_screen_get_monitor_height_mm",
+        constants$11.const$4
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        JAVA_DOUBLE.withName("red"),
-        JAVA_DOUBLE.withName("green"),
-        JAVA_DOUBLE.withName("blue"),
-        JAVA_DOUBLE.withName("alpha")
-    ).withName("_GdkRGBA");
-    static final VarHandle const$5 = constants$1876.const$4.varHandle(MemoryLayout.PathElement.groupElement("red"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_monitor_plug_name",
+        constants$21.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_monitor_scale_factor",
+        constants$11.const$4
+    );
 }
 
 

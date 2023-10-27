@@ -2,7 +2,7 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemorySegment;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
@@ -11,17 +11,32 @@ final class constants$828 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$828() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "getlogin_r",
-        constants$97.const$1
+        "ttyname_r",
+        constants$24.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "setlogin",
-        constants$10.const$5
+        "isatty",
+        constants$8.const$4
     );
-    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("optarg", RuntimeHelper.POINTER);
-    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("optind", JAVA_INT);
-    static final MemorySegment const$4 = RuntimeHelper.lookupGlobalVariable("opterr", JAVA_INT);
-    static final MemorySegment const$5 = RuntimeHelper.lookupGlobalVariable("optopt", JAVA_INT);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "ttyslot",
+        constants$83.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "link",
+        constants$9.const$0
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "linkat",
+        constants$828.const$4
+    );
 }
 
 

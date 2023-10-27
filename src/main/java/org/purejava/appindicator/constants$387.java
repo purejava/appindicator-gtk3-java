@@ -8,26 +8,23 @@ final class constants$387 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$387() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_option_context_set_translation_domain",
-        constants$13.const$4
+        "g_option_context_add_main_entries",
+        constants$14.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_option_context_add_group",
-        constants$13.const$4
+        "g_option_context_parse",
+        constants$34.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_option_context_set_main_group",
-        constants$13.const$4
+        "g_option_context_parse_strv",
+        constants$12.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_option_context_get_main_group",
-        constants$5.const$2
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_option_context_set_translate_func$func.class, "apply", constants$5.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_option_context_set_translate_func$destroy_notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_option_context_set_translate_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_option_context_get_help",
-        constants$196.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_option_group_new$destroy.class, "apply", constants$13.const$1);
 }
 
 

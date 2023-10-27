@@ -2,34 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2064 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2064() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("get_n_mime_types"),
-        RuntimeHelper.POINTER.withName("get_mime_type"),
-        RuntimeHelper.POINTER.withName("get_stream"),
-        RuntimeHelper.POINTER.withName("get_uri"),
-        RuntimeHelper.POINTER.withName("pad1"),
-        RuntimeHelper.POINTER.withName("pad2"),
-        RuntimeHelper.POINTER.withName("pad3")
-    ).withName("_AtkStreamableContentIface");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkStreamableContentIface.get_n_mime_types.class, "apply", constants$10.const$5);
-    static final VarHandle const$2 = constants$2064.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_n_mime_types"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkStreamableContentIface.get_mime_type.class, "apply", constants$21.const$3);
-    static final VarHandle const$4 = constants$2064.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_mime_type"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkStreamableContentIface.get_stream.class, "apply", constants$5.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_selection_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_selection_add_selection",
+        constants$11.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_selection_clear_selection",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_selection_ref_selection",
+        constants$21.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_selection_get_selection_count",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_selection_is_child_selected",
+        constants$11.const$4
+    );
 }
 
 

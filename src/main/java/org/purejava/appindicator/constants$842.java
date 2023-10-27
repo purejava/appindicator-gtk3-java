@@ -2,43 +2,53 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$842 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$842() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_new",
-        constants$5.const$2
+        "g_datagram_based_send_messages",
+        constants$839.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_set_byte_order",
-        constants$40.const$2
+        "g_datagram_based_create_source",
+        constants$196.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_get_byte_order",
-        constants$10.const$5
+        "g_datagram_based_condition_check",
+        constants$11.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_set_newline_type",
-        constants$40.const$2
+        "g_datagram_based_condition_wait",
+        constants$841.const$0
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_get_newline_type",
-        constants$10.const$5
-    );
-    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_BYTE,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_byte",
-        constants$842.const$5
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        MemoryLayout.structLayout(
+                            RuntimeHelper.POINTER.withName("g_class")
+                        ).withName("g_type_instance"),
+                        JAVA_INT.withName("ref_count"),
+                        MemoryLayout.paddingLayout(4),
+                        RuntimeHelper.POINTER.withName("qdata")
+                    ).withName("parent_instance"),
+                    RuntimeHelper.POINTER.withName("priv")
+                ).withName("parent_instance"),
+                RuntimeHelper.POINTER.withName("base_stream")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GDataInputStream");
+    static final VarHandle const$5 = constants$842.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

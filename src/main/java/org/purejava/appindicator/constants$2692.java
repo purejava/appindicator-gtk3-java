@@ -8,28 +8,28 @@ final class constants$2692 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2692() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_new_with_dialog",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_get_title",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_set_title",
+        "gtk_file_chooser_add_filter",
         constants$13.const$4
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_remove_filter",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_file_chooser_list_filters",
+        constants$5.const$2
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_get_width_chars",
-        constants$10.const$5
+        "gtk_file_chooser_set_filter",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_set_width_chars",
-        constants$40.const$2
+        "gtk_file_chooser_get_filter",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_get_focus_on_click",
-        constants$10.const$5
+        "gtk_file_chooser_add_shortcut_folder",
+        constants$12.const$2
     );
 }
 

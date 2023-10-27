@@ -8,28 +8,28 @@ final class constants$2133 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2133() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_freeze_child_notify",
+        "gtk_widget_queue_draw",
         constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_child_notify",
-        constants$13.const$4
+        "gtk_widget_queue_draw_area",
+        constants$1648.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_thaw_child_notify",
-        constants$13.const$1
+        "gtk_widget_queue_draw_region",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_can_focus",
-        constants$40.const$2
+        "gtk_widget_queue_resize",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_can_focus",
-        constants$10.const$5
+        "gtk_widget_queue_resize_no_redraw",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_has_focus",
-        constants$10.const$5
+        "gtk_widget_queue_allocate",
+        constants$13.const$1
     );
 }
 

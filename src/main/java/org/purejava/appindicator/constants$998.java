@@ -2,19 +2,34 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$998 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$998() {}
-    static final VarHandle const$0 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("mount_mountable"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.mount_mountable_finish.class, "apply", constants$23.const$0);
-    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("mount_mountable_finish"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.unmount_mountable.class, "apply", constants$281.const$5);
-    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("unmount_mountable"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.unmount_mountable_finish.class, "apply", constants$12.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.make_symbolic_link_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_symbolic_link_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.copy.class, "apply", constants$909.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$909.const$0
+    );
+    static final VarHandle const$4 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("copy"));
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
 }
 
 

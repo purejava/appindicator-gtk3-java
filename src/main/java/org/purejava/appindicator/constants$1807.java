@@ -2,35 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1807 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1807() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_scroll_direction",
-        constants$9.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_scroll_deltas",
-        constants$12.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_event_is_scroll_stop_event",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_axis",
-        constants$150.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_event_set_device",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_event_get_device",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$1806.const$0.varHandle(MemoryLayout.PathElement.groupElement("index"));
+    static final VarHandle const$1 = constants$1806.const$0.varHandle(MemoryLayout.PathElement.groupElement("mode"));
+    static final VarHandle const$2 = constants$1806.const$0.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("time"),
+        JAVA_INT.withName("group"),
+        JAVA_INT.withName("mode")
+    ).withName("_GdkEventPadGroupMode");
+    static final VarHandle const$4 = constants$1807.const$3.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$5 = constants$1807.const$3.varHandle(MemoryLayout.PathElement.groupElement("window"));
 }
 
 

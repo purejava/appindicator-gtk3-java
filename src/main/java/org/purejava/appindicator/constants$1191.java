@@ -9,12 +9,14 @@ final class constants$1191 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1191() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.drive_stop_button.class, "apply", constants$13.const$4);
-    static final VarHandle const$1 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("drive_stop_button"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass._g_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass._g_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.drive_disconnected.class, "apply", constants$13.const$4);
+    static final VarHandle const$1 = constants$1188.const$1.varHandle(MemoryLayout.PathElement.groupElement("drive_disconnected"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.drive_changed.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$1188.const$1.varHandle(MemoryLayout.PathElement.groupElement("drive_changed"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.is_supported.class, "apply", constants$83.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$83.const$1
+    );
 }
 
 

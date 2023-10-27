@@ -9,24 +9,12 @@ final class constants$2295 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2295() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.unref_node.class, "apply", constants$13.const$4);
-    static final VarHandle const$1 = constants$2288.const$2.varHandle(MemoryLayout.PathElement.groupElement("unref_node"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_new",
-        constants$35.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_new_from_string",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_path_new_from_indices",
-        constants$24.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_new_from_indicesv",
-        constants$21.const$1
-    );
+    static final VarHandle const$0 = constants$2293.const$2.varHandle(MemoryLayout.PathElement.groupElement("rows_reordered"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.get_flags.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$2293.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_flags"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.get_n_columns.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$2293.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_n_columns"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.get_column_type.class, "apply", constants$823.const$1);
 }
 
 

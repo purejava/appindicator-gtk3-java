@@ -24,13 +24,13 @@ import java.lang.invoke.VarHandle;
 public class _GtkScrolledWindowClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3061.const$2;
+        return constants$3066.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1008);
     }
     public static VarHandle scrollbar_spacing$VH() {
-        return constants$3061.const$3;
+        return constants$3066.const$3;
     }
     /**
      * Getter for field:
@@ -39,7 +39,7 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static int scrollbar_spacing$get(MemorySegment seg) {
-        return (int)constants$3061.const$3.get(seg);
+        return (int)constants$3066.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -48,13 +48,13 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static void scrollbar_spacing$set(MemorySegment seg, int x) {
-        constants$3061.const$3.set(seg, x);
+        constants$3066.const$3.set(seg, x);
     }
     public static int scrollbar_spacing$get(MemorySegment seg, long index) {
-        return (int)constants$3061.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3066.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void scrollbar_spacing$set(MemorySegment seg, long index, int x) {
-        constants$3061.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3066.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -65,7 +65,7 @@ public class _GtkScrolledWindowClass {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
         static MemorySegment allocate(scroll_child fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3061.const$4, fi, constants$49.const$0, scope);
+            return RuntimeHelper.upcallStub(constants$3066.const$4, fi, constants$49.const$0, scope);
         }
         static scroll_child ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -80,7 +80,7 @@ public class _GtkScrolledWindowClass {
     }
 
     public static VarHandle scroll_child$VH() {
-        return constants$3061.const$5;
+        return constants$3066.const$5;
     }
     /**
      * Getter for field:
@@ -89,7 +89,7 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static MemorySegment scroll_child$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3061.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3066.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -98,13 +98,13 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static void scroll_child$set(MemorySegment seg, MemorySegment x) {
-        constants$3061.const$5.set(seg, x);
+        constants$3066.const$5.set(seg, x);
     }
     public static MemorySegment scroll_child$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3061.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3066.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void scroll_child$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3061.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3066.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static scroll_child scroll_child(MemorySegment segment, Arena scope) {
         return scroll_child.ofAddress(scroll_child$get(segment), scope);
@@ -118,13 +118,13 @@ public class _GtkScrolledWindowClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(move_focus_out fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3062.const$0, fi, constants$40.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3067.const$0, fi, constants$40.const$2, scope);
         }
         static move_focus_out ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    constants$509.const$5.invokeExact(symbol, __x0, __x1);
+                    constants$511.const$3.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -133,7 +133,7 @@ public class _GtkScrolledWindowClass {
     }
 
     public static VarHandle move_focus_out$VH() {
-        return constants$3062.const$1;
+        return constants$3067.const$1;
     }
     /**
      * Getter for field:
@@ -142,7 +142,7 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static MemorySegment move_focus_out$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3062.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3067.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -151,13 +151,13 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static void move_focus_out$set(MemorySegment seg, MemorySegment x) {
-        constants$3062.const$1.set(seg, x);
+        constants$3067.const$1.set(seg, x);
     }
     public static MemorySegment move_focus_out$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3062.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3067.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void move_focus_out$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3062.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3067.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static move_focus_out move_focus_out(MemorySegment segment, Arena scope) {
         return move_focus_out.ofAddress(move_focus_out$get(segment), scope);
@@ -171,7 +171,7 @@ public class _GtkScrolledWindowClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3062.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3067.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -186,7 +186,7 @@ public class _GtkScrolledWindowClass {
     }
 
     public static VarHandle _gtk_reserved1$VH() {
-        return constants$3062.const$3;
+        return constants$3067.const$3;
     }
     /**
      * Getter for field:
@@ -195,7 +195,7 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3062.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3067.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -204,13 +204,13 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$3062.const$3.set(seg, x);
+        constants$3067.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3062.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3067.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3062.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3067.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
@@ -224,7 +224,7 @@ public class _GtkScrolledWindowClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3062.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3067.const$4, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -239,7 +239,7 @@ public class _GtkScrolledWindowClass {
     }
 
     public static VarHandle _gtk_reserved2$VH() {
-        return constants$3062.const$5;
+        return constants$3067.const$5;
     }
     /**
      * Getter for field:
@@ -248,7 +248,7 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3062.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3067.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -257,13 +257,13 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$3062.const$5.set(seg, x);
+        constants$3067.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3062.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3067.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3062.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3067.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
@@ -277,7 +277,7 @@ public class _GtkScrolledWindowClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3063.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3068.const$0, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -292,7 +292,7 @@ public class _GtkScrolledWindowClass {
     }
 
     public static VarHandle _gtk_reserved3$VH() {
-        return constants$3063.const$1;
+        return constants$3068.const$1;
     }
     /**
      * Getter for field:
@@ -301,7 +301,7 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3063.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3068.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -310,13 +310,13 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$3063.const$1.set(seg, x);
+        constants$3068.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3063.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3068.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3063.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3068.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
@@ -330,7 +330,7 @@ public class _GtkScrolledWindowClass {
 
         void apply();
         static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3063.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3068.const$2, fi, constants$7.const$5, scope);
         }
         static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -345,7 +345,7 @@ public class _GtkScrolledWindowClass {
     }
 
     public static VarHandle _gtk_reserved4$VH() {
-        return constants$3063.const$3;
+        return constants$3068.const$3;
     }
     /**
      * Getter for field:
@@ -354,7 +354,7 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3063.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3068.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -363,13 +363,13 @@ public class _GtkScrolledWindowClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$3063.const$3.set(seg, x);
+        constants$3068.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3063.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3068.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3063.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3068.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);

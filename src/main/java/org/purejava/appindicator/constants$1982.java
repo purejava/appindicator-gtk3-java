@@ -2,34 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1982 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1982() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("parent"),
-        RuntimeHelper.POINTER.withName("do_action"),
-        RuntimeHelper.POINTER.withName("get_n_actions"),
-        RuntimeHelper.POINTER.withName("get_description"),
-        RuntimeHelper.POINTER.withName("get_name"),
-        RuntimeHelper.POINTER.withName("get_keybinding"),
-        RuntimeHelper.POINTER.withName("set_description"),
-        RuntimeHelper.POINTER.withName("get_localized_name")
-    ).withName("_AtkActionIface");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkActionIface.do_action.class, "apply", constants$11.const$4);
-    static final VarHandle const$2 = constants$1982.const$0.varHandle(MemoryLayout.PathElement.groupElement("do_action"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkActionIface.get_n_actions.class, "apply", constants$10.const$5);
-    static final VarHandle const$4 = constants$1982.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_n_actions"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkActionIface.get_description.class, "apply", constants$21.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_object_get_name",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_object_get_description",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_object_get_parent",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_object_peek_parent",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_object_get_n_accessible_children",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_object_ref_accessible_child",
+        constants$21.const$3
+    );
 }
 
 

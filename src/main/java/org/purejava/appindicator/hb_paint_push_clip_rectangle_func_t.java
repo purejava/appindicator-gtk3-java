@@ -13,13 +13,13 @@ public interface hb_paint_push_clip_rectangle_func_t {
 
     void apply(java.lang.foreign.MemorySegment funcs, java.lang.foreign.MemorySegment paint_data, float xmin, float ymin, float xmax, float ymax, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_paint_push_clip_rectangle_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1456.const$4, fi, constants$1456.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1461.const$0, fi, constants$1460.const$5, scope);
     }
     static hb_paint_push_clip_rectangle_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _funcs, java.lang.foreign.MemorySegment _paint_data, float _xmin, float _ymin, float _xmax, float _ymax, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1456.const$5.invokeExact(symbol, _funcs, _paint_data, _xmin, _ymin, _xmax, _ymax, _user_data);
+                constants$1461.const$1.invokeExact(symbol, _funcs, _paint_data, _xmin, _ymin, _xmax, _ymax, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

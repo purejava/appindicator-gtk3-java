@@ -8,28 +8,25 @@ final class constants$2958 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2958() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_reverse",
-        constants$40.const$2
+        "gtk_print_settings_unset",
+        constants$13.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_duplex",
-        constants$10.const$5
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_print_settings_foreach$func.class, "apply", constants$14.const$3);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_duplex",
-        constants$40.const$2
+        "gtk_print_settings_foreach",
+        constants$14.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_quality",
-        constants$10.const$5
+        "gtk_print_settings_get_bool",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_quality",
-        constants$40.const$2
+        "gtk_print_settings_set_bool",
+        constants$164.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_n_copies",
-        constants$10.const$5
+        "gtk_print_settings_get_double",
+        constants$67.const$5
     );
 }
 

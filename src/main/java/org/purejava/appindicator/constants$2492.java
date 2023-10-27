@@ -7,24 +7,21 @@ final class constants$2492 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2492() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_row_separator_func",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_tree_view_set_row_separator_func$func.class, "apply", constants$12.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_tree_view_set_row_separator_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_row_separator_func",
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_tree_view_set_search_equal_func$search_equal_func.class, "apply", constants$374.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_tree_view_set_search_equal_func$search_destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_set_search_equal_func",
         constants$42.const$1
     );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_get_search_entry",
+        constants$5.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_grid_lines",
-        constants$10.const$5
+        "gtk_tree_view_set_search_entry",
+        constants$13.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_grid_lines",
-        constants$40.const$2
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_tree_view_get_search_position_func$return.class, "apply", constants$14.const$3);
 }
 
 

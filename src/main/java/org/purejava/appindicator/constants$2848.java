@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2848 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2848() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_changed",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_is_selected",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_set_selectable",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_get_selectable",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_set_activatable",
-        constants$40.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_list_box_row_get_activatable",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$2846.const$2.varHandle(MemoryLayout.PathElement.groupElement("move_cursor"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkListBoxClass.selected_rows_changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$2846.const$2.varHandle(MemoryLayout.PathElement.groupElement("selected_rows_changed"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkListBoxClass.select_all.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$2846.const$2.varHandle(MemoryLayout.PathElement.groupElement("select_all"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkListBoxClass.unselect_all.class, "apply", constants$13.const$1);
 }
 
 

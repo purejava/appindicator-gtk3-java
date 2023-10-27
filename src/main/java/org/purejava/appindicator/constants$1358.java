@@ -8,27 +8,27 @@ final class constants$1358 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1358() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_database",
+        "g_tls_certificate_get_not_valid_before",
         constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_certificate",
-        constants$13.const$4
+        "g_tls_certificate_get_not_valid_after",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_certificate",
+        "g_tls_certificate_get_subject_name",
         constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_interaction",
-        constants$13.const$4
+        "g_tls_certificate_get_issuer_name",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_interaction",
+        "g_tls_certificate_get_dns_names",
         constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_peer_certificate",
+        "g_tls_certificate_get_ip_addresses",
         constants$5.const$2
     );
 }

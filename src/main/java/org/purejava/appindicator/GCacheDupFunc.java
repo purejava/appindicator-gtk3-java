@@ -13,7 +13,7 @@ public interface GCacheDupFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GCacheDupFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$493.const$0, fi, constants$5.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$494.const$4, fi, constants$5.const$2, scope);
     }
     static GCacheDupFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

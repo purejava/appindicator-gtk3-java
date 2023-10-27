@@ -2,34 +2,44 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.*;
 final class constants$302 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$302() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "g_strconcat",
-        constants$5.const$2
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "g_strjoin",
-        constants$5.const$2
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_strdup_vprintf",
+        constants$302.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_strcompress",
-        constants$5.const$2
+        "g_strndup",
+        constants$21.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_strescape",
-        constants$5.const$5
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_BYTE
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_memdup",
-        constants$21.const$3
+        "g_strnfill",
+        constants$302.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_memdup2",
-        constants$21.const$1
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_strconcat",
+        constants$5.const$2
     );
 }
 

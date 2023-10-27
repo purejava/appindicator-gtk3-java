@@ -9,12 +9,12 @@ final class constants$1235 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1235() {}
-    static final VarHandle const$0 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_records_finish"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_with_flags_async.class, "apply", constants$584.const$3);
-    static final VarHandle const$2 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_with_flags_async"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_with_flags_finish.class, "apply", constants$23.const$0);
-    static final VarHandle const$4 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_with_flags_finish"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_with_flags.class, "apply", constants$977.const$0);
+    static final VarHandle const$0 = constants$1234.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_async.class, "apply", constants$332.const$1);
+    static final VarHandle const$2 = constants$1234.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_async"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$4 = constants$1234.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_address.class, "apply", constants$39.const$1);
 }
 
 

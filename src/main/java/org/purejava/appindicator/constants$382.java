@@ -2,38 +2,26 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$382 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$382() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$34.const$5
+        "g_set_print_handler",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GOptionParseFunc.class, "apply", constants$34.const$5);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GOptionErrorFunc.class, "apply", constants$42.const$1);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_option_error_quark",
-        constants$83.const$1
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_printerr",
+        constants$13.const$1
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("long_name"),
-        JAVA_BYTE.withName("short_name"),
-        MemoryLayout.paddingLayout(3),
-        JAVA_INT.withName("flags"),
-        JAVA_INT.withName("arg"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("arg_data"),
-        RuntimeHelper.POINTER.withName("description"),
-        RuntimeHelper.POINTER.withName("arg_description")
-    ).withName("_GOptionEntry");
-    static final VarHandle const$5 = constants$382.const$4.varHandle(MemoryLayout.PathElement.groupElement("long_name"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_set_printerr_handler$func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_set_printerr_handler$return.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_set_printerr_handler",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GOptionArgFunc.class, "apply", constants$34.const$5);
 }
 
 

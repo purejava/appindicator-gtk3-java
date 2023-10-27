@@ -8,28 +8,28 @@ final class constants$1721 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1721() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_status",
-        constants$10.const$5
+        "cairo_get_tolerance",
+        constants$67.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_status_to_string",
-        constants$24.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_device_reference",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_device_get_type",
+        "cairo_get_antialias",
         constants$10.const$5
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_has_current_point",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_get_current_point",
+        constants$14.const$3
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_device_status",
+        "cairo_get_fill_rule",
         constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_device_acquire",
-        constants$10.const$5
+        "cairo_get_line_width",
+        constants$67.const$0
     );
 }
 

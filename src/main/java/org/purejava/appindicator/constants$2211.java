@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2211 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2211() {}
-    static final VarHandle const$0 = constants$2210.const$4.varHandle(MemoryLayout.PathElement.groupElement("response"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkDialogClass.close.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$2210.const$4.varHandle(MemoryLayout.PathElement.groupElement("close"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkDialogClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2210.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkDialogClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_window_set_keep_above",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_window_set_keep_below",
+        constants$40.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_window_begin_resize_drag",
+        constants$1647.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_window_begin_move_drag",
+        constants$1648.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_window_set_default_size",
+        constants$469.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_window_get_default_size",
+        constants$14.const$3
+    );
 }
 
 

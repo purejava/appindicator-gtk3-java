@@ -9,12 +9,12 @@ final class constants$2551 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2551() {}
-    static final VarHandle const$0 = constants$2549.const$2.varHandle(MemoryLayout.PathElement.groupElement("leave"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkButtonClass.activate.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$2549.const$2.varHandle(MemoryLayout.PathElement.groupElement("activate"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkButtonClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2549.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkButtonClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$0 = constants$2548.const$4.varHandle(MemoryLayout.PathElement.groupElement("custom_tag_end"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkBuildableIface.custom_finished.class, "apply", constants$332.const$1);
+    static final VarHandle const$2 = constants$2548.const$4.varHandle(MemoryLayout.PathElement.groupElement("custom_finished"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkBuildableIface.parser_finished.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$2548.const$4.varHandle(MemoryLayout.PathElement.groupElement("parser_finished"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkBuildableIface.get_internal_child.class, "apply", constants$23.const$0);
 }
 
 

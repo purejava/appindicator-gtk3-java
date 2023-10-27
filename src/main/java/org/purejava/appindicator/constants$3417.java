@@ -2,17 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
 final class constants$3417 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3417() {}
-    static final MemorySegment const$0 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("SUPPORT_URL");
-    static final MemorySegment const$1 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("BUG_REPORT_URL");
-    static final MemorySegment const$2 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PRIVACY_POLICY_URL");
-    static final MemorySegment const$3 = MemorySegment.ofAddress(-1L);
-    static final MemorySegment const$4 = MemorySegment.ofAddress(1L);
-    static final MemorySegment const$5 = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("_-|> <.");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "app_indicator_get_title",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "app_indicator_get_menu",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "app_indicator_get_label",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "app_indicator_get_label_guide",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "app_indicator_get_ordering_index",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "app_indicator_get_secondary_activate_target",
+        constants$5.const$2
+    );
 }
 
 

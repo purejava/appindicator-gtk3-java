@@ -19,13 +19,13 @@ import java.lang.invoke.VarHandle;
 public class _GParamSpecFlags {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$660.const$5;
+        return constants$663.const$4;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);
     }
     public static VarHandle flags_class$VH() {
-        return constants$661.const$0;
+        return constants$663.const$5;
     }
     /**
      * Getter for field:
@@ -34,7 +34,7 @@ public class _GParamSpecFlags {
      * }
      */
     public static MemorySegment flags_class$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$661.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$663.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -43,16 +43,16 @@ public class _GParamSpecFlags {
      * }
      */
     public static void flags_class$set(MemorySegment seg, MemorySegment x) {
-        constants$661.const$0.set(seg, x);
+        constants$663.const$5.set(seg, x);
     }
     public static MemorySegment flags_class$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$661.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$663.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void flags_class$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$661.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$663.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle default_value$VH() {
-        return constants$661.const$1;
+        return constants$664.const$0;
     }
     /**
      * Getter for field:
@@ -61,7 +61,7 @@ public class _GParamSpecFlags {
      * }
      */
     public static int default_value$get(MemorySegment seg) {
-        return (int)constants$661.const$1.get(seg);
+        return (int)constants$664.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -70,13 +70,13 @@ public class _GParamSpecFlags {
      * }
      */
     public static void default_value$set(MemorySegment seg, int x) {
-        constants$661.const$1.set(seg, x);
+        constants$664.const$0.set(seg, x);
     }
     public static int default_value$get(MemorySegment seg, long index) {
-        return (int)constants$661.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$664.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void default_value$set(MemorySegment seg, long index, int x) {
-        constants$661.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$664.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

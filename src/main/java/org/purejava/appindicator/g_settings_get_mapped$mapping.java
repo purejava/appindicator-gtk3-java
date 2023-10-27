@@ -13,7 +13,7 @@ public interface g_settings_get_mapped$mapping {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_settings_get_mapped$mapping fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1263.const$3, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1267.const$3, fi, constants$12.const$2, scope);
     }
     static g_settings_get_mapped$mapping ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

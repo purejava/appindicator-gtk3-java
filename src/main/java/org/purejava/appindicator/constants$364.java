@@ -4,7 +4,6 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
-import java.lang.foreign.UnionLayout;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
@@ -12,41 +11,29 @@ final class constants$364 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$364() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_variant_iter_next_value",
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("x")
+    ).withName("_GVariantIter");
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_iter_new",
         constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_iter_next",
-        constants$9.const$0
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_iter_init",
+        constants$22.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_iter_loop",
-        constants$9.const$0
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_iter_copy",
+        constants$5.const$2
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.unionLayout(
-            MemoryLayout.structLayout(
-                JAVA_LONG.withName("partial_magic"),
-                RuntimeHelper.POINTER.withName("type"),
-                MemoryLayout.sequenceLayout(14, JAVA_LONG).withName("y")
-            ).withName("s"),
-            MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("x")
-        ).withName("u")
-    ).withName("_GVariantBuilder");
-    static final UnionLayout const$4 = MemoryLayout.unionLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("partial_magic"),
-            RuntimeHelper.POINTER.withName("type"),
-            MemoryLayout.sequenceLayout(14, JAVA_LONG).withName("y")
-        ).withName("s"),
-        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("x")
-    ).withName("");
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        JAVA_LONG.withName("partial_magic"),
-        RuntimeHelper.POINTER.withName("type"),
-        MemoryLayout.sequenceLayout(14, JAVA_LONG).withName("y")
-    ).withName("");
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_iter_n_children",
+        constants$4.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_iter_free",
+        constants$13.const$1
+    );
 }
 
 

@@ -9,12 +9,14 @@ final class constants$2005 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2005() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_document_locale.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$2004.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_document_locale"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_document_attributes.class, "apply", constants$5.const$2);
-    static final VarHandle const$3 = constants$2004.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_document_attributes"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_document_attribute_value.class, "apply", constants$5.const$5);
-    static final VarHandle const$5 = constants$2004.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_document_attribute_value"));
+    static final VarHandle const$0 = constants$1999.const$4.varHandle(MemoryLayout.PathElement.groupElement("bounds_changed"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkComponentIface.get_alpha.class, "apply", constants$67.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$67.const$0
+    );
+    static final VarHandle const$3 = constants$1999.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_alpha"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkComponentIface.scroll_to.class, "apply", constants$11.const$4);
+    static final VarHandle const$5 = constants$1999.const$4.varHandle(MemoryLayout.PathElement.groupElement("scroll_to"));
 }
 
 

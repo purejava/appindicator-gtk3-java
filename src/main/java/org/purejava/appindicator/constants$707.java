@@ -9,12 +9,12 @@ final class constants$707 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$707() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GActionGroupInterface.activate_action.class, "apply", constants$14.const$3);
-    static final VarHandle const$1 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("activate_action"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GActionGroupInterface.action_added.class, "apply", constants$13.const$4);
-    static final VarHandle const$3 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("action_added"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GActionGroupInterface.action_removed.class, "apply", constants$13.const$4);
-    static final VarHandle const$5 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("action_removed"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GActionGroupInterface.has_action.class, "apply", constants$9.const$0);
+    static final VarHandle const$1 = constants$706.const$5.varHandle(MemoryLayout.PathElement.groupElement("has_action"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GActionGroupInterface.list_actions.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$706.const$5.varHandle(MemoryLayout.PathElement.groupElement("list_actions"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GActionGroupInterface.get_action_enabled.class, "apply", constants$9.const$0);
+    static final VarHandle const$5 = constants$706.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_action_enabled"));
 }
 
 

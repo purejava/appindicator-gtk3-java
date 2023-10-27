@@ -26,7 +26,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkToolShellIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3179.const$2;
+        return constants$3184.const$2;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -40,7 +40,7 @@ public class _GtkToolShellIface {
 
         int apply(java.lang.foreign.MemorySegment _x0);
         static MemorySegment allocate(get_icon_size fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3179.const$3, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3184.const$3, fi, constants$10.const$5, scope);
         }
         static get_icon_size ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -55,7 +55,7 @@ public class _GtkToolShellIface {
     }
 
     public static VarHandle get_icon_size$VH() {
-        return constants$3179.const$4;
+        return constants$3184.const$4;
     }
     /**
      * Getter for field:
@@ -64,7 +64,7 @@ public class _GtkToolShellIface {
      * }
      */
     public static MemorySegment get_icon_size$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3179.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3184.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -73,13 +73,13 @@ public class _GtkToolShellIface {
      * }
      */
     public static void get_icon_size$set(MemorySegment seg, MemorySegment x) {
-        constants$3179.const$4.set(seg, x);
+        constants$3184.const$4.set(seg, x);
     }
     public static MemorySegment get_icon_size$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3179.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3184.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_icon_size$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3179.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3184.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_icon_size get_icon_size(MemorySegment segment, Arena scope) {
         return get_icon_size.ofAddress(get_icon_size$get(segment), scope);
@@ -93,7 +93,7 @@ public class _GtkToolShellIface {
 
         int apply(java.lang.foreign.MemorySegment _x0);
         static MemorySegment allocate(get_orientation fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3179.const$5, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3184.const$5, fi, constants$10.const$5, scope);
         }
         static get_orientation ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -108,7 +108,7 @@ public class _GtkToolShellIface {
     }
 
     public static VarHandle get_orientation$VH() {
-        return constants$3180.const$0;
+        return constants$3185.const$0;
     }
     /**
      * Getter for field:
@@ -117,7 +117,7 @@ public class _GtkToolShellIface {
      * }
      */
     public static MemorySegment get_orientation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3180.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3185.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -126,13 +126,13 @@ public class _GtkToolShellIface {
      * }
      */
     public static void get_orientation$set(MemorySegment seg, MemorySegment x) {
-        constants$3180.const$0.set(seg, x);
+        constants$3185.const$0.set(seg, x);
     }
     public static MemorySegment get_orientation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3180.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3185.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_orientation$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3180.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3185.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_orientation get_orientation(MemorySegment segment, Arena scope) {
         return get_orientation.ofAddress(get_orientation$get(segment), scope);
@@ -146,7 +146,7 @@ public class _GtkToolShellIface {
 
         int apply(java.lang.foreign.MemorySegment _x0);
         static MemorySegment allocate(get_style fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3180.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3185.const$1, fi, constants$10.const$5, scope);
         }
         static get_style ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -161,7 +161,7 @@ public class _GtkToolShellIface {
     }
 
     public static VarHandle get_style$VH() {
-        return constants$3180.const$2;
+        return constants$3185.const$2;
     }
     /**
      * Getter for field:
@@ -170,7 +170,7 @@ public class _GtkToolShellIface {
      * }
      */
     public static MemorySegment get_style$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3180.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3185.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -179,13 +179,13 @@ public class _GtkToolShellIface {
      * }
      */
     public static void get_style$set(MemorySegment seg, MemorySegment x) {
-        constants$3180.const$2.set(seg, x);
+        constants$3185.const$2.set(seg, x);
     }
     public static MemorySegment get_style$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3180.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3185.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_style$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3180.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3185.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_style get_style(MemorySegment segment, Arena scope) {
         return get_style.ofAddress(get_style$get(segment), scope);
@@ -199,7 +199,7 @@ public class _GtkToolShellIface {
 
         int apply(java.lang.foreign.MemorySegment _x0);
         static MemorySegment allocate(get_relief_style fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3180.const$3, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3185.const$3, fi, constants$10.const$5, scope);
         }
         static get_relief_style ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -214,7 +214,7 @@ public class _GtkToolShellIface {
     }
 
     public static VarHandle get_relief_style$VH() {
-        return constants$3180.const$4;
+        return constants$3185.const$4;
     }
     /**
      * Getter for field:
@@ -223,7 +223,7 @@ public class _GtkToolShellIface {
      * }
      */
     public static MemorySegment get_relief_style$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3180.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3185.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -232,13 +232,13 @@ public class _GtkToolShellIface {
      * }
      */
     public static void get_relief_style$set(MemorySegment seg, MemorySegment x) {
-        constants$3180.const$4.set(seg, x);
+        constants$3185.const$4.set(seg, x);
     }
     public static MemorySegment get_relief_style$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3180.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3185.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_relief_style$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3180.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3185.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_relief_style get_relief_style(MemorySegment segment, Arena scope) {
         return get_relief_style.ofAddress(get_relief_style$get(segment), scope);
@@ -252,7 +252,7 @@ public class _GtkToolShellIface {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(rebuild_menu fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3180.const$5, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$3185.const$5, fi, constants$13.const$1, scope);
         }
         static rebuild_menu ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -267,7 +267,7 @@ public class _GtkToolShellIface {
     }
 
     public static VarHandle rebuild_menu$VH() {
-        return constants$3181.const$0;
+        return constants$3186.const$0;
     }
     /**
      * Getter for field:
@@ -276,7 +276,7 @@ public class _GtkToolShellIface {
      * }
      */
     public static MemorySegment rebuild_menu$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3181.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3186.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -285,13 +285,13 @@ public class _GtkToolShellIface {
      * }
      */
     public static void rebuild_menu$set(MemorySegment seg, MemorySegment x) {
-        constants$3181.const$0.set(seg, x);
+        constants$3186.const$0.set(seg, x);
     }
     public static MemorySegment rebuild_menu$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3181.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3186.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void rebuild_menu$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3181.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3186.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static rebuild_menu rebuild_menu(MemorySegment segment, Arena scope) {
         return rebuild_menu.ofAddress(rebuild_menu$get(segment), scope);
@@ -305,7 +305,7 @@ public class _GtkToolShellIface {
 
         int apply(java.lang.foreign.MemorySegment _x0);
         static MemorySegment allocate(get_text_orientation fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3181.const$1, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3186.const$1, fi, constants$10.const$5, scope);
         }
         static get_text_orientation ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -320,7 +320,7 @@ public class _GtkToolShellIface {
     }
 
     public static VarHandle get_text_orientation$VH() {
-        return constants$3181.const$2;
+        return constants$3186.const$2;
     }
     /**
      * Getter for field:
@@ -329,7 +329,7 @@ public class _GtkToolShellIface {
      * }
      */
     public static MemorySegment get_text_orientation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3181.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3186.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -338,13 +338,13 @@ public class _GtkToolShellIface {
      * }
      */
     public static void get_text_orientation$set(MemorySegment seg, MemorySegment x) {
-        constants$3181.const$2.set(seg, x);
+        constants$3186.const$2.set(seg, x);
     }
     public static MemorySegment get_text_orientation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3181.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3186.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_text_orientation$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3181.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3186.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_text_orientation get_text_orientation(MemorySegment segment, Arena scope) {
         return get_text_orientation.ofAddress(get_text_orientation$get(segment), scope);
@@ -358,13 +358,13 @@ public class _GtkToolShellIface {
 
         float apply(java.lang.foreign.MemorySegment _x0);
         static MemorySegment allocate(get_text_alignment fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3181.const$3, fi, constants$689.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$3186.const$3, fi, constants$692.const$0, scope);
         }
         static get_text_alignment ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (float)constants$3181.const$4.invokeExact(symbol, __x0);
+                    return (float)constants$3186.const$4.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -373,7 +373,7 @@ public class _GtkToolShellIface {
     }
 
     public static VarHandle get_text_alignment$VH() {
-        return constants$3181.const$5;
+        return constants$3186.const$5;
     }
     /**
      * Getter for field:
@@ -382,7 +382,7 @@ public class _GtkToolShellIface {
      * }
      */
     public static MemorySegment get_text_alignment$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3181.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3186.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -391,13 +391,13 @@ public class _GtkToolShellIface {
      * }
      */
     public static void get_text_alignment$set(MemorySegment seg, MemorySegment x) {
-        constants$3181.const$5.set(seg, x);
+        constants$3186.const$5.set(seg, x);
     }
     public static MemorySegment get_text_alignment$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3181.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3186.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_text_alignment$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3181.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3186.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_text_alignment get_text_alignment(MemorySegment segment, Arena scope) {
         return get_text_alignment.ofAddress(get_text_alignment$get(segment), scope);
@@ -411,7 +411,7 @@ public class _GtkToolShellIface {
 
         int apply(java.lang.foreign.MemorySegment _x0);
         static MemorySegment allocate(get_ellipsize_mode fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3182.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3187.const$0, fi, constants$10.const$5, scope);
         }
         static get_ellipsize_mode ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -426,7 +426,7 @@ public class _GtkToolShellIface {
     }
 
     public static VarHandle get_ellipsize_mode$VH() {
-        return constants$3182.const$1;
+        return constants$3187.const$1;
     }
     /**
      * Getter for field:
@@ -435,7 +435,7 @@ public class _GtkToolShellIface {
      * }
      */
     public static MemorySegment get_ellipsize_mode$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3182.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3187.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -444,13 +444,13 @@ public class _GtkToolShellIface {
      * }
      */
     public static void get_ellipsize_mode$set(MemorySegment seg, MemorySegment x) {
-        constants$3182.const$1.set(seg, x);
+        constants$3187.const$1.set(seg, x);
     }
     public static MemorySegment get_ellipsize_mode$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3182.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3187.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_ellipsize_mode$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3182.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3187.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_ellipsize_mode get_ellipsize_mode(MemorySegment segment, Arena scope) {
         return get_ellipsize_mode.ofAddress(get_ellipsize_mode$get(segment), scope);
@@ -464,7 +464,7 @@ public class _GtkToolShellIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_text_size_group fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3182.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$3187.const$2, fi, constants$5.const$2, scope);
         }
         static get_text_size_group ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -479,7 +479,7 @@ public class _GtkToolShellIface {
     }
 
     public static VarHandle get_text_size_group$VH() {
-        return constants$3182.const$3;
+        return constants$3187.const$3;
     }
     /**
      * Getter for field:
@@ -488,7 +488,7 @@ public class _GtkToolShellIface {
      * }
      */
     public static MemorySegment get_text_size_group$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3182.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3187.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -497,13 +497,13 @@ public class _GtkToolShellIface {
      * }
      */
     public static void get_text_size_group$set(MemorySegment seg, MemorySegment x) {
-        constants$3182.const$3.set(seg, x);
+        constants$3187.const$3.set(seg, x);
     }
     public static MemorySegment get_text_size_group$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3182.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3187.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_text_size_group$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3182.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3187.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_text_size_group get_text_size_group(MemorySegment segment, Arena scope) {
         return get_text_size_group.ofAddress(get_text_size_group$get(segment), scope);

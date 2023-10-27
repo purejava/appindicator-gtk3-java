@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkVSeparator {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3402.const$0;
+        return constants$3407.const$0;
     }
     public static MemorySegment separator$slice(MemorySegment seg) {
         return seg.asSlice(0, 40);

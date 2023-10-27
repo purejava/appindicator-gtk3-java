@@ -8,27 +8,27 @@ final class constants$533 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$533() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pthread_condattr_setclock",
-        constants$11.const$4
+        "pthread_cond_signal",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pthread_spin_init",
-        constants$11.const$4
+        "pthread_cond_broadcast",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pthread_spin_destroy",
-        constants$10.const$5
+        "pthread_cond_wait",
+        constants$9.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pthread_spin_lock",
-        constants$10.const$5
+        "pthread_cond_timedwait",
+        constants$12.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pthread_spin_trylock",
+        "pthread_condattr_init",
         constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pthread_spin_unlock",
+        "pthread_condattr_destroy",
         constants$10.const$5
     );
 }

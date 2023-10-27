@@ -2,23 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1464 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1464() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_transform_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_set_pop_transform_func",
-        constants$42.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_clip_glyph_func$func.class, "apply", constants$379.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_clip_glyph_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_set_push_clip_glyph_func",
-        constants$42.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_clip_rectangle_func$func.class, "apply", constants$1456.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_color_line_t.get_color_stops.class, "apply", constants$1247.const$0);
+    static final VarHandle const$1 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_color_stops"));
+    static final VarHandle const$2 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_color_stops_user_data"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_color_line_t.get_extend.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_extend"));
+    static final VarHandle const$5 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_extend_user_data"));
 }
 
 

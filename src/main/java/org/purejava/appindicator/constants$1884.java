@@ -2,7 +2,7 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
@@ -10,38 +10,20 @@ final class constants$1884 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1884() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_resource_at_scale",
-        constants$1883.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_pixbuf_new_from_data$destroy_fn.class, "apply", constants$13.const$4);
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
+    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_micro_version", JAVA_INT);
+    static final MemorySegment const$1 = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_version", RuntimeHelper.POINTER);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GdkPixbufDestroyNotify.class, "apply", constants$13.const$4);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_data",
-        constants$1884.const$2
+        "gdk_pixbuf_error_quark",
+        constants$83.const$1
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_bytes",
-        constants$1884.const$4
+        "gdk_pixbuf_ref",
+        constants$5.const$2
     );
 }
 

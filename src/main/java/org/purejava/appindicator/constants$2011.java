@@ -9,14 +9,12 @@ final class constants$2011 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2011() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$1421.const$1
-    );
-    static final VarHandle const$1 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_text_after_offset"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkTextIface.get_text_at_offset.class, "apply", constants$1421.const$1);
-    static final VarHandle const$3 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_text_at_offset"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkTextIface.get_character_at_offset.class, "apply", constants$11.const$4);
-    static final VarHandle const$5 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_character_at_offset"));
+    static final VarHandle const$0 = constants$2009.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_document_attribute_value"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkDocumentIface.set_document_attribute.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$2009.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_document_attribute"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_current_page_number.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$2009.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_current_page_number"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_page_count.class, "apply", constants$10.const$5);
 }
 
 

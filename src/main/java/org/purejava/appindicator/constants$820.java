@@ -6,34 +6,36 @@ import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$820 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$820() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "_exit",
-        constants$80.const$1
+        "lchown",
+        constants$49.const$0
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
         RuntimeHelper.POINTER,
-        JAVA_INT
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pathconf",
-        constants$820.const$1
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
         JAVA_INT,
         JAVA_INT
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "fchownat",
+        constants$820.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "chdir",
+        constants$10.const$5
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "fpathconf",
-        constants$820.const$3
+        "fchdir",
+        constants$8.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "sysconf",
-        constants$173.const$0
+        "getcwd",
+        constants$21.const$1
     );
 }
 

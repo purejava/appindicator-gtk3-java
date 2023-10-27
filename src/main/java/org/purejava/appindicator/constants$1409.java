@@ -2,32 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1409 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1409() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_volume_get_drive",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_volume_get_mount",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_volume_can_mount",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_volume_can_eject",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_volume_should_automount",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_volume_mount$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeIface.eject.class, "apply", constants$282.const$1);
+    static final VarHandle const$1 = constants$1405.const$1.varHandle(MemoryLayout.PathElement.groupElement("eject"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeIface.eject_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$1405.const$1.varHandle(MemoryLayout.PathElement.groupElement("eject_finish"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeIface.get_identifier.class, "apply", constants$5.const$5);
+    static final VarHandle const$5 = constants$1405.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_identifier"));
 }
 
 

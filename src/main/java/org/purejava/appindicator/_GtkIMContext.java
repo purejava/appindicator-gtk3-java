@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkIMContext {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2402.const$4;
+        return constants$2407.const$4;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);

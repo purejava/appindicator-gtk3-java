@@ -13,7 +13,7 @@ public interface g_child_watch_add_full$notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_child_watch_add_full$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$279.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$279.const$4, fi, constants$13.const$1, scope);
     }
     static g_child_watch_add_full$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

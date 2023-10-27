@@ -13,7 +13,7 @@ public interface GModuleUnload {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(GModuleUnload fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1121.const$4, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1125.const$1, fi, constants$13.const$1, scope);
     }
     static GModuleUnload ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

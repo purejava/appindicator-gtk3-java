@@ -13,7 +13,7 @@ public interface GdkPixbufDestroyNotify {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GdkPixbufDestroyNotify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1879.const$2, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$1884.const$2, fi, constants$13.const$4, scope);
     }
     static GdkPixbufDestroyNotify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -7,30 +7,18 @@ final class constants$593 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$593() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__CHAR",
-        constants$584.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__CHARv",
-        constants$585.const$0
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_closure_add_marshal_guards$pre_marshal_notify.class, "apply", constants$13.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_closure_add_marshal_guards$post_marshal_notify.class, "apply", constants$13.const$4);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__UCHAR",
-        constants$584.const$3
+        "g_closure_add_marshal_guards",
+        constants$332.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__UCHARv",
-        constants$585.const$0
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_closure_set_marshal$marshal.class, "apply", constants$587.const$0);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__INT",
-        constants$584.const$3
+        "g_closure_set_marshal",
+        constants$13.const$4
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__INTv",
-        constants$585.const$0
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_closure_set_meta_marshal$meta_marshal.class, "apply", constants$587.const$0);
 }
 
 

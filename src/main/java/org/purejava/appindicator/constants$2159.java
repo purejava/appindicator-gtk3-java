@@ -8,28 +8,28 @@ final class constants$2159 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2159() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_input_shape_combine_region",
-        constants$13.const$4
+        "gtk_widget_translate_coordinates",
+        constants$1032.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_list_mnemonic_labels",
-        constants$5.const$2
+        "gtk_widget_hide_on_delete",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_add_mnemonic_label",
-        constants$13.const$4
+        "gtk_widget_override_color",
+        constants$42.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_remove_mnemonic_label",
-        constants$13.const$4
+        "gtk_widget_override_background_color",
+        constants$42.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_tooltip_window",
+        "gtk_widget_override_font",
         constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_tooltip_window",
-        constants$5.const$2
+        "gtk_widget_override_symbolic_color",
+        constants$14.const$3
     );
 }
 

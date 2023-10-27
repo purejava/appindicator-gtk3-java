@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GDebugControllerDBus {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$937.const$2;
+        return constants$940.const$2;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);

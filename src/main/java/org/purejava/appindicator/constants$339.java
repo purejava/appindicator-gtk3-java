@@ -4,25 +4,36 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$339 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$339() {}
-    static final VarHandle const$0 = constants$338.const$2.varHandle(MemoryLayout.PathElement.groupElement("start_element"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMarkupParser.end_element.class, "apply", constants$42.const$1);
-    static final VarHandle const$2 = constants$338.const$2.varHandle(MemoryLayout.PathElement.groupElement("end_element"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mapped_file_free",
+        constants$13.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_markup_error_quark",
+        constants$83.const$1
+    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("start_element"),
+        RuntimeHelper.POINTER.withName("end_element"),
+        RuntimeHelper.POINTER.withName("text"),
+        RuntimeHelper.POINTER.withName("passthrough"),
+        RuntimeHelper.POINTER.withName("error")
+    ).withName("_GMarkupParser");
     static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
-        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMarkupParser.text.class, "apply", constants$339.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMarkupParser.start_element.class, "apply", constants$339.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
         constants$339.const$3
     );

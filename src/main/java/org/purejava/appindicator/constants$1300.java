@@ -2,31 +2,38 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$1300 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1300() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSocketConnectableIface.to_string.class, "apply", constants$5.const$2);
-    static final VarHandle const$1 = constants$1299.const$1.varHandle(MemoryLayout.PathElement.groupElement("to_string"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect",
+        constants$39.const$1
+    );
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_SHORT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_socket_connectable_get_type",
-        constants$3.const$5
+        "g_socket_client_connect_to_host",
+        constants$1300.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_socket_connectable_enumerate",
-        constants$5.const$2
+        "g_socket_client_connect_to_service",
+        constants$331.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_socket_connectable_proxy_enumerate",
-        constants$5.const$2
+        "g_socket_client_connect_to_uri",
+        constants$1300.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_connectable_to_string",
-        constants$5.const$2
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_socket_client_connect_async$callback.class, "apply", constants$14.const$3);
 }
 
 

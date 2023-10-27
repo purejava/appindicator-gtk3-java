@@ -2,38 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$653 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$653() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_flags_register_static",
-        constants$22.const$0
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_enum_complete_type_info",
-        constants$653.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_flags_complete_type_info",
-        constants$653.const$1
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("value"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("value_name"),
+        RuntimeHelper.POINTER.withName("value_nick")
+    ).withName("_GFlagsValue");
+    static final VarHandle const$1 = constants$653.const$0.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final VarHandle const$2 = constants$653.const$0.varHandle(MemoryLayout.PathElement.groupElement("value_name"));
+    static final VarHandle const$3 = constants$653.const$0.varHandle(MemoryLayout.PathElement.groupElement("value_nick"));
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_unicode_type_get_type",
-        constants$3.const$5
+        "g_enum_get_value",
+        constants$21.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_unicode_break_type_get_type",
-        constants$3.const$5
+        "g_enum_get_value_by_name",
+        constants$5.const$5
     );
 }
 

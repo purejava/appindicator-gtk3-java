@@ -13,7 +13,7 @@ public interface g_tree_foreach$func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_tree_foreach$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$478.const$0, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$479.const$5, fi, constants$12.const$2, scope);
     }
     static g_tree_foreach$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

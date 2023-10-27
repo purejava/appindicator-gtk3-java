@@ -12,7 +12,9 @@ final class constants$2331 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2331() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
@@ -20,13 +22,13 @@ final class constants$2331 {
         JAVA_INT,
         JAVA_INT
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.activate.class, "apply", constants$2331.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.render.class, "apply", constants$2331.const$0);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
         constants$2331.const$0
     );
-    static final VarHandle const$3 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("activate"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellAreaClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final VarHandle const$3 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("render"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.apply_attributes.class, "apply", constants$1646.const$5);
+    static final VarHandle const$5 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("apply_attributes"));
 }
 
 

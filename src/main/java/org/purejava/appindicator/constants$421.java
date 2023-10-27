@@ -3,17 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.UnionLayout;
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.*;
 final class constants$421 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$421() {}
-    static final VarHandle const$0 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_binary"));
-    static final VarHandle const$1 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_octal"));
-    static final VarHandle const$2 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_int"));
-    static final VarHandle const$3 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_int64"));
-    static final VarHandle const$4 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_float"));
-    static final VarHandle const$5 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_hex"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch_all",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GScannerMsgFunc.class, "apply", constants$164.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$164.const$5
+    );
+    static final UnionLayout const$3 = MemoryLayout.unionLayout(
+        RuntimeHelper.POINTER.withName("v_symbol"),
+        RuntimeHelper.POINTER.withName("v_identifier"),
+        JAVA_LONG.withName("v_binary"),
+        JAVA_LONG.withName("v_octal"),
+        JAVA_LONG.withName("v_int"),
+        JAVA_LONG.withName("v_int64"),
+        JAVA_DOUBLE.withName("v_float"),
+        JAVA_LONG.withName("v_hex"),
+        RuntimeHelper.POINTER.withName("v_string"),
+        RuntimeHelper.POINTER.withName("v_comment"),
+        JAVA_BYTE.withName("v_char"),
+        JAVA_INT.withName("v_error")
+    ).withName("_GTokenValue");
+    static final VarHandle const$4 = constants$421.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_symbol"));
+    static final VarHandle const$5 = constants$421.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_identifier"));
 }
 
 

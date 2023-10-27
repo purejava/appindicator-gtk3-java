@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$801 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$801() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_cancellable_release_fd",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_cancellable_source_new",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_cancellable_get_current",
-        constants$35.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_cancellable_push_current",
-        constants$13.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_cancellable_pop_current",
-        constants$13.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_cancellable_reset",
-        constants$13.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GCancellableClass.cancelled.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$800.const$5.varHandle(MemoryLayout.PathElement.groupElement("cancelled"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GCancellableClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$800.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GCancellableClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$800.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
 }
 
 

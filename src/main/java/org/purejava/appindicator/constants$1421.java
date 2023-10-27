@@ -2,35 +2,30 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1421 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1421() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_blob_create$destroy.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_blob_create",
-        constants$1421.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_blob_create_or_fail$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_blob_create_or_fail",
-        constants$1421.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_blob_create_from_file",
-        constants$5.const$2
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_BYTE.withName("unused")
+    ).withName("hb_user_data_key_t");
+    static final VarHandle const$1 = constants$1421.const$0.varHandle(MemoryLayout.PathElement.groupElement("unused"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_destroy_func_t.class, "apply", constants$13.const$1);
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("tag"),
+        JAVA_INT.withName("value"),
+        JAVA_INT.withName("start"),
+        JAVA_INT.withName("end")
+    ).withName("hb_feature_t");
+    static final VarHandle const$4 = constants$1421.const$3.varHandle(MemoryLayout.PathElement.groupElement("tag"));
+    static final VarHandle const$5 = constants$1421.const$3.varHandle(MemoryLayout.PathElement.groupElement("value"));
 }
 
 

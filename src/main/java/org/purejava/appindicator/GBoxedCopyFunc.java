@@ -13,7 +13,7 @@ public interface GBoxedCopyFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GBoxedCopyFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$619.const$1, fi, constants$5.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$621.const$3, fi, constants$5.const$2, scope);
     }
     static GBoxedCopyFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

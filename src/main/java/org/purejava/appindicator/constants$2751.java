@@ -2,30 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2751 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2751() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkGridClass._gtk_reserved8.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2748.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved8"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_set_has_alpha",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_gl_area_get_has_depth_buffer",
+        constants$10.const$5
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_grid_get_type",
-        constants$3.const$5
+        "gtk_gl_area_set_has_depth_buffer",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_grid_new",
-        constants$35.const$2
+        "gtk_gl_area_get_has_stencil_buffer",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_grid_attach",
-        constants$1849.const$4
+        "gtk_gl_area_set_has_stencil_buffer",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_grid_attach_next_to",
-        constants$2130.const$5
+        "gtk_gl_area_get_auto_render",
+        constants$10.const$5
     );
 }
 

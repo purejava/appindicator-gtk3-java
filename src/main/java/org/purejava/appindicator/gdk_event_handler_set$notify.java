@@ -13,7 +13,7 @@ public interface gdk_event_handler_set$notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gdk_event_handler_set$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1809.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1814.const$2, fi, constants$13.const$1, scope);
     }
     static gdk_event_handler_set$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -21,7 +21,7 @@ import java.lang.invoke.VarHandle;
 public class _GApplicationCommandLineClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$748.const$5;
+        return constants$751.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -35,7 +35,7 @@ public class _GApplicationCommandLineClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(print_literal fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$749.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$751.const$5, fi, constants$13.const$4, scope);
         }
         static print_literal ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -50,7 +50,7 @@ public class _GApplicationCommandLineClass {
     }
 
     public static VarHandle print_literal$VH() {
-        return constants$749.const$1;
+        return constants$752.const$0;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GApplicationCommandLineClass {
      * }
      */
     public static MemorySegment print_literal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$749.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$752.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -68,13 +68,13 @@ public class _GApplicationCommandLineClass {
      * }
      */
     public static void print_literal$set(MemorySegment seg, MemorySegment x) {
-        constants$749.const$1.set(seg, x);
+        constants$752.const$0.set(seg, x);
     }
     public static MemorySegment print_literal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$749.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$752.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void print_literal$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$749.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$752.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static print_literal print_literal(MemorySegment segment, Arena scope) {
         return print_literal.ofAddress(print_literal$get(segment), scope);
@@ -88,7 +88,7 @@ public class _GApplicationCommandLineClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(printerr_literal fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$749.const$2, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$752.const$1, fi, constants$13.const$4, scope);
         }
         static printerr_literal ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -103,7 +103,7 @@ public class _GApplicationCommandLineClass {
     }
 
     public static VarHandle printerr_literal$VH() {
-        return constants$749.const$3;
+        return constants$752.const$2;
     }
     /**
      * Getter for field:
@@ -112,7 +112,7 @@ public class _GApplicationCommandLineClass {
      * }
      */
     public static MemorySegment printerr_literal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$749.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$752.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -121,13 +121,13 @@ public class _GApplicationCommandLineClass {
      * }
      */
     public static void printerr_literal$set(MemorySegment seg, MemorySegment x) {
-        constants$749.const$3.set(seg, x);
+        constants$752.const$2.set(seg, x);
     }
     public static MemorySegment printerr_literal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$749.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$752.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void printerr_literal$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$749.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$752.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static printerr_literal printerr_literal(MemorySegment segment, Arena scope) {
         return printerr_literal.ofAddress(printerr_literal$get(segment), scope);
@@ -141,7 +141,7 @@ public class _GApplicationCommandLineClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_stdin fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$749.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$752.const$3, fi, constants$5.const$2, scope);
         }
         static get_stdin ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -156,7 +156,7 @@ public class _GApplicationCommandLineClass {
     }
 
     public static VarHandle get_stdin$VH() {
-        return constants$749.const$5;
+        return constants$752.const$4;
     }
     /**
      * Getter for field:
@@ -165,7 +165,7 @@ public class _GApplicationCommandLineClass {
      * }
      */
     public static MemorySegment get_stdin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$749.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$752.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -174,13 +174,13 @@ public class _GApplicationCommandLineClass {
      * }
      */
     public static void get_stdin$set(MemorySegment seg, MemorySegment x) {
-        constants$749.const$5.set(seg, x);
+        constants$752.const$4.set(seg, x);
     }
     public static MemorySegment get_stdin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$749.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$752.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_stdin$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$749.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$752.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_stdin get_stdin(MemorySegment segment, Arena scope) {
         return get_stdin.ofAddress(get_stdin$get(segment), scope);

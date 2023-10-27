@@ -2,90 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.invoke.MethodHandle;
 final class constants$1446 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1446() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        JAVA_INT.withName("path_open"),
-        JAVA_FLOAT.withName("path_start_x"),
-        JAVA_FLOAT.withName("path_start_y"),
-        JAVA_FLOAT.withName("current_x"),
-        JAVA_FLOAT.withName("current_y"),
-        MemoryLayout.unionLayout(
-            JAVA_FLOAT.withName("f"),
-            JAVA_INT.withName("u32"),
-            JAVA_INT.withName("i32"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
-        ).withName("reserved1"),
-        MemoryLayout.unionLayout(
-            JAVA_FLOAT.withName("f"),
-            JAVA_INT.withName("u32"),
-            JAVA_INT.withName("i32"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
-        ).withName("reserved2"),
-        MemoryLayout.unionLayout(
-            JAVA_FLOAT.withName("f"),
-            JAVA_INT.withName("u32"),
-            JAVA_INT.withName("i32"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
-        ).withName("reserved3"),
-        MemoryLayout.unionLayout(
-            JAVA_FLOAT.withName("f"),
-            JAVA_INT.withName("u32"),
-            JAVA_INT.withName("i32"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
-        ).withName("reserved4"),
-        MemoryLayout.unionLayout(
-            JAVA_FLOAT.withName("f"),
-            JAVA_INT.withName("u32"),
-            JAVA_INT.withName("i32"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
-        ).withName("reserved5"),
-        MemoryLayout.unionLayout(
-            JAVA_FLOAT.withName("f"),
-            JAVA_INT.withName("u32"),
-            JAVA_INT.withName("i32"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
-        ).withName("reserved6"),
-        MemoryLayout.unionLayout(
-            JAVA_FLOAT.withName("f"),
-            JAVA_INT.withName("u32"),
-            JAVA_INT.withName("i32"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
-            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
-        ).withName("reserved7")
-    ).withName("hb_draw_state_t");
-    static final VarHandle const$1 = constants$1446.const$0.varHandle(MemoryLayout.PathElement.groupElement("path_open"));
-    static final VarHandle const$2 = constants$1446.const$0.varHandle(MemoryLayout.PathElement.groupElement("path_start_x"));
-    static final VarHandle const$3 = constants$1446.const$0.varHandle(MemoryLayout.PathElement.groupElement("path_start_y"));
-    static final VarHandle const$4 = constants$1446.const$0.varHandle(MemoryLayout.PathElement.groupElement("current_x"));
-    static final VarHandle const$5 = constants$1446.const$0.varHandle(MemoryLayout.PathElement.groupElement("current_y"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_face_create_for_tables",
+        constants$23.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_face_get_empty",
+        constants$35.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_face_reference",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_face_destroy",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_face_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_face_set_user_data",
+        constants$1427.const$2
+    );
 }
 
 

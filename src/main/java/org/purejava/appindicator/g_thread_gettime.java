@@ -13,13 +13,13 @@ public interface g_thread_gettime {
 
     long apply();
     static MemorySegment allocate(g_thread_gettime fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$511.const$1, fi, constants$3.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$512.const$5, fi, constants$3.const$5, scope);
     }
     static g_thread_gettime ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return () -> {
             try {
-                return (long)constants$511.const$2.invokeExact(symbol);
+                return (long)constants$513.const$0.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

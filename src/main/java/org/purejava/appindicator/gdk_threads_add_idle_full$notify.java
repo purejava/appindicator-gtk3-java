@@ -13,7 +13,7 @@ public interface gdk_threads_add_idle_full$notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gdk_threads_add_idle_full$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1944.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1949.const$1, fi, constants$13.const$1, scope);
     }
     static gdk_threads_add_idle_full$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -2,43 +2,23 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1495 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1495() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_glyph_from_name_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_advances_for_direction",
-        constants$1495.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_origin_for_direction",
-        constants$1494.const$5
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_funcs_set_draw_glyph_func$func.class, "apply", constants$587.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_funcs_set_draw_glyph_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_font_add_glyph_origin_for_direction",
-        constants$1494.const$5
+        "hb_font_funcs_set_draw_glyph_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_font_subtract_glyph_origin_for_direction",
-        constants$1494.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_kerning_for_direction",
-        constants$215.const$5
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_paint_glyph_func$func.class, "apply", constants$1486.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_font_funcs_set_paint_glyph_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

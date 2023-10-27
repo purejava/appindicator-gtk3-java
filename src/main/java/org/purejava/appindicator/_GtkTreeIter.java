@@ -20,10 +20,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkTreeIter {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2287.const$3;
+        return constants$2292.const$3;
     }
     public static VarHandle stamp$VH() {
-        return constants$2287.const$4;
+        return constants$2292.const$4;
     }
     /**
      * Getter for field:
@@ -32,7 +32,7 @@ public class _GtkTreeIter {
      * }
      */
     public static int stamp$get(MemorySegment seg) {
-        return (int)constants$2287.const$4.get(seg);
+        return (int)constants$2292.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -41,16 +41,16 @@ public class _GtkTreeIter {
      * }
      */
     public static void stamp$set(MemorySegment seg, int x) {
-        constants$2287.const$4.set(seg, x);
+        constants$2292.const$4.set(seg, x);
     }
     public static int stamp$get(MemorySegment seg, long index) {
-        return (int)constants$2287.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2292.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void stamp$set(MemorySegment seg, long index, int x) {
-        constants$2287.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$2292.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle user_data$VH() {
-        return constants$2287.const$5;
+        return constants$2292.const$5;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GtkTreeIter {
      * }
      */
     public static MemorySegment user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2287.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2292.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -68,16 +68,16 @@ public class _GtkTreeIter {
      * }
      */
     public static void user_data$set(MemorySegment seg, MemorySegment x) {
-        constants$2287.const$5.set(seg, x);
+        constants$2292.const$5.set(seg, x);
     }
     public static MemorySegment user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2287.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2292.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void user_data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2287.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2292.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle user_data2$VH() {
-        return constants$2288.const$0;
+        return constants$2293.const$0;
     }
     /**
      * Getter for field:
@@ -86,7 +86,7 @@ public class _GtkTreeIter {
      * }
      */
     public static MemorySegment user_data2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2288.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2293.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -95,16 +95,16 @@ public class _GtkTreeIter {
      * }
      */
     public static void user_data2$set(MemorySegment seg, MemorySegment x) {
-        constants$2288.const$0.set(seg, x);
+        constants$2293.const$0.set(seg, x);
     }
     public static MemorySegment user_data2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2288.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2293.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void user_data2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2288.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$2293.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle user_data3$VH() {
-        return constants$2288.const$1;
+        return constants$2293.const$1;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GtkTreeIter {
      * }
      */
     public static MemorySegment user_data3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2288.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2293.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GtkTreeIter {
      * }
      */
     public static void user_data3$set(MemorySegment seg, MemorySegment x) {
-        constants$2288.const$1.set(seg, x);
+        constants$2293.const$1.set(seg, x);
     }
     public static MemorySegment user_data3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2288.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2293.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void user_data3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2288.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2293.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

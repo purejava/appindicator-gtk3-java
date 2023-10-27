@@ -13,13 +13,13 @@ public interface g_object_add_toggle_ref$notify {
 
     void apply(java.lang.foreign.MemorySegment screen, java.lang.foreign.MemorySegment colors, int n_colors);
     static MemorySegment allocate(g_object_add_toggle_ref$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$634.const$2, fi, constants$164.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$636.const$5, fi, constants$164.const$5, scope);
     }
     static g_object_add_toggle_ref$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _screen, java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
             try {
-                constants$420.const$2.invokeExact(symbol, _screen, _colors, _n_colors);
+                constants$421.const$2.invokeExact(symbol, _screen, _colors, _n_colors);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

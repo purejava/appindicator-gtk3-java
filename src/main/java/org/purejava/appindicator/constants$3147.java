@@ -2,19 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3147 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3147() {}
-    static final VarHandle const$0 = constants$3144.const$2.varHandle(MemoryLayout.PathElement.groupElement("copy_clipboard"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextViewClass.paste_clipboard.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$3144.const$2.varHandle(MemoryLayout.PathElement.groupElement("paste_clipboard"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextViewClass.toggle_overwrite.class, "apply", constants$13.const$1);
-    static final VarHandle const$4 = constants$3144.const$2.varHandle(MemoryLayout.PathElement.groupElement("toggle_overwrite"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextViewClass.create_buffer.class, "apply", constants$5.const$2);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_text_buffer_register_deserialize_format$user_data_destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_register_deserialize_format",
+        constants$331.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_register_deserialize_tagset",
+        constants$5.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_unregister_serialize_format",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_unregister_deserialize_format",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_deserialize_set_can_create_tags",
+        constants$164.const$5
+    );
 }
 
 

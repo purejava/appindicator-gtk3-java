@@ -13,7 +13,7 @@ public interface pthread_key_create$__destr_function {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(pthread_key_create$__destr_function fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$535.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$536.const$4, fi, constants$13.const$1, scope);
     }
     static pthread_key_create$__destr_function ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

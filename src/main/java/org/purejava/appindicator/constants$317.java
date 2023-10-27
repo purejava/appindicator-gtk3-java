@@ -2,21 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$317 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$317() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GIOFuncs.io_seek.class, "apply", constants$316.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GIOFuncs.io_read.class, "apply", constants$316.const$5);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
         constants$316.const$5
     );
-    static final VarHandle const$2 = constants$315.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_seek"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GIOFuncs.io_close.class, "apply", constants$9.const$0);
-    static final VarHandle const$4 = constants$315.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_close"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GIOFuncs.io_create_watch.class, "apply", constants$21.const$3);
+    static final VarHandle const$2 = constants$316.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_read"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GIOFuncs.io_write.class, "apply", constants$316.const$5);
+    static final VarHandle const$4 = constants$316.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_write"));
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER
+    );
 }
 
 

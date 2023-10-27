@@ -8,28 +8,25 @@ final class constants$1436 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1436() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_set_get_population",
-        constants$10.const$5
+        "hb_set_reference",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_set_get_min",
-        constants$10.const$5
+        "hb_set_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_set_get_max",
-        constants$10.const$5
-    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_set_set_user_data$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_set_next",
-        constants$9.const$0
+        "hb_set_set_user_data",
+        constants$1427.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_set_previous",
-        constants$9.const$0
+        "hb_set_get_user_data",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_set_next_range",
-        constants$12.const$2
+        "hb_set_allocation_successful",
+        constants$10.const$5
     );
 }
 

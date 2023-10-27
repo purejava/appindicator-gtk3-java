@@ -3,6 +3,7 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
@@ -10,38 +11,38 @@ final class constants$906 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$906() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
         JAVA_INT,
+        JAVA_INT,
         RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_bus_own_name_on_connection",
+        "g_dbus_method_invocation_return_error_valist",
         constants$906.const$0
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_error_literal",
+        constants$57.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_bus_own_name_with_closures",
-        constants$906.const$2
+        "g_dbus_method_invocation_return_gerror",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_bus_own_name_on_connection_with_closures",
-        constants$859.const$1
+        "g_dbus_method_invocation_take_error",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_bus_unown_name",
-        constants$80.const$1
+        "g_dbus_method_invocation_return_dbus_error",
+        constants$14.const$3
     );
 }
 

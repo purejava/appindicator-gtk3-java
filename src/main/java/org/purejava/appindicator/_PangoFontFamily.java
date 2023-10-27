@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _PangoFontFamily {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1547.const$0;
+        return constants$1552.const$0;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);

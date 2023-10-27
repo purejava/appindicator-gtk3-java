@@ -2,55 +2,29 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2494 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2494() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_tooltip_row",
-        constants$14.const$3
+        "gtk_tree_view_convert_widget_to_bin_window_coords",
+        constants$1499.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_tooltip_cell",
-        constants$331.const$1
+        "gtk_tree_view_convert_bin_window_to_widget_coords",
+        constants$1499.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_tooltip_context",
-        constants$867.const$5
+        "gtk_tree_view_convert_tree_to_bin_window_coords",
+        constants$1499.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_tooltip_column",
-        constants$40.const$2
+        "gtk_tree_view_convert_bin_window_to_tree_coords",
+        constants$1499.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_tooltip_column",
-        constants$10.const$5
-    );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        MemoryLayout.structLayout(
-                            RuntimeHelper.POINTER.withName("g_class")
-                        ).withName("g_type_instance"),
-                        JAVA_INT.withName("ref_count"),
-                        MemoryLayout.paddingLayout(4),
-                        RuntimeHelper.POINTER.withName("qdata")
-                    ).withName("parent_instance"),
-                    RuntimeHelper.POINTER.withName("priv")
-                ).withName("widget"),
-                RuntimeHelper.POINTER.withName("priv")
-            ).withName("container"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkComboBox");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GtkTreeDestroyCountFunc.class, "apply", constants$466.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_tree_view_set_destroy_count_func$func.class, "apply", constants$466.const$3);
 }
 
 

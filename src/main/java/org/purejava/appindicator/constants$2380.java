@@ -8,28 +8,28 @@ final class constants$2380 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2380() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_visible_cursor_positions",
-        constants$11.const$4
+        "gtk_text_iter_backward_char",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_offset",
-        constants$40.const$2
+        "gtk_text_iter_forward_chars",
+        constants$11.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_line",
-        constants$40.const$2
+        "gtk_text_iter_backward_chars",
+        constants$11.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_line_offset",
-        constants$40.const$2
+        "gtk_text_iter_forward_line",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_line_index",
-        constants$40.const$2
+        "gtk_text_iter_backward_line",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_to_end",
-        constants$13.const$1
+        "gtk_text_iter_forward_lines",
+        constants$11.const$4
     );
 }
 

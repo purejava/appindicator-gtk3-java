@@ -20,10 +20,10 @@ import java.lang.invoke.VarHandle;
 public class _GdkColor {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1874.const$4;
+        return constants$1879.const$4;
     }
     public static VarHandle pixel$VH() {
-        return constants$1874.const$5;
+        return constants$1879.const$5;
     }
     /**
      * Getter for field:
@@ -32,7 +32,7 @@ public class _GdkColor {
      * }
      */
     public static int pixel$get(MemorySegment seg) {
-        return (int)constants$1874.const$5.get(seg);
+        return (int)constants$1879.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -41,16 +41,16 @@ public class _GdkColor {
      * }
      */
     public static void pixel$set(MemorySegment seg, int x) {
-        constants$1874.const$5.set(seg, x);
+        constants$1879.const$5.set(seg, x);
     }
     public static int pixel$get(MemorySegment seg, long index) {
-        return (int)constants$1874.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1879.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void pixel$set(MemorySegment seg, long index, int x) {
-        constants$1874.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1879.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle red$VH() {
-        return constants$1875.const$0;
+        return constants$1880.const$0;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class _GdkColor {
      * }
      */
     public static short red$get(MemorySegment seg) {
-        return (short)constants$1875.const$0.get(seg);
+        return (short)constants$1880.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -68,16 +68,16 @@ public class _GdkColor {
      * }
      */
     public static void red$set(MemorySegment seg, short x) {
-        constants$1875.const$0.set(seg, x);
+        constants$1880.const$0.set(seg, x);
     }
     public static short red$get(MemorySegment seg, long index) {
-        return (short)constants$1875.const$0.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1880.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void red$set(MemorySegment seg, long index, short x) {
-        constants$1875.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1880.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle green$VH() {
-        return constants$1875.const$1;
+        return constants$1880.const$1;
     }
     /**
      * Getter for field:
@@ -86,7 +86,7 @@ public class _GdkColor {
      * }
      */
     public static short green$get(MemorySegment seg) {
-        return (short)constants$1875.const$1.get(seg);
+        return (short)constants$1880.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -95,16 +95,16 @@ public class _GdkColor {
      * }
      */
     public static void green$set(MemorySegment seg, short x) {
-        constants$1875.const$1.set(seg, x);
+        constants$1880.const$1.set(seg, x);
     }
     public static short green$get(MemorySegment seg, long index) {
-        return (short)constants$1875.const$1.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1880.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void green$set(MemorySegment seg, long index, short x) {
-        constants$1875.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1880.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle blue$VH() {
-        return constants$1875.const$2;
+        return constants$1880.const$2;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class _GdkColor {
      * }
      */
     public static short blue$get(MemorySegment seg) {
-        return (short)constants$1875.const$2.get(seg);
+        return (short)constants$1880.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class _GdkColor {
      * }
      */
     public static void blue$set(MemorySegment seg, short x) {
-        constants$1875.const$2.set(seg, x);
+        constants$1880.const$2.set(seg, x);
     }
     public static short blue$get(MemorySegment seg, long index) {
-        return (short)constants$1875.const$2.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1880.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void blue$set(MemorySegment seg, long index, short x) {
-        constants$1875.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1880.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

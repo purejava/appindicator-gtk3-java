@@ -2,29 +2,18 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.foreign.MemoryLayout;
+import java.lang.invoke.VarHandle;
 final class constants$1480 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1480() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_get_glyph_h_kerning_func_t.class, "apply", constants$1479.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_glyph_extents_func_t.class, "apply", constants$859.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_get_glyph_contour_point_func_t.class, "apply", constants$1314.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        constants$1314.const$3
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_font_get_glyph_name_func_t.class, "apply", constants$1480.const$4);
+    static final VarHandle const$0 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved7"));
+    static final VarHandle const$1 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved6"));
+    static final VarHandle const$2 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved5"));
+    static final VarHandle const$3 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved4"));
+    static final VarHandle const$4 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved3"));
+    static final VarHandle const$5 = constants$1479.const$0.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
 }
 
 

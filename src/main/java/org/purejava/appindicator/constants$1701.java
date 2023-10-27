@@ -2,35 +2,35 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1701 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1701() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_get_variations",
-        constants$5.const$2
+        "cairo_text_cluster_allocate",
+        constants$24.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_set_variations",
-        constants$13.const$4
+        "cairo_text_cluster_free",
+        constants$13.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_set_color_mode",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_get_color_mode",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_get_color_palette",
-        constants$10.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_font_options_set_color_palette",
-        constants$40.const$2
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_DOUBLE.withName("x_bearing"),
+        JAVA_DOUBLE.withName("y_bearing"),
+        JAVA_DOUBLE.withName("width"),
+        JAVA_DOUBLE.withName("height"),
+        JAVA_DOUBLE.withName("x_advance"),
+        JAVA_DOUBLE.withName("y_advance")
+    ).withName("cairo_text_extents_t");
+    static final VarHandle const$3 = constants$1701.const$2.varHandle(MemoryLayout.PathElement.groupElement("x_bearing"));
+    static final VarHandle const$4 = constants$1701.const$2.varHandle(MemoryLayout.PathElement.groupElement("y_bearing"));
+    static final VarHandle const$5 = constants$1701.const$2.varHandle(MemoryLayout.PathElement.groupElement("width"));
 }
 
 

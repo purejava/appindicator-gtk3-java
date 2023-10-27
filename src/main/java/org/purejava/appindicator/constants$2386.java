@@ -8,29 +8,26 @@ final class constants$2386 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2386() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_text_targets",
-        constants$40.const$2
+        "gtk_text_iter_forward_to_line_end",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_rich_text_targets",
-        constants$57.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_image_targets",
-        constants$467.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_uri_targets",
+        "gtk_text_iter_set_visible_line_offset",
         constants$40.const$2
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_set_visible_line_index",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_text_iter_forward_to_tag_toggle",
+        constants$9.const$0
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_table",
-        constants$164.const$5
+        "gtk_text_iter_backward_to_tag_toggle",
+        constants$9.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_target_list_remove",
-        constants$13.const$4
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GtkTextCharPredicate.class, "apply", constants$9.const$2);
 }
 
 

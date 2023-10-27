@@ -13,7 +13,7 @@ public interface GReallocFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment data, long size);
     static MemorySegment allocate(GReallocFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1143.const$1, fi, constants$21.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1146.const$4, fi, constants$21.const$1, scope);
     }
     static GReallocFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

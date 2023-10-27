@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkCheckButton {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2608.const$5;
+        return constants$2613.const$5;
     }
     public static MemorySegment toggle_button$slice(MemorySegment seg) {
         return seg.asSlice(0, 64);

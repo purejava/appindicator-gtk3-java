@@ -13,7 +13,7 @@ public interface g_variant_new_from_data$notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_variant_new_from_data$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$362.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$363.const$3, fi, constants$13.const$1, scope);
     }
     static g_variant_new_from_data$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

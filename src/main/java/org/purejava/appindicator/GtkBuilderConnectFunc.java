@@ -13,13 +13,13 @@ public interface GtkBuilderConnectFunc {
 
     void apply(java.lang.foreign.MemorySegment builder, java.lang.foreign.MemorySegment object, java.lang.foreign.MemorySegment signal_name, java.lang.foreign.MemorySegment handler_name, java.lang.foreign.MemorySegment connect_object, int flags, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GtkBuilderConnectFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1960.const$3, fi, constants$1960.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1965.const$3, fi, constants$1965.const$2, scope);
     }
     static GtkBuilderConnectFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _builder, java.lang.foreign.MemorySegment _object, java.lang.foreign.MemorySegment _signal_name, java.lang.foreign.MemorySegment _handler_name, java.lang.foreign.MemorySegment _connect_object, int _flags, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1960.const$4.invokeExact(symbol, _builder, _object, _signal_name, _handler_name, _connect_object, _flags, _user_data);
+                constants$1965.const$4.invokeExact(symbol, _builder, _object, _signal_name, _handler_name, _connect_object, _flags, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -2,37 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1419 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1419() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_variation_from_string",
-        constants$150.const$0
+        "hb_tag_from_string",
+        constants$11.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_variation_to_string",
-        constants$164.const$5
+        "hb_tag_to_string",
+        constants$90.const$2
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_BYTE,
-        JAVA_INT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_direction_from_string",
+        constants$11.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_color_get_alpha",
-        constants$1419.const$2
+        "hb_direction_to_string",
+        constants$24.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_color_get_red",
-        constants$1419.const$2
+        "hb_language_from_string",
+        constants$21.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_color_get_green",
-        constants$1419.const$2
+        "hb_language_to_string",
+        constants$5.const$2
     );
 }
 

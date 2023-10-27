@@ -2,32 +2,35 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1011 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1011() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_new_tmp_dir_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_new_tmp_dir_async",
-        constants$281.const$5
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1010.const$4
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_new_tmp_dir_finish",
-        constants$5.const$5
+    static final VarHandle const$1 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("measure_disk_usage"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_parse_name",
-        constants$5.const$2
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.measure_disk_usage_async.class, "apply", constants$1011.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$1011.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
-        "g_file_new_build_filename",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_dup",
-        constants$5.const$2
-    );
+    static final VarHandle const$5 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("measure_disk_usage_async"));
 }
 
 

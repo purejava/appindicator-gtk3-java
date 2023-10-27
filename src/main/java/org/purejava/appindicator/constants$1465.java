@@ -2,23 +2,18 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.invoke.VarHandle;
 final class constants$1465 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1465() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_clip_rectangle_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_set_push_clip_rectangle_func",
-        constants$42.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_clip_func$func.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_clip_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_paint_funcs_set_pop_clip_func",
-        constants$42.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_color_func$func.class, "apply", constants$1457.const$1);
+    static final VarHandle const$0 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("reserved0"));
+    static final VarHandle const$1 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
+    static final VarHandle const$2 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
+    static final VarHandle const$3 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("reserved3"));
+    static final VarHandle const$4 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("reserved5"));
+    static final VarHandle const$5 = constants$1463.const$4.varHandle(MemoryLayout.PathElement.groupElement("reserved6"));
 }
 
 

@@ -2,23 +2,47 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1944 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1944() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gdk_threads_add_idle_full$function.class, "apply", constants$10.const$5);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_threads_add_idle_full$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pango_layout_get_clip_region",
+        constants$1943.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_atom_intern",
+        constants$21.const$3
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_threads_add_idle_full",
-        constants$280.const$4
+        "gdk_atom_intern_static_string",
+        constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_threads_add_idle$function.class, "apply", constants$10.const$5);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_threads_add_idle",
-        constants$9.const$0
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_atom_name",
+        constants$5.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gdk_threads_add_timeout_full$function.class, "apply", constants$10.const$5);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_property_get",
+        constants$1944.const$4
+    );
 }
 
 

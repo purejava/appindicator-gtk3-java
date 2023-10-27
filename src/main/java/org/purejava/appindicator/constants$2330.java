@@ -2,19 +2,31 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2330 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2330() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.get_cell_property.class, "apply", constants$379.const$3);
-    static final VarHandle const$1 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_cell_property"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.focus.class, "apply", constants$11.const$4);
-    static final VarHandle const$3 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("focus"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.is_activatable.class, "apply", constants$10.const$5);
-    static final VarHandle const$5 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("is_activatable"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.foreach_alloc.class, "apply", constants$871.const$1);
+    static final VarHandle const$1 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("foreach_alloc"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.event.class, "apply", constants$2330.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$2330.const$2
+    );
+    static final VarHandle const$5 = constants$2328.const$5.varHandle(MemoryLayout.PathElement.groupElement("event"));
 }
 
 

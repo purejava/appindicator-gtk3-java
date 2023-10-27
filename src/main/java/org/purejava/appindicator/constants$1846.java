@@ -8,28 +8,28 @@ final class constants$1846 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1846() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_create_similar_image_surface",
-        constants$1734.const$4
+        "gdk_window_get_root_coords",
+        constants$1499.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_beep",
-        constants$13.const$1
+        "gdk_window_coords_to_parent",
+        constants$1826.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_iconify",
-        constants$13.const$1
+        "gdk_window_coords_from_parent",
+        constants$1826.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_deiconify",
-        constants$13.const$1
+        "gdk_window_get_root_origin",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_stick",
-        constants$13.const$1
+        "gdk_window_get_frame_extents",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_unstick",
-        constants$13.const$1
+        "gdk_window_get_scale_factor",
+        constants$10.const$5
     );
 }
 

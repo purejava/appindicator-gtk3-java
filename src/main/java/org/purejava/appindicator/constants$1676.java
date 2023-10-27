@@ -8,28 +8,28 @@ final class constants$1676 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1676() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_is_zero_width",
-        constants$8.const$4
+        "ferror",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_find_paragraph_boundary",
-        constants$179.const$1
+        "clearerr_unlocked",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_version",
-        constants$83.const$1
+        "feof_unlocked",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_version_string",
-        constants$35.const$2
+        "ferror_unlocked",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_version_check",
-        constants$30.const$2
+        "perror",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "cairo_version",
-        constants$83.const$1
+        "fileno",
+        constants$10.const$5
     );
 }
 

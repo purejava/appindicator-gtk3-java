@@ -8,23 +8,29 @@ final class constants$3260 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3260() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_stock_lookup",
-        constants$9.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_stock_list_ids",
-        constants$35.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_stock_item_copy",
+        "gtk_action_get_icon_name",
         constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_stock_item_free",
-        constants$13.const$1
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_action_set_visible_horizontal",
+        constants$40.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_stock_set_translate_func$func.class, "apply", constants$5.const$5);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_stock_set_translate_func$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_action_get_visible_horizontal",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_action_set_visible_vertical",
+        constants$40.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_action_get_visible_vertical",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_action_set_is_important",
+        constants$40.const$2
+    );
 }
 
 

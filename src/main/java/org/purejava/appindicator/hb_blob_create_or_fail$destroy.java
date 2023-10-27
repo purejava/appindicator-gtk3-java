@@ -13,7 +13,7 @@ public interface hb_blob_create_or_fail$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(hb_blob_create_or_fail$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1421.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1425.const$4, fi, constants$13.const$1, scope);
     }
     static hb_blob_create_or_fail$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -9,12 +9,18 @@ final class constants$2729 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2729() {}
-    static final VarHandle const$0 = constants$2728.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkFontChooserDialogClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$2728.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkFontChooserDialogClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2728.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkFontChooserDialogClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkFontChooserIface.set_font_map.class, "apply", constants$13.const$4);
+    static final VarHandle const$1 = constants$2727.const$1.varHandle(MemoryLayout.PathElement.groupElement("set_font_map"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkFontChooserIface.get_font_map.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$2727.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_font_map"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_font_chooser_get_font_family",
+        constants$5.const$2
+    );
 }
 
 

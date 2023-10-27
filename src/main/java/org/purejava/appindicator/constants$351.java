@@ -5,33 +5,33 @@ package org.purejava.appindicator;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_SHORT;
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
 final class constants$351 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$351() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        JAVA_SHORT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_is_of_type",
+        constants$9.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_variant_new_int16",
-        constants$351.const$0
+        "g_variant_is_container",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_new_uint16",
-        constants$351.const$0
+        "g_variant_classify",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_new_int32",
+        "g_variant_new_boolean",
         constants$24.const$0
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_variant_new_uint32",
-        constants$24.const$0
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_BYTE
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_new_int64",
-        constants$63.const$3
+        "g_variant_new_byte",
+        constants$351.const$4
     );
 }
 

@@ -9,18 +9,12 @@ final class constants$2421 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2421() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkListStoreClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2420.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkListStoreClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$2420.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_list_store_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_list_store_new",
-        constants$24.const$0
-    );
+    static final VarHandle const$0 = constants$2417.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$2417.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass._gtk_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$2417.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkEntryBufferClass._gtk_reserved6.class, "apply", constants$7.const$5);
 }
 
 

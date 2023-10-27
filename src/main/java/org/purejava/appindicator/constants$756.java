@@ -12,22 +12,28 @@ final class constants$756 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$756() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_async_initable_newv_async$callback.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         JAVA_LONG,
-        JAVA_INT,
         RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_initable_new",
+        constants$756.const$0
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
         JAVA_INT,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_async_initable_newv_async",
-        constants$756.const$1
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_initable_newv",
+        constants$756.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_async_initable_new_valist_async$callback.class, "apply", constants$14.const$3);
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
         JAVA_LONG,
         RuntimeHelper.POINTER,
         MemoryLayout.structLayout(
@@ -37,13 +43,11 @@ final class constants$756 {
             JAVA_INT.withName("__gr_offs"),
             JAVA_INT.withName("__vr_offs")
         ).withName("__va_list"),
-        JAVA_INT,
-        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_async_initable_new_valist_async",
+        "g_initable_new_valist",
         constants$756.const$4
     );
 }

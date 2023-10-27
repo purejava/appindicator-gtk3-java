@@ -21,13 +21,13 @@ import java.lang.invoke.VarHandle;
 public class _GTypeModule {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$675.const$0;
+        return constants$677.const$4;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);
     }
     public static VarHandle use_count$VH() {
-        return constants$675.const$1;
+        return constants$677.const$5;
     }
     /**
      * Getter for field:
@@ -36,7 +36,7 @@ public class _GTypeModule {
      * }
      */
     public static int use_count$get(MemorySegment seg) {
-        return (int)constants$675.const$1.get(seg);
+        return (int)constants$677.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -45,16 +45,16 @@ public class _GTypeModule {
      * }
      */
     public static void use_count$set(MemorySegment seg, int x) {
-        constants$675.const$1.set(seg, x);
+        constants$677.const$5.set(seg, x);
     }
     public static int use_count$get(MemorySegment seg, long index) {
-        return (int)constants$675.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$677.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void use_count$set(MemorySegment seg, long index, int x) {
-        constants$675.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$677.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle type_infos$VH() {
-        return constants$675.const$2;
+        return constants$678.const$0;
     }
     /**
      * Getter for field:
@@ -63,7 +63,7 @@ public class _GTypeModule {
      * }
      */
     public static MemorySegment type_infos$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$675.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$678.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -72,16 +72,16 @@ public class _GTypeModule {
      * }
      */
     public static void type_infos$set(MemorySegment seg, MemorySegment x) {
-        constants$675.const$2.set(seg, x);
+        constants$678.const$0.set(seg, x);
     }
     public static MemorySegment type_infos$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$675.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$678.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void type_infos$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$675.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$678.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle interface_infos$VH() {
-        return constants$675.const$3;
+        return constants$678.const$1;
     }
     /**
      * Getter for field:
@@ -90,7 +90,7 @@ public class _GTypeModule {
      * }
      */
     public static MemorySegment interface_infos$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$675.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$678.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -99,16 +99,16 @@ public class _GTypeModule {
      * }
      */
     public static void interface_infos$set(MemorySegment seg, MemorySegment x) {
-        constants$675.const$3.set(seg, x);
+        constants$678.const$1.set(seg, x);
     }
     public static MemorySegment interface_infos$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$675.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$678.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void interface_infos$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$675.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$678.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle name$VH() {
-        return constants$675.const$4;
+        return constants$678.const$2;
     }
     /**
      * Getter for field:
@@ -117,7 +117,7 @@ public class _GTypeModule {
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$675.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$678.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -126,13 +126,13 @@ public class _GTypeModule {
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        constants$675.const$4.set(seg, x);
+        constants$678.const$2.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$675.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$678.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$675.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$678.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -2,45 +2,23 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1471 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1471() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_INT,
-        JAVA_FLOAT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_color_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_paint_image",
-        constants$1471.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_paint_linear_gradient",
-        constants$1453.const$3
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_image_func$func.class, "apply", constants$1462.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_image_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_paint_radial_gradient",
-        constants$1453.const$3
+        "hb_paint_funcs_set_image_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_paint_sweep_gradient",
-        constants$1453.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_paint_push_group",
-        constants$13.const$4
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_linear_gradient_func$func.class, "apply", constants$1452.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_linear_gradient_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

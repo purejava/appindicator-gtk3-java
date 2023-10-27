@@ -8,28 +8,22 @@ final class constants$1814 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1814() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_get_frame_time",
-        constants$4.const$0
+        "gdk_events_get_center",
+        constants$34.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_get_presentation_time",
-        constants$4.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_get_refresh_interval",
-        constants$4.const$0
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_event_handler_set$func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gdk_event_handler_set$notify.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_get_predicted_presentation_time",
-        constants$4.const$0
+        "gdk_event_handler_set",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_type",
-        constants$3.const$5
+        "gdk_event_set_screen",
+        constants$13.const$4
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_frame_time",
-        constants$4.const$0
+        "gdk_event_get_screen",
+        constants$5.const$2
     );
 }
 

@@ -29,7 +29,7 @@ import java.lang.invoke.VarHandle;
 public class _GClosure {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$586.const$1;
+        return constants$588.const$4;
     }
     /**
      * {@snippet :
@@ -40,13 +40,13 @@ public class _GClosure {
 
         void apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment draw_funcs, java.lang.foreign.MemorySegment draw_data, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(marshal fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$586.const$2, fi, constants$584.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$588.const$5, fi, constants$587.const$0, scope);
         }
         static marshal ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _draw_funcs, java.lang.foreign.MemorySegment _draw_data, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    constants$584.const$5.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
+                    constants$587.const$2.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -55,7 +55,7 @@ public class _GClosure {
     }
 
     public static VarHandle marshal$VH() {
-        return constants$586.const$3;
+        return constants$589.const$0;
     }
     /**
      * Getter for field:
@@ -64,7 +64,7 @@ public class _GClosure {
      * }
      */
     public static MemorySegment marshal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$586.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$589.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -73,19 +73,19 @@ public class _GClosure {
      * }
      */
     public static void marshal$set(MemorySegment seg, MemorySegment x) {
-        constants$586.const$3.set(seg, x);
+        constants$589.const$0.set(seg, x);
     }
     public static MemorySegment marshal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$586.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$589.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void marshal$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$586.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$589.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static marshal marshal(MemorySegment segment, Arena scope) {
         return marshal.ofAddress(marshal$get(segment), scope);
     }
     public static VarHandle data$VH() {
-        return constants$586.const$4;
+        return constants$589.const$1;
     }
     /**
      * Getter for field:
@@ -94,7 +94,7 @@ public class _GClosure {
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$586.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$589.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -103,16 +103,16 @@ public class _GClosure {
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        constants$586.const$4.set(seg, x);
+        constants$589.const$1.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$586.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$589.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$586.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$589.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle notifiers$VH() {
-        return constants$586.const$5;
+        return constants$589.const$2;
     }
     /**
      * Getter for field:
@@ -121,7 +121,7 @@ public class _GClosure {
      * }
      */
     public static MemorySegment notifiers$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$586.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$589.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -130,13 +130,13 @@ public class _GClosure {
      * }
      */
     public static void notifiers$set(MemorySegment seg, MemorySegment x) {
-        constants$586.const$5.set(seg, x);
+        constants$589.const$2.set(seg, x);
     }
     public static MemorySegment notifiers$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$586.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$589.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void notifiers$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$586.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$589.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

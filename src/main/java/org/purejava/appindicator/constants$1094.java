@@ -3,18 +3,100 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1094 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1094() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass.query_info_finish.class, "apply", constants$23.const$0);
-    static final VarHandle const$1 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("query_info_finish"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass.get_etag.class, "apply", constants$5.const$2);
-    static final VarHandle const$3 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_etag"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass._g_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_filename_completer_get_completion_suffix",
+        constants$5.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_filename_completer_get_completions",
+        constants$5.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_filename_completer_set_dirs_only",
+        constants$40.const$2
+    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GFileOutputStream");
+    static final VarHandle const$4 = constants$1094.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    JAVA_LONG.withName("g_type")
+                ).withName("g_type_class"),
+                RuntimeHelper.POINTER.withName("construct_properties"),
+                RuntimeHelper.POINTER.withName("constructor"),
+                RuntimeHelper.POINTER.withName("set_property"),
+                RuntimeHelper.POINTER.withName("get_property"),
+                RuntimeHelper.POINTER.withName("dispose"),
+                RuntimeHelper.POINTER.withName("finalize"),
+                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                RuntimeHelper.POINTER.withName("notify"),
+                RuntimeHelper.POINTER.withName("constructed"),
+                JAVA_LONG.withName("flags"),
+                JAVA_LONG.withName("n_construct_properties"),
+                RuntimeHelper.POINTER.withName("pspecs"),
+                JAVA_LONG.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+            ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("write_fn"),
+            RuntimeHelper.POINTER.withName("splice"),
+            RuntimeHelper.POINTER.withName("flush"),
+            RuntimeHelper.POINTER.withName("close_fn"),
+            RuntimeHelper.POINTER.withName("write_async"),
+            RuntimeHelper.POINTER.withName("write_finish"),
+            RuntimeHelper.POINTER.withName("splice_async"),
+            RuntimeHelper.POINTER.withName("splice_finish"),
+            RuntimeHelper.POINTER.withName("flush_async"),
+            RuntimeHelper.POINTER.withName("flush_finish"),
+            RuntimeHelper.POINTER.withName("close_async"),
+            RuntimeHelper.POINTER.withName("close_finish"),
+            RuntimeHelper.POINTER.withName("writev_fn"),
+            RuntimeHelper.POINTER.withName("writev_async"),
+            RuntimeHelper.POINTER.withName("writev_finish"),
+            RuntimeHelper.POINTER.withName("_g_reserved4"),
+            RuntimeHelper.POINTER.withName("_g_reserved5"),
+            RuntimeHelper.POINTER.withName("_g_reserved6"),
+            RuntimeHelper.POINTER.withName("_g_reserved7"),
+            RuntimeHelper.POINTER.withName("_g_reserved8")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("tell"),
+        RuntimeHelper.POINTER.withName("can_seek"),
+        RuntimeHelper.POINTER.withName("seek"),
+        RuntimeHelper.POINTER.withName("can_truncate"),
+        RuntimeHelper.POINTER.withName("truncate_fn"),
+        RuntimeHelper.POINTER.withName("query_info"),
+        RuntimeHelper.POINTER.withName("query_info_async"),
+        RuntimeHelper.POINTER.withName("query_info_finish"),
+        RuntimeHelper.POINTER.withName("get_etag"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5")
+    ).withName("_GFileOutputStreamClass");
 }
 
 

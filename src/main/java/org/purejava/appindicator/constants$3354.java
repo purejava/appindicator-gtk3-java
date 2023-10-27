@@ -16,6 +16,7 @@ final class constants$3354 {
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT,
+        JAVA_INT,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT,
@@ -23,13 +24,26 @@ final class constants$3354 {
         JAVA_INT,
         JAVA_INT
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_focus.class, "apply", constants$3354.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_shadow.class, "apply", constants$3354.const$0);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
         constants$3354.const$0
     );
-    static final VarHandle const$3 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_focus"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_slider.class, "apply", constants$3353.const$2);
-    static final VarHandle const$5 = constants$3345.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_slider"));
+    static final VarHandle const$3 = constants$3350.const$2.varHandle(MemoryLayout.PathElement.groupElement("draw_shadow"));
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkStyleClass.draw_arrow.class, "apply", constants$3354.const$4);
 }
 
 

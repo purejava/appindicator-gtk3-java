@@ -12,38 +12,39 @@ final class constants$416 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$416() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_regex_split",
-        constants$32.const$3
+        "g_regex_match",
+        constants$328.const$4
     );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_LONG,
         JAVA_INT,
         JAVA_INT,
-        JAVA_INT,
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_regex_split_full",
+        "g_regex_match_full",
         constants$416.const$1
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_regex_match_all",
+        constants$328.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_regex_replace",
-        constants$416.const$3
+        "g_regex_match_all_full",
+        constants$416.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_regex_replace_literal",
-        constants$416.const$3
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_regex_split_simple",
+        constants$416.const$5
     );
 }
 

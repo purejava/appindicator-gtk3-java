@@ -7,18 +7,30 @@ final class constants$2716 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2716() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_flow_box_set_filter_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_bind_model",
+        constants$332.const$1
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_filter_func",
-        constants$42.const$1
+        "gtk_flow_box_set_homogeneous",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_invalidate_filter",
-        constants$13.const$1
+        "gtk_flow_box_get_homogeneous",
+        constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GtkFlowBoxSortFunc.class, "apply", constants$12.const$2);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_flow_box_set_sort_func$sort_func.class, "apply", constants$12.const$2);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_flow_box_set_sort_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_set_row_spacing",
+        constants$40.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_get_row_spacing",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_flow_box_set_column_spacing",
+        constants$40.const$2
+    );
 }
 
 

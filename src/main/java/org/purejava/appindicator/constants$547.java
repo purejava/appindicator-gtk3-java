@@ -3,30 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$547 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$547() {}
-    static final VarHandle const$0 = constants$546.const$3.varHandle(MemoryLayout.PathElement.groupElement("class_size"));
-    static final VarHandle const$1 = constants$546.const$3.varHandle(MemoryLayout.PathElement.groupElement("instance_size"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_init",
-        constants$7.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_type_init_with_debug_flags",
-        constants$80.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_type_name",
-        constants$63.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_type_qname",
-        constants$26.const$2
-    );
+    static final VarHandle const$0 = constants$546.const$5.varHandle(MemoryLayout.PathElement.groupElement("g_type"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("g_class")
+    ).withName("_GTypeInstance");
+    static final VarHandle const$2 = constants$547.const$1.varHandle(MemoryLayout.PathElement.groupElement("g_class"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("g_type"),
+        JAVA_LONG.withName("g_instance_type")
+    ).withName("_GTypeInterface");
+    static final VarHandle const$4 = constants$547.const$3.varHandle(MemoryLayout.PathElement.groupElement("g_type"));
+    static final VarHandle const$5 = constants$547.const$3.varHandle(MemoryLayout.PathElement.groupElement("g_instance_type"));
 }
 
 

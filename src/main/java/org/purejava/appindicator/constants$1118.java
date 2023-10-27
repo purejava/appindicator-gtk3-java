@@ -8,27 +8,27 @@ final class constants$1118 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1118() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_channel_binding_error_get_type",
+        "g_bus_name_watcher_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_rehandshake_mode_get_type",
+        "g_dbus_proxy_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_password_flags_get_type",
+        "g_dbus_error_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_result_get_type",
+        "g_dbus_connection_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_flags_get_type",
+        "g_dbus_capability_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_flags_get_type",
+        "g_dbus_call_flags_get_type",
         constants$3.const$5
     );
 }

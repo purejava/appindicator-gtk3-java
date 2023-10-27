@@ -7,27 +7,18 @@ final class constants$1949 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1949() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_colormap_size",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_bits_per_rgb",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gdk_threads_add_idle_full$function.class, "apply", constants$10.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_threads_add_idle_full$notify.class, "apply", constants$13.const$1);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_red_pixel_details",
-        constants$42.const$1
+        "gdk_threads_add_idle_full",
+        constants$281.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_green_pixel_details",
-        constants$42.const$1
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_threads_add_idle$function.class, "apply", constants$10.const$5);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_blue_pixel_details",
-        constants$42.const$1
+        "gdk_threads_add_idle",
+        constants$9.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GtkAccelGroupActivate.class, "apply", constants$414.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gdk_threads_add_timeout_full$function.class, "apply", constants$10.const$5);
 }
 
 

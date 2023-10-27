@@ -2,19 +2,48 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3371 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3371() {}
-    static final VarHandle const$0 = constants$3370.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTableClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$2 = constants$3370.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTableClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$3370.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTableClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_paint_spinner",
+        constants$3361.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_style_get_style_property",
+        constants$682.const$3
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_style_get_valist",
+        constants$3371.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_style_get",
+        constants$360.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "_gtk_style_new_for_path",
+        constants$5.const$5
+    );
 }
 
 

@@ -9,12 +9,27 @@ final class constants$2517 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2517() {}
-    static final VarHandle const$0 = constants$2516.const$4.varHandle(MemoryLayout.PathElement.groupElement("prepare"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkAssistantClass.apply.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$2516.const$4.varHandle(MemoryLayout.PathElement.groupElement("apply"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkAssistantClass.close.class, "apply", constants$13.const$1);
-    static final VarHandle const$4 = constants$2516.const$4.varHandle(MemoryLayout.PathElement.groupElement("close"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkAssistantClass.cancel.class, "apply", constants$13.const$1);
+    static final VarHandle const$0 = constants$2515.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_frame_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_frame_new",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_frame_set_label",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_frame_get_label",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_frame_set_label_widget",
+        constants$13.const$4
+    );
 }
 
 

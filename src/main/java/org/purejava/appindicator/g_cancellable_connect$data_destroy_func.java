@@ -13,7 +13,7 @@ public interface g_cancellable_connect$data_destroy_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_cancellable_connect$data_destroy_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$802.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$805.const$1, fi, constants$13.const$1, scope);
     }
     static g_cancellable_connect$data_destroy_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

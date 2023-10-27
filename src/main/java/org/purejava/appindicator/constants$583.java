@@ -2,41 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$583 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$583() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_new",
-        constants$24.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_insert",
-        constants$25.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_remove",
-        constants$13.const$4
-    );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_lookup",
-        constants$583.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_list_owned",
-        constants$21.const$1
-    );
+    static final VarHandle const$0 = constants$582.const$2.varHandle(MemoryLayout.PathElement.groupElement("instance_init"));
+    static final VarHandle const$1 = constants$582.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_type"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GParamSpecTypeInfo.finalize.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$582.const$2.varHandle(MemoryLayout.PathElement.groupElement("finalize"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GParamSpecTypeInfo.value_set_default.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$582.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_set_default"));
 }
 
 

@@ -13,7 +13,7 @@ public interface pthread_once$__init_routine {
 
     void apply();
     static MemorySegment allocate(pthread_once$__init_routine fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$522.const$0, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$523.const$3, fi, constants$7.const$5, scope);
     }
     static pthread_once$__init_routine ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

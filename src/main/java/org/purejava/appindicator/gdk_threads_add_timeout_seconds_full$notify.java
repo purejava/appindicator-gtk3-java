@@ -13,7 +13,7 @@ public interface gdk_threads_add_timeout_seconds_full$notify {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gdk_threads_add_timeout_seconds_full$notify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1945.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1950.const$5, fi, constants$13.const$1, scope);
     }
     static gdk_threads_add_timeout_seconds_full$notify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

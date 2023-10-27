@@ -2,34 +2,51 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$483 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$483() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_uri_build",
-        constants$481.const$4
+        "g_uri_split_network",
+        constants$180.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_uri_build_with_user",
-        constants$482.const$0
+        "g_uri_is_valid",
+        constants$150.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_uri_to_string",
-        constants$5.const$2
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_uri_to_string_partial",
-        constants$21.const$3
+        "g_uri_join",
+        constants$483.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_uri_get_scheme",
-        constants$5.const$2
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_uri_get_userinfo",
-        constants$5.const$2
+        "g_uri_join_with_user",
+        constants$483.const$4
     );
 }
 

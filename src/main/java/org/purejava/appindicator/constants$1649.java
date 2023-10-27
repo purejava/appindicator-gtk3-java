@@ -2,35 +2,36 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1649 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1649() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_glyph_item",
-        constants$1641.const$5
+        constants$1046.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_rectangle",
-        constants$1642.const$3
+    static final VarHandle const$1 = constants$1646.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_shape"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_error_underline",
-        constants$1643.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_trapezoid",
-        constants$1644.const$2
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_trapezoid.class, "apply", constants$1649.const$2);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_glyph",
-        constants$1645.const$0
+        constants$1649.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_renderer_activate",
-        constants$13.const$1
-    );
+    static final VarHandle const$5 = constants$1646.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_trapezoid"));
 }
 
 

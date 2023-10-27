@@ -13,7 +13,7 @@ public interface GtkStylePropertyParser {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GtkStylePropertyParser fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2770.const$3, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$2775.const$3, fi, constants$12.const$2, scope);
     }
     static GtkStylePropertyParser ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

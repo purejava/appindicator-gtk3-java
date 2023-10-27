@@ -27,10 +27,10 @@ import java.lang.invoke.VarHandle;
 public class _GdkGeometry {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1818.const$5;
+        return constants$1823.const$5;
     }
     public static VarHandle min_width$VH() {
-        return constants$1819.const$0;
+        return constants$1824.const$0;
     }
     /**
      * Getter for field:
@@ -39,7 +39,7 @@ public class _GdkGeometry {
      * }
      */
     public static int min_width$get(MemorySegment seg) {
-        return (int)constants$1819.const$0.get(seg);
+        return (int)constants$1824.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -48,16 +48,16 @@ public class _GdkGeometry {
      * }
      */
     public static void min_width$set(MemorySegment seg, int x) {
-        constants$1819.const$0.set(seg, x);
+        constants$1824.const$0.set(seg, x);
     }
     public static int min_width$get(MemorySegment seg, long index) {
-        return (int)constants$1819.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1824.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void min_width$set(MemorySegment seg, long index, int x) {
-        constants$1819.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1824.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle min_height$VH() {
-        return constants$1819.const$1;
+        return constants$1824.const$1;
     }
     /**
      * Getter for field:
@@ -66,7 +66,7 @@ public class _GdkGeometry {
      * }
      */
     public static int min_height$get(MemorySegment seg) {
-        return (int)constants$1819.const$1.get(seg);
+        return (int)constants$1824.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -75,16 +75,16 @@ public class _GdkGeometry {
      * }
      */
     public static void min_height$set(MemorySegment seg, int x) {
-        constants$1819.const$1.set(seg, x);
+        constants$1824.const$1.set(seg, x);
     }
     public static int min_height$get(MemorySegment seg, long index) {
-        return (int)constants$1819.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1824.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void min_height$set(MemorySegment seg, long index, int x) {
-        constants$1819.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1824.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle max_width$VH() {
-        return constants$1819.const$2;
+        return constants$1824.const$2;
     }
     /**
      * Getter for field:
@@ -93,7 +93,7 @@ public class _GdkGeometry {
      * }
      */
     public static int max_width$get(MemorySegment seg) {
-        return (int)constants$1819.const$2.get(seg);
+        return (int)constants$1824.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -102,16 +102,16 @@ public class _GdkGeometry {
      * }
      */
     public static void max_width$set(MemorySegment seg, int x) {
-        constants$1819.const$2.set(seg, x);
+        constants$1824.const$2.set(seg, x);
     }
     public static int max_width$get(MemorySegment seg, long index) {
-        return (int)constants$1819.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1824.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void max_width$set(MemorySegment seg, long index, int x) {
-        constants$1819.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1824.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle max_height$VH() {
-        return constants$1819.const$3;
+        return constants$1824.const$3;
     }
     /**
      * Getter for field:
@@ -120,7 +120,7 @@ public class _GdkGeometry {
      * }
      */
     public static int max_height$get(MemorySegment seg) {
-        return (int)constants$1819.const$3.get(seg);
+        return (int)constants$1824.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -129,16 +129,16 @@ public class _GdkGeometry {
      * }
      */
     public static void max_height$set(MemorySegment seg, int x) {
-        constants$1819.const$3.set(seg, x);
+        constants$1824.const$3.set(seg, x);
     }
     public static int max_height$get(MemorySegment seg, long index) {
-        return (int)constants$1819.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1824.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void max_height$set(MemorySegment seg, long index, int x) {
-        constants$1819.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1824.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle base_width$VH() {
-        return constants$1819.const$4;
+        return constants$1824.const$4;
     }
     /**
      * Getter for field:
@@ -147,7 +147,7 @@ public class _GdkGeometry {
      * }
      */
     public static int base_width$get(MemorySegment seg) {
-        return (int)constants$1819.const$4.get(seg);
+        return (int)constants$1824.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -156,16 +156,16 @@ public class _GdkGeometry {
      * }
      */
     public static void base_width$set(MemorySegment seg, int x) {
-        constants$1819.const$4.set(seg, x);
+        constants$1824.const$4.set(seg, x);
     }
     public static int base_width$get(MemorySegment seg, long index) {
-        return (int)constants$1819.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1824.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void base_width$set(MemorySegment seg, long index, int x) {
-        constants$1819.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1824.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle base_height$VH() {
-        return constants$1819.const$5;
+        return constants$1824.const$5;
     }
     /**
      * Getter for field:
@@ -174,7 +174,7 @@ public class _GdkGeometry {
      * }
      */
     public static int base_height$get(MemorySegment seg) {
-        return (int)constants$1819.const$5.get(seg);
+        return (int)constants$1824.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -183,16 +183,16 @@ public class _GdkGeometry {
      * }
      */
     public static void base_height$set(MemorySegment seg, int x) {
-        constants$1819.const$5.set(seg, x);
+        constants$1824.const$5.set(seg, x);
     }
     public static int base_height$get(MemorySegment seg, long index) {
-        return (int)constants$1819.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1824.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void base_height$set(MemorySegment seg, long index, int x) {
-        constants$1819.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1824.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle width_inc$VH() {
-        return constants$1820.const$0;
+        return constants$1825.const$0;
     }
     /**
      * Getter for field:
@@ -201,7 +201,7 @@ public class _GdkGeometry {
      * }
      */
     public static int width_inc$get(MemorySegment seg) {
-        return (int)constants$1820.const$0.get(seg);
+        return (int)constants$1825.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -210,16 +210,16 @@ public class _GdkGeometry {
      * }
      */
     public static void width_inc$set(MemorySegment seg, int x) {
-        constants$1820.const$0.set(seg, x);
+        constants$1825.const$0.set(seg, x);
     }
     public static int width_inc$get(MemorySegment seg, long index) {
-        return (int)constants$1820.const$0.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1825.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void width_inc$set(MemorySegment seg, long index, int x) {
-        constants$1820.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1825.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle height_inc$VH() {
-        return constants$1820.const$1;
+        return constants$1825.const$1;
     }
     /**
      * Getter for field:
@@ -228,7 +228,7 @@ public class _GdkGeometry {
      * }
      */
     public static int height_inc$get(MemorySegment seg) {
-        return (int)constants$1820.const$1.get(seg);
+        return (int)constants$1825.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -237,16 +237,16 @@ public class _GdkGeometry {
      * }
      */
     public static void height_inc$set(MemorySegment seg, int x) {
-        constants$1820.const$1.set(seg, x);
+        constants$1825.const$1.set(seg, x);
     }
     public static int height_inc$get(MemorySegment seg, long index) {
-        return (int)constants$1820.const$1.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1825.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void height_inc$set(MemorySegment seg, long index, int x) {
-        constants$1820.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1825.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle min_aspect$VH() {
-        return constants$1820.const$2;
+        return constants$1825.const$2;
     }
     /**
      * Getter for field:
@@ -255,7 +255,7 @@ public class _GdkGeometry {
      * }
      */
     public static double min_aspect$get(MemorySegment seg) {
-        return (double)constants$1820.const$2.get(seg);
+        return (double)constants$1825.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -264,16 +264,16 @@ public class _GdkGeometry {
      * }
      */
     public static void min_aspect$set(MemorySegment seg, double x) {
-        constants$1820.const$2.set(seg, x);
+        constants$1825.const$2.set(seg, x);
     }
     public static double min_aspect$get(MemorySegment seg, long index) {
-        return (double)constants$1820.const$2.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1825.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void min_aspect$set(MemorySegment seg, long index, double x) {
-        constants$1820.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1825.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle max_aspect$VH() {
-        return constants$1820.const$3;
+        return constants$1825.const$3;
     }
     /**
      * Getter for field:
@@ -282,7 +282,7 @@ public class _GdkGeometry {
      * }
      */
     public static double max_aspect$get(MemorySegment seg) {
-        return (double)constants$1820.const$3.get(seg);
+        return (double)constants$1825.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -291,16 +291,16 @@ public class _GdkGeometry {
      * }
      */
     public static void max_aspect$set(MemorySegment seg, double x) {
-        constants$1820.const$3.set(seg, x);
+        constants$1825.const$3.set(seg, x);
     }
     public static double max_aspect$get(MemorySegment seg, long index) {
-        return (double)constants$1820.const$3.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1825.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void max_aspect$set(MemorySegment seg, long index, double x) {
-        constants$1820.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1825.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle win_gravity$VH() {
-        return constants$1820.const$4;
+        return constants$1825.const$4;
     }
     /**
      * Getter for field:
@@ -309,7 +309,7 @@ public class _GdkGeometry {
      * }
      */
     public static int win_gravity$get(MemorySegment seg) {
-        return (int)constants$1820.const$4.get(seg);
+        return (int)constants$1825.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -318,13 +318,13 @@ public class _GdkGeometry {
      * }
      */
     public static void win_gravity$set(MemorySegment seg, int x) {
-        constants$1820.const$4.set(seg, x);
+        constants$1825.const$4.set(seg, x);
     }
     public static int win_gravity$get(MemorySegment seg, long index) {
-        return (int)constants$1820.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1825.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void win_gravity$set(MemorySegment seg, long index, int x) {
-        constants$1820.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1825.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -10,34 +10,33 @@ final class constants$1940 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1940() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_error_trap_pop",
+        constants$83.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_error_trap_pop_ignored",
+        constants$7.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_get_display_arg_name",
+        constants$35.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_get_display",
+        constants$35.const$2
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
         RuntimeHelper.POINTER,
         JAVA_INT,
         JAVA_INT,
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_property_change",
-        constants$1940.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_property_delete",
-        constants$13.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_text_property_to_utf8_list_for_display",
-        constants$1480.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_utf8_to_string_target",
-        constants$5.const$2
-    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_set",
-        constants$414.const$4
+        "gdk_pointer_grab",
+        constants$1940.const$4
     );
 }
 

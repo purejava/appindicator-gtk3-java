@@ -2,35 +2,28 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1612 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1612() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_alignment_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_wrap_mode_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_ellipsize_mode_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_layout_serialize_flags_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_layout_deserialize_error_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_layout_deserialize_flags_get_type",
-        constants$3.const$5
-    );
+    static final VarHandle const$0 = constants$1611.const$5.varHandle(MemoryLayout.PathElement.groupElement("script"));
+    static final VarHandle const$1 = constants$1611.const$5.varHandle(MemoryLayout.PathElement.groupElement("langs"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("id"),
+        RuntimeHelper.POINTER.withName("engine_type"),
+        RuntimeHelper.POINTER.withName("render_type"),
+        RuntimeHelper.POINTER.withName("scripts"),
+        JAVA_INT.withName("n_scripts"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_PangoEngineInfo");
+    static final VarHandle const$3 = constants$1612.const$2.varHandle(MemoryLayout.PathElement.groupElement("id"));
+    static final VarHandle const$4 = constants$1612.const$2.varHandle(MemoryLayout.PathElement.groupElement("engine_type"));
+    static final VarHandle const$5 = constants$1612.const$2.varHandle(MemoryLayout.PathElement.groupElement("render_type"));
 }
 
 

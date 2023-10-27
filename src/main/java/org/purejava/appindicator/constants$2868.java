@@ -8,28 +8,28 @@ final class constants$2868 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2868() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_get_pack_direction",
-        constants$10.const$5
+        "gtk_true",
+        constants$83.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_set_pack_direction",
-        constants$40.const$2
+        "gtk_false",
+        constants$83.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_get_child_pack_direction",
-        constants$10.const$5
+        "gtk_grab_add",
+        constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_set_child_pack_direction",
-        constants$40.const$2
+        "gtk_grab_get_current",
+        constants$35.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "_gtk_menu_bar_cycle_focus",
-        constants$40.const$2
+        "gtk_grab_remove",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "_gtk_menu_bar_get_viewable_menu_bars",
-        constants$5.const$2
+        "gtk_device_grab_add",
+        constants$164.const$5
     );
 }
 

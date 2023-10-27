@@ -2,18 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 final class constants$2356 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2356() {}
-    static final VarHandle const$0 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("font"));
-    static final VarHandle const$1 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("font_scale"));
-    static final VarHandle const$2 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("left_margin"));
-    static final VarHandle const$3 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("right_margin"));
-    static final VarHandle const$4 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("indent"));
-    static final VarHandle const$5 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("pixels_above_lines"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_expand",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_expand",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_clickable",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_clickable",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_widget",
+        constants$13.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_widget",
+        constants$5.const$2
+    );
 }
 
 

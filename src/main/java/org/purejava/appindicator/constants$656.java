@@ -2,62 +2,39 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.invoke.MethodHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$656 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$656() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            RuntimeHelper.POINTER.withName("name"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("value_type"),
-            JAVA_LONG.withName("owner_type"),
-            RuntimeHelper.POINTER.withName("_nick"),
-            RuntimeHelper.POINTER.withName("_blurb"),
-            RuntimeHelper.POINTER.withName("qdata"),
-            JAVA_INT.withName("ref_count"),
-            JAVA_INT.withName("param_id")
-        ).withName("parent_instance"),
-        JAVA_INT.withName("minimum"),
-        JAVA_INT.withName("maximum"),
-        JAVA_INT.withName("default_value"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GParamSpecInt");
-    static final VarHandle const$1 = constants$656.const$0.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
-    static final VarHandle const$2 = constants$656.const$0.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
-    static final VarHandle const$3 = constants$656.const$0.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            RuntimeHelper.POINTER.withName("name"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("value_type"),
-            JAVA_LONG.withName("owner_type"),
-            RuntimeHelper.POINTER.withName("_nick"),
-            RuntimeHelper.POINTER.withName("_blurb"),
-            RuntimeHelper.POINTER.withName("qdata"),
-            JAVA_INT.withName("ref_count"),
-            JAVA_INT.withName("param_id")
-        ).withName("parent_instance"),
-        JAVA_INT.withName("minimum"),
-        JAVA_INT.withName("maximum"),
-        JAVA_INT.withName("default_value"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GParamSpecUInt");
-    static final VarHandle const$5 = constants$656.const$4.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_enum_complete_type_info",
+        constants$656.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_flags_complete_type_info",
+        constants$656.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_unicode_type_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_unicode_break_type_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_unicode_script_get_type",
+        constants$3.const$5
+    );
 }
 
 

@@ -8,17 +8,29 @@ final class constants$1128 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1128() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_io_scheduler_cancel_all_jobs",
-        constants$7.const$5
+        "g_io_modules_load_all_in_directory",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop$func.class, "apply", constants$10.const$5);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_modules_scan_all_in_directory_with_scope",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_modules_load_all_in_directory_with_scope",
+        constants$5.const$5
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_io_scheduler_job_send_to_mainloop",
-        constants$34.const$5
+        "g_io_extension_point_register",
+        constants$5.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop_async$func.class, "apply", constants$10.const$5);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop_async$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_io_extension_point_lookup",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_io_extension_point_set_required_type",
+        constants$25.const$3
+    );
 }
 
 

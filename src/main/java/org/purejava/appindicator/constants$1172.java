@@ -8,26 +8,29 @@ final class constants$1172 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1172() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_mount_guess_content_type_finish",
-        constants$23.const$0
+        "g_mount_get_root",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_mount_guess_content_type_sync",
-        constants$180.const$0
+        "g_mount_get_default_location",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_mount_is_shadowed",
-        constants$10.const$5
+        "g_mount_get_name",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_mount_shadow",
-        constants$13.const$1
+        "g_mount_get_icon",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_mount_unshadow",
-        constants$13.const$1
+        "g_mount_get_symbolic_icon",
+        constants$5.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_mount_unmount_with_operation$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mount_get_uuid",
+        constants$5.const$2
+    );
 }
 
 

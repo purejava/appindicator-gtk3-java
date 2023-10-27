@@ -2,39 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$354 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$354() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_variant_new_strv",
-        constants$21.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_variant_new_objv",
-        constants$21.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_variant_new_bytestring",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_new_printf",
         constants$5.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_variant_new_bytestring_array",
-        constants$21.const$1
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_new_object_path",
+        constants$5.const$2
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_LONG
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_is_object_path",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_new_signature",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_is_signature",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_variant_new_fixed_array",
-        constants$354.const$4
+        "g_variant_new_variant",
+        constants$5.const$2
     );
 }
 

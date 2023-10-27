@@ -13,7 +13,7 @@ public interface hb_destroy_func_t {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(hb_destroy_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1417.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1421.const$2, fi, constants$13.const$1, scope);
     }
     static hb_destroy_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

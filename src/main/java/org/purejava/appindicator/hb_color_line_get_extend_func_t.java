@@ -13,7 +13,7 @@ public interface hb_color_line_get_extend_func_t {
 
     int apply(java.lang.foreign.MemorySegment color_line, java.lang.foreign.MemorySegment color_line_data, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_color_line_get_extend_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1459.const$1, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1463.const$3, fi, constants$12.const$2, scope);
     }
     static hb_color_line_get_extend_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

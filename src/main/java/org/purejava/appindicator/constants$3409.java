@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3409 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3409() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "app_indicator_set_attention_icon",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "app_indicator_set_attention_icon_full",
-        constants$14.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "app_indicator_set_menu",
-        constants$13.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "app_indicator_set_icon",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "app_indicator_set_icon_full",
-        constants$14.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "app_indicator_set_label",
-        constants$14.const$3
-    );
+    static final VarHandle const$0 = constants$3407.const$4.varHandle(MemoryLayout.PathElement.groupElement("new_icon_theme_path"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AppIndicatorClass.new_label.class, "apply", constants$42.const$1);
+    static final VarHandle const$2 = constants$3407.const$4.varHandle(MemoryLayout.PathElement.groupElement("new_label"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AppIndicatorClass.connection_changed.class, "apply", constants$42.const$4);
+    static final VarHandle const$4 = constants$3407.const$4.varHandle(MemoryLayout.PathElement.groupElement("connection_changed"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AppIndicatorClass.scroll_event.class, "apply", constants$57.const$0);
 }
 
 

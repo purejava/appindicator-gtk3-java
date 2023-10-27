@@ -4,25 +4,40 @@ package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$882 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$882() {}
-    static final VarHandle const$0 = constants$881.const$3.varHandle(MemoryLayout.PathElement.groupElement("in_args"));
-    static final VarHandle const$1 = constants$881.const$3.varHandle(MemoryLayout.PathElement.groupElement("out_args"));
-    static final VarHandle const$2 = constants$881.const$3.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_unexport_from_connection",
+        constants$13.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_connection",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_connections",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_has_connection",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_object_path",
+        constants$5.const$2
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
         JAVA_INT.withName("ref_count"),
         MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("name"),
-        RuntimeHelper.POINTER.withName("args"),
+        RuntimeHelper.POINTER.withName("key"),
+        RuntimeHelper.POINTER.withName("value"),
         RuntimeHelper.POINTER.withName("annotations")
-    ).withName("_GDBusSignalInfo");
-    static final VarHandle const$4 = constants$882.const$3.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
-    static final VarHandle const$5 = constants$882.const$3.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    ).withName("_GDBusAnnotationInfo");
 }
 
 

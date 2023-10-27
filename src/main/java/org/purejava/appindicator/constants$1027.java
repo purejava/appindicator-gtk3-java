@@ -8,25 +8,22 @@ final class constants$1027 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1027() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_make_directory_finish",
+        "g_file_trash",
         constants$12.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_make_directory_with_parents",
-        constants$12.const$2
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_file_trash_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_make_symbolic_link",
-        constants$34.const$5
+        "g_file_trash_async",
+        constants$282.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_make_symbolic_link_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_make_symbolic_link_async",
-        constants$584.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_file_make_symbolic_link_finish",
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_trash_finish",
         constants$12.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_copy$progress_callback.class, "apply", constants$564.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_copy",
+        constants$909.const$0
     );
 }
 

@@ -13,7 +13,7 @@ public interface g_relation_index$hash_func {
 
     int apply(java.lang.foreign.MemorySegment key);
     static MemorySegment allocate(g_relation_index$hash_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$500.const$1, fi, constants$10.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$501.const$5, fi, constants$10.const$5, scope);
     }
     static g_relation_index$hash_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

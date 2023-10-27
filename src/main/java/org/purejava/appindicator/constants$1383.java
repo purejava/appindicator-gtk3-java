@@ -2,31 +2,23 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$1383 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1383() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_unix_connection_receive_fd",
-        constants$12.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTlsPasswordClass.set_value.class, "apply", constants$1143.const$1);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_unix_connection_send_credentials",
-        constants$12.const$2
+        constants$1143.const$1
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_unix_connection_send_credentials_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_unix_connection_send_credentials_async",
-        constants$42.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_unix_connection_send_credentials_finish",
-        constants$12.const$2
-    );
+    static final VarHandle const$2 = constants$1382.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_value"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTlsPasswordClass.get_default_warning.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$1382.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_default_warning"));
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_unix_connection_receive_credentials",
-        constants$23.const$0
+        "g_tls_password_get_type",
+        constants$3.const$5
     );
 }
 

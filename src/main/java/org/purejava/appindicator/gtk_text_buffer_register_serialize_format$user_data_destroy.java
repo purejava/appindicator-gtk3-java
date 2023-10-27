@@ -13,7 +13,7 @@ public interface gtk_text_buffer_register_serialize_format$user_data_destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_text_buffer_register_serialize_format$user_data_destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3141.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$3146.const$2, fi, constants$13.const$1, scope);
     }
     static gtk_text_buffer_register_serialize_format$user_data_destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

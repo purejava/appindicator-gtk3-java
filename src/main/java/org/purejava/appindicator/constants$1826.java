@@ -2,35 +2,34 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1826 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1826() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_new",
-        constants$32.const$3
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_destroy",
-        constants$13.const$1
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GdkWindowClass.pick_embedded_child.class, "apply", constants$1826.const$0);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_window_type",
-        constants$10.const$5
+        constants$1826.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_is_destroyed",
-        constants$10.const$5
+    static final VarHandle const$3 = constants$1825.const$5.varHandle(MemoryLayout.PathElement.groupElement("pick_embedded_child"));
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_visual",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_screen",
-        constants$5.const$2
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GdkWindowClass.to_embedder.class, "apply", constants$1826.const$4);
 }
 
 

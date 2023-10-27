@@ -2,35 +2,26 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$490 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$490() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_destroy",
-        constants$13.const$1
+        "g_uuid_string_is_valid",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_alloc",
-        constants$5.const$2
+        "g_uuid_string_random",
+        constants$35.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_alloc0",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_free",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_clean",
-        constants$13.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_reset",
-        constants$13.const$1
-    );
+    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("glib_major_version", JAVA_INT);
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("glib_minor_version", JAVA_INT);
+    static final MemorySegment const$4 = RuntimeHelper.lookupGlobalVariable("glib_micro_version", JAVA_INT);
+    static final MemorySegment const$5 = RuntimeHelper.lookupGlobalVariable("glib_interface_age", JAVA_INT);
 }
 
 

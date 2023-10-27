@@ -13,7 +13,7 @@ public interface GBaseInitFunc {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(GBaseInitFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$551.const$5, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$553.const$2, fi, constants$13.const$1, scope);
     }
     static GBaseInitFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

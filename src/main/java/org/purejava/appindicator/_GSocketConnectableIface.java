@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class _GSocketConnectableIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1299.const$1;
+        return constants$1303.const$1;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -34,7 +34,7 @@ public class _GSocketConnectableIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(enumerate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1299.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1303.const$2, fi, constants$5.const$2, scope);
         }
         static enumerate ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -49,7 +49,7 @@ public class _GSocketConnectableIface {
     }
 
     public static VarHandle enumerate$VH() {
-        return constants$1299.const$3;
+        return constants$1303.const$3;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _GSocketConnectableIface {
      * }
      */
     public static MemorySegment enumerate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1299.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1303.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -67,13 +67,13 @@ public class _GSocketConnectableIface {
      * }
      */
     public static void enumerate$set(MemorySegment seg, MemorySegment x) {
-        constants$1299.const$3.set(seg, x);
+        constants$1303.const$3.set(seg, x);
     }
     public static MemorySegment enumerate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1299.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1303.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void enumerate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1299.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1303.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static enumerate enumerate(MemorySegment segment, Arena scope) {
         return enumerate.ofAddress(enumerate$get(segment), scope);
@@ -87,7 +87,7 @@ public class _GSocketConnectableIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(proxy_enumerate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1299.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1303.const$4, fi, constants$5.const$2, scope);
         }
         static proxy_enumerate ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -102,7 +102,7 @@ public class _GSocketConnectableIface {
     }
 
     public static VarHandle proxy_enumerate$VH() {
-        return constants$1299.const$5;
+        return constants$1303.const$5;
     }
     /**
      * Getter for field:
@@ -111,7 +111,7 @@ public class _GSocketConnectableIface {
      * }
      */
     public static MemorySegment proxy_enumerate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1299.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1303.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -120,13 +120,13 @@ public class _GSocketConnectableIface {
      * }
      */
     public static void proxy_enumerate$set(MemorySegment seg, MemorySegment x) {
-        constants$1299.const$5.set(seg, x);
+        constants$1303.const$5.set(seg, x);
     }
     public static MemorySegment proxy_enumerate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1299.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1303.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void proxy_enumerate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1299.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1303.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static proxy_enumerate proxy_enumerate(MemorySegment segment, Arena scope) {
         return proxy_enumerate.ofAddress(proxy_enumerate$get(segment), scope);
@@ -140,7 +140,7 @@ public class _GSocketConnectableIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(to_string fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1300.const$0, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1304.const$0, fi, constants$5.const$2, scope);
         }
         static to_string ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -155,7 +155,7 @@ public class _GSocketConnectableIface {
     }
 
     public static VarHandle to_string$VH() {
-        return constants$1300.const$1;
+        return constants$1304.const$1;
     }
     /**
      * Getter for field:
@@ -164,7 +164,7 @@ public class _GSocketConnectableIface {
      * }
      */
     public static MemorySegment to_string$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1300.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1304.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -173,13 +173,13 @@ public class _GSocketConnectableIface {
      * }
      */
     public static void to_string$set(MemorySegment seg, MemorySegment x) {
-        constants$1300.const$1.set(seg, x);
+        constants$1304.const$1.set(seg, x);
     }
     public static MemorySegment to_string$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1300.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1304.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void to_string$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1300.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1304.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static to_string to_string(MemorySegment segment, Arena scope) {
         return to_string.ofAddress(to_string$get(segment), scope);

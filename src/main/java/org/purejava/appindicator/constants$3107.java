@@ -2,24 +2,39 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3107 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3107() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkStackSwitcherClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$3106.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkStackSwitcherClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$3106.const$1.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_get_numeric",
+        constants$10.const$5
+    );
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_spin",
+        constants$3107.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_spin_button_set_wrap",
+        constants$40.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_stack_switcher_get_type",
-        constants$3.const$5
+        "gtk_spin_button_get_wrap",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_stack_switcher_new",
-        constants$35.const$2
+        "gtk_spin_button_set_snap_to_ticks",
+        constants$40.const$2
     );
 }
 

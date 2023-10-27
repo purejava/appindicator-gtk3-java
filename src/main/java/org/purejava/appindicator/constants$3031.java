@@ -2,29 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3031 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3031() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_sort_type",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_recent_chooser_set_sort_func$sort_func.class, "apply", constants$12.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_recent_chooser_set_sort_func$data_destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_sort_func",
-        constants$42.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_current_uri",
-        constants$12.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_current_uri",
-        constants$5.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.get_recent_manager.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$3028.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_recent_manager"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.add_filter.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$3028.const$3.varHandle(MemoryLayout.PathElement.groupElement("add_filter"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkRecentChooserIface.remove_filter.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$3028.const$3.varHandle(MemoryLayout.PathElement.groupElement("remove_filter"));
 }
 
 

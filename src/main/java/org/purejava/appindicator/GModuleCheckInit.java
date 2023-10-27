@@ -13,7 +13,7 @@ public interface GModuleCheckInit {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GModuleCheckInit fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1121.const$3, fi, constants$5.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1125.const$0, fi, constants$5.const$2, scope);
     }
     static GModuleCheckInit ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -7,23 +7,29 @@ final class constants$1326 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1326() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_subprocess_communicate_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_async",
-        constants$331.const$1
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_subprocess_new",
+        constants$237.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_finish",
-        constants$165.const$2
+        "g_subprocess_newv",
+        constants$196.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_utf8",
-        constants$638.const$1
+        "g_subprocess_get_stdin_pipe",
+        constants$5.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_subprocess_communicate_utf8_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_stdout_pipe",
+        constants$5.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_utf8_async",
-        constants$331.const$1
+        "g_subprocess_get_stderr_pipe",
+        constants$5.const$2
     );
 }
 

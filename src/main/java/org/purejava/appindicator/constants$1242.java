@@ -7,29 +7,23 @@ final class constants$1242 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1242() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_resource_ref",
-        constants$5.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_resolver_lookup_by_address_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_resource_unref",
-        constants$13.const$1
+        "g_resolver_lookup_by_address_async",
+        constants$332.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_resource_load",
-        constants$5.const$5
+        "g_resolver_lookup_by_address_finish",
+        constants$23.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_resource_open_stream",
-        constants$482.const$3
+        "g_resolver_lookup_service",
+        constants$335.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_resource_lookup_data",
-        constants$482.const$3
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_resolver_lookup_service_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_resource_enumerate_children",
-        constants$482.const$3
+        "g_resolver_lookup_service_async",
+        constants$871.const$1
     );
 }
 

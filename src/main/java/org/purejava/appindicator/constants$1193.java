@@ -9,24 +9,12 @@ final class constants$1193 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1193() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass._g_reserved6.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get",
-        constants$35.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get_connected_drives",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get_volumes",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$1188.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_mounts"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.get_volume_for_uuid.class, "apply", constants$5.const$5);
+    static final VarHandle const$2 = constants$1188.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_volume_for_uuid"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.get_mount_for_uuid.class, "apply", constants$5.const$5);
+    static final VarHandle const$4 = constants$1188.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_mount_for_uuid"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.adopt_orphan_mount.class, "apply", constants$5.const$5);
 }
 
 

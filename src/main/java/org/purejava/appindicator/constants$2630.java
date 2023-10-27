@@ -7,29 +7,17 @@ final class constants$2630 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2630() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_request_targets",
-        constants$14.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_contents",
-        constants$5.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_text",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_rich_text",
-        constants$39.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GtkClipboardURIReceivedFunc.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkClipboardTargetsReceivedFunc.class, "apply", constants$466.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GtkClipboardGetFunc.class, "apply", constants$466.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GtkClipboardClearFunc.class, "apply", constants$13.const$4);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_image",
-        constants$5.const$2
+        "gtk_clipboard_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_uris",
-        constants$5.const$2
+        "gtk_clipboard_get_for_display",
+        constants$5.const$5
     );
 }
 

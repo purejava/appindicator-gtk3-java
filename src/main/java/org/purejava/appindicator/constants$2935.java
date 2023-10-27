@@ -2,34 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2935 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2935() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_set_paper_size_and_default_margins",
-        constants$13.const$4
+        "gtk_paper_size_get_height",
+        constants$2934.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_paper_width",
-        constants$2929.const$4
+        "gtk_paper_size_is_custom",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_paper_height",
-        constants$2929.const$4
+        "gtk_paper_size_is_ipp",
+        constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_page_width",
-        constants$2929.const$4
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_INT
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_page_height",
-        constants$2929.const$4
+        "gtk_paper_size_set_size",
+        constants$2935.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_new_from_file",
-        constants$5.const$5
+        "gtk_paper_size_get_default_top_margin",
+        constants$2934.const$4
     );
 }
 

@@ -20,10 +20,10 @@ import java.lang.invoke.VarHandle;
 public class hb_glyph_extents_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1420.const$1;
+        return constants$1424.const$2;
     }
     public static VarHandle x_bearing$VH() {
-        return constants$1420.const$2;
+        return constants$1424.const$3;
     }
     /**
      * Getter for field:
@@ -32,7 +32,7 @@ public class hb_glyph_extents_t {
      * }
      */
     public static int x_bearing$get(MemorySegment seg) {
-        return (int)constants$1420.const$2.get(seg);
+        return (int)constants$1424.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -41,16 +41,16 @@ public class hb_glyph_extents_t {
      * }
      */
     public static void x_bearing$set(MemorySegment seg, int x) {
-        constants$1420.const$2.set(seg, x);
+        constants$1424.const$3.set(seg, x);
     }
     public static int x_bearing$get(MemorySegment seg, long index) {
-        return (int)constants$1420.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1424.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void x_bearing$set(MemorySegment seg, long index, int x) {
-        constants$1420.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1424.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle y_bearing$VH() {
-        return constants$1420.const$3;
+        return constants$1424.const$4;
     }
     /**
      * Getter for field:
@@ -59,7 +59,7 @@ public class hb_glyph_extents_t {
      * }
      */
     public static int y_bearing$get(MemorySegment seg) {
-        return (int)constants$1420.const$3.get(seg);
+        return (int)constants$1424.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -68,16 +68,16 @@ public class hb_glyph_extents_t {
      * }
      */
     public static void y_bearing$set(MemorySegment seg, int x) {
-        constants$1420.const$3.set(seg, x);
+        constants$1424.const$4.set(seg, x);
     }
     public static int y_bearing$get(MemorySegment seg, long index) {
-        return (int)constants$1420.const$3.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1424.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void y_bearing$set(MemorySegment seg, long index, int x) {
-        constants$1420.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1424.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle width$VH() {
-        return constants$1420.const$4;
+        return constants$1424.const$5;
     }
     /**
      * Getter for field:
@@ -86,7 +86,7 @@ public class hb_glyph_extents_t {
      * }
      */
     public static int width$get(MemorySegment seg) {
-        return (int)constants$1420.const$4.get(seg);
+        return (int)constants$1424.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -95,16 +95,16 @@ public class hb_glyph_extents_t {
      * }
      */
     public static void width$set(MemorySegment seg, int x) {
-        constants$1420.const$4.set(seg, x);
+        constants$1424.const$5.set(seg, x);
     }
     public static int width$get(MemorySegment seg, long index) {
-        return (int)constants$1420.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1424.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void width$set(MemorySegment seg, long index, int x) {
-        constants$1420.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1424.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle height$VH() {
-        return constants$1420.const$5;
+        return constants$1425.const$0;
     }
     /**
      * Getter for field:
@@ -113,7 +113,7 @@ public class hb_glyph_extents_t {
      * }
      */
     public static int height$get(MemorySegment seg) {
-        return (int)constants$1420.const$5.get(seg);
+        return (int)constants$1425.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -122,13 +122,13 @@ public class hb_glyph_extents_t {
      * }
      */
     public static void height$set(MemorySegment seg, int x) {
-        constants$1420.const$5.set(seg, x);
+        constants$1425.const$0.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
-        return (int)constants$1420.const$5.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1425.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void height$set(MemorySegment seg, long index, int x) {
-        constants$1420.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1425.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

@@ -2,38 +2,38 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_SHORT;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1296 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1296() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect",
-        constants$39.const$1
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_SHORT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_host",
-        constants$1296.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_service",
-        constants$330.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSocketClientClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1294.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GSocketClient");
+    static final VarHandle const$3 = constants$1296.const$2.varHandle(MemoryLayout.PathElement.groupElement("priv"));
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_uri",
-        constants$1296.const$1
+        "g_socket_client_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_socket_client_connect_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_client_new",
+        constants$35.const$2
+    );
 }
 
 

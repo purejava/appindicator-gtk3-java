@@ -13,13 +13,13 @@ public interface GToggleNotify {
 
     void apply(java.lang.foreign.MemorySegment screen, java.lang.foreign.MemorySegment colors, int n_colors);
     static MemorySegment allocate(GToggleNotify fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$634.const$1, fi, constants$164.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$636.const$4, fi, constants$164.const$5, scope);
     }
     static GToggleNotify ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _screen, java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
             try {
-                constants$420.const$2.invokeExact(symbol, _screen, _colors, _n_colors);
+                constants$421.const$2.invokeExact(symbol, _screen, _colors, _n_colors);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

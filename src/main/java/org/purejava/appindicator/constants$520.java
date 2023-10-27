@@ -8,28 +8,28 @@ final class constants$520 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$520() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pthread_attr_setscope",
+        "pthread_attr_setdetachstate",
         constants$11.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pthread_attr_getstackaddr",
+        "pthread_attr_getguardsize",
         constants$9.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pthread_attr_setstackaddr",
-        constants$9.const$0
+        "pthread_attr_setguardsize",
+        constants$97.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pthread_attr_getstacksize",
+        "pthread_attr_getschedparam",
         constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pthread_attr_setstacksize",
-        constants$97.const$1
+        "pthread_attr_setschedparam",
+        constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pthread_attr_getstack",
-        constants$12.const$2
+        "pthread_attr_getschedpolicy",
+        constants$9.const$0
     );
 }
 

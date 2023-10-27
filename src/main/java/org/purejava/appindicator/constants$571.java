@@ -7,38 +7,39 @@ import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import static java.lang.foreign.ValueLayout.*;
 final class constants$571 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$571() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_value_transform",
-        constants$9.const$0
+        "g_type_name_from_instance",
+        constants$5.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_value_register_transform_func$transform_func.class, "apply", constants$13.const$4);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_value_register_transform_func",
-        constants$561.const$3
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_name_from_class",
+        constants$5.const$2
     );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GValueTransform.class, "apply", constants$13.const$4);
     static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("g_class")
-        ).withName("g_type_instance"),
-        RuntimeHelper.POINTER.withName("name"),
-        JAVA_INT.withName("flags"),
-        MemoryLayout.paddingLayout(4),
-        JAVA_LONG.withName("value_type"),
-        JAVA_LONG.withName("owner_type"),
-        RuntimeHelper.POINTER.withName("_nick"),
-        RuntimeHelper.POINTER.withName("_blurb"),
-        RuntimeHelper.POINTER.withName("qdata"),
-        JAVA_INT.withName("ref_count"),
-        JAVA_INT.withName("param_id")
-    ).withName("_GParamSpec");
-    static final VarHandle const$4 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("name"));
-    static final VarHandle const$5 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+        JAVA_LONG.withName("g_type"),
+        MemoryLayout.sequenceLayout(2, MemoryLayout.unionLayout(
+            JAVA_INT.withName("v_int"),
+            JAVA_INT.withName("v_uint"),
+            JAVA_LONG.withName("v_long"),
+            JAVA_LONG.withName("v_ulong"),
+            JAVA_LONG.withName("v_int64"),
+            JAVA_LONG.withName("v_uint64"),
+            JAVA_FLOAT.withName("v_float"),
+            JAVA_DOUBLE.withName("v_double"),
+            RuntimeHelper.POINTER.withName("v_pointer")
+        ).withName("")).withName("data")
+    ).withName("_GValue");
+    static final VarHandle const$4 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("g_type"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_init",
+        constants$21.const$1
+    );
 }
 
 

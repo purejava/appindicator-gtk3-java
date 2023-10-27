@@ -25,7 +25,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkFontChooserIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2722.const$1;
+        return constants$2727.const$1;
     }
     public static MemorySegment base_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -39,7 +39,7 @@ public class _GtkFontChooserIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_font_family fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2722.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2727.const$2, fi, constants$5.const$2, scope);
         }
         static get_font_family ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -54,7 +54,7 @@ public class _GtkFontChooserIface {
     }
 
     public static VarHandle get_font_family$VH() {
-        return constants$2722.const$3;
+        return constants$2727.const$3;
     }
     /**
      * Getter for field:
@@ -63,7 +63,7 @@ public class _GtkFontChooserIface {
      * }
      */
     public static MemorySegment get_font_family$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2722.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2727.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -72,13 +72,13 @@ public class _GtkFontChooserIface {
      * }
      */
     public static void get_font_family$set(MemorySegment seg, MemorySegment x) {
-        constants$2722.const$3.set(seg, x);
+        constants$2727.const$3.set(seg, x);
     }
     public static MemorySegment get_font_family$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2722.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2727.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_font_family$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2722.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2727.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_font_family get_font_family(MemorySegment segment, Arena scope) {
         return get_font_family.ofAddress(get_font_family$get(segment), scope);
@@ -92,7 +92,7 @@ public class _GtkFontChooserIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_font_face fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2722.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2727.const$4, fi, constants$5.const$2, scope);
         }
         static get_font_face ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -107,7 +107,7 @@ public class _GtkFontChooserIface {
     }
 
     public static VarHandle get_font_face$VH() {
-        return constants$2722.const$5;
+        return constants$2727.const$5;
     }
     /**
      * Getter for field:
@@ -116,7 +116,7 @@ public class _GtkFontChooserIface {
      * }
      */
     public static MemorySegment get_font_face$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2722.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2727.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -125,13 +125,13 @@ public class _GtkFontChooserIface {
      * }
      */
     public static void get_font_face$set(MemorySegment seg, MemorySegment x) {
-        constants$2722.const$5.set(seg, x);
+        constants$2727.const$5.set(seg, x);
     }
     public static MemorySegment get_font_face$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2722.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2727.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_font_face$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2722.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2727.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_font_face get_font_face(MemorySegment segment, Arena scope) {
         return get_font_face.ofAddress(get_font_face$get(segment), scope);
@@ -145,7 +145,7 @@ public class _GtkFontChooserIface {
 
         int apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_font_size fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2723.const$0, fi, constants$10.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$2728.const$0, fi, constants$10.const$5, scope);
         }
         static get_font_size ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -160,7 +160,7 @@ public class _GtkFontChooserIface {
     }
 
     public static VarHandle get_font_size$VH() {
-        return constants$2723.const$1;
+        return constants$2728.const$1;
     }
     /**
      * Getter for field:
@@ -169,7 +169,7 @@ public class _GtkFontChooserIface {
      * }
      */
     public static MemorySegment get_font_size$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2723.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2728.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -178,13 +178,13 @@ public class _GtkFontChooserIface {
      * }
      */
     public static void get_font_size$set(MemorySegment seg, MemorySegment x) {
-        constants$2723.const$1.set(seg, x);
+        constants$2728.const$1.set(seg, x);
     }
     public static MemorySegment get_font_size$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2723.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2728.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_font_size$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2723.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2728.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_font_size get_font_size(MemorySegment segment, Arena scope) {
         return get_font_size.ofAddress(get_font_size$get(segment), scope);
@@ -198,7 +198,7 @@ public class _GtkFontChooserIface {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_filter_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2723.const$2, fi, constants$42.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$2728.const$2, fi, constants$42.const$1, scope);
         }
         static set_filter_func ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -213,7 +213,7 @@ public class _GtkFontChooserIface {
     }
 
     public static VarHandle set_filter_func$VH() {
-        return constants$2723.const$3;
+        return constants$2728.const$3;
     }
     /**
      * Getter for field:
@@ -222,7 +222,7 @@ public class _GtkFontChooserIface {
      * }
      */
     public static MemorySegment set_filter_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2723.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2728.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -231,13 +231,13 @@ public class _GtkFontChooserIface {
      * }
      */
     public static void set_filter_func$set(MemorySegment seg, MemorySegment x) {
-        constants$2723.const$3.set(seg, x);
+        constants$2728.const$3.set(seg, x);
     }
     public static MemorySegment set_filter_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2723.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2728.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void set_filter_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2723.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2728.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_filter_func set_filter_func(MemorySegment segment, Arena scope) {
         return set_filter_func.ofAddress(set_filter_func$get(segment), scope);
@@ -251,7 +251,7 @@ public class _GtkFontChooserIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(font_activated fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2723.const$4, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2728.const$4, fi, constants$13.const$4, scope);
         }
         static font_activated ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -266,7 +266,7 @@ public class _GtkFontChooserIface {
     }
 
     public static VarHandle font_activated$VH() {
-        return constants$2723.const$5;
+        return constants$2728.const$5;
     }
     /**
      * Getter for field:
@@ -275,7 +275,7 @@ public class _GtkFontChooserIface {
      * }
      */
     public static MemorySegment font_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2723.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2728.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -284,13 +284,13 @@ public class _GtkFontChooserIface {
      * }
      */
     public static void font_activated$set(MemorySegment seg, MemorySegment x) {
-        constants$2723.const$5.set(seg, x);
+        constants$2728.const$5.set(seg, x);
     }
     public static MemorySegment font_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2723.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2728.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void font_activated$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2723.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$2728.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static font_activated font_activated(MemorySegment segment, Arena scope) {
         return font_activated.ofAddress(font_activated$get(segment), scope);
@@ -304,7 +304,7 @@ public class _GtkFontChooserIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(set_font_map fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2724.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$2729.const$0, fi, constants$13.const$4, scope);
         }
         static set_font_map ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -319,7 +319,7 @@ public class _GtkFontChooserIface {
     }
 
     public static VarHandle set_font_map$VH() {
-        return constants$2724.const$1;
+        return constants$2729.const$1;
     }
     /**
      * Getter for field:
@@ -328,7 +328,7 @@ public class _GtkFontChooserIface {
      * }
      */
     public static MemorySegment set_font_map$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2724.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2729.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -337,13 +337,13 @@ public class _GtkFontChooserIface {
      * }
      */
     public static void set_font_map$set(MemorySegment seg, MemorySegment x) {
-        constants$2724.const$1.set(seg, x);
+        constants$2729.const$1.set(seg, x);
     }
     public static MemorySegment set_font_map$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2724.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2729.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void set_font_map$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2724.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$2729.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static set_font_map set_font_map(MemorySegment segment, Arena scope) {
         return set_font_map.ofAddress(set_font_map$get(segment), scope);
@@ -357,7 +357,7 @@ public class _GtkFontChooserIface {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_font_map fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2724.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2729.const$2, fi, constants$5.const$2, scope);
         }
         static get_font_map ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -372,7 +372,7 @@ public class _GtkFontChooserIface {
     }
 
     public static VarHandle get_font_map$VH() {
-        return constants$2724.const$3;
+        return constants$2729.const$3;
     }
     /**
      * Getter for field:
@@ -381,7 +381,7 @@ public class _GtkFontChooserIface {
      * }
      */
     public static MemorySegment get_font_map$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2724.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2729.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -390,13 +390,13 @@ public class _GtkFontChooserIface {
      * }
      */
     public static void get_font_map$set(MemorySegment seg, MemorySegment x) {
-        constants$2724.const$3.set(seg, x);
+        constants$2729.const$3.set(seg, x);
     }
     public static MemorySegment get_font_map$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2724.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2729.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_font_map$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2724.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2729.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_font_map get_font_map(MemorySegment segment, Arena scope) {
         return get_font_map.ofAddress(get_font_map$get(segment), scope);

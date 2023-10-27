@@ -2,62 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1384 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1384() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_unix_connection_receive_credentials_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_password_new",
+        constants$24.const$4
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_unix_connection_receive_credentials_async",
-        constants$42.const$1
+        "g_tls_password_get_value",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_unix_connection_receive_credentials_finish",
-        constants$23.const$0
+        "g_tls_password_set_value",
+        constants$25.const$1
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    JAVA_LONG.withName("g_type")
-                ).withName("g_type_class"),
-                RuntimeHelper.POINTER.withName("construct_properties"),
-                RuntimeHelper.POINTER.withName("constructor"),
-                RuntimeHelper.POINTER.withName("set_property"),
-                RuntimeHelper.POINTER.withName("get_property"),
-                RuntimeHelper.POINTER.withName("dispose"),
-                RuntimeHelper.POINTER.withName("finalize"),
-                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
-                RuntimeHelper.POINTER.withName("notify"),
-                RuntimeHelper.POINTER.withName("constructed"),
-                JAVA_LONG.withName("flags"),
-                JAVA_LONG.withName("n_construct_properties"),
-                RuntimeHelper.POINTER.withName("pspecs"),
-                JAVA_LONG.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
-            ).withName("parent_class"),
-            RuntimeHelper.POINTER.withName("get_size"),
-            RuntimeHelper.POINTER.withName("get_level"),
-            RuntimeHelper.POINTER.withName("get_type"),
-            RuntimeHelper.POINTER.withName("serialize"),
-            RuntimeHelper.POINTER.withName("deserialize"),
-            RuntimeHelper.POINTER.withName("_g_reserved1"),
-            RuntimeHelper.POINTER.withName("_g_reserved2"),
-            RuntimeHelper.POINTER.withName("_g_reserved3"),
-            RuntimeHelper.POINTER.withName("_g_reserved4"),
-            RuntimeHelper.POINTER.withName("_g_reserved5")
-        ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("_g_reserved1"),
-        RuntimeHelper.POINTER.withName("_g_reserved2")
-    ).withName("_GUnixCredentialsMessageClass");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GUnixCredentialsMessageClass._g_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$1384.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_tls_password_set_value_full$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_value_full",
+        constants$1143.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_flags",
+        constants$10.const$5
+    );
 }
 
 

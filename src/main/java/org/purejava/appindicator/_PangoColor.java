@@ -19,10 +19,10 @@ import java.lang.invoke.VarHandle;
 public class _PangoColor {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1559.const$3;
+        return constants$1564.const$3;
     }
     public static VarHandle red$VH() {
-        return constants$1559.const$4;
+        return constants$1564.const$4;
     }
     /**
      * Getter for field:
@@ -31,7 +31,7 @@ public class _PangoColor {
      * }
      */
     public static short red$get(MemorySegment seg) {
-        return (short)constants$1559.const$4.get(seg);
+        return (short)constants$1564.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -40,16 +40,16 @@ public class _PangoColor {
      * }
      */
     public static void red$set(MemorySegment seg, short x) {
-        constants$1559.const$4.set(seg, x);
+        constants$1564.const$4.set(seg, x);
     }
     public static short red$get(MemorySegment seg, long index) {
-        return (short)constants$1559.const$4.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1564.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void red$set(MemorySegment seg, long index, short x) {
-        constants$1559.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1564.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle green$VH() {
-        return constants$1559.const$5;
+        return constants$1564.const$5;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _PangoColor {
      * }
      */
     public static short green$get(MemorySegment seg) {
-        return (short)constants$1559.const$5.get(seg);
+        return (short)constants$1564.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -67,16 +67,16 @@ public class _PangoColor {
      * }
      */
     public static void green$set(MemorySegment seg, short x) {
-        constants$1559.const$5.set(seg, x);
+        constants$1564.const$5.set(seg, x);
     }
     public static short green$get(MemorySegment seg, long index) {
-        return (short)constants$1559.const$5.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1564.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void green$set(MemorySegment seg, long index, short x) {
-        constants$1559.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1564.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle blue$VH() {
-        return constants$1560.const$0;
+        return constants$1565.const$0;
     }
     /**
      * Getter for field:
@@ -85,7 +85,7 @@ public class _PangoColor {
      * }
      */
     public static short blue$get(MemorySegment seg) {
-        return (short)constants$1560.const$0.get(seg);
+        return (short)constants$1565.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -94,13 +94,13 @@ public class _PangoColor {
      * }
      */
     public static void blue$set(MemorySegment seg, short x) {
-        constants$1560.const$0.set(seg, x);
+        constants$1565.const$0.set(seg, x);
     }
     public static short blue$get(MemorySegment seg, long index) {
-        return (short)constants$1560.const$0.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1565.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void blue$set(MemorySegment seg, long index, short x) {
-        constants$1560.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1565.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

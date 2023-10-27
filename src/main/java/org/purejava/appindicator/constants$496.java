@@ -2,28 +2,38 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$496 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$496() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GCompletionFunc.class, "apply", constants$5.const$2);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GCompletionStrncmpFunc.class, "apply", constants$18.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$18.const$2
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_cache_new$key_equal_func.class, "apply", constants$9.const$0);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("items"),
-        RuntimeHelper.POINTER.withName("func"),
-        RuntimeHelper.POINTER.withName("prefix"),
-        RuntimeHelper.POINTER.withName("cache"),
-        RuntimeHelper.POINTER.withName("strncmp_func")
-    ).withName("_GCompletion");
-    static final VarHandle const$4 = constants$496.const$3.varHandle(MemoryLayout.PathElement.groupElement("items"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GCompletion.func.class, "apply", constants$5.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_cache_new",
+        constants$496.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_cache_destroy",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_cache_insert",
+        constants$5.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_cache_remove",
+        constants$13.const$4
+    );
 }
 
 

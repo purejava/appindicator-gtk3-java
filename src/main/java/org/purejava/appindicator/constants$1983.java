@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$1983 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1983() {}
-    static final VarHandle const$0 = constants$1982.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_description"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkActionIface.get_name.class, "apply", constants$21.const$3);
-    static final VarHandle const$2 = constants$1982.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_name"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkActionIface.get_keybinding.class, "apply", constants$21.const$3);
-    static final VarHandle const$4 = constants$1982.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_keybinding"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkActionIface.set_description.class, "apply", constants$150.const$0);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_object_ref_relation_set",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_object_get_role",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_object_get_layer",
+        constants$10.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_object_get_mdi_zorder",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_object_get_attributes",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_object_ref_state_set",
+        constants$5.const$2
+    );
 }
 
 

@@ -13,7 +13,7 @@ public interface gtk_tree_model_filter_set_modify_func$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_tree_model_filter_set_modify_func$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2429.const$2, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2434.const$2, fi, constants$13.const$1, scope);
     }
     static gtk_tree_model_filter_set_modify_func$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

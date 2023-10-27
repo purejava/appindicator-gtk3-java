@@ -13,7 +13,7 @@ public interface g_tree_search_node$search_func {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_tree_search_node$search_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$479.const$0, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$480.const$5, fi, constants$9.const$0, scope);
     }
     static g_tree_search_node$search_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

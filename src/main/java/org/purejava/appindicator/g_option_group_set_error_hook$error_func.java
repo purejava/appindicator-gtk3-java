@@ -13,7 +13,7 @@ public interface g_option_group_set_error_hook$error_func {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_option_group_set_error_hook$error_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$388.const$4, fi, constants$42.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$389.const$4, fi, constants$42.const$1, scope);
     }
     static g_option_group_set_error_hook$error_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

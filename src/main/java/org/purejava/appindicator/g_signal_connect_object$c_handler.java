@@ -13,7 +13,7 @@ public interface g_signal_connect_object$c_handler {
 
     void apply();
     static MemorySegment allocate(g_signal_connect_object$c_handler fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$640.const$0, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$642.const$3, fi, constants$7.const$5, scope);
     }
     static g_signal_connect_object$c_handler ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

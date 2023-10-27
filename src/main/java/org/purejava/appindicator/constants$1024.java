@@ -7,21 +7,27 @@ final class constants$1024 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1024() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_trash_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_query_filesystem_info_async",
+        constants$587.const$0
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_trash_async",
-        constants$281.const$5
+        "g_file_query_filesystem_info_finish",
+        constants$23.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_trash_finish",
-        constants$12.const$2
+        "g_file_find_enclosing_mount",
+        constants$23.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_copy$progress_callback.class, "apply", constants$561.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_find_enclosing_mount_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_copy",
-        constants$906.const$0
+        "g_file_find_enclosing_mount_async",
+        constants$282.const$1
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_copy_async$progress_callback.class, "apply", constants$561.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_find_enclosing_mount_finish",
+        constants$23.const$0
+    );
 }
 
 

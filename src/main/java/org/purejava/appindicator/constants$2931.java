@@ -2,34 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2931 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2931() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_bottom_margin",
-        constants$2929.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_left_margin",
-        constants$2929.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_right_margin",
-        constants$2929.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default",
-        constants$35.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_new_from_key_file",
-        constants$23.const$0
-    );
+    static final VarHandle const$0 = constants$2930.const$5.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$1 = constants$2930.const$5.varHandle(MemoryLayout.PathElement.groupElement("index"));
+    static final VarHandle const$2 = constants$2930.const$5.varHandle(MemoryLayout.PathElement.groupElement("mode"));
+    static final VarHandle const$3 = constants$2930.const$5.varHandle(MemoryLayout.PathElement.groupElement("label"));
+    static final VarHandle const$4 = constants$2930.const$5.varHandle(MemoryLayout.PathElement.groupElement("action_name"));
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_to_key_file",
-        constants$14.const$3
+        "gtk_pad_controller_get_type",
+        constants$3.const$5
     );
 }
 

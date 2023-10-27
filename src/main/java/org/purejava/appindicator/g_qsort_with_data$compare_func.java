@@ -13,7 +13,7 @@ public interface g_qsort_with_data$compare_func {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_qsort_with_data$compare_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$394.const$5, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$395.const$5, fi, constants$12.const$2, scope);
     }
     static g_qsort_with_data$compare_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

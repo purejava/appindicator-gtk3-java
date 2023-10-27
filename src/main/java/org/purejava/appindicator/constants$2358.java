@@ -2,27 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2358 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2358() {}
-    static final VarHandle const$0 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("pg_bg_rgba"));
-    static final VarHandle const$1 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("letter_spacing"));
-    static final VarHandle const$2 = constants$2355.const$2.varHandle(MemoryLayout.PathElement.groupElement("font_features"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_sort_indicator",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_get_sort_indicator",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_column_set_sort_order",
+        constants$40.const$2
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_attributes_new",
-        constants$35.const$2
+        "gtk_tree_view_column_get_sort_order",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_attributes_copy",
-        constants$5.const$2
+        "gtk_tree_view_column_cell_set_cell_data",
+        constants$1646.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_attributes_copy_values",
-        constants$13.const$4
+        "gtk_tree_view_column_cell_get_size",
+        constants$339.const$3
     );
 }
 

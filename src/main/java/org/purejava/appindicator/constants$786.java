@@ -2,49 +2,21 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$786 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$786() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_output_stream_write_all",
-        constants$766.const$0
+        constants$769.const$0
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_output_stream_writev",
-        constants$766.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_output_stream_writev_all",
-        constants$766.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
-        "g_output_stream_printf",
-        constants$165.const$2
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        MemoryLayout.structLayout(
-            RuntimeHelper.POINTER.withName("__stack"),
-            RuntimeHelper.POINTER.withName("__gr_top"),
-            RuntimeHelper.POINTER.withName("__vr_top"),
-            JAVA_INT.withName("__gr_offs"),
-            JAVA_INT.withName("__vr_offs")
-        ).withName("__va_list")
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_output_stream_vprintf",
-        constants$786.const$4
-    );
+    static final VarHandle const$1 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("writev_fn"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GOutputStreamClass.writev_async.class, "apply", constants$764.const$1);
+    static final VarHandle const$3 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("writev_async"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GOutputStreamClass.writev_finish.class, "apply", constants$34.const$5);
+    static final VarHandle const$5 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("writev_finish"));
 }
 
 

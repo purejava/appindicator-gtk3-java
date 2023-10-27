@@ -18,10 +18,10 @@ import java.lang.invoke.VarHandle;
 public class _AtkAttribute {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1964.const$2;
+        return constants$1969.const$3;
     }
     public static VarHandle name$VH() {
-        return constants$1964.const$3;
+        return constants$1969.const$4;
     }
     /**
      * Getter for field:
@@ -30,7 +30,7 @@ public class _AtkAttribute {
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1964.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1969.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -39,16 +39,16 @@ public class _AtkAttribute {
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        constants$1964.const$3.set(seg, x);
+        constants$1969.const$4.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1964.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1969.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1964.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1969.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle value$VH() {
-        return constants$1964.const$4;
+        return constants$1969.const$5;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _AtkAttribute {
      * }
      */
     public static MemorySegment value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1964.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1969.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _AtkAttribute {
      * }
      */
     public static void value$set(MemorySegment seg, MemorySegment x) {
-        constants$1964.const$4.set(seg, x);
+        constants$1969.const$5.set(seg, x);
     }
     public static MemorySegment value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1964.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1969.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1964.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1969.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

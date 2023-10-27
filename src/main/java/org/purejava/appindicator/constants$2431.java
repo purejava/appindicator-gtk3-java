@@ -7,26 +7,13 @@ import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$2431 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2431() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GtkEntryCompletionMatchFunc.class, "apply", constants$34.const$5);
+    static final VarHandle const$0 = constants$2430.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
     static final StructLayout const$1 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                RuntimeHelper.POINTER.withName("g_class")
-            ).withName("g_type_instance"),
-            JAVA_INT.withName("ref_count"),
-            MemoryLayout.paddingLayout(4),
-            RuntimeHelper.POINTER.withName("qdata")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkEntryCompletion");
-    static final VarHandle const$2 = constants$2431.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 JAVA_LONG.withName("g_type")
@@ -46,17 +33,17 @@ final class constants$2431 {
             JAVA_LONG.withName("n_pspecs"),
             MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
         ).withName("parent_class"),
-        RuntimeHelper.POINTER.withName("match_selected"),
-        RuntimeHelper.POINTER.withName("action_activated"),
-        RuntimeHelper.POINTER.withName("insert_prefix"),
-        RuntimeHelper.POINTER.withName("cursor_on_match"),
-        RuntimeHelper.POINTER.withName("no_matches"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved0"),
+        RuntimeHelper.POINTER.withName("visible"),
+        RuntimeHelper.POINTER.withName("modify"),
         RuntimeHelper.POINTER.withName("_gtk_reserved1"),
-        RuntimeHelper.POINTER.withName("_gtk_reserved2")
-    ).withName("_GtkEntryCompletionClass");
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkEntryCompletionClass.match_selected.class, "apply", constants$12.const$2);
-    static final VarHandle const$5 = constants$2431.const$3.varHandle(MemoryLayout.PathElement.groupElement("match_selected"));
+        RuntimeHelper.POINTER.withName("_gtk_reserved2"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved3"),
+        RuntimeHelper.POINTER.withName("_gtk_reserved4")
+    ).withName("_GtkTreeModelFilterClass");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeModelFilterClass.visible.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$2431.const$1.varHandle(MemoryLayout.PathElement.groupElement("visible"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeModelFilterClass.modify.class, "apply", constants$649.const$2);
+    static final VarHandle const$5 = constants$2431.const$1.varHandle(MemoryLayout.PathElement.groupElement("modify"));
 }
 
 

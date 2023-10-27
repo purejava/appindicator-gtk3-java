@@ -18,10 +18,10 @@ import java.lang.invoke.VarHandle;
 public class hb_variation_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1418.const$3;
+        return constants$1422.const$4;
     }
     public static VarHandle tag$VH() {
-        return constants$1418.const$4;
+        return constants$1422.const$5;
     }
     /**
      * Getter for field:
@@ -30,7 +30,7 @@ public class hb_variation_t {
      * }
      */
     public static int tag$get(MemorySegment seg) {
-        return (int)constants$1418.const$4.get(seg);
+        return (int)constants$1422.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -39,16 +39,16 @@ public class hb_variation_t {
      * }
      */
     public static void tag$set(MemorySegment seg, int x) {
-        constants$1418.const$4.set(seg, x);
+        constants$1422.const$5.set(seg, x);
     }
     public static int tag$get(MemorySegment seg, long index) {
-        return (int)constants$1418.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1422.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void tag$set(MemorySegment seg, long index, int x) {
-        constants$1418.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1422.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle value$VH() {
-        return constants$1418.const$5;
+        return constants$1423.const$0;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class hb_variation_t {
      * }
      */
     public static float value$get(MemorySegment seg) {
-        return (float)constants$1418.const$5.get(seg);
+        return (float)constants$1423.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class hb_variation_t {
      * }
      */
     public static void value$set(MemorySegment seg, float x) {
-        constants$1418.const$5.set(seg, x);
+        constants$1423.const$0.set(seg, x);
     }
     public static float value$get(MemorySegment seg, long index) {
-        return (float)constants$1418.const$5.get(seg.asSlice(index*sizeof()));
+        return (float)constants$1423.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void value$set(MemorySegment seg, long index, float x) {
-        constants$1418.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1423.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

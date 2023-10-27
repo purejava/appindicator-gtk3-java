@@ -2,31 +2,45 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.*;
 final class constants$672 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$672() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_signal_group_dup_target",
-        constants$5.const$2
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_INT
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_signal_group_block",
-        constants$13.const$1
+        "g_param_spec_double",
+        constants$672.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_signal_group_unblock",
-        constants$13.const$1
+        "g_param_spec_string",
+        constants$647.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect_closure",
-        constants$331.const$4
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_group_connect_object$c_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_param_spec_param",
+        constants$672.const$3
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect_object",
-        constants$646.const$4
+        "g_param_spec_boxed",
+        constants$672.const$3
     );
 }
 

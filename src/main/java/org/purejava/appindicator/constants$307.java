@@ -2,34 +2,33 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$307 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$307() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_string_free_and_steal",
-        constants$5.const$2
-    );
+    static final VarHandle const$0 = constants$306.const$3.varHandle(MemoryLayout.PathElement.groupElement("allocated_len"));
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_string_free_to_bytes",
+        "g_string_new",
         constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_string_equal",
-        constants$9.const$0
+        "g_string_new_take",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_string_hash",
-        constants$10.const$5
+        "g_string_new_len",
+        constants$21.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_string_assign",
-        constants$5.const$5
+        "g_string_sized_new",
+        constants$63.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_string_truncate",
-        constants$21.const$1
+        "g_string_free",
+        constants$21.const$3
     );
 }
 

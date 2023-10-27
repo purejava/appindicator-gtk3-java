@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkNativeDialog {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2695.const$3;
+        return constants$2700.const$3;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);

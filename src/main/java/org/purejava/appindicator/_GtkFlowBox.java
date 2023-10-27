@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkFlowBox {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2703.const$2;
+        return constants$2708.const$2;
     }
     public static MemorySegment container$slice(MemorySegment seg) {
         return seg.asSlice(0, 40);

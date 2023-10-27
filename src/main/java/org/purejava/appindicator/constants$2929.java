@@ -2,38 +2,21 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$2929 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2929() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_paper_sizes",
-        constants$24.const$0
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_name",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_display_name",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_ppd_name",
-        constants$5.const$2
-    );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_DOUBLE,
-        RuntimeHelper.POINTER,
-        JAVA_INT
-    );
+    static final VarHandle const$0 = constants$2926.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkOverlayClass._gtk_reserved7.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$2926.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved7"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkOverlayClass._gtk_reserved8.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$2926.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved8"));
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_width",
-        constants$2929.const$4
+        "gtk_overlay_get_type",
+        constants$3.const$5
     );
 }
 

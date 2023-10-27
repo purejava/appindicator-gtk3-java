@@ -7,29 +7,29 @@ final class constants$453 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$453() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "g_test_message",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_test_incomplete",
         constants$13.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_test_bug_base",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_incomplete_printf",
         constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_test_bug",
+        "g_test_skip",
         constants$13.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_test_summary",
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_skip_printf",
         constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_test_timer_start",
-        constants$7.const$5
+        "g_test_failed",
+        constants$83.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_test_timer_elapsed",
-        constants$83.const$5
+        "g_test_set_nonfatal_assertions",
+        constants$7.const$5
     );
 }
 

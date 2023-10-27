@@ -2,38 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$1531 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1531() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_version_atleast",
+        constants$819.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_matrix_translate",
-        constants$1531.const$0
+        "pango_coverage_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_matrix_scale",
-        constants$1531.const$0
+        "pango_coverage_new",
+        constants$35.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_matrix_rotate",
-        constants$689.const$5
+        "pango_coverage_ref",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_matrix_concat",
-        constants$13.const$4
+        "pango_coverage_unref",
+        constants$13.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_matrix_transform_point",
-        constants$14.const$3
+        "pango_coverage_copy",
+        constants$5.const$2
     );
 }
 

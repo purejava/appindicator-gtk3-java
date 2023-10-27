@@ -13,7 +13,7 @@ public interface gtk_builder_lookup_callback_symbol$return {
 
     void apply();
     static MemorySegment allocate(gtk_builder_lookup_callback_symbol$return fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2542.const$4, fi, constants$7.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$2547.const$4, fi, constants$7.const$5, scope);
     }
     static gtk_builder_lookup_callback_symbol$return ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

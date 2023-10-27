@@ -2,35 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$803 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$803() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_cancellable_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GConverterIface.convert.class, "apply", constants$803.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_cancellable_new",
+        constants$35.const$2
+    );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$803.const$0
+        "g_cancellable_is_cancelled",
+        constants$10.const$5
     );
-    static final VarHandle const$3 = constants$802.const$5.varHandle(MemoryLayout.PathElement.groupElement("convert"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GConverterIface.reset.class, "apply", constants$13.const$1);
-    static final VarHandle const$5 = constants$802.const$5.varHandle(MemoryLayout.PathElement.groupElement("reset"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_cancellable_set_error_if_cancelled",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_cancellable_get_fd",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_cancellable_make_pollfd",
+        constants$9.const$0
+    );
 }
 
 

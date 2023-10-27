@@ -2,44 +2,42 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1136 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1136() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_load",
-        constants$855.const$5
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_list_store_sort$compare_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_list_store_sort",
+        constants$14.const$3
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_loadable_icon_load_async$callback.class, "apply", constants$14.const$3);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_load_async",
-        constants$281.const$5
+        "g_list_store_append",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_load_finish",
-        constants$39.const$1
+        "g_list_store_remove",
+        constants$40.const$2
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    RuntimeHelper.POINTER.withName("g_class")
-                ).withName("g_type_instance"),
-                JAVA_INT.withName("ref_count"),
-                MemoryLayout.paddingLayout(4),
-                RuntimeHelper.POINTER.withName("qdata")
-            ).withName("parent_instance"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GMemoryInputStream");
-    static final VarHandle const$5 = constants$1136.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_list_store_remove_all",
+        constants$13.const$1
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_list_store_splice",
+        constants$1136.const$5
+    );
 }
 
 

@@ -13,7 +13,7 @@ public interface GdkWindowInvalidateHandlerFunc {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GdkWindowInvalidateHandlerFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1834.const$3, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$1839.const$3, fi, constants$13.const$4, scope);
     }
     static GdkWindowInvalidateHandlerFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

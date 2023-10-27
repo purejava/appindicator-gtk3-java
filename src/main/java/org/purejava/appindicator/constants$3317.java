@@ -2,34 +2,56 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$3317 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3317() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_action_toggled",
-        constants$13.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_action_set_active",
-        constants$40.const$2
-    );
+    static final VarHandle const$0 = constants$3316.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    JAVA_LONG.withName("g_type")
+                ).withName("g_type_class"),
+                RuntimeHelper.POINTER.withName("construct_properties"),
+                RuntimeHelper.POINTER.withName("constructor"),
+                RuntimeHelper.POINTER.withName("set_property"),
+                RuntimeHelper.POINTER.withName("get_property"),
+                RuntimeHelper.POINTER.withName("dispose"),
+                RuntimeHelper.POINTER.withName("finalize"),
+                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                RuntimeHelper.POINTER.withName("notify"),
+                RuntimeHelper.POINTER.withName("constructed"),
+                JAVA_LONG.withName("flags"),
+                JAVA_LONG.withName("n_construct_properties"),
+                RuntimeHelper.POINTER.withName("pspecs"),
+                JAVA_LONG.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+            ).withName("parent_class")
+        ).withName("parent_class"),
+        MemoryLayout.sequenceLayout(16, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GtkNumerableIconClass");
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_action_get_active",
-        constants$10.const$5
+        "gtk_numerable_icon_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_action_set_draw_as_radio",
-        constants$40.const$2
+        "gtk_numerable_icon_new",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_toggle_action_get_draw_as_radio",
-        constants$10.const$5
+        "gtk_numerable_icon_new_with_style_context",
+        constants$5.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "_gtk_toggle_action_set_active",
-        constants$40.const$2
+        "gtk_numerable_icon_get_style_context",
+        constants$5.const$2
     );
 }
 

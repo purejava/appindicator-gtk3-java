@@ -8,28 +8,28 @@ final class constants$3299 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3299() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_handle_box_set_shadow_type",
-        constants$40.const$2
+        "gtk_symbolic_color_unref",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_handle_box_get_shadow_type",
-        constants$10.const$5
+        "gtk_symbolic_color_to_string",
+        constants$5.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_handle_box_set_handle_position",
-        constants$40.const$2
+        "gtk_symbolic_color_resolve",
+        constants$12.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_handle_box_get_handle_position",
-        constants$10.const$5
+        "gtk_gradient_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_handle_box_set_snap_edge",
-        constants$40.const$2
+        "gtk_gradient_new_linear",
+        constants$1746.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_handle_box_get_snap_edge",
-        constants$10.const$5
+        "gtk_gradient_new_radial",
+        constants$1747.const$1
     );
 }
 

@@ -2,35 +2,50 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1595 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1595() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_context_list_families",
-        constants$14.const$3
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_context_load_font",
-        constants$5.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_context_load_fontset",
-        constants$23.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_context_get_metrics",
-        constants$23.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_context_set_font_description",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_context_get_font_description",
-        constants$5.const$2
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("load_font"),
+        RuntimeHelper.POINTER.withName("list_families"),
+        RuntimeHelper.POINTER.withName("load_fontset"),
+        RuntimeHelper.POINTER.withName("shape_engine_type"),
+        RuntimeHelper.POINTER.withName("get_serial"),
+        RuntimeHelper.POINTER.withName("changed"),
+        RuntimeHelper.POINTER.withName("get_family"),
+        RuntimeHelper.POINTER.withName("get_face")
+    ).withName("_PangoFontMapClass");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoFontMapClass.load_font.class, "apply", constants$23.const$0);
+    static final VarHandle const$2 = constants$1595.const$0.varHandle(MemoryLayout.PathElement.groupElement("load_font"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoFontMapClass.list_families.class, "apply", constants$14.const$3);
+    static final VarHandle const$4 = constants$1595.const$0.varHandle(MemoryLayout.PathElement.groupElement("list_families"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_PangoFontMapClass.load_fontset.class, "apply", constants$39.const$1);
 }
 
 

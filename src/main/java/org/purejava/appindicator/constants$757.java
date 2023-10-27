@@ -12,23 +12,21 @@ final class constants$757 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$757() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_async_initable_new_finish",
-        constants$23.const$0
-    );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
+    static final StructLayout const$0 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             JAVA_LONG.withName("g_type"),
             JAVA_LONG.withName("g_instance_type")
         ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("get_user_data"),
-        RuntimeHelper.POINTER.withName("get_source_object"),
-        RuntimeHelper.POINTER.withName("is_tagged")
-    ).withName("_GAsyncResultIface");
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GAsyncResultIface.get_user_data.class, "apply", constants$5.const$2);
-    static final VarHandle const$3 = constants$757.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_user_data"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GAsyncResultIface.get_source_object.class, "apply", constants$5.const$2);
-    static final VarHandle const$5 = constants$757.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_source_object"));
+        RuntimeHelper.POINTER.withName("init_async"),
+        RuntimeHelper.POINTER.withName("init_finish")
+    ).withName("_GAsyncInitableIface");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GAsyncInitableIface.init_async.class, "apply", constants$282.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$282.const$1
+    );
+    static final VarHandle const$3 = constants$757.const$0.varHandle(MemoryLayout.PathElement.groupElement("init_async"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GAsyncInitableIface.init_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$757.const$0.varHandle(MemoryLayout.PathElement.groupElement("init_finish"));
 }
 
 

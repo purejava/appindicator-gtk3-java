@@ -5,7 +5,6 @@ package org.purejava.appindicator;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3173 {
@@ -13,22 +12,26 @@ final class constants$3173 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3173() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_group_get_item_position",
-        constants$9.const$0
+        "gtk_toolbar_set_icon_size",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_group_get_n_items",
-        constants$10.const$5
+        "gtk_toolbar_unset_icon_size",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_group_get_nth_item",
-        constants$21.const$3
+        "gtk_toolbar_get_relief_style",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_group_get_drop_item",
-        constants$33.const$5
+        "gtk_toolbar_get_drop_index",
+        constants$49.const$0
     );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_toolbar_set_drop_highlight_item",
+        constants$164.const$5
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -44,8 +47,7 @@ final class constants$3173 {
             RuntimeHelper.POINTER.withName("priv")
         ).withName("parent_instance"),
         RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkToolPalette");
-    static final VarHandle const$5 = constants$3173.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    ).withName("_GtkToolItemGroup");
 }
 
 

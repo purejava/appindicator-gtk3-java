@@ -13,13 +13,13 @@ public interface gtk_tree_model_filter_set_modify_func$func {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment value, int column, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(gtk_tree_model_filter_set_modify_func$func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2429.const$1, fi, constants$1127.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$2434.const$1, fi, constants$1131.const$2, scope);
     }
     static gtk_tree_model_filter_set_modify_func$func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _value, int _column, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$2425.const$4.invokeExact(symbol, _model, _iter, _value, _column, _data);
+                constants$2430.const$4.invokeExact(symbol, _model, _iter, _value, _column, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

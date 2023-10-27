@@ -7,26 +7,29 @@ final class constants$3142 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3142() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_text_buffer_register_deserialize_format$user_data_destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_iter_at_line",
+        constants$164.const$5
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_deserialize_format",
-        constants$330.const$5
+        "gtk_text_buffer_get_start_iter",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_deserialize_tagset",
-        constants$5.const$5
+        "gtk_text_buffer_get_end_iter",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_unregister_serialize_format",
-        constants$13.const$4
+        "gtk_text_buffer_get_bounds",
+        constants$14.const$3
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_unregister_deserialize_format",
-        constants$13.const$4
+        "gtk_text_buffer_get_iter_at_mark",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_deserialize_set_can_create_tags",
-        constants$164.const$5
+        "gtk_text_buffer_get_iter_at_child_anchor",
+        constants$14.const$3
     );
 }
 

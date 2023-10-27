@@ -2,29 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2564 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2564() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_calendar_set_detail_func$func.class, "apply", constants$1883.const$3);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_calendar_set_detail_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_calendar_set_detail_func",
-        constants$42.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_calendar_set_detail_width_chars",
-        constants$40.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_calendar_set_detail_height_rows",
-        constants$40.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_calendar_get_detail_width_chars",
-        constants$10.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkCalendarClass.day_selected.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$2563.const$3.varHandle(MemoryLayout.PathElement.groupElement("day_selected"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkCalendarClass.day_selected_double_click.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$2563.const$3.varHandle(MemoryLayout.PathElement.groupElement("day_selected_double_click"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCalendarClass.prev_month.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$2563.const$3.varHandle(MemoryLayout.PathElement.groupElement("prev_month"));
 }
 
 

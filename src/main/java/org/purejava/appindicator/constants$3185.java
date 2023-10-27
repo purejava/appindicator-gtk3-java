@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3185 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3185() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_test_create_widget",
-        constants$407.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_test_create_simple_window",
-        constants$5.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_test_display_button_window",
-        constants$5.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_test_slider_set_perc",
-        constants$689.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_test_slider_get_value",
-        constants$67.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_test_spin_button_click",
-        constants$49.const$0
-    );
+    static final VarHandle const$0 = constants$3184.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_orientation"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkToolShellIface.get_style.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$3184.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_style"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkToolShellIface.get_relief_style.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$3184.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_relief_style"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkToolShellIface.rebuild_menu.class, "apply", constants$13.const$1);
 }
 
 

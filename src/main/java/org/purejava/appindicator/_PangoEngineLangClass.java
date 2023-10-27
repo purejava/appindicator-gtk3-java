@@ -18,7 +18,7 @@ import java.lang.invoke.VarHandle;
 public class _PangoEngineLangClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1604.const$2;
+        return constants$1609.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -32,13 +32,13 @@ public class _PangoEngineLangClass {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5);
         static MemorySegment allocate(script_break fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1604.const$3, fi, constants$1603.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1609.const$3, fi, constants$1608.const$2, scope);
         }
         static script_break ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5) -> {
                 try {
-                    constants$1604.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$1609.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -47,7 +47,7 @@ public class _PangoEngineLangClass {
     }
 
     public static VarHandle script_break$VH() {
-        return constants$1604.const$5;
+        return constants$1609.const$5;
     }
     /**
      * Getter for field:
@@ -56,7 +56,7 @@ public class _PangoEngineLangClass {
      * }
      */
     public static MemorySegment script_break$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1604.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1609.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -65,13 +65,13 @@ public class _PangoEngineLangClass {
      * }
      */
     public static void script_break$set(MemorySegment seg, MemorySegment x) {
-        constants$1604.const$5.set(seg, x);
+        constants$1609.const$5.set(seg, x);
     }
     public static MemorySegment script_break$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1604.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1609.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void script_break$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1604.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1609.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static script_break script_break(MemorySegment segment, Arena scope) {
         return script_break.ofAddress(script_break$get(segment), scope);

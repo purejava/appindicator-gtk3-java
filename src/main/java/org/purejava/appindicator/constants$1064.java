@@ -2,49 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1064 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1064() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_matches",
-        constants$9.const$0
+        "g_file_info_set_is_hidden",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_matches_only",
-        constants$9.const$0
+        "g_file_info_set_is_symlink",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_enumerate_namespace",
-        constants$9.const$0
+        "g_file_info_set_name",
+        constants$13.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_enumerate_next",
-        constants$5.const$2
+        "g_file_info_set_display_name",
+        constants$13.const$4
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_to_string",
-        constants$5.const$2
+        "g_file_info_set_edit_name",
+        constants$13.const$4
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    RuntimeHelper.POINTER.withName("g_class")
-                ).withName("g_type_instance"),
-                JAVA_INT.withName("ref_count"),
-                MemoryLayout.paddingLayout(4),
-                RuntimeHelper.POINTER.withName("qdata")
-            ).withName("parent_instance"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GFileInputStream");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_icon",
+        constants$13.const$4
+    );
 }
 
 

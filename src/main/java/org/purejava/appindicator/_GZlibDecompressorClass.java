@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GZlibDecompressorClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1413.const$0;
+        return constants$1417.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);

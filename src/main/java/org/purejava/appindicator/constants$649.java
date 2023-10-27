@@ -2,26 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.invoke.MethodHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$649 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$649() {}
-    static final VarHandle const$0 = constants$648.const$5.varHandle(MemoryLayout.PathElement.groupElement("mask"));
-    static final VarHandle const$1 = constants$648.const$5.varHandle(MemoryLayout.PathElement.groupElement("n_values"));
-    static final VarHandle const$2 = constants$648.const$5.varHandle(MemoryLayout.PathElement.groupElement("values"));
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        JAVA_INT.withName("value"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("value_name"),
-        RuntimeHelper.POINTER.withName("value_nick")
-    ).withName("_GEnumValue");
-    static final VarHandle const$4 = constants$649.const$3.varHandle(MemoryLayout.PathElement.groupElement("value"));
-    static final VarHandle const$5 = constants$649.const$3.varHandle(MemoryLayout.PathElement.groupElement("value_name"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_binding_group_dup_source",
+        constants$5.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_binding_group_set_source",
+        constants$13.const$4
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_binding_group_bind",
+        constants$649.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_binding_group_bind_full$transform_to.class, "apply", constants$34.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_binding_group_bind_full$transform_from.class, "apply", constants$34.const$5);
 }
 
 

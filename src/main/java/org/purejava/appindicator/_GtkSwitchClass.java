@@ -24,7 +24,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkSwitchClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3112.const$4;
+        return constants$3117.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 824);
@@ -38,7 +38,7 @@ public class _GtkSwitchClass {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(activate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3112.const$5, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$3117.const$5, fi, constants$13.const$1, scope);
         }
         static activate ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -53,7 +53,7 @@ public class _GtkSwitchClass {
     }
 
     public static VarHandle activate$VH() {
-        return constants$3113.const$0;
+        return constants$3118.const$0;
     }
     /**
      * Getter for field:
@@ -62,7 +62,7 @@ public class _GtkSwitchClass {
      * }
      */
     public static MemorySegment activate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3118.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -71,13 +71,13 @@ public class _GtkSwitchClass {
      * }
      */
     public static void activate$set(MemorySegment seg, MemorySegment x) {
-        constants$3113.const$0.set(seg, x);
+        constants$3118.const$0.set(seg, x);
     }
     public static MemorySegment activate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3118.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void activate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3113.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3118.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static activate activate(MemorySegment segment, Arena scope) {
         return activate.ofAddress(activate$get(segment), scope);
@@ -91,13 +91,13 @@ public class _GtkSwitchClass {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
         static MemorySegment allocate(state_set fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3113.const$1, fi, constants$11.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$3118.const$1, fi, constants$11.const$4, scope);
         }
         static state_set ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$840.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -106,7 +106,7 @@ public class _GtkSwitchClass {
     }
 
     public static VarHandle state_set$VH() {
-        return constants$3113.const$2;
+        return constants$3118.const$2;
     }
     /**
      * Getter for field:
@@ -115,7 +115,7 @@ public class _GtkSwitchClass {
      * }
      */
     public static MemorySegment state_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3118.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -124,13 +124,13 @@ public class _GtkSwitchClass {
      * }
      */
     public static void state_set$set(MemorySegment seg, MemorySegment x) {
-        constants$3113.const$2.set(seg, x);
+        constants$3118.const$2.set(seg, x);
     }
     public static MemorySegment state_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3118.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void state_set$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3113.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3118.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static state_set state_set(MemorySegment segment, Arena scope) {
         return state_set.ofAddress(state_set$get(segment), scope);
@@ -144,7 +144,7 @@ public class _GtkSwitchClass {
 
         void apply();
         static MemorySegment allocate(_switch_padding_1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3113.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3118.const$3, fi, constants$7.const$5, scope);
         }
         static _switch_padding_1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -159,7 +159,7 @@ public class _GtkSwitchClass {
     }
 
     public static VarHandle _switch_padding_1$VH() {
-        return constants$3113.const$4;
+        return constants$3118.const$4;
     }
     /**
      * Getter for field:
@@ -168,7 +168,7 @@ public class _GtkSwitchClass {
      * }
      */
     public static MemorySegment _switch_padding_1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3118.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -177,13 +177,13 @@ public class _GtkSwitchClass {
      * }
      */
     public static void _switch_padding_1$set(MemorySegment seg, MemorySegment x) {
-        constants$3113.const$4.set(seg, x);
+        constants$3118.const$4.set(seg, x);
     }
     public static MemorySegment _switch_padding_1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3118.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _switch_padding_1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3113.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3118.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _switch_padding_1 _switch_padding_1(MemorySegment segment, Arena scope) {
         return _switch_padding_1.ofAddress(_switch_padding_1$get(segment), scope);
@@ -197,7 +197,7 @@ public class _GtkSwitchClass {
 
         void apply();
         static MemorySegment allocate(_switch_padding_2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3113.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3118.const$5, fi, constants$7.const$5, scope);
         }
         static _switch_padding_2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -212,7 +212,7 @@ public class _GtkSwitchClass {
     }
 
     public static VarHandle _switch_padding_2$VH() {
-        return constants$3114.const$0;
+        return constants$3119.const$0;
     }
     /**
      * Getter for field:
@@ -221,7 +221,7 @@ public class _GtkSwitchClass {
      * }
      */
     public static MemorySegment _switch_padding_2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3119.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -230,13 +230,13 @@ public class _GtkSwitchClass {
      * }
      */
     public static void _switch_padding_2$set(MemorySegment seg, MemorySegment x) {
-        constants$3114.const$0.set(seg, x);
+        constants$3119.const$0.set(seg, x);
     }
     public static MemorySegment _switch_padding_2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3119.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _switch_padding_2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3114.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3119.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _switch_padding_2 _switch_padding_2(MemorySegment segment, Arena scope) {
         return _switch_padding_2.ofAddress(_switch_padding_2$get(segment), scope);
@@ -250,7 +250,7 @@ public class _GtkSwitchClass {
 
         void apply();
         static MemorySegment allocate(_switch_padding_3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3114.const$1, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3119.const$1, fi, constants$7.const$5, scope);
         }
         static _switch_padding_3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -265,7 +265,7 @@ public class _GtkSwitchClass {
     }
 
     public static VarHandle _switch_padding_3$VH() {
-        return constants$3114.const$2;
+        return constants$3119.const$2;
     }
     /**
      * Getter for field:
@@ -274,7 +274,7 @@ public class _GtkSwitchClass {
      * }
      */
     public static MemorySegment _switch_padding_3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3119.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -283,13 +283,13 @@ public class _GtkSwitchClass {
      * }
      */
     public static void _switch_padding_3$set(MemorySegment seg, MemorySegment x) {
-        constants$3114.const$2.set(seg, x);
+        constants$3119.const$2.set(seg, x);
     }
     public static MemorySegment _switch_padding_3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3119.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _switch_padding_3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3114.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3119.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _switch_padding_3 _switch_padding_3(MemorySegment segment, Arena scope) {
         return _switch_padding_3.ofAddress(_switch_padding_3$get(segment), scope);
@@ -303,7 +303,7 @@ public class _GtkSwitchClass {
 
         void apply();
         static MemorySegment allocate(_switch_padding_4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3114.const$3, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3119.const$3, fi, constants$7.const$5, scope);
         }
         static _switch_padding_4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -318,7 +318,7 @@ public class _GtkSwitchClass {
     }
 
     public static VarHandle _switch_padding_4$VH() {
-        return constants$3114.const$4;
+        return constants$3119.const$4;
     }
     /**
      * Getter for field:
@@ -327,7 +327,7 @@ public class _GtkSwitchClass {
      * }
      */
     public static MemorySegment _switch_padding_4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3119.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -336,13 +336,13 @@ public class _GtkSwitchClass {
      * }
      */
     public static void _switch_padding_4$set(MemorySegment seg, MemorySegment x) {
-        constants$3114.const$4.set(seg, x);
+        constants$3119.const$4.set(seg, x);
     }
     public static MemorySegment _switch_padding_4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3119.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _switch_padding_4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3114.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3119.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _switch_padding_4 _switch_padding_4(MemorySegment segment, Arena scope) {
         return _switch_padding_4.ofAddress(_switch_padding_4$get(segment), scope);
@@ -356,7 +356,7 @@ public class _GtkSwitchClass {
 
         void apply();
         static MemorySegment allocate(_switch_padding_5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3114.const$5, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$3119.const$5, fi, constants$7.const$5, scope);
         }
         static _switch_padding_5 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -371,7 +371,7 @@ public class _GtkSwitchClass {
     }
 
     public static VarHandle _switch_padding_5$VH() {
-        return constants$3115.const$0;
+        return constants$3120.const$0;
     }
     /**
      * Getter for field:
@@ -380,7 +380,7 @@ public class _GtkSwitchClass {
      * }
      */
     public static MemorySegment _switch_padding_5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3115.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3120.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -389,13 +389,13 @@ public class _GtkSwitchClass {
      * }
      */
     public static void _switch_padding_5$set(MemorySegment seg, MemorySegment x) {
-        constants$3115.const$0.set(seg, x);
+        constants$3120.const$0.set(seg, x);
     }
     public static MemorySegment _switch_padding_5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3115.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3120.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _switch_padding_5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3115.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3120.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _switch_padding_5 _switch_padding_5(MemorySegment segment, Arena scope) {
         return _switch_padding_5.ofAddress(_switch_padding_5$get(segment), scope);

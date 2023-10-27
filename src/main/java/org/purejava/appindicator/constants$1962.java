@@ -8,28 +8,28 @@ final class constants$1962 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1962() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_role_get_type",
-        constants$3.const$5
+        "gtk_accelerator_name",
+        constants$1416.const$3
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_layer_get_type",
-        constants$3.const$5
+        "gtk_accelerator_name_with_keycode",
+        constants$1728.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_relation_type_get_type",
-        constants$3.const$5
+        "gtk_accelerator_get_label",
+        constants$1416.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_state_type_get_type",
-        constants$3.const$5
+        "gtk_accelerator_get_label_with_keycode",
+        constants$1728.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_text_attribute_get_type",
-        constants$3.const$5
+        "gtk_accelerator_set_default_mod_mask",
+        constants$80.const$1
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_text_boundary_get_type",
-        constants$3.const$5
+        "gtk_accelerator_get_default_mod_mask",
+        constants$83.const$1
     );
 }
 

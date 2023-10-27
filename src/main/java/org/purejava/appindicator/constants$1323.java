@@ -2,31 +2,43 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1323 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1323() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_identifier",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_subprocess_send_signal",
-        constants$40.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_subprocess_force_exit",
-        constants$13.const$1
-    );
+    static final VarHandle const$0 = constants$1320.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GSocketService");
+    static final VarHandle const$2 = constants$1323.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_subprocess_wait",
-        constants$12.const$2
+        "g_socket_service_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_subprocess_wait_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_service_new",
+        constants$35.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_subprocess_wait_async",
-        constants$42.const$1
+        "g_socket_service_start",
+        constants$13.const$1
     );
 }
 

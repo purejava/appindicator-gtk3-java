@@ -8,28 +8,28 @@ final class constants$2219 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2219() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_version",
-        constants$13.const$4
+        "gtk_dialog_set_response_sensitive",
+        constants$469.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_copyright",
-        constants$5.const$2
+        "gtk_dialog_set_default_response",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_copyright",
-        constants$13.const$4
+        "gtk_dialog_get_widget_for_response",
+        constants$21.const$3
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_comments",
-        constants$5.const$2
+        "gtk_dialog_get_response_for_widget",
+        constants$9.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_comments",
-        constants$13.const$4
+        "gtk_alternative_dialog_button_order",
+        constants$10.const$5
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_license",
-        constants$5.const$2
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_dialog_set_alternative_button_order",
+        constants$40.const$2
     );
 }
 

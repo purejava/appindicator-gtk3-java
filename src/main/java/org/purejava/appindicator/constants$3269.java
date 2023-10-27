@@ -2,35 +2,31 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3269 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3269() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_list_actions",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_add_action",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_add_action_with_accel",
-        constants$14.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_remove_action",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_add_actions",
-        constants$464.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_add_toggle_actions",
-        constants$464.const$4
-    );
+    static final VarHandle const$0 = constants$3268.const$2.varHandle(MemoryLayout.PathElement.groupElement("accelerator"));
+    static final VarHandle const$1 = constants$3268.const$2.varHandle(MemoryLayout.PathElement.groupElement("tooltip"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkActionEntry.callback.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3268.const$2.varHandle(MemoryLayout.PathElement.groupElement("callback"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("name"),
+        RuntimeHelper.POINTER.withName("stock_id"),
+        RuntimeHelper.POINTER.withName("label"),
+        RuntimeHelper.POINTER.withName("accelerator"),
+        RuntimeHelper.POINTER.withName("tooltip"),
+        RuntimeHelper.POINTER.withName("callback"),
+        JAVA_INT.withName("is_active"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GtkToggleActionEntry");
+    static final VarHandle const$5 = constants$3269.const$4.varHandle(MemoryLayout.PathElement.groupElement("name"));
 }
 
 

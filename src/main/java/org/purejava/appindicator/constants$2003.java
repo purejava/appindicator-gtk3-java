@@ -2,35 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2003 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2003() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_component_remove_focus_handler",
-        constants$40.const$2
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkComponentIface.set_extents.class, "apply", constants$1947.const$3);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_component_set_extents",
-        constants$1942.const$3
+        constants$1947.const$3
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_component_set_position",
-        constants$608.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_component_set_size",
-        constants$49.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_component_get_alpha",
-        constants$67.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_component_scroll_to",
-        constants$11.const$4
-    );
+    static final VarHandle const$2 = constants$1999.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_extents"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkComponentIface.set_position.class, "apply", constants$611.const$1);
+    static final VarHandle const$4 = constants$1999.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_position"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkComponentIface.set_size.class, "apply", constants$49.const$0);
 }
 
 

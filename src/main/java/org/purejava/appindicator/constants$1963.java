@@ -2,35 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_SHORT;
 final class constants$1963 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1963() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "atk_text_granularity_get_type",
-        constants$3.const$5
+        "gtk_accel_group_query",
+        constants$215.const$2
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "atk_text_clip_type_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "atk_key_event_type_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "atk_coord_type_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "atk_value_type_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_state_type_register",
-        constants$10.const$5
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("accel_key"),
+            JAVA_INT.withName("accel_mods"),
+            MemoryLayout.paddingLayout(4)
+        ).withName("key"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("closure"),
+        JAVA_INT.withName("accel_path_quark"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GtkAccelGroupEntry");
+    static final VarHandle const$2 = constants$1963.const$1.varHandle(MemoryLayout.PathElement.groupElement("closure"));
+    static final VarHandle const$3 = constants$1963.const$1.varHandle(MemoryLayout.PathElement.groupElement("accel_path_quark"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_SHORT.withName("left"),
+        JAVA_SHORT.withName("right"),
+        JAVA_SHORT.withName("top"),
+        JAVA_SHORT.withName("bottom")
+    ).withName("_GtkBorder");
+    static final VarHandle const$5 = constants$1963.const$4.varHandle(MemoryLayout.PathElement.groupElement("left"));
 }
 
 

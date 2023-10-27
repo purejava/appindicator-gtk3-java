@@ -2,34 +2,47 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1293 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1293() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_family",
+        "g_socket_speaks_ipv4",
         constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_family",
-        constants$40.const$2
+        "g_socket_get_credentials",
+        constants$5.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_socket_type",
-        constants$10.const$5
+        "g_socket_receive_with_blocking",
+        constants$1218.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_socket_type",
-        constants$40.const$2
+        "g_socket_send_with_blocking",
+        constants$1218.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_protocol",
-        constants$10.const$5
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_protocol",
-        constants$40.const$2
+        "g_socket_send_message_with_timeout",
+        constants$1293.const$4
     );
 }
 

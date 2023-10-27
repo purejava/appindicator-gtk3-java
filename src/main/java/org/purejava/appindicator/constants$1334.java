@@ -8,23 +8,20 @@ final class constants$1334 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1334() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_task_get_check_cancellable",
-        constants$10.const$5
+        "g_subprocess_launcher_close",
+        constants$13.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_task_get_source_tag",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_task_get_name",
-        constants$5.const$2
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_subprocess_launcher_set_child_setup$child_setup.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_subprocess_launcher_set_child_setup$destroy_notify.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_task_is_valid",
-        constants$9.const$0
+        "g_subprocess_launcher_set_child_setup",
+        constants$42.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GTaskThreadFunc.class, "apply", constants$42.const$1);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_task_run_in_thread$task_func.class, "apply", constants$42.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_task_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_task_new$callback.class, "apply", constants$14.const$3);
 }
 
 

@@ -8,28 +8,28 @@ final class constants$392 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$392() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_path_buf_push",
+        "g_path_buf_init_from_path",
         constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_path_buf_pop",
-        constants$10.const$5
+        "g_path_buf_clear",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_path_buf_set_filename",
-        constants$9.const$0
+        "g_path_buf_clear_to_path",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_path_buf_set_extension",
-        constants$9.const$0
+        "g_path_buf_free",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_path_buf_to_path",
+        "g_path_buf_free_to_path",
         constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_path_buf_equal",
-        constants$9.const$0
+        "g_path_buf_copy",
+        constants$5.const$2
     );
 }
 

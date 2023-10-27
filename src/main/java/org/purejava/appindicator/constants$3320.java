@@ -9,27 +9,12 @@ final class constants$3320 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3320() {}
-    static final VarHandle const$0 = constants$3318.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_radio_action_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_radio_action_new",
-        constants$644.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_radio_action_get_group",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_radio_action_set_group",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_radio_action_join_group",
-        constants$13.const$4
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkToggleActionClass.toggled.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$3319.const$5.varHandle(MemoryLayout.PathElement.groupElement("toggled"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkToggleActionClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3319.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkToggleActionClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$3319.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
 }
 
 

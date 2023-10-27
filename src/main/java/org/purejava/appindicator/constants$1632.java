@@ -8,28 +8,28 @@ final class constants$1632 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1632() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_layout_get_size",
-        constants$14.const$3
+        "pango_layout_set_justify",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_layout_get_pixel_size",
-        constants$14.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_layout_get_baseline",
+        "pango_layout_get_justify",
         constants$10.const$5
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_layout_set_justify_last_line",
+        constants$40.const$2
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_layout_get_line_count",
+        "pango_layout_get_justify_last_line",
         constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_layout_get_line",
-        constants$21.const$3
+        "pango_layout_set_auto_dir",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_layout_get_line_readonly",
-        constants$21.const$3
+        "pango_layout_get_auto_dir",
+        constants$10.const$5
     );
 }
 

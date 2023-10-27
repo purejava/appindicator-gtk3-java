@@ -7,18 +7,17 @@ final class constants$1487 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1487() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_origin_func$func.class, "apply", constants$1243.const$0);
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_origin_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_glyph_v_origin_func",
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1486.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_funcs_set_font_h_extents_func$func.class, "apply", constants$34.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_funcs_set_font_h_extents_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_font_h_extents_func",
         constants$42.const$1
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_h_kerning_func$func.class, "apply", constants$1479.const$3);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_h_kerning_func$destroy.class, "apply", constants$13.const$1);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_glyph_h_kerning_func",
-        constants$42.const$1
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_font_v_extents_func$func.class, "apply", constants$34.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_font_funcs_set_font_v_extents_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

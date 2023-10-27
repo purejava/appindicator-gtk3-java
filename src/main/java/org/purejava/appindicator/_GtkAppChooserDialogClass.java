@@ -17,7 +17,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkAppChooserDialogClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2278.const$0;
+        return constants$2283.const$0;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 1120);

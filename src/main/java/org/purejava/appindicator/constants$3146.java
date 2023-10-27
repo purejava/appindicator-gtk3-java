@@ -2,19 +2,25 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3146 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3146() {}
-    static final VarHandle const$0 = constants$3144.const$2.varHandle(MemoryLayout.PathElement.groupElement("delete_from_cursor"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkTextViewClass.backspace.class, "apply", constants$13.const$1);
-    static final VarHandle const$2 = constants$3144.const$2.varHandle(MemoryLayout.PathElement.groupElement("backspace"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkTextViewClass.cut_clipboard.class, "apply", constants$13.const$1);
-    static final VarHandle const$4 = constants$3144.const$2.varHandle(MemoryLayout.PathElement.groupElement("cut_clipboard"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkTextViewClass.copy_clipboard.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$3145.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_text_buffer_register_serialize_format$function.class, "apply", constants$335.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_text_buffer_register_serialize_format$user_data_destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_register_serialize_format",
+        constants$331.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_register_serialize_tagset",
+        constants$5.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_text_buffer_register_deserialize_format$function.class, "apply", constants$3145.const$4);
 }
 
 

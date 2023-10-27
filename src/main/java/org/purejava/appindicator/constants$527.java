@@ -8,28 +8,28 @@ final class constants$527 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$527() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_getpshared",
-        constants$9.const$0
+        "pthread_mutex_trylock",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_setpshared",
-        constants$11.const$4
+        "pthread_mutex_lock",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_gettype",
+        "pthread_mutex_timedlock",
         constants$9.const$0
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_settype",
-        constants$11.const$4
+        "pthread_mutex_unlock",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_getprotocol",
+        "pthread_mutex_getprioceiling",
         constants$9.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_setprotocol",
-        constants$11.const$4
+        "pthread_mutex_setprioceiling",
+        constants$150.const$0
     );
 }
 

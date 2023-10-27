@@ -18,7 +18,7 @@ import java.lang.invoke.VarHandle;
 public class _GNativeVolumeMonitorClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1194.const$5;
+        return constants$1198.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 336);
@@ -32,7 +32,7 @@ public class _GNativeVolumeMonitorClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(get_mount_for_mount_path fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1195.const$0, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1198.const$3, fi, constants$5.const$5, scope);
         }
         static get_mount_for_mount_path ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -47,7 +47,7 @@ public class _GNativeVolumeMonitorClass {
     }
 
     public static VarHandle get_mount_for_mount_path$VH() {
-        return constants$1195.const$1;
+        return constants$1198.const$4;
     }
     /**
      * Getter for field:
@@ -56,7 +56,7 @@ public class _GNativeVolumeMonitorClass {
      * }
      */
     public static MemorySegment get_mount_for_mount_path$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1195.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1198.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -65,13 +65,13 @@ public class _GNativeVolumeMonitorClass {
      * }
      */
     public static void get_mount_for_mount_path$set(MemorySegment seg, MemorySegment x) {
-        constants$1195.const$1.set(seg, x);
+        constants$1198.const$4.set(seg, x);
     }
     public static MemorySegment get_mount_for_mount_path$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1195.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1198.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_mount_for_mount_path$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1195.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1198.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_mount_for_mount_path get_mount_for_mount_path(MemorySegment segment, Arena scope) {
         return get_mount_for_mount_path.ofAddress(get_mount_for_mount_path$get(segment), scope);

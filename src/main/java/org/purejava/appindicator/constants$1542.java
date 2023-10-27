@@ -8,28 +8,28 @@ final class constants$1542 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1542() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "pango_font_description_unset_fields",
-        constants$40.const$2
+        "pango_get_mirror_char",
+        constants$9.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "pango_font_description_merge",
-        constants$164.const$5
+        "pango_font_description_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "pango_font_description_merge_static",
-        constants$164.const$5
+        "pango_font_description_new",
+        constants$35.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "pango_font_description_better_match",
-        constants$12.const$2
+        "pango_font_description_copy",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "pango_font_description_from_string",
+        "pango_font_description_copy_static",
         constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "pango_font_description_to_string",
-        constants$5.const$2
+        "pango_font_description_hash",
+        constants$10.const$5
     );
 }
 

@@ -19,10 +19,10 @@ import java.lang.invoke.VarHandle;
 public class _cairo_rectangle_list {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1693.const$1;
+        return constants$1698.const$1;
     }
     public static VarHandle status$VH() {
-        return constants$1693.const$2;
+        return constants$1698.const$2;
     }
     /**
      * Getter for field:
@@ -31,7 +31,7 @@ public class _cairo_rectangle_list {
      * }
      */
     public static int status$get(MemorySegment seg) {
-        return (int)constants$1693.const$2.get(seg);
+        return (int)constants$1698.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -40,16 +40,16 @@ public class _cairo_rectangle_list {
      * }
      */
     public static void status$set(MemorySegment seg, int x) {
-        constants$1693.const$2.set(seg, x);
+        constants$1698.const$2.set(seg, x);
     }
     public static int status$get(MemorySegment seg, long index) {
-        return (int)constants$1693.const$2.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1698.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void status$set(MemorySegment seg, long index, int x) {
-        constants$1693.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1698.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle rectangles$VH() {
-        return constants$1693.const$3;
+        return constants$1698.const$3;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _cairo_rectangle_list {
      * }
      */
     public static MemorySegment rectangles$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1693.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1698.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -67,16 +67,16 @@ public class _cairo_rectangle_list {
      * }
      */
     public static void rectangles$set(MemorySegment seg, MemorySegment x) {
-        constants$1693.const$3.set(seg, x);
+        constants$1698.const$3.set(seg, x);
     }
     public static MemorySegment rectangles$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1693.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1698.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void rectangles$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1693.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1698.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle num_rectangles$VH() {
-        return constants$1693.const$4;
+        return constants$1698.const$4;
     }
     /**
      * Getter for field:
@@ -85,7 +85,7 @@ public class _cairo_rectangle_list {
      * }
      */
     public static int num_rectangles$get(MemorySegment seg) {
-        return (int)constants$1693.const$4.get(seg);
+        return (int)constants$1698.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -94,13 +94,13 @@ public class _cairo_rectangle_list {
      * }
      */
     public static void num_rectangles$set(MemorySegment seg, int x) {
-        constants$1693.const$4.set(seg, x);
+        constants$1698.const$4.set(seg, x);
     }
     public static int num_rectangles$get(MemorySegment seg, long index) {
-        return (int)constants$1693.const$4.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1698.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void num_rectangles$set(MemorySegment seg, long index, int x) {
-        constants$1693.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1698.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

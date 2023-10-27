@@ -13,7 +13,7 @@ public interface gtk_settings_install_property_parser$parser {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(gtk_settings_install_property_parser$parser fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3084.const$0, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$3089.const$0, fi, constants$12.const$2, scope);
     }
     static gtk_settings_install_property_parser$parser ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

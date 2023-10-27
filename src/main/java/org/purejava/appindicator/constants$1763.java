@@ -8,27 +8,27 @@ final class constants$1763 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1763() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_dest_window",
-        constants$5.const$2
+        "gdk_device_get_position_double",
+        constants$42.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_protocol",
-        constants$10.const$5
+        "gdk_device_get_window_at_position_double",
+        constants$23.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_drag_status",
-        constants$467.const$3
+        "gdk_device_get_history",
+        constants$1032.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_drop_reply",
-        constants$467.const$3
+        "gdk_device_free_history",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_drop_finish",
-        constants$467.const$3
+        "gdk_device_get_n_axes",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_drag_get_selection",
+        "gdk_device_list_axes",
         constants$5.const$2
     );
 }

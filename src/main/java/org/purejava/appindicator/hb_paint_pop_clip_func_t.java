@@ -13,7 +13,7 @@ public interface hb_paint_pop_clip_func_t {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_paint_pop_clip_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1457.const$0, fi, constants$14.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1461.const$2, fi, constants$14.const$3, scope);
     }
     static hb_paint_pop_clip_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

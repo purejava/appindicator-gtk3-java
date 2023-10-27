@@ -9,12 +9,12 @@ final class constants$2112 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2112() {}
-    static final VarHandle const$0 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("selection_request_event"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkWidgetClass.selection_notify_event.class, "apply", constants$9.const$0);
-    static final VarHandle const$2 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("selection_notify_event"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass.proximity_in_event.class, "apply", constants$9.const$0);
-    static final VarHandle const$4 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("proximity_in_event"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkWidgetClass.proximity_out_event.class, "apply", constants$9.const$0);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass.scroll_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$1 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("scroll_event"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkWidgetClass.motion_notify_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$3 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("motion_notify_event"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWidgetClass.delete_event.class, "apply", constants$9.const$0);
+    static final VarHandle const$5 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("delete_event"));
 }
 
 

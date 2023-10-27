@@ -6,25 +6,24 @@ import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$557 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$557() {}
-    static final VarHandle const$0 = constants$556.const$2.varHandle(MemoryLayout.PathElement.groupElement("interface_finalize"));
-    static final VarHandle const$1 = constants$556.const$2.varHandle(MemoryLayout.PathElement.groupElement("interface_data"));
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("value_init"),
-        RuntimeHelper.POINTER.withName("value_free"),
-        RuntimeHelper.POINTER.withName("value_copy"),
-        RuntimeHelper.POINTER.withName("value_peek_pointer"),
-        RuntimeHelper.POINTER.withName("collect_format"),
-        RuntimeHelper.POINTER.withName("collect_value"),
-        RuntimeHelper.POINTER.withName("lcopy_format"),
-        RuntimeHelper.POINTER.withName("lcopy_value")
-    ).withName("_GTypeValueTable");
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTypeValueTable.value_init.class, "apply", constants$13.const$1);
-    static final VarHandle const$4 = constants$557.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_init"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTypeValueTable.value_free.class, "apply", constants$13.const$1);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTypeInfo.instance_init.class, "apply", constants$13.const$4);
+    static final VarHandle const$1 = constants$554.const$5.varHandle(MemoryLayout.PathElement.groupElement("instance_init"));
+    static final VarHandle const$2 = constants$554.const$5.varHandle(MemoryLayout.PathElement.groupElement("value_table"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type_flags")
+    ).withName("_GTypeFundamentalInfo");
+    static final VarHandle const$4 = constants$557.const$3.varHandle(MemoryLayout.PathElement.groupElement("type_flags"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("interface_init"),
+        RuntimeHelper.POINTER.withName("interface_finalize"),
+        RuntimeHelper.POINTER.withName("interface_data")
+    ).withName("_GInterfaceInfo");
 }
 
 

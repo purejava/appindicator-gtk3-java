@@ -2,19 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_FLOAT;
 final class constants$1460 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1460() {}
-    static final VarHandle const$0 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_color_stops_user_data"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_color_line_t.get_extend.class, "apply", constants$12.const$2);
-    static final VarHandle const$2 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_extend"));
-    static final VarHandle const$3 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_extend_user_data"));
-    static final VarHandle const$4 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("reserved0"));
-    static final VarHandle const$5 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1459.const$4
+    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_paint_pop_transform_func_t.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_color_glyph_func_t.class, "apply", constants$862.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_paint_push_clip_glyph_func_t.class, "apply", constants$380.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$380.const$3
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER
+    );
 }
 
 

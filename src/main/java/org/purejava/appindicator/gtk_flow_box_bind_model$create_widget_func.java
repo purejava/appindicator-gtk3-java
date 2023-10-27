@@ -13,7 +13,7 @@ public interface gtk_flow_box_bind_model$create_widget_func {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
     static MemorySegment allocate(gtk_flow_box_bind_model$create_widget_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2710.const$4, fi, constants$5.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$2715.const$4, fi, constants$5.const$5, scope);
     }
     static gtk_flow_box_bind_model$create_widget_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

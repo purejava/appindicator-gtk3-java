@@ -13,7 +13,7 @@ public interface GTypeInterfaceCheckFunc {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(GTypeInterfaceCheckFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$553.const$1, fi, constants$13.const$4, scope);
+        return RuntimeHelper.upcallStub(constants$554.const$4, fi, constants$13.const$4, scope);
     }
     static GTypeInterfaceCheckFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

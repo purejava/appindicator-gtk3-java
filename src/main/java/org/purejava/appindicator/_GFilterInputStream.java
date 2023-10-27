@@ -18,13 +18,13 @@ import java.lang.invoke.VarHandle;
 public class _GFilterInputStream {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$770.const$0;
+        return constants$773.const$0;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 32);
     }
     public static VarHandle base_stream$VH() {
-        return constants$770.const$1;
+        return constants$773.const$1;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class _GFilterInputStream {
      * }
      */
     public static MemorySegment base_stream$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$770.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$773.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -42,13 +42,13 @@ public class _GFilterInputStream {
      * }
      */
     public static void base_stream$set(MemorySegment seg, MemorySegment x) {
-        constants$770.const$1.set(seg, x);
+        constants$773.const$1.set(seg, x);
     }
     public static MemorySegment base_stream$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$770.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$773.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void base_stream$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$770.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$773.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

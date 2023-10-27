@@ -2,36 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1694 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1694() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_rectangle_list_destroy",
-        constants$13.const$1
+        "cairo_path_extents",
+        constants$332.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "cairo_tag_begin",
-        constants$14.const$3
+        "cairo_paint",
+        constants$13.const$1
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "cairo_tag_end",
+        "cairo_paint_with_alpha",
+        constants$692.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_mask",
         constants$13.const$4
     );
-    static final StructLayout const$3 = MemoryLayout.structLayout(
-        JAVA_LONG.withName("index"),
-        JAVA_DOUBLE.withName("x"),
-        JAVA_DOUBLE.withName("y")
-    ).withName("cairo_glyph_t");
-    static final VarHandle const$4 = constants$1694.const$3.varHandle(MemoryLayout.PathElement.groupElement("index"));
-    static final VarHandle const$5 = constants$1694.const$3.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_mask_surface",
+        constants$1688.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_stroke",
+        constants$13.const$1
+    );
 }
 
 

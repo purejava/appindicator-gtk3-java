@@ -9,12 +9,12 @@ final class constants$1000 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1000() {}
-    static final VarHandle const$0 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("mount_enclosing_volume"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.mount_enclosing_volume_finish.class, "apply", constants$12.const$2);
-    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("mount_enclosing_volume_finish"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.monitor_dir.class, "apply", constants$180.const$0);
-    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("monitor_dir"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.monitor_file.class, "apply", constants$180.const$0);
+    static final VarHandle const$0 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("move"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.move_async.class, "apply", constants$998.const$5);
+    static final VarHandle const$2 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("move_async"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.move_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$974.const$5.varHandle(MemoryLayout.PathElement.groupElement("move_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.mount_mountable.class, "apply", constants$381.const$0);
 }
 
 

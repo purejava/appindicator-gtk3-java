@@ -13,7 +13,7 @@ public interface g_dbus_connection_add_filter$user_data_free_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_dbus_connection_add_filter$user_data_free_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$870.const$0, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$873.const$0, fi, constants$13.const$1, scope);
     }
     static g_dbus_connection_add_filter$user_data_free_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

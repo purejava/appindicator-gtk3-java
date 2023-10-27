@@ -7,29 +7,26 @@ final class constants$3089 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3089() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_child_by_name",
-        constants$5.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gtk_settings_install_property_parser$parser.class, "apply", constants$12.const$2);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_visible_child",
+        "gtk_settings_install_property_parser",
         constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_visible_child",
-        constants$5.const$2
+        "gtk_rc_property_parse_color",
+        constants$12.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_visible_child_name",
-        constants$13.const$4
+        "gtk_rc_property_parse_enum",
+        constants$12.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_visible_child_name",
-        constants$5.const$2
+        "gtk_rc_property_parse_flags",
+        constants$12.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_visible_child_full",
-        constants$164.const$5
+        "gtk_rc_property_parse_requisition",
+        constants$12.const$2
     );
 }
 

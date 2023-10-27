@@ -2,32 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$1755 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1755() {}
-    static final VarHandle const$0 = constants$1754.const$5.varHandle(MemoryLayout.PathElement.groupElement("x"));
-    static final VarHandle const$1 = constants$1754.const$5.varHandle(MemoryLayout.PathElement.groupElement("y"));
-    static final StructLayout const$2 = MemoryLayout.structLayout(
-        JAVA_INT.withName("time"),
-        MemoryLayout.paddingLayout(4),
-        MemoryLayout.sequenceLayout(128, JAVA_DOUBLE).withName("axes")
-    ).withName("_GdkTimeCoord");
-    static final VarHandle const$3 = constants$1755.const$2.varHandle(MemoryLayout.PathElement.groupElement("time"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_matrix_rotate",
+        constants$692.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_matrix_invert",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_matrix_multiply",
+        constants$14.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_matrix_transform_distance",
+        constants$14.const$3
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_device_get_type",
-        constants$3.const$5
+        "cairo_matrix_transform_point",
+        constants$14.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_device_get_name",
-        constants$5.const$2
+        "cairo_region_create",
+        constants$35.const$2
     );
 }
 

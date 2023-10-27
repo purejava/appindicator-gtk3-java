@@ -6,30 +6,25 @@ import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.JAVA_BYTE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1787 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1787() {}
-    static final VarHandle const$0 = constants$1786.const$1.varHandle(MemoryLayout.PathElement.groupElement("target"));
-    static final VarHandle const$1 = constants$1786.const$1.varHandle(MemoryLayout.PathElement.groupElement("property"));
-    static final VarHandle const$2 = constants$1786.const$1.varHandle(MemoryLayout.PathElement.groupElement("time"));
-    static final VarHandle const$3 = constants$1786.const$1.varHandle(MemoryLayout.PathElement.groupElement("requestor"));
-    static final StructLayout const$4 = MemoryLayout.structLayout(
+    static final VarHandle const$0 = constants$1785.const$3.varHandle(MemoryLayout.PathElement.groupElement("y_root"));
+    static final VarHandle const$1 = constants$1785.const$3.varHandle(MemoryLayout.PathElement.groupElement("mode"));
+    static final VarHandle const$2 = constants$1785.const$3.varHandle(MemoryLayout.PathElement.groupElement("detail"));
+    static final VarHandle const$3 = constants$1785.const$3.varHandle(MemoryLayout.PathElement.groupElement("focus"));
+    static final VarHandle const$4 = constants$1785.const$3.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
         JAVA_INT.withName("type"),
         MemoryLayout.paddingLayout(4),
         RuntimeHelper.POINTER.withName("window"),
         JAVA_BYTE.withName("send_event"),
-        MemoryLayout.paddingLayout(7),
-        RuntimeHelper.POINTER.withName("owner"),
-        JAVA_INT.withName("reason"),
-        MemoryLayout.paddingLayout(4),
-        RuntimeHelper.POINTER.withName("selection"),
-        JAVA_INT.withName("time"),
-        JAVA_INT.withName("selection_time")
-    ).withName("_GdkEventOwnerChange");
-    static final VarHandle const$5 = constants$1787.const$4.varHandle(MemoryLayout.PathElement.groupElement("type"));
+        MemoryLayout.paddingLayout(1),
+        JAVA_SHORT.withName("in"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GdkEventFocus");
 }
 
 

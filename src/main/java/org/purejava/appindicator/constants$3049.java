@@ -2,19 +2,41 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
 final class constants$3049 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3049() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkScaleClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$3047.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkScaleClass._gtk_reserved3.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$3047.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkScaleClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$3047.const$2.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_render_extension",
+        constants$3048.const$3
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_render_handle",
+        constants$3046.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_render_activity",
+        constants$3046.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_render_icon_pixbuf",
+        constants$32.const$3
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_render_icon",
+        constants$3049.const$4
+    );
 }
 
 

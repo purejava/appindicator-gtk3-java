@@ -8,27 +8,27 @@ final class constants$2784 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2784() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_frame_clock",
-        constants$13.const$4
+        "gtk_style_context_get_section",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_frame_clock",
-        constants$5.const$2
+        "gtk_style_context_get_property",
+        constants$466.const$3
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_direction",
+        "gtk_style_context_get_valist",
+        constants$2777.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_style_context_get",
         constants$40.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_direction",
-        constants$10.const$5
-    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_junction_sides",
+        "gtk_style_context_set_state",
         constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_junction_sides",
+        "gtk_style_context_get_state",
         constants$10.const$5
     );
 }

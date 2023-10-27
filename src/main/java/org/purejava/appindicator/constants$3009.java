@@ -3,33 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3009 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3009() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_range_get_round_digits",
-        constants$10.const$5
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkRangeClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$3005.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_range_get_type",
+        constants$3.const$5
     );
-    static final StructLayout const$1 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("display_name"),
-        RuntimeHelper.POINTER.withName("description"),
-        RuntimeHelper.POINTER.withName("mime_type"),
-        RuntimeHelper.POINTER.withName("app_name"),
-        RuntimeHelper.POINTER.withName("app_exec"),
-        RuntimeHelper.POINTER.withName("groups"),
-        JAVA_INT.withName("is_private"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("_GtkRecentData");
-    static final VarHandle const$2 = constants$3009.const$1.varHandle(MemoryLayout.PathElement.groupElement("display_name"));
-    static final VarHandle const$3 = constants$3009.const$1.varHandle(MemoryLayout.PathElement.groupElement("description"));
-    static final VarHandle const$4 = constants$3009.const$1.varHandle(MemoryLayout.PathElement.groupElement("mime_type"));
-    static final VarHandle const$5 = constants$3009.const$1.varHandle(MemoryLayout.PathElement.groupElement("app_name"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_range_set_adjustment",
+        constants$13.const$4
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_range_get_adjustment",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_range_set_inverted",
+        constants$40.const$2
+    );
 }
 
 

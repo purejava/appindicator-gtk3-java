@@ -13,13 +13,13 @@ public interface hb_color_line_get_color_stops_func_t {
 
     int apply(java.lang.foreign.MemorySegment color_line, java.lang.foreign.MemorySegment color_line_data, int start, java.lang.foreign.MemorySegment count, java.lang.foreign.MemorySegment color_stops, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(hb_color_line_get_color_stops_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1458.const$5, fi, constants$1243.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$1463.const$1, fi, constants$1247.const$0, scope);
     }
     static hb_color_line_get_color_stops_func_t ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _color_line, java.lang.foreign.MemorySegment _color_line_data, int _start, java.lang.foreign.MemorySegment _count, java.lang.foreign.MemorySegment _color_stops, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1459.const$0.invokeExact(symbol, _color_line, _color_line_data, _start, _count, _color_stops, _user_data);
+                return (int)constants$1463.const$2.invokeExact(symbol, _color_line, _color_line_data, _start, _count, _color_stops, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

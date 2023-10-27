@@ -9,15 +9,12 @@ final class constants$1975 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1975() {}
-    static final VarHandle const$0 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_attributes"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectClass.get_object_locale.class, "apply", constants$5.const$2);
-    static final VarHandle const$2 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_object_locale"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkObjectClass.pad1.class, "apply", constants$10.const$5);
-    static final VarHandle const$4 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("pad1"));
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "atk_object_get_type",
-        constants$3.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkObjectClass.get_mdi_zorder.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_mdi_zorder"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkObjectClass.ref_state_set.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("ref_state_set"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkObjectClass.set_name.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$1971.const$5.varHandle(MemoryLayout.PathElement.groupElement("set_name"));
 }
 
 

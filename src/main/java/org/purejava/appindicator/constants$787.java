@@ -2,32 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$787 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$787() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_output_stream_write_bytes",
-        constants$332.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_output_stream_splice",
-        constants$778.const$3
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_output_stream_flush",
-        constants$12.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_output_stream_close",
-        constants$12.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_output_stream_write_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_output_stream_write_async",
-        constants$761.const$1
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved6.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$781.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
 }
 
 

@@ -17,7 +17,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GSimpleActionGroupClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1265.const$1;
+        return constants$1269.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);

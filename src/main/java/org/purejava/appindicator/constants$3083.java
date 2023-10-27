@@ -7,45 +7,45 @@ import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
-import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3083 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3083() {}
-    static final StructLayout const$0 = MemoryLayout.structLayout(
-        RuntimeHelper.POINTER.withName("origin"),
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            MemoryLayout.sequenceLayout(2, MemoryLayout.unionLayout(
-                JAVA_INT.withName("v_int"),
-                JAVA_INT.withName("v_uint"),
-                JAVA_LONG.withName("v_long"),
-                JAVA_LONG.withName("v_ulong"),
-                JAVA_LONG.withName("v_int64"),
-                JAVA_LONG.withName("v_uint64"),
-                JAVA_FLOAT.withName("v_float"),
-                JAVA_DOUBLE.withName("v_double"),
-                RuntimeHelper.POINTER.withName("v_pointer")
-            ).withName("")).withName("data")
-        ).withName("value")
-    ).withName("_GtkSettingsValue");
-    static final VarHandle const$1 = constants$3083.const$0.varHandle(MemoryLayout.PathElement.groupElement("origin"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkSeparatorMenuItemClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$3081.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_settings_get_type",
+        "gtk_separator_menu_item_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_settings_get_default",
+        "gtk_separator_menu_item_new",
         constants$35.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_settings_get_for_screen",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_settings_install_property",
-        constants$13.const$1
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        MemoryLayout.structLayout(
+                            MemoryLayout.structLayout(
+                                RuntimeHelper.POINTER.withName("g_class")
+                            ).withName("g_type_instance"),
+                            JAVA_INT.withName("ref_count"),
+                            MemoryLayout.paddingLayout(4),
+                            RuntimeHelper.POINTER.withName("qdata")
+                        ).withName("parent_instance"),
+                        RuntimeHelper.POINTER.withName("priv")
+                    ).withName("widget"),
+                    RuntimeHelper.POINTER.withName("priv")
+                ).withName("container"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("parent"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GtkSeparatorToolItem");
+    static final VarHandle const$5 = constants$3083.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

@@ -8,27 +8,27 @@ final class constants$1837 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1837() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_mark_paint_from_clip",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_paint_region",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_end_paint",
+        "gdk_window_set_child_shapes",
         constants$13.const$1
     );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_composited",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_composited",
+        constants$40.const$2
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_draw_frame",
-        constants$5.const$5
+        "gdk_window_merge_child_shapes",
+        constants$13.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_end_draw_frame",
-        constants$13.const$4
+        "gdk_window_input_shape_combine_region",
+        constants$1046.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_flush",
+        "gdk_window_set_child_input_shapes",
         constants$13.const$1
     );
 }

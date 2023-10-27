@@ -8,28 +8,25 @@ final class constants$1835 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1835() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_window_has_native",
+        "gdk_window_get_accept_focus",
         constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_type_hint",
+        "gdk_window_set_accept_focus",
         constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_type_hint",
+        "gdk_window_get_focus_on_map",
         constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_window_get_modal_hint",
-        constants$10.const$5
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_modal_hint",
+        "gdk_window_set_focus_on_map",
         constants$40.const$2
     );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gdk_window_add_filter$function.class, "apply", constants$12.const$2);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_window_set_skip_taskbar_hint",
-        constants$40.const$2
+        "gdk_window_add_filter",
+        constants$14.const$3
     );
 }
 

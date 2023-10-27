@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GPathBuf {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$390.const$2;
+        return constants$391.const$2;
     }
     public static MemorySegment dummy$slice(MemorySegment seg) {
         return seg.asSlice(0, 64);

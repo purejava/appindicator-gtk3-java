@@ -2,34 +2,52 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$329 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$329() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_key_file_to_data",
-        constants$23.const$0
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_key_file_save_to_file",
-        constants$12.const$2
+        "g_key_file_load_from_data",
+        constants$329.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_key_file_get_start_group",
-        constants$5.const$2
+        "g_key_file_load_from_bytes",
+        constants$328.const$4
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_key_file_get_groups",
-        constants$5.const$5
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_key_file_get_keys",
-        constants$39.const$1
+        "g_key_file_load_from_dirs",
+        constants$329.const$3
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_key_file_has_group",
-        constants$9.const$0
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_data_dirs",
+        constants$329.const$5
     );
 }
 

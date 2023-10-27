@@ -9,21 +9,12 @@ final class constants$1076 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1076() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GIOStreamClass._g_reserved10.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$1071.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved10"));
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_io_stream_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_io_stream_get_input_stream",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_io_stream_get_output_stream",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_io_stream_splice_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GIOStreamClass.close_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$1074.const$3.varHandle(MemoryLayout.PathElement.groupElement("close_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GIOStreamClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1074.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GIOStreamClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1074.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
 }
 
 

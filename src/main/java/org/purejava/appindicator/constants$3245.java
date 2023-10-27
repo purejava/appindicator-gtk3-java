@@ -9,12 +9,12 @@ final class constants$3245 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3245() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkActionClass.activate.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$3244.const$5.varHandle(MemoryLayout.PathElement.groupElement("activate"));
-    static final VarHandle const$2 = constants$3244.const$5.varHandle(MemoryLayout.PathElement.groupElement("menu_item_type"));
-    static final VarHandle const$3 = constants$3244.const$5.varHandle(MemoryLayout.PathElement.groupElement("toolbar_item_type"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkActionClass.create_menu_item.class, "apply", constants$5.const$2);
-    static final VarHandle const$5 = constants$3244.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_menu_item"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWindowGroupClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$3244.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkWindowGroupClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3244.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWindowGroupClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$3244.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
 }
 
 

@@ -20,7 +20,7 @@ import java.lang.invoke.VarHandle;
 public class _GDBusProxyClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$926.const$1;
+        return constants$929.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -34,7 +34,7 @@ public class _GDBusProxyClass {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(g_properties_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$926.const$2, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$929.const$2, fi, constants$14.const$3, scope);
         }
         static g_properties_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -49,7 +49,7 @@ public class _GDBusProxyClass {
     }
 
     public static VarHandle g_properties_changed$VH() {
-        return constants$926.const$3;
+        return constants$929.const$3;
     }
     /**
      * Getter for field:
@@ -58,7 +58,7 @@ public class _GDBusProxyClass {
      * }
      */
     public static MemorySegment g_properties_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$926.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$929.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -67,13 +67,13 @@ public class _GDBusProxyClass {
      * }
      */
     public static void g_properties_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$926.const$3.set(seg, x);
+        constants$929.const$3.set(seg, x);
     }
     public static MemorySegment g_properties_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$926.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$929.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void g_properties_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$926.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$929.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static g_properties_changed g_properties_changed(MemorySegment segment, Arena scope) {
         return g_properties_changed.ofAddress(g_properties_changed$get(segment), scope);
@@ -87,7 +87,7 @@ public class _GDBusProxyClass {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(g_signal fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$926.const$4, fi, constants$42.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$929.const$4, fi, constants$42.const$1, scope);
         }
         static g_signal ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -102,7 +102,7 @@ public class _GDBusProxyClass {
     }
 
     public static VarHandle g_signal$VH() {
-        return constants$926.const$5;
+        return constants$929.const$5;
     }
     /**
      * Getter for field:
@@ -111,7 +111,7 @@ public class _GDBusProxyClass {
      * }
      */
     public static MemorySegment g_signal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$926.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$929.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -120,13 +120,13 @@ public class _GDBusProxyClass {
      * }
      */
     public static void g_signal$set(MemorySegment seg, MemorySegment x) {
-        constants$926.const$5.set(seg, x);
+        constants$929.const$5.set(seg, x);
     }
     public static MemorySegment g_signal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$926.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$929.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void g_signal$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$926.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$929.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static g_signal g_signal(MemorySegment segment, Arena scope) {
         return g_signal.ofAddress(g_signal$get(segment), scope);

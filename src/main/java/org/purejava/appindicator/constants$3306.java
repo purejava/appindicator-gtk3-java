@@ -123,40 +123,41 @@ final class constants$3306 {
                     RuntimeHelper.POINTER.withName("_gtk_reserved6"),
                     RuntimeHelper.POINTER.withName("_gtk_reserved7")
                 ).withName("parent_class"),
-                RuntimeHelper.POINTER.withName("slider_detail"),
-                RuntimeHelper.POINTER.withName("stepper_detail"),
-                RuntimeHelper.POINTER.withName("value_changed"),
-                RuntimeHelper.POINTER.withName("adjust_bounds"),
-                RuntimeHelper.POINTER.withName("move_slider"),
-                RuntimeHelper.POINTER.withName("get_range_border"),
-                RuntimeHelper.POINTER.withName("change_value"),
-                RuntimeHelper.POINTER.withName("get_range_size_request"),
+                RuntimeHelper.POINTER.withName("add"),
+                RuntimeHelper.POINTER.withName("remove"),
+                RuntimeHelper.POINTER.withName("check_resize"),
+                RuntimeHelper.POINTER.withName("forall"),
+                RuntimeHelper.POINTER.withName("set_focus_child"),
+                RuntimeHelper.POINTER.withName("child_type"),
+                RuntimeHelper.POINTER.withName("composite_name"),
+                RuntimeHelper.POINTER.withName("set_child_property"),
+                RuntimeHelper.POINTER.withName("get_child_property"),
+                RuntimeHelper.POINTER.withName("get_path_for_child"),
+                MemoryLayout.paddingLayout(8),
                 RuntimeHelper.POINTER.withName("_gtk_reserved1"),
                 RuntimeHelper.POINTER.withName("_gtk_reserved2"),
-                RuntimeHelper.POINTER.withName("_gtk_reserved3")
+                RuntimeHelper.POINTER.withName("_gtk_reserved3"),
+                RuntimeHelper.POINTER.withName("_gtk_reserved4"),
+                RuntimeHelper.POINTER.withName("_gtk_reserved5"),
+                RuntimeHelper.POINTER.withName("_gtk_reserved6"),
+                RuntimeHelper.POINTER.withName("_gtk_reserved7"),
+                RuntimeHelper.POINTER.withName("_gtk_reserved8")
             ).withName("parent_class"),
-            RuntimeHelper.POINTER.withName("format_value"),
-            RuntimeHelper.POINTER.withName("draw_value"),
-            RuntimeHelper.POINTER.withName("get_layout_offsets"),
             RuntimeHelper.POINTER.withName("_gtk_reserved1"),
             RuntimeHelper.POINTER.withName("_gtk_reserved2"),
             RuntimeHelper.POINTER.withName("_gtk_reserved3"),
             RuntimeHelper.POINTER.withName("_gtk_reserved4")
         ).withName("parent_class")
-    ).withName("_GtkHScaleClass");
+    ).withName("_GtkHBoxClass");
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_hscale_get_type",
+        "gtk_hbox_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_hscale_new",
-        constants$5.const$2
+        "gtk_hbox_new",
+        constants$1416.const$3
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_hscale_new_with_range",
-        constants$1741.const$1
-    );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
+    static final StructLayout const$3 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -171,10 +172,11 @@ final class constants$3306 {
                     RuntimeHelper.POINTER.withName("priv")
                 ).withName("widget"),
                 RuntimeHelper.POINTER.withName("priv")
-            ).withName("range")
-        ).withName("scrollbar")
-    ).withName("_GtkHScrollbar");
-    static final StructLayout const$5 = MemoryLayout.structLayout(
+            ).withName("container"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("paned")
+    ).withName("_GtkHPaned");
+    static final StructLayout const$4 = MemoryLayout.structLayout(
         MemoryLayout.structLayout(
             MemoryLayout.structLayout(
                 MemoryLayout.structLayout(
@@ -285,24 +287,42 @@ final class constants$3306 {
                     RuntimeHelper.POINTER.withName("_gtk_reserved6"),
                     RuntimeHelper.POINTER.withName("_gtk_reserved7")
                 ).withName("parent_class"),
-                RuntimeHelper.POINTER.withName("slider_detail"),
-                RuntimeHelper.POINTER.withName("stepper_detail"),
-                RuntimeHelper.POINTER.withName("value_changed"),
-                RuntimeHelper.POINTER.withName("adjust_bounds"),
-                RuntimeHelper.POINTER.withName("move_slider"),
-                RuntimeHelper.POINTER.withName("get_range_border"),
-                RuntimeHelper.POINTER.withName("change_value"),
-                RuntimeHelper.POINTER.withName("get_range_size_request"),
+                RuntimeHelper.POINTER.withName("add"),
+                RuntimeHelper.POINTER.withName("remove"),
+                RuntimeHelper.POINTER.withName("check_resize"),
+                RuntimeHelper.POINTER.withName("forall"),
+                RuntimeHelper.POINTER.withName("set_focus_child"),
+                RuntimeHelper.POINTER.withName("child_type"),
+                RuntimeHelper.POINTER.withName("composite_name"),
+                RuntimeHelper.POINTER.withName("set_child_property"),
+                RuntimeHelper.POINTER.withName("get_child_property"),
+                RuntimeHelper.POINTER.withName("get_path_for_child"),
+                MemoryLayout.paddingLayout(8),
                 RuntimeHelper.POINTER.withName("_gtk_reserved1"),
                 RuntimeHelper.POINTER.withName("_gtk_reserved2"),
-                RuntimeHelper.POINTER.withName("_gtk_reserved3")
+                RuntimeHelper.POINTER.withName("_gtk_reserved3"),
+                RuntimeHelper.POINTER.withName("_gtk_reserved4"),
+                RuntimeHelper.POINTER.withName("_gtk_reserved5"),
+                RuntimeHelper.POINTER.withName("_gtk_reserved6"),
+                RuntimeHelper.POINTER.withName("_gtk_reserved7"),
+                RuntimeHelper.POINTER.withName("_gtk_reserved8")
             ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("cycle_child_focus"),
+            RuntimeHelper.POINTER.withName("toggle_handle_focus"),
+            RuntimeHelper.POINTER.withName("move_handle"),
+            RuntimeHelper.POINTER.withName("cycle_handle_focus"),
+            RuntimeHelper.POINTER.withName("accept_position"),
+            RuntimeHelper.POINTER.withName("cancel_position"),
             RuntimeHelper.POINTER.withName("_gtk_reserved1"),
             RuntimeHelper.POINTER.withName("_gtk_reserved2"),
             RuntimeHelper.POINTER.withName("_gtk_reserved3"),
             RuntimeHelper.POINTER.withName("_gtk_reserved4")
         ).withName("parent_class")
-    ).withName("_GtkHScrollbarClass");
+    ).withName("_GtkHPanedClass");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_hpaned_get_type",
+        constants$3.const$5
+    );
 }
 
 

@@ -26,10 +26,10 @@ import java.lang.invoke.VarHandle;
 public class _GTypeInfo {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$553.const$2;
+        return constants$554.const$5;
     }
     public static VarHandle class_size$VH() {
-        return constants$553.const$3;
+        return constants$555.const$0;
     }
     /**
      * Getter for field:
@@ -38,7 +38,7 @@ public class _GTypeInfo {
      * }
      */
     public static short class_size$get(MemorySegment seg) {
-        return (short)constants$553.const$3.get(seg);
+        return (short)constants$555.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -47,13 +47,13 @@ public class _GTypeInfo {
      * }
      */
     public static void class_size$set(MemorySegment seg, short x) {
-        constants$553.const$3.set(seg, x);
+        constants$555.const$0.set(seg, x);
     }
     public static short class_size$get(MemorySegment seg, long index) {
-        return (short)constants$553.const$3.get(seg.asSlice(index*sizeof()));
+        return (short)constants$555.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void class_size$set(MemorySegment seg, long index, short x) {
-        constants$553.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$555.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -64,7 +64,7 @@ public class _GTypeInfo {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(base_init fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$553.const$4, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$555.const$1, fi, constants$13.const$1, scope);
         }
         static base_init ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -79,7 +79,7 @@ public class _GTypeInfo {
     }
 
     public static VarHandle base_init$VH() {
-        return constants$553.const$5;
+        return constants$555.const$2;
     }
     /**
      * Getter for field:
@@ -88,7 +88,7 @@ public class _GTypeInfo {
      * }
      */
     public static MemorySegment base_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$553.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$555.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -97,13 +97,13 @@ public class _GTypeInfo {
      * }
      */
     public static void base_init$set(MemorySegment seg, MemorySegment x) {
-        constants$553.const$5.set(seg, x);
+        constants$555.const$2.set(seg, x);
     }
     public static MemorySegment base_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$553.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$555.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void base_init$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$553.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$555.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static base_init base_init(MemorySegment segment, Arena scope) {
         return base_init.ofAddress(base_init$get(segment), scope);
@@ -117,7 +117,7 @@ public class _GTypeInfo {
 
         void apply(java.lang.foreign.MemorySegment display);
         static MemorySegment allocate(base_finalize fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$554.const$0, fi, constants$13.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$555.const$3, fi, constants$13.const$1, scope);
         }
         static base_finalize ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -132,7 +132,7 @@ public class _GTypeInfo {
     }
 
     public static VarHandle base_finalize$VH() {
-        return constants$554.const$1;
+        return constants$555.const$4;
     }
     /**
      * Getter for field:
@@ -141,7 +141,7 @@ public class _GTypeInfo {
      * }
      */
     public static MemorySegment base_finalize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$554.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$555.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -150,13 +150,13 @@ public class _GTypeInfo {
      * }
      */
     public static void base_finalize$set(MemorySegment seg, MemorySegment x) {
-        constants$554.const$1.set(seg, x);
+        constants$555.const$4.set(seg, x);
     }
     public static MemorySegment base_finalize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$554.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$555.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void base_finalize$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$554.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$555.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static base_finalize base_finalize(MemorySegment segment, Arena scope) {
         return base_finalize.ofAddress(base_finalize$get(segment), scope);
@@ -170,7 +170,7 @@ public class _GTypeInfo {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(class_init fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$554.const$2, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$555.const$5, fi, constants$13.const$4, scope);
         }
         static class_init ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -185,7 +185,7 @@ public class _GTypeInfo {
     }
 
     public static VarHandle class_init$VH() {
-        return constants$554.const$3;
+        return constants$556.const$0;
     }
     /**
      * Getter for field:
@@ -194,7 +194,7 @@ public class _GTypeInfo {
      * }
      */
     public static MemorySegment class_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$554.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$556.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -203,13 +203,13 @@ public class _GTypeInfo {
      * }
      */
     public static void class_init$set(MemorySegment seg, MemorySegment x) {
-        constants$554.const$3.set(seg, x);
+        constants$556.const$0.set(seg, x);
     }
     public static MemorySegment class_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$554.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$556.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void class_init$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$554.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$556.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static class_init class_init(MemorySegment segment, Arena scope) {
         return class_init.ofAddress(class_init$get(segment), scope);
@@ -223,7 +223,7 @@ public class _GTypeInfo {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(class_finalize fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$554.const$4, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$556.const$1, fi, constants$13.const$4, scope);
         }
         static class_finalize ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -238,7 +238,7 @@ public class _GTypeInfo {
     }
 
     public static VarHandle class_finalize$VH() {
-        return constants$554.const$5;
+        return constants$556.const$2;
     }
     /**
      * Getter for field:
@@ -247,7 +247,7 @@ public class _GTypeInfo {
      * }
      */
     public static MemorySegment class_finalize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$554.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$556.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -256,19 +256,19 @@ public class _GTypeInfo {
      * }
      */
     public static void class_finalize$set(MemorySegment seg, MemorySegment x) {
-        constants$554.const$5.set(seg, x);
+        constants$556.const$2.set(seg, x);
     }
     public static MemorySegment class_finalize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$554.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$556.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void class_finalize$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$554.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$556.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static class_finalize class_finalize(MemorySegment segment, Arena scope) {
         return class_finalize.ofAddress(class_finalize$get(segment), scope);
     }
     public static VarHandle class_data$VH() {
-        return constants$555.const$0;
+        return constants$556.const$3;
     }
     /**
      * Getter for field:
@@ -277,7 +277,7 @@ public class _GTypeInfo {
      * }
      */
     public static MemorySegment class_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$555.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$556.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -286,16 +286,16 @@ public class _GTypeInfo {
      * }
      */
     public static void class_data$set(MemorySegment seg, MemorySegment x) {
-        constants$555.const$0.set(seg, x);
+        constants$556.const$3.set(seg, x);
     }
     public static MemorySegment class_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$555.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$556.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void class_data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$555.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$556.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle instance_size$VH() {
-        return constants$555.const$1;
+        return constants$556.const$4;
     }
     /**
      * Getter for field:
@@ -304,7 +304,7 @@ public class _GTypeInfo {
      * }
      */
     public static short instance_size$get(MemorySegment seg) {
-        return (short)constants$555.const$1.get(seg);
+        return (short)constants$556.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -313,16 +313,16 @@ public class _GTypeInfo {
      * }
      */
     public static void instance_size$set(MemorySegment seg, short x) {
-        constants$555.const$1.set(seg, x);
+        constants$556.const$4.set(seg, x);
     }
     public static short instance_size$get(MemorySegment seg, long index) {
-        return (short)constants$555.const$1.get(seg.asSlice(index*sizeof()));
+        return (short)constants$556.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void instance_size$set(MemorySegment seg, long index, short x) {
-        constants$555.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$556.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle n_preallocs$VH() {
-        return constants$555.const$2;
+        return constants$556.const$5;
     }
     /**
      * Getter for field:
@@ -331,7 +331,7 @@ public class _GTypeInfo {
      * }
      */
     public static short n_preallocs$get(MemorySegment seg) {
-        return (short)constants$555.const$2.get(seg);
+        return (short)constants$556.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -340,13 +340,13 @@ public class _GTypeInfo {
      * }
      */
     public static void n_preallocs$set(MemorySegment seg, short x) {
-        constants$555.const$2.set(seg, x);
+        constants$556.const$5.set(seg, x);
     }
     public static short n_preallocs$get(MemorySegment seg, long index) {
-        return (short)constants$555.const$2.get(seg.asSlice(index*sizeof()));
+        return (short)constants$556.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void n_preallocs$set(MemorySegment seg, long index, short x) {
-        constants$555.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$556.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -357,7 +357,7 @@ public class _GTypeInfo {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(instance_init fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$555.const$3, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$557.const$0, fi, constants$13.const$4, scope);
         }
         static instance_init ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -372,7 +372,7 @@ public class _GTypeInfo {
     }
 
     public static VarHandle instance_init$VH() {
-        return constants$555.const$4;
+        return constants$557.const$1;
     }
     /**
      * Getter for field:
@@ -381,7 +381,7 @@ public class _GTypeInfo {
      * }
      */
     public static MemorySegment instance_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$555.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$557.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -390,19 +390,19 @@ public class _GTypeInfo {
      * }
      */
     public static void instance_init$set(MemorySegment seg, MemorySegment x) {
-        constants$555.const$4.set(seg, x);
+        constants$557.const$1.set(seg, x);
     }
     public static MemorySegment instance_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$555.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$557.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void instance_init$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$555.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$557.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static instance_init instance_init(MemorySegment segment, Arena scope) {
         return instance_init.ofAddress(instance_init$get(segment), scope);
     }
     public static VarHandle value_table$VH() {
-        return constants$555.const$5;
+        return constants$557.const$2;
     }
     /**
      * Getter for field:
@@ -411,7 +411,7 @@ public class _GTypeInfo {
      * }
      */
     public static MemorySegment value_table$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$555.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$557.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -420,13 +420,13 @@ public class _GTypeInfo {
      * }
      */
     public static void value_table$set(MemorySegment seg, MemorySegment x) {
-        constants$555.const$5.set(seg, x);
+        constants$557.const$2.set(seg, x);
     }
     public static MemorySegment value_table$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$555.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$557.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void value_table$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$555.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$557.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

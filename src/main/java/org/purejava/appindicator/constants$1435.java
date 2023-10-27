@@ -8,28 +8,28 @@ final class constants$1435 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1435() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_set_is_subset",
-        constants$9.const$0
+        "hb_unicode_mirroring",
+        constants$11.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_set_set",
-        constants$13.const$4
+        "hb_unicode_script",
+        constants$11.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_set_union",
-        constants$13.const$4
+        "hb_unicode_compose",
+        constants$49.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_set_intersect",
-        constants$13.const$4
+        "hb_unicode_decompose",
+        constants$11.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_set_subtract",
-        constants$13.const$4
+        "hb_set_create",
+        constants$35.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_set_symmetric_difference",
-        constants$13.const$4
+        "hb_set_get_empty",
+        constants$35.const$2
     );
 }
 

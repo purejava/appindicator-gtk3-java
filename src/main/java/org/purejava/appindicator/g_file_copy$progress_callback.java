@@ -13,13 +13,13 @@ public interface g_file_copy$progress_callback {
 
     void apply(long current_num_bytes, long total_num_bytes, java.lang.foreign.MemorySegment data);
     static MemorySegment allocate(g_file_copy$progress_callback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1024.const$3, fi, constants$561.const$3, scope);
+        return RuntimeHelper.upcallStub(constants$1027.const$4, fi, constants$564.const$0, scope);
     }
     static g_file_copy$progress_callback ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
         return (long _current_num_bytes, long _total_num_bytes, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$693.const$3.invokeExact(symbol, _current_num_bytes, _total_num_bytes, _data);
+                constants$696.const$1.invokeExact(symbol, _current_num_bytes, _total_num_bytes, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

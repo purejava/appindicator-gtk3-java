@@ -8,29 +8,17 @@ final class constants$1472 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1472() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_paint_pop_group",
-        constants$164.const$5
+        "hb_paint_funcs_set_linear_gradient_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_paint_custom_palette_color",
-        constants$327.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_create",
-        constants$35.const$2
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_radial_gradient_func$func.class, "apply", constants$1452.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_radial_gradient_func$destroy.class, "apply", constants$13.const$1);
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_get_empty",
-        constants$35.const$2
+        "hb_paint_funcs_set_radial_gradient_func",
+        constants$42.const$1
     );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_reference",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_destroy",
-        constants$13.const$1
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_sweep_gradient_func$func.class, "apply", constants$1451.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_sweep_gradient_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

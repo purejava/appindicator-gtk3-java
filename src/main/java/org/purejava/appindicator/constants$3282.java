@@ -3,58 +3,18 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$3282 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3282() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_set_current_color",
-        constants$13.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_get_current_color",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_set_previous_color",
-        constants$13.const$4
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_get_previous_color",
-        constants$13.const$4
-    );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        MemoryLayout.structLayout(
-                            MemoryLayout.structLayout(
-                                MemoryLayout.structLayout(
-                                    RuntimeHelper.POINTER.withName("g_class")
-                                ).withName("g_type_instance"),
-                                JAVA_INT.withName("ref_count"),
-                                MemoryLayout.paddingLayout(4),
-                                RuntimeHelper.POINTER.withName("qdata")
-                            ).withName("parent_instance"),
-                            RuntimeHelper.POINTER.withName("priv")
-                        ).withName("widget"),
-                        RuntimeHelper.POINTER.withName("priv")
-                    ).withName("container"),
-                    RuntimeHelper.POINTER.withName("priv")
-                ).withName("bin"),
-                RuntimeHelper.POINTER.withName("priv")
-            ).withName("window"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GtkColorSelectionDialog");
-    static final VarHandle const$5 = constants$3282.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkColorSelectionClass.color_changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$3281.const$5.varHandle(MemoryLayout.PathElement.groupElement("color_changed"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkColorSelectionClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$3281.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkColorSelectionClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$3281.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
 }
 
 

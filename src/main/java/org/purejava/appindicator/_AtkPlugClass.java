@@ -18,7 +18,7 @@ import java.lang.invoke.VarHandle;
 public class _AtkPlugClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$2047.const$1;
+        return constants$2052.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 352);
@@ -32,7 +32,7 @@ public class _AtkPlugClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_object_id fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2047.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$2052.const$3, fi, constants$5.const$2, scope);
         }
         static get_object_id ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -47,7 +47,7 @@ public class _AtkPlugClass {
     }
 
     public static VarHandle get_object_id$VH() {
-        return constants$2047.const$3;
+        return constants$2052.const$4;
     }
     /**
      * Getter for field:
@@ -56,7 +56,7 @@ public class _AtkPlugClass {
      * }
      */
     public static MemorySegment get_object_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2047.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2052.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -65,13 +65,13 @@ public class _AtkPlugClass {
      * }
      */
     public static void get_object_id$set(MemorySegment seg, MemorySegment x) {
-        constants$2047.const$3.set(seg, x);
+        constants$2052.const$4.set(seg, x);
     }
     public static MemorySegment get_object_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2047.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2052.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_object_id$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2047.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$2052.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_object_id get_object_id(MemorySegment segment, Arena scope) {
         return get_object_id.ofAddress(get_object_id$get(segment), scope);

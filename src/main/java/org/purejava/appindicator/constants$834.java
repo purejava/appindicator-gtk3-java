@@ -8,28 +8,28 @@ final class constants$834 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$834() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "crypt",
-        constants$5.const$5
+        "endusershell",
+        constants$7.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "getentropy",
-        constants$97.const$1
+        "setusershell",
+        constants$7.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_credentials_get_type",
-        constants$3.const$5
+        "daemon",
+        constants$123.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_credentials_new",
-        constants$35.const$2
+        "chroot",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_credentials_to_string",
+        "getpass",
         constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_credentials_get_native",
-        constants$21.const$3
+        "fsync",
+        constants$8.const$4
     );
 }
 

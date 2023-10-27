@@ -19,7 +19,7 @@ import java.lang.invoke.VarHandle;
 public class _GtkActivatableIface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3256.const$3;
+        return constants$3261.const$3;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -33,7 +33,7 @@ public class _GtkActivatableIface {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(update fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3256.const$4, fi, constants$14.const$3, scope);
+            return RuntimeHelper.upcallStub(constants$3261.const$4, fi, constants$14.const$3, scope);
         }
         static update ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -48,7 +48,7 @@ public class _GtkActivatableIface {
     }
 
     public static VarHandle update$VH() {
-        return constants$3256.const$5;
+        return constants$3261.const$5;
     }
     /**
      * Getter for field:
@@ -57,7 +57,7 @@ public class _GtkActivatableIface {
      * }
      */
     public static MemorySegment update$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3256.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3261.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -66,13 +66,13 @@ public class _GtkActivatableIface {
      * }
      */
     public static void update$set(MemorySegment seg, MemorySegment x) {
-        constants$3256.const$5.set(seg, x);
+        constants$3261.const$5.set(seg, x);
     }
     public static MemorySegment update$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3256.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3261.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void update$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3256.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3261.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static update update(MemorySegment segment, Arena scope) {
         return update.ofAddress(update$get(segment), scope);
@@ -86,7 +86,7 @@ public class _GtkActivatableIface {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(sync_action_properties fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3257.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$3262.const$0, fi, constants$13.const$4, scope);
         }
         static sync_action_properties ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -101,7 +101,7 @@ public class _GtkActivatableIface {
     }
 
     public static VarHandle sync_action_properties$VH() {
-        return constants$3257.const$1;
+        return constants$3262.const$1;
     }
     /**
      * Getter for field:
@@ -110,7 +110,7 @@ public class _GtkActivatableIface {
      * }
      */
     public static MemorySegment sync_action_properties$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3257.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3262.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -119,13 +119,13 @@ public class _GtkActivatableIface {
      * }
      */
     public static void sync_action_properties$set(MemorySegment seg, MemorySegment x) {
-        constants$3257.const$1.set(seg, x);
+        constants$3262.const$1.set(seg, x);
     }
     public static MemorySegment sync_action_properties$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3257.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3262.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void sync_action_properties$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3257.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3262.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static sync_action_properties sync_action_properties(MemorySegment segment, Arena scope) {
         return sync_action_properties.ofAddress(sync_action_properties$get(segment), scope);

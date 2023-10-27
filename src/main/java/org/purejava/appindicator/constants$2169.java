@@ -8,28 +8,28 @@ final class constants$2169 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2169() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_application_set_menubar",
-        constants$13.const$4
+        "gtk_widget_add_tick_callback",
+        constants$34.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_application_add_accelerator",
-        constants$42.const$1
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_application_remove_accelerator",
-        constants$14.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_application_inhibit",
-        constants$327.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_application_uninhibit",
+        "gtk_widget_remove_tick_callback",
         constants$40.const$2
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_widget_init_template",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_widget_get_template_child",
+        constants$36.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_widget_class_set_template",
+        constants$13.const$4
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_application_is_inhibited",
-        constants$11.const$4
+        "gtk_widget_class_set_template_from_resource",
+        constants$13.const$4
     );
 }
 

@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GtkScrollbar {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3059.const$0;
+        return constants$3064.const$0;
     }
     public static MemorySegment range$slice(MemorySegment seg) {
         return seg.asSlice(0, 40);

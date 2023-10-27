@@ -8,29 +8,26 @@ final class constants$1904 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1904() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_get_animation",
-        constants$5.const$2
+        "gdk_pixbuf_format_is_scalable",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_close",
-        constants$9.const$0
+        "gdk_pixbuf_format_is_disabled",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_get_format",
-        constants$5.const$2
+        "gdk_pixbuf_format_set_disabled",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_alpha_mode_get_type",
-        constants$3.const$5
+        "gdk_pixbuf_format_get_license",
+        constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gdk_colorspace_get_type",
-        constants$3.const$5
+        "gdk_pixbuf_get_file_info",
+        constants$23.const$0
     );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_error_get_type",
-        constants$3.const$5
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gdk_pixbuf_get_file_info_async$callback.class, "apply", constants$14.const$3);
 }
 
 

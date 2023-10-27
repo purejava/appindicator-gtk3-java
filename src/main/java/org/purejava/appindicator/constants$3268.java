@@ -2,35 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$3268 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3268() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_set_sensitive",
-        constants$40.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_get_visible",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_set_visible",
-        constants$40.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_get_accel_group",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_set_accel_group",
-        constants$13.const$4
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_action_group_get_action",
-        constants$5.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkActionGroupClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$3266.const$3.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("name"),
+        RuntimeHelper.POINTER.withName("stock_id"),
+        RuntimeHelper.POINTER.withName("label"),
+        RuntimeHelper.POINTER.withName("accelerator"),
+        RuntimeHelper.POINTER.withName("tooltip"),
+        RuntimeHelper.POINTER.withName("callback")
+    ).withName("_GtkActionEntry");
+    static final VarHandle const$3 = constants$3268.const$2.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final VarHandle const$4 = constants$3268.const$2.varHandle(MemoryLayout.PathElement.groupElement("stock_id"));
+    static final VarHandle const$5 = constants$3268.const$2.varHandle(MemoryLayout.PathElement.groupElement("label"));
 }
 
 

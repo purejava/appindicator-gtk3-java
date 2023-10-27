@@ -13,7 +13,7 @@ public interface PangoAttrFilterFunc {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(PangoAttrFilterFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1561.const$5, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$1566.const$5, fi, constants$9.const$0, scope);
     }
     static PangoAttrFilterFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

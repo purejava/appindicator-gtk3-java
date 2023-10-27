@@ -9,12 +9,12 @@ final class constants$1348 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1348() {}
-    static final VarHandle const$0 = constants$1346.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_default_database"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.supports_dtls.class, "apply", constants$10.const$5);
-    static final VarHandle const$2 = constants$1346.const$0.varHandle(MemoryLayout.PathElement.groupElement("supports_dtls"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.get_dtls_client_connection_type.class, "apply", constants$3.const$5);
-    static final VarHandle const$4 = constants$1346.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_dtls_client_connection_type"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.get_dtls_server_connection_type.class, "apply", constants$3.const$5);
+    static final VarHandle const$0 = constants$1347.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GThreadedSocketServiceClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1347.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GThreadedSocketServiceClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1347.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GThreadedSocketServiceClass._g_reserved4.class, "apply", constants$7.const$5);
 }
 
 

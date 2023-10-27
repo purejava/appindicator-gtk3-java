@@ -8,28 +8,28 @@ final class constants$2238 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2238() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_menu_popup_at_pointer",
-        constants$13.const$4
+        "gtk_menu_shell_cancel",
+        constants$13.const$1
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_menu_reposition",
-        constants$13.const$1
+        "gtk_menu_shell_get_take_focus",
+        constants$10.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_menu_popdown",
-        constants$13.const$1
+        "gtk_menu_shell_set_take_focus",
+        constants$40.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_active",
+        "gtk_menu_shell_get_selected_item",
         constants$5.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_active",
-        constants$40.const$2
+        "gtk_menu_shell_get_parent_shell",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_accel_group",
-        constants$13.const$4
+        "gtk_menu_shell_bind_model",
+        constants$332.const$4
     );
 }
 

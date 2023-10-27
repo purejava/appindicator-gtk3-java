@@ -8,28 +8,28 @@ final class constants$1514 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1514() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_latin1",
-        constants$1513.const$2
+        "hb_buffer_set_direction",
+        constants$40.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_codepoints",
-        constants$1513.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_buffer_append",
-        constants$1043.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_length",
-        constants$11.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_length",
+        "hb_buffer_get_direction",
         constants$10.const$5
     );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_script",
+        constants$40.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_script",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_language",
+        constants$13.const$4
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_glyph_infos",
-        constants$5.const$5
+        "hb_buffer_get_language",
+        constants$5.const$2
     );
 }
 

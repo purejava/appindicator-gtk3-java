@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GPowerProfileMonitorInterface {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1215.const$4;
+        return constants$1219.const$1;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);

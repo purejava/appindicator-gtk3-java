@@ -29,10 +29,10 @@ import java.lang.invoke.VarHandle;
 public class _GtkTableChild {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$3372.const$1;
+        return constants$3377.const$1;
     }
     public static VarHandle widget$VH() {
-        return constants$3372.const$2;
+        return constants$3377.const$2;
     }
     /**
      * Getter for field:
@@ -41,7 +41,7 @@ public class _GtkTableChild {
      * }
      */
     public static MemorySegment widget$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3372.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3377.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -50,16 +50,16 @@ public class _GtkTableChild {
      * }
      */
     public static void widget$set(MemorySegment seg, MemorySegment x) {
-        constants$3372.const$2.set(seg, x);
+        constants$3377.const$2.set(seg, x);
     }
     public static MemorySegment widget$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3372.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3377.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void widget$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3372.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3377.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle left_attach$VH() {
-        return constants$3372.const$3;
+        return constants$3377.const$3;
     }
     /**
      * Getter for field:
@@ -68,7 +68,7 @@ public class _GtkTableChild {
      * }
      */
     public static short left_attach$get(MemorySegment seg) {
-        return (short)constants$3372.const$3.get(seg);
+        return (short)constants$3377.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -77,16 +77,16 @@ public class _GtkTableChild {
      * }
      */
     public static void left_attach$set(MemorySegment seg, short x) {
-        constants$3372.const$3.set(seg, x);
+        constants$3377.const$3.set(seg, x);
     }
     public static short left_attach$get(MemorySegment seg, long index) {
-        return (short)constants$3372.const$3.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3377.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void left_attach$set(MemorySegment seg, long index, short x) {
-        constants$3372.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$3377.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle right_attach$VH() {
-        return constants$3372.const$4;
+        return constants$3377.const$4;
     }
     /**
      * Getter for field:
@@ -95,7 +95,7 @@ public class _GtkTableChild {
      * }
      */
     public static short right_attach$get(MemorySegment seg) {
-        return (short)constants$3372.const$4.get(seg);
+        return (short)constants$3377.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -104,16 +104,16 @@ public class _GtkTableChild {
      * }
      */
     public static void right_attach$set(MemorySegment seg, short x) {
-        constants$3372.const$4.set(seg, x);
+        constants$3377.const$4.set(seg, x);
     }
     public static short right_attach$get(MemorySegment seg, long index) {
-        return (short)constants$3372.const$4.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3377.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void right_attach$set(MemorySegment seg, long index, short x) {
-        constants$3372.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$3377.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle top_attach$VH() {
-        return constants$3372.const$5;
+        return constants$3377.const$5;
     }
     /**
      * Getter for field:
@@ -122,7 +122,7 @@ public class _GtkTableChild {
      * }
      */
     public static short top_attach$get(MemorySegment seg) {
-        return (short)constants$3372.const$5.get(seg);
+        return (short)constants$3377.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -131,16 +131,16 @@ public class _GtkTableChild {
      * }
      */
     public static void top_attach$set(MemorySegment seg, short x) {
-        constants$3372.const$5.set(seg, x);
+        constants$3377.const$5.set(seg, x);
     }
     public static short top_attach$get(MemorySegment seg, long index) {
-        return (short)constants$3372.const$5.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3377.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void top_attach$set(MemorySegment seg, long index, short x) {
-        constants$3372.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$3377.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle bottom_attach$VH() {
-        return constants$3373.const$0;
+        return constants$3378.const$0;
     }
     /**
      * Getter for field:
@@ -149,7 +149,7 @@ public class _GtkTableChild {
      * }
      */
     public static short bottom_attach$get(MemorySegment seg) {
-        return (short)constants$3373.const$0.get(seg);
+        return (short)constants$3378.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -158,16 +158,16 @@ public class _GtkTableChild {
      * }
      */
     public static void bottom_attach$set(MemorySegment seg, short x) {
-        constants$3373.const$0.set(seg, x);
+        constants$3378.const$0.set(seg, x);
     }
     public static short bottom_attach$get(MemorySegment seg, long index) {
-        return (short)constants$3373.const$0.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3378.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void bottom_attach$set(MemorySegment seg, long index, short x) {
-        constants$3373.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$3378.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle xpadding$VH() {
-        return constants$3373.const$1;
+        return constants$3378.const$1;
     }
     /**
      * Getter for field:
@@ -176,7 +176,7 @@ public class _GtkTableChild {
      * }
      */
     public static short xpadding$get(MemorySegment seg) {
-        return (short)constants$3373.const$1.get(seg);
+        return (short)constants$3378.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -185,16 +185,16 @@ public class _GtkTableChild {
      * }
      */
     public static void xpadding$set(MemorySegment seg, short x) {
-        constants$3373.const$1.set(seg, x);
+        constants$3378.const$1.set(seg, x);
     }
     public static short xpadding$get(MemorySegment seg, long index) {
-        return (short)constants$3373.const$1.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3378.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void xpadding$set(MemorySegment seg, long index, short x) {
-        constants$3373.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$3378.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static VarHandle ypadding$VH() {
-        return constants$3373.const$2;
+        return constants$3378.const$2;
     }
     /**
      * Getter for field:
@@ -203,7 +203,7 @@ public class _GtkTableChild {
      * }
      */
     public static short ypadding$get(MemorySegment seg) {
-        return (short)constants$3373.const$2.get(seg);
+        return (short)constants$3378.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -212,13 +212,13 @@ public class _GtkTableChild {
      * }
      */
     public static void ypadding$set(MemorySegment seg, short x) {
-        constants$3373.const$2.set(seg, x);
+        constants$3378.const$2.set(seg, x);
     }
     public static short ypadding$get(MemorySegment seg, long index) {
-        return (short)constants$3373.const$2.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3378.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void ypadding$set(MemorySegment seg, long index, short x) {
-        constants$3373.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$3378.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

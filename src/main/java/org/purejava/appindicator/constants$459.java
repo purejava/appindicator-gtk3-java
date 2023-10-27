@@ -11,33 +11,42 @@ final class constants$459 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$459() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_test_suite_free",
+        constants$13.const$1
+    );
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_assertion_message_error",
-        constants$459.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_test_add_vtable$data_setup.class, "apply", constants$13.const$4);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_test_add_vtable$data_test.class, "apply", constants$13.const$4);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_test_add_vtable$data_teardown.class, "apply", constants$13.const$4);
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
         RuntimeHelper.POINTER,
         JAVA_LONG,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_trap_assertions",
+        constants$459.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_assertion_message",
+        constants$380.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_assertion_message_expr",
+        constants$380.const$3
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
     static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
-        "g_test_add_vtable",
+        "g_assertion_message_cmpstr",
         constants$459.const$5
     );
 }

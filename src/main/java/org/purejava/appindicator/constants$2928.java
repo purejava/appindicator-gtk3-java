@@ -2,42 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_DOUBLE;
-import static java.lang.foreign.ValueLayout.JAVA_INT;
+import java.lang.invoke.VarHandle;
 final class constants$2928 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2928() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_new_from_ipp",
-        constants$1821.const$0
-    );
-    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_DOUBLE,
-        JAVA_DOUBLE,
-        JAVA_INT
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_new_custom",
-        constants$2928.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_copy",
-        constants$5.const$2
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_free",
-        constants$13.const$1
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_is_equal",
-        constants$9.const$0
-    );
+    static final VarHandle const$0 = constants$2926.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkOverlayClass._gtk_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$2926.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkOverlayClass._gtk_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$2926.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkOverlayClass._gtk_reserved6.class, "apply", constants$7.const$5);
 }
 
 

@@ -8,27 +8,27 @@ final class constants$1117 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1117() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_dbus_message_byte_order_get_type",
+        "g_socket_msg_flags_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_application_flags_get_type",
+        "g_socket_protocol_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_error_get_type",
+        "g_zlib_compressor_format_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_flags_get_type",
+        "g_unix_socket_address_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_authentication_mode_get_type",
+        "g_bus_type_get_type",
         constants$3.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tls_channel_binding_type_get_type",
+        "g_bus_name_owner_flags_get_type",
         constants$3.const$5
     );
 }

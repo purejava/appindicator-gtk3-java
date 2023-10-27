@@ -9,16 +9,12 @@ final class constants$2906 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2906() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkNotebookClass.insert_page.class, "apply", constants$1423.const$1);
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        constants$1423.const$1
-    );
-    static final VarHandle const$2 = constants$2903.const$5.varHandle(MemoryLayout.PathElement.groupElement("insert_page"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkNotebookClass.create_window.class, "apply", constants$415.const$5);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        constants$415.const$5
-    );
-    static final VarHandle const$5 = constants$2903.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_window"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkMountOperationClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$2905.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkMountOperationClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$2905.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkMountOperationClass._gtk_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$2905.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
 }
 
 

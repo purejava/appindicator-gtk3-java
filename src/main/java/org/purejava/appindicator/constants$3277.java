@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$3277 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3277() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkColorSelectionClass.color_changed.class, "apply", constants$13.const$1);
-    static final VarHandle const$1 = constants$3276.const$5.varHandle(MemoryLayout.PathElement.groupElement("color_changed"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkColorSelectionClass._gtk_reserved1.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$3276.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkColorSelectionClass._gtk_reserved2.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$3276.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_action_group_set_translate_func",
+        constants$42.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_action_group_set_translation_domain",
+        constants$13.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_action_group_translate_string",
+        constants$5.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "_gtk_action_group_emit_connect_proxy",
+        constants$14.const$3
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "_gtk_action_group_emit_disconnect_proxy",
+        constants$14.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "_gtk_action_group_emit_pre_activate",
+        constants$13.const$4
+    );
 }
 
 

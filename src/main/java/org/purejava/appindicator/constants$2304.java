@@ -8,25 +8,28 @@ final class constants$2304 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2304() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_ref_node",
-        constants$13.const$4
+        "gtk_tree_row_reference_new",
+        constants$5.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_unref_node",
-        constants$13.const$4
+        "gtk_tree_row_reference_new_proxy",
+        constants$23.const$0
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_model_get",
-        constants$13.const$4
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_tree_row_reference_get_path",
+        constants$5.const$2
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_valist",
-        constants$311.const$4
+        "gtk_tree_row_reference_get_model",
+        constants$5.const$2
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gtk_tree_model_foreach$func.class, "apply", constants$34.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_row_reference_valid",
+        constants$10.const$5
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_foreach",
-        constants$14.const$3
+        "gtk_tree_row_reference_copy",
+        constants$5.const$2
     );
 }
 

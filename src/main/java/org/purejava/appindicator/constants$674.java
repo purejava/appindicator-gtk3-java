@@ -2,27 +2,31 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 final class constants$674 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$674() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_group_connect_after$c_handler.class, "apply", constants$7.const$5);
+    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("g_param_spec_types", RuntimeHelper.POINTER);
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect_after",
-        constants$42.const$1
+        "g_signal_group_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_signal_group_connect_swapped$c_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_signal_group_new",
+        constants$63.const$3
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect_swapped",
-        constants$42.const$1
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_source_set_closure",
+        "g_signal_group_set_target",
         constants$13.const$4
     );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_signal_group_dup_target",
+        constants$5.const$2
+    );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_source_set_dummy_callback",
+        "g_signal_group_block",
         constants$13.const$1
     );
 }

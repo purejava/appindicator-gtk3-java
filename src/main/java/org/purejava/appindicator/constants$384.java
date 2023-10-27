@@ -2,35 +2,18 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
+import java.lang.foreign.MemoryLayout;
+import java.lang.invoke.VarHandle;
 final class constants$384 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$384() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_option_context_new",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_option_context_set_summary",
-        constants$13.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_option_context_get_summary",
-        constants$5.const$2
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_option_context_set_description",
-        constants$13.const$4
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_option_context_get_description",
-        constants$5.const$2
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_option_context_free",
-        constants$13.const$1
-    );
+    static final VarHandle const$0 = constants$383.const$4.varHandle(MemoryLayout.PathElement.groupElement("short_name"));
+    static final VarHandle const$1 = constants$383.const$4.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+    static final VarHandle const$2 = constants$383.const$4.varHandle(MemoryLayout.PathElement.groupElement("arg"));
+    static final VarHandle const$3 = constants$383.const$4.varHandle(MemoryLayout.PathElement.groupElement("arg_data"));
+    static final VarHandle const$4 = constants$383.const$4.varHandle(MemoryLayout.PathElement.groupElement("description"));
+    static final VarHandle const$5 = constants$383.const$4.varHandle(MemoryLayout.PathElement.groupElement("arg_description"));
 }
 
 

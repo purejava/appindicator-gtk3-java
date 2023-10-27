@@ -2,39 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$441 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$441() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        JAVA_LONG,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_shell_quote",
+        constants$5.const$2
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_slice_free1",
-        constants$441.const$0
+        "g_shell_unquote",
+        constants$5.const$5
     );
-    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        JAVA_LONG
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_shell_parse_argv",
+        constants$34.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_slice_free_chain_with_offset",
-        constants$441.const$2
+        "g_slice_alloc",
+        constants$63.const$3
     );
-    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
-        JAVA_INT,
-        JAVA_LONG
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_slice_alloc0",
+        constants$63.const$3
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_slice_set_config",
-        constants$441.const$4
+        "g_slice_copy",
+        constants$408.const$2
     );
 }
 

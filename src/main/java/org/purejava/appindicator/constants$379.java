@@ -2,40 +2,34 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$379 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$379() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_log_set_debug_enabled",
-        constants$80.const$1
+        "g_log_writer_journald",
+        constants$82.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "_g_log_fallback_handler",
-        constants$179.const$1
+        "g_log_writer_standard_streams",
+        constants$82.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_return_if_fail_warning",
-        constants$14.const$3
+        "g_log_writer_default",
+        constants$82.const$4
     );
-    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_log_writer_default_set_use_stderr",
+        constants$80.const$1
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_warn_message",
-        constants$379.const$3
+        "g_log_writer_default_would_drop",
+        constants$9.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_assert_warning",
-        constants$379.const$3
+        "g_log_get_debug_enabled",
+        constants$83.const$1
     );
 }
 

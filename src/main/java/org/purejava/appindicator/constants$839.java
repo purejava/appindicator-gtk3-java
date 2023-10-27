@@ -2,53 +2,33 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
 
 import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$839 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$839() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_datagram_based_send_messages",
-        constants$836.const$0
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_datagram_based_create_source",
-        constants$196.const$3
-    );
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDatagramBasedInterface.receive_messages.class, "apply", constants$839.const$0);
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_datagram_based_condition_check",
-        constants$11.const$4
+        constants$839.const$0
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_datagram_based_condition_wait",
-        constants$838.const$0
-    );
-    static final StructLayout const$4 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        MemoryLayout.structLayout(
-                            RuntimeHelper.POINTER.withName("g_class")
-                        ).withName("g_type_instance"),
-                        JAVA_INT.withName("ref_count"),
-                        MemoryLayout.paddingLayout(4),
-                        RuntimeHelper.POINTER.withName("qdata")
-                    ).withName("parent_instance"),
-                    RuntimeHelper.POINTER.withName("priv")
-                ).withName("parent_instance"),
-                RuntimeHelper.POINTER.withName("base_stream")
-            ).withName("parent_instance"),
-            RuntimeHelper.POINTER.withName("priv")
-        ).withName("parent_instance"),
-        RuntimeHelper.POINTER.withName("priv")
-    ).withName("_GDataInputStream");
-    static final VarHandle const$5 = constants$839.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final VarHandle const$3 = constants$838.const$5.varHandle(MemoryLayout.PathElement.groupElement("receive_messages"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDatagramBasedInterface.send_messages.class, "apply", constants$839.const$0);
+    static final VarHandle const$5 = constants$838.const$5.varHandle(MemoryLayout.PathElement.groupElement("send_messages"));
 }
 
 

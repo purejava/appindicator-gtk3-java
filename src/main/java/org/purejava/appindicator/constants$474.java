@@ -2,25 +2,33 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$474 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$474() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tree_new_with_data",
-        constants$5.const$5
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("next")
+    ).withName("_GTrashStack");
+    static final VarHandle const$1 = constants$474.const$0.varHandle(MemoryLayout.PathElement.groupElement("next"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_trash_stack_push",
+        constants$13.const$4
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_tree_new_full$key_compare_func.class, "apply", constants$12.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_tree_new_full$key_destroy_func.class, "apply", constants$13.const$1);
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_tree_new_full$value_destroy_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_trash_stack_pop",
+        constants$5.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tree_new_full",
-        constants$39.const$1
+        "g_trash_stack_peek",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_tree_node_first",
-        constants$5.const$2
+        "g_trash_stack_height",
+        constants$10.const$5
     );
 }
 

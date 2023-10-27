@@ -13,7 +13,7 @@ public interface GtkTranslateFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
     static MemorySegment allocate(GtkTranslateFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3258.const$3, fi, constants$5.const$5, scope);
+        return RuntimeHelper.upcallStub(constants$3263.const$3, fi, constants$5.const$5, scope);
     }
     static GtkTranslateFunc ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

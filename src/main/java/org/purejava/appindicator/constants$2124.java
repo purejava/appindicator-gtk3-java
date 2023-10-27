@@ -9,12 +9,12 @@ final class constants$2124 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2124() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass.queue_draw_region.class, "apply", constants$13.const$4);
-    static final VarHandle const$1 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("queue_draw_region"));
-    static final VarHandle const$2 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkWidgetClass._gtk_reserved6.class, "apply", constants$7.const$5);
-    static final VarHandle const$4 = constants$2095.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkWidgetClass._gtk_reserved7.class, "apply", constants$7.const$5);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkWidgetClass.popup_menu.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("popup_menu"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkWidgetClass.show_help.class, "apply", constants$11.const$4);
+    static final VarHandle const$3 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("show_help"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkWidgetClass.get_accessible.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$2101.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_accessible"));
 }
 
 

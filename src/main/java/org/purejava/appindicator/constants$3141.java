@@ -8,19 +8,29 @@ final class constants$3141 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3141() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        constants$3140.const$4
+        "gtk_text_buffer_remove_tag_by_name",
+        constants$42.const$1
     );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gtk_text_buffer_register_serialize_format$function.class, "apply", constants$334.const$2);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gtk_text_buffer_register_serialize_format$user_data_destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_remove_all_tags",
+        constants$14.const$3
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "gtk_text_buffer_create_tag",
+        constants$23.const$0
+    );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_serialize_format",
-        constants$330.const$5
+        "gtk_text_buffer_get_iter_at_line_offset",
+        constants$1046.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_serialize_tagset",
-        constants$5.const$5
+        "gtk_text_buffer_get_iter_at_line_index",
+        constants$1046.const$2
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_text_buffer_register_deserialize_format$function.class, "apply", constants$3140.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_text_buffer_get_iter_at_offset",
+        constants$164.const$5
+    );
 }
 
 

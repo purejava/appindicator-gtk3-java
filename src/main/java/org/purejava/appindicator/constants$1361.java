@@ -3,41 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$1361 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1361() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_protocol_version",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_ciphersuite_name",
-        constants$5.const$2
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_tls_error_quark",
-        constants$83.const$1
-    );
+    static final VarHandle const$0 = constants$1359.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_binding_data"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GTlsConnectionClass.get_negotiated_protocol.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$1359.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_negotiated_protocol"));
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "g_tls_channel_binding_error_quark",
-        constants$83.const$1
+        "g_tls_connection_get_type",
+        constants$3.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_tls_connection_emit_accept_certificate",
-        constants$62.const$0
+        "g_tls_connection_set_use_system_certdb",
+        constants$40.const$2
     );
-    static final StructLayout const$5 = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            JAVA_LONG.withName("g_type"),
-            JAVA_LONG.withName("g_instance_type")
-        ).withName("g_iface"),
-        RuntimeHelper.POINTER.withName("copy_session_state")
-    ).withName("_GTlsClientConnectionInterface");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_use_system_certdb",
+        constants$10.const$5
+    );
 }
 
 

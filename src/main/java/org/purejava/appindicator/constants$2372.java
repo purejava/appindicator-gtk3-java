@@ -2,34 +2,24 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2372 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2372() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_editable",
-        constants$11.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_can_insert",
-        constants$11.const$4
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_starts_word",
-        constants$10.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_ends_word",
-        constants$10.const$5
-    );
+    static final VarHandle const$0 = constants$2370.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy11"));
+    static final VarHandle const$1 = constants$2370.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy12"));
+    static final VarHandle const$2 = constants$2370.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy13"));
+    static final VarHandle const$3 = constants$2370.const$1.varHandle(MemoryLayout.PathElement.groupElement("dummy14"));
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_inside_word",
-        constants$10.const$5
+        "gtk_text_iter_get_buffer",
+        constants$5.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_starts_sentence",
-        constants$10.const$5
+        "gtk_text_iter_copy",
+        constants$5.const$2
     );
 }
 

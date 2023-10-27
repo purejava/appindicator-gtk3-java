@@ -2,34 +2,19 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_LONG;
+import java.lang.invoke.VarHandle;
 final class constants$679 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$679() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_type_module_add_interface",
-        constants$94.const$1
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_type_module_register_enum",
-        constants$166.const$0
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_type_module_register_flags",
-        constants$166.const$0
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GTypePluginUse.class, "apply", constants$13.const$1);
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GTypePluginUnuse.class, "apply", constants$13.const$1);
-    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        JAVA_LONG,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTypeModuleClass.unload.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$678.const$3.varHandle(MemoryLayout.PathElement.groupElement("unload"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTypeModuleClass.reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$678.const$3.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTypeModuleClass.reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$678.const$3.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
 }
 
 

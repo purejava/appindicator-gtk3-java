@@ -2,31 +2,51 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.JAVA_LONG;
 final class constants$1218 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1218() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_proxy_get_type",
-        constants$3.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_proxy_get_default_for_protocol",
+        "g_pollable_source_new",
         constants$5.const$2
     );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_proxy_connect",
-        constants$330.const$5
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_proxy_connect_async$callback.class, "apply", constants$14.const$3);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_proxy_connect_async",
-        constants$338.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_proxy_connect_finish",
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_pollable_source_new_full",
         constants$23.const$0
+    );
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_pollable_stream_read",
+        constants$1218.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_pollable_stream_write",
+        constants$1218.const$2
+    );
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_pollable_stream_write_all",
+        constants$1218.const$5
     );
 }
 

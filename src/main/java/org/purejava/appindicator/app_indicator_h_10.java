@@ -11,6 +11,84 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
 
     /**
      * {@snippet :
+     * typedef struct _GSList* GMenuModel_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GMenuModel_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GMenuModel_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GMenuModel_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GMenuAttributeIter* GMenuAttributeIter_autoptr;
+     * }
+     */
+    public static final AddressLayout GMenuAttributeIter_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GMenuAttributeIter_listautoptr;
+     * }
+     */
+    public static final AddressLayout GMenuAttributeIter_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GMenuAttributeIter_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GMenuAttributeIter_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GMenuAttributeIter_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GMenuAttributeIter_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GMenuLinkIter* GMenuLinkIter_autoptr;
+     * }
+     */
+    public static final AddressLayout GMenuLinkIter_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GMenuLinkIter_listautoptr;
+     * }
+     */
+    public static final AddressLayout GMenuLinkIter_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GMenuLinkIter_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GMenuLinkIter_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GMenuLinkIter_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GMenuLinkIter_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GMount* GMount_autoptr;
+     * }
+     */
+    public static final AddressLayout GMount_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GMount_listautoptr;
+     * }
+     */
+    public static final AddressLayout GMount_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GMount_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GMount_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
      * typedef struct _GQueue* GMount_queueautoptr;
      * }
      */
@@ -1624,7 +1702,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
      */
     public static final OfInt hb_tag_t = JAVA_INT;
     public static MethodHandle hb_tag_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1414.const$5,"hb_tag_from_string");
+        return RuntimeHelper.requireNonNull(constants$1419.const$0,"hb_tag_from_string");
     }
     /**
      * {@snippet :
@@ -1640,7 +1718,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_tag_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1415.const$0,"hb_tag_to_string");
+        return RuntimeHelper.requireNonNull(constants$1419.const$1,"hb_tag_to_string");
     }
     /**
      * {@snippet :
@@ -1696,7 +1774,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)7L;
     }
     public static MethodHandle hb_direction_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1415.const$1,"hb_direction_from_string");
+        return RuntimeHelper.requireNonNull(constants$1419.const$2,"hb_direction_from_string");
     }
     /**
      * {@snippet :
@@ -1712,7 +1790,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_direction_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1415.const$2,"hb_direction_to_string");
+        return RuntimeHelper.requireNonNull(constants$1419.const$3,"hb_direction_to_string");
     }
     /**
      * {@snippet :
@@ -1734,7 +1812,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
      */
     public static final AddressLayout hb_language_t = RuntimeHelper.POINTER;
     public static MethodHandle hb_language_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1415.const$3,"hb_language_from_string");
+        return RuntimeHelper.requireNonNull(constants$1419.const$4,"hb_language_from_string");
     }
     /**
      * {@snippet :
@@ -1750,7 +1828,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_language_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1415.const$4,"hb_language_to_string");
+        return RuntimeHelper.requireNonNull(constants$1419.const$5,"hb_language_to_string");
     }
     /**
      * {@snippet :
@@ -1766,7 +1844,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_language_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$1415.const$5,"hb_language_get_default");
+        return RuntimeHelper.requireNonNull(constants$1420.const$0,"hb_language_get_default");
     }
     /**
      * {@snippet :
@@ -1782,7 +1860,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_language_matches$MH() {
-        return RuntimeHelper.requireNonNull(constants$1416.const$0,"hb_language_matches");
+        return RuntimeHelper.requireNonNull(constants$1420.const$1,"hb_language_matches");
     }
     /**
      * {@snippet :
@@ -3142,7 +3220,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)2147483647L;
     }
     public static MethodHandle hb_script_from_iso15924_tag$MH() {
-        return RuntimeHelper.requireNonNull(constants$1416.const$1,"hb_script_from_iso15924_tag");
+        return RuntimeHelper.requireNonNull(constants$1420.const$2,"hb_script_from_iso15924_tag");
     }
     /**
      * {@snippet :
@@ -3158,7 +3236,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_script_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1416.const$2,"hb_script_from_string");
+        return RuntimeHelper.requireNonNull(constants$1420.const$3,"hb_script_from_string");
     }
     /**
      * {@snippet :
@@ -3174,7 +3252,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_script_to_iso15924_tag$MH() {
-        return RuntimeHelper.requireNonNull(constants$1416.const$3,"hb_script_to_iso15924_tag");
+        return RuntimeHelper.requireNonNull(constants$1420.const$4,"hb_script_to_iso15924_tag");
     }
     /**
      * {@snippet :
@@ -3190,7 +3268,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_script_get_horizontal_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1416.const$4,"hb_script_get_horizontal_direction");
+        return RuntimeHelper.requireNonNull(constants$1420.const$5,"hb_script_get_horizontal_direction");
     }
     /**
      * {@snippet :
@@ -3206,7 +3284,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_feature_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1418.const$1,"hb_feature_from_string");
+        return RuntimeHelper.requireNonNull(constants$1422.const$2,"hb_feature_from_string");
     }
     /**
      * {@snippet :
@@ -3222,7 +3300,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_feature_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1418.const$2,"hb_feature_to_string");
+        return RuntimeHelper.requireNonNull(constants$1422.const$3,"hb_feature_to_string");
     }
     /**
      * {@snippet :
@@ -3238,7 +3316,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_variation_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1419.const$0,"hb_variation_from_string");
+        return RuntimeHelper.requireNonNull(constants$1423.const$1,"hb_variation_from_string");
     }
     /**
      * {@snippet :
@@ -3254,7 +3332,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_variation_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1419.const$1,"hb_variation_to_string");
+        return RuntimeHelper.requireNonNull(constants$1423.const$2,"hb_variation_to_string");
     }
     /**
      * {@snippet :
@@ -3276,7 +3354,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
      */
     public static final OfInt hb_color_t = JAVA_INT;
     public static MethodHandle hb_color_get_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1419.const$3,"hb_color_get_alpha");
+        return RuntimeHelper.requireNonNull(constants$1423.const$4,"hb_color_get_alpha");
     }
     /**
      * {@snippet :
@@ -3292,7 +3370,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_color_get_red$MH() {
-        return RuntimeHelper.requireNonNull(constants$1419.const$4,"hb_color_get_red");
+        return RuntimeHelper.requireNonNull(constants$1423.const$5,"hb_color_get_red");
     }
     /**
      * {@snippet :
@@ -3308,7 +3386,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_color_get_green$MH() {
-        return RuntimeHelper.requireNonNull(constants$1419.const$5,"hb_color_get_green");
+        return RuntimeHelper.requireNonNull(constants$1424.const$0,"hb_color_get_green");
     }
     /**
      * {@snippet :
@@ -3324,7 +3402,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_color_get_blue$MH() {
-        return RuntimeHelper.requireNonNull(constants$1420.const$0,"hb_color_get_blue");
+        return RuntimeHelper.requireNonNull(constants$1424.const$1,"hb_color_get_blue");
     }
     /**
      * {@snippet :
@@ -3372,7 +3450,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)3L;
     }
     public static MethodHandle hb_blob_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1421.const$2,"hb_blob_create");
+        return RuntimeHelper.requireNonNull(constants$1425.const$3,"hb_blob_create");
     }
     /**
      * {@snippet :
@@ -3388,7 +3466,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_create_or_fail$MH() {
-        return RuntimeHelper.requireNonNull(constants$1421.const$4,"hb_blob_create_or_fail");
+        return RuntimeHelper.requireNonNull(constants$1425.const$5,"hb_blob_create_or_fail");
     }
     /**
      * {@snippet :
@@ -3404,7 +3482,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_create_from_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$1421.const$5,"hb_blob_create_from_file");
+        return RuntimeHelper.requireNonNull(constants$1426.const$0,"hb_blob_create_from_file");
     }
     /**
      * {@snippet :
@@ -3420,7 +3498,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_create_from_file_or_fail$MH() {
-        return RuntimeHelper.requireNonNull(constants$1422.const$0,"hb_blob_create_from_file_or_fail");
+        return RuntimeHelper.requireNonNull(constants$1426.const$1,"hb_blob_create_from_file_or_fail");
     }
     /**
      * {@snippet :
@@ -3436,7 +3514,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_create_sub_blob$MH() {
-        return RuntimeHelper.requireNonNull(constants$1422.const$1,"hb_blob_create_sub_blob");
+        return RuntimeHelper.requireNonNull(constants$1426.const$2,"hb_blob_create_sub_blob");
     }
     /**
      * {@snippet :
@@ -3452,7 +3530,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_copy_writable_or_fail$MH() {
-        return RuntimeHelper.requireNonNull(constants$1422.const$2,"hb_blob_copy_writable_or_fail");
+        return RuntimeHelper.requireNonNull(constants$1426.const$3,"hb_blob_copy_writable_or_fail");
     }
     /**
      * {@snippet :
@@ -3468,7 +3546,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1422.const$3,"hb_blob_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1426.const$4,"hb_blob_get_empty");
     }
     /**
      * {@snippet :
@@ -3484,7 +3562,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1422.const$4,"hb_blob_reference");
+        return RuntimeHelper.requireNonNull(constants$1426.const$5,"hb_blob_reference");
     }
     /**
      * {@snippet :
@@ -3500,7 +3578,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1422.const$5,"hb_blob_destroy");
+        return RuntimeHelper.requireNonNull(constants$1427.const$0,"hb_blob_destroy");
     }
     /**
      * {@snippet :
@@ -3516,7 +3594,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1423.const$2,"hb_blob_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1427.const$3,"hb_blob_set_user_data");
     }
     /**
      * {@snippet :
@@ -3532,7 +3610,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1423.const$3,"hb_blob_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1427.const$4,"hb_blob_get_user_data");
     }
     /**
      * {@snippet :
@@ -3548,7 +3626,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1423.const$4,"hb_blob_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1427.const$5,"hb_blob_make_immutable");
     }
     /**
      * {@snippet :
@@ -3564,7 +3642,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1423.const$5,"hb_blob_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1428.const$0,"hb_blob_is_immutable");
     }
     /**
      * {@snippet :
@@ -3580,7 +3658,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_get_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$1424.const$0,"hb_blob_get_length");
+        return RuntimeHelper.requireNonNull(constants$1428.const$1,"hb_blob_get_length");
     }
     /**
      * {@snippet :
@@ -3596,7 +3674,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_get_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1424.const$1,"hb_blob_get_data");
+        return RuntimeHelper.requireNonNull(constants$1428.const$2,"hb_blob_get_data");
     }
     /**
      * {@snippet :
@@ -3612,7 +3690,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_get_data_writable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1424.const$2,"hb_blob_get_data_writable");
+        return RuntimeHelper.requireNonNull(constants$1428.const$3,"hb_blob_get_data_writable");
     }
     /**
      * {@snippet :
@@ -4324,7 +4402,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)255L;
     }
     public static MethodHandle hb_unicode_funcs_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$1424.const$3,"hb_unicode_funcs_get_default");
+        return RuntimeHelper.requireNonNull(constants$1428.const$4,"hb_unicode_funcs_get_default");
     }
     /**
      * {@snippet :
@@ -4340,7 +4418,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1424.const$4,"hb_unicode_funcs_create");
+        return RuntimeHelper.requireNonNull(constants$1428.const$5,"hb_unicode_funcs_create");
     }
     /**
      * {@snippet :
@@ -4356,7 +4434,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1424.const$5,"hb_unicode_funcs_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1429.const$0,"hb_unicode_funcs_get_empty");
     }
     /**
      * {@snippet :
@@ -4372,7 +4450,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1425.const$0,"hb_unicode_funcs_reference");
+        return RuntimeHelper.requireNonNull(constants$1429.const$1,"hb_unicode_funcs_reference");
     }
     /**
      * {@snippet :
@@ -4388,7 +4466,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1425.const$1,"hb_unicode_funcs_destroy");
+        return RuntimeHelper.requireNonNull(constants$1429.const$2,"hb_unicode_funcs_destroy");
     }
     /**
      * {@snippet :
@@ -4404,7 +4482,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1425.const$3,"hb_unicode_funcs_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1429.const$4,"hb_unicode_funcs_set_user_data");
     }
     /**
      * {@snippet :
@@ -4420,7 +4498,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1425.const$4,"hb_unicode_funcs_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1429.const$5,"hb_unicode_funcs_get_user_data");
     }
     /**
      * {@snippet :
@@ -4436,7 +4514,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1425.const$5,"hb_unicode_funcs_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1430.const$0,"hb_unicode_funcs_make_immutable");
     }
     /**
      * {@snippet :
@@ -4452,7 +4530,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1426.const$0,"hb_unicode_funcs_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1430.const$1,"hb_unicode_funcs_is_immutable");
     }
     /**
      * {@snippet :
@@ -4468,7 +4546,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_get_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1426.const$1,"hb_unicode_funcs_get_parent");
+        return RuntimeHelper.requireNonNull(constants$1430.const$2,"hb_unicode_funcs_get_parent");
     }
     /**
      * {@snippet :
@@ -4484,7 +4562,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_combining_class_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1427.const$5,"hb_unicode_funcs_set_combining_class_func");
+        return RuntimeHelper.requireNonNull(constants$1432.const$0,"hb_unicode_funcs_set_combining_class_func");
     }
     /**
      * {@snippet :
@@ -4500,7 +4578,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_general_category_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1428.const$2,"hb_unicode_funcs_set_general_category_func");
+        return RuntimeHelper.requireNonNull(constants$1432.const$3,"hb_unicode_funcs_set_general_category_func");
     }
     /**
      * {@snippet :
@@ -4516,7 +4594,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_mirroring_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1428.const$5,"hb_unicode_funcs_set_mirroring_func");
+        return RuntimeHelper.requireNonNull(constants$1433.const$0,"hb_unicode_funcs_set_mirroring_func");
     }
     /**
      * {@snippet :
@@ -4532,7 +4610,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_script_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1429.const$2,"hb_unicode_funcs_set_script_func");
+        return RuntimeHelper.requireNonNull(constants$1433.const$3,"hb_unicode_funcs_set_script_func");
     }
     /**
      * {@snippet :
@@ -4548,7 +4626,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_compose_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1429.const$5,"hb_unicode_funcs_set_compose_func");
+        return RuntimeHelper.requireNonNull(constants$1434.const$0,"hb_unicode_funcs_set_compose_func");
     }
     /**
      * {@snippet :
@@ -4564,7 +4642,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_decompose_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1430.const$2,"hb_unicode_funcs_set_decompose_func");
+        return RuntimeHelper.requireNonNull(constants$1434.const$3,"hb_unicode_funcs_set_decompose_func");
     }
     /**
      * {@snippet :
@@ -4580,7 +4658,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_combining_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$1430.const$3,"hb_unicode_combining_class");
+        return RuntimeHelper.requireNonNull(constants$1434.const$4,"hb_unicode_combining_class");
     }
     /**
      * {@snippet :
@@ -4596,7 +4674,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_general_category$MH() {
-        return RuntimeHelper.requireNonNull(constants$1430.const$4,"hb_unicode_general_category");
+        return RuntimeHelper.requireNonNull(constants$1434.const$5,"hb_unicode_general_category");
     }
     /**
      * {@snippet :
@@ -4612,7 +4690,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_mirroring$MH() {
-        return RuntimeHelper.requireNonNull(constants$1430.const$5,"hb_unicode_mirroring");
+        return RuntimeHelper.requireNonNull(constants$1435.const$0,"hb_unicode_mirroring");
     }
     /**
      * {@snippet :
@@ -4628,7 +4706,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$1431.const$0,"hb_unicode_script");
+        return RuntimeHelper.requireNonNull(constants$1435.const$1,"hb_unicode_script");
     }
     /**
      * {@snippet :
@@ -4644,7 +4722,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_compose$MH() {
-        return RuntimeHelper.requireNonNull(constants$1431.const$1,"hb_unicode_compose");
+        return RuntimeHelper.requireNonNull(constants$1435.const$2,"hb_unicode_compose");
     }
     /**
      * {@snippet :
@@ -4660,7 +4738,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_decompose$MH() {
-        return RuntimeHelper.requireNonNull(constants$1431.const$2,"hb_unicode_decompose");
+        return RuntimeHelper.requireNonNull(constants$1435.const$3,"hb_unicode_decompose");
     }
     /**
      * {@snippet :
@@ -4676,7 +4754,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1431.const$3,"hb_set_create");
+        return RuntimeHelper.requireNonNull(constants$1435.const$4,"hb_set_create");
     }
     /**
      * {@snippet :
@@ -4692,7 +4770,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1431.const$4,"hb_set_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1435.const$5,"hb_set_get_empty");
     }
     /**
      * {@snippet :
@@ -4708,7 +4786,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1431.const$5,"hb_set_reference");
+        return RuntimeHelper.requireNonNull(constants$1436.const$0,"hb_set_reference");
     }
     /**
      * {@snippet :
@@ -4724,7 +4802,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1432.const$0,"hb_set_destroy");
+        return RuntimeHelper.requireNonNull(constants$1436.const$1,"hb_set_destroy");
     }
     /**
      * {@snippet :
@@ -4740,7 +4818,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1432.const$2,"hb_set_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1436.const$3,"hb_set_set_user_data");
     }
     /**
      * {@snippet :
@@ -4756,7 +4834,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1432.const$3,"hb_set_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1436.const$4,"hb_set_get_user_data");
     }
     /**
      * {@snippet :
@@ -4772,7 +4850,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_allocation_successful$MH() {
-        return RuntimeHelper.requireNonNull(constants$1432.const$4,"hb_set_allocation_successful");
+        return RuntimeHelper.requireNonNull(constants$1436.const$5,"hb_set_allocation_successful");
     }
     /**
      * {@snippet :
@@ -4788,7 +4866,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1432.const$5,"hb_set_copy");
+        return RuntimeHelper.requireNonNull(constants$1437.const$0,"hb_set_copy");
     }
     /**
      * {@snippet :
@@ -4804,7 +4882,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$1433.const$0,"hb_set_clear");
+        return RuntimeHelper.requireNonNull(constants$1437.const$1,"hb_set_clear");
     }
     /**
      * {@snippet :
@@ -4820,7 +4898,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_is_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1433.const$1,"hb_set_is_empty");
+        return RuntimeHelper.requireNonNull(constants$1437.const$2,"hb_set_is_empty");
     }
     /**
      * {@snippet :
@@ -4836,7 +4914,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_invert$MH() {
-        return RuntimeHelper.requireNonNull(constants$1433.const$2,"hb_set_invert");
+        return RuntimeHelper.requireNonNull(constants$1437.const$3,"hb_set_invert");
     }
     /**
      * {@snippet :
@@ -4852,7 +4930,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_is_inverted$MH() {
-        return RuntimeHelper.requireNonNull(constants$1433.const$3,"hb_set_is_inverted");
+        return RuntimeHelper.requireNonNull(constants$1437.const$4,"hb_set_is_inverted");
     }
     /**
      * {@snippet :
@@ -4868,7 +4946,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_has$MH() {
-        return RuntimeHelper.requireNonNull(constants$1433.const$4,"hb_set_has");
+        return RuntimeHelper.requireNonNull(constants$1437.const$5,"hb_set_has");
     }
     /**
      * {@snippet :
@@ -4884,7 +4962,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$1433.const$5,"hb_set_add");
+        return RuntimeHelper.requireNonNull(constants$1438.const$0,"hb_set_add");
     }
     /**
      * {@snippet :
@@ -4900,7 +4978,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_add_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1434.const$0,"hb_set_add_range");
+        return RuntimeHelper.requireNonNull(constants$1438.const$1,"hb_set_add_range");
     }
     /**
      * {@snippet :
@@ -4916,7 +4994,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_add_sorted_array$MH() {
-        return RuntimeHelper.requireNonNull(constants$1434.const$1,"hb_set_add_sorted_array");
+        return RuntimeHelper.requireNonNull(constants$1438.const$2,"hb_set_add_sorted_array");
     }
     /**
      * {@snippet :
@@ -4932,7 +5010,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_del$MH() {
-        return RuntimeHelper.requireNonNull(constants$1434.const$2,"hb_set_del");
+        return RuntimeHelper.requireNonNull(constants$1438.const$3,"hb_set_del");
     }
     /**
      * {@snippet :
@@ -4948,7 +5026,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_del_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1434.const$3,"hb_set_del_range");
+        return RuntimeHelper.requireNonNull(constants$1438.const$4,"hb_set_del_range");
     }
     /**
      * {@snippet :
@@ -4964,7 +5042,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_is_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1434.const$4,"hb_set_is_equal");
+        return RuntimeHelper.requireNonNull(constants$1438.const$5,"hb_set_is_equal");
     }
     /**
      * {@snippet :
@@ -4980,7 +5058,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1434.const$5,"hb_set_hash");
+        return RuntimeHelper.requireNonNull(constants$1439.const$0,"hb_set_hash");
     }
     /**
      * {@snippet :
@@ -4996,7 +5074,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_is_subset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1435.const$0,"hb_set_is_subset");
+        return RuntimeHelper.requireNonNull(constants$1439.const$1,"hb_set_is_subset");
     }
     /**
      * {@snippet :
@@ -5012,7 +5090,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1435.const$1,"hb_set_set");
+        return RuntimeHelper.requireNonNull(constants$1439.const$2,"hb_set_set");
     }
     /**
      * {@snippet :
@@ -5028,7 +5106,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_union$MH() {
-        return RuntimeHelper.requireNonNull(constants$1435.const$2,"hb_set_union");
+        return RuntimeHelper.requireNonNull(constants$1439.const$3,"hb_set_union");
     }
     /**
      * {@snippet :
@@ -5044,7 +5122,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_intersect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1435.const$3,"hb_set_intersect");
+        return RuntimeHelper.requireNonNull(constants$1439.const$4,"hb_set_intersect");
     }
     /**
      * {@snippet :
@@ -5060,7 +5138,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_subtract$MH() {
-        return RuntimeHelper.requireNonNull(constants$1435.const$4,"hb_set_subtract");
+        return RuntimeHelper.requireNonNull(constants$1439.const$5,"hb_set_subtract");
     }
     /**
      * {@snippet :
@@ -5076,7 +5154,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_symmetric_difference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1435.const$5,"hb_set_symmetric_difference");
+        return RuntimeHelper.requireNonNull(constants$1440.const$0,"hb_set_symmetric_difference");
     }
     /**
      * {@snippet :
@@ -5092,7 +5170,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_get_population$MH() {
-        return RuntimeHelper.requireNonNull(constants$1436.const$0,"hb_set_get_population");
+        return RuntimeHelper.requireNonNull(constants$1440.const$1,"hb_set_get_population");
     }
     /**
      * {@snippet :
@@ -5108,7 +5186,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_get_min$MH() {
-        return RuntimeHelper.requireNonNull(constants$1436.const$1,"hb_set_get_min");
+        return RuntimeHelper.requireNonNull(constants$1440.const$2,"hb_set_get_min");
     }
     /**
      * {@snippet :
@@ -5124,7 +5202,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_get_max$MH() {
-        return RuntimeHelper.requireNonNull(constants$1436.const$2,"hb_set_get_max");
+        return RuntimeHelper.requireNonNull(constants$1440.const$3,"hb_set_get_max");
     }
     /**
      * {@snippet :
@@ -5140,7 +5218,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_next$MH() {
-        return RuntimeHelper.requireNonNull(constants$1436.const$3,"hb_set_next");
+        return RuntimeHelper.requireNonNull(constants$1440.const$4,"hb_set_next");
     }
     /**
      * {@snippet :
@@ -5156,7 +5234,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_previous$MH() {
-        return RuntimeHelper.requireNonNull(constants$1436.const$4,"hb_set_previous");
+        return RuntimeHelper.requireNonNull(constants$1440.const$5,"hb_set_previous");
     }
     /**
      * {@snippet :
@@ -5172,7 +5250,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_next_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1436.const$5,"hb_set_next_range");
+        return RuntimeHelper.requireNonNull(constants$1441.const$0,"hb_set_next_range");
     }
     /**
      * {@snippet :
@@ -5188,7 +5266,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_previous_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1437.const$0,"hb_set_previous_range");
+        return RuntimeHelper.requireNonNull(constants$1441.const$1,"hb_set_previous_range");
     }
     /**
      * {@snippet :
@@ -5204,7 +5282,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_next_many$MH() {
-        return RuntimeHelper.requireNonNull(constants$1437.const$1,"hb_set_next_many");
+        return RuntimeHelper.requireNonNull(constants$1441.const$2,"hb_set_next_many");
     }
     /**
      * {@snippet :
@@ -5220,7 +5298,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1437.const$2,"hb_map_create");
+        return RuntimeHelper.requireNonNull(constants$1441.const$3,"hb_map_create");
     }
     /**
      * {@snippet :
@@ -5236,7 +5314,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1437.const$3,"hb_map_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1441.const$4,"hb_map_get_empty");
     }
     /**
      * {@snippet :
@@ -5252,7 +5330,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1437.const$4,"hb_map_reference");
+        return RuntimeHelper.requireNonNull(constants$1441.const$5,"hb_map_reference");
     }
     /**
      * {@snippet :
@@ -5268,7 +5346,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1437.const$5,"hb_map_destroy");
+        return RuntimeHelper.requireNonNull(constants$1442.const$0,"hb_map_destroy");
     }
     /**
      * {@snippet :
@@ -5284,7 +5362,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1438.const$1,"hb_map_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1442.const$2,"hb_map_set_user_data");
     }
     /**
      * {@snippet :
@@ -5300,7 +5378,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1438.const$2,"hb_map_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1442.const$3,"hb_map_get_user_data");
     }
     /**
      * {@snippet :
@@ -5316,7 +5394,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_allocation_successful$MH() {
-        return RuntimeHelper.requireNonNull(constants$1438.const$3,"hb_map_allocation_successful");
+        return RuntimeHelper.requireNonNull(constants$1442.const$4,"hb_map_allocation_successful");
     }
     /**
      * {@snippet :
@@ -5332,7 +5410,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1438.const$4,"hb_map_copy");
+        return RuntimeHelper.requireNonNull(constants$1442.const$5,"hb_map_copy");
     }
     /**
      * {@snippet :
@@ -5348,7 +5426,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$1438.const$5,"hb_map_clear");
+        return RuntimeHelper.requireNonNull(constants$1443.const$0,"hb_map_clear");
     }
     /**
      * {@snippet :
@@ -5364,7 +5442,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_is_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1439.const$0,"hb_map_is_empty");
+        return RuntimeHelper.requireNonNull(constants$1443.const$1,"hb_map_is_empty");
     }
     /**
      * {@snippet :
@@ -5380,7 +5458,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_get_population$MH() {
-        return RuntimeHelper.requireNonNull(constants$1439.const$1,"hb_map_get_population");
+        return RuntimeHelper.requireNonNull(constants$1443.const$2,"hb_map_get_population");
     }
     /**
      * {@snippet :
@@ -5396,7 +5474,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_is_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1439.const$2,"hb_map_is_equal");
+        return RuntimeHelper.requireNonNull(constants$1443.const$3,"hb_map_is_equal");
     }
     /**
      * {@snippet :
@@ -5412,7 +5490,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1439.const$3,"hb_map_hash");
+        return RuntimeHelper.requireNonNull(constants$1443.const$4,"hb_map_hash");
     }
     /**
      * {@snippet :
@@ -5428,7 +5506,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1439.const$4,"hb_map_set");
+        return RuntimeHelper.requireNonNull(constants$1443.const$5,"hb_map_set");
     }
     /**
      * {@snippet :
@@ -5444,7 +5522,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1439.const$5,"hb_map_get");
+        return RuntimeHelper.requireNonNull(constants$1444.const$0,"hb_map_get");
     }
     /**
      * {@snippet :
@@ -5460,7 +5538,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_del$MH() {
-        return RuntimeHelper.requireNonNull(constants$1440.const$0,"hb_map_del");
+        return RuntimeHelper.requireNonNull(constants$1444.const$1,"hb_map_del");
     }
     /**
      * {@snippet :
@@ -5476,7 +5554,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_has$MH() {
-        return RuntimeHelper.requireNonNull(constants$1440.const$1,"hb_map_has");
+        return RuntimeHelper.requireNonNull(constants$1444.const$2,"hb_map_has");
     }
     /**
      * {@snippet :
@@ -5492,7 +5570,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_update$MH() {
-        return RuntimeHelper.requireNonNull(constants$1440.const$2,"hb_map_update");
+        return RuntimeHelper.requireNonNull(constants$1444.const$3,"hb_map_update");
     }
     /**
      * {@snippet :
@@ -5508,7 +5586,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_next$MH() {
-        return RuntimeHelper.requireNonNull(constants$1440.const$3,"hb_map_next");
+        return RuntimeHelper.requireNonNull(constants$1444.const$4,"hb_map_next");
     }
     /**
      * {@snippet :
@@ -5524,7 +5602,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_keys$MH() {
-        return RuntimeHelper.requireNonNull(constants$1440.const$4,"hb_map_keys");
+        return RuntimeHelper.requireNonNull(constants$1444.const$5,"hb_map_keys");
     }
     /**
      * {@snippet :
@@ -5540,7 +5618,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_map_values$MH() {
-        return RuntimeHelper.requireNonNull(constants$1440.const$5,"hb_map_values");
+        return RuntimeHelper.requireNonNull(constants$1445.const$0,"hb_map_values");
     }
     /**
      * {@snippet :
@@ -5556,7 +5634,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1441.const$0,"hb_face_count");
+        return RuntimeHelper.requireNonNull(constants$1445.const$1,"hb_face_count");
     }
     /**
      * {@snippet :
@@ -5572,7 +5650,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1441.const$1,"hb_face_create");
+        return RuntimeHelper.requireNonNull(constants$1445.const$2,"hb_face_create");
     }
     /**
      * {@snippet :
@@ -5588,7 +5666,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_create_for_tables$MH() {
-        return RuntimeHelper.requireNonNull(constants$1441.const$5,"hb_face_create_for_tables");
+        return RuntimeHelper.requireNonNull(constants$1446.const$0,"hb_face_create_for_tables");
     }
     /**
      * {@snippet :
@@ -5604,7 +5682,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1442.const$0,"hb_face_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1446.const$1,"hb_face_get_empty");
     }
     /**
      * {@snippet :
@@ -5620,7 +5698,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1442.const$1,"hb_face_reference");
+        return RuntimeHelper.requireNonNull(constants$1446.const$2,"hb_face_reference");
     }
     /**
      * {@snippet :
@@ -5636,7 +5714,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1442.const$2,"hb_face_destroy");
+        return RuntimeHelper.requireNonNull(constants$1446.const$3,"hb_face_destroy");
     }
     /**
      * {@snippet :
@@ -5652,7 +5730,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1442.const$4,"hb_face_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1446.const$5,"hb_face_set_user_data");
     }
     /**
      * {@snippet :
@@ -5668,7 +5746,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1442.const$5,"hb_face_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1447.const$0,"hb_face_get_user_data");
     }
     /**
      * {@snippet :
@@ -5684,7 +5762,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1443.const$0,"hb_face_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1447.const$1,"hb_face_make_immutable");
     }
     /**
      * {@snippet :
@@ -5700,7 +5778,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1443.const$1,"hb_face_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1447.const$2,"hb_face_is_immutable");
     }
     /**
      * {@snippet :
@@ -5716,7 +5794,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_reference_table$MH() {
-        return RuntimeHelper.requireNonNull(constants$1443.const$2,"hb_face_reference_table");
+        return RuntimeHelper.requireNonNull(constants$1447.const$3,"hb_face_reference_table");
     }
     /**
      * {@snippet :
@@ -5732,7 +5810,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_reference_blob$MH() {
-        return RuntimeHelper.requireNonNull(constants$1443.const$3,"hb_face_reference_blob");
+        return RuntimeHelper.requireNonNull(constants$1447.const$4,"hb_face_reference_blob");
     }
     /**
      * {@snippet :
@@ -5748,7 +5826,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_set_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1443.const$4,"hb_face_set_index");
+        return RuntimeHelper.requireNonNull(constants$1447.const$5,"hb_face_set_index");
     }
     /**
      * {@snippet :
@@ -5764,7 +5842,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1443.const$5,"hb_face_get_index");
+        return RuntimeHelper.requireNonNull(constants$1448.const$0,"hb_face_get_index");
     }
     /**
      * {@snippet :
@@ -5780,7 +5858,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_set_upem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1444.const$0,"hb_face_set_upem");
+        return RuntimeHelper.requireNonNull(constants$1448.const$1,"hb_face_set_upem");
     }
     /**
      * {@snippet :
@@ -5796,7 +5874,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_upem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1444.const$1,"hb_face_get_upem");
+        return RuntimeHelper.requireNonNull(constants$1448.const$2,"hb_face_get_upem");
     }
     /**
      * {@snippet :
@@ -5812,7 +5890,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_set_glyph_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1444.const$2,"hb_face_set_glyph_count");
+        return RuntimeHelper.requireNonNull(constants$1448.const$3,"hb_face_set_glyph_count");
     }
     /**
      * {@snippet :
@@ -5828,7 +5906,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_glyph_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1444.const$3,"hb_face_get_glyph_count");
+        return RuntimeHelper.requireNonNull(constants$1448.const$4,"hb_face_get_glyph_count");
     }
     /**
      * {@snippet :
@@ -5844,7 +5922,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_table_tags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1444.const$4,"hb_face_get_table_tags");
+        return RuntimeHelper.requireNonNull(constants$1448.const$5,"hb_face_get_table_tags");
     }
     /**
      * {@snippet :
@@ -5860,7 +5938,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_collect_unicodes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1444.const$5,"hb_face_collect_unicodes");
+        return RuntimeHelper.requireNonNull(constants$1449.const$0,"hb_face_collect_unicodes");
     }
     /**
      * {@snippet :
@@ -5876,7 +5954,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_collect_nominal_glyph_mapping$MH() {
-        return RuntimeHelper.requireNonNull(constants$1445.const$0,"hb_face_collect_nominal_glyph_mapping");
+        return RuntimeHelper.requireNonNull(constants$1449.const$1,"hb_face_collect_nominal_glyph_mapping");
     }
     /**
      * {@snippet :
@@ -5892,7 +5970,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_collect_variation_selectors$MH() {
-        return RuntimeHelper.requireNonNull(constants$1445.const$1,"hb_face_collect_variation_selectors");
+        return RuntimeHelper.requireNonNull(constants$1449.const$2,"hb_face_collect_variation_selectors");
     }
     /**
      * {@snippet :
@@ -5908,7 +5986,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_collect_variation_unicodes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1445.const$2,"hb_face_collect_variation_unicodes");
+        return RuntimeHelper.requireNonNull(constants$1449.const$3,"hb_face_collect_variation_unicodes");
     }
     /**
      * {@snippet :
@@ -5924,7 +6002,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_builder_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1445.const$3,"hb_face_builder_create");
+        return RuntimeHelper.requireNonNull(constants$1449.const$4,"hb_face_builder_create");
     }
     /**
      * {@snippet :
@@ -5940,7 +6018,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_builder_add_table$MH() {
-        return RuntimeHelper.requireNonNull(constants$1445.const$4,"hb_face_builder_add_table");
+        return RuntimeHelper.requireNonNull(constants$1449.const$5,"hb_face_builder_add_table");
     }
     /**
      * {@snippet :
@@ -5956,7 +6034,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_builder_sort_tables$MH() {
-        return RuntimeHelper.requireNonNull(constants$1445.const$5,"hb_face_builder_sort_tables");
+        return RuntimeHelper.requireNonNull(constants$1450.const$0,"hb_face_builder_sort_tables");
     }
     /**
      * {@snippet :
@@ -5972,7 +6050,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_move_to_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1449.const$1,"hb_draw_funcs_set_move_to_func");
+        return RuntimeHelper.requireNonNull(constants$1453.const$2,"hb_draw_funcs_set_move_to_func");
     }
     /**
      * {@snippet :
@@ -5988,7 +6066,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_line_to_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1449.const$4,"hb_draw_funcs_set_line_to_func");
+        return RuntimeHelper.requireNonNull(constants$1453.const$5,"hb_draw_funcs_set_line_to_func");
     }
     /**
      * {@snippet :
@@ -6004,7 +6082,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_quadratic_to_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1450.const$1,"hb_draw_funcs_set_quadratic_to_func");
+        return RuntimeHelper.requireNonNull(constants$1454.const$2,"hb_draw_funcs_set_quadratic_to_func");
     }
     /**
      * {@snippet :
@@ -6020,7 +6098,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_cubic_to_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1450.const$4,"hb_draw_funcs_set_cubic_to_func");
+        return RuntimeHelper.requireNonNull(constants$1454.const$5,"hb_draw_funcs_set_cubic_to_func");
     }
     /**
      * {@snippet :
@@ -6036,7 +6114,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_close_path_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1451.const$1,"hb_draw_funcs_set_close_path_func");
+        return RuntimeHelper.requireNonNull(constants$1455.const$2,"hb_draw_funcs_set_close_path_func");
     }
     /**
      * {@snippet :
@@ -6052,7 +6130,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1451.const$2,"hb_draw_funcs_create");
+        return RuntimeHelper.requireNonNull(constants$1455.const$3,"hb_draw_funcs_create");
     }
     /**
      * {@snippet :
@@ -6068,7 +6146,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1451.const$3,"hb_draw_funcs_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1455.const$4,"hb_draw_funcs_get_empty");
     }
     /**
      * {@snippet :
@@ -6084,7 +6162,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1451.const$4,"hb_draw_funcs_reference");
+        return RuntimeHelper.requireNonNull(constants$1455.const$5,"hb_draw_funcs_reference");
     }
     /**
      * {@snippet :
@@ -6100,7 +6178,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1451.const$5,"hb_draw_funcs_destroy");
+        return RuntimeHelper.requireNonNull(constants$1456.const$0,"hb_draw_funcs_destroy");
     }
     /**
      * {@snippet :
@@ -6116,7 +6194,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1452.const$1,"hb_draw_funcs_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1456.const$2,"hb_draw_funcs_set_user_data");
     }
     /**
      * {@snippet :
@@ -6132,7 +6210,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1452.const$2,"hb_draw_funcs_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1456.const$3,"hb_draw_funcs_get_user_data");
     }
     /**
      * {@snippet :
@@ -6148,7 +6226,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1452.const$3,"hb_draw_funcs_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1456.const$4,"hb_draw_funcs_make_immutable");
     }
     /**
      * {@snippet :
@@ -6164,7 +6242,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1452.const$4,"hb_draw_funcs_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1456.const$5,"hb_draw_funcs_is_immutable");
     }
     /**
      * {@snippet :
@@ -6180,7 +6258,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_move_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1452.const$6,"hb_draw_move_to");
+        return RuntimeHelper.requireNonNull(constants$1457.const$1,"hb_draw_move_to");
     }
     /**
      * {@snippet :
@@ -6196,7 +6274,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_line_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1453.const$0,"hb_draw_line_to");
+        return RuntimeHelper.requireNonNull(constants$1457.const$2,"hb_draw_line_to");
     }
     /**
      * {@snippet :
@@ -6212,7 +6290,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_quadratic_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1453.const$2,"hb_draw_quadratic_to");
+        return RuntimeHelper.requireNonNull(constants$1457.const$4,"hb_draw_quadratic_to");
     }
     /**
      * {@snippet :
@@ -6228,7 +6306,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_cubic_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1453.const$4,"hb_draw_cubic_to");
+        return RuntimeHelper.requireNonNull(constants$1457.const$6,"hb_draw_cubic_to");
     }
     /**
      * {@snippet :
@@ -6244,7 +6322,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_close_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1453.const$5,"hb_draw_close_path");
+        return RuntimeHelper.requireNonNull(constants$1458.const$0,"hb_draw_close_path");
     }
     /**
      * {@snippet :
@@ -6260,7 +6338,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1454.const$0,"hb_paint_funcs_create");
+        return RuntimeHelper.requireNonNull(constants$1458.const$1,"hb_paint_funcs_create");
     }
     /**
      * {@snippet :
@@ -6276,7 +6354,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1454.const$1,"hb_paint_funcs_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1458.const$2,"hb_paint_funcs_get_empty");
     }
     /**
      * {@snippet :
@@ -6292,7 +6370,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1454.const$2,"hb_paint_funcs_reference");
+        return RuntimeHelper.requireNonNull(constants$1458.const$3,"hb_paint_funcs_reference");
     }
     /**
      * {@snippet :
@@ -6308,7 +6386,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1454.const$3,"hb_paint_funcs_destroy");
+        return RuntimeHelper.requireNonNull(constants$1458.const$4,"hb_paint_funcs_destroy");
     }
     /**
      * {@snippet :
@@ -6324,7 +6402,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1454.const$5,"hb_paint_funcs_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1459.const$0,"hb_paint_funcs_set_user_data");
     }
     /**
      * {@snippet :
@@ -6340,7 +6418,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1455.const$0,"hb_paint_funcs_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1459.const$1,"hb_paint_funcs_get_user_data");
     }
     /**
      * {@snippet :
@@ -6356,7 +6434,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1455.const$1,"hb_paint_funcs_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1459.const$2,"hb_paint_funcs_make_immutable");
     }
     /**
      * {@snippet :
@@ -6372,7 +6450,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1455.const$2,"hb_paint_funcs_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1459.const$3,"hb_paint_funcs_is_immutable");
     }
     /**
      * {@snippet :
@@ -6412,7 +6490,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)2L;
     }
     public static MethodHandle hb_color_line_get_color_stops$MH() {
-        return RuntimeHelper.requireNonNull(constants$1462.const$0,"hb_color_line_get_color_stops");
+        return RuntimeHelper.requireNonNull(constants$1466.const$2,"hb_color_line_get_color_stops");
     }
     /**
      * {@snippet :
@@ -6428,7 +6506,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_color_line_get_extend$MH() {
-        return RuntimeHelper.requireNonNull(constants$1462.const$1,"hb_color_line_get_extend");
+        return RuntimeHelper.requireNonNull(constants$1466.const$3,"hb_color_line_get_extend");
     }
     /**
      * {@snippet :
@@ -6668,7 +6746,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)27L;
     }
     public static MethodHandle hb_paint_funcs_set_push_transform_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1463.const$4,"hb_paint_funcs_set_push_transform_func");
+        return RuntimeHelper.requireNonNull(constants$1468.const$0,"hb_paint_funcs_set_push_transform_func");
     }
     /**
      * {@snippet :
@@ -6684,7 +6762,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_pop_transform_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1464.const$1,"hb_paint_funcs_set_pop_transform_func");
+        return RuntimeHelper.requireNonNull(constants$1468.const$3,"hb_paint_funcs_set_pop_transform_func");
     }
     /**
      * {@snippet :
@@ -6699,8 +6777,24 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    public static MethodHandle hb_paint_funcs_set_color_glyph_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1469.const$0,"hb_paint_funcs_set_color_glyph_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_color_glyph_func(struct hb_paint_funcs_t* funcs, int (*func)(struct hb_paint_funcs_t*,void*,unsigned int,struct hb_font_t*,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_color_glyph_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_color_glyph_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle hb_paint_funcs_set_push_clip_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1464.const$4,"hb_paint_funcs_set_push_clip_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1469.const$3,"hb_paint_funcs_set_push_clip_glyph_func");
     }
     /**
      * {@snippet :
@@ -6716,7 +6810,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_push_clip_rectangle_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1465.const$1,"hb_paint_funcs_set_push_clip_rectangle_func");
+        return RuntimeHelper.requireNonNull(constants$1470.const$0,"hb_paint_funcs_set_push_clip_rectangle_func");
     }
     /**
      * {@snippet :
@@ -6732,7 +6826,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_pop_clip_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1465.const$4,"hb_paint_funcs_set_pop_clip_func");
+        return RuntimeHelper.requireNonNull(constants$1470.const$3,"hb_paint_funcs_set_pop_clip_func");
     }
     /**
      * {@snippet :
@@ -6748,7 +6842,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_color_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1466.const$1,"hb_paint_funcs_set_color_func");
+        return RuntimeHelper.requireNonNull(constants$1471.const$0,"hb_paint_funcs_set_color_func");
     }
     /**
      * {@snippet :
@@ -6764,7 +6858,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_image_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1466.const$4,"hb_paint_funcs_set_image_func");
+        return RuntimeHelper.requireNonNull(constants$1471.const$3,"hb_paint_funcs_set_image_func");
     }
     /**
      * {@snippet :
@@ -6780,7 +6874,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_linear_gradient_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1467.const$1,"hb_paint_funcs_set_linear_gradient_func");
+        return RuntimeHelper.requireNonNull(constants$1472.const$0,"hb_paint_funcs_set_linear_gradient_func");
     }
     /**
      * {@snippet :
@@ -6796,7 +6890,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_radial_gradient_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1467.const$4,"hb_paint_funcs_set_radial_gradient_func");
+        return RuntimeHelper.requireNonNull(constants$1472.const$3,"hb_paint_funcs_set_radial_gradient_func");
     }
     /**
      * {@snippet :
@@ -6812,7 +6906,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_sweep_gradient_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1468.const$1,"hb_paint_funcs_set_sweep_gradient_func");
+        return RuntimeHelper.requireNonNull(constants$1473.const$0,"hb_paint_funcs_set_sweep_gradient_func");
     }
     /**
      * {@snippet :
@@ -6828,7 +6922,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_push_group_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1468.const$4,"hb_paint_funcs_set_push_group_func");
+        return RuntimeHelper.requireNonNull(constants$1473.const$3,"hb_paint_funcs_set_push_group_func");
     }
     /**
      * {@snippet :
@@ -6844,7 +6938,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_pop_group_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1469.const$1,"hb_paint_funcs_set_pop_group_func");
+        return RuntimeHelper.requireNonNull(constants$1474.const$0,"hb_paint_funcs_set_pop_group_func");
     }
     /**
      * {@snippet :
@@ -6860,7 +6954,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_funcs_set_custom_palette_color_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1469.const$4,"hb_paint_funcs_set_custom_palette_color_func");
+        return RuntimeHelper.requireNonNull(constants$1474.const$3,"hb_paint_funcs_set_custom_palette_color_func");
     }
     /**
      * {@snippet :
@@ -6876,7 +6970,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_push_transform$MH() {
-        return RuntimeHelper.requireNonNull(constants$1469.const$6,"hb_paint_push_transform");
+        return RuntimeHelper.requireNonNull(constants$1474.const$5,"hb_paint_push_transform");
     }
     /**
      * {@snippet :
@@ -6892,7 +6986,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_pop_transform$MH() {
-        return RuntimeHelper.requireNonNull(constants$1470.const$0,"hb_paint_pop_transform");
+        return RuntimeHelper.requireNonNull(constants$1475.const$0,"hb_paint_pop_transform");
     }
     /**
      * {@snippet :
@@ -6907,8 +7001,24 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    public static MethodHandle hb_paint_color_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$1475.const$1,"hb_paint_color_glyph");
+    }
+    /**
+     * {@snippet :
+     * int hb_paint_color_glyph(struct hb_paint_funcs_t* funcs, void* paint_data, unsigned int glyph, struct hb_font_t* font);
+     * }
+     */
+    public static int hb_paint_color_glyph(MemorySegment funcs, MemorySegment paint_data, int glyph, MemorySegment font) {
+        var mh$ = hb_paint_color_glyph$MH();
+        try {
+            return (int)mh$.invokeExact(funcs, paint_data, glyph, font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle hb_paint_push_clip_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1470.const$1,"hb_paint_push_clip_glyph");
+        return RuntimeHelper.requireNonNull(constants$1475.const$2,"hb_paint_push_clip_glyph");
     }
     /**
      * {@snippet :
@@ -6924,7 +7034,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_push_clip_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1470.const$3,"hb_paint_push_clip_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1475.const$4,"hb_paint_push_clip_rectangle");
     }
     /**
      * {@snippet :
@@ -6940,7 +7050,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_pop_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1470.const$4,"hb_paint_pop_clip");
+        return RuntimeHelper.requireNonNull(constants$1475.const$5,"hb_paint_pop_clip");
     }
     /**
      * {@snippet :
@@ -6956,7 +7066,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1470.const$5,"hb_paint_color");
+        return RuntimeHelper.requireNonNull(constants$1476.const$0,"hb_paint_color");
     }
     /**
      * {@snippet :
@@ -6972,7 +7082,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$1471.const$1,"hb_paint_image");
+        return RuntimeHelper.requireNonNull(constants$1476.const$2,"hb_paint_image");
     }
     /**
      * {@snippet :
@@ -6988,7 +7098,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_linear_gradient$MH() {
-        return RuntimeHelper.requireNonNull(constants$1471.const$2,"hb_paint_linear_gradient");
+        return RuntimeHelper.requireNonNull(constants$1476.const$3,"hb_paint_linear_gradient");
     }
     /**
      * {@snippet :
@@ -7004,7 +7114,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_radial_gradient$MH() {
-        return RuntimeHelper.requireNonNull(constants$1471.const$3,"hb_paint_radial_gradient");
+        return RuntimeHelper.requireNonNull(constants$1476.const$4,"hb_paint_radial_gradient");
     }
     /**
      * {@snippet :
@@ -7020,7 +7130,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_sweep_gradient$MH() {
-        return RuntimeHelper.requireNonNull(constants$1471.const$4,"hb_paint_sweep_gradient");
+        return RuntimeHelper.requireNonNull(constants$1476.const$5,"hb_paint_sweep_gradient");
     }
     /**
      * {@snippet :
@@ -7036,7 +7146,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_push_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1471.const$5,"hb_paint_push_group");
+        return RuntimeHelper.requireNonNull(constants$1477.const$0,"hb_paint_push_group");
     }
     /**
      * {@snippet :
@@ -7052,7 +7162,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_pop_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1472.const$0,"hb_paint_pop_group");
+        return RuntimeHelper.requireNonNull(constants$1477.const$1,"hb_paint_pop_group");
     }
     /**
      * {@snippet :
@@ -7068,7 +7178,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_paint_custom_palette_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1472.const$1,"hb_paint_custom_palette_color");
+        return RuntimeHelper.requireNonNull(constants$1477.const$2,"hb_paint_custom_palette_color");
     }
     /**
      * {@snippet :
@@ -7084,7 +7194,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1472.const$2,"hb_font_funcs_create");
+        return RuntimeHelper.requireNonNull(constants$1477.const$3,"hb_font_funcs_create");
     }
     /**
      * {@snippet :
@@ -7100,7 +7210,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1472.const$3,"hb_font_funcs_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1477.const$4,"hb_font_funcs_get_empty");
     }
     /**
      * {@snippet :
@@ -7116,7 +7226,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1472.const$4,"hb_font_funcs_reference");
+        return RuntimeHelper.requireNonNull(constants$1477.const$5,"hb_font_funcs_reference");
     }
     /**
      * {@snippet :
@@ -7132,7 +7242,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1472.const$5,"hb_font_funcs_destroy");
+        return RuntimeHelper.requireNonNull(constants$1478.const$0,"hb_font_funcs_destroy");
     }
     /**
      * {@snippet :
@@ -7148,7 +7258,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1473.const$1,"hb_font_funcs_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1478.const$2,"hb_font_funcs_set_user_data");
     }
     /**
      * {@snippet :
@@ -7164,7 +7274,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1473.const$2,"hb_font_funcs_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1478.const$3,"hb_font_funcs_get_user_data");
     }
     /**
      * {@snippet :
@@ -7180,7 +7290,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1473.const$3,"hb_font_funcs_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1478.const$4,"hb_font_funcs_make_immutable");
     }
     /**
      * {@snippet :
@@ -7196,7 +7306,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1473.const$4,"hb_font_funcs_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1478.const$5,"hb_font_funcs_is_immutable");
     }
     /**
      * {@snippet :
@@ -7212,7 +7322,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_font_h_extents_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1482.const$2,"hb_font_funcs_set_font_h_extents_func");
+        return RuntimeHelper.requireNonNull(constants$1487.const$3,"hb_font_funcs_set_font_h_extents_func");
     }
     /**
      * {@snippet :
@@ -7228,7 +7338,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_font_v_extents_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1482.const$5,"hb_font_funcs_set_font_v_extents_func");
+        return RuntimeHelper.requireNonNull(constants$1488.const$0,"hb_font_funcs_set_font_v_extents_func");
     }
     /**
      * {@snippet :
@@ -7244,7 +7354,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_nominal_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1483.const$2,"hb_font_funcs_set_nominal_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1488.const$3,"hb_font_funcs_set_nominal_glyph_func");
     }
     /**
      * {@snippet :
@@ -7260,7 +7370,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_nominal_glyphs_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1483.const$5,"hb_font_funcs_set_nominal_glyphs_func");
+        return RuntimeHelper.requireNonNull(constants$1489.const$0,"hb_font_funcs_set_nominal_glyphs_func");
     }
     /**
      * {@snippet :
@@ -7276,7 +7386,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_variation_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1484.const$2,"hb_font_funcs_set_variation_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1489.const$3,"hb_font_funcs_set_variation_glyph_func");
     }
     /**
      * {@snippet :
@@ -7292,7 +7402,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_h_advance_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1484.const$5,"hb_font_funcs_set_glyph_h_advance_func");
+        return RuntimeHelper.requireNonNull(constants$1490.const$0,"hb_font_funcs_set_glyph_h_advance_func");
     }
     /**
      * {@snippet :
@@ -7308,7 +7418,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_v_advance_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1485.const$2,"hb_font_funcs_set_glyph_v_advance_func");
+        return RuntimeHelper.requireNonNull(constants$1490.const$3,"hb_font_funcs_set_glyph_v_advance_func");
     }
     /**
      * {@snippet :
@@ -7324,7 +7434,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_h_advances_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1485.const$5,"hb_font_funcs_set_glyph_h_advances_func");
+        return RuntimeHelper.requireNonNull(constants$1491.const$0,"hb_font_funcs_set_glyph_h_advances_func");
     }
     /**
      * {@snippet :
@@ -7340,7 +7450,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_v_advances_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1486.const$2,"hb_font_funcs_set_glyph_v_advances_func");
+        return RuntimeHelper.requireNonNull(constants$1491.const$3,"hb_font_funcs_set_glyph_v_advances_func");
     }
     /**
      * {@snippet :
@@ -7356,7 +7466,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_h_origin_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1486.const$5,"hb_font_funcs_set_glyph_h_origin_func");
+        return RuntimeHelper.requireNonNull(constants$1492.const$0,"hb_font_funcs_set_glyph_h_origin_func");
     }
     /**
      * {@snippet :
@@ -7372,7 +7482,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_v_origin_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1487.const$2,"hb_font_funcs_set_glyph_v_origin_func");
+        return RuntimeHelper.requireNonNull(constants$1492.const$3,"hb_font_funcs_set_glyph_v_origin_func");
     }
     /**
      * {@snippet :
@@ -7388,7 +7498,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_h_kerning_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1487.const$5,"hb_font_funcs_set_glyph_h_kerning_func");
+        return RuntimeHelper.requireNonNull(constants$1493.const$0,"hb_font_funcs_set_glyph_h_kerning_func");
     }
     /**
      * {@snippet :
@@ -7404,7 +7514,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_extents_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1488.const$2,"hb_font_funcs_set_glyph_extents_func");
+        return RuntimeHelper.requireNonNull(constants$1493.const$3,"hb_font_funcs_set_glyph_extents_func");
     }
     /**
      * {@snippet :
@@ -7420,7 +7530,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_contour_point_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1488.const$5,"hb_font_funcs_set_glyph_contour_point_func");
+        return RuntimeHelper.requireNonNull(constants$1494.const$0,"hb_font_funcs_set_glyph_contour_point_func");
     }
     /**
      * {@snippet :
@@ -7436,7 +7546,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_name_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1489.const$2,"hb_font_funcs_set_glyph_name_func");
+        return RuntimeHelper.requireNonNull(constants$1494.const$3,"hb_font_funcs_set_glyph_name_func");
     }
     /**
      * {@snippet :
@@ -7452,7 +7562,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_from_name_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1489.const$5,"hb_font_funcs_set_glyph_from_name_func");
+        return RuntimeHelper.requireNonNull(constants$1495.const$0,"hb_font_funcs_set_glyph_from_name_func");
     }
     /**
      * {@snippet :
@@ -7468,7 +7578,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_draw_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1490.const$2,"hb_font_funcs_set_draw_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1495.const$3,"hb_font_funcs_set_draw_glyph_func");
     }
     /**
      * {@snippet :
@@ -7484,7 +7594,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_paint_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1490.const$5,"hb_font_funcs_set_paint_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1496.const$0,"hb_font_funcs_set_paint_glyph_func");
     }
     /**
      * {@snippet :
@@ -7500,7 +7610,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_h_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1491.const$0,"hb_font_get_h_extents");
+        return RuntimeHelper.requireNonNull(constants$1496.const$1,"hb_font_get_h_extents");
     }
     /**
      * {@snippet :
@@ -7516,7 +7626,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_v_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1491.const$1,"hb_font_get_v_extents");
+        return RuntimeHelper.requireNonNull(constants$1496.const$2,"hb_font_get_v_extents");
     }
     /**
      * {@snippet :
@@ -7532,7 +7642,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_nominal_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1491.const$2,"hb_font_get_nominal_glyph");
+        return RuntimeHelper.requireNonNull(constants$1496.const$3,"hb_font_get_nominal_glyph");
     }
     /**
      * {@snippet :
@@ -7548,7 +7658,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_variation_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1491.const$3,"hb_font_get_variation_glyph");
+        return RuntimeHelper.requireNonNull(constants$1496.const$4,"hb_font_get_variation_glyph");
     }
     /**
      * {@snippet :
@@ -7564,7 +7674,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_nominal_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1491.const$5,"hb_font_get_nominal_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1496.const$6,"hb_font_get_nominal_glyphs");
     }
     /**
      * {@snippet :
@@ -7580,7 +7690,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_h_advance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1492.const$0,"hb_font_get_glyph_h_advance");
+        return RuntimeHelper.requireNonNull(constants$1497.const$0,"hb_font_get_glyph_h_advance");
     }
     /**
      * {@snippet :
@@ -7596,7 +7706,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_v_advance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1492.const$1,"hb_font_get_glyph_v_advance");
+        return RuntimeHelper.requireNonNull(constants$1497.const$1,"hb_font_get_glyph_v_advance");
     }
     /**
      * {@snippet :
@@ -7612,7 +7722,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_h_advances$MH() {
-        return RuntimeHelper.requireNonNull(constants$1492.const$3,"hb_font_get_glyph_h_advances");
+        return RuntimeHelper.requireNonNull(constants$1497.const$3,"hb_font_get_glyph_h_advances");
     }
     /**
      * {@snippet :
@@ -7628,7 +7738,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_v_advances$MH() {
-        return RuntimeHelper.requireNonNull(constants$1492.const$4,"hb_font_get_glyph_v_advances");
+        return RuntimeHelper.requireNonNull(constants$1497.const$4,"hb_font_get_glyph_v_advances");
     }
     /**
      * {@snippet :
@@ -7644,7 +7754,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_h_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1492.const$5,"hb_font_get_glyph_h_origin");
+        return RuntimeHelper.requireNonNull(constants$1497.const$5,"hb_font_get_glyph_h_origin");
     }
     /**
      * {@snippet :
@@ -7660,7 +7770,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_v_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1493.const$0,"hb_font_get_glyph_v_origin");
+        return RuntimeHelper.requireNonNull(constants$1498.const$0,"hb_font_get_glyph_v_origin");
     }
     /**
      * {@snippet :
@@ -7676,7 +7786,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_h_kerning$MH() {
-        return RuntimeHelper.requireNonNull(constants$1493.const$1,"hb_font_get_glyph_h_kerning");
+        return RuntimeHelper.requireNonNull(constants$1498.const$1,"hb_font_get_glyph_h_kerning");
     }
     /**
      * {@snippet :
@@ -7692,7 +7802,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1493.const$2,"hb_font_get_glyph_extents");
+        return RuntimeHelper.requireNonNull(constants$1498.const$2,"hb_font_get_glyph_extents");
     }
     /**
      * {@snippet :
@@ -7708,7 +7818,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_contour_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1493.const$3,"hb_font_get_glyph_contour_point");
+        return RuntimeHelper.requireNonNull(constants$1498.const$3,"hb_font_get_glyph_contour_point");
     }
     /**
      * {@snippet :
@@ -7724,7 +7834,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1493.const$4,"hb_font_get_glyph_name");
+        return RuntimeHelper.requireNonNull(constants$1498.const$4,"hb_font_get_glyph_name");
     }
     /**
      * {@snippet :
@@ -7740,7 +7850,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_from_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1493.const$5,"hb_font_get_glyph_from_name");
+        return RuntimeHelper.requireNonNull(constants$1498.const$5,"hb_font_get_glyph_from_name");
     }
     /**
      * {@snippet :
@@ -7756,7 +7866,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_draw_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1494.const$0,"hb_font_draw_glyph");
+        return RuntimeHelper.requireNonNull(constants$1499.const$0,"hb_font_draw_glyph");
     }
     /**
      * {@snippet :
@@ -7772,7 +7882,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_paint_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1494.const$2,"hb_font_paint_glyph");
+        return RuntimeHelper.requireNonNull(constants$1499.const$2,"hb_font_paint_glyph");
     }
     /**
      * {@snippet :
@@ -7788,7 +7898,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1494.const$3,"hb_font_get_glyph");
+        return RuntimeHelper.requireNonNull(constants$1499.const$3,"hb_font_get_glyph");
     }
     /**
      * {@snippet :
@@ -7804,7 +7914,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_extents_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1494.const$4,"hb_font_get_extents_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1499.const$4,"hb_font_get_extents_for_direction");
     }
     /**
      * {@snippet :
@@ -7820,7 +7930,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_advance_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1494.const$6,"hb_font_get_glyph_advance_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1499.const$6,"hb_font_get_glyph_advance_for_direction");
     }
     /**
      * {@snippet :
@@ -7836,7 +7946,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_advances_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1495.const$1,"hb_font_get_glyph_advances_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1500.const$1,"hb_font_get_glyph_advances_for_direction");
     }
     /**
      * {@snippet :
@@ -7852,7 +7962,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_origin_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1495.const$2,"hb_font_get_glyph_origin_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1500.const$2,"hb_font_get_glyph_origin_for_direction");
     }
     /**
      * {@snippet :
@@ -7868,7 +7978,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_add_glyph_origin_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1495.const$3,"hb_font_add_glyph_origin_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1500.const$3,"hb_font_add_glyph_origin_for_direction");
     }
     /**
      * {@snippet :
@@ -7884,7 +7994,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_subtract_glyph_origin_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1495.const$4,"hb_font_subtract_glyph_origin_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1500.const$4,"hb_font_subtract_glyph_origin_for_direction");
     }
     /**
      * {@snippet :
@@ -7900,7 +8010,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_kerning_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1495.const$5,"hb_font_get_glyph_kerning_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1500.const$5,"hb_font_get_glyph_kerning_for_direction");
     }
     /**
      * {@snippet :
@@ -7916,7 +8026,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_extents_for_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1496.const$0,"hb_font_get_glyph_extents_for_origin");
+        return RuntimeHelper.requireNonNull(constants$1501.const$0,"hb_font_get_glyph_extents_for_origin");
     }
     /**
      * {@snippet :
@@ -7932,7 +8042,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_contour_point_for_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1496.const$2,"hb_font_get_glyph_contour_point_for_origin");
+        return RuntimeHelper.requireNonNull(constants$1501.const$2,"hb_font_get_glyph_contour_point_for_origin");
     }
     /**
      * {@snippet :
@@ -7948,7 +8058,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_glyph_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1496.const$4,"hb_font_glyph_to_string");
+        return RuntimeHelper.requireNonNull(constants$1501.const$4,"hb_font_glyph_to_string");
     }
     /**
      * {@snippet :
@@ -7964,7 +8074,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_glyph_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1496.const$5,"hb_font_glyph_from_string");
+        return RuntimeHelper.requireNonNull(constants$1501.const$5,"hb_font_glyph_from_string");
     }
     /**
      * {@snippet :
@@ -7980,7 +8090,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1497.const$0,"hb_font_create");
+        return RuntimeHelper.requireNonNull(constants$1502.const$0,"hb_font_create");
     }
     /**
      * {@snippet :
@@ -7996,7 +8106,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_create_sub_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1497.const$1,"hb_font_create_sub_font");
+        return RuntimeHelper.requireNonNull(constants$1502.const$1,"hb_font_create_sub_font");
     }
     /**
      * {@snippet :
@@ -8012,7 +8122,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1497.const$2,"hb_font_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1502.const$2,"hb_font_get_empty");
     }
     /**
      * {@snippet :
@@ -8028,7 +8138,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1497.const$3,"hb_font_reference");
+        return RuntimeHelper.requireNonNull(constants$1502.const$3,"hb_font_reference");
     }
     /**
      * {@snippet :
@@ -8044,7 +8154,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1497.const$4,"hb_font_destroy");
+        return RuntimeHelper.requireNonNull(constants$1502.const$4,"hb_font_destroy");
     }
     /**
      * {@snippet :
@@ -8060,7 +8170,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1498.const$0,"hb_font_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1503.const$0,"hb_font_set_user_data");
     }
     /**
      * {@snippet :
@@ -8076,7 +8186,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1498.const$1,"hb_font_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1503.const$1,"hb_font_get_user_data");
     }
     /**
      * {@snippet :
@@ -8092,7 +8202,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1498.const$2,"hb_font_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1503.const$2,"hb_font_make_immutable");
     }
     /**
      * {@snippet :
@@ -8108,7 +8218,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1498.const$3,"hb_font_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1503.const$3,"hb_font_is_immutable");
     }
     /**
      * {@snippet :
@@ -8124,7 +8234,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$1498.const$4,"hb_font_get_serial");
+        return RuntimeHelper.requireNonNull(constants$1503.const$4,"hb_font_get_serial");
     }
     /**
      * {@snippet :
@@ -8140,7 +8250,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1498.const$5,"hb_font_changed");
+        return RuntimeHelper.requireNonNull(constants$1503.const$5,"hb_font_changed");
     }
     /**
      * {@snippet :
@@ -8156,7 +8266,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1499.const$0,"hb_font_set_parent");
+        return RuntimeHelper.requireNonNull(constants$1504.const$0,"hb_font_set_parent");
     }
     /**
      * {@snippet :
@@ -8172,7 +8282,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1499.const$1,"hb_font_get_parent");
+        return RuntimeHelper.requireNonNull(constants$1504.const$1,"hb_font_get_parent");
     }
     /**
      * {@snippet :
@@ -8188,7 +8298,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1499.const$2,"hb_font_set_face");
+        return RuntimeHelper.requireNonNull(constants$1504.const$2,"hb_font_set_face");
     }
     /**
      * {@snippet :
@@ -8204,7 +8314,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1499.const$3,"hb_font_get_face");
+        return RuntimeHelper.requireNonNull(constants$1504.const$3,"hb_font_get_face");
     }
     /**
      * {@snippet :
@@ -8220,7 +8330,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_funcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1499.const$5,"hb_font_set_funcs");
+        return RuntimeHelper.requireNonNull(constants$1504.const$5,"hb_font_set_funcs");
     }
     /**
      * {@snippet :
@@ -8236,7 +8346,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_funcs_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1500.const$1,"hb_font_set_funcs_data");
+        return RuntimeHelper.requireNonNull(constants$1505.const$1,"hb_font_set_funcs_data");
     }
     /**
      * {@snippet :
@@ -8252,7 +8362,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1500.const$2,"hb_font_set_scale");
+        return RuntimeHelper.requireNonNull(constants$1505.const$2,"hb_font_set_scale");
     }
     /**
      * {@snippet :
@@ -8268,7 +8378,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1500.const$3,"hb_font_get_scale");
+        return RuntimeHelper.requireNonNull(constants$1505.const$3,"hb_font_get_scale");
     }
     /**
      * {@snippet :
@@ -8284,7 +8394,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_ppem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1500.const$4,"hb_font_set_ppem");
+        return RuntimeHelper.requireNonNull(constants$1505.const$4,"hb_font_set_ppem");
     }
     /**
      * {@snippet :
@@ -8300,7 +8410,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_ppem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1500.const$5,"hb_font_get_ppem");
+        return RuntimeHelper.requireNonNull(constants$1505.const$5,"hb_font_get_ppem");
     }
     /**
      * {@snippet :
@@ -8316,7 +8426,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_ptem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1501.const$0,"hb_font_set_ptem");
+        return RuntimeHelper.requireNonNull(constants$1506.const$0,"hb_font_set_ptem");
     }
     /**
      * {@snippet :
@@ -8332,7 +8442,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_ptem$MH() {
-        return RuntimeHelper.requireNonNull(constants$1501.const$1,"hb_font_get_ptem");
+        return RuntimeHelper.requireNonNull(constants$1506.const$1,"hb_font_get_ptem");
     }
     /**
      * {@snippet :
@@ -8348,7 +8458,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_synthetic_bold$MH() {
-        return RuntimeHelper.requireNonNull(constants$1501.const$3,"hb_font_set_synthetic_bold");
+        return RuntimeHelper.requireNonNull(constants$1506.const$3,"hb_font_set_synthetic_bold");
     }
     /**
      * {@snippet :
@@ -8364,7 +8474,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_synthetic_bold$MH() {
-        return RuntimeHelper.requireNonNull(constants$1501.const$4,"hb_font_get_synthetic_bold");
+        return RuntimeHelper.requireNonNull(constants$1506.const$4,"hb_font_get_synthetic_bold");
     }
     /**
      * {@snippet :
@@ -8380,7 +8490,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_synthetic_slant$MH() {
-        return RuntimeHelper.requireNonNull(constants$1501.const$5,"hb_font_set_synthetic_slant");
+        return RuntimeHelper.requireNonNull(constants$1506.const$5,"hb_font_set_synthetic_slant");
     }
     /**
      * {@snippet :
@@ -8396,7 +8506,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_synthetic_slant$MH() {
-        return RuntimeHelper.requireNonNull(constants$1502.const$0,"hb_font_get_synthetic_slant");
+        return RuntimeHelper.requireNonNull(constants$1507.const$0,"hb_font_get_synthetic_slant");
     }
     /**
      * {@snippet :
@@ -8412,7 +8522,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1502.const$1,"hb_font_set_variations");
+        return RuntimeHelper.requireNonNull(constants$1507.const$1,"hb_font_set_variations");
     }
     /**
      * {@snippet :
@@ -8428,7 +8538,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_variation$MH() {
-        return RuntimeHelper.requireNonNull(constants$1502.const$3,"hb_font_set_variation");
+        return RuntimeHelper.requireNonNull(constants$1507.const$3,"hb_font_set_variation");
     }
     /**
      * {@snippet :
@@ -8444,7 +8554,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_var_coords_design$MH() {
-        return RuntimeHelper.requireNonNull(constants$1502.const$4,"hb_font_set_var_coords_design");
+        return RuntimeHelper.requireNonNull(constants$1507.const$4,"hb_font_set_var_coords_design");
     }
     /**
      * {@snippet :
@@ -8460,7 +8570,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_var_coords_design$MH() {
-        return RuntimeHelper.requireNonNull(constants$1502.const$5,"hb_font_get_var_coords_design");
+        return RuntimeHelper.requireNonNull(constants$1507.const$5,"hb_font_get_var_coords_design");
     }
     /**
      * {@snippet :
@@ -8476,7 +8586,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_var_coords_normalized$MH() {
-        return RuntimeHelper.requireNonNull(constants$1503.const$0,"hb_font_set_var_coords_normalized");
+        return RuntimeHelper.requireNonNull(constants$1508.const$0,"hb_font_set_var_coords_normalized");
     }
     /**
      * {@snippet :
@@ -8492,7 +8602,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_var_coords_normalized$MH() {
-        return RuntimeHelper.requireNonNull(constants$1503.const$1,"hb_font_get_var_coords_normalized");
+        return RuntimeHelper.requireNonNull(constants$1508.const$1,"hb_font_get_var_coords_normalized");
     }
     /**
      * {@snippet :
@@ -8508,7 +8618,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_var_named_instance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1503.const$2,"hb_font_set_var_named_instance");
+        return RuntimeHelper.requireNonNull(constants$1508.const$2,"hb_font_set_var_named_instance");
     }
     /**
      * {@snippet :
@@ -8524,7 +8634,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_var_named_instance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1503.const$3,"hb_font_get_var_named_instance");
+        return RuntimeHelper.requireNonNull(constants$1508.const$3,"hb_font_get_var_named_instance");
     }
     /**
      * {@snippet :
@@ -8572,7 +8682,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)7L;
     }
     public static MethodHandle hb_glyph_info_get_glyph_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1504.const$2,"hb_glyph_info_get_glyph_flags");
+        return RuntimeHelper.requireNonNull(constants$1509.const$2,"hb_glyph_info_get_glyph_flags");
     }
     /**
      * {@snippet :
@@ -8588,7 +8698,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_segment_properties_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1506.const$2,"hb_segment_properties_equal");
+        return RuntimeHelper.requireNonNull(constants$1511.const$2,"hb_segment_properties_equal");
     }
     /**
      * {@snippet :
@@ -8604,7 +8714,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_segment_properties_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1506.const$3,"hb_segment_properties_hash");
+        return RuntimeHelper.requireNonNull(constants$1511.const$3,"hb_segment_properties_hash");
     }
     /**
      * {@snippet :
@@ -8620,7 +8730,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_segment_properties_overlay$MH() {
-        return RuntimeHelper.requireNonNull(constants$1506.const$4,"hb_segment_properties_overlay");
+        return RuntimeHelper.requireNonNull(constants$1511.const$4,"hb_segment_properties_overlay");
     }
     /**
      * {@snippet :
@@ -8636,7 +8746,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1506.const$5,"hb_buffer_create");
+        return RuntimeHelper.requireNonNull(constants$1511.const$5,"hb_buffer_create");
     }
     /**
      * {@snippet :
@@ -8652,7 +8762,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_create_similar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1507.const$0,"hb_buffer_create_similar");
+        return RuntimeHelper.requireNonNull(constants$1512.const$0,"hb_buffer_create_similar");
     }
     /**
      * {@snippet :
@@ -8668,7 +8778,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_reset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1507.const$1,"hb_buffer_reset");
+        return RuntimeHelper.requireNonNull(constants$1512.const$1,"hb_buffer_reset");
     }
     /**
      * {@snippet :
@@ -8684,7 +8794,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1507.const$2,"hb_buffer_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1512.const$2,"hb_buffer_get_empty");
     }
     /**
      * {@snippet :
@@ -8700,7 +8810,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1507.const$3,"hb_buffer_reference");
+        return RuntimeHelper.requireNonNull(constants$1512.const$3,"hb_buffer_reference");
     }
     /**
      * {@snippet :
@@ -8716,7 +8826,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1507.const$4,"hb_buffer_destroy");
+        return RuntimeHelper.requireNonNull(constants$1512.const$4,"hb_buffer_destroy");
     }
     /**
      * {@snippet :
@@ -8732,7 +8842,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1508.const$0,"hb_buffer_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1513.const$0,"hb_buffer_set_user_data");
     }
     /**
      * {@snippet :
@@ -8748,7 +8858,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1508.const$1,"hb_buffer_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1513.const$1,"hb_buffer_get_user_data");
     }
     /**
      * {@snippet :
@@ -8788,7 +8898,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)2L;
     }
     public static MethodHandle hb_buffer_set_content_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1508.const$2,"hb_buffer_set_content_type");
+        return RuntimeHelper.requireNonNull(constants$1513.const$2,"hb_buffer_set_content_type");
     }
     /**
      * {@snippet :
@@ -8804,7 +8914,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_content_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1508.const$3,"hb_buffer_get_content_type");
+        return RuntimeHelper.requireNonNull(constants$1513.const$3,"hb_buffer_get_content_type");
     }
     /**
      * {@snippet :
@@ -8820,7 +8930,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_unicode_funcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1508.const$4,"hb_buffer_set_unicode_funcs");
+        return RuntimeHelper.requireNonNull(constants$1513.const$4,"hb_buffer_set_unicode_funcs");
     }
     /**
      * {@snippet :
@@ -8836,7 +8946,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_unicode_funcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1508.const$5,"hb_buffer_get_unicode_funcs");
+        return RuntimeHelper.requireNonNull(constants$1513.const$5,"hb_buffer_get_unicode_funcs");
     }
     /**
      * {@snippet :
@@ -8852,7 +8962,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1509.const$0,"hb_buffer_set_direction");
+        return RuntimeHelper.requireNonNull(constants$1514.const$0,"hb_buffer_set_direction");
     }
     /**
      * {@snippet :
@@ -8868,7 +8978,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1509.const$1,"hb_buffer_get_direction");
+        return RuntimeHelper.requireNonNull(constants$1514.const$1,"hb_buffer_get_direction");
     }
     /**
      * {@snippet :
@@ -8884,7 +8994,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$1509.const$2,"hb_buffer_set_script");
+        return RuntimeHelper.requireNonNull(constants$1514.const$2,"hb_buffer_set_script");
     }
     /**
      * {@snippet :
@@ -8900,7 +9010,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$1509.const$3,"hb_buffer_get_script");
+        return RuntimeHelper.requireNonNull(constants$1514.const$3,"hb_buffer_get_script");
     }
     /**
      * {@snippet :
@@ -8916,7 +9026,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$1509.const$4,"hb_buffer_set_language");
+        return RuntimeHelper.requireNonNull(constants$1514.const$4,"hb_buffer_set_language");
     }
     /**
      * {@snippet :
@@ -8932,7 +9042,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$1509.const$5,"hb_buffer_get_language");
+        return RuntimeHelper.requireNonNull(constants$1514.const$5,"hb_buffer_get_language");
     }
     /**
      * {@snippet :
@@ -8948,7 +9058,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_segment_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$1510.const$0,"hb_buffer_set_segment_properties");
+        return RuntimeHelper.requireNonNull(constants$1515.const$0,"hb_buffer_set_segment_properties");
     }
     /**
      * {@snippet :
@@ -8964,7 +9074,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_segment_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$1510.const$1,"hb_buffer_get_segment_properties");
+        return RuntimeHelper.requireNonNull(constants$1515.const$1,"hb_buffer_get_segment_properties");
     }
     /**
      * {@snippet :
@@ -8980,7 +9090,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_guess_segment_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$1510.const$2,"hb_buffer_guess_segment_properties");
+        return RuntimeHelper.requireNonNull(constants$1515.const$2,"hb_buffer_guess_segment_properties");
     }
     /**
      * {@snippet :
@@ -9076,7 +9186,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)255L;
     }
     public static MethodHandle hb_buffer_set_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1510.const$3,"hb_buffer_set_flags");
+        return RuntimeHelper.requireNonNull(constants$1515.const$3,"hb_buffer_set_flags");
     }
     /**
      * {@snippet :
@@ -9092,7 +9202,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1510.const$4,"hb_buffer_get_flags");
+        return RuntimeHelper.requireNonNull(constants$1515.const$4,"hb_buffer_get_flags");
     }
     /**
      * {@snippet :
@@ -9140,7 +9250,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)0L;
     }
     public static MethodHandle hb_buffer_set_cluster_level$MH() {
-        return RuntimeHelper.requireNonNull(constants$1510.const$5,"hb_buffer_set_cluster_level");
+        return RuntimeHelper.requireNonNull(constants$1515.const$5,"hb_buffer_set_cluster_level");
     }
     /**
      * {@snippet :
@@ -9156,7 +9266,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_cluster_level$MH() {
-        return RuntimeHelper.requireNonNull(constants$1511.const$0,"hb_buffer_get_cluster_level");
+        return RuntimeHelper.requireNonNull(constants$1516.const$0,"hb_buffer_get_cluster_level");
     }
     /**
      * {@snippet :
@@ -9172,7 +9282,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_replacement_codepoint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1511.const$1,"hb_buffer_set_replacement_codepoint");
+        return RuntimeHelper.requireNonNull(constants$1516.const$1,"hb_buffer_set_replacement_codepoint");
     }
     /**
      * {@snippet :
@@ -9188,7 +9298,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_replacement_codepoint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1511.const$2,"hb_buffer_get_replacement_codepoint");
+        return RuntimeHelper.requireNonNull(constants$1516.const$2,"hb_buffer_get_replacement_codepoint");
     }
     /**
      * {@snippet :
@@ -9204,7 +9314,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_invisible_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1511.const$3,"hb_buffer_set_invisible_glyph");
+        return RuntimeHelper.requireNonNull(constants$1516.const$3,"hb_buffer_set_invisible_glyph");
     }
     /**
      * {@snippet :
@@ -9220,7 +9330,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_invisible_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1511.const$4,"hb_buffer_get_invisible_glyph");
+        return RuntimeHelper.requireNonNull(constants$1516.const$4,"hb_buffer_get_invisible_glyph");
     }
     /**
      * {@snippet :
@@ -9236,7 +9346,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_not_found_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1511.const$5,"hb_buffer_set_not_found_glyph");
+        return RuntimeHelper.requireNonNull(constants$1516.const$5,"hb_buffer_set_not_found_glyph");
     }
     /**
      * {@snippet :
@@ -9252,7 +9362,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_not_found_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$1512.const$0,"hb_buffer_get_not_found_glyph");
+        return RuntimeHelper.requireNonNull(constants$1517.const$0,"hb_buffer_get_not_found_glyph");
     }
     /**
      * {@snippet :
@@ -9268,7 +9378,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_clear_contents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1512.const$1,"hb_buffer_clear_contents");
+        return RuntimeHelper.requireNonNull(constants$1517.const$1,"hb_buffer_clear_contents");
     }
     /**
      * {@snippet :
@@ -9284,7 +9394,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_pre_allocate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1512.const$2,"hb_buffer_pre_allocate");
+        return RuntimeHelper.requireNonNull(constants$1517.const$2,"hb_buffer_pre_allocate");
     }
     /**
      * {@snippet :
@@ -9300,7 +9410,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_allocation_successful$MH() {
-        return RuntimeHelper.requireNonNull(constants$1512.const$3,"hb_buffer_allocation_successful");
+        return RuntimeHelper.requireNonNull(constants$1517.const$3,"hb_buffer_allocation_successful");
     }
     /**
      * {@snippet :
@@ -9316,7 +9426,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_reverse$MH() {
-        return RuntimeHelper.requireNonNull(constants$1512.const$4,"hb_buffer_reverse");
+        return RuntimeHelper.requireNonNull(constants$1517.const$4,"hb_buffer_reverse");
     }
     /**
      * {@snippet :
@@ -9332,7 +9442,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_reverse_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1512.const$5,"hb_buffer_reverse_range");
+        return RuntimeHelper.requireNonNull(constants$1517.const$5,"hb_buffer_reverse_range");
     }
     /**
      * {@snippet :
@@ -9348,7 +9458,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_reverse_clusters$MH() {
-        return RuntimeHelper.requireNonNull(constants$1513.const$0,"hb_buffer_reverse_clusters");
+        return RuntimeHelper.requireNonNull(constants$1518.const$0,"hb_buffer_reverse_clusters");
     }
     /**
      * {@snippet :
@@ -9364,7 +9474,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$1513.const$1,"hb_buffer_add");
+        return RuntimeHelper.requireNonNull(constants$1518.const$1,"hb_buffer_add");
     }
     /**
      * {@snippet :
@@ -9380,7 +9490,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$1513.const$3,"hb_buffer_add_utf8");
+        return RuntimeHelper.requireNonNull(constants$1518.const$3,"hb_buffer_add_utf8");
     }
     /**
      * {@snippet :
@@ -9396,7 +9506,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add_utf16$MH() {
-        return RuntimeHelper.requireNonNull(constants$1513.const$4,"hb_buffer_add_utf16");
+        return RuntimeHelper.requireNonNull(constants$1518.const$4,"hb_buffer_add_utf16");
     }
     /**
      * {@snippet :
@@ -9412,7 +9522,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add_utf32$MH() {
-        return RuntimeHelper.requireNonNull(constants$1513.const$5,"hb_buffer_add_utf32");
+        return RuntimeHelper.requireNonNull(constants$1518.const$5,"hb_buffer_add_utf32");
     }
     /**
      * {@snippet :
@@ -9428,7 +9538,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add_latin1$MH() {
-        return RuntimeHelper.requireNonNull(constants$1514.const$0,"hb_buffer_add_latin1");
+        return RuntimeHelper.requireNonNull(constants$1519.const$0,"hb_buffer_add_latin1");
     }
     /**
      * {@snippet :
@@ -9444,7 +9554,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add_codepoints$MH() {
-        return RuntimeHelper.requireNonNull(constants$1514.const$1,"hb_buffer_add_codepoints");
+        return RuntimeHelper.requireNonNull(constants$1519.const$1,"hb_buffer_add_codepoints");
     }
     /**
      * {@snippet :
@@ -9460,7 +9570,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_append$MH() {
-        return RuntimeHelper.requireNonNull(constants$1514.const$2,"hb_buffer_append");
+        return RuntimeHelper.requireNonNull(constants$1519.const$2,"hb_buffer_append");
     }
     /**
      * {@snippet :
@@ -9476,7 +9586,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$1514.const$3,"hb_buffer_set_length");
+        return RuntimeHelper.requireNonNull(constants$1519.const$3,"hb_buffer_set_length");
     }
     /**
      * {@snippet :
@@ -9492,7 +9602,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$1514.const$4,"hb_buffer_get_length");
+        return RuntimeHelper.requireNonNull(constants$1519.const$4,"hb_buffer_get_length");
     }
     /**
      * {@snippet :
@@ -9508,7 +9618,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_glyph_infos$MH() {
-        return RuntimeHelper.requireNonNull(constants$1514.const$5,"hb_buffer_get_glyph_infos");
+        return RuntimeHelper.requireNonNull(constants$1519.const$5,"hb_buffer_get_glyph_infos");
     }
     /**
      * {@snippet :
@@ -9524,7 +9634,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_glyph_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1515.const$0,"hb_buffer_get_glyph_positions");
+        return RuntimeHelper.requireNonNull(constants$1520.const$0,"hb_buffer_get_glyph_positions");
     }
     /**
      * {@snippet :
@@ -9540,7 +9650,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_has_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1515.const$1,"hb_buffer_has_positions");
+        return RuntimeHelper.requireNonNull(constants$1520.const$1,"hb_buffer_has_positions");
     }
     /**
      * {@snippet :
@@ -9556,7 +9666,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_normalize_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1515.const$2,"hb_buffer_normalize_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1520.const$2,"hb_buffer_normalize_glyphs");
     }
     /**
      * {@snippet :
@@ -9660,7 +9770,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)0L;
     }
     public static MethodHandle hb_buffer_serialize_format_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1515.const$3,"hb_buffer_serialize_format_from_string");
+        return RuntimeHelper.requireNonNull(constants$1520.const$3,"hb_buffer_serialize_format_from_string");
     }
     /**
      * {@snippet :
@@ -9676,7 +9786,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_serialize_format_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1515.const$4,"hb_buffer_serialize_format_to_string");
+        return RuntimeHelper.requireNonNull(constants$1520.const$4,"hb_buffer_serialize_format_to_string");
     }
     /**
      * {@snippet :
@@ -9692,7 +9802,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_serialize_list_formats$MH() {
-        return RuntimeHelper.requireNonNull(constants$1515.const$5,"hb_buffer_serialize_list_formats");
+        return RuntimeHelper.requireNonNull(constants$1520.const$5,"hb_buffer_serialize_list_formats");
     }
     /**
      * {@snippet :
@@ -9708,7 +9818,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_serialize_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1516.const$1,"hb_buffer_serialize_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1521.const$1,"hb_buffer_serialize_glyphs");
     }
     /**
      * {@snippet :
@@ -9724,7 +9834,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_serialize_unicode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1516.const$3,"hb_buffer_serialize_unicode");
+        return RuntimeHelper.requireNonNull(constants$1521.const$3,"hb_buffer_serialize_unicode");
     }
     /**
      * {@snippet :
@@ -9740,7 +9850,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_serialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1516.const$4,"hb_buffer_serialize");
+        return RuntimeHelper.requireNonNull(constants$1521.const$4,"hb_buffer_serialize");
     }
     /**
      * {@snippet :
@@ -9756,7 +9866,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_deserialize_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1516.const$6,"hb_buffer_deserialize_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1521.const$6,"hb_buffer_deserialize_glyphs");
     }
     /**
      * {@snippet :
@@ -9772,7 +9882,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_deserialize_unicode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1517.const$1,"hb_buffer_deserialize_unicode");
+        return RuntimeHelper.requireNonNull(constants$1522.const$1,"hb_buffer_deserialize_unicode");
     }
     /**
      * {@snippet :
@@ -9860,7 +9970,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         return (int)128L;
     }
     public static MethodHandle hb_buffer_diff$MH() {
-        return RuntimeHelper.requireNonNull(constants$1517.const$2,"hb_buffer_diff");
+        return RuntimeHelper.requireNonNull(constants$1522.const$2,"hb_buffer_diff");
     }
     /**
      * {@snippet :
@@ -9876,7 +9986,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_message_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1518.const$0,"hb_buffer_set_message_func");
+        return RuntimeHelper.requireNonNull(constants$1523.const$0,"hb_buffer_set_message_func");
     }
     /**
      * {@snippet :
@@ -9892,7 +10002,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1518.const$4,"hb_font_funcs_set_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1523.const$4,"hb_font_funcs_set_glyph_func");
     }
     /**
      * {@snippet :
@@ -9908,7 +10018,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_eastasian_width_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1519.const$2,"hb_unicode_funcs_set_eastasian_width_func");
+        return RuntimeHelper.requireNonNull(constants$1524.const$2,"hb_unicode_funcs_set_eastasian_width_func");
     }
     /**
      * {@snippet :
@@ -9924,7 +10034,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_eastasian_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1519.const$3,"hb_unicode_eastasian_width");
+        return RuntimeHelper.requireNonNull(constants$1524.const$3,"hb_unicode_eastasian_width");
     }
     /**
      * {@snippet :
@@ -9940,7 +10050,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_decompose_compatibility_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1520.const$1,"hb_unicode_funcs_set_decompose_compatibility_func");
+        return RuntimeHelper.requireNonNull(constants$1525.const$1,"hb_unicode_funcs_set_decompose_compatibility_func");
     }
     /**
      * {@snippet :
@@ -9956,7 +10066,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_decompose_compatibility$MH() {
-        return RuntimeHelper.requireNonNull(constants$1520.const$2,"hb_unicode_decompose_compatibility");
+        return RuntimeHelper.requireNonNull(constants$1525.const$2,"hb_unicode_decompose_compatibility");
     }
     /**
      * {@snippet :
@@ -9972,7 +10082,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_v_kerning_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1521.const$0,"hb_font_funcs_set_glyph_v_kerning_func");
+        return RuntimeHelper.requireNonNull(constants$1526.const$0,"hb_font_funcs_set_glyph_v_kerning_func");
     }
     /**
      * {@snippet :
@@ -9988,7 +10098,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_v_kerning$MH() {
-        return RuntimeHelper.requireNonNull(constants$1521.const$1,"hb_font_get_glyph_v_kerning");
+        return RuntimeHelper.requireNonNull(constants$1526.const$1,"hb_font_get_glyph_v_kerning");
     }
     /**
      * {@snippet :
@@ -10004,7 +10114,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_shape_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1521.const$5,"hb_font_funcs_set_glyph_shape_func");
+        return RuntimeHelper.requireNonNull(constants$1526.const$5,"hb_font_funcs_set_glyph_shape_func");
     }
     /**
      * {@snippet :
@@ -10020,7 +10130,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_shape$MH() {
-        return RuntimeHelper.requireNonNull(constants$1522.const$0,"hb_font_get_glyph_shape");
+        return RuntimeHelper.requireNonNull(constants$1527.const$0,"hb_font_get_glyph_shape");
     }
     /**
      * {@snippet :
@@ -10036,7 +10146,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape$MH() {
-        return RuntimeHelper.requireNonNull(constants$1522.const$1,"hb_shape");
+        return RuntimeHelper.requireNonNull(constants$1527.const$1,"hb_shape");
     }
     /**
      * {@snippet :
@@ -10052,7 +10162,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1522.const$2,"hb_shape_full");
+        return RuntimeHelper.requireNonNull(constants$1527.const$2,"hb_shape_full");
     }
     /**
      * {@snippet :
@@ -10068,7 +10178,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_justify$MH() {
-        return RuntimeHelper.requireNonNull(constants$1522.const$4,"hb_shape_justify");
+        return RuntimeHelper.requireNonNull(constants$1527.const$4,"hb_shape_justify");
     }
     /**
      * {@snippet :
@@ -10084,7 +10194,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_list_shapers$MH() {
-        return RuntimeHelper.requireNonNull(constants$1522.const$5,"hb_shape_list_shapers");
+        return RuntimeHelper.requireNonNull(constants$1527.const$5,"hb_shape_list_shapers");
     }
     /**
      * {@snippet :
@@ -10100,7 +10210,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1523.const$1,"hb_shape_plan_create");
+        return RuntimeHelper.requireNonNull(constants$1528.const$1,"hb_shape_plan_create");
     }
     /**
      * {@snippet :
@@ -10116,7 +10226,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_create_cached$MH() {
-        return RuntimeHelper.requireNonNull(constants$1523.const$2,"hb_shape_plan_create_cached");
+        return RuntimeHelper.requireNonNull(constants$1528.const$2,"hb_shape_plan_create_cached");
     }
     /**
      * {@snippet :
@@ -10132,7 +10242,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_create2$MH() {
-        return RuntimeHelper.requireNonNull(constants$1523.const$4,"hb_shape_plan_create2");
+        return RuntimeHelper.requireNonNull(constants$1528.const$4,"hb_shape_plan_create2");
     }
     /**
      * {@snippet :
@@ -10148,7 +10258,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_create_cached2$MH() {
-        return RuntimeHelper.requireNonNull(constants$1523.const$5,"hb_shape_plan_create_cached2");
+        return RuntimeHelper.requireNonNull(constants$1528.const$5,"hb_shape_plan_create_cached2");
     }
     /**
      * {@snippet :
@@ -10164,7 +10274,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1524.const$0,"hb_shape_plan_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1529.const$0,"hb_shape_plan_get_empty");
     }
     /**
      * {@snippet :
@@ -10180,7 +10290,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1524.const$1,"hb_shape_plan_reference");
+        return RuntimeHelper.requireNonNull(constants$1529.const$1,"hb_shape_plan_reference");
     }
     /**
      * {@snippet :
@@ -10196,7 +10306,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1524.const$2,"hb_shape_plan_destroy");
+        return RuntimeHelper.requireNonNull(constants$1529.const$2,"hb_shape_plan_destroy");
     }
     /**
      * {@snippet :
@@ -10212,7 +10322,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1524.const$4,"hb_shape_plan_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1529.const$4,"hb_shape_plan_set_user_data");
     }
     /**
      * {@snippet :
@@ -10228,7 +10338,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1524.const$5,"hb_shape_plan_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1529.const$5,"hb_shape_plan_get_user_data");
     }
     /**
      * {@snippet :
@@ -10244,7 +10354,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_execute$MH() {
-        return RuntimeHelper.requireNonNull(constants$1525.const$0,"hb_shape_plan_execute");
+        return RuntimeHelper.requireNonNull(constants$1530.const$0,"hb_shape_plan_execute");
     }
     /**
      * {@snippet :
@@ -10260,7 +10370,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_get_shaper$MH() {
-        return RuntimeHelper.requireNonNull(constants$1525.const$1,"hb_shape_plan_get_shaper");
+        return RuntimeHelper.requireNonNull(constants$1530.const$1,"hb_shape_plan_get_shaper");
     }
     /**
      * {@snippet :
@@ -10322,206 +10432,6 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
      */
     public static int HB_STYLE_TAG_WEIGHT() {
         return (int)2003265652L;
-    }
-    /**
-     * {@snippet :
-     * enum hb_style_tag_t._HB_STYLE_TAG_MAX_VALUE = 2147483647;
-     * }
-     */
-    public static int _HB_STYLE_TAG_MAX_VALUE() {
-        return (int)2147483647L;
-    }
-    public static MethodHandle hb_style_get_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1525.const$3,"hb_style_get_value");
-    }
-    /**
-     * {@snippet :
-     * float hb_style_get_value(struct hb_font_t* font, enum hb_style_tag_t style_tag);
-     * }
-     */
-    public static float hb_style_get_value(MemorySegment font, int style_tag) {
-        var mh$ = hb_style_get_value$MH();
-        try {
-            return (float)mh$.invokeExact(font, style_tag);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_version$MH() {
-        return RuntimeHelper.requireNonNull(constants$1525.const$4,"hb_version");
-    }
-    /**
-     * {@snippet :
-     * void hb_version(unsigned int* major, unsigned int* minor, unsigned int* micro);
-     * }
-     */
-    public static void hb_version(MemorySegment major, MemorySegment minor, MemorySegment micro) {
-        var mh$ = hb_version$MH();
-        try {
-            mh$.invokeExact(major, minor, micro);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_version_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1525.const$5,"hb_version_string");
-    }
-    /**
-     * {@snippet :
-     * char* hb_version_string();
-     * }
-     */
-    public static MemorySegment hb_version_string() {
-        var mh$ = hb_version_string$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_version_atleast$MH() {
-        return RuntimeHelper.requireNonNull(constants$1526.const$0,"hb_version_atleast");
-    }
-    /**
-     * {@snippet :
-     * int hb_version_atleast(unsigned int major, unsigned int minor, unsigned int micro);
-     * }
-     */
-    public static int hb_version_atleast(int major, int minor, int micro) {
-        var mh$ = hb_version_atleast$MH();
-        try {
-            return (int)mh$.invokeExact(major, minor, micro);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum PangoCoverageLevel.PANGO_COVERAGE_NONE = 0;
-     * }
-     */
-    public static int PANGO_COVERAGE_NONE() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum PangoCoverageLevel.PANGO_COVERAGE_FALLBACK = 1;
-     * }
-     */
-    public static int PANGO_COVERAGE_FALLBACK() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum PangoCoverageLevel.PANGO_COVERAGE_APPROXIMATE = 2;
-     * }
-     */
-    public static int PANGO_COVERAGE_APPROXIMATE() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum PangoCoverageLevel.PANGO_COVERAGE_EXACT = 3;
-     * }
-     */
-    public static int PANGO_COVERAGE_EXACT() {
-        return (int)3L;
-    }
-    public static MethodHandle pango_coverage_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1526.const$1,"pango_coverage_get_type");
-    }
-    /**
-     * {@snippet :
-     * unsigned long pango_coverage_get_type();
-     * }
-     */
-    public static long pango_coverage_get_type() {
-        var mh$ = pango_coverage_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1526.const$2,"pango_coverage_new");
-    }
-    /**
-     * {@snippet :
-     * struct _PangoCoverage* pango_coverage_new();
-     * }
-     */
-    public static MemorySegment pango_coverage_new() {
-        var mh$ = pango_coverage_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1526.const$3,"pango_coverage_ref");
-    }
-    /**
-     * {@snippet :
-     * struct _PangoCoverage* pango_coverage_ref(struct _PangoCoverage* coverage);
-     * }
-     */
-    public static MemorySegment pango_coverage_ref(MemorySegment coverage) {
-        var mh$ = pango_coverage_ref$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(coverage);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1526.const$4,"pango_coverage_unref");
-    }
-    /**
-     * {@snippet :
-     * void pango_coverage_unref(struct _PangoCoverage* coverage);
-     * }
-     */
-    public static void pango_coverage_unref(MemorySegment coverage) {
-        var mh$ = pango_coverage_unref$MH();
-        try {
-            mh$.invokeExact(coverage);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1526.const$5,"pango_coverage_copy");
-    }
-    /**
-     * {@snippet :
-     * struct _PangoCoverage* pango_coverage_copy(struct _PangoCoverage* coverage);
-     * }
-     */
-    public static MemorySegment pango_coverage_copy(MemorySegment coverage) {
-        var mh$ = pango_coverage_copy$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(coverage);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1527.const$0,"pango_coverage_get");
-    }
-    /**
-     * {@snippet :
-     * enum PangoCoverageLevel pango_coverage_get(struct _PangoCoverage* coverage, int index_);
-     * }
-     */
-    public static int pango_coverage_get(MemorySegment coverage, int index_) {
-        var mh$ = pango_coverage_get$MH();
-        try {
-            return (int)mh$.invokeExact(coverage, index_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
     }
 }
 

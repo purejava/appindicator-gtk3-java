@@ -13,7 +13,7 @@ public interface g_memory_input_stream_new_from_data$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_memory_input_stream_new_from_data$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1139.const$1, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$1142.const$3, fi, constants$13.const$1, scope);
     }
     static g_memory_input_stream_new_from_data$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

@@ -8,17 +8,29 @@ final class constants$1738 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1738() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "cairo_raster_source_pattern_get_callback_data",
-        constants$5.const$2
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_set_acquire$acquire.class, "apply", constants$39.const$1);
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_set_acquire$release.class, "apply", constants$14.const$3);
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "cairo_raster_source_pattern_set_acquire",
+        "cairo_surface_get_device_scale",
         constants$14.const$3
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_get_acquire$acquire.class, "apply", constants$39.const$1);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_get_acquire$release.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_surface_set_device_offset",
+        constants$1536.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_device_offset",
+        constants$14.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_surface_set_fallback_resolution",
+        constants$1536.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_fallback_resolution",
+        constants$14.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_surface_copy_page",
+        constants$13.const$1
+    );
 }
 
 

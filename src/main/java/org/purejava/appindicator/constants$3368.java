@@ -8,28 +8,28 @@ final class constants$3368 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3368() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_style",
-        constants$5.const$2
+        "gtk_paint_vline",
+        constants$3353.const$0
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_modify_style",
-        constants$13.const$4
+        "gtk_paint_shadow",
+        constants$3354.const$0
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_modifier_style",
-        constants$5.const$2
+        "gtk_paint_arrow",
+        constants$3354.const$4
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_modify_fg",
-        constants$42.const$4
+        "gtk_paint_diamond",
+        constants$3354.const$0
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_modify_bg",
-        constants$42.const$4
+        "gtk_paint_box",
+        constants$3354.const$0
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_modify_text",
-        constants$42.const$4
+        "gtk_paint_flat_box",
+        constants$3354.const$0
     );
 }
 

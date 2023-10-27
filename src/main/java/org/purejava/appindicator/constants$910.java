@@ -2,19 +2,32 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$910 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$910() {}
-    static final VarHandle const$0 = constants$909.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_interfaces"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusObjectIface.get_interface.class, "apply", constants$5.const$5);
-    static final VarHandle const$2 = constants$909.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_interface"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDBusObjectIface.interface_added.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$909.const$2.varHandle(MemoryLayout.PathElement.groupElement("interface_added"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDBusObjectIface.interface_removed.class, "apply", constants$13.const$4);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GBusNameAppearedCallback.class, "apply", constants$42.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GBusNameVanishedCallback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_bus_watch_name$name_appeared_handler.class, "apply", constants$42.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_bus_watch_name$name_vanished_handler.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_bus_watch_name$user_data_free_func.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_bus_watch_name",
+        constants$910.const$5
+    );
 }
 
 

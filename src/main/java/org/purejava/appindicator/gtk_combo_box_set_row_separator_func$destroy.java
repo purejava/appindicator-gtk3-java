@@ -13,7 +13,7 @@ public interface gtk_combo_box_set_row_separator_func$destroy {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(gtk_combo_box_set_row_separator_func$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2501.const$4, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$2506.const$4, fi, constants$13.const$1, scope);
     }
     static gtk_combo_box_set_row_separator_func$destroy ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

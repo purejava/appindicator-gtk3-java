@@ -42,7 +42,7 @@ import java.lang.invoke.VarHandle;
 public class _GVolumeMonitorClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1184.const$4;
+        return constants$1188.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -56,7 +56,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(volume_added fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1184.const$5, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1188.const$2, fi, constants$13.const$4, scope);
         }
         static volume_added ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -71,7 +71,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle volume_added$VH() {
-        return constants$1185.const$0;
+        return constants$1188.const$3;
     }
     /**
      * Getter for field:
@@ -80,7 +80,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment volume_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1185.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1188.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -89,13 +89,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void volume_added$set(MemorySegment seg, MemorySegment x) {
-        constants$1185.const$0.set(seg, x);
+        constants$1188.const$3.set(seg, x);
     }
     public static MemorySegment volume_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1185.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1188.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void volume_added$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1185.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1188.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static volume_added volume_added(MemorySegment segment, Arena scope) {
         return volume_added.ofAddress(volume_added$get(segment), scope);
@@ -109,7 +109,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(volume_removed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1185.const$1, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1188.const$4, fi, constants$13.const$4, scope);
         }
         static volume_removed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -124,7 +124,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle volume_removed$VH() {
-        return constants$1185.const$2;
+        return constants$1188.const$5;
     }
     /**
      * Getter for field:
@@ -133,7 +133,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment volume_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1185.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1188.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -142,13 +142,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void volume_removed$set(MemorySegment seg, MemorySegment x) {
-        constants$1185.const$2.set(seg, x);
+        constants$1188.const$5.set(seg, x);
     }
     public static MemorySegment volume_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1185.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1188.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void volume_removed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1185.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1188.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static volume_removed volume_removed(MemorySegment segment, Arena scope) {
         return volume_removed.ofAddress(volume_removed$get(segment), scope);
@@ -162,7 +162,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(volume_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1185.const$3, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1189.const$0, fi, constants$13.const$4, scope);
         }
         static volume_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -177,7 +177,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle volume_changed$VH() {
-        return constants$1185.const$4;
+        return constants$1189.const$1;
     }
     /**
      * Getter for field:
@@ -186,7 +186,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment volume_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1185.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1189.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -195,13 +195,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void volume_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1185.const$4.set(seg, x);
+        constants$1189.const$1.set(seg, x);
     }
     public static MemorySegment volume_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1185.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1189.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void volume_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1185.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1189.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static volume_changed volume_changed(MemorySegment segment, Arena scope) {
         return volume_changed.ofAddress(volume_changed$get(segment), scope);
@@ -215,7 +215,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(mount_added fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1185.const$5, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1189.const$2, fi, constants$13.const$4, scope);
         }
         static mount_added ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -230,7 +230,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle mount_added$VH() {
-        return constants$1186.const$0;
+        return constants$1189.const$3;
     }
     /**
      * Getter for field:
@@ -239,7 +239,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment mount_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1186.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1189.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -248,13 +248,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void mount_added$set(MemorySegment seg, MemorySegment x) {
-        constants$1186.const$0.set(seg, x);
+        constants$1189.const$3.set(seg, x);
     }
     public static MemorySegment mount_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1186.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1189.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void mount_added$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1186.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1189.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static mount_added mount_added(MemorySegment segment, Arena scope) {
         return mount_added.ofAddress(mount_added$get(segment), scope);
@@ -268,7 +268,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(mount_removed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1186.const$1, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1189.const$4, fi, constants$13.const$4, scope);
         }
         static mount_removed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -283,7 +283,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle mount_removed$VH() {
-        return constants$1186.const$2;
+        return constants$1189.const$5;
     }
     /**
      * Getter for field:
@@ -292,7 +292,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment mount_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1186.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1189.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -301,13 +301,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void mount_removed$set(MemorySegment seg, MemorySegment x) {
-        constants$1186.const$2.set(seg, x);
+        constants$1189.const$5.set(seg, x);
     }
     public static MemorySegment mount_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1186.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1189.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void mount_removed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1186.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1189.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static mount_removed mount_removed(MemorySegment segment, Arena scope) {
         return mount_removed.ofAddress(mount_removed$get(segment), scope);
@@ -321,7 +321,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(mount_pre_unmount fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1186.const$3, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1190.const$0, fi, constants$13.const$4, scope);
         }
         static mount_pre_unmount ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -336,7 +336,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle mount_pre_unmount$VH() {
-        return constants$1186.const$4;
+        return constants$1190.const$1;
     }
     /**
      * Getter for field:
@@ -345,7 +345,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment mount_pre_unmount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1186.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1190.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -354,13 +354,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void mount_pre_unmount$set(MemorySegment seg, MemorySegment x) {
-        constants$1186.const$4.set(seg, x);
+        constants$1190.const$1.set(seg, x);
     }
     public static MemorySegment mount_pre_unmount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1186.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1190.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void mount_pre_unmount$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1186.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1190.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static mount_pre_unmount mount_pre_unmount(MemorySegment segment, Arena scope) {
         return mount_pre_unmount.ofAddress(mount_pre_unmount$get(segment), scope);
@@ -374,7 +374,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(mount_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1186.const$5, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1190.const$2, fi, constants$13.const$4, scope);
         }
         static mount_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -389,7 +389,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle mount_changed$VH() {
-        return constants$1187.const$0;
+        return constants$1190.const$3;
     }
     /**
      * Getter for field:
@@ -398,7 +398,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment mount_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1187.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1190.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -407,13 +407,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void mount_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1187.const$0.set(seg, x);
+        constants$1190.const$3.set(seg, x);
     }
     public static MemorySegment mount_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1187.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1190.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void mount_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1187.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1190.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static mount_changed mount_changed(MemorySegment segment, Arena scope) {
         return mount_changed.ofAddress(mount_changed$get(segment), scope);
@@ -427,7 +427,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(drive_connected fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1187.const$1, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1190.const$4, fi, constants$13.const$4, scope);
         }
         static drive_connected ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -442,7 +442,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle drive_connected$VH() {
-        return constants$1187.const$2;
+        return constants$1190.const$5;
     }
     /**
      * Getter for field:
@@ -451,7 +451,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment drive_connected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1187.const$2.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1190.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -460,13 +460,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void drive_connected$set(MemorySegment seg, MemorySegment x) {
-        constants$1187.const$2.set(seg, x);
+        constants$1190.const$5.set(seg, x);
     }
     public static MemorySegment drive_connected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1187.const$2.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1190.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void drive_connected$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1187.const$2.set(seg.asSlice(index*sizeof()), x);
+        constants$1190.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static drive_connected drive_connected(MemorySegment segment, Arena scope) {
         return drive_connected.ofAddress(drive_connected$get(segment), scope);
@@ -480,7 +480,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(drive_disconnected fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1187.const$3, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1191.const$0, fi, constants$13.const$4, scope);
         }
         static drive_disconnected ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -495,7 +495,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle drive_disconnected$VH() {
-        return constants$1187.const$4;
+        return constants$1191.const$1;
     }
     /**
      * Getter for field:
@@ -504,7 +504,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment drive_disconnected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1187.const$4.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1191.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -513,13 +513,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void drive_disconnected$set(MemorySegment seg, MemorySegment x) {
-        constants$1187.const$4.set(seg, x);
+        constants$1191.const$1.set(seg, x);
     }
     public static MemorySegment drive_disconnected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1187.const$4.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1191.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void drive_disconnected$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1187.const$4.set(seg.asSlice(index*sizeof()), x);
+        constants$1191.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static drive_disconnected drive_disconnected(MemorySegment segment, Arena scope) {
         return drive_disconnected.ofAddress(drive_disconnected$get(segment), scope);
@@ -533,7 +533,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(drive_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1187.const$5, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1191.const$2, fi, constants$13.const$4, scope);
         }
         static drive_changed ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -548,7 +548,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle drive_changed$VH() {
-        return constants$1188.const$0;
+        return constants$1191.const$3;
     }
     /**
      * Getter for field:
@@ -557,7 +557,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment drive_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1188.const$0.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1191.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -566,13 +566,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void drive_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1188.const$0.set(seg, x);
+        constants$1191.const$3.set(seg, x);
     }
     public static MemorySegment drive_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1188.const$0.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1191.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void drive_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1188.const$0.set(seg.asSlice(index*sizeof()), x);
+        constants$1191.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static drive_changed drive_changed(MemorySegment segment, Arena scope) {
         return drive_changed.ofAddress(drive_changed$get(segment), scope);
@@ -586,13 +586,13 @@ public class _GVolumeMonitorClass {
 
         int apply();
         static MemorySegment allocate(is_supported fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1188.const$1, fi, constants$83.const$1, scope);
+            return RuntimeHelper.upcallStub(constants$1191.const$4, fi, constants$83.const$1, scope);
         }
         static is_supported ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (int)constants$1188.const$2.invokeExact(symbol);
+                    return (int)constants$1191.const$5.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -601,7 +601,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle is_supported$VH() {
-        return constants$1188.const$3;
+        return constants$1192.const$0;
     }
     /**
      * Getter for field:
@@ -610,7 +610,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment is_supported$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1188.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1192.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -619,13 +619,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void is_supported$set(MemorySegment seg, MemorySegment x) {
-        constants$1188.const$3.set(seg, x);
+        constants$1192.const$0.set(seg, x);
     }
     public static MemorySegment is_supported$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1188.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1192.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void is_supported$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1188.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1192.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static is_supported is_supported(MemorySegment segment, Arena scope) {
         return is_supported.ofAddress(is_supported$get(segment), scope);
@@ -639,7 +639,7 @@ public class _GVolumeMonitorClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_connected_drives fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1188.const$4, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1192.const$1, fi, constants$5.const$2, scope);
         }
         static get_connected_drives ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -654,7 +654,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle get_connected_drives$VH() {
-        return constants$1188.const$5;
+        return constants$1192.const$2;
     }
     /**
      * Getter for field:
@@ -663,7 +663,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment get_connected_drives$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1188.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1192.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -672,13 +672,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void get_connected_drives$set(MemorySegment seg, MemorySegment x) {
-        constants$1188.const$5.set(seg, x);
+        constants$1192.const$2.set(seg, x);
     }
     public static MemorySegment get_connected_drives$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1188.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1192.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_connected_drives$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1188.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1192.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_connected_drives get_connected_drives(MemorySegment segment, Arena scope) {
         return get_connected_drives.ofAddress(get_connected_drives$get(segment), scope);
@@ -692,7 +692,7 @@ public class _GVolumeMonitorClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_volumes fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1189.const$0, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1192.const$3, fi, constants$5.const$2, scope);
         }
         static get_volumes ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -707,7 +707,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle get_volumes$VH() {
-        return constants$1189.const$1;
+        return constants$1192.const$4;
     }
     /**
      * Getter for field:
@@ -716,7 +716,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment get_volumes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1189.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1192.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -725,13 +725,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void get_volumes$set(MemorySegment seg, MemorySegment x) {
-        constants$1189.const$1.set(seg, x);
+        constants$1192.const$4.set(seg, x);
     }
     public static MemorySegment get_volumes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1189.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1192.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_volumes$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1189.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1192.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_volumes get_volumes(MemorySegment segment, Arena scope) {
         return get_volumes.ofAddress(get_volumes$get(segment), scope);
@@ -745,7 +745,7 @@ public class _GVolumeMonitorClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
         static MemorySegment allocate(get_mounts fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1189.const$2, fi, constants$5.const$2, scope);
+            return RuntimeHelper.upcallStub(constants$1192.const$5, fi, constants$5.const$2, scope);
         }
         static get_mounts ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -760,7 +760,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle get_mounts$VH() {
-        return constants$1189.const$3;
+        return constants$1193.const$0;
     }
     /**
      * Getter for field:
@@ -769,7 +769,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment get_mounts$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1189.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1193.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -778,13 +778,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void get_mounts$set(MemorySegment seg, MemorySegment x) {
-        constants$1189.const$3.set(seg, x);
+        constants$1193.const$0.set(seg, x);
     }
     public static MemorySegment get_mounts$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1189.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1193.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_mounts$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1189.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1193.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_mounts get_mounts(MemorySegment segment, Arena scope) {
         return get_mounts.ofAddress(get_mounts$get(segment), scope);
@@ -798,7 +798,7 @@ public class _GVolumeMonitorClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(get_volume_for_uuid fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1189.const$4, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1193.const$1, fi, constants$5.const$5, scope);
         }
         static get_volume_for_uuid ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -813,7 +813,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle get_volume_for_uuid$VH() {
-        return constants$1189.const$5;
+        return constants$1193.const$2;
     }
     /**
      * Getter for field:
@@ -822,7 +822,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment get_volume_for_uuid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1189.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1193.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -831,13 +831,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void get_volume_for_uuid$set(MemorySegment seg, MemorySegment x) {
-        constants$1189.const$5.set(seg, x);
+        constants$1193.const$2.set(seg, x);
     }
     public static MemorySegment get_volume_for_uuid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1189.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1193.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_volume_for_uuid$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1189.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1193.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_volume_for_uuid get_volume_for_uuid(MemorySegment segment, Arena scope) {
         return get_volume_for_uuid.ofAddress(get_volume_for_uuid$get(segment), scope);
@@ -851,7 +851,7 @@ public class _GVolumeMonitorClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(get_mount_for_uuid fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1190.const$0, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1193.const$3, fi, constants$5.const$5, scope);
         }
         static get_mount_for_uuid ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -866,7 +866,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle get_mount_for_uuid$VH() {
-        return constants$1190.const$1;
+        return constants$1193.const$4;
     }
     /**
      * Getter for field:
@@ -875,7 +875,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment get_mount_for_uuid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1190.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1193.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -884,13 +884,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void get_mount_for_uuid$set(MemorySegment seg, MemorySegment x) {
-        constants$1190.const$1.set(seg, x);
+        constants$1193.const$4.set(seg, x);
     }
     public static MemorySegment get_mount_for_uuid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1190.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1193.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_mount_for_uuid$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1190.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1193.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static get_mount_for_uuid get_mount_for_uuid(MemorySegment segment, Arena scope) {
         return get_mount_for_uuid.ofAddress(get_mount_for_uuid$get(segment), scope);
@@ -904,7 +904,7 @@ public class _GVolumeMonitorClass {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
         static MemorySegment allocate(adopt_orphan_mount fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1190.const$2, fi, constants$5.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1193.const$5, fi, constants$5.const$5, scope);
         }
         static adopt_orphan_mount ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -919,7 +919,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle adopt_orphan_mount$VH() {
-        return constants$1190.const$3;
+        return constants$1194.const$0;
     }
     /**
      * Getter for field:
@@ -928,7 +928,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment adopt_orphan_mount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1190.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1194.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -937,13 +937,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void adopt_orphan_mount$set(MemorySegment seg, MemorySegment x) {
-        constants$1190.const$3.set(seg, x);
+        constants$1194.const$0.set(seg, x);
     }
     public static MemorySegment adopt_orphan_mount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1190.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1194.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void adopt_orphan_mount$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1190.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1194.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static adopt_orphan_mount adopt_orphan_mount(MemorySegment segment, Arena scope) {
         return adopt_orphan_mount.ofAddress(adopt_orphan_mount$get(segment), scope);
@@ -957,7 +957,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(drive_eject_button fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1190.const$4, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1194.const$1, fi, constants$13.const$4, scope);
         }
         static drive_eject_button ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -972,7 +972,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle drive_eject_button$VH() {
-        return constants$1190.const$5;
+        return constants$1194.const$2;
     }
     /**
      * Getter for field:
@@ -981,7 +981,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment drive_eject_button$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1190.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1194.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -990,13 +990,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void drive_eject_button$set(MemorySegment seg, MemorySegment x) {
-        constants$1190.const$5.set(seg, x);
+        constants$1194.const$2.set(seg, x);
     }
     public static MemorySegment drive_eject_button$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1190.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1194.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void drive_eject_button$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1190.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1194.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static drive_eject_button drive_eject_button(MemorySegment segment, Arena scope) {
         return drive_eject_button.ofAddress(drive_eject_button$get(segment), scope);
@@ -1010,7 +1010,7 @@ public class _GVolumeMonitorClass {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
         static MemorySegment allocate(drive_stop_button fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1191.const$0, fi, constants$13.const$4, scope);
+            return RuntimeHelper.upcallStub(constants$1194.const$3, fi, constants$13.const$4, scope);
         }
         static drive_stop_button ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1025,7 +1025,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle drive_stop_button$VH() {
-        return constants$1191.const$1;
+        return constants$1194.const$4;
     }
     /**
      * Getter for field:
@@ -1034,7 +1034,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment drive_stop_button$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1191.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1194.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -1043,13 +1043,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void drive_stop_button$set(MemorySegment seg, MemorySegment x) {
-        constants$1191.const$1.set(seg, x);
+        constants$1194.const$4.set(seg, x);
     }
     public static MemorySegment drive_stop_button$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1191.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1194.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void drive_stop_button$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1191.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1194.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static drive_stop_button drive_stop_button(MemorySegment segment, Arena scope) {
         return drive_stop_button.ofAddress(drive_stop_button$get(segment), scope);
@@ -1063,7 +1063,7 @@ public class _GVolumeMonitorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1191.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1194.const$5, fi, constants$7.const$5, scope);
         }
         static _g_reserved1 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1078,7 +1078,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle _g_reserved1$VH() {
-        return constants$1191.const$3;
+        return constants$1195.const$0;
     }
     /**
      * Getter for field:
@@ -1087,7 +1087,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment _g_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1191.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1195.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -1096,13 +1096,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void _g_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$1191.const$3.set(seg, x);
+        constants$1195.const$0.set(seg, x);
     }
     public static MemorySegment _g_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1191.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1195.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1191.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1195.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved1 _g_reserved1(MemorySegment segment, Arena scope) {
         return _g_reserved1.ofAddress(_g_reserved1$get(segment), scope);
@@ -1116,7 +1116,7 @@ public class _GVolumeMonitorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1191.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1195.const$1, fi, constants$7.const$5, scope);
         }
         static _g_reserved2 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1131,7 +1131,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle _g_reserved2$VH() {
-        return constants$1191.const$5;
+        return constants$1195.const$2;
     }
     /**
      * Getter for field:
@@ -1140,7 +1140,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1191.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1195.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -1149,13 +1149,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1191.const$5.set(seg, x);
+        constants$1195.const$2.set(seg, x);
     }
     public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1191.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1195.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1191.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1195.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved2 _g_reserved2(MemorySegment segment, Arena scope) {
         return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);
@@ -1169,7 +1169,7 @@ public class _GVolumeMonitorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1192.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1195.const$3, fi, constants$7.const$5, scope);
         }
         static _g_reserved3 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1184,7 +1184,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle _g_reserved3$VH() {
-        return constants$1192.const$1;
+        return constants$1195.const$4;
     }
     /**
      * Getter for field:
@@ -1193,7 +1193,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment _g_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1192.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1195.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -1202,13 +1202,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void _g_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$1192.const$1.set(seg, x);
+        constants$1195.const$4.set(seg, x);
     }
     public static MemorySegment _g_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1192.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1195.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1192.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1195.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved3 _g_reserved3(MemorySegment segment, Arena scope) {
         return _g_reserved3.ofAddress(_g_reserved3$get(segment), scope);
@@ -1222,7 +1222,7 @@ public class _GVolumeMonitorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1192.const$2, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1195.const$5, fi, constants$7.const$5, scope);
         }
         static _g_reserved4 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1237,7 +1237,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle _g_reserved4$VH() {
-        return constants$1192.const$3;
+        return constants$1196.const$0;
     }
     /**
      * Getter for field:
@@ -1246,7 +1246,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment _g_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1192.const$3.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1196.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -1255,13 +1255,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void _g_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$1192.const$3.set(seg, x);
+        constants$1196.const$0.set(seg, x);
     }
     public static MemorySegment _g_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1192.const$3.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1196.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1192.const$3.set(seg.asSlice(index*sizeof()), x);
+        constants$1196.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved4 _g_reserved4(MemorySegment segment, Arena scope) {
         return _g_reserved4.ofAddress(_g_reserved4$get(segment), scope);
@@ -1275,7 +1275,7 @@ public class _GVolumeMonitorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1192.const$4, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1196.const$1, fi, constants$7.const$5, scope);
         }
         static _g_reserved5 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1290,7 +1290,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle _g_reserved5$VH() {
-        return constants$1192.const$5;
+        return constants$1196.const$2;
     }
     /**
      * Getter for field:
@@ -1299,7 +1299,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment _g_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1192.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1196.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -1308,13 +1308,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void _g_reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$1192.const$5.set(seg, x);
+        constants$1196.const$2.set(seg, x);
     }
     public static MemorySegment _g_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1192.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1196.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1192.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1196.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved5 _g_reserved5(MemorySegment segment, Arena scope) {
         return _g_reserved5.ofAddress(_g_reserved5$get(segment), scope);
@@ -1328,7 +1328,7 @@ public class _GVolumeMonitorClass {
 
         void apply();
         static MemorySegment allocate(_g_reserved6 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1193.const$0, fi, constants$7.const$5, scope);
+            return RuntimeHelper.upcallStub(constants$1196.const$3, fi, constants$7.const$5, scope);
         }
         static _g_reserved6 ofAddress(MemorySegment addr, Arena arena) {
             MemorySegment symbol = addr.reinterpret(arena, null);
@@ -1343,7 +1343,7 @@ public class _GVolumeMonitorClass {
     }
 
     public static VarHandle _g_reserved6$VH() {
-        return constants$1193.const$1;
+        return constants$1196.const$4;
     }
     /**
      * Getter for field:
@@ -1352,7 +1352,7 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static MemorySegment _g_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1193.const$1.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1196.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -1361,13 +1361,13 @@ public class _GVolumeMonitorClass {
      * }
      */
     public static void _g_reserved6$set(MemorySegment seg, MemorySegment x) {
-        constants$1193.const$1.set(seg, x);
+        constants$1196.const$4.set(seg, x);
     }
     public static MemorySegment _g_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1193.const$1.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1196.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1193.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1196.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static _g_reserved6 _g_reserved6(MemorySegment segment, Arena scope) {
         return _g_reserved6.ofAddress(_g_reserved6$get(segment), scope);

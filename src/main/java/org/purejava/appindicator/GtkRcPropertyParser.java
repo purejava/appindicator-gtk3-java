@@ -13,7 +13,7 @@ public interface GtkRcPropertyParser {
 
     int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(GtkRcPropertyParser fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1960.const$1, fi, constants$12.const$2, scope);
+        return RuntimeHelper.upcallStub(constants$1965.const$1, fi, constants$12.const$2, scope);
     }
     static GtkRcPropertyParser ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

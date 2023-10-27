@@ -2,26 +2,28 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.StructLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$589 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$589() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "g_closure_new_simple",
-        constants$24.const$4
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_closure_add_finalize_notifier$notify_func.class, "apply", constants$13.const$4);
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_closure_add_finalize_notifier",
-        constants$14.const$3
-    );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_closure_remove_finalize_notifier$notify_func.class, "apply", constants$13.const$4);
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_closure_remove_finalize_notifier",
-        constants$14.const$3
-    );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_closure_add_invalidate_notifier$notify_func.class, "apply", constants$13.const$4);
+    static final VarHandle const$0 = constants$588.const$4.varHandle(MemoryLayout.PathElement.groupElement("marshal"));
+    static final VarHandle const$1 = constants$588.const$4.varHandle(MemoryLayout.PathElement.groupElement("data"));
+    static final VarHandle const$2 = constants$588.const$4.varHandle(MemoryLayout.PathElement.groupElement("notifiers"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.paddingLayout(8),
+            RuntimeHelper.POINTER.withName("marshal"),
+            RuntimeHelper.POINTER.withName("data"),
+            RuntimeHelper.POINTER.withName("notifiers")
+        ).withName("closure"),
+        RuntimeHelper.POINTER.withName("callback")
+    ).withName("_GCClosure");
+    static final VarHandle const$4 = constants$589.const$3.varHandle(MemoryLayout.PathElement.groupElement("callback"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_cclosure_new$callback_func.class, "apply", constants$7.const$5);
 }
 
 

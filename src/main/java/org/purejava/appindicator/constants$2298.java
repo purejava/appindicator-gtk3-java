@@ -2,35 +2,19 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
 final class constants$2298 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2298() {}
-    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_prev",
-        constants$10.const$5
-    );
-    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_up",
-        constants$10.const$5
-    );
-    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_down",
-        constants$13.const$1
-    );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_is_ancestor",
-        constants$9.const$0
-    );
-    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_is_descendant",
-        constants$9.const$0
-    );
-    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_tree_row_reference_get_type",
-        constants$3.const$5
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.iter_children.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$2293.const$2.varHandle(MemoryLayout.PathElement.groupElement("iter_children"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.iter_has_child.class, "apply", constants$9.const$0);
+    static final VarHandle const$3 = constants$2293.const$2.varHandle(MemoryLayout.PathElement.groupElement("iter_has_child"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkTreeModelIface.iter_n_children.class, "apply", constants$9.const$0);
+    static final VarHandle const$5 = constants$2293.const$2.varHandle(MemoryLayout.PathElement.groupElement("iter_n_children"));
 }
 
 

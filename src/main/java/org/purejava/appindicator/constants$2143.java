@@ -8,28 +8,28 @@ final class constants$2143 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2143() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_allocation",
-        constants$13.const$4
+        "gtk_widget_is_sensitive",
+        constants$10.const$5
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_clip",
-        constants$13.const$4
+        "gtk_widget_set_visible",
+        constants$40.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_clip",
-        constants$13.const$4
+        "gtk_widget_get_visible",
+        constants$10.const$5
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_requisition",
-        constants$13.const$4
+        "gtk_widget_is_visible",
+        constants$10.const$5
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "gtk_widget_child_focus",
-        constants$11.const$4
+        "gtk_widget_set_has_window",
+        constants$40.const$2
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "gtk_widget_keynav_failed",
-        constants$11.const$4
+        "gtk_widget_get_has_window",
+        constants$10.const$5
     );
 }
 

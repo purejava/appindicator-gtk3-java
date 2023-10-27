@@ -18,13 +18,13 @@ import java.lang.invoke.VarHandle;
 public class _PangoAttrFontFeatures {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1566.const$4;
+        return constants$1571.const$4;
     }
     public static MemorySegment attr$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
     public static VarHandle features$VH() {
-        return constants$1566.const$5;
+        return constants$1571.const$5;
     }
     /**
      * Getter for field:
@@ -33,7 +33,7 @@ public class _PangoAttrFontFeatures {
      * }
      */
     public static MemorySegment features$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1566.const$5.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1571.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -42,13 +42,13 @@ public class _PangoAttrFontFeatures {
      * }
      */
     public static void features$set(MemorySegment seg, MemorySegment x) {
-        constants$1566.const$5.set(seg, x);
+        constants$1571.const$5.set(seg, x);
     }
     public static MemorySegment features$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1566.const$5.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1571.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void features$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1566.const$5.set(seg.asSlice(index*sizeof()), x);
+        constants$1571.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }

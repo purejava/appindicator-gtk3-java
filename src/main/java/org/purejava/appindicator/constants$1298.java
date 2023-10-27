@@ -7,23 +7,29 @@ final class constants$1298 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1298() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_socket_client_connect_to_service_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_client_get_local_address",
+        constants$5.const$2
+    );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_service_async",
-        constants$338.const$3
+        "g_socket_client_set_local_address",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_service_finish",
-        constants$23.const$0
+        "g_socket_client_get_timeout",
+        constants$10.const$5
     );
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_socket_client_connect_to_uri_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_client_set_timeout",
+        constants$40.const$2
+    );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_uri_async",
-        constants$1297.const$3
+        "g_socket_client_get_enable_proxy",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_uri_finish",
-        constants$23.const$0
+        "g_socket_client_set_enable_proxy",
+        constants$40.const$2
     );
 }
 

@@ -8,28 +8,28 @@ final class constants$1515 {
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1515() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_glyph_positions",
-        constants$5.const$5
+        "hb_buffer_set_segment_properties",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "hb_buffer_has_positions",
-        constants$10.const$5
+        "hb_buffer_get_segment_properties",
+        constants$13.const$4
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "hb_buffer_normalize_glyphs",
+        "hb_buffer_guess_segment_properties",
         constants$13.const$1
     );
     static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "hb_buffer_serialize_format_from_string",
-        constants$11.const$4
+        "hb_buffer_set_flags",
+        constants$40.const$2
     );
     static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
-        "hb_buffer_serialize_format_to_string",
-        constants$24.const$0
+        "hb_buffer_get_flags",
+        constants$10.const$5
     );
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
-        "hb_buffer_serialize_list_formats",
-        constants$35.const$2
+        "hb_buffer_set_cluster_level",
+        constants$40.const$2
     );
 }
 

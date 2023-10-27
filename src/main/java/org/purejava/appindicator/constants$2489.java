@@ -2,29 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2489 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2489() {}
     static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_widget_to_bin_window_coords",
-        constants$1494.const$5
+        "gtk_tree_view_get_visible_rect",
+        constants$13.const$4
     );
     static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_bin_window_to_widget_coords",
-        constants$1494.const$5
+        "gtk_tree_view_get_visible_range",
+        constants$12.const$2
     );
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_tree_to_bin_window_coords",
-        constants$1494.const$5
+        "gtk_tree_view_is_blank_at_pos",
+        constants$1645.const$2
     );
-    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_bin_window_to_tree_coords",
-        constants$1494.const$5
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GtkTreeDestroyCountFunc.class, "apply", constants$464.const$4);
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gtk_tree_view_set_destroy_count_func$func.class, "apply", constants$464.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_enable_model_drag_source",
+        constants$2489.const$3
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tree_view_enable_model_drag_dest",
+        constants$1046.const$2
+    );
 }
 
 

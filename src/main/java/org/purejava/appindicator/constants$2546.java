@@ -2,19 +2,35 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
 final class constants$2546 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2546() {}
-    static final VarHandle const$0 = constants$2543.const$4.varHandle(MemoryLayout.PathElement.groupElement("custom_tag_end"));
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkBuildableIface.custom_finished.class, "apply", constants$331.const$1);
-    static final VarHandle const$2 = constants$2543.const$4.varHandle(MemoryLayout.PathElement.groupElement("custom_finished"));
-    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GtkBuildableIface.parser_finished.class, "apply", constants$13.const$4);
-    static final VarHandle const$4 = constants$2543.const$4.varHandle(MemoryLayout.PathElement.groupElement("parser_finished"));
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GtkBuildableIface.get_internal_child.class, "apply", constants$23.const$0);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_builder_get_type_from_name",
+        constants$22.const$0
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_builder_value_from_string",
+        constants$165.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_builder_value_from_string_type",
+        constants$54.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_builder_new_from_file",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_builder_new_from_resource",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_builder_new_from_string",
+        constants$21.const$1
+    );
 }
 
 

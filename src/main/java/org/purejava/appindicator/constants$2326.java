@@ -2,33 +2,31 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.MemoryLayout;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-
-import static java.lang.foreign.ValueLayout.JAVA_INT;
 final class constants$2326 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2326() {}
-    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        RuntimeHelper.POINTER,
-        JAVA_INT,
-        JAVA_INT
-    );
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.render.class, "apply", constants$2326.const$0);
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkTreeSortableIface.has_default_sort_func.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$2324.const$1.varHandle(MemoryLayout.PathElement.groupElement("has_default_sort_func"));
     static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
-        constants$2326.const$0
+        "gtk_tree_sortable_get_type",
+        constants$3.const$5
     );
-    static final VarHandle const$3 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("render"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkCellAreaClass.apply_attributes.class, "apply", constants$1641.const$5);
-    static final VarHandle const$5 = constants$2323.const$5.varHandle(MemoryLayout.PathElement.groupElement("apply_attributes"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_sort_column_changed",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_get_sort_column_id",
+        constants$12.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_tree_sortable_set_sort_column_id",
+        constants$469.const$2
+    );
 }
 
 

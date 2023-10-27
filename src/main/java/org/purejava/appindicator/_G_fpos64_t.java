@@ -18,10 +18,10 @@ import java.lang.invoke.VarHandle;
 public class _G_fpos64_t {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1653.const$0;
+        return constants$1658.const$0;
     }
     public static VarHandle __pos$VH() {
-        return constants$1653.const$1;
+        return constants$1658.const$1;
     }
     /**
      * Getter for field:
@@ -30,7 +30,7 @@ public class _G_fpos64_t {
      * }
      */
     public static long __pos$get(MemorySegment seg) {
-        return (long)constants$1653.const$1.get(seg);
+        return (long)constants$1658.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -39,13 +39,13 @@ public class _G_fpos64_t {
      * }
      */
     public static void __pos$set(MemorySegment seg, long x) {
-        constants$1653.const$1.set(seg, x);
+        constants$1658.const$1.set(seg, x);
     }
     public static long __pos$get(MemorySegment seg, long index) {
-        return (long)constants$1653.const$1.get(seg.asSlice(index*sizeof()));
+        return (long)constants$1658.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void __pos$set(MemorySegment seg, long index, long x) {
-        constants$1653.const$1.set(seg.asSlice(index*sizeof()), x);
+        constants$1658.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment __state$slice(MemorySegment seg) {
         return seg.asSlice(8, 8);

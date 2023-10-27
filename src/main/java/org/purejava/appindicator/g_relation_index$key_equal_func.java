@@ -13,7 +13,7 @@ public interface g_relation_index$key_equal_func {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
     static MemorySegment allocate(g_relation_index$key_equal_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$500.const$2, fi, constants$9.const$0, scope);
+        return RuntimeHelper.upcallStub(constants$502.const$0, fi, constants$9.const$0, scope);
     }
     static g_relation_index$key_equal_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);

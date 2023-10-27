@@ -16,7 +16,7 @@ import java.lang.foreign.SegmentAllocator;
 public class _GInetAddressMaskClass {
 
     public static MemoryLayout $LAYOUT() {
-        return constants$1102.const$1;
+        return constants$1105.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);

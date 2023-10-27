@@ -9,12 +9,12 @@ final class constants$2909 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2909() {}
-    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkNotebookClass._gtk_reserved4.class, "apply", constants$7.const$5);
-    static final VarHandle const$1 = constants$2903.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
-    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkNotebookClass._gtk_reserved5.class, "apply", constants$7.const$5);
-    static final VarHandle const$3 = constants$2903.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkNotebookClass._gtk_reserved6.class, "apply", constants$7.const$5);
-    static final VarHandle const$5 = constants$2903.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GtkNotebookClass.switch_page.class, "apply", constants$164.const$5);
+    static final VarHandle const$1 = constants$2908.const$5.varHandle(MemoryLayout.PathElement.groupElement("switch_page"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkNotebookClass.select_page.class, "apply", constants$11.const$4);
+    static final VarHandle const$3 = constants$2908.const$5.varHandle(MemoryLayout.PathElement.groupElement("select_page"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkNotebookClass.focus_tab.class, "apply", constants$11.const$4);
+    static final VarHandle const$5 = constants$2908.const$5.varHandle(MemoryLayout.PathElement.groupElement("focus_tab"));
 }
 
 

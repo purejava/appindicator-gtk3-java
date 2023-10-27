@@ -13,7 +13,7 @@ public interface g_cache_new$value_destroy_func {
 
     void apply(java.lang.foreign.MemorySegment display);
     static MemorySegment allocate(g_cache_new$value_destroy_func fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$493.const$3, fi, constants$13.const$1, scope);
+        return RuntimeHelper.upcallStub(constants$495.const$1, fi, constants$13.const$1, scope);
     }
     static g_cache_new$value_destroy_func ofAddress(MemorySegment addr, Arena arena) {
         MemorySegment symbol = addr.reinterpret(arena, null);
