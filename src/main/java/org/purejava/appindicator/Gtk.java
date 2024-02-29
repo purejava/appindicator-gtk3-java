@@ -1,5 +1,6 @@
 package org.purejava.appindicator;
 
+import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 
 import static org.purejava.appindicator.app_indicator_h.*;
@@ -37,9 +38,11 @@ public final class Gtk {
      * @param menuItem A GtkMenuItem.
      * @param label    The text you want to set.
      */
-    public static void menuItemSetLabel(MemorySegment menuItem, MemorySegment label) {
+    public static void menuItemSetLabel(MemorySegment menuItem, String label) {
         if (null != menuItem && null!= label) {
-            gtk_menu_item_set_label(menuItem, label);
+            try (var arena = Arena.ofConfined()) {
+                gtk_menu_item_set_label(menuItem, arena.allocateFrom(label));
+            }
         }
     }
 

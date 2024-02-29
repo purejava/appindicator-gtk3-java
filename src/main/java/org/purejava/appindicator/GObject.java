@@ -1,5 +1,6 @@
 package org.purejava.appindicator;
 
+import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 
 import static org.purejava.appindicator.app_indicator_h.g_signal_connect_object;
@@ -16,11 +17,13 @@ public final class GObject {
      * @param connectFlags   A combination of GConnectFlags.
      * @return The handler id.
      */
-    public static long signalConnectObject(MemorySegment instance, MemorySegment detailedSignal, MemorySegment cHandler, MemorySegment gobject, int connectFlags) {
+    public static long signalConnectObject(MemorySegment instance, String detailedSignal, MemorySegment cHandler, MemorySegment gobject, int connectFlags) {
         if (null != instance
             && null!= detailedSignal
             && null != cHandler) {
-                return g_signal_connect_object(instance, detailedSignal, cHandler, gobject, connectFlags);
+            try (var arena = Arena.ofConfined()) {
+                return g_signal_connect_object(instance, arena.allocateFrom(detailedSignal), cHandler, gobject, connectFlags);
+            }
         } else {
             return -1;
         }
