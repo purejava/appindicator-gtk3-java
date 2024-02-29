@@ -102,6 +102,24 @@ public final class AppIndicator {
     }
 
     /**
+     * Creates a new AppIndicator setting the properties: “id” with id , “category” with category , “icon-name” with iconName and “icon-theme-path” with iconThemePath.
+     * @param id            The unique id of the indicator to create.
+     * @param iconName      The icon name for this indicator.
+     * @param category      The category of indicator.
+     * @param iconThemePath A custom path for finding icons.
+     * @return A pointer to a new AppIndicator object.
+     */
+    public static MemorySegment newIndicatorWithPath(String id, String iconName, int category, String iconThemePath) {
+        if (null != id && null != iconName && null != iconThemePath) {
+            try (var arena = Arena.ofConfined()) {
+                return app_indicator_new_with_path(arena.allocateFrom(id), arena.allocateFrom(iconName), category, arena.allocateFrom(iconThemePath));
+            }
+        } else {
+            return MemorySegment.NULL;
+        }
+    }
+
+    /**
      * This function allows for building the Application Indicator menu from a static desktop file.
      * @param self           The AppIndicator object to use.
      * @param desktopFile    A path to the desktop file to build the menu from.
@@ -185,6 +203,104 @@ public final class AppIndicator {
      */
     public static int getStatus(MemorySegment self) {
         return null != self ? app_indicator_get_status(self) : -1;
+    }
+
+    /**
+     * Gets the title of the application indicator. See the function app_indicator_set_title() for information on the title.
+     * @param self The AppIndicator object to use.
+     * @return The current title.
+     */
+    public static String getTitle(MemorySegment self) {
+        return null != self ? app_indicator_get_title(self).getString(0) : "";
+    }
+
+    /**
+     * Wrapper for app_indicator_set_attention_icon_full() with a NULL description.
+     * @param self     The AppIndicator object to use.
+     * @param iconName The name of the attention icon to set for this indicator.
+     */
+    public static void setAttentionIcon(MemorySegment self, String iconName) {
+        if (null != self && null != iconName) {
+            try (var arena = Arena.ofConfined()) {
+                app_indicator_set_attention_icon(self, arena.allocateFrom(iconName));
+            }
+        }
+    }
+
+    /**
+     * Wrapper function for app_indicator_set_icon_full() with a NULL description.
+     * @param self     The AppIndicator object to use.
+     * @param iconName The icon name to set.
+     */
+    public static void setIcon(MemorySegment self, String iconName) {
+        if (null != self && null != iconName) {
+            try (var arena = Arena.ofConfined()) {
+                app_indicator_set_icon(self, arena.allocateFrom(iconName));
+            }
+        }
+    }
+
+    /**
+     * This is a wrapper function for the “label” and “guide” properties. This function can take NULL as either label or guide and will clear the entries.
+     * @param self  The AppIndicator object to use.
+     * @param label The label to show next to the icon.
+     * @param guide A guide to size the label correctly.
+     */
+    public static void setLabel(MemorySegment self, String label, String guide) {
+        if (null != self && null != label && null != guide) {
+            try (var arena = Arena.ofConfined()) {
+                app_indicator_set_label(self, arena.allocateFrom(label), arena.allocateFrom(guide));
+            }
+        }
+    }
+
+    /**
+     * Sets the menu that should be shown when the Application Indicator is clicked on in the panel. An application indicator will not be rendered unless it has a menu.
+     * Wrapper function for property “menu”.
+     * @param self The AppIndicator object to use.
+     * @param menu A GtkMenu to set.
+     */
+    public static void setMenu(MemorySegment self, MemorySegment menu) {
+        if (null != self && null != menu) {
+            app_indicator_set_menu(self, menu);
+        }
+    }
+
+    /**
+     * Sets the ordering index for the app indicator which effects the placement of it on the panel. For almost all app indicator this is not the function you're looking for.
+     * Wrapper function for property “ordering-index”.
+     * @param self          The AppIndicator object to use.
+     * @param orderingIndex A value for the ordering of this app indicator.
+     */
+    public static void setOrderingIndex(MemorySegment self, int orderingIndex) {
+        if (null != self) {
+            app_indicator_set_ordering_index(self, orderingIndex);
+        }
+    }
+
+    /**
+     * Wrapper function for property “status”.
+     * @param self   The AppIndicator object to use.
+     * @param status The status to set for this indicator.
+     */
+    public static void setStatus(MemorySegment self, int status) {
+        if (null != self) {
+            app_indicator_set_status(self, status);
+        }
+    }
+
+    /**
+     * Sets the title of the application indicator, or how it should be referred in a human readable form. This string should be UTF-8 and localized as it expected that users will set it.
+     * In the Unity desktop the most prominent place that this is show will be in the HUD. HUD listings for this application indicator will start with the title as the first part of the line for the menu items.
+     * @param self  The AppIndicator object to use.
+     * @param title Title of the app indicator. Setting title to NULL removes the title.
+     */
+    public static void setTitle(MemorySegment self, String title) {
+        if (null != self) {
+            try (var arena = Arena.ofConfined()) {
+                app_indicator_set_title(self, arena.allocateFrom(title));
+            }
+        }
     }
 
     public static boolean isLoaded() {
