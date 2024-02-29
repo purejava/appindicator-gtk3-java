@@ -2,1029 +2,2944 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.invoke.MethodHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
 import static java.lang.foreign.ValueLayout.*;
-public class app_indicator_h  {
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
-    public static final OfByte C_CHAR = JAVA_BYTE;
-    public static final OfShort C_SHORT = JAVA_SHORT;
-    public static final OfInt C_INT = JAVA_INT;
-    public static final OfLong C_LONG = JAVA_LONG;
-    public static final OfLong C_LONG_LONG = JAVA_LONG;
-    public static final OfFloat C_FLOAT = JAVA_FLOAT;
-    public static final OfDouble C_DOUBLE = JAVA_DOUBLE;
-    public static final AddressLayout C_POINTER = RuntimeHelper.POINTER;
-    public static MethodHandle g_error_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.const$1,"g_error_free");
+public class app_indicator_h {
+
+    app_indicator_h() {
+        // Should not be called directly
+    }
+
+    static final Arena LIBRARY_ARENA = Arena.ofAuto();
+    static final boolean TRACE_DOWNCALLS = Boolean.getBoolean("jextract.trace.downcalls");
+
+    static void traceDowncall(String name, Object... args) {
+         String traceArgs = Arrays.stream(args)
+                       .map(Object::toString)
+                       .collect(Collectors.joining(", "));
+         System.out.printf("%s(%s)\n", name, traceArgs);
+    }
+
+    static MemorySegment findOrThrow(String symbol) {
+        return SYMBOL_LOOKUP.find(symbol)
+            .orElseThrow(() -> new UnsatisfiedLinkError("unresolved symbol: " + symbol));
+    }
+
+    static MethodHandle upcallHandle(Class<?> fi, String name, FunctionDescriptor fdesc) {
+        try {
+            return MethodHandles.lookup().findVirtual(fi, name, fdesc.toMethodType());
+        } catch (ReflectiveOperationException ex) {
+            throw new AssertionError(ex);
+        }
+    }
+
+    static final SymbolLookup SYMBOL_LOOKUP = SymbolLookup.loaderLookup()
+            .or(Linker.nativeLinker().defaultLookup());
+
+    public static final ValueLayout.OfBoolean C_BOOL = ValueLayout.JAVA_BOOLEAN;
+    public static final ValueLayout.OfByte C_CHAR = ValueLayout.JAVA_BYTE;
+    public static final ValueLayout.OfShort C_SHORT = ValueLayout.JAVA_SHORT;
+    public static final ValueLayout.OfInt C_INT = ValueLayout.JAVA_INT;
+    public static final ValueLayout.OfLong C_LONG_LONG = ValueLayout.JAVA_LONG;
+    public static final ValueLayout.OfFloat C_FLOAT = ValueLayout.JAVA_FLOAT;
+    public static final ValueLayout.OfDouble C_DOUBLE = ValueLayout.JAVA_DOUBLE;
+    public static final AddressLayout C_POINTER = ValueLayout.ADDRESS
+            .withTargetLayout(MemoryLayout.sequenceLayout(java.lang.Long.MAX_VALUE, JAVA_BYTE));
+    public static final ValueLayout.OfLong C_LONG = ValueLayout.JAVA_LONG;
+
+    private static class g_error_free {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("g_error_free"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_error_free(GError *error)
+     * }
+     */
+    public static FunctionDescriptor g_error_free$descriptor() {
+        return g_error_free.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_error_free(GError *error)
+     * }
+     */
+    public static MethodHandle g_error_free$handle() {
+        return g_error_free.HANDLE;
     }
     /**
-     * {@snippet :
-     * void g_error_free(struct _GError* error);
+     * {@snippet lang=c :
+     * extern void g_error_free(GError *error)
      * }
      */
     public static void g_error_free(MemorySegment error) {
-        var mh$ = g_error_free$MH();
+        var mh$ = g_error_free.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_error_free", error);
+            }
             mh$.invokeExact(error);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle g_object_set_data_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.const$2,"g_object_set_data_full");
+
+    private static class g_object_set_data_full {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("g_object_set_data_full"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void g_object_set_data_full(GObject *object, const gchar *key, gpointer data, GDestroyNotify destroy)
+     * }
+     */
+    public static FunctionDescriptor g_object_set_data_full$descriptor() {
+        return g_object_set_data_full.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void g_object_set_data_full(GObject *object, const gchar *key, gpointer data, GDestroyNotify destroy)
+     * }
+     */
+    public static MethodHandle g_object_set_data_full$handle() {
+        return g_object_set_data_full.HANDLE;
     }
     /**
-     * {@snippet :
-     * void g_object_set_data_full(struct _GObject* object, char* key, void* data, void (*destroy)(void*));
+     * {@snippet lang=c :
+     * extern void g_object_set_data_full(GObject *object, const gchar *key, gpointer data, GDestroyNotify destroy)
      * }
      */
     public static void g_object_set_data_full(MemorySegment object, MemorySegment key, MemorySegment data, MemorySegment destroy) {
-        var mh$ = g_object_set_data_full$MH();
+        var mh$ = g_object_set_data_full.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_object_set_data_full", object, key, data, destroy);
+            }
             mh$.invokeExact(object, key, data, destroy);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle g_signal_connect_object$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.const$5,"g_signal_connect_object");
+
+    private static class g_signal_connect_object {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("g_signal_connect_object"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern gulong g_signal_connect_object(gpointer instance, const gchar *detailed_signal, GCallback c_handler, gpointer gobject, GConnectFlags connect_flags)
+     * }
+     */
+    public static FunctionDescriptor g_signal_connect_object$descriptor() {
+        return g_signal_connect_object.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern gulong g_signal_connect_object(gpointer instance, const gchar *detailed_signal, GCallback c_handler, gpointer gobject, GConnectFlags connect_flags)
+     * }
+     */
+    public static MethodHandle g_signal_connect_object$handle() {
+        return g_signal_connect_object.HANDLE;
     }
     /**
-     * {@snippet :
-     * unsigned long g_signal_connect_object(void* instance, char* detailed_signal, void (*c_handler)(), void* gobject, enum GConnectFlags connect_flags);
+     * {@snippet lang=c :
+     * extern gulong g_signal_connect_object(gpointer instance, const gchar *detailed_signal, GCallback c_handler, gpointer gobject, GConnectFlags connect_flags)
      * }
      */
     public static long g_signal_connect_object(MemorySegment instance, MemorySegment detailed_signal, MemorySegment c_handler, MemorySegment gobject, int connect_flags) {
-        var mh$ = g_signal_connect_object$MH();
+        var mh$ = g_signal_connect_object.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("g_signal_connect_object", instance, detailed_signal, c_handler, gobject, connect_flags);
+            }
             return (long)mh$.invokeExact(instance, detailed_signal, c_handler, gobject, connect_flags);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_widget_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.const$0,"gtk_widget_destroy");
+
+    private static class gtk_widget_destroy {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_widget_destroy"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_destroy(GtkWidget *widget)
+     * }
+     */
+    public static FunctionDescriptor gtk_widget_destroy$descriptor() {
+        return gtk_widget_destroy.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_destroy(GtkWidget *widget)
+     * }
+     */
+    public static MethodHandle gtk_widget_destroy$handle() {
+        return gtk_widget_destroy.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_widget_destroy(struct _GtkWidget* widget);
+     * {@snippet lang=c :
+     * extern void gtk_widget_destroy(GtkWidget *widget)
      * }
      */
     public static void gtk_widget_destroy(MemorySegment widget) {
-        var mh$ = gtk_widget_destroy$MH();
+        var mh$ = gtk_widget_destroy.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_widget_destroy", widget);
+            }
             mh$.invokeExact(widget);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_widget_destroyed$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.const$2,"gtk_widget_destroyed");
+
+    private static class gtk_widget_destroyed {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_widget_destroyed"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_destroyed(GtkWidget *widget, GtkWidget **widget_pointer)
+     * }
+     */
+    public static FunctionDescriptor gtk_widget_destroyed$descriptor() {
+        return gtk_widget_destroyed.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_destroyed(GtkWidget *widget, GtkWidget **widget_pointer)
+     * }
+     */
+    public static MethodHandle gtk_widget_destroyed$handle() {
+        return gtk_widget_destroyed.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_widget_destroyed(struct _GtkWidget* widget, struct _GtkWidget** widget_pointer);
+     * {@snippet lang=c :
+     * extern void gtk_widget_destroyed(GtkWidget *widget, GtkWidget **widget_pointer)
      * }
      */
     public static void gtk_widget_destroyed(MemorySegment widget, MemorySegment widget_pointer) {
-        var mh$ = gtk_widget_destroyed$MH();
+        var mh$ = gtk_widget_destroyed.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_widget_destroyed", widget, widget_pointer);
+            }
             mh$.invokeExact(widget, widget_pointer);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_widget_show$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.const$3,"gtk_widget_show");
+
+    private static class gtk_widget_show {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_widget_show"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_show(GtkWidget *widget)
+     * }
+     */
+    public static FunctionDescriptor gtk_widget_show$descriptor() {
+        return gtk_widget_show.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_show(GtkWidget *widget)
+     * }
+     */
+    public static MethodHandle gtk_widget_show$handle() {
+        return gtk_widget_show.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_widget_show(struct _GtkWidget* widget);
+     * {@snippet lang=c :
+     * extern void gtk_widget_show(GtkWidget *widget)
      * }
      */
     public static void gtk_widget_show(MemorySegment widget) {
-        var mh$ = gtk_widget_show$MH();
+        var mh$ = gtk_widget_show.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_widget_show", widget);
+            }
             mh$.invokeExact(widget);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_widget_show_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.const$4,"gtk_widget_show_all");
+
+    private static class gtk_widget_show_all {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_widget_show_all"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_show_all(GtkWidget *widget)
+     * }
+     */
+    public static FunctionDescriptor gtk_widget_show_all$descriptor() {
+        return gtk_widget_show_all.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_show_all(GtkWidget *widget)
+     * }
+     */
+    public static MethodHandle gtk_widget_show_all$handle() {
+        return gtk_widget_show_all.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_widget_show_all(struct _GtkWidget* widget);
+     * {@snippet lang=c :
+     * extern void gtk_widget_show_all(GtkWidget *widget)
      * }
      */
     public static void gtk_widget_show_all(MemorySegment widget) {
-        var mh$ = gtk_widget_show_all$MH();
+        var mh$ = gtk_widget_show_all.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_widget_show_all", widget);
+            }
             mh$.invokeExact(widget);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_widget_grab_focus$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.const$5,"gtk_widget_grab_focus");
+
+    private static class gtk_widget_grab_focus {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_widget_grab_focus"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_grab_focus(GtkWidget *widget)
+     * }
+     */
+    public static FunctionDescriptor gtk_widget_grab_focus$descriptor() {
+        return gtk_widget_grab_focus.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_grab_focus(GtkWidget *widget)
+     * }
+     */
+    public static MethodHandle gtk_widget_grab_focus$handle() {
+        return gtk_widget_grab_focus.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_widget_grab_focus(struct _GtkWidget* widget);
+     * {@snippet lang=c :
+     * extern void gtk_widget_grab_focus(GtkWidget *widget)
      * }
      */
     public static void gtk_widget_grab_focus(MemorySegment widget) {
-        var mh$ = gtk_widget_grab_focus$MH();
+        var mh$ = gtk_widget_grab_focus.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_widget_grab_focus", widget);
+            }
             mh$.invokeExact(widget);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_container_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.const$0,"gtk_container_add");
+
+    private static class gtk_container_add {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_container_add"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_container_add(GtkContainer *container, GtkWidget *widget)
+     * }
+     */
+    public static FunctionDescriptor gtk_container_add$descriptor() {
+        return gtk_container_add.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_container_add(GtkContainer *container, GtkWidget *widget)
+     * }
+     */
+    public static MethodHandle gtk_container_add$handle() {
+        return gtk_container_add.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_container_add(struct _GtkContainer* container, struct _GtkWidget* widget);
+     * {@snippet lang=c :
+     * extern void gtk_container_add(GtkContainer *container, GtkWidget *widget)
      * }
      */
     public static void gtk_container_add(MemorySegment container, MemorySegment widget) {
-        var mh$ = gtk_container_add$MH();
+        var mh$ = gtk_container_add.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_container_add", container, widget);
+            }
             mh$.invokeExact(container, widget);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_window_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.const$2,"gtk_window_new");
+
+    private static class gtk_window_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_window_new"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_window_new(GtkWindowType type)
+     * }
+     */
+    public static FunctionDescriptor gtk_window_new$descriptor() {
+        return gtk_window_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_window_new(GtkWindowType type)
+     * }
+     */
+    public static MethodHandle gtk_window_new$handle() {
+        return gtk_window_new.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkWidget* gtk_window_new(enum GtkWindowType type);
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_window_new(GtkWindowType type)
      * }
      */
     public static MemorySegment gtk_window_new(int type) {
-        var mh$ = gtk_window_new$MH();
+        var mh$ = gtk_window_new.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(type);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_window_new", type);
+            }
+            return (MemorySegment)mh$.invokeExact(type);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_window_set_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.const$3,"gtk_window_set_title");
+
+    private static class gtk_window_set_title {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_window_set_title"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_title(GtkWindow *window, const gchar *title)
+     * }
+     */
+    public static FunctionDescriptor gtk_window_set_title$descriptor() {
+        return gtk_window_set_title.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_title(GtkWindow *window, const gchar *title)
+     * }
+     */
+    public static MethodHandle gtk_window_set_title$handle() {
+        return gtk_window_set_title.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_window_set_title(struct _GtkWindow* window, char* title);
+     * {@snippet lang=c :
+     * extern void gtk_window_set_title(GtkWindow *window, const gchar *title)
      * }
      */
     public static void gtk_window_set_title(MemorySegment window, MemorySegment title) {
-        var mh$ = gtk_window_set_title$MH();
+        var mh$ = gtk_window_set_title.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_window_set_title", window, title);
+            }
             mh$.invokeExact(window, title);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_window_add_accel_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.const$4,"gtk_window_add_accel_group");
+
+    private static class gtk_window_add_accel_group {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_window_add_accel_group"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_window_add_accel_group(GtkWindow *window, GtkAccelGroup *accel_group)
+     * }
+     */
+    public static FunctionDescriptor gtk_window_add_accel_group$descriptor() {
+        return gtk_window_add_accel_group.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_window_add_accel_group(GtkWindow *window, GtkAccelGroup *accel_group)
+     * }
+     */
+    public static MethodHandle gtk_window_add_accel_group$handle() {
+        return gtk_window_add_accel_group.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_window_add_accel_group(struct _GtkWindow* window, struct _GtkAccelGroup* accel_group);
+     * {@snippet lang=c :
+     * extern void gtk_window_add_accel_group(GtkWindow *window, GtkAccelGroup *accel_group)
      * }
      */
     public static void gtk_window_add_accel_group(MemorySegment window, MemorySegment accel_group) {
-        var mh$ = gtk_window_add_accel_group$MH();
+        var mh$ = gtk_window_add_accel_group.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_window_add_accel_group", window, accel_group);
+            }
             mh$.invokeExact(window, accel_group);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_window_set_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.const$5,"gtk_window_set_icon");
+
+    private static class gtk_window_set_icon {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_window_set_icon"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_icon(GtkWindow *window, GdkPixbuf *icon)
+     * }
+     */
+    public static FunctionDescriptor gtk_window_set_icon$descriptor() {
+        return gtk_window_set_icon.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_icon(GtkWindow *window, GdkPixbuf *icon)
+     * }
+     */
+    public static MethodHandle gtk_window_set_icon$handle() {
+        return gtk_window_set_icon.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_window_set_icon(struct _GtkWindow* window, struct _GdkPixbuf* icon);
+     * {@snippet lang=c :
+     * extern void gtk_window_set_icon(GtkWindow *window, GdkPixbuf *icon)
      * }
      */
     public static void gtk_window_set_icon(MemorySegment window, MemorySegment icon) {
-        var mh$ = gtk_window_set_icon$MH();
+        var mh$ = gtk_window_set_icon.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_window_set_icon", window, icon);
+            }
             mh$.invokeExact(window, icon);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_window_set_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.const$0,"gtk_window_set_icon_name");
+
+    private static class gtk_window_set_icon_name {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_window_set_icon_name"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_icon_name(GtkWindow *window, const gchar *name)
+     * }
+     */
+    public static FunctionDescriptor gtk_window_set_icon_name$descriptor() {
+        return gtk_window_set_icon_name.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_icon_name(GtkWindow *window, const gchar *name)
+     * }
+     */
+    public static MethodHandle gtk_window_set_icon_name$handle() {
+        return gtk_window_set_icon_name.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_window_set_icon_name(struct _GtkWindow* window, char* name);
+     * {@snippet lang=c :
+     * extern void gtk_window_set_icon_name(GtkWindow *window, const gchar *name)
      * }
      */
     public static void gtk_window_set_icon_name(MemorySegment window, MemorySegment name) {
-        var mh$ = gtk_window_set_icon_name$MH();
+        var mh$ = gtk_window_set_icon_name.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_window_set_icon_name", window, name);
+            }
             mh$.invokeExact(window, name);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_window_set_default_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.const$2,"gtk_window_set_default_size");
+
+    private static class gtk_window_set_default_size {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_window_set_default_size"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_default_size(GtkWindow *window, gint width, gint height)
+     * }
+     */
+    public static FunctionDescriptor gtk_window_set_default_size$descriptor() {
+        return gtk_window_set_default_size.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_default_size(GtkWindow *window, gint width, gint height)
+     * }
+     */
+    public static MethodHandle gtk_window_set_default_size$handle() {
+        return gtk_window_set_default_size.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_window_set_default_size(struct _GtkWindow* window, int width, int height);
+     * {@snippet lang=c :
+     * extern void gtk_window_set_default_size(GtkWindow *window, gint width, gint height)
      * }
      */
     public static void gtk_window_set_default_size(MemorySegment window, int width, int height) {
-        var mh$ = gtk_window_set_default_size$MH();
+        var mh$ = gtk_window_set_default_size.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_window_set_default_size", window, width, height);
+            }
             mh$.invokeExact(window, width, height);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_menu_shell_append$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.const$3,"gtk_menu_shell_append");
+
+    private static class gtk_menu_shell_append {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_menu_shell_append"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_menu_shell_append(GtkMenuShell *menu_shell, GtkWidget *child)
+     * }
+     */
+    public static FunctionDescriptor gtk_menu_shell_append$descriptor() {
+        return gtk_menu_shell_append.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_menu_shell_append(GtkMenuShell *menu_shell, GtkWidget *child)
+     * }
+     */
+    public static MethodHandle gtk_menu_shell_append$handle() {
+        return gtk_menu_shell_append.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_menu_shell_append(struct _GtkMenuShell* menu_shell, struct _GtkWidget* child);
+     * {@snippet lang=c :
+     * extern void gtk_menu_shell_append(GtkMenuShell *menu_shell, GtkWidget *child)
      * }
      */
     public static void gtk_menu_shell_append(MemorySegment menu_shell, MemorySegment child) {
-        var mh$ = gtk_menu_shell_append$MH();
+        var mh$ = gtk_menu_shell_append.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_menu_shell_append", menu_shell, child);
+            }
             mh$.invokeExact(menu_shell, child);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_menu_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.const$5,"gtk_menu_new");
+
+    private static class gtk_menu_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER    );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_menu_new"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_menu_new(void)
+     * }
+     */
+    public static FunctionDescriptor gtk_menu_new$descriptor() {
+        return gtk_menu_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_menu_new(void)
+     * }
+     */
+    public static MethodHandle gtk_menu_new$handle() {
+        return gtk_menu_new.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkWidget* gtk_menu_new();
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_menu_new(void)
      * }
      */
     public static MemorySegment gtk_menu_new() {
-        var mh$ = gtk_menu_new$MH();
+        var mh$ = gtk_menu_new.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_menu_new");
+            }
+            return (MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_menu_item_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.const$0,"gtk_menu_item_new");
+
+    private static class gtk_menu_item_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER    );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_menu_item_new"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_menu_item_new(void)
+     * }
+     */
+    public static FunctionDescriptor gtk_menu_item_new$descriptor() {
+        return gtk_menu_item_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_menu_item_new(void)
+     * }
+     */
+    public static MethodHandle gtk_menu_item_new$handle() {
+        return gtk_menu_item_new.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkWidget* gtk_menu_item_new();
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_menu_item_new(void)
      * }
      */
     public static MemorySegment gtk_menu_item_new() {
-        var mh$ = gtk_menu_item_new$MH();
+        var mh$ = gtk_menu_item_new.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_menu_item_new");
+            }
+            return (MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_menu_item_set_submenu$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.const$1,"gtk_menu_item_set_submenu");
+
+    private static class gtk_menu_item_set_submenu {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_menu_item_set_submenu"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_menu_item_set_submenu(GtkMenuItem *menu_item, GtkWidget *submenu)
+     * }
+     */
+    public static FunctionDescriptor gtk_menu_item_set_submenu$descriptor() {
+        return gtk_menu_item_set_submenu.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_menu_item_set_submenu(GtkMenuItem *menu_item, GtkWidget *submenu)
+     * }
+     */
+    public static MethodHandle gtk_menu_item_set_submenu$handle() {
+        return gtk_menu_item_set_submenu.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_menu_item_set_submenu(struct _GtkMenuItem* menu_item, struct _GtkWidget* submenu);
+     * {@snippet lang=c :
+     * extern void gtk_menu_item_set_submenu(GtkMenuItem *menu_item, GtkWidget *submenu)
      * }
      */
     public static void gtk_menu_item_set_submenu(MemorySegment menu_item, MemorySegment submenu) {
-        var mh$ = gtk_menu_item_set_submenu$MH();
+        var mh$ = gtk_menu_item_set_submenu.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_menu_item_set_submenu", menu_item, submenu);
+            }
             mh$.invokeExact(menu_item, submenu);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_menu_item_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.const$2,"gtk_menu_item_set_label");
+
+    private static class gtk_menu_item_set_label {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_menu_item_set_label"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_menu_item_set_label(GtkMenuItem *menu_item, const gchar *label)
+     * }
+     */
+    public static FunctionDescriptor gtk_menu_item_set_label$descriptor() {
+        return gtk_menu_item_set_label.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_menu_item_set_label(GtkMenuItem *menu_item, const gchar *label)
+     * }
+     */
+    public static MethodHandle gtk_menu_item_set_label$handle() {
+        return gtk_menu_item_set_label.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_menu_item_set_label(struct _GtkMenuItem* menu_item, char* label);
+     * {@snippet lang=c :
+     * extern void gtk_menu_item_set_label(GtkMenuItem *menu_item, const gchar *label)
      * }
      */
     public static void gtk_menu_item_set_label(MemorySegment menu_item, MemorySegment label) {
-        var mh$ = gtk_menu_item_set_label$MH();
+        var mh$ = gtk_menu_item_set_label.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_menu_item_set_label", menu_item, label);
+            }
             mh$.invokeExact(menu_item, label);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.const$3,"gtk_init");
+
+    private static class gtk_init {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_init"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_init(int *argc, char ***argv)
+     * }
+     */
+    public static FunctionDescriptor gtk_init$descriptor() {
+        return gtk_init.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_init(int *argc, char ***argv)
+     * }
+     */
+    public static MethodHandle gtk_init$handle() {
+        return gtk_init.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_init(int* argc, char*** argv);
+     * {@snippet lang=c :
+     * extern void gtk_init(int *argc, char ***argv)
      * }
      */
     public static void gtk_init(MemorySegment argc, MemorySegment argv) {
-        var mh$ = gtk_init$MH();
+        var mh$ = gtk_init.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_init", argc, argv);
+            }
             mh$.invokeExact(argc, argv);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_main$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.const$4,"gtk_main");
+
+    private static class gtk_main {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(    );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_main"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_main(void)
+     * }
+     */
+    public static FunctionDescriptor gtk_main$descriptor() {
+        return gtk_main.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_main(void)
+     * }
+     */
+    public static MethodHandle gtk_main$handle() {
+        return gtk_main.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_main();
+     * {@snippet lang=c :
+     * extern void gtk_main(void)
      * }
      */
     public static void gtk_main() {
-        var mh$ = gtk_main$MH();
+        var mh$ = gtk_main.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_main");
+            }
             mh$.invokeExact();
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_message_dialog_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.const$6,"gtk_message_dialog_new");
-    }
+
     /**
-     * {@snippet :
-     * struct _GtkWidget* gtk_message_dialog_new(struct _GtkWindow* parent, enum GtkDialogFlags flags, enum GtkMessageType type, enum GtkButtonsType buttons, char* message_format,...);
+     * Variadic invoker class for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_message_dialog_new(GtkWindow *parent, GtkDialogFlags flags, GtkMessageType type, GtkButtonsType buttons, const gchar *message_format, ...)
      * }
      */
-    public static MemorySegment gtk_message_dialog_new(MemorySegment parent, int flags, int type, int buttons, MemorySegment message_format, Object... x5) {
-        var mh$ = gtk_message_dialog_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parent, flags, type, buttons, message_format, x5);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+    public static class gtk_message_dialog_new {
+        private static final FunctionDescriptor BASE_DESC = FunctionDescriptor.of(
+                app_indicator_h.C_POINTER,
+                app_indicator_h.C_POINTER,
+                app_indicator_h.C_INT,
+                app_indicator_h.C_INT,
+                app_indicator_h.C_INT,
+                app_indicator_h.C_POINTER
+            );
+        private static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_message_dialog_new");
+
+        private final MethodHandle handle;
+        private final FunctionDescriptor descriptor;
+        private final MethodHandle spreader;
+
+        private gtk_message_dialog_new(MethodHandle handle, FunctionDescriptor descriptor, MethodHandle spreader) {
+            this.handle = handle;
+            this.descriptor = descriptor;
+            this.spreader = spreader;
+        }
+
+        /**
+         * Variadic invoker factory for:
+         * {@snippet lang=c :
+         * extern GtkWidget *gtk_message_dialog_new(GtkWindow *parent, GtkDialogFlags flags, GtkMessageType type, GtkButtonsType buttons, const gchar *message_format, ...)
+         * }
+         */
+        public static gtk_message_dialog_new makeInvoker(MemoryLayout... layouts) {
+            FunctionDescriptor desc$ = BASE_DESC.appendArgumentLayouts(layouts);
+            Linker.Option fva$ = Linker.Option.firstVariadicArg(BASE_DESC.argumentLayouts().size());
+            var mh$ = Linker.nativeLinker().downcallHandle(ADDR, desc$, fva$);
+            var spreader$ = mh$.asSpreader(Object[].class, layouts.length);
+            return new gtk_message_dialog_new(mh$, desc$, spreader$);
+        }
+
+        /**
+         * {@return the specialized method handle}
+         */
+        public MethodHandle handle() {
+            return handle;
+        }
+
+        /**
+         * {@return the specialized descriptor}
+         */
+        public FunctionDescriptor descriptor() {
+            return descriptor;
+        }
+
+        public MemorySegment apply(MemorySegment parent, int flags, int type, int buttons, MemorySegment message_format, Object... x5) {
+            try {
+                if (TRACE_DOWNCALLS) {
+                    traceDowncall("gtk_message_dialog_new", parent, flags, type, buttons, message_format, x5);
+                }
+                return (MemorySegment)spreader.invokeExact(parent, flags, type, buttons, message_format, x5);
+            } catch(IllegalArgumentException | ClassCastException ex$)  {
+                throw ex$; // rethrow IAE from passing wrong number/type of args
+            } catch (Throwable ex$) {
+               throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
-    public static MethodHandle gtk_scrolled_window_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$6.const$1,"gtk_scrolled_window_new");
+
+    private static class gtk_scrolled_window_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_scrolled_window_new"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_scrolled_window_new(GtkAdjustment *hadjustment, GtkAdjustment *vadjustment)
+     * }
+     */
+    public static FunctionDescriptor gtk_scrolled_window_new$descriptor() {
+        return gtk_scrolled_window_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_scrolled_window_new(GtkAdjustment *hadjustment, GtkAdjustment *vadjustment)
+     * }
+     */
+    public static MethodHandle gtk_scrolled_window_new$handle() {
+        return gtk_scrolled_window_new.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkWidget* gtk_scrolled_window_new(struct _GtkAdjustment* hadjustment, struct _GtkAdjustment* vadjustment);
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_scrolled_window_new(GtkAdjustment *hadjustment, GtkAdjustment *vadjustment)
      * }
      */
     public static MemorySegment gtk_scrolled_window_new(MemorySegment hadjustment, MemorySegment vadjustment) {
-        var mh$ = gtk_scrolled_window_new$MH();
+        var mh$ = gtk_scrolled_window_new.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(hadjustment, vadjustment);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_scrolled_window_new", hadjustment, vadjustment);
+            }
+            return (MemorySegment)mh$.invokeExact(hadjustment, vadjustment);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_scrolled_window_set_policy$MH() {
-        return RuntimeHelper.requireNonNull(constants$6.const$2,"gtk_scrolled_window_set_policy");
+
+    private static class gtk_scrolled_window_set_policy {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_scrolled_window_set_policy"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_scrolled_window_set_policy(GtkScrolledWindow *scrolled_window, GtkPolicyType hscrollbar_policy, GtkPolicyType vscrollbar_policy)
+     * }
+     */
+    public static FunctionDescriptor gtk_scrolled_window_set_policy$descriptor() {
+        return gtk_scrolled_window_set_policy.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_scrolled_window_set_policy(GtkScrolledWindow *scrolled_window, GtkPolicyType hscrollbar_policy, GtkPolicyType vscrollbar_policy)
+     * }
+     */
+    public static MethodHandle gtk_scrolled_window_set_policy$handle() {
+        return gtk_scrolled_window_set_policy.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_scrolled_window_set_policy(struct _GtkScrolledWindow* scrolled_window, enum GtkPolicyType hscrollbar_policy, enum GtkPolicyType vscrollbar_policy);
+     * {@snippet lang=c :
+     * extern void gtk_scrolled_window_set_policy(GtkScrolledWindow *scrolled_window, GtkPolicyType hscrollbar_policy, GtkPolicyType vscrollbar_policy)
      * }
      */
     public static void gtk_scrolled_window_set_policy(MemorySegment scrolled_window, int hscrollbar_policy, int vscrollbar_policy) {
-        var mh$ = gtk_scrolled_window_set_policy$MH();
+        var mh$ = gtk_scrolled_window_set_policy.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_scrolled_window_set_policy", scrolled_window, hscrollbar_policy, vscrollbar_policy);
+            }
             mh$.invokeExact(scrolled_window, hscrollbar_policy, vscrollbar_policy);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_scrolled_window_set_shadow_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$6.const$4,"gtk_scrolled_window_set_shadow_type");
+
+    private static class gtk_scrolled_window_set_shadow_type {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_scrolled_window_set_shadow_type"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_scrolled_window_set_shadow_type(GtkScrolledWindow *scrolled_window, GtkShadowType type)
+     * }
+     */
+    public static FunctionDescriptor gtk_scrolled_window_set_shadow_type$descriptor() {
+        return gtk_scrolled_window_set_shadow_type.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_scrolled_window_set_shadow_type(GtkScrolledWindow *scrolled_window, GtkShadowType type)
+     * }
+     */
+    public static MethodHandle gtk_scrolled_window_set_shadow_type$handle() {
+        return gtk_scrolled_window_set_shadow_type.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_scrolled_window_set_shadow_type(struct _GtkScrolledWindow* scrolled_window, enum GtkShadowType type);
+     * {@snippet lang=c :
+     * extern void gtk_scrolled_window_set_shadow_type(GtkScrolledWindow *scrolled_window, GtkShadowType type)
      * }
      */
     public static void gtk_scrolled_window_set_shadow_type(MemorySegment scrolled_window, int type) {
-        var mh$ = gtk_scrolled_window_set_shadow_type$MH();
+        var mh$ = gtk_scrolled_window_set_shadow_type.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_scrolled_window_set_shadow_type", scrolled_window, type);
+            }
             mh$.invokeExact(scrolled_window, type);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_statusbar_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$6.const$5,"gtk_statusbar_new");
+
+    private static class gtk_statusbar_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER    );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_statusbar_new"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_statusbar_new(void)
+     * }
+     */
+    public static FunctionDescriptor gtk_statusbar_new$descriptor() {
+        return gtk_statusbar_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_statusbar_new(void)
+     * }
+     */
+    public static MethodHandle gtk_statusbar_new$handle() {
+        return gtk_statusbar_new.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkWidget* gtk_statusbar_new();
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_statusbar_new(void)
      * }
      */
     public static MemorySegment gtk_statusbar_new() {
-        var mh$ = gtk_statusbar_new$MH();
+        var mh$ = gtk_statusbar_new.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_statusbar_new");
+            }
+            return (MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_text_view_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.const$0,"gtk_text_view_new");
+
+    private static class gtk_text_view_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER    );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_text_view_new"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_text_view_new(void)
+     * }
+     */
+    public static FunctionDescriptor gtk_text_view_new$descriptor() {
+        return gtk_text_view_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_text_view_new(void)
+     * }
+     */
+    public static MethodHandle gtk_text_view_new$handle() {
+        return gtk_text_view_new.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkWidget* gtk_text_view_new();
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_text_view_new(void)
      * }
      */
     public static MemorySegment gtk_text_view_new() {
-        var mh$ = gtk_text_view_new$MH();
+        var mh$ = gtk_text_view_new.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_text_view_new");
+            }
+            return (MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_action_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.const$2,"gtk_action_get_name");
+
+    private static class gtk_action_get_name {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_action_get_name"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern const gchar *gtk_action_get_name(GtkAction *action)
+     * }
+     */
+    public static FunctionDescriptor gtk_action_get_name$descriptor() {
+        return gtk_action_get_name.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern const gchar *gtk_action_get_name(GtkAction *action)
+     * }
+     */
+    public static MethodHandle gtk_action_get_name$handle() {
+        return gtk_action_get_name.HANDLE;
     }
     /**
-     * {@snippet :
-     * char* gtk_action_get_name(struct _GtkAction* action);
+     * {@snippet lang=c :
+     * extern const gchar *gtk_action_get_name(GtkAction *action)
      * }
      */
     public static MemorySegment gtk_action_get_name(MemorySegment action) {
-        var mh$ = gtk_action_get_name$MH();
+        var mh$ = gtk_action_get_name.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_action_get_name", action);
+            }
+            return (MemorySegment)mh$.invokeExact(action);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_action_group_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.const$3,"gtk_action_group_new");
+
+    private static class gtk_action_group_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_action_group_new"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkActionGroup *gtk_action_group_new(const gchar *name)
+     * }
+     */
+    public static FunctionDescriptor gtk_action_group_new$descriptor() {
+        return gtk_action_group_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkActionGroup *gtk_action_group_new(const gchar *name)
+     * }
+     */
+    public static MethodHandle gtk_action_group_new$handle() {
+        return gtk_action_group_new.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkActionGroup* gtk_action_group_new(char* name);
+     * {@snippet lang=c :
+     * extern GtkActionGroup *gtk_action_group_new(const gchar *name)
      * }
      */
     public static MemorySegment gtk_action_group_new(MemorySegment name) {
-        var mh$ = gtk_action_group_new$MH();
+        var mh$ = gtk_action_group_new.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(name);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_action_group_new", name);
+            }
+            return (MemorySegment)mh$.invokeExact(name);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_action_group_add_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.const$4,"gtk_action_group_add_action");
+
+    private static class gtk_action_group_add_action {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_action_group_add_action"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_action_group_add_action(GtkActionGroup *action_group, GtkAction *action)
+     * }
+     */
+    public static FunctionDescriptor gtk_action_group_add_action$descriptor() {
+        return gtk_action_group_add_action.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_action_group_add_action(GtkActionGroup *action_group, GtkAction *action)
+     * }
+     */
+    public static MethodHandle gtk_action_group_add_action$handle() {
+        return gtk_action_group_add_action.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_action_group_add_action(struct _GtkActionGroup* action_group, struct _GtkAction* action);
+     * {@snippet lang=c :
+     * extern void gtk_action_group_add_action(GtkActionGroup *action_group, GtkAction *action)
      * }
      */
     public static void gtk_action_group_add_action(MemorySegment action_group, MemorySegment action) {
-        var mh$ = gtk_action_group_add_action$MH();
+        var mh$ = gtk_action_group_add_action.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_action_group_add_action", action_group, action);
+            }
             mh$.invokeExact(action_group, action);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_action_group_add_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$7.const$6,"gtk_action_group_add_actions");
+
+    private static class gtk_action_group_add_actions {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_action_group_add_actions"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_action_group_add_actions(GtkActionGroup *action_group, const GtkActionEntry *entries, guint n_entries, gpointer user_data)
+     * }
+     */
+    public static FunctionDescriptor gtk_action_group_add_actions$descriptor() {
+        return gtk_action_group_add_actions.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_action_group_add_actions(GtkActionGroup *action_group, const GtkActionEntry *entries, guint n_entries, gpointer user_data)
+     * }
+     */
+    public static MethodHandle gtk_action_group_add_actions$handle() {
+        return gtk_action_group_add_actions.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_action_group_add_actions(struct _GtkActionGroup* action_group, struct _GtkActionEntry* entries, unsigned int n_entries, void* user_data);
+     * {@snippet lang=c :
+     * extern void gtk_action_group_add_actions(GtkActionGroup *action_group, const GtkActionEntry *entries, guint n_entries, gpointer user_data)
      * }
      */
     public static void gtk_action_group_add_actions(MemorySegment action_group, MemorySegment entries, int n_entries, MemorySegment user_data) {
-        var mh$ = gtk_action_group_add_actions$MH();
+        var mh$ = gtk_action_group_add_actions.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_action_group_add_actions", action_group, entries, n_entries, user_data);
+            }
             mh$.invokeExact(action_group, entries, n_entries, user_data);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_table_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.const$1,"gtk_table_new");
+
+    private static class gtk_table_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_table_new"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_table_new(guint rows, guint columns, gboolean homogeneous)
+     * }
+     */
+    public static FunctionDescriptor gtk_table_new$descriptor() {
+        return gtk_table_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_table_new(guint rows, guint columns, gboolean homogeneous)
+     * }
+     */
+    public static MethodHandle gtk_table_new$handle() {
+        return gtk_table_new.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkWidget* gtk_table_new(unsigned int rows, unsigned int columns, int homogeneous);
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_table_new(guint rows, guint columns, gboolean homogeneous)
      * }
      */
     public static MemorySegment gtk_table_new(int rows, int columns, int homogeneous) {
-        var mh$ = gtk_table_new$MH();
+        var mh$ = gtk_table_new.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(rows, columns, homogeneous);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_table_new", rows, columns, homogeneous);
+            }
+            return (MemorySegment)mh$.invokeExact(rows, columns, homogeneous);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_table_attach$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.const$3,"gtk_table_attach");
+
+    private static class gtk_table_attach {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_table_attach"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_table_attach(GtkTable *table, GtkWidget *child, guint left_attach, guint right_attach, guint top_attach, guint bottom_attach, GtkAttachOptions xoptions, GtkAttachOptions yoptions, guint xpadding, guint ypadding)
+     * }
+     */
+    public static FunctionDescriptor gtk_table_attach$descriptor() {
+        return gtk_table_attach.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_table_attach(GtkTable *table, GtkWidget *child, guint left_attach, guint right_attach, guint top_attach, guint bottom_attach, GtkAttachOptions xoptions, GtkAttachOptions yoptions, guint xpadding, guint ypadding)
+     * }
+     */
+    public static MethodHandle gtk_table_attach$handle() {
+        return gtk_table_attach.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_table_attach(struct _GtkTable* table, struct _GtkWidget* child, unsigned int left_attach, unsigned int right_attach, unsigned int top_attach, unsigned int bottom_attach, enum GtkAttachOptions xoptions, enum GtkAttachOptions yoptions, unsigned int xpadding, unsigned int ypadding);
+     * {@snippet lang=c :
+     * extern void gtk_table_attach(GtkTable *table, GtkWidget *child, guint left_attach, guint right_attach, guint top_attach, guint bottom_attach, GtkAttachOptions xoptions, GtkAttachOptions yoptions, guint xpadding, guint ypadding)
      * }
      */
     public static void gtk_table_attach(MemorySegment table, MemorySegment child, int left_attach, int right_attach, int top_attach, int bottom_attach, int xoptions, int yoptions, int xpadding, int ypadding) {
-        var mh$ = gtk_table_attach$MH();
+        var mh$ = gtk_table_attach.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_table_attach", table, child, left_attach, right_attach, top_attach, bottom_attach, xoptions, yoptions, xpadding, ypadding);
+            }
             mh$.invokeExact(table, child, left_attach, right_attach, top_attach, bottom_attach, xoptions, yoptions, xpadding, ypadding);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_ui_manager_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.const$4,"gtk_ui_manager_new");
+
+    private static class gtk_ui_manager_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER    );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_ui_manager_new"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkUIManager *gtk_ui_manager_new(void)
+     * }
+     */
+    public static FunctionDescriptor gtk_ui_manager_new$descriptor() {
+        return gtk_ui_manager_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkUIManager *gtk_ui_manager_new(void)
+     * }
+     */
+    public static MethodHandle gtk_ui_manager_new$handle() {
+        return gtk_ui_manager_new.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkUIManager* gtk_ui_manager_new();
+     * {@snippet lang=c :
+     * extern GtkUIManager *gtk_ui_manager_new(void)
      * }
      */
     public static MemorySegment gtk_ui_manager_new() {
-        var mh$ = gtk_ui_manager_new$MH();
+        var mh$ = gtk_ui_manager_new.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_ui_manager_new");
+            }
+            return (MemorySegment)mh$.invokeExact();
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_ui_manager_insert_action_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$8.const$6,"gtk_ui_manager_insert_action_group");
+
+    private static class gtk_ui_manager_insert_action_group {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_ui_manager_insert_action_group"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_ui_manager_insert_action_group(GtkUIManager *manager, GtkActionGroup *action_group, gint pos)
+     * }
+     */
+    public static FunctionDescriptor gtk_ui_manager_insert_action_group$descriptor() {
+        return gtk_ui_manager_insert_action_group.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_ui_manager_insert_action_group(GtkUIManager *manager, GtkActionGroup *action_group, gint pos)
+     * }
+     */
+    public static MethodHandle gtk_ui_manager_insert_action_group$handle() {
+        return gtk_ui_manager_insert_action_group.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_ui_manager_insert_action_group(struct _GtkUIManager* manager, struct _GtkActionGroup* action_group, int pos);
+     * {@snippet lang=c :
+     * extern void gtk_ui_manager_insert_action_group(GtkUIManager *manager, GtkActionGroup *action_group, gint pos)
      * }
      */
     public static void gtk_ui_manager_insert_action_group(MemorySegment manager, MemorySegment action_group, int pos) {
-        var mh$ = gtk_ui_manager_insert_action_group$MH();
+        var mh$ = gtk_ui_manager_insert_action_group.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_ui_manager_insert_action_group", manager, action_group, pos);
+            }
             mh$.invokeExact(manager, action_group, pos);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_ui_manager_get_accel_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.const$0,"gtk_ui_manager_get_accel_group");
+
+    private static class gtk_ui_manager_get_accel_group {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_ui_manager_get_accel_group"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkAccelGroup *gtk_ui_manager_get_accel_group(GtkUIManager *manager)
+     * }
+     */
+    public static FunctionDescriptor gtk_ui_manager_get_accel_group$descriptor() {
+        return gtk_ui_manager_get_accel_group.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkAccelGroup *gtk_ui_manager_get_accel_group(GtkUIManager *manager)
+     * }
+     */
+    public static MethodHandle gtk_ui_manager_get_accel_group$handle() {
+        return gtk_ui_manager_get_accel_group.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkAccelGroup* gtk_ui_manager_get_accel_group(struct _GtkUIManager* manager);
+     * {@snippet lang=c :
+     * extern GtkAccelGroup *gtk_ui_manager_get_accel_group(GtkUIManager *manager)
      * }
      */
     public static MemorySegment gtk_ui_manager_get_accel_group(MemorySegment manager) {
-        var mh$ = gtk_ui_manager_get_accel_group$MH();
+        var mh$ = gtk_ui_manager_get_accel_group.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_ui_manager_get_accel_group", manager);
+            }
+            return (MemorySegment)mh$.invokeExact(manager);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_ui_manager_get_widget$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.const$1,"gtk_ui_manager_get_widget");
+
+    private static class gtk_ui_manager_get_widget {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_ui_manager_get_widget"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_ui_manager_get_widget(GtkUIManager *manager, const gchar *path)
+     * }
+     */
+    public static FunctionDescriptor gtk_ui_manager_get_widget$descriptor() {
+        return gtk_ui_manager_get_widget.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_ui_manager_get_widget(GtkUIManager *manager, const gchar *path)
+     * }
+     */
+    public static MethodHandle gtk_ui_manager_get_widget$handle() {
+        return gtk_ui_manager_get_widget.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkWidget* gtk_ui_manager_get_widget(struct _GtkUIManager* manager, char* path);
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_ui_manager_get_widget(GtkUIManager *manager, const gchar *path)
      * }
      */
     public static MemorySegment gtk_ui_manager_get_widget(MemorySegment manager, MemorySegment path) {
-        var mh$ = gtk_ui_manager_get_widget$MH();
+        var mh$ = gtk_ui_manager_get_widget.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager, path);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_ui_manager_get_widget", manager, path);
+            }
+            return (MemorySegment)mh$.invokeExact(manager, path);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_ui_manager_add_ui_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.const$3,"gtk_ui_manager_add_ui_from_string");
+
+    private static class gtk_ui_manager_add_ui_from_string {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_ui_manager_add_ui_from_string"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern guint gtk_ui_manager_add_ui_from_string(GtkUIManager *manager, const gchar *buffer, gssize length, GError **error)
+     * }
+     */
+    public static FunctionDescriptor gtk_ui_manager_add_ui_from_string$descriptor() {
+        return gtk_ui_manager_add_ui_from_string.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern guint gtk_ui_manager_add_ui_from_string(GtkUIManager *manager, const gchar *buffer, gssize length, GError **error)
+     * }
+     */
+    public static MethodHandle gtk_ui_manager_add_ui_from_string$handle() {
+        return gtk_ui_manager_add_ui_from_string.HANDLE;
     }
     /**
-     * {@snippet :
-     * unsigned int gtk_ui_manager_add_ui_from_string(struct _GtkUIManager* manager, char* buffer, long length, struct _GError** error);
+     * {@snippet lang=c :
+     * extern guint gtk_ui_manager_add_ui_from_string(GtkUIManager *manager, const gchar *buffer, gssize length, GError **error)
      * }
      */
     public static int gtk_ui_manager_add_ui_from_string(MemorySegment manager, MemorySegment buffer, long length, MemorySegment error) {
-        var mh$ = gtk_ui_manager_add_ui_from_string$MH();
+        var mh$ = gtk_ui_manager_add_ui_from_string.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_ui_manager_add_ui_from_string", manager, buffer, length, error);
+            }
             return (int)mh$.invokeExact(manager, buffer, length, error);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle gtk_ui_manager_add_ui$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.const$5,"gtk_ui_manager_add_ui");
+
+    private static class gtk_ui_manager_add_ui {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("gtk_ui_manager_add_ui"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_ui_manager_add_ui(GtkUIManager *manager, guint merge_id, const gchar *path, const gchar *name, const gchar *action, GtkUIManagerItemType type, gboolean top)
+     * }
+     */
+    public static FunctionDescriptor gtk_ui_manager_add_ui$descriptor() {
+        return gtk_ui_manager_add_ui.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_ui_manager_add_ui(GtkUIManager *manager, guint merge_id, const gchar *path, const gchar *name, const gchar *action, GtkUIManagerItemType type, gboolean top)
+     * }
+     */
+    public static MethodHandle gtk_ui_manager_add_ui$handle() {
+        return gtk_ui_manager_add_ui.HANDLE;
     }
     /**
-     * {@snippet :
-     * void gtk_ui_manager_add_ui(struct _GtkUIManager* manager, unsigned int merge_id, char* path, char* name, char* action, enum GtkUIManagerItemType type, int top);
+     * {@snippet lang=c :
+     * extern void gtk_ui_manager_add_ui(GtkUIManager *manager, guint merge_id, const gchar *path, const gchar *name, const gchar *action, GtkUIManagerItemType type, gboolean top)
      * }
      */
     public static void gtk_ui_manager_add_ui(MemorySegment manager, int merge_id, MemorySegment path, MemorySegment name, MemorySegment action, int type, int top) {
-        var mh$ = gtk_ui_manager_add_ui$MH();
+        var mh$ = gtk_ui_manager_add_ui.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_ui_manager_add_ui", manager, merge_id, path, name, action, type, top);
+            }
             mh$.invokeExact(manager, merge_id, path, name, action, type, top);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
+    private static final int APP_INDICATOR_CATEGORY_APPLICATION_STATUS = (int)0L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_APPLICATION_STATUS = 0;
+     * {@snippet lang=c :
+     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_APPLICATION_STATUS = 0
      * }
      */
     public static int APP_INDICATOR_CATEGORY_APPLICATION_STATUS() {
-        return (int)0L;
+        return APP_INDICATOR_CATEGORY_APPLICATION_STATUS;
     }
+    private static final int APP_INDICATOR_CATEGORY_COMMUNICATIONS = (int)1L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_COMMUNICATIONS = 1;
+     * {@snippet lang=c :
+     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_COMMUNICATIONS = 1
      * }
      */
     public static int APP_INDICATOR_CATEGORY_COMMUNICATIONS() {
-        return (int)1L;
+        return APP_INDICATOR_CATEGORY_COMMUNICATIONS;
     }
+    private static final int APP_INDICATOR_CATEGORY_SYSTEM_SERVICES = (int)2L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_SYSTEM_SERVICES = 2;
+     * {@snippet lang=c :
+     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_SYSTEM_SERVICES = 2
      * }
      */
     public static int APP_INDICATOR_CATEGORY_SYSTEM_SERVICES() {
-        return (int)2L;
+        return APP_INDICATOR_CATEGORY_SYSTEM_SERVICES;
     }
+    private static final int APP_INDICATOR_CATEGORY_HARDWARE = (int)3L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_HARDWARE = 3;
+     * {@snippet lang=c :
+     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_HARDWARE = 3
      * }
      */
     public static int APP_INDICATOR_CATEGORY_HARDWARE() {
-        return (int)3L;
+        return APP_INDICATOR_CATEGORY_HARDWARE;
     }
+    private static final int APP_INDICATOR_CATEGORY_OTHER = (int)4L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_OTHER = 4;
+     * {@snippet lang=c :
+     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_OTHER = 4
      * }
      */
     public static int APP_INDICATOR_CATEGORY_OTHER() {
-        return (int)4L;
+        return APP_INDICATOR_CATEGORY_OTHER;
     }
+    private static final int APP_INDICATOR_STATUS_PASSIVE = (int)0L;
     /**
-     * {@snippet :
-     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_PASSIVE = 0;
+     * {@snippet lang=c :
+     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_PASSIVE = 0
      * }
      */
     public static int APP_INDICATOR_STATUS_PASSIVE() {
-        return (int)0L;
+        return APP_INDICATOR_STATUS_PASSIVE;
     }
+    private static final int APP_INDICATOR_STATUS_ACTIVE = (int)1L;
     /**
-     * {@snippet :
-     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_ACTIVE = 1;
+     * {@snippet lang=c :
+     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_ACTIVE = 1
      * }
      */
     public static int APP_INDICATOR_STATUS_ACTIVE() {
-        return (int)1L;
+        return APP_INDICATOR_STATUS_ACTIVE;
     }
+    private static final int APP_INDICATOR_STATUS_ATTENTION = (int)2L;
     /**
-     * {@snippet :
-     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_ATTENTION = 2;
+     * {@snippet lang=c :
+     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_ATTENTION = 2
      * }
      */
     public static int APP_INDICATOR_STATUS_ATTENTION() {
-        return (int)2L;
+        return APP_INDICATOR_STATUS_ATTENTION;
     }
-    public static MethodHandle app_indicator_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.const$1,"app_indicator_new");
+
+    private static class app_indicator_new {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_new"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * AppIndicator *app_indicator_new(const gchar *id, const gchar *icon_name, AppIndicatorCategory category)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_new$descriptor() {
+        return app_indicator_new.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * AppIndicator *app_indicator_new(const gchar *id, const gchar *icon_name, AppIndicatorCategory category)
+     * }
+     */
+    public static MethodHandle app_indicator_new$handle() {
+        return app_indicator_new.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _AppIndicator* app_indicator_new(char* id, char* icon_name, enum AppIndicatorCategory category);
+     * {@snippet lang=c :
+     * AppIndicator *app_indicator_new(const gchar *id, const gchar *icon_name, AppIndicatorCategory category)
      * }
      */
     public static MemorySegment app_indicator_new(MemorySegment id, MemorySegment icon_name, int category) {
-        var mh$ = app_indicator_new$MH();
+        var mh$ = app_indicator_new.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(id, icon_name, category);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_new", id, icon_name, category);
+            }
+            return (MemorySegment)mh$.invokeExact(id, icon_name, category);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_new_with_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.const$3,"app_indicator_new_with_path");
+
+    private static class app_indicator_new_with_path {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_new_with_path"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * AppIndicator *app_indicator_new_with_path(const gchar *id, const gchar *icon_name, AppIndicatorCategory category, const gchar *icon_theme_path)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_new_with_path$descriptor() {
+        return app_indicator_new_with_path.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * AppIndicator *app_indicator_new_with_path(const gchar *id, const gchar *icon_name, AppIndicatorCategory category, const gchar *icon_theme_path)
+     * }
+     */
+    public static MethodHandle app_indicator_new_with_path$handle() {
+        return app_indicator_new_with_path.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _AppIndicator* app_indicator_new_with_path(char* id, char* icon_name, enum AppIndicatorCategory category, char* icon_theme_path);
+     * {@snippet lang=c :
+     * AppIndicator *app_indicator_new_with_path(const gchar *id, const gchar *icon_name, AppIndicatorCategory category, const gchar *icon_theme_path)
      * }
      */
     public static MemorySegment app_indicator_new_with_path(MemorySegment id, MemorySegment icon_name, int category, MemorySegment icon_theme_path) {
-        var mh$ = app_indicator_new_with_path$MH();
+        var mh$ = app_indicator_new_with_path.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(id, icon_name, category, icon_theme_path);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_new_with_path", id, icon_name, category, icon_theme_path);
+            }
+            return (MemorySegment)mh$.invokeExact(id, icon_name, category, icon_theme_path);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_set_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.const$4,"app_indicator_set_status");
+
+    private static class app_indicator_set_status {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_set_status"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * void app_indicator_set_status(AppIndicator *self, AppIndicatorStatus status)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_set_status$descriptor() {
+        return app_indicator_set_status.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * void app_indicator_set_status(AppIndicator *self, AppIndicatorStatus status)
+     * }
+     */
+    public static MethodHandle app_indicator_set_status$handle() {
+        return app_indicator_set_status.HANDLE;
     }
     /**
-     * {@snippet :
-     * void app_indicator_set_status(struct _AppIndicator* self, enum AppIndicatorStatus status);
+     * {@snippet lang=c :
+     * void app_indicator_set_status(AppIndicator *self, AppIndicatorStatus status)
      * }
      */
     public static void app_indicator_set_status(MemorySegment self, int status) {
-        var mh$ = app_indicator_set_status$MH();
+        var mh$ = app_indicator_set_status.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_set_status", self, status);
+            }
             mh$.invokeExact(self, status);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_set_attention_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.const$5,"app_indicator_set_attention_icon");
+
+    private static class app_indicator_set_attention_icon {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_set_attention_icon"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * void app_indicator_set_attention_icon(AppIndicator *self, const gchar *icon_name)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_set_attention_icon$descriptor() {
+        return app_indicator_set_attention_icon.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * void app_indicator_set_attention_icon(AppIndicator *self, const gchar *icon_name)
+     * }
+     */
+    public static MethodHandle app_indicator_set_attention_icon$handle() {
+        return app_indicator_set_attention_icon.HANDLE;
     }
     /**
-     * {@snippet :
-     * void app_indicator_set_attention_icon(struct _AppIndicator* self, char* icon_name);
+     * {@snippet lang=c :
+     * void app_indicator_set_attention_icon(AppIndicator *self, const gchar *icon_name)
      * }
      */
     public static void app_indicator_set_attention_icon(MemorySegment self, MemorySegment icon_name) {
-        var mh$ = app_indicator_set_attention_icon$MH();
+        var mh$ = app_indicator_set_attention_icon.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_set_attention_icon", self, icon_name);
+            }
             mh$.invokeExact(self, icon_name);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_set_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.const$0,"app_indicator_set_menu");
+
+    private static class app_indicator_set_menu {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_set_menu"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * void app_indicator_set_menu(AppIndicator *self, GtkMenu *menu)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_set_menu$descriptor() {
+        return app_indicator_set_menu.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * void app_indicator_set_menu(AppIndicator *self, GtkMenu *menu)
+     * }
+     */
+    public static MethodHandle app_indicator_set_menu$handle() {
+        return app_indicator_set_menu.HANDLE;
     }
     /**
-     * {@snippet :
-     * void app_indicator_set_menu(struct _AppIndicator* self, struct _GtkMenu* menu);
+     * {@snippet lang=c :
+     * void app_indicator_set_menu(AppIndicator *self, GtkMenu *menu)
      * }
      */
     public static void app_indicator_set_menu(MemorySegment self, MemorySegment menu) {
-        var mh$ = app_indicator_set_menu$MH();
+        var mh$ = app_indicator_set_menu.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_set_menu", self, menu);
+            }
             mh$.invokeExact(self, menu);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_set_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.const$1,"app_indicator_set_icon");
+
+    private static class app_indicator_set_icon {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_set_icon"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * void app_indicator_set_icon(AppIndicator *self, const gchar *icon_name)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_set_icon$descriptor() {
+        return app_indicator_set_icon.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * void app_indicator_set_icon(AppIndicator *self, const gchar *icon_name)
+     * }
+     */
+    public static MethodHandle app_indicator_set_icon$handle() {
+        return app_indicator_set_icon.HANDLE;
     }
     /**
-     * {@snippet :
-     * void app_indicator_set_icon(struct _AppIndicator* self, char* icon_name);
+     * {@snippet lang=c :
+     * void app_indicator_set_icon(AppIndicator *self, const gchar *icon_name)
      * }
      */
     public static void app_indicator_set_icon(MemorySegment self, MemorySegment icon_name) {
-        var mh$ = app_indicator_set_icon$MH();
+        var mh$ = app_indicator_set_icon.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_set_icon", self, icon_name);
+            }
             mh$.invokeExact(self, icon_name);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.const$3,"app_indicator_set_label");
+
+    private static class app_indicator_set_label {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_set_label"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * void app_indicator_set_label(AppIndicator *self, const gchar *label, const gchar *guide)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_set_label$descriptor() {
+        return app_indicator_set_label.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * void app_indicator_set_label(AppIndicator *self, const gchar *label, const gchar *guide)
+     * }
+     */
+    public static MethodHandle app_indicator_set_label$handle() {
+        return app_indicator_set_label.HANDLE;
     }
     /**
-     * {@snippet :
-     * void app_indicator_set_label(struct _AppIndicator* self, char* label, char* guide);
+     * {@snippet lang=c :
+     * void app_indicator_set_label(AppIndicator *self, const gchar *label, const gchar *guide)
      * }
      */
     public static void app_indicator_set_label(MemorySegment self, MemorySegment label, MemorySegment guide) {
-        var mh$ = app_indicator_set_label$MH();
+        var mh$ = app_indicator_set_label.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_set_label", self, label, guide);
+            }
             mh$.invokeExact(self, label, guide);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_set_ordering_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.const$4,"app_indicator_set_ordering_index");
+
+    private static class app_indicator_set_ordering_index {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_set_ordering_index"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * void app_indicator_set_ordering_index(AppIndicator *self, guint32 ordering_index)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_set_ordering_index$descriptor() {
+        return app_indicator_set_ordering_index.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * void app_indicator_set_ordering_index(AppIndicator *self, guint32 ordering_index)
+     * }
+     */
+    public static MethodHandle app_indicator_set_ordering_index$handle() {
+        return app_indicator_set_ordering_index.HANDLE;
     }
     /**
-     * {@snippet :
-     * void app_indicator_set_ordering_index(struct _AppIndicator* self, unsigned int ordering_index);
+     * {@snippet lang=c :
+     * void app_indicator_set_ordering_index(AppIndicator *self, guint32 ordering_index)
      * }
      */
     public static void app_indicator_set_ordering_index(MemorySegment self, int ordering_index) {
-        var mh$ = app_indicator_set_ordering_index$MH();
+        var mh$ = app_indicator_set_ordering_index.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_set_ordering_index", self, ordering_index);
+            }
             mh$.invokeExact(self, ordering_index);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_set_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.const$5,"app_indicator_set_title");
+
+    private static class app_indicator_set_title {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_set_title"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * void app_indicator_set_title(AppIndicator *self, const gchar *title)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_set_title$descriptor() {
+        return app_indicator_set_title.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * void app_indicator_set_title(AppIndicator *self, const gchar *title)
+     * }
+     */
+    public static MethodHandle app_indicator_set_title$handle() {
+        return app_indicator_set_title.HANDLE;
     }
     /**
-     * {@snippet :
-     * void app_indicator_set_title(struct _AppIndicator* self, char* title);
+     * {@snippet lang=c :
+     * void app_indicator_set_title(AppIndicator *self, const gchar *title)
      * }
      */
     public static void app_indicator_set_title(MemorySegment self, MemorySegment title) {
-        var mh$ = app_indicator_set_title$MH();
+        var mh$ = app_indicator_set_title.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_set_title", self, title);
+            }
             mh$.invokeExact(self, title);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_get_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.const$0,"app_indicator_get_id");
+
+    private static class app_indicator_get_id {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_get_id"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_id(AppIndicator *self)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_get_id$descriptor() {
+        return app_indicator_get_id.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_id(AppIndicator *self)
+     * }
+     */
+    public static MethodHandle app_indicator_get_id$handle() {
+        return app_indicator_get_id.HANDLE;
     }
     /**
-     * {@snippet :
-     * char* app_indicator_get_id(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_id(AppIndicator *self)
      * }
      */
     public static MemorySegment app_indicator_get_id(MemorySegment self) {
-        var mh$ = app_indicator_get_id$MH();
+        var mh$ = app_indicator_get_id.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_get_id", self);
+            }
+            return (MemorySegment)mh$.invokeExact(self);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_get_category$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.const$2,"app_indicator_get_category");
+
+    private static class app_indicator_get_category {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_get_category"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * AppIndicatorCategory app_indicator_get_category(AppIndicator *self)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_get_category$descriptor() {
+        return app_indicator_get_category.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * AppIndicatorCategory app_indicator_get_category(AppIndicator *self)
+     * }
+     */
+    public static MethodHandle app_indicator_get_category$handle() {
+        return app_indicator_get_category.HANDLE;
     }
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory app_indicator_get_category(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * AppIndicatorCategory app_indicator_get_category(AppIndicator *self)
      * }
      */
     public static int app_indicator_get_category(MemorySegment self) {
-        var mh$ = app_indicator_get_category$MH();
+        var mh$ = app_indicator_get_category.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_get_category", self);
+            }
             return (int)mh$.invokeExact(self);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_get_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.const$3,"app_indicator_get_status");
+
+    private static class app_indicator_get_status {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_get_status"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * AppIndicatorStatus app_indicator_get_status(AppIndicator *self)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_get_status$descriptor() {
+        return app_indicator_get_status.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * AppIndicatorStatus app_indicator_get_status(AppIndicator *self)
+     * }
+     */
+    public static MethodHandle app_indicator_get_status$handle() {
+        return app_indicator_get_status.HANDLE;
     }
     /**
-     * {@snippet :
-     * enum AppIndicatorStatus app_indicator_get_status(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * AppIndicatorStatus app_indicator_get_status(AppIndicator *self)
      * }
      */
     public static int app_indicator_get_status(MemorySegment self) {
-        var mh$ = app_indicator_get_status$MH();
+        var mh$ = app_indicator_get_status.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_get_status", self);
+            }
             return (int)mh$.invokeExact(self);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.const$4,"app_indicator_get_icon");
+
+    private static class app_indicator_get_icon {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_get_icon"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_icon(AppIndicator *self)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_get_icon$descriptor() {
+        return app_indicator_get_icon.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_icon(AppIndicator *self)
+     * }
+     */
+    public static MethodHandle app_indicator_get_icon$handle() {
+        return app_indicator_get_icon.HANDLE;
     }
     /**
-     * {@snippet :
-     * char* app_indicator_get_icon(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_icon(AppIndicator *self)
      * }
      */
     public static MemorySegment app_indicator_get_icon(MemorySegment self) {
-        var mh$ = app_indicator_get_icon$MH();
+        var mh$ = app_indicator_get_icon.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_get_icon", self);
+            }
+            return (MemorySegment)mh$.invokeExact(self);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_get_attention_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.const$5,"app_indicator_get_attention_icon");
+
+    private static class app_indicator_get_attention_icon {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_get_attention_icon"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_attention_icon(AppIndicator *self)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_get_attention_icon$descriptor() {
+        return app_indicator_get_attention_icon.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_attention_icon(AppIndicator *self)
+     * }
+     */
+    public static MethodHandle app_indicator_get_attention_icon$handle() {
+        return app_indicator_get_attention_icon.HANDLE;
     }
     /**
-     * {@snippet :
-     * char* app_indicator_get_attention_icon(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_attention_icon(AppIndicator *self)
      * }
      */
     public static MemorySegment app_indicator_get_attention_icon(MemorySegment self) {
-        var mh$ = app_indicator_get_attention_icon$MH();
+        var mh$ = app_indicator_get_attention_icon.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_get_attention_icon", self);
+            }
+            return (MemorySegment)mh$.invokeExact(self);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_get_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.const$0,"app_indicator_get_title");
+
+    private static class app_indicator_get_title {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_get_title"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_title(AppIndicator *self)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_get_title$descriptor() {
+        return app_indicator_get_title.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_title(AppIndicator *self)
+     * }
+     */
+    public static MethodHandle app_indicator_get_title$handle() {
+        return app_indicator_get_title.HANDLE;
     }
     /**
-     * {@snippet :
-     * char* app_indicator_get_title(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_title(AppIndicator *self)
      * }
      */
     public static MemorySegment app_indicator_get_title(MemorySegment self) {
-        var mh$ = app_indicator_get_title$MH();
+        var mh$ = app_indicator_get_title.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_get_title", self);
+            }
+            return (MemorySegment)mh$.invokeExact(self);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_get_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.const$1,"app_indicator_get_menu");
+
+    private static class app_indicator_get_menu {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_get_menu"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * GtkMenu *app_indicator_get_menu(AppIndicator *self)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_get_menu$descriptor() {
+        return app_indicator_get_menu.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * GtkMenu *app_indicator_get_menu(AppIndicator *self)
+     * }
+     */
+    public static MethodHandle app_indicator_get_menu$handle() {
+        return app_indicator_get_menu.HANDLE;
     }
     /**
-     * {@snippet :
-     * struct _GtkMenu* app_indicator_get_menu(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * GtkMenu *app_indicator_get_menu(AppIndicator *self)
      * }
      */
     public static MemorySegment app_indicator_get_menu(MemorySegment self) {
-        var mh$ = app_indicator_get_menu$MH();
+        var mh$ = app_indicator_get_menu.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_get_menu", self);
+            }
+            return (MemorySegment)mh$.invokeExact(self);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_get_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.const$2,"app_indicator_get_label");
+
+    private static class app_indicator_get_label {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_get_label"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_label(AppIndicator *self)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_get_label$descriptor() {
+        return app_indicator_get_label.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_label(AppIndicator *self)
+     * }
+     */
+    public static MethodHandle app_indicator_get_label$handle() {
+        return app_indicator_get_label.HANDLE;
     }
     /**
-     * {@snippet :
-     * char* app_indicator_get_label(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_label(AppIndicator *self)
      * }
      */
     public static MemorySegment app_indicator_get_label(MemorySegment self) {
-        var mh$ = app_indicator_get_label$MH();
+        var mh$ = app_indicator_get_label.HANDLE;
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_get_label", self);
+            }
+            return (MemorySegment)mh$.invokeExact(self);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_get_ordering_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.const$3,"app_indicator_get_ordering_index");
+
+    private static class app_indicator_get_ordering_index {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_get_ordering_index"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * guint32 app_indicator_get_ordering_index(AppIndicator *self)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_get_ordering_index$descriptor() {
+        return app_indicator_get_ordering_index.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * guint32 app_indicator_get_ordering_index(AppIndicator *self)
+     * }
+     */
+    public static MethodHandle app_indicator_get_ordering_index$handle() {
+        return app_indicator_get_ordering_index.HANDLE;
     }
     /**
-     * {@snippet :
-     * unsigned int app_indicator_get_ordering_index(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * guint32 app_indicator_get_ordering_index(AppIndicator *self)
      * }
      */
     public static int app_indicator_get_ordering_index(MemorySegment self) {
-        var mh$ = app_indicator_get_ordering_index$MH();
+        var mh$ = app_indicator_get_ordering_index.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_get_ordering_index", self);
+            }
             return (int)mh$.invokeExact(self);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle app_indicator_build_menu_from_desktop$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.const$4,"app_indicator_build_menu_from_desktop");
+
+    private static class app_indicator_build_menu_from_desktop {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
+                    app_indicator_h.findOrThrow("app_indicator_build_menu_from_desktop"),
+                    DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * void app_indicator_build_menu_from_desktop(AppIndicator *self, const gchar *desktop_file, const gchar *desktop_profile)
+     * }
+     */
+    public static FunctionDescriptor app_indicator_build_menu_from_desktop$descriptor() {
+        return app_indicator_build_menu_from_desktop.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * void app_indicator_build_menu_from_desktop(AppIndicator *self, const gchar *desktop_file, const gchar *desktop_profile)
+     * }
+     */
+    public static MethodHandle app_indicator_build_menu_from_desktop$handle() {
+        return app_indicator_build_menu_from_desktop.HANDLE;
     }
     /**
-     * {@snippet :
-     * void app_indicator_build_menu_from_desktop(struct _AppIndicator* self, char* desktop_file, char* desktop_profile);
+     * {@snippet lang=c :
+     * void app_indicator_build_menu_from_desktop(AppIndicator *self, const gchar *desktop_file, const gchar *desktop_profile)
      * }
      */
     public static void app_indicator_build_menu_from_desktop(MemorySegment self, MemorySegment desktop_file, MemorySegment desktop_profile) {
-        var mh$ = app_indicator_build_menu_from_desktop$MH();
+        var mh$ = app_indicator_build_menu_from_desktop.HANDLE;
         try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("app_indicator_build_menu_from_desktop", self, desktop_file, desktop_profile);
+            }
             mh$.invokeExact(self, desktop_file, desktop_profile);
         } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
+           throw new AssertionError("should not reach here", ex$);
         }
     }
 }
-
 

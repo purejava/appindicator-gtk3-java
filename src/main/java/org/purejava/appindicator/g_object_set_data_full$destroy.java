@@ -2,29 +2,62 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*g_object_set_data_full$destroy)(void*);
+ * {@snippet lang=c :
+ * GDestroyNotify destroy
  * }
  */
-public interface g_object_set_data_full$destroy {
+public class g_object_set_data_full$destroy {
 
-    void apply(java.lang.foreign.MemorySegment _x0);
-    static MemorySegment allocate(g_object_set_data_full$destroy fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$0.const$5, fi, constants$0.const$0, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment _x0);
     }
-    static g_object_set_data_full$destroy ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment __x0) -> {
-            try {
-                constants$1.const$0.invokeExact(symbol, __x0);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(g_object_set_data_full$destroy.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(g_object_set_data_full$destroy.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, _x0);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

@@ -36,8 +36,8 @@
     </scm>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <junit.version>5.10.2</junit.version>
@@ -132,11 +132,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.12.1</version>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
-                    <compilerArgs>
-                        --enable-preview
-                    </compilerArgs>
+                    <source>22</source>
+                    <target>22</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -164,7 +161,6 @@
                         </goals>
                         <configuration>
                             <failOnError>false</failOnError>
-                            <additionalOptions>--enable-preview</additionalOptions>
                         </configuration>
                     </execution>
                 </executions>
