@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkInfoBar GtkInfoBar;
+ * {@snippet lang=c :
+ * typedef struct _GtkInfoBar GtkInfoBar
  * }
  */
-public final class GtkInfoBar extends _GtkInfoBar {
+public class GtkInfoBar extends _GtkInfoBar {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkInfoBar() {}
+    GtkInfoBar() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GError GError;
+ * {@snippet lang=c :
+ * typedef struct _GError GError
  * }
  */
-public final class GError extends _GError {
+public class GError extends _GError {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GError() {}
+    GError() {
+        // Should not be called directly
+    }
 }
-
 

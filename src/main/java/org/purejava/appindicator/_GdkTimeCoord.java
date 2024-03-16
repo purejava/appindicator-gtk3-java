@@ -2,60 +2,206 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GdkTimeCoord {
- *     unsigned int time;
- *     double axes[128];
- * };
+ *     guint32 time;
+ *     gdouble axes[128];
+ * }
  * }
  */
 public class _GdkTimeCoord {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1760.const$2;
+    _GdkTimeCoord() {
+        // Should not be called directly
     }
-    public static VarHandle time$VH() {
-        return constants$1760.const$3;
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("time"),
+        MemoryLayout.paddingLayout(4),
+        MemoryLayout.sequenceLayout(128, app_indicator_h.C_DOUBLE).withName("axes")
+    ).withName("_GdkTimeCoord");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
+
+    private static final OfInt time$LAYOUT = (OfInt)$LAYOUT.select(groupElement("time"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint32 time
+     * }
+     */
+    public static final OfInt time$layout() {
+        return time$LAYOUT;
+    }
+
+    private static final long time$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint32 time
+     * }
+     */
+    public static final long time$offset() {
+        return time$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * unsigned int time;
+     * {@snippet lang=c :
+     * guint32 time
      * }
      */
-    public static int time$get(MemorySegment seg) {
-        return (int)constants$1760.const$3.get(seg);
+    public static int time(MemorySegment struct) {
+        return struct.get(time$LAYOUT, time$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * unsigned int time;
+     * {@snippet lang=c :
+     * guint32 time
      * }
      */
-    public static void time$set(MemorySegment seg, int x) {
-        constants$1760.const$3.set(seg, x);
+    public static void time(MemorySegment struct, int fieldValue) {
+        struct.set(time$LAYOUT, time$OFFSET, fieldValue);
     }
-    public static int time$get(MemorySegment seg, long index) {
-        return (int)constants$1760.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void time$set(MemorySegment seg, long index, int x) {
-        constants$1760.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment axes$slice(MemorySegment seg) {
-        return seg.asSlice(8, 1024);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final SequenceLayout axes$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("axes"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gdouble axes[128]
+     * }
+     */
+    public static final SequenceLayout axes$layout() {
+        return axes$LAYOUT;
+    }
+
+    private static final long axes$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gdouble axes[128]
+     * }
+     */
+    public static final long axes$offset() {
+        return axes$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gdouble axes[128]
+     * }
+     */
+    public static MemorySegment axes(MemorySegment struct) {
+        return struct.asSlice(axes$OFFSET, axes$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gdouble axes[128]
+     * }
+     */
+    public static void axes(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, axes$OFFSET, axes$LAYOUT.byteSize());
+    }
+
+    private static long[] axes$DIMS = { 128 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * gdouble axes[128]
+     * }
+     */
+    public static long[] axes$dimensions() {
+        return axes$DIMS;
+    }
+    private static final VarHandle axes$ELEM_HANDLE = axes$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * gdouble axes[128]
+     * }
+     */
+    public static double axes(MemorySegment struct, long index0) {
+        return (double)axes$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * gdouble axes[128]
+     * }
+     */
+    public static void axes(MemorySegment struct, long index0, double fieldValue) {
+        axes$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

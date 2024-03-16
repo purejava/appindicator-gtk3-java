@@ -2,302 +2,625 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GDatagramBasedInterface {
- *     struct _GTypeInterface g_iface;
- *     int (*receive_messages)(struct _GDatagramBased*,struct _GInputMessage*,unsigned int,int,long,struct _GCancellable*,struct _GError**);
- *     int (*send_messages)(struct _GDatagramBased*,struct _GOutputMessage*,unsigned int,int,long,struct _GCancellable*,struct _GError**);
- *     struct _GSource* (*create_source)(struct _GDatagramBased*,enum GIOCondition,struct _GCancellable*);
- *     enum GIOCondition (*condition_check)(struct _GDatagramBased*,enum GIOCondition);
- *     int (*condition_wait)(struct _GDatagramBased*,enum GIOCondition,long,struct _GCancellable*,struct _GError**);
- * };
+ *     GTypeInterface g_iface;
+ *     gint (*receive_messages)(GDatagramBased *, GInputMessage *, guint, gint, gint64, GCancellable *, GError **);
+ *     gint (*send_messages)(GDatagramBased *, GOutputMessage *, guint, gint, gint64, GCancellable *, GError **);
+ *     GSource *(*create_source)(GDatagramBased *, GIOCondition, GCancellable *);
+ *     GIOCondition (*condition_check)(GDatagramBased *, GIOCondition);
+ *     gboolean (*condition_wait)(GDatagramBased *, GIOCondition, gint64, GCancellable *, GError **);
+ * }
  * }
  */
 public class _GDatagramBasedInterface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$838.const$5;
+    _GDatagramBasedInterface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("receive_messages"),
+        app_indicator_h.C_POINTER.withName("send_messages"),
+        app_indicator_h.C_POINTER.withName("create_source"),
+        app_indicator_h.C_POINTER.withName("condition_check"),
+        app_indicator_h.C_POINTER.withName("condition_wait")
+    ).withName("_GDatagramBasedInterface");
+
     /**
-     * {@snippet :
- * int (*receive_messages)(struct _GDatagramBased*,struct _GInputMessage*,unsigned int,int,long,struct _GCancellable*,struct _GError**);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface receive_messages {
-
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, long _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
-        static MemorySegment allocate(receive_messages fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$839.const$1, fi, constants$839.const$0, scope);
-        }
-        static receive_messages ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, long __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
-                try {
-                    return (int)constants$839.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle receive_messages$VH() {
-        return constants$839.const$3;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*receive_messages)(struct _GDatagramBased*,struct _GInputMessage*,unsigned int,int,long,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment receive_messages$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$839.const$3.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*receive_messages)(struct _GDatagramBased*,struct _GInputMessage*,unsigned int,int,long,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void receive_messages$set(MemorySegment seg, MemorySegment x) {
-        constants$839.const$3.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment receive_messages$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$839.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void receive_messages$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$839.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static receive_messages receive_messages(MemorySegment segment, Arena scope) {
-        return receive_messages.ofAddress(receive_messages$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*send_messages)(struct _GDatagramBased*,struct _GOutputMessage*,unsigned int,int,long,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * gint (*receive_messages)(GDatagramBased *, GInputMessage *, guint, gint, gint64, GCancellable *, GError **)
      * }
      */
-    public interface send_messages {
+    public class receive_messages {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, long _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6);
-        static MemorySegment allocate(send_messages fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$839.const$4, fi, constants$839.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, long _x4, MemorySegment _x5, MemorySegment _x6);
         }
-        static send_messages ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, long __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6) -> {
-                try {
-                    return (int)constants$839.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(receive_messages.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(receive_messages.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, long _x4, MemorySegment _x5, MemorySegment _x6) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle send_messages$VH() {
-        return constants$839.const$5;
+    private static final AddressLayout receive_messages$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("receive_messages"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint (*receive_messages)(GDatagramBased *, GInputMessage *, guint, gint, gint64, GCancellable *, GError **)
+     * }
+     */
+    public static final AddressLayout receive_messages$layout() {
+        return receive_messages$LAYOUT;
     }
+
+    private static final long receive_messages$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint (*receive_messages)(GDatagramBased *, GInputMessage *, guint, gint, gint64, GCancellable *, GError **)
+     * }
+     */
+    public static final long receive_messages$offset() {
+        return receive_messages$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*send_messages)(struct _GDatagramBased*,struct _GOutputMessage*,unsigned int,int,long,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * gint (*receive_messages)(GDatagramBased *, GInputMessage *, guint, gint, gint64, GCancellable *, GError **)
      * }
      */
-    public static MemorySegment send_messages$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$839.const$5.get(seg);
+    public static MemorySegment receive_messages(MemorySegment struct) {
+        return struct.get(receive_messages$LAYOUT, receive_messages$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*send_messages)(struct _GDatagramBased*,struct _GOutputMessage*,unsigned int,int,long,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * gint (*receive_messages)(GDatagramBased *, GInputMessage *, guint, gint, gint64, GCancellable *, GError **)
      * }
      */
-    public static void send_messages$set(MemorySegment seg, MemorySegment x) {
-        constants$839.const$5.set(seg, x);
+    public static void receive_messages(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(receive_messages$LAYOUT, receive_messages$OFFSET, fieldValue);
     }
-    public static MemorySegment send_messages$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$839.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void send_messages$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$839.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static send_messages send_messages(MemorySegment segment, Arena scope) {
-        return send_messages.ofAddress(send_messages$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GSource* (*create_source)(struct _GDatagramBased*,enum GIOCondition,struct _GCancellable*);
+     * {@snippet lang=c :
+     * gint (*send_messages)(GDatagramBased *, GOutputMessage *, guint, gint, gint64, GCancellable *, GError **)
      * }
      */
-    public interface create_source {
+    public class send_messages {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(create_source fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$840.const$0, fi, constants$196.const$3, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, long _x4, MemorySegment _x5, MemorySegment _x6);
         }
-        static create_source ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$840.const$1.invokeExact(symbol, __x0, __x1, __x2);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(send_messages.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(send_messages.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3, long _x4, MemorySegment _x5, MemorySegment _x6) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle create_source$VH() {
-        return constants$840.const$2;
+    private static final AddressLayout send_messages$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("send_messages"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint (*send_messages)(GDatagramBased *, GOutputMessage *, guint, gint, gint64, GCancellable *, GError **)
+     * }
+     */
+    public static final AddressLayout send_messages$layout() {
+        return send_messages$LAYOUT;
     }
+
+    private static final long send_messages$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint (*send_messages)(GDatagramBased *, GOutputMessage *, guint, gint, gint64, GCancellable *, GError **)
+     * }
+     */
+    public static final long send_messages$offset() {
+        return send_messages$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GSource* (*create_source)(struct _GDatagramBased*,enum GIOCondition,struct _GCancellable*);
+     * {@snippet lang=c :
+     * gint (*send_messages)(GDatagramBased *, GOutputMessage *, guint, gint, gint64, GCancellable *, GError **)
      * }
      */
-    public static MemorySegment create_source$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$840.const$2.get(seg);
+    public static MemorySegment send_messages(MemorySegment struct) {
+        return struct.get(send_messages$LAYOUT, send_messages$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GSource* (*create_source)(struct _GDatagramBased*,enum GIOCondition,struct _GCancellable*);
+     * {@snippet lang=c :
+     * gint (*send_messages)(GDatagramBased *, GOutputMessage *, guint, gint, gint64, GCancellable *, GError **)
      * }
      */
-    public static void create_source$set(MemorySegment seg, MemorySegment x) {
-        constants$840.const$2.set(seg, x);
+    public static void send_messages(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(send_messages$LAYOUT, send_messages$OFFSET, fieldValue);
     }
-    public static MemorySegment create_source$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$840.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void create_source$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$840.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static create_source create_source(MemorySegment segment, Arena scope) {
-        return create_source.ofAddress(create_source$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GIOCondition (*condition_check)(struct _GDatagramBased*,enum GIOCondition);
+     * {@snippet lang=c :
+     * GSource *(*create_source)(GDatagramBased *, GIOCondition, GCancellable *)
      * }
      */
-    public interface condition_check {
+    public class create_source {
 
-        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(condition_check fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$840.const$3, fi, constants$11.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, int _x1, MemorySegment _x2);
         }
-        static condition_check ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
-                try {
-                    return (int)constants$840.const$4.invokeExact(symbol, __x0, __x1);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(create_source.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(create_source.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle condition_check$VH() {
-        return constants$840.const$5;
+    private static final AddressLayout create_source$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("create_source"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GSource *(*create_source)(GDatagramBased *, GIOCondition, GCancellable *)
+     * }
+     */
+    public static final AddressLayout create_source$layout() {
+        return create_source$LAYOUT;
     }
+
+    private static final long create_source$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GSource *(*create_source)(GDatagramBased *, GIOCondition, GCancellable *)
+     * }
+     */
+    public static final long create_source$offset() {
+        return create_source$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GIOCondition (*condition_check)(struct _GDatagramBased*,enum GIOCondition);
+     * {@snippet lang=c :
+     * GSource *(*create_source)(GDatagramBased *, GIOCondition, GCancellable *)
      * }
      */
-    public static MemorySegment condition_check$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$840.const$5.get(seg);
+    public static MemorySegment create_source(MemorySegment struct) {
+        return struct.get(create_source$LAYOUT, create_source$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GIOCondition (*condition_check)(struct _GDatagramBased*,enum GIOCondition);
+     * {@snippet lang=c :
+     * GSource *(*create_source)(GDatagramBased *, GIOCondition, GCancellable *)
      * }
      */
-    public static void condition_check$set(MemorySegment seg, MemorySegment x) {
-        constants$840.const$5.set(seg, x);
+    public static void create_source(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(create_source$LAYOUT, create_source$OFFSET, fieldValue);
     }
-    public static MemorySegment condition_check$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$840.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void condition_check$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$840.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static condition_check condition_check(MemorySegment segment, Arena scope) {
-        return condition_check.ofAddress(condition_check$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*condition_wait)(struct _GDatagramBased*,enum GIOCondition,long,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOCondition (*condition_check)(GDatagramBased *, GIOCondition)
      * }
      */
-    public interface condition_wait {
+    public class condition_check {
 
-        int apply(java.lang.foreign.MemorySegment _x0, int _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(condition_wait fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$841.const$1, fi, constants$841.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, int _x1);
         }
-        static condition_wait ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
-                try {
-                    return (int)constants$841.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(condition_check.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(condition_check.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle condition_wait$VH() {
-        return constants$841.const$3;
+    private static final AddressLayout condition_check$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("condition_check"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIOCondition (*condition_check)(GDatagramBased *, GIOCondition)
+     * }
+     */
+    public static final AddressLayout condition_check$layout() {
+        return condition_check$LAYOUT;
     }
+
+    private static final long condition_check$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIOCondition (*condition_check)(GDatagramBased *, GIOCondition)
+     * }
+     */
+    public static final long condition_check$offset() {
+        return condition_check$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*condition_wait)(struct _GDatagramBased*,enum GIOCondition,long,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOCondition (*condition_check)(GDatagramBased *, GIOCondition)
      * }
      */
-    public static MemorySegment condition_wait$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$841.const$3.get(seg);
+    public static MemorySegment condition_check(MemorySegment struct) {
+        return struct.get(condition_check$LAYOUT, condition_check$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*condition_wait)(struct _GDatagramBased*,enum GIOCondition,long,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOCondition (*condition_check)(GDatagramBased *, GIOCondition)
      * }
      */
-    public static void condition_wait$set(MemorySegment seg, MemorySegment x) {
-        constants$841.const$3.set(seg, x);
+    public static void condition_check(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(condition_check$LAYOUT, condition_check$OFFSET, fieldValue);
     }
-    public static MemorySegment condition_wait$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$841.const$3.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * gboolean (*condition_wait)(GDatagramBased *, GIOCondition, gint64, GCancellable *, GError **)
+     * }
+     */
+    public class condition_wait {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, int _x1, long _x2, MemorySegment _x3, MemorySegment _x4);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(condition_wait.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(condition_wait.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void condition_wait$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$841.const$3.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout condition_wait$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("condition_wait"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*condition_wait)(GDatagramBased *, GIOCondition, gint64, GCancellable *, GError **)
+     * }
+     */
+    public static final AddressLayout condition_wait$layout() {
+        return condition_wait$LAYOUT;
     }
-    public static condition_wait condition_wait(MemorySegment segment, Arena scope) {
-        return condition_wait.ofAddress(condition_wait$get(segment), scope);
+
+    private static final long condition_wait$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*condition_wait)(GDatagramBased *, GIOCondition, gint64, GCancellable *, GError **)
+     * }
+     */
+    public static final long condition_wait$offset() {
+        return condition_wait$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean (*condition_wait)(GDatagramBased *, GIOCondition, gint64, GCancellable *, GError **)
+     * }
+     */
+    public static MemorySegment condition_wait(MemorySegment struct) {
+        return struct.get(condition_wait$LAYOUT, condition_wait$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean (*condition_wait)(GDatagramBased *, GIOCondition, gint64, GCancellable *, GError **)
+     * }
+     */
+    public static void condition_wait(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(condition_wait$LAYOUT, condition_wait$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

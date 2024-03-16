@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GDBusMethodInfo GDBusMethodInfo;
+ * {@snippet lang=c :
+ * typedef struct _GDBusMethodInfo GDBusMethodInfo
  * }
  */
-public final class GDBusMethodInfo extends _GDBusMethodInfo {
+public class GDBusMethodInfo extends _GDBusMethodInfo {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GDBusMethodInfo() {}
+    GDBusMethodInfo() {
+        // Should not be called directly
+    }
 }
-
 

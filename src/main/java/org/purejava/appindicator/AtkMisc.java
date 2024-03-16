@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _AtkMisc AtkMisc;
+ * {@snippet lang=c :
+ * typedef struct _AtkMisc AtkMisc
  * }
  */
-public final class AtkMisc extends _AtkMisc {
+public class AtkMisc extends _AtkMisc {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkMisc() {}
+    AtkMisc() {
+        // Should not be called directly
+    }
 }
-
 

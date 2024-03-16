@@ -2,29 +2,67 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * int (*hb_unicode_compose_func_t)(struct hb_unicode_funcs_t* ufuncs,unsigned int a,unsigned int b,unsigned int* ab,void* user_data);
+ * {@snippet lang=c :
+ * typedef hb_bool_t (*hb_unicode_compose_func_t)(hb_unicode_funcs_t *, hb_codepoint_t, hb_codepoint_t, hb_codepoint_t *, void *)
  * }
  */
-public interface hb_unicode_compose_func_t {
+public class hb_unicode_compose_func_t {
 
-    int apply(java.lang.foreign.MemorySegment ufuncs, int a, int b, java.lang.foreign.MemorySegment ab, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(hb_unicode_compose_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1431.const$1, fi, constants$959.const$4, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment ufuncs, int a, int b, MemorySegment ab, MemorySegment user_data);
     }
-    static hb_unicode_compose_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _ufuncs, int _a, int _b, java.lang.foreign.MemorySegment _ab, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                return (int)constants$960.const$0.invokeExact(symbol, _ufuncs, _a, _b, _ab, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(hb_unicode_compose_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(hb_unicode_compose_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment ufuncs, int a, int b, MemorySegment ab, MemorySegment user_data) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, ufuncs, a, b, ab, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

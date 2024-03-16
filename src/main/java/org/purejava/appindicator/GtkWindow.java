@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkWindow GtkWindow;
+ * {@snippet lang=c :
+ * typedef struct _GtkWindow GtkWindow
  * }
  */
-public final class GtkWindow extends _GtkWindow {
+public class GtkWindow extends _GtkWindow {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkWindow() {}
+    GtkWindow() {
+        // Should not be called directly
+    }
 }
-
 

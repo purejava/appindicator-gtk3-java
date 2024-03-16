@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GConverterInputStreamClass GConverterInputStreamClass;
+ * {@snippet lang=c :
+ * typedef struct _GConverterInputStreamClass GConverterInputStreamClass
  * }
  */
-public final class GConverterInputStreamClass extends _GConverterInputStreamClass {
+public class GConverterInputStreamClass extends _GConverterInputStreamClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GConverterInputStreamClass() {}
+    GConverterInputStreamClass() {
+        // Should not be called directly
+    }
 }
-
 

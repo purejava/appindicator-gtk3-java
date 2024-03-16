@@ -2,29 +2,66 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * int (*GdkPixbufSaveFunc)(char* buf,unsigned long count,struct _GError** error,void* data);
+ * {@snippet lang=c :
+ * typedef gboolean (*GdkPixbufSaveFunc)(const gchar *, gsize, GError **, gpointer)
  * }
  */
-public interface GdkPixbufSaveFunc {
+public class GdkPixbufSaveFunc {
 
-    int apply(java.lang.foreign.MemorySegment buf, long count, java.lang.foreign.MemorySegment error, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GdkPixbufSaveFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1891.const$0, fi, constants$394.const$4, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment buf, long count, MemorySegment error, MemorySegment data);
     }
-    static GdkPixbufSaveFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _buf, long _count, java.lang.foreign.MemorySegment _error, java.lang.foreign.MemorySegment _data) -> {
-            try {
-                return (int)constants$1084.const$0.invokeExact(symbol, _buf, _count, _error, _data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GdkPixbufSaveFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GdkPixbufSaveFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment buf, long count, MemorySegment error, MemorySegment data) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, buf, count, error, data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

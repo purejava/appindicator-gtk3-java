@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _AtkGObjectAccessibleClass AtkGObjectAccessibleClass;
+ * {@snippet lang=c :
+ * typedef struct _AtkGObjectAccessibleClass AtkGObjectAccessibleClass
  * }
  */
-public final class AtkGObjectAccessibleClass extends _AtkGObjectAccessibleClass {
+public class AtkGObjectAccessibleClass extends _AtkGObjectAccessibleClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkGObjectAccessibleClass() {}
+    AtkGObjectAccessibleClass() {
+        // Should not be called directly
+    }
 }
-
 

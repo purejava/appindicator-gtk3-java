@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GHashTableIter GHashTableIter;
+ * {@snippet lang=c :
+ * typedef struct _GHashTableIter GHashTableIter
  * }
  */
-public final class GHashTableIter extends _GHashTableIter {
+public class GHashTableIter extends _GHashTableIter {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GHashTableIter() {}
+    GHashTableIter() {
+        // Should not be called directly
+    }
 }
-
 

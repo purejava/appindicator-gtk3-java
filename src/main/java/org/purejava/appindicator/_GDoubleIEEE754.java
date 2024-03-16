@@ -2,85 +2,269 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * union _GDoubleIEEE754 {
- *     double v_double;
- *     struct  mpn;
- * };
+ *     gdouble v_double;
+ *     struct {
+ *         guint mantissa_low : 32;
+ *         guint mantissa_high : 20;
+ *         guint biased_exponent : 11;
+ *         guint sign : 1;
+ *     } mpn;
+ * }
  * }
  */
 public class _GDoubleIEEE754 {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$16.const$1;
+    _GDoubleIEEE754() {
+        // Should not be called directly
     }
-    public static VarHandle v_double$VH() {
-        return constants$16.const$2;
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
+        app_indicator_h.C_DOUBLE.withName("v_double"),
+        _GDoubleIEEE754.mpn.layout().withName("mpn")
+    ).withName("_GDoubleIEEE754");
+
+    /**
+     * The layout of this union
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
+
+    private static final OfDouble v_double$LAYOUT = (OfDouble)$LAYOUT.select(groupElement("v_double"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gdouble v_double
+     * }
+     */
+    public static final OfDouble v_double$layout() {
+        return v_double$LAYOUT;
+    }
+
+    private static final long v_double$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gdouble v_double
+     * }
+     */
+    public static final long v_double$offset() {
+        return v_double$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * double v_double;
+     * {@snippet lang=c :
+     * gdouble v_double
      * }
      */
-    public static double v_double$get(MemorySegment seg) {
-        return (double)constants$16.const$2.get(seg);
+    public static double v_double(MemorySegment union) {
+        return union.get(v_double$LAYOUT, v_double$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * double v_double;
+     * {@snippet lang=c :
+     * gdouble v_double
      * }
      */
-    public static void v_double$set(MemorySegment seg, double x) {
-        constants$16.const$2.set(seg, x);
+    public static void v_double(MemorySegment union, double fieldValue) {
+        union.set(v_double$LAYOUT, v_double$OFFSET, fieldValue);
     }
-    public static double v_double$get(MemorySegment seg, long index) {
-        return (double)constants$16.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_double$set(MemorySegment seg, long index, double x) {
-        constants$16.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
+
     /**
-     * {@snippet :
+     * {@snippet lang=c :
      * struct {
-     *          *     unsigned int mantissa_low;
-     *     unsigned int mantissa_high;
-     *     unsigned int biased_exponent;
-     *     unsigned int sign;
-     * };
+     *     guint mantissa_low : 32;
+     *     guint mantissa_high : 20;
+     *     guint biased_exponent : 11;
+     *     guint sign : 1;
+     * }
      * }
      */
-    public static final class mpn {
+    public static class mpn {
 
-        // Suppresses default constructor, ensuring non-instantiability.
-        private mpn() {}
-        public static MemoryLayout $LAYOUT() {
-            return constants$16.const$3;
+        mpn() {
+            // Should not be called directly
         }
-        public static long sizeof() { return $LAYOUT().byteSize(); }
-        public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-        public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-            return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+        private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+            MemoryLayout.paddingLayout(8)
+        ).withName("$anon$547:3");
+
+        /**
+         * The layout of this struct
+         */
+        public static final GroupLayout layout() {
+            return $LAYOUT;
         }
-        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+        /**
+         * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+         * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+         */
+        public static MemorySegment asSlice(MemorySegment array, long index) {
+            return array.asSlice(layout().byteSize() * index);
+        }
+
+        /**
+         * The size (in bytes) of this struct
+         */
+        public static long sizeof() { return layout().byteSize(); }
+
+        /**
+         * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+         */
+        public static MemorySegment allocate(SegmentAllocator allocator) {
+            return allocator.allocate(layout());
+        }
+
+        /**
+         * Allocate an array of size {@code elementCount} using {@code allocator}.
+         * The returned segment has size {@code elementCount * layout().byteSize()}.
+         */
+        public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+            return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+        }
+
+        /**
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * The returned segment has size {@code layout().byteSize()}
+         */
+        public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+            return reinterpret(addr, 1, arena, cleanup);
+        }
+
+        /**
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * The returned segment has size {@code elementCount * layout().byteSize()}
+         */
+        public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+            return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+        }
     }
 
-    public static MemorySegment mpn$slice(MemorySegment seg) {
-        return seg.asSlice(0, 8);
+    private static final GroupLayout mpn$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("mpn"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * struct {
+     *     guint mantissa_low : 32;
+     *     guint mantissa_high : 20;
+     *     guint biased_exponent : 11;
+     *     guint sign : 1;
+     * } mpn
+     * }
+     */
+    public static final GroupLayout mpn$layout() {
+        return mpn$LAYOUT;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    private static final long mpn$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * struct {
+     *     guint mantissa_low : 32;
+     *     guint mantissa_high : 20;
+     *     guint biased_exponent : 11;
+     *     guint sign : 1;
+     * } mpn
+     * }
+     */
+    public static final long mpn$offset() {
+        return mpn$OFFSET;
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * struct {
+     *     guint mantissa_low : 32;
+     *     guint mantissa_high : 20;
+     *     guint biased_exponent : 11;
+     *     guint sign : 1;
+     * } mpn
+     * }
+     */
+    public static MemorySegment mpn(MemorySegment union) {
+        return union.asSlice(mpn$OFFSET, mpn$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * struct {
+     *     guint mantissa_low : 32;
+     *     guint mantissa_high : 20;
+     *     guint biased_exponent : 11;
+     *     guint sign : 1;
+     * } mpn
+     * }
+     */
+    public static void mpn(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, mpn$OFFSET, mpn$LAYOUT.byteSize());
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this union
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

@@ -2,112 +2,218 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GSignalInvocationHint {
- *     unsigned int signal_id;
- *     unsigned int detail;
- *     enum GSignalFlags run_type;
- * };
+ *     guint signal_id;
+ *     GQuark detail;
+ *     GSignalFlags run_type;
+ * }
  * }
  */
 public class _GSignalInvocationHint {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$602.const$5;
+    _GSignalInvocationHint() {
+        // Should not be called directly
     }
-    public static VarHandle signal_id$VH() {
-        return constants$603.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int signal_id;
-     * }
-     */
-    public static int signal_id$get(MemorySegment seg) {
-        return (int)constants$603.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int signal_id;
-     * }
-     */
-    public static void signal_id$set(MemorySegment seg, int x) {
-        constants$603.const$0.set(seg, x);
-    }
-    public static int signal_id$get(MemorySegment seg, long index) {
-        return (int)constants$603.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void signal_id$set(MemorySegment seg, long index, int x) {
-        constants$603.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle detail$VH() {
-        return constants$603.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int detail;
-     * }
-     */
-    public static int detail$get(MemorySegment seg) {
-        return (int)constants$603.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int detail;
-     * }
-     */
-    public static void detail$set(MemorySegment seg, int x) {
-        constants$603.const$1.set(seg, x);
-    }
-    public static int detail$get(MemorySegment seg, long index) {
-        return (int)constants$603.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void detail$set(MemorySegment seg, long index, int x) {
-        constants$603.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle run_type$VH() {
-        return constants$603.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum GSignalFlags run_type;
-     * }
-     */
-    public static int run_type$get(MemorySegment seg) {
-        return (int)constants$603.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum GSignalFlags run_type;
-     * }
-     */
-    public static void run_type$set(MemorySegment seg, int x) {
-        constants$603.const$2.set(seg, x);
-    }
-    public static int run_type$get(MemorySegment seg, long index) {
-        return (int)constants$603.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void run_type$set(MemorySegment seg, long index, int x) {
-        constants$603.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("signal_id"),
+        app_indicator_h.C_INT.withName("detail"),
+        app_indicator_h.C_INT.withName("run_type")
+    ).withName("_GSignalInvocationHint");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt signal_id$LAYOUT = (OfInt)$LAYOUT.select(groupElement("signal_id"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint signal_id
+     * }
+     */
+    public static final OfInt signal_id$layout() {
+        return signal_id$LAYOUT;
+    }
+
+    private static final long signal_id$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint signal_id
+     * }
+     */
+    public static final long signal_id$offset() {
+        return signal_id$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint signal_id
+     * }
+     */
+    public static int signal_id(MemorySegment struct) {
+        return struct.get(signal_id$LAYOUT, signal_id$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint signal_id
+     * }
+     */
+    public static void signal_id(MemorySegment struct, int fieldValue) {
+        struct.set(signal_id$LAYOUT, signal_id$OFFSET, fieldValue);
+    }
+
+    private static final OfInt detail$LAYOUT = (OfInt)$LAYOUT.select(groupElement("detail"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GQuark detail
+     * }
+     */
+    public static final OfInt detail$layout() {
+        return detail$LAYOUT;
+    }
+
+    private static final long detail$OFFSET = 4;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GQuark detail
+     * }
+     */
+    public static final long detail$offset() {
+        return detail$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GQuark detail
+     * }
+     */
+    public static int detail(MemorySegment struct) {
+        return struct.get(detail$LAYOUT, detail$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GQuark detail
+     * }
+     */
+    public static void detail(MemorySegment struct, int fieldValue) {
+        struct.set(detail$LAYOUT, detail$OFFSET, fieldValue);
+    }
+
+    private static final OfInt run_type$LAYOUT = (OfInt)$LAYOUT.select(groupElement("run_type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GSignalFlags run_type
+     * }
+     */
+    public static final OfInt run_type$layout() {
+        return run_type$LAYOUT;
+    }
+
+    private static final long run_type$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GSignalFlags run_type
+     * }
+     */
+    public static final long run_type$offset() {
+        return run_type$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GSignalFlags run_type
+     * }
+     */
+    public static int run_type(MemorySegment struct) {
+        return struct.get(run_type$LAYOUT, run_type$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GSignalFlags run_type
+     * }
+     */
+    public static void run_type(MemorySegment struct, int fieldValue) {
+        struct.set(run_type$LAYOUT, run_type$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

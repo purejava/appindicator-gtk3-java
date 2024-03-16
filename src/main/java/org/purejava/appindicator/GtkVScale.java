@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkVScale GtkVScale;
+ * {@snippet lang=c :
+ * typedef struct _GtkVScale GtkVScale
  * }
  */
-public final class GtkVScale extends _GtkVScale {
+public class GtkVScale extends _GtkVScale {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkVScale() {}
+    GtkVScale() {
+        // Should not be called directly
+    }
 }
-
 

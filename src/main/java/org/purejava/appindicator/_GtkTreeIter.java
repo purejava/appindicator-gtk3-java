@@ -2,140 +2,265 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkTreeIter {
- *     int stamp;
- *     void* user_data;
- *     void* user_data2;
- *     void* user_data3;
- * };
+ *     gint stamp;
+ *     gpointer user_data;
+ *     gpointer user_data2;
+ *     gpointer user_data3;
+ * }
  * }
  */
 public class _GtkTreeIter {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2292.const$3;
+    _GtkTreeIter() {
+        // Should not be called directly
     }
-    public static VarHandle stamp$VH() {
-        return constants$2292.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int stamp;
-     * }
-     */
-    public static int stamp$get(MemorySegment seg) {
-        return (int)constants$2292.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int stamp;
-     * }
-     */
-    public static void stamp$set(MemorySegment seg, int x) {
-        constants$2292.const$4.set(seg, x);
-    }
-    public static int stamp$get(MemorySegment seg, long index) {
-        return (int)constants$2292.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void stamp$set(MemorySegment seg, long index, int x) {
-        constants$2292.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle user_data$VH() {
-        return constants$2292.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * void* user_data;
-     * }
-     */
-    public static MemorySegment user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2292.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * void* user_data;
-     * }
-     */
-    public static void user_data$set(MemorySegment seg, MemorySegment x) {
-        constants$2292.const$5.set(seg, x);
-    }
-    public static MemorySegment user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2292.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void user_data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2292.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle user_data2$VH() {
-        return constants$2293.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * void* user_data2;
-     * }
-     */
-    public static MemorySegment user_data2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2293.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * void* user_data2;
-     * }
-     */
-    public static void user_data2$set(MemorySegment seg, MemorySegment x) {
-        constants$2293.const$0.set(seg, x);
-    }
-    public static MemorySegment user_data2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2293.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void user_data2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2293.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle user_data3$VH() {
-        return constants$2293.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * void* user_data3;
-     * }
-     */
-    public static MemorySegment user_data3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2293.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * void* user_data3;
-     * }
-     */
-    public static void user_data3$set(MemorySegment seg, MemorySegment x) {
-        constants$2293.const$1.set(seg, x);
-    }
-    public static MemorySegment user_data3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2293.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void user_data3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2293.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("stamp"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("user_data"),
+        app_indicator_h.C_POINTER.withName("user_data2"),
+        app_indicator_h.C_POINTER.withName("user_data3")
+    ).withName("_GtkTreeIter");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt stamp$LAYOUT = (OfInt)$LAYOUT.select(groupElement("stamp"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint stamp
+     * }
+     */
+    public static final OfInt stamp$layout() {
+        return stamp$LAYOUT;
+    }
+
+    private static final long stamp$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint stamp
+     * }
+     */
+    public static final long stamp$offset() {
+        return stamp$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint stamp
+     * }
+     */
+    public static int stamp(MemorySegment struct) {
+        return struct.get(stamp$LAYOUT, stamp$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint stamp
+     * }
+     */
+    public static void stamp(MemorySegment struct, int fieldValue) {
+        struct.set(stamp$LAYOUT, stamp$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout user_data$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("user_data"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer user_data
+     * }
+     */
+    public static final AddressLayout user_data$layout() {
+        return user_data$LAYOUT;
+    }
+
+    private static final long user_data$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer user_data
+     * }
+     */
+    public static final long user_data$offset() {
+        return user_data$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer user_data
+     * }
+     */
+    public static MemorySegment user_data(MemorySegment struct) {
+        return struct.get(user_data$LAYOUT, user_data$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer user_data
+     * }
+     */
+    public static void user_data(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(user_data$LAYOUT, user_data$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout user_data2$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("user_data2"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer user_data2
+     * }
+     */
+    public static final AddressLayout user_data2$layout() {
+        return user_data2$LAYOUT;
+    }
+
+    private static final long user_data2$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer user_data2
+     * }
+     */
+    public static final long user_data2$offset() {
+        return user_data2$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer user_data2
+     * }
+     */
+    public static MemorySegment user_data2(MemorySegment struct) {
+        return struct.get(user_data2$LAYOUT, user_data2$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer user_data2
+     * }
+     */
+    public static void user_data2(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(user_data2$LAYOUT, user_data2$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout user_data3$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("user_data3"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer user_data3
+     * }
+     */
+    public static final AddressLayout user_data3$layout() {
+        return user_data3$LAYOUT;
+    }
+
+    private static final long user_data3$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer user_data3
+     * }
+     */
+    public static final long user_data3$offset() {
+        return user_data3$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer user_data3
+     * }
+     */
+    public static MemorySegment user_data3(MemorySegment struct) {
+        return struct.get(user_data3$LAYOUT, user_data3$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer user_data3
+     * }
+     */
+    public static void user_data3(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(user_data3$LAYOUT, user_data3$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

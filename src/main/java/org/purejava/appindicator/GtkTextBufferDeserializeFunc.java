@@ -2,29 +2,70 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * int (*GtkTextBufferDeserializeFunc)(struct _GtkTextBuffer* register_buffer,struct _GtkTextBuffer* content_buffer,struct _GtkTextIter* iter,unsigned char* data,unsigned long length,int create_tags,void* user_data,struct _GError** error);
+ * {@snippet lang=c :
+ * typedef gboolean (*GtkTextBufferDeserializeFunc)(GtkTextBuffer *, GtkTextBuffer *, GtkTextIter *, const guint8 *, gsize, gboolean, gpointer, GError **)
  * }
  */
-public interface GtkTextBufferDeserializeFunc {
+public class GtkTextBufferDeserializeFunc {
 
-    int apply(java.lang.foreign.MemorySegment register_buffer, java.lang.foreign.MemorySegment content_buffer, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data, long length, int create_tags, java.lang.foreign.MemorySegment user_data, java.lang.foreign.MemorySegment error);
-    static MemorySegment allocate(GtkTextBufferDeserializeFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3145.const$5, fi, constants$3145.const$4, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment iter, MemorySegment data, long length, int create_tags, MemorySegment user_data, MemorySegment error);
     }
-    static GtkTextBufferDeserializeFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _register_buffer, java.lang.foreign.MemorySegment _content_buffer, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data, long _length, int _create_tags, java.lang.foreign.MemorySegment _user_data, java.lang.foreign.MemorySegment _error) -> {
-            try {
-                return (int)constants$3146.const$0.invokeExact(symbol, _register_buffer, _content_buffer, _iter, _data, _length, _create_tags, _user_data, _error);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GtkTextBufferDeserializeFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GtkTextBufferDeserializeFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment iter, MemorySegment data, long length, int create_tags, MemorySegment user_data, MemorySegment error) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, register_buffer, content_buffer, iter, data, length, create_tags, user_data, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

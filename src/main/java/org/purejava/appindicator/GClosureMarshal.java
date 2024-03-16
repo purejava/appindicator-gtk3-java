@@ -2,29 +2,67 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*GClosureMarshal)(struct _GClosure* closure,struct _GValue* return_value,unsigned int n_param_values,struct _GValue* param_values,void* invocation_hint,void* marshal_data);
+ * {@snippet lang=c :
+ * typedef void (*GClosureMarshal)(GClosure *, GValue *, guint, const GValue *, gpointer, gpointer)
  * }
  */
-public interface GClosureMarshal {
+public class GClosureMarshal {
 
-    void apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment draw_funcs, java.lang.foreign.MemorySegment draw_data, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GClosureMarshal fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$587.const$1, fi, constants$587.const$0, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment closure, MemorySegment return_value, int n_param_values, MemorySegment param_values, MemorySegment invocation_hint, MemorySegment marshal_data);
     }
-    static GClosureMarshal ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _draw_funcs, java.lang.foreign.MemorySegment _draw_data, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                constants$587.const$2.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GClosureMarshal.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GClosureMarshal.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment closure, MemorySegment return_value, int n_param_values, MemorySegment param_values, MemorySegment invocation_hint, MemorySegment marshal_data) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, closure, return_value, n_param_values, param_values, invocation_hint, marshal_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

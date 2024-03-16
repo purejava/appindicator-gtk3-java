@@ -2,117 +2,224 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkTableRowCol {
- *     unsigned short requisition;
- *     unsigned short allocation;
- *     unsigned short spacing;
- *      *     unsigned int need_expand;
- *     unsigned int need_shrink;
- *     unsigned int expand;
- *     unsigned int shrink;
- *     unsigned int empty;
- * };
+ *     guint16 requisition;
+ *     guint16 allocation;
+ *     guint16 spacing;
+ *     guint need_expand : 1;
+ *     guint need_shrink : 1;
+ *     guint expand : 1;
+ *     guint shrink : 1;
+ *     guint empty : 1;
+ * }
  * }
  */
 public class _GtkTableRowCol {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$3378.const$3;
+    _GtkTableRowCol() {
+        // Should not be called directly
     }
-    public static VarHandle requisition$VH() {
-        return constants$3378.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned short requisition;
-     * }
-     */
-    public static short requisition$get(MemorySegment seg) {
-        return (short)constants$3378.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned short requisition;
-     * }
-     */
-    public static void requisition$set(MemorySegment seg, short x) {
-        constants$3378.const$4.set(seg, x);
-    }
-    public static short requisition$get(MemorySegment seg, long index) {
-        return (short)constants$3378.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void requisition$set(MemorySegment seg, long index, short x) {
-        constants$3378.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle allocation$VH() {
-        return constants$3378.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned short allocation;
-     * }
-     */
-    public static short allocation$get(MemorySegment seg) {
-        return (short)constants$3378.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned short allocation;
-     * }
-     */
-    public static void allocation$set(MemorySegment seg, short x) {
-        constants$3378.const$5.set(seg, x);
-    }
-    public static short allocation$get(MemorySegment seg, long index) {
-        return (short)constants$3378.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void allocation$set(MemorySegment seg, long index, short x) {
-        constants$3378.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle spacing$VH() {
-        return constants$3379.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned short spacing;
-     * }
-     */
-    public static short spacing$get(MemorySegment seg) {
-        return (short)constants$3379.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned short spacing;
-     * }
-     */
-    public static void spacing$set(MemorySegment seg, short x) {
-        constants$3379.const$0.set(seg, x);
-    }
-    public static short spacing$get(MemorySegment seg, long index) {
-        return (short)constants$3379.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void spacing$set(MemorySegment seg, long index, short x) {
-        constants$3379.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_SHORT.withName("requisition"),
+        app_indicator_h.C_SHORT.withName("allocation"),
+        app_indicator_h.C_SHORT.withName("spacing"),
+        MemoryLayout.paddingLayout(2)
+    ).withName("_GtkTableRowCol");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfShort requisition$LAYOUT = (OfShort)$LAYOUT.select(groupElement("requisition"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint16 requisition
+     * }
+     */
+    public static final OfShort requisition$layout() {
+        return requisition$LAYOUT;
+    }
+
+    private static final long requisition$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint16 requisition
+     * }
+     */
+    public static final long requisition$offset() {
+        return requisition$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint16 requisition
+     * }
+     */
+    public static short requisition(MemorySegment struct) {
+        return struct.get(requisition$LAYOUT, requisition$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint16 requisition
+     * }
+     */
+    public static void requisition(MemorySegment struct, short fieldValue) {
+        struct.set(requisition$LAYOUT, requisition$OFFSET, fieldValue);
+    }
+
+    private static final OfShort allocation$LAYOUT = (OfShort)$LAYOUT.select(groupElement("allocation"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint16 allocation
+     * }
+     */
+    public static final OfShort allocation$layout() {
+        return allocation$LAYOUT;
+    }
+
+    private static final long allocation$OFFSET = 2;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint16 allocation
+     * }
+     */
+    public static final long allocation$offset() {
+        return allocation$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint16 allocation
+     * }
+     */
+    public static short allocation(MemorySegment struct) {
+        return struct.get(allocation$LAYOUT, allocation$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint16 allocation
+     * }
+     */
+    public static void allocation(MemorySegment struct, short fieldValue) {
+        struct.set(allocation$LAYOUT, allocation$OFFSET, fieldValue);
+    }
+
+    private static final OfShort spacing$LAYOUT = (OfShort)$LAYOUT.select(groupElement("spacing"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint16 spacing
+     * }
+     */
+    public static final OfShort spacing$layout() {
+        return spacing$LAYOUT;
+    }
+
+    private static final long spacing$OFFSET = 4;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint16 spacing
+     * }
+     */
+    public static final long spacing$offset() {
+        return spacing$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint16 spacing
+     * }
+     */
+    public static short spacing(MemorySegment struct) {
+        return struct.get(spacing$LAYOUT, spacing$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint16 spacing
+     * }
+     */
+    public static void spacing(MemorySegment struct, short fieldValue) {
+        struct.set(spacing$LAYOUT, spacing$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

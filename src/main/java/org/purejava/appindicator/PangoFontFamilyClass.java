@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _PangoFontFamilyClass PangoFontFamilyClass;
+ * {@snippet lang=c :
+ * typedef struct _PangoFontFamilyClass PangoFontFamilyClass
  * }
  */
-public final class PangoFontFamilyClass extends _PangoFontFamilyClass {
+public class PangoFontFamilyClass extends _PangoFontFamilyClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private PangoFontFamilyClass() {}
+    PangoFontFamilyClass() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GSocketConnectableIface GSocketConnectableIface;
+ * {@snippet lang=c :
+ * typedef struct _GSocketConnectableIface GSocketConnectableIface
  * }
  */
-public final class GSocketConnectableIface extends _GSocketConnectableIface {
+public class GSocketConnectableIface extends _GSocketConnectableIface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GSocketConnectableIface() {}
+    GSocketConnectableIface() {
+        // Should not be called directly
+    }
 }
-
 

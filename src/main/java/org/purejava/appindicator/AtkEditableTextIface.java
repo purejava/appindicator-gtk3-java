@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _AtkEditableTextIface AtkEditableTextIface;
+ * {@snippet lang=c :
+ * typedef struct _AtkEditableTextIface AtkEditableTextIface
  * }
  */
-public final class AtkEditableTextIface extends _AtkEditableTextIface {
+public class AtkEditableTextIface extends _AtkEditableTextIface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkEditableTextIface() {}
+    AtkEditableTextIface() {
+        // Should not be called directly
+    }
 }
-
 

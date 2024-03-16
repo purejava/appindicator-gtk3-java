@@ -2,84 +2,168 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfLong;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GTimeVal {
- *     long tv_sec;
- *     long tv_usec;
- * };
+ *     glong tv_sec;
+ *     glong tv_usec;
+ * }
  * }
  */
 public class _GTimeVal {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$16.const$4;
+    _GTimeVal() {
+        // Should not be called directly
     }
-    public static VarHandle tv_sec$VH() {
-        return constants$16.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * long tv_sec;
-     * }
-     */
-    public static long tv_sec$get(MemorySegment seg) {
-        return (long)constants$16.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * long tv_sec;
-     * }
-     */
-    public static void tv_sec$set(MemorySegment seg, long x) {
-        constants$16.const$5.set(seg, x);
-    }
-    public static long tv_sec$get(MemorySegment seg, long index) {
-        return (long)constants$16.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void tv_sec$set(MemorySegment seg, long index, long x) {
-        constants$16.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle tv_usec$VH() {
-        return constants$17.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * long tv_usec;
-     * }
-     */
-    public static long tv_usec$get(MemorySegment seg) {
-        return (long)constants$17.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * long tv_usec;
-     * }
-     */
-    public static void tv_usec$set(MemorySegment seg, long x) {
-        constants$17.const$0.set(seg, x);
-    }
-    public static long tv_usec$get(MemorySegment seg, long index) {
-        return (long)constants$17.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void tv_usec$set(MemorySegment seg, long index, long x) {
-        constants$17.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_LONG.withName("tv_sec"),
+        app_indicator_h.C_LONG.withName("tv_usec")
+    ).withName("_GTimeVal");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfLong tv_sec$LAYOUT = (OfLong)$LAYOUT.select(groupElement("tv_sec"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * glong tv_sec
+     * }
+     */
+    public static final OfLong tv_sec$layout() {
+        return tv_sec$LAYOUT;
+    }
+
+    private static final long tv_sec$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * glong tv_sec
+     * }
+     */
+    public static final long tv_sec$offset() {
+        return tv_sec$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * glong tv_sec
+     * }
+     */
+    public static long tv_sec(MemorySegment struct) {
+        return struct.get(tv_sec$LAYOUT, tv_sec$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * glong tv_sec
+     * }
+     */
+    public static void tv_sec(MemorySegment struct, long fieldValue) {
+        struct.set(tv_sec$LAYOUT, tv_sec$OFFSET, fieldValue);
+    }
+
+    private static final OfLong tv_usec$LAYOUT = (OfLong)$LAYOUT.select(groupElement("tv_usec"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * glong tv_usec
+     * }
+     */
+    public static final OfLong tv_usec$layout() {
+        return tv_usec$LAYOUT;
+    }
+
+    private static final long tv_usec$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * glong tv_usec
+     * }
+     */
+    public static final long tv_usec$offset() {
+        return tv_usec$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * glong tv_usec
+     * }
+     */
+    public static long tv_usec(MemorySegment struct) {
+        return struct.get(tv_usec$LAYOUT, tv_usec$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * glong tv_usec
+     * }
+     */
+    public static void tv_usec(MemorySegment struct, long fieldValue) {
+        struct.set(tv_usec$LAYOUT, tv_usec$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

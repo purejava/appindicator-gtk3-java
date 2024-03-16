@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkTargetPair GtkTargetPair;
+ * {@snippet lang=c :
+ * typedef struct _GtkTargetPair GtkTargetPair
  * }
  */
-public final class GtkTargetPair extends _GtkTargetPair {
+public class GtkTargetPair extends _GtkTargetPair {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkTargetPair() {}
+    GtkTargetPair() {
+        // Should not be called directly
+    }
 }
-
 

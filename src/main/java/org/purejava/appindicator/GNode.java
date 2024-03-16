@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GNode GNode;
+ * {@snippet lang=c :
+ * typedef struct _GNode GNode
  * }
  */
-public final class GNode extends _GNode {
+public class GNode extends _GNode {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GNode() {}
+    GNode() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GEmblemedIconClass GEmblemedIconClass;
+ * {@snippet lang=c :
+ * typedef struct _GEmblemedIconClass GEmblemedIconClass
  * }
  */
-public final class GEmblemedIconClass extends _GEmblemedIconClass {
+public class GEmblemedIconClass extends _GEmblemedIconClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GEmblemedIconClass() {}
+    GEmblemedIconClass() {
+        // Should not be called directly
+    }
 }
-
 

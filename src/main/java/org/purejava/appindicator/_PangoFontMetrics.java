@@ -2,15 +2,20 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _PangoFontMetrics {
- *     unsigned int ref_count;
+ *     guint ref_count;
  *     int ascent;
  *     int descent;
  *     int height;
@@ -20,290 +25,517 @@ import java.lang.invoke.VarHandle;
  *     int underline_thickness;
  *     int strikethrough_position;
  *     int strikethrough_thickness;
- * };
+ * }
  * }
  */
 public class _PangoFontMetrics {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1548.const$1;
+    _PangoFontMetrics() {
+        // Should not be called directly
     }
-    public static VarHandle ref_count$VH() {
-        return constants$1548.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int ref_count;
-     * }
-     */
-    public static int ref_count$get(MemorySegment seg) {
-        return (int)constants$1548.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int ref_count;
-     * }
-     */
-    public static void ref_count$set(MemorySegment seg, int x) {
-        constants$1548.const$2.set(seg, x);
-    }
-    public static int ref_count$get(MemorySegment seg, long index) {
-        return (int)constants$1548.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void ref_count$set(MemorySegment seg, long index, int x) {
-        constants$1548.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle ascent$VH() {
-        return constants$1548.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int ascent;
-     * }
-     */
-    public static int ascent$get(MemorySegment seg) {
-        return (int)constants$1548.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int ascent;
-     * }
-     */
-    public static void ascent$set(MemorySegment seg, int x) {
-        constants$1548.const$3.set(seg, x);
-    }
-    public static int ascent$get(MemorySegment seg, long index) {
-        return (int)constants$1548.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void ascent$set(MemorySegment seg, long index, int x) {
-        constants$1548.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle descent$VH() {
-        return constants$1548.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int descent;
-     * }
-     */
-    public static int descent$get(MemorySegment seg) {
-        return (int)constants$1548.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int descent;
-     * }
-     */
-    public static void descent$set(MemorySegment seg, int x) {
-        constants$1548.const$4.set(seg, x);
-    }
-    public static int descent$get(MemorySegment seg, long index) {
-        return (int)constants$1548.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void descent$set(MemorySegment seg, long index, int x) {
-        constants$1548.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle height$VH() {
-        return constants$1548.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int height;
-     * }
-     */
-    public static int height$get(MemorySegment seg) {
-        return (int)constants$1548.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int height;
-     * }
-     */
-    public static void height$set(MemorySegment seg, int x) {
-        constants$1548.const$5.set(seg, x);
-    }
-    public static int height$get(MemorySegment seg, long index) {
-        return (int)constants$1548.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void height$set(MemorySegment seg, long index, int x) {
-        constants$1548.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle approximate_char_width$VH() {
-        return constants$1549.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int approximate_char_width;
-     * }
-     */
-    public static int approximate_char_width$get(MemorySegment seg) {
-        return (int)constants$1549.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int approximate_char_width;
-     * }
-     */
-    public static void approximate_char_width$set(MemorySegment seg, int x) {
-        constants$1549.const$0.set(seg, x);
-    }
-    public static int approximate_char_width$get(MemorySegment seg, long index) {
-        return (int)constants$1549.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void approximate_char_width$set(MemorySegment seg, long index, int x) {
-        constants$1549.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle approximate_digit_width$VH() {
-        return constants$1549.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int approximate_digit_width;
-     * }
-     */
-    public static int approximate_digit_width$get(MemorySegment seg) {
-        return (int)constants$1549.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int approximate_digit_width;
-     * }
-     */
-    public static void approximate_digit_width$set(MemorySegment seg, int x) {
-        constants$1549.const$1.set(seg, x);
-    }
-    public static int approximate_digit_width$get(MemorySegment seg, long index) {
-        return (int)constants$1549.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void approximate_digit_width$set(MemorySegment seg, long index, int x) {
-        constants$1549.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle underline_position$VH() {
-        return constants$1549.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int underline_position;
-     * }
-     */
-    public static int underline_position$get(MemorySegment seg) {
-        return (int)constants$1549.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int underline_position;
-     * }
-     */
-    public static void underline_position$set(MemorySegment seg, int x) {
-        constants$1549.const$2.set(seg, x);
-    }
-    public static int underline_position$get(MemorySegment seg, long index) {
-        return (int)constants$1549.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void underline_position$set(MemorySegment seg, long index, int x) {
-        constants$1549.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle underline_thickness$VH() {
-        return constants$1549.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int underline_thickness;
-     * }
-     */
-    public static int underline_thickness$get(MemorySegment seg) {
-        return (int)constants$1549.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int underline_thickness;
-     * }
-     */
-    public static void underline_thickness$set(MemorySegment seg, int x) {
-        constants$1549.const$3.set(seg, x);
-    }
-    public static int underline_thickness$get(MemorySegment seg, long index) {
-        return (int)constants$1549.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void underline_thickness$set(MemorySegment seg, long index, int x) {
-        constants$1549.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle strikethrough_position$VH() {
-        return constants$1549.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int strikethrough_position;
-     * }
-     */
-    public static int strikethrough_position$get(MemorySegment seg) {
-        return (int)constants$1549.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int strikethrough_position;
-     * }
-     */
-    public static void strikethrough_position$set(MemorySegment seg, int x) {
-        constants$1549.const$4.set(seg, x);
-    }
-    public static int strikethrough_position$get(MemorySegment seg, long index) {
-        return (int)constants$1549.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void strikethrough_position$set(MemorySegment seg, long index, int x) {
-        constants$1549.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle strikethrough_thickness$VH() {
-        return constants$1549.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int strikethrough_thickness;
-     * }
-     */
-    public static int strikethrough_thickness$get(MemorySegment seg) {
-        return (int)constants$1549.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int strikethrough_thickness;
-     * }
-     */
-    public static void strikethrough_thickness$set(MemorySegment seg, int x) {
-        constants$1549.const$5.set(seg, x);
-    }
-    public static int strikethrough_thickness$get(MemorySegment seg, long index) {
-        return (int)constants$1549.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void strikethrough_thickness$set(MemorySegment seg, long index, int x) {
-        constants$1549.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("ref_count"),
+        app_indicator_h.C_INT.withName("ascent"),
+        app_indicator_h.C_INT.withName("descent"),
+        app_indicator_h.C_INT.withName("height"),
+        app_indicator_h.C_INT.withName("approximate_char_width"),
+        app_indicator_h.C_INT.withName("approximate_digit_width"),
+        app_indicator_h.C_INT.withName("underline_position"),
+        app_indicator_h.C_INT.withName("underline_thickness"),
+        app_indicator_h.C_INT.withName("strikethrough_position"),
+        app_indicator_h.C_INT.withName("strikethrough_thickness")
+    ).withName("_PangoFontMetrics");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt ref_count$LAYOUT = (OfInt)$LAYOUT.select(groupElement("ref_count"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint ref_count
+     * }
+     */
+    public static final OfInt ref_count$layout() {
+        return ref_count$LAYOUT;
+    }
+
+    private static final long ref_count$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint ref_count
+     * }
+     */
+    public static final long ref_count$offset() {
+        return ref_count$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint ref_count
+     * }
+     */
+    public static int ref_count(MemorySegment struct) {
+        return struct.get(ref_count$LAYOUT, ref_count$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint ref_count
+     * }
+     */
+    public static void ref_count(MemorySegment struct, int fieldValue) {
+        struct.set(ref_count$LAYOUT, ref_count$OFFSET, fieldValue);
+    }
+
+    private static final OfInt ascent$LAYOUT = (OfInt)$LAYOUT.select(groupElement("ascent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int ascent
+     * }
+     */
+    public static final OfInt ascent$layout() {
+        return ascent$LAYOUT;
+    }
+
+    private static final long ascent$OFFSET = 4;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int ascent
+     * }
+     */
+    public static final long ascent$offset() {
+        return ascent$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int ascent
+     * }
+     */
+    public static int ascent(MemorySegment struct) {
+        return struct.get(ascent$LAYOUT, ascent$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int ascent
+     * }
+     */
+    public static void ascent(MemorySegment struct, int fieldValue) {
+        struct.set(ascent$LAYOUT, ascent$OFFSET, fieldValue);
+    }
+
+    private static final OfInt descent$LAYOUT = (OfInt)$LAYOUT.select(groupElement("descent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int descent
+     * }
+     */
+    public static final OfInt descent$layout() {
+        return descent$LAYOUT;
+    }
+
+    private static final long descent$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int descent
+     * }
+     */
+    public static final long descent$offset() {
+        return descent$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int descent
+     * }
+     */
+    public static int descent(MemorySegment struct) {
+        return struct.get(descent$LAYOUT, descent$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int descent
+     * }
+     */
+    public static void descent(MemorySegment struct, int fieldValue) {
+        struct.set(descent$LAYOUT, descent$OFFSET, fieldValue);
+    }
+
+    private static final OfInt height$LAYOUT = (OfInt)$LAYOUT.select(groupElement("height"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int height
+     * }
+     */
+    public static final OfInt height$layout() {
+        return height$LAYOUT;
+    }
+
+    private static final long height$OFFSET = 12;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int height
+     * }
+     */
+    public static final long height$offset() {
+        return height$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int height
+     * }
+     */
+    public static int height(MemorySegment struct) {
+        return struct.get(height$LAYOUT, height$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int height
+     * }
+     */
+    public static void height(MemorySegment struct, int fieldValue) {
+        struct.set(height$LAYOUT, height$OFFSET, fieldValue);
+    }
+
+    private static final OfInt approximate_char_width$LAYOUT = (OfInt)$LAYOUT.select(groupElement("approximate_char_width"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int approximate_char_width
+     * }
+     */
+    public static final OfInt approximate_char_width$layout() {
+        return approximate_char_width$LAYOUT;
+    }
+
+    private static final long approximate_char_width$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int approximate_char_width
+     * }
+     */
+    public static final long approximate_char_width$offset() {
+        return approximate_char_width$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int approximate_char_width
+     * }
+     */
+    public static int approximate_char_width(MemorySegment struct) {
+        return struct.get(approximate_char_width$LAYOUT, approximate_char_width$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int approximate_char_width
+     * }
+     */
+    public static void approximate_char_width(MemorySegment struct, int fieldValue) {
+        struct.set(approximate_char_width$LAYOUT, approximate_char_width$OFFSET, fieldValue);
+    }
+
+    private static final OfInt approximate_digit_width$LAYOUT = (OfInt)$LAYOUT.select(groupElement("approximate_digit_width"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int approximate_digit_width
+     * }
+     */
+    public static final OfInt approximate_digit_width$layout() {
+        return approximate_digit_width$LAYOUT;
+    }
+
+    private static final long approximate_digit_width$OFFSET = 20;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int approximate_digit_width
+     * }
+     */
+    public static final long approximate_digit_width$offset() {
+        return approximate_digit_width$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int approximate_digit_width
+     * }
+     */
+    public static int approximate_digit_width(MemorySegment struct) {
+        return struct.get(approximate_digit_width$LAYOUT, approximate_digit_width$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int approximate_digit_width
+     * }
+     */
+    public static void approximate_digit_width(MemorySegment struct, int fieldValue) {
+        struct.set(approximate_digit_width$LAYOUT, approximate_digit_width$OFFSET, fieldValue);
+    }
+
+    private static final OfInt underline_position$LAYOUT = (OfInt)$LAYOUT.select(groupElement("underline_position"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int underline_position
+     * }
+     */
+    public static final OfInt underline_position$layout() {
+        return underline_position$LAYOUT;
+    }
+
+    private static final long underline_position$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int underline_position
+     * }
+     */
+    public static final long underline_position$offset() {
+        return underline_position$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int underline_position
+     * }
+     */
+    public static int underline_position(MemorySegment struct) {
+        return struct.get(underline_position$LAYOUT, underline_position$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int underline_position
+     * }
+     */
+    public static void underline_position(MemorySegment struct, int fieldValue) {
+        struct.set(underline_position$LAYOUT, underline_position$OFFSET, fieldValue);
+    }
+
+    private static final OfInt underline_thickness$LAYOUT = (OfInt)$LAYOUT.select(groupElement("underline_thickness"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int underline_thickness
+     * }
+     */
+    public static final OfInt underline_thickness$layout() {
+        return underline_thickness$LAYOUT;
+    }
+
+    private static final long underline_thickness$OFFSET = 28;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int underline_thickness
+     * }
+     */
+    public static final long underline_thickness$offset() {
+        return underline_thickness$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int underline_thickness
+     * }
+     */
+    public static int underline_thickness(MemorySegment struct) {
+        return struct.get(underline_thickness$LAYOUT, underline_thickness$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int underline_thickness
+     * }
+     */
+    public static void underline_thickness(MemorySegment struct, int fieldValue) {
+        struct.set(underline_thickness$LAYOUT, underline_thickness$OFFSET, fieldValue);
+    }
+
+    private static final OfInt strikethrough_position$LAYOUT = (OfInt)$LAYOUT.select(groupElement("strikethrough_position"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int strikethrough_position
+     * }
+     */
+    public static final OfInt strikethrough_position$layout() {
+        return strikethrough_position$LAYOUT;
+    }
+
+    private static final long strikethrough_position$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int strikethrough_position
+     * }
+     */
+    public static final long strikethrough_position$offset() {
+        return strikethrough_position$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int strikethrough_position
+     * }
+     */
+    public static int strikethrough_position(MemorySegment struct) {
+        return struct.get(strikethrough_position$LAYOUT, strikethrough_position$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int strikethrough_position
+     * }
+     */
+    public static void strikethrough_position(MemorySegment struct, int fieldValue) {
+        struct.set(strikethrough_position$LAYOUT, strikethrough_position$OFFSET, fieldValue);
+    }
+
+    private static final OfInt strikethrough_thickness$LAYOUT = (OfInt)$LAYOUT.select(groupElement("strikethrough_thickness"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int strikethrough_thickness
+     * }
+     */
+    public static final OfInt strikethrough_thickness$layout() {
+        return strikethrough_thickness$LAYOUT;
+    }
+
+    private static final long strikethrough_thickness$OFFSET = 36;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int strikethrough_thickness
+     * }
+     */
+    public static final long strikethrough_thickness$offset() {
+        return strikethrough_thickness$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int strikethrough_thickness
+     * }
+     */
+    public static int strikethrough_thickness(MemorySegment struct) {
+        return struct.get(strikethrough_thickness$LAYOUT, strikethrough_thickness$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int strikethrough_thickness
+     * }
+     */
+    public static void strikethrough_thickness(MemorySegment struct, int fieldValue) {
+        struct.set(strikethrough_thickness$LAYOUT, strikethrough_thickness$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

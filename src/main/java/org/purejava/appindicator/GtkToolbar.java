@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkToolbar GtkToolbar;
+ * {@snippet lang=c :
+ * typedef struct _GtkToolbar GtkToolbar
  * }
  */
-public final class GtkToolbar extends _GtkToolbar {
+public class GtkToolbar extends _GtkToolbar {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkToolbar() {}
+    GtkToolbar() {
+        // Should not be called directly
+    }
 }
-
 

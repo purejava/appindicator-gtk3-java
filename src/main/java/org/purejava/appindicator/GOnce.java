@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GOnce GOnce;
+ * {@snippet lang=c :
+ * typedef struct _GOnce GOnce
  * }
  */
-public final class GOnce extends _GOnce {
+public class GOnce extends _GOnce {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GOnce() {}
+    GOnce() {
+        // Should not be called directly
+    }
 }
-
 

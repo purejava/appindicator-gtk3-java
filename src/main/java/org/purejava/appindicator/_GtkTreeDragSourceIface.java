@@ -2,194 +2,418 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkTreeDragSourceIface {
- *     struct _GTypeInterface g_iface;
- *     int (*row_draggable)(struct _GtkTreeDragSource*,struct _GtkTreePath*);
- *     int (*drag_data_get)(struct _GtkTreeDragSource*,struct _GtkTreePath*,struct _GtkSelectionData*);
- *     int (*drag_data_delete)(struct _GtkTreeDragSource*,struct _GtkTreePath*);
- * };
+ *     GTypeInterface g_iface;
+ *     gboolean (*row_draggable)(GtkTreeDragSource *, GtkTreePath *);
+ *     gboolean (*drag_data_get)(GtkTreeDragSource *, GtkTreePath *, GtkSelectionData *);
+ *     gboolean (*drag_data_delete)(GtkTreeDragSource *, GtkTreePath *);
+ * }
  * }
  */
 public class _GtkTreeDragSourceIface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$3192.const$1;
+    _GtkTreeDragSourceIface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("row_draggable"),
+        app_indicator_h.C_POINTER.withName("drag_data_get"),
+        app_indicator_h.C_POINTER.withName("drag_data_delete")
+    ).withName("_GtkTreeDragSourceIface");
+
     /**
-     * {@snippet :
- * int (*row_draggable)(struct _GtkTreeDragSource*,struct _GtkTreePath*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface row_draggable {
-
-        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(row_draggable fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3192.const$2, fi, constants$9.const$0, scope);
-        }
-        static row_draggable ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle row_draggable$VH() {
-        return constants$3192.const$3;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*row_draggable)(struct _GtkTreeDragSource*,struct _GtkTreePath*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment row_draggable$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3192.const$3.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*row_draggable)(struct _GtkTreeDragSource*,struct _GtkTreePath*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void row_draggable$set(MemorySegment seg, MemorySegment x) {
-        constants$3192.const$3.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment row_draggable$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3192.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void row_draggable$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3192.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static row_draggable row_draggable(MemorySegment segment, Arena scope) {
-        return row_draggable.ofAddress(row_draggable$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*drag_data_get)(struct _GtkTreeDragSource*,struct _GtkTreePath*,struct _GtkSelectionData*);
+     * {@snippet lang=c :
+     * gboolean (*row_draggable)(GtkTreeDragSource *, GtkTreePath *)
      * }
      */
-    public interface drag_data_get {
+    public class row_draggable {
 
-        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(drag_data_get fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3192.const$4, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static drag_data_get ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(row_draggable.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(row_draggable.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle drag_data_get$VH() {
-        return constants$3192.const$5;
+    private static final AddressLayout row_draggable$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("row_draggable"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*row_draggable)(GtkTreeDragSource *, GtkTreePath *)
+     * }
+     */
+    public static final AddressLayout row_draggable$layout() {
+        return row_draggable$LAYOUT;
     }
+
+    private static final long row_draggable$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*row_draggable)(GtkTreeDragSource *, GtkTreePath *)
+     * }
+     */
+    public static final long row_draggable$offset() {
+        return row_draggable$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*drag_data_get)(struct _GtkTreeDragSource*,struct _GtkTreePath*,struct _GtkSelectionData*);
+     * {@snippet lang=c :
+     * gboolean (*row_draggable)(GtkTreeDragSource *, GtkTreePath *)
      * }
      */
-    public static MemorySegment drag_data_get$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3192.const$5.get(seg);
+    public static MemorySegment row_draggable(MemorySegment struct) {
+        return struct.get(row_draggable$LAYOUT, row_draggable$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*drag_data_get)(struct _GtkTreeDragSource*,struct _GtkTreePath*,struct _GtkSelectionData*);
+     * {@snippet lang=c :
+     * gboolean (*row_draggable)(GtkTreeDragSource *, GtkTreePath *)
      * }
      */
-    public static void drag_data_get$set(MemorySegment seg, MemorySegment x) {
-        constants$3192.const$5.set(seg, x);
+    public static void row_draggable(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(row_draggable$LAYOUT, row_draggable$OFFSET, fieldValue);
     }
-    public static MemorySegment drag_data_get$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3192.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void drag_data_get$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3192.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static drag_data_get drag_data_get(MemorySegment segment, Arena scope) {
-        return drag_data_get.ofAddress(drag_data_get$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*drag_data_delete)(struct _GtkTreeDragSource*,struct _GtkTreePath*);
+     * {@snippet lang=c :
+     * gboolean (*drag_data_get)(GtkTreeDragSource *, GtkTreePath *, GtkSelectionData *)
      * }
      */
-    public interface drag_data_delete {
+    public class drag_data_get {
 
-        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(drag_data_delete fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3193.const$0, fi, constants$9.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static drag_data_delete ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(drag_data_get.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(drag_data_get.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle drag_data_delete$VH() {
-        return constants$3193.const$1;
+    private static final AddressLayout drag_data_get$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("drag_data_get"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*drag_data_get)(GtkTreeDragSource *, GtkTreePath *, GtkSelectionData *)
+     * }
+     */
+    public static final AddressLayout drag_data_get$layout() {
+        return drag_data_get$LAYOUT;
     }
+
+    private static final long drag_data_get$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*drag_data_get)(GtkTreeDragSource *, GtkTreePath *, GtkSelectionData *)
+     * }
+     */
+    public static final long drag_data_get$offset() {
+        return drag_data_get$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*drag_data_delete)(struct _GtkTreeDragSource*,struct _GtkTreePath*);
+     * {@snippet lang=c :
+     * gboolean (*drag_data_get)(GtkTreeDragSource *, GtkTreePath *, GtkSelectionData *)
      * }
      */
-    public static MemorySegment drag_data_delete$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3193.const$1.get(seg);
+    public static MemorySegment drag_data_get(MemorySegment struct) {
+        return struct.get(drag_data_get$LAYOUT, drag_data_get$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*drag_data_delete)(struct _GtkTreeDragSource*,struct _GtkTreePath*);
+     * {@snippet lang=c :
+     * gboolean (*drag_data_get)(GtkTreeDragSource *, GtkTreePath *, GtkSelectionData *)
      * }
      */
-    public static void drag_data_delete$set(MemorySegment seg, MemorySegment x) {
-        constants$3193.const$1.set(seg, x);
+    public static void drag_data_get(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(drag_data_get$LAYOUT, drag_data_get$OFFSET, fieldValue);
     }
-    public static MemorySegment drag_data_delete$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3193.const$1.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * gboolean (*drag_data_delete)(GtkTreeDragSource *, GtkTreePath *)
+     * }
+     */
+    public class drag_data_delete {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(drag_data_delete.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(drag_data_delete.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void drag_data_delete$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3193.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout drag_data_delete$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("drag_data_delete"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*drag_data_delete)(GtkTreeDragSource *, GtkTreePath *)
+     * }
+     */
+    public static final AddressLayout drag_data_delete$layout() {
+        return drag_data_delete$LAYOUT;
     }
-    public static drag_data_delete drag_data_delete(MemorySegment segment, Arena scope) {
-        return drag_data_delete.ofAddress(drag_data_delete$get(segment), scope);
+
+    private static final long drag_data_delete$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*drag_data_delete)(GtkTreeDragSource *, GtkTreePath *)
+     * }
+     */
+    public static final long drag_data_delete$offset() {
+        return drag_data_delete$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean (*drag_data_delete)(GtkTreeDragSource *, GtkTreePath *)
+     * }
+     */
+    public static MemorySegment drag_data_delete(MemorySegment struct) {
+        return struct.get(drag_data_delete$LAYOUT, drag_data_delete$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean (*drag_data_delete)(GtkTreeDragSource *, GtkTreePath *)
+     * }
+     */
+    public static void drag_data_delete(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(drag_data_delete$LAYOUT, drag_data_delete$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

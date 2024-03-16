@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkRecentManagerClass GtkRecentManagerClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkRecentManagerClass GtkRecentManagerClass
  * }
  */
-public final class GtkRecentManagerClass extends _GtkRecentManagerClass {
+public class GtkRecentManagerClass extends _GtkRecentManagerClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkRecentManagerClass() {}
+    GtkRecentManagerClass() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,198 +2,496 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GTlsPasswordClass {
- *     struct _GObjectClass parent_class;
- *     unsigned char* (*get_value)(struct _GTlsPassword*,unsigned long*);
- *     void (*set_value)(struct _GTlsPassword*,unsigned char*,long,void (*)(void*));
- *     char* (*get_default_warning)(struct _GTlsPassword*);
- *     void* padding[4];
- * };
+ *     GObjectClass parent_class;
+ *     const guchar *(*get_value)(GTlsPassword *, gsize *);
+ *     void (*set_value)(GTlsPassword *, guchar *, gssize, GDestroyNotify);
+ *     const gchar *(*get_default_warning)(GTlsPassword *);
+ *     gpointer padding[4];
+ * }
  * }
  */
 public class _GTlsPasswordClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1382.const$3;
+    _GTlsPasswordClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 136);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObjectClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("get_value"),
+        app_indicator_h.C_POINTER.withName("set_value"),
+        app_indicator_h.C_POINTER.withName("get_default_warning"),
+        MemoryLayout.sequenceLayout(4, app_indicator_h.C_POINTER).withName("padding")
+    ).withName("_GTlsPasswordClass");
+
     /**
-     * {@snippet :
- * unsigned char* (*get_value)(struct _GTlsPassword*,unsigned long*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public interface get_value {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-        static MemorySegment allocate(get_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1382.const$4, fi, constants$5.const$5, scope);
-        }
-        static get_value ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle get_value$VH() {
-        return constants$1382.const$5;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * unsigned char* (*get_value)(struct _GTlsPassword*,unsigned long*);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static MemorySegment get_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1382.const$5.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * unsigned char* (*get_value)(struct _GTlsPassword*,unsigned long*);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static void get_value$set(MemorySegment seg, MemorySegment x) {
-        constants$1382.const$5.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment get_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1382.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1382.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_value get_value(MemorySegment segment, Arena scope) {
-        return get_value.ofAddress(get_value$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*set_value)(struct _GTlsPassword*,unsigned char*,long,void (*)(void*));
+     * {@snippet lang=c :
+     * const guchar *(*get_value)(GTlsPassword *, gsize *)
      * }
      */
-    public interface set_value {
+    public class get_value {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(set_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1383.const$0, fi, constants$1143.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static set_value ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3) -> {
-                try {
-                    constants$1383.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_value.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_value.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle set_value$VH() {
-        return constants$1383.const$2;
+    private static final AddressLayout get_value$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_value"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const guchar *(*get_value)(GTlsPassword *, gsize *)
+     * }
+     */
+    public static final AddressLayout get_value$layout() {
+        return get_value$LAYOUT;
     }
+
+    private static final long get_value$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const guchar *(*get_value)(GTlsPassword *, gsize *)
+     * }
+     */
+    public static final long get_value$offset() {
+        return get_value$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*set_value)(struct _GTlsPassword*,unsigned char*,long,void (*)(void*));
+     * {@snippet lang=c :
+     * const guchar *(*get_value)(GTlsPassword *, gsize *)
      * }
      */
-    public static MemorySegment set_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1383.const$2.get(seg);
+    public static MemorySegment get_value(MemorySegment struct) {
+        return struct.get(get_value$LAYOUT, get_value$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*set_value)(struct _GTlsPassword*,unsigned char*,long,void (*)(void*));
+     * {@snippet lang=c :
+     * const guchar *(*get_value)(GTlsPassword *, gsize *)
      * }
      */
-    public static void set_value$set(MemorySegment seg, MemorySegment x) {
-        constants$1383.const$2.set(seg, x);
+    public static void get_value(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_value$LAYOUT, get_value$OFFSET, fieldValue);
     }
-    public static MemorySegment set_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1383.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void set_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1383.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static set_value set_value(MemorySegment segment, Arena scope) {
-        return set_value.ofAddress(set_value$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * char* (*get_default_warning)(struct _GTlsPassword*);
+     * {@snippet lang=c :
+     * void (*set_value)(GTlsPassword *, guchar *, gssize, GDestroyNotify)
      * }
      */
-    public interface get_default_warning {
+    public class set_value {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_default_warning fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1383.const$3, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3);
         }
-        static get_default_warning ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(set_value.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(set_value.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_default_warning$VH() {
-        return constants$1383.const$4;
+    private static final AddressLayout set_value$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("set_value"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*set_value)(GTlsPassword *, guchar *, gssize, GDestroyNotify)
+     * }
+     */
+    public static final AddressLayout set_value$layout() {
+        return set_value$LAYOUT;
     }
+
+    private static final long set_value$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*set_value)(GTlsPassword *, guchar *, gssize, GDestroyNotify)
+     * }
+     */
+    public static final long set_value$offset() {
+        return set_value$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* (*get_default_warning)(struct _GTlsPassword*);
+     * {@snippet lang=c :
+     * void (*set_value)(GTlsPassword *, guchar *, gssize, GDestroyNotify)
      * }
      */
-    public static MemorySegment get_default_warning$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1383.const$4.get(seg);
+    public static MemorySegment set_value(MemorySegment struct) {
+        return struct.get(set_value$LAYOUT, set_value$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* (*get_default_warning)(struct _GTlsPassword*);
+     * {@snippet lang=c :
+     * void (*set_value)(GTlsPassword *, guchar *, gssize, GDestroyNotify)
      * }
      */
-    public static void get_default_warning$set(MemorySegment seg, MemorySegment x) {
-        constants$1383.const$4.set(seg, x);
+    public static void set_value(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(set_value$LAYOUT, set_value$OFFSET, fieldValue);
     }
-    public static MemorySegment get_default_warning$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1383.const$4.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * const gchar *(*get_default_warning)(GTlsPassword *)
+     * }
+     */
+    public class get_default_warning {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_default_warning.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_default_warning.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void get_default_warning$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1383.const$4.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout get_default_warning$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_default_warning"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_default_warning)(GTlsPassword *)
+     * }
+     */
+    public static final AddressLayout get_default_warning$layout() {
+        return get_default_warning$LAYOUT;
     }
-    public static get_default_warning get_default_warning(MemorySegment segment, Arena scope) {
-        return get_default_warning.ofAddress(get_default_warning$get(segment), scope);
+
+    private static final long get_default_warning$OFFSET = 152;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_default_warning)(GTlsPassword *)
+     * }
+     */
+    public static final long get_default_warning$offset() {
+        return get_default_warning$OFFSET;
     }
-    public static MemorySegment padding$slice(MemorySegment seg) {
-        return seg.asSlice(160, 32);
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_default_warning)(GTlsPassword *)
+     * }
+     */
+    public static MemorySegment get_default_warning(MemorySegment struct) {
+        return struct.get(get_default_warning$LAYOUT, get_default_warning$OFFSET);
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_default_warning)(GTlsPassword *)
+     * }
+     */
+    public static void get_default_warning(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_default_warning$LAYOUT, get_default_warning$OFFSET, fieldValue);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    private static final SequenceLayout padding$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("padding"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer padding[4]
+     * }
+     */
+    public static final SequenceLayout padding$layout() {
+        return padding$LAYOUT;
+    }
+
+    private static final long padding$OFFSET = 160;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer padding[4]
+     * }
+     */
+    public static final long padding$offset() {
+        return padding$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[4]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct) {
+        return struct.asSlice(padding$OFFSET, padding$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[4]
+     * }
+     */
+    public static void padding(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, padding$OFFSET, padding$LAYOUT.byteSize());
+    }
+
+    private static long[] padding$DIMS = { 4 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * gpointer padding[4]
+     * }
+     */
+    public static long[] padding$dimensions() {
+        return padding$DIMS;
+    }
+    private static final VarHandle padding$ELEM_HANDLE = padding$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[4]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct, long index0) {
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[4]
+     * }
+     */
+    public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

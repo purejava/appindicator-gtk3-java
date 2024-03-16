@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct user_fpsimd_struct prfpregset_t;
+ * {@snippet lang=c :
+ * typedef __prfpregset_t prfpregset_t
  * }
  */
-public final class prfpregset_t extends user_fpsimd_struct {
+public class prfpregset_t extends user_fpsimd_struct {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private prfpregset_t() {}
+    prfpregset_t() {
+        // Should not be called directly
+    }
 }
-
 

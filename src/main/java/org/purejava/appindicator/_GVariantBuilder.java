@@ -2,142 +2,611 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GVariantBuilder {
- *     union  u;
- * };
+ *     union {
+ *         struct {
+ *             gsize partial_magic;
+ *             const GVariantType *type;
+ *             guintptr y[14];
+ *         } s;
+ *         guintptr x[16];
+ *     } u;
+ * }
  * }
  */
 public class _GVariantBuilder {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$365.const$3;
+    _GVariantBuilder() {
+        // Should not be called directly
     }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GVariantBuilder.u.layout().withName("u")
+    ).withName("_GVariantBuilder");
+
     /**
-     * {@snippet :
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    /**
+     * {@snippet lang=c :
      * union {
-     *     struct  s;
-     *     unsigned long x[16];
-     * };
+     *     struct {
+     *         gsize partial_magic;
+     *         const GVariantType *type;
+     *         guintptr y[14];
+     *     } s;
+     *     guintptr x[16];
+     * }
      * }
      */
-    public static final class u {
+    public static class u {
 
-        // Suppresses default constructor, ensuring non-instantiability.
-        private u() {}
-        public static MemoryLayout $LAYOUT() {
-            return constants$365.const$4;
+        u() {
+            // Should not be called directly
         }
+
+        private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
+            _GVariantBuilder.u.s.layout().withName("s"),
+            MemoryLayout.sequenceLayout(16, app_indicator_h.C_LONG).withName("x")
+        ).withName("$anon$302:3");
+
         /**
-         * {@snippet :
+         * The layout of this union
+         */
+        public static final GroupLayout layout() {
+            return $LAYOUT;
+        }
+
+        /**
+         * {@snippet lang=c :
          * struct {
-         *     unsigned long partial_magic;
-         *     struct _GVariantType* type;
-         *     unsigned long y[14];
-         * };
+         *     gsize partial_magic;
+         *     const GVariantType *type;
+         *     guintptr y[14];
+         * }
          * }
          */
-        public static final class s {
+        public static class s {
 
-            // Suppresses default constructor, ensuring non-instantiability.
-            private s() {}
-            public static MemoryLayout $LAYOUT() {
-                return constants$365.const$5;
+            s() {
+                // Should not be called directly
             }
-            public static VarHandle partial_magic$VH() {
-                return constants$366.const$0;
+
+            private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+                app_indicator_h.C_LONG.withName("partial_magic"),
+                app_indicator_h.C_POINTER.withName("type"),
+                MemoryLayout.sequenceLayout(14, app_indicator_h.C_LONG).withName("y")
+            ).withName("$anon$304:5");
+
+            /**
+             * The layout of this struct
+             */
+            public static final GroupLayout layout() {
+                return $LAYOUT;
             }
+
+            private static final OfLong partial_magic$LAYOUT = (OfLong)$LAYOUT.select(groupElement("partial_magic"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * gsize partial_magic
+             * }
+             */
+            public static final OfLong partial_magic$layout() {
+                return partial_magic$LAYOUT;
+            }
+
+            private static final long partial_magic$OFFSET = 0;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * gsize partial_magic
+             * }
+             */
+            public static final long partial_magic$offset() {
+                return partial_magic$OFFSET;
+            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * unsigned long partial_magic;
+             * {@snippet lang=c :
+             * gsize partial_magic
              * }
              */
-            public static long partial_magic$get(MemorySegment seg) {
-                return (long)constants$366.const$0.get(seg);
+            public static long partial_magic(MemorySegment struct) {
+                return struct.get(partial_magic$LAYOUT, partial_magic$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * unsigned long partial_magic;
+             * {@snippet lang=c :
+             * gsize partial_magic
              * }
              */
-            public static void partial_magic$set(MemorySegment seg, long x) {
-                constants$366.const$0.set(seg, x);
+            public static void partial_magic(MemorySegment struct, long fieldValue) {
+                struct.set(partial_magic$LAYOUT, partial_magic$OFFSET, fieldValue);
             }
-            public static long partial_magic$get(MemorySegment seg, long index) {
-                return (long)constants$366.const$0.get(seg.asSlice(index*sizeof()));
+
+            private static final AddressLayout type$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("type"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * const GVariantType *type
+             * }
+             */
+            public static final AddressLayout type$layout() {
+                return type$LAYOUT;
             }
-            public static void partial_magic$set(MemorySegment seg, long index, long x) {
-                constants$366.const$0.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long type$OFFSET = 8;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * const GVariantType *type
+             * }
+             */
+            public static final long type$offset() {
+                return type$OFFSET;
             }
-            public static VarHandle type$VH() {
-                return constants$366.const$1;
-            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * struct _GVariantType* type;
+             * {@snippet lang=c :
+             * const GVariantType *type
              * }
              */
-            public static MemorySegment type$get(MemorySegment seg) {
-                return (java.lang.foreign.MemorySegment)constants$366.const$1.get(seg);
+            public static MemorySegment type(MemorySegment struct) {
+                return struct.get(type$LAYOUT, type$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * struct _GVariantType* type;
+             * {@snippet lang=c :
+             * const GVariantType *type
              * }
              */
-            public static void type$set(MemorySegment seg, MemorySegment x) {
-                constants$366.const$1.set(seg, x);
+            public static void type(MemorySegment struct, MemorySegment fieldValue) {
+                struct.set(type$LAYOUT, type$OFFSET, fieldValue);
             }
-            public static MemorySegment type$get(MemorySegment seg, long index) {
-                return (java.lang.foreign.MemorySegment)constants$366.const$1.get(seg.asSlice(index*sizeof()));
+
+            private static final SequenceLayout y$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("y"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * guintptr y[14]
+             * }
+             */
+            public static final SequenceLayout y$layout() {
+                return y$LAYOUT;
             }
-            public static void type$set(MemorySegment seg, long index, MemorySegment x) {
-                constants$366.const$1.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long y$OFFSET = 16;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * guintptr y[14]
+             * }
+             */
+            public static final long y$offset() {
+                return y$OFFSET;
             }
-            public static MemorySegment y$slice(MemorySegment seg) {
-                return seg.asSlice(16, 112);
+
+            /**
+             * Getter for field:
+             * {@snippet lang=c :
+             * guintptr y[14]
+             * }
+             */
+            public static MemorySegment y(MemorySegment struct) {
+                return struct.asSlice(y$OFFSET, y$LAYOUT.byteSize());
             }
-            public static long sizeof() { return $LAYOUT().byteSize(); }
-            public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-                return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+            /**
+             * Setter for field:
+             * {@snippet lang=c :
+             * guintptr y[14]
+             * }
+             */
+            public static void y(MemorySegment struct, MemorySegment fieldValue) {
+                MemorySegment.copy(fieldValue, 0L, struct, y$OFFSET, y$LAYOUT.byteSize());
             }
-            public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+            private static long[] y$DIMS = { 14 };
+
+            /**
+             * Dimensions for array field:
+             * {@snippet lang=c :
+             * guintptr y[14]
+             * }
+             */
+            public static long[] y$dimensions() {
+                return y$DIMS;
+            }
+            private static final VarHandle y$ELEM_HANDLE = y$LAYOUT.varHandle(sequenceElement());
+
+            /**
+             * Indexed getter for field:
+             * {@snippet lang=c :
+             * guintptr y[14]
+             * }
+             */
+            public static long y(MemorySegment struct, long index0) {
+                return (long)y$ELEM_HANDLE.get(struct, 0L, index0);
+            }
+
+            /**
+             * Indexed setter for field:
+             * {@snippet lang=c :
+             * guintptr y[14]
+             * }
+             */
+            public static void y(MemorySegment struct, long index0, long fieldValue) {
+                y$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+            }
+
+            /**
+             * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+             * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+             */
+            public static MemorySegment asSlice(MemorySegment array, long index) {
+                return array.asSlice(layout().byteSize() * index);
+            }
+
+            /**
+             * The size (in bytes) of this struct
+             */
+            public static long sizeof() { return layout().byteSize(); }
+
+            /**
+             * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+             */
+            public static MemorySegment allocate(SegmentAllocator allocator) {
+                return allocator.allocate(layout());
+            }
+
+            /**
+             * Allocate an array of size {@code elementCount} using {@code allocator}.
+             * The returned segment has size {@code elementCount * layout().byteSize()}.
+             */
+            public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+                return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+                return reinterpret(addr, 1, arena, cleanup);
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code elementCount * layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+                return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+            }
         }
 
-        public static MemorySegment s$slice(MemorySegment seg) {
-            return seg.asSlice(0, 128);
+        private static final GroupLayout s$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("s"));
+
+        /**
+         * Layout for field:
+         * {@snippet lang=c :
+         * struct {
+         *     gsize partial_magic;
+         *     const GVariantType *type;
+         *     guintptr y[14];
+         * } s
+         * }
+         */
+        public static final GroupLayout s$layout() {
+            return s$LAYOUT;
         }
-        public static MemorySegment x$slice(MemorySegment seg) {
-            return seg.asSlice(0, 128);
+
+        private static final long s$OFFSET = 0;
+
+        /**
+         * Offset for field:
+         * {@snippet lang=c :
+         * struct {
+         *     gsize partial_magic;
+         *     const GVariantType *type;
+         *     guintptr y[14];
+         * } s
+         * }
+         */
+        public static final long s$offset() {
+            return s$OFFSET;
         }
-        public static long sizeof() { return $LAYOUT().byteSize(); }
-        public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-        public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-            return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     gsize partial_magic;
+         *     const GVariantType *type;
+         *     guintptr y[14];
+         * } s
+         * }
+         */
+        public static MemorySegment s(MemorySegment union) {
+            return union.asSlice(s$OFFSET, s$LAYOUT.byteSize());
         }
-        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     gsize partial_magic;
+         *     const GVariantType *type;
+         *     guintptr y[14];
+         * } s
+         * }
+         */
+        public static void s(MemorySegment union, MemorySegment fieldValue) {
+            MemorySegment.copy(fieldValue, 0L, union, s$OFFSET, s$LAYOUT.byteSize());
+        }
+
+        private static final SequenceLayout x$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("x"));
+
+        /**
+         * Layout for field:
+         * {@snippet lang=c :
+         * guintptr x[16]
+         * }
+         */
+        public static final SequenceLayout x$layout() {
+            return x$LAYOUT;
+        }
+
+        private static final long x$OFFSET = 0;
+
+        /**
+         * Offset for field:
+         * {@snippet lang=c :
+         * guintptr x[16]
+         * }
+         */
+        public static final long x$offset() {
+            return x$OFFSET;
+        }
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * guintptr x[16]
+         * }
+         */
+        public static MemorySegment x(MemorySegment union) {
+            return union.asSlice(x$OFFSET, x$LAYOUT.byteSize());
+        }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * guintptr x[16]
+         * }
+         */
+        public static void x(MemorySegment union, MemorySegment fieldValue) {
+            MemorySegment.copy(fieldValue, 0L, union, x$OFFSET, x$LAYOUT.byteSize());
+        }
+
+        private static long[] x$DIMS = { 16 };
+
+        /**
+         * Dimensions for array field:
+         * {@snippet lang=c :
+         * guintptr x[16]
+         * }
+         */
+        public static long[] x$dimensions() {
+            return x$DIMS;
+        }
+        private static final VarHandle x$ELEM_HANDLE = x$LAYOUT.varHandle(sequenceElement());
+
+        /**
+         * Indexed getter for field:
+         * {@snippet lang=c :
+         * guintptr x[16]
+         * }
+         */
+        public static long x(MemorySegment union, long index0) {
+            return (long)x$ELEM_HANDLE.get(union, 0L, index0);
+        }
+
+        /**
+         * Indexed setter for field:
+         * {@snippet lang=c :
+         * guintptr x[16]
+         * }
+         */
+        public static void x(MemorySegment union, long index0, long fieldValue) {
+            x$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+        }
+
+        /**
+         * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+         * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+         */
+        public static MemorySegment asSlice(MemorySegment array, long index) {
+            return array.asSlice(layout().byteSize() * index);
+        }
+
+        /**
+         * The size (in bytes) of this union
+         */
+        public static long sizeof() { return layout().byteSize(); }
+
+        /**
+         * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+         */
+        public static MemorySegment allocate(SegmentAllocator allocator) {
+            return allocator.allocate(layout());
+        }
+
+        /**
+         * Allocate an array of size {@code elementCount} using {@code allocator}.
+         * The returned segment has size {@code elementCount * layout().byteSize()}.
+         */
+        public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+            return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+        }
+
+        /**
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * The returned segment has size {@code layout().byteSize()}
+         */
+        public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+            return reinterpret(addr, 1, arena, cleanup);
+        }
+
+        /**
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * The returned segment has size {@code elementCount * layout().byteSize()}
+         */
+        public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+            return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+        }
     }
 
-    public static MemorySegment u$slice(MemorySegment seg) {
-        return seg.asSlice(0, 128);
+    private static final GroupLayout u$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("u"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * union {
+     *     struct {
+     *         gsize partial_magic;
+     *         const GVariantType *type;
+     *         guintptr y[14];
+     *     } s;
+     *     guintptr x[16];
+     * } u
+     * }
+     */
+    public static final GroupLayout u$layout() {
+        return u$LAYOUT;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    private static final long u$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * union {
+     *     struct {
+     *         gsize partial_magic;
+     *         const GVariantType *type;
+     *         guintptr y[14];
+     *     } s;
+     *     guintptr x[16];
+     * } u
+     * }
+     */
+    public static final long u$offset() {
+        return u$OFFSET;
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * union {
+     *     struct {
+     *         gsize partial_magic;
+     *         const GVariantType *type;
+     *         guintptr y[14];
+     *     } s;
+     *     guintptr x[16];
+     * } u
+     * }
+     */
+    public static MemorySegment u(MemorySegment struct) {
+        return struct.asSlice(u$OFFSET, u$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * union {
+     *     struct {
+     *         gsize partial_magic;
+     *         const GVariantType *type;
+     *         guintptr y[14];
+     *     } s;
+     *     guintptr x[16];
+     * } u
+     * }
+     */
+    public static void u(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, u$OFFSET, u$LAYOUT.byteSize());
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

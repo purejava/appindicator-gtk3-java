@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkStyleProperties GtkStyleProperties;
+ * {@snippet lang=c :
+ * typedef struct _GtkStyleProperties GtkStyleProperties
  * }
  */
-public final class GtkStyleProperties extends _GtkStyleProperties {
+public class GtkStyleProperties extends _GtkStyleProperties {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkStyleProperties() {}
+    GtkStyleProperties() {
+        // Should not be called directly
+    }
 }
-
 

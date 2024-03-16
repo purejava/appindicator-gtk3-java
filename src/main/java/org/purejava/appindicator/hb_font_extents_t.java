@@ -2,364 +2,632 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct hb_font_extents_t {
- *     int ascender;
- *     int descender;
- *     int line_gap;
- *     int reserved9;
- *     int reserved8;
- *     int reserved7;
- *     int reserved6;
- *     int reserved5;
- *     int reserved4;
- *     int reserved3;
- *     int reserved2;
- *     int reserved1;
- * };
+ *     hb_position_t ascender;
+ *     hb_position_t descender;
+ *     hb_position_t line_gap;
+ *     hb_position_t reserved9;
+ *     hb_position_t reserved8;
+ *     hb_position_t reserved7;
+ *     hb_position_t reserved6;
+ *     hb_position_t reserved5;
+ *     hb_position_t reserved4;
+ *     hb_position_t reserved3;
+ *     hb_position_t reserved2;
+ *     hb_position_t reserved1;
+ * }
  * }
  */
 public class hb_font_extents_t {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1479.const$0;
+    hb_font_extents_t() {
+        // Should not be called directly
     }
-    public static VarHandle ascender$VH() {
-        return constants$1479.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int ascender;
-     * }
-     */
-    public static int ascender$get(MemorySegment seg) {
-        return (int)constants$1479.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int ascender;
-     * }
-     */
-    public static void ascender$set(MemorySegment seg, int x) {
-        constants$1479.const$1.set(seg, x);
-    }
-    public static int ascender$get(MemorySegment seg, long index) {
-        return (int)constants$1479.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void ascender$set(MemorySegment seg, long index, int x) {
-        constants$1479.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle descender$VH() {
-        return constants$1479.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int descender;
-     * }
-     */
-    public static int descender$get(MemorySegment seg) {
-        return (int)constants$1479.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int descender;
-     * }
-     */
-    public static void descender$set(MemorySegment seg, int x) {
-        constants$1479.const$2.set(seg, x);
-    }
-    public static int descender$get(MemorySegment seg, long index) {
-        return (int)constants$1479.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void descender$set(MemorySegment seg, long index, int x) {
-        constants$1479.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle line_gap$VH() {
-        return constants$1479.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int line_gap;
-     * }
-     */
-    public static int line_gap$get(MemorySegment seg) {
-        return (int)constants$1479.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int line_gap;
-     * }
-     */
-    public static void line_gap$set(MemorySegment seg, int x) {
-        constants$1479.const$3.set(seg, x);
-    }
-    public static int line_gap$get(MemorySegment seg, long index) {
-        return (int)constants$1479.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void line_gap$set(MemorySegment seg, long index, int x) {
-        constants$1479.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle reserved9$VH() {
-        return constants$1479.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int reserved9;
-     * }
-     */
-    public static int reserved9$get(MemorySegment seg) {
-        return (int)constants$1479.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int reserved9;
-     * }
-     */
-    public static void reserved9$set(MemorySegment seg, int x) {
-        constants$1479.const$4.set(seg, x);
-    }
-    public static int reserved9$get(MemorySegment seg, long index) {
-        return (int)constants$1479.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reserved9$set(MemorySegment seg, long index, int x) {
-        constants$1479.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle reserved8$VH() {
-        return constants$1479.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int reserved8;
-     * }
-     */
-    public static int reserved8$get(MemorySegment seg) {
-        return (int)constants$1479.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int reserved8;
-     * }
-     */
-    public static void reserved8$set(MemorySegment seg, int x) {
-        constants$1479.const$5.set(seg, x);
-    }
-    public static int reserved8$get(MemorySegment seg, long index) {
-        return (int)constants$1479.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reserved8$set(MemorySegment seg, long index, int x) {
-        constants$1479.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle reserved7$VH() {
-        return constants$1480.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int reserved7;
-     * }
-     */
-    public static int reserved7$get(MemorySegment seg) {
-        return (int)constants$1480.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int reserved7;
-     * }
-     */
-    public static void reserved7$set(MemorySegment seg, int x) {
-        constants$1480.const$0.set(seg, x);
-    }
-    public static int reserved7$get(MemorySegment seg, long index) {
-        return (int)constants$1480.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reserved7$set(MemorySegment seg, long index, int x) {
-        constants$1480.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle reserved6$VH() {
-        return constants$1480.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int reserved6;
-     * }
-     */
-    public static int reserved6$get(MemorySegment seg) {
-        return (int)constants$1480.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int reserved6;
-     * }
-     */
-    public static void reserved6$set(MemorySegment seg, int x) {
-        constants$1480.const$1.set(seg, x);
-    }
-    public static int reserved6$get(MemorySegment seg, long index) {
-        return (int)constants$1480.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reserved6$set(MemorySegment seg, long index, int x) {
-        constants$1480.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle reserved5$VH() {
-        return constants$1480.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int reserved5;
-     * }
-     */
-    public static int reserved5$get(MemorySegment seg) {
-        return (int)constants$1480.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int reserved5;
-     * }
-     */
-    public static void reserved5$set(MemorySegment seg, int x) {
-        constants$1480.const$2.set(seg, x);
-    }
-    public static int reserved5$get(MemorySegment seg, long index) {
-        return (int)constants$1480.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reserved5$set(MemorySegment seg, long index, int x) {
-        constants$1480.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle reserved4$VH() {
-        return constants$1480.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int reserved4;
-     * }
-     */
-    public static int reserved4$get(MemorySegment seg) {
-        return (int)constants$1480.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int reserved4;
-     * }
-     */
-    public static void reserved4$set(MemorySegment seg, int x) {
-        constants$1480.const$3.set(seg, x);
-    }
-    public static int reserved4$get(MemorySegment seg, long index) {
-        return (int)constants$1480.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reserved4$set(MemorySegment seg, long index, int x) {
-        constants$1480.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle reserved3$VH() {
-        return constants$1480.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int reserved3;
-     * }
-     */
-    public static int reserved3$get(MemorySegment seg) {
-        return (int)constants$1480.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int reserved3;
-     * }
-     */
-    public static void reserved3$set(MemorySegment seg, int x) {
-        constants$1480.const$4.set(seg, x);
-    }
-    public static int reserved3$get(MemorySegment seg, long index) {
-        return (int)constants$1480.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reserved3$set(MemorySegment seg, long index, int x) {
-        constants$1480.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle reserved2$VH() {
-        return constants$1480.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int reserved2;
-     * }
-     */
-    public static int reserved2$get(MemorySegment seg) {
-        return (int)constants$1480.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int reserved2;
-     * }
-     */
-    public static void reserved2$set(MemorySegment seg, int x) {
-        constants$1480.const$5.set(seg, x);
-    }
-    public static int reserved2$get(MemorySegment seg, long index) {
-        return (int)constants$1480.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reserved2$set(MemorySegment seg, long index, int x) {
-        constants$1480.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle reserved1$VH() {
-        return constants$1481.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int reserved1;
-     * }
-     */
-    public static int reserved1$get(MemorySegment seg) {
-        return (int)constants$1481.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int reserved1;
-     * }
-     */
-    public static void reserved1$set(MemorySegment seg, int x) {
-        constants$1481.const$0.set(seg, x);
-    }
-    public static int reserved1$get(MemorySegment seg, long index) {
-        return (int)constants$1481.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reserved1$set(MemorySegment seg, long index, int x) {
-        constants$1481.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("ascender"),
+        app_indicator_h.C_INT.withName("descender"),
+        app_indicator_h.C_INT.withName("line_gap"),
+        app_indicator_h.C_INT.withName("reserved9"),
+        app_indicator_h.C_INT.withName("reserved8"),
+        app_indicator_h.C_INT.withName("reserved7"),
+        app_indicator_h.C_INT.withName("reserved6"),
+        app_indicator_h.C_INT.withName("reserved5"),
+        app_indicator_h.C_INT.withName("reserved4"),
+        app_indicator_h.C_INT.withName("reserved3"),
+        app_indicator_h.C_INT.withName("reserved2"),
+        app_indicator_h.C_INT.withName("reserved1")
+    ).withName("hb_font_extents_t");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt ascender$LAYOUT = (OfInt)$LAYOUT.select(groupElement("ascender"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t ascender
+     * }
+     */
+    public static final OfInt ascender$layout() {
+        return ascender$LAYOUT;
+    }
+
+    private static final long ascender$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t ascender
+     * }
+     */
+    public static final long ascender$offset() {
+        return ascender$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t ascender
+     * }
+     */
+    public static int ascender(MemorySegment struct) {
+        return struct.get(ascender$LAYOUT, ascender$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t ascender
+     * }
+     */
+    public static void ascender(MemorySegment struct, int fieldValue) {
+        struct.set(ascender$LAYOUT, ascender$OFFSET, fieldValue);
+    }
+
+    private static final OfInt descender$LAYOUT = (OfInt)$LAYOUT.select(groupElement("descender"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t descender
+     * }
+     */
+    public static final OfInt descender$layout() {
+        return descender$LAYOUT;
+    }
+
+    private static final long descender$OFFSET = 4;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t descender
+     * }
+     */
+    public static final long descender$offset() {
+        return descender$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t descender
+     * }
+     */
+    public static int descender(MemorySegment struct) {
+        return struct.get(descender$LAYOUT, descender$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t descender
+     * }
+     */
+    public static void descender(MemorySegment struct, int fieldValue) {
+        struct.set(descender$LAYOUT, descender$OFFSET, fieldValue);
+    }
+
+    private static final OfInt line_gap$LAYOUT = (OfInt)$LAYOUT.select(groupElement("line_gap"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t line_gap
+     * }
+     */
+    public static final OfInt line_gap$layout() {
+        return line_gap$LAYOUT;
+    }
+
+    private static final long line_gap$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t line_gap
+     * }
+     */
+    public static final long line_gap$offset() {
+        return line_gap$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t line_gap
+     * }
+     */
+    public static int line_gap(MemorySegment struct) {
+        return struct.get(line_gap$LAYOUT, line_gap$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t line_gap
+     * }
+     */
+    public static void line_gap(MemorySegment struct, int fieldValue) {
+        struct.set(line_gap$LAYOUT, line_gap$OFFSET, fieldValue);
+    }
+
+    private static final OfInt reserved9$LAYOUT = (OfInt)$LAYOUT.select(groupElement("reserved9"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved9
+     * }
+     */
+    public static final OfInt reserved9$layout() {
+        return reserved9$LAYOUT;
+    }
+
+    private static final long reserved9$OFFSET = 12;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved9
+     * }
+     */
+    public static final long reserved9$offset() {
+        return reserved9$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved9
+     * }
+     */
+    public static int reserved9(MemorySegment struct) {
+        return struct.get(reserved9$LAYOUT, reserved9$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved9
+     * }
+     */
+    public static void reserved9(MemorySegment struct, int fieldValue) {
+        struct.set(reserved9$LAYOUT, reserved9$OFFSET, fieldValue);
+    }
+
+    private static final OfInt reserved8$LAYOUT = (OfInt)$LAYOUT.select(groupElement("reserved8"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved8
+     * }
+     */
+    public static final OfInt reserved8$layout() {
+        return reserved8$LAYOUT;
+    }
+
+    private static final long reserved8$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved8
+     * }
+     */
+    public static final long reserved8$offset() {
+        return reserved8$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved8
+     * }
+     */
+    public static int reserved8(MemorySegment struct) {
+        return struct.get(reserved8$LAYOUT, reserved8$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved8
+     * }
+     */
+    public static void reserved8(MemorySegment struct, int fieldValue) {
+        struct.set(reserved8$LAYOUT, reserved8$OFFSET, fieldValue);
+    }
+
+    private static final OfInt reserved7$LAYOUT = (OfInt)$LAYOUT.select(groupElement("reserved7"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved7
+     * }
+     */
+    public static final OfInt reserved7$layout() {
+        return reserved7$LAYOUT;
+    }
+
+    private static final long reserved7$OFFSET = 20;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved7
+     * }
+     */
+    public static final long reserved7$offset() {
+        return reserved7$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved7
+     * }
+     */
+    public static int reserved7(MemorySegment struct) {
+        return struct.get(reserved7$LAYOUT, reserved7$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved7
+     * }
+     */
+    public static void reserved7(MemorySegment struct, int fieldValue) {
+        struct.set(reserved7$LAYOUT, reserved7$OFFSET, fieldValue);
+    }
+
+    private static final OfInt reserved6$LAYOUT = (OfInt)$LAYOUT.select(groupElement("reserved6"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved6
+     * }
+     */
+    public static final OfInt reserved6$layout() {
+        return reserved6$LAYOUT;
+    }
+
+    private static final long reserved6$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved6
+     * }
+     */
+    public static final long reserved6$offset() {
+        return reserved6$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved6
+     * }
+     */
+    public static int reserved6(MemorySegment struct) {
+        return struct.get(reserved6$LAYOUT, reserved6$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved6
+     * }
+     */
+    public static void reserved6(MemorySegment struct, int fieldValue) {
+        struct.set(reserved6$LAYOUT, reserved6$OFFSET, fieldValue);
+    }
+
+    private static final OfInt reserved5$LAYOUT = (OfInt)$LAYOUT.select(groupElement("reserved5"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved5
+     * }
+     */
+    public static final OfInt reserved5$layout() {
+        return reserved5$LAYOUT;
+    }
+
+    private static final long reserved5$OFFSET = 28;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved5
+     * }
+     */
+    public static final long reserved5$offset() {
+        return reserved5$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved5
+     * }
+     */
+    public static int reserved5(MemorySegment struct) {
+        return struct.get(reserved5$LAYOUT, reserved5$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved5
+     * }
+     */
+    public static void reserved5(MemorySegment struct, int fieldValue) {
+        struct.set(reserved5$LAYOUT, reserved5$OFFSET, fieldValue);
+    }
+
+    private static final OfInt reserved4$LAYOUT = (OfInt)$LAYOUT.select(groupElement("reserved4"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved4
+     * }
+     */
+    public static final OfInt reserved4$layout() {
+        return reserved4$LAYOUT;
+    }
+
+    private static final long reserved4$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved4
+     * }
+     */
+    public static final long reserved4$offset() {
+        return reserved4$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved4
+     * }
+     */
+    public static int reserved4(MemorySegment struct) {
+        return struct.get(reserved4$LAYOUT, reserved4$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved4
+     * }
+     */
+    public static void reserved4(MemorySegment struct, int fieldValue) {
+        struct.set(reserved4$LAYOUT, reserved4$OFFSET, fieldValue);
+    }
+
+    private static final OfInt reserved3$LAYOUT = (OfInt)$LAYOUT.select(groupElement("reserved3"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved3
+     * }
+     */
+    public static final OfInt reserved3$layout() {
+        return reserved3$LAYOUT;
+    }
+
+    private static final long reserved3$OFFSET = 36;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved3
+     * }
+     */
+    public static final long reserved3$offset() {
+        return reserved3$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved3
+     * }
+     */
+    public static int reserved3(MemorySegment struct) {
+        return struct.get(reserved3$LAYOUT, reserved3$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved3
+     * }
+     */
+    public static void reserved3(MemorySegment struct, int fieldValue) {
+        struct.set(reserved3$LAYOUT, reserved3$OFFSET, fieldValue);
+    }
+
+    private static final OfInt reserved2$LAYOUT = (OfInt)$LAYOUT.select(groupElement("reserved2"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved2
+     * }
+     */
+    public static final OfInt reserved2$layout() {
+        return reserved2$LAYOUT;
+    }
+
+    private static final long reserved2$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved2
+     * }
+     */
+    public static final long reserved2$offset() {
+        return reserved2$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved2
+     * }
+     */
+    public static int reserved2(MemorySegment struct) {
+        return struct.get(reserved2$LAYOUT, reserved2$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved2
+     * }
+     */
+    public static void reserved2(MemorySegment struct, int fieldValue) {
+        struct.set(reserved2$LAYOUT, reserved2$OFFSET, fieldValue);
+    }
+
+    private static final OfInt reserved1$LAYOUT = (OfInt)$LAYOUT.select(groupElement("reserved1"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved1
+     * }
+     */
+    public static final OfInt reserved1$layout() {
+        return reserved1$LAYOUT;
+    }
+
+    private static final long reserved1$OFFSET = 44;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved1
+     * }
+     */
+    public static final long reserved1$offset() {
+        return reserved1$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved1
+     * }
+     */
+    public static int reserved1(MemorySegment struct) {
+        return struct.get(reserved1$LAYOUT, reserved1$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_position_t reserved1
+     * }
+     */
+    public static void reserved1(MemorySegment struct, int fieldValue) {
+        struct.set(reserved1$LAYOUT, reserved1$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

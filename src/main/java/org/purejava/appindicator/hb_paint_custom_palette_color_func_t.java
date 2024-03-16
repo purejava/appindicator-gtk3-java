@@ -2,29 +2,67 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * int (*hb_paint_custom_palette_color_func_t)(struct hb_paint_funcs_t* funcs,void* paint_data,unsigned int color_index,unsigned int* color,void* user_data);
+ * {@snippet lang=c :
+ * typedef hb_bool_t (*hb_paint_custom_palette_color_func_t)(hb_paint_funcs_t *, void *, unsigned int, hb_color_t *, void *)
  * }
  */
-public interface hb_paint_custom_palette_color_func_t {
+public class hb_paint_custom_palette_color_func_t {
 
-    int apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment extents, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(hb_paint_custom_palette_color_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1467.const$3, fi, constants$862.const$1, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment funcs, MemorySegment paint_data, int color_index, MemorySegment color, MemorySegment user_data);
     }
-    static hb_paint_custom_palette_color_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _extents, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                return (int)constants$988.const$1.invokeExact(symbol, _font, _font_data, _glyph, _extents, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(hb_paint_custom_palette_color_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(hb_paint_custom_palette_color_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment funcs, MemorySegment paint_data, int color_index, MemorySegment color, MemorySegment user_data) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, funcs, paint_data, color_index, color, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

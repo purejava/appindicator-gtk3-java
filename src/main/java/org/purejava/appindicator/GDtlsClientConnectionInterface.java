@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GDtlsClientConnectionInterface GDtlsClientConnectionInterface;
+ * {@snippet lang=c :
+ * typedef struct _GDtlsClientConnectionInterface GDtlsClientConnectionInterface
  * }
  */
-public final class GDtlsClientConnectionInterface extends _GDtlsClientConnectionInterface {
+public class GDtlsClientConnectionInterface extends _GDtlsClientConnectionInterface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GDtlsClientConnectionInterface() {}
+    GDtlsClientConnectionInterface() {
+        // Should not be called directly
+    }
 }
-
 

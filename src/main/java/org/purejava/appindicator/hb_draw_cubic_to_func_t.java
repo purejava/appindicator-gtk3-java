@@ -2,29 +2,71 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*hb_draw_cubic_to_func_t)(struct hb_draw_funcs_t* dfuncs,void* draw_data,struct hb_draw_state_t* st,float control1_x,float control1_y,float control2_x,float control2_y,float to_x,float to_y,void* user_data);
+ * {@snippet lang=c :
+ * typedef void (*hb_draw_cubic_to_func_t)(hb_draw_funcs_t *, void *, hb_draw_state_t *, float, float, float, float, float, float, void *)
  * }
  */
-public interface hb_draw_cubic_to_func_t {
+public class hb_draw_cubic_to_func_t {
 
-    void apply(java.lang.foreign.MemorySegment funcs, java.lang.foreign.MemorySegment paint_data, java.lang.foreign.MemorySegment color_line, float x0, float y0, float r0, float x1, float y1, float r1, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(hb_draw_cubic_to_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1452.const$3, fi, constants$1452.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y, MemorySegment user_data);
     }
-    static hb_draw_cubic_to_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _funcs, java.lang.foreign.MemorySegment _paint_data, java.lang.foreign.MemorySegment _color_line, float _x0, float _y0, float _r0, float _x1, float _y1, float _r1, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                constants$1452.const$4.invokeExact(symbol, _funcs, _paint_data, _color_line, _x0, _y0, _r0, _x1, _y1, _r1, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(hb_draw_cubic_to_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(hb_draw_cubic_to_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y, MemorySegment user_data) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, dfuncs, draw_data, st, control1_x, control1_y, control2_x, control2_y, to_x, to_y, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

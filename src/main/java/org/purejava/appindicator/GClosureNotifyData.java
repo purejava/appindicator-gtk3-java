@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GClosureNotifyData GClosureNotifyData;
+ * {@snippet lang=c :
+ * typedef struct _GClosureNotifyData GClosureNotifyData
  * }
  */
-public final class GClosureNotifyData extends _GClosureNotifyData {
+public class GClosureNotifyData extends _GClosureNotifyData {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GClosureNotifyData() {}
+    GClosureNotifyData() {
+        // Should not be called directly
+    }
 }
-
 

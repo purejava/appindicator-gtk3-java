@@ -2,29 +2,66 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*GFileMeasureProgressCallback)(int reporting,unsigned long current_size,unsigned long num_dirs,unsigned long num_files,void* data);
+ * {@snippet lang=c :
+ * typedef void (*GFileMeasureProgressCallback)(gboolean, guint64, guint64, guint64, gpointer)
  * }
  */
-public interface GFileMeasureProgressCallback {
+public class GFileMeasureProgressCallback {
 
-    void apply(int reporting, long current_size, long num_dirs, long num_files, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GFileMeasureProgressCallback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$696.const$5, fi, constants$696.const$4, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(int reporting, long current_size, long num_dirs, long num_files, MemorySegment data);
     }
-    static GFileMeasureProgressCallback ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (int _reporting, long _current_size, long _num_dirs, long _num_files, java.lang.foreign.MemorySegment _data) -> {
-            try {
-                constants$697.const$0.invokeExact(symbol, _reporting, _current_size, _num_dirs, _num_files, _data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GFileMeasureProgressCallback.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GFileMeasureProgressCallback.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,int reporting, long current_size, long num_dirs, long num_files, MemorySegment data) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, reporting, current_size, num_dirs, num_files, data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

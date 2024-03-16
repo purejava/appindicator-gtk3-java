@@ -2,29 +2,66 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * unsigned long (*GDBusProxyTypeFunc)(struct _GDBusObjectManagerClient* manager,char* object_path,char* interface_name,void* data);
+ * {@snippet lang=c :
+ * typedef GType (*GDBusProxyTypeFunc)(GDBusObjectManagerClient *, const gchar *, const gchar *, gpointer)
  * }
  */
-public interface GDBusProxyTypeFunc {
+public class GDBusProxyTypeFunc {
 
-    long apply(java.lang.foreign.MemorySegment manager, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GDBusProxyTypeFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$701.const$4, fi, constants$333.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        long apply(MemorySegment manager, MemorySegment object_path, MemorySegment interface_name, MemorySegment data);
     }
-    static GDBusProxyTypeFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _manager, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _data) -> {
-            try {
-                return (long)constants$701.const$5.invokeExact(symbol, _manager, _object_path, _interface_name, _data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GDBusProxyTypeFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GDBusProxyTypeFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static long invoke(MemorySegment funcPtr,MemorySegment manager, MemorySegment object_path, MemorySegment interface_name, MemorySegment data) {
+        try {
+            return (long) DOWN$MH.invokeExact(funcPtr, manager, object_path, interface_name, data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

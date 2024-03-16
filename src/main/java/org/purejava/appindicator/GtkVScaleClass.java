@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkVScaleClass GtkVScaleClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkVScaleClass GtkVScaleClass
  * }
  */
-public final class GtkVScaleClass extends _GtkVScaleClass {
+public class GtkVScaleClass extends _GtkVScaleClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkVScaleClass() {}
+    GtkVScaleClass() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkRange GtkRange;
+ * {@snippet lang=c :
+ * typedef struct _GtkRange GtkRange
  * }
  */
-public final class GtkRange extends _GtkRange {
+public class GtkRange extends _GtkRange {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkRange() {}
+    GtkRange() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _AtkStateSet AtkStateSet;
+ * {@snippet lang=c :
+ * typedef struct _AtkStateSet AtkStateSet
  * }
  */
-public final class AtkStateSet extends _AtkStateSet {
+public class AtkStateSet extends _AtkStateSet {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkStateSet() {}
+    AtkStateSet() {
+        // Should not be called directly
+    }
 }
-
 

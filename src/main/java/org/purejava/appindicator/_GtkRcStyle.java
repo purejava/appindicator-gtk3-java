@@ -2,253 +2,941 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkRcStyle {
- *     struct _GObject parent_instance;
- *     char* name;
- *     char* bg_pixmap_name[5];
- *     struct _PangoFontDescription* font_desc;
- *     enum GtkRcFlags color_flags[5];
- *     struct _GdkColor fg[5];
- *     struct _GdkColor bg[5];
- *     struct _GdkColor text[5];
- *     struct _GdkColor base[5];
- *     int xthickness;
- *     int ythickness;
- *     struct _GArray* rc_properties;
- *     struct _GSList* rc_style_lists;
- *     struct _GSList* icon_factories;
- *      *     unsigned int engine_specified;
- * };
+ *     GObject parent_instance;
+ *     gchar *name;
+ *     gchar *bg_pixmap_name[5];
+ *     PangoFontDescription *font_desc;
+ *     GtkRcFlags color_flags[5];
+ *     GdkColor fg[5];
+ *     GdkColor bg[5];
+ *     GdkColor text[5];
+ *     GdkColor base[5];
+ *     gint xthickness;
+ *     gint ythickness;
+ *     GArray *rc_properties;
+ *     GSList *rc_style_lists;
+ *     GSList *icon_factories;
+ *     guint engine_specified : 1;
+ * }
  * }
  */
 public class _GtkRcStyle {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$3326.const$2;
+    _GtkRcStyle() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_instance$slice(MemorySegment seg) {
-        return seg.asSlice(0, 24);
-    }
-    public static VarHandle name$VH() {
-        return constants$3326.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* name;
-     * }
-     */
-    public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3326.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* name;
-     * }
-     */
-    public static void name$set(MemorySegment seg, MemorySegment x) {
-        constants$3326.const$3.set(seg, x);
-    }
-    public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3326.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3326.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment bg_pixmap_name$slice(MemorySegment seg) {
-        return seg.asSlice(32, 40);
-    }
-    public static VarHandle font_desc$VH() {
-        return constants$3326.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoFontDescription* font_desc;
-     * }
-     */
-    public static MemorySegment font_desc$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3326.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoFontDescription* font_desc;
-     * }
-     */
-    public static void font_desc$set(MemorySegment seg, MemorySegment x) {
-        constants$3326.const$4.set(seg, x);
-    }
-    public static MemorySegment font_desc$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3326.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void font_desc$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3326.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment color_flags$slice(MemorySegment seg) {
-        return seg.asSlice(80, 20);
-    }
-    public static MemorySegment fg$slice(MemorySegment seg) {
-        return seg.asSlice(100, 60);
-    }
-    public static MemorySegment bg$slice(MemorySegment seg) {
-        return seg.asSlice(160, 60);
-    }
-    public static MemorySegment text$slice(MemorySegment seg) {
-        return seg.asSlice(220, 60);
-    }
-    public static MemorySegment base$slice(MemorySegment seg) {
-        return seg.asSlice(280, 60);
-    }
-    public static VarHandle xthickness$VH() {
-        return constants$3326.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int xthickness;
-     * }
-     */
-    public static int xthickness$get(MemorySegment seg) {
-        return (int)constants$3326.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int xthickness;
-     * }
-     */
-    public static void xthickness$set(MemorySegment seg, int x) {
-        constants$3326.const$5.set(seg, x);
-    }
-    public static int xthickness$get(MemorySegment seg, long index) {
-        return (int)constants$3326.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void xthickness$set(MemorySegment seg, long index, int x) {
-        constants$3326.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle ythickness$VH() {
-        return constants$3327.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int ythickness;
-     * }
-     */
-    public static int ythickness$get(MemorySegment seg) {
-        return (int)constants$3327.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int ythickness;
-     * }
-     */
-    public static void ythickness$set(MemorySegment seg, int x) {
-        constants$3327.const$0.set(seg, x);
-    }
-    public static int ythickness$get(MemorySegment seg, long index) {
-        return (int)constants$3327.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void ythickness$set(MemorySegment seg, long index, int x) {
-        constants$3327.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle rc_properties$VH() {
-        return constants$3327.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GArray* rc_properties;
-     * }
-     */
-    public static MemorySegment rc_properties$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3327.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GArray* rc_properties;
-     * }
-     */
-    public static void rc_properties$set(MemorySegment seg, MemorySegment x) {
-        constants$3327.const$1.set(seg, x);
-    }
-    public static MemorySegment rc_properties$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3327.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void rc_properties$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3327.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle rc_style_lists$VH() {
-        return constants$3327.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GSList* rc_style_lists;
-     * }
-     */
-    public static MemorySegment rc_style_lists$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3327.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GSList* rc_style_lists;
-     * }
-     */
-    public static void rc_style_lists$set(MemorySegment seg, MemorySegment x) {
-        constants$3327.const$2.set(seg, x);
-    }
-    public static MemorySegment rc_style_lists$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3327.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void rc_style_lists$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3327.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle icon_factories$VH() {
-        return constants$3327.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GSList* icon_factories;
-     * }
-     */
-    public static MemorySegment icon_factories$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3327.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GSList* icon_factories;
-     * }
-     */
-    public static void icon_factories$set(MemorySegment seg, MemorySegment x) {
-        constants$3327.const$3.set(seg, x);
-    }
-    public static MemorySegment icon_factories$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3327.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void icon_factories$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3327.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObject.layout().withName("parent_instance"),
+        app_indicator_h.C_POINTER.withName("name"),
+        MemoryLayout.sequenceLayout(5, app_indicator_h.C_POINTER).withName("bg_pixmap_name"),
+        app_indicator_h.C_POINTER.withName("font_desc"),
+        MemoryLayout.sequenceLayout(5, app_indicator_h.C_INT).withName("color_flags"),
+        MemoryLayout.sequenceLayout(5, _GdkColor.layout()).withName("fg"),
+        MemoryLayout.sequenceLayout(5, _GdkColor.layout()).withName("bg"),
+        MemoryLayout.sequenceLayout(5, _GdkColor.layout()).withName("text"),
+        MemoryLayout.sequenceLayout(5, _GdkColor.layout()).withName("base"),
+        app_indicator_h.C_INT.withName("xthickness"),
+        app_indicator_h.C_INT.withName("ythickness"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("rc_properties"),
+        app_indicator_h.C_POINTER.withName("rc_style_lists"),
+        app_indicator_h.C_POINTER.withName("icon_factories"),
+        MemoryLayout.paddingLayout(8)
+    ).withName("_GtkRcStyle");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_instance$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_instance"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObject parent_instance
+     * }
+     */
+    public static final GroupLayout parent_instance$layout() {
+        return parent_instance$LAYOUT;
+    }
+
+    private static final long parent_instance$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObject parent_instance
+     * }
+     */
+    public static final long parent_instance$offset() {
+        return parent_instance$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GObject parent_instance
+     * }
+     */
+    public static MemorySegment parent_instance(MemorySegment struct) {
+        return struct.asSlice(parent_instance$OFFSET, parent_instance$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GObject parent_instance
+     * }
+     */
+    public static void parent_instance(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_instance$OFFSET, parent_instance$LAYOUT.byteSize());
+    }
+
+    private static final AddressLayout name$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("name"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *name
+     * }
+     */
+    public static final AddressLayout name$layout() {
+        return name$LAYOUT;
+    }
+
+    private static final long name$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *name
+     * }
+     */
+    public static final long name$offset() {
+        return name$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *name
+     * }
+     */
+    public static MemorySegment name(MemorySegment struct) {
+        return struct.get(name$LAYOUT, name$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *name
+     * }
+     */
+    public static void name(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(name$LAYOUT, name$OFFSET, fieldValue);
+    }
+
+    private static final SequenceLayout bg_pixmap_name$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("bg_pixmap_name"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *bg_pixmap_name[5]
+     * }
+     */
+    public static final SequenceLayout bg_pixmap_name$layout() {
+        return bg_pixmap_name$LAYOUT;
+    }
+
+    private static final long bg_pixmap_name$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *bg_pixmap_name[5]
+     * }
+     */
+    public static final long bg_pixmap_name$offset() {
+        return bg_pixmap_name$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *bg_pixmap_name[5]
+     * }
+     */
+    public static MemorySegment bg_pixmap_name(MemorySegment struct) {
+        return struct.asSlice(bg_pixmap_name$OFFSET, bg_pixmap_name$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *bg_pixmap_name[5]
+     * }
+     */
+    public static void bg_pixmap_name(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, bg_pixmap_name$OFFSET, bg_pixmap_name$LAYOUT.byteSize());
+    }
+
+    private static long[] bg_pixmap_name$DIMS = { 5 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * gchar *bg_pixmap_name[5]
+     * }
+     */
+    public static long[] bg_pixmap_name$dimensions() {
+        return bg_pixmap_name$DIMS;
+    }
+    private static final VarHandle bg_pixmap_name$ELEM_HANDLE = bg_pixmap_name$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * gchar *bg_pixmap_name[5]
+     * }
+     */
+    public static MemorySegment bg_pixmap_name(MemorySegment struct, long index0) {
+        return (MemorySegment)bg_pixmap_name$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * gchar *bg_pixmap_name[5]
+     * }
+     */
+    public static void bg_pixmap_name(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        bg_pixmap_name$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    private static final AddressLayout font_desc$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("font_desc"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoFontDescription *font_desc
+     * }
+     */
+    public static final AddressLayout font_desc$layout() {
+        return font_desc$LAYOUT;
+    }
+
+    private static final long font_desc$OFFSET = 72;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoFontDescription *font_desc
+     * }
+     */
+    public static final long font_desc$offset() {
+        return font_desc$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoFontDescription *font_desc
+     * }
+     */
+    public static MemorySegment font_desc(MemorySegment struct) {
+        return struct.get(font_desc$LAYOUT, font_desc$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoFontDescription *font_desc
+     * }
+     */
+    public static void font_desc(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(font_desc$LAYOUT, font_desc$OFFSET, fieldValue);
+    }
+
+    private static final SequenceLayout color_flags$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("color_flags"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkRcFlags color_flags[5]
+     * }
+     */
+    public static final SequenceLayout color_flags$layout() {
+        return color_flags$LAYOUT;
+    }
+
+    private static final long color_flags$OFFSET = 80;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkRcFlags color_flags[5]
+     * }
+     */
+    public static final long color_flags$offset() {
+        return color_flags$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GtkRcFlags color_flags[5]
+     * }
+     */
+    public static MemorySegment color_flags(MemorySegment struct) {
+        return struct.asSlice(color_flags$OFFSET, color_flags$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GtkRcFlags color_flags[5]
+     * }
+     */
+    public static void color_flags(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, color_flags$OFFSET, color_flags$LAYOUT.byteSize());
+    }
+
+    private static long[] color_flags$DIMS = { 5 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * GtkRcFlags color_flags[5]
+     * }
+     */
+    public static long[] color_flags$dimensions() {
+        return color_flags$DIMS;
+    }
+    private static final VarHandle color_flags$ELEM_HANDLE = color_flags$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * GtkRcFlags color_flags[5]
+     * }
+     */
+    public static int color_flags(MemorySegment struct, long index0) {
+        return (int)color_flags$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * GtkRcFlags color_flags[5]
+     * }
+     */
+    public static void color_flags(MemorySegment struct, long index0, int fieldValue) {
+        color_flags$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    private static final SequenceLayout fg$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("fg"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkColor fg[5]
+     * }
+     */
+    public static final SequenceLayout fg$layout() {
+        return fg$LAYOUT;
+    }
+
+    private static final long fg$OFFSET = 100;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkColor fg[5]
+     * }
+     */
+    public static final long fg$offset() {
+        return fg$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkColor fg[5]
+     * }
+     */
+    public static MemorySegment fg(MemorySegment struct) {
+        return struct.asSlice(fg$OFFSET, fg$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkColor fg[5]
+     * }
+     */
+    public static void fg(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, fg$OFFSET, fg$LAYOUT.byteSize());
+    }
+
+    private static long[] fg$DIMS = { 5 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * GdkColor fg[5]
+     * }
+     */
+    public static long[] fg$dimensions() {
+        return fg$DIMS;
+    }
+    private static final MethodHandle fg$ELEM_HANDLE = fg$LAYOUT.sliceHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * GdkColor fg[5]
+     * }
+     */
+    public static MemorySegment fg(MemorySegment struct, long index0) {
+        try {
+            return (MemorySegment)fg$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * GdkColor fg[5]
+     * }
+     */
+    public static void fg(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, fg(struct, index0), 0L, _GdkColor.layout().byteSize());
+    }
+
+    private static final SequenceLayout bg$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("bg"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkColor bg[5]
+     * }
+     */
+    public static final SequenceLayout bg$layout() {
+        return bg$LAYOUT;
+    }
+
+    private static final long bg$OFFSET = 160;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkColor bg[5]
+     * }
+     */
+    public static final long bg$offset() {
+        return bg$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkColor bg[5]
+     * }
+     */
+    public static MemorySegment bg(MemorySegment struct) {
+        return struct.asSlice(bg$OFFSET, bg$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkColor bg[5]
+     * }
+     */
+    public static void bg(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, bg$OFFSET, bg$LAYOUT.byteSize());
+    }
+
+    private static long[] bg$DIMS = { 5 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * GdkColor bg[5]
+     * }
+     */
+    public static long[] bg$dimensions() {
+        return bg$DIMS;
+    }
+    private static final MethodHandle bg$ELEM_HANDLE = bg$LAYOUT.sliceHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * GdkColor bg[5]
+     * }
+     */
+    public static MemorySegment bg(MemorySegment struct, long index0) {
+        try {
+            return (MemorySegment)bg$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * GdkColor bg[5]
+     * }
+     */
+    public static void bg(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, bg(struct, index0), 0L, _GdkColor.layout().byteSize());
+    }
+
+    private static final SequenceLayout text$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("text"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkColor text[5]
+     * }
+     */
+    public static final SequenceLayout text$layout() {
+        return text$LAYOUT;
+    }
+
+    private static final long text$OFFSET = 220;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkColor text[5]
+     * }
+     */
+    public static final long text$offset() {
+        return text$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkColor text[5]
+     * }
+     */
+    public static MemorySegment text(MemorySegment struct) {
+        return struct.asSlice(text$OFFSET, text$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkColor text[5]
+     * }
+     */
+    public static void text(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, text$OFFSET, text$LAYOUT.byteSize());
+    }
+
+    private static long[] text$DIMS = { 5 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * GdkColor text[5]
+     * }
+     */
+    public static long[] text$dimensions() {
+        return text$DIMS;
+    }
+    private static final MethodHandle text$ELEM_HANDLE = text$LAYOUT.sliceHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * GdkColor text[5]
+     * }
+     */
+    public static MemorySegment text(MemorySegment struct, long index0) {
+        try {
+            return (MemorySegment)text$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * GdkColor text[5]
+     * }
+     */
+    public static void text(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, text(struct, index0), 0L, _GdkColor.layout().byteSize());
+    }
+
+    private static final SequenceLayout base$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("base"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkColor base[5]
+     * }
+     */
+    public static final SequenceLayout base$layout() {
+        return base$LAYOUT;
+    }
+
+    private static final long base$OFFSET = 280;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkColor base[5]
+     * }
+     */
+    public static final long base$offset() {
+        return base$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkColor base[5]
+     * }
+     */
+    public static MemorySegment base(MemorySegment struct) {
+        return struct.asSlice(base$OFFSET, base$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkColor base[5]
+     * }
+     */
+    public static void base(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, base$OFFSET, base$LAYOUT.byteSize());
+    }
+
+    private static long[] base$DIMS = { 5 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * GdkColor base[5]
+     * }
+     */
+    public static long[] base$dimensions() {
+        return base$DIMS;
+    }
+    private static final MethodHandle base$ELEM_HANDLE = base$LAYOUT.sliceHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * GdkColor base[5]
+     * }
+     */
+    public static MemorySegment base(MemorySegment struct, long index0) {
+        try {
+            return (MemorySegment)base$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * GdkColor base[5]
+     * }
+     */
+    public static void base(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, base(struct, index0), 0L, _GdkColor.layout().byteSize());
+    }
+
+    private static final OfInt xthickness$LAYOUT = (OfInt)$LAYOUT.select(groupElement("xthickness"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint xthickness
+     * }
+     */
+    public static final OfInt xthickness$layout() {
+        return xthickness$LAYOUT;
+    }
+
+    private static final long xthickness$OFFSET = 340;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint xthickness
+     * }
+     */
+    public static final long xthickness$offset() {
+        return xthickness$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint xthickness
+     * }
+     */
+    public static int xthickness(MemorySegment struct) {
+        return struct.get(xthickness$LAYOUT, xthickness$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint xthickness
+     * }
+     */
+    public static void xthickness(MemorySegment struct, int fieldValue) {
+        struct.set(xthickness$LAYOUT, xthickness$OFFSET, fieldValue);
+    }
+
+    private static final OfInt ythickness$LAYOUT = (OfInt)$LAYOUT.select(groupElement("ythickness"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint ythickness
+     * }
+     */
+    public static final OfInt ythickness$layout() {
+        return ythickness$LAYOUT;
+    }
+
+    private static final long ythickness$OFFSET = 344;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint ythickness
+     * }
+     */
+    public static final long ythickness$offset() {
+        return ythickness$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint ythickness
+     * }
+     */
+    public static int ythickness(MemorySegment struct) {
+        return struct.get(ythickness$LAYOUT, ythickness$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint ythickness
+     * }
+     */
+    public static void ythickness(MemorySegment struct, int fieldValue) {
+        struct.set(ythickness$LAYOUT, ythickness$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout rc_properties$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("rc_properties"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GArray *rc_properties
+     * }
+     */
+    public static final AddressLayout rc_properties$layout() {
+        return rc_properties$LAYOUT;
+    }
+
+    private static final long rc_properties$OFFSET = 352;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GArray *rc_properties
+     * }
+     */
+    public static final long rc_properties$offset() {
+        return rc_properties$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GArray *rc_properties
+     * }
+     */
+    public static MemorySegment rc_properties(MemorySegment struct) {
+        return struct.get(rc_properties$LAYOUT, rc_properties$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GArray *rc_properties
+     * }
+     */
+    public static void rc_properties(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(rc_properties$LAYOUT, rc_properties$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout rc_style_lists$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("rc_style_lists"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GSList *rc_style_lists
+     * }
+     */
+    public static final AddressLayout rc_style_lists$layout() {
+        return rc_style_lists$LAYOUT;
+    }
+
+    private static final long rc_style_lists$OFFSET = 360;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GSList *rc_style_lists
+     * }
+     */
+    public static final long rc_style_lists$offset() {
+        return rc_style_lists$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GSList *rc_style_lists
+     * }
+     */
+    public static MemorySegment rc_style_lists(MemorySegment struct) {
+        return struct.get(rc_style_lists$LAYOUT, rc_style_lists$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GSList *rc_style_lists
+     * }
+     */
+    public static void rc_style_lists(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(rc_style_lists$LAYOUT, rc_style_lists$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout icon_factories$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("icon_factories"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GSList *icon_factories
+     * }
+     */
+    public static final AddressLayout icon_factories$layout() {
+        return icon_factories$LAYOUT;
+    }
+
+    private static final long icon_factories$OFFSET = 368;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GSList *icon_factories
+     * }
+     */
+    public static final long icon_factories$offset() {
+        return icon_factories$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GSList *icon_factories
+     * }
+     */
+    public static MemorySegment icon_factories(MemorySegment struct) {
+        return struct.get(icon_factories$LAYOUT, icon_factories$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GSList *icon_factories
+     * }
+     */
+    public static void icon_factories(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(icon_factories$LAYOUT, icon_factories$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

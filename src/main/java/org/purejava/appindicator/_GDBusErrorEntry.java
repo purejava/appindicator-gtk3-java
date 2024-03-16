@@ -2,84 +2,173 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GDBusErrorEntry {
- *     int error_code;
- *     char* dbus_error_name;
- * };
+ *     gint error_code;
+ *     const gchar *dbus_error_name;
+ * }
  * }
  */
 public class _GDBusErrorEntry {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$874.const$1;
+    _GDBusErrorEntry() {
+        // Should not be called directly
     }
-    public static VarHandle error_code$VH() {
-        return constants$874.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int error_code;
-     * }
-     */
-    public static int error_code$get(MemorySegment seg) {
-        return (int)constants$874.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int error_code;
-     * }
-     */
-    public static void error_code$set(MemorySegment seg, int x) {
-        constants$874.const$2.set(seg, x);
-    }
-    public static int error_code$get(MemorySegment seg, long index) {
-        return (int)constants$874.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void error_code$set(MemorySegment seg, long index, int x) {
-        constants$874.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle dbus_error_name$VH() {
-        return constants$874.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* dbus_error_name;
-     * }
-     */
-    public static MemorySegment dbus_error_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$874.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* dbus_error_name;
-     * }
-     */
-    public static void dbus_error_name$set(MemorySegment seg, MemorySegment x) {
-        constants$874.const$3.set(seg, x);
-    }
-    public static MemorySegment dbus_error_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$874.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void dbus_error_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$874.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("error_code"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("dbus_error_name")
+    ).withName("_GDBusErrorEntry");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt error_code$LAYOUT = (OfInt)$LAYOUT.select(groupElement("error_code"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint error_code
+     * }
+     */
+    public static final OfInt error_code$layout() {
+        return error_code$LAYOUT;
+    }
+
+    private static final long error_code$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint error_code
+     * }
+     */
+    public static final long error_code$offset() {
+        return error_code$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint error_code
+     * }
+     */
+    public static int error_code(MemorySegment struct) {
+        return struct.get(error_code$LAYOUT, error_code$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint error_code
+     * }
+     */
+    public static void error_code(MemorySegment struct, int fieldValue) {
+        struct.set(error_code$LAYOUT, error_code$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout dbus_error_name$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("dbus_error_name"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const gchar *dbus_error_name
+     * }
+     */
+    public static final AddressLayout dbus_error_name$layout() {
+        return dbus_error_name$LAYOUT;
+    }
+
+    private static final long dbus_error_name$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const gchar *dbus_error_name
+     * }
+     */
+    public static final long dbus_error_name$offset() {
+        return dbus_error_name$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * const gchar *dbus_error_name
+     * }
+     */
+    public static MemorySegment dbus_error_name(MemorySegment struct) {
+        return struct.get(dbus_error_name$LAYOUT, dbus_error_name$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * const gchar *dbus_error_name
+     * }
+     */
+    public static void dbus_error_name(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(dbus_error_name$LAYOUT, dbus_error_name$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

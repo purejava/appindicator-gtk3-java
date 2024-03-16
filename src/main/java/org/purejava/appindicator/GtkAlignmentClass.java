@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkAlignmentClass GtkAlignmentClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkAlignmentClass GtkAlignmentClass
  * }
  */
-public final class GtkAlignmentClass extends _GtkAlignmentClass {
+public class GtkAlignmentClass extends _GtkAlignmentClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkAlignmentClass() {}
+    GtkAlignmentClass() {
+        // Should not be called directly
+    }
 }
-
 

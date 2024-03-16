@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkUIManagerClass GtkUIManagerClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkUIManagerClass GtkUIManagerClass
  * }
  */
-public final class GtkUIManagerClass extends _GtkUIManagerClass {
+public class GtkUIManagerClass extends _GtkUIManagerClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkUIManagerClass() {}
+    GtkUIManagerClass() {
+        // Should not be called directly
+    }
 }
-
 

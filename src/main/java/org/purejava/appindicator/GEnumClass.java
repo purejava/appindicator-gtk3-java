@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GEnumClass GEnumClass;
+ * {@snippet lang=c :
+ * typedef struct _GEnumClass GEnumClass
  * }
  */
-public final class GEnumClass extends _GEnumClass {
+public class GEnumClass extends _GEnumClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GEnumClass() {}
+    GEnumClass() {
+        // Should not be called directly
+    }
 }
-
 

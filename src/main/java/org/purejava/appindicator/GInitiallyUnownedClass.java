@@ -2,15 +2,41 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GObjectClass GInitiallyUnownedClass;
+ * {@snippet lang=c :
+ * typedef struct _GObjectClass {
+ *     GTypeClass g_type_class;
+ *     GSList *construct_properties;
+ *     GObject *(*constructor)(GType, guint, GObjectConstructParam *);
+ *     void (*set_property)(GObject *, guint, const GValue *, GParamSpec *);
+ *     void (*get_property)(GObject *, guint, GValue *, GParamSpec *);
+ *     void (*dispose)(GObject *);
+ *     void (*finalize)(GObject *);
+ *     void (*dispatch_properties_changed)(GObject *, guint, GParamSpec **);
+ *     void (*notify)(GObject *, GParamSpec *);
+ *     void (*constructed)(GObject *);
+ *     gsize flags;
+ *     gsize n_construct_properties;
+ *     gpointer pspecs;
+ *     gsize n_pspecs;
+ *     gpointer pdummy[3];
+ * } GInitiallyUnownedClass
  * }
  */
-public final class GInitiallyUnownedClass extends _GObjectClass {
+public class GInitiallyUnownedClass extends _GObjectClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GInitiallyUnownedClass() {}
+    GInitiallyUnownedClass() {
+        // Should not be called directly
+    }
 }
-
 

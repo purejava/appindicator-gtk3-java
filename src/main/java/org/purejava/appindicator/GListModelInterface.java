@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GListModelInterface GListModelInterface;
+ * {@snippet lang=c :
+ * typedef struct _GListModelInterface GListModelInterface
  * }
  */
-public final class GListModelInterface extends _GListModelInterface {
+public class GListModelInterface extends _GListModelInterface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GListModelInterface() {}
+    GListModelInterface() {
+        // Should not be called directly
+    }
 }
-
 

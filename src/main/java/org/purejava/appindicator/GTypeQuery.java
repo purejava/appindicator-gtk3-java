@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GTypeQuery GTypeQuery;
+ * {@snippet lang=c :
+ * typedef struct _GTypeQuery GTypeQuery
  * }
  */
-public final class GTypeQuery extends _GTypeQuery {
+public class GTypeQuery extends _GTypeQuery {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTypeQuery() {}
+    GTypeQuery() {
+        // Should not be called directly
+    }
 }
-
 

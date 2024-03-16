@@ -2,29 +2,65 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * int (*GCompletionStrncmpFunc)(char* s1,char* s2,unsigned long n);
+ * {@snippet lang=c :
+ * typedef gint (*GCompletionStrncmpFunc)(const gchar *, const gchar *, gsize)
  * }
  */
-public interface GCompletionStrncmpFunc {
+public class GCompletionStrncmpFunc {
 
-    int apply(java.lang.foreign.MemorySegment s1, java.lang.foreign.MemorySegment s2, long n);
-    static MemorySegment allocate(GCompletionStrncmpFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$497.const$5, fi, constants$18.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment s1, MemorySegment s2, long n);
     }
-    static GCompletionStrncmpFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _s1, java.lang.foreign.MemorySegment _s2, long _n) -> {
-            try {
-                return (int)constants$498.const$0.invokeExact(symbol, _s1, _s2, _n);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_LONG
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GCompletionStrncmpFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GCompletionStrncmpFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment s1, MemorySegment s2, long n) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, s1, s2, n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

@@ -2,29 +2,64 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*GtkColorSelectionChangePaletteWithScreenFunc)(struct _GdkScreen* screen,struct _GdkColor* colors,int n_colors);
+ * {@snippet lang=c :
+ * typedef void (*GtkColorSelectionChangePaletteWithScreenFunc)(GdkScreen *, const GdkColor *, gint)
  * }
  */
-public interface GtkColorSelectionChangePaletteWithScreenFunc {
+public class GtkColorSelectionChangePaletteWithScreenFunc {
 
-    void apply(java.lang.foreign.MemorySegment screen, java.lang.foreign.MemorySegment colors, int n_colors);
-    static MemorySegment allocate(GtkColorSelectionChangePaletteWithScreenFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3281.const$2, fi, constants$164.const$5, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment screen, MemorySegment colors, int n_colors);
     }
-    static GtkColorSelectionChangePaletteWithScreenFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _screen, java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
-            try {
-                constants$421.const$2.invokeExact(symbol, _screen, _colors, _n_colors);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GtkColorSelectionChangePaletteWithScreenFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GtkColorSelectionChangePaletteWithScreenFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment screen, MemorySegment colors, int n_colors) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, screen, colors, n_colors);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

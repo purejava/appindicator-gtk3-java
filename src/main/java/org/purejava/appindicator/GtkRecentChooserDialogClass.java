@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkRecentChooserDialogClass GtkRecentChooserDialogClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkRecentChooserDialogClass GtkRecentChooserDialogClass
  * }
  */
-public final class GtkRecentChooserDialogClass extends _GtkRecentChooserDialogClass {
+public class GtkRecentChooserDialogClass extends _GtkRecentChooserDialogClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkRecentChooserDialogClass() {}
+    GtkRecentChooserDialogClass() {
+        // Should not be called directly
+    }
 }
-
 

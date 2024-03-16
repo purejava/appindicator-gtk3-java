@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GDBusProxy GDBusProxy;
+ * {@snippet lang=c :
+ * typedef struct _GDBusProxy GDBusProxy
  * }
  */
-public final class GDBusProxy extends _GDBusProxy {
+public class GDBusProxy extends _GDBusProxy {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GDBusProxy() {}
+    GDBusProxy() {
+        // Should not be called directly
+    }
 }
-
 

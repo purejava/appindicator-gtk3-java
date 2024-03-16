@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GPathBuf GPathBuf;
+ * {@snippet lang=c :
+ * typedef struct _GPathBuf GPathBuf
  * }
  */
-public final class GPathBuf extends _GPathBuf {
+public class GPathBuf extends _GPathBuf {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GPathBuf() {}
+    GPathBuf() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GMenuModel GMenuModel;
+ * {@snippet lang=c :
+ * typedef struct _GMenuModel GMenuModel
  * }
  */
-public final class GMenuModel extends _GMenuModel {
+public class GMenuModel extends _GMenuModel {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GMenuModel() {}
+    GMenuModel() {
+        // Should not be called directly
+    }
 }
-
 

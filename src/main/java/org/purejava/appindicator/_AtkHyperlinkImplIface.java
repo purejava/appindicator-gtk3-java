@@ -2,86 +2,222 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _AtkHyperlinkImplIface {
- *     struct _GTypeInterface parent;
- *     struct _AtkHyperlink* (*get_hyperlink)(struct _AtkHyperlinkImpl*);
- * };
+ *     GTypeInterface parent;
+ *     AtkHyperlink *(*get_hyperlink)(AtkHyperlinkImpl *);
+ * }
  * }
  */
 public class _AtkHyperlinkImplIface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2040.const$2;
+    _AtkHyperlinkImplIface() {
+        // Should not be called directly
     }
-    public static MemorySegment parent$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("parent"),
+        app_indicator_h.C_POINTER.withName("get_hyperlink")
+    ).withName("_AtkHyperlinkImplIface");
+
     /**
-     * {@snippet :
- * struct _AtkHyperlink* (*get_hyperlink)(struct _AtkHyperlinkImpl*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface parent
      * }
      */
-    public interface get_hyperlink {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_hyperlink fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2040.const$3, fi, constants$5.const$2, scope);
-        }
-        static get_hyperlink ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent$layout() {
+        return parent$LAYOUT;
     }
 
-    public static VarHandle get_hyperlink$VH() {
-        return constants$2040.const$4;
+    private static final long parent$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface parent
+     * }
+     */
+    public static final long parent$offset() {
+        return parent$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _AtkHyperlink* (*get_hyperlink)(struct _AtkHyperlinkImpl*);
+     * {@snippet lang=c :
+     * GTypeInterface parent
      * }
      */
-    public static MemorySegment get_hyperlink$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2040.const$4.get(seg);
+    public static MemorySegment parent(MemorySegment struct) {
+        return struct.asSlice(parent$OFFSET, parent$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _AtkHyperlink* (*get_hyperlink)(struct _AtkHyperlinkImpl*);
+     * {@snippet lang=c :
+     * GTypeInterface parent
      * }
      */
-    public static void get_hyperlink$set(MemorySegment seg, MemorySegment x) {
-        constants$2040.const$4.set(seg, x);
+    public static void parent(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent$OFFSET, parent$LAYOUT.byteSize());
     }
-    public static MemorySegment get_hyperlink$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2040.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_hyperlink$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2040.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_hyperlink get_hyperlink(MemorySegment segment, Arena scope) {
-        return get_hyperlink.ofAddress(get_hyperlink$get(segment), scope);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    /**
+     * {@snippet lang=c :
+     * AtkHyperlink *(*get_hyperlink)(AtkHyperlinkImpl *)
+     * }
+     */
+    public class get_hyperlink {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_hyperlink.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_hyperlink.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
+    }
+
+    private static final AddressLayout get_hyperlink$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_hyperlink"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * AtkHyperlink *(*get_hyperlink)(AtkHyperlinkImpl *)
+     * }
+     */
+    public static final AddressLayout get_hyperlink$layout() {
+        return get_hyperlink$LAYOUT;
+    }
+
+    private static final long get_hyperlink$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * AtkHyperlink *(*get_hyperlink)(AtkHyperlinkImpl *)
+     * }
+     */
+    public static final long get_hyperlink$offset() {
+        return get_hyperlink$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * AtkHyperlink *(*get_hyperlink)(AtkHyperlinkImpl *)
+     * }
+     */
+    public static MemorySegment get_hyperlink(MemorySegment struct) {
+        return struct.get(get_hyperlink$LAYOUT, get_hyperlink$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * AtkHyperlink *(*get_hyperlink)(AtkHyperlinkImpl *)
+     * }
+     */
+    public static void get_hyperlink(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_hyperlink$LAYOUT, get_hyperlink$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

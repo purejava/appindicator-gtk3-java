@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GdkEventOwnerChange GdkEventOwnerChange;
+ * {@snippet lang=c :
+ * typedef struct _GdkEventOwnerChange GdkEventOwnerChange
  * }
  */
-public final class GdkEventOwnerChange extends _GdkEventOwnerChange {
+public class GdkEventOwnerChange extends _GdkEventOwnerChange {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GdkEventOwnerChange() {}
+    GdkEventOwnerChange() {
+        // Should not be called directly
+    }
 }
-
 

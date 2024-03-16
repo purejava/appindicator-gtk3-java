@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GDBusPropertyInfo GDBusPropertyInfo;
+ * {@snippet lang=c :
+ * typedef struct _GDBusPropertyInfo GDBusPropertyInfo
  * }
  */
-public final class GDBusPropertyInfo extends _GDBusPropertyInfo {
+public class GDBusPropertyInfo extends _GDBusPropertyInfo {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GDBusPropertyInfo() {}
+    GDBusPropertyInfo() {
+        // Should not be called directly
+    }
 }
-
 

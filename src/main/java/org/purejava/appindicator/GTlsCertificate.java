@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GTlsCertificate GTlsCertificate;
+ * {@snippet lang=c :
+ * typedef struct _GTlsCertificate GTlsCertificate
  * }
  */
-public final class GTlsCertificate extends _GTlsCertificate {
+public class GTlsCertificate extends _GTlsCertificate {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTlsCertificate() {}
+    GTlsCertificate() {
+        // Should not be called directly
+    }
 }
-
 

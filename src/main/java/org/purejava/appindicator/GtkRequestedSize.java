@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkRequestedSize GtkRequestedSize;
+ * {@snippet lang=c :
+ * typedef struct _GtkRequestedSize GtkRequestedSize
  * }
  */
-public final class GtkRequestedSize extends _GtkRequestedSize {
+public class GtkRequestedSize extends _GtkRequestedSize {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkRequestedSize() {}
+    GtkRequestedSize() {
+        // Should not be called directly
+    }
 }
-
 

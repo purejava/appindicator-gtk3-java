@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkIconFactory GtkIconFactory;
+ * {@snippet lang=c :
+ * typedef struct _GtkIconFactory GtkIconFactory
  * }
  */
-public final class GtkIconFactory extends _GtkIconFactory {
+public class GtkIconFactory extends _GtkIconFactory {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkIconFactory() {}
+    GtkIconFactory() {
+        // Should not be called directly
+    }
 }
-
 

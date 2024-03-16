@@ -2,29 +2,67 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * int (*GtkTreeViewColumnDropFunc)(struct _GtkTreeView* tree_view,struct _GtkTreeViewColumn* column,struct _GtkTreeViewColumn* prev_column,struct _GtkTreeViewColumn* next_column,void* data);
+ * {@snippet lang=c :
+ * typedef gboolean (*GtkTreeViewColumnDropFunc)(GtkTreeView *, GtkTreeViewColumn *, GtkTreeViewColumn *, GtkTreeViewColumn *, gpointer)
  * }
  */
-public interface GtkTreeViewColumnDropFunc {
+public class GtkTreeViewColumnDropFunc {
 
-    int apply(java.lang.foreign.MemorySegment tree_view, java.lang.foreign.MemorySegment column, java.lang.foreign.MemorySegment prev_column, java.lang.foreign.MemorySegment next_column, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GtkTreeViewColumnDropFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2479.const$0, fi, constants$165.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment tree_view, MemorySegment column, MemorySegment prev_column, MemorySegment next_column, MemorySegment data);
     }
-    static GtkTreeViewColumnDropFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _tree_view, java.lang.foreign.MemorySegment _column, java.lang.foreign.MemorySegment _prev_column, java.lang.foreign.MemorySegment _next_column, java.lang.foreign.MemorySegment _data) -> {
-            try {
-                return (int)constants$2091.const$4.invokeExact(symbol, _tree_view, _column, _prev_column, _next_column, _data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GtkTreeViewColumnDropFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GtkTreeViewColumnDropFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment tree_view, MemorySegment column, MemorySegment prev_column, MemorySegment next_column, MemorySegment data) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, tree_view, column, prev_column, next_column, data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

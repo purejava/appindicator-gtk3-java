@@ -2,29 +2,70 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*hb_paint_push_transform_func_t)(struct hb_paint_funcs_t* funcs,void* paint_data,float xx,float yx,float xy,float yy,float dx,float dy,void* user_data);
+ * {@snippet lang=c :
+ * typedef void (*hb_paint_push_transform_func_t)(hb_paint_funcs_t *, void *, float, float, float, float, float, float, void *)
  * }
  */
-public interface hb_paint_push_transform_func_t {
+public class hb_paint_push_transform_func_t {
 
-    void apply(java.lang.foreign.MemorySegment funcs, java.lang.foreign.MemorySegment paint_data, float xx, float yx, float xy, float yy, float dx, float dy, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(hb_paint_push_transform_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1459.const$5, fi, constants$1459.const$4, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment funcs, MemorySegment paint_data, float xx, float yx, float xy, float yy, float dx, float dy, MemorySegment user_data);
     }
-    static hb_paint_push_transform_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _funcs, java.lang.foreign.MemorySegment _paint_data, float _xx, float _yx, float _xy, float _yy, float _dx, float _dy, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                constants$1460.const$0.invokeExact(symbol, _funcs, _paint_data, _xx, _yx, _xy, _yy, _dx, _dy, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_FLOAT,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(hb_paint_push_transform_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(hb_paint_push_transform_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment funcs, MemorySegment paint_data, float xx, float yx, float xy, float yy, float dx, float dy, MemorySegment user_data) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, funcs, paint_data, xx, yx, xy, yy, dx, dy, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

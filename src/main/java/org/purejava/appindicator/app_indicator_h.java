@@ -2,8019 +2,2189 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.AddressLayout;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
 import static java.lang.foreign.ValueLayout.*;
-public class app_indicator_h extends app_indicator_h_21 {
+import static java.lang.foreign.MemoryLayout.PathElement.*;
 
-    public static final OfByte C_CHAR = JAVA_BYTE;
-    public static final OfShort C_SHORT = JAVA_SHORT;
-    public static final OfInt C_INT = JAVA_INT;
-    public static final OfLong C_LONG = JAVA_LONG;
-    public static final OfLong C_LONG_LONG = JAVA_LONG;
-    public static final OfFloat C_FLOAT = JAVA_FLOAT;
-    public static final OfDouble C_DOUBLE = JAVA_DOUBLE;
-    public static final AddressLayout C_POINTER = RuntimeHelper.POINTER;
-    /**
-     * {@snippet :
-     * #define G_ANALYZER_ANALYZING 0
-     * }
-     */
-    public static int G_ANALYZER_ANALYZING() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define G_HAVE_GNUC_VISIBILITY 1
-     * }
-     */
-    public static int G_HAVE_GNUC_VISIBILITY() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _LIBC_LIMITS_H_ 1
-     * }
-     */
-    public static int _LIBC_LIMITS_H_() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _FEATURES_H 1
-     * }
-     */
-    public static int _FEATURES_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _DEFAULT_SOURCE 1
-     * }
-     */
-    public static int _DEFAULT_SOURCE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_USE_ISOC2X 0
-     * }
-     */
-    public static int __GLIBC_USE_ISOC2X() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_ISOC11 1
-     * }
-     */
-    public static int __USE_ISOC11() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_ISOC99 1
-     * }
-     */
-    public static int __USE_ISOC99() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_ISOC95 1
-     * }
-     */
-    public static int __USE_ISOC95() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_POSIX_IMPLICITLY 1
-     * }
-     */
-    public static int __USE_POSIX_IMPLICITLY() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_SOURCE 1
-     * }
-     */
-    public static int _POSIX_SOURCE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_POSIX 1
-     * }
-     */
-    public static int __USE_POSIX() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_POSIX2 1
-     * }
-     */
-    public static int __USE_POSIX2() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_POSIX199309 1
-     * }
-     */
-    public static int __USE_POSIX199309() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_POSIX199506 1
-     * }
-     */
-    public static int __USE_POSIX199506() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_XOPEN2K 1
-     * }
-     */
-    public static int __USE_XOPEN2K() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_XOPEN2K8 1
-     * }
-     */
-    public static int __USE_XOPEN2K8() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _ATFILE_SOURCE 1
-     * }
-     */
-    public static int _ATFILE_SOURCE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __WORDSIZE 64
-     * }
-     */
-    public static int __WORDSIZE() {
-        return (int)64L;
-    }
-    /**
-     * {@snippet :
-     * #define __WORDSIZE_TIME64_COMPAT32 0
-     * }
-     */
-    public static int __WORDSIZE_TIME64_COMPAT32() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __TIMESIZE 64
-     * }
-     */
-    public static int __TIMESIZE() {
-        return (int)64L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_MISC 1
-     * }
-     */
-    public static int __USE_MISC() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_ATFILE 1
-     * }
-     */
-    public static int __USE_ATFILE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __USE_FORTIFY_LEVEL 0
-     * }
-     */
-    public static int __USE_FORTIFY_LEVEL() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_USE_DEPRECATED_GETS 0
-     * }
-     */
-    public static int __GLIBC_USE_DEPRECATED_GETS() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_USE_DEPRECATED_SCANF 0
-     * }
-     */
-    public static int __GLIBC_USE_DEPRECATED_SCANF() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define _STDC_PREDEF_H 1
-     * }
-     */
-    public static int _STDC_PREDEF_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __STDC_IEC_559__ 1
-     * }
-     */
-    public static int __STDC_IEC_559__() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __STDC_IEC_559_COMPLEX__ 1
-     * }
-     */
-    public static int __STDC_IEC_559_COMPLEX__() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __GNU_LIBRARY__ 6
-     * }
-     */
-    public static int __GNU_LIBRARY__() {
-        return (int)6L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC__ 2
-     * }
-     */
-    public static int __GLIBC__() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_MINOR__ 35
-     * }
-     */
-    public static int __GLIBC_MINOR__() {
-        return (int)35L;
-    }
-    /**
-     * {@snippet :
-     * #define _SYS_CDEFS_H 1
-     * }
-     */
-    public static int _SYS_CDEFS_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __glibc_c99_flexarr_available 1
-     * }
-     */
-    public static int __glibc_c99_flexarr_available() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI 0
-     * }
-     */
-    public static int __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_GENERIC_SELECTION 1
-     * }
-     */
-    public static int __HAVE_GENERIC_SELECTION() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_USE_LIB_EXT2 0
-     * }
-     */
-    public static int __GLIBC_USE_LIB_EXT2() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_USE_IEC_60559_BFP_EXT 0
-     * }
-     */
-    public static int __GLIBC_USE_IEC_60559_BFP_EXT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_USE_IEC_60559_BFP_EXT_C2X 0
-     * }
-     */
-    public static int __GLIBC_USE_IEC_60559_BFP_EXT_C2X() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_USE_IEC_60559_EXT 0
-     * }
-     */
-    public static int __GLIBC_USE_IEC_60559_EXT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_USE_IEC_60559_FUNCS_EXT 0
-     * }
-     */
-    public static int __GLIBC_USE_IEC_60559_FUNCS_EXT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X 0
-     * }
-     */
-    public static int __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __GLIBC_USE_IEC_60559_TYPES_EXT 0
-     * }
-     */
-    public static int __GLIBC_USE_IEC_60559_TYPES_EXT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define MB_LEN_MAX 16
-     * }
-     */
-    public static int MB_LEN_MAX() {
-        return (int)16L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_POSIX1_LIM_H 1
-     * }
-     */
-    public static int _BITS_POSIX1_LIM_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_AIO_LISTIO_MAX 2
-     * }
-     */
-    public static int _POSIX_AIO_LISTIO_MAX() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_AIO_MAX 1
-     * }
-     */
-    public static int _POSIX_AIO_MAX() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_ARG_MAX 4096
-     * }
-     */
-    public static int _POSIX_ARG_MAX() {
-        return (int)4096L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_CHILD_MAX 25
-     * }
-     */
-    public static int _POSIX_CHILD_MAX() {
-        return (int)25L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_DELAYTIMER_MAX 32
-     * }
-     */
-    public static int _POSIX_DELAYTIMER_MAX() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_HOST_NAME_MAX 255
-     * }
-     */
-    public static int _POSIX_HOST_NAME_MAX() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_LINK_MAX 8
-     * }
-     */
-    public static int _POSIX_LINK_MAX() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_LOGIN_NAME_MAX 9
-     * }
-     */
-    public static int _POSIX_LOGIN_NAME_MAX() {
-        return (int)9L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_MAX_CANON 255
-     * }
-     */
-    public static int _POSIX_MAX_CANON() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_MAX_INPUT 255
-     * }
-     */
-    public static int _POSIX_MAX_INPUT() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_MQ_OPEN_MAX 8
-     * }
-     */
-    public static int _POSIX_MQ_OPEN_MAX() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_MQ_PRIO_MAX 32
-     * }
-     */
-    public static int _POSIX_MQ_PRIO_MAX() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_NAME_MAX 14
-     * }
-     */
-    public static int _POSIX_NAME_MAX() {
-        return (int)14L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_NGROUPS_MAX 8
-     * }
-     */
-    public static int _POSIX_NGROUPS_MAX() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_OPEN_MAX 20
-     * }
-     */
-    public static int _POSIX_OPEN_MAX() {
-        return (int)20L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_PATH_MAX 256
-     * }
-     */
-    public static int _POSIX_PATH_MAX() {
-        return (int)256L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_PIPE_BUF 512
-     * }
-     */
-    public static int _POSIX_PIPE_BUF() {
-        return (int)512L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_RE_DUP_MAX 255
-     * }
-     */
-    public static int _POSIX_RE_DUP_MAX() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_RTSIG_MAX 8
-     * }
-     */
-    public static int _POSIX_RTSIG_MAX() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_SEM_NSEMS_MAX 256
-     * }
-     */
-    public static int _POSIX_SEM_NSEMS_MAX() {
-        return (int)256L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_SEM_VALUE_MAX 32767
-     * }
-     */
-    public static int _POSIX_SEM_VALUE_MAX() {
-        return (int)32767L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_SIGQUEUE_MAX 32
-     * }
-     */
-    public static int _POSIX_SIGQUEUE_MAX() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_SSIZE_MAX 32767
-     * }
-     */
-    public static int _POSIX_SSIZE_MAX() {
-        return (int)32767L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_STREAM_MAX 8
-     * }
-     */
-    public static int _POSIX_STREAM_MAX() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_SYMLINK_MAX 255
-     * }
-     */
-    public static int _POSIX_SYMLINK_MAX() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_SYMLOOP_MAX 8
-     * }
-     */
-    public static int _POSIX_SYMLOOP_MAX() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_TIMER_MAX 32
-     * }
-     */
-    public static int _POSIX_TIMER_MAX() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_TTY_NAME_MAX 9
-     * }
-     */
-    public static int _POSIX_TTY_NAME_MAX() {
-        return (int)9L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_TZNAME_MAX 6
-     * }
-     */
-    public static int _POSIX_TZNAME_MAX() {
-        return (int)6L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_CLOCKRES_MIN 20000000
-     * }
-     */
-    public static int _POSIX_CLOCKRES_MIN() {
-        return (int)20000000L;
-    }
-    /**
-     * {@snippet :
-     * #define NR_OPEN 1024
-     * }
-     */
-    public static int NR_OPEN() {
-        return (int)1024L;
-    }
-    /**
-     * {@snippet :
-     * #define NGROUPS_MAX 65536
-     * }
-     */
-    public static int NGROUPS_MAX() {
-        return (int)65536L;
-    }
-    /**
-     * {@snippet :
-     * #define ARG_MAX 131072
-     * }
-     */
-    public static int ARG_MAX() {
-        return (int)131072L;
-    }
-    /**
-     * {@snippet :
-     * #define LINK_MAX 127
-     * }
-     */
-    public static int LINK_MAX() {
-        return (int)127L;
-    }
-    /**
-     * {@snippet :
-     * #define MAX_CANON 255
-     * }
-     */
-    public static int MAX_CANON() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define MAX_INPUT 255
-     * }
-     */
-    public static int MAX_INPUT() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define NAME_MAX 255
-     * }
-     */
-    public static int NAME_MAX() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define PATH_MAX 4096
-     * }
-     */
-    public static int PATH_MAX() {
-        return (int)4096L;
-    }
-    /**
-     * {@snippet :
-     * #define PIPE_BUF 4096
-     * }
-     */
-    public static int PIPE_BUF() {
-        return (int)4096L;
-    }
-    /**
-     * {@snippet :
-     * #define XATTR_NAME_MAX 255
-     * }
-     */
-    public static int XATTR_NAME_MAX() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define XATTR_SIZE_MAX 65536
-     * }
-     */
-    public static int XATTR_SIZE_MAX() {
-        return (int)65536L;
-    }
-    /**
-     * {@snippet :
-     * #define XATTR_LIST_MAX 65536
-     * }
-     */
-    public static int XATTR_LIST_MAX() {
-        return (int)65536L;
-    }
-    /**
-     * {@snippet :
-     * #define RTSIG_MAX 32
-     * }
-     */
-    public static int RTSIG_MAX() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_THREAD_KEYS_MAX 128
-     * }
-     */
-    public static int _POSIX_THREAD_KEYS_MAX() {
-        return (int)128L;
-    }
-    /**
-     * {@snippet :
-     * #define PTHREAD_KEYS_MAX 1024
-     * }
-     */
-    public static int PTHREAD_KEYS_MAX() {
-        return (int)1024L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_THREAD_DESTRUCTOR_ITERATIONS 4
-     * }
-     */
-    public static int _POSIX_THREAD_DESTRUCTOR_ITERATIONS() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_THREAD_THREADS_MAX 64
-     * }
-     */
-    public static int _POSIX_THREAD_THREADS_MAX() {
-        return (int)64L;
-    }
-    /**
-     * {@snippet :
-     * #define AIO_PRIO_DELTA_MAX 20
-     * }
-     */
-    public static int AIO_PRIO_DELTA_MAX() {
-        return (int)20L;
-    }
-    /**
-     * {@snippet :
-     * #define PTHREAD_STACK_MIN 131072
-     * }
-     */
-    public static int PTHREAD_STACK_MIN() {
-        return (int)131072L;
-    }
-    /**
-     * {@snippet :
-     * #define DELAYTIMER_MAX 2147483647
-     * }
-     */
-    public static int DELAYTIMER_MAX() {
-        return (int)2147483647L;
-    }
-    /**
-     * {@snippet :
-     * #define TTY_NAME_MAX 32
-     * }
-     */
-    public static int TTY_NAME_MAX() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define LOGIN_NAME_MAX 256
-     * }
-     */
-    public static int LOGIN_NAME_MAX() {
-        return (int)256L;
-    }
-    /**
-     * {@snippet :
-     * #define HOST_NAME_MAX 64
-     * }
-     */
-    public static int HOST_NAME_MAX() {
-        return (int)64L;
-    }
-    /**
-     * {@snippet :
-     * #define MQ_PRIO_MAX 32768
-     * }
-     */
-    public static int MQ_PRIO_MAX() {
-        return (int)32768L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_POSIX2_LIM_H 1
-     * }
-     */
-    public static int _BITS_POSIX2_LIM_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX2_BC_BASE_MAX 99
-     * }
-     */
-    public static int _POSIX2_BC_BASE_MAX() {
-        return (int)99L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX2_BC_DIM_MAX 2048
-     * }
-     */
-    public static int _POSIX2_BC_DIM_MAX() {
-        return (int)2048L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX2_BC_SCALE_MAX 99
-     * }
-     */
-    public static int _POSIX2_BC_SCALE_MAX() {
-        return (int)99L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX2_BC_STRING_MAX 1000
-     * }
-     */
-    public static int _POSIX2_BC_STRING_MAX() {
-        return (int)1000L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX2_COLL_WEIGHTS_MAX 2
-     * }
-     */
-    public static int _POSIX2_COLL_WEIGHTS_MAX() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX2_EXPR_NEST_MAX 32
-     * }
-     */
-    public static int _POSIX2_EXPR_NEST_MAX() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX2_LINE_MAX 2048
-     * }
-     */
-    public static int _POSIX2_LINE_MAX() {
-        return (int)2048L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX2_RE_DUP_MAX 255
-     * }
-     */
-    public static int _POSIX2_RE_DUP_MAX() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX2_CHARCLASS_NAME_MAX 14
-     * }
-     */
-    public static int _POSIX2_CHARCLASS_NAME_MAX() {
-        return (int)14L;
-    }
-    /**
-     * {@snippet :
-     * #define COLL_WEIGHTS_MAX 255
-     * }
-     */
-    public static int COLL_WEIGHTS_MAX() {
-        return (int)255L;
-    }
-    /**
-     * {@snippet :
-     * #define CHARCLASS_NAME_MAX 2048
-     * }
-     */
-    public static int CHARCLASS_NAME_MAX() {
-        return (int)2048L;
-    }
-    /**
-     * {@snippet :
-     * #define CHAR_MIN 0
-     * }
-     */
-    public static int CHAR_MIN() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define G_HAVE_GINT64 1
-     * }
-     */
-    public static int G_HAVE_GINT64() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_SIZEOF_VOID_P 8
-     * }
-     */
-    public static int GLIB_SIZEOF_VOID_P() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_SIZEOF_LONG 8
-     * }
-     */
-    public static int GLIB_SIZEOF_LONG() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_SIZEOF_SIZE_T 8
-     * }
-     */
-    public static int GLIB_SIZEOF_SIZE_T() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_SIZEOF_SSIZE_T 8
-     * }
-     */
-    public static int GLIB_SIZEOF_SSIZE_T() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_MAJOR_VERSION 2
-     * }
-     */
-    public static int GLIB_MAJOR_VERSION() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_MINOR_VERSION 78
-     * }
-     */
-    public static int GLIB_MINOR_VERSION() {
-        return (int)78L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_MICRO_VERSION 0
-     * }
-     */
-    public static int GLIB_MICRO_VERSION() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define G_HAVE_ISO_VARARGS 1
-     * }
-     */
-    public static int G_HAVE_ISO_VARARGS() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define G_HAVE_GROWING_STACK 0
-     * }
-     */
-    public static int G_HAVE_GROWING_STACK() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define G_HAVE_GNUC_VARARGS 1
-     * }
-     */
-    public static int G_HAVE_GNUC_VARARGS() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_SYSDEF_AF_UNIX 1
-     * }
-     */
-    public static int GLIB_SYSDEF_AF_UNIX() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_SYSDEF_AF_INET 2
-     * }
-     */
-    public static int GLIB_SYSDEF_AF_INET() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_SYSDEF_AF_INET6 10
-     * }
-     */
-    public static int GLIB_SYSDEF_AF_INET6() {
-        return (int)10L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_SYSDEF_MSG_OOB 1
-     * }
-     */
-    public static int GLIB_SYSDEF_MSG_OOB() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_SYSDEF_MSG_PEEK 2
-     * }
-     */
-    public static int GLIB_SYSDEF_MSG_PEEK() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define GLIB_SYSDEF_MSG_DONTROUTE 4
-     * }
-     */
-    public static int GLIB_SYSDEF_MSG_DONTROUTE() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * #define _TIME_H 1
-     * }
-     */
-    public static int _TIME_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_TIME_H 1
-     * }
-     */
-    public static int _BITS_TIME_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_TYPES_H 1
-     * }
-     */
-    public static int _BITS_TYPES_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_TYPESIZES_H 1
-     * }
-     */
-    public static int _BITS_TYPESIZES_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __OFF_T_MATCHES_OFF64_T 1
-     * }
-     */
-    public static int __OFF_T_MATCHES_OFF64_T() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __INO_T_MATCHES_INO64_T 1
-     * }
-     */
-    public static int __INO_T_MATCHES_INO64_T() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __RLIM_T_MATCHES_RLIM64_T 1
-     * }
-     */
-    public static int __RLIM_T_MATCHES_RLIM64_T() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __STATFS_MATCHES_STATFS64 1
-     * }
-     */
-    public static int __STATFS_MATCHES_STATFS64() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __FD_SETSIZE 1024
-     * }
-     */
-    public static int __FD_SETSIZE() {
-        return (int)1024L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_TIME64_H 1
-     * }
-     */
-    public static int _BITS_TIME64_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_REALTIME 0
-     * }
-     */
-    public static int CLOCK_REALTIME() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_MONOTONIC 1
-     * }
-     */
-    public static int CLOCK_MONOTONIC() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_PROCESS_CPUTIME_ID 2
-     * }
-     */
-    public static int CLOCK_PROCESS_CPUTIME_ID() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_THREAD_CPUTIME_ID 3
-     * }
-     */
-    public static int CLOCK_THREAD_CPUTIME_ID() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_MONOTONIC_RAW 4
-     * }
-     */
-    public static int CLOCK_MONOTONIC_RAW() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_REALTIME_COARSE 5
-     * }
-     */
-    public static int CLOCK_REALTIME_COARSE() {
-        return (int)5L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_MONOTONIC_COARSE 6
-     * }
-     */
-    public static int CLOCK_MONOTONIC_COARSE() {
-        return (int)6L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_BOOTTIME 7
-     * }
-     */
-    public static int CLOCK_BOOTTIME() {
-        return (int)7L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_REALTIME_ALARM 8
-     * }
-     */
-    public static int CLOCK_REALTIME_ALARM() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_BOOTTIME_ALARM 9
-     * }
-     */
-    public static int CLOCK_BOOTTIME_ALARM() {
-        return (int)9L;
-    }
-    /**
-     * {@snippet :
-     * #define CLOCK_TAI 11
-     * }
-     */
-    public static int CLOCK_TAI() {
-        return (int)11L;
-    }
-    /**
-     * {@snippet :
-     * #define TIMER_ABSTIME 1
-     * }
-     */
-    public static int TIMER_ABSTIME() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __clock_t_defined 1
-     * }
-     */
-    public static int __clock_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __time_t_defined 1
-     * }
-     */
-    public static int __time_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __struct_tm_defined 1
-     * }
-     */
-    public static int __struct_tm_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _STRUCT_TIMESPEC 1
-     * }
-     */
-    public static int _STRUCT_TIMESPEC() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_ENDIAN_H 1
-     * }
-     */
-    public static int _BITS_ENDIAN_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __LITTLE_ENDIAN 1234
-     * }
-     */
-    public static int __LITTLE_ENDIAN() {
-        return (int)1234L;
-    }
-    /**
-     * {@snippet :
-     * #define __BIG_ENDIAN 4321
-     * }
-     */
-    public static int __BIG_ENDIAN() {
-        return (int)4321L;
-    }
-    /**
-     * {@snippet :
-     * #define __PDP_ENDIAN 3412
-     * }
-     */
-    public static int __PDP_ENDIAN() {
-        return (int)3412L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_ENDIANNESS_H 1
-     * }
-     */
-    public static int _BITS_ENDIANNESS_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __clockid_t_defined 1
-     * }
-     */
-    public static int __clockid_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __timer_t_defined 1
-     * }
-     */
-    public static int __timer_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __itimerspec_defined 1
-     * }
-     */
-    public static int __itimerspec_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_TYPES_LOCALE_T_H 1
-     * }
-     */
-    public static int _BITS_TYPES_LOCALE_T_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_TYPES___LOCALE_T_H 1
-     * }
-     */
-    public static int _BITS_TYPES___LOCALE_T_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define TIME_UTC 1
-     * }
-     */
-    public static int TIME_UTC() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define G_LITTLE_ENDIAN 1234
-     * }
-     */
-    public static int G_LITTLE_ENDIAN() {
-        return (int)1234L;
-    }
-    /**
-     * {@snippet :
-     * #define G_BIG_ENDIAN 4321
-     * }
-     */
-    public static int G_BIG_ENDIAN() {
-        return (int)4321L;
-    }
-    /**
-     * {@snippet :
-     * #define G_PDP_ENDIAN 3412
-     * }
-     */
-    public static int G_PDP_ENDIAN() {
-        return (int)3412L;
-    }
-    /**
-     * {@snippet :
-     * #define _STRING_H 1
-     * }
-     */
-    public static int _STRING_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _STRINGS_H 1
-     * }
-     */
-    public static int _STRINGS_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _STDLIB_H 1
-     * }
-     */
-    public static int _STDLIB_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define WNOHANG 1
-     * }
-     */
-    public static int WNOHANG() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define WUNTRACED 2
-     * }
-     */
-    public static int WUNTRACED() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define WSTOPPED 2
-     * }
-     */
-    public static int WSTOPPED() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define WEXITED 4
-     * }
-     */
-    public static int WEXITED() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * #define WCONTINUED 8
-     * }
-     */
-    public static int WCONTINUED() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define WNOWAIT 16777216
-     * }
-     */
-    public static int WNOWAIT() {
-        return (int)16777216L;
-    }
-    /**
-     * {@snippet :
-     * #define __WNOTHREAD 536870912
-     * }
-     */
-    public static int __WNOTHREAD() {
-        return (int)536870912L;
-    }
-    /**
-     * {@snippet :
-     * #define __WALL 1073741824
-     * }
-     */
-    public static int __WALL() {
-        return (int)1073741824L;
-    }
-    /**
-     * {@snippet :
-     * #define __W_CONTINUED 65535
-     * }
-     */
-    public static int __W_CONTINUED() {
-        return (int)65535L;
-    }
-    /**
-     * {@snippet :
-     * #define __WCOREFLAG 128
-     * }
-     */
-    public static int __WCOREFLAG() {
-        return (int)128L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_FLOAT128 1
-     * }
-     */
-    public static int __HAVE_FLOAT128() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_DISTINCT_FLOAT128 0
-     * }
-     */
-    public static int __HAVE_DISTINCT_FLOAT128() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_FLOAT16 0
-     * }
-     */
-    public static int __HAVE_FLOAT16() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_FLOAT32 1
-     * }
-     */
-    public static int __HAVE_FLOAT32() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_FLOAT64 1
-     * }
-     */
-    public static int __HAVE_FLOAT64() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_FLOAT32X 1
-     * }
-     */
-    public static int __HAVE_FLOAT32X() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_FLOAT128X 0
-     * }
-     */
-    public static int __HAVE_FLOAT128X() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_DISTINCT_FLOAT32 0
-     * }
-     */
-    public static int __HAVE_DISTINCT_FLOAT32() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_DISTINCT_FLOAT64 0
-     * }
-     */
-    public static int __HAVE_DISTINCT_FLOAT64() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_DISTINCT_FLOAT32X 0
-     * }
-     */
-    public static int __HAVE_DISTINCT_FLOAT32X() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_DISTINCT_FLOAT64X 0
-     * }
-     */
-    public static int __HAVE_DISTINCT_FLOAT64X() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_FLOATN_NOT_TYPEDEF 0
-     * }
-     */
-    public static int __HAVE_FLOATN_NOT_TYPEDEF() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __ldiv_t_defined 1
-     * }
-     */
-    public static int __ldiv_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __lldiv_t_defined 1
-     * }
-     */
-    public static int __lldiv_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define RAND_MAX 2147483647
-     * }
-     */
-    public static int RAND_MAX() {
-        return (int)2147483647L;
-    }
-    /**
-     * {@snippet :
-     * #define EXIT_FAILURE 1
-     * }
-     */
-    public static int EXIT_FAILURE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define EXIT_SUCCESS 0
-     * }
-     */
-    public static int EXIT_SUCCESS() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define _SYS_TYPES_H 1
-     * }
-     */
-    public static int _SYS_TYPES_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_STDINT_INTN_H 1
-     * }
-     */
-    public static int _BITS_STDINT_INTN_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __BIT_TYPES_DEFINED__ 1
-     * }
-     */
-    public static int __BIT_TYPES_DEFINED__() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _ENDIAN_H 1
-     * }
-     */
-    public static int _ENDIAN_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_BYTESWAP_H 1
-     * }
-     */
-    public static int _BITS_BYTESWAP_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_UINTN_IDENTITY_H 1
-     * }
-     */
-    public static int _BITS_UINTN_IDENTITY_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _SYS_SELECT_H 1
-     * }
-     */
-    public static int _SYS_SELECT_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __sigset_t_defined 1
-     * }
-     */
-    public static int __sigset_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __timeval_defined 1
-     * }
-     */
-    public static int __timeval_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_PTHREADTYPES_COMMON_H 1
-     * }
-     */
-    public static int _BITS_PTHREADTYPES_COMMON_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _THREAD_SHARED_TYPES_H 1
-     * }
-     */
-    public static int _THREAD_SHARED_TYPES_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_PTHREADTYPES_ARCH_H 1
-     * }
-     */
-    public static int _BITS_PTHREADTYPES_ARCH_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_ATTR_T 64
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_ATTR_T() {
-        return (int)64L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_MUTEX_T 48
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_MUTEX_T() {
-        return (int)48L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_MUTEXATTR_T 8
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_MUTEXATTR_T() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_CONDATTR_T 8
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_CONDATTR_T() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_RWLOCK_T 56
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_RWLOCK_T() {
-        return (int)56L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_BARRIER_T 32
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_BARRIER_T() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_BARRIERATTR_T 8
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_BARRIERATTR_T() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_COND_T 48
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_COND_T() {
-        return (int)48L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_RWLOCKATTR_T 8
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_RWLOCKATTR_T() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define _THREAD_MUTEX_INTERNAL_H 1
-     * }
-     */
-    public static int _THREAD_MUTEX_INTERNAL_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __PTHREAD_MUTEX_HAVE_PREV 1
-     * }
-     */
-    public static int __PTHREAD_MUTEX_HAVE_PREV() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __have_pthread_attr_t 1
-     * }
-     */
-    public static int __have_pthread_attr_t() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _ALLOCA_H 1
-     * }
-     */
-    public static int _ALLOCA_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SIGNUM_GENERIC_H 1
-     * }
-     */
-    public static int _BITS_SIGNUM_GENERIC_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGINT 2
-     * }
-     */
-    public static int SIGINT() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGILL 4
-     * }
-     */
-    public static int SIGILL() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGABRT 6
-     * }
-     */
-    public static int SIGABRT() {
-        return (int)6L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGFPE 8
-     * }
-     */
-    public static int SIGFPE() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGSEGV 11
-     * }
-     */
-    public static int SIGSEGV() {
-        return (int)11L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGTERM 15
-     * }
-     */
-    public static int SIGTERM() {
-        return (int)15L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGHUP 1
-     * }
-     */
-    public static int SIGHUP() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGQUIT 3
-     * }
-     */
-    public static int SIGQUIT() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGTRAP 5
-     * }
-     */
-    public static int SIGTRAP() {
-        return (int)5L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGKILL 9
-     * }
-     */
-    public static int SIGKILL() {
-        return (int)9L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGPIPE 13
-     * }
-     */
-    public static int SIGPIPE() {
-        return (int)13L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGALRM 14
-     * }
-     */
-    public static int SIGALRM() {
-        return (int)14L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SIGNUM_ARCH_H 1
-     * }
-     */
-    public static int _BITS_SIGNUM_ARCH_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGSTKFLT 16
-     * }
-     */
-    public static int SIGSTKFLT() {
-        return (int)16L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGPWR 30
-     * }
-     */
-    public static int SIGPWR() {
-        return (int)30L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGBUS 7
-     * }
-     */
-    public static int SIGBUS() {
-        return (int)7L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGSYS 31
-     * }
-     */
-    public static int SIGSYS() {
-        return (int)31L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGURG 23
-     * }
-     */
-    public static int SIGURG() {
-        return (int)23L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGSTOP 19
-     * }
-     */
-    public static int SIGSTOP() {
-        return (int)19L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGTSTP 20
-     * }
-     */
-    public static int SIGTSTP() {
-        return (int)20L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGCONT 18
-     * }
-     */
-    public static int SIGCONT() {
-        return (int)18L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGCHLD 17
-     * }
-     */
-    public static int SIGCHLD() {
-        return (int)17L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGTTIN 21
-     * }
-     */
-    public static int SIGTTIN() {
-        return (int)21L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGTTOU 22
-     * }
-     */
-    public static int SIGTTOU() {
-        return (int)22L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGPOLL 29
-     * }
-     */
-    public static int SIGPOLL() {
-        return (int)29L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGXFSZ 25
-     * }
-     */
-    public static int SIGXFSZ() {
-        return (int)25L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGXCPU 24
-     * }
-     */
-    public static int SIGXCPU() {
-        return (int)24L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGVTALRM 26
-     * }
-     */
-    public static int SIGVTALRM() {
-        return (int)26L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGPROF 27
-     * }
-     */
-    public static int SIGPROF() {
-        return (int)27L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGUSR1 10
-     * }
-     */
-    public static int SIGUSR1() {
-        return (int)10L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGUSR2 12
-     * }
-     */
-    public static int SIGUSR2() {
-        return (int)12L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGWINCH 28
-     * }
-     */
-    public static int SIGWINCH() {
-        return (int)28L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIGRTMIN 32
-     * }
-     */
-    public static int __SIGRTMIN() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIGRTMAX 64
-     * }
-     */
-    public static int __SIGRTMAX() {
-        return (int)64L;
-    }
-    /**
-     * {@snippet :
-     * #define __sig_atomic_t_defined 1
-     * }
-     */
-    public static int __sig_atomic_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __siginfo_t_defined 1
-     * }
-     */
-    public static int __siginfo_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __SI_MAX_SIZE 128
-     * }
-     */
-    public static int __SI_MAX_SIZE() {
-        return (int)128L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SIGINFO_ARCH_H 1
-     * }
-     */
-    public static int _BITS_SIGINFO_ARCH_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __SI_ERRNO_THEN_CODE 1
-     * }
-     */
-    public static int __SI_ERRNO_THEN_CODE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __SI_HAVE_SIGSYS 1
-     * }
-     */
-    public static int __SI_HAVE_SIGSYS() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SIGINFO_CONSTS_H 1
-     * }
-     */
-    public static int _BITS_SIGINFO_CONSTS_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __SI_ASYNCIO_AFTER_SIGIO 1
-     * }
-     */
-    public static int __SI_ASYNCIO_AFTER_SIGIO() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __sigevent_t_defined 1
-     * }
-     */
-    public static int __sigevent_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIGEV_MAX_SIZE 64
-     * }
-     */
-    public static int __SIGEV_MAX_SIZE() {
-        return (int)64L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SIGEVENT_CONSTS_H 1
-     * }
-     */
-    public static int _BITS_SIGEVENT_CONSTS_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SIGACTION_H 1
-     * }
-     */
-    public static int _BITS_SIGACTION_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define SA_NOCLDSTOP 1
-     * }
-     */
-    public static int SA_NOCLDSTOP() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define SA_NOCLDWAIT 2
-     * }
-     */
-    public static int SA_NOCLDWAIT() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define SA_SIGINFO 4
-     * }
-     */
-    public static int SA_SIGINFO() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * #define SA_ONSTACK 134217728
-     * }
-     */
-    public static int SA_ONSTACK() {
-        return (int)134217728L;
-    }
-    /**
-     * {@snippet :
-     * #define SA_RESTART 268435456
-     * }
-     */
-    public static int SA_RESTART() {
-        return (int)268435456L;
-    }
-    /**
-     * {@snippet :
-     * #define SA_NODEFER 1073741824
-     * }
-     */
-    public static int SA_NODEFER() {
-        return (int)1073741824L;
-    }
-    /**
-     * {@snippet :
-     * #define SA_INTERRUPT 536870912
-     * }
-     */
-    public static int SA_INTERRUPT() {
-        return (int)536870912L;
-    }
-    /**
-     * {@snippet :
-     * #define SIG_BLOCK 0
-     * }
-     */
-    public static int SIG_BLOCK() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define SIG_UNBLOCK 1
-     * }
-     */
-    public static int SIG_UNBLOCK() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define SIG_SETMASK 2
-     * }
-     */
-    public static int SIG_SETMASK() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SIGCONTEXT_H 1
-     * }
-     */
-    public static int _BITS_SIGCONTEXT_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __BITS_PER_LONG 64
-     * }
-     */
-    public static int __BITS_PER_LONG() {
-        return (int)64L;
-    }
-    /**
-     * {@snippet :
-     * #define FPSIMD_MAGIC 1179680769
-     * }
-     */
-    public static int FPSIMD_MAGIC() {
-        return (int)1179680769L;
-    }
-    /**
-     * {@snippet :
-     * #define ESR_MAGIC 1163088385
-     * }
-     */
-    public static int ESR_MAGIC() {
-        return (int)1163088385L;
-    }
-    /**
-     * {@snippet :
-     * #define EXTRA_MAGIC 1163416577
-     * }
-     */
-    public static int EXTRA_MAGIC() {
-        return (int)1163416577L;
-    }
-    /**
-     * {@snippet :
-     * #define SVE_MAGIC 1398162689
-     * }
-     */
-    public static int SVE_MAGIC() {
-        return (int)1398162689L;
-    }
-    /**
-     * {@snippet :
-     * #define SVE_SIG_FLAG_SM 1
-     * }
-     */
-    public static int SVE_SIG_FLAG_SM() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define TPIDR2_MAGIC 1414547714
-     * }
-     */
-    public static int TPIDR2_MAGIC() {
-        return (int)1414547714L;
-    }
-    /**
-     * {@snippet :
-     * #define ZA_MAGIC 1412850501
-     * }
-     */
-    public static int ZA_MAGIC() {
-        return (int)1412850501L;
-    }
-    /**
-     * {@snippet :
-     * #define ZT_MAGIC 1515474433
-     * }
-     */
-    public static int ZT_MAGIC() {
-        return (int)1515474433L;
-    }
-    /**
-     * {@snippet :
-     * #define __SVE_VQ_BYTES 16
-     * }
-     */
-    public static int __SVE_VQ_BYTES() {
-        return (int)16L;
-    }
-    /**
-     * {@snippet :
-     * #define __SVE_VQ_MIN 1
-     * }
-     */
-    public static int __SVE_VQ_MIN() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __SVE_VQ_MAX 512
-     * }
-     */
-    public static int __SVE_VQ_MAX() {
-        return (int)512L;
-    }
-    /**
-     * {@snippet :
-     * #define __SVE_NUM_ZREGS 32
-     * }
-     */
-    public static int __SVE_NUM_ZREGS() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define __SVE_NUM_PREGS 16
-     * }
-     */
-    public static int __SVE_NUM_PREGS() {
-        return (int)16L;
-    }
-    /**
-     * {@snippet :
-     * #define __SVE_ZREGS_OFFSET 0
-     * }
-     */
-    public static int __SVE_ZREGS_OFFSET() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define ZT_SIG_REG_SIZE 512
-     * }
-     */
-    public static int ZT_SIG_REG_SIZE() {
-        return (int)512L;
-    }
-    /**
-     * {@snippet :
-     * #define __stack_t_defined 1
-     * }
-     */
-    public static int __stack_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _SYS_UCONTEXT_H 1
-     * }
-     */
-    public static int _SYS_UCONTEXT_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _SYS_PROCFS_H 1
-     * }
-     */
-    public static int _SYS_PROCFS_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _SYS_TIME_H 1
-     * }
-     */
-    public static int _SYS_TIME_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _SYS_USER_H 1
-     * }
-     */
-    public static int _SYS_USER_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SIGSTACK_H 1
-     * }
-     */
-    public static int _BITS_SIGSTACK_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define MINSIGSTKSZ 5120
-     * }
-     */
-    public static int MINSIGSTKSZ() {
-        return (int)5120L;
-    }
-    /**
-     * {@snippet :
-     * #define SIGSTKSZ 16384
-     * }
-     */
-    public static int SIGSTKSZ() {
-        return (int)16384L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SS_FLAGS_H 1
-     * }
-     */
-    public static int _BITS_SS_FLAGS_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __sigstack_defined 1
-     * }
-     */
-    public static int __sigstack_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SIGTHREAD_H 1
-     * }
-     */
-    public static int _BITS_SIGTHREAD_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define G_DATALIST_FLAGS_MASK 3
-     * }
-     */
-    public static int G_DATALIST_FLAGS_MASK() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * #define _DIRENT_H 1
-     * }
-     */
-    public static int _DIRENT_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _DIRENT_MATCHES_DIRENT64 1
-     * }
-     */
-    public static int _DIRENT_MATCHES_DIRENT64() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define G_PRIORITY_DEFAULT 0
-     * }
-     */
-    public static int G_PRIORITY_DEFAULT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define G_PRIORITY_HIGH_IDLE 100
-     * }
-     */
-    public static int G_PRIORITY_HIGH_IDLE() {
-        return (int)100L;
-    }
-    /**
-     * {@snippet :
-     * #define G_PRIORITY_DEFAULT_IDLE 200
-     * }
-     */
-    public static int G_PRIORITY_DEFAULT_IDLE() {
-        return (int)200L;
-    }
-    /**
-     * {@snippet :
-     * #define G_PRIORITY_LOW 300
-     * }
-     */
-    public static int G_PRIORITY_LOW() {
-        return (int)300L;
-    }
-    /**
-     * {@snippet :
-     * #define G_UNICHAR_MAX_DECOMPOSITION_LENGTH 18
-     * }
-     */
-    public static int G_UNICHAR_MAX_DECOMPOSITION_LENGTH() {
-        return (int)18L;
-    }
-    /**
-     * {@snippet :
-     * #define _ERRNO_H 1
-     * }
-     */
-    public static int _ERRNO_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_ERRNO_H 1
-     * }
-     */
-    public static int _BITS_ERRNO_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define EPERM 1
-     * }
-     */
-    public static int EPERM() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOENT 2
-     * }
-     */
-    public static int ENOENT() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define ESRCH 3
-     * }
-     */
-    public static int ESRCH() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * #define EINTR 4
-     * }
-     */
-    public static int EINTR() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * #define EIO 5
-     * }
-     */
-    public static int EIO() {
-        return (int)5L;
-    }
-    /**
-     * {@snippet :
-     * #define ENXIO 6
-     * }
-     */
-    public static int ENXIO() {
-        return (int)6L;
-    }
-    /**
-     * {@snippet :
-     * #define E2BIG 7
-     * }
-     */
-    public static int E2BIG() {
-        return (int)7L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOEXEC 8
-     * }
-     */
-    public static int ENOEXEC() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define EBADF 9
-     * }
-     */
-    public static int EBADF() {
-        return (int)9L;
-    }
-    /**
-     * {@snippet :
-     * #define ECHILD 10
-     * }
-     */
-    public static int ECHILD() {
-        return (int)10L;
-    }
-    /**
-     * {@snippet :
-     * #define EAGAIN 11
-     * }
-     */
-    public static int EAGAIN() {
-        return (int)11L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOMEM 12
-     * }
-     */
-    public static int ENOMEM() {
-        return (int)12L;
-    }
-    /**
-     * {@snippet :
-     * #define EACCES 13
-     * }
-     */
-    public static int EACCES() {
-        return (int)13L;
-    }
-    /**
-     * {@snippet :
-     * #define EFAULT 14
-     * }
-     */
-    public static int EFAULT() {
-        return (int)14L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOTBLK 15
-     * }
-     */
-    public static int ENOTBLK() {
-        return (int)15L;
-    }
-    /**
-     * {@snippet :
-     * #define EBUSY 16
-     * }
-     */
-    public static int EBUSY() {
-        return (int)16L;
-    }
-    /**
-     * {@snippet :
-     * #define EEXIST 17
-     * }
-     */
-    public static int EEXIST() {
-        return (int)17L;
-    }
-    /**
-     * {@snippet :
-     * #define EXDEV 18
-     * }
-     */
-    public static int EXDEV() {
-        return (int)18L;
-    }
-    /**
-     * {@snippet :
-     * #define ENODEV 19
-     * }
-     */
-    public static int ENODEV() {
-        return (int)19L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOTDIR 20
-     * }
-     */
-    public static int ENOTDIR() {
-        return (int)20L;
-    }
-    /**
-     * {@snippet :
-     * #define EISDIR 21
-     * }
-     */
-    public static int EISDIR() {
-        return (int)21L;
-    }
-    /**
-     * {@snippet :
-     * #define EINVAL 22
-     * }
-     */
-    public static int EINVAL() {
-        return (int)22L;
-    }
-    /**
-     * {@snippet :
-     * #define ENFILE 23
-     * }
-     */
-    public static int ENFILE() {
-        return (int)23L;
-    }
-    /**
-     * {@snippet :
-     * #define EMFILE 24
-     * }
-     */
-    public static int EMFILE() {
-        return (int)24L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOTTY 25
-     * }
-     */
-    public static int ENOTTY() {
-        return (int)25L;
-    }
-    /**
-     * {@snippet :
-     * #define ETXTBSY 26
-     * }
-     */
-    public static int ETXTBSY() {
-        return (int)26L;
-    }
-    /**
-     * {@snippet :
-     * #define EFBIG 27
-     * }
-     */
-    public static int EFBIG() {
-        return (int)27L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOSPC 28
-     * }
-     */
-    public static int ENOSPC() {
-        return (int)28L;
-    }
-    /**
-     * {@snippet :
-     * #define ESPIPE 29
-     * }
-     */
-    public static int ESPIPE() {
-        return (int)29L;
-    }
-    /**
-     * {@snippet :
-     * #define EROFS 30
-     * }
-     */
-    public static int EROFS() {
-        return (int)30L;
-    }
-    /**
-     * {@snippet :
-     * #define EMLINK 31
-     * }
-     */
-    public static int EMLINK() {
-        return (int)31L;
-    }
-    /**
-     * {@snippet :
-     * #define EPIPE 32
-     * }
-     */
-    public static int EPIPE() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define EDOM 33
-     * }
-     */
-    public static int EDOM() {
-        return (int)33L;
-    }
-    /**
-     * {@snippet :
-     * #define ERANGE 34
-     * }
-     */
-    public static int ERANGE() {
-        return (int)34L;
-    }
-    /**
-     * {@snippet :
-     * #define EDEADLK 35
-     * }
-     */
-    public static int EDEADLK() {
-        return (int)35L;
-    }
-    /**
-     * {@snippet :
-     * #define ENAMETOOLONG 36
-     * }
-     */
-    public static int ENAMETOOLONG() {
-        return (int)36L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOLCK 37
-     * }
-     */
-    public static int ENOLCK() {
-        return (int)37L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOSYS 38
-     * }
-     */
-    public static int ENOSYS() {
-        return (int)38L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOTEMPTY 39
-     * }
-     */
-    public static int ENOTEMPTY() {
-        return (int)39L;
-    }
-    /**
-     * {@snippet :
-     * #define ELOOP 40
-     * }
-     */
-    public static int ELOOP() {
-        return (int)40L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOMSG 42
-     * }
-     */
-    public static int ENOMSG() {
-        return (int)42L;
-    }
-    /**
-     * {@snippet :
-     * #define EIDRM 43
-     * }
-     */
-    public static int EIDRM() {
-        return (int)43L;
-    }
-    /**
-     * {@snippet :
-     * #define ECHRNG 44
-     * }
-     */
-    public static int ECHRNG() {
-        return (int)44L;
-    }
-    /**
-     * {@snippet :
-     * #define EL2NSYNC 45
-     * }
-     */
-    public static int EL2NSYNC() {
-        return (int)45L;
-    }
-    /**
-     * {@snippet :
-     * #define EL3HLT 46
-     * }
-     */
-    public static int EL3HLT() {
-        return (int)46L;
-    }
-    /**
-     * {@snippet :
-     * #define EL3RST 47
-     * }
-     */
-    public static int EL3RST() {
-        return (int)47L;
-    }
-    /**
-     * {@snippet :
-     * #define ELNRNG 48
-     * }
-     */
-    public static int ELNRNG() {
-        return (int)48L;
-    }
-    /**
-     * {@snippet :
-     * #define EUNATCH 49
-     * }
-     */
-    public static int EUNATCH() {
-        return (int)49L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOCSI 50
-     * }
-     */
-    public static int ENOCSI() {
-        return (int)50L;
-    }
-    /**
-     * {@snippet :
-     * #define EL2HLT 51
-     * }
-     */
-    public static int EL2HLT() {
-        return (int)51L;
-    }
-    /**
-     * {@snippet :
-     * #define EBADE 52
-     * }
-     */
-    public static int EBADE() {
-        return (int)52L;
-    }
-    /**
-     * {@snippet :
-     * #define EBADR 53
-     * }
-     */
-    public static int EBADR() {
-        return (int)53L;
-    }
-    /**
-     * {@snippet :
-     * #define EXFULL 54
-     * }
-     */
-    public static int EXFULL() {
-        return (int)54L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOANO 55
-     * }
-     */
-    public static int ENOANO() {
-        return (int)55L;
-    }
-    /**
-     * {@snippet :
-     * #define EBADRQC 56
-     * }
-     */
-    public static int EBADRQC() {
-        return (int)56L;
-    }
-    /**
-     * {@snippet :
-     * #define EBADSLT 57
-     * }
-     */
-    public static int EBADSLT() {
-        return (int)57L;
-    }
-    /**
-     * {@snippet :
-     * #define EBFONT 59
-     * }
-     */
-    public static int EBFONT() {
-        return (int)59L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOSTR 60
-     * }
-     */
-    public static int ENOSTR() {
-        return (int)60L;
-    }
-    /**
-     * {@snippet :
-     * #define ENODATA 61
-     * }
-     */
-    public static int ENODATA() {
-        return (int)61L;
-    }
-    /**
-     * {@snippet :
-     * #define ETIME 62
-     * }
-     */
-    public static int ETIME() {
-        return (int)62L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOSR 63
-     * }
-     */
-    public static int ENOSR() {
-        return (int)63L;
-    }
-    /**
-     * {@snippet :
-     * #define ENONET 64
-     * }
-     */
-    public static int ENONET() {
-        return (int)64L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOPKG 65
-     * }
-     */
-    public static int ENOPKG() {
-        return (int)65L;
-    }
-    /**
-     * {@snippet :
-     * #define EREMOTE 66
-     * }
-     */
-    public static int EREMOTE() {
-        return (int)66L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOLINK 67
-     * }
-     */
-    public static int ENOLINK() {
-        return (int)67L;
-    }
-    /**
-     * {@snippet :
-     * #define EADV 68
-     * }
-     */
-    public static int EADV() {
-        return (int)68L;
-    }
-    /**
-     * {@snippet :
-     * #define ESRMNT 69
-     * }
-     */
-    public static int ESRMNT() {
-        return (int)69L;
-    }
-    /**
-     * {@snippet :
-     * #define ECOMM 70
-     * }
-     */
-    public static int ECOMM() {
-        return (int)70L;
-    }
-    /**
-     * {@snippet :
-     * #define EPROTO 71
-     * }
-     */
-    public static int EPROTO() {
-        return (int)71L;
-    }
-    /**
-     * {@snippet :
-     * #define EMULTIHOP 72
-     * }
-     */
-    public static int EMULTIHOP() {
-        return (int)72L;
-    }
-    /**
-     * {@snippet :
-     * #define EDOTDOT 73
-     * }
-     */
-    public static int EDOTDOT() {
-        return (int)73L;
-    }
-    /**
-     * {@snippet :
-     * #define EBADMSG 74
-     * }
-     */
-    public static int EBADMSG() {
-        return (int)74L;
-    }
-    /**
-     * {@snippet :
-     * #define EOVERFLOW 75
-     * }
-     */
-    public static int EOVERFLOW() {
-        return (int)75L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOTUNIQ 76
-     * }
-     */
-    public static int ENOTUNIQ() {
-        return (int)76L;
-    }
-    /**
-     * {@snippet :
-     * #define EBADFD 77
-     * }
-     */
-    public static int EBADFD() {
-        return (int)77L;
-    }
-    /**
-     * {@snippet :
-     * #define EREMCHG 78
-     * }
-     */
-    public static int EREMCHG() {
-        return (int)78L;
-    }
-    /**
-     * {@snippet :
-     * #define ELIBACC 79
-     * }
-     */
-    public static int ELIBACC() {
-        return (int)79L;
-    }
-    /**
-     * {@snippet :
-     * #define ELIBBAD 80
-     * }
-     */
-    public static int ELIBBAD() {
-        return (int)80L;
-    }
-    /**
-     * {@snippet :
-     * #define ELIBSCN 81
-     * }
-     */
-    public static int ELIBSCN() {
-        return (int)81L;
-    }
-    /**
-     * {@snippet :
-     * #define ELIBMAX 82
-     * }
-     */
-    public static int ELIBMAX() {
-        return (int)82L;
-    }
-    /**
-     * {@snippet :
-     * #define ELIBEXEC 83
-     * }
-     */
-    public static int ELIBEXEC() {
-        return (int)83L;
-    }
-    /**
-     * {@snippet :
-     * #define EILSEQ 84
-     * }
-     */
-    public static int EILSEQ() {
-        return (int)84L;
-    }
-    /**
-     * {@snippet :
-     * #define ERESTART 85
-     * }
-     */
-    public static int ERESTART() {
-        return (int)85L;
-    }
-    /**
-     * {@snippet :
-     * #define ESTRPIPE 86
-     * }
-     */
-    public static int ESTRPIPE() {
-        return (int)86L;
-    }
-    /**
-     * {@snippet :
-     * #define EUSERS 87
-     * }
-     */
-    public static int EUSERS() {
-        return (int)87L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOTSOCK 88
-     * }
-     */
-    public static int ENOTSOCK() {
-        return (int)88L;
-    }
-    /**
-     * {@snippet :
-     * #define EDESTADDRREQ 89
-     * }
-     */
-    public static int EDESTADDRREQ() {
-        return (int)89L;
-    }
-    /**
-     * {@snippet :
-     * #define EMSGSIZE 90
-     * }
-     */
-    public static int EMSGSIZE() {
-        return (int)90L;
-    }
-    /**
-     * {@snippet :
-     * #define EPROTOTYPE 91
-     * }
-     */
-    public static int EPROTOTYPE() {
-        return (int)91L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOPROTOOPT 92
-     * }
-     */
-    public static int ENOPROTOOPT() {
-        return (int)92L;
-    }
-    /**
-     * {@snippet :
-     * #define EPROTONOSUPPORT 93
-     * }
-     */
-    public static int EPROTONOSUPPORT() {
-        return (int)93L;
-    }
-    /**
-     * {@snippet :
-     * #define ESOCKTNOSUPPORT 94
-     * }
-     */
-    public static int ESOCKTNOSUPPORT() {
-        return (int)94L;
-    }
-    /**
-     * {@snippet :
-     * #define EOPNOTSUPP 95
-     * }
-     */
-    public static int EOPNOTSUPP() {
-        return (int)95L;
-    }
-    /**
-     * {@snippet :
-     * #define EPFNOSUPPORT 96
-     * }
-     */
-    public static int EPFNOSUPPORT() {
-        return (int)96L;
-    }
-    /**
-     * {@snippet :
-     * #define EAFNOSUPPORT 97
-     * }
-     */
-    public static int EAFNOSUPPORT() {
-        return (int)97L;
-    }
-    /**
-     * {@snippet :
-     * #define EADDRINUSE 98
-     * }
-     */
-    public static int EADDRINUSE() {
-        return (int)98L;
-    }
-    /**
-     * {@snippet :
-     * #define EADDRNOTAVAIL 99
-     * }
-     */
-    public static int EADDRNOTAVAIL() {
-        return (int)99L;
-    }
-    /**
-     * {@snippet :
-     * #define ENETDOWN 100
-     * }
-     */
-    public static int ENETDOWN() {
-        return (int)100L;
-    }
-    /**
-     * {@snippet :
-     * #define ENETUNREACH 101
-     * }
-     */
-    public static int ENETUNREACH() {
-        return (int)101L;
-    }
-    /**
-     * {@snippet :
-     * #define ENETRESET 102
-     * }
-     */
-    public static int ENETRESET() {
-        return (int)102L;
-    }
-    /**
-     * {@snippet :
-     * #define ECONNABORTED 103
-     * }
-     */
-    public static int ECONNABORTED() {
-        return (int)103L;
-    }
-    /**
-     * {@snippet :
-     * #define ECONNRESET 104
-     * }
-     */
-    public static int ECONNRESET() {
-        return (int)104L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOBUFS 105
-     * }
-     */
-    public static int ENOBUFS() {
-        return (int)105L;
-    }
-    /**
-     * {@snippet :
-     * #define EISCONN 106
-     * }
-     */
-    public static int EISCONN() {
-        return (int)106L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOTCONN 107
-     * }
-     */
-    public static int ENOTCONN() {
-        return (int)107L;
-    }
-    /**
-     * {@snippet :
-     * #define ESHUTDOWN 108
-     * }
-     */
-    public static int ESHUTDOWN() {
-        return (int)108L;
-    }
-    /**
-     * {@snippet :
-     * #define ETOOMANYREFS 109
-     * }
-     */
-    public static int ETOOMANYREFS() {
-        return (int)109L;
-    }
-    /**
-     * {@snippet :
-     * #define ETIMEDOUT 110
-     * }
-     */
-    public static int ETIMEDOUT() {
-        return (int)110L;
-    }
-    /**
-     * {@snippet :
-     * #define ECONNREFUSED 111
-     * }
-     */
-    public static int ECONNREFUSED() {
-        return (int)111L;
-    }
-    /**
-     * {@snippet :
-     * #define EHOSTDOWN 112
-     * }
-     */
-    public static int EHOSTDOWN() {
-        return (int)112L;
-    }
-    /**
-     * {@snippet :
-     * #define EHOSTUNREACH 113
-     * }
-     */
-    public static int EHOSTUNREACH() {
-        return (int)113L;
-    }
-    /**
-     * {@snippet :
-     * #define EALREADY 114
-     * }
-     */
-    public static int EALREADY() {
-        return (int)114L;
-    }
-    /**
-     * {@snippet :
-     * #define EINPROGRESS 115
-     * }
-     */
-    public static int EINPROGRESS() {
-        return (int)115L;
-    }
-    /**
-     * {@snippet :
-     * #define ESTALE 116
-     * }
-     */
-    public static int ESTALE() {
-        return (int)116L;
-    }
-    /**
-     * {@snippet :
-     * #define EUCLEAN 117
-     * }
-     */
-    public static int EUCLEAN() {
-        return (int)117L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOTNAM 118
-     * }
-     */
-    public static int ENOTNAM() {
-        return (int)118L;
-    }
-    /**
-     * {@snippet :
-     * #define ENAVAIL 119
-     * }
-     */
-    public static int ENAVAIL() {
-        return (int)119L;
-    }
-    /**
-     * {@snippet :
-     * #define EISNAM 120
-     * }
-     */
-    public static int EISNAM() {
-        return (int)120L;
-    }
-    /**
-     * {@snippet :
-     * #define EREMOTEIO 121
-     * }
-     */
-    public static int EREMOTEIO() {
-        return (int)121L;
-    }
-    /**
-     * {@snippet :
-     * #define EDQUOT 122
-     * }
-     */
-    public static int EDQUOT() {
-        return (int)122L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOMEDIUM 123
-     * }
-     */
-    public static int ENOMEDIUM() {
-        return (int)123L;
-    }
-    /**
-     * {@snippet :
-     * #define EMEDIUMTYPE 124
-     * }
-     */
-    public static int EMEDIUMTYPE() {
-        return (int)124L;
-    }
-    /**
-     * {@snippet :
-     * #define ECANCELED 125
-     * }
-     */
-    public static int ECANCELED() {
-        return (int)125L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOKEY 126
-     * }
-     */
-    public static int ENOKEY() {
-        return (int)126L;
-    }
-    /**
-     * {@snippet :
-     * #define EKEYEXPIRED 127
-     * }
-     */
-    public static int EKEYEXPIRED() {
-        return (int)127L;
-    }
-    /**
-     * {@snippet :
-     * #define EKEYREVOKED 128
-     * }
-     */
-    public static int EKEYREVOKED() {
-        return (int)128L;
-    }
-    /**
-     * {@snippet :
-     * #define EKEYREJECTED 129
-     * }
-     */
-    public static int EKEYREJECTED() {
-        return (int)129L;
-    }
-    /**
-     * {@snippet :
-     * #define EOWNERDEAD 130
-     * }
-     */
-    public static int EOWNERDEAD() {
-        return (int)130L;
-    }
-    /**
-     * {@snippet :
-     * #define ENOTRECOVERABLE 131
-     * }
-     */
-    public static int ENOTRECOVERABLE() {
-        return (int)131L;
-    }
-    /**
-     * {@snippet :
-     * #define ERFKILL 132
-     * }
-     */
-    public static int ERFKILL() {
-        return (int)132L;
-    }
-    /**
-     * {@snippet :
-     * #define EHWPOISON 133
-     * }
-     */
-    public static int EHWPOISON() {
-        return (int)133L;
-    }
-    /**
-     * {@snippet :
-     * #define G_USEC_PER_SEC 1000000
-     * }
-     */
-    public static int G_USEC_PER_SEC() {
-        return (int)1000000L;
-    }
-    /**
-     * {@snippet :
-     * #define G_ALLOC_ONLY 1
-     * }
-     */
-    public static int G_ALLOC_ONLY() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define G_ALLOC_AND_FREE 2
-     * }
-     */
-    public static int G_ALLOC_AND_FREE() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define G_ALLOCATOR_LIST 1
-     * }
-     */
-    public static int G_ALLOCATOR_LIST() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define G_ALLOCATOR_SLIST 2
-     * }
-     */
-    public static int G_ALLOCATOR_SLIST() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define G_ALLOCATOR_NODE 3
-     * }
-     */
-    public static int G_ALLOCATOR_NODE() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * #define _PTHREAD_H 1
-     * }
-     */
-    public static int _PTHREAD_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _SCHED_H 1
-     * }
-     */
-    public static int _SCHED_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SCHED_H 1
-     * }
-     */
-    public static int _BITS_SCHED_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define SCHED_OTHER 0
-     * }
-     */
-    public static int SCHED_OTHER() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define SCHED_FIFO 1
-     * }
-     */
-    public static int SCHED_FIFO() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define SCHED_RR 2
-     * }
-     */
-    public static int SCHED_RR() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_TYPES_STRUCT_SCHED_PARAM 1
-     * }
-     */
-    public static int _BITS_TYPES_STRUCT_SCHED_PARAM() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_CPU_SET_H 1
-     * }
-     */
-    public static int _BITS_CPU_SET_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __CPU_SETSIZE 1024
-     * }
-     */
-    public static int __CPU_SETSIZE() {
-        return (int)1024L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_SETJMP_H 1
-     * }
-     */
-    public static int _BITS_SETJMP_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __jmp_buf_tag_defined 1
-     * }
-     */
-    public static int __jmp_buf_tag_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define PTHREAD_ONCE_INIT 0
-     * }
-     */
-    public static int PTHREAD_ONCE_INIT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define G_SIGNAL_FLAGS_MASK 511
-     * }
-     */
-    public static int G_SIGNAL_FLAGS_MASK() {
-        return (int)511L;
-    }
-    /**
-     * {@snippet :
-     * #define G_SIGNAL_MATCH_MASK 63
-     * }
-     */
-    public static int G_SIGNAL_MATCH_MASK() {
-        return (int)63L;
-    }
-    /**
-     * {@snippet :
-     * #define _UNISTD_H 1
-     * }
-     */
-    public static int _UNISTD_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_VERSION 700
-     * }
-     */
-    public static int _XOPEN_VERSION() {
-        return (int)700L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_XCU_VERSION 4
-     * }
-     */
-    public static int _XOPEN_XCU_VERSION() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_XPG2 1
-     * }
-     */
-    public static int _XOPEN_XPG2() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_XPG3 1
-     * }
-     */
-    public static int _XOPEN_XPG3() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_XPG4 1
-     * }
-     */
-    public static int _XOPEN_XPG4() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_UNIX 1
-     * }
-     */
-    public static int _XOPEN_UNIX() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_ENH_I18N 1
-     * }
-     */
-    public static int _XOPEN_ENH_I18N() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_LEGACY 1
-     * }
-     */
-    public static int _XOPEN_LEGACY() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_POSIX_OPT_H 1
-     * }
-     */
-    public static int _BITS_POSIX_OPT_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_JOB_CONTROL 1
-     * }
-     */
-    public static int _POSIX_JOB_CONTROL() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_SAVED_IDS 1
-     * }
-     */
-    public static int _POSIX_SAVED_IDS() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_CHOWN_RESTRICTED 0
-     * }
-     */
-    public static int _POSIX_CHOWN_RESTRICTED() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_NO_TRUNC 1
-     * }
-     */
-    public static int _POSIX_NO_TRUNC() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_REALTIME 1
-     * }
-     */
-    public static int _XOPEN_REALTIME() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_REALTIME_THREADS 1
-     * }
-     */
-    public static int _XOPEN_REALTIME_THREADS() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _XOPEN_SHM 1
-     * }
-     */
-    public static int _XOPEN_SHM() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_REENTRANT_FUNCTIONS 1
-     * }
-     */
-    public static int _POSIX_REENTRANT_FUNCTIONS() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_ASYNC_IO 1
-     * }
-     */
-    public static int _POSIX_ASYNC_IO() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _LFS_ASYNCHRONOUS_IO 1
-     * }
-     */
-    public static int _LFS_ASYNCHRONOUS_IO() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _LFS64_ASYNCHRONOUS_IO 1
-     * }
-     */
-    public static int _LFS64_ASYNCHRONOUS_IO() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _LFS_LARGEFILE 1
-     * }
-     */
-    public static int _LFS_LARGEFILE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _LFS64_LARGEFILE 1
-     * }
-     */
-    public static int _LFS64_LARGEFILE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _LFS64_STDIO 1
-     * }
-     */
-    public static int _LFS64_STDIO() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_CPUTIME 0
-     * }
-     */
-    public static int _POSIX_CPUTIME() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_THREAD_CPUTIME 0
-     * }
-     */
-    public static int _POSIX_THREAD_CPUTIME() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_REGEXP 1
-     * }
-     */
-    public static int _POSIX_REGEXP() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_SHELL 1
-     * }
-     */
-    public static int _POSIX_SHELL() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_MONOTONIC_CLOCK 0
-     * }
-     */
-    public static int _POSIX_MONOTONIC_CLOCK() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_V7_LP64_OFF64 1
-     * }
-     */
-    public static int _POSIX_V7_LP64_OFF64() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _POSIX_V6_LP64_OFF64 1
-     * }
-     */
-    public static int _POSIX_V6_LP64_OFF64() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _XBS5_LP64_OFF64 1
-     * }
-     */
-    public static int _XBS5_LP64_OFF64() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define STDIN_FILENO 0
-     * }
-     */
-    public static int STDIN_FILENO() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define STDOUT_FILENO 1
-     * }
-     */
-    public static int STDOUT_FILENO() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define STDERR_FILENO 2
-     * }
-     */
-    public static int STDERR_FILENO() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define R_OK 4
-     * }
-     */
-    public static int R_OK() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * #define W_OK 2
-     * }
-     */
-    public static int W_OK() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define X_OK 1
-     * }
-     */
-    public static int X_OK() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define F_OK 0
-     * }
-     */
-    public static int F_OK() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define SEEK_SET 0
-     * }
-     */
-    public static int SEEK_SET() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define SEEK_CUR 1
-     * }
-     */
-    public static int SEEK_CUR() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define SEEK_END 2
-     * }
-     */
-    public static int SEEK_END() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define _GETOPT_POSIX_H 1
-     * }
-     */
-    public static int _GETOPT_POSIX_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _GETOPT_CORE_H 1
-     * }
-     */
-    public static int _GETOPT_CORE_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define F_ULOCK 0
-     * }
-     */
-    public static int F_ULOCK() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define F_LOCK 1
-     * }
-     */
-    public static int F_LOCK() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define F_TLOCK 2
-     * }
-     */
-    public static int F_TLOCK() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define F_TEST 3
-     * }
-     */
-    public static int F_TEST() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_VERSION_MAJOR 1
-     * }
-     */
-    public static int PANGO_VERSION_MAJOR() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_VERSION_MINOR 51
-     * }
-     */
-    public static int PANGO_VERSION_MINOR() {
-        return (int)51L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_VERSION_MICRO 0
-     * }
-     */
-    public static int PANGO_VERSION_MICRO() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define _STDINT_H 1
-     * }
-     */
-    public static int _STDINT_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_WCHAR_H 1
-     * }
-     */
-    public static int _BITS_WCHAR_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_STDINT_UINTN_H 1
-     * }
-     */
-    public static int _BITS_STDINT_UINTN_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define HB_FEATURE_GLOBAL_START 0
-     * }
-     */
-    public static int HB_FEATURE_GLOBAL_START() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define HB_UNICODE_COMBINING_CLASS_CCC133 133
-     * }
-     */
-    public static int HB_UNICODE_COMBINING_CLASS_CCC133() {
-        return (int)133L;
-    }
-    /**
-     * {@snippet :
-     * #define HB_VERSION_MAJOR 8
-     * }
-     */
-    public static int HB_VERSION_MAJOR() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define HB_VERSION_MINOR 2
-     * }
-     */
-    public static int HB_VERSION_MINOR() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define HB_VERSION_MICRO 2
-     * }
-     */
-    public static int HB_VERSION_MICRO() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_SCALE 1024
-     * }
-     */
-    public static int PANGO_SCALE() {
-        return (int)1024L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_UNKNOWN_GLYPH_WIDTH 10
-     * }
-     */
-    public static int PANGO_UNKNOWN_GLYPH_WIDTH() {
-        return (int)10L;
-    }
-    /**
-     * {@snippet :
-     * #define PANGO_UNKNOWN_GLYPH_HEIGHT 14
-     * }
-     */
-    public static int PANGO_UNKNOWN_GLYPH_HEIGHT() {
-        return (int)14L;
-    }
-    /**
-     * {@snippet :
-     * #define _STDIO_H 1
-     * }
-     */
-    public static int _STDIO_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _____fpos_t_defined 1
-     * }
-     */
-    public static int _____fpos_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define ____mbstate_t_defined 1
-     * }
-     */
-    public static int ____mbstate_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _____fpos64_t_defined 1
-     * }
-     */
-    public static int _____fpos64_t_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define ____FILE_defined 1
-     * }
-     */
-    public static int ____FILE_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __FILE_defined 1
-     * }
-     */
-    public static int __FILE_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __struct_FILE_defined 1
-     * }
-     */
-    public static int __struct_FILE_defined() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _IO_EOF_SEEN 16
-     * }
-     */
-    public static int _IO_EOF_SEEN() {
-        return (int)16L;
-    }
-    /**
-     * {@snippet :
-     * #define _IO_ERR_SEEN 32
-     * }
-     */
-    public static int _IO_ERR_SEEN() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * #define _IO_USER_LOCK 32768
-     * }
-     */
-    public static int _IO_USER_LOCK() {
-        return (int)32768L;
-    }
-    /**
-     * {@snippet :
-     * #define _IOFBF 0
-     * }
-     */
-    public static int _IOFBF() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define _IOLBF 1
-     * }
-     */
-    public static int _IOLBF() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define _IONBF 2
-     * }
-     */
-    public static int _IONBF() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define BUFSIZ 8192
-     * }
-     */
-    public static int BUFSIZ() {
-        return (int)8192L;
-    }
-    /**
-     * {@snippet :
-     * #define _BITS_STDIO_LIM_H 1
-     * }
-     */
-    public static int _BITS_STDIO_LIM_H() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define L_tmpnam 20
-     * }
-     */
-    public static int L_tmpnam() {
-        return (int)20L;
-    }
-    /**
-     * {@snippet :
-     * #define TMP_MAX 238328
-     * }
-     */
-    public static int TMP_MAX() {
-        return (int)238328L;
-    }
-    /**
-     * {@snippet :
-     * #define FILENAME_MAX 4096
-     * }
-     */
-    public static int FILENAME_MAX() {
-        return (int)4096L;
-    }
-    /**
-     * {@snippet :
-     * #define L_ctermid 9
-     * }
-     */
-    public static int L_ctermid() {
-        return (int)9L;
-    }
-    /**
-     * {@snippet :
-     * #define FOPEN_MAX 16
-     * }
-     */
-    public static int FOPEN_MAX() {
-        return (int)16L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_VERSION_MAJOR 1
-     * }
-     */
-    public static int CAIRO_VERSION_MAJOR() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_VERSION_MINOR 18
-     * }
-     */
-    public static int CAIRO_VERSION_MINOR() {
-        return (int)18L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_VERSION_MICRO 0
-     * }
-     */
-    public static int CAIRO_VERSION_MICRO() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_FC_FONT 1
-     * }
-     */
-    public static int CAIRO_HAS_FC_FONT() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_FT_FONT 1
-     * }
-     */
-    public static int CAIRO_HAS_FT_FONT() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_GOBJECT_FUNCTIONS 1
-     * }
-     */
-    public static int CAIRO_HAS_GOBJECT_FUNCTIONS() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_IMAGE_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_IMAGE_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_MIME_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_MIME_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_OBSERVER_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_OBSERVER_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_PDF_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_PDF_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_PNG_FUNCTIONS 1
-     * }
-     */
-    public static int CAIRO_HAS_PNG_FUNCTIONS() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_PS_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_PS_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_RECORDING_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_RECORDING_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_SCRIPT_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_SCRIPT_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_SVG_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_SVG_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_TEE_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_TEE_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_USER_FONT 1
-     * }
-     */
-    public static int CAIRO_HAS_USER_FONT() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_XCB_SHM_FUNCTIONS 1
-     * }
-     */
-    public static int CAIRO_HAS_XCB_SHM_FUNCTIONS() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_XCB_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_XCB_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_XLIB_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_XLIB_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_HAS_XLIB_XRENDER_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_XLIB_XRENDER_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_COLOR_PALETTE_DEFAULT 0
-     * }
-     */
-    public static int CAIRO_COLOR_PALETTE_DEFAULT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_MAX_TIMECOORD_AXES 128
-     * }
-     */
-    public static int GDK_MAX_TIMECOORD_AXES() {
-        return (int)128L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_VoidSymbol 16777215
-     * }
-     */
-    public static int GDK_KEY_VoidSymbol() {
-        return (int)16777215L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_BackSpace 65288
-     * }
-     */
-    public static int GDK_KEY_BackSpace() {
-        return (int)65288L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Tab 65289
-     * }
-     */
-    public static int GDK_KEY_Tab() {
-        return (int)65289L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Linefeed 65290
-     * }
-     */
-    public static int GDK_KEY_Linefeed() {
-        return (int)65290L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Clear 65291
-     * }
-     */
-    public static int GDK_KEY_Clear() {
-        return (int)65291L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Return 65293
-     * }
-     */
-    public static int GDK_KEY_Return() {
-        return (int)65293L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Pause 65299
-     * }
-     */
-    public static int GDK_KEY_Pause() {
-        return (int)65299L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Scroll_Lock 65300
-     * }
-     */
-    public static int GDK_KEY_Scroll_Lock() {
-        return (int)65300L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Sys_Req 65301
-     * }
-     */
-    public static int GDK_KEY_Sys_Req() {
-        return (int)65301L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Escape 65307
-     * }
-     */
-    public static int GDK_KEY_Escape() {
-        return (int)65307L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Delete 65535
-     * }
-     */
-    public static int GDK_KEY_Delete() {
-        return (int)65535L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Multi_key 65312
-     * }
-     */
-    public static int GDK_KEY_Multi_key() {
-        return (int)65312L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Codeinput 65335
-     * }
-     */
-    public static int GDK_KEY_Codeinput() {
-        return (int)65335L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_SingleCandidate 65340
-     * }
-     */
-    public static int GDK_KEY_SingleCandidate() {
-        return (int)65340L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_MultipleCandidate 65341
-     * }
-     */
-    public static int GDK_KEY_MultipleCandidate() {
-        return (int)65341L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_PreviousCandidate 65342
-     * }
-     */
-    public static int GDK_KEY_PreviousCandidate() {
-        return (int)65342L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Kanji 65313
-     * }
-     */
-    public static int GDK_KEY_Kanji() {
-        return (int)65313L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Muhenkan 65314
-     * }
-     */
-    public static int GDK_KEY_Muhenkan() {
-        return (int)65314L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Henkan_Mode 65315
-     * }
-     */
-    public static int GDK_KEY_Henkan_Mode() {
-        return (int)65315L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Henkan 65315
-     * }
-     */
-    public static int GDK_KEY_Henkan() {
-        return (int)65315L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Romaji 65316
-     * }
-     */
-    public static int GDK_KEY_Romaji() {
-        return (int)65316L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hiragana 65317
-     * }
-     */
-    public static int GDK_KEY_Hiragana() {
-        return (int)65317L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Katakana 65318
-     * }
-     */
-    public static int GDK_KEY_Katakana() {
-        return (int)65318L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hiragana_Katakana 65319
-     * }
-     */
-    public static int GDK_KEY_Hiragana_Katakana() {
-        return (int)65319L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Zenkaku 65320
-     * }
-     */
-    public static int GDK_KEY_Zenkaku() {
-        return (int)65320L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hankaku 65321
-     * }
-     */
-    public static int GDK_KEY_Hankaku() {
-        return (int)65321L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Zenkaku_Hankaku 65322
-     * }
-     */
-    public static int GDK_KEY_Zenkaku_Hankaku() {
-        return (int)65322L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Touroku 65323
-     * }
-     */
-    public static int GDK_KEY_Touroku() {
-        return (int)65323L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Massyo 65324
-     * }
-     */
-    public static int GDK_KEY_Massyo() {
-        return (int)65324L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Kana_Lock 65325
-     * }
-     */
-    public static int GDK_KEY_Kana_Lock() {
-        return (int)65325L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Kana_Shift 65326
-     * }
-     */
-    public static int GDK_KEY_Kana_Shift() {
-        return (int)65326L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Eisu_Shift 65327
-     * }
-     */
-    public static int GDK_KEY_Eisu_Shift() {
-        return (int)65327L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Eisu_toggle 65328
-     * }
-     */
-    public static int GDK_KEY_Eisu_toggle() {
-        return (int)65328L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Kanji_Bangou 65335
-     * }
-     */
-    public static int GDK_KEY_Kanji_Bangou() {
-        return (int)65335L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Zen_Koho 65341
-     * }
-     */
-    public static int GDK_KEY_Zen_Koho() {
-        return (int)65341L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Mae_Koho 65342
-     * }
-     */
-    public static int GDK_KEY_Mae_Koho() {
-        return (int)65342L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Home 65360
-     * }
-     */
-    public static int GDK_KEY_Home() {
-        return (int)65360L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Left 65361
-     * }
-     */
-    public static int GDK_KEY_Left() {
-        return (int)65361L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Up 65362
-     * }
-     */
-    public static int GDK_KEY_Up() {
-        return (int)65362L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Right 65363
-     * }
-     */
-    public static int GDK_KEY_Right() {
-        return (int)65363L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Down 65364
-     * }
-     */
-    public static int GDK_KEY_Down() {
-        return (int)65364L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Prior 65365
-     * }
-     */
-    public static int GDK_KEY_Prior() {
-        return (int)65365L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Page_Up 65365
-     * }
-     */
-    public static int GDK_KEY_Page_Up() {
-        return (int)65365L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Next 65366
-     * }
-     */
-    public static int GDK_KEY_Next() {
-        return (int)65366L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Page_Down 65366
-     * }
-     */
-    public static int GDK_KEY_Page_Down() {
-        return (int)65366L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_End 65367
-     * }
-     */
-    public static int GDK_KEY_End() {
-        return (int)65367L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Begin 65368
-     * }
-     */
-    public static int GDK_KEY_Begin() {
-        return (int)65368L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Select 65376
-     * }
-     */
-    public static int GDK_KEY_Select() {
-        return (int)65376L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Print 65377
-     * }
-     */
-    public static int GDK_KEY_Print() {
-        return (int)65377L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Execute 65378
-     * }
-     */
-    public static int GDK_KEY_Execute() {
-        return (int)65378L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Insert 65379
-     * }
-     */
-    public static int GDK_KEY_Insert() {
-        return (int)65379L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Undo 65381
-     * }
-     */
-    public static int GDK_KEY_Undo() {
-        return (int)65381L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Redo 65382
-     * }
-     */
-    public static int GDK_KEY_Redo() {
-        return (int)65382L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Menu 65383
-     * }
-     */
-    public static int GDK_KEY_Menu() {
-        return (int)65383L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Find 65384
-     * }
-     */
-    public static int GDK_KEY_Find() {
-        return (int)65384L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Cancel 65385
-     * }
-     */
-    public static int GDK_KEY_Cancel() {
-        return (int)65385L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Help 65386
-     * }
-     */
-    public static int GDK_KEY_Help() {
-        return (int)65386L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Break 65387
-     * }
-     */
-    public static int GDK_KEY_Break() {
-        return (int)65387L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Mode_switch 65406
-     * }
-     */
-    public static int GDK_KEY_Mode_switch() {
-        return (int)65406L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_script_switch 65406
-     * }
-     */
-    public static int GDK_KEY_script_switch() {
-        return (int)65406L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Num_Lock 65407
-     * }
-     */
-    public static int GDK_KEY_Num_Lock() {
-        return (int)65407L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Space 65408
-     * }
-     */
-    public static int GDK_KEY_KP_Space() {
-        return (int)65408L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Tab 65417
-     * }
-     */
-    public static int GDK_KEY_KP_Tab() {
-        return (int)65417L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Enter 65421
-     * }
-     */
-    public static int GDK_KEY_KP_Enter() {
-        return (int)65421L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_F1 65425
-     * }
-     */
-    public static int GDK_KEY_KP_F1() {
-        return (int)65425L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_F2 65426
-     * }
-     */
-    public static int GDK_KEY_KP_F2() {
-        return (int)65426L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_F3 65427
-     * }
-     */
-    public static int GDK_KEY_KP_F3() {
-        return (int)65427L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_F4 65428
-     * }
-     */
-    public static int GDK_KEY_KP_F4() {
-        return (int)65428L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Home 65429
-     * }
-     */
-    public static int GDK_KEY_KP_Home() {
-        return (int)65429L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Left 65430
-     * }
-     */
-    public static int GDK_KEY_KP_Left() {
-        return (int)65430L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Up 65431
-     * }
-     */
-    public static int GDK_KEY_KP_Up() {
-        return (int)65431L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Right 65432
-     * }
-     */
-    public static int GDK_KEY_KP_Right() {
-        return (int)65432L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Down 65433
-     * }
-     */
-    public static int GDK_KEY_KP_Down() {
-        return (int)65433L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Prior 65434
-     * }
-     */
-    public static int GDK_KEY_KP_Prior() {
-        return (int)65434L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Page_Up 65434
-     * }
-     */
-    public static int GDK_KEY_KP_Page_Up() {
-        return (int)65434L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Next 65435
-     * }
-     */
-    public static int GDK_KEY_KP_Next() {
-        return (int)65435L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Page_Down 65435
-     * }
-     */
-    public static int GDK_KEY_KP_Page_Down() {
-        return (int)65435L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_End 65436
-     * }
-     */
-    public static int GDK_KEY_KP_End() {
-        return (int)65436L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Begin 65437
-     * }
-     */
-    public static int GDK_KEY_KP_Begin() {
-        return (int)65437L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Insert 65438
-     * }
-     */
-    public static int GDK_KEY_KP_Insert() {
-        return (int)65438L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Delete 65439
-     * }
-     */
-    public static int GDK_KEY_KP_Delete() {
-        return (int)65439L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Equal 65469
-     * }
-     */
-    public static int GDK_KEY_KP_Equal() {
-        return (int)65469L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Multiply 65450
-     * }
-     */
-    public static int GDK_KEY_KP_Multiply() {
-        return (int)65450L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Add 65451
-     * }
-     */
-    public static int GDK_KEY_KP_Add() {
-        return (int)65451L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Separator 65452
-     * }
-     */
-    public static int GDK_KEY_KP_Separator() {
-        return (int)65452L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Subtract 65453
-     * }
-     */
-    public static int GDK_KEY_KP_Subtract() {
-        return (int)65453L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Decimal 65454
-     * }
-     */
-    public static int GDK_KEY_KP_Decimal() {
-        return (int)65454L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_Divide 65455
-     * }
-     */
-    public static int GDK_KEY_KP_Divide() {
-        return (int)65455L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_0 65456
-     * }
-     */
-    public static int GDK_KEY_KP_0() {
-        return (int)65456L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_1 65457
-     * }
-     */
-    public static int GDK_KEY_KP_1() {
-        return (int)65457L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_2 65458
-     * }
-     */
-    public static int GDK_KEY_KP_2() {
-        return (int)65458L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_3 65459
-     * }
-     */
-    public static int GDK_KEY_KP_3() {
-        return (int)65459L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_4 65460
-     * }
-     */
-    public static int GDK_KEY_KP_4() {
-        return (int)65460L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_5 65461
-     * }
-     */
-    public static int GDK_KEY_KP_5() {
-        return (int)65461L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_6 65462
-     * }
-     */
-    public static int GDK_KEY_KP_6() {
-        return (int)65462L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_7 65463
-     * }
-     */
-    public static int GDK_KEY_KP_7() {
-        return (int)65463L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_8 65464
-     * }
-     */
-    public static int GDK_KEY_KP_8() {
-        return (int)65464L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_KP_9 65465
-     * }
-     */
-    public static int GDK_KEY_KP_9() {
-        return (int)65465L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F1 65470
-     * }
-     */
-    public static int GDK_KEY_F1() {
-        return (int)65470L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F2 65471
-     * }
-     */
-    public static int GDK_KEY_F2() {
-        return (int)65471L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F3 65472
-     * }
-     */
-    public static int GDK_KEY_F3() {
-        return (int)65472L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F4 65473
-     * }
-     */
-    public static int GDK_KEY_F4() {
-        return (int)65473L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F5 65474
-     * }
-     */
-    public static int GDK_KEY_F5() {
-        return (int)65474L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F6 65475
-     * }
-     */
-    public static int GDK_KEY_F6() {
-        return (int)65475L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F7 65476
-     * }
-     */
-    public static int GDK_KEY_F7() {
-        return (int)65476L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F8 65477
-     * }
-     */
-    public static int GDK_KEY_F8() {
-        return (int)65477L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F9 65478
-     * }
-     */
-    public static int GDK_KEY_F9() {
-        return (int)65478L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F10 65479
-     * }
-     */
-    public static int GDK_KEY_F10() {
-        return (int)65479L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F11 65480
-     * }
-     */
-    public static int GDK_KEY_F11() {
-        return (int)65480L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_L1 65480
-     * }
-     */
-    public static int GDK_KEY_L1() {
-        return (int)65480L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F12 65481
-     * }
-     */
-    public static int GDK_KEY_F12() {
-        return (int)65481L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_L2 65481
-     * }
-     */
-    public static int GDK_KEY_L2() {
-        return (int)65481L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F13 65482
-     * }
-     */
-    public static int GDK_KEY_F13() {
-        return (int)65482L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_L3 65482
-     * }
-     */
-    public static int GDK_KEY_L3() {
-        return (int)65482L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F14 65483
-     * }
-     */
-    public static int GDK_KEY_F14() {
-        return (int)65483L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_L4 65483
-     * }
-     */
-    public static int GDK_KEY_L4() {
-        return (int)65483L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F15 65484
-     * }
-     */
-    public static int GDK_KEY_F15() {
-        return (int)65484L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_L5 65484
-     * }
-     */
-    public static int GDK_KEY_L5() {
-        return (int)65484L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F16 65485
-     * }
-     */
-    public static int GDK_KEY_F16() {
-        return (int)65485L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_L6 65485
-     * }
-     */
-    public static int GDK_KEY_L6() {
-        return (int)65485L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F17 65486
-     * }
-     */
-    public static int GDK_KEY_F17() {
-        return (int)65486L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_L7 65486
-     * }
-     */
-    public static int GDK_KEY_L7() {
-        return (int)65486L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F18 65487
-     * }
-     */
-    public static int GDK_KEY_F18() {
-        return (int)65487L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_L8 65487
-     * }
-     */
-    public static int GDK_KEY_L8() {
-        return (int)65487L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F19 65488
-     * }
-     */
-    public static int GDK_KEY_F19() {
-        return (int)65488L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_L9 65488
-     * }
-     */
-    public static int GDK_KEY_L9() {
-        return (int)65488L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F20 65489
-     * }
-     */
-    public static int GDK_KEY_F20() {
-        return (int)65489L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_L10 65489
-     * }
-     */
-    public static int GDK_KEY_L10() {
-        return (int)65489L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F21 65490
-     * }
-     */
-    public static int GDK_KEY_F21() {
-        return (int)65490L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R1 65490
-     * }
-     */
-    public static int GDK_KEY_R1() {
-        return (int)65490L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F22 65491
-     * }
-     */
-    public static int GDK_KEY_F22() {
-        return (int)65491L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R2 65491
-     * }
-     */
-    public static int GDK_KEY_R2() {
-        return (int)65491L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F23 65492
-     * }
-     */
-    public static int GDK_KEY_F23() {
-        return (int)65492L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R3 65492
-     * }
-     */
-    public static int GDK_KEY_R3() {
-        return (int)65492L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F24 65493
-     * }
-     */
-    public static int GDK_KEY_F24() {
-        return (int)65493L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R4 65493
-     * }
-     */
-    public static int GDK_KEY_R4() {
-        return (int)65493L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F25 65494
-     * }
-     */
-    public static int GDK_KEY_F25() {
-        return (int)65494L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R5 65494
-     * }
-     */
-    public static int GDK_KEY_R5() {
-        return (int)65494L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F26 65495
-     * }
-     */
-    public static int GDK_KEY_F26() {
-        return (int)65495L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R6 65495
-     * }
-     */
-    public static int GDK_KEY_R6() {
-        return (int)65495L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F27 65496
-     * }
-     */
-    public static int GDK_KEY_F27() {
-        return (int)65496L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R7 65496
-     * }
-     */
-    public static int GDK_KEY_R7() {
-        return (int)65496L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F28 65497
-     * }
-     */
-    public static int GDK_KEY_F28() {
-        return (int)65497L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R8 65497
-     * }
-     */
-    public static int GDK_KEY_R8() {
-        return (int)65497L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F29 65498
-     * }
-     */
-    public static int GDK_KEY_F29() {
-        return (int)65498L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R9 65498
-     * }
-     */
-    public static int GDK_KEY_R9() {
-        return (int)65498L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F30 65499
-     * }
-     */
-    public static int GDK_KEY_F30() {
-        return (int)65499L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R10 65499
-     * }
-     */
-    public static int GDK_KEY_R10() {
-        return (int)65499L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F31 65500
-     * }
-     */
-    public static int GDK_KEY_F31() {
-        return (int)65500L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R11 65500
-     * }
-     */
-    public static int GDK_KEY_R11() {
-        return (int)65500L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F32 65501
-     * }
-     */
-    public static int GDK_KEY_F32() {
-        return (int)65501L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R12 65501
-     * }
-     */
-    public static int GDK_KEY_R12() {
-        return (int)65501L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F33 65502
-     * }
-     */
-    public static int GDK_KEY_F33() {
-        return (int)65502L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R13 65502
-     * }
-     */
-    public static int GDK_KEY_R13() {
-        return (int)65502L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F34 65503
-     * }
-     */
-    public static int GDK_KEY_F34() {
-        return (int)65503L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R14 65503
-     * }
-     */
-    public static int GDK_KEY_R14() {
-        return (int)65503L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_F35 65504
-     * }
-     */
-    public static int GDK_KEY_F35() {
-        return (int)65504L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_R15 65504
-     * }
-     */
-    public static int GDK_KEY_R15() {
-        return (int)65504L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Shift_L 65505
-     * }
-     */
-    public static int GDK_KEY_Shift_L() {
-        return (int)65505L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Shift_R 65506
-     * }
-     */
-    public static int GDK_KEY_Shift_R() {
-        return (int)65506L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Control_L 65507
-     * }
-     */
-    public static int GDK_KEY_Control_L() {
-        return (int)65507L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Control_R 65508
-     * }
-     */
-    public static int GDK_KEY_Control_R() {
-        return (int)65508L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Caps_Lock 65509
-     * }
-     */
-    public static int GDK_KEY_Caps_Lock() {
-        return (int)65509L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Shift_Lock 65510
-     * }
-     */
-    public static int GDK_KEY_Shift_Lock() {
-        return (int)65510L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Meta_L 65511
-     * }
-     */
-    public static int GDK_KEY_Meta_L() {
-        return (int)65511L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Meta_R 65512
-     * }
-     */
-    public static int GDK_KEY_Meta_R() {
-        return (int)65512L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Alt_L 65513
-     * }
-     */
-    public static int GDK_KEY_Alt_L() {
-        return (int)65513L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Alt_R 65514
-     * }
-     */
-    public static int GDK_KEY_Alt_R() {
-        return (int)65514L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Super_L 65515
-     * }
-     */
-    public static int GDK_KEY_Super_L() {
-        return (int)65515L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Super_R 65516
-     * }
-     */
-    public static int GDK_KEY_Super_R() {
-        return (int)65516L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hyper_L 65517
-     * }
-     */
-    public static int GDK_KEY_Hyper_L() {
-        return (int)65517L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hyper_R 65518
-     * }
-     */
-    public static int GDK_KEY_Hyper_R() {
-        return (int)65518L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Lock 65025
-     * }
-     */
-    public static int GDK_KEY_ISO_Lock() {
-        return (int)65025L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Level2_Latch 65026
-     * }
-     */
-    public static int GDK_KEY_ISO_Level2_Latch() {
-        return (int)65026L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Level3_Shift 65027
-     * }
-     */
-    public static int GDK_KEY_ISO_Level3_Shift() {
-        return (int)65027L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Level3_Latch 65028
-     * }
-     */
-    public static int GDK_KEY_ISO_Level3_Latch() {
-        return (int)65028L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Level3_Lock 65029
-     * }
-     */
-    public static int GDK_KEY_ISO_Level3_Lock() {
-        return (int)65029L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Level5_Shift 65041
-     * }
-     */
-    public static int GDK_KEY_ISO_Level5_Shift() {
-        return (int)65041L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Level5_Latch 65042
-     * }
-     */
-    public static int GDK_KEY_ISO_Level5_Latch() {
-        return (int)65042L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Level5_Lock 65043
-     * }
-     */
-    public static int GDK_KEY_ISO_Level5_Lock() {
-        return (int)65043L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Group_Shift 65406
-     * }
-     */
-    public static int GDK_KEY_ISO_Group_Shift() {
-        return (int)65406L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Group_Latch 65030
-     * }
-     */
-    public static int GDK_KEY_ISO_Group_Latch() {
-        return (int)65030L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Group_Lock 65031
-     * }
-     */
-    public static int GDK_KEY_ISO_Group_Lock() {
-        return (int)65031L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Next_Group 65032
-     * }
-     */
-    public static int GDK_KEY_ISO_Next_Group() {
-        return (int)65032L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Next_Group_Lock 65033
-     * }
-     */
-    public static int GDK_KEY_ISO_Next_Group_Lock() {
-        return (int)65033L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Prev_Group 65034
-     * }
-     */
-    public static int GDK_KEY_ISO_Prev_Group() {
-        return (int)65034L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Prev_Group_Lock 65035
-     * }
-     */
-    public static int GDK_KEY_ISO_Prev_Group_Lock() {
-        return (int)65035L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_First_Group 65036
-     * }
-     */
-    public static int GDK_KEY_ISO_First_Group() {
-        return (int)65036L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_First_Group_Lock 65037
-     * }
-     */
-    public static int GDK_KEY_ISO_First_Group_Lock() {
-        return (int)65037L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Last_Group 65038
-     * }
-     */
-    public static int GDK_KEY_ISO_Last_Group() {
-        return (int)65038L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Last_Group_Lock 65039
-     * }
-     */
-    public static int GDK_KEY_ISO_Last_Group_Lock() {
-        return (int)65039L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Left_Tab 65056
-     * }
-     */
-    public static int GDK_KEY_ISO_Left_Tab() {
-        return (int)65056L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Move_Line_Up 65057
-     * }
-     */
-    public static int GDK_KEY_ISO_Move_Line_Up() {
-        return (int)65057L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Move_Line_Down 65058
-     * }
-     */
-    public static int GDK_KEY_ISO_Move_Line_Down() {
-        return (int)65058L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Partial_Line_Up 65059
-     * }
-     */
-    public static int GDK_KEY_ISO_Partial_Line_Up() {
-        return (int)65059L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Partial_Line_Down 65060
-     * }
-     */
-    public static int GDK_KEY_ISO_Partial_Line_Down() {
-        return (int)65060L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Partial_Space_Left 65061
-     * }
-     */
-    public static int GDK_KEY_ISO_Partial_Space_Left() {
-        return (int)65061L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Partial_Space_Right 65062
-     * }
-     */
-    public static int GDK_KEY_ISO_Partial_Space_Right() {
-        return (int)65062L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Set_Margin_Left 65063
-     * }
-     */
-    public static int GDK_KEY_ISO_Set_Margin_Left() {
-        return (int)65063L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Set_Margin_Right 65064
-     * }
-     */
-    public static int GDK_KEY_ISO_Set_Margin_Right() {
-        return (int)65064L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Release_Margin_Left 65065
-     * }
-     */
-    public static int GDK_KEY_ISO_Release_Margin_Left() {
-        return (int)65065L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Release_Margin_Right 65066
-     * }
-     */
-    public static int GDK_KEY_ISO_Release_Margin_Right() {
-        return (int)65066L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Release_Both_Margins 65067
-     * }
-     */
-    public static int GDK_KEY_ISO_Release_Both_Margins() {
-        return (int)65067L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Fast_Cursor_Left 65068
-     * }
-     */
-    public static int GDK_KEY_ISO_Fast_Cursor_Left() {
-        return (int)65068L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Fast_Cursor_Right 65069
-     * }
-     */
-    public static int GDK_KEY_ISO_Fast_Cursor_Right() {
-        return (int)65069L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Fast_Cursor_Up 65070
-     * }
-     */
-    public static int GDK_KEY_ISO_Fast_Cursor_Up() {
-        return (int)65070L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Fast_Cursor_Down 65071
-     * }
-     */
-    public static int GDK_KEY_ISO_Fast_Cursor_Down() {
-        return (int)65071L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Continuous_Underline 65072
-     * }
-     */
-    public static int GDK_KEY_ISO_Continuous_Underline() {
-        return (int)65072L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Discontinuous_Underline 65073
-     * }
-     */
-    public static int GDK_KEY_ISO_Discontinuous_Underline() {
-        return (int)65073L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Emphasize 65074
-     * }
-     */
-    public static int GDK_KEY_ISO_Emphasize() {
-        return (int)65074L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Center_Object 65075
-     * }
-     */
-    public static int GDK_KEY_ISO_Center_Object() {
-        return (int)65075L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_ISO_Enter 65076
-     * }
-     */
-    public static int GDK_KEY_ISO_Enter() {
-        return (int)65076L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_grave 65104
-     * }
-     */
-    public static int GDK_KEY_dead_grave() {
-        return (int)65104L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_acute 65105
-     * }
-     */
-    public static int GDK_KEY_dead_acute() {
-        return (int)65105L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_circumflex 65106
-     * }
-     */
-    public static int GDK_KEY_dead_circumflex() {
-        return (int)65106L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_tilde 65107
-     * }
-     */
-    public static int GDK_KEY_dead_tilde() {
-        return (int)65107L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_perispomeni 65107
-     * }
-     */
-    public static int GDK_KEY_dead_perispomeni() {
-        return (int)65107L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_macron 65108
-     * }
-     */
-    public static int GDK_KEY_dead_macron() {
-        return (int)65108L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_breve 65109
-     * }
-     */
-    public static int GDK_KEY_dead_breve() {
-        return (int)65109L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_abovedot 65110
-     * }
-     */
-    public static int GDK_KEY_dead_abovedot() {
-        return (int)65110L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_diaeresis 65111
-     * }
-     */
-    public static int GDK_KEY_dead_diaeresis() {
-        return (int)65111L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_abovering 65112
-     * }
-     */
-    public static int GDK_KEY_dead_abovering() {
-        return (int)65112L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_doubleacute 65113
-     * }
-     */
-    public static int GDK_KEY_dead_doubleacute() {
-        return (int)65113L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_caron 65114
-     * }
-     */
-    public static int GDK_KEY_dead_caron() {
-        return (int)65114L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_cedilla 65115
-     * }
-     */
-    public static int GDK_KEY_dead_cedilla() {
-        return (int)65115L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_ogonek 65116
-     * }
-     */
-    public static int GDK_KEY_dead_ogonek() {
-        return (int)65116L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_iota 65117
-     * }
-     */
-    public static int GDK_KEY_dead_iota() {
-        return (int)65117L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_voiced_sound 65118
-     * }
-     */
-    public static int GDK_KEY_dead_voiced_sound() {
-        return (int)65118L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_semivoiced_sound 65119
-     * }
-     */
-    public static int GDK_KEY_dead_semivoiced_sound() {
-        return (int)65119L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_belowdot 65120
-     * }
-     */
-    public static int GDK_KEY_dead_belowdot() {
-        return (int)65120L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_hook 65121
-     * }
-     */
-    public static int GDK_KEY_dead_hook() {
-        return (int)65121L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_horn 65122
-     * }
-     */
-    public static int GDK_KEY_dead_horn() {
-        return (int)65122L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_dead_stroke 65123
-     * }
-     */
-    public static int GDK_KEY_dead_stroke() {
-        return (int)65123L;
+public class app_indicator_h extends app_indicator_h_1 {
+
+    app_indicator_h() {
+        // Should not be called directly
     }
+    private static final MemorySegment GDK_SELECTION_SECONDARY = MemorySegment.ofAddress(2L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_abovecomma 65124
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_SECONDARY (void*) 2
      * }
      */
-    public static int GDK_KEY_dead_abovecomma() {
-        return (int)65124L;
+    public static MemorySegment GDK_SELECTION_SECONDARY() {
+        return GDK_SELECTION_SECONDARY;
     }
+    private static final MemorySegment GDK_SELECTION_CLIPBOARD = MemorySegment.ofAddress(69L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_psili 65124
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_CLIPBOARD (void*) 69
      * }
      */
-    public static int GDK_KEY_dead_psili() {
-        return (int)65124L;
+    public static MemorySegment GDK_SELECTION_CLIPBOARD() {
+        return GDK_SELECTION_CLIPBOARD;
     }
+    private static final MemorySegment GDK_TARGET_BITMAP = MemorySegment.ofAddress(5L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_abovereversedcomma 65125
+     * {@snippet lang=c :
+     * #define GDK_TARGET_BITMAP (void*) 5
      * }
      */
-    public static int GDK_KEY_dead_abovereversedcomma() {
-        return (int)65125L;
+    public static MemorySegment GDK_TARGET_BITMAP() {
+        return GDK_TARGET_BITMAP;
     }
+    private static final MemorySegment GDK_TARGET_COLORMAP = MemorySegment.ofAddress(7L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_dasia 65125
+     * {@snippet lang=c :
+     * #define GDK_TARGET_COLORMAP (void*) 7
      * }
      */
-    public static int GDK_KEY_dead_dasia() {
-        return (int)65125L;
+    public static MemorySegment GDK_TARGET_COLORMAP() {
+        return GDK_TARGET_COLORMAP;
     }
+    private static final MemorySegment GDK_TARGET_DRAWABLE = MemorySegment.ofAddress(17L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_doublegrave 65126
+     * {@snippet lang=c :
+     * #define GDK_TARGET_DRAWABLE (void*) 17
      * }
      */
-    public static int GDK_KEY_dead_doublegrave() {
-        return (int)65126L;
+    public static MemorySegment GDK_TARGET_DRAWABLE() {
+        return GDK_TARGET_DRAWABLE;
     }
+    private static final MemorySegment GDK_TARGET_PIXMAP = MemorySegment.ofAddress(20L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_belowring 65127
+     * {@snippet lang=c :
+     * #define GDK_TARGET_PIXMAP (void*) 20
      * }
      */
-    public static int GDK_KEY_dead_belowring() {
-        return (int)65127L;
+    public static MemorySegment GDK_TARGET_PIXMAP() {
+        return GDK_TARGET_PIXMAP;
     }
+    private static final MemorySegment GDK_TARGET_STRING = MemorySegment.ofAddress(31L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_belowmacron 65128
+     * {@snippet lang=c :
+     * #define GDK_TARGET_STRING (void*) 31
      * }
      */
-    public static int GDK_KEY_dead_belowmacron() {
-        return (int)65128L;
+    public static MemorySegment GDK_TARGET_STRING() {
+        return GDK_TARGET_STRING;
     }
+    private static final MemorySegment GDK_SELECTION_TYPE_ATOM = MemorySegment.ofAddress(4L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_belowcircumflex 65129
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_TYPE_ATOM (void*) 4
      * }
      */
-    public static int GDK_KEY_dead_belowcircumflex() {
-        return (int)65129L;
+    public static MemorySegment GDK_SELECTION_TYPE_ATOM() {
+        return GDK_SELECTION_TYPE_ATOM;
     }
+    private static final MemorySegment GDK_SELECTION_TYPE_BITMAP = MemorySegment.ofAddress(5L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_belowtilde 65130
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_TYPE_BITMAP (void*) 5
      * }
      */
-    public static int GDK_KEY_dead_belowtilde() {
-        return (int)65130L;
+    public static MemorySegment GDK_SELECTION_TYPE_BITMAP() {
+        return GDK_SELECTION_TYPE_BITMAP;
     }
+    private static final MemorySegment GDK_SELECTION_TYPE_COLORMAP = MemorySegment.ofAddress(7L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_belowbreve 65131
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_TYPE_COLORMAP (void*) 7
      * }
      */
-    public static int GDK_KEY_dead_belowbreve() {
-        return (int)65131L;
+    public static MemorySegment GDK_SELECTION_TYPE_COLORMAP() {
+        return GDK_SELECTION_TYPE_COLORMAP;
     }
+    private static final MemorySegment GDK_SELECTION_TYPE_DRAWABLE = MemorySegment.ofAddress(17L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_belowdiaeresis 65132
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_TYPE_DRAWABLE (void*) 17
      * }
      */
-    public static int GDK_KEY_dead_belowdiaeresis() {
-        return (int)65132L;
+    public static MemorySegment GDK_SELECTION_TYPE_DRAWABLE() {
+        return GDK_SELECTION_TYPE_DRAWABLE;
     }
+    private static final MemorySegment GDK_SELECTION_TYPE_INTEGER = MemorySegment.ofAddress(19L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_invertedbreve 65133
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_TYPE_INTEGER (void*) 19
      * }
      */
-    public static int GDK_KEY_dead_invertedbreve() {
-        return (int)65133L;
+    public static MemorySegment GDK_SELECTION_TYPE_INTEGER() {
+        return GDK_SELECTION_TYPE_INTEGER;
     }
+    private static final MemorySegment GDK_SELECTION_TYPE_PIXMAP = MemorySegment.ofAddress(20L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_belowcomma 65134
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_TYPE_PIXMAP (void*) 20
      * }
      */
-    public static int GDK_KEY_dead_belowcomma() {
-        return (int)65134L;
+    public static MemorySegment GDK_SELECTION_TYPE_PIXMAP() {
+        return GDK_SELECTION_TYPE_PIXMAP;
     }
+    private static final MemorySegment GDK_SELECTION_TYPE_WINDOW = MemorySegment.ofAddress(33L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_currency 65135
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_TYPE_WINDOW (void*) 33
      * }
      */
-    public static int GDK_KEY_dead_currency() {
-        return (int)65135L;
+    public static MemorySegment GDK_SELECTION_TYPE_WINDOW() {
+        return GDK_SELECTION_TYPE_WINDOW;
     }
+    private static final MemorySegment GDK_SELECTION_TYPE_STRING = MemorySegment.ofAddress(31L);
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_lowline 65168
+     * {@snippet lang=c :
+     * #define GDK_SELECTION_TYPE_STRING (void*) 31
      * }
      */
-    public static int GDK_KEY_dead_lowline() {
-        return (int)65168L;
+    public static MemorySegment GDK_SELECTION_TYPE_STRING() {
+        return GDK_SELECTION_TYPE_STRING;
     }
+    private static final int GTK_UNIT_PIXEL = (int)0L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_aboveverticalline 65169
+     * {@snippet lang=c :
+     * #define GTK_UNIT_PIXEL 0
      * }
      */
-    public static int GDK_KEY_dead_aboveverticalline() {
-        return (int)65169L;
+    public static int GTK_UNIT_PIXEL() {
+        return GTK_UNIT_PIXEL;
     }
+    private static final int ATK_MAJOR_VERSION = (int)2L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_belowverticalline 65170
+     * {@snippet lang=c :
+     * #define ATK_MAJOR_VERSION 2
      * }
      */
-    public static int GDK_KEY_dead_belowverticalline() {
-        return (int)65170L;
+    public static int ATK_MAJOR_VERSION() {
+        return ATK_MAJOR_VERSION;
     }
+    private static final int ATK_MINOR_VERSION = (int)50L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_longsolidusoverlay 65171
+     * {@snippet lang=c :
+     * #define ATK_MINOR_VERSION 50
      * }
      */
-    public static int GDK_KEY_dead_longsolidusoverlay() {
-        return (int)65171L;
+    public static int ATK_MINOR_VERSION() {
+        return ATK_MINOR_VERSION;
     }
+    private static final int ATK_MICRO_VERSION = (int)1L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_a 65152
+     * {@snippet lang=c :
+     * #define ATK_MICRO_VERSION 1
      * }
      */
-    public static int GDK_KEY_dead_a() {
-        return (int)65152L;
+    public static int ATK_MICRO_VERSION() {
+        return ATK_MICRO_VERSION;
     }
+    private static final int ATK_BINARY_AGE = (int)25011L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_A 65153
+     * {@snippet lang=c :
+     * #define ATK_BINARY_AGE 25011
      * }
      */
-    public static int GDK_KEY_dead_A() {
-        return (int)65153L;
+    public static int ATK_BINARY_AGE() {
+        return ATK_BINARY_AGE;
     }
+    private static final int ATK_INTERFACE_AGE = (int)1L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_e 65154
+     * {@snippet lang=c :
+     * #define ATK_INTERFACE_AGE 1
      * }
      */
-    public static int GDK_KEY_dead_e() {
-        return (int)65154L;
+    public static int ATK_INTERFACE_AGE() {
+        return ATK_INTERFACE_AGE;
     }
+    private static final int ATK_VERSION_2_2 = (int)131584L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_E 65155
+     * {@snippet lang=c :
+     * #define ATK_VERSION_2_2 131584
      * }
      */
-    public static int GDK_KEY_dead_E() {
-        return (int)65155L;
+    public static int ATK_VERSION_2_2() {
+        return ATK_VERSION_2_2;
     }
+    private static final int ATK_VERSION_2_4 = (int)132096L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_i 65156
+     * {@snippet lang=c :
+     * #define ATK_VERSION_2_4 132096
      * }
      */
-    public static int GDK_KEY_dead_i() {
-        return (int)65156L;
+    public static int ATK_VERSION_2_4() {
+        return ATK_VERSION_2_4;
     }
+    private static final int ATK_VERSION_2_6 = (int)132608L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_I 65157
+     * {@snippet lang=c :
+     * #define ATK_VERSION_2_6 132608
      * }
      */
-    public static int GDK_KEY_dead_I() {
-        return (int)65157L;
+    public static int ATK_VERSION_2_6() {
+        return ATK_VERSION_2_6;
     }
+    private static final int ATK_VERSION_2_8 = (int)133120L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_o 65158
+     * {@snippet lang=c :
+     * #define ATK_VERSION_2_8 133120
      * }
      */
-    public static int GDK_KEY_dead_o() {
-        return (int)65158L;
+    public static int ATK_VERSION_2_8() {
+        return ATK_VERSION_2_8;
     }
+    private static final int ATK_VERSION_2_10 = (int)133632L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_O 65159
+     * {@snippet lang=c :
+     * #define ATK_VERSION_2_10 133632
      * }
      */
-    public static int GDK_KEY_dead_O() {
-        return (int)65159L;
+    public static int ATK_VERSION_2_10() {
+        return ATK_VERSION_2_10;
     }
+    private static final int ATK_VERSION_2_12 = (int)134144L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_u 65160
+     * {@snippet lang=c :
+     * #define ATK_VERSION_2_12 134144
      * }
      */
-    public static int GDK_KEY_dead_u() {
-        return (int)65160L;
+    public static int ATK_VERSION_2_12() {
+        return ATK_VERSION_2_12;
     }
+    private static final int ATK_VERSION_2_14 = (int)134656L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_U 65161
+     * {@snippet lang=c :
+     * #define ATK_VERSION_2_14 134656
      * }
      */
-    public static int GDK_KEY_dead_U() {
-        return (int)65161L;
+    public static int ATK_VERSION_2_14() {
+        return ATK_VERSION_2_14;
     }
+    private static final int ATK_VERSION_2_30 = (int)138752L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_small_schwa 65162
+     * {@snippet lang=c :
+     * #define ATK_VERSION_2_30 138752
      * }
      */
-    public static int GDK_KEY_dead_small_schwa() {
-        return (int)65162L;
+    public static int ATK_VERSION_2_30() {
+        return ATK_VERSION_2_30;
     }
+    private static final int ATK_VERSION_2_36 = (int)140288L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_capital_schwa 65163
+     * {@snippet lang=c :
+     * #define ATK_VERSION_2_36 140288
      * }
      */
-    public static int GDK_KEY_dead_capital_schwa() {
-        return (int)65163L;
+    public static int ATK_VERSION_2_36() {
+        return ATK_VERSION_2_36;
     }
+    private static final int ATK_VERSION_CUR_STABLE = (int)143872L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_dead_greek 65164
+     * {@snippet lang=c :
+     * #define ATK_VERSION_CUR_STABLE 143872
      * }
      */
-    public static int GDK_KEY_dead_greek() {
-        return (int)65164L;
+    public static int ATK_VERSION_CUR_STABLE() {
+        return ATK_VERSION_CUR_STABLE;
     }
+    private static final int ATK_VERSION_PREV_STABLE = (int)143360L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_First_Virtual_Screen 65232
+     * {@snippet lang=c :
+     * #define ATK_VERSION_PREV_STABLE 143360
      * }
      */
-    public static int GDK_KEY_First_Virtual_Screen() {
-        return (int)65232L;
+    public static int ATK_VERSION_PREV_STABLE() {
+        return ATK_VERSION_PREV_STABLE;
     }
+    private static final int ATK_VERSION_MIN_REQUIRED = (int)143872L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_Prev_Virtual_Screen 65233
+     * {@snippet lang=c :
+     * #define ATK_VERSION_MIN_REQUIRED 143872
      * }
      */
-    public static int GDK_KEY_Prev_Virtual_Screen() {
-        return (int)65233L;
+    public static int ATK_VERSION_MIN_REQUIRED() {
+        return ATK_VERSION_MIN_REQUIRED;
     }
+    private static final int ATK_VERSION_MAX_ALLOWED = (int)143872L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_Next_Virtual_Screen 65234
+     * {@snippet lang=c :
+     * #define ATK_VERSION_MAX_ALLOWED 143872
      * }
      */
-    public static int GDK_KEY_Next_Virtual_Screen() {
-        return (int)65234L;
+    public static int ATK_VERSION_MAX_ALLOWED() {
+        return ATK_VERSION_MAX_ALLOWED;
     }
+    private static final int GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID = (int)-1L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_Last_Virtual_Screen 65236
+     * {@snippet lang=c :
+     * #define GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID -1
      * }
      */
-    public static int GDK_KEY_Last_Virtual_Screen() {
-        return (int)65236L;
+    public static int GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID() {
+        return GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID;
     }
+    private static final int GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID = (int)-2L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_Terminate_Server 65237
+     * {@snippet lang=c :
+     * #define GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID -2
      * }
      */
-    public static int GDK_KEY_Terminate_Server() {
-        return (int)65237L;
+    public static int GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID() {
+        return GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID;
     }
+    private static final int GTK_ENTRY_BUFFER_MAX_SIZE = (int)65535L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_AccessX_Enable 65136
+     * {@snippet lang=c :
+     * #define GTK_ENTRY_BUFFER_MAX_SIZE 65535
      * }
      */
-    public static int GDK_KEY_AccessX_Enable() {
-        return (int)65136L;
+    public static int GTK_ENTRY_BUFFER_MAX_SIZE() {
+        return GTK_ENTRY_BUFFER_MAX_SIZE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_AccessX_Feedback_Enable 65137
+     * {@snippet lang=c :
+     * #define GTK_STYLE_PROPERTY_BACKGROUND_COLOR "background-color"
      * }
      */
-    public static int GDK_KEY_AccessX_Feedback_Enable() {
-        return (int)65137L;
+    public static MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_COLOR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_COLOR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("background-color");
+        }
+        return Holder.GTK_STYLE_PROPERTY_BACKGROUND_COLOR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_RepeatKeys_Enable 65138
+     * {@snippet lang=c :
+     * #define GTK_STYLE_PROPERTY_COLOR "color"
      * }
      */
-    public static int GDK_KEY_RepeatKeys_Enable() {
-        return (int)65138L;
+    public static MemorySegment GTK_STYLE_PROPERTY_COLOR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_PROPERTY_COLOR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("color");
+        }
+        return Holder.GTK_STYLE_PROPERTY_COLOR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_SlowKeys_Enable 65139
+     * {@snippet lang=c :
+     * #define GTK_STYLE_PROPERTY_FONT "font"
      * }
      */
-    public static int GDK_KEY_SlowKeys_Enable() {
-        return (int)65139L;
+    public static MemorySegment GTK_STYLE_PROPERTY_FONT() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_PROPERTY_FONT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("font");
+        }
+        return Holder.GTK_STYLE_PROPERTY_FONT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_BounceKeys_Enable 65140
+     * {@snippet lang=c :
+     * #define GTK_STYLE_PROPERTY_PADDING "padding"
      * }
      */
-    public static int GDK_KEY_BounceKeys_Enable() {
-        return (int)65140L;
+    public static MemorySegment GTK_STYLE_PROPERTY_PADDING() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_PROPERTY_PADDING
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("padding");
+        }
+        return Holder.GTK_STYLE_PROPERTY_PADDING;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_StickyKeys_Enable 65141
+     * {@snippet lang=c :
+     * #define GTK_STYLE_PROPERTY_BORDER_WIDTH "border-width"
      * }
      */
-    public static int GDK_KEY_StickyKeys_Enable() {
-        return (int)65141L;
+    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_WIDTH() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_PROPERTY_BORDER_WIDTH
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("border-width");
+        }
+        return Holder.GTK_STYLE_PROPERTY_BORDER_WIDTH;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_MouseKeys_Enable 65142
+     * {@snippet lang=c :
+     * #define GTK_STYLE_PROPERTY_MARGIN "margin"
      * }
      */
-    public static int GDK_KEY_MouseKeys_Enable() {
-        return (int)65142L;
+    public static MemorySegment GTK_STYLE_PROPERTY_MARGIN() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_PROPERTY_MARGIN
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("margin");
+        }
+        return Holder.GTK_STYLE_PROPERTY_MARGIN;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_MouseKeys_Accel_Enable 65143
+     * {@snippet lang=c :
+     * #define GTK_STYLE_PROPERTY_BORDER_RADIUS "border-radius"
      * }
      */
-    public static int GDK_KEY_MouseKeys_Accel_Enable() {
-        return (int)65143L;
+    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_RADIUS() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_PROPERTY_BORDER_RADIUS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("border-radius");
+        }
+        return Holder.GTK_STYLE_PROPERTY_BORDER_RADIUS;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Overlay1_Enable 65144
+     * {@snippet lang=c :
+     * #define GTK_STYLE_PROPERTY_BORDER_STYLE "border-style"
      * }
      */
-    public static int GDK_KEY_Overlay1_Enable() {
-        return (int)65144L;
+    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_STYLE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_PROPERTY_BORDER_STYLE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("border-style");
+        }
+        return Holder.GTK_STYLE_PROPERTY_BORDER_STYLE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Overlay2_Enable 65145
+     * {@snippet lang=c :
+     * #define GTK_STYLE_PROPERTY_BORDER_COLOR "border-color"
      * }
      */
-    public static int GDK_KEY_Overlay2_Enable() {
-        return (int)65145L;
+    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_COLOR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_PROPERTY_BORDER_COLOR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("border-color");
+        }
+        return Holder.GTK_STYLE_PROPERTY_BORDER_COLOR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_AudibleBell_Enable 65146
+     * {@snippet lang=c :
+     * #define GTK_STYLE_PROPERTY_BACKGROUND_IMAGE "background-image"
      * }
      */
-    public static int GDK_KEY_AudibleBell_Enable() {
-        return (int)65146L;
+    public static MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_IMAGE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_IMAGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("background-image");
+        }
+        return Holder.GTK_STYLE_PROPERTY_BACKGROUND_IMAGE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Left 65248
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_CELL "cell"
      * }
      */
-    public static int GDK_KEY_Pointer_Left() {
-        return (int)65248L;
+    public static MemorySegment GTK_STYLE_CLASS_CELL() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_CELL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("cell");
+        }
+        return Holder.GTK_STYLE_CLASS_CELL;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Right 65249
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_DIM_LABEL "dim-label"
      * }
      */
-    public static int GDK_KEY_Pointer_Right() {
-        return (int)65249L;
+    public static MemorySegment GTK_STYLE_CLASS_DIM_LABEL() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_DIM_LABEL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dim-label");
+        }
+        return Holder.GTK_STYLE_CLASS_DIM_LABEL;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Up 65250
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_ENTRY "entry"
      * }
      */
-    public static int GDK_KEY_Pointer_Up() {
-        return (int)65250L;
+    public static MemorySegment GTK_STYLE_CLASS_ENTRY() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_ENTRY
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("entry");
+        }
+        return Holder.GTK_STYLE_CLASS_ENTRY;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Down 65251
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_LABEL "label"
      * }
      */
-    public static int GDK_KEY_Pointer_Down() {
-        return (int)65251L;
+    public static MemorySegment GTK_STYLE_CLASS_LABEL() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_LABEL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("label");
+        }
+        return Holder.GTK_STYLE_CLASS_LABEL;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_UpLeft 65252
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_COMBOBOX_ENTRY "combobox-entry"
      * }
      */
-    public static int GDK_KEY_Pointer_UpLeft() {
-        return (int)65252L;
+    public static MemorySegment GTK_STYLE_CLASS_COMBOBOX_ENTRY() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_COMBOBOX_ENTRY
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("combobox-entry");
+        }
+        return Holder.GTK_STYLE_CLASS_COMBOBOX_ENTRY;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_UpRight 65253
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_BUTTON "button"
      * }
      */
-    public static int GDK_KEY_Pointer_UpRight() {
-        return (int)65253L;
+    public static MemorySegment GTK_STYLE_CLASS_BUTTON() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_BUTTON
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("button");
+        }
+        return Holder.GTK_STYLE_CLASS_BUTTON;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_DownLeft 65254
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_LIST "list"
      * }
      */
-    public static int GDK_KEY_Pointer_DownLeft() {
-        return (int)65254L;
+    public static MemorySegment GTK_STYLE_CLASS_LIST() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_LIST
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("list");
+        }
+        return Holder.GTK_STYLE_CLASS_LIST;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_DownRight 65255
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_LIST_ROW "list-row"
      * }
      */
-    public static int GDK_KEY_Pointer_DownRight() {
-        return (int)65255L;
+    public static MemorySegment GTK_STYLE_CLASS_LIST_ROW() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_LIST_ROW
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("list-row");
+        }
+        return Holder.GTK_STYLE_CLASS_LIST_ROW;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Button_Dflt 65256
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_CALENDAR "calendar"
      * }
      */
-    public static int GDK_KEY_Pointer_Button_Dflt() {
-        return (int)65256L;
+    public static MemorySegment GTK_STYLE_CLASS_CALENDAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_CALENDAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("calendar");
+        }
+        return Holder.GTK_STYLE_CLASS_CALENDAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Button1 65257
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SLIDER "slider"
      * }
      */
-    public static int GDK_KEY_Pointer_Button1() {
-        return (int)65257L;
+    public static MemorySegment GTK_STYLE_CLASS_SLIDER() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SLIDER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("slider");
+        }
+        return Holder.GTK_STYLE_CLASS_SLIDER;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Button2 65258
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_BACKGROUND "background"
      * }
      */
-    public static int GDK_KEY_Pointer_Button2() {
-        return (int)65258L;
+    public static MemorySegment GTK_STYLE_CLASS_BACKGROUND() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_BACKGROUND
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("background");
+        }
+        return Holder.GTK_STYLE_CLASS_BACKGROUND;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Button3 65259
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_RUBBERBAND "rubberband"
      * }
      */
-    public static int GDK_KEY_Pointer_Button3() {
-        return (int)65259L;
+    public static MemorySegment GTK_STYLE_CLASS_RUBBERBAND() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_RUBBERBAND
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("rubberband");
+        }
+        return Holder.GTK_STYLE_CLASS_RUBBERBAND;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Button4 65260
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_CSD "csd"
      * }
      */
-    public static int GDK_KEY_Pointer_Button4() {
-        return (int)65260L;
+    public static MemorySegment GTK_STYLE_CLASS_CSD() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_CSD
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("csd");
+        }
+        return Holder.GTK_STYLE_CLASS_CSD;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Button5 65261
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_TOOLTIP "tooltip"
      * }
      */
-    public static int GDK_KEY_Pointer_Button5() {
-        return (int)65261L;
+    public static MemorySegment GTK_STYLE_CLASS_TOOLTIP() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_TOOLTIP
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("tooltip");
+        }
+        return Holder.GTK_STYLE_CLASS_TOOLTIP;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_DblClick_Dflt 65262
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_MENU "menu"
      * }
      */
-    public static int GDK_KEY_Pointer_DblClick_Dflt() {
-        return (int)65262L;
+    public static MemorySegment GTK_STYLE_CLASS_MENU() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_MENU
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("menu");
+        }
+        return Holder.GTK_STYLE_CLASS_MENU;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_DblClick1 65263
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_CONTEXT_MENU "context-menu"
      * }
      */
-    public static int GDK_KEY_Pointer_DblClick1() {
-        return (int)65263L;
+    public static MemorySegment GTK_STYLE_CLASS_CONTEXT_MENU() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_CONTEXT_MENU
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("context-menu");
+        }
+        return Holder.GTK_STYLE_CLASS_CONTEXT_MENU;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_DblClick2 65264
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_TOUCH_SELECTION "touch-selection"
      * }
      */
-    public static int GDK_KEY_Pointer_DblClick2() {
-        return (int)65264L;
+    public static MemorySegment GTK_STYLE_CLASS_TOUCH_SELECTION() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_TOUCH_SELECTION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("touch-selection");
+        }
+        return Holder.GTK_STYLE_CLASS_TOUCH_SELECTION;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_DblClick3 65265
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_MENUBAR "menubar"
      * }
      */
-    public static int GDK_KEY_Pointer_DblClick3() {
-        return (int)65265L;
+    public static MemorySegment GTK_STYLE_CLASS_MENUBAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_MENUBAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("menubar");
+        }
+        return Holder.GTK_STYLE_CLASS_MENUBAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_DblClick4 65266
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_MENUITEM "menuitem"
      * }
      */
-    public static int GDK_KEY_Pointer_DblClick4() {
-        return (int)65266L;
+    public static MemorySegment GTK_STYLE_CLASS_MENUITEM() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_MENUITEM
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("menuitem");
+        }
+        return Holder.GTK_STYLE_CLASS_MENUITEM;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_DblClick5 65267
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_TOOLBAR "toolbar"
      * }
      */
-    public static int GDK_KEY_Pointer_DblClick5() {
-        return (int)65267L;
+    public static MemorySegment GTK_STYLE_CLASS_TOOLBAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_TOOLBAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("toolbar");
+        }
+        return Holder.GTK_STYLE_CLASS_TOOLBAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Drag_Dflt 65268
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_PRIMARY_TOOLBAR "primary-toolbar"
      * }
      */
-    public static int GDK_KEY_Pointer_Drag_Dflt() {
-        return (int)65268L;
+    public static MemorySegment GTK_STYLE_CLASS_PRIMARY_TOOLBAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_PRIMARY_TOOLBAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("primary-toolbar");
+        }
+        return Holder.GTK_STYLE_CLASS_PRIMARY_TOOLBAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Drag1 65269
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_INLINE_TOOLBAR "inline-toolbar"
      * }
      */
-    public static int GDK_KEY_Pointer_Drag1() {
-        return (int)65269L;
+    public static MemorySegment GTK_STYLE_CLASS_INLINE_TOOLBAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_INLINE_TOOLBAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("inline-toolbar");
+        }
+        return Holder.GTK_STYLE_CLASS_INLINE_TOOLBAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Drag2 65270
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_STATUSBAR "statusbar"
      * }
      */
-    public static int GDK_KEY_Pointer_Drag2() {
-        return (int)65270L;
+    public static MemorySegment GTK_STYLE_CLASS_STATUSBAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_STATUSBAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("statusbar");
+        }
+        return Holder.GTK_STYLE_CLASS_STATUSBAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Drag3 65271
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_RADIO "radio"
      * }
      */
-    public static int GDK_KEY_Pointer_Drag3() {
-        return (int)65271L;
+    public static MemorySegment GTK_STYLE_CLASS_RADIO() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_RADIO
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("radio");
+        }
+        return Holder.GTK_STYLE_CLASS_RADIO;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Drag4 65272
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_CHECK "check"
      * }
      */
-    public static int GDK_KEY_Pointer_Drag4() {
-        return (int)65272L;
+    public static MemorySegment GTK_STYLE_CLASS_CHECK() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_CHECK
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("check");
+        }
+        return Holder.GTK_STYLE_CLASS_CHECK;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Drag5 65277
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_DEFAULT "default"
      * }
      */
-    public static int GDK_KEY_Pointer_Drag5() {
-        return (int)65277L;
+    public static MemorySegment GTK_STYLE_CLASS_DEFAULT() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_DEFAULT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("default");
+        }
+        return Holder.GTK_STYLE_CLASS_DEFAULT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_EnableKeys 65273
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_TROUGH "trough"
      * }
      */
-    public static int GDK_KEY_Pointer_EnableKeys() {
-        return (int)65273L;
+    public static MemorySegment GTK_STYLE_CLASS_TROUGH() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_TROUGH
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("trough");
+        }
+        return Holder.GTK_STYLE_CLASS_TROUGH;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_Accelerate 65274
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SCROLLBAR "scrollbar"
      * }
      */
-    public static int GDK_KEY_Pointer_Accelerate() {
-        return (int)65274L;
+    public static MemorySegment GTK_STYLE_CLASS_SCROLLBAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SCROLLBAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("scrollbar");
+        }
+        return Holder.GTK_STYLE_CLASS_SCROLLBAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_DfltBtnNext 65275
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SCROLLBARS_JUNCTION "scrollbars-junction"
      * }
      */
-    public static int GDK_KEY_Pointer_DfltBtnNext() {
-        return (int)65275L;
+    public static MemorySegment GTK_STYLE_CLASS_SCROLLBARS_JUNCTION() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SCROLLBARS_JUNCTION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("scrollbars-junction");
+        }
+        return Holder.GTK_STYLE_CLASS_SCROLLBARS_JUNCTION;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Pointer_DfltBtnPrev 65276
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SCALE "scale"
      * }
      */
-    public static int GDK_KEY_Pointer_DfltBtnPrev() {
-        return (int)65276L;
+    public static MemorySegment GTK_STYLE_CLASS_SCALE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SCALE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("scale");
+        }
+        return Holder.GTK_STYLE_CLASS_SCALE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_ch 65184
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE "scale-has-marks-above"
      * }
      */
-    public static int GDK_KEY_ch() {
-        return (int)65184L;
+    public static MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("scale-has-marks-above");
+        }
+        return Holder.GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Ch 65185
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW "scale-has-marks-below"
      * }
      */
-    public static int GDK_KEY_Ch() {
-        return (int)65185L;
+    public static MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("scale-has-marks-below");
+        }
+        return Holder.GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_CH 65186
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_HEADER "header"
      * }
      */
-    public static int GDK_KEY_CH() {
-        return (int)65186L;
+    public static MemorySegment GTK_STYLE_CLASS_HEADER() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_HEADER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("header");
+        }
+        return Holder.GTK_STYLE_CLASS_HEADER;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_c_h 65187
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_ACCELERATOR "accelerator"
      * }
      */
-    public static int GDK_KEY_c_h() {
-        return (int)65187L;
+    public static MemorySegment GTK_STYLE_CLASS_ACCELERATOR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_ACCELERATOR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("accelerator");
+        }
+        return Holder.GTK_STYLE_CLASS_ACCELERATOR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_C_h 65188
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_RAISED "raised"
      * }
      */
-    public static int GDK_KEY_C_h() {
-        return (int)65188L;
+    public static MemorySegment GTK_STYLE_CLASS_RAISED() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_RAISED
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("raised");
+        }
+        return Holder.GTK_STYLE_CLASS_RAISED;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_C_H 65189
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_LINKED "linked"
      * }
      */
-    public static int GDK_KEY_C_H() {
-        return (int)65189L;
+    public static MemorySegment GTK_STYLE_CLASS_LINKED() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_LINKED
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("linked");
+        }
+        return Holder.GTK_STYLE_CLASS_LINKED;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Duplicate 64769
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_GRIP "grip"
      * }
      */
-    public static int GDK_KEY_3270_Duplicate() {
-        return (int)64769L;
+    public static MemorySegment GTK_STYLE_CLASS_GRIP() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_GRIP
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("grip");
+        }
+        return Holder.GTK_STYLE_CLASS_GRIP;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_FieldMark 64770
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_DOCK "dock"
      * }
      */
-    public static int GDK_KEY_3270_FieldMark() {
-        return (int)64770L;
+    public static MemorySegment GTK_STYLE_CLASS_DOCK() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_DOCK
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dock");
+        }
+        return Holder.GTK_STYLE_CLASS_DOCK;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Right2 64771
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_PROGRESSBAR "progressbar"
      * }
      */
-    public static int GDK_KEY_3270_Right2() {
-        return (int)64771L;
+    public static MemorySegment GTK_STYLE_CLASS_PROGRESSBAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_PROGRESSBAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("progressbar");
+        }
+        return Holder.GTK_STYLE_CLASS_PROGRESSBAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Left2 64772
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SPINNER "spinner"
      * }
      */
-    public static int GDK_KEY_3270_Left2() {
-        return (int)64772L;
+    public static MemorySegment GTK_STYLE_CLASS_SPINNER() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SPINNER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("spinner");
+        }
+        return Holder.GTK_STYLE_CLASS_SPINNER;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_BackTab 64773
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_MARK "mark"
      * }
      */
-    public static int GDK_KEY_3270_BackTab() {
-        return (int)64773L;
+    public static MemorySegment GTK_STYLE_CLASS_MARK() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_MARK
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("mark");
+        }
+        return Holder.GTK_STYLE_CLASS_MARK;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_EraseEOF 64774
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_EXPANDER "expander"
      * }
      */
-    public static int GDK_KEY_3270_EraseEOF() {
-        return (int)64774L;
+    public static MemorySegment GTK_STYLE_CLASS_EXPANDER() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_EXPANDER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("expander");
+        }
+        return Holder.GTK_STYLE_CLASS_EXPANDER;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_EraseInput 64775
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SPINBUTTON "spinbutton"
      * }
      */
-    public static int GDK_KEY_3270_EraseInput() {
-        return (int)64775L;
+    public static MemorySegment GTK_STYLE_CLASS_SPINBUTTON() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SPINBUTTON
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("spinbutton");
+        }
+        return Holder.GTK_STYLE_CLASS_SPINBUTTON;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Reset 64776
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_NOTEBOOK "notebook"
      * }
      */
-    public static int GDK_KEY_3270_Reset() {
-        return (int)64776L;
+    public static MemorySegment GTK_STYLE_CLASS_NOTEBOOK() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_NOTEBOOK
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("notebook");
+        }
+        return Holder.GTK_STYLE_CLASS_NOTEBOOK;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Quit 64777
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_VIEW "view"
      * }
      */
-    public static int GDK_KEY_3270_Quit() {
-        return (int)64777L;
+    public static MemorySegment GTK_STYLE_CLASS_VIEW() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_VIEW
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("view");
+        }
+        return Holder.GTK_STYLE_CLASS_VIEW;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_PA1 64778
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SIDEBAR "sidebar"
      * }
      */
-    public static int GDK_KEY_3270_PA1() {
-        return (int)64778L;
+    public static MemorySegment GTK_STYLE_CLASS_SIDEBAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SIDEBAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("sidebar");
+        }
+        return Holder.GTK_STYLE_CLASS_SIDEBAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_PA2 64779
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_IMAGE "image"
      * }
      */
-    public static int GDK_KEY_3270_PA2() {
-        return (int)64779L;
+    public static MemorySegment GTK_STYLE_CLASS_IMAGE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_IMAGE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("image");
+        }
+        return Holder.GTK_STYLE_CLASS_IMAGE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_PA3 64780
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_HIGHLIGHT "highlight"
      * }
      */
-    public static int GDK_KEY_3270_PA3() {
-        return (int)64780L;
+    public static MemorySegment GTK_STYLE_CLASS_HIGHLIGHT() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_HIGHLIGHT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("highlight");
+        }
+        return Holder.GTK_STYLE_CLASS_HIGHLIGHT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Test 64781
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_FRAME "frame"
      * }
      */
-    public static int GDK_KEY_3270_Test() {
-        return (int)64781L;
+    public static MemorySegment GTK_STYLE_CLASS_FRAME() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_FRAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("frame");
+        }
+        return Holder.GTK_STYLE_CLASS_FRAME;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Attn 64782
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_DND "dnd"
      * }
      */
-    public static int GDK_KEY_3270_Attn() {
-        return (int)64782L;
+    public static MemorySegment GTK_STYLE_CLASS_DND() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_DND
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dnd");
+        }
+        return Holder.GTK_STYLE_CLASS_DND;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_CursorBlink 64783
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_PANE_SEPARATOR "pane-separator"
      * }
      */
-    public static int GDK_KEY_3270_CursorBlink() {
-        return (int)64783L;
+    public static MemorySegment GTK_STYLE_CLASS_PANE_SEPARATOR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_PANE_SEPARATOR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("pane-separator");
+        }
+        return Holder.GTK_STYLE_CLASS_PANE_SEPARATOR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_AltCursor 64784
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SEPARATOR "separator"
      * }
      */
-    public static int GDK_KEY_3270_AltCursor() {
-        return (int)64784L;
+    public static MemorySegment GTK_STYLE_CLASS_SEPARATOR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SEPARATOR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("separator");
+        }
+        return Holder.GTK_STYLE_CLASS_SEPARATOR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_KeyClick 64785
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_INFO "info"
      * }
      */
-    public static int GDK_KEY_3270_KeyClick() {
-        return (int)64785L;
+    public static MemorySegment GTK_STYLE_CLASS_INFO() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_INFO
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("info");
+        }
+        return Holder.GTK_STYLE_CLASS_INFO;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Jump 64786
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_WARNING "warning"
      * }
      */
-    public static int GDK_KEY_3270_Jump() {
-        return (int)64786L;
+    public static MemorySegment GTK_STYLE_CLASS_WARNING() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_WARNING
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("warning");
+        }
+        return Holder.GTK_STYLE_CLASS_WARNING;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Ident 64787
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_QUESTION "question"
      * }
      */
-    public static int GDK_KEY_3270_Ident() {
-        return (int)64787L;
+    public static MemorySegment GTK_STYLE_CLASS_QUESTION() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_QUESTION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("question");
+        }
+        return Holder.GTK_STYLE_CLASS_QUESTION;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Rule 64788
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_ERROR "error"
      * }
      */
-    public static int GDK_KEY_3270_Rule() {
-        return (int)64788L;
+    public static MemorySegment GTK_STYLE_CLASS_ERROR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_ERROR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("error");
+        }
+        return Holder.GTK_STYLE_CLASS_ERROR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Copy 64789
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_HORIZONTAL "horizontal"
      * }
      */
-    public static int GDK_KEY_3270_Copy() {
-        return (int)64789L;
+    public static MemorySegment GTK_STYLE_CLASS_HORIZONTAL() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_HORIZONTAL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("horizontal");
+        }
+        return Holder.GTK_STYLE_CLASS_HORIZONTAL;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Play 64790
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_VERTICAL "vertical"
      * }
      */
-    public static int GDK_KEY_3270_Play() {
-        return (int)64790L;
+    public static MemorySegment GTK_STYLE_CLASS_VERTICAL() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_VERTICAL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("vertical");
+        }
+        return Holder.GTK_STYLE_CLASS_VERTICAL;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Setup 64791
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_TOP "top"
      * }
      */
-    public static int GDK_KEY_3270_Setup() {
-        return (int)64791L;
+    public static MemorySegment GTK_STYLE_CLASS_TOP() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_TOP
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("top");
+        }
+        return Holder.GTK_STYLE_CLASS_TOP;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Record 64792
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_BOTTOM "bottom"
      * }
      */
-    public static int GDK_KEY_3270_Record() {
-        return (int)64792L;
+    public static MemorySegment GTK_STYLE_CLASS_BOTTOM() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_BOTTOM
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("bottom");
+        }
+        return Holder.GTK_STYLE_CLASS_BOTTOM;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_ChangeScreen 64793
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_LEFT "left"
      * }
      */
-    public static int GDK_KEY_3270_ChangeScreen() {
-        return (int)64793L;
+    public static MemorySegment GTK_STYLE_CLASS_LEFT() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_LEFT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("left");
+        }
+        return Holder.GTK_STYLE_CLASS_LEFT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_DeleteWord 64794
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_RIGHT "right"
      * }
      */
-    public static int GDK_KEY_3270_DeleteWord() {
-        return (int)64794L;
+    public static MemorySegment GTK_STYLE_CLASS_RIGHT() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_RIGHT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("right");
+        }
+        return Holder.GTK_STYLE_CLASS_RIGHT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_ExSelect 64795
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_PULSE "pulse"
      * }
      */
-    public static int GDK_KEY_3270_ExSelect() {
-        return (int)64795L;
+    public static MemorySegment GTK_STYLE_CLASS_PULSE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_PULSE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("pulse");
+        }
+        return Holder.GTK_STYLE_CLASS_PULSE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_CursorSelect 64796
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_ARROW "arrow"
      * }
      */
-    public static int GDK_KEY_3270_CursorSelect() {
-        return (int)64796L;
+    public static MemorySegment GTK_STYLE_CLASS_ARROW() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_ARROW
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("arrow");
+        }
+        return Holder.GTK_STYLE_CLASS_ARROW;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_PrintScreen 64797
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_OSD "osd"
      * }
      */
-    public static int GDK_KEY_3270_PrintScreen() {
-        return (int)64797L;
+    public static MemorySegment GTK_STYLE_CLASS_OSD() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_OSD
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("osd");
+        }
+        return Holder.GTK_STYLE_CLASS_OSD;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3270_Enter 64798
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_LEVEL_BAR "level-bar"
      * }
      */
-    public static int GDK_KEY_3270_Enter() {
-        return (int)64798L;
+    public static MemorySegment GTK_STYLE_CLASS_LEVEL_BAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_LEVEL_BAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("level-bar");
+        }
+        return Holder.GTK_STYLE_CLASS_LEVEL_BAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_space 32
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_CURSOR_HANDLE "cursor-handle"
      * }
      */
-    public static int GDK_KEY_space() {
-        return (int)32L;
+    public static MemorySegment GTK_STYLE_CLASS_CURSOR_HANDLE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_CURSOR_HANDLE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("cursor-handle");
+        }
+        return Holder.GTK_STYLE_CLASS_CURSOR_HANDLE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_exclam 33
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_INSERTION_CURSOR "insertion-cursor"
      * }
      */
-    public static int GDK_KEY_exclam() {
-        return (int)33L;
+    public static MemorySegment GTK_STYLE_CLASS_INSERTION_CURSOR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_INSERTION_CURSOR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("insertion-cursor");
+        }
+        return Holder.GTK_STYLE_CLASS_INSERTION_CURSOR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_quotedbl 34
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_TITLEBAR "titlebar"
      * }
      */
-    public static int GDK_KEY_quotedbl() {
-        return (int)34L;
+    public static MemorySegment GTK_STYLE_CLASS_TITLEBAR() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_TITLEBAR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("titlebar");
+        }
+        return Holder.GTK_STYLE_CLASS_TITLEBAR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_numbersign 35
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_TITLE "title"
      * }
      */
-    public static int GDK_KEY_numbersign() {
-        return (int)35L;
+    public static MemorySegment GTK_STYLE_CLASS_TITLE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_TITLE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("title");
+        }
+        return Holder.GTK_STYLE_CLASS_TITLE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_dollar 36
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SUBTITLE "subtitle"
      * }
      */
-    public static int GDK_KEY_dollar() {
-        return (int)36L;
+    public static MemorySegment GTK_STYLE_CLASS_SUBTITLE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SUBTITLE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("subtitle");
+        }
+        return Holder.GTK_STYLE_CLASS_SUBTITLE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_percent 37
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_NEEDS_ATTENTION "needs-attention"
      * }
      */
-    public static int GDK_KEY_percent() {
-        return (int)37L;
+    public static MemorySegment GTK_STYLE_CLASS_NEEDS_ATTENTION() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_NEEDS_ATTENTION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("needs-attention");
+        }
+        return Holder.GTK_STYLE_CLASS_NEEDS_ATTENTION;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_ampersand 38
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_SUGGESTED_ACTION "suggested-action"
      * }
      */
-    public static int GDK_KEY_ampersand() {
-        return (int)38L;
+    public static MemorySegment GTK_STYLE_CLASS_SUGGESTED_ACTION() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_SUGGESTED_ACTION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("suggested-action");
+        }
+        return Holder.GTK_STYLE_CLASS_SUGGESTED_ACTION;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_apostrophe 39
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_DESTRUCTIVE_ACTION "destructive-action"
      * }
      */
-    public static int GDK_KEY_apostrophe() {
-        return (int)39L;
+    public static MemorySegment GTK_STYLE_CLASS_DESTRUCTIVE_ACTION() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_DESTRUCTIVE_ACTION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("destructive-action");
+        }
+        return Holder.GTK_STYLE_CLASS_DESTRUCTIVE_ACTION;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_quoteright 39
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_POPOVER "popover"
      * }
      */
-    public static int GDK_KEY_quoteright() {
-        return (int)39L;
+    public static MemorySegment GTK_STYLE_CLASS_POPOVER() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_POPOVER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("popover");
+        }
+        return Holder.GTK_STYLE_CLASS_POPOVER;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_parenleft 40
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_POPUP "popup"
      * }
      */
-    public static int GDK_KEY_parenleft() {
-        return (int)40L;
+    public static MemorySegment GTK_STYLE_CLASS_POPUP() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_POPUP
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("popup");
+        }
+        return Holder.GTK_STYLE_CLASS_POPUP;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_parenright 41
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_MESSAGE_DIALOG "message-dialog"
      * }
      */
-    public static int GDK_KEY_parenright() {
-        return (int)41L;
+    public static MemorySegment GTK_STYLE_CLASS_MESSAGE_DIALOG() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_MESSAGE_DIALOG
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("message-dialog");
+        }
+        return Holder.GTK_STYLE_CLASS_MESSAGE_DIALOG;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_asterisk 42
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_FLAT "flat"
      * }
      */
-    public static int GDK_KEY_asterisk() {
-        return (int)42L;
+    public static MemorySegment GTK_STYLE_CLASS_FLAT() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_FLAT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("flat");
+        }
+        return Holder.GTK_STYLE_CLASS_FLAT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_plus 43
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_READ_ONLY "read-only"
      * }
      */
-    public static int GDK_KEY_plus() {
-        return (int)43L;
+    public static MemorySegment GTK_STYLE_CLASS_READ_ONLY() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_READ_ONLY
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("read-only");
+        }
+        return Holder.GTK_STYLE_CLASS_READ_ONLY;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_comma 44
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_OVERSHOOT "overshoot"
      * }
      */
-    public static int GDK_KEY_comma() {
-        return (int)44L;
+    public static MemorySegment GTK_STYLE_CLASS_OVERSHOOT() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_OVERSHOOT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("overshoot");
+        }
+        return Holder.GTK_STYLE_CLASS_OVERSHOOT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_minus 45
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_UNDERSHOOT "undershoot"
      * }
      */
-    public static int GDK_KEY_minus() {
-        return (int)45L;
+    public static MemorySegment GTK_STYLE_CLASS_UNDERSHOOT() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_UNDERSHOOT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("undershoot");
+        }
+        return Holder.GTK_STYLE_CLASS_UNDERSHOOT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_period 46
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_PAPER "paper"
      * }
      */
-    public static int GDK_KEY_period() {
-        return (int)46L;
+    public static MemorySegment GTK_STYLE_CLASS_PAPER() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_PAPER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("paper");
+        }
+        return Holder.GTK_STYLE_CLASS_PAPER;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_slash 47
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_MONOSPACE "monospace"
      * }
      */
-    public static int GDK_KEY_slash() {
-        return (int)47L;
+    public static MemorySegment GTK_STYLE_CLASS_MONOSPACE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_MONOSPACE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("monospace");
+        }
+        return Holder.GTK_STYLE_CLASS_MONOSPACE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_0 48
+     * {@snippet lang=c :
+     * #define GTK_STYLE_CLASS_WIDE "wide"
      * }
      */
-    public static int GDK_KEY_0() {
-        return (int)48L;
+    public static MemorySegment GTK_STYLE_CLASS_WIDE() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_CLASS_WIDE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("wide");
+        }
+        return Holder.GTK_STYLE_CLASS_WIDE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_1 49
+     * {@snippet lang=c :
+     * #define GTK_STYLE_REGION_ROW "row"
      * }
      */
-    public static int GDK_KEY_1() {
-        return (int)49L;
+    public static MemorySegment GTK_STYLE_REGION_ROW() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_REGION_ROW
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("row");
+        }
+        return Holder.GTK_STYLE_REGION_ROW;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_2 50
+     * {@snippet lang=c :
+     * #define GTK_STYLE_REGION_COLUMN "column"
      * }
      */
-    public static int GDK_KEY_2() {
-        return (int)50L;
+    public static MemorySegment GTK_STYLE_REGION_COLUMN() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_REGION_COLUMN
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("column");
+        }
+        return Holder.GTK_STYLE_REGION_COLUMN;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_3 51
+     * {@snippet lang=c :
+     * #define GTK_STYLE_REGION_COLUMN_HEADER "column-header"
      * }
      */
-    public static int GDK_KEY_3() {
-        return (int)51L;
+    public static MemorySegment GTK_STYLE_REGION_COLUMN_HEADER() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_REGION_COLUMN_HEADER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("column-header");
+        }
+        return Holder.GTK_STYLE_REGION_COLUMN_HEADER;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_4 52
+     * {@snippet lang=c :
+     * #define GTK_STYLE_REGION_TAB "tab"
      * }
      */
-    public static int GDK_KEY_4() {
-        return (int)52L;
+    public static MemorySegment GTK_STYLE_REGION_TAB() {
+        class Holder {
+            static final MemorySegment GTK_STYLE_REGION_TAB
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("tab");
+        }
+        return Holder.GTK_STYLE_REGION_TAB;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_5 53
+     * {@snippet lang=c :
+     * #define GTK_LEVEL_BAR_OFFSET_LOW "low"
      * }
      */
-    public static int GDK_KEY_5() {
-        return (int)53L;
+    public static MemorySegment GTK_LEVEL_BAR_OFFSET_LOW() {
+        class Holder {
+            static final MemorySegment GTK_LEVEL_BAR_OFFSET_LOW
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("low");
+        }
+        return Holder.GTK_LEVEL_BAR_OFFSET_LOW;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_6 54
+     * {@snippet lang=c :
+     * #define GTK_LEVEL_BAR_OFFSET_HIGH "high"
      * }
      */
-    public static int GDK_KEY_6() {
-        return (int)54L;
+    public static MemorySegment GTK_LEVEL_BAR_OFFSET_HIGH() {
+        class Holder {
+            static final MemorySegment GTK_LEVEL_BAR_OFFSET_HIGH
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("high");
+        }
+        return Holder.GTK_LEVEL_BAR_OFFSET_HIGH;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_7 55
+     * {@snippet lang=c :
+     * #define GTK_LEVEL_BAR_OFFSET_FULL "full"
      * }
      */
-    public static int GDK_KEY_7() {
-        return (int)55L;
+    public static MemorySegment GTK_LEVEL_BAR_OFFSET_FULL() {
+        class Holder {
+            static final MemorySegment GTK_LEVEL_BAR_OFFSET_FULL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("full");
+        }
+        return Holder.GTK_LEVEL_BAR_OFFSET_FULL;
     }
+    private static final int GTK_PRIORITY_RESIZE = (int)110L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_8 56
+     * {@snippet lang=c :
+     * #define GTK_PRIORITY_RESIZE 110
      * }
      */
-    public static int GDK_KEY_8() {
-        return (int)56L;
+    public static int GTK_PRIORITY_RESIZE() {
+        return GTK_PRIORITY_RESIZE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_9 57
+     * {@snippet lang=c :
+     * #define GTK_PAPER_NAME_A3 "iso_a3"
      * }
      */
-    public static int GDK_KEY_9() {
-        return (int)57L;
+    public static MemorySegment GTK_PAPER_NAME_A3() {
+        class Holder {
+            static final MemorySegment GTK_PAPER_NAME_A3
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("iso_a3");
+        }
+        return Holder.GTK_PAPER_NAME_A3;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_colon 58
+     * {@snippet lang=c :
+     * #define GTK_PAPER_NAME_A4 "iso_a4"
      * }
      */
-    public static int GDK_KEY_colon() {
-        return (int)58L;
+    public static MemorySegment GTK_PAPER_NAME_A4() {
+        class Holder {
+            static final MemorySegment GTK_PAPER_NAME_A4
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("iso_a4");
+        }
+        return Holder.GTK_PAPER_NAME_A4;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_semicolon 59
+     * {@snippet lang=c :
+     * #define GTK_PAPER_NAME_A5 "iso_a5"
      * }
      */
-    public static int GDK_KEY_semicolon() {
-        return (int)59L;
+    public static MemorySegment GTK_PAPER_NAME_A5() {
+        class Holder {
+            static final MemorySegment GTK_PAPER_NAME_A5
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("iso_a5");
+        }
+        return Holder.GTK_PAPER_NAME_A5;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_less 60
+     * {@snippet lang=c :
+     * #define GTK_PAPER_NAME_B5 "iso_b5"
      * }
      */
-    public static int GDK_KEY_less() {
-        return (int)60L;
+    public static MemorySegment GTK_PAPER_NAME_B5() {
+        class Holder {
+            static final MemorySegment GTK_PAPER_NAME_B5
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("iso_b5");
+        }
+        return Holder.GTK_PAPER_NAME_B5;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_equal 61
+     * {@snippet lang=c :
+     * #define GTK_PAPER_NAME_LETTER "na_letter"
      * }
      */
-    public static int GDK_KEY_equal() {
-        return (int)61L;
+    public static MemorySegment GTK_PAPER_NAME_LETTER() {
+        class Holder {
+            static final MemorySegment GTK_PAPER_NAME_LETTER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("na_letter");
+        }
+        return Holder.GTK_PAPER_NAME_LETTER;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_greater 62
+     * {@snippet lang=c :
+     * #define GTK_PAPER_NAME_EXECUTIVE "na_executive"
      * }
      */
-    public static int GDK_KEY_greater() {
-        return (int)62L;
+    public static MemorySegment GTK_PAPER_NAME_EXECUTIVE() {
+        class Holder {
+            static final MemorySegment GTK_PAPER_NAME_EXECUTIVE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("na_executive");
+        }
+        return Holder.GTK_PAPER_NAME_EXECUTIVE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_question 63
+     * {@snippet lang=c :
+     * #define GTK_PAPER_NAME_LEGAL "na_legal"
      * }
      */
-    public static int GDK_KEY_question() {
-        return (int)63L;
+    public static MemorySegment GTK_PAPER_NAME_LEGAL() {
+        class Holder {
+            static final MemorySegment GTK_PAPER_NAME_LEGAL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("na_legal");
+        }
+        return Holder.GTK_PAPER_NAME_LEGAL;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_at 64
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_PRINTER "printer"
      * }
      */
-    public static int GDK_KEY_at() {
-        return (int)64L;
+    public static MemorySegment GTK_PRINT_SETTINGS_PRINTER() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_PRINTER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("printer");
+        }
+        return Holder.GTK_PRINT_SETTINGS_PRINTER;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_A 65
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_ORIENTATION "orientation"
      * }
      */
-    public static int GDK_KEY_A() {
-        return (int)65L;
+    public static MemorySegment GTK_PRINT_SETTINGS_ORIENTATION() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_ORIENTATION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("orientation");
+        }
+        return Holder.GTK_PRINT_SETTINGS_ORIENTATION;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_B 66
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_PAPER_FORMAT "paper-format"
      * }
      */
-    public static int GDK_KEY_B() {
-        return (int)66L;
+    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_FORMAT() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_PAPER_FORMAT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("paper-format");
+        }
+        return Holder.GTK_PRINT_SETTINGS_PAPER_FORMAT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_C 67
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_PAPER_WIDTH "paper-width"
      * }
      */
-    public static int GDK_KEY_C() {
-        return (int)67L;
+    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_WIDTH() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_PAPER_WIDTH
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("paper-width");
+        }
+        return Holder.GTK_PRINT_SETTINGS_PAPER_WIDTH;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_D 68
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_PAPER_HEIGHT "paper-height"
      * }
      */
-    public static int GDK_KEY_D() {
-        return (int)68L;
+    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_HEIGHT() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_PAPER_HEIGHT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("paper-height");
+        }
+        return Holder.GTK_PRINT_SETTINGS_PAPER_HEIGHT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_E 69
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_N_COPIES "n-copies"
      * }
      */
-    public static int GDK_KEY_E() {
-        return (int)69L;
+    public static MemorySegment GTK_PRINT_SETTINGS_N_COPIES() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_N_COPIES
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("n-copies");
+        }
+        return Holder.GTK_PRINT_SETTINGS_N_COPIES;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_F 70
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_DEFAULT_SOURCE "default-source"
      * }
      */
-    public static int GDK_KEY_F() {
-        return (int)70L;
+    public static MemorySegment GTK_PRINT_SETTINGS_DEFAULT_SOURCE() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_DEFAULT_SOURCE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("default-source");
+        }
+        return Holder.GTK_PRINT_SETTINGS_DEFAULT_SOURCE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_G 71
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_QUALITY "quality"
      * }
      */
-    public static int GDK_KEY_G() {
-        return (int)71L;
+    public static MemorySegment GTK_PRINT_SETTINGS_QUALITY() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_QUALITY
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("quality");
+        }
+        return Holder.GTK_PRINT_SETTINGS_QUALITY;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_H 72
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_RESOLUTION "resolution"
      * }
      */
-    public static int GDK_KEY_H() {
-        return (int)72L;
+    public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_RESOLUTION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("resolution");
+        }
+        return Holder.GTK_PRINT_SETTINGS_RESOLUTION;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_I 73
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_USE_COLOR "use-color"
      * }
      */
-    public static int GDK_KEY_I() {
-        return (int)73L;
+    public static MemorySegment GTK_PRINT_SETTINGS_USE_COLOR() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_USE_COLOR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("use-color");
+        }
+        return Holder.GTK_PRINT_SETTINGS_USE_COLOR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_J 74
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_DUPLEX "duplex"
      * }
      */
-    public static int GDK_KEY_J() {
-        return (int)74L;
+    public static MemorySegment GTK_PRINT_SETTINGS_DUPLEX() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_DUPLEX
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("duplex");
+        }
+        return Holder.GTK_PRINT_SETTINGS_DUPLEX;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_K 75
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_COLLATE "collate"
      * }
      */
-    public static int GDK_KEY_K() {
-        return (int)75L;
+    public static MemorySegment GTK_PRINT_SETTINGS_COLLATE() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_COLLATE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("collate");
+        }
+        return Holder.GTK_PRINT_SETTINGS_COLLATE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_L 76
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_REVERSE "reverse"
      * }
      */
-    public static int GDK_KEY_L() {
-        return (int)76L;
+    public static MemorySegment GTK_PRINT_SETTINGS_REVERSE() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_REVERSE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("reverse");
+        }
+        return Holder.GTK_PRINT_SETTINGS_REVERSE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_M 77
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_MEDIA_TYPE "media-type"
      * }
      */
-    public static int GDK_KEY_M() {
-        return (int)77L;
+    public static MemorySegment GTK_PRINT_SETTINGS_MEDIA_TYPE() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_MEDIA_TYPE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("media-type");
+        }
+        return Holder.GTK_PRINT_SETTINGS_MEDIA_TYPE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_N 78
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_DITHER "dither"
      * }
      */
-    public static int GDK_KEY_N() {
-        return (int)78L;
+    public static MemorySegment GTK_PRINT_SETTINGS_DITHER() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_DITHER
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("dither");
+        }
+        return Holder.GTK_PRINT_SETTINGS_DITHER;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_O 79
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_SCALE "scale"
      * }
      */
-    public static int GDK_KEY_O() {
-        return (int)79L;
+    public static MemorySegment GTK_PRINT_SETTINGS_SCALE() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_SCALE
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("scale");
+        }
+        return Holder.GTK_PRINT_SETTINGS_SCALE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_P 80
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_PRINT_PAGES "print-pages"
      * }
      */
-    public static int GDK_KEY_P() {
-        return (int)80L;
+    public static MemorySegment GTK_PRINT_SETTINGS_PRINT_PAGES() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_PRINT_PAGES
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("print-pages");
+        }
+        return Holder.GTK_PRINT_SETTINGS_PRINT_PAGES;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Q 81
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_PAGE_RANGES "page-ranges"
      * }
      */
-    public static int GDK_KEY_Q() {
-        return (int)81L;
+    public static MemorySegment GTK_PRINT_SETTINGS_PAGE_RANGES() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_PAGE_RANGES
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("page-ranges");
+        }
+        return Holder.GTK_PRINT_SETTINGS_PAGE_RANGES;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_R 82
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_PAGE_SET "page-set"
      * }
      */
-    public static int GDK_KEY_R() {
-        return (int)82L;
+    public static MemorySegment GTK_PRINT_SETTINGS_PAGE_SET() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_PAGE_SET
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("page-set");
+        }
+        return Holder.GTK_PRINT_SETTINGS_PAGE_SET;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_S 83
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_FINISHINGS "finishings"
      * }
      */
-    public static int GDK_KEY_S() {
-        return (int)83L;
+    public static MemorySegment GTK_PRINT_SETTINGS_FINISHINGS() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_FINISHINGS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("finishings");
+        }
+        return Holder.GTK_PRINT_SETTINGS_FINISHINGS;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_T 84
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_NUMBER_UP "number-up"
      * }
      */
-    public static int GDK_KEY_T() {
-        return (int)84L;
+    public static MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("number-up");
+        }
+        return Holder.GTK_PRINT_SETTINGS_NUMBER_UP;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_U 85
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT "number-up-layout"
      * }
      */
-    public static int GDK_KEY_U() {
-        return (int)85L;
+    public static MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("number-up-layout");
+        }
+        return Holder.GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_V 86
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_OUTPUT_BIN "output-bin"
      * }
      */
-    public static int GDK_KEY_V() {
-        return (int)86L;
+    public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BIN() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BIN
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("output-bin");
+        }
+        return Holder.GTK_PRINT_SETTINGS_OUTPUT_BIN;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_W 87
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_RESOLUTION_X "resolution-x"
      * }
      */
-    public static int GDK_KEY_W() {
-        return (int)87L;
+    public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_X() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_X
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("resolution-x");
+        }
+        return Holder.GTK_PRINT_SETTINGS_RESOLUTION_X;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_X 88
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_RESOLUTION_Y "resolution-y"
      * }
      */
-    public static int GDK_KEY_X() {
-        return (int)88L;
+    public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_Y() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_Y
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("resolution-y");
+        }
+        return Holder.GTK_PRINT_SETTINGS_RESOLUTION_Y;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Y 89
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_PRINTER_LPI "printer-lpi"
      * }
      */
-    public static int GDK_KEY_Y() {
-        return (int)89L;
+    public static MemorySegment GTK_PRINT_SETTINGS_PRINTER_LPI() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_PRINTER_LPI
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("printer-lpi");
+        }
+        return Holder.GTK_PRINT_SETTINGS_PRINTER_LPI;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_Z 90
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_OUTPUT_DIR "output-dir"
      * }
      */
-    public static int GDK_KEY_Z() {
-        return (int)90L;
+    public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_DIR() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_DIR
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("output-dir");
+        }
+        return Holder.GTK_PRINT_SETTINGS_OUTPUT_DIR;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_bracketleft 91
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_OUTPUT_BASENAME "output-basename"
      * }
      */
-    public static int GDK_KEY_bracketleft() {
-        return (int)91L;
+    public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BASENAME() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BASENAME
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("output-basename");
+        }
+        return Holder.GTK_PRINT_SETTINGS_OUTPUT_BASENAME;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_backslash 92
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT "output-file-format"
      * }
      */
-    public static int GDK_KEY_backslash() {
-        return (int)92L;
+    public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("output-file-format");
+        }
+        return Holder.GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_bracketright 93
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_OUTPUT_URI "output-uri"
      * }
      */
-    public static int GDK_KEY_bracketright() {
-        return (int)93L;
+    public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_URI() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_URI
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("output-uri");
+        }
+        return Holder.GTK_PRINT_SETTINGS_OUTPUT_URI;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_asciicircum 94
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION "win32-driver-version"
      * }
      */
-    public static int GDK_KEY_asciicircum() {
-        return (int)94L;
+    public static MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("win32-driver-version");
+        }
+        return Holder.GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_underscore 95
+     * {@snippet lang=c :
+     * #define GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA "win32-driver-extra"
      * }
      */
-    public static int GDK_KEY_underscore() {
-        return (int)95L;
+    public static MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA() {
+        class Holder {
+            static final MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("win32-driver-extra");
+        }
+        return Holder.GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA;
     }
+    private static final int GTK_INPUT_ERROR = (int)-1L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_grave 96
+     * {@snippet lang=c :
+     * #define GTK_INPUT_ERROR -1
      * }
      */
-    public static int GDK_KEY_grave() {
-        return (int)96L;
+    public static int GTK_INPUT_ERROR() {
+        return GTK_INPUT_ERROR;
     }
+    private static final int GTK_TEXT_VIEW_PRIORITY_VALIDATE = (int)125L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_quoteleft 96
+     * {@snippet lang=c :
+     * #define GTK_TEXT_VIEW_PRIORITY_VALIDATE 125
      * }
      */
-    public static int GDK_KEY_quoteleft() {
-        return (int)96L;
+    public static int GTK_TEXT_VIEW_PRIORITY_VALIDATE() {
+        return GTK_TEXT_VIEW_PRIORITY_VALIDATE;
     }
+    private static final int GTK_MAJOR_VERSION = (int)3L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_a 97
+     * {@snippet lang=c :
+     * #define GTK_MAJOR_VERSION 3
      * }
      */
-    public static int GDK_KEY_a() {
-        return (int)97L;
+    public static int GTK_MAJOR_VERSION() {
+        return GTK_MAJOR_VERSION;
     }
+    private static final int GTK_MINOR_VERSION = (int)24L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_b 98
+     * {@snippet lang=c :
+     * #define GTK_MINOR_VERSION 24
      * }
      */
-    public static int GDK_KEY_b() {
-        return (int)98L;
+    public static int GTK_MINOR_VERSION() {
+        return GTK_MINOR_VERSION;
     }
+    private static final int GTK_MICRO_VERSION = (int)41L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_c 99
+     * {@snippet lang=c :
+     * #define GTK_MICRO_VERSION 41
      * }
      */
-    public static int GDK_KEY_c() {
-        return (int)99L;
+    public static int GTK_MICRO_VERSION() {
+        return GTK_MICRO_VERSION;
     }
+    private static final int GTK_BINARY_AGE = (int)2441L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_d 100
+     * {@snippet lang=c :
+     * #define GTK_BINARY_AGE 2441
      * }
      */
-    public static int GDK_KEY_d() {
-        return (int)100L;
+    public static int GTK_BINARY_AGE() {
+        return GTK_BINARY_AGE;
     }
+    private static final int GTK_INTERFACE_AGE = (int)32L;
     /**
-     * {@snippet :
-     * #define GDK_KEY_e 101
+     * {@snippet lang=c :
+     * #define GTK_INTERFACE_AGE 32
      * }
      */
-    public static int GDK_KEY_e() {
-        return (int)101L;
+    public static int GTK_INTERFACE_AGE() {
+        return GTK_INTERFACE_AGE;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_f 102
+     * {@snippet lang=c :
+     * #define APP_INDICATOR_SIGNAL_NEW_ICON "new-icon"
      * }
      */
-    public static int GDK_KEY_f() {
-        return (int)102L;
+    public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON() {
+        class Holder {
+            static final MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("new-icon");
+        }
+        return Holder.APP_INDICATOR_SIGNAL_NEW_ICON;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_g 103
+     * {@snippet lang=c :
+     * #define APP_INDICATOR_SIGNAL_NEW_ATTENTION_ICON "new-attention-icon"
      * }
      */
-    public static int GDK_KEY_g() {
-        return (int)103L;
+    public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ATTENTION_ICON() {
+        class Holder {
+            static final MemorySegment APP_INDICATOR_SIGNAL_NEW_ATTENTION_ICON
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("new-attention-icon");
+        }
+        return Holder.APP_INDICATOR_SIGNAL_NEW_ATTENTION_ICON;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_h 104
+     * {@snippet lang=c :
+     * #define APP_INDICATOR_SIGNAL_NEW_STATUS "new-status"
      * }
      */
-    public static int GDK_KEY_h() {
-        return (int)104L;
+    public static MemorySegment APP_INDICATOR_SIGNAL_NEW_STATUS() {
+        class Holder {
+            static final MemorySegment APP_INDICATOR_SIGNAL_NEW_STATUS
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("new-status");
+        }
+        return Holder.APP_INDICATOR_SIGNAL_NEW_STATUS;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_i 105
+     * {@snippet lang=c :
+     * #define APP_INDICATOR_SIGNAL_NEW_LABEL "new-label"
      * }
      */
-    public static int GDK_KEY_i() {
-        return (int)105L;
+    public static MemorySegment APP_INDICATOR_SIGNAL_NEW_LABEL() {
+        class Holder {
+            static final MemorySegment APP_INDICATOR_SIGNAL_NEW_LABEL
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("new-label");
+        }
+        return Holder.APP_INDICATOR_SIGNAL_NEW_LABEL;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_j 106
+     * {@snippet lang=c :
+     * #define APP_INDICATOR_SIGNAL_CONNECTION_CHANGED "connection-changed"
      * }
      */
-    public static int GDK_KEY_j() {
-        return (int)106L;
+    public static MemorySegment APP_INDICATOR_SIGNAL_CONNECTION_CHANGED() {
+        class Holder {
+            static final MemorySegment APP_INDICATOR_SIGNAL_CONNECTION_CHANGED
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("connection-changed");
+        }
+        return Holder.APP_INDICATOR_SIGNAL_CONNECTION_CHANGED;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_k 107
+     * {@snippet lang=c :
+     * #define APP_INDICATOR_SIGNAL_NEW_ICON_THEME_PATH "new-icon-theme-path"
      * }
      */
-    public static int GDK_KEY_k() {
-        return (int)107L;
+    public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON_THEME_PATH() {
+        class Holder {
+            static final MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON_THEME_PATH
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("new-icon-theme-path");
+        }
+        return Holder.APP_INDICATOR_SIGNAL_NEW_ICON_THEME_PATH;
     }
     /**
-     * {@snippet :
-     * #define GDK_KEY_l 108
+     * {@snippet lang=c :
+     * #define APP_INDICATOR_SIGNAL_SCROLL_EVENT "scroll-event"
      * }
      */
-    public static int GDK_KEY_l() {
-        return (int)108L;
+    public static MemorySegment APP_INDICATOR_SIGNAL_SCROLL_EVENT() {
+        class Holder {
+            static final MemorySegment APP_INDICATOR_SIGNAL_SCROLL_EVENT
+                = app_indicator_h.LIBRARY_ARENA.allocateFrom("scroll-event");
+        }
+        return Holder.APP_INDICATOR_SIGNAL_SCROLL_EVENT;
     }
 }
-
 

@@ -2,15 +2,29 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GObject GInitiallyUnowned;
+ * {@snippet lang=c :
+ * typedef struct _GObject {
+ *     GTypeInstance g_type_instance;
+ *     guint ref_count;
+ *     GData *qdata;
+ * } GInitiallyUnowned
  * }
  */
-public final class GInitiallyUnowned extends _GObject {
+public class GInitiallyUnowned extends _GObject {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GInitiallyUnowned() {}
+    GInitiallyUnowned() {
+        // Should not be called directly
+    }
 }
-
 

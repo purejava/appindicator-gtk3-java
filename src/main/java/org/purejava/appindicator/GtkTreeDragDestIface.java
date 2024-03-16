@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkTreeDragDestIface GtkTreeDragDestIface;
+ * {@snippet lang=c :
+ * typedef struct _GtkTreeDragDestIface GtkTreeDragDestIface
  * }
  */
-public final class GtkTreeDragDestIface extends _GtkTreeDragDestIface {
+public class GtkTreeDragDestIface extends _GtkTreeDragDestIface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkTreeDragDestIface() {}
+    GtkTreeDragDestIface() {
+        // Should not be called directly
+    }
 }
-
 

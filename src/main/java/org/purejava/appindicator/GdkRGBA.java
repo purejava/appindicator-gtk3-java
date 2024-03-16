@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GdkRGBA GdkRGBA;
+ * {@snippet lang=c :
+ * typedef struct _GdkRGBA GdkRGBA
  * }
  */
-public final class GdkRGBA extends _GdkRGBA {
+public class GdkRGBA extends _GdkRGBA {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GdkRGBA() {}
+    GdkRGBA() {
+        // Should not be called directly
+    }
 }
-
 

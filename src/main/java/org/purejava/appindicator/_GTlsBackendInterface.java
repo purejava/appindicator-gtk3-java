@@ -2,518 +2,978 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GTlsBackendInterface {
- *     struct _GTypeInterface g_iface;
- *     int (*supports_tls)(struct _GTlsBackend*);
- *     unsigned long (*get_certificate_type)();
- *     unsigned long (*get_client_connection_type)();
- *     unsigned long (*get_server_connection_type)();
- *     unsigned long (*get_file_database_type)();
- *     struct _GTlsDatabase* (*get_default_database)(struct _GTlsBackend*);
- *     int (*supports_dtls)(struct _GTlsBackend*);
- *     unsigned long (*get_dtls_client_connection_type)();
- *     unsigned long (*get_dtls_server_connection_type)();
- * };
+ *     GTypeInterface g_iface;
+ *     gboolean (*supports_tls)(GTlsBackend *);
+ *     GType (*get_certificate_type)(void);
+ *     GType (*get_client_connection_type)(void);
+ *     GType (*get_server_connection_type)(void);
+ *     GType (*get_file_database_type)(void);
+ *     GTlsDatabase *(*get_default_database)(GTlsBackend *);
+ *     gboolean (*supports_dtls)(GTlsBackend *);
+ *     GType (*get_dtls_client_connection_type)(void);
+ *     GType (*get_dtls_server_connection_type)(void);
+ * }
  * }
  */
 public class _GTlsBackendInterface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1350.const$1;
+    _GTlsBackendInterface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("supports_tls"),
+        app_indicator_h.C_POINTER.withName("get_certificate_type"),
+        app_indicator_h.C_POINTER.withName("get_client_connection_type"),
+        app_indicator_h.C_POINTER.withName("get_server_connection_type"),
+        app_indicator_h.C_POINTER.withName("get_file_database_type"),
+        app_indicator_h.C_POINTER.withName("get_default_database"),
+        app_indicator_h.C_POINTER.withName("supports_dtls"),
+        app_indicator_h.C_POINTER.withName("get_dtls_client_connection_type"),
+        app_indicator_h.C_POINTER.withName("get_dtls_server_connection_type")
+    ).withName("_GTlsBackendInterface");
+
     /**
-     * {@snippet :
- * int (*supports_tls)(struct _GTlsBackend*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface supports_tls {
-
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(supports_tls fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1350.const$2, fi, constants$10.const$5, scope);
-        }
-        static supports_tls ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle supports_tls$VH() {
-        return constants$1350.const$3;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*supports_tls)(struct _GTlsBackend*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment supports_tls$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1350.const$3.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*supports_tls)(struct _GTlsBackend*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void supports_tls$set(MemorySegment seg, MemorySegment x) {
-        constants$1350.const$3.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment supports_tls$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1350.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void supports_tls$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1350.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static supports_tls supports_tls(MemorySegment segment, Arena scope) {
-        return supports_tls.ofAddress(supports_tls$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * unsigned long (*get_certificate_type)();
+     * {@snippet lang=c :
+     * gboolean (*supports_tls)(GTlsBackend *)
      * }
      */
-    public interface get_certificate_type {
+    public class supports_tls {
 
-        long apply();
-        static MemorySegment allocate(get_certificate_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1350.const$4, fi, constants$3.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static get_certificate_type ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    return (long)constants$513.const$0.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(supports_tls.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(supports_tls.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_certificate_type$VH() {
-        return constants$1350.const$5;
+    private static final AddressLayout supports_tls$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("supports_tls"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*supports_tls)(GTlsBackend *)
+     * }
+     */
+    public static final AddressLayout supports_tls$layout() {
+        return supports_tls$LAYOUT;
     }
+
+    private static final long supports_tls$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*supports_tls)(GTlsBackend *)
+     * }
+     */
+    public static final long supports_tls$offset() {
+        return supports_tls$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * unsigned long (*get_certificate_type)();
+     * {@snippet lang=c :
+     * gboolean (*supports_tls)(GTlsBackend *)
      * }
      */
-    public static MemorySegment get_certificate_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1350.const$5.get(seg);
+    public static MemorySegment supports_tls(MemorySegment struct) {
+        return struct.get(supports_tls$LAYOUT, supports_tls$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * unsigned long (*get_certificate_type)();
+     * {@snippet lang=c :
+     * gboolean (*supports_tls)(GTlsBackend *)
      * }
      */
-    public static void get_certificate_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1350.const$5.set(seg, x);
+    public static void supports_tls(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(supports_tls$LAYOUT, supports_tls$OFFSET, fieldValue);
     }
-    public static MemorySegment get_certificate_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1350.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_certificate_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1350.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_certificate_type get_certificate_type(MemorySegment segment, Arena scope) {
-        return get_certificate_type.ofAddress(get_certificate_type$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * unsigned long (*get_client_connection_type)();
+     * {@snippet lang=c :
+     * GType (*get_certificate_type)(void)
      * }
      */
-    public interface get_client_connection_type {
+    public class get_certificate_type {
 
-        long apply();
-        static MemorySegment allocate(get_client_connection_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1351.const$0, fi, constants$3.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            long apply();
         }
-        static get_client_connection_type ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    return (long)constants$513.const$0.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG);
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_certificate_type.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_certificate_type.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static long invoke(MemorySegment funcPtr) {
+            try {
+                return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_client_connection_type$VH() {
-        return constants$1351.const$1;
+    private static final AddressLayout get_certificate_type$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_certificate_type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GType (*get_certificate_type)(void)
+     * }
+     */
+    public static final AddressLayout get_certificate_type$layout() {
+        return get_certificate_type$LAYOUT;
     }
+
+    private static final long get_certificate_type$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GType (*get_certificate_type)(void)
+     * }
+     */
+    public static final long get_certificate_type$offset() {
+        return get_certificate_type$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * unsigned long (*get_client_connection_type)();
+     * {@snippet lang=c :
+     * GType (*get_certificate_type)(void)
      * }
      */
-    public static MemorySegment get_client_connection_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1351.const$1.get(seg);
+    public static MemorySegment get_certificate_type(MemorySegment struct) {
+        return struct.get(get_certificate_type$LAYOUT, get_certificate_type$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * unsigned long (*get_client_connection_type)();
+     * {@snippet lang=c :
+     * GType (*get_certificate_type)(void)
      * }
      */
-    public static void get_client_connection_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1351.const$1.set(seg, x);
+    public static void get_certificate_type(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_certificate_type$LAYOUT, get_certificate_type$OFFSET, fieldValue);
     }
-    public static MemorySegment get_client_connection_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1351.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_client_connection_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1351.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_client_connection_type get_client_connection_type(MemorySegment segment, Arena scope) {
-        return get_client_connection_type.ofAddress(get_client_connection_type$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * unsigned long (*get_server_connection_type)();
+     * {@snippet lang=c :
+     * GType (*get_client_connection_type)(void)
      * }
      */
-    public interface get_server_connection_type {
+    public class get_client_connection_type {
 
-        long apply();
-        static MemorySegment allocate(get_server_connection_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1351.const$2, fi, constants$3.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            long apply();
         }
-        static get_server_connection_type ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    return (long)constants$513.const$0.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG);
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_client_connection_type.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_client_connection_type.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static long invoke(MemorySegment funcPtr) {
+            try {
+                return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_server_connection_type$VH() {
-        return constants$1351.const$3;
+    private static final AddressLayout get_client_connection_type$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_client_connection_type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GType (*get_client_connection_type)(void)
+     * }
+     */
+    public static final AddressLayout get_client_connection_type$layout() {
+        return get_client_connection_type$LAYOUT;
     }
+
+    private static final long get_client_connection_type$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GType (*get_client_connection_type)(void)
+     * }
+     */
+    public static final long get_client_connection_type$offset() {
+        return get_client_connection_type$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * unsigned long (*get_server_connection_type)();
+     * {@snippet lang=c :
+     * GType (*get_client_connection_type)(void)
      * }
      */
-    public static MemorySegment get_server_connection_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1351.const$3.get(seg);
+    public static MemorySegment get_client_connection_type(MemorySegment struct) {
+        return struct.get(get_client_connection_type$LAYOUT, get_client_connection_type$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * unsigned long (*get_server_connection_type)();
+     * {@snippet lang=c :
+     * GType (*get_client_connection_type)(void)
      * }
      */
-    public static void get_server_connection_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1351.const$3.set(seg, x);
+    public static void get_client_connection_type(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_client_connection_type$LAYOUT, get_client_connection_type$OFFSET, fieldValue);
     }
-    public static MemorySegment get_server_connection_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1351.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_server_connection_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1351.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_server_connection_type get_server_connection_type(MemorySegment segment, Arena scope) {
-        return get_server_connection_type.ofAddress(get_server_connection_type$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * unsigned long (*get_file_database_type)();
+     * {@snippet lang=c :
+     * GType (*get_server_connection_type)(void)
      * }
      */
-    public interface get_file_database_type {
+    public class get_server_connection_type {
 
-        long apply();
-        static MemorySegment allocate(get_file_database_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1351.const$4, fi, constants$3.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            long apply();
         }
-        static get_file_database_type ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    return (long)constants$513.const$0.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG);
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_server_connection_type.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_server_connection_type.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static long invoke(MemorySegment funcPtr) {
+            try {
+                return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_file_database_type$VH() {
-        return constants$1351.const$5;
+    private static final AddressLayout get_server_connection_type$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_server_connection_type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GType (*get_server_connection_type)(void)
+     * }
+     */
+    public static final AddressLayout get_server_connection_type$layout() {
+        return get_server_connection_type$LAYOUT;
     }
+
+    private static final long get_server_connection_type$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GType (*get_server_connection_type)(void)
+     * }
+     */
+    public static final long get_server_connection_type$offset() {
+        return get_server_connection_type$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * unsigned long (*get_file_database_type)();
+     * {@snippet lang=c :
+     * GType (*get_server_connection_type)(void)
      * }
      */
-    public static MemorySegment get_file_database_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1351.const$5.get(seg);
+    public static MemorySegment get_server_connection_type(MemorySegment struct) {
+        return struct.get(get_server_connection_type$LAYOUT, get_server_connection_type$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * unsigned long (*get_file_database_type)();
+     * {@snippet lang=c :
+     * GType (*get_server_connection_type)(void)
      * }
      */
-    public static void get_file_database_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1351.const$5.set(seg, x);
+    public static void get_server_connection_type(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_server_connection_type$LAYOUT, get_server_connection_type$OFFSET, fieldValue);
     }
-    public static MemorySegment get_file_database_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1351.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_file_database_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1351.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_file_database_type get_file_database_type(MemorySegment segment, Arena scope) {
-        return get_file_database_type.ofAddress(get_file_database_type$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GTlsDatabase* (*get_default_database)(struct _GTlsBackend*);
+     * {@snippet lang=c :
+     * GType (*get_file_database_type)(void)
      * }
      */
-    public interface get_default_database {
+    public class get_file_database_type {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_default_database fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1352.const$0, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            long apply();
         }
-        static get_default_database ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG);
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_file_database_type.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_file_database_type.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static long invoke(MemorySegment funcPtr) {
+            try {
+                return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_default_database$VH() {
-        return constants$1352.const$1;
+    private static final AddressLayout get_file_database_type$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_file_database_type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GType (*get_file_database_type)(void)
+     * }
+     */
+    public static final AddressLayout get_file_database_type$layout() {
+        return get_file_database_type$LAYOUT;
     }
+
+    private static final long get_file_database_type$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GType (*get_file_database_type)(void)
+     * }
+     */
+    public static final long get_file_database_type$offset() {
+        return get_file_database_type$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GTlsDatabase* (*get_default_database)(struct _GTlsBackend*);
+     * {@snippet lang=c :
+     * GType (*get_file_database_type)(void)
      * }
      */
-    public static MemorySegment get_default_database$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1352.const$1.get(seg);
+    public static MemorySegment get_file_database_type(MemorySegment struct) {
+        return struct.get(get_file_database_type$LAYOUT, get_file_database_type$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GTlsDatabase* (*get_default_database)(struct _GTlsBackend*);
+     * {@snippet lang=c :
+     * GType (*get_file_database_type)(void)
      * }
      */
-    public static void get_default_database$set(MemorySegment seg, MemorySegment x) {
-        constants$1352.const$1.set(seg, x);
+    public static void get_file_database_type(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_file_database_type$LAYOUT, get_file_database_type$OFFSET, fieldValue);
     }
-    public static MemorySegment get_default_database$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1352.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_default_database$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1352.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_default_database get_default_database(MemorySegment segment, Arena scope) {
-        return get_default_database.ofAddress(get_default_database$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*supports_dtls)(struct _GTlsBackend*);
+     * {@snippet lang=c :
+     * GTlsDatabase *(*get_default_database)(GTlsBackend *)
      * }
      */
-    public interface supports_dtls {
+    public class get_default_database {
 
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(supports_dtls fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1352.const$2, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static supports_dtls ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_default_database.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_default_database.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle supports_dtls$VH() {
-        return constants$1352.const$3;
+    private static final AddressLayout get_default_database$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_default_database"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTlsDatabase *(*get_default_database)(GTlsBackend *)
+     * }
+     */
+    public static final AddressLayout get_default_database$layout() {
+        return get_default_database$LAYOUT;
     }
+
+    private static final long get_default_database$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTlsDatabase *(*get_default_database)(GTlsBackend *)
+     * }
+     */
+    public static final long get_default_database$offset() {
+        return get_default_database$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*supports_dtls)(struct _GTlsBackend*);
+     * {@snippet lang=c :
+     * GTlsDatabase *(*get_default_database)(GTlsBackend *)
      * }
      */
-    public static MemorySegment supports_dtls$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1352.const$3.get(seg);
+    public static MemorySegment get_default_database(MemorySegment struct) {
+        return struct.get(get_default_database$LAYOUT, get_default_database$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*supports_dtls)(struct _GTlsBackend*);
+     * {@snippet lang=c :
+     * GTlsDatabase *(*get_default_database)(GTlsBackend *)
      * }
      */
-    public static void supports_dtls$set(MemorySegment seg, MemorySegment x) {
-        constants$1352.const$3.set(seg, x);
+    public static void get_default_database(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_default_database$LAYOUT, get_default_database$OFFSET, fieldValue);
     }
-    public static MemorySegment supports_dtls$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1352.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void supports_dtls$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1352.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static supports_dtls supports_dtls(MemorySegment segment, Arena scope) {
-        return supports_dtls.ofAddress(supports_dtls$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * unsigned long (*get_dtls_client_connection_type)();
+     * {@snippet lang=c :
+     * gboolean (*supports_dtls)(GTlsBackend *)
      * }
      */
-    public interface get_dtls_client_connection_type {
+    public class supports_dtls {
 
-        long apply();
-        static MemorySegment allocate(get_dtls_client_connection_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1352.const$4, fi, constants$3.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static get_dtls_client_connection_type ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    return (long)constants$513.const$0.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(supports_dtls.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(supports_dtls.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_dtls_client_connection_type$VH() {
-        return constants$1352.const$5;
+    private static final AddressLayout supports_dtls$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("supports_dtls"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*supports_dtls)(GTlsBackend *)
+     * }
+     */
+    public static final AddressLayout supports_dtls$layout() {
+        return supports_dtls$LAYOUT;
     }
+
+    private static final long supports_dtls$OFFSET = 64;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*supports_dtls)(GTlsBackend *)
+     * }
+     */
+    public static final long supports_dtls$offset() {
+        return supports_dtls$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * unsigned long (*get_dtls_client_connection_type)();
+     * {@snippet lang=c :
+     * gboolean (*supports_dtls)(GTlsBackend *)
      * }
      */
-    public static MemorySegment get_dtls_client_connection_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1352.const$5.get(seg);
+    public static MemorySegment supports_dtls(MemorySegment struct) {
+        return struct.get(supports_dtls$LAYOUT, supports_dtls$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * unsigned long (*get_dtls_client_connection_type)();
+     * {@snippet lang=c :
+     * gboolean (*supports_dtls)(GTlsBackend *)
      * }
      */
-    public static void get_dtls_client_connection_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1352.const$5.set(seg, x);
+    public static void supports_dtls(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(supports_dtls$LAYOUT, supports_dtls$OFFSET, fieldValue);
     }
-    public static MemorySegment get_dtls_client_connection_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1352.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_dtls_client_connection_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1352.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_dtls_client_connection_type get_dtls_client_connection_type(MemorySegment segment, Arena scope) {
-        return get_dtls_client_connection_type.ofAddress(get_dtls_client_connection_type$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * unsigned long (*get_dtls_server_connection_type)();
+     * {@snippet lang=c :
+     * GType (*get_dtls_client_connection_type)(void)
      * }
      */
-    public interface get_dtls_server_connection_type {
+    public class get_dtls_client_connection_type {
 
-        long apply();
-        static MemorySegment allocate(get_dtls_server_connection_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1353.const$0, fi, constants$3.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            long apply();
         }
-        static get_dtls_server_connection_type ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    return (long)constants$513.const$0.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG);
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_dtls_client_connection_type.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_dtls_client_connection_type.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static long invoke(MemorySegment funcPtr) {
+            try {
+                return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_dtls_server_connection_type$VH() {
-        return constants$1353.const$1;
+    private static final AddressLayout get_dtls_client_connection_type$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_dtls_client_connection_type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GType (*get_dtls_client_connection_type)(void)
+     * }
+     */
+    public static final AddressLayout get_dtls_client_connection_type$layout() {
+        return get_dtls_client_connection_type$LAYOUT;
     }
+
+    private static final long get_dtls_client_connection_type$OFFSET = 72;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GType (*get_dtls_client_connection_type)(void)
+     * }
+     */
+    public static final long get_dtls_client_connection_type$offset() {
+        return get_dtls_client_connection_type$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * unsigned long (*get_dtls_server_connection_type)();
+     * {@snippet lang=c :
+     * GType (*get_dtls_client_connection_type)(void)
      * }
      */
-    public static MemorySegment get_dtls_server_connection_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1353.const$1.get(seg);
+    public static MemorySegment get_dtls_client_connection_type(MemorySegment struct) {
+        return struct.get(get_dtls_client_connection_type$LAYOUT, get_dtls_client_connection_type$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * unsigned long (*get_dtls_server_connection_type)();
+     * {@snippet lang=c :
+     * GType (*get_dtls_client_connection_type)(void)
      * }
      */
-    public static void get_dtls_server_connection_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1353.const$1.set(seg, x);
+    public static void get_dtls_client_connection_type(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_dtls_client_connection_type$LAYOUT, get_dtls_client_connection_type$OFFSET, fieldValue);
     }
-    public static MemorySegment get_dtls_server_connection_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1353.const$1.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * GType (*get_dtls_server_connection_type)(void)
+     * }
+     */
+    public class get_dtls_server_connection_type {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            long apply();
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG);
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_dtls_server_connection_type.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_dtls_server_connection_type.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static long invoke(MemorySegment funcPtr) {
+            try {
+                return (long) DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void get_dtls_server_connection_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1353.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout get_dtls_server_connection_type$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_dtls_server_connection_type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GType (*get_dtls_server_connection_type)(void)
+     * }
+     */
+    public static final AddressLayout get_dtls_server_connection_type$layout() {
+        return get_dtls_server_connection_type$LAYOUT;
     }
-    public static get_dtls_server_connection_type get_dtls_server_connection_type(MemorySegment segment, Arena scope) {
-        return get_dtls_server_connection_type.ofAddress(get_dtls_server_connection_type$get(segment), scope);
+
+    private static final long get_dtls_server_connection_type$OFFSET = 80;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GType (*get_dtls_server_connection_type)(void)
+     * }
+     */
+    public static final long get_dtls_server_connection_type$offset() {
+        return get_dtls_server_connection_type$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GType (*get_dtls_server_connection_type)(void)
+     * }
+     */
+    public static MemorySegment get_dtls_server_connection_type(MemorySegment struct) {
+        return struct.get(get_dtls_server_connection_type$LAYOUT, get_dtls_server_connection_type$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GType (*get_dtls_server_connection_type)(void)
+     * }
+     */
+    public static void get_dtls_server_connection_type(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_dtls_server_connection_type$LAYOUT, get_dtls_server_connection_type$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

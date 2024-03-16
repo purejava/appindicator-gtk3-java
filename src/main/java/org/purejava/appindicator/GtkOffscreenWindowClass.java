@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkOffscreenWindowClass GtkOffscreenWindowClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkOffscreenWindowClass GtkOffscreenWindowClass
  * }
  */
-public final class GtkOffscreenWindowClass extends _GtkOffscreenWindowClass {
+public class GtkOffscreenWindowClass extends _GtkOffscreenWindowClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkOffscreenWindowClass() {}
+    GtkOffscreenWindowClass() {
+        // Should not be called directly
+    }
 }
-
 

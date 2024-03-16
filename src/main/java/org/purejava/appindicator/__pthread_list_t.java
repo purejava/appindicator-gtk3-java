@@ -2,15 +2,28 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct __pthread_internal_list __pthread_list_t;
+ * {@snippet lang=c :
+ * typedef struct __pthread_internal_list {
+ *     struct __pthread_internal_list *__prev;
+ *     struct __pthread_internal_list *__next;
+ * } __pthread_list_t
  * }
  */
-public final class __pthread_list_t extends __pthread_internal_list {
+public class __pthread_list_t extends __pthread_internal_list {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private __pthread_list_t() {}
+    __pthread_list_t() {
+        // Should not be called directly
+    }
 }
-
 

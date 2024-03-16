@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GVfs GVfs;
+ * {@snippet lang=c :
+ * typedef struct _GVfs GVfs
  * }
  */
-public final class GVfs extends _GVfs {
+public class GVfs extends _GVfs {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GVfs() {}
+    GVfs() {
+        // Should not be called directly
+    }
 }
-
 

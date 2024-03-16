@@ -2,194 +2,297 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GDBusSubtreeVTable {
- *     char** (*enumerate)(struct _GDBusConnection*,char*,char*,void*);
- *     struct _GDBusInterfaceInfo** (*introspect)(struct _GDBusConnection*,char*,char*,char*,void*);
- *     struct _GDBusInterfaceVTable* (*dispatch)(struct _GDBusConnection*,char*,char*,char*,char*,void**,void*);
- *     void* padding[8];
- * };
+ *     GDBusSubtreeEnumerateFunc enumerate;
+ *     GDBusSubtreeIntrospectFunc introspect;
+ *     GDBusSubtreeDispatchFunc dispatch;
+ *     gpointer padding[8];
+ * }
  * }
  */
 public class _GDBusSubtreeVTable {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$869.const$3;
+    _GDBusSubtreeVTable() {
+        // Should not be called directly
     }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("enumerate"),
+        app_indicator_h.C_POINTER.withName("introspect"),
+        app_indicator_h.C_POINTER.withName("dispatch"),
+        MemoryLayout.sequenceLayout(8, app_indicator_h.C_POINTER).withName("padding")
+    ).withName("_GDBusSubtreeVTable");
+
     /**
-     * {@snippet :
- * char** (*enumerate)(struct _GDBusConnection*,char*,char*,void*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final AddressLayout enumerate$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("enumerate"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GDBusSubtreeEnumerateFunc enumerate
      * }
      */
-    public interface enumerate {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
-        static MemorySegment allocate(enumerate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$869.const$4, fi, constants$39.const$1, scope);
-        }
-        static enumerate ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$868.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout enumerate$layout() {
+        return enumerate$LAYOUT;
     }
 
-    public static VarHandle enumerate$VH() {
-        return constants$869.const$5;
+    private static final long enumerate$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GDBusSubtreeEnumerateFunc enumerate
+     * }
+     */
+    public static final long enumerate$offset() {
+        return enumerate$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char** (*enumerate)(struct _GDBusConnection*,char*,char*,void*);
+     * {@snippet lang=c :
+     * GDBusSubtreeEnumerateFunc enumerate
      * }
      */
-    public static MemorySegment enumerate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$869.const$5.get(seg);
+    public static MemorySegment enumerate(MemorySegment struct) {
+        return struct.get(enumerate$LAYOUT, enumerate$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char** (*enumerate)(struct _GDBusConnection*,char*,char*,void*);
+     * {@snippet lang=c :
+     * GDBusSubtreeEnumerateFunc enumerate
      * }
      */
-    public static void enumerate$set(MemorySegment seg, MemorySegment x) {
-        constants$869.const$5.set(seg, x);
+    public static void enumerate(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(enumerate$LAYOUT, enumerate$OFFSET, fieldValue);
     }
-    public static MemorySegment enumerate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$869.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void enumerate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$869.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static enumerate enumerate(MemorySegment segment, Arena scope) {
-        return enumerate.ofAddress(enumerate$get(segment), scope);
-    }
+
+    private static final AddressLayout introspect$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("introspect"));
+
     /**
-     * {@snippet :
- * struct _GDBusInterfaceInfo** (*introspect)(struct _GDBusConnection*,char*,char*,char*,void*);
+     * Layout for field:
+     * {@snippet lang=c :
+     * GDBusSubtreeIntrospectFunc introspect
      * }
      */
-    public interface introspect {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(introspect fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$870.const$0, fi, constants$331.const$5, scope);
-        }
-        static introspect ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$869.const$1.invokeExact(symbol, _connection, _sender, _object_path, _node, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout introspect$layout() {
+        return introspect$LAYOUT;
     }
 
-    public static VarHandle introspect$VH() {
-        return constants$870.const$1;
+    private static final long introspect$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GDBusSubtreeIntrospectFunc introspect
+     * }
+     */
+    public static final long introspect$offset() {
+        return introspect$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GDBusInterfaceInfo** (*introspect)(struct _GDBusConnection*,char*,char*,char*,void*);
+     * {@snippet lang=c :
+     * GDBusSubtreeIntrospectFunc introspect
      * }
      */
-    public static MemorySegment introspect$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$870.const$1.get(seg);
+    public static MemorySegment introspect(MemorySegment struct) {
+        return struct.get(introspect$LAYOUT, introspect$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GDBusInterfaceInfo** (*introspect)(struct _GDBusConnection*,char*,char*,char*,void*);
+     * {@snippet lang=c :
+     * GDBusSubtreeIntrospectFunc introspect
      * }
      */
-    public static void introspect$set(MemorySegment seg, MemorySegment x) {
-        constants$870.const$1.set(seg, x);
+    public static void introspect(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(introspect$LAYOUT, introspect$OFFSET, fieldValue);
     }
-    public static MemorySegment introspect$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$870.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void introspect$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$870.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static introspect introspect(MemorySegment segment, Arena scope) {
-        return introspect.ofAddress(introspect$get(segment), scope);
-    }
+
+    private static final AddressLayout dispatch$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("dispatch"));
+
     /**
-     * {@snippet :
- * struct _GDBusInterfaceVTable* (*dispatch)(struct _GDBusConnection*,char*,char*,char*,char*,void**,void*);
+     * Layout for field:
+     * {@snippet lang=c :
+     * GDBusSubtreeDispatchFunc dispatch
      * }
      */
-    public interface dispatch {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment out_user_data, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(dispatch fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$870.const$2, fi, constants$496.const$1, scope);
-        }
-        static dispatch ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _out_user_data, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$866.const$1.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _node, _out_user_data, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout dispatch$layout() {
+        return dispatch$LAYOUT;
     }
 
-    public static VarHandle dispatch$VH() {
-        return constants$870.const$3;
+    private static final long dispatch$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GDBusSubtreeDispatchFunc dispatch
+     * }
+     */
+    public static final long dispatch$offset() {
+        return dispatch$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GDBusInterfaceVTable* (*dispatch)(struct _GDBusConnection*,char*,char*,char*,char*,void**,void*);
+     * {@snippet lang=c :
+     * GDBusSubtreeDispatchFunc dispatch
      * }
      */
-    public static MemorySegment dispatch$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$870.const$3.get(seg);
+    public static MemorySegment dispatch(MemorySegment struct) {
+        return struct.get(dispatch$LAYOUT, dispatch$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GDBusInterfaceVTable* (*dispatch)(struct _GDBusConnection*,char*,char*,char*,char*,void**,void*);
+     * {@snippet lang=c :
+     * GDBusSubtreeDispatchFunc dispatch
      * }
      */
-    public static void dispatch$set(MemorySegment seg, MemorySegment x) {
-        constants$870.const$3.set(seg, x);
+    public static void dispatch(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(dispatch$LAYOUT, dispatch$OFFSET, fieldValue);
     }
-    public static MemorySegment dispatch$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$870.const$3.get(seg.asSlice(index*sizeof()));
+
+    private static final SequenceLayout padding$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("padding"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static final SequenceLayout padding$layout() {
+        return padding$LAYOUT;
     }
-    public static void dispatch$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$870.const$3.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long padding$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static final long padding$offset() {
+        return padding$OFFSET;
     }
-    public static dispatch dispatch(MemorySegment segment, Arena scope) {
-        return dispatch.ofAddress(dispatch$get(segment), scope);
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct) {
+        return struct.asSlice(padding$OFFSET, padding$LAYOUT.byteSize());
     }
-    public static MemorySegment padding$slice(MemorySegment seg) {
-        return seg.asSlice(24, 64);
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static void padding(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, padding$OFFSET, padding$LAYOUT.byteSize());
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    private static long[] padding$DIMS = { 8 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static long[] padding$dimensions() {
+        return padding$DIMS;
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    private static final VarHandle padding$ELEM_HANDLE = padding$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct, long index0) {
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

@@ -2,29 +2,66 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * struct _GDBusMessage* (*GDBusMessageFilterFunction)(struct _GDBusConnection* connection,struct _GDBusMessage* message,int incoming,void* user_data);
+ * {@snippet lang=c :
+ * typedef GDBusMessage *(*GDBusMessageFilterFunction)(GDBusConnection *, GDBusMessage *, gboolean, gpointer)
  * }
  */
-public interface GDBusMessageFilterFunction {
+public class GDBusMessageFilterFunction {
 
-    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment message, int incoming, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GDBusMessageFilterFunction fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$872.const$3, fi, constants$484.const$1, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        MemorySegment apply(MemorySegment connection, MemorySegment message, int incoming, MemorySegment user_data);
     }
-    static GDBusMessageFilterFunction ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _message, int _incoming, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                return (java.lang.foreign.MemorySegment)constants$872.const$4.invokeExact(symbol, _connection, _message, _incoming, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GDBusMessageFilterFunction.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GDBusMessageFilterFunction.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment connection, MemorySegment message, int incoming, MemorySegment user_data) {
+        try {
+            return (MemorySegment) DOWN$MH.invokeExact(funcPtr, connection, message, incoming, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

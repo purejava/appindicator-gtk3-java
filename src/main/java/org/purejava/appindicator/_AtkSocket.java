@@ -2,60 +2,167 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _AtkSocket {
- *     struct _AtkObject parent;
- *     char* embedded_plug_id;
- * };
+ *     AtkObject parent;
+ *     gchar *embedded_plug_id;
+ * }
  * }
  */
 public class _AtkSocket {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2065.const$2;
+    _AtkSocket() {
+        // Should not be called directly
     }
-    public static MemorySegment parent$slice(MemorySegment seg) {
-        return seg.asSlice(0, 72);
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _AtkObject.layout().withName("parent"),
+        app_indicator_h.C_POINTER.withName("embedded_plug_id")
+    ).withName("_AtkSocket");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
-    public static VarHandle embedded_plug_id$VH() {
-        return constants$2065.const$3;
+
+    private static final GroupLayout parent$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * AtkObject parent
+     * }
+     */
+    public static final GroupLayout parent$layout() {
+        return parent$LAYOUT;
     }
+
+    private static final long parent$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * AtkObject parent
+     * }
+     */
+    public static final long parent$offset() {
+        return parent$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* embedded_plug_id;
+     * {@snippet lang=c :
+     * AtkObject parent
      * }
      */
-    public static MemorySegment embedded_plug_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2065.const$3.get(seg);
+    public static MemorySegment parent(MemorySegment struct) {
+        return struct.asSlice(parent$OFFSET, parent$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* embedded_plug_id;
+     * {@snippet lang=c :
+     * AtkObject parent
      * }
      */
-    public static void embedded_plug_id$set(MemorySegment seg, MemorySegment x) {
-        constants$2065.const$3.set(seg, x);
+    public static void parent(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent$OFFSET, parent$LAYOUT.byteSize());
     }
-    public static MemorySegment embedded_plug_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2065.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void embedded_plug_id$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2065.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final AddressLayout embedded_plug_id$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("embedded_plug_id"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *embedded_plug_id
+     * }
+     */
+    public static final AddressLayout embedded_plug_id$layout() {
+        return embedded_plug_id$LAYOUT;
+    }
+
+    private static final long embedded_plug_id$OFFSET = 72;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *embedded_plug_id
+     * }
+     */
+    public static final long embedded_plug_id$offset() {
+        return embedded_plug_id$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *embedded_plug_id
+     * }
+     */
+    public static MemorySegment embedded_plug_id(MemorySegment struct) {
+        return struct.get(embedded_plug_id$LAYOUT, embedded_plug_id$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *embedded_plug_id
+     * }
+     */
+    public static void embedded_plug_id(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(embedded_plug_id$LAYOUT, embedded_plug_id$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GArray GArray;
+ * {@snippet lang=c :
+ * typedef struct _GArray GArray
  * }
  */
-public final class GArray extends _GArray {
+public class GArray extends _GArray {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GArray() {}
+    GArray() {
+        // Should not be called directly
+    }
 }
-
 

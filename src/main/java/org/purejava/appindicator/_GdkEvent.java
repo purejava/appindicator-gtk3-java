@@ -2,152 +2,1226 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * union _GdkEvent {
- *     enum GdkEventType type;
- *     struct _GdkEventAny any;
- *     struct _GdkEventExpose expose;
- *     struct _GdkEventVisibility visibility;
- *     struct _GdkEventMotion motion;
- *     struct _GdkEventButton button;
- *     struct _GdkEventTouch touch;
- *     struct _GdkEventScroll scroll;
- *     struct _GdkEventKey key;
- *     struct _GdkEventCrossing crossing;
- *     struct _GdkEventFocus focus_change;
- *     struct _GdkEventConfigure configure;
- *     struct _GdkEventProperty property;
- *     struct _GdkEventSelection selection;
- *     struct _GdkEventOwnerChange owner_change;
- *     struct _GdkEventProximity proximity;
- *     struct _GdkEventDND dnd;
- *     struct _GdkEventWindowState window_state;
- *     struct _GdkEventSetting setting;
- *     struct _GdkEventGrabBroken grab_broken;
- *     struct _GdkEventTouchpadSwipe touchpad_swipe;
- *     struct _GdkEventTouchpadPinch touchpad_pinch;
- *     struct _GdkEventPadButton pad_button;
- *     struct _GdkEventPadAxis pad_axis;
- *     struct _GdkEventPadGroupMode pad_group_mode;
- * };
+ *     GdkEventType type;
+ *     GdkEventAny any;
+ *     GdkEventExpose expose;
+ *     GdkEventVisibility visibility;
+ *     GdkEventMotion motion;
+ *     GdkEventButton button;
+ *     GdkEventTouch touch;
+ *     GdkEventScroll scroll;
+ *     GdkEventKey key;
+ *     GdkEventCrossing crossing;
+ *     GdkEventFocus focus_change;
+ *     GdkEventConfigure configure;
+ *     GdkEventProperty property;
+ *     GdkEventSelection selection;
+ *     GdkEventOwnerChange owner_change;
+ *     GdkEventProximity proximity;
+ *     GdkEventDND dnd;
+ *     GdkEventWindowState window_state;
+ *     GdkEventSetting setting;
+ *     GdkEventGrabBroken grab_broken;
+ *     GdkEventTouchpadSwipe touchpad_swipe;
+ *     GdkEventTouchpadPinch touchpad_pinch;
+ *     GdkEventPadButton pad_button;
+ *     GdkEventPadAxis pad_axis;
+ *     GdkEventPadGroupMode pad_group_mode;
+ * }
  * }
  */
 public class _GdkEvent {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1808.const$4;
+    _GdkEvent() {
+        // Should not be called directly
     }
-    public static VarHandle type$VH() {
-        return constants$1808.const$5;
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
+        app_indicator_h.C_INT.withName("type"),
+        _GdkEventAny.layout().withName("any"),
+        _GdkEventExpose.layout().withName("expose"),
+        _GdkEventVisibility.layout().withName("visibility"),
+        _GdkEventMotion.layout().withName("motion"),
+        _GdkEventButton.layout().withName("button"),
+        _GdkEventTouch.layout().withName("touch"),
+        _GdkEventScroll.layout().withName("scroll"),
+        _GdkEventKey.layout().withName("key"),
+        _GdkEventCrossing.layout().withName("crossing"),
+        _GdkEventFocus.layout().withName("focus_change"),
+        _GdkEventConfigure.layout().withName("configure"),
+        _GdkEventProperty.layout().withName("property"),
+        _GdkEventSelection.layout().withName("selection"),
+        _GdkEventOwnerChange.layout().withName("owner_change"),
+        _GdkEventProximity.layout().withName("proximity"),
+        _GdkEventDND.layout().withName("dnd"),
+        _GdkEventWindowState.layout().withName("window_state"),
+        _GdkEventSetting.layout().withName("setting"),
+        _GdkEventGrabBroken.layout().withName("grab_broken"),
+        _GdkEventTouchpadSwipe.layout().withName("touchpad_swipe"),
+        _GdkEventTouchpadPinch.layout().withName("touchpad_pinch"),
+        _GdkEventPadButton.layout().withName("pad_button"),
+        _GdkEventPadAxis.layout().withName("pad_axis"),
+        _GdkEventPadGroupMode.layout().withName("pad_group_mode")
+    ).withName("_GdkEvent");
+
+    /**
+     * The layout of this union
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
+
+    private static final OfInt type$LAYOUT = (OfInt)$LAYOUT.select(groupElement("type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventType type
+     * }
+     */
+    public static final OfInt type$layout() {
+        return type$LAYOUT;
+    }
+
+    private static final long type$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventType type
+     * }
+     */
+    public static final long type$offset() {
+        return type$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GdkEventType type;
+     * {@snippet lang=c :
+     * GdkEventType type
      * }
      */
-    public static int type$get(MemorySegment seg) {
-        return (int)constants$1808.const$5.get(seg);
+    public static int type(MemorySegment union) {
+        return union.get(type$LAYOUT, type$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GdkEventType type;
+     * {@snippet lang=c :
+     * GdkEventType type
      * }
      */
-    public static void type$set(MemorySegment seg, int x) {
-        constants$1808.const$5.set(seg, x);
+    public static void type(MemorySegment union, int fieldValue) {
+        union.set(type$LAYOUT, type$OFFSET, fieldValue);
     }
-    public static int type$get(MemorySegment seg, long index) {
-        return (int)constants$1808.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void type$set(MemorySegment seg, long index, int x) {
-        constants$1808.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment any$slice(MemorySegment seg) {
-        return seg.asSlice(0, 24);
-    }
-    public static MemorySegment expose$slice(MemorySegment seg) {
-        return seg.asSlice(0, 56);
-    }
-    public static MemorySegment visibility$slice(MemorySegment seg) {
-        return seg.asSlice(0, 24);
-    }
-    public static MemorySegment motion$slice(MemorySegment seg) {
-        return seg.asSlice(0, 80);
-    }
-    public static MemorySegment button$slice(MemorySegment seg) {
-        return seg.asSlice(0, 80);
-    }
-    public static MemorySegment touch$slice(MemorySegment seg) {
-        return seg.asSlice(0, 96);
-    }
-    public static MemorySegment scroll$slice(MemorySegment seg) {
-        return seg.asSlice(0, 96);
-    }
-    public static MemorySegment key$slice(MemorySegment seg) {
-        return seg.asSlice(0, 56);
-    }
-    public static MemorySegment crossing$slice(MemorySegment seg) {
-        return seg.asSlice(0, 88);
-    }
-    public static MemorySegment focus_change$slice(MemorySegment seg) {
-        return seg.asSlice(0, 24);
-    }
-    public static MemorySegment configure$slice(MemorySegment seg) {
-        return seg.asSlice(0, 40);
-    }
-    public static MemorySegment property$slice(MemorySegment seg) {
-        return seg.asSlice(0, 40);
-    }
-    public static MemorySegment selection$slice(MemorySegment seg) {
-        return seg.asSlice(0, 64);
-    }
-    public static MemorySegment owner_change$slice(MemorySegment seg) {
-        return seg.asSlice(0, 56);
-    }
-    public static MemorySegment proximity$slice(MemorySegment seg) {
-        return seg.asSlice(0, 32);
-    }
-    public static MemorySegment dnd$slice(MemorySegment seg) {
-        return seg.asSlice(0, 40);
-    }
-    public static MemorySegment window_state$slice(MemorySegment seg) {
-        return seg.asSlice(0, 32);
-    }
-    public static MemorySegment setting$slice(MemorySegment seg) {
-        return seg.asSlice(0, 32);
-    }
-    public static MemorySegment grab_broken$slice(MemorySegment seg) {
-        return seg.asSlice(0, 40);
-    }
-    public static MemorySegment touchpad_swipe$slice(MemorySegment seg) {
-        return seg.asSlice(0, 80);
-    }
-    public static MemorySegment touchpad_pinch$slice(MemorySegment seg) {
-        return seg.asSlice(0, 96);
-    }
-    public static MemorySegment pad_button$slice(MemorySegment seg) {
-        return seg.asSlice(0, 40);
-    }
-    public static MemorySegment pad_axis$slice(MemorySegment seg) {
-        return seg.asSlice(0, 48);
-    }
-    public static MemorySegment pad_group_mode$slice(MemorySegment seg) {
-        return seg.asSlice(0, 32);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout any$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("any"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventAny any
+     * }
+     */
+    public static final GroupLayout any$layout() {
+        return any$LAYOUT;
+    }
+
+    private static final long any$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventAny any
+     * }
+     */
+    public static final long any$offset() {
+        return any$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventAny any
+     * }
+     */
+    public static MemorySegment any(MemorySegment union) {
+        return union.asSlice(any$OFFSET, any$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventAny any
+     * }
+     */
+    public static void any(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, any$OFFSET, any$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout expose$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("expose"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventExpose expose
+     * }
+     */
+    public static final GroupLayout expose$layout() {
+        return expose$LAYOUT;
+    }
+
+    private static final long expose$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventExpose expose
+     * }
+     */
+    public static final long expose$offset() {
+        return expose$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventExpose expose
+     * }
+     */
+    public static MemorySegment expose(MemorySegment union) {
+        return union.asSlice(expose$OFFSET, expose$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventExpose expose
+     * }
+     */
+    public static void expose(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, expose$OFFSET, expose$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout visibility$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("visibility"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventVisibility visibility
+     * }
+     */
+    public static final GroupLayout visibility$layout() {
+        return visibility$LAYOUT;
+    }
+
+    private static final long visibility$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventVisibility visibility
+     * }
+     */
+    public static final long visibility$offset() {
+        return visibility$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventVisibility visibility
+     * }
+     */
+    public static MemorySegment visibility(MemorySegment union) {
+        return union.asSlice(visibility$OFFSET, visibility$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventVisibility visibility
+     * }
+     */
+    public static void visibility(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, visibility$OFFSET, visibility$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout motion$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("motion"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventMotion motion
+     * }
+     */
+    public static final GroupLayout motion$layout() {
+        return motion$LAYOUT;
+    }
+
+    private static final long motion$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventMotion motion
+     * }
+     */
+    public static final long motion$offset() {
+        return motion$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventMotion motion
+     * }
+     */
+    public static MemorySegment motion(MemorySegment union) {
+        return union.asSlice(motion$OFFSET, motion$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventMotion motion
+     * }
+     */
+    public static void motion(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, motion$OFFSET, motion$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout button$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("button"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventButton button
+     * }
+     */
+    public static final GroupLayout button$layout() {
+        return button$LAYOUT;
+    }
+
+    private static final long button$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventButton button
+     * }
+     */
+    public static final long button$offset() {
+        return button$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventButton button
+     * }
+     */
+    public static MemorySegment button(MemorySegment union) {
+        return union.asSlice(button$OFFSET, button$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventButton button
+     * }
+     */
+    public static void button(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, button$OFFSET, button$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout touch$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("touch"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventTouch touch
+     * }
+     */
+    public static final GroupLayout touch$layout() {
+        return touch$LAYOUT;
+    }
+
+    private static final long touch$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventTouch touch
+     * }
+     */
+    public static final long touch$offset() {
+        return touch$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventTouch touch
+     * }
+     */
+    public static MemorySegment touch(MemorySegment union) {
+        return union.asSlice(touch$OFFSET, touch$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventTouch touch
+     * }
+     */
+    public static void touch(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, touch$OFFSET, touch$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout scroll$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("scroll"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventScroll scroll
+     * }
+     */
+    public static final GroupLayout scroll$layout() {
+        return scroll$LAYOUT;
+    }
+
+    private static final long scroll$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventScroll scroll
+     * }
+     */
+    public static final long scroll$offset() {
+        return scroll$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventScroll scroll
+     * }
+     */
+    public static MemorySegment scroll(MemorySegment union) {
+        return union.asSlice(scroll$OFFSET, scroll$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventScroll scroll
+     * }
+     */
+    public static void scroll(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, scroll$OFFSET, scroll$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout key$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("key"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventKey key
+     * }
+     */
+    public static final GroupLayout key$layout() {
+        return key$LAYOUT;
+    }
+
+    private static final long key$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventKey key
+     * }
+     */
+    public static final long key$offset() {
+        return key$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventKey key
+     * }
+     */
+    public static MemorySegment key(MemorySegment union) {
+        return union.asSlice(key$OFFSET, key$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventKey key
+     * }
+     */
+    public static void key(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, key$OFFSET, key$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout crossing$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("crossing"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventCrossing crossing
+     * }
+     */
+    public static final GroupLayout crossing$layout() {
+        return crossing$LAYOUT;
+    }
+
+    private static final long crossing$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventCrossing crossing
+     * }
+     */
+    public static final long crossing$offset() {
+        return crossing$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventCrossing crossing
+     * }
+     */
+    public static MemorySegment crossing(MemorySegment union) {
+        return union.asSlice(crossing$OFFSET, crossing$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventCrossing crossing
+     * }
+     */
+    public static void crossing(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, crossing$OFFSET, crossing$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout focus_change$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("focus_change"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventFocus focus_change
+     * }
+     */
+    public static final GroupLayout focus_change$layout() {
+        return focus_change$LAYOUT;
+    }
+
+    private static final long focus_change$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventFocus focus_change
+     * }
+     */
+    public static final long focus_change$offset() {
+        return focus_change$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventFocus focus_change
+     * }
+     */
+    public static MemorySegment focus_change(MemorySegment union) {
+        return union.asSlice(focus_change$OFFSET, focus_change$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventFocus focus_change
+     * }
+     */
+    public static void focus_change(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, focus_change$OFFSET, focus_change$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout configure$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("configure"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventConfigure configure
+     * }
+     */
+    public static final GroupLayout configure$layout() {
+        return configure$LAYOUT;
+    }
+
+    private static final long configure$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventConfigure configure
+     * }
+     */
+    public static final long configure$offset() {
+        return configure$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventConfigure configure
+     * }
+     */
+    public static MemorySegment configure(MemorySegment union) {
+        return union.asSlice(configure$OFFSET, configure$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventConfigure configure
+     * }
+     */
+    public static void configure(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, configure$OFFSET, configure$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout property$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("property"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventProperty property
+     * }
+     */
+    public static final GroupLayout property$layout() {
+        return property$LAYOUT;
+    }
+
+    private static final long property$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventProperty property
+     * }
+     */
+    public static final long property$offset() {
+        return property$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventProperty property
+     * }
+     */
+    public static MemorySegment property(MemorySegment union) {
+        return union.asSlice(property$OFFSET, property$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventProperty property
+     * }
+     */
+    public static void property(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, property$OFFSET, property$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout selection$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("selection"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventSelection selection
+     * }
+     */
+    public static final GroupLayout selection$layout() {
+        return selection$LAYOUT;
+    }
+
+    private static final long selection$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventSelection selection
+     * }
+     */
+    public static final long selection$offset() {
+        return selection$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventSelection selection
+     * }
+     */
+    public static MemorySegment selection(MemorySegment union) {
+        return union.asSlice(selection$OFFSET, selection$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventSelection selection
+     * }
+     */
+    public static void selection(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, selection$OFFSET, selection$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout owner_change$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("owner_change"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventOwnerChange owner_change
+     * }
+     */
+    public static final GroupLayout owner_change$layout() {
+        return owner_change$LAYOUT;
+    }
+
+    private static final long owner_change$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventOwnerChange owner_change
+     * }
+     */
+    public static final long owner_change$offset() {
+        return owner_change$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventOwnerChange owner_change
+     * }
+     */
+    public static MemorySegment owner_change(MemorySegment union) {
+        return union.asSlice(owner_change$OFFSET, owner_change$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventOwnerChange owner_change
+     * }
+     */
+    public static void owner_change(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, owner_change$OFFSET, owner_change$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout proximity$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("proximity"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventProximity proximity
+     * }
+     */
+    public static final GroupLayout proximity$layout() {
+        return proximity$LAYOUT;
+    }
+
+    private static final long proximity$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventProximity proximity
+     * }
+     */
+    public static final long proximity$offset() {
+        return proximity$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventProximity proximity
+     * }
+     */
+    public static MemorySegment proximity(MemorySegment union) {
+        return union.asSlice(proximity$OFFSET, proximity$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventProximity proximity
+     * }
+     */
+    public static void proximity(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, proximity$OFFSET, proximity$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout dnd$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("dnd"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventDND dnd
+     * }
+     */
+    public static final GroupLayout dnd$layout() {
+        return dnd$LAYOUT;
+    }
+
+    private static final long dnd$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventDND dnd
+     * }
+     */
+    public static final long dnd$offset() {
+        return dnd$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventDND dnd
+     * }
+     */
+    public static MemorySegment dnd(MemorySegment union) {
+        return union.asSlice(dnd$OFFSET, dnd$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventDND dnd
+     * }
+     */
+    public static void dnd(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, dnd$OFFSET, dnd$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout window_state$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("window_state"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventWindowState window_state
+     * }
+     */
+    public static final GroupLayout window_state$layout() {
+        return window_state$LAYOUT;
+    }
+
+    private static final long window_state$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventWindowState window_state
+     * }
+     */
+    public static final long window_state$offset() {
+        return window_state$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventWindowState window_state
+     * }
+     */
+    public static MemorySegment window_state(MemorySegment union) {
+        return union.asSlice(window_state$OFFSET, window_state$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventWindowState window_state
+     * }
+     */
+    public static void window_state(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, window_state$OFFSET, window_state$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout setting$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("setting"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventSetting setting
+     * }
+     */
+    public static final GroupLayout setting$layout() {
+        return setting$LAYOUT;
+    }
+
+    private static final long setting$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventSetting setting
+     * }
+     */
+    public static final long setting$offset() {
+        return setting$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventSetting setting
+     * }
+     */
+    public static MemorySegment setting(MemorySegment union) {
+        return union.asSlice(setting$OFFSET, setting$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventSetting setting
+     * }
+     */
+    public static void setting(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, setting$OFFSET, setting$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout grab_broken$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("grab_broken"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventGrabBroken grab_broken
+     * }
+     */
+    public static final GroupLayout grab_broken$layout() {
+        return grab_broken$LAYOUT;
+    }
+
+    private static final long grab_broken$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventGrabBroken grab_broken
+     * }
+     */
+    public static final long grab_broken$offset() {
+        return grab_broken$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventGrabBroken grab_broken
+     * }
+     */
+    public static MemorySegment grab_broken(MemorySegment union) {
+        return union.asSlice(grab_broken$OFFSET, grab_broken$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventGrabBroken grab_broken
+     * }
+     */
+    public static void grab_broken(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, grab_broken$OFFSET, grab_broken$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout touchpad_swipe$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("touchpad_swipe"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventTouchpadSwipe touchpad_swipe
+     * }
+     */
+    public static final GroupLayout touchpad_swipe$layout() {
+        return touchpad_swipe$LAYOUT;
+    }
+
+    private static final long touchpad_swipe$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventTouchpadSwipe touchpad_swipe
+     * }
+     */
+    public static final long touchpad_swipe$offset() {
+        return touchpad_swipe$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventTouchpadSwipe touchpad_swipe
+     * }
+     */
+    public static MemorySegment touchpad_swipe(MemorySegment union) {
+        return union.asSlice(touchpad_swipe$OFFSET, touchpad_swipe$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventTouchpadSwipe touchpad_swipe
+     * }
+     */
+    public static void touchpad_swipe(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, touchpad_swipe$OFFSET, touchpad_swipe$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout touchpad_pinch$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("touchpad_pinch"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventTouchpadPinch touchpad_pinch
+     * }
+     */
+    public static final GroupLayout touchpad_pinch$layout() {
+        return touchpad_pinch$LAYOUT;
+    }
+
+    private static final long touchpad_pinch$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventTouchpadPinch touchpad_pinch
+     * }
+     */
+    public static final long touchpad_pinch$offset() {
+        return touchpad_pinch$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventTouchpadPinch touchpad_pinch
+     * }
+     */
+    public static MemorySegment touchpad_pinch(MemorySegment union) {
+        return union.asSlice(touchpad_pinch$OFFSET, touchpad_pinch$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventTouchpadPinch touchpad_pinch
+     * }
+     */
+    public static void touchpad_pinch(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, touchpad_pinch$OFFSET, touchpad_pinch$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout pad_button$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("pad_button"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventPadButton pad_button
+     * }
+     */
+    public static final GroupLayout pad_button$layout() {
+        return pad_button$LAYOUT;
+    }
+
+    private static final long pad_button$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventPadButton pad_button
+     * }
+     */
+    public static final long pad_button$offset() {
+        return pad_button$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventPadButton pad_button
+     * }
+     */
+    public static MemorySegment pad_button(MemorySegment union) {
+        return union.asSlice(pad_button$OFFSET, pad_button$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventPadButton pad_button
+     * }
+     */
+    public static void pad_button(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, pad_button$OFFSET, pad_button$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout pad_axis$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("pad_axis"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventPadAxis pad_axis
+     * }
+     */
+    public static final GroupLayout pad_axis$layout() {
+        return pad_axis$LAYOUT;
+    }
+
+    private static final long pad_axis$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventPadAxis pad_axis
+     * }
+     */
+    public static final long pad_axis$offset() {
+        return pad_axis$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventPadAxis pad_axis
+     * }
+     */
+    public static MemorySegment pad_axis(MemorySegment union) {
+        return union.asSlice(pad_axis$OFFSET, pad_axis$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventPadAxis pad_axis
+     * }
+     */
+    public static void pad_axis(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, pad_axis$OFFSET, pad_axis$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout pad_group_mode$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("pad_group_mode"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventPadGroupMode pad_group_mode
+     * }
+     */
+    public static final GroupLayout pad_group_mode$layout() {
+        return pad_group_mode$LAYOUT;
+    }
+
+    private static final long pad_group_mode$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventPadGroupMode pad_group_mode
+     * }
+     */
+    public static final long pad_group_mode$offset() {
+        return pad_group_mode$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventPadGroupMode pad_group_mode
+     * }
+     */
+    public static MemorySegment pad_group_mode(MemorySegment union) {
+        return union.asSlice(pad_group_mode$OFFSET, pad_group_mode$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventPadGroupMode pad_group_mode
+     * }
+     */
+    public static void pad_group_mode(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, pad_group_mode$OFFSET, pad_group_mode$LAYOUT.byteSize());
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this union
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

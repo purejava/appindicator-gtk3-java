@@ -2,460 +2,858 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GIOFuncs {
- *     enum GIOStatus (*io_read)(struct _GIOChannel*,char*,unsigned long,unsigned long*,struct _GError**);
- *     enum GIOStatus (*io_write)(struct _GIOChannel*,char*,unsigned long,unsigned long*,struct _GError**);
- *     enum GIOStatus (*io_seek)(struct _GIOChannel*,long,enum GSeekType,struct _GError**);
- *     enum GIOStatus (*io_close)(struct _GIOChannel*,struct _GError**);
- *     struct _GSource* (*io_create_watch)(struct _GIOChannel*,enum GIOCondition);
- *     void (*io_free)(struct _GIOChannel*);
- *     enum GIOStatus (*io_set_flags)(struct _GIOChannel*,enum GIOFlags,struct _GError**);
- *     enum GIOFlags (*io_get_flags)(struct _GIOChannel*);
- * };
+ *     GIOStatus (*io_read)(GIOChannel *, gchar *, gsize, gsize *, GError **);
+ *     GIOStatus (*io_write)(GIOChannel *, const gchar *, gsize, gsize *, GError **);
+ *     GIOStatus (*io_seek)(GIOChannel *, gint64, GSeekType, GError **);
+ *     GIOStatus (*io_close)(GIOChannel *, GError **);
+ *     GSource *(*io_create_watch)(GIOChannel *, GIOCondition);
+ *     void (*io_free)(GIOChannel *);
+ *     GIOStatus (*io_set_flags)(GIOChannel *, GIOFlags, GError **);
+ *     GIOFlags (*io_get_flags)(GIOChannel *);
+ * }
  * }
  */
 public class _GIOFuncs {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$316.const$4;
+    _GIOFuncs() {
+        // Should not be called directly
     }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("io_read"),
+        app_indicator_h.C_POINTER.withName("io_write"),
+        app_indicator_h.C_POINTER.withName("io_seek"),
+        app_indicator_h.C_POINTER.withName("io_close"),
+        app_indicator_h.C_POINTER.withName("io_create_watch"),
+        app_indicator_h.C_POINTER.withName("io_free"),
+        app_indicator_h.C_POINTER.withName("io_set_flags"),
+        app_indicator_h.C_POINTER.withName("io_get_flags")
+    ).withName("_GIOFuncs");
+
     /**
-     * {@snippet :
- * enum GIOStatus (*io_read)(struct _GIOChannel*,char*,unsigned long,unsigned long*,struct _GError**);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * GIOStatus (*io_read)(GIOChannel *, gchar *, gsize, gsize *, GError **)
      * }
      */
-    public interface io_read {
+    public class io_read {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(io_read fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$317.const$0, fi, constants$316.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static io_read ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
-                try {
-                    return (int)constants$317.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(io_read.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(io_read.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle io_read$VH() {
-        return constants$317.const$2;
+    private static final AddressLayout io_read$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("io_read"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIOStatus (*io_read)(GIOChannel *, gchar *, gsize, gsize *, GError **)
+     * }
+     */
+    public static final AddressLayout io_read$layout() {
+        return io_read$LAYOUT;
     }
+
+    private static final long io_read$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIOStatus (*io_read)(GIOChannel *, gchar *, gsize, gsize *, GError **)
+     * }
+     */
+    public static final long io_read$offset() {
+        return io_read$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GIOStatus (*io_read)(struct _GIOChannel*,char*,unsigned long,unsigned long*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_read)(GIOChannel *, gchar *, gsize, gsize *, GError **)
      * }
      */
-    public static MemorySegment io_read$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$317.const$2.get(seg);
+    public static MemorySegment io_read(MemorySegment struct) {
+        return struct.get(io_read$LAYOUT, io_read$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GIOStatus (*io_read)(struct _GIOChannel*,char*,unsigned long,unsigned long*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_read)(GIOChannel *, gchar *, gsize, gsize *, GError **)
      * }
      */
-    public static void io_read$set(MemorySegment seg, MemorySegment x) {
-        constants$317.const$2.set(seg, x);
+    public static void io_read(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(io_read$LAYOUT, io_read$OFFSET, fieldValue);
     }
-    public static MemorySegment io_read$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$317.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void io_read$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$317.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static io_read io_read(MemorySegment segment, Arena scope) {
-        return io_read.ofAddress(io_read$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GIOStatus (*io_write)(struct _GIOChannel*,char*,unsigned long,unsigned long*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_write)(GIOChannel *, const gchar *, gsize, gsize *, GError **)
      * }
      */
-    public interface io_write {
+    public class io_write {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(io_write fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$317.const$3, fi, constants$316.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static io_write ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
-                try {
-                    return (int)constants$317.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(io_write.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(io_write.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle io_write$VH() {
-        return constants$317.const$4;
+    private static final AddressLayout io_write$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("io_write"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIOStatus (*io_write)(GIOChannel *, const gchar *, gsize, gsize *, GError **)
+     * }
+     */
+    public static final AddressLayout io_write$layout() {
+        return io_write$LAYOUT;
     }
+
+    private static final long io_write$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIOStatus (*io_write)(GIOChannel *, const gchar *, gsize, gsize *, GError **)
+     * }
+     */
+    public static final long io_write$offset() {
+        return io_write$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GIOStatus (*io_write)(struct _GIOChannel*,char*,unsigned long,unsigned long*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_write)(GIOChannel *, const gchar *, gsize, gsize *, GError **)
      * }
      */
-    public static MemorySegment io_write$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$317.const$4.get(seg);
+    public static MemorySegment io_write(MemorySegment struct) {
+        return struct.get(io_write$LAYOUT, io_write$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GIOStatus (*io_write)(struct _GIOChannel*,char*,unsigned long,unsigned long*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_write)(GIOChannel *, const gchar *, gsize, gsize *, GError **)
      * }
      */
-    public static void io_write$set(MemorySegment seg, MemorySegment x) {
-        constants$317.const$4.set(seg, x);
+    public static void io_write(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(io_write$LAYOUT, io_write$OFFSET, fieldValue);
     }
-    public static MemorySegment io_write$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$317.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void io_write$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$317.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static io_write io_write(MemorySegment segment, Arena scope) {
-        return io_write.ofAddress(io_write$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GIOStatus (*io_seek)(struct _GIOChannel*,long,enum GSeekType,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_seek)(GIOChannel *, gint64, GSeekType, GError **)
      * }
      */
-    public interface io_seek {
+    public class io_seek {
 
-        int apply(java.lang.foreign.MemorySegment _x0, long _x1, int _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(io_seek fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$318.const$0, fi, constants$317.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, long _x1, int _x2, MemorySegment _x3);
         }
-        static io_seek ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, long __x1, int __x2, java.lang.foreign.MemorySegment __x3) -> {
-                try {
-                    return (int)constants$318.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(io_seek.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(io_seek.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, long _x1, int _x2, MemorySegment _x3) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle io_seek$VH() {
-        return constants$318.const$2;
+    private static final AddressLayout io_seek$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("io_seek"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIOStatus (*io_seek)(GIOChannel *, gint64, GSeekType, GError **)
+     * }
+     */
+    public static final AddressLayout io_seek$layout() {
+        return io_seek$LAYOUT;
     }
+
+    private static final long io_seek$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIOStatus (*io_seek)(GIOChannel *, gint64, GSeekType, GError **)
+     * }
+     */
+    public static final long io_seek$offset() {
+        return io_seek$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GIOStatus (*io_seek)(struct _GIOChannel*,long,enum GSeekType,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_seek)(GIOChannel *, gint64, GSeekType, GError **)
      * }
      */
-    public static MemorySegment io_seek$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$318.const$2.get(seg);
+    public static MemorySegment io_seek(MemorySegment struct) {
+        return struct.get(io_seek$LAYOUT, io_seek$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GIOStatus (*io_seek)(struct _GIOChannel*,long,enum GSeekType,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_seek)(GIOChannel *, gint64, GSeekType, GError **)
      * }
      */
-    public static void io_seek$set(MemorySegment seg, MemorySegment x) {
-        constants$318.const$2.set(seg, x);
+    public static void io_seek(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(io_seek$LAYOUT, io_seek$OFFSET, fieldValue);
     }
-    public static MemorySegment io_seek$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$318.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void io_seek$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$318.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static io_seek io_seek(MemorySegment segment, Arena scope) {
-        return io_seek.ofAddress(io_seek$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GIOStatus (*io_close)(struct _GIOChannel*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_close)(GIOChannel *, GError **)
      * }
      */
-    public interface io_close {
+    public class io_close {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(io_close fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$318.const$3, fi, constants$9.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static io_close ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
-                try {
-                    return (int)constants$12.const$1.invokeExact(symbol, __x0, __x1);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(io_close.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(io_close.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle io_close$VH() {
-        return constants$318.const$4;
+    private static final AddressLayout io_close$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("io_close"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIOStatus (*io_close)(GIOChannel *, GError **)
+     * }
+     */
+    public static final AddressLayout io_close$layout() {
+        return io_close$LAYOUT;
     }
+
+    private static final long io_close$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIOStatus (*io_close)(GIOChannel *, GError **)
+     * }
+     */
+    public static final long io_close$offset() {
+        return io_close$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GIOStatus (*io_close)(struct _GIOChannel*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_close)(GIOChannel *, GError **)
      * }
      */
-    public static MemorySegment io_close$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$318.const$4.get(seg);
+    public static MemorySegment io_close(MemorySegment struct) {
+        return struct.get(io_close$LAYOUT, io_close$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GIOStatus (*io_close)(struct _GIOChannel*,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_close)(GIOChannel *, GError **)
      * }
      */
-    public static void io_close$set(MemorySegment seg, MemorySegment x) {
-        constants$318.const$4.set(seg, x);
+    public static void io_close(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(io_close$LAYOUT, io_close$OFFSET, fieldValue);
     }
-    public static MemorySegment io_close$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$318.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void io_close$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$318.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static io_close io_close(MemorySegment segment, Arena scope) {
-        return io_close.ofAddress(io_close$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GSource* (*io_create_watch)(struct _GIOChannel*,enum GIOCondition);
+     * {@snippet lang=c :
+     * GSource *(*io_create_watch)(GIOChannel *, GIOCondition)
      * }
      */
-    public interface io_create_watch {
+    public class io_create_watch {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(io_create_watch fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$318.const$5, fi, constants$21.const$3, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, int _x1);
         }
-        static io_create_watch ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$319.const$0.invokeExact(symbol, __x0, __x1);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(io_create_watch.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(io_create_watch.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle io_create_watch$VH() {
-        return constants$319.const$1;
+    private static final AddressLayout io_create_watch$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("io_create_watch"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GSource *(*io_create_watch)(GIOChannel *, GIOCondition)
+     * }
+     */
+    public static final AddressLayout io_create_watch$layout() {
+        return io_create_watch$LAYOUT;
     }
+
+    private static final long io_create_watch$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GSource *(*io_create_watch)(GIOChannel *, GIOCondition)
+     * }
+     */
+    public static final long io_create_watch$offset() {
+        return io_create_watch$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GSource* (*io_create_watch)(struct _GIOChannel*,enum GIOCondition);
+     * {@snippet lang=c :
+     * GSource *(*io_create_watch)(GIOChannel *, GIOCondition)
      * }
      */
-    public static MemorySegment io_create_watch$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$319.const$1.get(seg);
+    public static MemorySegment io_create_watch(MemorySegment struct) {
+        return struct.get(io_create_watch$LAYOUT, io_create_watch$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GSource* (*io_create_watch)(struct _GIOChannel*,enum GIOCondition);
+     * {@snippet lang=c :
+     * GSource *(*io_create_watch)(GIOChannel *, GIOCondition)
      * }
      */
-    public static void io_create_watch$set(MemorySegment seg, MemorySegment x) {
-        constants$319.const$1.set(seg, x);
+    public static void io_create_watch(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(io_create_watch$LAYOUT, io_create_watch$OFFSET, fieldValue);
     }
-    public static MemorySegment io_create_watch$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$319.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void io_create_watch$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$319.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static io_create_watch io_create_watch(MemorySegment segment, Arena scope) {
-        return io_create_watch.ofAddress(io_create_watch$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*io_free)(struct _GIOChannel*);
+     * {@snippet lang=c :
+     * void (*io_free)(GIOChannel *)
      * }
      */
-    public interface io_free {
+    public class io_free {
 
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(io_free fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$319.const$2, fi, constants$13.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static io_free ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(io_free.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(io_free.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle io_free$VH() {
-        return constants$319.const$3;
+    private static final AddressLayout io_free$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("io_free"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*io_free)(GIOChannel *)
+     * }
+     */
+    public static final AddressLayout io_free$layout() {
+        return io_free$LAYOUT;
     }
+
+    private static final long io_free$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*io_free)(GIOChannel *)
+     * }
+     */
+    public static final long io_free$offset() {
+        return io_free$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*io_free)(struct _GIOChannel*);
+     * {@snippet lang=c :
+     * void (*io_free)(GIOChannel *)
      * }
      */
-    public static MemorySegment io_free$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$319.const$3.get(seg);
+    public static MemorySegment io_free(MemorySegment struct) {
+        return struct.get(io_free$LAYOUT, io_free$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*io_free)(struct _GIOChannel*);
+     * {@snippet lang=c :
+     * void (*io_free)(GIOChannel *)
      * }
      */
-    public static void io_free$set(MemorySegment seg, MemorySegment x) {
-        constants$319.const$3.set(seg, x);
+    public static void io_free(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(io_free$LAYOUT, io_free$OFFSET, fieldValue);
     }
-    public static MemorySegment io_free$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$319.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void io_free$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$319.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static io_free io_free(MemorySegment segment, Arena scope) {
-        return io_free.ofAddress(io_free$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GIOStatus (*io_set_flags)(struct _GIOChannel*,enum GIOFlags,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_set_flags)(GIOChannel *, GIOFlags, GError **)
      * }
      */
-    public interface io_set_flags {
+    public class io_set_flags {
 
-        int apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(io_set_flags fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$319.const$4, fi, constants$150.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, int _x1, MemorySegment _x2);
         }
-        static io_set_flags ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
-                try {
-                    return (int)constants$316.const$3.invokeExact(symbol, __x0, __x1, __x2);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(io_set_flags.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(io_set_flags.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle io_set_flags$VH() {
-        return constants$319.const$5;
+    private static final AddressLayout io_set_flags$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("io_set_flags"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIOStatus (*io_set_flags)(GIOChannel *, GIOFlags, GError **)
+     * }
+     */
+    public static final AddressLayout io_set_flags$layout() {
+        return io_set_flags$LAYOUT;
     }
+
+    private static final long io_set_flags$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIOStatus (*io_set_flags)(GIOChannel *, GIOFlags, GError **)
+     * }
+     */
+    public static final long io_set_flags$offset() {
+        return io_set_flags$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GIOStatus (*io_set_flags)(struct _GIOChannel*,enum GIOFlags,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_set_flags)(GIOChannel *, GIOFlags, GError **)
      * }
      */
-    public static MemorySegment io_set_flags$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$319.const$5.get(seg);
+    public static MemorySegment io_set_flags(MemorySegment struct) {
+        return struct.get(io_set_flags$LAYOUT, io_set_flags$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GIOStatus (*io_set_flags)(struct _GIOChannel*,enum GIOFlags,struct _GError**);
+     * {@snippet lang=c :
+     * GIOStatus (*io_set_flags)(GIOChannel *, GIOFlags, GError **)
      * }
      */
-    public static void io_set_flags$set(MemorySegment seg, MemorySegment x) {
-        constants$319.const$5.set(seg, x);
+    public static void io_set_flags(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(io_set_flags$LAYOUT, io_set_flags$OFFSET, fieldValue);
     }
-    public static MemorySegment io_set_flags$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$319.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void io_set_flags$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$319.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static io_set_flags io_set_flags(MemorySegment segment, Arena scope) {
-        return io_set_flags.ofAddress(io_set_flags$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GIOFlags (*io_get_flags)(struct _GIOChannel*);
+     * {@snippet lang=c :
+     * GIOFlags (*io_get_flags)(GIOChannel *)
      * }
      */
-    public interface io_get_flags {
+    public class io_get_flags {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(io_get_flags fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$320.const$0, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static io_get_flags ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, __x0);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(io_get_flags.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(io_get_flags.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle io_get_flags$VH() {
-        return constants$320.const$1;
+    private static final AddressLayout io_get_flags$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("io_get_flags"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIOFlags (*io_get_flags)(GIOChannel *)
+     * }
+     */
+    public static final AddressLayout io_get_flags$layout() {
+        return io_get_flags$LAYOUT;
     }
+
+    private static final long io_get_flags$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIOFlags (*io_get_flags)(GIOChannel *)
+     * }
+     */
+    public static final long io_get_flags$offset() {
+        return io_get_flags$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GIOFlags (*io_get_flags)(struct _GIOChannel*);
+     * {@snippet lang=c :
+     * GIOFlags (*io_get_flags)(GIOChannel *)
      * }
      */
-    public static MemorySegment io_get_flags$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$320.const$1.get(seg);
+    public static MemorySegment io_get_flags(MemorySegment struct) {
+        return struct.get(io_get_flags$LAYOUT, io_get_flags$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GIOFlags (*io_get_flags)(struct _GIOChannel*);
+     * {@snippet lang=c :
+     * GIOFlags (*io_get_flags)(GIOChannel *)
      * }
      */
-    public static void io_get_flags$set(MemorySegment seg, MemorySegment x) {
-        constants$320.const$1.set(seg, x);
+    public static void io_get_flags(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(io_get_flags$LAYOUT, io_get_flags$OFFSET, fieldValue);
     }
-    public static MemorySegment io_get_flags$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$320.const$1.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
     }
-    public static void io_get_flags$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$320.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
     }
-    public static io_get_flags io_get_flags(MemorySegment segment, Arena scope) {
-        return io_get_flags.ofAddress(io_get_flags$get(segment), scope);
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

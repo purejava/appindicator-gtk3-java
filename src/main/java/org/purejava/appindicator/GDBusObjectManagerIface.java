@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GDBusObjectManagerIface GDBusObjectManagerIface;
+ * {@snippet lang=c :
+ * typedef struct _GDBusObjectManagerIface GDBusObjectManagerIface
  * }
  */
-public final class GDBusObjectManagerIface extends _GDBusObjectManagerIface {
+public class GDBusObjectManagerIface extends _GDBusObjectManagerIface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GDBusObjectManagerIface() {}
+    GDBusObjectManagerIface() {
+        // Should not be called directly
+    }
 }
-
 

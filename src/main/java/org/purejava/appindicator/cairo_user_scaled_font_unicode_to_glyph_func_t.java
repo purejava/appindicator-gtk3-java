@@ -2,29 +2,65 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * enum _cairo_status (*cairo_user_scaled_font_unicode_to_glyph_func_t)(struct _cairo_scaled_font* scaled_font,unsigned long unicode,unsigned long* glyph_index);
+ * {@snippet lang=c :
+ * typedef cairo_status_t (*cairo_user_scaled_font_unicode_to_glyph_func_t)(cairo_scaled_font_t *, unsigned long, unsigned long *)
  * }
  */
-public interface cairo_user_scaled_font_unicode_to_glyph_func_t {
+public class cairo_user_scaled_font_unicode_to_glyph_func_t {
 
-    int apply(java.lang.foreign.MemorySegment scaled_font, long unicode, java.lang.foreign.MemorySegment glyph_index);
-    static MemorySegment allocate(cairo_user_scaled_font_unicode_to_glyph_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1716.const$5, fi, constants$62.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment scaled_font, long unicode, MemorySegment glyph_index);
     }
-    static cairo_user_scaled_font_unicode_to_glyph_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _scaled_font, long _unicode, java.lang.foreign.MemorySegment _glyph_index) -> {
-            try {
-                return (int)constants$696.const$3.invokeExact(symbol, _scaled_font, _unicode, _glyph_index);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(cairo_user_scaled_font_unicode_to_glyph_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(cairo_user_scaled_font_unicode_to_glyph_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment scaled_font, long unicode, MemorySegment glyph_index) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, scaled_font, unicode, glyph_index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

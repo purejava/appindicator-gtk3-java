@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkComboBoxTextClass GtkComboBoxTextClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkComboBoxTextClass GtkComboBoxTextClass
  * }
  */
-public final class GtkComboBoxTextClass extends _GtkComboBoxTextClass {
+public class GtkComboBoxTextClass extends _GtkComboBoxTextClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkComboBoxTextClass() {}
+    GtkComboBoxTextClass() {
+        // Should not be called directly
+    }
 }
-
 

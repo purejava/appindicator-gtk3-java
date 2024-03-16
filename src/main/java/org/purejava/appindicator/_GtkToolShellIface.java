@@ -2,518 +2,989 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkToolShellIface {
- *     struct _GTypeInterface g_iface;
- *     enum GtkIconSize (*get_icon_size)(struct _GtkToolShell*);
- *     enum GtkOrientation (*get_orientation)(struct _GtkToolShell*);
- *     enum GtkToolbarStyle (*get_style)(struct _GtkToolShell*);
- *     enum GtkReliefStyle (*get_relief_style)(struct _GtkToolShell*);
- *     void (*rebuild_menu)(struct _GtkToolShell*);
- *     enum GtkOrientation (*get_text_orientation)(struct _GtkToolShell*);
- *     float (*get_text_alignment)(struct _GtkToolShell*);
- *     enum PangoEllipsizeMode (*get_ellipsize_mode)(struct _GtkToolShell*);
- *     struct _GtkSizeGroup* (*get_text_size_group)(struct _GtkToolShell*);
- * };
+ *     GTypeInterface g_iface;
+ *     GtkIconSize (*get_icon_size)(GtkToolShell *);
+ *     GtkOrientation (*get_orientation)(GtkToolShell *);
+ *     GtkToolbarStyle (*get_style)(GtkToolShell *);
+ *     GtkReliefStyle (*get_relief_style)(GtkToolShell *);
+ *     void (*rebuild_menu)(GtkToolShell *);
+ *     GtkOrientation (*get_text_orientation)(GtkToolShell *);
+ *     gfloat (*get_text_alignment)(GtkToolShell *);
+ *     PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell *);
+ *     GtkSizeGroup *(*get_text_size_group)(GtkToolShell *);
+ * }
  * }
  */
 public class _GtkToolShellIface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$3184.const$2;
+    _GtkToolShellIface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("get_icon_size"),
+        app_indicator_h.C_POINTER.withName("get_orientation"),
+        app_indicator_h.C_POINTER.withName("get_style"),
+        app_indicator_h.C_POINTER.withName("get_relief_style"),
+        app_indicator_h.C_POINTER.withName("rebuild_menu"),
+        app_indicator_h.C_POINTER.withName("get_text_orientation"),
+        app_indicator_h.C_POINTER.withName("get_text_alignment"),
+        app_indicator_h.C_POINTER.withName("get_ellipsize_mode"),
+        app_indicator_h.C_POINTER.withName("get_text_size_group")
+    ).withName("_GtkToolShellIface");
+
     /**
-     * {@snippet :
- * enum GtkIconSize (*get_icon_size)(struct _GtkToolShell*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface get_icon_size {
-
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_icon_size fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3184.const$3, fi, constants$10.const$5, scope);
-        }
-        static get_icon_size ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, __x0);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle get_icon_size$VH() {
-        return constants$3184.const$4;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GtkIconSize (*get_icon_size)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment get_icon_size$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3184.const$4.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GtkIconSize (*get_icon_size)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void get_icon_size$set(MemorySegment seg, MemorySegment x) {
-        constants$3184.const$4.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment get_icon_size$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3184.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_icon_size$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3184.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_icon_size get_icon_size(MemorySegment segment, Arena scope) {
-        return get_icon_size.ofAddress(get_icon_size$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GtkOrientation (*get_orientation)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkIconSize (*get_icon_size)(GtkToolShell *)
      * }
      */
-    public interface get_orientation {
+    public class get_icon_size {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_orientation fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3184.const$5, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static get_orientation ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, __x0);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_icon_size.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_icon_size.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_orientation$VH() {
-        return constants$3185.const$0;
+    private static final AddressLayout get_icon_size$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_icon_size"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkIconSize (*get_icon_size)(GtkToolShell *)
+     * }
+     */
+    public static final AddressLayout get_icon_size$layout() {
+        return get_icon_size$LAYOUT;
     }
+
+    private static final long get_icon_size$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkIconSize (*get_icon_size)(GtkToolShell *)
+     * }
+     */
+    public static final long get_icon_size$offset() {
+        return get_icon_size$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GtkOrientation (*get_orientation)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkIconSize (*get_icon_size)(GtkToolShell *)
      * }
      */
-    public static MemorySegment get_orientation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3185.const$0.get(seg);
+    public static MemorySegment get_icon_size(MemorySegment struct) {
+        return struct.get(get_icon_size$LAYOUT, get_icon_size$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GtkOrientation (*get_orientation)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkIconSize (*get_icon_size)(GtkToolShell *)
      * }
      */
-    public static void get_orientation$set(MemorySegment seg, MemorySegment x) {
-        constants$3185.const$0.set(seg, x);
+    public static void get_icon_size(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_icon_size$LAYOUT, get_icon_size$OFFSET, fieldValue);
     }
-    public static MemorySegment get_orientation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3185.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_orientation$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3185.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_orientation get_orientation(MemorySegment segment, Arena scope) {
-        return get_orientation.ofAddress(get_orientation$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GtkToolbarStyle (*get_style)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkOrientation (*get_orientation)(GtkToolShell *)
      * }
      */
-    public interface get_style {
+    public class get_orientation {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_style fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3185.const$1, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static get_style ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, __x0);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_orientation.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_orientation.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_style$VH() {
-        return constants$3185.const$2;
+    private static final AddressLayout get_orientation$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_orientation"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkOrientation (*get_orientation)(GtkToolShell *)
+     * }
+     */
+    public static final AddressLayout get_orientation$layout() {
+        return get_orientation$LAYOUT;
     }
+
+    private static final long get_orientation$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkOrientation (*get_orientation)(GtkToolShell *)
+     * }
+     */
+    public static final long get_orientation$offset() {
+        return get_orientation$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GtkToolbarStyle (*get_style)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkOrientation (*get_orientation)(GtkToolShell *)
      * }
      */
-    public static MemorySegment get_style$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3185.const$2.get(seg);
+    public static MemorySegment get_orientation(MemorySegment struct) {
+        return struct.get(get_orientation$LAYOUT, get_orientation$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GtkToolbarStyle (*get_style)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkOrientation (*get_orientation)(GtkToolShell *)
      * }
      */
-    public static void get_style$set(MemorySegment seg, MemorySegment x) {
-        constants$3185.const$2.set(seg, x);
+    public static void get_orientation(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_orientation$LAYOUT, get_orientation$OFFSET, fieldValue);
     }
-    public static MemorySegment get_style$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3185.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_style$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3185.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_style get_style(MemorySegment segment, Arena scope) {
-        return get_style.ofAddress(get_style$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GtkReliefStyle (*get_relief_style)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkToolbarStyle (*get_style)(GtkToolShell *)
      * }
      */
-    public interface get_relief_style {
+    public class get_style {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_relief_style fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3185.const$3, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static get_relief_style ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, __x0);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_style.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_style.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_relief_style$VH() {
-        return constants$3185.const$4;
+    private static final AddressLayout get_style$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_style"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkToolbarStyle (*get_style)(GtkToolShell *)
+     * }
+     */
+    public static final AddressLayout get_style$layout() {
+        return get_style$LAYOUT;
     }
+
+    private static final long get_style$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkToolbarStyle (*get_style)(GtkToolShell *)
+     * }
+     */
+    public static final long get_style$offset() {
+        return get_style$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GtkReliefStyle (*get_relief_style)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkToolbarStyle (*get_style)(GtkToolShell *)
      * }
      */
-    public static MemorySegment get_relief_style$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3185.const$4.get(seg);
+    public static MemorySegment get_style(MemorySegment struct) {
+        return struct.get(get_style$LAYOUT, get_style$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GtkReliefStyle (*get_relief_style)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkToolbarStyle (*get_style)(GtkToolShell *)
      * }
      */
-    public static void get_relief_style$set(MemorySegment seg, MemorySegment x) {
-        constants$3185.const$4.set(seg, x);
+    public static void get_style(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_style$LAYOUT, get_style$OFFSET, fieldValue);
     }
-    public static MemorySegment get_relief_style$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3185.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_relief_style$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3185.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_relief_style get_relief_style(MemorySegment segment, Arena scope) {
-        return get_relief_style.ofAddress(get_relief_style$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*rebuild_menu)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkReliefStyle (*get_relief_style)(GtkToolShell *)
      * }
      */
-    public interface rebuild_menu {
+    public class get_relief_style {
 
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(rebuild_menu fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3185.const$5, fi, constants$13.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static rebuild_menu ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_relief_style.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_relief_style.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle rebuild_menu$VH() {
-        return constants$3186.const$0;
+    private static final AddressLayout get_relief_style$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_relief_style"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkReliefStyle (*get_relief_style)(GtkToolShell *)
+     * }
+     */
+    public static final AddressLayout get_relief_style$layout() {
+        return get_relief_style$LAYOUT;
     }
+
+    private static final long get_relief_style$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkReliefStyle (*get_relief_style)(GtkToolShell *)
+     * }
+     */
+    public static final long get_relief_style$offset() {
+        return get_relief_style$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*rebuild_menu)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkReliefStyle (*get_relief_style)(GtkToolShell *)
      * }
      */
-    public static MemorySegment rebuild_menu$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3186.const$0.get(seg);
+    public static MemorySegment get_relief_style(MemorySegment struct) {
+        return struct.get(get_relief_style$LAYOUT, get_relief_style$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*rebuild_menu)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkReliefStyle (*get_relief_style)(GtkToolShell *)
      * }
      */
-    public static void rebuild_menu$set(MemorySegment seg, MemorySegment x) {
-        constants$3186.const$0.set(seg, x);
+    public static void get_relief_style(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_relief_style$LAYOUT, get_relief_style$OFFSET, fieldValue);
     }
-    public static MemorySegment rebuild_menu$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3186.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void rebuild_menu$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3186.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static rebuild_menu rebuild_menu(MemorySegment segment, Arena scope) {
-        return rebuild_menu.ofAddress(rebuild_menu$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GtkOrientation (*get_text_orientation)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * void (*rebuild_menu)(GtkToolShell *)
      * }
      */
-    public interface get_text_orientation {
+    public class rebuild_menu {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_text_orientation fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3186.const$1, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static get_text_orientation ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, __x0);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(rebuild_menu.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(rebuild_menu.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_text_orientation$VH() {
-        return constants$3186.const$2;
+    private static final AddressLayout rebuild_menu$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("rebuild_menu"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*rebuild_menu)(GtkToolShell *)
+     * }
+     */
+    public static final AddressLayout rebuild_menu$layout() {
+        return rebuild_menu$LAYOUT;
     }
+
+    private static final long rebuild_menu$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*rebuild_menu)(GtkToolShell *)
+     * }
+     */
+    public static final long rebuild_menu$offset() {
+        return rebuild_menu$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GtkOrientation (*get_text_orientation)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * void (*rebuild_menu)(GtkToolShell *)
      * }
      */
-    public static MemorySegment get_text_orientation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3186.const$2.get(seg);
+    public static MemorySegment rebuild_menu(MemorySegment struct) {
+        return struct.get(rebuild_menu$LAYOUT, rebuild_menu$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GtkOrientation (*get_text_orientation)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * void (*rebuild_menu)(GtkToolShell *)
      * }
      */
-    public static void get_text_orientation$set(MemorySegment seg, MemorySegment x) {
-        constants$3186.const$2.set(seg, x);
+    public static void rebuild_menu(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(rebuild_menu$LAYOUT, rebuild_menu$OFFSET, fieldValue);
     }
-    public static MemorySegment get_text_orientation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3186.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_text_orientation$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3186.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_text_orientation get_text_orientation(MemorySegment segment, Arena scope) {
-        return get_text_orientation.ofAddress(get_text_orientation$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * float (*get_text_alignment)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkOrientation (*get_text_orientation)(GtkToolShell *)
      * }
      */
-    public interface get_text_alignment {
+    public class get_text_orientation {
 
-        float apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_text_alignment fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3186.const$3, fi, constants$692.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static get_text_alignment ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0) -> {
-                try {
-                    return (float)constants$3186.const$4.invokeExact(symbol, __x0);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_text_orientation.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_text_orientation.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_text_alignment$VH() {
-        return constants$3186.const$5;
+    private static final AddressLayout get_text_orientation$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_text_orientation"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkOrientation (*get_text_orientation)(GtkToolShell *)
+     * }
+     */
+    public static final AddressLayout get_text_orientation$layout() {
+        return get_text_orientation$LAYOUT;
     }
+
+    private static final long get_text_orientation$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkOrientation (*get_text_orientation)(GtkToolShell *)
+     * }
+     */
+    public static final long get_text_orientation$offset() {
+        return get_text_orientation$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * float (*get_text_alignment)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkOrientation (*get_text_orientation)(GtkToolShell *)
      * }
      */
-    public static MemorySegment get_text_alignment$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3186.const$5.get(seg);
+    public static MemorySegment get_text_orientation(MemorySegment struct) {
+        return struct.get(get_text_orientation$LAYOUT, get_text_orientation$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * float (*get_text_alignment)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * GtkOrientation (*get_text_orientation)(GtkToolShell *)
      * }
      */
-    public static void get_text_alignment$set(MemorySegment seg, MemorySegment x) {
-        constants$3186.const$5.set(seg, x);
+    public static void get_text_orientation(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_text_orientation$LAYOUT, get_text_orientation$OFFSET, fieldValue);
     }
-    public static MemorySegment get_text_alignment$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3186.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_text_alignment$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3186.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_text_alignment get_text_alignment(MemorySegment segment, Arena scope) {
-        return get_text_alignment.ofAddress(get_text_alignment$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum PangoEllipsizeMode (*get_ellipsize_mode)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * gfloat (*get_text_alignment)(GtkToolShell *)
      * }
      */
-    public interface get_ellipsize_mode {
+    public class get_text_alignment {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_ellipsize_mode fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3187.const$0, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            float apply(MemorySegment _x0);
         }
-        static get_ellipsize_mode ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, __x0);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_FLOAT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_text_alignment.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_text_alignment.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static float invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (float) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_ellipsize_mode$VH() {
-        return constants$3187.const$1;
+    private static final AddressLayout get_text_alignment$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_text_alignment"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gfloat (*get_text_alignment)(GtkToolShell *)
+     * }
+     */
+    public static final AddressLayout get_text_alignment$layout() {
+        return get_text_alignment$LAYOUT;
     }
+
+    private static final long get_text_alignment$OFFSET = 64;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gfloat (*get_text_alignment)(GtkToolShell *)
+     * }
+     */
+    public static final long get_text_alignment$offset() {
+        return get_text_alignment$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum PangoEllipsizeMode (*get_ellipsize_mode)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * gfloat (*get_text_alignment)(GtkToolShell *)
      * }
      */
-    public static MemorySegment get_ellipsize_mode$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3187.const$1.get(seg);
+    public static MemorySegment get_text_alignment(MemorySegment struct) {
+        return struct.get(get_text_alignment$LAYOUT, get_text_alignment$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum PangoEllipsizeMode (*get_ellipsize_mode)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * gfloat (*get_text_alignment)(GtkToolShell *)
      * }
      */
-    public static void get_ellipsize_mode$set(MemorySegment seg, MemorySegment x) {
-        constants$3187.const$1.set(seg, x);
+    public static void get_text_alignment(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_text_alignment$LAYOUT, get_text_alignment$OFFSET, fieldValue);
     }
-    public static MemorySegment get_ellipsize_mode$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3187.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_ellipsize_mode$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3187.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_ellipsize_mode get_ellipsize_mode(MemorySegment segment, Arena scope) {
-        return get_ellipsize_mode.ofAddress(get_ellipsize_mode$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GtkSizeGroup* (*get_text_size_group)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell *)
      * }
      */
-    public interface get_text_size_group {
+    public class get_ellipsize_mode {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_text_size_group fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3187.const$2, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static get_text_size_group ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_ellipsize_mode.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_ellipsize_mode.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_text_size_group$VH() {
-        return constants$3187.const$3;
+    private static final AddressLayout get_ellipsize_mode$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_ellipsize_mode"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell *)
+     * }
+     */
+    public static final AddressLayout get_ellipsize_mode$layout() {
+        return get_ellipsize_mode$LAYOUT;
     }
+
+    private static final long get_ellipsize_mode$OFFSET = 72;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell *)
+     * }
+     */
+    public static final long get_ellipsize_mode$offset() {
+        return get_ellipsize_mode$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GtkSizeGroup* (*get_text_size_group)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell *)
      * }
      */
-    public static MemorySegment get_text_size_group$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3187.const$3.get(seg);
+    public static MemorySegment get_ellipsize_mode(MemorySegment struct) {
+        return struct.get(get_ellipsize_mode$LAYOUT, get_ellipsize_mode$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GtkSizeGroup* (*get_text_size_group)(struct _GtkToolShell*);
+     * {@snippet lang=c :
+     * PangoEllipsizeMode (*get_ellipsize_mode)(GtkToolShell *)
      * }
      */
-    public static void get_text_size_group$set(MemorySegment seg, MemorySegment x) {
-        constants$3187.const$3.set(seg, x);
+    public static void get_ellipsize_mode(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_ellipsize_mode$LAYOUT, get_ellipsize_mode$OFFSET, fieldValue);
     }
-    public static MemorySegment get_text_size_group$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3187.const$3.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * GtkSizeGroup *(*get_text_size_group)(GtkToolShell *)
+     * }
+     */
+    public class get_text_size_group {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_text_size_group.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_text_size_group.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void get_text_size_group$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3187.const$3.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout get_text_size_group$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_text_size_group"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkSizeGroup *(*get_text_size_group)(GtkToolShell *)
+     * }
+     */
+    public static final AddressLayout get_text_size_group$layout() {
+        return get_text_size_group$LAYOUT;
     }
-    public static get_text_size_group get_text_size_group(MemorySegment segment, Arena scope) {
-        return get_text_size_group.ofAddress(get_text_size_group$get(segment), scope);
+
+    private static final long get_text_size_group$OFFSET = 80;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkSizeGroup *(*get_text_size_group)(GtkToolShell *)
+     * }
+     */
+    public static final long get_text_size_group$offset() {
+        return get_text_size_group$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GtkSizeGroup *(*get_text_size_group)(GtkToolShell *)
+     * }
+     */
+    public static MemorySegment get_text_size_group(MemorySegment struct) {
+        return struct.get(get_text_size_group$LAYOUT, get_text_size_group$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GtkSizeGroup *(*get_text_size_group)(GtkToolShell *)
+     * }
+     */
+    public static void get_text_size_group(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_text_size_group$LAYOUT, get_text_size_group$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

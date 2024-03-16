@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkLabel GtkLabel;
+ * {@snippet lang=c :
+ * typedef struct _GtkLabel GtkLabel
  * }
  */
-public final class GtkLabel extends _GtkLabel {
+public class GtkLabel extends _GtkLabel {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkLabel() {}
+    GtkLabel() {
+        // Should not be called directly
+    }
 }
-
 

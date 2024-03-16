@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkHButtonBox GtkHButtonBox;
+ * {@snippet lang=c :
+ * typedef struct _GtkHButtonBox GtkHButtonBox
  * }
  */
-public final class GtkHButtonBox extends _GtkHButtonBox {
+public class GtkHButtonBox extends _GtkHButtonBox {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkHButtonBox() {}
+    GtkHButtonBox() {
+        // Should not be called directly
+    }
 }
-
 

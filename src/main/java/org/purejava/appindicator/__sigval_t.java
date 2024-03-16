@@ -2,15 +2,28 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef union sigval __sigval_t;
+ * {@snippet lang=c :
+ * typedef union sigval {
+ *     int sival_int;
+ *     void *sival_ptr;
+ * } __sigval_t
  * }
  */
-public final class __sigval_t extends sigval {
+public class __sigval_t extends sigval {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private __sigval_t() {}
+    __sigval_t() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,464 +2,897 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _AtkDocumentIface {
- *     struct _GTypeInterface parent;
- *     char* (*get_document_type)(struct _AtkDocument*);
- *     void* (*get_document)(struct _AtkDocument*);
- *     char* (*get_document_locale)(struct _AtkDocument*);
- *     struct _GSList* (*get_document_attributes)(struct _AtkDocument*);
- *     char* (*get_document_attribute_value)(struct _AtkDocument*,char*);
- *     int (*set_document_attribute)(struct _AtkDocument*,char*,char*);
- *     int (*get_current_page_number)(struct _AtkDocument*);
- *     int (*get_page_count)(struct _AtkDocument*);
- * };
+ *     GTypeInterface parent;
+ *     const gchar *(*get_document_type)(AtkDocument *);
+ *     gpointer (*get_document)(AtkDocument *);
+ *     const gchar *(*get_document_locale)(AtkDocument *);
+ *     AtkAttributeSet *(*get_document_attributes)(AtkDocument *);
+ *     const gchar *(*get_document_attribute_value)(AtkDocument *, const gchar *);
+ *     gboolean (*set_document_attribute)(AtkDocument *, const gchar *, const gchar *);
+ *     gint (*get_current_page_number)(AtkDocument *);
+ *     gint (*get_page_count)(AtkDocument *);
+ * }
  * }
  */
 public class _AtkDocumentIface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2009.const$2;
+    _AtkDocumentIface() {
+        // Should not be called directly
     }
-    public static MemorySegment parent$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("parent"),
+        app_indicator_h.C_POINTER.withName("get_document_type"),
+        app_indicator_h.C_POINTER.withName("get_document"),
+        app_indicator_h.C_POINTER.withName("get_document_locale"),
+        app_indicator_h.C_POINTER.withName("get_document_attributes"),
+        app_indicator_h.C_POINTER.withName("get_document_attribute_value"),
+        app_indicator_h.C_POINTER.withName("set_document_attribute"),
+        app_indicator_h.C_POINTER.withName("get_current_page_number"),
+        app_indicator_h.C_POINTER.withName("get_page_count")
+    ).withName("_AtkDocumentIface");
+
     /**
-     * {@snippet :
- * char* (*get_document_type)(struct _AtkDocument*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface parent
      * }
      */
-    public interface get_document_type {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_document_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2009.const$3, fi, constants$5.const$2, scope);
-        }
-        static get_document_type ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent$layout() {
+        return parent$LAYOUT;
     }
 
-    public static VarHandle get_document_type$VH() {
-        return constants$2009.const$4;
+    private static final long parent$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface parent
+     * }
+     */
+    public static final long parent$offset() {
+        return parent$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* (*get_document_type)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * GTypeInterface parent
      * }
      */
-    public static MemorySegment get_document_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2009.const$4.get(seg);
+    public static MemorySegment parent(MemorySegment struct) {
+        return struct.asSlice(parent$OFFSET, parent$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* (*get_document_type)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * GTypeInterface parent
      * }
      */
-    public static void get_document_type$set(MemorySegment seg, MemorySegment x) {
-        constants$2009.const$4.set(seg, x);
+    public static void parent(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent$OFFSET, parent$LAYOUT.byteSize());
     }
-    public static MemorySegment get_document_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2009.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_document_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2009.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_document_type get_document_type(MemorySegment segment, Arena scope) {
-        return get_document_type.ofAddress(get_document_type$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void* (*get_document)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * const gchar *(*get_document_type)(AtkDocument *)
      * }
      */
-    public interface get_document {
+    public class get_document_type {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_document fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2009.const$5, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_document ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_document_type.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_document_type.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_document$VH() {
-        return constants$2010.const$0;
+    private static final AddressLayout get_document_type$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_document_type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_document_type)(AtkDocument *)
+     * }
+     */
+    public static final AddressLayout get_document_type$layout() {
+        return get_document_type$LAYOUT;
     }
+
+    private static final long get_document_type$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_document_type)(AtkDocument *)
+     * }
+     */
+    public static final long get_document_type$offset() {
+        return get_document_type$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* (*get_document)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * const gchar *(*get_document_type)(AtkDocument *)
      * }
      */
-    public static MemorySegment get_document$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2010.const$0.get(seg);
+    public static MemorySegment get_document_type(MemorySegment struct) {
+        return struct.get(get_document_type$LAYOUT, get_document_type$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* (*get_document)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * const gchar *(*get_document_type)(AtkDocument *)
      * }
      */
-    public static void get_document$set(MemorySegment seg, MemorySegment x) {
-        constants$2010.const$0.set(seg, x);
+    public static void get_document_type(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_document_type$LAYOUT, get_document_type$OFFSET, fieldValue);
     }
-    public static MemorySegment get_document$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2010.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_document$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2010.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_document get_document(MemorySegment segment, Arena scope) {
-        return get_document.ofAddress(get_document$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * char* (*get_document_locale)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * gpointer (*get_document)(AtkDocument *)
      * }
      */
-    public interface get_document_locale {
+    public class get_document {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_document_locale fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2010.const$1, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_document_locale ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_document.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_document.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_document_locale$VH() {
-        return constants$2010.const$2;
+    private static final AddressLayout get_document$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_document"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer (*get_document)(AtkDocument *)
+     * }
+     */
+    public static final AddressLayout get_document$layout() {
+        return get_document$LAYOUT;
     }
+
+    private static final long get_document$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer (*get_document)(AtkDocument *)
+     * }
+     */
+    public static final long get_document$offset() {
+        return get_document$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* (*get_document_locale)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * gpointer (*get_document)(AtkDocument *)
      * }
      */
-    public static MemorySegment get_document_locale$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2010.const$2.get(seg);
+    public static MemorySegment get_document(MemorySegment struct) {
+        return struct.get(get_document$LAYOUT, get_document$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* (*get_document_locale)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * gpointer (*get_document)(AtkDocument *)
      * }
      */
-    public static void get_document_locale$set(MemorySegment seg, MemorySegment x) {
-        constants$2010.const$2.set(seg, x);
+    public static void get_document(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_document$LAYOUT, get_document$OFFSET, fieldValue);
     }
-    public static MemorySegment get_document_locale$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2010.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_document_locale$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2010.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_document_locale get_document_locale(MemorySegment segment, Arena scope) {
-        return get_document_locale.ofAddress(get_document_locale$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GSList* (*get_document_attributes)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * const gchar *(*get_document_locale)(AtkDocument *)
      * }
      */
-    public interface get_document_attributes {
+    public class get_document_locale {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_document_attributes fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2010.const$3, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_document_attributes ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_document_locale.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_document_locale.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_document_attributes$VH() {
-        return constants$2010.const$4;
+    private static final AddressLayout get_document_locale$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_document_locale"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_document_locale)(AtkDocument *)
+     * }
+     */
+    public static final AddressLayout get_document_locale$layout() {
+        return get_document_locale$LAYOUT;
     }
+
+    private static final long get_document_locale$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_document_locale)(AtkDocument *)
+     * }
+     */
+    public static final long get_document_locale$offset() {
+        return get_document_locale$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GSList* (*get_document_attributes)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * const gchar *(*get_document_locale)(AtkDocument *)
      * }
      */
-    public static MemorySegment get_document_attributes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2010.const$4.get(seg);
+    public static MemorySegment get_document_locale(MemorySegment struct) {
+        return struct.get(get_document_locale$LAYOUT, get_document_locale$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GSList* (*get_document_attributes)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * const gchar *(*get_document_locale)(AtkDocument *)
      * }
      */
-    public static void get_document_attributes$set(MemorySegment seg, MemorySegment x) {
-        constants$2010.const$4.set(seg, x);
+    public static void get_document_locale(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_document_locale$LAYOUT, get_document_locale$OFFSET, fieldValue);
     }
-    public static MemorySegment get_document_attributes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2010.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_document_attributes$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2010.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_document_attributes get_document_attributes(MemorySegment segment, Arena scope) {
-        return get_document_attributes.ofAddress(get_document_attributes$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * char* (*get_document_attribute_value)(struct _AtkDocument*,char*);
+     * {@snippet lang=c :
+     * AtkAttributeSet *(*get_document_attributes)(AtkDocument *)
      * }
      */
-    public interface get_document_attribute_value {
+    public class get_document_attributes {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-        static MemorySegment allocate(get_document_attribute_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2010.const$5, fi, constants$5.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_document_attribute_value ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_document_attributes.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_document_attributes.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_document_attribute_value$VH() {
-        return constants$2011.const$0;
+    private static final AddressLayout get_document_attributes$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_document_attributes"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * AtkAttributeSet *(*get_document_attributes)(AtkDocument *)
+     * }
+     */
+    public static final AddressLayout get_document_attributes$layout() {
+        return get_document_attributes$LAYOUT;
     }
+
+    private static final long get_document_attributes$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * AtkAttributeSet *(*get_document_attributes)(AtkDocument *)
+     * }
+     */
+    public static final long get_document_attributes$offset() {
+        return get_document_attributes$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* (*get_document_attribute_value)(struct _AtkDocument*,char*);
+     * {@snippet lang=c :
+     * AtkAttributeSet *(*get_document_attributes)(AtkDocument *)
      * }
      */
-    public static MemorySegment get_document_attribute_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2011.const$0.get(seg);
+    public static MemorySegment get_document_attributes(MemorySegment struct) {
+        return struct.get(get_document_attributes$LAYOUT, get_document_attributes$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* (*get_document_attribute_value)(struct _AtkDocument*,char*);
+     * {@snippet lang=c :
+     * AtkAttributeSet *(*get_document_attributes)(AtkDocument *)
      * }
      */
-    public static void get_document_attribute_value$set(MemorySegment seg, MemorySegment x) {
-        constants$2011.const$0.set(seg, x);
+    public static void get_document_attributes(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_document_attributes$LAYOUT, get_document_attributes$OFFSET, fieldValue);
     }
-    public static MemorySegment get_document_attribute_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2011.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_document_attribute_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2011.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_document_attribute_value get_document_attribute_value(MemorySegment segment, Arena scope) {
-        return get_document_attribute_value.ofAddress(get_document_attribute_value$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*set_document_attribute)(struct _AtkDocument*,char*,char*);
+     * {@snippet lang=c :
+     * const gchar *(*get_document_attribute_value)(AtkDocument *, const gchar *)
      * }
      */
-    public interface set_document_attribute {
+    public class get_document_attribute_value {
 
-        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(set_document_attribute fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2011.const$1, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static set_document_attribute ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_document_attribute_value.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_document_attribute_value.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle set_document_attribute$VH() {
-        return constants$2011.const$2;
+    private static final AddressLayout get_document_attribute_value$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_document_attribute_value"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_document_attribute_value)(AtkDocument *, const gchar *)
+     * }
+     */
+    public static final AddressLayout get_document_attribute_value$layout() {
+        return get_document_attribute_value$LAYOUT;
     }
+
+    private static final long get_document_attribute_value$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_document_attribute_value)(AtkDocument *, const gchar *)
+     * }
+     */
+    public static final long get_document_attribute_value$offset() {
+        return get_document_attribute_value$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*set_document_attribute)(struct _AtkDocument*,char*,char*);
+     * {@snippet lang=c :
+     * const gchar *(*get_document_attribute_value)(AtkDocument *, const gchar *)
      * }
      */
-    public static MemorySegment set_document_attribute$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2011.const$2.get(seg);
+    public static MemorySegment get_document_attribute_value(MemorySegment struct) {
+        return struct.get(get_document_attribute_value$LAYOUT, get_document_attribute_value$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*set_document_attribute)(struct _AtkDocument*,char*,char*);
+     * {@snippet lang=c :
+     * const gchar *(*get_document_attribute_value)(AtkDocument *, const gchar *)
      * }
      */
-    public static void set_document_attribute$set(MemorySegment seg, MemorySegment x) {
-        constants$2011.const$2.set(seg, x);
+    public static void get_document_attribute_value(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_document_attribute_value$LAYOUT, get_document_attribute_value$OFFSET, fieldValue);
     }
-    public static MemorySegment set_document_attribute$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2011.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void set_document_attribute$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2011.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static set_document_attribute set_document_attribute(MemorySegment segment, Arena scope) {
-        return set_document_attribute.ofAddress(set_document_attribute$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*get_current_page_number)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * gboolean (*set_document_attribute)(AtkDocument *, const gchar *, const gchar *)
      * }
      */
-    public interface get_current_page_number {
+    public class set_document_attribute {
 
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_current_page_number fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2011.const$3, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static get_current_page_number ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(set_document_attribute.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(set_document_attribute.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_current_page_number$VH() {
-        return constants$2011.const$4;
+    private static final AddressLayout set_document_attribute$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("set_document_attribute"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*set_document_attribute)(AtkDocument *, const gchar *, const gchar *)
+     * }
+     */
+    public static final AddressLayout set_document_attribute$layout() {
+        return set_document_attribute$LAYOUT;
     }
+
+    private static final long set_document_attribute$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*set_document_attribute)(AtkDocument *, const gchar *, const gchar *)
+     * }
+     */
+    public static final long set_document_attribute$offset() {
+        return set_document_attribute$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*get_current_page_number)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * gboolean (*set_document_attribute)(AtkDocument *, const gchar *, const gchar *)
      * }
      */
-    public static MemorySegment get_current_page_number$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2011.const$4.get(seg);
+    public static MemorySegment set_document_attribute(MemorySegment struct) {
+        return struct.get(set_document_attribute$LAYOUT, set_document_attribute$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*get_current_page_number)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * gboolean (*set_document_attribute)(AtkDocument *, const gchar *, const gchar *)
      * }
      */
-    public static void get_current_page_number$set(MemorySegment seg, MemorySegment x) {
-        constants$2011.const$4.set(seg, x);
+    public static void set_document_attribute(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(set_document_attribute$LAYOUT, set_document_attribute$OFFSET, fieldValue);
     }
-    public static MemorySegment get_current_page_number$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2011.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_current_page_number$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2011.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_current_page_number get_current_page_number(MemorySegment segment, Arena scope) {
-        return get_current_page_number.ofAddress(get_current_page_number$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*get_page_count)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * gint (*get_current_page_number)(AtkDocument *)
      * }
      */
-    public interface get_page_count {
+    public class get_current_page_number {
 
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_page_count fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2011.const$5, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static get_page_count ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_current_page_number.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_current_page_number.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_page_count$VH() {
-        return constants$2012.const$0;
+    private static final AddressLayout get_current_page_number$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_current_page_number"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint (*get_current_page_number)(AtkDocument *)
+     * }
+     */
+    public static final AddressLayout get_current_page_number$layout() {
+        return get_current_page_number$LAYOUT;
     }
+
+    private static final long get_current_page_number$OFFSET = 64;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint (*get_current_page_number)(AtkDocument *)
+     * }
+     */
+    public static final long get_current_page_number$offset() {
+        return get_current_page_number$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*get_page_count)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * gint (*get_current_page_number)(AtkDocument *)
      * }
      */
-    public static MemorySegment get_page_count$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2012.const$0.get(seg);
+    public static MemorySegment get_current_page_number(MemorySegment struct) {
+        return struct.get(get_current_page_number$LAYOUT, get_current_page_number$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*get_page_count)(struct _AtkDocument*);
+     * {@snippet lang=c :
+     * gint (*get_current_page_number)(AtkDocument *)
      * }
      */
-    public static void get_page_count$set(MemorySegment seg, MemorySegment x) {
-        constants$2012.const$0.set(seg, x);
+    public static void get_current_page_number(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_current_page_number$LAYOUT, get_current_page_number$OFFSET, fieldValue);
     }
-    public static MemorySegment get_page_count$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2012.const$0.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * gint (*get_page_count)(AtkDocument *)
+     * }
+     */
+    public class get_page_count {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_page_count.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_page_count.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void get_page_count$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2012.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout get_page_count$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_page_count"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint (*get_page_count)(AtkDocument *)
+     * }
+     */
+    public static final AddressLayout get_page_count$layout() {
+        return get_page_count$LAYOUT;
     }
-    public static get_page_count get_page_count(MemorySegment segment, Arena scope) {
-        return get_page_count.ofAddress(get_page_count$get(segment), scope);
+
+    private static final long get_page_count$OFFSET = 72;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint (*get_page_count)(AtkDocument *)
+     * }
+     */
+    public static final long get_page_count$offset() {
+        return get_page_count$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint (*get_page_count)(AtkDocument *)
+     * }
+     */
+    public static MemorySegment get_page_count(MemorySegment struct) {
+        return struct.get(get_page_count$LAYOUT, get_page_count$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint (*get_page_count)(AtkDocument *)
+     * }
+     */
+    public static void get_page_count(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_page_count$LAYOUT, get_page_count$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

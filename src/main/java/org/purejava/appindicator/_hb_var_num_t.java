@@ -2,128 +2,534 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * union _hb_var_num_t {
  *     float f;
- *     unsigned int u32;
- *     int i32;
- *     unsigned short u16[2];
- *     short i16[2];
- *     unsigned char u8[4];
- *     signed char i8[4];
- * };
+ *     uint32_t u32;
+ *     int32_t i32;
+ *     uint16_t u16[2];
+ *     int16_t i16[2];
+ *     uint8_t u8[4];
+ *     int8_t i8[4];
+ * }
  * }
  */
 public class _hb_var_num_t {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1418.const$2;
+    _hb_var_num_t() {
+        // Should not be called directly
     }
-    public static VarHandle f$VH() {
-        return constants$1418.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * float f;
-     * }
-     */
-    public static float f$get(MemorySegment seg) {
-        return (float)constants$1418.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * float f;
-     * }
-     */
-    public static void f$set(MemorySegment seg, float x) {
-        constants$1418.const$3.set(seg, x);
-    }
-    public static float f$get(MemorySegment seg, long index) {
-        return (float)constants$1418.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void f$set(MemorySegment seg, long index, float x) {
-        constants$1418.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle u32$VH() {
-        return constants$1418.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int u32;
-     * }
-     */
-    public static int u32$get(MemorySegment seg) {
-        return (int)constants$1418.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int u32;
-     * }
-     */
-    public static void u32$set(MemorySegment seg, int x) {
-        constants$1418.const$4.set(seg, x);
-    }
-    public static int u32$get(MemorySegment seg, long index) {
-        return (int)constants$1418.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void u32$set(MemorySegment seg, long index, int x) {
-        constants$1418.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle i32$VH() {
-        return constants$1418.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int i32;
-     * }
-     */
-    public static int i32$get(MemorySegment seg) {
-        return (int)constants$1418.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int i32;
-     * }
-     */
-    public static void i32$set(MemorySegment seg, int x) {
-        constants$1418.const$5.set(seg, x);
-    }
-    public static int i32$get(MemorySegment seg, long index) {
-        return (int)constants$1418.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void i32$set(MemorySegment seg, long index, int x) {
-        constants$1418.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment u16$slice(MemorySegment seg) {
-        return seg.asSlice(0, 4);
-    }
-    public static MemorySegment i16$slice(MemorySegment seg) {
-        return seg.asSlice(0, 4);
-    }
-    public static MemorySegment u8$slice(MemorySegment seg) {
-        return seg.asSlice(0, 4);
-    }
-    public static MemorySegment i8$slice(MemorySegment seg) {
-        return seg.asSlice(0, 4);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
+        app_indicator_h.C_FLOAT.withName("f"),
+        app_indicator_h.C_INT.withName("u32"),
+        app_indicator_h.C_INT.withName("i32"),
+        MemoryLayout.sequenceLayout(2, app_indicator_h.C_SHORT).withName("u16"),
+        MemoryLayout.sequenceLayout(2, app_indicator_h.C_SHORT).withName("i16"),
+        MemoryLayout.sequenceLayout(4, app_indicator_h.C_CHAR).withName("u8"),
+        MemoryLayout.sequenceLayout(4, app_indicator_h.C_CHAR).withName("i8")
+    ).withName("_hb_var_num_t");
+
+    /**
+     * The layout of this union
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfFloat f$LAYOUT = (OfFloat)$LAYOUT.select(groupElement("f"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * float f
+     * }
+     */
+    public static final OfFloat f$layout() {
+        return f$LAYOUT;
+    }
+
+    private static final long f$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * float f
+     * }
+     */
+    public static final long f$offset() {
+        return f$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * float f
+     * }
+     */
+    public static float f(MemorySegment union) {
+        return union.get(f$LAYOUT, f$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * float f
+     * }
+     */
+    public static void f(MemorySegment union, float fieldValue) {
+        union.set(f$LAYOUT, f$OFFSET, fieldValue);
+    }
+
+    private static final OfInt u32$LAYOUT = (OfInt)$LAYOUT.select(groupElement("u32"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * uint32_t u32
+     * }
+     */
+    public static final OfInt u32$layout() {
+        return u32$LAYOUT;
+    }
+
+    private static final long u32$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * uint32_t u32
+     * }
+     */
+    public static final long u32$offset() {
+        return u32$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * uint32_t u32
+     * }
+     */
+    public static int u32(MemorySegment union) {
+        return union.get(u32$LAYOUT, u32$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * uint32_t u32
+     * }
+     */
+    public static void u32(MemorySegment union, int fieldValue) {
+        union.set(u32$LAYOUT, u32$OFFSET, fieldValue);
+    }
+
+    private static final OfInt i32$LAYOUT = (OfInt)$LAYOUT.select(groupElement("i32"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int32_t i32
+     * }
+     */
+    public static final OfInt i32$layout() {
+        return i32$LAYOUT;
+    }
+
+    private static final long i32$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int32_t i32
+     * }
+     */
+    public static final long i32$offset() {
+        return i32$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int32_t i32
+     * }
+     */
+    public static int i32(MemorySegment union) {
+        return union.get(i32$LAYOUT, i32$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int32_t i32
+     * }
+     */
+    public static void i32(MemorySegment union, int fieldValue) {
+        union.set(i32$LAYOUT, i32$OFFSET, fieldValue);
+    }
+
+    private static final SequenceLayout u16$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("u16"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * uint16_t u16[2]
+     * }
+     */
+    public static final SequenceLayout u16$layout() {
+        return u16$LAYOUT;
+    }
+
+    private static final long u16$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * uint16_t u16[2]
+     * }
+     */
+    public static final long u16$offset() {
+        return u16$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * uint16_t u16[2]
+     * }
+     */
+    public static MemorySegment u16(MemorySegment union) {
+        return union.asSlice(u16$OFFSET, u16$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * uint16_t u16[2]
+     * }
+     */
+    public static void u16(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, u16$OFFSET, u16$LAYOUT.byteSize());
+    }
+
+    private static long[] u16$DIMS = { 2 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * uint16_t u16[2]
+     * }
+     */
+    public static long[] u16$dimensions() {
+        return u16$DIMS;
+    }
+    private static final VarHandle u16$ELEM_HANDLE = u16$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * uint16_t u16[2]
+     * }
+     */
+    public static short u16(MemorySegment union, long index0) {
+        return (short)u16$ELEM_HANDLE.get(union, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * uint16_t u16[2]
+     * }
+     */
+    public static void u16(MemorySegment union, long index0, short fieldValue) {
+        u16$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+    }
+
+    private static final SequenceLayout i16$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("i16"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int16_t i16[2]
+     * }
+     */
+    public static final SequenceLayout i16$layout() {
+        return i16$LAYOUT;
+    }
+
+    private static final long i16$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int16_t i16[2]
+     * }
+     */
+    public static final long i16$offset() {
+        return i16$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int16_t i16[2]
+     * }
+     */
+    public static MemorySegment i16(MemorySegment union) {
+        return union.asSlice(i16$OFFSET, i16$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int16_t i16[2]
+     * }
+     */
+    public static void i16(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, i16$OFFSET, i16$LAYOUT.byteSize());
+    }
+
+    private static long[] i16$DIMS = { 2 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * int16_t i16[2]
+     * }
+     */
+    public static long[] i16$dimensions() {
+        return i16$DIMS;
+    }
+    private static final VarHandle i16$ELEM_HANDLE = i16$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * int16_t i16[2]
+     * }
+     */
+    public static short i16(MemorySegment union, long index0) {
+        return (short)i16$ELEM_HANDLE.get(union, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * int16_t i16[2]
+     * }
+     */
+    public static void i16(MemorySegment union, long index0, short fieldValue) {
+        i16$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+    }
+
+    private static final SequenceLayout u8$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("u8"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * uint8_t u8[4]
+     * }
+     */
+    public static final SequenceLayout u8$layout() {
+        return u8$LAYOUT;
+    }
+
+    private static final long u8$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * uint8_t u8[4]
+     * }
+     */
+    public static final long u8$offset() {
+        return u8$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * uint8_t u8[4]
+     * }
+     */
+    public static MemorySegment u8(MemorySegment union) {
+        return union.asSlice(u8$OFFSET, u8$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * uint8_t u8[4]
+     * }
+     */
+    public static void u8(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, u8$OFFSET, u8$LAYOUT.byteSize());
+    }
+
+    private static long[] u8$DIMS = { 4 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * uint8_t u8[4]
+     * }
+     */
+    public static long[] u8$dimensions() {
+        return u8$DIMS;
+    }
+    private static final VarHandle u8$ELEM_HANDLE = u8$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * uint8_t u8[4]
+     * }
+     */
+    public static byte u8(MemorySegment union, long index0) {
+        return (byte)u8$ELEM_HANDLE.get(union, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * uint8_t u8[4]
+     * }
+     */
+    public static void u8(MemorySegment union, long index0, byte fieldValue) {
+        u8$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+    }
+
+    private static final SequenceLayout i8$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("i8"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int8_t i8[4]
+     * }
+     */
+    public static final SequenceLayout i8$layout() {
+        return i8$LAYOUT;
+    }
+
+    private static final long i8$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int8_t i8[4]
+     * }
+     */
+    public static final long i8$offset() {
+        return i8$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int8_t i8[4]
+     * }
+     */
+    public static MemorySegment i8(MemorySegment union) {
+        return union.asSlice(i8$OFFSET, i8$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int8_t i8[4]
+     * }
+     */
+    public static void i8(MemorySegment union, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, union, i8$OFFSET, i8$LAYOUT.byteSize());
+    }
+
+    private static long[] i8$DIMS = { 4 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * int8_t i8[4]
+     * }
+     */
+    public static long[] i8$dimensions() {
+        return i8$DIMS;
+    }
+    private static final VarHandle i8$ELEM_HANDLE = i8$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * int8_t i8[4]
+     * }
+     */
+    public static byte i8(MemorySegment union, long index0) {
+        return (byte)i8$ELEM_HANDLE.get(union, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * int8_t i8[4]
+     * }
+     */
+    public static void i8(MemorySegment union, long index0, byte fieldValue) {
+        i8$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this union
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _G_fpos_t fpos_t;
+ * {@snippet lang=c :
+ * typedef __fpos_t fpos_t
  * }
  */
-public final class fpos_t extends _G_fpos_t {
+public class fpos_t extends _G_fpos_t {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private fpos_t() {}
+    fpos_t() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkCellRendererComboClass GtkCellRendererComboClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkCellRendererComboClass GtkCellRendererComboClass
  * }
  */
-public final class GtkCellRendererComboClass extends _GtkCellRendererComboClass {
+public class GtkCellRendererComboClass extends _GtkCellRendererComboClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkCellRendererComboClass() {}
+    GtkCellRendererComboClass() {
+        // Should not be called directly
+    }
 }
-
 

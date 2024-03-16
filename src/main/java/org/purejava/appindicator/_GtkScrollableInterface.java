@@ -2,86 +2,223 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkScrollableInterface {
- *     struct _GTypeInterface base_iface;
- *     int (*get_border)(struct _GtkScrollable*,struct _GtkBorder*);
- * };
+ *     GTypeInterface base_iface;
+ *     gboolean (*get_border)(GtkScrollable *, GtkBorder *);
+ * }
  * }
  */
 public class _GtkScrollableInterface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$3061.const$5;
+    _GtkScrollableInterface() {
+        // Should not be called directly
     }
-    public static MemorySegment base_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("base_iface"),
+        app_indicator_h.C_POINTER.withName("get_border")
+    ).withName("_GtkScrollableInterface");
+
     /**
-     * {@snippet :
- * int (*get_border)(struct _GtkScrollable*,struct _GtkBorder*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout base_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("base_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface base_iface
      * }
      */
-    public interface get_border {
-
-        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_border fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3062.const$0, fi, constants$9.const$0, scope);
-        }
-        static get_border ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout base_iface$layout() {
+        return base_iface$LAYOUT;
     }
 
-    public static VarHandle get_border$VH() {
-        return constants$3062.const$1;
+    private static final long base_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface base_iface
+     * }
+     */
+    public static final long base_iface$offset() {
+        return base_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*get_border)(struct _GtkScrollable*,struct _GtkBorder*);
+     * {@snippet lang=c :
+     * GTypeInterface base_iface
      * }
      */
-    public static MemorySegment get_border$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3062.const$1.get(seg);
+    public static MemorySegment base_iface(MemorySegment struct) {
+        return struct.asSlice(base_iface$OFFSET, base_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*get_border)(struct _GtkScrollable*,struct _GtkBorder*);
+     * {@snippet lang=c :
+     * GTypeInterface base_iface
      * }
      */
-    public static void get_border$set(MemorySegment seg, MemorySegment x) {
-        constants$3062.const$1.set(seg, x);
+    public static void base_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, base_iface$OFFSET, base_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment get_border$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3062.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_border$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3062.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_border get_border(MemorySegment segment, Arena scope) {
-        return get_border.ofAddress(get_border$get(segment), scope);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    /**
+     * {@snippet lang=c :
+     * gboolean (*get_border)(GtkScrollable *, GtkBorder *)
+     * }
+     */
+    public class get_border {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_border.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_border.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
+    }
+
+    private static final AddressLayout get_border$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_border"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*get_border)(GtkScrollable *, GtkBorder *)
+     * }
+     */
+    public static final AddressLayout get_border$layout() {
+        return get_border$LAYOUT;
+    }
+
+    private static final long get_border$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*get_border)(GtkScrollable *, GtkBorder *)
+     * }
+     */
+    public static final long get_border$offset() {
+        return get_border$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean (*get_border)(GtkScrollable *, GtkBorder *)
+     * }
+     */
+    public static MemorySegment get_border(MemorySegment struct) {
+        return struct.get(get_border$LAYOUT, get_border$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean (*get_border)(GtkScrollable *, GtkBorder *)
+     * }
+     */
+    public static void get_border(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_border$LAYOUT, get_border$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

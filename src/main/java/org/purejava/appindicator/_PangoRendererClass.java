@@ -2,788 +2,1483 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _PangoRendererClass {
- *     struct _GObjectClass parent_class;
- *     void (*draw_glyphs)(struct _PangoRenderer*,struct _PangoFont*,struct _PangoGlyphString*,int,int);
- *     void (*draw_rectangle)(struct _PangoRenderer*,enum PangoRenderPart,int,int,int,int);
- *     void (*draw_error_underline)(struct _PangoRenderer*,int,int,int,int);
- *     void (*draw_shape)(struct _PangoRenderer*,struct _PangoAttrShape*,int,int);
- *     void (*draw_trapezoid)(struct _PangoRenderer*,enum PangoRenderPart,double,double,double,double,double,double);
- *     void (*draw_glyph)(struct _PangoRenderer*,struct _PangoFont*,unsigned int,double,double);
- *     void (*part_changed)(struct _PangoRenderer*,enum PangoRenderPart);
- *     void (*begin)(struct _PangoRenderer*);
- *     void (*end)(struct _PangoRenderer*);
- *     void (*prepare_run)(struct _PangoRenderer*,struct _PangoGlyphItem*);
- *     void (*draw_glyph_item)(struct _PangoRenderer*,char*,struct _PangoGlyphItem*,int,int);
- *     void (*_pango_reserved2)();
- *     void (*_pango_reserved3)();
- *     void (*_pango_reserved4)();
- * };
+ *     GObjectClass parent_class;
+ *     void (*draw_glyphs)(PangoRenderer *, PangoFont *, PangoGlyphString *, int, int);
+ *     void (*draw_rectangle)(PangoRenderer *, PangoRenderPart, int, int, int, int);
+ *     void (*draw_error_underline)(PangoRenderer *, int, int, int, int);
+ *     void (*draw_shape)(PangoRenderer *, PangoAttrShape *, int, int);
+ *     void (*draw_trapezoid)(PangoRenderer *, PangoRenderPart, double, double, double, double, double, double);
+ *     void (*draw_glyph)(PangoRenderer *, PangoFont *, PangoGlyph, double, double);
+ *     void (*part_changed)(PangoRenderer *, PangoRenderPart);
+ *     void (*begin)(PangoRenderer *);
+ *     void (*end)(PangoRenderer *);
+ *     void (*prepare_run)(PangoRenderer *, PangoLayoutRun *);
+ *     void (*draw_glyph_item)(PangoRenderer *, const char *, PangoGlyphItem *, int, int);
+ *     void (*_pango_reserved2)(void);
+ *     void (*_pango_reserved3)(void);
+ *     void (*_pango_reserved4)(void);
+ * }
  * }
  */
 public class _PangoRendererClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1646.const$4;
+    _PangoRendererClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 136);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObjectClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("draw_glyphs"),
+        app_indicator_h.C_POINTER.withName("draw_rectangle"),
+        app_indicator_h.C_POINTER.withName("draw_error_underline"),
+        app_indicator_h.C_POINTER.withName("draw_shape"),
+        app_indicator_h.C_POINTER.withName("draw_trapezoid"),
+        app_indicator_h.C_POINTER.withName("draw_glyph"),
+        app_indicator_h.C_POINTER.withName("part_changed"),
+        app_indicator_h.C_POINTER.withName("begin"),
+        app_indicator_h.C_POINTER.withName("end"),
+        app_indicator_h.C_POINTER.withName("prepare_run"),
+        app_indicator_h.C_POINTER.withName("draw_glyph_item"),
+        app_indicator_h.C_POINTER.withName("_pango_reserved2"),
+        app_indicator_h.C_POINTER.withName("_pango_reserved3"),
+        app_indicator_h.C_POINTER.withName("_pango_reserved4")
+    ).withName("_PangoRendererClass");
+
     /**
-     * {@snippet :
- * void (*draw_glyphs)(struct _PangoRenderer*,struct _PangoFont*,struct _PangoGlyphString*,int,int);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public interface draw_glyphs {
-
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, int _x4);
-        static MemorySegment allocate(draw_glyphs fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1647.const$0, fi, constants$1646.const$5, scope);
-        }
-        static draw_glyphs ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, int __x4) -> {
-                try {
-                    constants$1647.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle draw_glyphs$VH() {
-        return constants$1647.const$2;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*draw_glyphs)(struct _PangoRenderer*,struct _PangoFont*,struct _PangoGlyphString*,int,int);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static MemorySegment draw_glyphs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1647.const$2.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*draw_glyphs)(struct _PangoRenderer*,struct _PangoFont*,struct _PangoGlyphString*,int,int);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static void draw_glyphs$set(MemorySegment seg, MemorySegment x) {
-        constants$1647.const$2.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment draw_glyphs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1647.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void draw_glyphs$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1647.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static draw_glyphs draw_glyphs(MemorySegment segment, Arena scope) {
-        return draw_glyphs.ofAddress(draw_glyphs$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*draw_rectangle)(struct _PangoRenderer*,enum PangoRenderPart,int,int,int,int);
+     * {@snippet lang=c :
+     * void (*draw_glyphs)(PangoRenderer *, PangoFont *, PangoGlyphString *, int, int)
      * }
      */
-    public interface draw_rectangle {
+    public class draw_glyphs {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, int _x4, int _x5);
-        static MemorySegment allocate(draw_rectangle fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1647.const$4, fi, constants$1647.const$3, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, int _x4);
         }
-        static draw_rectangle ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, int __x4, int __x5) -> {
-                try {
-                    constants$1647.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(draw_glyphs.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(draw_glyphs.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, int _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle draw_rectangle$VH() {
-        return constants$1648.const$0;
+    private static final AddressLayout draw_glyphs$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("draw_glyphs"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*draw_glyphs)(PangoRenderer *, PangoFont *, PangoGlyphString *, int, int)
+     * }
+     */
+    public static final AddressLayout draw_glyphs$layout() {
+        return draw_glyphs$LAYOUT;
     }
+
+    private static final long draw_glyphs$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*draw_glyphs)(PangoRenderer *, PangoFont *, PangoGlyphString *, int, int)
+     * }
+     */
+    public static final long draw_glyphs$offset() {
+        return draw_glyphs$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*draw_rectangle)(struct _PangoRenderer*,enum PangoRenderPart,int,int,int,int);
+     * {@snippet lang=c :
+     * void (*draw_glyphs)(PangoRenderer *, PangoFont *, PangoGlyphString *, int, int)
      * }
      */
-    public static MemorySegment draw_rectangle$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1648.const$0.get(seg);
+    public static MemorySegment draw_glyphs(MemorySegment struct) {
+        return struct.get(draw_glyphs$LAYOUT, draw_glyphs$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*draw_rectangle)(struct _PangoRenderer*,enum PangoRenderPart,int,int,int,int);
+     * {@snippet lang=c :
+     * void (*draw_glyphs)(PangoRenderer *, PangoFont *, PangoGlyphString *, int, int)
      * }
      */
-    public static void draw_rectangle$set(MemorySegment seg, MemorySegment x) {
-        constants$1648.const$0.set(seg, x);
+    public static void draw_glyphs(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(draw_glyphs$LAYOUT, draw_glyphs$OFFSET, fieldValue);
     }
-    public static MemorySegment draw_rectangle$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1648.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void draw_rectangle$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1648.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static draw_rectangle draw_rectangle(MemorySegment segment, Arena scope) {
-        return draw_rectangle.ofAddress(draw_rectangle$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*draw_error_underline)(struct _PangoRenderer*,int,int,int,int);
+     * {@snippet lang=c :
+     * void (*draw_rectangle)(PangoRenderer *, PangoRenderPart, int, int, int, int)
      * }
      */
-    public interface draw_error_underline {
+    public class draw_rectangle {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, int _x4);
-        static MemorySegment allocate(draw_error_underline fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1648.const$2, fi, constants$1648.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, int _x2, int _x3, int _x4, int _x5);
         }
-        static draw_error_underline ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, int __x4) -> {
-                try {
-                    constants$1648.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(draw_rectangle.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(draw_rectangle.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3, int _x4, int _x5) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle draw_error_underline$VH() {
-        return constants$1648.const$4;
+    private static final AddressLayout draw_rectangle$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("draw_rectangle"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*draw_rectangle)(PangoRenderer *, PangoRenderPart, int, int, int, int)
+     * }
+     */
+    public static final AddressLayout draw_rectangle$layout() {
+        return draw_rectangle$LAYOUT;
     }
+
+    private static final long draw_rectangle$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*draw_rectangle)(PangoRenderer *, PangoRenderPart, int, int, int, int)
+     * }
+     */
+    public static final long draw_rectangle$offset() {
+        return draw_rectangle$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*draw_error_underline)(struct _PangoRenderer*,int,int,int,int);
+     * {@snippet lang=c :
+     * void (*draw_rectangle)(PangoRenderer *, PangoRenderPart, int, int, int, int)
      * }
      */
-    public static MemorySegment draw_error_underline$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1648.const$4.get(seg);
+    public static MemorySegment draw_rectangle(MemorySegment struct) {
+        return struct.get(draw_rectangle$LAYOUT, draw_rectangle$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*draw_error_underline)(struct _PangoRenderer*,int,int,int,int);
+     * {@snippet lang=c :
+     * void (*draw_rectangle)(PangoRenderer *, PangoRenderPart, int, int, int, int)
      * }
      */
-    public static void draw_error_underline$set(MemorySegment seg, MemorySegment x) {
-        constants$1648.const$4.set(seg, x);
+    public static void draw_rectangle(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(draw_rectangle$LAYOUT, draw_rectangle$OFFSET, fieldValue);
     }
-    public static MemorySegment draw_error_underline$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1648.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void draw_error_underline$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1648.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static draw_error_underline draw_error_underline(MemorySegment segment, Arena scope) {
-        return draw_error_underline.ofAddress(draw_error_underline$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*draw_shape)(struct _PangoRenderer*,struct _PangoAttrShape*,int,int);
+     * {@snippet lang=c :
+     * void (*draw_error_underline)(PangoRenderer *, int, int, int, int)
      * }
      */
-    public interface draw_shape {
+    public class draw_error_underline {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3);
-        static MemorySegment allocate(draw_shape fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1648.const$5, fi, constants$1046.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, int _x2, int _x3, int _x4);
         }
-        static draw_shape ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3) -> {
-                try {
-                    constants$1649.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(draw_error_underline.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(draw_error_underline.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3, int _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle draw_shape$VH() {
-        return constants$1649.const$1;
+    private static final AddressLayout draw_error_underline$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("draw_error_underline"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*draw_error_underline)(PangoRenderer *, int, int, int, int)
+     * }
+     */
+    public static final AddressLayout draw_error_underline$layout() {
+        return draw_error_underline$LAYOUT;
     }
+
+    private static final long draw_error_underline$OFFSET = 152;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*draw_error_underline)(PangoRenderer *, int, int, int, int)
+     * }
+     */
+    public static final long draw_error_underline$offset() {
+        return draw_error_underline$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*draw_shape)(struct _PangoRenderer*,struct _PangoAttrShape*,int,int);
+     * {@snippet lang=c :
+     * void (*draw_error_underline)(PangoRenderer *, int, int, int, int)
      * }
      */
-    public static MemorySegment draw_shape$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1649.const$1.get(seg);
+    public static MemorySegment draw_error_underline(MemorySegment struct) {
+        return struct.get(draw_error_underline$LAYOUT, draw_error_underline$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*draw_shape)(struct _PangoRenderer*,struct _PangoAttrShape*,int,int);
+     * {@snippet lang=c :
+     * void (*draw_error_underline)(PangoRenderer *, int, int, int, int)
      * }
      */
-    public static void draw_shape$set(MemorySegment seg, MemorySegment x) {
-        constants$1649.const$1.set(seg, x);
+    public static void draw_error_underline(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(draw_error_underline$LAYOUT, draw_error_underline$OFFSET, fieldValue);
     }
-    public static MemorySegment draw_shape$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1649.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void draw_shape$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1649.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static draw_shape draw_shape(MemorySegment segment, Arena scope) {
-        return draw_shape.ofAddress(draw_shape$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*draw_trapezoid)(struct _PangoRenderer*,enum PangoRenderPart,double,double,double,double,double,double);
+     * {@snippet lang=c :
+     * void (*draw_shape)(PangoRenderer *, PangoAttrShape *, int, int)
      * }
      */
-    public interface draw_trapezoid {
+    public class draw_shape {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, double _x2, double _x3, double _x4, double _x5, double _x6, double _x7);
-        static MemorySegment allocate(draw_trapezoid fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1649.const$3, fi, constants$1649.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, int _x2, int _x3);
         }
-        static draw_trapezoid ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, double __x2, double __x3, double __x4, double __x5, double __x6, double __x7) -> {
-                try {
-                    constants$1649.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(draw_shape.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(draw_shape.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, int _x3) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle draw_trapezoid$VH() {
-        return constants$1649.const$5;
+    private static final AddressLayout draw_shape$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("draw_shape"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*draw_shape)(PangoRenderer *, PangoAttrShape *, int, int)
+     * }
+     */
+    public static final AddressLayout draw_shape$layout() {
+        return draw_shape$LAYOUT;
     }
+
+    private static final long draw_shape$OFFSET = 160;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*draw_shape)(PangoRenderer *, PangoAttrShape *, int, int)
+     * }
+     */
+    public static final long draw_shape$offset() {
+        return draw_shape$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*draw_trapezoid)(struct _PangoRenderer*,enum PangoRenderPart,double,double,double,double,double,double);
+     * {@snippet lang=c :
+     * void (*draw_shape)(PangoRenderer *, PangoAttrShape *, int, int)
      * }
      */
-    public static MemorySegment draw_trapezoid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1649.const$5.get(seg);
+    public static MemorySegment draw_shape(MemorySegment struct) {
+        return struct.get(draw_shape$LAYOUT, draw_shape$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*draw_trapezoid)(struct _PangoRenderer*,enum PangoRenderPart,double,double,double,double,double,double);
+     * {@snippet lang=c :
+     * void (*draw_shape)(PangoRenderer *, PangoAttrShape *, int, int)
      * }
      */
-    public static void draw_trapezoid$set(MemorySegment seg, MemorySegment x) {
-        constants$1649.const$5.set(seg, x);
+    public static void draw_shape(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(draw_shape$LAYOUT, draw_shape$OFFSET, fieldValue);
     }
-    public static MemorySegment draw_trapezoid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1649.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void draw_trapezoid$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1649.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static draw_trapezoid draw_trapezoid(MemorySegment segment, Arena scope) {
-        return draw_trapezoid.ofAddress(draw_trapezoid$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*draw_glyph)(struct _PangoRenderer*,struct _PangoFont*,unsigned int,double,double);
+     * {@snippet lang=c :
+     * void (*draw_trapezoid)(PangoRenderer *, PangoRenderPart, double, double, double, double, double, double)
      * }
      */
-    public interface draw_glyph {
+    public class draw_trapezoid {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, double _x3, double _x4);
-        static MemorySegment allocate(draw_glyph fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1650.const$1, fi, constants$1650.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, double _x2, double _x3, double _x4, double _x5, double _x6, double _x7);
         }
-        static draw_glyph ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, double __x3, double __x4) -> {
-                try {
-                    constants$1650.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(draw_trapezoid.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(draw_trapezoid.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, double _x2, double _x3, double _x4, double _x5, double _x6, double _x7) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle draw_glyph$VH() {
-        return constants$1650.const$3;
+    private static final AddressLayout draw_trapezoid$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("draw_trapezoid"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*draw_trapezoid)(PangoRenderer *, PangoRenderPart, double, double, double, double, double, double)
+     * }
+     */
+    public static final AddressLayout draw_trapezoid$layout() {
+        return draw_trapezoid$LAYOUT;
     }
+
+    private static final long draw_trapezoid$OFFSET = 168;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*draw_trapezoid)(PangoRenderer *, PangoRenderPart, double, double, double, double, double, double)
+     * }
+     */
+    public static final long draw_trapezoid$offset() {
+        return draw_trapezoid$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*draw_glyph)(struct _PangoRenderer*,struct _PangoFont*,unsigned int,double,double);
+     * {@snippet lang=c :
+     * void (*draw_trapezoid)(PangoRenderer *, PangoRenderPart, double, double, double, double, double, double)
      * }
      */
-    public static MemorySegment draw_glyph$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1650.const$3.get(seg);
+    public static MemorySegment draw_trapezoid(MemorySegment struct) {
+        return struct.get(draw_trapezoid$LAYOUT, draw_trapezoid$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*draw_glyph)(struct _PangoRenderer*,struct _PangoFont*,unsigned int,double,double);
+     * {@snippet lang=c :
+     * void (*draw_trapezoid)(PangoRenderer *, PangoRenderPart, double, double, double, double, double, double)
      * }
      */
-    public static void draw_glyph$set(MemorySegment seg, MemorySegment x) {
-        constants$1650.const$3.set(seg, x);
+    public static void draw_trapezoid(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(draw_trapezoid$LAYOUT, draw_trapezoid$OFFSET, fieldValue);
     }
-    public static MemorySegment draw_glyph$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1650.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void draw_glyph$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1650.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static draw_glyph draw_glyph(MemorySegment segment, Arena scope) {
-        return draw_glyph.ofAddress(draw_glyph$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*part_changed)(struct _PangoRenderer*,enum PangoRenderPart);
+     * {@snippet lang=c :
+     * void (*draw_glyph)(PangoRenderer *, PangoFont *, PangoGlyph, double, double)
      * }
      */
-    public interface part_changed {
+    public class draw_glyph {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(part_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1650.const$4, fi, constants$40.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, int _x2, double _x3, double _x4);
         }
-        static part_changed ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
-                try {
-                    constants$511.const$3.invokeExact(symbol, __x0, __x1);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_DOUBLE,
+            app_indicator_h.C_DOUBLE
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(draw_glyph.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(draw_glyph.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, double _x3, double _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle part_changed$VH() {
-        return constants$1650.const$5;
+    private static final AddressLayout draw_glyph$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("draw_glyph"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*draw_glyph)(PangoRenderer *, PangoFont *, PangoGlyph, double, double)
+     * }
+     */
+    public static final AddressLayout draw_glyph$layout() {
+        return draw_glyph$LAYOUT;
     }
+
+    private static final long draw_glyph$OFFSET = 176;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*draw_glyph)(PangoRenderer *, PangoFont *, PangoGlyph, double, double)
+     * }
+     */
+    public static final long draw_glyph$offset() {
+        return draw_glyph$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*part_changed)(struct _PangoRenderer*,enum PangoRenderPart);
+     * {@snippet lang=c :
+     * void (*draw_glyph)(PangoRenderer *, PangoFont *, PangoGlyph, double, double)
      * }
      */
-    public static MemorySegment part_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1650.const$5.get(seg);
+    public static MemorySegment draw_glyph(MemorySegment struct) {
+        return struct.get(draw_glyph$LAYOUT, draw_glyph$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*part_changed)(struct _PangoRenderer*,enum PangoRenderPart);
+     * {@snippet lang=c :
+     * void (*draw_glyph)(PangoRenderer *, PangoFont *, PangoGlyph, double, double)
      * }
      */
-    public static void part_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1650.const$5.set(seg, x);
+    public static void draw_glyph(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(draw_glyph$LAYOUT, draw_glyph$OFFSET, fieldValue);
     }
-    public static MemorySegment part_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1650.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void part_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1650.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static part_changed part_changed(MemorySegment segment, Arena scope) {
-        return part_changed.ofAddress(part_changed$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*begin)(struct _PangoRenderer*);
+     * {@snippet lang=c :
+     * void (*part_changed)(PangoRenderer *, PangoRenderPart)
      * }
      */
-    public interface begin {
+    public class part_changed {
 
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(begin fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1651.const$0, fi, constants$13.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1);
         }
-        static begin ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(part_changed.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(part_changed.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle begin$VH() {
-        return constants$1651.const$1;
+    private static final AddressLayout part_changed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("part_changed"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*part_changed)(PangoRenderer *, PangoRenderPart)
+     * }
+     */
+    public static final AddressLayout part_changed$layout() {
+        return part_changed$LAYOUT;
     }
+
+    private static final long part_changed$OFFSET = 184;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*part_changed)(PangoRenderer *, PangoRenderPart)
+     * }
+     */
+    public static final long part_changed$offset() {
+        return part_changed$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*begin)(struct _PangoRenderer*);
+     * {@snippet lang=c :
+     * void (*part_changed)(PangoRenderer *, PangoRenderPart)
      * }
      */
-    public static MemorySegment begin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1651.const$1.get(seg);
+    public static MemorySegment part_changed(MemorySegment struct) {
+        return struct.get(part_changed$LAYOUT, part_changed$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*begin)(struct _PangoRenderer*);
+     * {@snippet lang=c :
+     * void (*part_changed)(PangoRenderer *, PangoRenderPart)
      * }
      */
-    public static void begin$set(MemorySegment seg, MemorySegment x) {
-        constants$1651.const$1.set(seg, x);
+    public static void part_changed(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(part_changed$LAYOUT, part_changed$OFFSET, fieldValue);
     }
-    public static MemorySegment begin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1651.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void begin$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1651.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static begin begin(MemorySegment segment, Arena scope) {
-        return begin.ofAddress(begin$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*end)(struct _PangoRenderer*);
+     * {@snippet lang=c :
+     * void (*begin)(PangoRenderer *)
      * }
      */
-    public interface end {
+    public class begin {
 
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(end fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1651.const$2, fi, constants$13.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static end ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(begin.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(begin.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle end$VH() {
-        return constants$1651.const$3;
+    private static final AddressLayout begin$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("begin"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*begin)(PangoRenderer *)
+     * }
+     */
+    public static final AddressLayout begin$layout() {
+        return begin$LAYOUT;
     }
+
+    private static final long begin$OFFSET = 192;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*begin)(PangoRenderer *)
+     * }
+     */
+    public static final long begin$offset() {
+        return begin$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*end)(struct _PangoRenderer*);
+     * {@snippet lang=c :
+     * void (*begin)(PangoRenderer *)
      * }
      */
-    public static MemorySegment end$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1651.const$3.get(seg);
+    public static MemorySegment begin(MemorySegment struct) {
+        return struct.get(begin$LAYOUT, begin$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*end)(struct _PangoRenderer*);
+     * {@snippet lang=c :
+     * void (*begin)(PangoRenderer *)
      * }
      */
-    public static void end$set(MemorySegment seg, MemorySegment x) {
-        constants$1651.const$3.set(seg, x);
+    public static void begin(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(begin$LAYOUT, begin$OFFSET, fieldValue);
     }
-    public static MemorySegment end$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1651.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void end$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1651.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static end end(MemorySegment segment, Arena scope) {
-        return end.ofAddress(end$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*prepare_run)(struct _PangoRenderer*,struct _PangoGlyphItem*);
+     * {@snippet lang=c :
+     * void (*end)(PangoRenderer *)
      * }
      */
-    public interface prepare_run {
+    public class end {
 
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(prepare_run fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1651.const$4, fi, constants$13.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static prepare_run ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(end.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(end.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle prepare_run$VH() {
-        return constants$1651.const$5;
+    private static final AddressLayout end$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("end"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*end)(PangoRenderer *)
+     * }
+     */
+    public static final AddressLayout end$layout() {
+        return end$LAYOUT;
     }
+
+    private static final long end$OFFSET = 200;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*end)(PangoRenderer *)
+     * }
+     */
+    public static final long end$offset() {
+        return end$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*prepare_run)(struct _PangoRenderer*,struct _PangoGlyphItem*);
+     * {@snippet lang=c :
+     * void (*end)(PangoRenderer *)
      * }
      */
-    public static MemorySegment prepare_run$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1651.const$5.get(seg);
+    public static MemorySegment end(MemorySegment struct) {
+        return struct.get(end$LAYOUT, end$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*prepare_run)(struct _PangoRenderer*,struct _PangoGlyphItem*);
+     * {@snippet lang=c :
+     * void (*end)(PangoRenderer *)
      * }
      */
-    public static void prepare_run$set(MemorySegment seg, MemorySegment x) {
-        constants$1651.const$5.set(seg, x);
+    public static void end(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(end$LAYOUT, end$OFFSET, fieldValue);
     }
-    public static MemorySegment prepare_run$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1651.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void prepare_run$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1651.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static prepare_run prepare_run(MemorySegment segment, Arena scope) {
-        return prepare_run.ofAddress(prepare_run$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*draw_glyph_item)(struct _PangoRenderer*,char*,struct _PangoGlyphItem*,int,int);
+     * {@snippet lang=c :
+     * void (*prepare_run)(PangoRenderer *, PangoLayoutRun *)
      * }
      */
-    public interface draw_glyph_item {
+    public class prepare_run {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, int _x4);
-        static MemorySegment allocate(draw_glyph_item fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1652.const$0, fi, constants$1646.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static draw_glyph_item ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, int __x4) -> {
-                try {
-                    constants$1647.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(prepare_run.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(prepare_run.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle draw_glyph_item$VH() {
-        return constants$1652.const$1;
+    private static final AddressLayout prepare_run$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("prepare_run"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*prepare_run)(PangoRenderer *, PangoLayoutRun *)
+     * }
+     */
+    public static final AddressLayout prepare_run$layout() {
+        return prepare_run$LAYOUT;
     }
+
+    private static final long prepare_run$OFFSET = 208;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*prepare_run)(PangoRenderer *, PangoLayoutRun *)
+     * }
+     */
+    public static final long prepare_run$offset() {
+        return prepare_run$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*draw_glyph_item)(struct _PangoRenderer*,char*,struct _PangoGlyphItem*,int,int);
+     * {@snippet lang=c :
+     * void (*prepare_run)(PangoRenderer *, PangoLayoutRun *)
      * }
      */
-    public static MemorySegment draw_glyph_item$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1652.const$1.get(seg);
+    public static MemorySegment prepare_run(MemorySegment struct) {
+        return struct.get(prepare_run$LAYOUT, prepare_run$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*draw_glyph_item)(struct _PangoRenderer*,char*,struct _PangoGlyphItem*,int,int);
+     * {@snippet lang=c :
+     * void (*prepare_run)(PangoRenderer *, PangoLayoutRun *)
      * }
      */
-    public static void draw_glyph_item$set(MemorySegment seg, MemorySegment x) {
-        constants$1652.const$1.set(seg, x);
+    public static void prepare_run(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(prepare_run$LAYOUT, prepare_run$OFFSET, fieldValue);
     }
-    public static MemorySegment draw_glyph_item$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1652.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void draw_glyph_item$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1652.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static draw_glyph_item draw_glyph_item(MemorySegment segment, Arena scope) {
-        return draw_glyph_item.ofAddress(draw_glyph_item$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_pango_reserved2)();
+     * {@snippet lang=c :
+     * void (*draw_glyph_item)(PangoRenderer *, const char *, PangoGlyphItem *, int, int)
      * }
      */
-    public interface _pango_reserved2 {
+    public class draw_glyph_item {
 
-        void apply();
-        static MemorySegment allocate(_pango_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1652.const$2, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, int _x4);
         }
-        static _pango_reserved2 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(draw_glyph_item.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(draw_glyph_item.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, int _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _pango_reserved2$VH() {
-        return constants$1652.const$3;
+    private static final AddressLayout draw_glyph_item$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("draw_glyph_item"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*draw_glyph_item)(PangoRenderer *, const char *, PangoGlyphItem *, int, int)
+     * }
+     */
+    public static final AddressLayout draw_glyph_item$layout() {
+        return draw_glyph_item$LAYOUT;
     }
+
+    private static final long draw_glyph_item$OFFSET = 216;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*draw_glyph_item)(PangoRenderer *, const char *, PangoGlyphItem *, int, int)
+     * }
+     */
+    public static final long draw_glyph_item$offset() {
+        return draw_glyph_item$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_pango_reserved2)();
+     * {@snippet lang=c :
+     * void (*draw_glyph_item)(PangoRenderer *, const char *, PangoGlyphItem *, int, int)
      * }
      */
-    public static MemorySegment _pango_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1652.const$3.get(seg);
+    public static MemorySegment draw_glyph_item(MemorySegment struct) {
+        return struct.get(draw_glyph_item$LAYOUT, draw_glyph_item$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_pango_reserved2)();
+     * {@snippet lang=c :
+     * void (*draw_glyph_item)(PangoRenderer *, const char *, PangoGlyphItem *, int, int)
      * }
      */
-    public static void _pango_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1652.const$3.set(seg, x);
+    public static void draw_glyph_item(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(draw_glyph_item$LAYOUT, draw_glyph_item$OFFSET, fieldValue);
     }
-    public static MemorySegment _pango_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1652.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _pango_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1652.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _pango_reserved2 _pango_reserved2(MemorySegment segment, Arena scope) {
-        return _pango_reserved2.ofAddress(_pango_reserved2$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_pango_reserved3)();
+     * {@snippet lang=c :
+     * void (*_pango_reserved2)(void)
      * }
      */
-    public interface _pango_reserved3 {
+    public class _pango_reserved2 {
 
-        void apply();
-        static MemorySegment allocate(_pango_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1652.const$4, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _pango_reserved3 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_pango_reserved2.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_pango_reserved2.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _pango_reserved3$VH() {
-        return constants$1652.const$5;
+    private static final AddressLayout _pango_reserved2$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_pango_reserved2"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_pango_reserved2)(void)
+     * }
+     */
+    public static final AddressLayout _pango_reserved2$layout() {
+        return _pango_reserved2$LAYOUT;
     }
+
+    private static final long _pango_reserved2$OFFSET = 224;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_pango_reserved2)(void)
+     * }
+     */
+    public static final long _pango_reserved2$offset() {
+        return _pango_reserved2$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_pango_reserved3)();
+     * {@snippet lang=c :
+     * void (*_pango_reserved2)(void)
      * }
      */
-    public static MemorySegment _pango_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1652.const$5.get(seg);
+    public static MemorySegment _pango_reserved2(MemorySegment struct) {
+        return struct.get(_pango_reserved2$LAYOUT, _pango_reserved2$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_pango_reserved3)();
+     * {@snippet lang=c :
+     * void (*_pango_reserved2)(void)
      * }
      */
-    public static void _pango_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$1652.const$5.set(seg, x);
+    public static void _pango_reserved2(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_pango_reserved2$LAYOUT, _pango_reserved2$OFFSET, fieldValue);
     }
-    public static MemorySegment _pango_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1652.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _pango_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1652.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _pango_reserved3 _pango_reserved3(MemorySegment segment, Arena scope) {
-        return _pango_reserved3.ofAddress(_pango_reserved3$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_pango_reserved4)();
+     * {@snippet lang=c :
+     * void (*_pango_reserved3)(void)
      * }
      */
-    public interface _pango_reserved4 {
+    public class _pango_reserved3 {
 
-        void apply();
-        static MemorySegment allocate(_pango_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1653.const$0, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _pango_reserved4 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_pango_reserved3.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_pango_reserved3.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _pango_reserved4$VH() {
-        return constants$1653.const$1;
+    private static final AddressLayout _pango_reserved3$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_pango_reserved3"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_pango_reserved3)(void)
+     * }
+     */
+    public static final AddressLayout _pango_reserved3$layout() {
+        return _pango_reserved3$LAYOUT;
     }
+
+    private static final long _pango_reserved3$OFFSET = 232;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_pango_reserved3)(void)
+     * }
+     */
+    public static final long _pango_reserved3$offset() {
+        return _pango_reserved3$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_pango_reserved4)();
+     * {@snippet lang=c :
+     * void (*_pango_reserved3)(void)
      * }
      */
-    public static MemorySegment _pango_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1653.const$1.get(seg);
+    public static MemorySegment _pango_reserved3(MemorySegment struct) {
+        return struct.get(_pango_reserved3$LAYOUT, _pango_reserved3$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_pango_reserved4)();
+     * {@snippet lang=c :
+     * void (*_pango_reserved3)(void)
      * }
      */
-    public static void _pango_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$1653.const$1.set(seg, x);
+    public static void _pango_reserved3(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_pango_reserved3$LAYOUT, _pango_reserved3$OFFSET, fieldValue);
     }
-    public static MemorySegment _pango_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1653.const$1.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * void (*_pango_reserved4)(void)
+     * }
+     */
+    public class _pango_reserved4 {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_pango_reserved4.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_pango_reserved4.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void _pango_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1653.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout _pango_reserved4$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_pango_reserved4"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_pango_reserved4)(void)
+     * }
+     */
+    public static final AddressLayout _pango_reserved4$layout() {
+        return _pango_reserved4$LAYOUT;
     }
-    public static _pango_reserved4 _pango_reserved4(MemorySegment segment, Arena scope) {
-        return _pango_reserved4.ofAddress(_pango_reserved4$get(segment), scope);
+
+    private static final long _pango_reserved4$OFFSET = 240;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_pango_reserved4)(void)
+     * }
+     */
+    public static final long _pango_reserved4$offset() {
+        return _pango_reserved4$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*_pango_reserved4)(void)
+     * }
+     */
+    public static MemorySegment _pango_reserved4(MemorySegment struct) {
+        return struct.get(_pango_reserved4$LAYOUT, _pango_reserved4$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*_pango_reserved4)(void)
+     * }
+     */
+    public static void _pango_reserved4(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_pango_reserved4$LAYOUT, _pango_reserved4$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

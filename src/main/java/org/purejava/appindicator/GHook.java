@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GHook GHook;
+ * {@snippet lang=c :
+ * typedef struct _GHook GHook
  * }
  */
-public final class GHook extends _GHook {
+public class GHook extends _GHook {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GHook() {}
+    GHook() {
+        // Should not be called directly
+    }
 }
-
 

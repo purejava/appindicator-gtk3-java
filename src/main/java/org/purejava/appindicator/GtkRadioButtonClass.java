@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkRadioButtonClass GtkRadioButtonClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkRadioButtonClass GtkRadioButtonClass
  * }
  */
-public final class GtkRadioButtonClass extends _GtkRadioButtonClass {
+public class GtkRadioButtonClass extends _GtkRadioButtonClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkRadioButtonClass() {}
+    GtkRadioButtonClass() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkFixed GtkFixed;
+ * {@snippet lang=c :
+ * typedef struct _GtkFixed GtkFixed
  * }
  */
-public final class GtkFixed extends _GtkFixed {
+public class GtkFixed extends _GtkFixed {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFixed() {}
+    GtkFixed() {
+        // Should not be called directly
+    }
 }
-
 

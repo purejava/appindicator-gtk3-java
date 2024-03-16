@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkStyle GtkStyle;
+ * {@snippet lang=c :
+ * typedef struct _GtkStyle GtkStyle
  * }
  */
-public final class GtkStyle extends _GtkStyle {
+public class GtkStyle extends _GtkStyle {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkStyle() {}
+    GtkStyle() {
+        // Should not be called directly
+    }
 }
-
 

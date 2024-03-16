@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkCheckMenuItemClass GtkCheckMenuItemClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkCheckMenuItemClass GtkCheckMenuItemClass
  * }
  */
-public final class GtkCheckMenuItemClass extends _GtkCheckMenuItemClass {
+public class GtkCheckMenuItemClass extends _GtkCheckMenuItemClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkCheckMenuItemClass() {}
+    GtkCheckMenuItemClass() {
+        // Should not be called directly
+    }
 }
-
 

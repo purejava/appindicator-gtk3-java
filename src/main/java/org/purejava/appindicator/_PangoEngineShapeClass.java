@@ -2,140 +2,327 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _PangoEngineShapeClass {
- *     struct _PangoEngineClass parent_class;
- *     void (*script_shape)(struct _PangoEngineShape*,struct _PangoFont*,char*,unsigned int,struct _PangoAnalysis*,struct _PangoGlyphString*,char*,unsigned int);
- *     enum PangoCoverageLevel (*covers)(struct _PangoEngineShape*,struct _PangoFont*,struct _PangoLanguage*,unsigned int);
- * };
+ *     PangoEngineClass parent_class;
+ *     void (*script_shape)(PangoEngineShape *, PangoFont *, const char *, unsigned int, const PangoAnalysis *, PangoGlyphString *, const char *, unsigned int);
+ *     PangoCoverageLevel (*covers)(PangoEngineShape *, PangoFont *, PangoLanguage *, gunichar);
+ * }
  * }
  */
 public class _PangoEngineShapeClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1610.const$2;
+    _PangoEngineShapeClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 136);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _PangoEngineClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("script_shape"),
+        app_indicator_h.C_POINTER.withName("covers")
+    ).withName("_PangoEngineShapeClass");
+
     /**
-     * {@snippet :
- * void (*script_shape)(struct _PangoEngineShape*,struct _PangoFont*,char*,unsigned int,struct _PangoAnalysis*,struct _PangoGlyphString*,char*,unsigned int);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoEngineClass parent_class
      * }
      */
-    public interface script_shape {
-
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5, java.lang.foreign.MemorySegment _x6, int _x7);
-        static MemorySegment allocate(script_shape fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1610.const$4, fi, constants$1610.const$3, scope);
-        }
-        static script_shape ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5, java.lang.foreign.MemorySegment __x6, int __x7) -> {
-                try {
-                    constants$1610.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle script_shape$VH() {
-        return constants$1611.const$0;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoEngineClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*script_shape)(struct _PangoEngineShape*,struct _PangoFont*,char*,unsigned int,struct _PangoAnalysis*,struct _PangoGlyphString*,char*,unsigned int);
+     * {@snippet lang=c :
+     * PangoEngineClass parent_class
      * }
      */
-    public static MemorySegment script_shape$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1611.const$0.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*script_shape)(struct _PangoEngineShape*,struct _PangoFont*,char*,unsigned int,struct _PangoAnalysis*,struct _PangoGlyphString*,char*,unsigned int);
+     * {@snippet lang=c :
+     * PangoEngineClass parent_class
      * }
      */
-    public static void script_shape$set(MemorySegment seg, MemorySegment x) {
-        constants$1611.const$0.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment script_shape$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1611.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void script_shape$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1611.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static script_shape script_shape(MemorySegment segment, Arena scope) {
-        return script_shape.ofAddress(script_shape$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum PangoCoverageLevel (*covers)(struct _PangoEngineShape*,struct _PangoFont*,struct _PangoLanguage*,unsigned int);
+     * {@snippet lang=c :
+     * void (*script_shape)(PangoEngineShape *, PangoFont *, const char *, unsigned int, const PangoAnalysis *, PangoGlyphString *, const char *, unsigned int)
      * }
      */
-    public interface covers {
+    public class script_shape {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3);
-        static MemorySegment allocate(covers fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1611.const$1, fi, constants$312.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, int _x7);
         }
-        static covers ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
-                try {
-                    return (int)constants$1611.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(script_shape.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(script_shape.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3, MemorySegment _x4, MemorySegment _x5, MemorySegment _x6, int _x7) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle covers$VH() {
-        return constants$1611.const$3;
+    private static final AddressLayout script_shape$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("script_shape"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*script_shape)(PangoEngineShape *, PangoFont *, const char *, unsigned int, const PangoAnalysis *, PangoGlyphString *, const char *, unsigned int)
+     * }
+     */
+    public static final AddressLayout script_shape$layout() {
+        return script_shape$LAYOUT;
     }
+
+    private static final long script_shape$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*script_shape)(PangoEngineShape *, PangoFont *, const char *, unsigned int, const PangoAnalysis *, PangoGlyphString *, const char *, unsigned int)
+     * }
+     */
+    public static final long script_shape$offset() {
+        return script_shape$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum PangoCoverageLevel (*covers)(struct _PangoEngineShape*,struct _PangoFont*,struct _PangoLanguage*,unsigned int);
+     * {@snippet lang=c :
+     * void (*script_shape)(PangoEngineShape *, PangoFont *, const char *, unsigned int, const PangoAnalysis *, PangoGlyphString *, const char *, unsigned int)
      * }
      */
-    public static MemorySegment covers$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1611.const$3.get(seg);
+    public static MemorySegment script_shape(MemorySegment struct) {
+        return struct.get(script_shape$LAYOUT, script_shape$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum PangoCoverageLevel (*covers)(struct _PangoEngineShape*,struct _PangoFont*,struct _PangoLanguage*,unsigned int);
+     * {@snippet lang=c :
+     * void (*script_shape)(PangoEngineShape *, PangoFont *, const char *, unsigned int, const PangoAnalysis *, PangoGlyphString *, const char *, unsigned int)
      * }
      */
-    public static void covers$set(MemorySegment seg, MemorySegment x) {
-        constants$1611.const$3.set(seg, x);
+    public static void script_shape(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(script_shape$LAYOUT, script_shape$OFFSET, fieldValue);
     }
-    public static MemorySegment covers$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1611.const$3.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * PangoCoverageLevel (*covers)(PangoEngineShape *, PangoFont *, PangoLanguage *, gunichar)
+     * }
+     */
+    public class covers {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(covers.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(covers.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, int _x3) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void covers$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1611.const$3.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout covers$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("covers"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoCoverageLevel (*covers)(PangoEngineShape *, PangoFont *, PangoLanguage *, gunichar)
+     * }
+     */
+    public static final AddressLayout covers$layout() {
+        return covers$LAYOUT;
     }
-    public static covers covers(MemorySegment segment, Arena scope) {
-        return covers.ofAddress(covers$get(segment), scope);
+
+    private static final long covers$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoCoverageLevel (*covers)(PangoEngineShape *, PangoFont *, PangoLanguage *, gunichar)
+     * }
+     */
+    public static final long covers$offset() {
+        return covers$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoCoverageLevel (*covers)(PangoEngineShape *, PangoFont *, PangoLanguage *, gunichar)
+     * }
+     */
+    public static MemorySegment covers(MemorySegment struct) {
+        return struct.get(covers$LAYOUT, covers$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoCoverageLevel (*covers)(PangoEngineShape *, PangoFont *, PangoLanguage *, gunichar)
+     * }
+     */
+    public static void covers(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(covers$LAYOUT, covers$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

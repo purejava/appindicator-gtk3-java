@@ -2,247 +2,534 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct sigaction {
- *     union  __sigaction_handler;
- *     struct __sigset_t sa_mask;
+ *     union {
+ *         __sighandler_t sa_handler;
+ *         void (*sa_sigaction)(int, siginfo_t *, void *);
+ *     } __sigaction_handler;
+ *     __sigset_t sa_mask;
  *     int sa_flags;
- *     void (*sa_restorer)();
- * };
+ *     void (*sa_restorer)(void);
+ * }
  * }
  */
 public class sigaction {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$126.const$5;
+    sigaction() {
+        // Should not be called directly
     }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        sigaction.__sigaction_handler.layout().withName("__sigaction_handler"),
+        __sigset_t.layout().withName("sa_mask"),
+        app_indicator_h.C_INT.withName("sa_flags"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("sa_restorer")
+    ).withName("sigaction");
+
     /**
-     * {@snippet :
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    /**
+     * {@snippet lang=c :
      * union {
-     *     void (*sa_handler)(int);
-     *     void (*sa_sigaction)(int,struct siginfo_t*,void*);
-     * };
+     *     __sighandler_t sa_handler;
+     *     void (*sa_sigaction)(int, siginfo_t *, void *);
+     * }
      * }
      */
-    public static final class __sigaction_handler {
+    public static class __sigaction_handler {
 
-        // Suppresses default constructor, ensuring non-instantiability.
-        private __sigaction_handler() {}
-        public static MemoryLayout $LAYOUT() {
-            return constants$127.const$0;
+        __sigaction_handler() {
+            // Should not be called directly
         }
+
+        private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
+            app_indicator_h.C_POINTER.withName("sa_handler"),
+            app_indicator_h.C_POINTER.withName("sa_sigaction")
+        ).withName("$anon$31:5");
+
         /**
-         * {@snippet :
- * void (*sa_handler)(int);
+         * The layout of this union
+         */
+        public static final GroupLayout layout() {
+            return $LAYOUT;
+        }
+
+        private static final AddressLayout sa_handler$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("sa_handler"));
+
+        /**
+         * Layout for field:
+         * {@snippet lang=c :
+         * __sighandler_t sa_handler
          * }
          */
-        public interface sa_handler {
-
-            void apply(int _x0);
-            static MemorySegment allocate(sa_handler fi, Arena scope) {
-                return RuntimeHelper.upcallStub(constants$127.const$1, fi, constants$80.const$1, scope);
-            }
-            static sa_handler ofAddress(MemorySegment addr, Arena arena) {
-                MemorySegment symbol = addr.reinterpret(arena, null);
-                return (int __x0) -> {
-                    try {
-                        constants$122.const$4.invokeExact(symbol, __x0);
-                    } catch (Throwable ex$) {
-                        throw new AssertionError("should not reach here", ex$);
-                    }
-                };
-            }
+        public static final AddressLayout sa_handler$layout() {
+            return sa_handler$LAYOUT;
         }
 
-        public static VarHandle sa_handler$VH() {
-            return constants$127.const$2;
+        private static final long sa_handler$OFFSET = 0;
+
+        /**
+         * Offset for field:
+         * {@snippet lang=c :
+         * __sighandler_t sa_handler
+         * }
+         */
+        public static final long sa_handler$offset() {
+            return sa_handler$OFFSET;
         }
+
         /**
          * Getter for field:
-         * {@snippet :
-         * void (*sa_handler)(int);
+         * {@snippet lang=c :
+         * __sighandler_t sa_handler
          * }
          */
-        public static MemorySegment sa_handler$get(MemorySegment seg) {
-            return (java.lang.foreign.MemorySegment)constants$127.const$2.get(seg);
+        public static MemorySegment sa_handler(MemorySegment union) {
+            return union.get(sa_handler$LAYOUT, sa_handler$OFFSET);
         }
+
         /**
          * Setter for field:
-         * {@snippet :
-         * void (*sa_handler)(int);
+         * {@snippet lang=c :
+         * __sighandler_t sa_handler
          * }
          */
-        public static void sa_handler$set(MemorySegment seg, MemorySegment x) {
-            constants$127.const$2.set(seg, x);
+        public static void sa_handler(MemorySegment union, MemorySegment fieldValue) {
+            union.set(sa_handler$LAYOUT, sa_handler$OFFSET, fieldValue);
         }
-        public static MemorySegment sa_handler$get(MemorySegment seg, long index) {
-            return (java.lang.foreign.MemorySegment)constants$127.const$2.get(seg.asSlice(index*sizeof()));
-        }
-        public static void sa_handler$set(MemorySegment seg, long index, MemorySegment x) {
-            constants$127.const$2.set(seg.asSlice(index*sizeof()), x);
-        }
-        public static sa_handler sa_handler(MemorySegment segment, Arena scope) {
-            return sa_handler.ofAddress(sa_handler$get(segment), scope);
-        }
-        /**
-         * {@snippet :
- * void (*sa_sigaction)(int,struct siginfo_t*,void*);
-         * }
-         */
-        public interface sa_sigaction {
 
-            void apply(int _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-            static MemorySegment allocate(sa_sigaction fi, Arena scope) {
-                return RuntimeHelper.upcallStub(constants$127.const$4, fi, constants$127.const$3, scope);
+        /**
+         * {@snippet lang=c :
+         * void (*sa_sigaction)(int, siginfo_t *, void *)
+         * }
+         */
+        public class sa_sigaction {
+
+            /**
+             * The function pointer signature, expressed as a functional interface
+             */
+            public interface Function {
+                void apply(int _x0, MemorySegment _x1, MemorySegment _x2);
             }
-            static sa_sigaction ofAddress(MemorySegment addr, Arena arena) {
-                MemorySegment symbol = addr.reinterpret(arena, null);
-                return (int __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
-                    try {
-                        constants$127.const$5.invokeExact(symbol, __x0, __x1, __x2);
-                    } catch (Throwable ex$) {
-                        throw new AssertionError("should not reach here", ex$);
-                    }
-                };
+
+            private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+                app_indicator_h.C_INT,
+                app_indicator_h.C_POINTER,
+                app_indicator_h.C_POINTER
+            );
+
+            /**
+             * The descriptor of this function pointer
+             */
+            public static FunctionDescriptor descriptor() {
+                return $DESC;
             }
-        }
 
-        public static VarHandle sa_sigaction$VH() {
-            return constants$128.const$0;
-        }
-        /**
-         * Getter for field:
-         * {@snippet :
-         * void (*sa_sigaction)(int,struct siginfo_t*,void*);
-         * }
-         */
-        public static MemorySegment sa_sigaction$get(MemorySegment seg) {
-            return (java.lang.foreign.MemorySegment)constants$128.const$0.get(seg);
-        }
-        /**
-         * Setter for field:
-         * {@snippet :
-         * void (*sa_sigaction)(int,struct siginfo_t*,void*);
-         * }
-         */
-        public static void sa_sigaction$set(MemorySegment seg, MemorySegment x) {
-            constants$128.const$0.set(seg, x);
-        }
-        public static MemorySegment sa_sigaction$get(MemorySegment seg, long index) {
-            return (java.lang.foreign.MemorySegment)constants$128.const$0.get(seg.asSlice(index*sizeof()));
-        }
-        public static void sa_sigaction$set(MemorySegment seg, long index, MemorySegment x) {
-            constants$128.const$0.set(seg.asSlice(index*sizeof()), x);
-        }
-        public static sa_sigaction sa_sigaction(MemorySegment segment, Arena scope) {
-            return sa_sigaction.ofAddress(sa_sigaction$get(segment), scope);
-        }
-        public static long sizeof() { return $LAYOUT().byteSize(); }
-        public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-        public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-            return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-        }
-        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-    }
+            private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(sa_sigaction.Function.class, "apply", $DESC);
 
-    public static MemorySegment __sigaction_handler$slice(MemorySegment seg) {
-        return seg.asSlice(0, 8);
-    }
-    public static MemorySegment sa_mask$slice(MemorySegment seg) {
-        return seg.asSlice(8, 128);
-    }
-    public static VarHandle sa_flags$VH() {
-        return constants$128.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int sa_flags;
-     * }
-     */
-    public static int sa_flags$get(MemorySegment seg) {
-        return (int)constants$128.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int sa_flags;
-     * }
-     */
-    public static void sa_flags$set(MemorySegment seg, int x) {
-        constants$128.const$1.set(seg, x);
-    }
-    public static int sa_flags$get(MemorySegment seg, long index) {
-        return (int)constants$128.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void sa_flags$set(MemorySegment seg, long index, int x) {
-        constants$128.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    /**
-     * {@snippet :
- * void (*sa_restorer)();
-     * }
-     */
-    public interface sa_restorer {
+            /**
+             * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+             * The lifetime of the returned segment is managed by {@code arena}
+             */
+            public static MemorySegment allocate(sa_sigaction.Function fi, Arena arena) {
+                return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+            }
 
-        void apply();
-        static MemorySegment allocate(sa_restorer fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$128.const$2, fi, constants$7.const$5, scope);
-        }
-        static sa_restorer ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
+            private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+            /**
+             * Invoke the upcall stub {@code funcPtr}, with given parameters
+             */
+            public static void invoke(MemorySegment funcPtr,int _x0, MemorySegment _x1, MemorySegment _x2) {
                 try {
-                    constants$64.const$1.invokeExact(symbol);
+                     DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
-            };
+            }
+        }
+
+        private static final AddressLayout sa_sigaction$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("sa_sigaction"));
+
+        /**
+         * Layout for field:
+         * {@snippet lang=c :
+         * void (*sa_sigaction)(int, siginfo_t *, void *)
+         * }
+         */
+        public static final AddressLayout sa_sigaction$layout() {
+            return sa_sigaction$LAYOUT;
+        }
+
+        private static final long sa_sigaction$OFFSET = 0;
+
+        /**
+         * Offset for field:
+         * {@snippet lang=c :
+         * void (*sa_sigaction)(int, siginfo_t *, void *)
+         * }
+         */
+        public static final long sa_sigaction$offset() {
+            return sa_sigaction$OFFSET;
+        }
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * void (*sa_sigaction)(int, siginfo_t *, void *)
+         * }
+         */
+        public static MemorySegment sa_sigaction(MemorySegment union) {
+            return union.get(sa_sigaction$LAYOUT, sa_sigaction$OFFSET);
+        }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * void (*sa_sigaction)(int, siginfo_t *, void *)
+         * }
+         */
+        public static void sa_sigaction(MemorySegment union, MemorySegment fieldValue) {
+            union.set(sa_sigaction$LAYOUT, sa_sigaction$OFFSET, fieldValue);
+        }
+
+        /**
+         * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+         * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+         */
+        public static MemorySegment asSlice(MemorySegment array, long index) {
+            return array.asSlice(layout().byteSize() * index);
+        }
+
+        /**
+         * The size (in bytes) of this union
+         */
+        public static long sizeof() { return layout().byteSize(); }
+
+        /**
+         * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+         */
+        public static MemorySegment allocate(SegmentAllocator allocator) {
+            return allocator.allocate(layout());
+        }
+
+        /**
+         * Allocate an array of size {@code elementCount} using {@code allocator}.
+         * The returned segment has size {@code elementCount * layout().byteSize()}.
+         */
+        public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+            return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+        }
+
+        /**
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * The returned segment has size {@code layout().byteSize()}
+         */
+        public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+            return reinterpret(addr, 1, arena, cleanup);
+        }
+
+        /**
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * The returned segment has size {@code elementCount * layout().byteSize()}
+         */
+        public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+            return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
         }
     }
 
-    public static VarHandle sa_restorer$VH() {
-        return constants$128.const$3;
+    private static final GroupLayout __sigaction_handler$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("__sigaction_handler"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * union {
+     *     __sighandler_t sa_handler;
+     *     void (*sa_sigaction)(int, siginfo_t *, void *);
+     * } __sigaction_handler
+     * }
+     */
+    public static final GroupLayout __sigaction_handler$layout() {
+        return __sigaction_handler$LAYOUT;
     }
+
+    private static final long __sigaction_handler$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * union {
+     *     __sighandler_t sa_handler;
+     *     void (*sa_sigaction)(int, siginfo_t *, void *);
+     * } __sigaction_handler
+     * }
+     */
+    public static final long __sigaction_handler$offset() {
+        return __sigaction_handler$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*sa_restorer)();
+     * {@snippet lang=c :
+     * union {
+     *     __sighandler_t sa_handler;
+     *     void (*sa_sigaction)(int, siginfo_t *, void *);
+     * } __sigaction_handler
      * }
      */
-    public static MemorySegment sa_restorer$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$128.const$3.get(seg);
+    public static MemorySegment __sigaction_handler(MemorySegment struct) {
+        return struct.asSlice(__sigaction_handler$OFFSET, __sigaction_handler$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*sa_restorer)();
+     * {@snippet lang=c :
+     * union {
+     *     __sighandler_t sa_handler;
+     *     void (*sa_sigaction)(int, siginfo_t *, void *);
+     * } __sigaction_handler
      * }
      */
-    public static void sa_restorer$set(MemorySegment seg, MemorySegment x) {
-        constants$128.const$3.set(seg, x);
+    public static void __sigaction_handler(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, __sigaction_handler$OFFSET, __sigaction_handler$LAYOUT.byteSize());
     }
-    public static MemorySegment sa_restorer$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$128.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void sa_restorer$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$128.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static sa_restorer sa_restorer(MemorySegment segment, Arena scope) {
-        return sa_restorer.ofAddress(sa_restorer$get(segment), scope);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout sa_mask$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("sa_mask"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __sigset_t sa_mask
+     * }
+     */
+    public static final GroupLayout sa_mask$layout() {
+        return sa_mask$LAYOUT;
+    }
+
+    private static final long sa_mask$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __sigset_t sa_mask
+     * }
+     */
+    public static final long sa_mask$offset() {
+        return sa_mask$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __sigset_t sa_mask
+     * }
+     */
+    public static MemorySegment sa_mask(MemorySegment struct) {
+        return struct.asSlice(sa_mask$OFFSET, sa_mask$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __sigset_t sa_mask
+     * }
+     */
+    public static void sa_mask(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, sa_mask$OFFSET, sa_mask$LAYOUT.byteSize());
+    }
+
+    private static final OfInt sa_flags$LAYOUT = (OfInt)$LAYOUT.select(groupElement("sa_flags"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int sa_flags
+     * }
+     */
+    public static final OfInt sa_flags$layout() {
+        return sa_flags$LAYOUT;
+    }
+
+    private static final long sa_flags$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int sa_flags
+     * }
+     */
+    public static final long sa_flags$offset() {
+        return sa_flags$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int sa_flags
+     * }
+     */
+    public static int sa_flags(MemorySegment struct) {
+        return struct.get(sa_flags$LAYOUT, sa_flags$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int sa_flags
+     * }
+     */
+    public static void sa_flags(MemorySegment struct, int fieldValue) {
+        struct.set(sa_flags$LAYOUT, sa_flags$OFFSET, fieldValue);
+    }
+
+    /**
+     * {@snippet lang=c :
+     * void (*sa_restorer)(void)
+     * }
+     */
+    public class sa_restorer {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(sa_restorer.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(sa_restorer.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
+    }
+
+    private static final AddressLayout sa_restorer$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("sa_restorer"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*sa_restorer)(void)
+     * }
+     */
+    public static final AddressLayout sa_restorer$layout() {
+        return sa_restorer$LAYOUT;
+    }
+
+    private static final long sa_restorer$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*sa_restorer)(void)
+     * }
+     */
+    public static final long sa_restorer$offset() {
+        return sa_restorer$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*sa_restorer)(void)
+     * }
+     */
+    public static MemorySegment sa_restorer(MemorySegment struct) {
+        return struct.get(sa_restorer$LAYOUT, sa_restorer$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*sa_restorer)(void)
+     * }
+     */
+    public static void sa_restorer(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(sa_restorer$LAYOUT, sa_restorer$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

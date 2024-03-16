@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkTreeViewClass GtkTreeViewClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkTreeViewClass GtkTreeViewClass
  * }
  */
-public final class GtkTreeViewClass extends _GtkTreeViewClass {
+public class GtkTreeViewClass extends _GtkTreeViewClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkTreeViewClass() {}
+    GtkTreeViewClass() {
+        // Should not be called directly
+    }
 }
-
 

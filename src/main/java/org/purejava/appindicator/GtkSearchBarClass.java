@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkSearchBarClass GtkSearchBarClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkSearchBarClass GtkSearchBarClass
  * }
  */
-public final class GtkSearchBarClass extends _GtkSearchBarClass {
+public class GtkSearchBarClass extends _GtkSearchBarClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkSearchBarClass() {}
+    GtkSearchBarClass() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GPollFD GPollFD;
+ * {@snippet lang=c :
+ * typedef struct _GPollFD GPollFD
  * }
  */
-public final class GPollFD extends _GPollFD {
+public class GPollFD extends _GPollFD {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GPollFD() {}
+    GPollFD() {
+        // Should not be called directly
+    }
 }
-
 

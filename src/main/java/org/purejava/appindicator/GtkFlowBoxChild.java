@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkFlowBoxChild GtkFlowBoxChild;
+ * {@snippet lang=c :
+ * typedef struct _GtkFlowBoxChild GtkFlowBoxChild
  * }
  */
-public final class GtkFlowBoxChild extends _GtkFlowBoxChild {
+public class GtkFlowBoxChild extends _GtkFlowBoxChild {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFlowBoxChild() {}
+    GtkFlowBoxChild() {
+        // Should not be called directly
+    }
 }
-
 

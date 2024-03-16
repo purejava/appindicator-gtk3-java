@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GMenuAttributeIter GMenuAttributeIter;
+ * {@snippet lang=c :
+ * typedef struct _GMenuAttributeIter GMenuAttributeIter
  * }
  */
-public final class GMenuAttributeIter extends _GMenuAttributeIter {
+public class GMenuAttributeIter extends _GMenuAttributeIter {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GMenuAttributeIter() {}
+    GMenuAttributeIter() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GdkPoint GdkPoint;
+ * {@snippet lang=c :
+ * typedef struct _GdkPoint GdkPoint
  * }
  */
-public final class GdkPoint extends _GdkPoint {
+public class GdkPoint extends _GdkPoint {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GdkPoint() {}
+    GdkPoint() {
+        // Should not be called directly
+    }
 }
-
 

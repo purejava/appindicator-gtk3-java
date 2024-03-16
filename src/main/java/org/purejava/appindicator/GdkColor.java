@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GdkColor GdkColor;
+ * {@snippet lang=c :
+ * typedef struct _GdkColor GdkColor
  * }
  */
-public final class GdkColor extends _GdkColor {
+public class GdkColor extends _GdkColor {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GdkColor() {}
+    GdkColor() {
+        // Should not be called directly
+    }
 }
-
 

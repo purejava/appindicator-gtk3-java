@@ -2,356 +2,709 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkTreeSortableIface {
- *     struct _GTypeInterface g_iface;
- *     void (*sort_column_changed)(struct _GtkTreeSortable*);
- *     int (*get_sort_column_id)(struct _GtkTreeSortable*,int*,enum GtkSortType*);
- *     void (*set_sort_column_id)(struct _GtkTreeSortable*,int,enum GtkSortType);
- *     void (*set_sort_func)(struct _GtkTreeSortable*,int,int (*)(struct _GtkTreeModel*,struct _GtkTreeIter*,struct _GtkTreeIter*,void*),void*,void (*)(void*));
- *     void (*set_default_sort_func)(struct _GtkTreeSortable*,int (*)(struct _GtkTreeModel*,struct _GtkTreeIter*,struct _GtkTreeIter*,void*),void*,void (*)(void*));
- *     int (*has_default_sort_func)(struct _GtkTreeSortable*);
- * };
+ *     GTypeInterface g_iface;
+ *     void (*sort_column_changed)(GtkTreeSortable *);
+ *     gboolean (*get_sort_column_id)(GtkTreeSortable *, gint *, GtkSortType *);
+ *     void (*set_sort_column_id)(GtkTreeSortable *, gint, GtkSortType);
+ *     void (*set_sort_func)(GtkTreeSortable *, gint, GtkTreeIterCompareFunc, gpointer, GDestroyNotify);
+ *     void (*set_default_sort_func)(GtkTreeSortable *, GtkTreeIterCompareFunc, gpointer, GDestroyNotify);
+ *     gboolean (*has_default_sort_func)(GtkTreeSortable *);
+ * }
  * }
  */
 public class _GtkTreeSortableIface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2324.const$1;
+    _GtkTreeSortableIface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("sort_column_changed"),
+        app_indicator_h.C_POINTER.withName("get_sort_column_id"),
+        app_indicator_h.C_POINTER.withName("set_sort_column_id"),
+        app_indicator_h.C_POINTER.withName("set_sort_func"),
+        app_indicator_h.C_POINTER.withName("set_default_sort_func"),
+        app_indicator_h.C_POINTER.withName("has_default_sort_func")
+    ).withName("_GtkTreeSortableIface");
+
     /**
-     * {@snippet :
- * void (*sort_column_changed)(struct _GtkTreeSortable*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface sort_column_changed {
-
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(sort_column_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2324.const$2, fi, constants$13.const$1, scope);
-        }
-        static sort_column_changed ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle sort_column_changed$VH() {
-        return constants$2324.const$3;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*sort_column_changed)(struct _GtkTreeSortable*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment sort_column_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2324.const$3.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*sort_column_changed)(struct _GtkTreeSortable*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void sort_column_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$2324.const$3.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment sort_column_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2324.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void sort_column_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2324.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static sort_column_changed sort_column_changed(MemorySegment segment, Arena scope) {
-        return sort_column_changed.ofAddress(sort_column_changed$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*get_sort_column_id)(struct _GtkTreeSortable*,int*,enum GtkSortType*);
+     * {@snippet lang=c :
+     * void (*sort_column_changed)(GtkTreeSortable *)
      * }
      */
-    public interface get_sort_column_id {
+    public class sort_column_changed {
 
-        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_sort_column_id fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2324.const$4, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static get_sort_column_id ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(sort_column_changed.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(sort_column_changed.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_sort_column_id$VH() {
-        return constants$2324.const$5;
+    private static final AddressLayout sort_column_changed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("sort_column_changed"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*sort_column_changed)(GtkTreeSortable *)
+     * }
+     */
+    public static final AddressLayout sort_column_changed$layout() {
+        return sort_column_changed$LAYOUT;
     }
+
+    private static final long sort_column_changed$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*sort_column_changed)(GtkTreeSortable *)
+     * }
+     */
+    public static final long sort_column_changed$offset() {
+        return sort_column_changed$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*get_sort_column_id)(struct _GtkTreeSortable*,int*,enum GtkSortType*);
+     * {@snippet lang=c :
+     * void (*sort_column_changed)(GtkTreeSortable *)
      * }
      */
-    public static MemorySegment get_sort_column_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2324.const$5.get(seg);
+    public static MemorySegment sort_column_changed(MemorySegment struct) {
+        return struct.get(sort_column_changed$LAYOUT, sort_column_changed$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*get_sort_column_id)(struct _GtkTreeSortable*,int*,enum GtkSortType*);
+     * {@snippet lang=c :
+     * void (*sort_column_changed)(GtkTreeSortable *)
      * }
      */
-    public static void get_sort_column_id$set(MemorySegment seg, MemorySegment x) {
-        constants$2324.const$5.set(seg, x);
+    public static void sort_column_changed(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(sort_column_changed$LAYOUT, sort_column_changed$OFFSET, fieldValue);
     }
-    public static MemorySegment get_sort_column_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2324.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_sort_column_id$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2324.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_sort_column_id get_sort_column_id(MemorySegment segment, Arena scope) {
-        return get_sort_column_id.ofAddress(get_sort_column_id$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*set_sort_column_id)(struct _GtkTreeSortable*,int,enum GtkSortType);
+     * {@snippet lang=c :
+     * gboolean (*get_sort_column_id)(GtkTreeSortable *, gint *, GtkSortType *)
      * }
      */
-    public interface set_sort_column_id {
+    public class get_sort_column_id {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
-        static MemorySegment allocate(set_sort_column_id fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2325.const$0, fi, constants$469.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static set_sort_column_id ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
-                try {
-                    constants$1906.const$2.invokeExact(symbol, __x0, __x1, __x2);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_sort_column_id.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_sort_column_id.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle set_sort_column_id$VH() {
-        return constants$2325.const$1;
+    private static final AddressLayout get_sort_column_id$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_sort_column_id"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*get_sort_column_id)(GtkTreeSortable *, gint *, GtkSortType *)
+     * }
+     */
+    public static final AddressLayout get_sort_column_id$layout() {
+        return get_sort_column_id$LAYOUT;
     }
+
+    private static final long get_sort_column_id$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*get_sort_column_id)(GtkTreeSortable *, gint *, GtkSortType *)
+     * }
+     */
+    public static final long get_sort_column_id$offset() {
+        return get_sort_column_id$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*set_sort_column_id)(struct _GtkTreeSortable*,int,enum GtkSortType);
+     * {@snippet lang=c :
+     * gboolean (*get_sort_column_id)(GtkTreeSortable *, gint *, GtkSortType *)
      * }
      */
-    public static MemorySegment set_sort_column_id$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2325.const$1.get(seg);
+    public static MemorySegment get_sort_column_id(MemorySegment struct) {
+        return struct.get(get_sort_column_id$LAYOUT, get_sort_column_id$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*set_sort_column_id)(struct _GtkTreeSortable*,int,enum GtkSortType);
+     * {@snippet lang=c :
+     * gboolean (*get_sort_column_id)(GtkTreeSortable *, gint *, GtkSortType *)
      * }
      */
-    public static void set_sort_column_id$set(MemorySegment seg, MemorySegment x) {
-        constants$2325.const$1.set(seg, x);
+    public static void get_sort_column_id(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_sort_column_id$LAYOUT, get_sort_column_id$OFFSET, fieldValue);
     }
-    public static MemorySegment set_sort_column_id$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2325.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void set_sort_column_id$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2325.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static set_sort_column_id set_sort_column_id(MemorySegment segment, Arena scope) {
-        return set_sort_column_id.ofAddress(set_sort_column_id$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*set_sort_func)(struct _GtkTreeSortable*,int,int (*)(struct _GtkTreeModel*,struct _GtkTreeIter*,struct _GtkTreeIter*,void*),void*,void (*)(void*));
+     * {@snippet lang=c :
+     * void (*set_sort_column_id)(GtkTreeSortable *, gint, GtkSortType)
      * }
      */
-    public interface set_sort_func {
+    public class set_sort_column_id {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(set_sort_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2325.const$2, fi, constants$282.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, int _x2);
         }
-        static set_sort_func ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
-                try {
-                    constants$757.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(set_sort_column_id.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(set_sort_column_id.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle set_sort_func$VH() {
-        return constants$2325.const$3;
+    private static final AddressLayout set_sort_column_id$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("set_sort_column_id"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*set_sort_column_id)(GtkTreeSortable *, gint, GtkSortType)
+     * }
+     */
+    public static final AddressLayout set_sort_column_id$layout() {
+        return set_sort_column_id$LAYOUT;
     }
+
+    private static final long set_sort_column_id$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*set_sort_column_id)(GtkTreeSortable *, gint, GtkSortType)
+     * }
+     */
+    public static final long set_sort_column_id$offset() {
+        return set_sort_column_id$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*set_sort_func)(struct _GtkTreeSortable*,int,int (*)(struct _GtkTreeModel*,struct _GtkTreeIter*,struct _GtkTreeIter*,void*),void*,void (*)(void*));
+     * {@snippet lang=c :
+     * void (*set_sort_column_id)(GtkTreeSortable *, gint, GtkSortType)
      * }
      */
-    public static MemorySegment set_sort_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2325.const$3.get(seg);
+    public static MemorySegment set_sort_column_id(MemorySegment struct) {
+        return struct.get(set_sort_column_id$LAYOUT, set_sort_column_id$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*set_sort_func)(struct _GtkTreeSortable*,int,int (*)(struct _GtkTreeModel*,struct _GtkTreeIter*,struct _GtkTreeIter*,void*),void*,void (*)(void*));
+     * {@snippet lang=c :
+     * void (*set_sort_column_id)(GtkTreeSortable *, gint, GtkSortType)
      * }
      */
-    public static void set_sort_func$set(MemorySegment seg, MemorySegment x) {
-        constants$2325.const$3.set(seg, x);
+    public static void set_sort_column_id(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(set_sort_column_id$LAYOUT, set_sort_column_id$OFFSET, fieldValue);
     }
-    public static MemorySegment set_sort_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2325.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void set_sort_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2325.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static set_sort_func set_sort_func(MemorySegment segment, Arena scope) {
-        return set_sort_func.ofAddress(set_sort_func$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*set_default_sort_func)(struct _GtkTreeSortable*,int (*)(struct _GtkTreeModel*,struct _GtkTreeIter*,struct _GtkTreeIter*,void*),void*,void (*)(void*));
+     * {@snippet lang=c :
+     * void (*set_sort_func)(GtkTreeSortable *, gint, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
      * }
      */
-    public interface set_default_sort_func {
+    public class set_sort_func {
 
-        void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(set_default_sort_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2325.const$4, fi, constants$42.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static set_default_sort_func ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$259.const$4.invokeExact(symbol, _model, _path, _iter, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(set_sort_func.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(set_sort_func.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle set_default_sort_func$VH() {
-        return constants$2325.const$5;
+    private static final AddressLayout set_sort_func$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("set_sort_func"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*set_sort_func)(GtkTreeSortable *, gint, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
+     * }
+     */
+    public static final AddressLayout set_sort_func$layout() {
+        return set_sort_func$LAYOUT;
     }
+
+    private static final long set_sort_func$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*set_sort_func)(GtkTreeSortable *, gint, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
+     * }
+     */
+    public static final long set_sort_func$offset() {
+        return set_sort_func$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*set_default_sort_func)(struct _GtkTreeSortable*,int (*)(struct _GtkTreeModel*,struct _GtkTreeIter*,struct _GtkTreeIter*,void*),void*,void (*)(void*));
+     * {@snippet lang=c :
+     * void (*set_sort_func)(GtkTreeSortable *, gint, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
      * }
      */
-    public static MemorySegment set_default_sort_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2325.const$5.get(seg);
+    public static MemorySegment set_sort_func(MemorySegment struct) {
+        return struct.get(set_sort_func$LAYOUT, set_sort_func$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*set_default_sort_func)(struct _GtkTreeSortable*,int (*)(struct _GtkTreeModel*,struct _GtkTreeIter*,struct _GtkTreeIter*,void*),void*,void (*)(void*));
+     * {@snippet lang=c :
+     * void (*set_sort_func)(GtkTreeSortable *, gint, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
      * }
      */
-    public static void set_default_sort_func$set(MemorySegment seg, MemorySegment x) {
-        constants$2325.const$5.set(seg, x);
+    public static void set_sort_func(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(set_sort_func$LAYOUT, set_sort_func$OFFSET, fieldValue);
     }
-    public static MemorySegment set_default_sort_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2325.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void set_default_sort_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2325.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static set_default_sort_func set_default_sort_func(MemorySegment segment, Arena scope) {
-        return set_default_sort_func.ofAddress(set_default_sort_func$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*has_default_sort_func)(struct _GtkTreeSortable*);
+     * {@snippet lang=c :
+     * void (*set_default_sort_func)(GtkTreeSortable *, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
      * }
      */
-    public interface has_default_sort_func {
+    public class set_default_sort_func {
 
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(has_default_sort_func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2326.const$0, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3);
         }
-        static has_default_sort_func ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(set_default_sort_func.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(set_default_sort_func.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle has_default_sort_func$VH() {
-        return constants$2326.const$1;
+    private static final AddressLayout set_default_sort_func$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("set_default_sort_func"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*set_default_sort_func)(GtkTreeSortable *, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
+     * }
+     */
+    public static final AddressLayout set_default_sort_func$layout() {
+        return set_default_sort_func$LAYOUT;
     }
+
+    private static final long set_default_sort_func$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*set_default_sort_func)(GtkTreeSortable *, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
+     * }
+     */
+    public static final long set_default_sort_func$offset() {
+        return set_default_sort_func$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*has_default_sort_func)(struct _GtkTreeSortable*);
+     * {@snippet lang=c :
+     * void (*set_default_sort_func)(GtkTreeSortable *, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
      * }
      */
-    public static MemorySegment has_default_sort_func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2326.const$1.get(seg);
+    public static MemorySegment set_default_sort_func(MemorySegment struct) {
+        return struct.get(set_default_sort_func$LAYOUT, set_default_sort_func$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*has_default_sort_func)(struct _GtkTreeSortable*);
+     * {@snippet lang=c :
+     * void (*set_default_sort_func)(GtkTreeSortable *, GtkTreeIterCompareFunc, gpointer, GDestroyNotify)
      * }
      */
-    public static void has_default_sort_func$set(MemorySegment seg, MemorySegment x) {
-        constants$2326.const$1.set(seg, x);
+    public static void set_default_sort_func(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(set_default_sort_func$LAYOUT, set_default_sort_func$OFFSET, fieldValue);
     }
-    public static MemorySegment has_default_sort_func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2326.const$1.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * gboolean (*has_default_sort_func)(GtkTreeSortable *)
+     * }
+     */
+    public class has_default_sort_func {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(has_default_sort_func.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(has_default_sort_func.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void has_default_sort_func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2326.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout has_default_sort_func$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("has_default_sort_func"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*has_default_sort_func)(GtkTreeSortable *)
+     * }
+     */
+    public static final AddressLayout has_default_sort_func$layout() {
+        return has_default_sort_func$LAYOUT;
     }
-    public static has_default_sort_func has_default_sort_func(MemorySegment segment, Arena scope) {
-        return has_default_sort_func.ofAddress(has_default_sort_func$get(segment), scope);
+
+    private static final long has_default_sort_func$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*has_default_sort_func)(GtkTreeSortable *)
+     * }
+     */
+    public static final long has_default_sort_func$offset() {
+        return has_default_sort_func$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean (*has_default_sort_func)(GtkTreeSortable *)
+     * }
+     */
+    public static MemorySegment has_default_sort_func(MemorySegment struct) {
+        return struct.get(has_default_sort_func$LAYOUT, has_default_sort_func$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean (*has_default_sort_func)(GtkTreeSortable *)
+     * }
+     */
+    public static void has_default_sort_func(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(has_default_sort_func$LAYOUT, has_default_sort_func$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkGrid GtkGrid;
+ * {@snippet lang=c :
+ * typedef struct _GtkGrid GtkGrid
  * }
  */
-public final class GtkGrid extends _GtkGrid {
+public class GtkGrid extends _GtkGrid {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkGrid() {}
+    GtkGrid() {
+        // Should not be called directly
+    }
 }
-
 

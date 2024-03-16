@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkSizeGroupClass GtkSizeGroupClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkSizeGroupClass GtkSizeGroupClass
  * }
  */
-public final class GtkSizeGroupClass extends _GtkSizeGroupClass {
+public class GtkSizeGroupClass extends _GtkSizeGroupClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkSizeGroupClass() {}
+    GtkSizeGroupClass() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkFontChooserDialogClass GtkFontChooserDialogClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkFontChooserDialogClass GtkFontChooserDialogClass
  * }
  */
-public final class GtkFontChooserDialogClass extends _GtkFontChooserDialogClass {
+public class GtkFontChooserDialogClass extends _GtkFontChooserDialogClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFontChooserDialogClass() {}
+    GtkFontChooserDialogClass() {
+        // Should not be called directly
+    }
 }
-
 

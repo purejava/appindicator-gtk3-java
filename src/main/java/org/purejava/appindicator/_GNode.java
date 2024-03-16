@@ -2,168 +2,305 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GNode {
- *     void* data;
- *     struct _GNode* next;
- *     struct _GNode* prev;
- *     struct _GNode* parent;
- *     struct _GNode* children;
- * };
+ *     gpointer data;
+ *     GNode *next;
+ *     GNode *prev;
+ *     GNode *parent;
+ *     GNode *children;
+ * }
  * }
  */
 public class _GNode {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$212.const$0;
+    _GNode() {
+        // Should not be called directly
     }
-    public static VarHandle data$VH() {
-        return constants$212.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * void* data;
-     * }
-     */
-    public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$212.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * void* data;
-     * }
-     */
-    public static void data$set(MemorySegment seg, MemorySegment x) {
-        constants$212.const$1.set(seg, x);
-    }
-    public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$212.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$212.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle next$VH() {
-        return constants$212.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GNode* next;
-     * }
-     */
-    public static MemorySegment next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$212.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GNode* next;
-     * }
-     */
-    public static void next$set(MemorySegment seg, MemorySegment x) {
-        constants$212.const$2.set(seg, x);
-    }
-    public static MemorySegment next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$212.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void next$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$212.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle prev$VH() {
-        return constants$212.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GNode* prev;
-     * }
-     */
-    public static MemorySegment prev$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$212.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GNode* prev;
-     * }
-     */
-    public static void prev$set(MemorySegment seg, MemorySegment x) {
-        constants$212.const$3.set(seg, x);
-    }
-    public static MemorySegment prev$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$212.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void prev$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$212.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle parent$VH() {
-        return constants$212.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GNode* parent;
-     * }
-     */
-    public static MemorySegment parent$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$212.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GNode* parent;
-     * }
-     */
-    public static void parent$set(MemorySegment seg, MemorySegment x) {
-        constants$212.const$4.set(seg, x);
-    }
-    public static MemorySegment parent$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$212.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void parent$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$212.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle children$VH() {
-        return constants$212.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GNode* children;
-     * }
-     */
-    public static MemorySegment children$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$212.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GNode* children;
-     * }
-     */
-    public static void children$set(MemorySegment seg, MemorySegment x) {
-        constants$212.const$5.set(seg, x);
-    }
-    public static MemorySegment children$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$212.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void children$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$212.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("data"),
+        app_indicator_h.C_POINTER.withName("next"),
+        app_indicator_h.C_POINTER.withName("prev"),
+        app_indicator_h.C_POINTER.withName("parent"),
+        app_indicator_h.C_POINTER.withName("children")
+    ).withName("_GNode");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final AddressLayout data$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("data"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer data
+     * }
+     */
+    public static final AddressLayout data$layout() {
+        return data$LAYOUT;
+    }
+
+    private static final long data$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer data
+     * }
+     */
+    public static final long data$offset() {
+        return data$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer data
+     * }
+     */
+    public static MemorySegment data(MemorySegment struct) {
+        return struct.get(data$LAYOUT, data$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer data
+     * }
+     */
+    public static void data(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(data$LAYOUT, data$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout next$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("next"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GNode *next
+     * }
+     */
+    public static final AddressLayout next$layout() {
+        return next$LAYOUT;
+    }
+
+    private static final long next$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GNode *next
+     * }
+     */
+    public static final long next$offset() {
+        return next$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GNode *next
+     * }
+     */
+    public static MemorySegment next(MemorySegment struct) {
+        return struct.get(next$LAYOUT, next$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GNode *next
+     * }
+     */
+    public static void next(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(next$LAYOUT, next$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout prev$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("prev"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GNode *prev
+     * }
+     */
+    public static final AddressLayout prev$layout() {
+        return prev$LAYOUT;
+    }
+
+    private static final long prev$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GNode *prev
+     * }
+     */
+    public static final long prev$offset() {
+        return prev$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GNode *prev
+     * }
+     */
+    public static MemorySegment prev(MemorySegment struct) {
+        return struct.get(prev$LAYOUT, prev$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GNode *prev
+     * }
+     */
+    public static void prev(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(prev$LAYOUT, prev$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout parent$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("parent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GNode *parent
+     * }
+     */
+    public static final AddressLayout parent$layout() {
+        return parent$LAYOUT;
+    }
+
+    private static final long parent$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GNode *parent
+     * }
+     */
+    public static final long parent$offset() {
+        return parent$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GNode *parent
+     * }
+     */
+    public static MemorySegment parent(MemorySegment struct) {
+        return struct.get(parent$LAYOUT, parent$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GNode *parent
+     * }
+     */
+    public static void parent(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(parent$LAYOUT, parent$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout children$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("children"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GNode *children
+     * }
+     */
+    public static final AddressLayout children$layout() {
+        return children$LAYOUT;
+    }
+
+    private static final long children$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GNode *children
+     * }
+     */
+    public static final long children$offset() {
+        return children$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GNode *children
+     * }
+     */
+    public static MemorySegment children(MemorySegment struct) {
+        return struct.get(children$LAYOUT, children$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GNode *children
+     * }
+     */
+    public static void children(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(children$LAYOUT, children$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

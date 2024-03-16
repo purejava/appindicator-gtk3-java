@@ -2,85 +2,174 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkAccelKey {
- *     unsigned int accel_key;
- *     enum GdkModifierType accel_mods;
- *      *     unsigned int accel_flags;
- * };
+ *     guint accel_key;
+ *     GdkModifierType accel_mods;
+ *     guint accel_flags : 16;
+ * }
  * }
  */
 public class _GtkAccelKey {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1957.const$4;
+    _GtkAccelKey() {
+        // Should not be called directly
     }
-    public static VarHandle accel_key$VH() {
-        return constants$1957.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int accel_key;
-     * }
-     */
-    public static int accel_key$get(MemorySegment seg) {
-        return (int)constants$1957.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int accel_key;
-     * }
-     */
-    public static void accel_key$set(MemorySegment seg, int x) {
-        constants$1957.const$5.set(seg, x);
-    }
-    public static int accel_key$get(MemorySegment seg, long index) {
-        return (int)constants$1957.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void accel_key$set(MemorySegment seg, long index, int x) {
-        constants$1957.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle accel_mods$VH() {
-        return constants$1958.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum GdkModifierType accel_mods;
-     * }
-     */
-    public static int accel_mods$get(MemorySegment seg) {
-        return (int)constants$1958.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum GdkModifierType accel_mods;
-     * }
-     */
-    public static void accel_mods$set(MemorySegment seg, int x) {
-        constants$1958.const$0.set(seg, x);
-    }
-    public static int accel_mods$get(MemorySegment seg, long index) {
-        return (int)constants$1958.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void accel_mods$set(MemorySegment seg, long index, int x) {
-        constants$1958.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("accel_key"),
+        app_indicator_h.C_INT.withName("accel_mods"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GtkAccelKey");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt accel_key$LAYOUT = (OfInt)$LAYOUT.select(groupElement("accel_key"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint accel_key
+     * }
+     */
+    public static final OfInt accel_key$layout() {
+        return accel_key$LAYOUT;
+    }
+
+    private static final long accel_key$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint accel_key
+     * }
+     */
+    public static final long accel_key$offset() {
+        return accel_key$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint accel_key
+     * }
+     */
+    public static int accel_key(MemorySegment struct) {
+        return struct.get(accel_key$LAYOUT, accel_key$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint accel_key
+     * }
+     */
+    public static void accel_key(MemorySegment struct, int fieldValue) {
+        struct.set(accel_key$LAYOUT, accel_key$OFFSET, fieldValue);
+    }
+
+    private static final OfInt accel_mods$LAYOUT = (OfInt)$LAYOUT.select(groupElement("accel_mods"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkModifierType accel_mods
+     * }
+     */
+    public static final OfInt accel_mods$layout() {
+        return accel_mods$LAYOUT;
+    }
+
+    private static final long accel_mods$OFFSET = 4;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkModifierType accel_mods
+     * }
+     */
+    public static final long accel_mods$offset() {
+        return accel_mods$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkModifierType accel_mods
+     * }
+     */
+    public static int accel_mods(MemorySegment struct) {
+        return struct.get(accel_mods$LAYOUT, accel_mods$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkModifierType accel_mods
+     * }
+     */
+    public static void accel_mods(MemorySegment struct, int fieldValue) {
+        struct.set(accel_mods$LAYOUT, accel_mods$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

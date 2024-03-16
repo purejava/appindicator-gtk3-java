@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkMessageDialogClass GtkMessageDialogClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkMessageDialogClass GtkMessageDialogClass
  * }
  */
-public final class GtkMessageDialogClass extends _GtkMessageDialogClass {
+public class GtkMessageDialogClass extends _GtkMessageDialogClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkMessageDialogClass() {}
+    GtkMessageDialogClass() {
+        // Should not be called directly
+    }
 }
-
 

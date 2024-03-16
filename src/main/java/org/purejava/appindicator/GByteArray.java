@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GByteArray GByteArray;
+ * {@snippet lang=c :
+ * typedef struct _GByteArray GByteArray
  * }
  */
-public final class GByteArray extends _GByteArray {
+public class GByteArray extends _GByteArray {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GByteArray() {}
+    GByteArray() {
+        // Should not be called directly
+    }
 }
-
 

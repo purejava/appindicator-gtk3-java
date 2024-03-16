@@ -2,29 +2,65 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*GTypePluginCompleteInterfaceInfo)(struct _GTypePlugin* plugin,unsigned long instance_type,unsigned long interface_type,struct _GInterfaceInfo* info);
+ * {@snippet lang=c :
+ * typedef void (*GTypePluginCompleteInterfaceInfo)(GTypePlugin *, GType, GType, GInterfaceInfo *)
  * }
  */
-public interface GTypePluginCompleteInterfaceInfo {
+public class GTypePluginCompleteInterfaceInfo {
 
-    void apply(java.lang.foreign.MemorySegment plugin, long instance_type, long interface_type, java.lang.foreign.MemorySegment info);
-    static MemorySegment allocate(GTypePluginCompleteInterfaceInfo fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$683.const$0, fi, constants$94.const$1, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment plugin, long instance_type, long interface_type, MemorySegment info);
     }
-    static GTypePluginCompleteInterfaceInfo ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _plugin, long _instance_type, long _interface_type, java.lang.foreign.MemorySegment _info) -> {
-            try {
-                constants$683.const$1.invokeExact(symbol, _plugin, _instance_type, _interface_type, _info);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GTypePluginCompleteInterfaceInfo.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GTypePluginCompleteInterfaceInfo.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment plugin, long instance_type, long interface_type, MemorySegment info) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, plugin, instance_type, interface_type, info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

@@ -2,252 +2,592 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GSettingsClass {
- *     struct _GObjectClass parent_class;
- *     void (*writable_changed)(struct _GSettings*,char*);
- *     void (*changed)(struct _GSettings*,char*);
- *     int (*writable_change_event)(struct _GSettings*,unsigned int);
- *     int (*change_event)(struct _GSettings*,unsigned int*,int);
- *     void* padding[20];
- * };
+ *     GObjectClass parent_class;
+ *     void (*writable_changed)(GSettings *, const gchar *);
+ *     void (*changed)(GSettings *, const gchar *);
+ *     gboolean (*writable_change_event)(GSettings *, GQuark);
+ *     gboolean (*change_event)(GSettings *, const GQuark *, gint);
+ *     gpointer padding[20];
+ * }
  * }
  */
 public class _GSettingsClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1256.const$0;
+    _GSettingsClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 136);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObjectClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("writable_changed"),
+        app_indicator_h.C_POINTER.withName("changed"),
+        app_indicator_h.C_POINTER.withName("writable_change_event"),
+        app_indicator_h.C_POINTER.withName("change_event"),
+        MemoryLayout.sequenceLayout(20, app_indicator_h.C_POINTER).withName("padding")
+    ).withName("_GSettingsClass");
+
     /**
-     * {@snippet :
- * void (*writable_changed)(struct _GSettings*,char*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public interface writable_changed {
-
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(writable_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1256.const$1, fi, constants$13.const$4, scope);
-        }
-        static writable_changed ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle writable_changed$VH() {
-        return constants$1256.const$2;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*writable_changed)(struct _GSettings*,char*);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static MemorySegment writable_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1256.const$2.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*writable_changed)(struct _GSettings*,char*);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static void writable_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1256.const$2.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment writable_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1256.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void writable_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1256.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static writable_changed writable_changed(MemorySegment segment, Arena scope) {
-        return writable_changed.ofAddress(writable_changed$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*changed)(struct _GSettings*,char*);
+     * {@snippet lang=c :
+     * void (*writable_changed)(GSettings *, const gchar *)
      * }
      */
-    public interface changed {
+    public class writable_changed {
 
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1256.const$3, fi, constants$13.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static changed ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(writable_changed.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(writable_changed.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle changed$VH() {
-        return constants$1256.const$4;
+    private static final AddressLayout writable_changed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("writable_changed"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*writable_changed)(GSettings *, const gchar *)
+     * }
+     */
+    public static final AddressLayout writable_changed$layout() {
+        return writable_changed$LAYOUT;
     }
+
+    private static final long writable_changed$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*writable_changed)(GSettings *, const gchar *)
+     * }
+     */
+    public static final long writable_changed$offset() {
+        return writable_changed$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*changed)(struct _GSettings*,char*);
+     * {@snippet lang=c :
+     * void (*writable_changed)(GSettings *, const gchar *)
      * }
      */
-    public static MemorySegment changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1256.const$4.get(seg);
+    public static MemorySegment writable_changed(MemorySegment struct) {
+        return struct.get(writable_changed$LAYOUT, writable_changed$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*changed)(struct _GSettings*,char*);
+     * {@snippet lang=c :
+     * void (*writable_changed)(GSettings *, const gchar *)
      * }
      */
-    public static void changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1256.const$4.set(seg, x);
+    public static void writable_changed(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(writable_changed$LAYOUT, writable_changed$OFFSET, fieldValue);
     }
-    public static MemorySegment changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1256.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1256.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static changed changed(MemorySegment segment, Arena scope) {
-        return changed.ofAddress(changed$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*writable_change_event)(struct _GSettings*,unsigned int);
+     * {@snippet lang=c :
+     * void (*changed)(GSettings *, const gchar *)
      * }
      */
-    public interface writable_change_event {
+    public class changed {
 
-        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(writable_change_event fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1256.const$5, fi, constants$11.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static writable_change_event ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
-                try {
-                    return (int)constants$840.const$4.invokeExact(symbol, __x0, __x1);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(changed.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(changed.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle writable_change_event$VH() {
-        return constants$1257.const$0;
+    private static final AddressLayout changed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("changed"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*changed)(GSettings *, const gchar *)
+     * }
+     */
+    public static final AddressLayout changed$layout() {
+        return changed$LAYOUT;
     }
+
+    private static final long changed$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*changed)(GSettings *, const gchar *)
+     * }
+     */
+    public static final long changed$offset() {
+        return changed$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*writable_change_event)(struct _GSettings*,unsigned int);
+     * {@snippet lang=c :
+     * void (*changed)(GSettings *, const gchar *)
      * }
      */
-    public static MemorySegment writable_change_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1257.const$0.get(seg);
+    public static MemorySegment changed(MemorySegment struct) {
+        return struct.get(changed$LAYOUT, changed$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*writable_change_event)(struct _GSettings*,unsigned int);
+     * {@snippet lang=c :
+     * void (*changed)(GSettings *, const gchar *)
      * }
      */
-    public static void writable_change_event$set(MemorySegment seg, MemorySegment x) {
-        constants$1257.const$0.set(seg, x);
+    public static void changed(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(changed$LAYOUT, changed$OFFSET, fieldValue);
     }
-    public static MemorySegment writable_change_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1257.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void writable_change_event$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1257.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static writable_change_event writable_change_event(MemorySegment segment, Arena scope) {
-        return writable_change_event.ofAddress(writable_change_event$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*change_event)(struct _GSettings*,unsigned int*,int);
+     * {@snippet lang=c :
+     * gboolean (*writable_change_event)(GSettings *, GQuark)
      * }
      */
-    public interface change_event {
+    public class writable_change_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
-        static MemorySegment allocate(change_event fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1257.const$1, fi, constants$62.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, int _x1);
         }
-        static change_event ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
-                try {
-                    return (int)constants$958.const$2.invokeExact(symbol, __x0, __x1, __x2);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(writable_change_event.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(writable_change_event.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle change_event$VH() {
-        return constants$1257.const$2;
+    private static final AddressLayout writable_change_event$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("writable_change_event"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*writable_change_event)(GSettings *, GQuark)
+     * }
+     */
+    public static final AddressLayout writable_change_event$layout() {
+        return writable_change_event$LAYOUT;
     }
+
+    private static final long writable_change_event$OFFSET = 152;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*writable_change_event)(GSettings *, GQuark)
+     * }
+     */
+    public static final long writable_change_event$offset() {
+        return writable_change_event$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*change_event)(struct _GSettings*,unsigned int*,int);
+     * {@snippet lang=c :
+     * gboolean (*writable_change_event)(GSettings *, GQuark)
      * }
      */
-    public static MemorySegment change_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1257.const$2.get(seg);
+    public static MemorySegment writable_change_event(MemorySegment struct) {
+        return struct.get(writable_change_event$LAYOUT, writable_change_event$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*change_event)(struct _GSettings*,unsigned int*,int);
+     * {@snippet lang=c :
+     * gboolean (*writable_change_event)(GSettings *, GQuark)
      * }
      */
-    public static void change_event$set(MemorySegment seg, MemorySegment x) {
-        constants$1257.const$2.set(seg, x);
+    public static void writable_change_event(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(writable_change_event$LAYOUT, writable_change_event$OFFSET, fieldValue);
     }
-    public static MemorySegment change_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1257.const$2.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * gboolean (*change_event)(GSettings *, const GQuark *, gint)
+     * }
+     */
+    public class change_event {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, int _x2);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(change_event.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(change_event.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void change_event$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1257.const$2.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout change_event$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("change_event"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*change_event)(GSettings *, const GQuark *, gint)
+     * }
+     */
+    public static final AddressLayout change_event$layout() {
+        return change_event$LAYOUT;
     }
-    public static change_event change_event(MemorySegment segment, Arena scope) {
-        return change_event.ofAddress(change_event$get(segment), scope);
+
+    private static final long change_event$OFFSET = 160;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*change_event)(GSettings *, const GQuark *, gint)
+     * }
+     */
+    public static final long change_event$offset() {
+        return change_event$OFFSET;
     }
-    public static MemorySegment padding$slice(MemorySegment seg) {
-        return seg.asSlice(168, 160);
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean (*change_event)(GSettings *, const GQuark *, gint)
+     * }
+     */
+    public static MemorySegment change_event(MemorySegment struct) {
+        return struct.get(change_event$LAYOUT, change_event$OFFSET);
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean (*change_event)(GSettings *, const GQuark *, gint)
+     * }
+     */
+    public static void change_event(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(change_event$LAYOUT, change_event$OFFSET, fieldValue);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    private static final SequenceLayout padding$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("padding"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer padding[20]
+     * }
+     */
+    public static final SequenceLayout padding$layout() {
+        return padding$LAYOUT;
+    }
+
+    private static final long padding$OFFSET = 168;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer padding[20]
+     * }
+     */
+    public static final long padding$offset() {
+        return padding$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[20]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct) {
+        return struct.asSlice(padding$OFFSET, padding$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[20]
+     * }
+     */
+    public static void padding(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, padding$OFFSET, padding$LAYOUT.byteSize());
+    }
+
+    private static long[] padding$DIMS = { 20 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * gpointer padding[20]
+     * }
+     */
+    public static long[] padding$dimensions() {
+        return padding$DIMS;
+    }
+    private static final VarHandle padding$ELEM_HANDLE = padding$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[20]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct, long index0) {
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[20]
+     * }
+     */
+    public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

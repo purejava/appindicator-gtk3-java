@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkListBox GtkListBox;
+ * {@snippet lang=c :
+ * typedef struct _GtkListBox GtkListBox
  * }
  */
-public final class GtkListBox extends _GtkListBox {
+public class GtkListBox extends _GtkListBox {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkListBox() {}
+    GtkListBox() {
+        // Should not be called directly
+    }
 }
-
 

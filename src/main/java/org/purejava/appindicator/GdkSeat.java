@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GdkSeat GdkSeat;
+ * {@snippet lang=c :
+ * typedef struct _GdkSeat GdkSeat
  * }
  */
-public final class GdkSeat extends _GdkSeat {
+public class GdkSeat extends _GdkSeat {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GdkSeat() {}
+    GdkSeat() {
+        // Should not be called directly
+    }
 }
-
 

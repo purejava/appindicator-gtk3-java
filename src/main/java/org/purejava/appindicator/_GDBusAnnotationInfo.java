@@ -2,140 +2,265 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GDBusAnnotationInfo {
- *     int ref_count;
- *     char* key;
- *     char* value;
- *     struct _GDBusAnnotationInfo** annotations;
- * };
+ *     gint ref_count;
+ *     gchar *key;
+ *     gchar *value;
+ *     GDBusAnnotationInfo **annotations;
+ * }
  * }
  */
 public class _GDBusAnnotationInfo {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$882.const$5;
+    _GDBusAnnotationInfo() {
+        // Should not be called directly
     }
-    public static VarHandle ref_count$VH() {
-        return constants$883.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int ref_count;
-     * }
-     */
-    public static int ref_count$get(MemorySegment seg) {
-        return (int)constants$883.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int ref_count;
-     * }
-     */
-    public static void ref_count$set(MemorySegment seg, int x) {
-        constants$883.const$0.set(seg, x);
-    }
-    public static int ref_count$get(MemorySegment seg, long index) {
-        return (int)constants$883.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void ref_count$set(MemorySegment seg, long index, int x) {
-        constants$883.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle key$VH() {
-        return constants$883.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* key;
-     * }
-     */
-    public static MemorySegment key$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$883.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* key;
-     * }
-     */
-    public static void key$set(MemorySegment seg, MemorySegment x) {
-        constants$883.const$1.set(seg, x);
-    }
-    public static MemorySegment key$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$883.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void key$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$883.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle value$VH() {
-        return constants$883.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* value;
-     * }
-     */
-    public static MemorySegment value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$883.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* value;
-     * }
-     */
-    public static void value$set(MemorySegment seg, MemorySegment x) {
-        constants$883.const$2.set(seg, x);
-    }
-    public static MemorySegment value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$883.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$883.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle annotations$VH() {
-        return constants$883.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GDBusAnnotationInfo** annotations;
-     * }
-     */
-    public static MemorySegment annotations$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$883.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GDBusAnnotationInfo** annotations;
-     * }
-     */
-    public static void annotations$set(MemorySegment seg, MemorySegment x) {
-        constants$883.const$3.set(seg, x);
-    }
-    public static MemorySegment annotations$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$883.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void annotations$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$883.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("key"),
+        app_indicator_h.C_POINTER.withName("value"),
+        app_indicator_h.C_POINTER.withName("annotations")
+    ).withName("_GDBusAnnotationInfo");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt ref_count$LAYOUT = (OfInt)$LAYOUT.select(groupElement("ref_count"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint ref_count
+     * }
+     */
+    public static final OfInt ref_count$layout() {
+        return ref_count$LAYOUT;
+    }
+
+    private static final long ref_count$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint ref_count
+     * }
+     */
+    public static final long ref_count$offset() {
+        return ref_count$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint ref_count
+     * }
+     */
+    public static int ref_count(MemorySegment struct) {
+        return struct.get(ref_count$LAYOUT, ref_count$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint ref_count
+     * }
+     */
+    public static void ref_count(MemorySegment struct, int fieldValue) {
+        struct.set(ref_count$LAYOUT, ref_count$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout key$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("key"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *key
+     * }
+     */
+    public static final AddressLayout key$layout() {
+        return key$LAYOUT;
+    }
+
+    private static final long key$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *key
+     * }
+     */
+    public static final long key$offset() {
+        return key$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *key
+     * }
+     */
+    public static MemorySegment key(MemorySegment struct) {
+        return struct.get(key$LAYOUT, key$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *key
+     * }
+     */
+    public static void key(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(key$LAYOUT, key$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout value$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("value"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *value
+     * }
+     */
+    public static final AddressLayout value$layout() {
+        return value$LAYOUT;
+    }
+
+    private static final long value$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *value
+     * }
+     */
+    public static final long value$offset() {
+        return value$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *value
+     * }
+     */
+    public static MemorySegment value(MemorySegment struct) {
+        return struct.get(value$LAYOUT, value$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *value
+     * }
+     */
+    public static void value(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(value$LAYOUT, value$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout annotations$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("annotations"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GDBusAnnotationInfo **annotations
+     * }
+     */
+    public static final AddressLayout annotations$layout() {
+        return annotations$LAYOUT;
+    }
+
+    private static final long annotations$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GDBusAnnotationInfo **annotations
+     * }
+     */
+    public static final long annotations$offset() {
+        return annotations$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GDBusAnnotationInfo **annotations
+     * }
+     */
+    public static MemorySegment annotations(MemorySegment struct) {
+        return struct.get(annotations$LAYOUT, annotations$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GDBusAnnotationInfo **annotations
+     * }
+     */
+    public static void annotations(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(annotations$LAYOUT, annotations$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

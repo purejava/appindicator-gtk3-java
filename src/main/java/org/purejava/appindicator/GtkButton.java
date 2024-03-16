@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkButton GtkButton;
+ * {@snippet lang=c :
+ * typedef struct _GtkButton GtkButton
  * }
  */
-public final class GtkButton extends _GtkButton {
+public class GtkButton extends _GtkButton {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkButton() {}
+    GtkButton() {
+        // Should not be called directly
+    }
 }
-
 

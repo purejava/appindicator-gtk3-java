@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkViewportClass GtkViewportClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkViewportClass GtkViewportClass
  * }
  */
-public final class GtkViewportClass extends _GtkViewportClass {
+public class GtkViewportClass extends _GtkViewportClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkViewportClass() {}
+    GtkViewportClass() {
+        // Should not be called directly
+    }
 }
-
 

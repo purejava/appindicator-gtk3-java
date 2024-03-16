@@ -2,144 +2,404 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GDBusObjectManagerClientClass {
- *     struct _GObjectClass parent_class;
- *     void (*interface_proxy_signal)(struct _GDBusObjectManagerClient*,struct _GDBusObjectProxy*,struct _GDBusProxy*,char*,char*,struct _GVariant*);
- *     void (*interface_proxy_properties_changed)(struct _GDBusObjectManagerClient*,struct _GDBusObjectProxy*,struct _GDBusProxy*,struct _GVariant*,char**);
- *     void* padding[8];
- * };
+ *     GObjectClass parent_class;
+ *     void (*interface_proxy_signal)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, const gchar *, const gchar *, GVariant *);
+ *     void (*interface_proxy_properties_changed)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, GVariant *, const gchar *const *);
+ *     gpointer padding[8];
+ * }
  * }
  */
 public class _GDBusObjectManagerClientClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$918.const$5;
+    _GDBusObjectManagerClientClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 136);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObjectClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("interface_proxy_signal"),
+        app_indicator_h.C_POINTER.withName("interface_proxy_properties_changed"),
+        MemoryLayout.sequenceLayout(8, app_indicator_h.C_POINTER).withName("padding")
+    ).withName("_GDBusObjectManagerClientClass");
+
     /**
-     * {@snippet :
- * void (*interface_proxy_signal)(struct _GDBusObjectManagerClient*,struct _GDBusObjectProxy*,struct _GDBusProxy*,char*,char*,struct _GVariant*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public interface interface_proxy_signal {
-
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(interface_proxy_signal fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$919.const$0, fi, constants$339.const$3, scope);
-        }
-        static interface_proxy_signal ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
-                try {
-                    constants$339.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle interface_proxy_signal$VH() {
-        return constants$919.const$1;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*interface_proxy_signal)(struct _GDBusObjectManagerClient*,struct _GDBusObjectProxy*,struct _GDBusProxy*,char*,char*,struct _GVariant*);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static MemorySegment interface_proxy_signal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$919.const$1.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*interface_proxy_signal)(struct _GDBusObjectManagerClient*,struct _GDBusObjectProxy*,struct _GDBusProxy*,char*,char*,struct _GVariant*);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static void interface_proxy_signal$set(MemorySegment seg, MemorySegment x) {
-        constants$919.const$1.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment interface_proxy_signal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$919.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void interface_proxy_signal$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$919.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static interface_proxy_signal interface_proxy_signal(MemorySegment segment, Arena scope) {
-        return interface_proxy_signal.ofAddress(interface_proxy_signal$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*interface_proxy_properties_changed)(struct _GDBusObjectManagerClient*,struct _GDBusObjectProxy*,struct _GDBusProxy*,struct _GVariant*,char**);
+     * {@snippet lang=c :
+     * void (*interface_proxy_signal)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, const gchar *, const gchar *, GVariant *)
      * }
      */
-    public interface interface_proxy_properties_changed {
+    public class interface_proxy_signal {
 
-        void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(interface_proxy_properties_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$919.const$2, fi, constants$332.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5);
         }
-        static interface_proxy_properties_changed ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$919.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(interface_proxy_signal.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(interface_proxy_signal.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle interface_proxy_properties_changed$VH() {
-        return constants$919.const$4;
+    private static final AddressLayout interface_proxy_signal$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("interface_proxy_signal"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*interface_proxy_signal)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, const gchar *, const gchar *, GVariant *)
+     * }
+     */
+    public static final AddressLayout interface_proxy_signal$layout() {
+        return interface_proxy_signal$LAYOUT;
     }
+
+    private static final long interface_proxy_signal$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*interface_proxy_signal)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, const gchar *, const gchar *, GVariant *)
+     * }
+     */
+    public static final long interface_proxy_signal$offset() {
+        return interface_proxy_signal$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*interface_proxy_properties_changed)(struct _GDBusObjectManagerClient*,struct _GDBusObjectProxy*,struct _GDBusProxy*,struct _GVariant*,char**);
+     * {@snippet lang=c :
+     * void (*interface_proxy_signal)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, const gchar *, const gchar *, GVariant *)
      * }
      */
-    public static MemorySegment interface_proxy_properties_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$919.const$4.get(seg);
+    public static MemorySegment interface_proxy_signal(MemorySegment struct) {
+        return struct.get(interface_proxy_signal$LAYOUT, interface_proxy_signal$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*interface_proxy_properties_changed)(struct _GDBusObjectManagerClient*,struct _GDBusObjectProxy*,struct _GDBusProxy*,struct _GVariant*,char**);
+     * {@snippet lang=c :
+     * void (*interface_proxy_signal)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, const gchar *, const gchar *, GVariant *)
      * }
      */
-    public static void interface_proxy_properties_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$919.const$4.set(seg, x);
+    public static void interface_proxy_signal(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(interface_proxy_signal$LAYOUT, interface_proxy_signal$OFFSET, fieldValue);
     }
-    public static MemorySegment interface_proxy_properties_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$919.const$4.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * void (*interface_proxy_properties_changed)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, GVariant *, const gchar *const *)
+     * }
+     */
+    public class interface_proxy_properties_changed {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(interface_proxy_properties_changed.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(interface_proxy_properties_changed.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void interface_proxy_properties_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$919.const$4.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout interface_proxy_properties_changed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("interface_proxy_properties_changed"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*interface_proxy_properties_changed)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, GVariant *, const gchar *const *)
+     * }
+     */
+    public static final AddressLayout interface_proxy_properties_changed$layout() {
+        return interface_proxy_properties_changed$LAYOUT;
     }
-    public static interface_proxy_properties_changed interface_proxy_properties_changed(MemorySegment segment, Arena scope) {
-        return interface_proxy_properties_changed.ofAddress(interface_proxy_properties_changed$get(segment), scope);
+
+    private static final long interface_proxy_properties_changed$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*interface_proxy_properties_changed)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, GVariant *, const gchar *const *)
+     * }
+     */
+    public static final long interface_proxy_properties_changed$offset() {
+        return interface_proxy_properties_changed$OFFSET;
     }
-    public static MemorySegment padding$slice(MemorySegment seg) {
-        return seg.asSlice(152, 64);
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*interface_proxy_properties_changed)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, GVariant *, const gchar *const *)
+     * }
+     */
+    public static MemorySegment interface_proxy_properties_changed(MemorySegment struct) {
+        return struct.get(interface_proxy_properties_changed$LAYOUT, interface_proxy_properties_changed$OFFSET);
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*interface_proxy_properties_changed)(GDBusObjectManagerClient *, GDBusObjectProxy *, GDBusProxy *, GVariant *, const gchar *const *)
+     * }
+     */
+    public static void interface_proxy_properties_changed(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(interface_proxy_properties_changed$LAYOUT, interface_proxy_properties_changed$OFFSET, fieldValue);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    private static final SequenceLayout padding$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("padding"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static final SequenceLayout padding$layout() {
+        return padding$LAYOUT;
+    }
+
+    private static final long padding$OFFSET = 152;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static final long padding$offset() {
+        return padding$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct) {
+        return struct.asSlice(padding$OFFSET, padding$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static void padding(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, padding$OFFSET, padding$LAYOUT.byteSize());
+    }
+
+    private static long[] padding$DIMS = { 8 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static long[] padding$dimensions() {
+        return padding$DIMS;
+    }
+    private static final VarHandle padding$ELEM_HANDLE = padding$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct, long index0) {
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[8]
+     * }
+     */
+    public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

@@ -2,64 +2,218 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _AtkPropertyValues {
- *     char* property_name;
- *     struct _GValue old_value;
- *     struct _GValue new_value;
- * };
+ *     const gchar *property_name;
+ *     GValue old_value;
+ *     GValue new_value;
+ * }
  * }
  */
 public class _AtkPropertyValues {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1970.const$0;
+    _AtkPropertyValues() {
+        // Should not be called directly
     }
-    public static VarHandle property_name$VH() {
-        return constants$1970.const$1;
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("property_name"),
+        _GValue.layout().withName("old_value"),
+        _GValue.layout().withName("new_value")
+    ).withName("_AtkPropertyValues");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
+
+    private static final AddressLayout property_name$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("property_name"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const gchar *property_name
+     * }
+     */
+    public static final AddressLayout property_name$layout() {
+        return property_name$LAYOUT;
+    }
+
+    private static final long property_name$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const gchar *property_name
+     * }
+     */
+    public static final long property_name$offset() {
+        return property_name$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* property_name;
+     * {@snippet lang=c :
+     * const gchar *property_name
      * }
      */
-    public static MemorySegment property_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1970.const$1.get(seg);
+    public static MemorySegment property_name(MemorySegment struct) {
+        return struct.get(property_name$LAYOUT, property_name$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* property_name;
+     * {@snippet lang=c :
+     * const gchar *property_name
      * }
      */
-    public static void property_name$set(MemorySegment seg, MemorySegment x) {
-        constants$1970.const$1.set(seg, x);
+    public static void property_name(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(property_name$LAYOUT, property_name$OFFSET, fieldValue);
     }
-    public static MemorySegment property_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1970.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void property_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1970.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment old_value$slice(MemorySegment seg) {
-        return seg.asSlice(8, 24);
-    }
-    public static MemorySegment new_value$slice(MemorySegment seg) {
-        return seg.asSlice(32, 24);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout old_value$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("old_value"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GValue old_value
+     * }
+     */
+    public static final GroupLayout old_value$layout() {
+        return old_value$LAYOUT;
+    }
+
+    private static final long old_value$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GValue old_value
+     * }
+     */
+    public static final long old_value$offset() {
+        return old_value$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GValue old_value
+     * }
+     */
+    public static MemorySegment old_value(MemorySegment struct) {
+        return struct.asSlice(old_value$OFFSET, old_value$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GValue old_value
+     * }
+     */
+    public static void old_value(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, old_value$OFFSET, old_value$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout new_value$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("new_value"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GValue new_value
+     * }
+     */
+    public static final GroupLayout new_value$layout() {
+        return new_value$LAYOUT;
+    }
+
+    private static final long new_value$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GValue new_value
+     * }
+     */
+    public static final long new_value$offset() {
+        return new_value$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GValue new_value
+     * }
+     */
+    public static MemorySegment new_value(MemorySegment struct) {
+        return struct.asSlice(new_value$OFFSET, new_value$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GValue new_value
+     * }
+     */
+    public static void new_value(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, new_value$OFFSET, new_value$LAYOUT.byteSize());
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

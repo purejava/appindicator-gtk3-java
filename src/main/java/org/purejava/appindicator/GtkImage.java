@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkImage GtkImage;
+ * {@snippet lang=c :
+ * typedef struct _GtkImage GtkImage
  * }
  */
-public final class GtkImage extends _GtkImage {
+public class GtkImage extends _GtkImage {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkImage() {}
+    GtkImage() {
+        // Should not be called directly
+    }
 }
-
 

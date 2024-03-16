@@ -2,200 +2,402 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GStaticRWLock {
- *     struct GStaticMutex mutex;
- *     struct _GCond* read_cond;
- *     struct _GCond* write_cond;
- *     unsigned int read_counter;
- *     int have_writer;
- *     unsigned int want_to_read;
- *     unsigned int want_to_write;
- * };
+ *     GStaticMutex mutex;
+ *     GCond *read_cond;
+ *     GCond *write_cond;
+ *     guint read_counter;
+ *     gboolean have_writer;
+ *     guint want_to_read;
+ *     guint want_to_write;
+ * }
  * }
  */
 public class _GStaticRWLock {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$541.const$1;
+    _GStaticRWLock() {
+        // Should not be called directly
     }
-    public static MemorySegment mutex$slice(MemorySegment seg) {
-        return seg.asSlice(0, 56);
-    }
-    public static VarHandle read_cond$VH() {
-        return constants$541.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GCond* read_cond;
-     * }
-     */
-    public static MemorySegment read_cond$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$541.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GCond* read_cond;
-     * }
-     */
-    public static void read_cond$set(MemorySegment seg, MemorySegment x) {
-        constants$541.const$2.set(seg, x);
-    }
-    public static MemorySegment read_cond$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$541.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void read_cond$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$541.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle write_cond$VH() {
-        return constants$541.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GCond* write_cond;
-     * }
-     */
-    public static MemorySegment write_cond$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$541.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GCond* write_cond;
-     * }
-     */
-    public static void write_cond$set(MemorySegment seg, MemorySegment x) {
-        constants$541.const$3.set(seg, x);
-    }
-    public static MemorySegment write_cond$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$541.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void write_cond$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$541.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle read_counter$VH() {
-        return constants$541.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int read_counter;
-     * }
-     */
-    public static int read_counter$get(MemorySegment seg) {
-        return (int)constants$541.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int read_counter;
-     * }
-     */
-    public static void read_counter$set(MemorySegment seg, int x) {
-        constants$541.const$4.set(seg, x);
-    }
-    public static int read_counter$get(MemorySegment seg, long index) {
-        return (int)constants$541.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void read_counter$set(MemorySegment seg, long index, int x) {
-        constants$541.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle have_writer$VH() {
-        return constants$541.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int have_writer;
-     * }
-     */
-    public static int have_writer$get(MemorySegment seg) {
-        return (int)constants$541.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int have_writer;
-     * }
-     */
-    public static void have_writer$set(MemorySegment seg, int x) {
-        constants$541.const$5.set(seg, x);
-    }
-    public static int have_writer$get(MemorySegment seg, long index) {
-        return (int)constants$541.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void have_writer$set(MemorySegment seg, long index, int x) {
-        constants$541.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle want_to_read$VH() {
-        return constants$542.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int want_to_read;
-     * }
-     */
-    public static int want_to_read$get(MemorySegment seg) {
-        return (int)constants$542.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int want_to_read;
-     * }
-     */
-    public static void want_to_read$set(MemorySegment seg, int x) {
-        constants$542.const$0.set(seg, x);
-    }
-    public static int want_to_read$get(MemorySegment seg, long index) {
-        return (int)constants$542.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void want_to_read$set(MemorySegment seg, long index, int x) {
-        constants$542.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle want_to_write$VH() {
-        return constants$542.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int want_to_write;
-     * }
-     */
-    public static int want_to_write$get(MemorySegment seg) {
-        return (int)constants$542.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int want_to_write;
-     * }
-     */
-    public static void want_to_write$set(MemorySegment seg, int x) {
-        constants$542.const$1.set(seg, x);
-    }
-    public static int want_to_write$get(MemorySegment seg, long index) {
-        return (int)constants$542.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void want_to_write$set(MemorySegment seg, long index, int x) {
-        constants$542.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        GStaticMutex.layout().withName("mutex"),
+        app_indicator_h.C_POINTER.withName("read_cond"),
+        app_indicator_h.C_POINTER.withName("write_cond"),
+        app_indicator_h.C_INT.withName("read_counter"),
+        app_indicator_h.C_INT.withName("have_writer"),
+        app_indicator_h.C_INT.withName("want_to_read"),
+        app_indicator_h.C_INT.withName("want_to_write")
+    ).withName("_GStaticRWLock");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout mutex$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("mutex"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GStaticMutex mutex
+     * }
+     */
+    public static final GroupLayout mutex$layout() {
+        return mutex$LAYOUT;
+    }
+
+    private static final long mutex$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GStaticMutex mutex
+     * }
+     */
+    public static final long mutex$offset() {
+        return mutex$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GStaticMutex mutex
+     * }
+     */
+    public static MemorySegment mutex(MemorySegment struct) {
+        return struct.asSlice(mutex$OFFSET, mutex$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GStaticMutex mutex
+     * }
+     */
+    public static void mutex(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, mutex$OFFSET, mutex$LAYOUT.byteSize());
+    }
+
+    private static final AddressLayout read_cond$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("read_cond"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GCond *read_cond
+     * }
+     */
+    public static final AddressLayout read_cond$layout() {
+        return read_cond$LAYOUT;
+    }
+
+    private static final long read_cond$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GCond *read_cond
+     * }
+     */
+    public static final long read_cond$offset() {
+        return read_cond$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GCond *read_cond
+     * }
+     */
+    public static MemorySegment read_cond(MemorySegment struct) {
+        return struct.get(read_cond$LAYOUT, read_cond$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GCond *read_cond
+     * }
+     */
+    public static void read_cond(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(read_cond$LAYOUT, read_cond$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout write_cond$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("write_cond"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GCond *write_cond
+     * }
+     */
+    public static final AddressLayout write_cond$layout() {
+        return write_cond$LAYOUT;
+    }
+
+    private static final long write_cond$OFFSET = 64;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GCond *write_cond
+     * }
+     */
+    public static final long write_cond$offset() {
+        return write_cond$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GCond *write_cond
+     * }
+     */
+    public static MemorySegment write_cond(MemorySegment struct) {
+        return struct.get(write_cond$LAYOUT, write_cond$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GCond *write_cond
+     * }
+     */
+    public static void write_cond(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(write_cond$LAYOUT, write_cond$OFFSET, fieldValue);
+    }
+
+    private static final OfInt read_counter$LAYOUT = (OfInt)$LAYOUT.select(groupElement("read_counter"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint read_counter
+     * }
+     */
+    public static final OfInt read_counter$layout() {
+        return read_counter$LAYOUT;
+    }
+
+    private static final long read_counter$OFFSET = 72;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint read_counter
+     * }
+     */
+    public static final long read_counter$offset() {
+        return read_counter$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint read_counter
+     * }
+     */
+    public static int read_counter(MemorySegment struct) {
+        return struct.get(read_counter$LAYOUT, read_counter$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint read_counter
+     * }
+     */
+    public static void read_counter(MemorySegment struct, int fieldValue) {
+        struct.set(read_counter$LAYOUT, read_counter$OFFSET, fieldValue);
+    }
+
+    private static final OfInt have_writer$LAYOUT = (OfInt)$LAYOUT.select(groupElement("have_writer"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean have_writer
+     * }
+     */
+    public static final OfInt have_writer$layout() {
+        return have_writer$LAYOUT;
+    }
+
+    private static final long have_writer$OFFSET = 76;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean have_writer
+     * }
+     */
+    public static final long have_writer$offset() {
+        return have_writer$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean have_writer
+     * }
+     */
+    public static int have_writer(MemorySegment struct) {
+        return struct.get(have_writer$LAYOUT, have_writer$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean have_writer
+     * }
+     */
+    public static void have_writer(MemorySegment struct, int fieldValue) {
+        struct.set(have_writer$LAYOUT, have_writer$OFFSET, fieldValue);
+    }
+
+    private static final OfInt want_to_read$LAYOUT = (OfInt)$LAYOUT.select(groupElement("want_to_read"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint want_to_read
+     * }
+     */
+    public static final OfInt want_to_read$layout() {
+        return want_to_read$LAYOUT;
+    }
+
+    private static final long want_to_read$OFFSET = 80;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint want_to_read
+     * }
+     */
+    public static final long want_to_read$offset() {
+        return want_to_read$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint want_to_read
+     * }
+     */
+    public static int want_to_read(MemorySegment struct) {
+        return struct.get(want_to_read$LAYOUT, want_to_read$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint want_to_read
+     * }
+     */
+    public static void want_to_read(MemorySegment struct, int fieldValue) {
+        struct.set(want_to_read$LAYOUT, want_to_read$OFFSET, fieldValue);
+    }
+
+    private static final OfInt want_to_write$LAYOUT = (OfInt)$LAYOUT.select(groupElement("want_to_write"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint want_to_write
+     * }
+     */
+    public static final OfInt want_to_write$layout() {
+        return want_to_write$LAYOUT;
+    }
+
+    private static final long want_to_write$OFFSET = 84;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint want_to_write
+     * }
+     */
+    public static final long want_to_write$offset() {
+        return want_to_write$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint want_to_write
+     * }
+     */
+    public static int want_to_write(MemorySegment struct) {
+        return struct.get(want_to_write$LAYOUT, want_to_write$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint want_to_write
+     * }
+     */
+    public static void want_to_write(MemorySegment struct, int fieldValue) {
+        struct.set(want_to_write$LAYOUT, want_to_write$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

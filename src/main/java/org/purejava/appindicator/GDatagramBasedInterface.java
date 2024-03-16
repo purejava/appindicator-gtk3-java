@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GDatagramBasedInterface GDatagramBasedInterface;
+ * {@snippet lang=c :
+ * typedef struct _GDatagramBasedInterface GDatagramBasedInterface
  * }
  */
-public final class GDatagramBasedInterface extends _GDatagramBasedInterface {
+public class GDatagramBasedInterface extends _GDatagramBasedInterface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GDatagramBasedInterface() {}
+    GDatagramBasedInterface() {
+        // Should not be called directly
+    }
 }
-
 

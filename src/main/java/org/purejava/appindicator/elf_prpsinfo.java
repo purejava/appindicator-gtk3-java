@@ -2,344 +2,745 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct elf_prpsinfo {
  *     char pr_state;
  *     char pr_sname;
  *     char pr_zomb;
  *     char pr_nice;
  *     unsigned long pr_flag;
- *     unsigned int pr_uid;
- *     unsigned int pr_gid;
+ *     __pr_uid_t pr_uid;
+ *     __pr_gid_t pr_gid;
  *     int pr_pid;
  *     int pr_ppid;
  *     int pr_pgrp;
  *     int pr_sid;
  *     char pr_fname[16];
  *     char pr_psargs[80];
- * };
+ * }
  * }
  */
 public class elf_prpsinfo {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$140.const$5;
+    elf_prpsinfo() {
+        // Should not be called directly
     }
-    public static VarHandle pr_state$VH() {
-        return constants$141.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char pr_state;
-     * }
-     */
-    public static byte pr_state$get(MemorySegment seg) {
-        return (byte)constants$141.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char pr_state;
-     * }
-     */
-    public static void pr_state$set(MemorySegment seg, byte x) {
-        constants$141.const$0.set(seg, x);
-    }
-    public static byte pr_state$get(MemorySegment seg, long index) {
-        return (byte)constants$141.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_state$set(MemorySegment seg, long index, byte x) {
-        constants$141.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pr_sname$VH() {
-        return constants$141.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char pr_sname;
-     * }
-     */
-    public static byte pr_sname$get(MemorySegment seg) {
-        return (byte)constants$141.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char pr_sname;
-     * }
-     */
-    public static void pr_sname$set(MemorySegment seg, byte x) {
-        constants$141.const$1.set(seg, x);
-    }
-    public static byte pr_sname$get(MemorySegment seg, long index) {
-        return (byte)constants$141.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_sname$set(MemorySegment seg, long index, byte x) {
-        constants$141.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pr_zomb$VH() {
-        return constants$141.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char pr_zomb;
-     * }
-     */
-    public static byte pr_zomb$get(MemorySegment seg) {
-        return (byte)constants$141.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char pr_zomb;
-     * }
-     */
-    public static void pr_zomb$set(MemorySegment seg, byte x) {
-        constants$141.const$2.set(seg, x);
-    }
-    public static byte pr_zomb$get(MemorySegment seg, long index) {
-        return (byte)constants$141.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_zomb$set(MemorySegment seg, long index, byte x) {
-        constants$141.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pr_nice$VH() {
-        return constants$141.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char pr_nice;
-     * }
-     */
-    public static byte pr_nice$get(MemorySegment seg) {
-        return (byte)constants$141.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char pr_nice;
-     * }
-     */
-    public static void pr_nice$set(MemorySegment seg, byte x) {
-        constants$141.const$3.set(seg, x);
-    }
-    public static byte pr_nice$get(MemorySegment seg, long index) {
-        return (byte)constants$141.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_nice$set(MemorySegment seg, long index, byte x) {
-        constants$141.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pr_flag$VH() {
-        return constants$141.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned long pr_flag;
-     * }
-     */
-    public static long pr_flag$get(MemorySegment seg) {
-        return (long)constants$141.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned long pr_flag;
-     * }
-     */
-    public static void pr_flag$set(MemorySegment seg, long x) {
-        constants$141.const$4.set(seg, x);
-    }
-    public static long pr_flag$get(MemorySegment seg, long index) {
-        return (long)constants$141.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_flag$set(MemorySegment seg, long index, long x) {
-        constants$141.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pr_uid$VH() {
-        return constants$141.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int pr_uid;
-     * }
-     */
-    public static int pr_uid$get(MemorySegment seg) {
-        return (int)constants$141.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int pr_uid;
-     * }
-     */
-    public static void pr_uid$set(MemorySegment seg, int x) {
-        constants$141.const$5.set(seg, x);
-    }
-    public static int pr_uid$get(MemorySegment seg, long index) {
-        return (int)constants$141.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_uid$set(MemorySegment seg, long index, int x) {
-        constants$141.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pr_gid$VH() {
-        return constants$142.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int pr_gid;
-     * }
-     */
-    public static int pr_gid$get(MemorySegment seg) {
-        return (int)constants$142.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int pr_gid;
-     * }
-     */
-    public static void pr_gid$set(MemorySegment seg, int x) {
-        constants$142.const$0.set(seg, x);
-    }
-    public static int pr_gid$get(MemorySegment seg, long index) {
-        return (int)constants$142.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_gid$set(MemorySegment seg, long index, int x) {
-        constants$142.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pr_pid$VH() {
-        return constants$142.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int pr_pid;
-     * }
-     */
-    public static int pr_pid$get(MemorySegment seg) {
-        return (int)constants$142.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int pr_pid;
-     * }
-     */
-    public static void pr_pid$set(MemorySegment seg, int x) {
-        constants$142.const$1.set(seg, x);
-    }
-    public static int pr_pid$get(MemorySegment seg, long index) {
-        return (int)constants$142.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_pid$set(MemorySegment seg, long index, int x) {
-        constants$142.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pr_ppid$VH() {
-        return constants$142.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int pr_ppid;
-     * }
-     */
-    public static int pr_ppid$get(MemorySegment seg) {
-        return (int)constants$142.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int pr_ppid;
-     * }
-     */
-    public static void pr_ppid$set(MemorySegment seg, int x) {
-        constants$142.const$2.set(seg, x);
-    }
-    public static int pr_ppid$get(MemorySegment seg, long index) {
-        return (int)constants$142.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_ppid$set(MemorySegment seg, long index, int x) {
-        constants$142.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pr_pgrp$VH() {
-        return constants$142.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int pr_pgrp;
-     * }
-     */
-    public static int pr_pgrp$get(MemorySegment seg) {
-        return (int)constants$142.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int pr_pgrp;
-     * }
-     */
-    public static void pr_pgrp$set(MemorySegment seg, int x) {
-        constants$142.const$3.set(seg, x);
-    }
-    public static int pr_pgrp$get(MemorySegment seg, long index) {
-        return (int)constants$142.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_pgrp$set(MemorySegment seg, long index, int x) {
-        constants$142.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pr_sid$VH() {
-        return constants$142.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int pr_sid;
-     * }
-     */
-    public static int pr_sid$get(MemorySegment seg) {
-        return (int)constants$142.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int pr_sid;
-     * }
-     */
-    public static void pr_sid$set(MemorySegment seg, int x) {
-        constants$142.const$4.set(seg, x);
-    }
-    public static int pr_sid$get(MemorySegment seg, long index) {
-        return (int)constants$142.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pr_sid$set(MemorySegment seg, long index, int x) {
-        constants$142.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment pr_fname$slice(MemorySegment seg) {
-        return seg.asSlice(40, 16);
-    }
-    public static MemorySegment pr_psargs$slice(MemorySegment seg) {
-        return seg.asSlice(56, 80);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_CHAR.withName("pr_state"),
+        app_indicator_h.C_CHAR.withName("pr_sname"),
+        app_indicator_h.C_CHAR.withName("pr_zomb"),
+        app_indicator_h.C_CHAR.withName("pr_nice"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_LONG.withName("pr_flag"),
+        app_indicator_h.C_INT.withName("pr_uid"),
+        app_indicator_h.C_INT.withName("pr_gid"),
+        app_indicator_h.C_INT.withName("pr_pid"),
+        app_indicator_h.C_INT.withName("pr_ppid"),
+        app_indicator_h.C_INT.withName("pr_pgrp"),
+        app_indicator_h.C_INT.withName("pr_sid"),
+        MemoryLayout.sequenceLayout(16, app_indicator_h.C_CHAR).withName("pr_fname"),
+        MemoryLayout.sequenceLayout(80, app_indicator_h.C_CHAR).withName("pr_psargs")
+    ).withName("elf_prpsinfo");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfByte pr_state$LAYOUT = (OfByte)$LAYOUT.select(groupElement("pr_state"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * char pr_state
+     * }
+     */
+    public static final OfByte pr_state$layout() {
+        return pr_state$LAYOUT;
+    }
+
+    private static final long pr_state$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * char pr_state
+     * }
+     */
+    public static final long pr_state$offset() {
+        return pr_state$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * char pr_state
+     * }
+     */
+    public static byte pr_state(MemorySegment struct) {
+        return struct.get(pr_state$LAYOUT, pr_state$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * char pr_state
+     * }
+     */
+    public static void pr_state(MemorySegment struct, byte fieldValue) {
+        struct.set(pr_state$LAYOUT, pr_state$OFFSET, fieldValue);
+    }
+
+    private static final OfByte pr_sname$LAYOUT = (OfByte)$LAYOUT.select(groupElement("pr_sname"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * char pr_sname
+     * }
+     */
+    public static final OfByte pr_sname$layout() {
+        return pr_sname$LAYOUT;
+    }
+
+    private static final long pr_sname$OFFSET = 1;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * char pr_sname
+     * }
+     */
+    public static final long pr_sname$offset() {
+        return pr_sname$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * char pr_sname
+     * }
+     */
+    public static byte pr_sname(MemorySegment struct) {
+        return struct.get(pr_sname$LAYOUT, pr_sname$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * char pr_sname
+     * }
+     */
+    public static void pr_sname(MemorySegment struct, byte fieldValue) {
+        struct.set(pr_sname$LAYOUT, pr_sname$OFFSET, fieldValue);
+    }
+
+    private static final OfByte pr_zomb$LAYOUT = (OfByte)$LAYOUT.select(groupElement("pr_zomb"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * char pr_zomb
+     * }
+     */
+    public static final OfByte pr_zomb$layout() {
+        return pr_zomb$LAYOUT;
+    }
+
+    private static final long pr_zomb$OFFSET = 2;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * char pr_zomb
+     * }
+     */
+    public static final long pr_zomb$offset() {
+        return pr_zomb$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * char pr_zomb
+     * }
+     */
+    public static byte pr_zomb(MemorySegment struct) {
+        return struct.get(pr_zomb$LAYOUT, pr_zomb$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * char pr_zomb
+     * }
+     */
+    public static void pr_zomb(MemorySegment struct, byte fieldValue) {
+        struct.set(pr_zomb$LAYOUT, pr_zomb$OFFSET, fieldValue);
+    }
+
+    private static final OfByte pr_nice$LAYOUT = (OfByte)$LAYOUT.select(groupElement("pr_nice"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * char pr_nice
+     * }
+     */
+    public static final OfByte pr_nice$layout() {
+        return pr_nice$LAYOUT;
+    }
+
+    private static final long pr_nice$OFFSET = 3;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * char pr_nice
+     * }
+     */
+    public static final long pr_nice$offset() {
+        return pr_nice$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * char pr_nice
+     * }
+     */
+    public static byte pr_nice(MemorySegment struct) {
+        return struct.get(pr_nice$LAYOUT, pr_nice$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * char pr_nice
+     * }
+     */
+    public static void pr_nice(MemorySegment struct, byte fieldValue) {
+        struct.set(pr_nice$LAYOUT, pr_nice$OFFSET, fieldValue);
+    }
+
+    private static final OfLong pr_flag$LAYOUT = (OfLong)$LAYOUT.select(groupElement("pr_flag"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * unsigned long pr_flag
+     * }
+     */
+    public static final OfLong pr_flag$layout() {
+        return pr_flag$LAYOUT;
+    }
+
+    private static final long pr_flag$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * unsigned long pr_flag
+     * }
+     */
+    public static final long pr_flag$offset() {
+        return pr_flag$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * unsigned long pr_flag
+     * }
+     */
+    public static long pr_flag(MemorySegment struct) {
+        return struct.get(pr_flag$LAYOUT, pr_flag$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * unsigned long pr_flag
+     * }
+     */
+    public static void pr_flag(MemorySegment struct, long fieldValue) {
+        struct.set(pr_flag$LAYOUT, pr_flag$OFFSET, fieldValue);
+    }
+
+    private static final OfInt pr_uid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("pr_uid"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __pr_uid_t pr_uid
+     * }
+     */
+    public static final OfInt pr_uid$layout() {
+        return pr_uid$LAYOUT;
+    }
+
+    private static final long pr_uid$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __pr_uid_t pr_uid
+     * }
+     */
+    public static final long pr_uid$offset() {
+        return pr_uid$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __pr_uid_t pr_uid
+     * }
+     */
+    public static int pr_uid(MemorySegment struct) {
+        return struct.get(pr_uid$LAYOUT, pr_uid$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __pr_uid_t pr_uid
+     * }
+     */
+    public static void pr_uid(MemorySegment struct, int fieldValue) {
+        struct.set(pr_uid$LAYOUT, pr_uid$OFFSET, fieldValue);
+    }
+
+    private static final OfInt pr_gid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("pr_gid"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __pr_gid_t pr_gid
+     * }
+     */
+    public static final OfInt pr_gid$layout() {
+        return pr_gid$LAYOUT;
+    }
+
+    private static final long pr_gid$OFFSET = 20;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __pr_gid_t pr_gid
+     * }
+     */
+    public static final long pr_gid$offset() {
+        return pr_gid$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __pr_gid_t pr_gid
+     * }
+     */
+    public static int pr_gid(MemorySegment struct) {
+        return struct.get(pr_gid$LAYOUT, pr_gid$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __pr_gid_t pr_gid
+     * }
+     */
+    public static void pr_gid(MemorySegment struct, int fieldValue) {
+        struct.set(pr_gid$LAYOUT, pr_gid$OFFSET, fieldValue);
+    }
+
+    private static final OfInt pr_pid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("pr_pid"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int pr_pid
+     * }
+     */
+    public static final OfInt pr_pid$layout() {
+        return pr_pid$LAYOUT;
+    }
+
+    private static final long pr_pid$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int pr_pid
+     * }
+     */
+    public static final long pr_pid$offset() {
+        return pr_pid$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int pr_pid
+     * }
+     */
+    public static int pr_pid(MemorySegment struct) {
+        return struct.get(pr_pid$LAYOUT, pr_pid$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int pr_pid
+     * }
+     */
+    public static void pr_pid(MemorySegment struct, int fieldValue) {
+        struct.set(pr_pid$LAYOUT, pr_pid$OFFSET, fieldValue);
+    }
+
+    private static final OfInt pr_ppid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("pr_ppid"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int pr_ppid
+     * }
+     */
+    public static final OfInt pr_ppid$layout() {
+        return pr_ppid$LAYOUT;
+    }
+
+    private static final long pr_ppid$OFFSET = 28;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int pr_ppid
+     * }
+     */
+    public static final long pr_ppid$offset() {
+        return pr_ppid$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int pr_ppid
+     * }
+     */
+    public static int pr_ppid(MemorySegment struct) {
+        return struct.get(pr_ppid$LAYOUT, pr_ppid$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int pr_ppid
+     * }
+     */
+    public static void pr_ppid(MemorySegment struct, int fieldValue) {
+        struct.set(pr_ppid$LAYOUT, pr_ppid$OFFSET, fieldValue);
+    }
+
+    private static final OfInt pr_pgrp$LAYOUT = (OfInt)$LAYOUT.select(groupElement("pr_pgrp"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int pr_pgrp
+     * }
+     */
+    public static final OfInt pr_pgrp$layout() {
+        return pr_pgrp$LAYOUT;
+    }
+
+    private static final long pr_pgrp$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int pr_pgrp
+     * }
+     */
+    public static final long pr_pgrp$offset() {
+        return pr_pgrp$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int pr_pgrp
+     * }
+     */
+    public static int pr_pgrp(MemorySegment struct) {
+        return struct.get(pr_pgrp$LAYOUT, pr_pgrp$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int pr_pgrp
+     * }
+     */
+    public static void pr_pgrp(MemorySegment struct, int fieldValue) {
+        struct.set(pr_pgrp$LAYOUT, pr_pgrp$OFFSET, fieldValue);
+    }
+
+    private static final OfInt pr_sid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("pr_sid"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int pr_sid
+     * }
+     */
+    public static final OfInt pr_sid$layout() {
+        return pr_sid$LAYOUT;
+    }
+
+    private static final long pr_sid$OFFSET = 36;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int pr_sid
+     * }
+     */
+    public static final long pr_sid$offset() {
+        return pr_sid$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int pr_sid
+     * }
+     */
+    public static int pr_sid(MemorySegment struct) {
+        return struct.get(pr_sid$LAYOUT, pr_sid$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int pr_sid
+     * }
+     */
+    public static void pr_sid(MemorySegment struct, int fieldValue) {
+        struct.set(pr_sid$LAYOUT, pr_sid$OFFSET, fieldValue);
+    }
+
+    private static final SequenceLayout pr_fname$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("pr_fname"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * char pr_fname[16]
+     * }
+     */
+    public static final SequenceLayout pr_fname$layout() {
+        return pr_fname$LAYOUT;
+    }
+
+    private static final long pr_fname$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * char pr_fname[16]
+     * }
+     */
+    public static final long pr_fname$offset() {
+        return pr_fname$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * char pr_fname[16]
+     * }
+     */
+    public static MemorySegment pr_fname(MemorySegment struct) {
+        return struct.asSlice(pr_fname$OFFSET, pr_fname$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * char pr_fname[16]
+     * }
+     */
+    public static void pr_fname(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, pr_fname$OFFSET, pr_fname$LAYOUT.byteSize());
+    }
+
+    private static long[] pr_fname$DIMS = { 16 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * char pr_fname[16]
+     * }
+     */
+    public static long[] pr_fname$dimensions() {
+        return pr_fname$DIMS;
+    }
+    private static final VarHandle pr_fname$ELEM_HANDLE = pr_fname$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * char pr_fname[16]
+     * }
+     */
+    public static byte pr_fname(MemorySegment struct, long index0) {
+        return (byte)pr_fname$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * char pr_fname[16]
+     * }
+     */
+    public static void pr_fname(MemorySegment struct, long index0, byte fieldValue) {
+        pr_fname$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    private static final SequenceLayout pr_psargs$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("pr_psargs"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * char pr_psargs[80]
+     * }
+     */
+    public static final SequenceLayout pr_psargs$layout() {
+        return pr_psargs$LAYOUT;
+    }
+
+    private static final long pr_psargs$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * char pr_psargs[80]
+     * }
+     */
+    public static final long pr_psargs$offset() {
+        return pr_psargs$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * char pr_psargs[80]
+     * }
+     */
+    public static MemorySegment pr_psargs(MemorySegment struct) {
+        return struct.asSlice(pr_psargs$OFFSET, pr_psargs$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * char pr_psargs[80]
+     * }
+     */
+    public static void pr_psargs(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, pr_psargs$OFFSET, pr_psargs$LAYOUT.byteSize());
+    }
+
+    private static long[] pr_psargs$DIMS = { 80 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * char pr_psargs[80]
+     * }
+     */
+    public static long[] pr_psargs$dimensions() {
+        return pr_psargs$DIMS;
+    }
+    private static final VarHandle pr_psargs$ELEM_HANDLE = pr_psargs$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * char pr_psargs[80]
+     * }
+     */
+    public static byte pr_psargs(MemorySegment struct, long index0) {
+        return (byte)pr_psargs$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * char pr_psargs[80]
+     * }
+     */
+    public static void pr_psargs(MemorySegment struct, long index0, byte fieldValue) {
+        pr_psargs$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

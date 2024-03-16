@@ -2,29 +2,66 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*GtkAccelMapForeach)(void* data,char* accel_path,unsigned int accel_key,enum GdkModifierType accel_mods,int changed);
+ * {@snippet lang=c :
+ * typedef void (*GtkAccelMapForeach)(gpointer, const gchar *, guint, GdkModifierType, gboolean)
  * }
  */
-public interface GtkAccelMapForeach {
+public class GtkAccelMapForeach {
 
-    void apply(java.lang.foreign.MemorySegment data, java.lang.foreign.MemorySegment accel_path, int accel_key, int accel_mods, int changed);
-    static MemorySegment allocate(GtkAccelMapForeach fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2265.const$0, fi, constants$1518.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment data, MemorySegment accel_path, int accel_key, int accel_mods, int changed);
     }
-    static GtkAccelMapForeach ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _data, java.lang.foreign.MemorySegment _accel_path, int _accel_key, int _accel_mods, int _changed) -> {
-            try {
-                constants$2265.const$1.invokeExact(symbol, _data, _accel_path, _accel_key, _accel_mods, _changed);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_INT
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GtkAccelMapForeach.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GtkAccelMapForeach.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment data, MemorySegment accel_path, int accel_key, int accel_mods, int changed) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, data, accel_path, accel_key, accel_mods, changed);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GMemoryOutputStream GMemoryOutputStream;
+ * {@snippet lang=c :
+ * typedef struct _GMemoryOutputStream GMemoryOutputStream
  * }
  */
-public final class GMemoryOutputStream extends _GMemoryOutputStream {
+public class GMemoryOutputStream extends _GMemoryOutputStream {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GMemoryOutputStream() {}
+    GMemoryOutputStream() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,140 +2,218 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _AtkGObjectAccessibleClass {
- *     struct _AtkObjectClass parent_class;
- *     int (*pad1)(void*);
- *     int (*pad2)(void*);
- * };
+ *     AtkObjectClass parent_class;
+ *     AtkFunction pad1;
+ *     AtkFunction pad2;
+ * }
  * }
  */
 public class _AtkGObjectAccessibleClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2034.const$0;
+    _AtkGObjectAccessibleClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 352);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _AtkObjectClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("pad1"),
+        app_indicator_h.C_POINTER.withName("pad2")
+    ).withName("_AtkGObjectAccessibleClass");
+
     /**
-     * {@snippet :
- * int (*pad1)(void*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * AtkObjectClass parent_class
      * }
      */
-    public interface pad1 {
-
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(pad1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2034.const$1, fi, constants$10.const$5, scope);
-        }
-        static pad1 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle pad1$VH() {
-        return constants$2034.const$2;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * AtkObjectClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*pad1)(void*);
+     * {@snippet lang=c :
+     * AtkObjectClass parent_class
      * }
      */
-    public static MemorySegment pad1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2034.const$2.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*pad1)(void*);
+     * {@snippet lang=c :
+     * AtkObjectClass parent_class
      * }
      */
-    public static void pad1$set(MemorySegment seg, MemorySegment x) {
-        constants$2034.const$2.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment pad1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2034.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pad1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2034.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static pad1 pad1(MemorySegment segment, Arena scope) {
-        return pad1.ofAddress(pad1$get(segment), scope);
-    }
+
+    private static final AddressLayout pad1$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("pad1"));
+
     /**
-     * {@snippet :
- * int (*pad2)(void*);
+     * Layout for field:
+     * {@snippet lang=c :
+     * AtkFunction pad1
      * }
      */
-    public interface pad2 {
-
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(pad2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2034.const$3, fi, constants$10.const$5, scope);
-        }
-        static pad2 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout pad1$layout() {
+        return pad1$LAYOUT;
     }
 
-    public static VarHandle pad2$VH() {
-        return constants$2034.const$4;
+    private static final long pad1$OFFSET = 352;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * AtkFunction pad1
+     * }
+     */
+    public static final long pad1$offset() {
+        return pad1$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*pad2)(void*);
+     * {@snippet lang=c :
+     * AtkFunction pad1
      * }
      */
-    public static MemorySegment pad2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2034.const$4.get(seg);
+    public static MemorySegment pad1(MemorySegment struct) {
+        return struct.get(pad1$LAYOUT, pad1$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*pad2)(void*);
+     * {@snippet lang=c :
+     * AtkFunction pad1
      * }
      */
-    public static void pad2$set(MemorySegment seg, MemorySegment x) {
-        constants$2034.const$4.set(seg, x);
+    public static void pad1(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(pad1$LAYOUT, pad1$OFFSET, fieldValue);
     }
-    public static MemorySegment pad2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2034.const$4.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout pad2$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("pad2"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * AtkFunction pad2
+     * }
+     */
+    public static final AddressLayout pad2$layout() {
+        return pad2$LAYOUT;
     }
-    public static void pad2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2034.const$4.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long pad2$OFFSET = 360;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * AtkFunction pad2
+     * }
+     */
+    public static final long pad2$offset() {
+        return pad2$OFFSET;
     }
-    public static pad2 pad2(MemorySegment segment, Arena scope) {
-        return pad2.ofAddress(pad2$get(segment), scope);
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * AtkFunction pad2
+     * }
+     */
+    public static MemorySegment pad2(MemorySegment struct) {
+        return struct.get(pad2$LAYOUT, pad2$OFFSET);
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * AtkFunction pad2
+     * }
+     */
+    public static void pad2(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(pad2$LAYOUT, pad2$OFFSET, fieldValue);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

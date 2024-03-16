@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkDialog GtkDialog;
+ * {@snippet lang=c :
+ * typedef struct _GtkDialog GtkDialog
  * }
  */
-public final class GtkDialog extends _GtkDialog {
+public class GtkDialog extends _GtkDialog {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkDialog() {}
+    GtkDialog() {
+        // Should not be called directly
+    }
 }
-
 

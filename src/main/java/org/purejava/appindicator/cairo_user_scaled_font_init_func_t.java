@@ -2,29 +2,65 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * enum _cairo_status (*cairo_user_scaled_font_init_func_t)(struct _cairo_scaled_font* scaled_font,struct _cairo* cr,struct cairo_font_extents_t* extents);
+ * {@snippet lang=c :
+ * typedef cairo_status_t (*cairo_user_scaled_font_init_func_t)(cairo_scaled_font_t *, cairo_t *, cairo_font_extents_t *)
  * }
  */
-public interface cairo_user_scaled_font_init_func_t {
+public class cairo_user_scaled_font_init_func_t {
 
-    int apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment other);
-    static MemorySegment allocate(cairo_user_scaled_font_init_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1716.const$0, fi, constants$12.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment scaled_font, MemorySegment cr, MemorySegment extents);
     }
-    static cairo_user_scaled_font_init_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _other) -> {
-            try {
-                return (int)constants$12.const$4.invokeExact(symbol, _pattern, _callback_data, _other);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(cairo_user_scaled_font_init_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(cairo_user_scaled_font_init_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment scaled_font, MemorySegment cr, MemorySegment extents) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, scaled_font, cr, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

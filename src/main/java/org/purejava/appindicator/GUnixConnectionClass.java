@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GUnixConnectionClass GUnixConnectionClass;
+ * {@snippet lang=c :
+ * typedef struct _GUnixConnectionClass GUnixConnectionClass
  * }
  */
-public final class GUnixConnectionClass extends _GUnixConnectionClass {
+public class GUnixConnectionClass extends _GUnixConnectionClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GUnixConnectionClass() {}
+    GUnixConnectionClass() {
+        // Should not be called directly
+    }
 }
-
 

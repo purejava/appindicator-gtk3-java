@@ -2,88 +2,218 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _AtkRegistry {
- *     struct _GObject parent;
- *     struct _GHashTable* factory_type_registry;
- *     struct _GHashTable* factory_singleton_cache;
- * };
+ *     GObject parent;
+ *     GHashTable *factory_type_registry;
+ *     GHashTable *factory_singleton_cache;
+ * }
  * }
  */
 public class _AtkRegistry {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2054.const$4;
+    _AtkRegistry() {
+        // Should not be called directly
     }
-    public static MemorySegment parent$slice(MemorySegment seg) {
-        return seg.asSlice(0, 24);
-    }
-    public static VarHandle factory_type_registry$VH() {
-        return constants$2054.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GHashTable* factory_type_registry;
-     * }
-     */
-    public static MemorySegment factory_type_registry$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2054.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GHashTable* factory_type_registry;
-     * }
-     */
-    public static void factory_type_registry$set(MemorySegment seg, MemorySegment x) {
-        constants$2054.const$5.set(seg, x);
-    }
-    public static MemorySegment factory_type_registry$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2054.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void factory_type_registry$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2054.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle factory_singleton_cache$VH() {
-        return constants$2055.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GHashTable* factory_singleton_cache;
-     * }
-     */
-    public static MemorySegment factory_singleton_cache$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2055.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GHashTable* factory_singleton_cache;
-     * }
-     */
-    public static void factory_singleton_cache$set(MemorySegment seg, MemorySegment x) {
-        constants$2055.const$0.set(seg, x);
-    }
-    public static MemorySegment factory_singleton_cache$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2055.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void factory_singleton_cache$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2055.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObject.layout().withName("parent"),
+        app_indicator_h.C_POINTER.withName("factory_type_registry"),
+        app_indicator_h.C_POINTER.withName("factory_singleton_cache")
+    ).withName("_AtkRegistry");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObject parent
+     * }
+     */
+    public static final GroupLayout parent$layout() {
+        return parent$LAYOUT;
+    }
+
+    private static final long parent$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObject parent
+     * }
+     */
+    public static final long parent$offset() {
+        return parent$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GObject parent
+     * }
+     */
+    public static MemorySegment parent(MemorySegment struct) {
+        return struct.asSlice(parent$OFFSET, parent$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GObject parent
+     * }
+     */
+    public static void parent(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent$OFFSET, parent$LAYOUT.byteSize());
+    }
+
+    private static final AddressLayout factory_type_registry$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("factory_type_registry"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GHashTable *factory_type_registry
+     * }
+     */
+    public static final AddressLayout factory_type_registry$layout() {
+        return factory_type_registry$LAYOUT;
+    }
+
+    private static final long factory_type_registry$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GHashTable *factory_type_registry
+     * }
+     */
+    public static final long factory_type_registry$offset() {
+        return factory_type_registry$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GHashTable *factory_type_registry
+     * }
+     */
+    public static MemorySegment factory_type_registry(MemorySegment struct) {
+        return struct.get(factory_type_registry$LAYOUT, factory_type_registry$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GHashTable *factory_type_registry
+     * }
+     */
+    public static void factory_type_registry(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(factory_type_registry$LAYOUT, factory_type_registry$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout factory_singleton_cache$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("factory_singleton_cache"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GHashTable *factory_singleton_cache
+     * }
+     */
+    public static final AddressLayout factory_singleton_cache$layout() {
+        return factory_singleton_cache$LAYOUT;
+    }
+
+    private static final long factory_singleton_cache$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GHashTable *factory_singleton_cache
+     * }
+     */
+    public static final long factory_singleton_cache$offset() {
+        return factory_singleton_cache$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GHashTable *factory_singleton_cache
+     * }
+     */
+    public static MemorySegment factory_singleton_cache(MemorySegment struct) {
+        return struct.get(factory_singleton_cache$LAYOUT, factory_singleton_cache$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GHashTable *factory_singleton_cache
+     * }
+     */
+    public static void factory_singleton_cache(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(factory_singleton_cache$LAYOUT, factory_singleton_cache$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

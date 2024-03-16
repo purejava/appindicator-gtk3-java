@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkColorChooserInterface GtkColorChooserInterface;
+ * {@snippet lang=c :
+ * typedef struct _GtkColorChooserInterface GtkColorChooserInterface
  * }
  */
-public final class GtkColorChooserInterface extends _GtkColorChooserInterface {
+public class GtkColorChooserInterface extends _GtkColorChooserInterface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkColorChooserInterface() {}
+    GtkColorChooserInterface() {
+        // Should not be called directly
+    }
 }
-
 

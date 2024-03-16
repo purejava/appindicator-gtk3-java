@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkHPaned GtkHPaned;
+ * {@snippet lang=c :
+ * typedef struct _GtkHPaned GtkHPaned
  * }
  */
-public final class GtkHPaned extends _GtkHPaned {
+public class GtkHPaned extends _GtkHPaned {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkHPaned() {}
+    GtkHPaned() {
+        // Should not be called directly
+    }
 }
-
 

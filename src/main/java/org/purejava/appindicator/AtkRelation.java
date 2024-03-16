@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _AtkRelation AtkRelation;
+ * {@snippet lang=c :
+ * typedef struct _AtkRelation AtkRelation
  * }
  */
-public final class AtkRelation extends _AtkRelation {
+public class AtkRelation extends _AtkRelation {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkRelation() {}
+    AtkRelation() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,29 +2,65 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * enum hb_paint_extend_t (*hb_color_line_get_extend_func_t)(struct hb_color_line_t* color_line,void* color_line_data,void* user_data);
+ * {@snippet lang=c :
+ * typedef hb_paint_extend_t (*hb_color_line_get_extend_func_t)(hb_color_line_t *, void *, void *)
  * }
  */
-public interface hb_color_line_get_extend_func_t {
+public class hb_color_line_get_extend_func_t {
 
-    int apply(java.lang.foreign.MemorySegment color_line, java.lang.foreign.MemorySegment color_line_data, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(hb_color_line_get_extend_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1463.const$3, fi, constants$12.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment color_line, MemorySegment color_line_data, MemorySegment user_data);
     }
-    static hb_color_line_get_extend_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _color_line, java.lang.foreign.MemorySegment _color_line_data, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                return (int)constants$12.const$4.invokeExact(symbol, _color_line, _color_line_data, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(hb_color_line_get_extend_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(hb_color_line_get_extend_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment color_line, MemorySegment color_line_data, MemorySegment user_data) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, color_line, color_line_data, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

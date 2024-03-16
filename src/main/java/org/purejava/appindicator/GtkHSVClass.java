@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkHSVClass GtkHSVClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkHSVClass GtkHSVClass
  * }
  */
-public final class GtkHSVClass extends _GtkHSVClass {
+public class GtkHSVClass extends _GtkHSVClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkHSVClass() {}
+    GtkHSVClass() {
+        // Should not be called directly
+    }
 }
-
 

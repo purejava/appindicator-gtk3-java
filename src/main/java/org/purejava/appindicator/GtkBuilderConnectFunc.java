@@ -2,29 +2,68 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*GtkBuilderConnectFunc)(struct _GtkBuilder* builder,struct _GObject* object,char* signal_name,char* handler_name,struct _GObject* connect_object,enum GConnectFlags flags,void* user_data);
+ * {@snippet lang=c :
+ * typedef void (*GtkBuilderConnectFunc)(GtkBuilder *, GObject *, const gchar *, const gchar *, GObject *, GConnectFlags, gpointer)
  * }
  */
-public interface GtkBuilderConnectFunc {
+public class GtkBuilderConnectFunc {
 
-    void apply(java.lang.foreign.MemorySegment builder, java.lang.foreign.MemorySegment object, java.lang.foreign.MemorySegment signal_name, java.lang.foreign.MemorySegment handler_name, java.lang.foreign.MemorySegment connect_object, int flags, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GtkBuilderConnectFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1965.const$3, fi, constants$1965.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment builder, MemorySegment object, MemorySegment signal_name, MemorySegment handler_name, MemorySegment connect_object, int flags, MemorySegment user_data);
     }
-    static GtkBuilderConnectFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _builder, java.lang.foreign.MemorySegment _object, java.lang.foreign.MemorySegment _signal_name, java.lang.foreign.MemorySegment _handler_name, java.lang.foreign.MemorySegment _connect_object, int _flags, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                constants$1965.const$4.invokeExact(symbol, _builder, _object, _signal_name, _handler_name, _connect_object, _flags, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GtkBuilderConnectFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GtkBuilderConnectFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment builder, MemorySegment object, MemorySegment signal_name, MemorySegment handler_name, MemorySegment connect_object, int flags, MemorySegment user_data) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, builder, object, signal_name, handler_name, connect_object, flags, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 
