@@ -2,112 +2,218 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * struct hb_color_stop_t {
+ * {@snippet lang=c :
+ * struct {
  *     float offset;
- *     int is_foreground;
- *     unsigned int color;
- * };
+ *     hb_bool_t is_foreground;
+ *     hb_color_t color;
+ * }
  * }
  */
 public class hb_color_stop_t {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1458.const$1;
+    hb_color_stop_t() {
+        // Should not be called directly
     }
-    public static VarHandle offset$VH() {
-        return constants$1458.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * float offset;
-     * }
-     */
-    public static float offset$get(MemorySegment seg) {
-        return (float)constants$1458.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * float offset;
-     * }
-     */
-    public static void offset$set(MemorySegment seg, float x) {
-        constants$1458.const$2.set(seg, x);
-    }
-    public static float offset$get(MemorySegment seg, long index) {
-        return (float)constants$1458.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void offset$set(MemorySegment seg, long index, float x) {
-        constants$1458.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle is_foreground$VH() {
-        return constants$1458.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int is_foreground;
-     * }
-     */
-    public static int is_foreground$get(MemorySegment seg) {
-        return (int)constants$1458.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int is_foreground;
-     * }
-     */
-    public static void is_foreground$set(MemorySegment seg, int x) {
-        constants$1458.const$3.set(seg, x);
-    }
-    public static int is_foreground$get(MemorySegment seg, long index) {
-        return (int)constants$1458.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void is_foreground$set(MemorySegment seg, long index, int x) {
-        constants$1458.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle color$VH() {
-        return constants$1458.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int color;
-     * }
-     */
-    public static int color$get(MemorySegment seg) {
-        return (int)constants$1458.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int color;
-     * }
-     */
-    public static void color$set(MemorySegment seg, int x) {
-        constants$1458.const$4.set(seg, x);
-    }
-    public static int color$get(MemorySegment seg, long index) {
-        return (int)constants$1458.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void color$set(MemorySegment seg, long index, int x) {
-        constants$1458.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_FLOAT.withName("offset"),
+        app_indicator_h.C_INT.withName("is_foreground"),
+        app_indicator_h.C_INT.withName("color")
+    ).withName("$anon$330:9");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfFloat offset$LAYOUT = (OfFloat)$LAYOUT.select(groupElement("offset"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * float offset
+     * }
+     */
+    public static final OfFloat offset$layout() {
+        return offset$LAYOUT;
+    }
+
+    private static final long offset$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * float offset
+     * }
+     */
+    public static final long offset$offset() {
+        return offset$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * float offset
+     * }
+     */
+    public static float offset(MemorySegment struct) {
+        return struct.get(offset$LAYOUT, offset$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * float offset
+     * }
+     */
+    public static void offset(MemorySegment struct, float fieldValue) {
+        struct.set(offset$LAYOUT, offset$OFFSET, fieldValue);
+    }
+
+    private static final OfInt is_foreground$LAYOUT = (OfInt)$LAYOUT.select(groupElement("is_foreground"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_bool_t is_foreground
+     * }
+     */
+    public static final OfInt is_foreground$layout() {
+        return is_foreground$LAYOUT;
+    }
+
+    private static final long is_foreground$OFFSET = 4;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_bool_t is_foreground
+     * }
+     */
+    public static final long is_foreground$offset() {
+        return is_foreground$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_bool_t is_foreground
+     * }
+     */
+    public static int is_foreground(MemorySegment struct) {
+        return struct.get(is_foreground$LAYOUT, is_foreground$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_bool_t is_foreground
+     * }
+     */
+    public static void is_foreground(MemorySegment struct, int fieldValue) {
+        struct.set(is_foreground$LAYOUT, is_foreground$OFFSET, fieldValue);
+    }
+
+    private static final OfInt color$LAYOUT = (OfInt)$LAYOUT.select(groupElement("color"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_color_t color
+     * }
+     */
+    public static final OfInt color$layout() {
+        return color$LAYOUT;
+    }
+
+    private static final long color$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_color_t color
+     * }
+     */
+    public static final long color$offset() {
+        return color$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_color_t color
+     * }
+     */
+    public static int color(MemorySegment struct) {
+        return struct.get(color$LAYOUT, color$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_color_t color
+     * }
+     */
+    public static void color(MemorySegment struct, int fieldValue) {
+        struct.set(color$LAYOUT, color$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

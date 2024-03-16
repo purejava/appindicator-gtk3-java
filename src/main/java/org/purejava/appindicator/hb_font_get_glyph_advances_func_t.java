@@ -2,29 +2,69 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*hb_font_get_glyph_advances_func_t)(struct hb_font_t* font,void* font_data,unsigned int count,unsigned int* first_glyph,unsigned int glyph_stride,int* first_advance,unsigned int advance_stride,void* user_data);
+ * {@snippet lang=c :
+ * typedef void (*hb_font_get_glyph_advances_func_t)(hb_font_t *, void *, unsigned int, const hb_codepoint_t *, unsigned int, hb_position_t *, unsigned int, void *)
  * }
  */
-public interface hb_font_get_glyph_advances_func_t {
+public class hb_font_get_glyph_advances_func_t {
 
-    void apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int count, java.lang.foreign.MemorySegment first_glyph, int glyph_stride, java.lang.foreign.MemorySegment first_advance, int advance_stride, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(hb_font_get_glyph_advances_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1478.const$2, fi, constants$1478.const$1, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment font, MemorySegment font_data, int count, MemorySegment first_glyph, int glyph_stride, MemorySegment first_advance, int advance_stride, MemorySegment user_data);
     }
-    static hb_font_get_glyph_advances_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _count, java.lang.foreign.MemorySegment _first_glyph, int _glyph_stride, java.lang.foreign.MemorySegment _first_advance, int _advance_stride, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                constants$1478.const$3.invokeExact(symbol, _font, _font_data, _count, _first_glyph, _glyph_stride, _first_advance, _advance_stride, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(hb_font_get_glyph_advances_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(hb_font_get_glyph_advances_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment font, MemorySegment font_data, int count, MemorySegment first_glyph, int glyph_stride, MemorySegment first_advance, int advance_stride, MemorySegment user_data) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, font, font_data, count, first_glyph, glyph_stride, first_advance, advance_stride, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

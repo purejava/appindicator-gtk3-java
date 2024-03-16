@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkFontChooserWidgetClass GtkFontChooserWidgetClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkFontChooserWidgetClass GtkFontChooserWidgetClass
  * }
  */
-public final class GtkFontChooserWidgetClass extends _GtkFontChooserWidgetClass {
+public class GtkFontChooserWidgetClass extends _GtkFontChooserWidgetClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFontChooserWidgetClass() {}
+    GtkFontChooserWidgetClass() {
+        // Should not be called directly
+    }
 }
-
 

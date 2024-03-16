@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkSwitch GtkSwitch;
+ * {@snippet lang=c :
+ * typedef struct _GtkSwitch GtkSwitch
  * }
  */
-public final class GtkSwitch extends _GtkSwitch {
+public class GtkSwitch extends _GtkSwitch {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkSwitch() {}
+    GtkSwitch() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkHSV GtkHSV;
+ * {@snippet lang=c :
+ * typedef struct _GtkHSV GtkHSV
  * }
  */
-public final class GtkHSV extends _GtkHSV {
+public class GtkHSV extends _GtkHSV {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkHSV() {}
+    GtkHSV() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,29 +2,63 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*GErrorCopyFunc)(struct _GError* src_error,struct _GError* dest_error);
+ * {@snippet lang=c :
+ * typedef void (*GErrorCopyFunc)(const GError *, GError *)
  * }
  */
-public interface GErrorCopyFunc {
+public class GErrorCopyFunc {
 
-    void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GErrorCopyFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$54.const$0, fi, constants$13.const$4, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment src_error, MemorySegment dest_error);
     }
-    static GErrorCopyFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-            try {
-                constants$14.const$0.invokeExact(symbol, _tag, _data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GErrorCopyFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GErrorCopyFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment src_error, MemorySegment dest_error) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, src_error, dest_error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct __fsid_t fsid_t;
+ * {@snippet lang=c :
+ * typedef __fsid_t fsid_t
  * }
  */
-public final class fsid_t extends __fsid_t {
+public class fsid_t extends __fsid_t {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private fsid_t() {}
+    fsid_t() {
+        // Should not be called directly
+    }
 }
-
 

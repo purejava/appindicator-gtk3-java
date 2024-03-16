@@ -2,302 +2,607 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GDBusObjectIface {
- *     struct _GTypeInterface parent_iface;
- *     char* (*get_object_path)(struct _GDBusObject*);
- *     struct _GList* (*get_interfaces)(struct _GDBusObject*);
- *     struct _GDBusInterface* (*get_interface)(struct _GDBusObject*,char*);
- *     void (*interface_added)(struct _GDBusObject*,struct _GDBusInterface*);
- *     void (*interface_removed)(struct _GDBusObject*,struct _GDBusInterface*);
- * };
+ *     GTypeInterface parent_iface;
+ *     const gchar *(*get_object_path)(GDBusObject *);
+ *     GList *(*get_interfaces)(GDBusObject *);
+ *     GDBusInterface *(*get_interface)(GDBusObject *, const gchar *);
+ *     void (*interface_added)(GDBusObject *, GDBusInterface *);
+ *     void (*interface_removed)(GDBusObject *, GDBusInterface *);
+ * }
  * }
  */
 public class _GDBusObjectIface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$909.const$2;
+    _GDBusObjectIface() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("parent_iface"),
+        app_indicator_h.C_POINTER.withName("get_object_path"),
+        app_indicator_h.C_POINTER.withName("get_interfaces"),
+        app_indicator_h.C_POINTER.withName("get_interface"),
+        app_indicator_h.C_POINTER.withName("interface_added"),
+        app_indicator_h.C_POINTER.withName("interface_removed")
+    ).withName("_GDBusObjectIface");
+
     /**
-     * {@snippet :
- * char* (*get_object_path)(struct _GDBusObject*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface parent_iface
      * }
      */
-    public interface get_object_path {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_object_path fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$909.const$3, fi, constants$5.const$2, scope);
-        }
-        static get_object_path ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_iface$layout() {
+        return parent_iface$LAYOUT;
     }
 
-    public static VarHandle get_object_path$VH() {
-        return constants$909.const$4;
+    private static final long parent_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface parent_iface
+     * }
+     */
+    public static final long parent_iface$offset() {
+        return parent_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* (*get_object_path)(struct _GDBusObject*);
+     * {@snippet lang=c :
+     * GTypeInterface parent_iface
      * }
      */
-    public static MemorySegment get_object_path$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$909.const$4.get(seg);
+    public static MemorySegment parent_iface(MemorySegment struct) {
+        return struct.asSlice(parent_iface$OFFSET, parent_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* (*get_object_path)(struct _GDBusObject*);
+     * {@snippet lang=c :
+     * GTypeInterface parent_iface
      * }
      */
-    public static void get_object_path$set(MemorySegment seg, MemorySegment x) {
-        constants$909.const$4.set(seg, x);
+    public static void parent_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_iface$OFFSET, parent_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment get_object_path$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$909.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_object_path$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$909.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_object_path get_object_path(MemorySegment segment, Arena scope) {
-        return get_object_path.ofAddress(get_object_path$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GList* (*get_interfaces)(struct _GDBusObject*);
+     * {@snippet lang=c :
+     * const gchar *(*get_object_path)(GDBusObject *)
      * }
      */
-    public interface get_interfaces {
+    public class get_object_path {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_interfaces fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$909.const$5, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_interfaces ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_object_path.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_object_path.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_interfaces$VH() {
-        return constants$910.const$0;
+    private static final AddressLayout get_object_path$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_object_path"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_object_path)(GDBusObject *)
+     * }
+     */
+    public static final AddressLayout get_object_path$layout() {
+        return get_object_path$LAYOUT;
     }
+
+    private static final long get_object_path$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_object_path)(GDBusObject *)
+     * }
+     */
+    public static final long get_object_path$offset() {
+        return get_object_path$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GList* (*get_interfaces)(struct _GDBusObject*);
+     * {@snippet lang=c :
+     * const gchar *(*get_object_path)(GDBusObject *)
      * }
      */
-    public static MemorySegment get_interfaces$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$910.const$0.get(seg);
+    public static MemorySegment get_object_path(MemorySegment struct) {
+        return struct.get(get_object_path$LAYOUT, get_object_path$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GList* (*get_interfaces)(struct _GDBusObject*);
+     * {@snippet lang=c :
+     * const gchar *(*get_object_path)(GDBusObject *)
      * }
      */
-    public static void get_interfaces$set(MemorySegment seg, MemorySegment x) {
-        constants$910.const$0.set(seg, x);
+    public static void get_object_path(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_object_path$LAYOUT, get_object_path$OFFSET, fieldValue);
     }
-    public static MemorySegment get_interfaces$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$910.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_interfaces$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$910.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_interfaces get_interfaces(MemorySegment segment, Arena scope) {
-        return get_interfaces.ofAddress(get_interfaces$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GDBusInterface* (*get_interface)(struct _GDBusObject*,char*);
+     * {@snippet lang=c :
+     * GList *(*get_interfaces)(GDBusObject *)
      * }
      */
-    public interface get_interface {
+    public class get_interfaces {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-        static MemorySegment allocate(get_interface fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$910.const$1, fi, constants$5.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_interface ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_interfaces.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_interfaces.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_interface$VH() {
-        return constants$910.const$2;
+    private static final AddressLayout get_interfaces$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_interfaces"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GList *(*get_interfaces)(GDBusObject *)
+     * }
+     */
+    public static final AddressLayout get_interfaces$layout() {
+        return get_interfaces$LAYOUT;
     }
+
+    private static final long get_interfaces$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GList *(*get_interfaces)(GDBusObject *)
+     * }
+     */
+    public static final long get_interfaces$offset() {
+        return get_interfaces$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GDBusInterface* (*get_interface)(struct _GDBusObject*,char*);
+     * {@snippet lang=c :
+     * GList *(*get_interfaces)(GDBusObject *)
      * }
      */
-    public static MemorySegment get_interface$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$910.const$2.get(seg);
+    public static MemorySegment get_interfaces(MemorySegment struct) {
+        return struct.get(get_interfaces$LAYOUT, get_interfaces$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GDBusInterface* (*get_interface)(struct _GDBusObject*,char*);
+     * {@snippet lang=c :
+     * GList *(*get_interfaces)(GDBusObject *)
      * }
      */
-    public static void get_interface$set(MemorySegment seg, MemorySegment x) {
-        constants$910.const$2.set(seg, x);
+    public static void get_interfaces(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_interfaces$LAYOUT, get_interfaces$OFFSET, fieldValue);
     }
-    public static MemorySegment get_interface$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$910.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_interface$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$910.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_interface get_interface(MemorySegment segment, Arena scope) {
-        return get_interface.ofAddress(get_interface$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*interface_added)(struct _GDBusObject*,struct _GDBusInterface*);
+     * {@snippet lang=c :
+     * GDBusInterface *(*get_interface)(GDBusObject *, const gchar *)
      * }
      */
-    public interface interface_added {
+    public class get_interface {
 
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(interface_added fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$910.const$3, fi, constants$13.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static interface_added ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_interface.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_interface.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle interface_added$VH() {
-        return constants$910.const$4;
+    private static final AddressLayout get_interface$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_interface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GDBusInterface *(*get_interface)(GDBusObject *, const gchar *)
+     * }
+     */
+    public static final AddressLayout get_interface$layout() {
+        return get_interface$LAYOUT;
     }
+
+    private static final long get_interface$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GDBusInterface *(*get_interface)(GDBusObject *, const gchar *)
+     * }
+     */
+    public static final long get_interface$offset() {
+        return get_interface$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*interface_added)(struct _GDBusObject*,struct _GDBusInterface*);
+     * {@snippet lang=c :
+     * GDBusInterface *(*get_interface)(GDBusObject *, const gchar *)
      * }
      */
-    public static MemorySegment interface_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$910.const$4.get(seg);
+    public static MemorySegment get_interface(MemorySegment struct) {
+        return struct.get(get_interface$LAYOUT, get_interface$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*interface_added)(struct _GDBusObject*,struct _GDBusInterface*);
+     * {@snippet lang=c :
+     * GDBusInterface *(*get_interface)(GDBusObject *, const gchar *)
      * }
      */
-    public static void interface_added$set(MemorySegment seg, MemorySegment x) {
-        constants$910.const$4.set(seg, x);
+    public static void get_interface(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_interface$LAYOUT, get_interface$OFFSET, fieldValue);
     }
-    public static MemorySegment interface_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$910.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void interface_added$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$910.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static interface_added interface_added(MemorySegment segment, Arena scope) {
-        return interface_added.ofAddress(interface_added$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*interface_removed)(struct _GDBusObject*,struct _GDBusInterface*);
+     * {@snippet lang=c :
+     * void (*interface_added)(GDBusObject *, GDBusInterface *)
      * }
      */
-    public interface interface_removed {
+    public class interface_added {
 
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(interface_removed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$910.const$5, fi, constants$13.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static interface_removed ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(interface_added.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(interface_added.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle interface_removed$VH() {
-        return constants$911.const$0;
+    private static final AddressLayout interface_added$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("interface_added"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*interface_added)(GDBusObject *, GDBusInterface *)
+     * }
+     */
+    public static final AddressLayout interface_added$layout() {
+        return interface_added$LAYOUT;
     }
+
+    private static final long interface_added$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*interface_added)(GDBusObject *, GDBusInterface *)
+     * }
+     */
+    public static final long interface_added$offset() {
+        return interface_added$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*interface_removed)(struct _GDBusObject*,struct _GDBusInterface*);
+     * {@snippet lang=c :
+     * void (*interface_added)(GDBusObject *, GDBusInterface *)
      * }
      */
-    public static MemorySegment interface_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$911.const$0.get(seg);
+    public static MemorySegment interface_added(MemorySegment struct) {
+        return struct.get(interface_added$LAYOUT, interface_added$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*interface_removed)(struct _GDBusObject*,struct _GDBusInterface*);
+     * {@snippet lang=c :
+     * void (*interface_added)(GDBusObject *, GDBusInterface *)
      * }
      */
-    public static void interface_removed$set(MemorySegment seg, MemorySegment x) {
-        constants$911.const$0.set(seg, x);
+    public static void interface_added(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(interface_added$LAYOUT, interface_added$OFFSET, fieldValue);
     }
-    public static MemorySegment interface_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$911.const$0.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * void (*interface_removed)(GDBusObject *, GDBusInterface *)
+     * }
+     */
+    public class interface_removed {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(interface_removed.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(interface_removed.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void interface_removed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$911.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout interface_removed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("interface_removed"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*interface_removed)(GDBusObject *, GDBusInterface *)
+     * }
+     */
+    public static final AddressLayout interface_removed$layout() {
+        return interface_removed$LAYOUT;
     }
-    public static interface_removed interface_removed(MemorySegment segment, Arena scope) {
-        return interface_removed.ofAddress(interface_removed$get(segment), scope);
+
+    private static final long interface_removed$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*interface_removed)(GDBusObject *, GDBusInterface *)
+     * }
+     */
+    public static final long interface_removed$offset() {
+        return interface_removed$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*interface_removed)(GDBusObject *, GDBusInterface *)
+     * }
+     */
+    public static MemorySegment interface_removed(MemorySegment struct) {
+        return struct.get(interface_removed$LAYOUT, interface_removed$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*interface_removed)(GDBusObject *, GDBusInterface *)
+     * }
+     */
+    public static void interface_removed(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(interface_removed$LAYOUT, interface_removed$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

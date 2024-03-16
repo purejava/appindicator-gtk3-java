@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GParamSpec GParamSpec;
+ * {@snippet lang=c :
+ * typedef struct _GParamSpec GParamSpec
  * }
  */
-public final class GParamSpec extends _GParamSpec {
+public class GParamSpec extends _GParamSpec {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GParamSpec() {}
+    GParamSpec() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GdkWindowAttr GdkWindowAttr;
+ * {@snippet lang=c :
+ * typedef struct _GdkWindowAttr GdkWindowAttr
  * }
  */
-public final class GdkWindowAttr extends _GdkWindowAttr {
+public class GdkWindowAttr extends _GdkWindowAttr {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GdkWindowAttr() {}
+    GdkWindowAttr() {
+        // Should not be called directly
+    }
 }
-
 

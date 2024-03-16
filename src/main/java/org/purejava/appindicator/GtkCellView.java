@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkCellView GtkCellView;
+ * {@snippet lang=c :
+ * typedef struct _GtkCellView GtkCellView
  * }
  */
-public final class GtkCellView extends _GtkCellView {
+public class GtkCellView extends _GtkCellView {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkCellView() {}
+    GtkCellView() {
+        // Should not be called directly
+    }
 }
-
 

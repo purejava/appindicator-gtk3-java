@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkCalendar GtkCalendar;
+ * {@snippet lang=c :
+ * typedef struct _GtkCalendar GtkCalendar
  * }
  */
-public final class GtkCalendar extends _GtkCalendar {
+public class GtkCalendar extends _GtkCalendar {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkCalendar() {}
+    GtkCalendar() {
+        // Should not be called directly
+    }
 }
-
 

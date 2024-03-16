@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkMenuBarClass GtkMenuBarClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkMenuBarClass GtkMenuBarClass
  * }
  */
-public final class GtkMenuBarClass extends _GtkMenuBarClass {
+public class GtkMenuBarClass extends _GtkMenuBarClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkMenuBarClass() {}
+    GtkMenuBarClass() {
+        // Should not be called directly
+    }
 }
-
 

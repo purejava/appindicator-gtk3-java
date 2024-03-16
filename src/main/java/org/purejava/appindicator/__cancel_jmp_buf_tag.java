@@ -2,60 +2,173 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct __cancel_jmp_buf_tag {
- *     unsigned long long __cancel_jmp_buf[22];
+ *     __jmp_buf __cancel_jmp_buf;
  *     int __mask_was_saved;
- * };
+ * }
  * }
  */
 public class __cancel_jmp_buf_tag {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$523.const$0;
+    __cancel_jmp_buf_tag() {
+        // Should not be called directly
     }
-    public static MemorySegment __cancel_jmp_buf$slice(MemorySegment seg) {
-        return seg.asSlice(0, 176);
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(22, app_indicator_h.C_LONG_LONG).withName("__cancel_jmp_buf"),
+        app_indicator_h.C_INT.withName("__mask_was_saved"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("__cancel_jmp_buf_tag");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
-    public static VarHandle __mask_was_saved$VH() {
-        return constants$523.const$1;
+
+    private static final SequenceLayout __cancel_jmp_buf$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("__cancel_jmp_buf"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __jmp_buf __cancel_jmp_buf
+     * }
+     */
+    public static final SequenceLayout __cancel_jmp_buf$layout() {
+        return __cancel_jmp_buf$LAYOUT;
     }
+
+    private static final long __cancel_jmp_buf$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __jmp_buf __cancel_jmp_buf
+     * }
+     */
+    public static final long __cancel_jmp_buf$offset() {
+        return __cancel_jmp_buf$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int __mask_was_saved;
+     * {@snippet lang=c :
+     * __jmp_buf __cancel_jmp_buf
      * }
      */
-    public static int __mask_was_saved$get(MemorySegment seg) {
-        return (int)constants$523.const$1.get(seg);
+    public static MemorySegment __cancel_jmp_buf(MemorySegment struct) {
+        return struct.asSlice(__cancel_jmp_buf$OFFSET, __cancel_jmp_buf$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int __mask_was_saved;
+     * {@snippet lang=c :
+     * __jmp_buf __cancel_jmp_buf
      * }
      */
-    public static void __mask_was_saved$set(MemorySegment seg, int x) {
-        constants$523.const$1.set(seg, x);
+    public static void __cancel_jmp_buf(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, __cancel_jmp_buf$OFFSET, __cancel_jmp_buf$LAYOUT.byteSize());
     }
-    public static int __mask_was_saved$get(MemorySegment seg, long index) {
-        return (int)constants$523.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void __mask_was_saved$set(MemorySegment seg, long index, int x) {
-        constants$523.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final OfInt __mask_was_saved$LAYOUT = (OfInt)$LAYOUT.select(groupElement("__mask_was_saved"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int __mask_was_saved
+     * }
+     */
+    public static final OfInt __mask_was_saved$layout() {
+        return __mask_was_saved$LAYOUT;
+    }
+
+    private static final long __mask_was_saved$OFFSET = 176;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int __mask_was_saved
+     * }
+     */
+    public static final long __mask_was_saved$offset() {
+        return __mask_was_saved$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int __mask_was_saved
+     * }
+     */
+    public static int __mask_was_saved(MemorySegment struct) {
+        return struct.get(__mask_was_saved$LAYOUT, __mask_was_saved$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int __mask_was_saved
+     * }
+     */
+    public static void __mask_was_saved(MemorySegment struct, int fieldValue) {
+        struct.set(__mask_was_saved$LAYOUT, __mask_was_saved$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

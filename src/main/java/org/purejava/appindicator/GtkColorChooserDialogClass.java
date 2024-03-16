@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkColorChooserDialogClass GtkColorChooserDialogClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkColorChooserDialogClass GtkColorChooserDialogClass
  * }
  */
-public final class GtkColorChooserDialogClass extends _GtkColorChooserDialogClass {
+public class GtkColorChooserDialogClass extends _GtkColorChooserDialogClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkColorChooserDialogClass() {}
+    GtkColorChooserDialogClass() {
+        // Should not be called directly
+    }
 }
-
 

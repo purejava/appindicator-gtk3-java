@@ -2,280 +2,495 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _PangoAnalysis {
- *     struct _PangoEngineShape* shape_engine;
- *     struct _PangoEngineLang* lang_engine;
- *     struct _PangoFont* font;
- *     unsigned char level;
- *     unsigned char gravity;
- *     unsigned char flags;
- *     unsigned char script;
- *     struct _PangoLanguage* language;
- *     struct _GSList* extra_attrs;
- * };
+ *     PangoEngineShape *shape_engine;
+ *     PangoEngineLang *lang_engine;
+ *     PangoFont *font;
+ *     guint8 level;
+ *     guint8 gravity;
+ *     guint8 flags;
+ *     guint8 script;
+ *     PangoLanguage *language;
+ *     GSList *extra_attrs;
+ * }
  * }
  */
 public class _PangoAnalysis {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1580.const$4;
+    _PangoAnalysis() {
+        // Should not be called directly
     }
-    public static VarHandle shape_engine$VH() {
-        return constants$1580.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoEngineShape* shape_engine;
-     * }
-     */
-    public static MemorySegment shape_engine$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1580.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoEngineShape* shape_engine;
-     * }
-     */
-    public static void shape_engine$set(MemorySegment seg, MemorySegment x) {
-        constants$1580.const$5.set(seg, x);
-    }
-    public static MemorySegment shape_engine$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1580.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void shape_engine$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1580.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle lang_engine$VH() {
-        return constants$1581.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoEngineLang* lang_engine;
-     * }
-     */
-    public static MemorySegment lang_engine$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1581.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoEngineLang* lang_engine;
-     * }
-     */
-    public static void lang_engine$set(MemorySegment seg, MemorySegment x) {
-        constants$1581.const$0.set(seg, x);
-    }
-    public static MemorySegment lang_engine$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1581.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void lang_engine$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1581.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle font$VH() {
-        return constants$1581.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoFont* font;
-     * }
-     */
-    public static MemorySegment font$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1581.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoFont* font;
-     * }
-     */
-    public static void font$set(MemorySegment seg, MemorySegment x) {
-        constants$1581.const$1.set(seg, x);
-    }
-    public static MemorySegment font$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1581.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void font$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1581.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle level$VH() {
-        return constants$1581.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned char level;
-     * }
-     */
-    public static byte level$get(MemorySegment seg) {
-        return (byte)constants$1581.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned char level;
-     * }
-     */
-    public static void level$set(MemorySegment seg, byte x) {
-        constants$1581.const$2.set(seg, x);
-    }
-    public static byte level$get(MemorySegment seg, long index) {
-        return (byte)constants$1581.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void level$set(MemorySegment seg, long index, byte x) {
-        constants$1581.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle gravity$VH() {
-        return constants$1581.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned char gravity;
-     * }
-     */
-    public static byte gravity$get(MemorySegment seg) {
-        return (byte)constants$1581.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned char gravity;
-     * }
-     */
-    public static void gravity$set(MemorySegment seg, byte x) {
-        constants$1581.const$3.set(seg, x);
-    }
-    public static byte gravity$get(MemorySegment seg, long index) {
-        return (byte)constants$1581.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void gravity$set(MemorySegment seg, long index, byte x) {
-        constants$1581.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle flags$VH() {
-        return constants$1581.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned char flags;
-     * }
-     */
-    public static byte flags$get(MemorySegment seg) {
-        return (byte)constants$1581.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned char flags;
-     * }
-     */
-    public static void flags$set(MemorySegment seg, byte x) {
-        constants$1581.const$4.set(seg, x);
-    }
-    public static byte flags$get(MemorySegment seg, long index) {
-        return (byte)constants$1581.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void flags$set(MemorySegment seg, long index, byte x) {
-        constants$1581.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle script$VH() {
-        return constants$1581.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned char script;
-     * }
-     */
-    public static byte script$get(MemorySegment seg) {
-        return (byte)constants$1581.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned char script;
-     * }
-     */
-    public static void script$set(MemorySegment seg, byte x) {
-        constants$1581.const$5.set(seg, x);
-    }
-    public static byte script$get(MemorySegment seg, long index) {
-        return (byte)constants$1581.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void script$set(MemorySegment seg, long index, byte x) {
-        constants$1581.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle language$VH() {
-        return constants$1582.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoLanguage* language;
-     * }
-     */
-    public static MemorySegment language$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1582.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoLanguage* language;
-     * }
-     */
-    public static void language$set(MemorySegment seg, MemorySegment x) {
-        constants$1582.const$0.set(seg, x);
-    }
-    public static MemorySegment language$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1582.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void language$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1582.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle extra_attrs$VH() {
-        return constants$1582.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GSList* extra_attrs;
-     * }
-     */
-    public static MemorySegment extra_attrs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1582.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GSList* extra_attrs;
-     * }
-     */
-    public static void extra_attrs$set(MemorySegment seg, MemorySegment x) {
-        constants$1582.const$1.set(seg, x);
-    }
-    public static MemorySegment extra_attrs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1582.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void extra_attrs$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1582.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("shape_engine"),
+        app_indicator_h.C_POINTER.withName("lang_engine"),
+        app_indicator_h.C_POINTER.withName("font"),
+        app_indicator_h.C_CHAR.withName("level"),
+        app_indicator_h.C_CHAR.withName("gravity"),
+        app_indicator_h.C_CHAR.withName("flags"),
+        app_indicator_h.C_CHAR.withName("script"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("language"),
+        app_indicator_h.C_POINTER.withName("extra_attrs")
+    ).withName("_PangoAnalysis");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final AddressLayout shape_engine$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("shape_engine"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoEngineShape *shape_engine
+     * }
+     */
+    public static final AddressLayout shape_engine$layout() {
+        return shape_engine$LAYOUT;
+    }
+
+    private static final long shape_engine$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoEngineShape *shape_engine
+     * }
+     */
+    public static final long shape_engine$offset() {
+        return shape_engine$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoEngineShape *shape_engine
+     * }
+     */
+    public static MemorySegment shape_engine(MemorySegment struct) {
+        return struct.get(shape_engine$LAYOUT, shape_engine$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoEngineShape *shape_engine
+     * }
+     */
+    public static void shape_engine(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(shape_engine$LAYOUT, shape_engine$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout lang_engine$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lang_engine"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoEngineLang *lang_engine
+     * }
+     */
+    public static final AddressLayout lang_engine$layout() {
+        return lang_engine$LAYOUT;
+    }
+
+    private static final long lang_engine$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoEngineLang *lang_engine
+     * }
+     */
+    public static final long lang_engine$offset() {
+        return lang_engine$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoEngineLang *lang_engine
+     * }
+     */
+    public static MemorySegment lang_engine(MemorySegment struct) {
+        return struct.get(lang_engine$LAYOUT, lang_engine$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoEngineLang *lang_engine
+     * }
+     */
+    public static void lang_engine(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(lang_engine$LAYOUT, lang_engine$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout font$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("font"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoFont *font
+     * }
+     */
+    public static final AddressLayout font$layout() {
+        return font$LAYOUT;
+    }
+
+    private static final long font$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoFont *font
+     * }
+     */
+    public static final long font$offset() {
+        return font$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoFont *font
+     * }
+     */
+    public static MemorySegment font(MemorySegment struct) {
+        return struct.get(font$LAYOUT, font$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoFont *font
+     * }
+     */
+    public static void font(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(font$LAYOUT, font$OFFSET, fieldValue);
+    }
+
+    private static final OfByte level$LAYOUT = (OfByte)$LAYOUT.select(groupElement("level"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint8 level
+     * }
+     */
+    public static final OfByte level$layout() {
+        return level$LAYOUT;
+    }
+
+    private static final long level$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint8 level
+     * }
+     */
+    public static final long level$offset() {
+        return level$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint8 level
+     * }
+     */
+    public static byte level(MemorySegment struct) {
+        return struct.get(level$LAYOUT, level$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint8 level
+     * }
+     */
+    public static void level(MemorySegment struct, byte fieldValue) {
+        struct.set(level$LAYOUT, level$OFFSET, fieldValue);
+    }
+
+    private static final OfByte gravity$LAYOUT = (OfByte)$LAYOUT.select(groupElement("gravity"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint8 gravity
+     * }
+     */
+    public static final OfByte gravity$layout() {
+        return gravity$LAYOUT;
+    }
+
+    private static final long gravity$OFFSET = 25;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint8 gravity
+     * }
+     */
+    public static final long gravity$offset() {
+        return gravity$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint8 gravity
+     * }
+     */
+    public static byte gravity(MemorySegment struct) {
+        return struct.get(gravity$LAYOUT, gravity$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint8 gravity
+     * }
+     */
+    public static void gravity(MemorySegment struct, byte fieldValue) {
+        struct.set(gravity$LAYOUT, gravity$OFFSET, fieldValue);
+    }
+
+    private static final OfByte flags$LAYOUT = (OfByte)$LAYOUT.select(groupElement("flags"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint8 flags
+     * }
+     */
+    public static final OfByte flags$layout() {
+        return flags$LAYOUT;
+    }
+
+    private static final long flags$OFFSET = 26;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint8 flags
+     * }
+     */
+    public static final long flags$offset() {
+        return flags$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint8 flags
+     * }
+     */
+    public static byte flags(MemorySegment struct) {
+        return struct.get(flags$LAYOUT, flags$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint8 flags
+     * }
+     */
+    public static void flags(MemorySegment struct, byte fieldValue) {
+        struct.set(flags$LAYOUT, flags$OFFSET, fieldValue);
+    }
+
+    private static final OfByte script$LAYOUT = (OfByte)$LAYOUT.select(groupElement("script"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint8 script
+     * }
+     */
+    public static final OfByte script$layout() {
+        return script$LAYOUT;
+    }
+
+    private static final long script$OFFSET = 27;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint8 script
+     * }
+     */
+    public static final long script$offset() {
+        return script$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint8 script
+     * }
+     */
+    public static byte script(MemorySegment struct) {
+        return struct.get(script$LAYOUT, script$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint8 script
+     * }
+     */
+    public static void script(MemorySegment struct, byte fieldValue) {
+        struct.set(script$LAYOUT, script$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout language$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("language"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoLanguage *language
+     * }
+     */
+    public static final AddressLayout language$layout() {
+        return language$LAYOUT;
+    }
+
+    private static final long language$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoLanguage *language
+     * }
+     */
+    public static final long language$offset() {
+        return language$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoLanguage *language
+     * }
+     */
+    public static MemorySegment language(MemorySegment struct) {
+        return struct.get(language$LAYOUT, language$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoLanguage *language
+     * }
+     */
+    public static void language(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(language$LAYOUT, language$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout extra_attrs$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("extra_attrs"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GSList *extra_attrs
+     * }
+     */
+    public static final AddressLayout extra_attrs$layout() {
+        return extra_attrs$LAYOUT;
+    }
+
+    private static final long extra_attrs$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GSList *extra_attrs
+     * }
+     */
+    public static final long extra_attrs$offset() {
+        return extra_attrs$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GSList *extra_attrs
+     * }
+     */
+    public static MemorySegment extra_attrs(MemorySegment struct) {
+        return struct.get(extra_attrs$LAYOUT, extra_attrs$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GSList *extra_attrs
+     * }
+     */
+    public static void extra_attrs(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(extra_attrs$LAYOUT, extra_attrs$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

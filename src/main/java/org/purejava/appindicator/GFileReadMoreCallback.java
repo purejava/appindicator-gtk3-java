@@ -2,29 +2,65 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * int (*GFileReadMoreCallback)(char* file_contents,long file_size,void* callback_data);
+ * {@snippet lang=c :
+ * typedef gboolean (*GFileReadMoreCallback)(const char *, goffset, gpointer)
  * }
  */
-public interface GFileReadMoreCallback {
+public class GFileReadMoreCallback {
 
-    int apply(java.lang.foreign.MemorySegment file_contents, long file_size, java.lang.foreign.MemorySegment callback_data);
-    static MemorySegment allocate(GFileReadMoreCallback fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$693.const$4, fi, constants$62.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment file_contents, long file_size, MemorySegment callback_data);
     }
-    static GFileReadMoreCallback ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _file_contents, long _file_size, java.lang.foreign.MemorySegment _callback_data) -> {
-            try {
-                return (int)constants$693.const$5.invokeExact(symbol, _file_contents, _file_size, _callback_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_LONG,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GFileReadMoreCallback.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GFileReadMoreCallback.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment file_contents, long file_size, MemorySegment callback_data) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, file_contents, file_size, callback_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

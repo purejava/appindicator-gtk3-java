@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _PangoAttrClass PangoAttrClass;
+ * {@snippet lang=c :
+ * typedef struct _PangoAttrClass PangoAttrClass
  * }
  */
-public final class PangoAttrClass extends _PangoAttrClass {
+public class PangoAttrClass extends _PangoAttrClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private PangoAttrClass() {}
+    PangoAttrClass() {
+        // Should not be called directly
+    }
 }
-
 

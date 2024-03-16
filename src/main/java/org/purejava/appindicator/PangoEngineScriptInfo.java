@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _PangoEngineScriptInfo PangoEngineScriptInfo;
+ * {@snippet lang=c :
+ * typedef struct _PangoEngineScriptInfo PangoEngineScriptInfo
  * }
  */
-public final class PangoEngineScriptInfo extends _PangoEngineScriptInfo {
+public class PangoEngineScriptInfo extends _PangoEngineScriptInfo {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private PangoEngineScriptInfo() {}
+    PangoEngineScriptInfo() {
+        // Should not be called directly
+    }
 }
-
 

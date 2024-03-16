@@ -2,248 +2,520 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GProxyInterface {
- *     struct _GTypeInterface g_iface;
- *     struct _GIOStream* (*connect)(struct _GProxy*,struct _GIOStream*,struct _GProxyAddress*,struct _GCancellable*,struct _GError**);
- *     void (*connect_async)(struct _GProxy*,struct _GIOStream*,struct _GProxyAddress*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     struct _GIOStream* (*connect_finish)(struct _GProxy*,struct _GAsyncResult*,struct _GError**);
- *     int (*supports_hostname)(struct _GProxy*);
- * };
+ *     GTypeInterface g_iface;
+ *     GIOStream *(*connect)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GError **);
+ *     void (*connect_async)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     GIOStream *(*connect_finish)(GProxy *, GAsyncResult *, GError **);
+ *     gboolean (*supports_hostname)(GProxy *);
+ * }
  * }
  */
 public class _GProxyInterface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1216.const$3;
+    _GProxyInterface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("connect"),
+        app_indicator_h.C_POINTER.withName("connect_async"),
+        app_indicator_h.C_POINTER.withName("connect_finish"),
+        app_indicator_h.C_POINTER.withName("supports_hostname")
+    ).withName("_GProxyInterface");
+
     /**
-     * {@snippet :
- * struct _GIOStream* (*connect)(struct _GProxy*,struct _GIOStream*,struct _GProxyAddress*,struct _GCancellable*,struct _GError**);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface connect {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(connect fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1216.const$4, fi, constants$330.const$5, scope);
-        }
-        static connect ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$866.const$1.invokeExact(symbol, _connection, _sender, _object_path, _node, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle connect$VH() {
-        return constants$1216.const$5;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GIOStream* (*connect)(struct _GProxy*,struct _GIOStream*,struct _GProxyAddress*,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment connect$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1216.const$5.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GIOStream* (*connect)(struct _GProxy*,struct _GIOStream*,struct _GProxyAddress*,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void connect$set(MemorySegment seg, MemorySegment x) {
-        constants$1216.const$5.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment connect$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1216.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void connect$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1216.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static connect connect(MemorySegment segment, Arena scope) {
-        return connect.ofAddress(connect$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*connect_async)(struct _GProxy*,struct _GIOStream*,struct _GProxyAddress*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * GIOStream *(*connect)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GError **)
      * }
      */
-    public interface connect_async {
+    public class connect {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(connect_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1217.const$0, fi, constants$338.const$3, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static connect_async ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
-                try {
-                    constants$338.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(connect.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(connect.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle connect_async$VH() {
-        return constants$1217.const$1;
+    private static final AddressLayout connect$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("connect"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIOStream *(*connect)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GError **)
+     * }
+     */
+    public static final AddressLayout connect$layout() {
+        return connect$LAYOUT;
     }
+
+    private static final long connect$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIOStream *(*connect)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GError **)
+     * }
+     */
+    public static final long connect$offset() {
+        return connect$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*connect_async)(struct _GProxy*,struct _GIOStream*,struct _GProxyAddress*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * GIOStream *(*connect)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GError **)
      * }
      */
-    public static MemorySegment connect_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1217.const$1.get(seg);
+    public static MemorySegment connect(MemorySegment struct) {
+        return struct.get(connect$LAYOUT, connect$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*connect_async)(struct _GProxy*,struct _GIOStream*,struct _GProxyAddress*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * GIOStream *(*connect)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GError **)
      * }
      */
-    public static void connect_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1217.const$1.set(seg, x);
+    public static void connect(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(connect$LAYOUT, connect$OFFSET, fieldValue);
     }
-    public static MemorySegment connect_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1217.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void connect_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1217.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static connect_async connect_async(MemorySegment segment, Arena scope) {
-        return connect_async.ofAddress(connect_async$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GIOStream* (*connect_finish)(struct _GProxy*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*connect_async)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface connect_finish {
+    public class connect_async {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(connect_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1217.const$2, fi, constants$23.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5);
         }
-        static connect_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(connect_async.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(connect_async.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle connect_finish$VH() {
-        return constants$1217.const$3;
+    private static final AddressLayout connect_async$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("connect_async"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*connect_async)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout connect_async$layout() {
+        return connect_async$LAYOUT;
     }
+
+    private static final long connect_async$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*connect_async)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long connect_async$offset() {
+        return connect_async$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GIOStream* (*connect_finish)(struct _GProxy*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*connect_async)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment connect_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1217.const$3.get(seg);
+    public static MemorySegment connect_async(MemorySegment struct) {
+        return struct.get(connect_async$LAYOUT, connect_async$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GIOStream* (*connect_finish)(struct _GProxy*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*connect_async)(GProxy *, GIOStream *, GProxyAddress *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void connect_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1217.const$3.set(seg, x);
+    public static void connect_async(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(connect_async$LAYOUT, connect_async$OFFSET, fieldValue);
     }
-    public static MemorySegment connect_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1217.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void connect_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1217.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static connect_finish connect_finish(MemorySegment segment, Arena scope) {
-        return connect_finish.ofAddress(connect_finish$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*supports_hostname)(struct _GProxy*);
+     * {@snippet lang=c :
+     * GIOStream *(*connect_finish)(GProxy *, GAsyncResult *, GError **)
      * }
      */
-    public interface supports_hostname {
+    public class connect_finish {
 
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(supports_hostname fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1217.const$4, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static supports_hostname ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(connect_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(connect_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle supports_hostname$VH() {
-        return constants$1217.const$5;
+    private static final AddressLayout connect_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("connect_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIOStream *(*connect_finish)(GProxy *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout connect_finish$layout() {
+        return connect_finish$LAYOUT;
     }
+
+    private static final long connect_finish$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIOStream *(*connect_finish)(GProxy *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long connect_finish$offset() {
+        return connect_finish$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*supports_hostname)(struct _GProxy*);
+     * {@snippet lang=c :
+     * GIOStream *(*connect_finish)(GProxy *, GAsyncResult *, GError **)
      * }
      */
-    public static MemorySegment supports_hostname$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1217.const$5.get(seg);
+    public static MemorySegment connect_finish(MemorySegment struct) {
+        return struct.get(connect_finish$LAYOUT, connect_finish$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*supports_hostname)(struct _GProxy*);
+     * {@snippet lang=c :
+     * GIOStream *(*connect_finish)(GProxy *, GAsyncResult *, GError **)
      * }
      */
-    public static void supports_hostname$set(MemorySegment seg, MemorySegment x) {
-        constants$1217.const$5.set(seg, x);
+    public static void connect_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(connect_finish$LAYOUT, connect_finish$OFFSET, fieldValue);
     }
-    public static MemorySegment supports_hostname$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1217.const$5.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * gboolean (*supports_hostname)(GProxy *)
+     * }
+     */
+    public class supports_hostname {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(supports_hostname.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(supports_hostname.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void supports_hostname$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1217.const$5.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout supports_hostname$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("supports_hostname"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*supports_hostname)(GProxy *)
+     * }
+     */
+    public static final AddressLayout supports_hostname$layout() {
+        return supports_hostname$LAYOUT;
     }
-    public static supports_hostname supports_hostname(MemorySegment segment, Arena scope) {
-        return supports_hostname.ofAddress(supports_hostname$get(segment), scope);
+
+    private static final long supports_hostname$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*supports_hostname)(GProxy *)
+     * }
+     */
+    public static final long supports_hostname$offset() {
+        return supports_hostname$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean (*supports_hostname)(GProxy *)
+     * }
+     */
+    public static MemorySegment supports_hostname(MemorySegment struct) {
+        return struct.get(supports_hostname$LAYOUT, supports_hostname$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean (*supports_hostname)(GProxy *)
+     * }
+     */
+    public static void supports_hostname(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(supports_hostname$LAYOUT, supports_hostname$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

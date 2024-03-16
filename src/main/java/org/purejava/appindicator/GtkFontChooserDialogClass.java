@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkFontChooserDialogClass GtkFontChooserDialogClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkFontChooserDialogClass GtkFontChooserDialogClass
  * }
  */
-public final class GtkFontChooserDialogClass extends _GtkFontChooserDialogClass {
+public class GtkFontChooserDialogClass extends _GtkFontChooserDialogClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFontChooserDialogClass() {}
+    GtkFontChooserDialogClass() {
+        // Should not be called directly
+    }
 }
-
 

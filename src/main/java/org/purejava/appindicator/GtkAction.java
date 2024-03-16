@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkAction GtkAction;
+ * {@snippet lang=c :
+ * typedef struct _GtkAction GtkAction
  * }
  */
-public final class GtkAction extends _GtkAction {
+public class GtkAction extends _GtkAction {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkAction() {}
+    GtkAction() {
+        // Should not be called directly
+    }
 }
-
 

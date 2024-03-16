@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GInetAddressClass GInetAddressClass;
+ * {@snippet lang=c :
+ * typedef struct _GInetAddressClass GInetAddressClass
  * }
  */
-public final class GInetAddressClass extends _GInetAddressClass {
+public class GInetAddressClass extends _GInetAddressClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GInetAddressClass() {}
+    GInetAddressClass() {
+        // Should not be called directly
+    }
 }
-
 

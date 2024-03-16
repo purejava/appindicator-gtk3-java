@@ -2,248 +2,514 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GNetworkMonitorInterface {
- *     struct _GTypeInterface g_iface;
- *     void (*network_changed)(struct _GNetworkMonitor*,int);
- *     int (*can_reach)(struct _GNetworkMonitor*,struct _GSocketConnectable*,struct _GCancellable*,struct _GError**);
- *     void (*can_reach_async)(struct _GNetworkMonitor*,struct _GSocketConnectable*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     int (*can_reach_finish)(struct _GNetworkMonitor*,struct _GAsyncResult*,struct _GError**);
- * };
+ *     GTypeInterface g_iface;
+ *     void (*network_changed)(GNetworkMonitor *, gboolean);
+ *     gboolean (*can_reach)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GError **);
+ *     void (*can_reach_async)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     gboolean (*can_reach_finish)(GNetworkMonitor *, GAsyncResult *, GError **);
+ * }
  * }
  */
 public class _GNetworkMonitorInterface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1197.const$3;
+    _GNetworkMonitorInterface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("network_changed"),
+        app_indicator_h.C_POINTER.withName("can_reach"),
+        app_indicator_h.C_POINTER.withName("can_reach_async"),
+        app_indicator_h.C_POINTER.withName("can_reach_finish")
+    ).withName("_GNetworkMonitorInterface");
+
     /**
-     * {@snippet :
- * void (*network_changed)(struct _GNetworkMonitor*,int);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface network_changed {
-
-        void apply(java.lang.foreign.MemorySegment colors, int n_colors);
-        static MemorySegment allocate(network_changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1197.const$4, fi, constants$40.const$2, scope);
-        }
-        static network_changed ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
-                try {
-                    constants$509.const$5.invokeExact(symbol, _colors, _n_colors);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle network_changed$VH() {
-        return constants$1197.const$5;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*network_changed)(struct _GNetworkMonitor*,int);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment network_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1197.const$5.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*network_changed)(struct _GNetworkMonitor*,int);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void network_changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1197.const$5.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment network_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1197.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void network_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1197.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static network_changed network_changed(MemorySegment segment, Arena scope) {
-        return network_changed.ofAddress(network_changed$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*can_reach)(struct _GNetworkMonitor*,struct _GSocketConnectable*,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*network_changed)(GNetworkMonitor *, gboolean)
      * }
      */
-    public interface can_reach {
+    public class network_changed {
 
-        int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(can_reach fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1198.const$0, fi, constants$34.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1);
         }
-        static can_reach ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$382.const$0.invokeExact(symbol, _completion, _key, _iter, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(network_changed.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(network_changed.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle can_reach$VH() {
-        return constants$1198.const$1;
+    private static final AddressLayout network_changed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("network_changed"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*network_changed)(GNetworkMonitor *, gboolean)
+     * }
+     */
+    public static final AddressLayout network_changed$layout() {
+        return network_changed$LAYOUT;
     }
+
+    private static final long network_changed$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*network_changed)(GNetworkMonitor *, gboolean)
+     * }
+     */
+    public static final long network_changed$offset() {
+        return network_changed$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*can_reach)(struct _GNetworkMonitor*,struct _GSocketConnectable*,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*network_changed)(GNetworkMonitor *, gboolean)
      * }
      */
-    public static MemorySegment can_reach$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1198.const$1.get(seg);
+    public static MemorySegment network_changed(MemorySegment struct) {
+        return struct.get(network_changed$LAYOUT, network_changed$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*can_reach)(struct _GNetworkMonitor*,struct _GSocketConnectable*,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*network_changed)(GNetworkMonitor *, gboolean)
      * }
      */
-    public static void can_reach$set(MemorySegment seg, MemorySegment x) {
-        constants$1198.const$1.set(seg, x);
+    public static void network_changed(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(network_changed$LAYOUT, network_changed$OFFSET, fieldValue);
     }
-    public static MemorySegment can_reach$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1198.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void can_reach$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1198.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static can_reach can_reach(MemorySegment segment, Arena scope) {
-        return can_reach.ofAddress(can_reach$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*can_reach_async)(struct _GNetworkMonitor*,struct _GSocketConnectable*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*can_reach)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GError **)
      * }
      */
-    public interface can_reach_async {
+    public class can_reach {
 
-        void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(can_reach_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1198.const$2, fi, constants$331.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3);
         }
-        static can_reach_async ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(can_reach.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(can_reach.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle can_reach_async$VH() {
-        return constants$1198.const$3;
+    private static final AddressLayout can_reach$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("can_reach"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*can_reach)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GError **)
+     * }
+     */
+    public static final AddressLayout can_reach$layout() {
+        return can_reach$LAYOUT;
     }
+
+    private static final long can_reach$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*can_reach)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GError **)
+     * }
+     */
+    public static final long can_reach$offset() {
+        return can_reach$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*can_reach_async)(struct _GNetworkMonitor*,struct _GSocketConnectable*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*can_reach)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GError **)
      * }
      */
-    public static MemorySegment can_reach_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1198.const$3.get(seg);
+    public static MemorySegment can_reach(MemorySegment struct) {
+        return struct.get(can_reach$LAYOUT, can_reach$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*can_reach_async)(struct _GNetworkMonitor*,struct _GSocketConnectable*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*can_reach)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GError **)
      * }
      */
-    public static void can_reach_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1198.const$3.set(seg, x);
+    public static void can_reach(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(can_reach$LAYOUT, can_reach$OFFSET, fieldValue);
     }
-    public static MemorySegment can_reach_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1198.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void can_reach_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1198.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static can_reach_async can_reach_async(MemorySegment segment, Arena scope) {
-        return can_reach_async.ofAddress(can_reach_async$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*can_reach_finish)(struct _GNetworkMonitor*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*can_reach_async)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface can_reach_finish {
+    public class can_reach_async {
 
-        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(can_reach_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1198.const$4, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static can_reach_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(can_reach_async.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(can_reach_async.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle can_reach_finish$VH() {
-        return constants$1198.const$5;
+    private static final AddressLayout can_reach_async$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("can_reach_async"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*can_reach_async)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout can_reach_async$layout() {
+        return can_reach_async$LAYOUT;
     }
+
+    private static final long can_reach_async$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*can_reach_async)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long can_reach_async$offset() {
+        return can_reach_async$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*can_reach_finish)(struct _GNetworkMonitor*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*can_reach_async)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment can_reach_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1198.const$5.get(seg);
+    public static MemorySegment can_reach_async(MemorySegment struct) {
+        return struct.get(can_reach_async$LAYOUT, can_reach_async$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*can_reach_finish)(struct _GNetworkMonitor*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*can_reach_async)(GNetworkMonitor *, GSocketConnectable *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void can_reach_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1198.const$5.set(seg, x);
+    public static void can_reach_async(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(can_reach_async$LAYOUT, can_reach_async$OFFSET, fieldValue);
     }
-    public static MemorySegment can_reach_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1198.const$5.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * gboolean (*can_reach_finish)(GNetworkMonitor *, GAsyncResult *, GError **)
+     * }
+     */
+    public class can_reach_finish {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(can_reach_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(can_reach_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void can_reach_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1198.const$5.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout can_reach_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("can_reach_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*can_reach_finish)(GNetworkMonitor *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout can_reach_finish$layout() {
+        return can_reach_finish$LAYOUT;
     }
-    public static can_reach_finish can_reach_finish(MemorySegment segment, Arena scope) {
-        return can_reach_finish.ofAddress(can_reach_finish$get(segment), scope);
+
+    private static final long can_reach_finish$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*can_reach_finish)(GNetworkMonitor *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long can_reach_finish$offset() {
+        return can_reach_finish$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean (*can_reach_finish)(GNetworkMonitor *, GAsyncResult *, GError **)
+     * }
+     */
+    public static MemorySegment can_reach_finish(MemorySegment struct) {
+        return struct.get(can_reach_finish$LAYOUT, can_reach_finish$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean (*can_reach_finish)(GNetworkMonitor *, GAsyncResult *, GError **)
+     * }
+     */
+    public static void can_reach_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(can_reach_finish$LAYOUT, can_reach_finish$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

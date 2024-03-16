@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkStack GtkStack;
+ * {@snippet lang=c :
+ * typedef struct _GtkStack GtkStack
  * }
  */
-public final class GtkStack extends _GtkStack {
+public class GtkStack extends _GtkStack {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkStack() {}
+    GtkStack() {
+        // Should not be called directly
+    }
 }
-
 

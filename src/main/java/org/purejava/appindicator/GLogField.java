@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GLogField GLogField;
+ * {@snippet lang=c :
+ * typedef struct _GLogField GLogField
  * }
  */
-public final class GLogField extends _GLogField {
+public class GLogField extends _GLogField {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GLogField() {}
+    GLogField() {
+        // Should not be called directly
+    }
 }
-
 

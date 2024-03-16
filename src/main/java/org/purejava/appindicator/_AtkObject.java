@@ -2,200 +2,400 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.ValueLayout.OfInt;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _AtkObject {
- *     struct _GObject parent;
- *     char* description;
- *     char* name;
- *     struct _AtkObject* accessible_parent;
- *     enum AtkRole role;
- *     struct _AtkRelationSet* relation_set;
- *     enum AtkLayer layer;
- * };
+ *     GObject parent;
+ *     gchar *description;
+ *     gchar *name;
+ *     AtkObject *accessible_parent;
+ *     AtkRole role;
+ *     AtkRelationSet *relation_set;
+ *     AtkLayer layer;
+ * }
  * }
  */
 public class _AtkObject {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1965.const$3;
+    _AtkObject() {
+        // Should not be called directly
     }
-    public static MemorySegment parent$slice(MemorySegment seg) {
-        return seg.asSlice(0, 24);
-    }
-    public static VarHandle description$VH() {
-        return constants$1965.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* description;
-     * }
-     */
-    public static MemorySegment description$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1965.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* description;
-     * }
-     */
-    public static void description$set(MemorySegment seg, MemorySegment x) {
-        constants$1965.const$4.set(seg, x);
-    }
-    public static MemorySegment description$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1965.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void description$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1965.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle name$VH() {
-        return constants$1965.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* name;
-     * }
-     */
-    public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1965.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* name;
-     * }
-     */
-    public static void name$set(MemorySegment seg, MemorySegment x) {
-        constants$1965.const$5.set(seg, x);
-    }
-    public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1965.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1965.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle accessible_parent$VH() {
-        return constants$1966.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _AtkObject* accessible_parent;
-     * }
-     */
-    public static MemorySegment accessible_parent$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1966.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _AtkObject* accessible_parent;
-     * }
-     */
-    public static void accessible_parent$set(MemorySegment seg, MemorySegment x) {
-        constants$1966.const$0.set(seg, x);
-    }
-    public static MemorySegment accessible_parent$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1966.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void accessible_parent$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1966.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle role$VH() {
-        return constants$1966.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum AtkRole role;
-     * }
-     */
-    public static int role$get(MemorySegment seg) {
-        return (int)constants$1966.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum AtkRole role;
-     * }
-     */
-    public static void role$set(MemorySegment seg, int x) {
-        constants$1966.const$1.set(seg, x);
-    }
-    public static int role$get(MemorySegment seg, long index) {
-        return (int)constants$1966.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void role$set(MemorySegment seg, long index, int x) {
-        constants$1966.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle relation_set$VH() {
-        return constants$1966.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _AtkRelationSet* relation_set;
-     * }
-     */
-    public static MemorySegment relation_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1966.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _AtkRelationSet* relation_set;
-     * }
-     */
-    public static void relation_set$set(MemorySegment seg, MemorySegment x) {
-        constants$1966.const$2.set(seg, x);
-    }
-    public static MemorySegment relation_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1966.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void relation_set$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1966.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle layer$VH() {
-        return constants$1966.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum AtkLayer layer;
-     * }
-     */
-    public static int layer$get(MemorySegment seg) {
-        return (int)constants$1966.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum AtkLayer layer;
-     * }
-     */
-    public static void layer$set(MemorySegment seg, int x) {
-        constants$1966.const$3.set(seg, x);
-    }
-    public static int layer$get(MemorySegment seg, long index) {
-        return (int)constants$1966.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void layer$set(MemorySegment seg, long index, int x) {
-        constants$1966.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObject.layout().withName("parent"),
+        app_indicator_h.C_POINTER.withName("description"),
+        app_indicator_h.C_POINTER.withName("name"),
+        app_indicator_h.C_POINTER.withName("accessible_parent"),
+        app_indicator_h.C_INT.withName("role"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("relation_set"),
+        app_indicator_h.C_INT.withName("layer"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_AtkObject");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObject parent
+     * }
+     */
+    public static final GroupLayout parent$layout() {
+        return parent$LAYOUT;
+    }
+
+    private static final long parent$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObject parent
+     * }
+     */
+    public static final long parent$offset() {
+        return parent$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GObject parent
+     * }
+     */
+    public static MemorySegment parent(MemorySegment struct) {
+        return struct.asSlice(parent$OFFSET, parent$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GObject parent
+     * }
+     */
+    public static void parent(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent$OFFSET, parent$LAYOUT.byteSize());
+    }
+
+    private static final AddressLayout description$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("description"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *description
+     * }
+     */
+    public static final AddressLayout description$layout() {
+        return description$LAYOUT;
+    }
+
+    private static final long description$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *description
+     * }
+     */
+    public static final long description$offset() {
+        return description$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *description
+     * }
+     */
+    public static MemorySegment description(MemorySegment struct) {
+        return struct.get(description$LAYOUT, description$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *description
+     * }
+     */
+    public static void description(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(description$LAYOUT, description$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout name$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("name"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *name
+     * }
+     */
+    public static final AddressLayout name$layout() {
+        return name$LAYOUT;
+    }
+
+    private static final long name$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *name
+     * }
+     */
+    public static final long name$offset() {
+        return name$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *name
+     * }
+     */
+    public static MemorySegment name(MemorySegment struct) {
+        return struct.get(name$LAYOUT, name$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *name
+     * }
+     */
+    public static void name(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(name$LAYOUT, name$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout accessible_parent$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("accessible_parent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * AtkObject *accessible_parent
+     * }
+     */
+    public static final AddressLayout accessible_parent$layout() {
+        return accessible_parent$LAYOUT;
+    }
+
+    private static final long accessible_parent$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * AtkObject *accessible_parent
+     * }
+     */
+    public static final long accessible_parent$offset() {
+        return accessible_parent$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * AtkObject *accessible_parent
+     * }
+     */
+    public static MemorySegment accessible_parent(MemorySegment struct) {
+        return struct.get(accessible_parent$LAYOUT, accessible_parent$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * AtkObject *accessible_parent
+     * }
+     */
+    public static void accessible_parent(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(accessible_parent$LAYOUT, accessible_parent$OFFSET, fieldValue);
+    }
+
+    private static final OfInt role$LAYOUT = (OfInt)$LAYOUT.select(groupElement("role"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * AtkRole role
+     * }
+     */
+    public static final OfInt role$layout() {
+        return role$LAYOUT;
+    }
+
+    private static final long role$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * AtkRole role
+     * }
+     */
+    public static final long role$offset() {
+        return role$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * AtkRole role
+     * }
+     */
+    public static int role(MemorySegment struct) {
+        return struct.get(role$LAYOUT, role$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * AtkRole role
+     * }
+     */
+    public static void role(MemorySegment struct, int fieldValue) {
+        struct.set(role$LAYOUT, role$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout relation_set$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("relation_set"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * AtkRelationSet *relation_set
+     * }
+     */
+    public static final AddressLayout relation_set$layout() {
+        return relation_set$LAYOUT;
+    }
+
+    private static final long relation_set$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * AtkRelationSet *relation_set
+     * }
+     */
+    public static final long relation_set$offset() {
+        return relation_set$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * AtkRelationSet *relation_set
+     * }
+     */
+    public static MemorySegment relation_set(MemorySegment struct) {
+        return struct.get(relation_set$LAYOUT, relation_set$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * AtkRelationSet *relation_set
+     * }
+     */
+    public static void relation_set(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(relation_set$LAYOUT, relation_set$OFFSET, fieldValue);
+    }
+
+    private static final OfInt layer$LAYOUT = (OfInt)$LAYOUT.select(groupElement("layer"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * AtkLayer layer
+     * }
+     */
+    public static final OfInt layer$layout() {
+        return layer$LAYOUT;
+    }
+
+    private static final long layer$OFFSET = 64;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * AtkLayer layer
+     * }
+     */
+    public static final long layer$offset() {
+        return layer$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * AtkLayer layer
+     * }
+     */
+    public static int layer(MemorySegment struct) {
+        return struct.get(layer$LAYOUT, layer$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * AtkLayer layer
+     * }
+     */
+    public static void layer(MemorySegment struct, int fieldValue) {
+        struct.set(layer$LAYOUT, layer$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

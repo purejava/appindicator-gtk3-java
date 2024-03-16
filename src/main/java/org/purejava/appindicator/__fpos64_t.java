@@ -2,15 +2,28 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _G_fpos64_t __fpos64_t;
+ * {@snippet lang=c :
+ * typedef struct _G_fpos64_t {
+ *     __off64_t __pos;
+ *     __mbstate_t __state;
+ * } __fpos64_t
  * }
  */
-public final class __fpos64_t extends _G_fpos64_t {
+public class __fpos64_t extends _G_fpos64_t {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private __fpos64_t() {}
+    __fpos64_t() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _AtkRegistryClass AtkRegistryClass;
+ * {@snippet lang=c :
+ * typedef struct _AtkRegistryClass {
+ *     GObjectClass parent_class;
+ * } AtkRegistryClass
  * }
  */
-public final class AtkRegistryClass extends _AtkRegistryClass {
+public class AtkRegistryClass extends _AtkRegistryClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkRegistryClass() {}
+    AtkRegistryClass() {
+        // Should not be called directly
+    }
 }
-
 

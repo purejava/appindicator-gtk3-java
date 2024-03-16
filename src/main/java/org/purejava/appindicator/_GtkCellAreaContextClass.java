@@ -2,572 +2,1068 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.lang.invoke.MethodHandle;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkCellAreaContextClass {
- *     struct _GObjectClass parent_class;
- *     void (*allocate)(struct _GtkCellAreaContext*,int,int);
- *     void (*reset)(struct _GtkCellAreaContext*);
- *     void (*get_preferred_height_for_width)(struct _GtkCellAreaContext*,int,int*,int*);
- *     void (*get_preferred_width_for_height)(struct _GtkCellAreaContext*,int,int*,int*);
- *     void (*_gtk_reserved1)();
- *     void (*_gtk_reserved2)();
- *     void (*_gtk_reserved3)();
- *     void (*_gtk_reserved4)();
- *     void (*_gtk_reserved5)();
- *     void (*_gtk_reserved6)();
- * };
+ *     GObjectClass parent_class;
+ *     void (*allocate)(GtkCellAreaContext *, gint, gint);
+ *     void (*reset)(GtkCellAreaContext *);
+ *     void (*get_preferred_height_for_width)(GtkCellAreaContext *, gint, gint *, gint *);
+ *     void (*get_preferred_width_for_height)(GtkCellAreaContext *, gint, gint *, gint *);
+ *     void (*_gtk_reserved1)(void);
+ *     void (*_gtk_reserved2)(void);
+ *     void (*_gtk_reserved3)(void);
+ *     void (*_gtk_reserved4)(void);
+ *     void (*_gtk_reserved5)(void);
+ *     void (*_gtk_reserved6)(void);
+ * }
  * }
  */
 public class _GtkCellAreaContextClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2568.const$4;
+    _GtkCellAreaContextClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 136);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObjectClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("allocate"),
+        app_indicator_h.C_POINTER.withName("reset"),
+        app_indicator_h.C_POINTER.withName("get_preferred_height_for_width"),
+        app_indicator_h.C_POINTER.withName("get_preferred_width_for_height"),
+        app_indicator_h.C_POINTER.withName("_gtk_reserved1"),
+        app_indicator_h.C_POINTER.withName("_gtk_reserved2"),
+        app_indicator_h.C_POINTER.withName("_gtk_reserved3"),
+        app_indicator_h.C_POINTER.withName("_gtk_reserved4"),
+        app_indicator_h.C_POINTER.withName("_gtk_reserved5"),
+        app_indicator_h.C_POINTER.withName("_gtk_reserved6")
+    ).withName("_GtkCellAreaContextClass");
+
     /**
-     * {@snippet :
- * void (*allocate)(struct _GtkCellAreaContext*,int,int);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public interface allocate {
-
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
-        static MemorySegment allocate(allocate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2568.const$5, fi, constants$467.const$3, scope);
-        }
-        static allocate ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
-                try {
-                    constants$1901.const$2.invokeExact(symbol, __x0, __x1, __x2);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle allocate$VH() {
-        return constants$2569.const$0;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*allocate)(struct _GtkCellAreaContext*,int,int);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static MemorySegment allocate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2569.const$0.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*allocate)(struct _GtkCellAreaContext*,int,int);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static void allocate$set(MemorySegment seg, MemorySegment x) {
-        constants$2569.const$0.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment allocate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2569.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void allocate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2569.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static allocate allocate(MemorySegment segment, Arena scope) {
-        return allocate.ofAddress(allocate$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*reset)(struct _GtkCellAreaContext*);
+     * {@snippet lang=c :
+     * void (*allocate)(GtkCellAreaContext *, gint, gint)
      * }
      */
-    public interface reset {
+    public class allocate {
 
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(reset fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2569.const$1, fi, constants$13.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, int _x2);
         }
-        static reset ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(allocate.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(allocate.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle reset$VH() {
-        return constants$2569.const$2;
+    private static final AddressLayout allocate$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("allocate"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*allocate)(GtkCellAreaContext *, gint, gint)
+     * }
+     */
+    public static final AddressLayout allocate$layout() {
+        return allocate$LAYOUT;
     }
+
+    private static final long allocate$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*allocate)(GtkCellAreaContext *, gint, gint)
+     * }
+     */
+    public static final long allocate$offset() {
+        return allocate$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*reset)(struct _GtkCellAreaContext*);
+     * {@snippet lang=c :
+     * void (*allocate)(GtkCellAreaContext *, gint, gint)
      * }
      */
-    public static MemorySegment reset$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2569.const$2.get(seg);
+    public static MemorySegment allocate(MemorySegment struct) {
+        return struct.get(allocate$LAYOUT, allocate$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*reset)(struct _GtkCellAreaContext*);
+     * {@snippet lang=c :
+     * void (*allocate)(GtkCellAreaContext *, gint, gint)
      * }
      */
-    public static void reset$set(MemorySegment seg, MemorySegment x) {
-        constants$2569.const$2.set(seg, x);
+    public static void allocate(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(allocate$LAYOUT, allocate$OFFSET, fieldValue);
     }
-    public static MemorySegment reset$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2569.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reset$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2569.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static reset reset(MemorySegment segment, Arena scope) {
-        return reset.ofAddress(reset$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*get_preferred_height_for_width)(struct _GtkCellAreaContext*,int,int*,int*);
+     * {@snippet lang=c :
+     * void (*reset)(GtkCellAreaContext *)
      * }
      */
-    public interface get_preferred_height_for_width {
+    public class reset {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(get_preferred_height_for_width fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2569.const$3, fi, constants$179.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static get_preferred_height_for_width ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
-                try {
-                    constants$372.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(reset.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(reset.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_preferred_height_for_width$VH() {
-        return constants$2569.const$4;
+    private static final AddressLayout reset$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reset"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*reset)(GtkCellAreaContext *)
+     * }
+     */
+    public static final AddressLayout reset$layout() {
+        return reset$LAYOUT;
     }
+
+    private static final long reset$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*reset)(GtkCellAreaContext *)
+     * }
+     */
+    public static final long reset$offset() {
+        return reset$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*get_preferred_height_for_width)(struct _GtkCellAreaContext*,int,int*,int*);
+     * {@snippet lang=c :
+     * void (*reset)(GtkCellAreaContext *)
      * }
      */
-    public static MemorySegment get_preferred_height_for_width$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2569.const$4.get(seg);
+    public static MemorySegment reset(MemorySegment struct) {
+        return struct.get(reset$LAYOUT, reset$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*get_preferred_height_for_width)(struct _GtkCellAreaContext*,int,int*,int*);
+     * {@snippet lang=c :
+     * void (*reset)(GtkCellAreaContext *)
      * }
      */
-    public static void get_preferred_height_for_width$set(MemorySegment seg, MemorySegment x) {
-        constants$2569.const$4.set(seg, x);
+    public static void reset(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(reset$LAYOUT, reset$OFFSET, fieldValue);
     }
-    public static MemorySegment get_preferred_height_for_width$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2569.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_preferred_height_for_width$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2569.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_preferred_height_for_width get_preferred_height_for_width(MemorySegment segment, Arena scope) {
-        return get_preferred_height_for_width.ofAddress(get_preferred_height_for_width$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*get_preferred_width_for_height)(struct _GtkCellAreaContext*,int,int*,int*);
+     * {@snippet lang=c :
+     * void (*get_preferred_height_for_width)(GtkCellAreaContext *, gint, gint *, gint *)
      * }
      */
-    public interface get_preferred_width_for_height {
+    public class get_preferred_height_for_width {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(get_preferred_width_for_height fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2569.const$5, fi, constants$179.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3);
         }
-        static get_preferred_width_for_height ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
-                try {
-                    constants$372.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_preferred_height_for_width.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_preferred_height_for_width.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_preferred_width_for_height$VH() {
-        return constants$2570.const$0;
+    private static final AddressLayout get_preferred_height_for_width$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_preferred_height_for_width"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*get_preferred_height_for_width)(GtkCellAreaContext *, gint, gint *, gint *)
+     * }
+     */
+    public static final AddressLayout get_preferred_height_for_width$layout() {
+        return get_preferred_height_for_width$LAYOUT;
     }
+
+    private static final long get_preferred_height_for_width$OFFSET = 152;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*get_preferred_height_for_width)(GtkCellAreaContext *, gint, gint *, gint *)
+     * }
+     */
+    public static final long get_preferred_height_for_width$offset() {
+        return get_preferred_height_for_width$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*get_preferred_width_for_height)(struct _GtkCellAreaContext*,int,int*,int*);
+     * {@snippet lang=c :
+     * void (*get_preferred_height_for_width)(GtkCellAreaContext *, gint, gint *, gint *)
      * }
      */
-    public static MemorySegment get_preferred_width_for_height$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2570.const$0.get(seg);
+    public static MemorySegment get_preferred_height_for_width(MemorySegment struct) {
+        return struct.get(get_preferred_height_for_width$LAYOUT, get_preferred_height_for_width$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*get_preferred_width_for_height)(struct _GtkCellAreaContext*,int,int*,int*);
+     * {@snippet lang=c :
+     * void (*get_preferred_height_for_width)(GtkCellAreaContext *, gint, gint *, gint *)
      * }
      */
-    public static void get_preferred_width_for_height$set(MemorySegment seg, MemorySegment x) {
-        constants$2570.const$0.set(seg, x);
+    public static void get_preferred_height_for_width(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_preferred_height_for_width$LAYOUT, get_preferred_height_for_width$OFFSET, fieldValue);
     }
-    public static MemorySegment get_preferred_width_for_height$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2570.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_preferred_width_for_height$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2570.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_preferred_width_for_height get_preferred_width_for_height(MemorySegment segment, Arena scope) {
-        return get_preferred_width_for_height.ofAddress(get_preferred_width_for_height$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_gtk_reserved1)();
+     * {@snippet lang=c :
+     * void (*get_preferred_width_for_height)(GtkCellAreaContext *, gint, gint *, gint *)
      * }
      */
-    public interface _gtk_reserved1 {
+    public class get_preferred_width_for_height {
 
-        void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2570.const$1, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3);
         }
-        static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_preferred_width_for_height.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_preferred_width_for_height.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _gtk_reserved1$VH() {
-        return constants$2570.const$2;
+    private static final AddressLayout get_preferred_width_for_height$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_preferred_width_for_height"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*get_preferred_width_for_height)(GtkCellAreaContext *, gint, gint *, gint *)
+     * }
+     */
+    public static final AddressLayout get_preferred_width_for_height$layout() {
+        return get_preferred_width_for_height$LAYOUT;
     }
+
+    private static final long get_preferred_width_for_height$OFFSET = 160;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*get_preferred_width_for_height)(GtkCellAreaContext *, gint, gint *, gint *)
+     * }
+     */
+    public static final long get_preferred_width_for_height$offset() {
+        return get_preferred_width_for_height$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_gtk_reserved1)();
+     * {@snippet lang=c :
+     * void (*get_preferred_width_for_height)(GtkCellAreaContext *, gint, gint *, gint *)
      * }
      */
-    public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2570.const$2.get(seg);
+    public static MemorySegment get_preferred_width_for_height(MemorySegment struct) {
+        return struct.get(get_preferred_width_for_height$LAYOUT, get_preferred_width_for_height$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_gtk_reserved1)();
+     * {@snippet lang=c :
+     * void (*get_preferred_width_for_height)(GtkCellAreaContext *, gint, gint *, gint *)
      * }
      */
-    public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$2570.const$2.set(seg, x);
+    public static void get_preferred_width_for_height(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_preferred_width_for_height$LAYOUT, get_preferred_width_for_height$OFFSET, fieldValue);
     }
-    public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2570.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2570.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
-        return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_gtk_reserved2)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved1)(void)
      * }
      */
-    public interface _gtk_reserved2 {
+    public class _gtk_reserved1 {
 
-        void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2570.const$3, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_gtk_reserved1.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_gtk_reserved1.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _gtk_reserved2$VH() {
-        return constants$2570.const$4;
+    private static final AddressLayout _gtk_reserved1$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_gtk_reserved1"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved1)(void)
+     * }
+     */
+    public static final AddressLayout _gtk_reserved1$layout() {
+        return _gtk_reserved1$LAYOUT;
     }
+
+    private static final long _gtk_reserved1$OFFSET = 168;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved1)(void)
+     * }
+     */
+    public static final long _gtk_reserved1$offset() {
+        return _gtk_reserved1$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_gtk_reserved2)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved1)(void)
      * }
      */
-    public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2570.const$4.get(seg);
+    public static MemorySegment _gtk_reserved1(MemorySegment struct) {
+        return struct.get(_gtk_reserved1$LAYOUT, _gtk_reserved1$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_gtk_reserved2)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved1)(void)
      * }
      */
-    public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$2570.const$4.set(seg, x);
+    public static void _gtk_reserved1(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_gtk_reserved1$LAYOUT, _gtk_reserved1$OFFSET, fieldValue);
     }
-    public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2570.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2570.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
-        return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_gtk_reserved3)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved2)(void)
      * }
      */
-    public interface _gtk_reserved3 {
+    public class _gtk_reserved2 {
 
-        void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2570.const$5, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_gtk_reserved2.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_gtk_reserved2.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _gtk_reserved3$VH() {
-        return constants$2571.const$0;
+    private static final AddressLayout _gtk_reserved2$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_gtk_reserved2"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved2)(void)
+     * }
+     */
+    public static final AddressLayout _gtk_reserved2$layout() {
+        return _gtk_reserved2$LAYOUT;
     }
+
+    private static final long _gtk_reserved2$OFFSET = 176;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved2)(void)
+     * }
+     */
+    public static final long _gtk_reserved2$offset() {
+        return _gtk_reserved2$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_gtk_reserved3)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved2)(void)
      * }
      */
-    public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2571.const$0.get(seg);
+    public static MemorySegment _gtk_reserved2(MemorySegment struct) {
+        return struct.get(_gtk_reserved2$LAYOUT, _gtk_reserved2$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_gtk_reserved3)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved2)(void)
      * }
      */
-    public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$2571.const$0.set(seg, x);
+    public static void _gtk_reserved2(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_gtk_reserved2$LAYOUT, _gtk_reserved2$OFFSET, fieldValue);
     }
-    public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2571.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2571.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
-        return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_gtk_reserved4)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved3)(void)
      * }
      */
-    public interface _gtk_reserved4 {
+    public class _gtk_reserved3 {
 
-        void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2571.const$1, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_gtk_reserved3.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_gtk_reserved3.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _gtk_reserved4$VH() {
-        return constants$2571.const$2;
+    private static final AddressLayout _gtk_reserved3$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_gtk_reserved3"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved3)(void)
+     * }
+     */
+    public static final AddressLayout _gtk_reserved3$layout() {
+        return _gtk_reserved3$LAYOUT;
     }
+
+    private static final long _gtk_reserved3$OFFSET = 184;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved3)(void)
+     * }
+     */
+    public static final long _gtk_reserved3$offset() {
+        return _gtk_reserved3$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_gtk_reserved4)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved3)(void)
      * }
      */
-    public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2571.const$2.get(seg);
+    public static MemorySegment _gtk_reserved3(MemorySegment struct) {
+        return struct.get(_gtk_reserved3$LAYOUT, _gtk_reserved3$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_gtk_reserved4)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved3)(void)
      * }
      */
-    public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        constants$2571.const$2.set(seg, x);
+    public static void _gtk_reserved3(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_gtk_reserved3$LAYOUT, _gtk_reserved3$OFFSET, fieldValue);
     }
-    public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2571.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2571.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
-        return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_gtk_reserved5)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved4)(void)
      * }
      */
-    public interface _gtk_reserved5 {
+    public class _gtk_reserved4 {
 
-        void apply();
-        static MemorySegment allocate(_gtk_reserved5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2571.const$3, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _gtk_reserved5 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_gtk_reserved4.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_gtk_reserved4.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _gtk_reserved5$VH() {
-        return constants$2571.const$4;
+    private static final AddressLayout _gtk_reserved4$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_gtk_reserved4"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved4)(void)
+     * }
+     */
+    public static final AddressLayout _gtk_reserved4$layout() {
+        return _gtk_reserved4$LAYOUT;
     }
+
+    private static final long _gtk_reserved4$OFFSET = 192;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved4)(void)
+     * }
+     */
+    public static final long _gtk_reserved4$offset() {
+        return _gtk_reserved4$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_gtk_reserved5)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved4)(void)
      * }
      */
-    public static MemorySegment _gtk_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2571.const$4.get(seg);
+    public static MemorySegment _gtk_reserved4(MemorySegment struct) {
+        return struct.get(_gtk_reserved4$LAYOUT, _gtk_reserved4$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_gtk_reserved5)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved4)(void)
      * }
      */
-    public static void _gtk_reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$2571.const$4.set(seg, x);
+    public static void _gtk_reserved4(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_gtk_reserved4$LAYOUT, _gtk_reserved4$OFFSET, fieldValue);
     }
-    public static MemorySegment _gtk_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2571.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _gtk_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2571.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, Arena scope) {
-        return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_gtk_reserved6)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved5)(void)
      * }
      */
-    public interface _gtk_reserved6 {
+    public class _gtk_reserved5 {
 
-        void apply();
-        static MemorySegment allocate(_gtk_reserved6 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2571.const$5, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _gtk_reserved6 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_gtk_reserved5.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_gtk_reserved5.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _gtk_reserved6$VH() {
-        return constants$2572.const$0;
+    private static final AddressLayout _gtk_reserved5$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_gtk_reserved5"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved5)(void)
+     * }
+     */
+    public static final AddressLayout _gtk_reserved5$layout() {
+        return _gtk_reserved5$LAYOUT;
     }
+
+    private static final long _gtk_reserved5$OFFSET = 200;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved5)(void)
+     * }
+     */
+    public static final long _gtk_reserved5$offset() {
+        return _gtk_reserved5$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_gtk_reserved6)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved5)(void)
      * }
      */
-    public static MemorySegment _gtk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2572.const$0.get(seg);
+    public static MemorySegment _gtk_reserved5(MemorySegment struct) {
+        return struct.get(_gtk_reserved5$LAYOUT, _gtk_reserved5$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_gtk_reserved6)();
+     * {@snippet lang=c :
+     * void (*_gtk_reserved5)(void)
      * }
      */
-    public static void _gtk_reserved6$set(MemorySegment seg, MemorySegment x) {
-        constants$2572.const$0.set(seg, x);
+    public static void _gtk_reserved5(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_gtk_reserved5$LAYOUT, _gtk_reserved5$OFFSET, fieldValue);
     }
-    public static MemorySegment _gtk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2572.const$0.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * void (*_gtk_reserved6)(void)
+     * }
+     */
+    public class _gtk_reserved6 {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_gtk_reserved6.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_gtk_reserved6.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void _gtk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2572.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout _gtk_reserved6$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_gtk_reserved6"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved6)(void)
+     * }
+     */
+    public static final AddressLayout _gtk_reserved6$layout() {
+        return _gtk_reserved6$LAYOUT;
     }
-    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, Arena scope) {
-        return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), scope);
+
+    private static final long _gtk_reserved6$OFFSET = 208;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved6)(void)
+     * }
+     */
+    public static final long _gtk_reserved6$offset() {
+        return _gtk_reserved6$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved6)(void)
+     * }
+     */
+    public static MemorySegment _gtk_reserved6(MemorySegment struct) {
+        return struct.get(_gtk_reserved6$LAYOUT, _gtk_reserved6$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*_gtk_reserved6)(void)
+     * }
+     */
+    public static void _gtk_reserved6(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_gtk_reserved6$LAYOUT, _gtk_reserved6$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

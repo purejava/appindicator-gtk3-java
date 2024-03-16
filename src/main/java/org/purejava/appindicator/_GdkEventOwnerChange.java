@@ -2,252 +2,451 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GdkEventOwnerChange {
- *     enum GdkEventType type;
- *     struct _GdkWindow* window;
- *     signed char send_event;
- *     struct _GdkWindow* owner;
- *     enum GdkOwnerChange reason;
- *     struct _GdkAtom* selection;
- *     unsigned int time;
- *     unsigned int selection_time;
- * };
+ *     GdkEventType type;
+ *     GdkWindow *window;
+ *     gint8 send_event;
+ *     GdkWindow *owner;
+ *     GdkOwnerChange reason;
+ *     GdkAtom selection;
+ *     guint32 time;
+ *     guint32 selection_time;
+ * }
  * }
  */
 public class _GdkEventOwnerChange {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1787.const$4;
+    _GdkEventOwnerChange() {
+        // Should not be called directly
     }
-    public static VarHandle type$VH() {
-        return constants$1787.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum GdkEventType type;
-     * }
-     */
-    public static int type$get(MemorySegment seg) {
-        return (int)constants$1787.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum GdkEventType type;
-     * }
-     */
-    public static void type$set(MemorySegment seg, int x) {
-        constants$1787.const$5.set(seg, x);
-    }
-    public static int type$get(MemorySegment seg, long index) {
-        return (int)constants$1787.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void type$set(MemorySegment seg, long index, int x) {
-        constants$1787.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle window$VH() {
-        return constants$1788.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GdkWindow* window;
-     * }
-     */
-    public static MemorySegment window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1788.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GdkWindow* window;
-     * }
-     */
-    public static void window$set(MemorySegment seg, MemorySegment x) {
-        constants$1788.const$0.set(seg, x);
-    }
-    public static MemorySegment window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1788.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void window$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1788.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle send_event$VH() {
-        return constants$1788.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * signed char send_event;
-     * }
-     */
-    public static byte send_event$get(MemorySegment seg) {
-        return (byte)constants$1788.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * signed char send_event;
-     * }
-     */
-    public static void send_event$set(MemorySegment seg, byte x) {
-        constants$1788.const$1.set(seg, x);
-    }
-    public static byte send_event$get(MemorySegment seg, long index) {
-        return (byte)constants$1788.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void send_event$set(MemorySegment seg, long index, byte x) {
-        constants$1788.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle owner$VH() {
-        return constants$1788.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GdkWindow* owner;
-     * }
-     */
-    public static MemorySegment owner$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1788.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GdkWindow* owner;
-     * }
-     */
-    public static void owner$set(MemorySegment seg, MemorySegment x) {
-        constants$1788.const$2.set(seg, x);
-    }
-    public static MemorySegment owner$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1788.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void owner$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1788.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle reason$VH() {
-        return constants$1788.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum GdkOwnerChange reason;
-     * }
-     */
-    public static int reason$get(MemorySegment seg) {
-        return (int)constants$1788.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum GdkOwnerChange reason;
-     * }
-     */
-    public static void reason$set(MemorySegment seg, int x) {
-        constants$1788.const$3.set(seg, x);
-    }
-    public static int reason$get(MemorySegment seg, long index) {
-        return (int)constants$1788.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void reason$set(MemorySegment seg, long index, int x) {
-        constants$1788.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle selection$VH() {
-        return constants$1788.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GdkAtom* selection;
-     * }
-     */
-    public static MemorySegment selection$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1788.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GdkAtom* selection;
-     * }
-     */
-    public static void selection$set(MemorySegment seg, MemorySegment x) {
-        constants$1788.const$4.set(seg, x);
-    }
-    public static MemorySegment selection$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1788.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void selection$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1788.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle time$VH() {
-        return constants$1788.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int time;
-     * }
-     */
-    public static int time$get(MemorySegment seg) {
-        return (int)constants$1788.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int time;
-     * }
-     */
-    public static void time$set(MemorySegment seg, int x) {
-        constants$1788.const$5.set(seg, x);
-    }
-    public static int time$get(MemorySegment seg, long index) {
-        return (int)constants$1788.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void time$set(MemorySegment seg, long index, int x) {
-        constants$1788.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle selection_time$VH() {
-        return constants$1789.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int selection_time;
-     * }
-     */
-    public static int selection_time$get(MemorySegment seg) {
-        return (int)constants$1789.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int selection_time;
-     * }
-     */
-    public static void selection_time$set(MemorySegment seg, int x) {
-        constants$1789.const$0.set(seg, x);
-    }
-    public static int selection_time$get(MemorySegment seg, long index) {
-        return (int)constants$1789.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void selection_time$set(MemorySegment seg, long index, int x) {
-        constants$1789.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("window"),
+        app_indicator_h.C_CHAR.withName("send_event"),
+        MemoryLayout.paddingLayout(7),
+        app_indicator_h.C_POINTER.withName("owner"),
+        app_indicator_h.C_INT.withName("reason"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("selection"),
+        app_indicator_h.C_INT.withName("time"),
+        app_indicator_h.C_INT.withName("selection_time")
+    ).withName("_GdkEventOwnerChange");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt type$LAYOUT = (OfInt)$LAYOUT.select(groupElement("type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventType type
+     * }
+     */
+    public static final OfInt type$layout() {
+        return type$LAYOUT;
+    }
+
+    private static final long type$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventType type
+     * }
+     */
+    public static final long type$offset() {
+        return type$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventType type
+     * }
+     */
+    public static int type(MemorySegment struct) {
+        return struct.get(type$LAYOUT, type$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventType type
+     * }
+     */
+    public static void type(MemorySegment struct, int fieldValue) {
+        struct.set(type$LAYOUT, type$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout window$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("window"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkWindow *window
+     * }
+     */
+    public static final AddressLayout window$layout() {
+        return window$LAYOUT;
+    }
+
+    private static final long window$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkWindow *window
+     * }
+     */
+    public static final long window$offset() {
+        return window$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkWindow *window
+     * }
+     */
+    public static MemorySegment window(MemorySegment struct) {
+        return struct.get(window$LAYOUT, window$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkWindow *window
+     * }
+     */
+    public static void window(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(window$LAYOUT, window$OFFSET, fieldValue);
+    }
+
+    private static final OfByte send_event$LAYOUT = (OfByte)$LAYOUT.select(groupElement("send_event"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint8 send_event
+     * }
+     */
+    public static final OfByte send_event$layout() {
+        return send_event$LAYOUT;
+    }
+
+    private static final long send_event$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint8 send_event
+     * }
+     */
+    public static final long send_event$offset() {
+        return send_event$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint8 send_event
+     * }
+     */
+    public static byte send_event(MemorySegment struct) {
+        return struct.get(send_event$LAYOUT, send_event$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint8 send_event
+     * }
+     */
+    public static void send_event(MemorySegment struct, byte fieldValue) {
+        struct.set(send_event$LAYOUT, send_event$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout owner$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("owner"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkWindow *owner
+     * }
+     */
+    public static final AddressLayout owner$layout() {
+        return owner$LAYOUT;
+    }
+
+    private static final long owner$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkWindow *owner
+     * }
+     */
+    public static final long owner$offset() {
+        return owner$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkWindow *owner
+     * }
+     */
+    public static MemorySegment owner(MemorySegment struct) {
+        return struct.get(owner$LAYOUT, owner$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkWindow *owner
+     * }
+     */
+    public static void owner(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(owner$LAYOUT, owner$OFFSET, fieldValue);
+    }
+
+    private static final OfInt reason$LAYOUT = (OfInt)$LAYOUT.select(groupElement("reason"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkOwnerChange reason
+     * }
+     */
+    public static final OfInt reason$layout() {
+        return reason$LAYOUT;
+    }
+
+    private static final long reason$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkOwnerChange reason
+     * }
+     */
+    public static final long reason$offset() {
+        return reason$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkOwnerChange reason
+     * }
+     */
+    public static int reason(MemorySegment struct) {
+        return struct.get(reason$LAYOUT, reason$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkOwnerChange reason
+     * }
+     */
+    public static void reason(MemorySegment struct, int fieldValue) {
+        struct.set(reason$LAYOUT, reason$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout selection$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("selection"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkAtom selection
+     * }
+     */
+    public static final AddressLayout selection$layout() {
+        return selection$LAYOUT;
+    }
+
+    private static final long selection$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkAtom selection
+     * }
+     */
+    public static final long selection$offset() {
+        return selection$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkAtom selection
+     * }
+     */
+    public static MemorySegment selection(MemorySegment struct) {
+        return struct.get(selection$LAYOUT, selection$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkAtom selection
+     * }
+     */
+    public static void selection(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(selection$LAYOUT, selection$OFFSET, fieldValue);
+    }
+
+    private static final OfInt time$LAYOUT = (OfInt)$LAYOUT.select(groupElement("time"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint32 time
+     * }
+     */
+    public static final OfInt time$layout() {
+        return time$LAYOUT;
+    }
+
+    private static final long time$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint32 time
+     * }
+     */
+    public static final long time$offset() {
+        return time$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint32 time
+     * }
+     */
+    public static int time(MemorySegment struct) {
+        return struct.get(time$LAYOUT, time$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint32 time
+     * }
+     */
+    public static void time(MemorySegment struct, int fieldValue) {
+        struct.set(time$LAYOUT, time$OFFSET, fieldValue);
+    }
+
+    private static final OfInt selection_time$LAYOUT = (OfInt)$LAYOUT.select(groupElement("selection_time"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint32 selection_time
+     * }
+     */
+    public static final OfInt selection_time$layout() {
+        return selection_time$LAYOUT;
+    }
+
+    private static final long selection_time$OFFSET = 52;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint32 selection_time
+     * }
+     */
+    public static final long selection_time$offset() {
+        return selection_time$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint32 selection_time
+     * }
+     */
+    public static int selection_time(MemorySegment struct) {
+        return struct.get(selection_time$LAYOUT, selection_time$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint32 selection_time
+     * }
+     */
+    public static void selection_time(MemorySegment struct, int fieldValue) {
+        struct.set(selection_time$LAYOUT, selection_time$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

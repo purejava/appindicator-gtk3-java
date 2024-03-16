@@ -2,88 +2,220 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkAccelGroupEntry {
- *     struct _GtkAccelKey key;
- *     struct _GClosure* closure;
- *     unsigned int accel_path_quark;
- * };
+ *     GtkAccelKey key;
+ *     GClosure *closure;
+ *     GQuark accel_path_quark;
+ * }
  * }
  */
 public class _GtkAccelGroupEntry {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1958.const$1;
+    _GtkAccelGroupEntry() {
+        // Should not be called directly
     }
-    public static MemorySegment key$slice(MemorySegment seg) {
-        return seg.asSlice(0, 12);
-    }
-    public static VarHandle closure$VH() {
-        return constants$1958.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GClosure* closure;
-     * }
-     */
-    public static MemorySegment closure$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1958.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GClosure* closure;
-     * }
-     */
-    public static void closure$set(MemorySegment seg, MemorySegment x) {
-        constants$1958.const$2.set(seg, x);
-    }
-    public static MemorySegment closure$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1958.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void closure$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1958.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle accel_path_quark$VH() {
-        return constants$1958.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int accel_path_quark;
-     * }
-     */
-    public static int accel_path_quark$get(MemorySegment seg) {
-        return (int)constants$1958.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int accel_path_quark;
-     * }
-     */
-    public static void accel_path_quark$set(MemorySegment seg, int x) {
-        constants$1958.const$3.set(seg, x);
-    }
-    public static int accel_path_quark$get(MemorySegment seg, long index) {
-        return (int)constants$1958.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void accel_path_quark$set(MemorySegment seg, long index, int x) {
-        constants$1958.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GtkAccelKey.layout().withName("key"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("closure"),
+        app_indicator_h.C_INT.withName("accel_path_quark"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GtkAccelGroupEntry");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout key$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("key"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkAccelKey key
+     * }
+     */
+    public static final GroupLayout key$layout() {
+        return key$LAYOUT;
+    }
+
+    private static final long key$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkAccelKey key
+     * }
+     */
+    public static final long key$offset() {
+        return key$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GtkAccelKey key
+     * }
+     */
+    public static MemorySegment key(MemorySegment struct) {
+        return struct.asSlice(key$OFFSET, key$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GtkAccelKey key
+     * }
+     */
+    public static void key(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, key$OFFSET, key$LAYOUT.byteSize());
+    }
+
+    private static final AddressLayout closure$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("closure"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GClosure *closure
+     * }
+     */
+    public static final AddressLayout closure$layout() {
+        return closure$LAYOUT;
+    }
+
+    private static final long closure$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GClosure *closure
+     * }
+     */
+    public static final long closure$offset() {
+        return closure$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GClosure *closure
+     * }
+     */
+    public static MemorySegment closure(MemorySegment struct) {
+        return struct.get(closure$LAYOUT, closure$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GClosure *closure
+     * }
+     */
+    public static void closure(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(closure$LAYOUT, closure$OFFSET, fieldValue);
+    }
+
+    private static final OfInt accel_path_quark$LAYOUT = (OfInt)$LAYOUT.select(groupElement("accel_path_quark"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GQuark accel_path_quark
+     * }
+     */
+    public static final OfInt accel_path_quark$layout() {
+        return accel_path_quark$LAYOUT;
+    }
+
+    private static final long accel_path_quark$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GQuark accel_path_quark
+     * }
+     */
+    public static final long accel_path_quark$offset() {
+        return accel_path_quark$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GQuark accel_path_quark
+     * }
+     */
+    public static int accel_path_quark(MemorySegment struct) {
+        return struct.get(accel_path_quark$LAYOUT, accel_path_quark$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GQuark accel_path_quark
+     * }
+     */
+    public static void accel_path_quark(MemorySegment struct, int fieldValue) {
+        struct.set(accel_path_quark$LAYOUT, accel_path_quark$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

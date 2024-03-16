@@ -2,196 +2,357 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GOutputMessage {
- *     struct _GSocketAddress* address;
- *     struct _GOutputVector* vectors;
- *     unsigned int num_vectors;
- *     unsigned int bytes_sent;
- *     struct _GSocketControlMessage** control_messages;
- *     unsigned int num_control_messages;
- * };
+ *     GSocketAddress *address;
+ *     GOutputVector *vectors;
+ *     guint num_vectors;
+ *     guint bytes_sent;
+ *     GSocketControlMessage **control_messages;
+ *     guint num_control_messages;
+ * }
  * }
  */
 public class _GOutputMessage {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$697.const$3;
+    _GOutputMessage() {
+        // Should not be called directly
     }
-    public static VarHandle address$VH() {
-        return constants$697.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GSocketAddress* address;
-     * }
-     */
-    public static MemorySegment address$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$697.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GSocketAddress* address;
-     * }
-     */
-    public static void address$set(MemorySegment seg, MemorySegment x) {
-        constants$697.const$4.set(seg, x);
-    }
-    public static MemorySegment address$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$697.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void address$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$697.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle vectors$VH() {
-        return constants$697.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GOutputVector* vectors;
-     * }
-     */
-    public static MemorySegment vectors$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$697.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GOutputVector* vectors;
-     * }
-     */
-    public static void vectors$set(MemorySegment seg, MemorySegment x) {
-        constants$697.const$5.set(seg, x);
-    }
-    public static MemorySegment vectors$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$697.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void vectors$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$697.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle num_vectors$VH() {
-        return constants$698.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int num_vectors;
-     * }
-     */
-    public static int num_vectors$get(MemorySegment seg) {
-        return (int)constants$698.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int num_vectors;
-     * }
-     */
-    public static void num_vectors$set(MemorySegment seg, int x) {
-        constants$698.const$0.set(seg, x);
-    }
-    public static int num_vectors$get(MemorySegment seg, long index) {
-        return (int)constants$698.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void num_vectors$set(MemorySegment seg, long index, int x) {
-        constants$698.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle bytes_sent$VH() {
-        return constants$698.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int bytes_sent;
-     * }
-     */
-    public static int bytes_sent$get(MemorySegment seg) {
-        return (int)constants$698.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int bytes_sent;
-     * }
-     */
-    public static void bytes_sent$set(MemorySegment seg, int x) {
-        constants$698.const$1.set(seg, x);
-    }
-    public static int bytes_sent$get(MemorySegment seg, long index) {
-        return (int)constants$698.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void bytes_sent$set(MemorySegment seg, long index, int x) {
-        constants$698.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle control_messages$VH() {
-        return constants$698.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GSocketControlMessage** control_messages;
-     * }
-     */
-    public static MemorySegment control_messages$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$698.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GSocketControlMessage** control_messages;
-     * }
-     */
-    public static void control_messages$set(MemorySegment seg, MemorySegment x) {
-        constants$698.const$2.set(seg, x);
-    }
-    public static MemorySegment control_messages$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$698.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void control_messages$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$698.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle num_control_messages$VH() {
-        return constants$698.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int num_control_messages;
-     * }
-     */
-    public static int num_control_messages$get(MemorySegment seg) {
-        return (int)constants$698.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int num_control_messages;
-     * }
-     */
-    public static void num_control_messages$set(MemorySegment seg, int x) {
-        constants$698.const$3.set(seg, x);
-    }
-    public static int num_control_messages$get(MemorySegment seg, long index) {
-        return (int)constants$698.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void num_control_messages$set(MemorySegment seg, long index, int x) {
-        constants$698.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("address"),
+        app_indicator_h.C_POINTER.withName("vectors"),
+        app_indicator_h.C_INT.withName("num_vectors"),
+        app_indicator_h.C_INT.withName("bytes_sent"),
+        app_indicator_h.C_POINTER.withName("control_messages"),
+        app_indicator_h.C_INT.withName("num_control_messages"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GOutputMessage");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final AddressLayout address$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("address"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GSocketAddress *address
+     * }
+     */
+    public static final AddressLayout address$layout() {
+        return address$LAYOUT;
+    }
+
+    private static final long address$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GSocketAddress *address
+     * }
+     */
+    public static final long address$offset() {
+        return address$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GSocketAddress *address
+     * }
+     */
+    public static MemorySegment address(MemorySegment struct) {
+        return struct.get(address$LAYOUT, address$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GSocketAddress *address
+     * }
+     */
+    public static void address(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(address$LAYOUT, address$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout vectors$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("vectors"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GOutputVector *vectors
+     * }
+     */
+    public static final AddressLayout vectors$layout() {
+        return vectors$LAYOUT;
+    }
+
+    private static final long vectors$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GOutputVector *vectors
+     * }
+     */
+    public static final long vectors$offset() {
+        return vectors$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GOutputVector *vectors
+     * }
+     */
+    public static MemorySegment vectors(MemorySegment struct) {
+        return struct.get(vectors$LAYOUT, vectors$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GOutputVector *vectors
+     * }
+     */
+    public static void vectors(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(vectors$LAYOUT, vectors$OFFSET, fieldValue);
+    }
+
+    private static final OfInt num_vectors$LAYOUT = (OfInt)$LAYOUT.select(groupElement("num_vectors"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint num_vectors
+     * }
+     */
+    public static final OfInt num_vectors$layout() {
+        return num_vectors$LAYOUT;
+    }
+
+    private static final long num_vectors$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint num_vectors
+     * }
+     */
+    public static final long num_vectors$offset() {
+        return num_vectors$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint num_vectors
+     * }
+     */
+    public static int num_vectors(MemorySegment struct) {
+        return struct.get(num_vectors$LAYOUT, num_vectors$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint num_vectors
+     * }
+     */
+    public static void num_vectors(MemorySegment struct, int fieldValue) {
+        struct.set(num_vectors$LAYOUT, num_vectors$OFFSET, fieldValue);
+    }
+
+    private static final OfInt bytes_sent$LAYOUT = (OfInt)$LAYOUT.select(groupElement("bytes_sent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint bytes_sent
+     * }
+     */
+    public static final OfInt bytes_sent$layout() {
+        return bytes_sent$LAYOUT;
+    }
+
+    private static final long bytes_sent$OFFSET = 20;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint bytes_sent
+     * }
+     */
+    public static final long bytes_sent$offset() {
+        return bytes_sent$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint bytes_sent
+     * }
+     */
+    public static int bytes_sent(MemorySegment struct) {
+        return struct.get(bytes_sent$LAYOUT, bytes_sent$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint bytes_sent
+     * }
+     */
+    public static void bytes_sent(MemorySegment struct, int fieldValue) {
+        struct.set(bytes_sent$LAYOUT, bytes_sent$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout control_messages$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("control_messages"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GSocketControlMessage **control_messages
+     * }
+     */
+    public static final AddressLayout control_messages$layout() {
+        return control_messages$LAYOUT;
+    }
+
+    private static final long control_messages$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GSocketControlMessage **control_messages
+     * }
+     */
+    public static final long control_messages$offset() {
+        return control_messages$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GSocketControlMessage **control_messages
+     * }
+     */
+    public static MemorySegment control_messages(MemorySegment struct) {
+        return struct.get(control_messages$LAYOUT, control_messages$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GSocketControlMessage **control_messages
+     * }
+     */
+    public static void control_messages(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(control_messages$LAYOUT, control_messages$OFFSET, fieldValue);
+    }
+
+    private static final OfInt num_control_messages$LAYOUT = (OfInt)$LAYOUT.select(groupElement("num_control_messages"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint num_control_messages
+     * }
+     */
+    public static final OfInt num_control_messages$layout() {
+        return num_control_messages$LAYOUT;
+    }
+
+    private static final long num_control_messages$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint num_control_messages
+     * }
+     */
+    public static final long num_control_messages$offset() {
+        return num_control_messages$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint num_control_messages
+     * }
+     */
+    public static int num_control_messages(MemorySegment struct) {
+        return struct.get(num_control_messages$LAYOUT, num_control_messages$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint num_control_messages
+     * }
+     */
+    public static void num_control_messages(MemorySegment struct, int fieldValue) {
+        struct.set(num_control_messages$LAYOUT, num_control_messages$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

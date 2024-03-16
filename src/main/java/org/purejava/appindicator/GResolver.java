@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GResolver GResolver;
+ * {@snippet lang=c :
+ * typedef struct _GResolver GResolver
  * }
  */
-public final class GResolver extends _GResolver {
+public class GResolver extends _GResolver {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GResolver() {}
+    GResolver() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _AtkDocumentIface AtkDocumentIface;
+ * {@snippet lang=c :
+ * typedef struct _AtkDocumentIface AtkDocumentIface
  * }
  */
-public final class AtkDocumentIface extends _AtkDocumentIface {
+public class AtkDocumentIface extends _AtkDocumentIface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkDocumentIface() {}
+    AtkDocumentIface() {
+        // Should not be called directly
+    }
 }
-
 

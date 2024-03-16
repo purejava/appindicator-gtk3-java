@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GSList AtkAttributeSet;
+ * {@snippet lang=c :
+ * typedef GSList AtkAttributeSet
  * }
  */
-public final class AtkAttributeSet extends _GSList {
+public class AtkAttributeSet extends _GSList {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkAttributeSet() {}
+    AtkAttributeSet() {
+        // Should not be called directly
+    }
 }
-
 

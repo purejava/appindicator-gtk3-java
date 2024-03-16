@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GDebugControllerInterface GDebugControllerInterface;
+ * {@snippet lang=c :
+ * typedef struct _GDebugControllerInterface GDebugControllerInterface
  * }
  */
-public final class GDebugControllerInterface extends _GDebugControllerInterface {
+public class GDebugControllerInterface extends _GDebugControllerInterface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GDebugControllerInterface() {}
+    GDebugControllerInterface() {
+        // Should not be called directly
+    }
 }
-
 

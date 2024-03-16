@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _PangoEngineShapeClass PangoEngineShapeClass;
+ * {@snippet lang=c :
+ * typedef struct _PangoEngineShapeClass PangoEngineShapeClass
  * }
  */
-public final class PangoEngineShapeClass extends _PangoEngineShapeClass {
+public class PangoEngineShapeClass extends _PangoEngineShapeClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private PangoEngineShapeClass() {}
+    PangoEngineShapeClass() {
+        // Should not be called directly
+    }
 }
-
 

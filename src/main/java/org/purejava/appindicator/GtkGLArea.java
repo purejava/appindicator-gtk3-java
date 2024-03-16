@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkGLArea GtkGLArea;
+ * {@snippet lang=c :
+ * typedef struct _GtkGLArea GtkGLArea
  * }
  */
-public final class GtkGLArea extends _GtkGLArea {
+public class GtkGLArea extends _GtkGLArea {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkGLArea() {}
+    GtkGLArea() {
+        // Should not be called directly
+    }
 }
-
 

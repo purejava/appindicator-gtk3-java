@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GTypeValueTable GTypeValueTable;
+ * {@snippet lang=c :
+ * typedef struct _GTypeValueTable GTypeValueTable
  * }
  */
-public final class GTypeValueTable extends _GTypeValueTable {
+public class GTypeValueTable extends _GTypeValueTable {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTypeValueTable() {}
+    GTypeValueTable() {
+        // Should not be called directly
+    }
 }
-
 

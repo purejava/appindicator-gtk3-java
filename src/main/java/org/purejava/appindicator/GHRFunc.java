@@ -3,28 +3,60 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
 import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
+
 /**
- * {@snippet :
- * int (*GHRFunc)(void* key,void* value,void* user_data);
+ * {@snippet lang=c :
+ * typedef gboolean (*GHRFunc)(gpointer, gpointer, gpointer)
  * }
  */
-public interface GHRFunc {
+public class GHRFunc {
 
-    int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GHRFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$225.const$4, fi, constants$12.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment key, MemorySegment value, MemorySegment user_data);
     }
-    static GHRFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GHRFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GHRFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment key, MemorySegment value, MemorySegment user_data) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, key, value, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

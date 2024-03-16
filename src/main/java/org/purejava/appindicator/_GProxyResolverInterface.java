@@ -2,248 +2,518 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GProxyResolverInterface {
- *     struct _GTypeInterface g_iface;
- *     int (*is_supported)(struct _GProxyResolver*);
- *     char** (*lookup)(struct _GProxyResolver*,char*,struct _GCancellable*,struct _GError**);
- *     void (*lookup_async)(struct _GProxyResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     char** (*lookup_finish)(struct _GProxyResolver*,struct _GAsyncResult*,struct _GError**);
- * };
+ *     GTypeInterface g_iface;
+ *     gboolean (*is_supported)(GProxyResolver *);
+ *     gchar **(*lookup)(GProxyResolver *, const gchar *, GCancellable *, GError **);
+ *     void (*lookup_async)(GProxyResolver *, const gchar *, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     gchar **(*lookup_finish)(GProxyResolver *, GAsyncResult *, GError **);
+ * }
  * }
  */
 public class _GProxyResolverInterface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1226.const$2;
+    _GProxyResolverInterface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("is_supported"),
+        app_indicator_h.C_POINTER.withName("lookup"),
+        app_indicator_h.C_POINTER.withName("lookup_async"),
+        app_indicator_h.C_POINTER.withName("lookup_finish")
+    ).withName("_GProxyResolverInterface");
+
     /**
-     * {@snippet :
- * int (*is_supported)(struct _GProxyResolver*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface is_supported {
-
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(is_supported fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1226.const$3, fi, constants$10.const$5, scope);
-        }
-        static is_supported ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle is_supported$VH() {
-        return constants$1226.const$4;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*is_supported)(struct _GProxyResolver*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment is_supported$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1226.const$4.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*is_supported)(struct _GProxyResolver*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void is_supported$set(MemorySegment seg, MemorySegment x) {
-        constants$1226.const$4.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment is_supported$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1226.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void is_supported$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1226.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static is_supported is_supported(MemorySegment segment, Arena scope) {
-        return is_supported.ofAddress(is_supported$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * char** (*lookup)(struct _GProxyResolver*,char*,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * gboolean (*is_supported)(GProxyResolver *)
      * }
      */
-    public interface lookup {
+    public class is_supported {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
-        static MemorySegment allocate(lookup fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1226.const$5, fi, constants$39.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static lookup ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$865.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(is_supported.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(is_supported.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle lookup$VH() {
-        return constants$1227.const$0;
+    private static final AddressLayout is_supported$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("is_supported"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*is_supported)(GProxyResolver *)
+     * }
+     */
+    public static final AddressLayout is_supported$layout() {
+        return is_supported$LAYOUT;
     }
+
+    private static final long is_supported$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*is_supported)(GProxyResolver *)
+     * }
+     */
+    public static final long is_supported$offset() {
+        return is_supported$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char** (*lookup)(struct _GProxyResolver*,char*,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * gboolean (*is_supported)(GProxyResolver *)
      * }
      */
-    public static MemorySegment lookup$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1227.const$0.get(seg);
+    public static MemorySegment is_supported(MemorySegment struct) {
+        return struct.get(is_supported$LAYOUT, is_supported$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char** (*lookup)(struct _GProxyResolver*,char*,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * gboolean (*is_supported)(GProxyResolver *)
      * }
      */
-    public static void lookup$set(MemorySegment seg, MemorySegment x) {
-        constants$1227.const$0.set(seg, x);
+    public static void is_supported(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(is_supported$LAYOUT, is_supported$OFFSET, fieldValue);
     }
-    public static MemorySegment lookup$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1227.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void lookup$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1227.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static lookup lookup(MemorySegment segment, Arena scope) {
-        return lookup.ofAddress(lookup$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*lookup_async)(struct _GProxyResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gchar **(*lookup)(GProxyResolver *, const gchar *, GCancellable *, GError **)
      * }
      */
-    public interface lookup_async {
+    public class lookup {
 
-        void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(lookup_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1227.const$1, fi, constants$331.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3);
         }
-        static lookup_async ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(lookup.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(lookup.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle lookup_async$VH() {
-        return constants$1227.const$2;
+    private static final AddressLayout lookup$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lookup"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar **(*lookup)(GProxyResolver *, const gchar *, GCancellable *, GError **)
+     * }
+     */
+    public static final AddressLayout lookup$layout() {
+        return lookup$LAYOUT;
     }
+
+    private static final long lookup$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar **(*lookup)(GProxyResolver *, const gchar *, GCancellable *, GError **)
+     * }
+     */
+    public static final long lookup$offset() {
+        return lookup$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*lookup_async)(struct _GProxyResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gchar **(*lookup)(GProxyResolver *, const gchar *, GCancellable *, GError **)
      * }
      */
-    public static MemorySegment lookup_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1227.const$2.get(seg);
+    public static MemorySegment lookup(MemorySegment struct) {
+        return struct.get(lookup$LAYOUT, lookup$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*lookup_async)(struct _GProxyResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gchar **(*lookup)(GProxyResolver *, const gchar *, GCancellable *, GError **)
      * }
      */
-    public static void lookup_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1227.const$2.set(seg, x);
+    public static void lookup(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(lookup$LAYOUT, lookup$OFFSET, fieldValue);
     }
-    public static MemorySegment lookup_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1227.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void lookup_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1227.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static lookup_async lookup_async(MemorySegment segment, Arena scope) {
-        return lookup_async.ofAddress(lookup_async$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * char** (*lookup_finish)(struct _GProxyResolver*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*lookup_async)(GProxyResolver *, const gchar *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface lookup_finish {
+    public class lookup_async {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(lookup_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1227.const$3, fi, constants$23.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static lookup_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(lookup_async.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(lookup_async.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle lookup_finish$VH() {
-        return constants$1227.const$4;
+    private static final AddressLayout lookup_async$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lookup_async"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*lookup_async)(GProxyResolver *, const gchar *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout lookup_async$layout() {
+        return lookup_async$LAYOUT;
     }
+
+    private static final long lookup_async$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*lookup_async)(GProxyResolver *, const gchar *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long lookup_async$offset() {
+        return lookup_async$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char** (*lookup_finish)(struct _GProxyResolver*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*lookup_async)(GProxyResolver *, const gchar *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment lookup_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1227.const$4.get(seg);
+    public static MemorySegment lookup_async(MemorySegment struct) {
+        return struct.get(lookup_async$LAYOUT, lookup_async$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char** (*lookup_finish)(struct _GProxyResolver*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*lookup_async)(GProxyResolver *, const gchar *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void lookup_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1227.const$4.set(seg, x);
+    public static void lookup_async(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(lookup_async$LAYOUT, lookup_async$OFFSET, fieldValue);
     }
-    public static MemorySegment lookup_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1227.const$4.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * gchar **(*lookup_finish)(GProxyResolver *, GAsyncResult *, GError **)
+     * }
+     */
+    public class lookup_finish {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(lookup_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(lookup_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void lookup_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1227.const$4.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout lookup_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lookup_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar **(*lookup_finish)(GProxyResolver *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout lookup_finish$layout() {
+        return lookup_finish$LAYOUT;
     }
-    public static lookup_finish lookup_finish(MemorySegment segment, Arena scope) {
-        return lookup_finish.ofAddress(lookup_finish$get(segment), scope);
+
+    private static final long lookup_finish$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar **(*lookup_finish)(GProxyResolver *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long lookup_finish$offset() {
+        return lookup_finish$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar **(*lookup_finish)(GProxyResolver *, GAsyncResult *, GError **)
+     * }
+     */
+    public static MemorySegment lookup_finish(MemorySegment struct) {
+        return struct.get(lookup_finish$LAYOUT, lookup_finish$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar **(*lookup_finish)(GProxyResolver *, GAsyncResult *, GError **)
+     * }
+     */
+    public static void lookup_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(lookup_finish$LAYOUT, lookup_finish$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

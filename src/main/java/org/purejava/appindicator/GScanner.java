@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GScanner GScanner;
+ * {@snippet lang=c :
+ * typedef struct _GScanner GScanner
  * }
  */
-public final class GScanner extends _GScanner {
+public class GScanner extends _GScanner {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GScanner() {}
+    GScanner() {
+        // Should not be called directly
+    }
 }
-
 

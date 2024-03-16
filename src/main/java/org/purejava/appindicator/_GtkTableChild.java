@@ -2,230 +2,409 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkTableChild {
- *     struct _GtkWidget* widget;
- *     unsigned short left_attach;
- *     unsigned short right_attach;
- *     unsigned short top_attach;
- *     unsigned short bottom_attach;
- *     unsigned short xpadding;
- *     unsigned short ypadding;
- *      *     unsigned int xexpand;
- *     unsigned int yexpand;
- *     unsigned int xshrink;
- *     unsigned int yshrink;
- *     unsigned int xfill;
- *     unsigned int yfill;
- * };
+ *     GtkWidget *widget;
+ *     guint16 left_attach;
+ *     guint16 right_attach;
+ *     guint16 top_attach;
+ *     guint16 bottom_attach;
+ *     guint16 xpadding;
+ *     guint16 ypadding;
+ *     guint xexpand : 1;
+ *     guint yexpand : 1;
+ *     guint xshrink : 1;
+ *     guint yshrink : 1;
+ *     guint xfill : 1;
+ *     guint yfill : 1;
+ * }
  * }
  */
 public class _GtkTableChild {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$3372.const$1;
+    _GtkTableChild() {
+        // Should not be called directly
     }
-    public static VarHandle widget$VH() {
-        return constants$3372.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GtkWidget* widget;
-     * }
-     */
-    public static MemorySegment widget$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3372.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GtkWidget* widget;
-     * }
-     */
-    public static void widget$set(MemorySegment seg, MemorySegment x) {
-        constants$3372.const$2.set(seg, x);
-    }
-    public static MemorySegment widget$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3372.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void widget$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3372.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle left_attach$VH() {
-        return constants$3372.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned short left_attach;
-     * }
-     */
-    public static short left_attach$get(MemorySegment seg) {
-        return (short)constants$3372.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned short left_attach;
-     * }
-     */
-    public static void left_attach$set(MemorySegment seg, short x) {
-        constants$3372.const$3.set(seg, x);
-    }
-    public static short left_attach$get(MemorySegment seg, long index) {
-        return (short)constants$3372.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void left_attach$set(MemorySegment seg, long index, short x) {
-        constants$3372.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle right_attach$VH() {
-        return constants$3372.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned short right_attach;
-     * }
-     */
-    public static short right_attach$get(MemorySegment seg) {
-        return (short)constants$3372.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned short right_attach;
-     * }
-     */
-    public static void right_attach$set(MemorySegment seg, short x) {
-        constants$3372.const$4.set(seg, x);
-    }
-    public static short right_attach$get(MemorySegment seg, long index) {
-        return (short)constants$3372.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void right_attach$set(MemorySegment seg, long index, short x) {
-        constants$3372.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle top_attach$VH() {
-        return constants$3372.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned short top_attach;
-     * }
-     */
-    public static short top_attach$get(MemorySegment seg) {
-        return (short)constants$3372.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned short top_attach;
-     * }
-     */
-    public static void top_attach$set(MemorySegment seg, short x) {
-        constants$3372.const$5.set(seg, x);
-    }
-    public static short top_attach$get(MemorySegment seg, long index) {
-        return (short)constants$3372.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void top_attach$set(MemorySegment seg, long index, short x) {
-        constants$3372.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle bottom_attach$VH() {
-        return constants$3373.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned short bottom_attach;
-     * }
-     */
-    public static short bottom_attach$get(MemorySegment seg) {
-        return (short)constants$3373.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned short bottom_attach;
-     * }
-     */
-    public static void bottom_attach$set(MemorySegment seg, short x) {
-        constants$3373.const$0.set(seg, x);
-    }
-    public static short bottom_attach$get(MemorySegment seg, long index) {
-        return (short)constants$3373.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void bottom_attach$set(MemorySegment seg, long index, short x) {
-        constants$3373.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle xpadding$VH() {
-        return constants$3373.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned short xpadding;
-     * }
-     */
-    public static short xpadding$get(MemorySegment seg) {
-        return (short)constants$3373.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned short xpadding;
-     * }
-     */
-    public static void xpadding$set(MemorySegment seg, short x) {
-        constants$3373.const$1.set(seg, x);
-    }
-    public static short xpadding$get(MemorySegment seg, long index) {
-        return (short)constants$3373.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void xpadding$set(MemorySegment seg, long index, short x) {
-        constants$3373.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle ypadding$VH() {
-        return constants$3373.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned short ypadding;
-     * }
-     */
-    public static short ypadding$get(MemorySegment seg) {
-        return (short)constants$3373.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned short ypadding;
-     * }
-     */
-    public static void ypadding$set(MemorySegment seg, short x) {
-        constants$3373.const$2.set(seg, x);
-    }
-    public static short ypadding$get(MemorySegment seg, long index) {
-        return (short)constants$3373.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void ypadding$set(MemorySegment seg, long index, short x) {
-        constants$3373.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("widget"),
+        app_indicator_h.C_SHORT.withName("left_attach"),
+        app_indicator_h.C_SHORT.withName("right_attach"),
+        app_indicator_h.C_SHORT.withName("top_attach"),
+        app_indicator_h.C_SHORT.withName("bottom_attach"),
+        app_indicator_h.C_SHORT.withName("xpadding"),
+        app_indicator_h.C_SHORT.withName("ypadding"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GtkTableChild");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final AddressLayout widget$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("widget"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkWidget *widget
+     * }
+     */
+    public static final AddressLayout widget$layout() {
+        return widget$LAYOUT;
+    }
+
+    private static final long widget$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkWidget *widget
+     * }
+     */
+    public static final long widget$offset() {
+        return widget$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GtkWidget *widget
+     * }
+     */
+    public static MemorySegment widget(MemorySegment struct) {
+        return struct.get(widget$LAYOUT, widget$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GtkWidget *widget
+     * }
+     */
+    public static void widget(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(widget$LAYOUT, widget$OFFSET, fieldValue);
+    }
+
+    private static final OfShort left_attach$LAYOUT = (OfShort)$LAYOUT.select(groupElement("left_attach"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint16 left_attach
+     * }
+     */
+    public static final OfShort left_attach$layout() {
+        return left_attach$LAYOUT;
+    }
+
+    private static final long left_attach$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint16 left_attach
+     * }
+     */
+    public static final long left_attach$offset() {
+        return left_attach$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint16 left_attach
+     * }
+     */
+    public static short left_attach(MemorySegment struct) {
+        return struct.get(left_attach$LAYOUT, left_attach$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint16 left_attach
+     * }
+     */
+    public static void left_attach(MemorySegment struct, short fieldValue) {
+        struct.set(left_attach$LAYOUT, left_attach$OFFSET, fieldValue);
+    }
+
+    private static final OfShort right_attach$LAYOUT = (OfShort)$LAYOUT.select(groupElement("right_attach"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint16 right_attach
+     * }
+     */
+    public static final OfShort right_attach$layout() {
+        return right_attach$LAYOUT;
+    }
+
+    private static final long right_attach$OFFSET = 10;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint16 right_attach
+     * }
+     */
+    public static final long right_attach$offset() {
+        return right_attach$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint16 right_attach
+     * }
+     */
+    public static short right_attach(MemorySegment struct) {
+        return struct.get(right_attach$LAYOUT, right_attach$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint16 right_attach
+     * }
+     */
+    public static void right_attach(MemorySegment struct, short fieldValue) {
+        struct.set(right_attach$LAYOUT, right_attach$OFFSET, fieldValue);
+    }
+
+    private static final OfShort top_attach$LAYOUT = (OfShort)$LAYOUT.select(groupElement("top_attach"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint16 top_attach
+     * }
+     */
+    public static final OfShort top_attach$layout() {
+        return top_attach$LAYOUT;
+    }
+
+    private static final long top_attach$OFFSET = 12;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint16 top_attach
+     * }
+     */
+    public static final long top_attach$offset() {
+        return top_attach$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint16 top_attach
+     * }
+     */
+    public static short top_attach(MemorySegment struct) {
+        return struct.get(top_attach$LAYOUT, top_attach$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint16 top_attach
+     * }
+     */
+    public static void top_attach(MemorySegment struct, short fieldValue) {
+        struct.set(top_attach$LAYOUT, top_attach$OFFSET, fieldValue);
+    }
+
+    private static final OfShort bottom_attach$LAYOUT = (OfShort)$LAYOUT.select(groupElement("bottom_attach"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint16 bottom_attach
+     * }
+     */
+    public static final OfShort bottom_attach$layout() {
+        return bottom_attach$LAYOUT;
+    }
+
+    private static final long bottom_attach$OFFSET = 14;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint16 bottom_attach
+     * }
+     */
+    public static final long bottom_attach$offset() {
+        return bottom_attach$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint16 bottom_attach
+     * }
+     */
+    public static short bottom_attach(MemorySegment struct) {
+        return struct.get(bottom_attach$LAYOUT, bottom_attach$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint16 bottom_attach
+     * }
+     */
+    public static void bottom_attach(MemorySegment struct, short fieldValue) {
+        struct.set(bottom_attach$LAYOUT, bottom_attach$OFFSET, fieldValue);
+    }
+
+    private static final OfShort xpadding$LAYOUT = (OfShort)$LAYOUT.select(groupElement("xpadding"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint16 xpadding
+     * }
+     */
+    public static final OfShort xpadding$layout() {
+        return xpadding$LAYOUT;
+    }
+
+    private static final long xpadding$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint16 xpadding
+     * }
+     */
+    public static final long xpadding$offset() {
+        return xpadding$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint16 xpadding
+     * }
+     */
+    public static short xpadding(MemorySegment struct) {
+        return struct.get(xpadding$LAYOUT, xpadding$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint16 xpadding
+     * }
+     */
+    public static void xpadding(MemorySegment struct, short fieldValue) {
+        struct.set(xpadding$LAYOUT, xpadding$OFFSET, fieldValue);
+    }
+
+    private static final OfShort ypadding$LAYOUT = (OfShort)$LAYOUT.select(groupElement("ypadding"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint16 ypadding
+     * }
+     */
+    public static final OfShort ypadding$layout() {
+        return ypadding$LAYOUT;
+    }
+
+    private static final long ypadding$OFFSET = 18;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint16 ypadding
+     * }
+     */
+    public static final long ypadding$offset() {
+        return ypadding$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint16 ypadding
+     * }
+     */
+    public static short ypadding(MemorySegment struct) {
+        return struct.get(ypadding$LAYOUT, ypadding$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint16 ypadding
+     * }
+     */
+    public static void ypadding(MemorySegment struct, short fieldValue) {
+        struct.set(ypadding$LAYOUT, ypadding$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _PangoEngineLangClass PangoEngineLangClass;
+ * {@snippet lang=c :
+ * typedef struct _PangoEngineLangClass PangoEngineLangClass
  * }
  */
-public final class PangoEngineLangClass extends _PangoEngineLangClass {
+public class PangoEngineLangClass extends _PangoEngineLangClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private PangoEngineLangClass() {}
+    PangoEngineLangClass() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GParamSpecTypeInfo GParamSpecTypeInfo;
+ * {@snippet lang=c :
+ * typedef struct _GParamSpecTypeInfo GParamSpecTypeInfo
  * }
  */
-public final class GParamSpecTypeInfo extends _GParamSpecTypeInfo {
+public class GParamSpecTypeInfo extends _GParamSpecTypeInfo {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GParamSpecTypeInfo() {}
+    GParamSpecTypeInfo() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,990 +2,2962 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.*;
 import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.*;
+
 /**
- * {@snippet :
- * struct siginfo_t {
+ * {@snippet lang=c :
+ * struct {
  *     int si_signo;
  *     int si_errno;
  *     int si_code;
  *     int __pad0;
- *     union  _sifields;
- * };
+ *     union {
+ *         int _pad[28];
+ *         struct {
+ *             __pid_t si_pid;
+ *             __uid_t si_uid;
+ *         } _kill;
+ *         struct {
+ *             int si_tid;
+ *             int si_overrun;
+ *             __sigval_t si_sigval;
+ *         } _timer;
+ *         struct {
+ *             __pid_t si_pid;
+ *             __uid_t si_uid;
+ *             __sigval_t si_sigval;
+ *         } _rt;
+ *         struct {
+ *             __pid_t si_pid;
+ *             __uid_t si_uid;
+ *             int si_status;
+ *             __clock_t si_utime;
+ *             __clock_t si_stime;
+ *         } _sigchld;
+ *         struct {
+ *             void *si_addr;
+ *             short si_addr_lsb;
+ *             union {
+ *                 struct {
+ *                     void *_lower;
+ *                     void *_upper;
+ *                 } _addr_bnd;
+ *                 __uint32_t _pkey;
+ *             } _bounds;
+ *         } _sigfault;
+ *         struct {
+ *             long si_band;
+ *             int si_fd;
+ *         } _sigpoll;
+ *         struct {
+ *             void *_call_addr;
+ *             int _syscall;
+ *             unsigned int _arch;
+ *         } _sigsys;
+ *     } _sifields;
+ * }
  * }
  */
 public class siginfo_t {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$114.const$4;
+    siginfo_t() {
+        // Should not be called directly
     }
-    public static VarHandle si_signo$VH() {
-        return constants$114.const$5;
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("si_signo"),
+        app_indicator_h.C_INT.withName("si_errno"),
+        app_indicator_h.C_INT.withName("si_code"),
+        app_indicator_h.C_INT.withName("__pad0"),
+        siginfo_t._sifields.layout().withName("_sifields")
+    ).withName("$anon$36:9");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
+
+    private static final OfInt si_signo$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_signo"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int si_signo
+     * }
+     */
+    public static final OfInt si_signo$layout() {
+        return si_signo$LAYOUT;
+    }
+
+    private static final long si_signo$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int si_signo
+     * }
+     */
+    public static final long si_signo$offset() {
+        return si_signo$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int si_signo;
+     * {@snippet lang=c :
+     * int si_signo
      * }
      */
-    public static int si_signo$get(MemorySegment seg) {
-        return (int)constants$114.const$5.get(seg);
+    public static int si_signo(MemorySegment struct) {
+        return struct.get(si_signo$LAYOUT, si_signo$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int si_signo;
+     * {@snippet lang=c :
+     * int si_signo
      * }
      */
-    public static void si_signo$set(MemorySegment seg, int x) {
-        constants$114.const$5.set(seg, x);
+    public static void si_signo(MemorySegment struct, int fieldValue) {
+        struct.set(si_signo$LAYOUT, si_signo$OFFSET, fieldValue);
     }
-    public static int si_signo$get(MemorySegment seg, long index) {
-        return (int)constants$114.const$5.get(seg.asSlice(index*sizeof()));
+
+    private static final OfInt si_errno$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_errno"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int si_errno
+     * }
+     */
+    public static final OfInt si_errno$layout() {
+        return si_errno$LAYOUT;
     }
-    public static void si_signo$set(MemorySegment seg, long index, int x) {
-        constants$114.const$5.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long si_errno$OFFSET = 4;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int si_errno
+     * }
+     */
+    public static final long si_errno$offset() {
+        return si_errno$OFFSET;
     }
-    public static VarHandle si_errno$VH() {
-        return constants$115.const$0;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int si_errno;
+     * {@snippet lang=c :
+     * int si_errno
      * }
      */
-    public static int si_errno$get(MemorySegment seg) {
-        return (int)constants$115.const$0.get(seg);
+    public static int si_errno(MemorySegment struct) {
+        return struct.get(si_errno$LAYOUT, si_errno$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int si_errno;
+     * {@snippet lang=c :
+     * int si_errno
      * }
      */
-    public static void si_errno$set(MemorySegment seg, int x) {
-        constants$115.const$0.set(seg, x);
+    public static void si_errno(MemorySegment struct, int fieldValue) {
+        struct.set(si_errno$LAYOUT, si_errno$OFFSET, fieldValue);
     }
-    public static int si_errno$get(MemorySegment seg, long index) {
-        return (int)constants$115.const$0.get(seg.asSlice(index*sizeof()));
+
+    private static final OfInt si_code$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_code"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int si_code
+     * }
+     */
+    public static final OfInt si_code$layout() {
+        return si_code$LAYOUT;
     }
-    public static void si_errno$set(MemorySegment seg, long index, int x) {
-        constants$115.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long si_code$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int si_code
+     * }
+     */
+    public static final long si_code$offset() {
+        return si_code$OFFSET;
     }
-    public static VarHandle si_code$VH() {
-        return constants$115.const$1;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int si_code;
+     * {@snippet lang=c :
+     * int si_code
      * }
      */
-    public static int si_code$get(MemorySegment seg) {
-        return (int)constants$115.const$1.get(seg);
+    public static int si_code(MemorySegment struct) {
+        return struct.get(si_code$LAYOUT, si_code$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int si_code;
+     * {@snippet lang=c :
+     * int si_code
      * }
      */
-    public static void si_code$set(MemorySegment seg, int x) {
-        constants$115.const$1.set(seg, x);
+    public static void si_code(MemorySegment struct, int fieldValue) {
+        struct.set(si_code$LAYOUT, si_code$OFFSET, fieldValue);
     }
-    public static int si_code$get(MemorySegment seg, long index) {
-        return (int)constants$115.const$1.get(seg.asSlice(index*sizeof()));
+
+    private static final OfInt __pad0$LAYOUT = (OfInt)$LAYOUT.select(groupElement("__pad0"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int __pad0
+     * }
+     */
+    public static final OfInt __pad0$layout() {
+        return __pad0$LAYOUT;
     }
-    public static void si_code$set(MemorySegment seg, long index, int x) {
-        constants$115.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long __pad0$OFFSET = 12;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int __pad0
+     * }
+     */
+    public static final long __pad0$offset() {
+        return __pad0$OFFSET;
     }
-    public static VarHandle __pad0$VH() {
-        return constants$115.const$2;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int __pad0;
+     * {@snippet lang=c :
+     * int __pad0
      * }
      */
-    public static int __pad0$get(MemorySegment seg) {
-        return (int)constants$115.const$2.get(seg);
+    public static int __pad0(MemorySegment struct) {
+        return struct.get(__pad0$LAYOUT, __pad0$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int __pad0;
+     * {@snippet lang=c :
+     * int __pad0
      * }
      */
-    public static void __pad0$set(MemorySegment seg, int x) {
-        constants$115.const$2.set(seg, x);
+    public static void __pad0(MemorySegment struct, int fieldValue) {
+        struct.set(__pad0$LAYOUT, __pad0$OFFSET, fieldValue);
     }
-    public static int __pad0$get(MemorySegment seg, long index) {
-        return (int)constants$115.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void __pad0$set(MemorySegment seg, long index, int x) {
-        constants$115.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
+
     /**
-     * {@snippet :
+     * {@snippet lang=c :
      * union {
      *     int _pad[28];
-     *     struct  _kill;
-     *     struct  _timer;
-     *     struct  _rt;
-     *     struct  _sigchld;
-     *     struct  _sigfault;
-     *     struct  _sigpoll;
-     *     struct  _sigsys;
-     * };
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *     } _kill;
+     *     struct {
+     *         int si_tid;
+     *         int si_overrun;
+     *         __sigval_t si_sigval;
+     *     } _timer;
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *         __sigval_t si_sigval;
+     *     } _rt;
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *         int si_status;
+     *         __clock_t si_utime;
+     *         __clock_t si_stime;
+     *     } _sigchld;
+     *     struct {
+     *         void *si_addr;
+     *         short si_addr_lsb;
+     *         union {
+     *             struct {
+     *                 void *_lower;
+     *                 void *_upper;
+     *             } _addr_bnd;
+     *             __uint32_t _pkey;
+     *         } _bounds;
+     *     } _sigfault;
+     *     struct {
+     *         long si_band;
+     *         int si_fd;
+     *     } _sigpoll;
+     *     struct {
+     *         void *_call_addr;
+     *         int _syscall;
+     *         unsigned int _arch;
+     *     } _sigsys;
+     * }
      * }
      */
-    public static final class _sifields {
+    public static class _sifields {
 
-        // Suppresses default constructor, ensuring non-instantiability.
-        private _sifields() {}
-        public static MemoryLayout $LAYOUT() {
-            return constants$115.const$3;
+        _sifields() {
+            // Should not be called directly
         }
-        public static MemorySegment _pad$slice(MemorySegment seg) {
-            return seg.asSlice(0, 112);
-        }
+
+        private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
+            MemoryLayout.sequenceLayout(28, app_indicator_h.C_INT).withName("_pad"),
+            siginfo_t._sifields._kill.layout().withName("_kill"),
+            siginfo_t._sifields._timer.layout().withName("_timer"),
+            siginfo_t._sifields._rt.layout().withName("_rt"),
+            siginfo_t._sifields._sigchld.layout().withName("_sigchld"),
+            siginfo_t._sifields._sigfault.layout().withName("_sigfault"),
+            siginfo_t._sifields._sigpoll.layout().withName("_sigpoll"),
+            siginfo_t._sifields._sigsys.layout().withName("_sigsys")
+        ).withName("$anon$51:5");
+
         /**
-         * {@snippet :
-         * struct {
-         *     int si_pid;
-         *     unsigned int si_uid;
-         * };
+         * The layout of this union
+         */
+        public static final GroupLayout layout() {
+            return $LAYOUT;
+        }
+
+        private static final SequenceLayout _pad$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("_pad"));
+
+        /**
+         * Layout for field:
+         * {@snippet lang=c :
+         * int _pad[28]
          * }
          */
-        public static final class _kill {
-
-            // Suppresses default constructor, ensuring non-instantiability.
-            private _kill() {}
-            public static MemoryLayout $LAYOUT() {
-                return constants$115.const$4;
-            }
-            public static VarHandle si_pid$VH() {
-                return constants$115.const$5;
-            }
-            /**
-             * Getter for field:
-             * {@snippet :
-             * int si_pid;
-             * }
-             */
-            public static int si_pid$get(MemorySegment seg) {
-                return (int)constants$115.const$5.get(seg);
-            }
-            /**
-             * Setter for field:
-             * {@snippet :
-             * int si_pid;
-             * }
-             */
-            public static void si_pid$set(MemorySegment seg, int x) {
-                constants$115.const$5.set(seg, x);
-            }
-            public static int si_pid$get(MemorySegment seg, long index) {
-                return (int)constants$115.const$5.get(seg.asSlice(index*sizeof()));
-            }
-            public static void si_pid$set(MemorySegment seg, long index, int x) {
-                constants$115.const$5.set(seg.asSlice(index*sizeof()), x);
-            }
-            public static VarHandle si_uid$VH() {
-                return constants$116.const$0;
-            }
-            /**
-             * Getter for field:
-             * {@snippet :
-             * unsigned int si_uid;
-             * }
-             */
-            public static int si_uid$get(MemorySegment seg) {
-                return (int)constants$116.const$0.get(seg);
-            }
-            /**
-             * Setter for field:
-             * {@snippet :
-             * unsigned int si_uid;
-             * }
-             */
-            public static void si_uid$set(MemorySegment seg, int x) {
-                constants$116.const$0.set(seg, x);
-            }
-            public static int si_uid$get(MemorySegment seg, long index) {
-                return (int)constants$116.const$0.get(seg.asSlice(index*sizeof()));
-            }
-            public static void si_uid$set(MemorySegment seg, long index, int x) {
-                constants$116.const$0.set(seg.asSlice(index*sizeof()), x);
-            }
-            public static long sizeof() { return $LAYOUT().byteSize(); }
-            public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-                return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-            }
-            public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+        public static final SequenceLayout _pad$layout() {
+            return _pad$LAYOUT;
         }
 
-        public static MemorySegment _kill$slice(MemorySegment seg) {
-            return seg.asSlice(0, 8);
-        }
+        private static final long _pad$OFFSET = 0;
+
         /**
-         * {@snippet :
+         * Offset for field:
+         * {@snippet lang=c :
+         * int _pad[28]
+         * }
+         */
+        public static final long _pad$offset() {
+            return _pad$OFFSET;
+        }
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * int _pad[28]
+         * }
+         */
+        public static MemorySegment _pad(MemorySegment union) {
+            return union.asSlice(_pad$OFFSET, _pad$LAYOUT.byteSize());
+        }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * int _pad[28]
+         * }
+         */
+        public static void _pad(MemorySegment union, MemorySegment fieldValue) {
+            MemorySegment.copy(fieldValue, 0L, union, _pad$OFFSET, _pad$LAYOUT.byteSize());
+        }
+
+        private static long[] _pad$DIMS = { 28 };
+
+        /**
+         * Dimensions for array field:
+         * {@snippet lang=c :
+         * int _pad[28]
+         * }
+         */
+        public static long[] _pad$dimensions() {
+            return _pad$DIMS;
+        }
+        private static final VarHandle _pad$ELEM_HANDLE = _pad$LAYOUT.varHandle(sequenceElement());
+
+        /**
+         * Indexed getter for field:
+         * {@snippet lang=c :
+         * int _pad[28]
+         * }
+         */
+        public static int _pad(MemorySegment union, long index0) {
+            return (int)_pad$ELEM_HANDLE.get(union, 0L, index0);
+        }
+
+        /**
+         * Indexed setter for field:
+         * {@snippet lang=c :
+         * int _pad[28]
+         * }
+         */
+        public static void _pad(MemorySegment union, long index0, int fieldValue) {
+            _pad$ELEM_HANDLE.set(union, 0L, index0, fieldValue);
+        }
+
+        /**
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         * }
+         * }
+         */
+        public static class _kill {
+
+            _kill() {
+                // Should not be called directly
+            }
+
+            private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+                app_indicator_h.C_INT.withName("si_pid"),
+                app_indicator_h.C_INT.withName("si_uid")
+            ).withName("$anon$56:2");
+
+            /**
+             * The layout of this struct
+             */
+            public static final GroupLayout layout() {
+                return $LAYOUT;
+            }
+
+            private static final OfInt si_pid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_pid"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * __pid_t si_pid
+             * }
+             */
+            public static final OfInt si_pid$layout() {
+                return si_pid$LAYOUT;
+            }
+
+            private static final long si_pid$OFFSET = 0;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * __pid_t si_pid
+             * }
+             */
+            public static final long si_pid$offset() {
+                return si_pid$OFFSET;
+            }
+
+            /**
+             * Getter for field:
+             * {@snippet lang=c :
+             * __pid_t si_pid
+             * }
+             */
+            public static int si_pid(MemorySegment struct) {
+                return struct.get(si_pid$LAYOUT, si_pid$OFFSET);
+            }
+
+            /**
+             * Setter for field:
+             * {@snippet lang=c :
+             * __pid_t si_pid
+             * }
+             */
+            public static void si_pid(MemorySegment struct, int fieldValue) {
+                struct.set(si_pid$LAYOUT, si_pid$OFFSET, fieldValue);
+            }
+
+            private static final OfInt si_uid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_uid"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * __uid_t si_uid
+             * }
+             */
+            public static final OfInt si_uid$layout() {
+                return si_uid$LAYOUT;
+            }
+
+            private static final long si_uid$OFFSET = 4;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * __uid_t si_uid
+             * }
+             */
+            public static final long si_uid$offset() {
+                return si_uid$OFFSET;
+            }
+
+            /**
+             * Getter for field:
+             * {@snippet lang=c :
+             * __uid_t si_uid
+             * }
+             */
+            public static int si_uid(MemorySegment struct) {
+                return struct.get(si_uid$LAYOUT, si_uid$OFFSET);
+            }
+
+            /**
+             * Setter for field:
+             * {@snippet lang=c :
+             * __uid_t si_uid
+             * }
+             */
+            public static void si_uid(MemorySegment struct, int fieldValue) {
+                struct.set(si_uid$LAYOUT, si_uid$OFFSET, fieldValue);
+            }
+
+            /**
+             * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+             * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+             */
+            public static MemorySegment asSlice(MemorySegment array, long index) {
+                return array.asSlice(layout().byteSize() * index);
+            }
+
+            /**
+             * The size (in bytes) of this struct
+             */
+            public static long sizeof() { return layout().byteSize(); }
+
+            /**
+             * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+             */
+            public static MemorySegment allocate(SegmentAllocator allocator) {
+                return allocator.allocate(layout());
+            }
+
+            /**
+             * Allocate an array of size {@code elementCount} using {@code allocator}.
+             * The returned segment has size {@code elementCount * layout().byteSize()}.
+             */
+            public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+                return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+                return reinterpret(addr, 1, arena, cleanup);
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code elementCount * layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+                return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+            }
+        }
+
+        private static final GroupLayout _kill$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("_kill"));
+
+        /**
+         * Layout for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         * } _kill
+         * }
+         */
+        public static final GroupLayout _kill$layout() {
+            return _kill$LAYOUT;
+        }
+
+        private static final long _kill$OFFSET = 0;
+
+        /**
+         * Offset for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         * } _kill
+         * }
+         */
+        public static final long _kill$offset() {
+            return _kill$OFFSET;
+        }
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         * } _kill
+         * }
+         */
+        public static MemorySegment _kill(MemorySegment union) {
+            return union.asSlice(_kill$OFFSET, _kill$LAYOUT.byteSize());
+        }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         * } _kill
+         * }
+         */
+        public static void _kill(MemorySegment union, MemorySegment fieldValue) {
+            MemorySegment.copy(fieldValue, 0L, union, _kill$OFFSET, _kill$LAYOUT.byteSize());
+        }
+
+        /**
+         * {@snippet lang=c :
          * struct {
          *     int si_tid;
          *     int si_overrun;
-         *     union sigval si_sigval;
-         * };
+         *     __sigval_t si_sigval;
+         * }
          * }
          */
-        public static final class _timer {
+        public static class _timer {
 
-            // Suppresses default constructor, ensuring non-instantiability.
-            private _timer() {}
-            public static MemoryLayout $LAYOUT() {
-                return constants$116.const$1;
+            _timer() {
+                // Should not be called directly
             }
-            public static VarHandle si_tid$VH() {
-                return constants$116.const$2;
+
+            private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+                app_indicator_h.C_INT.withName("si_tid"),
+                app_indicator_h.C_INT.withName("si_overrun"),
+                sigval.layout().withName("si_sigval")
+            ).withName("$anon$63:2");
+
+            /**
+             * The layout of this struct
+             */
+            public static final GroupLayout layout() {
+                return $LAYOUT;
             }
+
+            private static final OfInt si_tid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_tid"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * int si_tid
+             * }
+             */
+            public static final OfInt si_tid$layout() {
+                return si_tid$LAYOUT;
+            }
+
+            private static final long si_tid$OFFSET = 0;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * int si_tid
+             * }
+             */
+            public static final long si_tid$offset() {
+                return si_tid$OFFSET;
+            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * int si_tid;
+             * {@snippet lang=c :
+             * int si_tid
              * }
              */
-            public static int si_tid$get(MemorySegment seg) {
-                return (int)constants$116.const$2.get(seg);
+            public static int si_tid(MemorySegment struct) {
+                return struct.get(si_tid$LAYOUT, si_tid$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * int si_tid;
+             * {@snippet lang=c :
+             * int si_tid
              * }
              */
-            public static void si_tid$set(MemorySegment seg, int x) {
-                constants$116.const$2.set(seg, x);
+            public static void si_tid(MemorySegment struct, int fieldValue) {
+                struct.set(si_tid$LAYOUT, si_tid$OFFSET, fieldValue);
             }
-            public static int si_tid$get(MemorySegment seg, long index) {
-                return (int)constants$116.const$2.get(seg.asSlice(index*sizeof()));
+
+            private static final OfInt si_overrun$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_overrun"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * int si_overrun
+             * }
+             */
+            public static final OfInt si_overrun$layout() {
+                return si_overrun$LAYOUT;
             }
-            public static void si_tid$set(MemorySegment seg, long index, int x) {
-                constants$116.const$2.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long si_overrun$OFFSET = 4;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * int si_overrun
+             * }
+             */
+            public static final long si_overrun$offset() {
+                return si_overrun$OFFSET;
             }
-            public static VarHandle si_overrun$VH() {
-                return constants$116.const$3;
-            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * int si_overrun;
+             * {@snippet lang=c :
+             * int si_overrun
              * }
              */
-            public static int si_overrun$get(MemorySegment seg) {
-                return (int)constants$116.const$3.get(seg);
+            public static int si_overrun(MemorySegment struct) {
+                return struct.get(si_overrun$LAYOUT, si_overrun$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * int si_overrun;
+             * {@snippet lang=c :
+             * int si_overrun
              * }
              */
-            public static void si_overrun$set(MemorySegment seg, int x) {
-                constants$116.const$3.set(seg, x);
+            public static void si_overrun(MemorySegment struct, int fieldValue) {
+                struct.set(si_overrun$LAYOUT, si_overrun$OFFSET, fieldValue);
             }
-            public static int si_overrun$get(MemorySegment seg, long index) {
-                return (int)constants$116.const$3.get(seg.asSlice(index*sizeof()));
+
+            private static final GroupLayout si_sigval$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("si_sigval"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * __sigval_t si_sigval
+             * }
+             */
+            public static final GroupLayout si_sigval$layout() {
+                return si_sigval$LAYOUT;
             }
-            public static void si_overrun$set(MemorySegment seg, long index, int x) {
-                constants$116.const$3.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long si_sigval$OFFSET = 8;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * __sigval_t si_sigval
+             * }
+             */
+            public static final long si_sigval$offset() {
+                return si_sigval$OFFSET;
             }
-            public static MemorySegment si_sigval$slice(MemorySegment seg) {
-                return seg.asSlice(8, 8);
+
+            /**
+             * Getter for field:
+             * {@snippet lang=c :
+             * __sigval_t si_sigval
+             * }
+             */
+            public static MemorySegment si_sigval(MemorySegment struct) {
+                return struct.asSlice(si_sigval$OFFSET, si_sigval$LAYOUT.byteSize());
             }
-            public static long sizeof() { return $LAYOUT().byteSize(); }
-            public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-                return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+            /**
+             * Setter for field:
+             * {@snippet lang=c :
+             * __sigval_t si_sigval
+             * }
+             */
+            public static void si_sigval(MemorySegment struct, MemorySegment fieldValue) {
+                MemorySegment.copy(fieldValue, 0L, struct, si_sigval$OFFSET, si_sigval$LAYOUT.byteSize());
             }
-            public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+            /**
+             * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+             * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+             */
+            public static MemorySegment asSlice(MemorySegment array, long index) {
+                return array.asSlice(layout().byteSize() * index);
+            }
+
+            /**
+             * The size (in bytes) of this struct
+             */
+            public static long sizeof() { return layout().byteSize(); }
+
+            /**
+             * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+             */
+            public static MemorySegment allocate(SegmentAllocator allocator) {
+                return allocator.allocate(layout());
+            }
+
+            /**
+             * Allocate an array of size {@code elementCount} using {@code allocator}.
+             * The returned segment has size {@code elementCount * layout().byteSize()}.
+             */
+            public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+                return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+                return reinterpret(addr, 1, arena, cleanup);
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code elementCount * layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+                return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+            }
         }
 
-        public static MemorySegment _timer$slice(MemorySegment seg) {
-            return seg.asSlice(0, 16);
-        }
+        private static final GroupLayout _timer$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("_timer"));
+
         /**
-         * {@snippet :
+         * Layout for field:
+         * {@snippet lang=c :
          * struct {
-         *     int si_pid;
-         *     unsigned int si_uid;
-         *     union sigval si_sigval;
-         * };
+         *     int si_tid;
+         *     int si_overrun;
+         *     __sigval_t si_sigval;
+         * } _timer
          * }
          */
-        public static final class _rt {
-
-            // Suppresses default constructor, ensuring non-instantiability.
-            private _rt() {}
-            public static MemoryLayout $LAYOUT() {
-                return constants$116.const$4;
-            }
-            public static VarHandle si_pid$VH() {
-                return constants$116.const$5;
-            }
-            /**
-             * Getter for field:
-             * {@snippet :
-             * int si_pid;
-             * }
-             */
-            public static int si_pid$get(MemorySegment seg) {
-                return (int)constants$116.const$5.get(seg);
-            }
-            /**
-             * Setter for field:
-             * {@snippet :
-             * int si_pid;
-             * }
-             */
-            public static void si_pid$set(MemorySegment seg, int x) {
-                constants$116.const$5.set(seg, x);
-            }
-            public static int si_pid$get(MemorySegment seg, long index) {
-                return (int)constants$116.const$5.get(seg.asSlice(index*sizeof()));
-            }
-            public static void si_pid$set(MemorySegment seg, long index, int x) {
-                constants$116.const$5.set(seg.asSlice(index*sizeof()), x);
-            }
-            public static VarHandle si_uid$VH() {
-                return constants$117.const$0;
-            }
-            /**
-             * Getter for field:
-             * {@snippet :
-             * unsigned int si_uid;
-             * }
-             */
-            public static int si_uid$get(MemorySegment seg) {
-                return (int)constants$117.const$0.get(seg);
-            }
-            /**
-             * Setter for field:
-             * {@snippet :
-             * unsigned int si_uid;
-             * }
-             */
-            public static void si_uid$set(MemorySegment seg, int x) {
-                constants$117.const$0.set(seg, x);
-            }
-            public static int si_uid$get(MemorySegment seg, long index) {
-                return (int)constants$117.const$0.get(seg.asSlice(index*sizeof()));
-            }
-            public static void si_uid$set(MemorySegment seg, long index, int x) {
-                constants$117.const$0.set(seg.asSlice(index*sizeof()), x);
-            }
-            public static MemorySegment si_sigval$slice(MemorySegment seg) {
-                return seg.asSlice(8, 8);
-            }
-            public static long sizeof() { return $LAYOUT().byteSize(); }
-            public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-                return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-            }
-            public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+        public static final GroupLayout _timer$layout() {
+            return _timer$LAYOUT;
         }
 
-        public static MemorySegment _rt$slice(MemorySegment seg) {
-            return seg.asSlice(0, 16);
-        }
+        private static final long _timer$OFFSET = 0;
+
         /**
-         * {@snippet :
+         * Offset for field:
+         * {@snippet lang=c :
          * struct {
-         *     int si_pid;
-         *     unsigned int si_uid;
+         *     int si_tid;
+         *     int si_overrun;
+         *     __sigval_t si_sigval;
+         * } _timer
+         * }
+         */
+        public static final long _timer$offset() {
+            return _timer$OFFSET;
+        }
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     int si_tid;
+         *     int si_overrun;
+         *     __sigval_t si_sigval;
+         * } _timer
+         * }
+         */
+        public static MemorySegment _timer(MemorySegment union) {
+            return union.asSlice(_timer$OFFSET, _timer$LAYOUT.byteSize());
+        }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     int si_tid;
+         *     int si_overrun;
+         *     __sigval_t si_sigval;
+         * } _timer
+         * }
+         */
+        public static void _timer(MemorySegment union, MemorySegment fieldValue) {
+            MemorySegment.copy(fieldValue, 0L, union, _timer$OFFSET, _timer$LAYOUT.byteSize());
+        }
+
+        /**
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     __sigval_t si_sigval;
+         * }
+         * }
+         */
+        public static class _rt {
+
+            _rt() {
+                // Should not be called directly
+            }
+
+            private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+                app_indicator_h.C_INT.withName("si_pid"),
+                app_indicator_h.C_INT.withName("si_uid"),
+                sigval.layout().withName("si_sigval")
+            ).withName("$anon$71:2");
+
+            /**
+             * The layout of this struct
+             */
+            public static final GroupLayout layout() {
+                return $LAYOUT;
+            }
+
+            private static final OfInt si_pid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_pid"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * __pid_t si_pid
+             * }
+             */
+            public static final OfInt si_pid$layout() {
+                return si_pid$LAYOUT;
+            }
+
+            private static final long si_pid$OFFSET = 0;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * __pid_t si_pid
+             * }
+             */
+            public static final long si_pid$offset() {
+                return si_pid$OFFSET;
+            }
+
+            /**
+             * Getter for field:
+             * {@snippet lang=c :
+             * __pid_t si_pid
+             * }
+             */
+            public static int si_pid(MemorySegment struct) {
+                return struct.get(si_pid$LAYOUT, si_pid$OFFSET);
+            }
+
+            /**
+             * Setter for field:
+             * {@snippet lang=c :
+             * __pid_t si_pid
+             * }
+             */
+            public static void si_pid(MemorySegment struct, int fieldValue) {
+                struct.set(si_pid$LAYOUT, si_pid$OFFSET, fieldValue);
+            }
+
+            private static final OfInt si_uid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_uid"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * __uid_t si_uid
+             * }
+             */
+            public static final OfInt si_uid$layout() {
+                return si_uid$LAYOUT;
+            }
+
+            private static final long si_uid$OFFSET = 4;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * __uid_t si_uid
+             * }
+             */
+            public static final long si_uid$offset() {
+                return si_uid$OFFSET;
+            }
+
+            /**
+             * Getter for field:
+             * {@snippet lang=c :
+             * __uid_t si_uid
+             * }
+             */
+            public static int si_uid(MemorySegment struct) {
+                return struct.get(si_uid$LAYOUT, si_uid$OFFSET);
+            }
+
+            /**
+             * Setter for field:
+             * {@snippet lang=c :
+             * __uid_t si_uid
+             * }
+             */
+            public static void si_uid(MemorySegment struct, int fieldValue) {
+                struct.set(si_uid$LAYOUT, si_uid$OFFSET, fieldValue);
+            }
+
+            private static final GroupLayout si_sigval$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("si_sigval"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * __sigval_t si_sigval
+             * }
+             */
+            public static final GroupLayout si_sigval$layout() {
+                return si_sigval$LAYOUT;
+            }
+
+            private static final long si_sigval$OFFSET = 8;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * __sigval_t si_sigval
+             * }
+             */
+            public static final long si_sigval$offset() {
+                return si_sigval$OFFSET;
+            }
+
+            /**
+             * Getter for field:
+             * {@snippet lang=c :
+             * __sigval_t si_sigval
+             * }
+             */
+            public static MemorySegment si_sigval(MemorySegment struct) {
+                return struct.asSlice(si_sigval$OFFSET, si_sigval$LAYOUT.byteSize());
+            }
+
+            /**
+             * Setter for field:
+             * {@snippet lang=c :
+             * __sigval_t si_sigval
+             * }
+             */
+            public static void si_sigval(MemorySegment struct, MemorySegment fieldValue) {
+                MemorySegment.copy(fieldValue, 0L, struct, si_sigval$OFFSET, si_sigval$LAYOUT.byteSize());
+            }
+
+            /**
+             * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+             * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+             */
+            public static MemorySegment asSlice(MemorySegment array, long index) {
+                return array.asSlice(layout().byteSize() * index);
+            }
+
+            /**
+             * The size (in bytes) of this struct
+             */
+            public static long sizeof() { return layout().byteSize(); }
+
+            /**
+             * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+             */
+            public static MemorySegment allocate(SegmentAllocator allocator) {
+                return allocator.allocate(layout());
+            }
+
+            /**
+             * Allocate an array of size {@code elementCount} using {@code allocator}.
+             * The returned segment has size {@code elementCount * layout().byteSize()}.
+             */
+            public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+                return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+                return reinterpret(addr, 1, arena, cleanup);
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code elementCount * layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+                return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+            }
+        }
+
+        private static final GroupLayout _rt$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("_rt"));
+
+        /**
+         * Layout for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     __sigval_t si_sigval;
+         * } _rt
+         * }
+         */
+        public static final GroupLayout _rt$layout() {
+            return _rt$LAYOUT;
+        }
+
+        private static final long _rt$OFFSET = 0;
+
+        /**
+         * Offset for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     __sigval_t si_sigval;
+         * } _rt
+         * }
+         */
+        public static final long _rt$offset() {
+            return _rt$OFFSET;
+        }
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     __sigval_t si_sigval;
+         * } _rt
+         * }
+         */
+        public static MemorySegment _rt(MemorySegment union) {
+            return union.asSlice(_rt$OFFSET, _rt$LAYOUT.byteSize());
+        }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     __sigval_t si_sigval;
+         * } _rt
+         * }
+         */
+        public static void _rt(MemorySegment union, MemorySegment fieldValue) {
+            MemorySegment.copy(fieldValue, 0L, union, _rt$OFFSET, _rt$LAYOUT.byteSize());
+        }
+
+        /**
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
          *     int si_status;
-         *     long si_utime;
-         *     long si_stime;
-         * };
+         *     __clock_t si_utime;
+         *     __clock_t si_stime;
+         * }
          * }
          */
-        public static final class _sigchld {
+        public static class _sigchld {
 
-            // Suppresses default constructor, ensuring non-instantiability.
-            private _sigchld() {}
-            public static MemoryLayout $LAYOUT() {
-                return constants$117.const$1;
+            _sigchld() {
+                // Should not be called directly
             }
-            public static VarHandle si_pid$VH() {
-                return constants$117.const$2;
+
+            private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+                app_indicator_h.C_INT.withName("si_pid"),
+                app_indicator_h.C_INT.withName("si_uid"),
+                app_indicator_h.C_INT.withName("si_status"),
+                MemoryLayout.paddingLayout(4),
+                app_indicator_h.C_LONG.withName("si_utime"),
+                app_indicator_h.C_LONG.withName("si_stime")
+            ).withName("$anon$79:2");
+
+            /**
+             * The layout of this struct
+             */
+            public static final GroupLayout layout() {
+                return $LAYOUT;
             }
+
+            private static final OfInt si_pid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_pid"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * __pid_t si_pid
+             * }
+             */
+            public static final OfInt si_pid$layout() {
+                return si_pid$LAYOUT;
+            }
+
+            private static final long si_pid$OFFSET = 0;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * __pid_t si_pid
+             * }
+             */
+            public static final long si_pid$offset() {
+                return si_pid$OFFSET;
+            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * int si_pid;
+             * {@snippet lang=c :
+             * __pid_t si_pid
              * }
              */
-            public static int si_pid$get(MemorySegment seg) {
-                return (int)constants$117.const$2.get(seg);
+            public static int si_pid(MemorySegment struct) {
+                return struct.get(si_pid$LAYOUT, si_pid$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * int si_pid;
+             * {@snippet lang=c :
+             * __pid_t si_pid
              * }
              */
-            public static void si_pid$set(MemorySegment seg, int x) {
-                constants$117.const$2.set(seg, x);
+            public static void si_pid(MemorySegment struct, int fieldValue) {
+                struct.set(si_pid$LAYOUT, si_pid$OFFSET, fieldValue);
             }
-            public static int si_pid$get(MemorySegment seg, long index) {
-                return (int)constants$117.const$2.get(seg.asSlice(index*sizeof()));
+
+            private static final OfInt si_uid$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_uid"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * __uid_t si_uid
+             * }
+             */
+            public static final OfInt si_uid$layout() {
+                return si_uid$LAYOUT;
             }
-            public static void si_pid$set(MemorySegment seg, long index, int x) {
-                constants$117.const$2.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long si_uid$OFFSET = 4;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * __uid_t si_uid
+             * }
+             */
+            public static final long si_uid$offset() {
+                return si_uid$OFFSET;
             }
-            public static VarHandle si_uid$VH() {
-                return constants$117.const$3;
-            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * unsigned int si_uid;
+             * {@snippet lang=c :
+             * __uid_t si_uid
              * }
              */
-            public static int si_uid$get(MemorySegment seg) {
-                return (int)constants$117.const$3.get(seg);
+            public static int si_uid(MemorySegment struct) {
+                return struct.get(si_uid$LAYOUT, si_uid$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * unsigned int si_uid;
+             * {@snippet lang=c :
+             * __uid_t si_uid
              * }
              */
-            public static void si_uid$set(MemorySegment seg, int x) {
-                constants$117.const$3.set(seg, x);
+            public static void si_uid(MemorySegment struct, int fieldValue) {
+                struct.set(si_uid$LAYOUT, si_uid$OFFSET, fieldValue);
             }
-            public static int si_uid$get(MemorySegment seg, long index) {
-                return (int)constants$117.const$3.get(seg.asSlice(index*sizeof()));
+
+            private static final OfInt si_status$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_status"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * int si_status
+             * }
+             */
+            public static final OfInt si_status$layout() {
+                return si_status$LAYOUT;
             }
-            public static void si_uid$set(MemorySegment seg, long index, int x) {
-                constants$117.const$3.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long si_status$OFFSET = 8;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * int si_status
+             * }
+             */
+            public static final long si_status$offset() {
+                return si_status$OFFSET;
             }
-            public static VarHandle si_status$VH() {
-                return constants$117.const$4;
-            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * int si_status;
+             * {@snippet lang=c :
+             * int si_status
              * }
              */
-            public static int si_status$get(MemorySegment seg) {
-                return (int)constants$117.const$4.get(seg);
+            public static int si_status(MemorySegment struct) {
+                return struct.get(si_status$LAYOUT, si_status$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * int si_status;
+             * {@snippet lang=c :
+             * int si_status
              * }
              */
-            public static void si_status$set(MemorySegment seg, int x) {
-                constants$117.const$4.set(seg, x);
+            public static void si_status(MemorySegment struct, int fieldValue) {
+                struct.set(si_status$LAYOUT, si_status$OFFSET, fieldValue);
             }
-            public static int si_status$get(MemorySegment seg, long index) {
-                return (int)constants$117.const$4.get(seg.asSlice(index*sizeof()));
+
+            private static final OfLong si_utime$LAYOUT = (OfLong)$LAYOUT.select(groupElement("si_utime"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * __clock_t si_utime
+             * }
+             */
+            public static final OfLong si_utime$layout() {
+                return si_utime$LAYOUT;
             }
-            public static void si_status$set(MemorySegment seg, long index, int x) {
-                constants$117.const$4.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long si_utime$OFFSET = 16;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * __clock_t si_utime
+             * }
+             */
+            public static final long si_utime$offset() {
+                return si_utime$OFFSET;
             }
-            public static VarHandle si_utime$VH() {
-                return constants$117.const$5;
-            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * long si_utime;
+             * {@snippet lang=c :
+             * __clock_t si_utime
              * }
              */
-            public static long si_utime$get(MemorySegment seg) {
-                return (long)constants$117.const$5.get(seg);
+            public static long si_utime(MemorySegment struct) {
+                return struct.get(si_utime$LAYOUT, si_utime$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * long si_utime;
+             * {@snippet lang=c :
+             * __clock_t si_utime
              * }
              */
-            public static void si_utime$set(MemorySegment seg, long x) {
-                constants$117.const$5.set(seg, x);
+            public static void si_utime(MemorySegment struct, long fieldValue) {
+                struct.set(si_utime$LAYOUT, si_utime$OFFSET, fieldValue);
             }
-            public static long si_utime$get(MemorySegment seg, long index) {
-                return (long)constants$117.const$5.get(seg.asSlice(index*sizeof()));
+
+            private static final OfLong si_stime$LAYOUT = (OfLong)$LAYOUT.select(groupElement("si_stime"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * __clock_t si_stime
+             * }
+             */
+            public static final OfLong si_stime$layout() {
+                return si_stime$LAYOUT;
             }
-            public static void si_utime$set(MemorySegment seg, long index, long x) {
-                constants$117.const$5.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long si_stime$OFFSET = 24;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * __clock_t si_stime
+             * }
+             */
+            public static final long si_stime$offset() {
+                return si_stime$OFFSET;
             }
-            public static VarHandle si_stime$VH() {
-                return constants$118.const$0;
-            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * long si_stime;
+             * {@snippet lang=c :
+             * __clock_t si_stime
              * }
              */
-            public static long si_stime$get(MemorySegment seg) {
-                return (long)constants$118.const$0.get(seg);
+            public static long si_stime(MemorySegment struct) {
+                return struct.get(si_stime$LAYOUT, si_stime$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * long si_stime;
+             * {@snippet lang=c :
+             * __clock_t si_stime
              * }
              */
-            public static void si_stime$set(MemorySegment seg, long x) {
-                constants$118.const$0.set(seg, x);
+            public static void si_stime(MemorySegment struct, long fieldValue) {
+                struct.set(si_stime$LAYOUT, si_stime$OFFSET, fieldValue);
             }
-            public static long si_stime$get(MemorySegment seg, long index) {
-                return (long)constants$118.const$0.get(seg.asSlice(index*sizeof()));
+
+            /**
+             * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+             * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+             */
+            public static MemorySegment asSlice(MemorySegment array, long index) {
+                return array.asSlice(layout().byteSize() * index);
             }
-            public static void si_stime$set(MemorySegment seg, long index, long x) {
-                constants$118.const$0.set(seg.asSlice(index*sizeof()), x);
+
+            /**
+             * The size (in bytes) of this struct
+             */
+            public static long sizeof() { return layout().byteSize(); }
+
+            /**
+             * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+             */
+            public static MemorySegment allocate(SegmentAllocator allocator) {
+                return allocator.allocate(layout());
             }
-            public static long sizeof() { return $LAYOUT().byteSize(); }
-            public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-                return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+            /**
+             * Allocate an array of size {@code elementCount} using {@code allocator}.
+             * The returned segment has size {@code elementCount * layout().byteSize()}.
+             */
+            public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+                return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
             }
-            public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+                return reinterpret(addr, 1, arena, cleanup);
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code elementCount * layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+                return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+            }
         }
 
-        public static MemorySegment _sigchld$slice(MemorySegment seg) {
-            return seg.asSlice(0, 32);
-        }
+        private static final GroupLayout _sigchld$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("_sigchld"));
+
         /**
-         * {@snippet :
+         * Layout for field:
+         * {@snippet lang=c :
          * struct {
-         *     void* si_addr;
-         *     short si_addr_lsb;
-         *     union  _bounds;
-         * };
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     int si_status;
+         *     __clock_t si_utime;
+         *     __clock_t si_stime;
+         * } _sigchld
          * }
          */
-        public static final class _sigfault {
+        public static final GroupLayout _sigchld$layout() {
+            return _sigchld$LAYOUT;
+        }
 
-            // Suppresses default constructor, ensuring non-instantiability.
-            private _sigfault() {}
-            public static MemoryLayout $LAYOUT() {
-                return constants$118.const$1;
+        private static final long _sigchld$OFFSET = 0;
+
+        /**
+         * Offset for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     int si_status;
+         *     __clock_t si_utime;
+         *     __clock_t si_stime;
+         * } _sigchld
+         * }
+         */
+        public static final long _sigchld$offset() {
+            return _sigchld$OFFSET;
+        }
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     int si_status;
+         *     __clock_t si_utime;
+         *     __clock_t si_stime;
+         * } _sigchld
+         * }
+         */
+        public static MemorySegment _sigchld(MemorySegment union) {
+            return union.asSlice(_sigchld$OFFSET, _sigchld$LAYOUT.byteSize());
+        }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     __pid_t si_pid;
+         *     __uid_t si_uid;
+         *     int si_status;
+         *     __clock_t si_utime;
+         *     __clock_t si_stime;
+         * } _sigchld
+         * }
+         */
+        public static void _sigchld(MemorySegment union, MemorySegment fieldValue) {
+            MemorySegment.copy(fieldValue, 0L, union, _sigchld$OFFSET, _sigchld$LAYOUT.byteSize());
+        }
+
+        /**
+         * {@snippet lang=c :
+         * struct {
+         *     void *si_addr;
+         *     short si_addr_lsb;
+         *     union {
+         *         struct {
+         *             void *_lower;
+         *             void *_upper;
+         *         } _addr_bnd;
+         *         __uint32_t _pkey;
+         *     } _bounds;
+         * }
+         * }
+         */
+        public static class _sigfault {
+
+            _sigfault() {
+                // Should not be called directly
             }
-            public static VarHandle si_addr$VH() {
-                return constants$118.const$2;
+
+            private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+                app_indicator_h.C_POINTER.withName("si_addr"),
+                app_indicator_h.C_SHORT.withName("si_addr_lsb"),
+                MemoryLayout.paddingLayout(6),
+                siginfo_t._sifields._sigfault._bounds.layout().withName("_bounds")
+            ).withName("$anon$89:2");
+
+            /**
+             * The layout of this struct
+             */
+            public static final GroupLayout layout() {
+                return $LAYOUT;
             }
+
+            private static final AddressLayout si_addr$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("si_addr"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * void *si_addr
+             * }
+             */
+            public static final AddressLayout si_addr$layout() {
+                return si_addr$LAYOUT;
+            }
+
+            private static final long si_addr$OFFSET = 0;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * void *si_addr
+             * }
+             */
+            public static final long si_addr$offset() {
+                return si_addr$OFFSET;
+            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * void* si_addr;
+             * {@snippet lang=c :
+             * void *si_addr
              * }
              */
-            public static MemorySegment si_addr$get(MemorySegment seg) {
-                return (java.lang.foreign.MemorySegment)constants$118.const$2.get(seg);
+            public static MemorySegment si_addr(MemorySegment struct) {
+                return struct.get(si_addr$LAYOUT, si_addr$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * void* si_addr;
+             * {@snippet lang=c :
+             * void *si_addr
              * }
              */
-            public static void si_addr$set(MemorySegment seg, MemorySegment x) {
-                constants$118.const$2.set(seg, x);
+            public static void si_addr(MemorySegment struct, MemorySegment fieldValue) {
+                struct.set(si_addr$LAYOUT, si_addr$OFFSET, fieldValue);
             }
-            public static MemorySegment si_addr$get(MemorySegment seg, long index) {
-                return (java.lang.foreign.MemorySegment)constants$118.const$2.get(seg.asSlice(index*sizeof()));
+
+            private static final OfShort si_addr_lsb$LAYOUT = (OfShort)$LAYOUT.select(groupElement("si_addr_lsb"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * short si_addr_lsb
+             * }
+             */
+            public static final OfShort si_addr_lsb$layout() {
+                return si_addr_lsb$LAYOUT;
             }
-            public static void si_addr$set(MemorySegment seg, long index, MemorySegment x) {
-                constants$118.const$2.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long si_addr_lsb$OFFSET = 8;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * short si_addr_lsb
+             * }
+             */
+            public static final long si_addr_lsb$offset() {
+                return si_addr_lsb$OFFSET;
             }
-            public static VarHandle si_addr_lsb$VH() {
-                return constants$118.const$3;
-            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * short si_addr_lsb;
+             * {@snippet lang=c :
+             * short si_addr_lsb
              * }
              */
-            public static short si_addr_lsb$get(MemorySegment seg) {
-                return (short)constants$118.const$3.get(seg);
+            public static short si_addr_lsb(MemorySegment struct) {
+                return struct.get(si_addr_lsb$LAYOUT, si_addr_lsb$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * short si_addr_lsb;
+             * {@snippet lang=c :
+             * short si_addr_lsb
              * }
              */
-            public static void si_addr_lsb$set(MemorySegment seg, short x) {
-                constants$118.const$3.set(seg, x);
+            public static void si_addr_lsb(MemorySegment struct, short fieldValue) {
+                struct.set(si_addr_lsb$LAYOUT, si_addr_lsb$OFFSET, fieldValue);
             }
-            public static short si_addr_lsb$get(MemorySegment seg, long index) {
-                return (short)constants$118.const$3.get(seg.asSlice(index*sizeof()));
-            }
-            public static void si_addr_lsb$set(MemorySegment seg, long index, short x) {
-                constants$118.const$3.set(seg.asSlice(index*sizeof()), x);
-            }
+
             /**
-             * {@snippet :
+             * {@snippet lang=c :
              * union {
-             *     struct  _addr_bnd;
-             *     unsigned int _pkey;
-             * };
+             *     struct {
+             *         void *_lower;
+             *         void *_upper;
+             *     } _addr_bnd;
+             *     __uint32_t _pkey;
+             * }
              * }
              */
-            public static final class _bounds {
+            public static class _bounds {
 
-                // Suppresses default constructor, ensuring non-instantiability.
-                private _bounds() {}
-                public static MemoryLayout $LAYOUT() {
-                    return constants$118.const$4;
+                _bounds() {
+                    // Should not be called directly
                 }
+
+                private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
+                    siginfo_t._sifields._sigfault._bounds._addr_bnd.layout().withName("_addr_bnd"),
+                    app_indicator_h.C_INT.withName("_pkey")
+                ).withName("$anon$94:6");
+
                 /**
-                 * {@snippet :
+                 * The layout of this union
+                 */
+                public static final GroupLayout layout() {
+                    return $LAYOUT;
+                }
+
+                /**
+                 * {@snippet lang=c :
                  * struct {
-                 *     void* _lower;
-                 *     void* _upper;
-                 * };
+                 *     void *_lower;
+                 *     void *_upper;
+                 * }
                  * }
                  */
-                public static final class _addr_bnd {
+                public static class _addr_bnd {
 
-                    // Suppresses default constructor, ensuring non-instantiability.
-                    private _addr_bnd() {}
-                    public static MemoryLayout $LAYOUT() {
-                        return constants$118.const$5;
+                    _addr_bnd() {
+                        // Should not be called directly
                     }
-                    public static VarHandle _lower$VH() {
-                        return constants$119.const$0;
+
+                    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+                        app_indicator_h.C_POINTER.withName("_lower"),
+                        app_indicator_h.C_POINTER.withName("_upper")
+                    ).withName("$anon$97:3");
+
+                    /**
+                     * The layout of this struct
+                     */
+                    public static final GroupLayout layout() {
+                        return $LAYOUT;
                     }
+
+                    private static final AddressLayout _lower$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_lower"));
+
+                    /**
+                     * Layout for field:
+                     * {@snippet lang=c :
+                     * void *_lower
+                     * }
+                     */
+                    public static final AddressLayout _lower$layout() {
+                        return _lower$LAYOUT;
+                    }
+
+                    private static final long _lower$OFFSET = 0;
+
+                    /**
+                     * Offset for field:
+                     * {@snippet lang=c :
+                     * void *_lower
+                     * }
+                     */
+                    public static final long _lower$offset() {
+                        return _lower$OFFSET;
+                    }
+
                     /**
                      * Getter for field:
-                     * {@snippet :
-                     * void* _lower;
+                     * {@snippet lang=c :
+                     * void *_lower
                      * }
                      */
-                    public static MemorySegment _lower$get(MemorySegment seg) {
-                        return (java.lang.foreign.MemorySegment)constants$119.const$0.get(seg);
+                    public static MemorySegment _lower(MemorySegment struct) {
+                        return struct.get(_lower$LAYOUT, _lower$OFFSET);
                     }
+
                     /**
                      * Setter for field:
-                     * {@snippet :
-                     * void* _lower;
+                     * {@snippet lang=c :
+                     * void *_lower
                      * }
                      */
-                    public static void _lower$set(MemorySegment seg, MemorySegment x) {
-                        constants$119.const$0.set(seg, x);
+                    public static void _lower(MemorySegment struct, MemorySegment fieldValue) {
+                        struct.set(_lower$LAYOUT, _lower$OFFSET, fieldValue);
                     }
-                    public static MemorySegment _lower$get(MemorySegment seg, long index) {
-                        return (java.lang.foreign.MemorySegment)constants$119.const$0.get(seg.asSlice(index*sizeof()));
+
+                    private static final AddressLayout _upper$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_upper"));
+
+                    /**
+                     * Layout for field:
+                     * {@snippet lang=c :
+                     * void *_upper
+                     * }
+                     */
+                    public static final AddressLayout _upper$layout() {
+                        return _upper$LAYOUT;
                     }
-                    public static void _lower$set(MemorySegment seg, long index, MemorySegment x) {
-                        constants$119.const$0.set(seg.asSlice(index*sizeof()), x);
+
+                    private static final long _upper$OFFSET = 8;
+
+                    /**
+                     * Offset for field:
+                     * {@snippet lang=c :
+                     * void *_upper
+                     * }
+                     */
+                    public static final long _upper$offset() {
+                        return _upper$OFFSET;
                     }
-                    public static VarHandle _upper$VH() {
-                        return constants$119.const$1;
-                    }
+
                     /**
                      * Getter for field:
-                     * {@snippet :
-                     * void* _upper;
+                     * {@snippet lang=c :
+                     * void *_upper
                      * }
                      */
-                    public static MemorySegment _upper$get(MemorySegment seg) {
-                        return (java.lang.foreign.MemorySegment)constants$119.const$1.get(seg);
+                    public static MemorySegment _upper(MemorySegment struct) {
+                        return struct.get(_upper$LAYOUT, _upper$OFFSET);
                     }
+
                     /**
                      * Setter for field:
-                     * {@snippet :
-                     * void* _upper;
+                     * {@snippet lang=c :
+                     * void *_upper
                      * }
                      */
-                    public static void _upper$set(MemorySegment seg, MemorySegment x) {
-                        constants$119.const$1.set(seg, x);
+                    public static void _upper(MemorySegment struct, MemorySegment fieldValue) {
+                        struct.set(_upper$LAYOUT, _upper$OFFSET, fieldValue);
                     }
-                    public static MemorySegment _upper$get(MemorySegment seg, long index) {
-                        return (java.lang.foreign.MemorySegment)constants$119.const$1.get(seg.asSlice(index*sizeof()));
+
+                    /**
+                     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+                     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+                     */
+                    public static MemorySegment asSlice(MemorySegment array, long index) {
+                        return array.asSlice(layout().byteSize() * index);
                     }
-                    public static void _upper$set(MemorySegment seg, long index, MemorySegment x) {
-                        constants$119.const$1.set(seg.asSlice(index*sizeof()), x);
+
+                    /**
+                     * The size (in bytes) of this struct
+                     */
+                    public static long sizeof() { return layout().byteSize(); }
+
+                    /**
+                     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+                     */
+                    public static MemorySegment allocate(SegmentAllocator allocator) {
+                        return allocator.allocate(layout());
                     }
-                    public static long sizeof() { return $LAYOUT().byteSize(); }
-                    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-                    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-                        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+                    /**
+                     * Allocate an array of size {@code elementCount} using {@code allocator}.
+                     * The returned segment has size {@code elementCount * layout().byteSize()}.
+                     */
+                    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+                        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
                     }
-                    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+                    /**
+                     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+                     * The returned segment has size {@code layout().byteSize()}
+                     */
+                    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+                        return reinterpret(addr, 1, arena, cleanup);
+                    }
+
+                    /**
+                     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+                     * The returned segment has size {@code elementCount * layout().byteSize()}
+                     */
+                    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+                        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+                    }
                 }
 
-                public static MemorySegment _addr_bnd$slice(MemorySegment seg) {
-                    return seg.asSlice(0, 16);
+                private static final GroupLayout _addr_bnd$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("_addr_bnd"));
+
+                /**
+                 * Layout for field:
+                 * {@snippet lang=c :
+                 * struct {
+                 *     void *_lower;
+                 *     void *_upper;
+                 * } _addr_bnd
+                 * }
+                 */
+                public static final GroupLayout _addr_bnd$layout() {
+                    return _addr_bnd$LAYOUT;
                 }
-                public static VarHandle _pkey$VH() {
-                    return constants$119.const$2;
+
+                private static final long _addr_bnd$OFFSET = 0;
+
+                /**
+                 * Offset for field:
+                 * {@snippet lang=c :
+                 * struct {
+                 *     void *_lower;
+                 *     void *_upper;
+                 * } _addr_bnd
+                 * }
+                 */
+                public static final long _addr_bnd$offset() {
+                    return _addr_bnd$OFFSET;
                 }
+
                 /**
                  * Getter for field:
-                 * {@snippet :
-                 * unsigned int _pkey;
+                 * {@snippet lang=c :
+                 * struct {
+                 *     void *_lower;
+                 *     void *_upper;
+                 * } _addr_bnd
                  * }
                  */
-                public static int _pkey$get(MemorySegment seg) {
-                    return (int)constants$119.const$2.get(seg);
+                public static MemorySegment _addr_bnd(MemorySegment union) {
+                    return union.asSlice(_addr_bnd$OFFSET, _addr_bnd$LAYOUT.byteSize());
                 }
+
                 /**
                  * Setter for field:
-                 * {@snippet :
-                 * unsigned int _pkey;
+                 * {@snippet lang=c :
+                 * struct {
+                 *     void *_lower;
+                 *     void *_upper;
+                 * } _addr_bnd
                  * }
                  */
-                public static void _pkey$set(MemorySegment seg, int x) {
-                    constants$119.const$2.set(seg, x);
+                public static void _addr_bnd(MemorySegment union, MemorySegment fieldValue) {
+                    MemorySegment.copy(fieldValue, 0L, union, _addr_bnd$OFFSET, _addr_bnd$LAYOUT.byteSize());
                 }
-                public static int _pkey$get(MemorySegment seg, long index) {
-                    return (int)constants$119.const$2.get(seg.asSlice(index*sizeof()));
+
+                private static final OfInt _pkey$LAYOUT = (OfInt)$LAYOUT.select(groupElement("_pkey"));
+
+                /**
+                 * Layout for field:
+                 * {@snippet lang=c :
+                 * __uint32_t _pkey
+                 * }
+                 */
+                public static final OfInt _pkey$layout() {
+                    return _pkey$LAYOUT;
                 }
-                public static void _pkey$set(MemorySegment seg, long index, int x) {
-                    constants$119.const$2.set(seg.asSlice(index*sizeof()), x);
+
+                private static final long _pkey$OFFSET = 0;
+
+                /**
+                 * Offset for field:
+                 * {@snippet lang=c :
+                 * __uint32_t _pkey
+                 * }
+                 */
+                public static final long _pkey$offset() {
+                    return _pkey$OFFSET;
                 }
-                public static long sizeof() { return $LAYOUT().byteSize(); }
-                public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-                public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-                    return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+                /**
+                 * Getter for field:
+                 * {@snippet lang=c :
+                 * __uint32_t _pkey
+                 * }
+                 */
+                public static int _pkey(MemorySegment union) {
+                    return union.get(_pkey$LAYOUT, _pkey$OFFSET);
                 }
-                public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+                /**
+                 * Setter for field:
+                 * {@snippet lang=c :
+                 * __uint32_t _pkey
+                 * }
+                 */
+                public static void _pkey(MemorySegment union, int fieldValue) {
+                    union.set(_pkey$LAYOUT, _pkey$OFFSET, fieldValue);
+                }
+
+                /**
+                 * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+                 * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+                 */
+                public static MemorySegment asSlice(MemorySegment array, long index) {
+                    return array.asSlice(layout().byteSize() * index);
+                }
+
+                /**
+                 * The size (in bytes) of this union
+                 */
+                public static long sizeof() { return layout().byteSize(); }
+
+                /**
+                 * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+                 */
+                public static MemorySegment allocate(SegmentAllocator allocator) {
+                    return allocator.allocate(layout());
+                }
+
+                /**
+                 * Allocate an array of size {@code elementCount} using {@code allocator}.
+                 * The returned segment has size {@code elementCount * layout().byteSize()}.
+                 */
+                public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+                    return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+                }
+
+                /**
+                 * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+                 * The returned segment has size {@code layout().byteSize()}
+                 */
+                public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+                    return reinterpret(addr, 1, arena, cleanup);
+                }
+
+                /**
+                 * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+                 * The returned segment has size {@code elementCount * layout().byteSize()}
+                 */
+                public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+                    return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+                }
             }
 
-            public static MemorySegment _bounds$slice(MemorySegment seg) {
-                return seg.asSlice(16, 16);
+            private static final GroupLayout _bounds$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("_bounds"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * union {
+             *     struct {
+             *         void *_lower;
+             *         void *_upper;
+             *     } _addr_bnd;
+             *     __uint32_t _pkey;
+             * } _bounds
+             * }
+             */
+            public static final GroupLayout _bounds$layout() {
+                return _bounds$LAYOUT;
             }
-            public static long sizeof() { return $LAYOUT().byteSize(); }
-            public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-                return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+            private static final long _bounds$OFFSET = 16;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * union {
+             *     struct {
+             *         void *_lower;
+             *         void *_upper;
+             *     } _addr_bnd;
+             *     __uint32_t _pkey;
+             * } _bounds
+             * }
+             */
+            public static final long _bounds$offset() {
+                return _bounds$OFFSET;
             }
-            public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+            /**
+             * Getter for field:
+             * {@snippet lang=c :
+             * union {
+             *     struct {
+             *         void *_lower;
+             *         void *_upper;
+             *     } _addr_bnd;
+             *     __uint32_t _pkey;
+             * } _bounds
+             * }
+             */
+            public static MemorySegment _bounds(MemorySegment struct) {
+                return struct.asSlice(_bounds$OFFSET, _bounds$LAYOUT.byteSize());
+            }
+
+            /**
+             * Setter for field:
+             * {@snippet lang=c :
+             * union {
+             *     struct {
+             *         void *_lower;
+             *         void *_upper;
+             *     } _addr_bnd;
+             *     __uint32_t _pkey;
+             * } _bounds
+             * }
+             */
+            public static void _bounds(MemorySegment struct, MemorySegment fieldValue) {
+                MemorySegment.copy(fieldValue, 0L, struct, _bounds$OFFSET, _bounds$LAYOUT.byteSize());
+            }
+
+            /**
+             * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+             * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+             */
+            public static MemorySegment asSlice(MemorySegment array, long index) {
+                return array.asSlice(layout().byteSize() * index);
+            }
+
+            /**
+             * The size (in bytes) of this struct
+             */
+            public static long sizeof() { return layout().byteSize(); }
+
+            /**
+             * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+             */
+            public static MemorySegment allocate(SegmentAllocator allocator) {
+                return allocator.allocate(layout());
+            }
+
+            /**
+             * Allocate an array of size {@code elementCount} using {@code allocator}.
+             * The returned segment has size {@code elementCount * layout().byteSize()}.
+             */
+            public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+                return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+                return reinterpret(addr, 1, arena, cleanup);
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code elementCount * layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+                return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+            }
         }
 
-        public static MemorySegment _sigfault$slice(MemorySegment seg) {
-            return seg.asSlice(0, 32);
-        }
+        private static final GroupLayout _sigfault$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("_sigfault"));
+
         /**
-         * {@snippet :
+         * Layout for field:
+         * {@snippet lang=c :
+         * struct {
+         *     void *si_addr;
+         *     short si_addr_lsb;
+         *     union {
+         *         struct {
+         *             void *_lower;
+         *             void *_upper;
+         *         } _addr_bnd;
+         *         __uint32_t _pkey;
+         *     } _bounds;
+         * } _sigfault
+         * }
+         */
+        public static final GroupLayout _sigfault$layout() {
+            return _sigfault$LAYOUT;
+        }
+
+        private static final long _sigfault$OFFSET = 0;
+
+        /**
+         * Offset for field:
+         * {@snippet lang=c :
+         * struct {
+         *     void *si_addr;
+         *     short si_addr_lsb;
+         *     union {
+         *         struct {
+         *             void *_lower;
+         *             void *_upper;
+         *         } _addr_bnd;
+         *         __uint32_t _pkey;
+         *     } _bounds;
+         * } _sigfault
+         * }
+         */
+        public static final long _sigfault$offset() {
+            return _sigfault$OFFSET;
+        }
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     void *si_addr;
+         *     short si_addr_lsb;
+         *     union {
+         *         struct {
+         *             void *_lower;
+         *             void *_upper;
+         *         } _addr_bnd;
+         *         __uint32_t _pkey;
+         *     } _bounds;
+         * } _sigfault
+         * }
+         */
+        public static MemorySegment _sigfault(MemorySegment union) {
+            return union.asSlice(_sigfault$OFFSET, _sigfault$LAYOUT.byteSize());
+        }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     void *si_addr;
+         *     short si_addr_lsb;
+         *     union {
+         *         struct {
+         *             void *_lower;
+         *             void *_upper;
+         *         } _addr_bnd;
+         *         __uint32_t _pkey;
+         *     } _bounds;
+         * } _sigfault
+         * }
+         */
+        public static void _sigfault(MemorySegment union, MemorySegment fieldValue) {
+            MemorySegment.copy(fieldValue, 0L, union, _sigfault$OFFSET, _sigfault$LAYOUT.byteSize());
+        }
+
+        /**
+         * {@snippet lang=c :
          * struct {
          *     long si_band;
          *     int si_fd;
-         * };
+         * }
          * }
          */
-        public static final class _sigpoll {
+        public static class _sigpoll {
 
-            // Suppresses default constructor, ensuring non-instantiability.
-            private _sigpoll() {}
-            public static MemoryLayout $LAYOUT() {
-                return constants$119.const$3;
+            _sigpoll() {
+                // Should not be called directly
             }
-            public static VarHandle si_band$VH() {
-                return constants$119.const$4;
+
+            private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+                app_indicator_h.C_LONG.withName("si_band"),
+                app_indicator_h.C_INT.withName("si_fd"),
+                MemoryLayout.paddingLayout(4)
+            ).withName("$anon$108:2");
+
+            /**
+             * The layout of this struct
+             */
+            public static final GroupLayout layout() {
+                return $LAYOUT;
             }
+
+            private static final OfLong si_band$LAYOUT = (OfLong)$LAYOUT.select(groupElement("si_band"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * long si_band
+             * }
+             */
+            public static final OfLong si_band$layout() {
+                return si_band$LAYOUT;
+            }
+
+            private static final long si_band$OFFSET = 0;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * long si_band
+             * }
+             */
+            public static final long si_band$offset() {
+                return si_band$OFFSET;
+            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * long si_band;
+             * {@snippet lang=c :
+             * long si_band
              * }
              */
-            public static long si_band$get(MemorySegment seg) {
-                return (long)constants$119.const$4.get(seg);
+            public static long si_band(MemorySegment struct) {
+                return struct.get(si_band$LAYOUT, si_band$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * long si_band;
+             * {@snippet lang=c :
+             * long si_band
              * }
              */
-            public static void si_band$set(MemorySegment seg, long x) {
-                constants$119.const$4.set(seg, x);
+            public static void si_band(MemorySegment struct, long fieldValue) {
+                struct.set(si_band$LAYOUT, si_band$OFFSET, fieldValue);
             }
-            public static long si_band$get(MemorySegment seg, long index) {
-                return (long)constants$119.const$4.get(seg.asSlice(index*sizeof()));
+
+            private static final OfInt si_fd$LAYOUT = (OfInt)$LAYOUT.select(groupElement("si_fd"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * int si_fd
+             * }
+             */
+            public static final OfInt si_fd$layout() {
+                return si_fd$LAYOUT;
             }
-            public static void si_band$set(MemorySegment seg, long index, long x) {
-                constants$119.const$4.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long si_fd$OFFSET = 8;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * int si_fd
+             * }
+             */
+            public static final long si_fd$offset() {
+                return si_fd$OFFSET;
             }
-            public static VarHandle si_fd$VH() {
-                return constants$119.const$5;
-            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * int si_fd;
+             * {@snippet lang=c :
+             * int si_fd
              * }
              */
-            public static int si_fd$get(MemorySegment seg) {
-                return (int)constants$119.const$5.get(seg);
+            public static int si_fd(MemorySegment struct) {
+                return struct.get(si_fd$LAYOUT, si_fd$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * int si_fd;
+             * {@snippet lang=c :
+             * int si_fd
              * }
              */
-            public static void si_fd$set(MemorySegment seg, int x) {
-                constants$119.const$5.set(seg, x);
+            public static void si_fd(MemorySegment struct, int fieldValue) {
+                struct.set(si_fd$LAYOUT, si_fd$OFFSET, fieldValue);
             }
-            public static int si_fd$get(MemorySegment seg, long index) {
-                return (int)constants$119.const$5.get(seg.asSlice(index*sizeof()));
+
+            /**
+             * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+             * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+             */
+            public static MemorySegment asSlice(MemorySegment array, long index) {
+                return array.asSlice(layout().byteSize() * index);
             }
-            public static void si_fd$set(MemorySegment seg, long index, int x) {
-                constants$119.const$5.set(seg.asSlice(index*sizeof()), x);
+
+            /**
+             * The size (in bytes) of this struct
+             */
+            public static long sizeof() { return layout().byteSize(); }
+
+            /**
+             * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+             */
+            public static MemorySegment allocate(SegmentAllocator allocator) {
+                return allocator.allocate(layout());
             }
-            public static long sizeof() { return $LAYOUT().byteSize(); }
-            public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-                return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+            /**
+             * Allocate an array of size {@code elementCount} using {@code allocator}.
+             * The returned segment has size {@code elementCount * layout().byteSize()}.
+             */
+            public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+                return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
             }
-            public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+                return reinterpret(addr, 1, arena, cleanup);
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code elementCount * layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+                return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+            }
         }
 
-        public static MemorySegment _sigpoll$slice(MemorySegment seg) {
-            return seg.asSlice(0, 16);
-        }
+        private static final GroupLayout _sigpoll$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("_sigpoll"));
+
         /**
-         * {@snippet :
+         * Layout for field:
+         * {@snippet lang=c :
          * struct {
-         *     void* _call_addr;
+         *     long si_band;
+         *     int si_fd;
+         * } _sigpoll
+         * }
+         */
+        public static final GroupLayout _sigpoll$layout() {
+            return _sigpoll$LAYOUT;
+        }
+
+        private static final long _sigpoll$OFFSET = 0;
+
+        /**
+         * Offset for field:
+         * {@snippet lang=c :
+         * struct {
+         *     long si_band;
+         *     int si_fd;
+         * } _sigpoll
+         * }
+         */
+        public static final long _sigpoll$offset() {
+            return _sigpoll$OFFSET;
+        }
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     long si_band;
+         *     int si_fd;
+         * } _sigpoll
+         * }
+         */
+        public static MemorySegment _sigpoll(MemorySegment union) {
+            return union.asSlice(_sigpoll$OFFSET, _sigpoll$LAYOUT.byteSize());
+        }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     long si_band;
+         *     int si_fd;
+         * } _sigpoll
+         * }
+         */
+        public static void _sigpoll(MemorySegment union, MemorySegment fieldValue) {
+            MemorySegment.copy(fieldValue, 0L, union, _sigpoll$OFFSET, _sigpoll$LAYOUT.byteSize());
+        }
+
+        /**
+         * {@snippet lang=c :
+         * struct {
+         *     void *_call_addr;
          *     int _syscall;
          *     unsigned int _arch;
-         * };
+         * }
          * }
          */
-        public static final class _sigsys {
+        public static class _sigsys {
 
-            // Suppresses default constructor, ensuring non-instantiability.
-            private _sigsys() {}
-            public static MemoryLayout $LAYOUT() {
-                return constants$120.const$0;
+            _sigsys() {
+                // Should not be called directly
             }
-            public static VarHandle _call_addr$VH() {
-                return constants$120.const$1;
+
+            private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+                app_indicator_h.C_POINTER.withName("_call_addr"),
+                app_indicator_h.C_INT.withName("_syscall"),
+                app_indicator_h.C_INT.withName("_arch")
+            ).withName("$anon$116:2");
+
+            /**
+             * The layout of this struct
+             */
+            public static final GroupLayout layout() {
+                return $LAYOUT;
             }
+
+            private static final AddressLayout _call_addr$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_call_addr"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * void *_call_addr
+             * }
+             */
+            public static final AddressLayout _call_addr$layout() {
+                return _call_addr$LAYOUT;
+            }
+
+            private static final long _call_addr$OFFSET = 0;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * void *_call_addr
+             * }
+             */
+            public static final long _call_addr$offset() {
+                return _call_addr$OFFSET;
+            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * void* _call_addr;
+             * {@snippet lang=c :
+             * void *_call_addr
              * }
              */
-            public static MemorySegment _call_addr$get(MemorySegment seg) {
-                return (java.lang.foreign.MemorySegment)constants$120.const$1.get(seg);
+            public static MemorySegment _call_addr(MemorySegment struct) {
+                return struct.get(_call_addr$LAYOUT, _call_addr$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * void* _call_addr;
+             * {@snippet lang=c :
+             * void *_call_addr
              * }
              */
-            public static void _call_addr$set(MemorySegment seg, MemorySegment x) {
-                constants$120.const$1.set(seg, x);
+            public static void _call_addr(MemorySegment struct, MemorySegment fieldValue) {
+                struct.set(_call_addr$LAYOUT, _call_addr$OFFSET, fieldValue);
             }
-            public static MemorySegment _call_addr$get(MemorySegment seg, long index) {
-                return (java.lang.foreign.MemorySegment)constants$120.const$1.get(seg.asSlice(index*sizeof()));
+
+            private static final OfInt _syscall$LAYOUT = (OfInt)$LAYOUT.select(groupElement("_syscall"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * int _syscall
+             * }
+             */
+            public static final OfInt _syscall$layout() {
+                return _syscall$LAYOUT;
             }
-            public static void _call_addr$set(MemorySegment seg, long index, MemorySegment x) {
-                constants$120.const$1.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long _syscall$OFFSET = 8;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * int _syscall
+             * }
+             */
+            public static final long _syscall$offset() {
+                return _syscall$OFFSET;
             }
-            public static VarHandle _syscall$VH() {
-                return constants$120.const$2;
-            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * int _syscall;
+             * {@snippet lang=c :
+             * int _syscall
              * }
              */
-            public static int _syscall$get(MemorySegment seg) {
-                return (int)constants$120.const$2.get(seg);
+            public static int _syscall(MemorySegment struct) {
+                return struct.get(_syscall$LAYOUT, _syscall$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * int _syscall;
+             * {@snippet lang=c :
+             * int _syscall
              * }
              */
-            public static void _syscall$set(MemorySegment seg, int x) {
-                constants$120.const$2.set(seg, x);
+            public static void _syscall(MemorySegment struct, int fieldValue) {
+                struct.set(_syscall$LAYOUT, _syscall$OFFSET, fieldValue);
             }
-            public static int _syscall$get(MemorySegment seg, long index) {
-                return (int)constants$120.const$2.get(seg.asSlice(index*sizeof()));
+
+            private static final OfInt _arch$LAYOUT = (OfInt)$LAYOUT.select(groupElement("_arch"));
+
+            /**
+             * Layout for field:
+             * {@snippet lang=c :
+             * unsigned int _arch
+             * }
+             */
+            public static final OfInt _arch$layout() {
+                return _arch$LAYOUT;
             }
-            public static void _syscall$set(MemorySegment seg, long index, int x) {
-                constants$120.const$2.set(seg.asSlice(index*sizeof()), x);
+
+            private static final long _arch$OFFSET = 12;
+
+            /**
+             * Offset for field:
+             * {@snippet lang=c :
+             * unsigned int _arch
+             * }
+             */
+            public static final long _arch$offset() {
+                return _arch$OFFSET;
             }
-            public static VarHandle _arch$VH() {
-                return constants$120.const$3;
-            }
+
             /**
              * Getter for field:
-             * {@snippet :
-             * unsigned int _arch;
+             * {@snippet lang=c :
+             * unsigned int _arch
              * }
              */
-            public static int _arch$get(MemorySegment seg) {
-                return (int)constants$120.const$3.get(seg);
+            public static int _arch(MemorySegment struct) {
+                return struct.get(_arch$LAYOUT, _arch$OFFSET);
             }
+
             /**
              * Setter for field:
-             * {@snippet :
-             * unsigned int _arch;
+             * {@snippet lang=c :
+             * unsigned int _arch
              * }
              */
-            public static void _arch$set(MemorySegment seg, int x) {
-                constants$120.const$3.set(seg, x);
+            public static void _arch(MemorySegment struct, int fieldValue) {
+                struct.set(_arch$LAYOUT, _arch$OFFSET, fieldValue);
             }
-            public static int _arch$get(MemorySegment seg, long index) {
-                return (int)constants$120.const$3.get(seg.asSlice(index*sizeof()));
+
+            /**
+             * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+             * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+             */
+            public static MemorySegment asSlice(MemorySegment array, long index) {
+                return array.asSlice(layout().byteSize() * index);
             }
-            public static void _arch$set(MemorySegment seg, long index, int x) {
-                constants$120.const$3.set(seg.asSlice(index*sizeof()), x);
+
+            /**
+             * The size (in bytes) of this struct
+             */
+            public static long sizeof() { return layout().byteSize(); }
+
+            /**
+             * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+             */
+            public static MemorySegment allocate(SegmentAllocator allocator) {
+                return allocator.allocate(layout());
             }
-            public static long sizeof() { return $LAYOUT().byteSize(); }
-            public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-            public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-                return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+            /**
+             * Allocate an array of size {@code elementCount} using {@code allocator}.
+             * The returned segment has size {@code elementCount * layout().byteSize()}.
+             */
+            public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+                return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
             }
-            public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+                return reinterpret(addr, 1, arena, cleanup);
+            }
+
+            /**
+             * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+             * The returned segment has size {@code elementCount * layout().byteSize()}
+             */
+            public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+                return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+            }
         }
 
-        public static MemorySegment _sigsys$slice(MemorySegment seg) {
-            return seg.asSlice(0, 16);
+        private static final GroupLayout _sigsys$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("_sigsys"));
+
+        /**
+         * Layout for field:
+         * {@snippet lang=c :
+         * struct {
+         *     void *_call_addr;
+         *     int _syscall;
+         *     unsigned int _arch;
+         * } _sigsys
+         * }
+         */
+        public static final GroupLayout _sigsys$layout() {
+            return _sigsys$LAYOUT;
         }
-        public static long sizeof() { return $LAYOUT().byteSize(); }
-        public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-        public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-            return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+        private static final long _sigsys$OFFSET = 0;
+
+        /**
+         * Offset for field:
+         * {@snippet lang=c :
+         * struct {
+         *     void *_call_addr;
+         *     int _syscall;
+         *     unsigned int _arch;
+         * } _sigsys
+         * }
+         */
+        public static final long _sigsys$offset() {
+            return _sigsys$OFFSET;
         }
-        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+        /**
+         * Getter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     void *_call_addr;
+         *     int _syscall;
+         *     unsigned int _arch;
+         * } _sigsys
+         * }
+         */
+        public static MemorySegment _sigsys(MemorySegment union) {
+            return union.asSlice(_sigsys$OFFSET, _sigsys$LAYOUT.byteSize());
+        }
+
+        /**
+         * Setter for field:
+         * {@snippet lang=c :
+         * struct {
+         *     void *_call_addr;
+         *     int _syscall;
+         *     unsigned int _arch;
+         * } _sigsys
+         * }
+         */
+        public static void _sigsys(MemorySegment union, MemorySegment fieldValue) {
+            MemorySegment.copy(fieldValue, 0L, union, _sigsys$OFFSET, _sigsys$LAYOUT.byteSize());
+        }
+
+        /**
+         * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+         * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+         */
+        public static MemorySegment asSlice(MemorySegment array, long index) {
+            return array.asSlice(layout().byteSize() * index);
+        }
+
+        /**
+         * The size (in bytes) of this union
+         */
+        public static long sizeof() { return layout().byteSize(); }
+
+        /**
+         * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+         */
+        public static MemorySegment allocate(SegmentAllocator allocator) {
+            return allocator.allocate(layout());
+        }
+
+        /**
+         * Allocate an array of size {@code elementCount} using {@code allocator}.
+         * The returned segment has size {@code elementCount * layout().byteSize()}.
+         */
+        public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+            return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+        }
+
+        /**
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * The returned segment has size {@code layout().byteSize()}
+         */
+        public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+            return reinterpret(addr, 1, arena, cleanup);
+        }
+
+        /**
+         * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+         * The returned segment has size {@code elementCount * layout().byteSize()}
+         */
+        public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+            return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+        }
     }
 
-    public static MemorySegment _sifields$slice(MemorySegment seg) {
-        return seg.asSlice(16, 112);
+    private static final GroupLayout _sifields$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("_sifields"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * union {
+     *     int _pad[28];
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *     } _kill;
+     *     struct {
+     *         int si_tid;
+     *         int si_overrun;
+     *         __sigval_t si_sigval;
+     *     } _timer;
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *         __sigval_t si_sigval;
+     *     } _rt;
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *         int si_status;
+     *         __clock_t si_utime;
+     *         __clock_t si_stime;
+     *     } _sigchld;
+     *     struct {
+     *         void *si_addr;
+     *         short si_addr_lsb;
+     *         union {
+     *             struct {
+     *                 void *_lower;
+     *                 void *_upper;
+     *             } _addr_bnd;
+     *             __uint32_t _pkey;
+     *         } _bounds;
+     *     } _sigfault;
+     *     struct {
+     *         long si_band;
+     *         int si_fd;
+     *     } _sigpoll;
+     *     struct {
+     *         void *_call_addr;
+     *         int _syscall;
+     *         unsigned int _arch;
+     *     } _sigsys;
+     * } _sifields
+     * }
+     */
+    public static final GroupLayout _sifields$layout() {
+        return _sifields$LAYOUT;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    private static final long _sifields$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * union {
+     *     int _pad[28];
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *     } _kill;
+     *     struct {
+     *         int si_tid;
+     *         int si_overrun;
+     *         __sigval_t si_sigval;
+     *     } _timer;
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *         __sigval_t si_sigval;
+     *     } _rt;
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *         int si_status;
+     *         __clock_t si_utime;
+     *         __clock_t si_stime;
+     *     } _sigchld;
+     *     struct {
+     *         void *si_addr;
+     *         short si_addr_lsb;
+     *         union {
+     *             struct {
+     *                 void *_lower;
+     *                 void *_upper;
+     *             } _addr_bnd;
+     *             __uint32_t _pkey;
+     *         } _bounds;
+     *     } _sigfault;
+     *     struct {
+     *         long si_band;
+     *         int si_fd;
+     *     } _sigpoll;
+     *     struct {
+     *         void *_call_addr;
+     *         int _syscall;
+     *         unsigned int _arch;
+     *     } _sigsys;
+     * } _sifields
+     * }
+     */
+    public static final long _sifields$offset() {
+        return _sifields$OFFSET;
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * union {
+     *     int _pad[28];
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *     } _kill;
+     *     struct {
+     *         int si_tid;
+     *         int si_overrun;
+     *         __sigval_t si_sigval;
+     *     } _timer;
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *         __sigval_t si_sigval;
+     *     } _rt;
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *         int si_status;
+     *         __clock_t si_utime;
+     *         __clock_t si_stime;
+     *     } _sigchld;
+     *     struct {
+     *         void *si_addr;
+     *         short si_addr_lsb;
+     *         union {
+     *             struct {
+     *                 void *_lower;
+     *                 void *_upper;
+     *             } _addr_bnd;
+     *             __uint32_t _pkey;
+     *         } _bounds;
+     *     } _sigfault;
+     *     struct {
+     *         long si_band;
+     *         int si_fd;
+     *     } _sigpoll;
+     *     struct {
+     *         void *_call_addr;
+     *         int _syscall;
+     *         unsigned int _arch;
+     *     } _sigsys;
+     * } _sifields
+     * }
+     */
+    public static MemorySegment _sifields(MemorySegment struct) {
+        return struct.asSlice(_sifields$OFFSET, _sifields$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * union {
+     *     int _pad[28];
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *     } _kill;
+     *     struct {
+     *         int si_tid;
+     *         int si_overrun;
+     *         __sigval_t si_sigval;
+     *     } _timer;
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *         __sigval_t si_sigval;
+     *     } _rt;
+     *     struct {
+     *         __pid_t si_pid;
+     *         __uid_t si_uid;
+     *         int si_status;
+     *         __clock_t si_utime;
+     *         __clock_t si_stime;
+     *     } _sigchld;
+     *     struct {
+     *         void *si_addr;
+     *         short si_addr_lsb;
+     *         union {
+     *             struct {
+     *                 void *_lower;
+     *                 void *_upper;
+     *             } _addr_bnd;
+     *             __uint32_t _pkey;
+     *         } _bounds;
+     *     } _sigfault;
+     *     struct {
+     *         long si_band;
+     *         int si_fd;
+     *     } _sigpoll;
+     *     struct {
+     *         void *_call_addr;
+     *         int _syscall;
+     *         unsigned int _arch;
+     *     } _sigsys;
+     * } _sifields
+     * }
+     */
+    public static void _sifields(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, _sifields$OFFSET, _sifields$LAYOUT.byteSize());
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

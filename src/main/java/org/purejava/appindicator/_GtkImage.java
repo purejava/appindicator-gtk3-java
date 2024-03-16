@@ -2,60 +2,167 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkImage {
- *     struct _GtkMisc misc;
- *     struct _GtkImagePrivate* priv;
- * };
+ *     GtkMisc misc;
+ *     GtkImagePrivate *priv;
+ * }
  * }
  */
 public class _GtkImage {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2439.const$2;
+    _GtkImage() {
+        // Should not be called directly
     }
-    public static MemorySegment misc$slice(MemorySegment seg) {
-        return seg.asSlice(0, 40);
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GtkMisc.layout().withName("misc"),
+        app_indicator_h.C_POINTER.withName("priv")
+    ).withName("_GtkImage");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
-    public static VarHandle priv$VH() {
-        return constants$2439.const$3;
+
+    private static final GroupLayout misc$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("misc"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkMisc misc
+     * }
+     */
+    public static final GroupLayout misc$layout() {
+        return misc$LAYOUT;
     }
+
+    private static final long misc$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkMisc misc
+     * }
+     */
+    public static final long misc$offset() {
+        return misc$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GtkImagePrivate* priv;
+     * {@snippet lang=c :
+     * GtkMisc misc
      * }
      */
-    public static MemorySegment priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2439.const$3.get(seg);
+    public static MemorySegment misc(MemorySegment struct) {
+        return struct.asSlice(misc$OFFSET, misc$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GtkImagePrivate* priv;
+     * {@snippet lang=c :
+     * GtkMisc misc
      * }
      */
-    public static void priv$set(MemorySegment seg, MemorySegment x) {
-        constants$2439.const$3.set(seg, x);
+    public static void misc(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, misc$OFFSET, misc$LAYOUT.byteSize());
     }
-    public static MemorySegment priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2439.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void priv$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2439.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final AddressLayout priv$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("priv"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkImagePrivate *priv
+     * }
+     */
+    public static final AddressLayout priv$layout() {
+        return priv$LAYOUT;
+    }
+
+    private static final long priv$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkImagePrivate *priv
+     * }
+     */
+    public static final long priv$offset() {
+        return priv$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GtkImagePrivate *priv
+     * }
+     */
+    public static MemorySegment priv(MemorySegment struct) {
+        return struct.get(priv$LAYOUT, priv$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GtkImagePrivate *priv
+     * }
+     */
+    public static void priv(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(priv$LAYOUT, priv$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

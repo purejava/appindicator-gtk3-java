@@ -2,172 +2,360 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GdkEventExpose {
- *     enum GdkEventType type;
- *     struct _GdkWindow* window;
- *     signed char send_event;
- *     struct _cairo_rectangle_int area;
- *     struct _cairo_region* region;
- *     int count;
- * };
+ *     GdkEventType type;
+ *     GdkWindow *window;
+ *     gint8 send_event;
+ *     GdkRectangle area;
+ *     cairo_region_t *region;
+ *     gint count;
+ * }
  * }
  */
 public class _GdkEventExpose {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1767.const$5;
+    _GdkEventExpose() {
+        // Should not be called directly
     }
-    public static VarHandle type$VH() {
-        return constants$1768.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum GdkEventType type;
-     * }
-     */
-    public static int type$get(MemorySegment seg) {
-        return (int)constants$1768.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum GdkEventType type;
-     * }
-     */
-    public static void type$set(MemorySegment seg, int x) {
-        constants$1768.const$0.set(seg, x);
-    }
-    public static int type$get(MemorySegment seg, long index) {
-        return (int)constants$1768.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void type$set(MemorySegment seg, long index, int x) {
-        constants$1768.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle window$VH() {
-        return constants$1768.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GdkWindow* window;
-     * }
-     */
-    public static MemorySegment window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1768.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GdkWindow* window;
-     * }
-     */
-    public static void window$set(MemorySegment seg, MemorySegment x) {
-        constants$1768.const$1.set(seg, x);
-    }
-    public static MemorySegment window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1768.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void window$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1768.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle send_event$VH() {
-        return constants$1768.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * signed char send_event;
-     * }
-     */
-    public static byte send_event$get(MemorySegment seg) {
-        return (byte)constants$1768.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * signed char send_event;
-     * }
-     */
-    public static void send_event$set(MemorySegment seg, byte x) {
-        constants$1768.const$2.set(seg, x);
-    }
-    public static byte send_event$get(MemorySegment seg, long index) {
-        return (byte)constants$1768.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void send_event$set(MemorySegment seg, long index, byte x) {
-        constants$1768.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment area$slice(MemorySegment seg) {
-        return seg.asSlice(20, 16);
-    }
-    public static VarHandle region$VH() {
-        return constants$1768.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _cairo_region* region;
-     * }
-     */
-    public static MemorySegment region$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1768.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _cairo_region* region;
-     * }
-     */
-    public static void region$set(MemorySegment seg, MemorySegment x) {
-        constants$1768.const$3.set(seg, x);
-    }
-    public static MemorySegment region$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1768.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void region$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1768.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle count$VH() {
-        return constants$1768.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int count;
-     * }
-     */
-    public static int count$get(MemorySegment seg) {
-        return (int)constants$1768.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int count;
-     * }
-     */
-    public static void count$set(MemorySegment seg, int x) {
-        constants$1768.const$4.set(seg, x);
-    }
-    public static int count$get(MemorySegment seg, long index) {
-        return (int)constants$1768.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void count$set(MemorySegment seg, long index, int x) {
-        constants$1768.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("window"),
+        app_indicator_h.C_CHAR.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        _cairo_rectangle_int.layout().withName("area"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("region"),
+        app_indicator_h.C_INT.withName("count"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GdkEventExpose");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt type$LAYOUT = (OfInt)$LAYOUT.select(groupElement("type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkEventType type
+     * }
+     */
+    public static final OfInt type$layout() {
+        return type$LAYOUT;
+    }
+
+    private static final long type$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkEventType type
+     * }
+     */
+    public static final long type$offset() {
+        return type$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkEventType type
+     * }
+     */
+    public static int type(MemorySegment struct) {
+        return struct.get(type$LAYOUT, type$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkEventType type
+     * }
+     */
+    public static void type(MemorySegment struct, int fieldValue) {
+        struct.set(type$LAYOUT, type$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout window$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("window"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkWindow *window
+     * }
+     */
+    public static final AddressLayout window$layout() {
+        return window$LAYOUT;
+    }
+
+    private static final long window$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkWindow *window
+     * }
+     */
+    public static final long window$offset() {
+        return window$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkWindow *window
+     * }
+     */
+    public static MemorySegment window(MemorySegment struct) {
+        return struct.get(window$LAYOUT, window$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkWindow *window
+     * }
+     */
+    public static void window(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(window$LAYOUT, window$OFFSET, fieldValue);
+    }
+
+    private static final OfByte send_event$LAYOUT = (OfByte)$LAYOUT.select(groupElement("send_event"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint8 send_event
+     * }
+     */
+    public static final OfByte send_event$layout() {
+        return send_event$LAYOUT;
+    }
+
+    private static final long send_event$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint8 send_event
+     * }
+     */
+    public static final long send_event$offset() {
+        return send_event$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint8 send_event
+     * }
+     */
+    public static byte send_event(MemorySegment struct) {
+        return struct.get(send_event$LAYOUT, send_event$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint8 send_event
+     * }
+     */
+    public static void send_event(MemorySegment struct, byte fieldValue) {
+        struct.set(send_event$LAYOUT, send_event$OFFSET, fieldValue);
+    }
+
+    private static final GroupLayout area$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("area"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkRectangle area
+     * }
+     */
+    public static final GroupLayout area$layout() {
+        return area$LAYOUT;
+    }
+
+    private static final long area$OFFSET = 20;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkRectangle area
+     * }
+     */
+    public static final long area$offset() {
+        return area$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkRectangle area
+     * }
+     */
+    public static MemorySegment area(MemorySegment struct) {
+        return struct.asSlice(area$OFFSET, area$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkRectangle area
+     * }
+     */
+    public static void area(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, area$OFFSET, area$LAYOUT.byteSize());
+    }
+
+    private static final AddressLayout region$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("region"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * cairo_region_t *region
+     * }
+     */
+    public static final AddressLayout region$layout() {
+        return region$LAYOUT;
+    }
+
+    private static final long region$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * cairo_region_t *region
+     * }
+     */
+    public static final long region$offset() {
+        return region$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * cairo_region_t *region
+     * }
+     */
+    public static MemorySegment region(MemorySegment struct) {
+        return struct.get(region$LAYOUT, region$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * cairo_region_t *region
+     * }
+     */
+    public static void region(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(region$LAYOUT, region$OFFSET, fieldValue);
+    }
+
+    private static final OfInt count$LAYOUT = (OfInt)$LAYOUT.select(groupElement("count"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint count
+     * }
+     */
+    public static final OfInt count$layout() {
+        return count$LAYOUT;
+    }
+
+    private static final long count$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint count
+     * }
+     */
+    public static final long count$offset() {
+        return count$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint count
+     * }
+     */
+    public static int count(MemorySegment struct) {
+        return struct.get(count$LAYOUT, count$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint count
+     * }
+     */
+    public static void count(MemorySegment struct, int fieldValue) {
+        struct.set(count$LAYOUT, count$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

@@ -3,28 +3,61 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
 import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
+
 /**
- * {@snippet :
- * int (*hb_buffer_message_func_t)(struct hb_buffer_t* buffer,struct hb_font_t* font,char* message,void* user_data);
+ * {@snippet lang=c :
+ * typedef hb_bool_t (*hb_buffer_message_func_t)(hb_buffer_t *, hb_font_t *, const char *, void *)
  * }
  */
-public interface hb_buffer_message_func_t {
+public class hb_buffer_message_func_t {
 
-    int apply(java.lang.foreign.MemorySegment completion, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(hb_buffer_message_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1517.const$3, fi, constants$34.const$5, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment buffer, MemorySegment font, MemorySegment message, MemorySegment user_data);
     }
-    static hb_buffer_message_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _completion, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                return (int)constants$382.const$0.invokeExact(symbol, _completion, _key, _iter, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(hb_buffer_message_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(hb_buffer_message_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment buffer, MemorySegment font, MemorySegment message, MemorySegment user_data) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, buffer, font, message, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GTimeVal GTimeVal;
+ * {@snippet lang=c :
+ * typedef struct _GTimeVal GTimeVal
  * }
  */
-public final class GTimeVal extends _GTimeVal {
+public class GTimeVal extends _GTimeVal {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTimeVal() {}
+    GTimeVal() {
+        // Should not be called directly
+    }
 }
-
 

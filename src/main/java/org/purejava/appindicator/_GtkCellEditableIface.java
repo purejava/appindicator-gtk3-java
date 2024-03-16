@@ -2,194 +2,412 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkCellEditableIface {
- *     struct _GTypeInterface g_iface;
- *     void (*editing_done)(struct _GtkCellEditable*);
- *     void (*remove_widget)(struct _GtkCellEditable*);
- *     void (*start_editing)(struct _GtkCellEditable*,union _GdkEvent*);
- * };
+ *     GTypeInterface g_iface;
+ *     void (*editing_done)(GtkCellEditable *);
+ *     void (*remove_widget)(GtkCellEditable *);
+ *     void (*start_editing)(GtkCellEditable *, GdkEvent *);
+ * }
  * }
  */
 public class _GtkCellEditableIface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2306.const$0;
+    _GtkCellEditableIface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("editing_done"),
+        app_indicator_h.C_POINTER.withName("remove_widget"),
+        app_indicator_h.C_POINTER.withName("start_editing")
+    ).withName("_GtkCellEditableIface");
+
     /**
-     * {@snippet :
- * void (*editing_done)(struct _GtkCellEditable*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface editing_done {
-
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(editing_done fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2306.const$1, fi, constants$13.const$1, scope);
-        }
-        static editing_done ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle editing_done$VH() {
-        return constants$2306.const$2;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*editing_done)(struct _GtkCellEditable*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment editing_done$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2306.const$2.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*editing_done)(struct _GtkCellEditable*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void editing_done$set(MemorySegment seg, MemorySegment x) {
-        constants$2306.const$2.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment editing_done$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2306.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void editing_done$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2306.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static editing_done editing_done(MemorySegment segment, Arena scope) {
-        return editing_done.ofAddress(editing_done$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*remove_widget)(struct _GtkCellEditable*);
+     * {@snippet lang=c :
+     * void (*editing_done)(GtkCellEditable *)
      * }
      */
-    public interface remove_widget {
+    public class editing_done {
 
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(remove_widget fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2306.const$3, fi, constants$13.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static remove_widget ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(editing_done.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(editing_done.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle remove_widget$VH() {
-        return constants$2306.const$4;
+    private static final AddressLayout editing_done$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("editing_done"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*editing_done)(GtkCellEditable *)
+     * }
+     */
+    public static final AddressLayout editing_done$layout() {
+        return editing_done$LAYOUT;
     }
+
+    private static final long editing_done$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*editing_done)(GtkCellEditable *)
+     * }
+     */
+    public static final long editing_done$offset() {
+        return editing_done$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*remove_widget)(struct _GtkCellEditable*);
+     * {@snippet lang=c :
+     * void (*editing_done)(GtkCellEditable *)
      * }
      */
-    public static MemorySegment remove_widget$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2306.const$4.get(seg);
+    public static MemorySegment editing_done(MemorySegment struct) {
+        return struct.get(editing_done$LAYOUT, editing_done$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*remove_widget)(struct _GtkCellEditable*);
+     * {@snippet lang=c :
+     * void (*editing_done)(GtkCellEditable *)
      * }
      */
-    public static void remove_widget$set(MemorySegment seg, MemorySegment x) {
-        constants$2306.const$4.set(seg, x);
+    public static void editing_done(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(editing_done$LAYOUT, editing_done$OFFSET, fieldValue);
     }
-    public static MemorySegment remove_widget$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2306.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void remove_widget$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2306.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static remove_widget remove_widget(MemorySegment segment, Arena scope) {
-        return remove_widget.ofAddress(remove_widget$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*start_editing)(struct _GtkCellEditable*,union _GdkEvent*);
+     * {@snippet lang=c :
+     * void (*remove_widget)(GtkCellEditable *)
      * }
      */
-    public interface start_editing {
+    public class remove_widget {
 
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(start_editing fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2306.const$5, fi, constants$13.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static start_editing ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(remove_widget.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(remove_widget.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle start_editing$VH() {
-        return constants$2307.const$0;
+    private static final AddressLayout remove_widget$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remove_widget"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*remove_widget)(GtkCellEditable *)
+     * }
+     */
+    public static final AddressLayout remove_widget$layout() {
+        return remove_widget$LAYOUT;
     }
+
+    private static final long remove_widget$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*remove_widget)(GtkCellEditable *)
+     * }
+     */
+    public static final long remove_widget$offset() {
+        return remove_widget$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*start_editing)(struct _GtkCellEditable*,union _GdkEvent*);
+     * {@snippet lang=c :
+     * void (*remove_widget)(GtkCellEditable *)
      * }
      */
-    public static MemorySegment start_editing$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2307.const$0.get(seg);
+    public static MemorySegment remove_widget(MemorySegment struct) {
+        return struct.get(remove_widget$LAYOUT, remove_widget$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*start_editing)(struct _GtkCellEditable*,union _GdkEvent*);
+     * {@snippet lang=c :
+     * void (*remove_widget)(GtkCellEditable *)
      * }
      */
-    public static void start_editing$set(MemorySegment seg, MemorySegment x) {
-        constants$2307.const$0.set(seg, x);
+    public static void remove_widget(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(remove_widget$LAYOUT, remove_widget$OFFSET, fieldValue);
     }
-    public static MemorySegment start_editing$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2307.const$0.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * void (*start_editing)(GtkCellEditable *, GdkEvent *)
+     * }
+     */
+    public class start_editing {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(start_editing.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(start_editing.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void start_editing$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2307.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout start_editing$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("start_editing"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*start_editing)(GtkCellEditable *, GdkEvent *)
+     * }
+     */
+    public static final AddressLayout start_editing$layout() {
+        return start_editing$LAYOUT;
     }
-    public static start_editing start_editing(MemorySegment segment, Arena scope) {
-        return start_editing.ofAddress(start_editing$get(segment), scope);
+
+    private static final long start_editing$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*start_editing)(GtkCellEditable *, GdkEvent *)
+     * }
+     */
+    public static final long start_editing$offset() {
+        return start_editing$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*start_editing)(GtkCellEditable *, GdkEvent *)
+     * }
+     */
+    public static MemorySegment start_editing(MemorySegment struct) {
+        return struct.get(start_editing$LAYOUT, start_editing$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*start_editing)(GtkCellEditable *, GdkEvent *)
+     * }
+     */
+    public static void start_editing(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(start_editing$LAYOUT, start_editing$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

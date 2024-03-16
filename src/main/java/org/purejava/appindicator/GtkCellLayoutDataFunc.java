@@ -2,29 +2,66 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * void (*GtkCellLayoutDataFunc)(struct _GtkCellLayout* cell_layout,struct _GtkCellRenderer* cell,struct _GtkTreeModel* tree_model,struct _GtkTreeIter* iter,void* data);
+ * {@snippet lang=c :
+ * typedef void (*GtkCellLayoutDataFunc)(GtkCellLayout *, GtkCellRenderer *, GtkTreeModel *, GtkTreeIter *, gpointer)
  * }
  */
-public interface GtkCellLayoutDataFunc {
+public class GtkCellLayoutDataFunc {
 
-    void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GtkCellLayoutDataFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2574.const$0, fi, constants$331.const$1, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        void apply(MemorySegment cell_layout, MemorySegment cell, MemorySegment tree_model, MemorySegment iter, MemorySegment data);
     }
-    static GtkCellLayoutDataFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
-            try {
-                constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GtkCellLayoutDataFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GtkCellLayoutDataFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static void invoke(MemorySegment funcPtr,MemorySegment cell_layout, MemorySegment cell, MemorySegment tree_model, MemorySegment iter, MemorySegment data) {
+        try {
+             DOWN$MH.invokeExact(funcPtr, cell_layout, cell, tree_model, iter, data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

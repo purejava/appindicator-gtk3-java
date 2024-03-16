@@ -2,15 +2,29 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _AtkPropertyValues AtkPropertyValues;
+ * {@snippet lang=c :
+ * typedef struct _AtkPropertyValues {
+ *     const gchar *property_name;
+ *     GValue old_value;
+ *     GValue new_value;
+ * } AtkPropertyValues
  * }
  */
-public final class AtkPropertyValues extends _AtkPropertyValues {
+public class AtkPropertyValues extends _AtkPropertyValues {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkPropertyValues() {}
+    AtkPropertyValues() {
+        // Should not be called directly
+    }
 }
-
 

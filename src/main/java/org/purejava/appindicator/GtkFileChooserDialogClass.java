@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkFileChooserDialogClass GtkFileChooserDialogClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkFileChooserDialogClass GtkFileChooserDialogClass
  * }
  */
-public final class GtkFileChooserDialogClass extends _GtkFileChooserDialogClass {
+public class GtkFileChooserDialogClass extends _GtkFileChooserDialogClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFileChooserDialogClass() {}
+    GtkFileChooserDialogClass() {
+        // Should not be called directly
+    }
 }
-
 

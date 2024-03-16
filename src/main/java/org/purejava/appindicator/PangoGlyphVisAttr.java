@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _PangoGlyphVisAttr PangoGlyphVisAttr;
+ * {@snippet lang=c :
+ * typedef struct _PangoGlyphVisAttr PangoGlyphVisAttr
  * }
  */
-public final class PangoGlyphVisAttr extends _PangoGlyphVisAttr {
+public class PangoGlyphVisAttr extends _PangoGlyphVisAttr {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private PangoGlyphVisAttr() {}
+    PangoGlyphVisAttr() {
+        // Should not be called directly
+    }
 }
-
 

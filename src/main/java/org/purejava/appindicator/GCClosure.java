@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GCClosure GCClosure;
+ * {@snippet lang=c :
+ * typedef struct _GCClosure GCClosure
  * }
  */
-public final class GCClosure extends _GCClosure {
+public class GCClosure extends _GCClosure {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GCClosure() {}
+    GCClosure() {
+        // Should not be called directly
+    }
 }
-
 

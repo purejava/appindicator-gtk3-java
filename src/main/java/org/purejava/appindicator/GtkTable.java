@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkTable GtkTable;
+ * {@snippet lang=c :
+ * typedef struct _GtkTable GtkTable
  * }
  */
-public final class GtkTable extends _GtkTable {
+public class GtkTable extends _GtkTable {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkTable() {}
+    GtkTable() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GdkGeometry GdkGeometry;
+ * {@snippet lang=c :
+ * typedef struct _GdkGeometry GdkGeometry
  * }
  */
-public final class GdkGeometry extends _GdkGeometry {
+public class GdkGeometry extends _GdkGeometry {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GdkGeometry() {}
+    GdkGeometry() {
+        // Should not be called directly
+    }
 }
-
 

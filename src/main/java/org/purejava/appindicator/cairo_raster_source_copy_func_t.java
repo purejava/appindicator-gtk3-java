@@ -2,29 +2,65 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * enum _cairo_status (*cairo_raster_source_copy_func_t)(struct _cairo_pattern* pattern,void* callback_data,struct _cairo_pattern* other);
+ * {@snippet lang=c :
+ * typedef cairo_status_t (*cairo_raster_source_copy_func_t)(cairo_pattern_t *, void *, const cairo_pattern_t *)
  * }
  */
-public interface cairo_raster_source_copy_func_t {
+public class cairo_raster_source_copy_func_t {
 
-    int apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment other);
-    static MemorySegment allocate(cairo_raster_source_copy_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1737.const$2, fi, constants$12.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment pattern, MemorySegment callback_data, MemorySegment other);
     }
-    static cairo_raster_source_copy_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _other) -> {
-            try {
-                return (int)constants$12.const$4.invokeExact(symbol, _pattern, _callback_data, _other);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(cairo_raster_source_copy_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(cairo_raster_source_copy_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment pattern, MemorySegment callback_data, MemorySegment other) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, pattern, callback_data, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

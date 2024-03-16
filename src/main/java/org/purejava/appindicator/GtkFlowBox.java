@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkFlowBox GtkFlowBox;
+ * {@snippet lang=c :
+ * typedef struct _GtkFlowBox GtkFlowBox
  * }
  */
-public final class GtkFlowBox extends _GtkFlowBox {
+public class GtkFlowBox extends _GtkFlowBox {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFlowBox() {}
+    GtkFlowBox() {
+        // Should not be called directly
+    }
 }
-
 

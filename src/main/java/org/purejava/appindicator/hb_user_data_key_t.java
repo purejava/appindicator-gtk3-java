@@ -2,56 +2,126 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct hb_user_data_key_t {
  *     char unused;
- * };
+ * }
  * }
  */
 public class hb_user_data_key_t {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1416.const$5;
+    hb_user_data_key_t() {
+        // Should not be called directly
     }
-    public static VarHandle unused$VH() {
-        return constants$1417.const$0;
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_CHAR.withName("unused")
+    ).withName("hb_user_data_key_t");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
+
+    private static final OfByte unused$LAYOUT = (OfByte)$LAYOUT.select(groupElement("unused"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * char unused
+     * }
+     */
+    public static final OfByte unused$layout() {
+        return unused$LAYOUT;
+    }
+
+    private static final long unused$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * char unused
+     * }
+     */
+    public static final long unused$offset() {
+        return unused$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char unused;
+     * {@snippet lang=c :
+     * char unused
      * }
      */
-    public static byte unused$get(MemorySegment seg) {
-        return (byte)constants$1417.const$0.get(seg);
+    public static byte unused(MemorySegment struct) {
+        return struct.get(unused$LAYOUT, unused$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char unused;
+     * {@snippet lang=c :
+     * char unused
      * }
      */
-    public static void unused$set(MemorySegment seg, byte x) {
-        constants$1417.const$0.set(seg, x);
+    public static void unused(MemorySegment struct, byte fieldValue) {
+        struct.set(unused$LAYOUT, unused$OFFSET, fieldValue);
     }
-    public static byte unused$get(MemorySegment seg, long index) {
-        return (byte)constants$1417.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void unused$set(MemorySegment seg, long index, byte x) {
-        constants$1417.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

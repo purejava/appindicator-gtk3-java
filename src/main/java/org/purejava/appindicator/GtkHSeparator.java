@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkHSeparator GtkHSeparator;
+ * {@snippet lang=c :
+ * typedef struct _GtkHSeparator GtkHSeparator
  * }
  */
-public final class GtkHSeparator extends _GtkHSeparator {
+public class GtkHSeparator extends _GtkHSeparator {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkHSeparator() {}
+    GtkHSeparator() {
+        // Should not be called directly
+    }
 }
-
 

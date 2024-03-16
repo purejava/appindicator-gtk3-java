@@ -3,28 +3,59 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
 import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
+
 /**
- * {@snippet :
- * struct _GtkWidget* (*GtkFlowBoxCreateWidgetFunc)(void* item,void* user_data);
+ * {@snippet lang=c :
+ * typedef GtkWidget *(*GtkFlowBoxCreateWidgetFunc)(gpointer, gpointer)
  * }
  */
-public interface GtkFlowBoxCreateWidgetFunc {
+public class GtkFlowBoxCreateWidgetFunc {
 
-    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-    static MemorySegment allocate(GtkFlowBoxCreateWidgetFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2709.const$2, fi, constants$5.const$5, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        MemorySegment apply(MemorySegment item, MemorySegment user_data);
     }
-    static GtkFlowBoxCreateWidgetFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
-            try {
-                return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GtkFlowBoxCreateWidgetFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GtkFlowBoxCreateWidgetFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment item, MemorySegment user_data) {
+        try {
+            return (MemorySegment) DOWN$MH.invokeExact(funcPtr, item, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

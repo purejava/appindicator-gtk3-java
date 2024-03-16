@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GSocketListenerClass GSocketListenerClass;
+ * {@snippet lang=c :
+ * typedef struct _GSocketListenerClass GSocketListenerClass
  * }
  */
-public final class GSocketListenerClass extends _GSocketListenerClass {
+public class GSocketListenerClass extends _GSocketListenerClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GSocketListenerClass() {}
+    GSocketListenerClass() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GSocket GSocket;
+ * {@snippet lang=c :
+ * typedef struct _GSocket GSocket
  * }
  */
-public final class GSocket extends _GSocket {
+public class GSocket extends _GSocket {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GSocket() {}
+    GSocket() {
+        // Should not be called directly
+    }
 }
-
 

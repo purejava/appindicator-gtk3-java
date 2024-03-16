@@ -2,29 +2,70 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * enum _cairo_status (*cairo_user_scaled_font_text_to_glyphs_func_t)(struct _cairo_scaled_font* scaled_font,char* utf8,int utf8_len,struct cairo_glyph_t** glyphs,int* num_glyphs,struct cairo_text_cluster_t** clusters,int* num_clusters,enum _cairo_text_cluster_flags* cluster_flags);
+ * {@snippet lang=c :
+ * typedef cairo_status_t (*cairo_user_scaled_font_text_to_glyphs_func_t)(cairo_scaled_font_t *, const char *, int, cairo_glyph_t **, int *, cairo_text_cluster_t **, int *, cairo_text_cluster_flags_t *)
  * }
  */
-public interface cairo_user_scaled_font_text_to_glyphs_func_t {
+public class cairo_user_scaled_font_text_to_glyphs_func_t {
 
-    int apply(java.lang.foreign.MemorySegment scaled_font, java.lang.foreign.MemorySegment utf8, int utf8_len, java.lang.foreign.MemorySegment glyphs, java.lang.foreign.MemorySegment num_glyphs, java.lang.foreign.MemorySegment clusters, java.lang.foreign.MemorySegment num_clusters, java.lang.foreign.MemorySegment cluster_flags);
-    static MemorySegment allocate(cairo_user_scaled_font_text_to_glyphs_func_t fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$1711.const$3, fi, constants$1711.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment scaled_font, MemorySegment utf8, int utf8_len, MemorySegment glyphs, MemorySegment num_glyphs, MemorySegment clusters, MemorySegment num_clusters, MemorySegment cluster_flags);
     }
-    static cairo_user_scaled_font_text_to_glyphs_func_t ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _scaled_font, java.lang.foreign.MemorySegment _utf8, int _utf8_len, java.lang.foreign.MemorySegment _glyphs, java.lang.foreign.MemorySegment _num_glyphs, java.lang.foreign.MemorySegment _clusters, java.lang.foreign.MemorySegment _num_clusters, java.lang.foreign.MemorySegment _cluster_flags) -> {
-            try {
-                return (int)constants$1711.const$4.invokeExact(symbol, _scaled_font, _utf8, _utf8_len, _glyphs, _num_glyphs, _clusters, _num_clusters, _cluster_flags);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(cairo_user_scaled_font_text_to_glyphs_func_t.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(cairo_user_scaled_font_text_to_glyphs_func_t.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment scaled_font, MemorySegment utf8, int utf8_len, MemorySegment glyphs, MemorySegment num_glyphs, MemorySegment clusters, MemorySegment num_clusters, MemorySegment cluster_flags) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, scaled_font, utf8, utf8_len, glyphs, num_glyphs, clusters, num_clusters, cluster_flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

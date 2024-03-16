@@ -2,444 +2,678 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct hb_color_line_t {
- *     void* data;
- *     unsigned int (*get_color_stops)(struct hb_color_line_t*,void*,unsigned int,unsigned int*,struct hb_color_stop_t*,void*);
- *     void* get_color_stops_user_data;
- *     enum hb_paint_extend_t (*get_extend)(struct hb_color_line_t*,void*,void*);
- *     void* get_extend_user_data;
- *     void* reserved0;
- *     void* reserved1;
- *     void* reserved2;
- *     void* reserved3;
- *     void* reserved5;
- *     void* reserved6;
- *     void* reserved7;
- *     void* reserved8;
- * };
+ *     void *data;
+ *     hb_color_line_get_color_stops_func_t get_color_stops;
+ *     void *get_color_stops_user_data;
+ *     hb_color_line_get_extend_func_t get_extend;
+ *     void *get_extend_user_data;
+ *     void *reserved0;
+ *     void *reserved1;
+ *     void *reserved2;
+ *     void *reserved3;
+ *     void *reserved5;
+ *     void *reserved6;
+ *     void *reserved7;
+ *     void *reserved8;
+ * }
  * }
  */
 public class hb_color_line_t {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1459.const$2;
-    }
-    public static VarHandle data$VH() {
-        return constants$1459.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * void* data;
-     * }
-     */
-    public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1459.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * void* data;
-     * }
-     */
-    public static void data$set(MemorySegment seg, MemorySegment x) {
-        constants$1459.const$3.set(seg, x);
-    }
-    public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1459.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1459.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    /**
-     * {@snippet :
- * unsigned int (*get_color_stops)(struct hb_color_line_t*,void*,unsigned int,unsigned int*,struct hb_color_stop_t*,void*);
-     * }
-     */
-    public interface get_color_stops {
-
-        int apply(java.lang.foreign.MemorySegment color_line, java.lang.foreign.MemorySegment color_line_data, int start, java.lang.foreign.MemorySegment count, java.lang.foreign.MemorySegment color_stops, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_color_stops fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1459.const$4, fi, constants$1243.const$0, scope);
-        }
-        static get_color_stops ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _color_line, java.lang.foreign.MemorySegment _color_line_data, int _start, java.lang.foreign.MemorySegment _count, java.lang.foreign.MemorySegment _color_stops, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$1459.const$0.invokeExact(symbol, _color_line, _color_line_data, _start, _count, _color_stops, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    hb_color_line_t() {
+        // Should not be called directly
     }
 
-    public static VarHandle get_color_stops$VH() {
-        return constants$1459.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int (*get_color_stops)(struct hb_color_line_t*,void*,unsigned int,unsigned int*,struct hb_color_stop_t*,void*);
-     * }
-     */
-    public static MemorySegment get_color_stops$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1459.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int (*get_color_stops)(struct hb_color_line_t*,void*,unsigned int,unsigned int*,struct hb_color_stop_t*,void*);
-     * }
-     */
-    public static void get_color_stops$set(MemorySegment seg, MemorySegment x) {
-        constants$1459.const$5.set(seg, x);
-    }
-    public static MemorySegment get_color_stops$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1459.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_color_stops$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1459.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_color_stops get_color_stops(MemorySegment segment, Arena scope) {
-        return get_color_stops.ofAddress(get_color_stops$get(segment), scope);
-    }
-    public static VarHandle get_color_stops_user_data$VH() {
-        return constants$1460.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * void* get_color_stops_user_data;
-     * }
-     */
-    public static MemorySegment get_color_stops_user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * void* get_color_stops_user_data;
-     * }
-     */
-    public static void get_color_stops_user_data$set(MemorySegment seg, MemorySegment x) {
-        constants$1460.const$0.set(seg, x);
-    }
-    public static MemorySegment get_color_stops_user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_color_stops_user_data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1460.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    /**
-     * {@snippet :
- * enum hb_paint_extend_t (*get_extend)(struct hb_color_line_t*,void*,void*);
-     * }
-     */
-    public interface get_extend {
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("data"),
+        app_indicator_h.C_POINTER.withName("get_color_stops"),
+        app_indicator_h.C_POINTER.withName("get_color_stops_user_data"),
+        app_indicator_h.C_POINTER.withName("get_extend"),
+        app_indicator_h.C_POINTER.withName("get_extend_user_data"),
+        app_indicator_h.C_POINTER.withName("reserved0"),
+        app_indicator_h.C_POINTER.withName("reserved1"),
+        app_indicator_h.C_POINTER.withName("reserved2"),
+        app_indicator_h.C_POINTER.withName("reserved3"),
+        app_indicator_h.C_POINTER.withName("reserved5"),
+        app_indicator_h.C_POINTER.withName("reserved6"),
+        app_indicator_h.C_POINTER.withName("reserved7"),
+        app_indicator_h.C_POINTER.withName("reserved8")
+    ).withName("hb_color_line_t");
 
-        int apply(java.lang.foreign.MemorySegment color_line, java.lang.foreign.MemorySegment color_line_data, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_extend fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1460.const$1, fi, constants$12.const$2, scope);
-        }
-        static get_extend ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _color_line, java.lang.foreign.MemorySegment _color_line_data, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, _color_line, _color_line_data, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
 
-    public static VarHandle get_extend$VH() {
-        return constants$1460.const$2;
+    private static final AddressLayout data$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("data"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *data
+     * }
+     */
+    public static final AddressLayout data$layout() {
+        return data$LAYOUT;
     }
+
+    private static final long data$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *data
+     * }
+     */
+    public static final long data$offset() {
+        return data$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum hb_paint_extend_t (*get_extend)(struct hb_color_line_t*,void*,void*);
+     * {@snippet lang=c :
+     * void *data
      * }
      */
-    public static MemorySegment get_extend$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$2.get(seg);
+    public static MemorySegment data(MemorySegment struct) {
+        return struct.get(data$LAYOUT, data$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum hb_paint_extend_t (*get_extend)(struct hb_color_line_t*,void*,void*);
+     * {@snippet lang=c :
+     * void *data
      * }
      */
-    public static void get_extend$set(MemorySegment seg, MemorySegment x) {
-        constants$1460.const$2.set(seg, x);
+    public static void data(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(data$LAYOUT, data$OFFSET, fieldValue);
     }
-    public static MemorySegment get_extend$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$2.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout get_color_stops$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_color_stops"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_color_line_get_color_stops_func_t get_color_stops
+     * }
+     */
+    public static final AddressLayout get_color_stops$layout() {
+        return get_color_stops$LAYOUT;
     }
-    public static void get_extend$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1460.const$2.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long get_color_stops$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_color_line_get_color_stops_func_t get_color_stops
+     * }
+     */
+    public static final long get_color_stops$offset() {
+        return get_color_stops$OFFSET;
     }
-    public static get_extend get_extend(MemorySegment segment, Arena scope) {
-        return get_extend.ofAddress(get_extend$get(segment), scope);
-    }
-    public static VarHandle get_extend_user_data$VH() {
-        return constants$1460.const$3;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* get_extend_user_data;
+     * {@snippet lang=c :
+     * hb_color_line_get_color_stops_func_t get_color_stops
      * }
      */
-    public static MemorySegment get_extend_user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$3.get(seg);
+    public static MemorySegment get_color_stops(MemorySegment struct) {
+        return struct.get(get_color_stops$LAYOUT, get_color_stops$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* get_extend_user_data;
+     * {@snippet lang=c :
+     * hb_color_line_get_color_stops_func_t get_color_stops
      * }
      */
-    public static void get_extend_user_data$set(MemorySegment seg, MemorySegment x) {
-        constants$1460.const$3.set(seg, x);
+    public static void get_color_stops(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_color_stops$LAYOUT, get_color_stops$OFFSET, fieldValue);
     }
-    public static MemorySegment get_extend_user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$3.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout get_color_stops_user_data$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_color_stops_user_data"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *get_color_stops_user_data
+     * }
+     */
+    public static final AddressLayout get_color_stops_user_data$layout() {
+        return get_color_stops_user_data$LAYOUT;
     }
-    public static void get_extend_user_data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1460.const$3.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long get_color_stops_user_data$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *get_color_stops_user_data
+     * }
+     */
+    public static final long get_color_stops_user_data$offset() {
+        return get_color_stops_user_data$OFFSET;
     }
-    public static VarHandle reserved0$VH() {
-        return constants$1460.const$4;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* reserved0;
+     * {@snippet lang=c :
+     * void *get_color_stops_user_data
      * }
      */
-    public static MemorySegment reserved0$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$4.get(seg);
+    public static MemorySegment get_color_stops_user_data(MemorySegment struct) {
+        return struct.get(get_color_stops_user_data$LAYOUT, get_color_stops_user_data$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* reserved0;
+     * {@snippet lang=c :
+     * void *get_color_stops_user_data
      * }
      */
-    public static void reserved0$set(MemorySegment seg, MemorySegment x) {
-        constants$1460.const$4.set(seg, x);
+    public static void get_color_stops_user_data(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_color_stops_user_data$LAYOUT, get_color_stops_user_data$OFFSET, fieldValue);
     }
-    public static MemorySegment reserved0$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$4.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout get_extend$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_extend"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_color_line_get_extend_func_t get_extend
+     * }
+     */
+    public static final AddressLayout get_extend$layout() {
+        return get_extend$LAYOUT;
     }
-    public static void reserved0$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1460.const$4.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long get_extend$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_color_line_get_extend_func_t get_extend
+     * }
+     */
+    public static final long get_extend$offset() {
+        return get_extend$OFFSET;
     }
-    public static VarHandle reserved1$VH() {
-        return constants$1460.const$5;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* reserved1;
+     * {@snippet lang=c :
+     * hb_color_line_get_extend_func_t get_extend
      * }
      */
-    public static MemorySegment reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$5.get(seg);
+    public static MemorySegment get_extend(MemorySegment struct) {
+        return struct.get(get_extend$LAYOUT, get_extend$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* reserved1;
+     * {@snippet lang=c :
+     * hb_color_line_get_extend_func_t get_extend
      * }
      */
-    public static void reserved1$set(MemorySegment seg, MemorySegment x) {
-        constants$1460.const$5.set(seg, x);
+    public static void get_extend(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_extend$LAYOUT, get_extend$OFFSET, fieldValue);
     }
-    public static MemorySegment reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1460.const$5.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout get_extend_user_data$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_extend_user_data"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *get_extend_user_data
+     * }
+     */
+    public static final AddressLayout get_extend_user_data$layout() {
+        return get_extend_user_data$LAYOUT;
     }
-    public static void reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1460.const$5.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long get_extend_user_data$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *get_extend_user_data
+     * }
+     */
+    public static final long get_extend_user_data$offset() {
+        return get_extend_user_data$OFFSET;
     }
-    public static VarHandle reserved2$VH() {
-        return constants$1461.const$0;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* reserved2;
+     * {@snippet lang=c :
+     * void *get_extend_user_data
      * }
      */
-    public static MemorySegment reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$0.get(seg);
+    public static MemorySegment get_extend_user_data(MemorySegment struct) {
+        return struct.get(get_extend_user_data$LAYOUT, get_extend_user_data$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* reserved2;
+     * {@snippet lang=c :
+     * void *get_extend_user_data
      * }
      */
-    public static void reserved2$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$0.set(seg, x);
+    public static void get_extend_user_data(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_extend_user_data$LAYOUT, get_extend_user_data$OFFSET, fieldValue);
     }
-    public static MemorySegment reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$0.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout reserved0$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reserved0"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *reserved0
+     * }
+     */
+    public static final AddressLayout reserved0$layout() {
+        return reserved0$LAYOUT;
     }
-    public static void reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long reserved0$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *reserved0
+     * }
+     */
+    public static final long reserved0$offset() {
+        return reserved0$OFFSET;
     }
-    public static VarHandle reserved3$VH() {
-        return constants$1461.const$1;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* reserved3;
+     * {@snippet lang=c :
+     * void *reserved0
      * }
      */
-    public static MemorySegment reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$1.get(seg);
+    public static MemorySegment reserved0(MemorySegment struct) {
+        return struct.get(reserved0$LAYOUT, reserved0$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* reserved3;
+     * {@snippet lang=c :
+     * void *reserved0
      * }
      */
-    public static void reserved3$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$1.set(seg, x);
+    public static void reserved0(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(reserved0$LAYOUT, reserved0$OFFSET, fieldValue);
     }
-    public static MemorySegment reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$1.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout reserved1$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reserved1"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *reserved1
+     * }
+     */
+    public static final AddressLayout reserved1$layout() {
+        return reserved1$LAYOUT;
     }
-    public static void reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long reserved1$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *reserved1
+     * }
+     */
+    public static final long reserved1$offset() {
+        return reserved1$OFFSET;
     }
-    public static VarHandle reserved5$VH() {
-        return constants$1461.const$2;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* reserved5;
+     * {@snippet lang=c :
+     * void *reserved1
      * }
      */
-    public static MemorySegment reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$2.get(seg);
+    public static MemorySegment reserved1(MemorySegment struct) {
+        return struct.get(reserved1$LAYOUT, reserved1$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* reserved5;
+     * {@snippet lang=c :
+     * void *reserved1
      * }
      */
-    public static void reserved5$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$2.set(seg, x);
+    public static void reserved1(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(reserved1$LAYOUT, reserved1$OFFSET, fieldValue);
     }
-    public static MemorySegment reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$2.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout reserved2$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reserved2"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *reserved2
+     * }
+     */
+    public static final AddressLayout reserved2$layout() {
+        return reserved2$LAYOUT;
     }
-    public static void reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$2.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long reserved2$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *reserved2
+     * }
+     */
+    public static final long reserved2$offset() {
+        return reserved2$OFFSET;
     }
-    public static VarHandle reserved6$VH() {
-        return constants$1461.const$3;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* reserved6;
+     * {@snippet lang=c :
+     * void *reserved2
      * }
      */
-    public static MemorySegment reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$3.get(seg);
+    public static MemorySegment reserved2(MemorySegment struct) {
+        return struct.get(reserved2$LAYOUT, reserved2$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* reserved6;
+     * {@snippet lang=c :
+     * void *reserved2
      * }
      */
-    public static void reserved6$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$3.set(seg, x);
+    public static void reserved2(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(reserved2$LAYOUT, reserved2$OFFSET, fieldValue);
     }
-    public static MemorySegment reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$3.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout reserved3$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reserved3"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *reserved3
+     * }
+     */
+    public static final AddressLayout reserved3$layout() {
+        return reserved3$LAYOUT;
     }
-    public static void reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$3.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long reserved3$OFFSET = 64;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *reserved3
+     * }
+     */
+    public static final long reserved3$offset() {
+        return reserved3$OFFSET;
     }
-    public static VarHandle reserved7$VH() {
-        return constants$1461.const$4;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* reserved7;
+     * {@snippet lang=c :
+     * void *reserved3
      * }
      */
-    public static MemorySegment reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$4.get(seg);
+    public static MemorySegment reserved3(MemorySegment struct) {
+        return struct.get(reserved3$LAYOUT, reserved3$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* reserved7;
+     * {@snippet lang=c :
+     * void *reserved3
      * }
      */
-    public static void reserved7$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$4.set(seg, x);
+    public static void reserved3(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(reserved3$LAYOUT, reserved3$OFFSET, fieldValue);
     }
-    public static MemorySegment reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$4.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout reserved5$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reserved5"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *reserved5
+     * }
+     */
+    public static final AddressLayout reserved5$layout() {
+        return reserved5$LAYOUT;
     }
-    public static void reserved7$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$4.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long reserved5$OFFSET = 72;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *reserved5
+     * }
+     */
+    public static final long reserved5$offset() {
+        return reserved5$OFFSET;
     }
-    public static VarHandle reserved8$VH() {
-        return constants$1461.const$5;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* reserved8;
+     * {@snippet lang=c :
+     * void *reserved5
      * }
      */
-    public static MemorySegment reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$5.get(seg);
+    public static MemorySegment reserved5(MemorySegment struct) {
+        return struct.get(reserved5$LAYOUT, reserved5$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* reserved8;
+     * {@snippet lang=c :
+     * void *reserved5
      * }
      */
-    public static void reserved8$set(MemorySegment seg, MemorySegment x) {
-        constants$1461.const$5.set(seg, x);
+    public static void reserved5(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(reserved5$LAYOUT, reserved5$OFFSET, fieldValue);
     }
-    public static MemorySegment reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1461.const$5.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout reserved6$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reserved6"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *reserved6
+     * }
+     */
+    public static final AddressLayout reserved6$layout() {
+        return reserved6$LAYOUT;
     }
-    public static void reserved8$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1461.const$5.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long reserved6$OFFSET = 80;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *reserved6
+     * }
+     */
+    public static final long reserved6$offset() {
+        return reserved6$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void *reserved6
+     * }
+     */
+    public static MemorySegment reserved6(MemorySegment struct) {
+        return struct.get(reserved6$LAYOUT, reserved6$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void *reserved6
+     * }
+     */
+    public static void reserved6(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(reserved6$LAYOUT, reserved6$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout reserved7$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reserved7"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *reserved7
+     * }
+     */
+    public static final AddressLayout reserved7$layout() {
+        return reserved7$LAYOUT;
+    }
+
+    private static final long reserved7$OFFSET = 88;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *reserved7
+     * }
+     */
+    public static final long reserved7$offset() {
+        return reserved7$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void *reserved7
+     * }
+     */
+    public static MemorySegment reserved7(MemorySegment struct) {
+        return struct.get(reserved7$LAYOUT, reserved7$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void *reserved7
+     * }
+     */
+    public static void reserved7(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(reserved7$LAYOUT, reserved7$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout reserved8$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reserved8"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *reserved8
+     * }
+     */
+    public static final AddressLayout reserved8$layout() {
+        return reserved8$LAYOUT;
+    }
+
+    private static final long reserved8$OFFSET = 96;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *reserved8
+     * }
+     */
+    public static final long reserved8$offset() {
+        return reserved8$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void *reserved8
+     * }
+     */
+    public static MemorySegment reserved8(MemorySegment struct) {
+        return struct.get(reserved8$LAYOUT, reserved8$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void *reserved8
+     * }
+     */
+    public static void reserved8(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(reserved8$LAYOUT, reserved8$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkFileChooserButtonClass GtkFileChooserButtonClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkFileChooserButtonClass GtkFileChooserButtonClass
  * }
  */
-public final class GtkFileChooserButtonClass extends _GtkFileChooserButtonClass {
+public class GtkFileChooserButtonClass extends _GtkFileChooserButtonClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFileChooserButtonClass() {}
+    GtkFileChooserButtonClass() {
+        // Should not be called directly
+    }
 }
-
 

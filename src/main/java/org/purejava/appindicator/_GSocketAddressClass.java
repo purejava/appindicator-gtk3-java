@@ -2,194 +2,417 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GSocketAddressClass {
- *     struct _GObjectClass parent_class;
- *     enum GSocketFamily (*get_family)(struct _GSocketAddress*);
- *     long (*get_native_size)(struct _GSocketAddress*);
- *     int (*to_native)(struct _GSocketAddress*,void*,unsigned long,struct _GError**);
- * };
+ *     GObjectClass parent_class;
+ *     GSocketFamily (*get_family)(GSocketAddress *);
+ *     gssize (*get_native_size)(GSocketAddress *);
+ *     gboolean (*to_native)(GSocketAddress *, gpointer, gsize, GError **);
+ * }
  * }
  */
 public class _GSocketAddressClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1104.const$0;
+    _GSocketAddressClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 136);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObjectClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("get_family"),
+        app_indicator_h.C_POINTER.withName("get_native_size"),
+        app_indicator_h.C_POINTER.withName("to_native")
+    ).withName("_GSocketAddressClass");
+
     /**
-     * {@snippet :
- * enum GSocketFamily (*get_family)(struct _GSocketAddress*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public interface get_family {
-
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_family fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1104.const$1, fi, constants$10.const$5, scope);
-        }
-        static get_family ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, __x0);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle get_family$VH() {
-        return constants$1104.const$2;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GSocketFamily (*get_family)(struct _GSocketAddress*);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static MemorySegment get_family$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1104.const$2.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GSocketFamily (*get_family)(struct _GSocketAddress*);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static void get_family$set(MemorySegment seg, MemorySegment x) {
-        constants$1104.const$2.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment get_family$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1104.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_family$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1104.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_family get_family(MemorySegment segment, Arena scope) {
-        return get_family.ofAddress(get_family$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * long (*get_native_size)(struct _GSocketAddress*);
+     * {@snippet lang=c :
+     * GSocketFamily (*get_family)(GSocketAddress *)
      * }
      */
-    public interface get_native_size {
+    public class get_family {
 
-        long apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_native_size fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1104.const$3, fi, constants$4.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static get_native_size ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0) -> {
-                try {
-                    return (long)constants$1065.const$3.invokeExact(symbol, __x0);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_family.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_family.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_native_size$VH() {
-        return constants$1104.const$4;
+    private static final AddressLayout get_family$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_family"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GSocketFamily (*get_family)(GSocketAddress *)
+     * }
+     */
+    public static final AddressLayout get_family$layout() {
+        return get_family$LAYOUT;
     }
+
+    private static final long get_family$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GSocketFamily (*get_family)(GSocketAddress *)
+     * }
+     */
+    public static final long get_family$offset() {
+        return get_family$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * long (*get_native_size)(struct _GSocketAddress*);
+     * {@snippet lang=c :
+     * GSocketFamily (*get_family)(GSocketAddress *)
      * }
      */
-    public static MemorySegment get_native_size$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1104.const$4.get(seg);
+    public static MemorySegment get_family(MemorySegment struct) {
+        return struct.get(get_family$LAYOUT, get_family$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * long (*get_native_size)(struct _GSocketAddress*);
+     * {@snippet lang=c :
+     * GSocketFamily (*get_family)(GSocketAddress *)
      * }
      */
-    public static void get_native_size$set(MemorySegment seg, MemorySegment x) {
-        constants$1104.const$4.set(seg, x);
+    public static void get_family(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_family$LAYOUT, get_family$OFFSET, fieldValue);
     }
-    public static MemorySegment get_native_size$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1104.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_native_size$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1104.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_native_size get_native_size(MemorySegment segment, Arena scope) {
-        return get_native_size.ofAddress(get_native_size$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*to_native)(struct _GSocketAddress*,void*,unsigned long,struct _GError**);
+     * {@snippet lang=c :
+     * gssize (*get_native_size)(GSocketAddress *)
      * }
      */
-    public interface to_native {
+    public class get_native_size {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(to_native fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1104.const$5, fi, constants$27.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            long apply(MemorySegment _x0);
         }
-        static to_native ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3) -> {
-                try {
-                    return (int)constants$1105.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_native_size.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_native_size.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static long invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (long) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle to_native$VH() {
-        return constants$1105.const$1;
+    private static final AddressLayout get_native_size$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_native_size"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gssize (*get_native_size)(GSocketAddress *)
+     * }
+     */
+    public static final AddressLayout get_native_size$layout() {
+        return get_native_size$LAYOUT;
     }
+
+    private static final long get_native_size$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gssize (*get_native_size)(GSocketAddress *)
+     * }
+     */
+    public static final long get_native_size$offset() {
+        return get_native_size$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*to_native)(struct _GSocketAddress*,void*,unsigned long,struct _GError**);
+     * {@snippet lang=c :
+     * gssize (*get_native_size)(GSocketAddress *)
      * }
      */
-    public static MemorySegment to_native$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1105.const$1.get(seg);
+    public static MemorySegment get_native_size(MemorySegment struct) {
+        return struct.get(get_native_size$LAYOUT, get_native_size$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*to_native)(struct _GSocketAddress*,void*,unsigned long,struct _GError**);
+     * {@snippet lang=c :
+     * gssize (*get_native_size)(GSocketAddress *)
      * }
      */
-    public static void to_native$set(MemorySegment seg, MemorySegment x) {
-        constants$1105.const$1.set(seg, x);
+    public static void get_native_size(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_native_size$LAYOUT, get_native_size$OFFSET, fieldValue);
     }
-    public static MemorySegment to_native$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1105.const$1.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * gboolean (*to_native)(GSocketAddress *, gpointer, gsize, GError **)
+     * }
+     */
+    public class to_native {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(to_native.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(to_native.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void to_native$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1105.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout to_native$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("to_native"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*to_native)(GSocketAddress *, gpointer, gsize, GError **)
+     * }
+     */
+    public static final AddressLayout to_native$layout() {
+        return to_native$LAYOUT;
     }
-    public static to_native to_native(MemorySegment segment, Arena scope) {
-        return to_native.ofAddress(to_native$get(segment), scope);
+
+    private static final long to_native$OFFSET = 152;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*to_native)(GSocketAddress *, gpointer, gsize, GError **)
+     * }
+     */
+    public static final long to_native$offset() {
+        return to_native$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean (*to_native)(GSocketAddress *, gpointer, gsize, GError **)
+     * }
+     */
+    public static MemorySegment to_native(MemorySegment struct) {
+        return struct.get(to_native$LAYOUT, to_native$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean (*to_native)(GSocketAddress *, gpointer, gsize, GError **)
+     * }
+     */
+    public static void to_native(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(to_native$LAYOUT, to_native$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

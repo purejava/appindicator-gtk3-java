@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkSeparatorToolItemClass GtkSeparatorToolItemClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkSeparatorToolItemClass GtkSeparatorToolItemClass
  * }
  */
-public final class GtkSeparatorToolItemClass extends _GtkSeparatorToolItemClass {
+public class GtkSeparatorToolItemClass extends _GtkSeparatorToolItemClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkSeparatorToolItemClass() {}
+    GtkSeparatorToolItemClass() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GTuples GTuples;
+ * {@snippet lang=c :
+ * typedef struct _GTuples GTuples
  * }
  */
-public final class GTuples extends _GTuples {
+public class GTuples extends _GTuples {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTuples() {}
+    GTuples() {
+        // Should not be called directly
+    }
 }
-
 

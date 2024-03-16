@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GSocketControlMessageClass GSocketControlMessageClass;
+ * {@snippet lang=c :
+ * typedef struct _GSocketControlMessageClass GSocketControlMessageClass
  * }
  */
-public final class GSocketControlMessageClass extends _GSocketControlMessageClass {
+public class GSocketControlMessageClass extends _GSocketControlMessageClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GSocketControlMessageClass() {}
+    GSocketControlMessageClass() {
+        // Should not be called directly
+    }
 }
-
 

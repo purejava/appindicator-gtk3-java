@@ -2,15 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _cairo_rectangle cairo_rectangle_t;
+ * {@snippet lang=c :
+ * typedef struct _cairo_rectangle {
+ *     double x;
+ *     double y;
+ *     double width;
+ *     double height;
+ * } cairo_rectangle_t
  * }
  */
-public final class cairo_rectangle_t extends _cairo_rectangle {
+public class cairo_rectangle_t extends _cairo_rectangle {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private cairo_rectangle_t() {}
+    cairo_rectangle_t() {
+        // Should not be called directly
+    }
 }
-
 

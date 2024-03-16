@@ -2,35 +2,242 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * struct __pthread_unwind_buf_t {
+ * {@snippet lang=c :
+ * struct {
  *     struct __cancel_jmp_buf_tag __cancel_jmp_buf[1];
- *     void* __pad[4];
- * };
+ *     void *__pad[4];
+ * }
  * }
  */
 public class __pthread_unwind_buf_t {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$523.const$2;
+    __pthread_unwind_buf_t() {
+        // Should not be called directly
     }
-    public static MemorySegment __cancel_jmp_buf$slice(MemorySegment seg) {
-        return seg.asSlice(0, 184);
-    }
-    public static MemorySegment __pad$slice(MemorySegment seg) {
-        return seg.asSlice(184, 32);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(1, __cancel_jmp_buf_tag.layout()).withName("__cancel_jmp_buf"),
+        MemoryLayout.sequenceLayout(4, app_indicator_h.C_POINTER).withName("__pad")
+    ).withName("$anon$544:9");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final SequenceLayout __cancel_jmp_buf$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("__cancel_jmp_buf"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * struct __cancel_jmp_buf_tag __cancel_jmp_buf[1]
+     * }
+     */
+    public static final SequenceLayout __cancel_jmp_buf$layout() {
+        return __cancel_jmp_buf$LAYOUT;
+    }
+
+    private static final long __cancel_jmp_buf$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * struct __cancel_jmp_buf_tag __cancel_jmp_buf[1]
+     * }
+     */
+    public static final long __cancel_jmp_buf$offset() {
+        return __cancel_jmp_buf$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * struct __cancel_jmp_buf_tag __cancel_jmp_buf[1]
+     * }
+     */
+    public static MemorySegment __cancel_jmp_buf(MemorySegment struct) {
+        return struct.asSlice(__cancel_jmp_buf$OFFSET, __cancel_jmp_buf$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * struct __cancel_jmp_buf_tag __cancel_jmp_buf[1]
+     * }
+     */
+    public static void __cancel_jmp_buf(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, __cancel_jmp_buf$OFFSET, __cancel_jmp_buf$LAYOUT.byteSize());
+    }
+
+    private static long[] __cancel_jmp_buf$DIMS = { 1 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * struct __cancel_jmp_buf_tag __cancel_jmp_buf[1]
+     * }
+     */
+    public static long[] __cancel_jmp_buf$dimensions() {
+        return __cancel_jmp_buf$DIMS;
+    }
+    private static final MethodHandle __cancel_jmp_buf$ELEM_HANDLE = __cancel_jmp_buf$LAYOUT.sliceHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * struct __cancel_jmp_buf_tag __cancel_jmp_buf[1]
+     * }
+     */
+    public static MemorySegment __cancel_jmp_buf(MemorySegment struct, long index0) {
+        try {
+            return (MemorySegment)__cancel_jmp_buf$ELEM_HANDLE.invokeExact(struct, 0L, index0);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * struct __cancel_jmp_buf_tag __cancel_jmp_buf[1]
+     * }
+     */
+    public static void __cancel_jmp_buf(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, __cancel_jmp_buf(struct, index0), 0L, __cancel_jmp_buf_tag.layout().byteSize());
+    }
+
+    private static final SequenceLayout __pad$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("__pad"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *__pad[4]
+     * }
+     */
+    public static final SequenceLayout __pad$layout() {
+        return __pad$LAYOUT;
+    }
+
+    private static final long __pad$OFFSET = 184;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *__pad[4]
+     * }
+     */
+    public static final long __pad$offset() {
+        return __pad$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void *__pad[4]
+     * }
+     */
+    public static MemorySegment __pad(MemorySegment struct) {
+        return struct.asSlice(__pad$OFFSET, __pad$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void *__pad[4]
+     * }
+     */
+    public static void __pad(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, __pad$OFFSET, __pad$LAYOUT.byteSize());
+    }
+
+    private static long[] __pad$DIMS = { 4 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * void *__pad[4]
+     * }
+     */
+    public static long[] __pad$dimensions() {
+        return __pad$DIMS;
+    }
+    private static final VarHandle __pad$ELEM_HANDLE = __pad$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * void *__pad[4]
+     * }
+     */
+    public static MemorySegment __pad(MemorySegment struct, long index0) {
+        return (MemorySegment)__pad$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * void *__pad[4]
+     * }
+     */
+    public static void __pad(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        __pad$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

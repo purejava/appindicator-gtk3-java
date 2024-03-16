@@ -2,92 +2,297 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct extra_context {
  *     struct _aarch64_ctx head;
- *     unsigned long long datap;
- *     unsigned int size;
- *     unsigned int __reserved[3];
- * };
+ *     __u64 datap;
+ *     __u32 size;
+ *     __u32 __reserved[3];
+ * }
  * }
  */
 public class extra_context {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$132.const$4;
+    extra_context() {
+        // Should not be called directly
     }
-    public static MemorySegment head$slice(MemorySegment seg) {
-        return seg.asSlice(0, 8);
-    }
-    public static VarHandle datap$VH() {
-        return constants$132.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned long long datap;
-     * }
-     */
-    public static long datap$get(MemorySegment seg) {
-        return (long)constants$132.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned long long datap;
-     * }
-     */
-    public static void datap$set(MemorySegment seg, long x) {
-        constants$132.const$5.set(seg, x);
-    }
-    public static long datap$get(MemorySegment seg, long index) {
-        return (long)constants$132.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void datap$set(MemorySegment seg, long index, long x) {
-        constants$132.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle size$VH() {
-        return constants$133.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int size;
-     * }
-     */
-    public static int size$get(MemorySegment seg) {
-        return (int)constants$133.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int size;
-     * }
-     */
-    public static void size$set(MemorySegment seg, int x) {
-        constants$133.const$0.set(seg, x);
-    }
-    public static int size$get(MemorySegment seg, long index) {
-        return (int)constants$133.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void size$set(MemorySegment seg, long index, int x) {
-        constants$133.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment __reserved$slice(MemorySegment seg) {
-        return seg.asSlice(20, 12);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _aarch64_ctx.layout().withName("head"),
+        app_indicator_h.C_LONG_LONG.withName("datap"),
+        app_indicator_h.C_INT.withName("size"),
+        MemoryLayout.sequenceLayout(3, app_indicator_h.C_INT).withName("__reserved")
+    ).withName("extra_context");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout head$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("head"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * struct _aarch64_ctx head
+     * }
+     */
+    public static final GroupLayout head$layout() {
+        return head$LAYOUT;
+    }
+
+    private static final long head$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * struct _aarch64_ctx head
+     * }
+     */
+    public static final long head$offset() {
+        return head$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * struct _aarch64_ctx head
+     * }
+     */
+    public static MemorySegment head(MemorySegment struct) {
+        return struct.asSlice(head$OFFSET, head$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * struct _aarch64_ctx head
+     * }
+     */
+    public static void head(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, head$OFFSET, head$LAYOUT.byteSize());
+    }
+
+    private static final OfLong datap$LAYOUT = (OfLong)$LAYOUT.select(groupElement("datap"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __u64 datap
+     * }
+     */
+    public static final OfLong datap$layout() {
+        return datap$LAYOUT;
+    }
+
+    private static final long datap$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __u64 datap
+     * }
+     */
+    public static final long datap$offset() {
+        return datap$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __u64 datap
+     * }
+     */
+    public static long datap(MemorySegment struct) {
+        return struct.get(datap$LAYOUT, datap$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __u64 datap
+     * }
+     */
+    public static void datap(MemorySegment struct, long fieldValue) {
+        struct.set(datap$LAYOUT, datap$OFFSET, fieldValue);
+    }
+
+    private static final OfInt size$LAYOUT = (OfInt)$LAYOUT.select(groupElement("size"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __u32 size
+     * }
+     */
+    public static final OfInt size$layout() {
+        return size$LAYOUT;
+    }
+
+    private static final long size$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __u32 size
+     * }
+     */
+    public static final long size$offset() {
+        return size$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __u32 size
+     * }
+     */
+    public static int size(MemorySegment struct) {
+        return struct.get(size$LAYOUT, size$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __u32 size
+     * }
+     */
+    public static void size(MemorySegment struct, int fieldValue) {
+        struct.set(size$LAYOUT, size$OFFSET, fieldValue);
+    }
+
+    private static final SequenceLayout __reserved$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("__reserved"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * __u32 __reserved[3]
+     * }
+     */
+    public static final SequenceLayout __reserved$layout() {
+        return __reserved$LAYOUT;
+    }
+
+    private static final long __reserved$OFFSET = 20;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * __u32 __reserved[3]
+     * }
+     */
+    public static final long __reserved$offset() {
+        return __reserved$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * __u32 __reserved[3]
+     * }
+     */
+    public static MemorySegment __reserved(MemorySegment struct) {
+        return struct.asSlice(__reserved$OFFSET, __reserved$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * __u32 __reserved[3]
+     * }
+     */
+    public static void __reserved(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, __reserved$OFFSET, __reserved$LAYOUT.byteSize());
+    }
+
+    private static long[] __reserved$DIMS = { 3 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * __u32 __reserved[3]
+     * }
+     */
+    public static long[] __reserved$dimensions() {
+        return __reserved$DIMS;
+    }
+    private static final VarHandle __reserved$ELEM_HANDLE = __reserved$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * __u32 __reserved[3]
+     * }
+     */
+    public static int __reserved(MemorySegment struct, long index0) {
+        return (int)__reserved$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * __u32 __reserved[3]
+     * }
+     */
+    public static void __reserved(MemorySegment struct, long index0, int fieldValue) {
+        __reserved$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

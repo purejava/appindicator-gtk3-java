@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GIOChannel GIOChannel;
+ * {@snippet lang=c :
+ * typedef struct _GIOChannel GIOChannel
  * }
  */
-public final class GIOChannel extends _GIOChannel {
+public class GIOChannel extends _GIOChannel {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GIOChannel() {}
+    GIOChannel() {
+        // Should not be called directly
+    }
 }
-
 

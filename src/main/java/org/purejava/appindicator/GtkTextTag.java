@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkTextTag GtkTextTag;
+ * {@snippet lang=c :
+ * typedef struct _GtkTextTag GtkTextTag
  * }
  */
-public final class GtkTextTag extends _GtkTextTag {
+public class GtkTextTag extends _GtkTextTag {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkTextTag() {}
+    GtkTextTag() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkWidget GtkWidget;
+ * {@snippet lang=c :
+ * typedef struct _GtkWidget GtkWidget
  * }
  */
-public final class GtkWidget extends _GtkWidget {
+public class GtkWidget extends _GtkWidget {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkWidget() {}
+    GtkWidget() {
+        // Should not be called directly
+    }
 }
-
 

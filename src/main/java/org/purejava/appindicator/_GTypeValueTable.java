@@ -2,408 +2,448 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GTypeValueTable {
- *     void (*value_init)(struct _GValue*);
- *     void (*value_free)(struct _GValue*);
- *     void (*value_copy)(struct _GValue*,struct _GValue*);
- *     void* (*value_peek_pointer)(struct _GValue*);
- *     char* collect_format;
- *     char* (*collect_value)(struct _GValue*,unsigned int,union _GTypeCValue*,unsigned int);
- *     char* lcopy_format;
- *     char* (*lcopy_value)(struct _GValue*,unsigned int,union _GTypeCValue*,unsigned int);
- * };
+ *     GTypeValueInitFunc value_init;
+ *     GTypeValueFreeFunc value_free;
+ *     GTypeValueCopyFunc value_copy;
+ *     GTypeValuePeekPointerFunc value_peek_pointer;
+ *     const gchar *collect_format;
+ *     GTypeValueCollectFunc collect_value;
+ *     const gchar *lcopy_format;
+ *     GTypeValueLCopyFunc lcopy_value;
+ * }
  * }
  */
 public class _GTypeValueTable {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$557.const$2;
+    _GTypeValueTable() {
+        // Should not be called directly
     }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("value_init"),
+        app_indicator_h.C_POINTER.withName("value_free"),
+        app_indicator_h.C_POINTER.withName("value_copy"),
+        app_indicator_h.C_POINTER.withName("value_peek_pointer"),
+        app_indicator_h.C_POINTER.withName("collect_format"),
+        app_indicator_h.C_POINTER.withName("collect_value"),
+        app_indicator_h.C_POINTER.withName("lcopy_format"),
+        app_indicator_h.C_POINTER.withName("lcopy_value")
+    ).withName("_GTypeValueTable");
+
     /**
-     * {@snippet :
- * void (*value_init)(struct _GValue*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final AddressLayout value_init$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("value_init"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeValueInitFunc value_init
      * }
      */
-    public interface value_init {
-
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(value_init fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$557.const$3, fi, constants$13.const$1, scope);
-        }
-        static value_init ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout value_init$layout() {
+        return value_init$LAYOUT;
     }
 
-    public static VarHandle value_init$VH() {
-        return constants$557.const$4;
+    private static final long value_init$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeValueInitFunc value_init
+     * }
+     */
+    public static final long value_init$offset() {
+        return value_init$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*value_init)(struct _GValue*);
+     * {@snippet lang=c :
+     * GTypeValueInitFunc value_init
      * }
      */
-    public static MemorySegment value_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$557.const$4.get(seg);
+    public static MemorySegment value_init(MemorySegment struct) {
+        return struct.get(value_init$LAYOUT, value_init$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*value_init)(struct _GValue*);
+     * {@snippet lang=c :
+     * GTypeValueInitFunc value_init
      * }
      */
-    public static void value_init$set(MemorySegment seg, MemorySegment x) {
-        constants$557.const$4.set(seg, x);
+    public static void value_init(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(value_init$LAYOUT, value_init$OFFSET, fieldValue);
     }
-    public static MemorySegment value_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$557.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void value_init$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$557.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static value_init value_init(MemorySegment segment, Arena scope) {
-        return value_init.ofAddress(value_init$get(segment), scope);
-    }
+
+    private static final AddressLayout value_free$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("value_free"));
+
     /**
-     * {@snippet :
- * void (*value_free)(struct _GValue*);
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeValueFreeFunc value_free
      * }
      */
-    public interface value_free {
-
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(value_free fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$557.const$5, fi, constants$13.const$1, scope);
-        }
-        static value_free ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout value_free$layout() {
+        return value_free$LAYOUT;
     }
 
-    public static VarHandle value_free$VH() {
-        return constants$558.const$0;
+    private static final long value_free$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeValueFreeFunc value_free
+     * }
+     */
+    public static final long value_free$offset() {
+        return value_free$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*value_free)(struct _GValue*);
+     * {@snippet lang=c :
+     * GTypeValueFreeFunc value_free
      * }
      */
-    public static MemorySegment value_free$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$0.get(seg);
+    public static MemorySegment value_free(MemorySegment struct) {
+        return struct.get(value_free$LAYOUT, value_free$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*value_free)(struct _GValue*);
+     * {@snippet lang=c :
+     * GTypeValueFreeFunc value_free
      * }
      */
-    public static void value_free$set(MemorySegment seg, MemorySegment x) {
-        constants$558.const$0.set(seg, x);
+    public static void value_free(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(value_free$LAYOUT, value_free$OFFSET, fieldValue);
     }
-    public static MemorySegment value_free$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void value_free$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$558.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static value_free value_free(MemorySegment segment, Arena scope) {
-        return value_free.ofAddress(value_free$get(segment), scope);
-    }
+
+    private static final AddressLayout value_copy$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("value_copy"));
+
     /**
-     * {@snippet :
- * void (*value_copy)(struct _GValue*,struct _GValue*);
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeValueCopyFunc value_copy
      * }
      */
-    public interface value_copy {
-
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(value_copy fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$558.const$1, fi, constants$13.const$4, scope);
-        }
-        static value_copy ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout value_copy$layout() {
+        return value_copy$LAYOUT;
     }
 
-    public static VarHandle value_copy$VH() {
-        return constants$558.const$2;
+    private static final long value_copy$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeValueCopyFunc value_copy
+     * }
+     */
+    public static final long value_copy$offset() {
+        return value_copy$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*value_copy)(struct _GValue*,struct _GValue*);
+     * {@snippet lang=c :
+     * GTypeValueCopyFunc value_copy
      * }
      */
-    public static MemorySegment value_copy$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$2.get(seg);
+    public static MemorySegment value_copy(MemorySegment struct) {
+        return struct.get(value_copy$LAYOUT, value_copy$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*value_copy)(struct _GValue*,struct _GValue*);
+     * {@snippet lang=c :
+     * GTypeValueCopyFunc value_copy
      * }
      */
-    public static void value_copy$set(MemorySegment seg, MemorySegment x) {
-        constants$558.const$2.set(seg, x);
+    public static void value_copy(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(value_copy$LAYOUT, value_copy$OFFSET, fieldValue);
     }
-    public static MemorySegment value_copy$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void value_copy$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$558.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static value_copy value_copy(MemorySegment segment, Arena scope) {
-        return value_copy.ofAddress(value_copy$get(segment), scope);
-    }
+
+    private static final AddressLayout value_peek_pointer$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("value_peek_pointer"));
+
     /**
-     * {@snippet :
- * void* (*value_peek_pointer)(struct _GValue*);
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeValuePeekPointerFunc value_peek_pointer
      * }
      */
-    public interface value_peek_pointer {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(value_peek_pointer fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$558.const$3, fi, constants$5.const$2, scope);
-        }
-        static value_peek_pointer ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout value_peek_pointer$layout() {
+        return value_peek_pointer$LAYOUT;
     }
 
-    public static VarHandle value_peek_pointer$VH() {
-        return constants$558.const$4;
+    private static final long value_peek_pointer$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeValuePeekPointerFunc value_peek_pointer
+     * }
+     */
+    public static final long value_peek_pointer$offset() {
+        return value_peek_pointer$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* (*value_peek_pointer)(struct _GValue*);
+     * {@snippet lang=c :
+     * GTypeValuePeekPointerFunc value_peek_pointer
      * }
      */
-    public static MemorySegment value_peek_pointer$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * void* (*value_peek_pointer)(struct _GValue*);
-     * }
-     */
-    public static void value_peek_pointer$set(MemorySegment seg, MemorySegment x) {
-        constants$558.const$4.set(seg, x);
-    }
-    public static MemorySegment value_peek_pointer$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void value_peek_pointer$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$558.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static value_peek_pointer value_peek_pointer(MemorySegment segment, Arena scope) {
-        return value_peek_pointer.ofAddress(value_peek_pointer$get(segment), scope);
-    }
-    public static VarHandle collect_format$VH() {
-        return constants$558.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* collect_format;
-     * }
-     */
-    public static MemorySegment collect_format$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* collect_format;
-     * }
-     */
-    public static void collect_format$set(MemorySegment seg, MemorySegment x) {
-        constants$558.const$5.set(seg, x);
-    }
-    public static MemorySegment collect_format$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$558.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void collect_format$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$558.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    /**
-     * {@snippet :
- * char* (*collect_value)(struct _GValue*,unsigned int,union _GTypeCValue*,unsigned int);
-     * }
-     */
-    public interface collect_value {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, int _x3);
-        static MemorySegment allocate(collect_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$559.const$0, fi, constants$33.const$0, scope);
-        }
-        static collect_value ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$559.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static MemorySegment value_peek_pointer(MemorySegment struct) {
+        return struct.get(value_peek_pointer$LAYOUT, value_peek_pointer$OFFSET);
     }
 
-    public static VarHandle collect_value$VH() {
-        return constants$559.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* (*collect_value)(struct _GValue*,unsigned int,union _GTypeCValue*,unsigned int);
-     * }
-     */
-    public static MemorySegment collect_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$2.get(seg);
-    }
     /**
      * Setter for field:
-     * {@snippet :
-     * char* (*collect_value)(struct _GValue*,unsigned int,union _GTypeCValue*,unsigned int);
+     * {@snippet lang=c :
+     * GTypeValuePeekPointerFunc value_peek_pointer
      * }
      */
-    public static void collect_value$set(MemorySegment seg, MemorySegment x) {
-        constants$559.const$2.set(seg, x);
-    }
-    public static MemorySegment collect_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void collect_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$559.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static collect_value collect_value(MemorySegment segment, Arena scope) {
-        return collect_value.ofAddress(collect_value$get(segment), scope);
-    }
-    public static VarHandle lcopy_format$VH() {
-        return constants$559.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* lcopy_format;
-     * }
-     */
-    public static MemorySegment lcopy_format$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* lcopy_format;
-     * }
-     */
-    public static void lcopy_format$set(MemorySegment seg, MemorySegment x) {
-        constants$559.const$3.set(seg, x);
-    }
-    public static MemorySegment lcopy_format$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void lcopy_format$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$559.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    /**
-     * {@snippet :
- * char* (*lcopy_value)(struct _GValue*,unsigned int,union _GTypeCValue*,unsigned int);
-     * }
-     */
-    public interface lcopy_value {
-
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, int _x3);
-        static MemorySegment allocate(lcopy_value fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$559.const$4, fi, constants$33.const$0, scope);
-        }
-        static lcopy_value ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$559.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static void value_peek_pointer(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(value_peek_pointer$LAYOUT, value_peek_pointer$OFFSET, fieldValue);
     }
 
-    public static VarHandle lcopy_value$VH() {
-        return constants$559.const$5;
+    private static final AddressLayout collect_format$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("collect_format"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const gchar *collect_format
+     * }
+     */
+    public static final AddressLayout collect_format$layout() {
+        return collect_format$LAYOUT;
     }
+
+    private static final long collect_format$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const gchar *collect_format
+     * }
+     */
+    public static final long collect_format$offset() {
+        return collect_format$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* (*lcopy_value)(struct _GValue*,unsigned int,union _GTypeCValue*,unsigned int);
+     * {@snippet lang=c :
+     * const gchar *collect_format
      * }
      */
-    public static MemorySegment lcopy_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$5.get(seg);
+    public static MemorySegment collect_format(MemorySegment struct) {
+        return struct.get(collect_format$LAYOUT, collect_format$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* (*lcopy_value)(struct _GValue*,unsigned int,union _GTypeCValue*,unsigned int);
+     * {@snippet lang=c :
+     * const gchar *collect_format
      * }
      */
-    public static void lcopy_value$set(MemorySegment seg, MemorySegment x) {
-        constants$559.const$5.set(seg, x);
+    public static void collect_format(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(collect_format$LAYOUT, collect_format$OFFSET, fieldValue);
     }
-    public static MemorySegment lcopy_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$559.const$5.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout collect_value$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("collect_value"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeValueCollectFunc collect_value
+     * }
+     */
+    public static final AddressLayout collect_value$layout() {
+        return collect_value$LAYOUT;
     }
-    public static void lcopy_value$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$559.const$5.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long collect_value$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeValueCollectFunc collect_value
+     * }
+     */
+    public static final long collect_value$offset() {
+        return collect_value$OFFSET;
     }
-    public static lcopy_value lcopy_value(MemorySegment segment, Arena scope) {
-        return lcopy_value.ofAddress(lcopy_value$get(segment), scope);
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GTypeValueCollectFunc collect_value
+     * }
+     */
+    public static MemorySegment collect_value(MemorySegment struct) {
+        return struct.get(collect_value$LAYOUT, collect_value$OFFSET);
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GTypeValueCollectFunc collect_value
+     * }
+     */
+    public static void collect_value(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(collect_value$LAYOUT, collect_value$OFFSET, fieldValue);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    private static final AddressLayout lcopy_format$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lcopy_format"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const gchar *lcopy_format
+     * }
+     */
+    public static final AddressLayout lcopy_format$layout() {
+        return lcopy_format$LAYOUT;
+    }
+
+    private static final long lcopy_format$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const gchar *lcopy_format
+     * }
+     */
+    public static final long lcopy_format$offset() {
+        return lcopy_format$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * const gchar *lcopy_format
+     * }
+     */
+    public static MemorySegment lcopy_format(MemorySegment struct) {
+        return struct.get(lcopy_format$LAYOUT, lcopy_format$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * const gchar *lcopy_format
+     * }
+     */
+    public static void lcopy_format(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(lcopy_format$LAYOUT, lcopy_format$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout lcopy_value$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("lcopy_value"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeValueLCopyFunc lcopy_value
+     * }
+     */
+    public static final AddressLayout lcopy_value$layout() {
+        return lcopy_value$LAYOUT;
+    }
+
+    private static final long lcopy_value$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeValueLCopyFunc lcopy_value
+     * }
+     */
+    public static final long lcopy_value$offset() {
+        return lcopy_value$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GTypeValueLCopyFunc lcopy_value
+     * }
+     */
+    public static MemorySegment lcopy_value(MemorySegment struct) {
+        return struct.get(lcopy_value$LAYOUT, lcopy_value$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GTypeValueLCopyFunc lcopy_value
+     * }
+     */
+    public static void lcopy_value(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(lcopy_value$LAYOUT, lcopy_value$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

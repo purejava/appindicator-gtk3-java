@@ -2,248 +2,310 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GTypePluginClass {
- *     struct _GTypeInterface base_iface;
- *     void (*use_plugin)(struct _GTypePlugin*);
- *     void (*unuse_plugin)(struct _GTypePlugin*);
- *     void (*complete_type_info)(struct _GTypePlugin*,unsigned long,struct _GTypeInfo*,struct _GTypeValueTable*);
- *     void (*complete_interface_info)(struct _GTypePlugin*,unsigned long,unsigned long,struct _GInterfaceInfo*);
- * };
+ *     GTypeInterface base_iface;
+ *     GTypePluginUse use_plugin;
+ *     GTypePluginUnuse unuse_plugin;
+ *     GTypePluginCompleteTypeInfo complete_type_info;
+ *     GTypePluginCompleteInterfaceInfo complete_interface_info;
+ * }
  * }
  */
 public class _GTypePluginClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$680.const$4;
+    _GTypePluginClass() {
+        // Should not be called directly
     }
-    public static MemorySegment base_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("base_iface"),
+        app_indicator_h.C_POINTER.withName("use_plugin"),
+        app_indicator_h.C_POINTER.withName("unuse_plugin"),
+        app_indicator_h.C_POINTER.withName("complete_type_info"),
+        app_indicator_h.C_POINTER.withName("complete_interface_info")
+    ).withName("_GTypePluginClass");
+
     /**
-     * {@snippet :
- * void (*use_plugin)(struct _GTypePlugin*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout base_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("base_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface base_iface
      * }
      */
-    public interface use_plugin {
-
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(use_plugin fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$680.const$5, fi, constants$13.const$1, scope);
-        }
-        static use_plugin ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout base_iface$layout() {
+        return base_iface$LAYOUT;
     }
 
-    public static VarHandle use_plugin$VH() {
-        return constants$681.const$0;
+    private static final long base_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface base_iface
+     * }
+     */
+    public static final long base_iface$offset() {
+        return base_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*use_plugin)(struct _GTypePlugin*);
+     * {@snippet lang=c :
+     * GTypeInterface base_iface
      * }
      */
-    public static MemorySegment use_plugin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$681.const$0.get(seg);
+    public static MemorySegment base_iface(MemorySegment struct) {
+        return struct.asSlice(base_iface$OFFSET, base_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*use_plugin)(struct _GTypePlugin*);
+     * {@snippet lang=c :
+     * GTypeInterface base_iface
      * }
      */
-    public static void use_plugin$set(MemorySegment seg, MemorySegment x) {
-        constants$681.const$0.set(seg, x);
+    public static void base_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, base_iface$OFFSET, base_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment use_plugin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$681.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void use_plugin$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$681.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static use_plugin use_plugin(MemorySegment segment, Arena scope) {
-        return use_plugin.ofAddress(use_plugin$get(segment), scope);
-    }
+
+    private static final AddressLayout use_plugin$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("use_plugin"));
+
     /**
-     * {@snippet :
- * void (*unuse_plugin)(struct _GTypePlugin*);
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypePluginUse use_plugin
      * }
      */
-    public interface unuse_plugin {
-
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(unuse_plugin fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$681.const$1, fi, constants$13.const$1, scope);
-        }
-        static unuse_plugin ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout use_plugin$layout() {
+        return use_plugin$LAYOUT;
     }
 
-    public static VarHandle unuse_plugin$VH() {
-        return constants$681.const$2;
+    private static final long use_plugin$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypePluginUse use_plugin
+     * }
+     */
+    public static final long use_plugin$offset() {
+        return use_plugin$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*unuse_plugin)(struct _GTypePlugin*);
+     * {@snippet lang=c :
+     * GTypePluginUse use_plugin
      * }
      */
-    public static MemorySegment unuse_plugin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$681.const$2.get(seg);
+    public static MemorySegment use_plugin(MemorySegment struct) {
+        return struct.get(use_plugin$LAYOUT, use_plugin$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*unuse_plugin)(struct _GTypePlugin*);
+     * {@snippet lang=c :
+     * GTypePluginUse use_plugin
      * }
      */
-    public static void unuse_plugin$set(MemorySegment seg, MemorySegment x) {
-        constants$681.const$2.set(seg, x);
+    public static void use_plugin(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(use_plugin$LAYOUT, use_plugin$OFFSET, fieldValue);
     }
-    public static MemorySegment unuse_plugin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$681.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void unuse_plugin$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$681.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static unuse_plugin unuse_plugin(MemorySegment segment, Arena scope) {
-        return unuse_plugin.ofAddress(unuse_plugin$get(segment), scope);
-    }
+
+    private static final AddressLayout unuse_plugin$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("unuse_plugin"));
+
     /**
-     * {@snippet :
- * void (*complete_type_info)(struct _GTypePlugin*,unsigned long,struct _GTypeInfo*,struct _GTypeValueTable*);
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypePluginUnuse unuse_plugin
      * }
      */
-    public interface complete_type_info {
-
-        void apply(java.lang.foreign.MemorySegment plugin, long g_type, java.lang.foreign.MemorySegment info, java.lang.foreign.MemorySegment value_table);
-        static MemorySegment allocate(complete_type_info fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$681.const$3, fi, constants$679.const$5, scope);
-        }
-        static complete_type_info ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _plugin, long _g_type, java.lang.foreign.MemorySegment _info, java.lang.foreign.MemorySegment _value_table) -> {
-                try {
-                    constants$680.const$1.invokeExact(symbol, _plugin, _g_type, _info, _value_table);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout unuse_plugin$layout() {
+        return unuse_plugin$LAYOUT;
     }
 
-    public static VarHandle complete_type_info$VH() {
-        return constants$681.const$4;
+    private static final long unuse_plugin$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypePluginUnuse unuse_plugin
+     * }
+     */
+    public static final long unuse_plugin$offset() {
+        return unuse_plugin$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*complete_type_info)(struct _GTypePlugin*,unsigned long,struct _GTypeInfo*,struct _GTypeValueTable*);
+     * {@snippet lang=c :
+     * GTypePluginUnuse unuse_plugin
      * }
      */
-    public static MemorySegment complete_type_info$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$681.const$4.get(seg);
+    public static MemorySegment unuse_plugin(MemorySegment struct) {
+        return struct.get(unuse_plugin$LAYOUT, unuse_plugin$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*complete_type_info)(struct _GTypePlugin*,unsigned long,struct _GTypeInfo*,struct _GTypeValueTable*);
+     * {@snippet lang=c :
+     * GTypePluginUnuse unuse_plugin
      * }
      */
-    public static void complete_type_info$set(MemorySegment seg, MemorySegment x) {
-        constants$681.const$4.set(seg, x);
+    public static void unuse_plugin(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(unuse_plugin$LAYOUT, unuse_plugin$OFFSET, fieldValue);
     }
-    public static MemorySegment complete_type_info$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$681.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void complete_type_info$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$681.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static complete_type_info complete_type_info(MemorySegment segment, Arena scope) {
-        return complete_type_info.ofAddress(complete_type_info$get(segment), scope);
-    }
+
+    private static final AddressLayout complete_type_info$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("complete_type_info"));
+
     /**
-     * {@snippet :
- * void (*complete_interface_info)(struct _GTypePlugin*,unsigned long,unsigned long,struct _GInterfaceInfo*);
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypePluginCompleteTypeInfo complete_type_info
      * }
      */
-    public interface complete_interface_info {
-
-        void apply(java.lang.foreign.MemorySegment plugin, long instance_type, long interface_type, java.lang.foreign.MemorySegment info);
-        static MemorySegment allocate(complete_interface_info fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$681.const$5, fi, constants$94.const$1, scope);
-        }
-        static complete_interface_info ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _plugin, long _instance_type, long _interface_type, java.lang.foreign.MemorySegment _info) -> {
-                try {
-                    constants$680.const$3.invokeExact(symbol, _plugin, _instance_type, _interface_type, _info);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout complete_type_info$layout() {
+        return complete_type_info$LAYOUT;
     }
 
-    public static VarHandle complete_interface_info$VH() {
-        return constants$682.const$0;
+    private static final long complete_type_info$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypePluginCompleteTypeInfo complete_type_info
+     * }
+     */
+    public static final long complete_type_info$offset() {
+        return complete_type_info$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*complete_interface_info)(struct _GTypePlugin*,unsigned long,unsigned long,struct _GInterfaceInfo*);
+     * {@snippet lang=c :
+     * GTypePluginCompleteTypeInfo complete_type_info
      * }
      */
-    public static MemorySegment complete_interface_info$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$682.const$0.get(seg);
+    public static MemorySegment complete_type_info(MemorySegment struct) {
+        return struct.get(complete_type_info$LAYOUT, complete_type_info$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*complete_interface_info)(struct _GTypePlugin*,unsigned long,unsigned long,struct _GInterfaceInfo*);
+     * {@snippet lang=c :
+     * GTypePluginCompleteTypeInfo complete_type_info
      * }
      */
-    public static void complete_interface_info$set(MemorySegment seg, MemorySegment x) {
-        constants$682.const$0.set(seg, x);
+    public static void complete_type_info(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(complete_type_info$LAYOUT, complete_type_info$OFFSET, fieldValue);
     }
-    public static MemorySegment complete_interface_info$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$682.const$0.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout complete_interface_info$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("complete_interface_info"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypePluginCompleteInterfaceInfo complete_interface_info
+     * }
+     */
+    public static final AddressLayout complete_interface_info$layout() {
+        return complete_interface_info$LAYOUT;
     }
-    public static void complete_interface_info$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$682.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long complete_interface_info$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypePluginCompleteInterfaceInfo complete_interface_info
+     * }
+     */
+    public static final long complete_interface_info$offset() {
+        return complete_interface_info$OFFSET;
     }
-    public static complete_interface_info complete_interface_info(MemorySegment segment, Arena scope) {
-        return complete_interface_info.ofAddress(complete_interface_info$get(segment), scope);
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GTypePluginCompleteInterfaceInfo complete_interface_info
+     * }
+     */
+    public static MemorySegment complete_interface_info(MemorySegment struct) {
+        return struct.get(complete_interface_info$LAYOUT, complete_interface_info$OFFSET);
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GTypePluginCompleteInterfaceInfo complete_interface_info
+     * }
+     */
+    public static void complete_interface_info(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(complete_interface_info$LAYOUT, complete_interface_info$OFFSET, fieldValue);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

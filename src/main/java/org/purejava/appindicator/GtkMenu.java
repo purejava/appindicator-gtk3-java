@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkMenu GtkMenu;
+ * {@snippet lang=c :
+ * typedef struct _GtkMenu GtkMenu
  * }
  */
-public final class GtkMenu extends _GtkMenu {
+public class GtkMenu extends _GtkMenu {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkMenu() {}
+    GtkMenu() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkRecentChooserMenuClass GtkRecentChooserMenuClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkRecentChooserMenuClass GtkRecentChooserMenuClass
  * }
  */
-public final class GtkRecentChooserMenuClass extends _GtkRecentChooserMenuClass {
+public class GtkRecentChooserMenuClass extends _GtkRecentChooserMenuClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkRecentChooserMenuClass() {}
+    GtkRecentChooserMenuClass() {
+        // Should not be called directly
+    }
 }
-
 

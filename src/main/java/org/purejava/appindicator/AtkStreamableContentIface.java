@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _AtkStreamableContentIface AtkStreamableContentIface;
+ * {@snippet lang=c :
+ * typedef struct _AtkStreamableContentIface AtkStreamableContentIface
  * }
  */
-public final class AtkStreamableContentIface extends _AtkStreamableContentIface {
+public class AtkStreamableContentIface extends _AtkStreamableContentIface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkStreamableContentIface() {}
+    AtkStreamableContentIface() {
+        // Should not be called directly
+    }
 }
-
 

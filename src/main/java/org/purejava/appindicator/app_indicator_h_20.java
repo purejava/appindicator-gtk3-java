@@ -2,7709 +2,9020 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.AddressLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.invoke.MethodHandle;
-public class app_indicator_h_20 extends app_indicator_h_19 {
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
+public class app_indicator_h_20 extends app_indicator_h_21 {
+
+    app_indicator_h_20() {
+        // Should not be called directly
+    }
+    private static final int GDK_KEY_l = (int)108L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkRecentChooser_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_l 108
      * }
      */
-    public static final AddressLayout GtkRecentChooser_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_l() {
+        return GDK_KEY_l;
+    }
+    private static final int GDK_KEY_m = (int)109L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRecentChooser_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_m 109
      * }
      */
-    public static final AddressLayout GtkRecentChooser_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_m() {
+        return GDK_KEY_m;
+    }
+    private static final int GDK_KEY_n = (int)110L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRecentChooser_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_n 110
      * }
      */
-    public static final AddressLayout GtkRecentChooser_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_n() {
+        return GDK_KEY_n;
+    }
+    private static final int GDK_KEY_o = (int)111L;
     /**
-     * {@snippet :
-     * typedef struct _GtkRecentChooserDialog* GtkRecentChooserDialog_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_o 111
      * }
      */
-    public static final AddressLayout GtkRecentChooserDialog_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_o() {
+        return GDK_KEY_o;
+    }
+    private static final int GDK_KEY_p = (int)112L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkRecentChooserDialog_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_p 112
      * }
      */
-    public static final AddressLayout GtkRecentChooserDialog_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_p() {
+        return GDK_KEY_p;
+    }
+    private static final int GDK_KEY_q = (int)113L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRecentChooserDialog_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_q 113
      * }
      */
-    public static final AddressLayout GtkRecentChooserDialog_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_q() {
+        return GDK_KEY_q;
+    }
+    private static final int GDK_KEY_r = (int)114L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRecentChooserDialog_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_r 114
      * }
      */
-    public static final AddressLayout GtkRecentChooserDialog_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_r() {
+        return GDK_KEY_r;
+    }
+    private static final int GDK_KEY_s = (int)115L;
     /**
-     * {@snippet :
-     * typedef struct _GtkRecentChooserMenu* GtkRecentChooserMenu_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_s 115
      * }
      */
-    public static final AddressLayout GtkRecentChooserMenu_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_s() {
+        return GDK_KEY_s;
+    }
+    private static final int GDK_KEY_t = (int)116L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkRecentChooserMenu_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_t 116
      * }
      */
-    public static final AddressLayout GtkRecentChooserMenu_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_t() {
+        return GDK_KEY_t;
+    }
+    private static final int GDK_KEY_u = (int)117L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRecentChooserMenu_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_u 117
      * }
      */
-    public static final AddressLayout GtkRecentChooserMenu_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_u() {
+        return GDK_KEY_u;
+    }
+    private static final int GDK_KEY_v = (int)118L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRecentChooserMenu_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_v 118
      * }
      */
-    public static final AddressLayout GtkRecentChooserMenu_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_v() {
+        return GDK_KEY_v;
+    }
+    private static final int GDK_KEY_w = (int)119L;
     /**
-     * {@snippet :
-     * typedef struct _GtkRecentChooserWidget* GtkRecentChooserWidget_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_w 119
      * }
      */
-    public static final AddressLayout GtkRecentChooserWidget_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_w() {
+        return GDK_KEY_w;
+    }
+    private static final int GDK_KEY_x = (int)120L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkRecentChooserWidget_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_x 120
      * }
      */
-    public static final AddressLayout GtkRecentChooserWidget_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_x() {
+        return GDK_KEY_x;
+    }
+    private static final int GDK_KEY_y = (int)121L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRecentChooserWidget_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_y 121
      * }
      */
-    public static final AddressLayout GtkRecentChooserWidget_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_y() {
+        return GDK_KEY_y;
+    }
+    private static final int GDK_KEY_z = (int)122L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRecentChooserWidget_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_z 122
      * }
      */
-    public static final AddressLayout GtkRecentChooserWidget_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_z() {
+        return GDK_KEY_z;
+    }
+    private static final int GDK_KEY_braceleft = (int)123L;
     /**
-     * {@snippet :
-     * typedef struct _GtkRecentFilter* GtkRecentFilter_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_braceleft 123
      * }
      */
-    public static final AddressLayout GtkRecentFilter_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_braceleft() {
+        return GDK_KEY_braceleft;
+    }
+    private static final int GDK_KEY_bar = (int)124L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkRecentFilter_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_bar 124
      * }
      */
-    public static final AddressLayout GtkRecentFilter_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_bar() {
+        return GDK_KEY_bar;
+    }
+    private static final int GDK_KEY_braceright = (int)125L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRecentFilter_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_braceright 125
      * }
      */
-    public static final AddressLayout GtkRecentFilter_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_braceright() {
+        return GDK_KEY_braceright;
+    }
+    private static final int GDK_KEY_asciitilde = (int)126L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRecentFilter_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_asciitilde 126
      * }
      */
-    public static final AddressLayout GtkRecentFilter_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_asciitilde() {
+        return GDK_KEY_asciitilde;
+    }
+    private static final int GDK_KEY_nobreakspace = (int)160L;
     /**
-     * {@snippet :
-     * typedef struct _GtkRecentManager* GtkRecentManager_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_nobreakspace 160
      * }
      */
-    public static final AddressLayout GtkRecentManager_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_nobreakspace() {
+        return GDK_KEY_nobreakspace;
+    }
+    private static final int GDK_KEY_exclamdown = (int)161L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkRecentManager_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_exclamdown 161
      * }
      */
-    public static final AddressLayout GtkRecentManager_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_exclamdown() {
+        return GDK_KEY_exclamdown;
+    }
+    private static final int GDK_KEY_cent = (int)162L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRecentManager_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_cent 162
      * }
      */
-    public static final AddressLayout GtkRecentManager_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_cent() {
+        return GDK_KEY_cent;
+    }
+    private static final int GDK_KEY_sterling = (int)163L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRecentManager_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_sterling 163
      * }
      */
-    public static final AddressLayout GtkRecentManager_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_sterling() {
+        return GDK_KEY_sterling;
+    }
+    private static final int GDK_KEY_currency = (int)164L;
     /**
-     * {@snippet :
-     * typedef struct _GtkRevealer* GtkRevealer_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_currency 164
      * }
      */
-    public static final AddressLayout GtkRevealer_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_currency() {
+        return GDK_KEY_currency;
+    }
+    private static final int GDK_KEY_yen = (int)165L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkRevealer_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_yen 165
      * }
      */
-    public static final AddressLayout GtkRevealer_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_yen() {
+        return GDK_KEY_yen;
+    }
+    private static final int GDK_KEY_brokenbar = (int)166L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRevealer_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_brokenbar 166
      * }
      */
-    public static final AddressLayout GtkRevealer_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_brokenbar() {
+        return GDK_KEY_brokenbar;
+    }
+    private static final int GDK_KEY_section = (int)167L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRevealer_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_section 167
      * }
      */
-    public static final AddressLayout GtkRevealer_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_section() {
+        return GDK_KEY_section;
+    }
+    private static final int GDK_KEY_diaeresis = (int)168L;
     /**
-     * {@snippet :
-     * typedef struct _GtkScale* GtkScale_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_diaeresis 168
      * }
      */
-    public static final AddressLayout GtkScale_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_diaeresis() {
+        return GDK_KEY_diaeresis;
+    }
+    private static final int GDK_KEY_copyright = (int)169L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkScale_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_copyright 169
      * }
      */
-    public static final AddressLayout GtkScale_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_copyright() {
+        return GDK_KEY_copyright;
+    }
+    private static final int GDK_KEY_ordfeminine = (int)170L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkScale_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ordfeminine 170
      * }
      */
-    public static final AddressLayout GtkScale_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ordfeminine() {
+        return GDK_KEY_ordfeminine;
+    }
+    private static final int GDK_KEY_guillemotleft = (int)171L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkScale_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_guillemotleft 171
      * }
      */
-    public static final AddressLayout GtkScale_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_guillemotleft() {
+        return GDK_KEY_guillemotleft;
+    }
+    private static final int GDK_KEY_notsign = (int)172L;
     /**
-     * {@snippet :
-     * typedef struct _GtkScaleButton* GtkScaleButton_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_notsign 172
      * }
      */
-    public static final AddressLayout GtkScaleButton_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_notsign() {
+        return GDK_KEY_notsign;
+    }
+    private static final int GDK_KEY_hyphen = (int)173L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkScaleButton_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_hyphen 173
      * }
      */
-    public static final AddressLayout GtkScaleButton_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_hyphen() {
+        return GDK_KEY_hyphen;
+    }
+    private static final int GDK_KEY_registered = (int)174L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkScaleButton_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_registered 174
      * }
      */
-    public static final AddressLayout GtkScaleButton_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_registered() {
+        return GDK_KEY_registered;
+    }
+    private static final int GDK_KEY_macron = (int)175L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkScaleButton_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_macron 175
      * }
      */
-    public static final AddressLayout GtkScaleButton_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_macron() {
+        return GDK_KEY_macron;
+    }
+    private static final int GDK_KEY_degree = (int)176L;
     /**
-     * {@snippet :
-     * typedef struct _GtkScrollable* GtkScrollable_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_degree 176
      * }
      */
-    public static final AddressLayout GtkScrollable_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_degree() {
+        return GDK_KEY_degree;
+    }
+    private static final int GDK_KEY_plusminus = (int)177L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkScrollable_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_plusminus 177
      * }
      */
-    public static final AddressLayout GtkScrollable_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_plusminus() {
+        return GDK_KEY_plusminus;
+    }
+    private static final int GDK_KEY_twosuperior = (int)178L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkScrollable_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_twosuperior 178
      * }
      */
-    public static final AddressLayout GtkScrollable_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_twosuperior() {
+        return GDK_KEY_twosuperior;
+    }
+    private static final int GDK_KEY_threesuperior = (int)179L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkScrollable_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_threesuperior 179
      * }
      */
-    public static final AddressLayout GtkScrollable_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_threesuperior() {
+        return GDK_KEY_threesuperior;
+    }
+    private static final int GDK_KEY_acute = (int)180L;
     /**
-     * {@snippet :
-     * typedef struct _GtkScrollbar* GtkScrollbar_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_acute 180
      * }
      */
-    public static final AddressLayout GtkScrollbar_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_acute() {
+        return GDK_KEY_acute;
+    }
+    private static final int GDK_KEY_mu = (int)181L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkScrollbar_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_mu 181
      * }
      */
-    public static final AddressLayout GtkScrollbar_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_mu() {
+        return GDK_KEY_mu;
+    }
+    private static final int GDK_KEY_paragraph = (int)182L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkScrollbar_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_paragraph 182
      * }
      */
-    public static final AddressLayout GtkScrollbar_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_paragraph() {
+        return GDK_KEY_paragraph;
+    }
+    private static final int GDK_KEY_periodcentered = (int)183L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkScrollbar_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_periodcentered 183
      * }
      */
-    public static final AddressLayout GtkScrollbar_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_periodcentered() {
+        return GDK_KEY_periodcentered;
+    }
+    private static final int GDK_KEY_cedilla = (int)184L;
     /**
-     * {@snippet :
-     * typedef struct _GtkScrolledWindow* GtkScrolledWindow_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_cedilla 184
      * }
      */
-    public static final AddressLayout GtkScrolledWindow_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_cedilla() {
+        return GDK_KEY_cedilla;
+    }
+    private static final int GDK_KEY_onesuperior = (int)185L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkScrolledWindow_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_onesuperior 185
      * }
      */
-    public static final AddressLayout GtkScrolledWindow_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_onesuperior() {
+        return GDK_KEY_onesuperior;
+    }
+    private static final int GDK_KEY_masculine = (int)186L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkScrolledWindow_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_masculine 186
      * }
      */
-    public static final AddressLayout GtkScrolledWindow_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_masculine() {
+        return GDK_KEY_masculine;
+    }
+    private static final int GDK_KEY_guillemotright = (int)187L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkScrolledWindow_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_guillemotright 187
      * }
      */
-    public static final AddressLayout GtkScrolledWindow_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_guillemotright() {
+        return GDK_KEY_guillemotright;
+    }
+    private static final int GDK_KEY_onequarter = (int)188L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSearchBar* GtkSearchBar_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_onequarter 188
      * }
      */
-    public static final AddressLayout GtkSearchBar_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_onequarter() {
+        return GDK_KEY_onequarter;
+    }
+    private static final int GDK_KEY_onehalf = (int)189L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSearchBar_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_onehalf 189
      * }
      */
-    public static final AddressLayout GtkSearchBar_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_onehalf() {
+        return GDK_KEY_onehalf;
+    }
+    private static final int GDK_KEY_threequarters = (int)190L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSearchBar_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_threequarters 190
      * }
      */
-    public static final AddressLayout GtkSearchBar_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_threequarters() {
+        return GDK_KEY_threequarters;
+    }
+    private static final int GDK_KEY_questiondown = (int)191L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSearchBar_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_questiondown 191
      * }
      */
-    public static final AddressLayout GtkSearchBar_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_questiondown() {
+        return GDK_KEY_questiondown;
+    }
+    private static final int GDK_KEY_Agrave = (int)192L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSearchEntry* GtkSearchEntry_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Agrave 192
      * }
      */
-    public static final AddressLayout GtkSearchEntry_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Agrave() {
+        return GDK_KEY_Agrave;
+    }
+    private static final int GDK_KEY_Aacute = (int)193L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSearchEntry_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Aacute 193
      * }
      */
-    public static final AddressLayout GtkSearchEntry_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Aacute() {
+        return GDK_KEY_Aacute;
+    }
+    private static final int GDK_KEY_Acircumflex = (int)194L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSearchEntry_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Acircumflex 194
      * }
      */
-    public static final AddressLayout GtkSearchEntry_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Acircumflex() {
+        return GDK_KEY_Acircumflex;
+    }
+    private static final int GDK_KEY_Atilde = (int)195L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSearchEntry_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Atilde 195
      * }
      */
-    public static final AddressLayout GtkSearchEntry_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Atilde() {
+        return GDK_KEY_Atilde;
+    }
+    private static final int GDK_KEY_Adiaeresis = (int)196L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSeparator* GtkSeparator_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Adiaeresis 196
      * }
      */
-    public static final AddressLayout GtkSeparator_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Adiaeresis() {
+        return GDK_KEY_Adiaeresis;
+    }
+    private static final int GDK_KEY_Aring = (int)197L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSeparator_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Aring 197
      * }
      */
-    public static final AddressLayout GtkSeparator_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Aring() {
+        return GDK_KEY_Aring;
+    }
+    private static final int GDK_KEY_AE = (int)198L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSeparator_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_AE 198
      * }
      */
-    public static final AddressLayout GtkSeparator_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_AE() {
+        return GDK_KEY_AE;
+    }
+    private static final int GDK_KEY_Ccedilla = (int)199L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSeparator_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ccedilla 199
      * }
      */
-    public static final AddressLayout GtkSeparator_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ccedilla() {
+        return GDK_KEY_Ccedilla;
+    }
+    private static final int GDK_KEY_Egrave = (int)200L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSeparatorMenuItem* GtkSeparatorMenuItem_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Egrave 200
      * }
      */
-    public static final AddressLayout GtkSeparatorMenuItem_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Egrave() {
+        return GDK_KEY_Egrave;
+    }
+    private static final int GDK_KEY_Eacute = (int)201L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSeparatorMenuItem_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Eacute 201
      * }
      */
-    public static final AddressLayout GtkSeparatorMenuItem_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Eacute() {
+        return GDK_KEY_Eacute;
+    }
+    private static final int GDK_KEY_Ecircumflex = (int)202L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSeparatorMenuItem_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ecircumflex 202
      * }
      */
-    public static final AddressLayout GtkSeparatorMenuItem_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ecircumflex() {
+        return GDK_KEY_Ecircumflex;
+    }
+    private static final int GDK_KEY_Ediaeresis = (int)203L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSeparatorMenuItem_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ediaeresis 203
      * }
      */
-    public static final AddressLayout GtkSeparatorMenuItem_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ediaeresis() {
+        return GDK_KEY_Ediaeresis;
+    }
+    private static final int GDK_KEY_Igrave = (int)204L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSeparatorToolItem* GtkSeparatorToolItem_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Igrave 204
      * }
      */
-    public static final AddressLayout GtkSeparatorToolItem_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Igrave() {
+        return GDK_KEY_Igrave;
+    }
+    private static final int GDK_KEY_Iacute = (int)205L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSeparatorToolItem_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Iacute 205
      * }
      */
-    public static final AddressLayout GtkSeparatorToolItem_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Iacute() {
+        return GDK_KEY_Iacute;
+    }
+    private static final int GDK_KEY_Icircumflex = (int)206L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSeparatorToolItem_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Icircumflex 206
      * }
      */
-    public static final AddressLayout GtkSeparatorToolItem_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Icircumflex() {
+        return GDK_KEY_Icircumflex;
+    }
+    private static final int GDK_KEY_Idiaeresis = (int)207L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSeparatorToolItem_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Idiaeresis 207
      * }
      */
-    public static final AddressLayout GtkSeparatorToolItem_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Idiaeresis() {
+        return GDK_KEY_Idiaeresis;
+    }
+    private static final int GDK_KEY_ETH = (int)208L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSettings* GtkSettings_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ETH 208
      * }
      */
-    public static final AddressLayout GtkSettings_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ETH() {
+        return GDK_KEY_ETH;
+    }
+    private static final int GDK_KEY_Eth = (int)208L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSettings_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Eth 208
      * }
      */
-    public static final AddressLayout GtkSettings_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Eth() {
+        return GDK_KEY_Eth;
+    }
+    private static final int GDK_KEY_Ntilde = (int)209L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSettings_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ntilde 209
      * }
      */
-    public static final AddressLayout GtkSettings_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ntilde() {
+        return GDK_KEY_Ntilde;
+    }
+    private static final int GDK_KEY_Ograve = (int)210L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSettings_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ograve 210
      * }
      */
-    public static final AddressLayout GtkSettings_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ograve() {
+        return GDK_KEY_Ograve;
+    }
+    private static final int GDK_KEY_Oacute = (int)211L;
     /**
-     * {@snippet :
-     * typedef struct _GtkStackSidebar* GtkStackSidebar_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Oacute 211
      * }
      */
-    public static final AddressLayout GtkStackSidebar_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Oacute() {
+        return GDK_KEY_Oacute;
+    }
+    private static final int GDK_KEY_Ocircumflex = (int)212L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkStackSidebar_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ocircumflex 212
      * }
      */
-    public static final AddressLayout GtkStackSidebar_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ocircumflex() {
+        return GDK_KEY_Ocircumflex;
+    }
+    private static final int GDK_KEY_Otilde = (int)213L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkStackSidebar_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Otilde 213
      * }
      */
-    public static final AddressLayout GtkStackSidebar_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Otilde() {
+        return GDK_KEY_Otilde;
+    }
+    private static final int GDK_KEY_Odiaeresis = (int)214L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkStackSidebar_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Odiaeresis 214
      * }
      */
-    public static final AddressLayout GtkStackSidebar_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Odiaeresis() {
+        return GDK_KEY_Odiaeresis;
+    }
+    private static final int GDK_KEY_multiply = (int)215L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSizeGroup* GtkSizeGroup_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_multiply 215
      * }
      */
-    public static final AddressLayout GtkSizeGroup_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_multiply() {
+        return GDK_KEY_multiply;
+    }
+    private static final int GDK_KEY_Oslash = (int)216L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSizeGroup_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Oslash 216
      * }
      */
-    public static final AddressLayout GtkSizeGroup_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Oslash() {
+        return GDK_KEY_Oslash;
+    }
+    private static final int GDK_KEY_Ooblique = (int)216L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSizeGroup_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ooblique 216
      * }
      */
-    public static final AddressLayout GtkSizeGroup_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ooblique() {
+        return GDK_KEY_Ooblique;
+    }
+    private static final int GDK_KEY_Ugrave = (int)217L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSizeGroup_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ugrave 217
      * }
      */
-    public static final AddressLayout GtkSizeGroup_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ugrave() {
+        return GDK_KEY_Ugrave;
+    }
+    private static final int GDK_KEY_Uacute = (int)218L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSpinButton* GtkSpinButton_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Uacute 218
      * }
      */
-    public static final AddressLayout GtkSpinButton_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Uacute() {
+        return GDK_KEY_Uacute;
+    }
+    private static final int GDK_KEY_Ucircumflex = (int)219L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSpinButton_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ucircumflex 219
      * }
      */
-    public static final AddressLayout GtkSpinButton_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ucircumflex() {
+        return GDK_KEY_Ucircumflex;
+    }
+    private static final int GDK_KEY_Udiaeresis = (int)220L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSpinButton_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Udiaeresis 220
      * }
      */
-    public static final AddressLayout GtkSpinButton_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Udiaeresis() {
+        return GDK_KEY_Udiaeresis;
+    }
+    private static final int GDK_KEY_Yacute = (int)221L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSpinButton_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Yacute 221
      * }
      */
-    public static final AddressLayout GtkSpinButton_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Yacute() {
+        return GDK_KEY_Yacute;
+    }
+    private static final int GDK_KEY_THORN = (int)222L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSpinner* GtkSpinner_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_THORN 222
      * }
      */
-    public static final AddressLayout GtkSpinner_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_THORN() {
+        return GDK_KEY_THORN;
+    }
+    private static final int GDK_KEY_Thorn = (int)222L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSpinner_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thorn 222
      * }
      */
-    public static final AddressLayout GtkSpinner_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Thorn() {
+        return GDK_KEY_Thorn;
+    }
+    private static final int GDK_KEY_ssharp = (int)223L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSpinner_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ssharp 223
      * }
      */
-    public static final AddressLayout GtkSpinner_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ssharp() {
+        return GDK_KEY_ssharp;
+    }
+    private static final int GDK_KEY_agrave = (int)224L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSpinner_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_agrave 224
      * }
      */
-    public static final AddressLayout GtkSpinner_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_agrave() {
+        return GDK_KEY_agrave;
+    }
+    private static final int GDK_KEY_aacute = (int)225L;
     /**
-     * {@snippet :
-     * typedef struct _GtkStack* GtkStack_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_aacute 225
      * }
      */
-    public static final AddressLayout GtkStack_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_aacute() {
+        return GDK_KEY_aacute;
+    }
+    private static final int GDK_KEY_acircumflex = (int)226L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkStack_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_acircumflex 226
      * }
      */
-    public static final AddressLayout GtkStack_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_acircumflex() {
+        return GDK_KEY_acircumflex;
+    }
+    private static final int GDK_KEY_atilde = (int)227L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkStack_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_atilde 227
      * }
      */
-    public static final AddressLayout GtkStack_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_atilde() {
+        return GDK_KEY_atilde;
+    }
+    private static final int GDK_KEY_adiaeresis = (int)228L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkStack_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_adiaeresis 228
      * }
      */
-    public static final AddressLayout GtkStack_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_adiaeresis() {
+        return GDK_KEY_adiaeresis;
+    }
+    private static final int GDK_KEY_aring = (int)229L;
     /**
-     * {@snippet :
-     * typedef struct _GtkStackSwitcher* GtkStackSwitcher_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_aring 229
      * }
      */
-    public static final AddressLayout GtkStackSwitcher_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_aring() {
+        return GDK_KEY_aring;
+    }
+    private static final int GDK_KEY_ae = (int)230L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkStackSwitcher_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ae 230
      * }
      */
-    public static final AddressLayout GtkStackSwitcher_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ae() {
+        return GDK_KEY_ae;
+    }
+    private static final int GDK_KEY_ccedilla = (int)231L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkStackSwitcher_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ccedilla 231
      * }
      */
-    public static final AddressLayout GtkStackSwitcher_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ccedilla() {
+        return GDK_KEY_ccedilla;
+    }
+    private static final int GDK_KEY_egrave = (int)232L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkStackSwitcher_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_egrave 232
      * }
      */
-    public static final AddressLayout GtkStackSwitcher_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_egrave() {
+        return GDK_KEY_egrave;
+    }
+    private static final int GDK_KEY_eacute = (int)233L;
     /**
-     * {@snippet :
-     * typedef struct _GtkStatusbar* GtkStatusbar_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_eacute 233
      * }
      */
-    public static final AddressLayout GtkStatusbar_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_eacute() {
+        return GDK_KEY_eacute;
+    }
+    private static final int GDK_KEY_ecircumflex = (int)234L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkStatusbar_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ecircumflex 234
      * }
      */
-    public static final AddressLayout GtkStatusbar_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ecircumflex() {
+        return GDK_KEY_ecircumflex;
+    }
+    private static final int GDK_KEY_ediaeresis = (int)235L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkStatusbar_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ediaeresis 235
      * }
      */
-    public static final AddressLayout GtkStatusbar_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ediaeresis() {
+        return GDK_KEY_ediaeresis;
+    }
+    private static final int GDK_KEY_igrave = (int)236L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkStatusbar_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_igrave 236
      * }
      */
-    public static final AddressLayout GtkStatusbar_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_igrave() {
+        return GDK_KEY_igrave;
+    }
+    private static final int GDK_KEY_iacute = (int)237L;
     /**
-     * {@snippet :
-     * typedef struct _GtkStyle* GtkStyle_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_iacute 237
      * }
      */
-    public static final AddressLayout GtkStyle_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_iacute() {
+        return GDK_KEY_iacute;
+    }
+    private static final int GDK_KEY_icircumflex = (int)238L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkStyle_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_icircumflex 238
      * }
      */
-    public static final AddressLayout GtkStyle_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_icircumflex() {
+        return GDK_KEY_icircumflex;
+    }
+    private static final int GDK_KEY_idiaeresis = (int)239L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkStyle_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_idiaeresis 239
      * }
      */
-    public static final AddressLayout GtkStyle_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_idiaeresis() {
+        return GDK_KEY_idiaeresis;
+    }
+    private static final int GDK_KEY_eth = (int)240L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkStyle_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_eth 240
      * }
      */
-    public static final AddressLayout GtkStyle_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_eth() {
+        return GDK_KEY_eth;
+    }
+    private static final int GDK_KEY_ntilde = (int)241L;
     /**
-     * {@snippet :
-     * typedef struct _GtkStyleContext* GtkStyleContext_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ntilde 241
      * }
      */
-    public static final AddressLayout GtkStyleContext_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ntilde() {
+        return GDK_KEY_ntilde;
+    }
+    private static final int GDK_KEY_ograve = (int)242L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkStyleContext_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ograve 242
      * }
      */
-    public static final AddressLayout GtkStyleContext_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ograve() {
+        return GDK_KEY_ograve;
+    }
+    private static final int GDK_KEY_oacute = (int)243L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkStyleContext_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_oacute 243
      * }
      */
-    public static final AddressLayout GtkStyleContext_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_oacute() {
+        return GDK_KEY_oacute;
+    }
+    private static final int GDK_KEY_ocircumflex = (int)244L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkStyleContext_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ocircumflex 244
      * }
      */
-    public static final AddressLayout GtkStyleContext_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ocircumflex() {
+        return GDK_KEY_ocircumflex;
+    }
+    private static final int GDK_KEY_otilde = (int)245L;
     /**
-     * {@snippet :
-     * typedef struct _GtkStyleProperties* GtkStyleProperties_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_otilde 245
      * }
      */
-    public static final AddressLayout GtkStyleProperties_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_otilde() {
+        return GDK_KEY_otilde;
+    }
+    private static final int GDK_KEY_odiaeresis = (int)246L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkStyleProperties_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_odiaeresis 246
      * }
      */
-    public static final AddressLayout GtkStyleProperties_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_odiaeresis() {
+        return GDK_KEY_odiaeresis;
+    }
+    private static final int GDK_KEY_division = (int)247L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkStyleProperties_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_division 247
      * }
      */
-    public static final AddressLayout GtkStyleProperties_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_division() {
+        return GDK_KEY_division;
+    }
+    private static final int GDK_KEY_oslash = (int)248L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkStyleProperties_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_oslash 248
      * }
      */
-    public static final AddressLayout GtkStyleProperties_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_oslash() {
+        return GDK_KEY_oslash;
+    }
+    private static final int GDK_KEY_ooblique = (int)248L;
     /**
-     * {@snippet :
-     * typedef struct _GtkStyleProvider* GtkStyleProvider_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ooblique 248
      * }
      */
-    public static final AddressLayout GtkStyleProvider_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ooblique() {
+        return GDK_KEY_ooblique;
+    }
+    private static final int GDK_KEY_ugrave = (int)249L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkStyleProvider_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ugrave 249
      * }
      */
-    public static final AddressLayout GtkStyleProvider_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ugrave() {
+        return GDK_KEY_ugrave;
+    }
+    private static final int GDK_KEY_uacute = (int)250L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkStyleProvider_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_uacute 250
      * }
      */
-    public static final AddressLayout GtkStyleProvider_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_uacute() {
+        return GDK_KEY_uacute;
+    }
+    private static final int GDK_KEY_ucircumflex = (int)251L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkStyleProvider_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ucircumflex 251
      * }
      */
-    public static final AddressLayout GtkStyleProvider_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ucircumflex() {
+        return GDK_KEY_ucircumflex;
+    }
+    private static final int GDK_KEY_udiaeresis = (int)252L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSwitch* GtkSwitch_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_udiaeresis 252
      * }
      */
-    public static final AddressLayout GtkSwitch_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_udiaeresis() {
+        return GDK_KEY_udiaeresis;
+    }
+    private static final int GDK_KEY_yacute = (int)253L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSwitch_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_yacute 253
      * }
      */
-    public static final AddressLayout GtkSwitch_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_yacute() {
+        return GDK_KEY_yacute;
+    }
+    private static final int GDK_KEY_thorn = (int)254L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSwitch_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_thorn 254
      * }
      */
-    public static final AddressLayout GtkSwitch_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_thorn() {
+        return GDK_KEY_thorn;
+    }
+    private static final int GDK_KEY_ydiaeresis = (int)255L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSwitch_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ydiaeresis 255
      * }
      */
-    public static final AddressLayout GtkSwitch_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ydiaeresis() {
+        return GDK_KEY_ydiaeresis;
+    }
+    private static final int GDK_KEY_Aogonek = (int)417L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTextBuffer* GtkTextBuffer_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Aogonek 417
      * }
      */
-    public static final AddressLayout GtkTextBuffer_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Aogonek() {
+        return GDK_KEY_Aogonek;
+    }
+    private static final int GDK_KEY_breve = (int)418L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTextBuffer_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_breve 418
      * }
      */
-    public static final AddressLayout GtkTextBuffer_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_breve() {
+        return GDK_KEY_breve;
+    }
+    private static final int GDK_KEY_Lstroke = (int)419L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTextBuffer_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Lstroke 419
      * }
      */
-    public static final AddressLayout GtkTextBuffer_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Lstroke() {
+        return GDK_KEY_Lstroke;
+    }
+    private static final int GDK_KEY_Lcaron = (int)421L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTextBuffer_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Lcaron 421
      * }
      */
-    public static final AddressLayout GtkTextBuffer_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Lcaron() {
+        return GDK_KEY_Lcaron;
+    }
+    private static final int GDK_KEY_Sacute = (int)422L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTextChildAnchor* GtkTextChildAnchor_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Sacute 422
      * }
      */
-    public static final AddressLayout GtkTextChildAnchor_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Sacute() {
+        return GDK_KEY_Sacute;
+    }
+    private static final int GDK_KEY_Scaron = (int)425L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTextChildAnchor_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Scaron 425
      * }
      */
-    public static final AddressLayout GtkTextChildAnchor_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Scaron() {
+        return GDK_KEY_Scaron;
+    }
+    private static final int GDK_KEY_Scedilla = (int)426L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTextChildAnchor_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Scedilla 426
      * }
      */
-    public static final AddressLayout GtkTextChildAnchor_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Scedilla() {
+        return GDK_KEY_Scedilla;
+    }
+    private static final int GDK_KEY_Tcaron = (int)427L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTextChildAnchor_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Tcaron 427
      * }
      */
-    public static final AddressLayout GtkTextChildAnchor_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Tcaron() {
+        return GDK_KEY_Tcaron;
+    }
+    private static final int GDK_KEY_Zacute = (int)428L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTextMark* GtkTextMark_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Zacute 428
      * }
      */
-    public static final AddressLayout GtkTextMark_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Zacute() {
+        return GDK_KEY_Zacute;
+    }
+    private static final int GDK_KEY_Zcaron = (int)430L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTextMark_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Zcaron 430
      * }
      */
-    public static final AddressLayout GtkTextMark_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Zcaron() {
+        return GDK_KEY_Zcaron;
+    }
+    private static final int GDK_KEY_Zabovedot = (int)431L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTextMark_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Zabovedot 431
      * }
      */
-    public static final AddressLayout GtkTextMark_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Zabovedot() {
+        return GDK_KEY_Zabovedot;
+    }
+    private static final int GDK_KEY_aogonek = (int)433L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTextMark_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_aogonek 433
      * }
      */
-    public static final AddressLayout GtkTextMark_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_aogonek() {
+        return GDK_KEY_aogonek;
+    }
+    private static final int GDK_KEY_ogonek = (int)434L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTextTag* GtkTextTag_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ogonek 434
      * }
      */
-    public static final AddressLayout GtkTextTag_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ogonek() {
+        return GDK_KEY_ogonek;
+    }
+    private static final int GDK_KEY_lstroke = (int)435L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTextTag_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_lstroke 435
      * }
      */
-    public static final AddressLayout GtkTextTag_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_lstroke() {
+        return GDK_KEY_lstroke;
+    }
+    private static final int GDK_KEY_lcaron = (int)437L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTextTag_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_lcaron 437
      * }
      */
-    public static final AddressLayout GtkTextTag_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_lcaron() {
+        return GDK_KEY_lcaron;
+    }
+    private static final int GDK_KEY_sacute = (int)438L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTextTag_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_sacute 438
      * }
      */
-    public static final AddressLayout GtkTextTag_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_sacute() {
+        return GDK_KEY_sacute;
+    }
+    private static final int GDK_KEY_caron = (int)439L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTextTagTable* GtkTextTagTable_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_caron 439
      * }
      */
-    public static final AddressLayout GtkTextTagTable_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_caron() {
+        return GDK_KEY_caron;
+    }
+    private static final int GDK_KEY_scaron = (int)441L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTextTagTable_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_scaron 441
      * }
      */
-    public static final AddressLayout GtkTextTagTable_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_scaron() {
+        return GDK_KEY_scaron;
+    }
+    private static final int GDK_KEY_scedilla = (int)442L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTextTagTable_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_scedilla 442
      * }
      */
-    public static final AddressLayout GtkTextTagTable_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_scedilla() {
+        return GDK_KEY_scedilla;
+    }
+    private static final int GDK_KEY_tcaron = (int)443L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTextTagTable_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_tcaron 443
      * }
      */
-    public static final AddressLayout GtkTextTagTable_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_tcaron() {
+        return GDK_KEY_tcaron;
+    }
+    private static final int GDK_KEY_zacute = (int)444L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTextView* GtkTextView_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_zacute 444
      * }
      */
-    public static final AddressLayout GtkTextView_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_zacute() {
+        return GDK_KEY_zacute;
+    }
+    private static final int GDK_KEY_doubleacute = (int)445L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTextView_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_doubleacute 445
      * }
      */
-    public static final AddressLayout GtkTextView_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_doubleacute() {
+        return GDK_KEY_doubleacute;
+    }
+    private static final int GDK_KEY_zcaron = (int)446L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTextView_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_zcaron 446
      * }
      */
-    public static final AddressLayout GtkTextView_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_zcaron() {
+        return GDK_KEY_zcaron;
+    }
+    private static final int GDK_KEY_zabovedot = (int)447L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTextView_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_zabovedot 447
      * }
      */
-    public static final AddressLayout GtkTextView_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_zabovedot() {
+        return GDK_KEY_zabovedot;
+    }
+    private static final int GDK_KEY_Racute = (int)448L;
     /**
-     * {@snippet :
-     * typedef struct _GtkToggleButton* GtkToggleButton_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Racute 448
      * }
      */
-    public static final AddressLayout GtkToggleButton_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Racute() {
+        return GDK_KEY_Racute;
+    }
+    private static final int GDK_KEY_Abreve = (int)451L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkToggleButton_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Abreve 451
      * }
      */
-    public static final AddressLayout GtkToggleButton_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Abreve() {
+        return GDK_KEY_Abreve;
+    }
+    private static final int GDK_KEY_Lacute = (int)453L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkToggleButton_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Lacute 453
      * }
      */
-    public static final AddressLayout GtkToggleButton_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Lacute() {
+        return GDK_KEY_Lacute;
+    }
+    private static final int GDK_KEY_Cacute = (int)454L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkToggleButton_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cacute 454
      * }
      */
-    public static final AddressLayout GtkToggleButton_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Cacute() {
+        return GDK_KEY_Cacute;
+    }
+    private static final int GDK_KEY_Ccaron = (int)456L;
     /**
-     * {@snippet :
-     * typedef struct _GtkToggleToolButton* GtkToggleToolButton_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ccaron 456
      * }
      */
-    public static final AddressLayout GtkToggleToolButton_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ccaron() {
+        return GDK_KEY_Ccaron;
+    }
+    private static final int GDK_KEY_Eogonek = (int)458L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkToggleToolButton_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Eogonek 458
      * }
      */
-    public static final AddressLayout GtkToggleToolButton_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Eogonek() {
+        return GDK_KEY_Eogonek;
+    }
+    private static final int GDK_KEY_Ecaron = (int)460L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkToggleToolButton_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ecaron 460
      * }
      */
-    public static final AddressLayout GtkToggleToolButton_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ecaron() {
+        return GDK_KEY_Ecaron;
+    }
+    private static final int GDK_KEY_Dcaron = (int)463L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkToggleToolButton_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Dcaron 463
      * }
      */
-    public static final AddressLayout GtkToggleToolButton_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Dcaron() {
+        return GDK_KEY_Dcaron;
+    }
+    private static final int GDK_KEY_Dstroke = (int)464L;
     /**
-     * {@snippet :
-     * typedef struct _GtkToolButton* GtkToolButton_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Dstroke 464
      * }
      */
-    public static final AddressLayout GtkToolButton_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Dstroke() {
+        return GDK_KEY_Dstroke;
+    }
+    private static final int GDK_KEY_Nacute = (int)465L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkToolButton_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Nacute 465
      * }
      */
-    public static final AddressLayout GtkToolButton_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Nacute() {
+        return GDK_KEY_Nacute;
+    }
+    private static final int GDK_KEY_Ncaron = (int)466L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkToolButton_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ncaron 466
      * }
      */
-    public static final AddressLayout GtkToolButton_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ncaron() {
+        return GDK_KEY_Ncaron;
+    }
+    private static final int GDK_KEY_Odoubleacute = (int)469L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkToolButton_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Odoubleacute 469
      * }
      */
-    public static final AddressLayout GtkToolButton_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Odoubleacute() {
+        return GDK_KEY_Odoubleacute;
+    }
+    private static final int GDK_KEY_Rcaron = (int)472L;
     /**
-     * {@snippet :
-     * typedef struct _GtkToolItem* GtkToolItem_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Rcaron 472
      * }
      */
-    public static final AddressLayout GtkToolItem_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Rcaron() {
+        return GDK_KEY_Rcaron;
+    }
+    private static final int GDK_KEY_Uring = (int)473L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkToolItem_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Uring 473
      * }
      */
-    public static final AddressLayout GtkToolItem_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Uring() {
+        return GDK_KEY_Uring;
+    }
+    private static final int GDK_KEY_Udoubleacute = (int)475L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkToolItem_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Udoubleacute 475
      * }
      */
-    public static final AddressLayout GtkToolItem_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Udoubleacute() {
+        return GDK_KEY_Udoubleacute;
+    }
+    private static final int GDK_KEY_Tcedilla = (int)478L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkToolItem_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Tcedilla 478
      * }
      */
-    public static final AddressLayout GtkToolItem_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Tcedilla() {
+        return GDK_KEY_Tcedilla;
+    }
+    private static final int GDK_KEY_racute = (int)480L;
     /**
-     * {@snippet :
-     * typedef struct _GtkToolItemGroup* GtkToolItemGroup_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_racute 480
      * }
      */
-    public static final AddressLayout GtkToolItemGroup_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_racute() {
+        return GDK_KEY_racute;
+    }
+    private static final int GDK_KEY_abreve = (int)483L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkToolItemGroup_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_abreve 483
      * }
      */
-    public static final AddressLayout GtkToolItemGroup_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_abreve() {
+        return GDK_KEY_abreve;
+    }
+    private static final int GDK_KEY_lacute = (int)485L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkToolItemGroup_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_lacute 485
      * }
      */
-    public static final AddressLayout GtkToolItemGroup_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_lacute() {
+        return GDK_KEY_lacute;
+    }
+    private static final int GDK_KEY_cacute = (int)486L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkToolItemGroup_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_cacute 486
      * }
      */
-    public static final AddressLayout GtkToolItemGroup_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_cacute() {
+        return GDK_KEY_cacute;
+    }
+    private static final int GDK_KEY_ccaron = (int)488L;
     /**
-     * {@snippet :
-     * typedef struct _GtkToolPalette* GtkToolPalette_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ccaron 488
      * }
      */
-    public static final AddressLayout GtkToolPalette_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ccaron() {
+        return GDK_KEY_ccaron;
+    }
+    private static final int GDK_KEY_eogonek = (int)490L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkToolPalette_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_eogonek 490
      * }
      */
-    public static final AddressLayout GtkToolPalette_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_eogonek() {
+        return GDK_KEY_eogonek;
+    }
+    private static final int GDK_KEY_ecaron = (int)492L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkToolPalette_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ecaron 492
      * }
      */
-    public static final AddressLayout GtkToolPalette_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ecaron() {
+        return GDK_KEY_ecaron;
+    }
+    private static final int GDK_KEY_dcaron = (int)495L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkToolPalette_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_dcaron 495
      * }
      */
-    public static final AddressLayout GtkToolPalette_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_dcaron() {
+        return GDK_KEY_dcaron;
+    }
+    private static final int GDK_KEY_dstroke = (int)496L;
     /**
-     * {@snippet :
-     * typedef struct _GtkToolShell* GtkToolShell_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_dstroke 496
      * }
      */
-    public static final AddressLayout GtkToolShell_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_dstroke() {
+        return GDK_KEY_dstroke;
+    }
+    private static final int GDK_KEY_nacute = (int)497L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkToolShell_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_nacute 497
      * }
      */
-    public static final AddressLayout GtkToolShell_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_nacute() {
+        return GDK_KEY_nacute;
+    }
+    private static final int GDK_KEY_ncaron = (int)498L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkToolShell_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ncaron 498
      * }
      */
-    public static final AddressLayout GtkToolShell_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ncaron() {
+        return GDK_KEY_ncaron;
+    }
+    private static final int GDK_KEY_odoubleacute = (int)501L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkToolShell_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_odoubleacute 501
      * }
      */
-    public static final AddressLayout GtkToolShell_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_odoubleacute() {
+        return GDK_KEY_odoubleacute;
+    }
+    private static final int GDK_KEY_rcaron = (int)504L;
     /**
-     * {@snippet :
-     * typedef struct _GtkToolbar* GtkToolbar_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_rcaron 504
      * }
      */
-    public static final AddressLayout GtkToolbar_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_rcaron() {
+        return GDK_KEY_rcaron;
+    }
+    private static final int GDK_KEY_uring = (int)505L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkToolbar_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_uring 505
      * }
      */
-    public static final AddressLayout GtkToolbar_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_uring() {
+        return GDK_KEY_uring;
+    }
+    private static final int GDK_KEY_udoubleacute = (int)507L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkToolbar_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_udoubleacute 507
      * }
      */
-    public static final AddressLayout GtkToolbar_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_udoubleacute() {
+        return GDK_KEY_udoubleacute;
+    }
+    private static final int GDK_KEY_tcedilla = (int)510L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkToolbar_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_tcedilla 510
      * }
      */
-    public static final AddressLayout GtkToolbar_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_tcedilla() {
+        return GDK_KEY_tcedilla;
+    }
+    private static final int GDK_KEY_abovedot = (int)511L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTooltip* GtkTooltip_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_abovedot 511
      * }
      */
-    public static final AddressLayout GtkTooltip_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_abovedot() {
+        return GDK_KEY_abovedot;
+    }
+    private static final int GDK_KEY_Hstroke = (int)673L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTooltip_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hstroke 673
      * }
      */
-    public static final AddressLayout GtkTooltip_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Hstroke() {
+        return GDK_KEY_Hstroke;
+    }
+    private static final int GDK_KEY_Hcircumflex = (int)678L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTooltip_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hcircumflex 678
      * }
      */
-    public static final AddressLayout GtkTooltip_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Hcircumflex() {
+        return GDK_KEY_Hcircumflex;
+    }
+    private static final int GDK_KEY_Iabovedot = (int)681L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTooltip_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Iabovedot 681
      * }
      */
-    public static final AddressLayout GtkTooltip_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Iabovedot() {
+        return GDK_KEY_Iabovedot;
+    }
+    private static final int GDK_KEY_Gbreve = (int)683L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeDragDest* GtkTreeDragDest_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Gbreve 683
      * }
      */
-    public static final AddressLayout GtkTreeDragDest_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Gbreve() {
+        return GDK_KEY_Gbreve;
+    }
+    private static final int GDK_KEY_Jcircumflex = (int)684L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeDragDest_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Jcircumflex 684
      * }
      */
-    public static final AddressLayout GtkTreeDragDest_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Jcircumflex() {
+        return GDK_KEY_Jcircumflex;
+    }
+    private static final int GDK_KEY_hstroke = (int)689L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeDragDest_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_hstroke 689
      * }
      */
-    public static final AddressLayout GtkTreeDragDest_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_hstroke() {
+        return GDK_KEY_hstroke;
+    }
+    private static final int GDK_KEY_hcircumflex = (int)694L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeDragDest_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_hcircumflex 694
      * }
      */
-    public static final AddressLayout GtkTreeDragDest_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_hcircumflex() {
+        return GDK_KEY_hcircumflex;
+    }
+    private static final int GDK_KEY_idotless = (int)697L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeDragSource* GtkTreeDragSource_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_idotless 697
      * }
      */
-    public static final AddressLayout GtkTreeDragSource_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_idotless() {
+        return GDK_KEY_idotless;
+    }
+    private static final int GDK_KEY_gbreve = (int)699L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeDragSource_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_gbreve 699
      * }
      */
-    public static final AddressLayout GtkTreeDragSource_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_gbreve() {
+        return GDK_KEY_gbreve;
+    }
+    private static final int GDK_KEY_jcircumflex = (int)700L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeDragSource_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_jcircumflex 700
      * }
      */
-    public static final AddressLayout GtkTreeDragSource_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_jcircumflex() {
+        return GDK_KEY_jcircumflex;
+    }
+    private static final int GDK_KEY_Cabovedot = (int)709L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeDragSource_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cabovedot 709
      * }
      */
-    public static final AddressLayout GtkTreeDragSource_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Cabovedot() {
+        return GDK_KEY_Cabovedot;
+    }
+    private static final int GDK_KEY_Ccircumflex = (int)710L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeModel* GtkTreeModel_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ccircumflex 710
      * }
      */
-    public static final AddressLayout GtkTreeModel_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ccircumflex() {
+        return GDK_KEY_Ccircumflex;
+    }
+    private static final int GDK_KEY_Gabovedot = (int)725L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeModel_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Gabovedot 725
      * }
      */
-    public static final AddressLayout GtkTreeModel_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Gabovedot() {
+        return GDK_KEY_Gabovedot;
+    }
+    private static final int GDK_KEY_Gcircumflex = (int)728L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeModel_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Gcircumflex 728
      * }
      */
-    public static final AddressLayout GtkTreeModel_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Gcircumflex() {
+        return GDK_KEY_Gcircumflex;
+    }
+    private static final int GDK_KEY_Ubreve = (int)733L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeModel_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ubreve 733
      * }
      */
-    public static final AddressLayout GtkTreeModel_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ubreve() {
+        return GDK_KEY_Ubreve;
+    }
+    private static final int GDK_KEY_Scircumflex = (int)734L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeModelFilter* GtkTreeModelFilter_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Scircumflex 734
      * }
      */
-    public static final AddressLayout GtkTreeModelFilter_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Scircumflex() {
+        return GDK_KEY_Scircumflex;
+    }
+    private static final int GDK_KEY_cabovedot = (int)741L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeModelFilter_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_cabovedot 741
      * }
      */
-    public static final AddressLayout GtkTreeModelFilter_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_cabovedot() {
+        return GDK_KEY_cabovedot;
+    }
+    private static final int GDK_KEY_ccircumflex = (int)742L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeModelFilter_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ccircumflex 742
      * }
      */
-    public static final AddressLayout GtkTreeModelFilter_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ccircumflex() {
+        return GDK_KEY_ccircumflex;
+    }
+    private static final int GDK_KEY_gabovedot = (int)757L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeModelFilter_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_gabovedot 757
      * }
      */
-    public static final AddressLayout GtkTreeModelFilter_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_gabovedot() {
+        return GDK_KEY_gabovedot;
+    }
+    private static final int GDK_KEY_gcircumflex = (int)760L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeModelSort* GtkTreeModelSort_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_gcircumflex 760
      * }
      */
-    public static final AddressLayout GtkTreeModelSort_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_gcircumflex() {
+        return GDK_KEY_gcircumflex;
+    }
+    private static final int GDK_KEY_ubreve = (int)765L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeModelSort_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ubreve 765
      * }
      */
-    public static final AddressLayout GtkTreeModelSort_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ubreve() {
+        return GDK_KEY_ubreve;
+    }
+    private static final int GDK_KEY_scircumflex = (int)766L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeModelSort_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_scircumflex 766
      * }
      */
-    public static final AddressLayout GtkTreeModelSort_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_scircumflex() {
+        return GDK_KEY_scircumflex;
+    }
+    private static final int GDK_KEY_kra = (int)930L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeModelSort_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kra 930
      * }
      */
-    public static final AddressLayout GtkTreeModelSort_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_kra() {
+        return GDK_KEY_kra;
+    }
+    private static final int GDK_KEY_kappa = (int)930L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeSelection* GtkTreeSelection_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kappa 930
      * }
      */
-    public static final AddressLayout GtkTreeSelection_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_kappa() {
+        return GDK_KEY_kappa;
+    }
+    private static final int GDK_KEY_Rcedilla = (int)931L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeSelection_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Rcedilla 931
      * }
      */
-    public static final AddressLayout GtkTreeSelection_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Rcedilla() {
+        return GDK_KEY_Rcedilla;
+    }
+    private static final int GDK_KEY_Itilde = (int)933L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeSelection_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Itilde 933
      * }
      */
-    public static final AddressLayout GtkTreeSelection_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Itilde() {
+        return GDK_KEY_Itilde;
+    }
+    private static final int GDK_KEY_Lcedilla = (int)934L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeSelection_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Lcedilla 934
      * }
      */
-    public static final AddressLayout GtkTreeSelection_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Lcedilla() {
+        return GDK_KEY_Lcedilla;
+    }
+    private static final int GDK_KEY_Emacron = (int)938L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeSortable* GtkTreeSortable_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Emacron 938
      * }
      */
-    public static final AddressLayout GtkTreeSortable_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Emacron() {
+        return GDK_KEY_Emacron;
+    }
+    private static final int GDK_KEY_Gcedilla = (int)939L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeSortable_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Gcedilla 939
      * }
      */
-    public static final AddressLayout GtkTreeSortable_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Gcedilla() {
+        return GDK_KEY_Gcedilla;
+    }
+    private static final int GDK_KEY_Tslash = (int)940L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeSortable_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Tslash 940
      * }
      */
-    public static final AddressLayout GtkTreeSortable_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Tslash() {
+        return GDK_KEY_Tslash;
+    }
+    private static final int GDK_KEY_rcedilla = (int)947L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeSortable_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_rcedilla 947
      * }
      */
-    public static final AddressLayout GtkTreeSortable_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_rcedilla() {
+        return GDK_KEY_rcedilla;
+    }
+    private static final int GDK_KEY_itilde = (int)949L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeStore* GtkTreeStore_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_itilde 949
      * }
      */
-    public static final AddressLayout GtkTreeStore_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_itilde() {
+        return GDK_KEY_itilde;
+    }
+    private static final int GDK_KEY_lcedilla = (int)950L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeStore_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_lcedilla 950
      * }
      */
-    public static final AddressLayout GtkTreeStore_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_lcedilla() {
+        return GDK_KEY_lcedilla;
+    }
+    private static final int GDK_KEY_emacron = (int)954L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeStore_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_emacron 954
      * }
      */
-    public static final AddressLayout GtkTreeStore_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_emacron() {
+        return GDK_KEY_emacron;
+    }
+    private static final int GDK_KEY_gcedilla = (int)955L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeStore_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_gcedilla 955
      * }
      */
-    public static final AddressLayout GtkTreeStore_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_gcedilla() {
+        return GDK_KEY_gcedilla;
+    }
+    private static final int GDK_KEY_tslash = (int)956L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeView* GtkTreeView_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_tslash 956
      * }
      */
-    public static final AddressLayout GtkTreeView_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_tslash() {
+        return GDK_KEY_tslash;
+    }
+    private static final int GDK_KEY_ENG = (int)957L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeView_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ENG 957
      * }
      */
-    public static final AddressLayout GtkTreeView_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ENG() {
+        return GDK_KEY_ENG;
+    }
+    private static final int GDK_KEY_eng = (int)959L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeView_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_eng 959
      * }
      */
-    public static final AddressLayout GtkTreeView_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_eng() {
+        return GDK_KEY_eng;
+    }
+    private static final int GDK_KEY_Amacron = (int)960L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeView_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Amacron 960
      * }
      */
-    public static final AddressLayout GtkTreeView_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Amacron() {
+        return GDK_KEY_Amacron;
+    }
+    private static final int GDK_KEY_Iogonek = (int)967L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeViewColumn* GtkTreeViewColumn_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Iogonek 967
      * }
      */
-    public static final AddressLayout GtkTreeViewColumn_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Iogonek() {
+        return GDK_KEY_Iogonek;
+    }
+    private static final int GDK_KEY_Eabovedot = (int)972L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeViewColumn_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Eabovedot 972
      * }
      */
-    public static final AddressLayout GtkTreeViewColumn_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Eabovedot() {
+        return GDK_KEY_Eabovedot;
+    }
+    private static final int GDK_KEY_Imacron = (int)975L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeViewColumn_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Imacron 975
      * }
      */
-    public static final AddressLayout GtkTreeViewColumn_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Imacron() {
+        return GDK_KEY_Imacron;
+    }
+    private static final int GDK_KEY_Ncedilla = (int)977L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeViewColumn_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ncedilla 977
      * }
      */
-    public static final AddressLayout GtkTreeViewColumn_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ncedilla() {
+        return GDK_KEY_Ncedilla;
+    }
+    private static final int GDK_KEY_Omacron = (int)978L;
     /**
-     * {@snippet :
-     * typedef struct _GtkViewport* GtkViewport_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Omacron 978
      * }
      */
-    public static final AddressLayout GtkViewport_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Omacron() {
+        return GDK_KEY_Omacron;
+    }
+    private static final int GDK_KEY_Kcedilla = (int)979L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkViewport_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Kcedilla 979
      * }
      */
-    public static final AddressLayout GtkViewport_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Kcedilla() {
+        return GDK_KEY_Kcedilla;
+    }
+    private static final int GDK_KEY_Uogonek = (int)985L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkViewport_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Uogonek 985
      * }
      */
-    public static final AddressLayout GtkViewport_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Uogonek() {
+        return GDK_KEY_Uogonek;
+    }
+    private static final int GDK_KEY_Utilde = (int)989L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkViewport_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Utilde 989
      * }
      */
-    public static final AddressLayout GtkViewport_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Utilde() {
+        return GDK_KEY_Utilde;
+    }
+    private static final int GDK_KEY_Umacron = (int)990L;
     /**
-     * {@snippet :
-     * typedef struct _GtkVolumeButton* GtkVolumeButton_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Umacron 990
      * }
      */
-    public static final AddressLayout GtkVolumeButton_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Umacron() {
+        return GDK_KEY_Umacron;
+    }
+    private static final int GDK_KEY_amacron = (int)992L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkVolumeButton_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_amacron 992
      * }
      */
-    public static final AddressLayout GtkVolumeButton_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_amacron() {
+        return GDK_KEY_amacron;
+    }
+    private static final int GDK_KEY_iogonek = (int)999L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkVolumeButton_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_iogonek 999
      * }
      */
-    public static final AddressLayout GtkVolumeButton_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_iogonek() {
+        return GDK_KEY_iogonek;
+    }
+    private static final int GDK_KEY_eabovedot = (int)1004L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkVolumeButton_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_eabovedot 1004
      * }
      */
-    public static final AddressLayout GtkVolumeButton_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_eabovedot() {
+        return GDK_KEY_eabovedot;
+    }
+    private static final int GDK_KEY_imacron = (int)1007L;
     /**
-     * {@snippet :
-     * typedef struct _GtkPaperSize* GtkPaperSize_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_imacron 1007
      * }
      */
-    public static final AddressLayout GtkPaperSize_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_imacron() {
+        return GDK_KEY_imacron;
+    }
+    private static final int GDK_KEY_ncedilla = (int)1009L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkPaperSize_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ncedilla 1009
      * }
      */
-    public static final AddressLayout GtkPaperSize_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ncedilla() {
+        return GDK_KEY_ncedilla;
+    }
+    private static final int GDK_KEY_omacron = (int)1010L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkPaperSize_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_omacron 1010
      * }
      */
-    public static final AddressLayout GtkPaperSize_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_omacron() {
+        return GDK_KEY_omacron;
+    }
+    private static final int GDK_KEY_kcedilla = (int)1011L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkPaperSize_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kcedilla 1011
      * }
      */
-    public static final AddressLayout GtkPaperSize_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_kcedilla() {
+        return GDK_KEY_kcedilla;
+    }
+    private static final int GDK_KEY_uogonek = (int)1017L;
     /**
-     * {@snippet :
-     * typedef struct _GtkRecentInfo* GtkRecentInfo_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_uogonek 1017
      * }
      */
-    public static final AddressLayout GtkRecentInfo_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_uogonek() {
+        return GDK_KEY_uogonek;
+    }
+    private static final int GDK_KEY_utilde = (int)1021L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkRecentInfo_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_utilde 1021
      * }
      */
-    public static final AddressLayout GtkRecentInfo_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_utilde() {
+        return GDK_KEY_utilde;
+    }
+    private static final int GDK_KEY_umacron = (int)1022L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkRecentInfo_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_umacron 1022
      * }
      */
-    public static final AddressLayout GtkRecentInfo_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_umacron() {
+        return GDK_KEY_umacron;
+    }
+    private static final int GDK_KEY_Wcircumflex = (int)16777588L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkRecentInfo_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Wcircumflex 16777588
      * }
      */
-    public static final AddressLayout GtkRecentInfo_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Wcircumflex() {
+        return GDK_KEY_Wcircumflex;
+    }
+    private static final int GDK_KEY_wcircumflex = (int)16777589L;
     /**
-     * {@snippet :
-     * typedef struct _GtkSelectionData* GtkSelectionData_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_wcircumflex 16777589
      * }
      */
-    public static final AddressLayout GtkSelectionData_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_wcircumflex() {
+        return GDK_KEY_wcircumflex;
+    }
+    private static final int GDK_KEY_Ycircumflex = (int)16777590L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkSelectionData_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ycircumflex 16777590
      * }
      */
-    public static final AddressLayout GtkSelectionData_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ycircumflex() {
+        return GDK_KEY_Ycircumflex;
+    }
+    private static final int GDK_KEY_ycircumflex = (int)16777591L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkSelectionData_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ycircumflex 16777591
      * }
      */
-    public static final AddressLayout GtkSelectionData_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ycircumflex() {
+        return GDK_KEY_ycircumflex;
+    }
+    private static final int GDK_KEY_Babovedot = (int)16784898L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkSelectionData_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Babovedot 16784898
      * }
      */
-    public static final AddressLayout GtkSelectionData_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Babovedot() {
+        return GDK_KEY_Babovedot;
+    }
+    private static final int GDK_KEY_babovedot = (int)16784899L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTargetList* GtkTargetList_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_babovedot 16784899
      * }
      */
-    public static final AddressLayout GtkTargetList_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_babovedot() {
+        return GDK_KEY_babovedot;
+    }
+    private static final int GDK_KEY_Dabovedot = (int)16784906L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTargetList_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Dabovedot 16784906
      * }
      */
-    public static final AddressLayout GtkTargetList_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Dabovedot() {
+        return GDK_KEY_Dabovedot;
+    }
+    private static final int GDK_KEY_dabovedot = (int)16784907L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTargetList_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_dabovedot 16784907
      * }
      */
-    public static final AddressLayout GtkTargetList_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_dabovedot() {
+        return GDK_KEY_dabovedot;
+    }
+    private static final int GDK_KEY_Fabovedot = (int)16784926L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTargetList_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Fabovedot 16784926
      * }
      */
-    public static final AddressLayout GtkTargetList_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Fabovedot() {
+        return GDK_KEY_Fabovedot;
+    }
+    private static final int GDK_KEY_fabovedot = (int)16784927L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTextAttributes* GtkTextAttributes_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_fabovedot 16784927
      * }
      */
-    public static final AddressLayout GtkTextAttributes_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_fabovedot() {
+        return GDK_KEY_fabovedot;
+    }
+    private static final int GDK_KEY_Mabovedot = (int)16784960L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTextAttributes_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Mabovedot 16784960
      * }
      */
-    public static final AddressLayout GtkTextAttributes_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Mabovedot() {
+        return GDK_KEY_Mabovedot;
+    }
+    private static final int GDK_KEY_mabovedot = (int)16784961L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTextAttributes_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_mabovedot 16784961
      * }
      */
-    public static final AddressLayout GtkTextAttributes_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_mabovedot() {
+        return GDK_KEY_mabovedot;
+    }
+    private static final int GDK_KEY_Pabovedot = (int)16784982L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTextAttributes_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pabovedot 16784982
      * }
      */
-    public static final AddressLayout GtkTextAttributes_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Pabovedot() {
+        return GDK_KEY_Pabovedot;
+    }
+    private static final int GDK_KEY_pabovedot = (int)16784983L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTextIter* GtkTextIter_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_pabovedot 16784983
      * }
      */
-    public static final AddressLayout GtkTextIter_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_pabovedot() {
+        return GDK_KEY_pabovedot;
+    }
+    private static final int GDK_KEY_Sabovedot = (int)16784992L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTextIter_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Sabovedot 16784992
      * }
      */
-    public static final AddressLayout GtkTextIter_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Sabovedot() {
+        return GDK_KEY_Sabovedot;
+    }
+    private static final int GDK_KEY_sabovedot = (int)16784993L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTextIter_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_sabovedot 16784993
      * }
      */
-    public static final AddressLayout GtkTextIter_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_sabovedot() {
+        return GDK_KEY_sabovedot;
+    }
+    private static final int GDK_KEY_Tabovedot = (int)16785002L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTextIter_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Tabovedot 16785002
      * }
      */
-    public static final AddressLayout GtkTextIter_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Tabovedot() {
+        return GDK_KEY_Tabovedot;
+    }
+    private static final int GDK_KEY_tabovedot = (int)16785003L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeIter* GtkTreeIter_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_tabovedot 16785003
      * }
      */
-    public static final AddressLayout GtkTreeIter_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_tabovedot() {
+        return GDK_KEY_tabovedot;
+    }
+    private static final int GDK_KEY_Wgrave = (int)16785024L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeIter_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Wgrave 16785024
      * }
      */
-    public static final AddressLayout GtkTreeIter_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Wgrave() {
+        return GDK_KEY_Wgrave;
+    }
+    private static final int GDK_KEY_wgrave = (int)16785025L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeIter_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_wgrave 16785025
      * }
      */
-    public static final AddressLayout GtkTreeIter_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_wgrave() {
+        return GDK_KEY_wgrave;
+    }
+    private static final int GDK_KEY_Wacute = (int)16785026L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeIter_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Wacute 16785026
      * }
      */
-    public static final AddressLayout GtkTreeIter_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Wacute() {
+        return GDK_KEY_Wacute;
+    }
+    private static final int GDK_KEY_wacute = (int)16785027L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreePath* GtkTreePath_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_wacute 16785027
      * }
      */
-    public static final AddressLayout GtkTreePath_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_wacute() {
+        return GDK_KEY_wacute;
+    }
+    private static final int GDK_KEY_Wdiaeresis = (int)16785028L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreePath_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Wdiaeresis 16785028
      * }
      */
-    public static final AddressLayout GtkTreePath_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Wdiaeresis() {
+        return GDK_KEY_Wdiaeresis;
+    }
+    private static final int GDK_KEY_wdiaeresis = (int)16785029L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreePath_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_wdiaeresis 16785029
      * }
      */
-    public static final AddressLayout GtkTreePath_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_wdiaeresis() {
+        return GDK_KEY_wdiaeresis;
+    }
+    private static final int GDK_KEY_Ygrave = (int)16785138L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreePath_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ygrave 16785138
      * }
      */
-    public static final AddressLayout GtkTreePath_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ygrave() {
+        return GDK_KEY_Ygrave;
+    }
+    private static final int GDK_KEY_ygrave = (int)16785139L;
     /**
-     * {@snippet :
-     * typedef struct _GtkTreeRowReference* GtkTreeRowReference_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_ygrave 16785139
      * }
      */
-    public static final AddressLayout GtkTreeRowReference_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_ygrave() {
+        return GDK_KEY_ygrave;
+    }
+    private static final int GDK_KEY_OE = (int)5052L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkTreeRowReference_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_OE 5052
      * }
      */
-    public static final AddressLayout GtkTreeRowReference_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_OE() {
+        return GDK_KEY_OE;
+    }
+    private static final int GDK_KEY_oe = (int)5053L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkTreeRowReference_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_oe 5053
      * }
      */
-    public static final AddressLayout GtkTreeRowReference_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_oe() {
+        return GDK_KEY_oe;
+    }
+    private static final int GDK_KEY_Ydiaeresis = (int)5054L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkTreeRowReference_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ydiaeresis 5054
      * }
      */
-    public static final AddressLayout GtkTreeRowReference_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_Ydiaeresis() {
+        return GDK_KEY_Ydiaeresis;
+    }
+    private static final int GDK_KEY_overline = (int)1150L;
     /**
-     * {@snippet :
-     * typedef struct _GtkWidgetPath* GtkWidgetPath_autoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_overline 1150
      * }
      */
-    public static final AddressLayout GtkWidgetPath_autoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_overline() {
+        return GDK_KEY_overline;
+    }
+    private static final int GDK_KEY_kana_fullstop = (int)1185L;
     /**
-     * {@snippet :
-     * typedef struct _GList* GtkWidgetPath_listautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_fullstop 1185
      * }
      */
-    public static final AddressLayout GtkWidgetPath_listautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_kana_fullstop() {
+        return GDK_KEY_kana_fullstop;
+    }
+    private static final int GDK_KEY_kana_openingbracket = (int)1186L;
     /**
-     * {@snippet :
-     * typedef struct _GSList* GtkWidgetPath_slistautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_openingbracket 1186
      * }
      */
-    public static final AddressLayout GtkWidgetPath_slistautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_kana_openingbracket() {
+        return GDK_KEY_kana_openingbracket;
+    }
+    private static final int GDK_KEY_kana_closingbracket = (int)1187L;
     /**
-     * {@snippet :
-     * typedef struct _GQueue* GtkWidgetPath_queueautoptr;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_closingbracket 1187
      * }
      */
-    public static final AddressLayout GtkWidgetPath_queueautoptr = RuntimeHelper.POINTER;
+    public static int GDK_KEY_kana_closingbracket() {
+        return GDK_KEY_kana_closingbracket;
+    }
+    private static final int GDK_KEY_kana_comma = (int)1188L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_APPLICATION_STATUS = 0;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_comma 1188
      * }
      */
-    public static int APP_INDICATOR_CATEGORY_APPLICATION_STATUS() {
-        return (int)0L;
+    public static int GDK_KEY_kana_comma() {
+        return GDK_KEY_kana_comma;
     }
+    private static final int GDK_KEY_kana_conjunctive = (int)1189L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_COMMUNICATIONS = 1;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_conjunctive 1189
      * }
      */
-    public static int APP_INDICATOR_CATEGORY_COMMUNICATIONS() {
-        return (int)1L;
+    public static int GDK_KEY_kana_conjunctive() {
+        return GDK_KEY_kana_conjunctive;
     }
+    private static final int GDK_KEY_kana_middledot = (int)1189L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_SYSTEM_SERVICES = 2;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_middledot 1189
      * }
      */
-    public static int APP_INDICATOR_CATEGORY_SYSTEM_SERVICES() {
-        return (int)2L;
+    public static int GDK_KEY_kana_middledot() {
+        return GDK_KEY_kana_middledot;
     }
+    private static final int GDK_KEY_kana_WO = (int)1190L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_HARDWARE = 3;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_WO 1190
      * }
      */
-    public static int APP_INDICATOR_CATEGORY_HARDWARE() {
-        return (int)3L;
+    public static int GDK_KEY_kana_WO() {
+        return GDK_KEY_kana_WO;
     }
+    private static final int GDK_KEY_kana_a = (int)1191L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_OTHER = 4;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_a 1191
      * }
      */
-    public static int APP_INDICATOR_CATEGORY_OTHER() {
-        return (int)4L;
+    public static int GDK_KEY_kana_a() {
+        return GDK_KEY_kana_a;
     }
+    private static final int GDK_KEY_kana_i = (int)1192L;
     /**
-     * {@snippet :
-     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_PASSIVE = 0;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_i 1192
      * }
      */
-    public static int APP_INDICATOR_STATUS_PASSIVE() {
-        return (int)0L;
+    public static int GDK_KEY_kana_i() {
+        return GDK_KEY_kana_i;
     }
+    private static final int GDK_KEY_kana_u = (int)1193L;
     /**
-     * {@snippet :
-     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_ACTIVE = 1;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_u 1193
      * }
      */
-    public static int APP_INDICATOR_STATUS_ACTIVE() {
-        return (int)1L;
+    public static int GDK_KEY_kana_u() {
+        return GDK_KEY_kana_u;
     }
+    private static final int GDK_KEY_kana_e = (int)1194L;
     /**
-     * {@snippet :
-     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_ATTENTION = 2;
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_e 1194
      * }
      */
-    public static int APP_INDICATOR_STATUS_ATTENTION() {
-        return (int)2L;
+    public static int GDK_KEY_kana_e() {
+        return GDK_KEY_kana_e;
     }
-    public static MethodHandle app_indicator_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$3408.const$3,"app_indicator_get_type");
-    }
+    private static final int GDK_KEY_kana_o = (int)1195L;
     /**
-     * {@snippet :
-     * unsigned long app_indicator_get_type();
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_o 1195
      * }
      */
-    public static long app_indicator_get_type() {
-        var mh$ = app_indicator_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$3408.const$4,"app_indicator_new");
+    public static int GDK_KEY_kana_o() {
+        return GDK_KEY_kana_o;
     }
+    private static final int GDK_KEY_kana_ya = (int)1196L;
     /**
-     * {@snippet :
-     * struct _AppIndicator* app_indicator_new(char* id, char* icon_name, enum AppIndicatorCategory category);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_ya 1196
      * }
      */
-    public static MemorySegment app_indicator_new(MemorySegment id, MemorySegment icon_name, int category) {
-        var mh$ = app_indicator_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(id, icon_name, category);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_ya() {
+        return GDK_KEY_kana_ya;
     }
-    public static MethodHandle app_indicator_new_with_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3408.const$5,"app_indicator_new_with_path");
-    }
+    private static final int GDK_KEY_kana_yu = (int)1197L;
     /**
-     * {@snippet :
-     * struct _AppIndicator* app_indicator_new_with_path(char* id, char* icon_name, enum AppIndicatorCategory category, char* icon_theme_path);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_yu 1197
      * }
      */
-    public static MemorySegment app_indicator_new_with_path(MemorySegment id, MemorySegment icon_name, int category, MemorySegment icon_theme_path) {
-        var mh$ = app_indicator_new_with_path$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(id, icon_name, category, icon_theme_path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_yu() {
+        return GDK_KEY_kana_yu;
     }
-    public static MethodHandle app_indicator_set_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$0,"app_indicator_set_status");
-    }
+    private static final int GDK_KEY_kana_yo = (int)1198L;
     /**
-     * {@snippet :
-     * void app_indicator_set_status(struct _AppIndicator* self, enum AppIndicatorStatus status);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_yo 1198
      * }
      */
-    public static void app_indicator_set_status(MemorySegment self, int status) {
-        var mh$ = app_indicator_set_status$MH();
-        try {
-            mh$.invokeExact(self, status);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_set_attention_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$1,"app_indicator_set_attention_icon");
+    public static int GDK_KEY_kana_yo() {
+        return GDK_KEY_kana_yo;
     }
+    private static final int GDK_KEY_kana_tsu = (int)1199L;
     /**
-     * {@snippet :
-     * void app_indicator_set_attention_icon(struct _AppIndicator* self, char* icon_name);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_tsu 1199
      * }
      */
-    public static void app_indicator_set_attention_icon(MemorySegment self, MemorySegment icon_name) {
-        var mh$ = app_indicator_set_attention_icon$MH();
-        try {
-            mh$.invokeExact(self, icon_name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_tsu() {
+        return GDK_KEY_kana_tsu;
     }
-    public static MethodHandle app_indicator_set_attention_icon_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$2,"app_indicator_set_attention_icon_full");
-    }
+    private static final int GDK_KEY_kana_tu = (int)1199L;
     /**
-     * {@snippet :
-     * void app_indicator_set_attention_icon_full(struct _AppIndicator* self, char* icon_name, char* icon_desc);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_tu 1199
      * }
      */
-    public static void app_indicator_set_attention_icon_full(MemorySegment self, MemorySegment icon_name, MemorySegment icon_desc) {
-        var mh$ = app_indicator_set_attention_icon_full$MH();
-        try {
-            mh$.invokeExact(self, icon_name, icon_desc);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_set_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$3,"app_indicator_set_menu");
+    public static int GDK_KEY_kana_tu() {
+        return GDK_KEY_kana_tu;
     }
+    private static final int GDK_KEY_prolongedsound = (int)1200L;
     /**
-     * {@snippet :
-     * void app_indicator_set_menu(struct _AppIndicator* self, struct _GtkMenu* menu);
+     * {@snippet lang=c :
+     * #define GDK_KEY_prolongedsound 1200
      * }
      */
-    public static void app_indicator_set_menu(MemorySegment self, MemorySegment menu) {
-        var mh$ = app_indicator_set_menu$MH();
-        try {
-            mh$.invokeExact(self, menu);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_prolongedsound() {
+        return GDK_KEY_prolongedsound;
     }
-    public static MethodHandle app_indicator_set_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$4,"app_indicator_set_icon");
-    }
+    private static final int GDK_KEY_kana_A = (int)1201L;
     /**
-     * {@snippet :
-     * void app_indicator_set_icon(struct _AppIndicator* self, char* icon_name);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_A 1201
      * }
      */
-    public static void app_indicator_set_icon(MemorySegment self, MemorySegment icon_name) {
-        var mh$ = app_indicator_set_icon$MH();
-        try {
-            mh$.invokeExact(self, icon_name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_A() {
+        return GDK_KEY_kana_A;
     }
-    public static MethodHandle app_indicator_set_icon_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$3409.const$5,"app_indicator_set_icon_full");
-    }
+    private static final int GDK_KEY_kana_I = (int)1202L;
     /**
-     * {@snippet :
-     * void app_indicator_set_icon_full(struct _AppIndicator* self, char* icon_name, char* icon_desc);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_I 1202
      * }
      */
-    public static void app_indicator_set_icon_full(MemorySegment self, MemorySegment icon_name, MemorySegment icon_desc) {
-        var mh$ = app_indicator_set_icon_full$MH();
-        try {
-            mh$.invokeExact(self, icon_name, icon_desc);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$0,"app_indicator_set_label");
+    public static int GDK_KEY_kana_I() {
+        return GDK_KEY_kana_I;
     }
+    private static final int GDK_KEY_kana_U = (int)1203L;
     /**
-     * {@snippet :
-     * void app_indicator_set_label(struct _AppIndicator* self, char* label, char* guide);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_U 1203
      * }
      */
-    public static void app_indicator_set_label(MemorySegment self, MemorySegment label, MemorySegment guide) {
-        var mh$ = app_indicator_set_label$MH();
-        try {
-            mh$.invokeExact(self, label, guide);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_U() {
+        return GDK_KEY_kana_U;
     }
-    public static MethodHandle app_indicator_set_icon_theme_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$1,"app_indicator_set_icon_theme_path");
-    }
+    private static final int GDK_KEY_kana_E = (int)1204L;
     /**
-     * {@snippet :
-     * void app_indicator_set_icon_theme_path(struct _AppIndicator* self, char* icon_theme_path);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_E 1204
      * }
      */
-    public static void app_indicator_set_icon_theme_path(MemorySegment self, MemorySegment icon_theme_path) {
-        var mh$ = app_indicator_set_icon_theme_path$MH();
-        try {
-            mh$.invokeExact(self, icon_theme_path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_set_ordering_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$2,"app_indicator_set_ordering_index");
+    public static int GDK_KEY_kana_E() {
+        return GDK_KEY_kana_E;
     }
+    private static final int GDK_KEY_kana_O = (int)1205L;
     /**
-     * {@snippet :
-     * void app_indicator_set_ordering_index(struct _AppIndicator* self, unsigned int ordering_index);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_O 1205
      * }
      */
-    public static void app_indicator_set_ordering_index(MemorySegment self, int ordering_index) {
-        var mh$ = app_indicator_set_ordering_index$MH();
-        try {
-            mh$.invokeExact(self, ordering_index);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_O() {
+        return GDK_KEY_kana_O;
     }
-    public static MethodHandle app_indicator_set_secondary_activate_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$3,"app_indicator_set_secondary_activate_target");
-    }
+    private static final int GDK_KEY_kana_KA = (int)1206L;
     /**
-     * {@snippet :
-     * void app_indicator_set_secondary_activate_target(struct _AppIndicator* self, struct _GtkWidget* menuitem);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_KA 1206
      * }
      */
-    public static void app_indicator_set_secondary_activate_target(MemorySegment self, MemorySegment menuitem) {
-        var mh$ = app_indicator_set_secondary_activate_target$MH();
-        try {
-            mh$.invokeExact(self, menuitem);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_set_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$4,"app_indicator_set_title");
+    public static int GDK_KEY_kana_KA() {
+        return GDK_KEY_kana_KA;
     }
+    private static final int GDK_KEY_kana_KI = (int)1207L;
     /**
-     * {@snippet :
-     * void app_indicator_set_title(struct _AppIndicator* self, char* title);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_KI 1207
      * }
      */
-    public static void app_indicator_set_title(MemorySegment self, MemorySegment title) {
-        var mh$ = app_indicator_set_title$MH();
-        try {
-            mh$.invokeExact(self, title);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_KI() {
+        return GDK_KEY_kana_KI;
     }
-    public static MethodHandle app_indicator_get_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$3410.const$5,"app_indicator_get_id");
-    }
+    private static final int GDK_KEY_kana_KU = (int)1208L;
     /**
-     * {@snippet :
-     * char* app_indicator_get_id(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_KU 1208
      * }
      */
-    public static MemorySegment app_indicator_get_id(MemorySegment self) {
-        var mh$ = app_indicator_get_id$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_get_category$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$0,"app_indicator_get_category");
+    public static int GDK_KEY_kana_KU() {
+        return GDK_KEY_kana_KU;
     }
+    private static final int GDK_KEY_kana_KE = (int)1209L;
     /**
-     * {@snippet :
-     * enum AppIndicatorCategory app_indicator_get_category(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_KE 1209
      * }
      */
-    public static int app_indicator_get_category(MemorySegment self) {
-        var mh$ = app_indicator_get_category$MH();
-        try {
-            return (int)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_KE() {
+        return GDK_KEY_kana_KE;
     }
-    public static MethodHandle app_indicator_get_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$1,"app_indicator_get_status");
-    }
+    private static final int GDK_KEY_kana_KO = (int)1210L;
     /**
-     * {@snippet :
-     * enum AppIndicatorStatus app_indicator_get_status(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_KO 1210
      * }
      */
-    public static int app_indicator_get_status(MemorySegment self) {
-        var mh$ = app_indicator_get_status$MH();
-        try {
-            return (int)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_KO() {
+        return GDK_KEY_kana_KO;
     }
-    public static MethodHandle app_indicator_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$2,"app_indicator_get_icon");
-    }
+    private static final int GDK_KEY_kana_SA = (int)1211L;
     /**
-     * {@snippet :
-     * char* app_indicator_get_icon(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_SA 1211
      * }
      */
-    public static MemorySegment app_indicator_get_icon(MemorySegment self) {
-        var mh$ = app_indicator_get_icon$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_get_icon_desc$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$3,"app_indicator_get_icon_desc");
+    public static int GDK_KEY_kana_SA() {
+        return GDK_KEY_kana_SA;
     }
+    private static final int GDK_KEY_kana_SHI = (int)1212L;
     /**
-     * {@snippet :
-     * char* app_indicator_get_icon_desc(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_SHI 1212
      * }
      */
-    public static MemorySegment app_indicator_get_icon_desc(MemorySegment self) {
-        var mh$ = app_indicator_get_icon_desc$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_SHI() {
+        return GDK_KEY_kana_SHI;
     }
-    public static MethodHandle app_indicator_get_icon_theme_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$4,"app_indicator_get_icon_theme_path");
-    }
+    private static final int GDK_KEY_kana_SU = (int)1213L;
     /**
-     * {@snippet :
-     * char* app_indicator_get_icon_theme_path(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_SU 1213
      * }
      */
-    public static MemorySegment app_indicator_get_icon_theme_path(MemorySegment self) {
-        var mh$ = app_indicator_get_icon_theme_path$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_get_attention_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$3411.const$5,"app_indicator_get_attention_icon");
+    public static int GDK_KEY_kana_SU() {
+        return GDK_KEY_kana_SU;
     }
+    private static final int GDK_KEY_kana_SE = (int)1214L;
     /**
-     * {@snippet :
-     * char* app_indicator_get_attention_icon(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_SE 1214
      * }
      */
-    public static MemorySegment app_indicator_get_attention_icon(MemorySegment self) {
-        var mh$ = app_indicator_get_attention_icon$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_SE() {
+        return GDK_KEY_kana_SE;
     }
-    public static MethodHandle app_indicator_get_attention_icon_desc$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$0,"app_indicator_get_attention_icon_desc");
-    }
+    private static final int GDK_KEY_kana_SO = (int)1215L;
     /**
-     * {@snippet :
-     * char* app_indicator_get_attention_icon_desc(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_SO 1215
      * }
      */
-    public static MemorySegment app_indicator_get_attention_icon_desc(MemorySegment self) {
-        var mh$ = app_indicator_get_attention_icon_desc$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_SO() {
+        return GDK_KEY_kana_SO;
     }
-    public static MethodHandle app_indicator_get_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$1,"app_indicator_get_title");
-    }
+    private static final int GDK_KEY_kana_TA = (int)1216L;
     /**
-     * {@snippet :
-     * char* app_indicator_get_title(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_TA 1216
      * }
      */
-    public static MemorySegment app_indicator_get_title(MemorySegment self) {
-        var mh$ = app_indicator_get_title$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_get_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$2,"app_indicator_get_menu");
+    public static int GDK_KEY_kana_TA() {
+        return GDK_KEY_kana_TA;
     }
+    private static final int GDK_KEY_kana_CHI = (int)1217L;
     /**
-     * {@snippet :
-     * struct _GtkMenu* app_indicator_get_menu(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_CHI 1217
      * }
      */
-    public static MemorySegment app_indicator_get_menu(MemorySegment self) {
-        var mh$ = app_indicator_get_menu$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_CHI() {
+        return GDK_KEY_kana_CHI;
     }
-    public static MethodHandle app_indicator_get_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$3,"app_indicator_get_label");
-    }
+    private static final int GDK_KEY_kana_TI = (int)1217L;
     /**
-     * {@snippet :
-     * char* app_indicator_get_label(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_TI 1217
      * }
      */
-    public static MemorySegment app_indicator_get_label(MemorySegment self) {
-        var mh$ = app_indicator_get_label$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_get_label_guide$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$4,"app_indicator_get_label_guide");
+    public static int GDK_KEY_kana_TI() {
+        return GDK_KEY_kana_TI;
     }
+    private static final int GDK_KEY_kana_TSU = (int)1218L;
     /**
-     * {@snippet :
-     * char* app_indicator_get_label_guide(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_TSU 1218
      * }
      */
-    public static MemorySegment app_indicator_get_label_guide(MemorySegment self) {
-        var mh$ = app_indicator_get_label_guide$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_TSU() {
+        return GDK_KEY_kana_TSU;
     }
-    public static MethodHandle app_indicator_get_ordering_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$3412.const$5,"app_indicator_get_ordering_index");
-    }
+    private static final int GDK_KEY_kana_TU = (int)1218L;
     /**
-     * {@snippet :
-     * unsigned int app_indicator_get_ordering_index(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_TU 1218
      * }
      */
-    public static int app_indicator_get_ordering_index(MemorySegment self) {
-        var mh$ = app_indicator_get_ordering_index$MH();
-        try {
-            return (int)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_TU() {
+        return GDK_KEY_kana_TU;
     }
-    public static MethodHandle app_indicator_get_secondary_activate_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$3413.const$0,"app_indicator_get_secondary_activate_target");
-    }
+    private static final int GDK_KEY_kana_TE = (int)1219L;
     /**
-     * {@snippet :
-     * struct _GtkWidget* app_indicator_get_secondary_activate_target(struct _AppIndicator* self);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_TE 1219
      * }
      */
-    public static MemorySegment app_indicator_get_secondary_activate_target(MemorySegment self) {
-        var mh$ = app_indicator_get_secondary_activate_target$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(self);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle app_indicator_build_menu_from_desktop$MH() {
-        return RuntimeHelper.requireNonNull(constants$3413.const$1,"app_indicator_build_menu_from_desktop");
+    public static int GDK_KEY_kana_TE() {
+        return GDK_KEY_kana_TE;
     }
+    private static final int GDK_KEY_kana_TO = (int)1220L;
     /**
-     * {@snippet :
-     * void app_indicator_build_menu_from_desktop(struct _AppIndicator* self, char* desktop_file, char* desktop_profile);
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_TO 1220
      * }
      */
-    public static void app_indicator_build_menu_from_desktop(MemorySegment self, MemorySegment desktop_file, MemorySegment desktop_profile) {
-        var mh$ = app_indicator_build_menu_from_desktop$MH();
-        try {
-            mh$.invokeExact(self, desktop_file, desktop_profile);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
+    public static int GDK_KEY_kana_TO() {
+        return GDK_KEY_kana_TO;
     }
+    private static final int GDK_KEY_kana_NA = (int)1221L;
     /**
-     * {@snippet :
-     * #define NULL 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_NA 1221
      * }
      */
-    public static MemorySegment NULL() {
-        return constants$3413.const$2;
+    public static int GDK_KEY_kana_NA() {
+        return GDK_KEY_kana_NA;
     }
+    private static final int GDK_KEY_kana_NI = (int)1222L;
     /**
-     * {@snippet :
-     * #define G_C_STD_VERSION 201710
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_NI 1222
      * }
      */
-    public static long G_C_STD_VERSION() {
-        return 201710L;
+    public static int GDK_KEY_kana_NI() {
+        return GDK_KEY_kana_NI;
     }
+    private static final int GDK_KEY_kana_NU = (int)1223L;
     /**
-     * {@snippet :
-     * #define g_macro__has_attribute 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_NU 1223
      * }
      */
-    public static int g_macro__has_attribute() {
-        return (int)0L;
+    public static int GDK_KEY_kana_NU() {
+        return GDK_KEY_kana_NU;
     }
+    private static final int GDK_KEY_kana_NE = (int)1224L;
     /**
-     * {@snippet :
-     * #define g_macro__has_feature 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_NE 1224
      * }
      */
-    public static int g_macro__has_feature() {
-        return (int)0L;
+    public static int GDK_KEY_kana_NE() {
+        return GDK_KEY_kana_NE;
     }
+    private static final int GDK_KEY_kana_NO = (int)1225L;
     /**
-     * {@snippet :
-     * #define g_macro__has_builtin 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_NO 1225
      * }
      */
-    public static int g_macro__has_builtin() {
-        return (int)0L;
+    public static int GDK_KEY_kana_NO() {
+        return GDK_KEY_kana_NO;
     }
+    private static final int GDK_KEY_kana_HA = (int)1226L;
     /**
-     * {@snippet :
-     * #define g_macro__has_extension 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_HA 1226
      * }
      */
-    public static int g_macro__has_extension() {
-        return (int)0L;
+    public static int GDK_KEY_kana_HA() {
+        return GDK_KEY_kana_HA;
     }
+    private static final int GDK_KEY_kana_HI = (int)1227L;
     /**
-     * {@snippet :
-     * #define G_GNUC_FUNCTION ""
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_HI 1227
      * }
      */
-    public static MemorySegment G_GNUC_FUNCTION() {
-        return constants$3413.const$3;
+    public static int GDK_KEY_kana_HI() {
+        return GDK_KEY_kana_HI;
     }
+    private static final int GDK_KEY_kana_FU = (int)1228L;
     /**
-     * {@snippet :
-     * #define G_GNUC_PRETTY_FUNCTION ""
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_FU 1228
      * }
      */
-    public static MemorySegment G_GNUC_PRETTY_FUNCTION() {
-        return constants$3413.const$3;
+    public static int GDK_KEY_kana_FU() {
+        return GDK_KEY_kana_FU;
     }
+    private static final int GDK_KEY_kana_HU = (int)1228L;
     /**
-     * {@snippet :
-     * #define G_STRLOC "/tmp/jextract$7831923431972799985.h:49"
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_HU 1228
      * }
      */
-    public static MemorySegment G_STRLOC() {
-        return constants$3413.const$4;
+    public static int GDK_KEY_kana_HU() {
+        return GDK_KEY_kana_HU;
     }
+    private static final int GDK_KEY_kana_HE = (int)1229L;
     /**
-     * {@snippet :
-     * #define FALSE 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_HE 1229
      * }
      */
-    public static int FALSE() {
-        return (int)0L;
+    public static int GDK_KEY_kana_HE() {
+        return GDK_KEY_kana_HE;
     }
+    private static final int GDK_KEY_kana_HO = (int)1230L;
     /**
-     * {@snippet :
-     * #define TRUE 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_HO 1230
      * }
      */
-    public static int TRUE() {
-        return (int)1L;
+    public static int GDK_KEY_kana_HO() {
+        return GDK_KEY_kana_HO;
     }
+    private static final int GDK_KEY_kana_MA = (int)1231L;
     /**
-     * {@snippet :
-     * #define _POSIX_C_SOURCE 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_MA 1231
      * }
      */
-    public static long _POSIX_C_SOURCE() {
-        return 200809L;
+    public static int GDK_KEY_kana_MA() {
+        return GDK_KEY_kana_MA;
     }
+    private static final int GDK_KEY_kana_MI = (int)1232L;
     /**
-     * {@snippet :
-     * #define __STDC_IEC_60559_BFP__ 201404
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_MI 1232
      * }
      */
-    public static long __STDC_IEC_60559_BFP__() {
-        return 201404L;
+    public static int GDK_KEY_kana_MI() {
+        return GDK_KEY_kana_MI;
     }
+    private static final int GDK_KEY_kana_MU = (int)1233L;
     /**
-     * {@snippet :
-     * #define __STDC_IEC_60559_COMPLEX__ 201404
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_MU 1233
      * }
      */
-    public static long __STDC_IEC_60559_COMPLEX__() {
-        return 201404L;
+    public static int GDK_KEY_kana_MU() {
+        return GDK_KEY_kana_MU;
     }
+    private static final int GDK_KEY_kana_ME = (int)1234L;
     /**
-     * {@snippet :
-     * #define __STDC_ISO_10646__ 201706
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_ME 1234
      * }
      */
-    public static long __STDC_ISO_10646__() {
-        return 201706L;
+    public static int GDK_KEY_kana_ME() {
+        return GDK_KEY_kana_ME;
     }
+    private static final int GDK_KEY_kana_MO = (int)1235L;
     /**
-     * {@snippet :
-     * #define LLONG_MIN -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_MO 1235
      * }
      */
-    public static long LLONG_MIN() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_kana_MO() {
+        return GDK_KEY_kana_MO;
     }
+    private static final int GDK_KEY_kana_YA = (int)1236L;
     /**
-     * {@snippet :
-     * #define LLONG_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_YA 1236
      * }
      */
-    public static long LLONG_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_kana_YA() {
+        return GDK_KEY_kana_YA;
     }
+    private static final int GDK_KEY_kana_YU = (int)1237L;
     /**
-     * {@snippet :
-     * #define ULLONG_MAX -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_YU 1237
      * }
      */
-    public static long ULLONG_MAX() {
-        return -1L;
+    public static int GDK_KEY_kana_YU() {
+        return GDK_KEY_kana_YU;
     }
+    private static final int GDK_KEY_kana_YO = (int)1238L;
     /**
-     * {@snippet :
-     * #define PTHREAD_DESTRUCTOR_ITERATIONS 4
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_YO 1238
      * }
      */
-    public static int PTHREAD_DESTRUCTOR_ITERATIONS() {
-        return (int)4L;
+    public static int GDK_KEY_kana_YO() {
+        return GDK_KEY_kana_YO;
     }
+    private static final int GDK_KEY_kana_RA = (int)1239L;
     /**
-     * {@snippet :
-     * #define SEM_VALUE_MAX 2147483647
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_RA 1239
      * }
      */
-    public static int SEM_VALUE_MAX() {
-        return (int)2147483647L;
+    public static int GDK_KEY_kana_RA() {
+        return GDK_KEY_kana_RA;
     }
+    private static final int GDK_KEY_kana_RI = (int)1240L;
     /**
-     * {@snippet :
-     * #define SSIZE_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_RI 1240
      * }
      */
-    public static long SSIZE_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_kana_RI() {
+        return GDK_KEY_kana_RI;
     }
+    private static final int GDK_KEY_kana_RU = (int)1241L;
     /**
-     * {@snippet :
-     * #define BC_BASE_MAX 99
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_RU 1241
      * }
      */
-    public static int BC_BASE_MAX() {
-        return (int)99L;
+    public static int GDK_KEY_kana_RU() {
+        return GDK_KEY_kana_RU;
     }
+    private static final int GDK_KEY_kana_RE = (int)1242L;
     /**
-     * {@snippet :
-     * #define BC_DIM_MAX 2048
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_RE 1242
      * }
      */
-    public static int BC_DIM_MAX() {
-        return (int)2048L;
+    public static int GDK_KEY_kana_RE() {
+        return GDK_KEY_kana_RE;
     }
+    private static final int GDK_KEY_kana_RO = (int)1243L;
     /**
-     * {@snippet :
-     * #define BC_SCALE_MAX 99
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_RO 1243
      * }
      */
-    public static int BC_SCALE_MAX() {
-        return (int)99L;
+    public static int GDK_KEY_kana_RO() {
+        return GDK_KEY_kana_RO;
     }
+    private static final int GDK_KEY_kana_WA = (int)1244L;
     /**
-     * {@snippet :
-     * #define BC_STRING_MAX 1000
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_WA 1244
      * }
      */
-    public static int BC_STRING_MAX() {
-        return (int)1000L;
+    public static int GDK_KEY_kana_WA() {
+        return GDK_KEY_kana_WA;
     }
+    private static final int GDK_KEY_kana_N = (int)1245L;
     /**
-     * {@snippet :
-     * #define EXPR_NEST_MAX 32
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_N 1245
      * }
      */
-    public static int EXPR_NEST_MAX() {
-        return (int)32L;
+    public static int GDK_KEY_kana_N() {
+        return GDK_KEY_kana_N;
     }
+    private static final int GDK_KEY_voicedsound = (int)1246L;
     /**
-     * {@snippet :
-     * #define LINE_MAX 2048
+     * {@snippet lang=c :
+     * #define GDK_KEY_voicedsound 1246
      * }
      */
-    public static int LINE_MAX() {
-        return (int)2048L;
+    public static int GDK_KEY_voicedsound() {
+        return GDK_KEY_voicedsound;
     }
+    private static final int GDK_KEY_semivoicedsound = (int)1247L;
     /**
-     * {@snippet :
-     * #define RE_DUP_MAX 32767
+     * {@snippet lang=c :
+     * #define GDK_KEY_semivoicedsound 1247
      * }
      */
-    public static int RE_DUP_MAX() {
-        return (int)32767L;
+    public static int GDK_KEY_semivoicedsound() {
+        return GDK_KEY_semivoicedsound;
     }
+    private static final int GDK_KEY_kana_switch = (int)65406L;
     /**
-     * {@snippet :
-     * #define SCHAR_MAX 127
+     * {@snippet lang=c :
+     * #define GDK_KEY_kana_switch 65406
      * }
      */
-    public static int SCHAR_MAX() {
-        return (int)127L;
+    public static int GDK_KEY_kana_switch() {
+        return GDK_KEY_kana_switch;
     }
+    private static final int GDK_KEY_Farsi_0 = (int)16778992L;
     /**
-     * {@snippet :
-     * #define SHRT_MAX 32767
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_0 16778992
      * }
      */
-    public static int SHRT_MAX() {
-        return (int)32767L;
+    public static int GDK_KEY_Farsi_0() {
+        return GDK_KEY_Farsi_0;
     }
+    private static final int GDK_KEY_Farsi_1 = (int)16778993L;
     /**
-     * {@snippet :
-     * #define INT_MAX 2147483647
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_1 16778993
      * }
      */
-    public static int INT_MAX() {
-        return (int)2147483647L;
+    public static int GDK_KEY_Farsi_1() {
+        return GDK_KEY_Farsi_1;
     }
+    private static final int GDK_KEY_Farsi_2 = (int)16778994L;
     /**
-     * {@snippet :
-     * #define LONG_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_2 16778994
      * }
      */
-    public static long LONG_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Farsi_2() {
+        return GDK_KEY_Farsi_2;
     }
+    private static final int GDK_KEY_Farsi_3 = (int)16778995L;
     /**
-     * {@snippet :
-     * #define SCHAR_MIN -128
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_3 16778995
      * }
      */
-    public static int SCHAR_MIN() {
-        return (int)-128L;
+    public static int GDK_KEY_Farsi_3() {
+        return GDK_KEY_Farsi_3;
     }
+    private static final int GDK_KEY_Farsi_4 = (int)16778996L;
     /**
-     * {@snippet :
-     * #define SHRT_MIN -32768
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_4 16778996
      * }
      */
-    public static int SHRT_MIN() {
-        return (int)-32768L;
+    public static int GDK_KEY_Farsi_4() {
+        return GDK_KEY_Farsi_4;
     }
+    private static final int GDK_KEY_Farsi_5 = (int)16778997L;
     /**
-     * {@snippet :
-     * #define INT_MIN -2147483648
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_5 16778997
      * }
      */
-    public static int INT_MIN() {
-        return (int)-2147483648L;
+    public static int GDK_KEY_Farsi_5() {
+        return GDK_KEY_Farsi_5;
     }
+    private static final int GDK_KEY_Farsi_6 = (int)16778998L;
     /**
-     * {@snippet :
-     * #define LONG_MIN -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_6 16778998
      * }
      */
-    public static long LONG_MIN() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Farsi_6() {
+        return GDK_KEY_Farsi_6;
     }
+    private static final int GDK_KEY_Farsi_7 = (int)16778999L;
     /**
-     * {@snippet :
-     * #define UCHAR_MAX 255
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_7 16778999
      * }
      */
-    public static int UCHAR_MAX() {
-        return (int)255L;
+    public static int GDK_KEY_Farsi_7() {
+        return GDK_KEY_Farsi_7;
     }
+    private static final int GDK_KEY_Farsi_8 = (int)16779000L;
     /**
-     * {@snippet :
-     * #define USHRT_MAX 65535
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_8 16779000
      * }
      */
-    public static int USHRT_MAX() {
-        return (int)65535L;
+    public static int GDK_KEY_Farsi_8() {
+        return GDK_KEY_Farsi_8;
     }
+    private static final int GDK_KEY_Farsi_9 = (int)16779001L;
     /**
-     * {@snippet :
-     * #define UINT_MAX 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_9 16779001
      * }
      */
-    public static int UINT_MAX() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Farsi_9() {
+        return GDK_KEY_Farsi_9;
     }
+    private static final int GDK_KEY_Arabic_percent = (int)16778858L;
     /**
-     * {@snippet :
-     * #define ULONG_MAX -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_percent 16778858
      * }
      */
-    public static long ULONG_MAX() {
-        return -1L;
+    public static int GDK_KEY_Arabic_percent() {
+        return GDK_KEY_Arabic_percent;
     }
+    private static final int GDK_KEY_Arabic_superscript_alef = (int)16778864L;
     /**
-     * {@snippet :
-     * #define CHAR_BIT 8
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_superscript_alef 16778864
      * }
      */
-    public static int CHAR_BIT() {
-        return (int)8L;
+    public static int GDK_KEY_Arabic_superscript_alef() {
+        return GDK_KEY_Arabic_superscript_alef;
     }
+    private static final int GDK_KEY_Arabic_tteh = (int)16778873L;
     /**
-     * {@snippet :
-     * #define CHAR_MAX 255
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_tteh 16778873
      * }
      */
-    public static int CHAR_MAX() {
-        return (int)255L;
+    public static int GDK_KEY_Arabic_tteh() {
+        return GDK_KEY_Arabic_tteh;
     }
+    private static final int GDK_KEY_Arabic_peh = (int)16778878L;
     /**
-     * {@snippet :
-     * #define FLT_EVAL_METHOD 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_peh 16778878
      * }
      */
-    public static int FLT_EVAL_METHOD() {
-        return (int)0L;
+    public static int GDK_KEY_Arabic_peh() {
+        return GDK_KEY_Arabic_peh;
     }
+    private static final int GDK_KEY_Arabic_tcheh = (int)16778886L;
     /**
-     * {@snippet :
-     * #define FLT_RADIX 2
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_tcheh 16778886
      * }
      */
-    public static int FLT_RADIX() {
-        return (int)2L;
+    public static int GDK_KEY_Arabic_tcheh() {
+        return GDK_KEY_Arabic_tcheh;
     }
+    private static final int GDK_KEY_Arabic_ddal = (int)16778888L;
     /**
-     * {@snippet :
-     * #define FLT_MANT_DIG 24
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_ddal 16778888
      * }
      */
-    public static int FLT_MANT_DIG() {
-        return (int)24L;
+    public static int GDK_KEY_Arabic_ddal() {
+        return GDK_KEY_Arabic_ddal;
     }
+    private static final int GDK_KEY_Arabic_rreh = (int)16778897L;
     /**
-     * {@snippet :
-     * #define DBL_MANT_DIG 53
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_rreh 16778897
      * }
      */
-    public static int DBL_MANT_DIG() {
-        return (int)53L;
+    public static int GDK_KEY_Arabic_rreh() {
+        return GDK_KEY_Arabic_rreh;
     }
+    private static final int GDK_KEY_Arabic_comma = (int)1452L;
     /**
-     * {@snippet :
-     * #define LDBL_MANT_DIG 113
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_comma 1452
      * }
      */
-    public static int LDBL_MANT_DIG() {
-        return (int)113L;
+    public static int GDK_KEY_Arabic_comma() {
+        return GDK_KEY_Arabic_comma;
     }
+    private static final int GDK_KEY_Arabic_fullstop = (int)16778964L;
     /**
-     * {@snippet :
-     * #define DECIMAL_DIG 36
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_fullstop 16778964
      * }
      */
-    public static int DECIMAL_DIG() {
-        return (int)36L;
+    public static int GDK_KEY_Arabic_fullstop() {
+        return GDK_KEY_Arabic_fullstop;
     }
+    private static final int GDK_KEY_Arabic_0 = (int)16778848L;
     /**
-     * {@snippet :
-     * #define FLT_DIG 6
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_0 16778848
      * }
      */
-    public static int FLT_DIG() {
-        return (int)6L;
+    public static int GDK_KEY_Arabic_0() {
+        return GDK_KEY_Arabic_0;
     }
+    private static final int GDK_KEY_Arabic_1 = (int)16778849L;
     /**
-     * {@snippet :
-     * #define DBL_DIG 15
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_1 16778849
      * }
      */
-    public static int DBL_DIG() {
-        return (int)15L;
+    public static int GDK_KEY_Arabic_1() {
+        return GDK_KEY_Arabic_1;
     }
+    private static final int GDK_KEY_Arabic_2 = (int)16778850L;
     /**
-     * {@snippet :
-     * #define LDBL_DIG 33
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_2 16778850
      * }
      */
-    public static int LDBL_DIG() {
-        return (int)33L;
+    public static int GDK_KEY_Arabic_2() {
+        return GDK_KEY_Arabic_2;
     }
+    private static final int GDK_KEY_Arabic_3 = (int)16778851L;
     /**
-     * {@snippet :
-     * #define FLT_MIN_EXP -125
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_3 16778851
      * }
      */
-    public static int FLT_MIN_EXP() {
-        return (int)-125L;
+    public static int GDK_KEY_Arabic_3() {
+        return GDK_KEY_Arabic_3;
     }
+    private static final int GDK_KEY_Arabic_4 = (int)16778852L;
     /**
-     * {@snippet :
-     * #define DBL_MIN_EXP -1021
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_4 16778852
      * }
      */
-    public static int DBL_MIN_EXP() {
-        return (int)-1021L;
+    public static int GDK_KEY_Arabic_4() {
+        return GDK_KEY_Arabic_4;
     }
+    private static final int GDK_KEY_Arabic_5 = (int)16778853L;
     /**
-     * {@snippet :
-     * #define LDBL_MIN_EXP -16381
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_5 16778853
      * }
      */
-    public static int LDBL_MIN_EXP() {
-        return (int)-16381L;
+    public static int GDK_KEY_Arabic_5() {
+        return GDK_KEY_Arabic_5;
     }
+    private static final int GDK_KEY_Arabic_6 = (int)16778854L;
     /**
-     * {@snippet :
-     * #define FLT_MIN_10_EXP -37
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_6 16778854
      * }
      */
-    public static int FLT_MIN_10_EXP() {
-        return (int)-37L;
+    public static int GDK_KEY_Arabic_6() {
+        return GDK_KEY_Arabic_6;
     }
+    private static final int GDK_KEY_Arabic_7 = (int)16778855L;
     /**
-     * {@snippet :
-     * #define DBL_MIN_10_EXP -307
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_7 16778855
      * }
      */
-    public static int DBL_MIN_10_EXP() {
-        return (int)-307L;
+    public static int GDK_KEY_Arabic_7() {
+        return GDK_KEY_Arabic_7;
     }
+    private static final int GDK_KEY_Arabic_8 = (int)16778856L;
     /**
-     * {@snippet :
-     * #define LDBL_MIN_10_EXP -4931
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_8 16778856
      * }
      */
-    public static int LDBL_MIN_10_EXP() {
-        return (int)-4931L;
+    public static int GDK_KEY_Arabic_8() {
+        return GDK_KEY_Arabic_8;
     }
+    private static final int GDK_KEY_Arabic_9 = (int)16778857L;
     /**
-     * {@snippet :
-     * #define FLT_MAX_EXP 128
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_9 16778857
      * }
      */
-    public static int FLT_MAX_EXP() {
-        return (int)128L;
+    public static int GDK_KEY_Arabic_9() {
+        return GDK_KEY_Arabic_9;
     }
+    private static final int GDK_KEY_Arabic_semicolon = (int)1467L;
     /**
-     * {@snippet :
-     * #define DBL_MAX_EXP 1024
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_semicolon 1467
      * }
      */
-    public static int DBL_MAX_EXP() {
-        return (int)1024L;
+    public static int GDK_KEY_Arabic_semicolon() {
+        return GDK_KEY_Arabic_semicolon;
     }
+    private static final int GDK_KEY_Arabic_question_mark = (int)1471L;
     /**
-     * {@snippet :
-     * #define LDBL_MAX_EXP 16384
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_question_mark 1471
      * }
      */
-    public static int LDBL_MAX_EXP() {
-        return (int)16384L;
+    public static int GDK_KEY_Arabic_question_mark() {
+        return GDK_KEY_Arabic_question_mark;
     }
+    private static final int GDK_KEY_Arabic_hamza = (int)1473L;
     /**
-     * {@snippet :
-     * #define FLT_MAX_10_EXP 38
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_hamza 1473
      * }
      */
-    public static int FLT_MAX_10_EXP() {
-        return (int)38L;
+    public static int GDK_KEY_Arabic_hamza() {
+        return GDK_KEY_Arabic_hamza;
     }
+    private static final int GDK_KEY_Arabic_maddaonalef = (int)1474L;
     /**
-     * {@snippet :
-     * #define DBL_MAX_10_EXP 308
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_maddaonalef 1474
      * }
      */
-    public static int DBL_MAX_10_EXP() {
-        return (int)308L;
+    public static int GDK_KEY_Arabic_maddaonalef() {
+        return GDK_KEY_Arabic_maddaonalef;
     }
+    private static final int GDK_KEY_Arabic_hamzaonalef = (int)1475L;
     /**
-     * {@snippet :
-     * #define LDBL_MAX_10_EXP 4932
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_hamzaonalef 1475
      * }
      */
-    public static int LDBL_MAX_10_EXP() {
-        return (int)4932L;
+    public static int GDK_KEY_Arabic_hamzaonalef() {
+        return GDK_KEY_Arabic_hamzaonalef;
     }
+    private static final int GDK_KEY_Arabic_hamzaonwaw = (int)1476L;
     /**
-     * {@snippet :
-     * #define FLT_MAX 3.4028234663852886E38
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_hamzaonwaw 1476
      * }
      */
-    public static float FLT_MAX() {
-        return 3.4028234663852886E38f;
+    public static int GDK_KEY_Arabic_hamzaonwaw() {
+        return GDK_KEY_Arabic_hamzaonwaw;
     }
+    private static final int GDK_KEY_Arabic_hamzaunderalef = (int)1477L;
     /**
-     * {@snippet :
-     * #define DBL_MAX 1.7976931348623157E308
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_hamzaunderalef 1477
      * }
      */
-    public static double DBL_MAX() {
-        return 1.7976931348623157E308d;
+    public static int GDK_KEY_Arabic_hamzaunderalef() {
+        return GDK_KEY_Arabic_hamzaunderalef;
     }
+    private static final int GDK_KEY_Arabic_hamzaonyeh = (int)1478L;
     /**
-     * {@snippet :
-     * #define FLT_EPSILON 1.1920928955078125E-7
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_hamzaonyeh 1478
      * }
      */
-    public static float FLT_EPSILON() {
-        return 1.1920928955078125E-7f;
+    public static int GDK_KEY_Arabic_hamzaonyeh() {
+        return GDK_KEY_Arabic_hamzaonyeh;
     }
+    private static final int GDK_KEY_Arabic_alef = (int)1479L;
     /**
-     * {@snippet :
-     * #define DBL_EPSILON 2.220446049250313E-16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_alef 1479
      * }
      */
-    public static double DBL_EPSILON() {
-        return 2.220446049250313E-16d;
+    public static int GDK_KEY_Arabic_alef() {
+        return GDK_KEY_Arabic_alef;
     }
+    private static final int GDK_KEY_Arabic_beh = (int)1480L;
     /**
-     * {@snippet :
-     * #define FLT_MIN 1.1754943508222875E-38
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_beh 1480
      * }
      */
-    public static float FLT_MIN() {
-        return 1.1754943508222875E-38f;
+    public static int GDK_KEY_Arabic_beh() {
+        return GDK_KEY_Arabic_beh;
     }
+    private static final int GDK_KEY_Arabic_tehmarbuta = (int)1481L;
     /**
-     * {@snippet :
-     * #define DBL_MIN 2.2250738585072014E-308
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_tehmarbuta 1481
      * }
      */
-    public static double DBL_MIN() {
-        return 2.2250738585072014E-308d;
+    public static int GDK_KEY_Arabic_tehmarbuta() {
+        return GDK_KEY_Arabic_tehmarbuta;
     }
+    private static final int GDK_KEY_Arabic_teh = (int)1482L;
     /**
-     * {@snippet :
-     * #define FLT_TRUE_MIN 1.401298464324817E-45
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_teh 1482
      * }
      */
-    public static float FLT_TRUE_MIN() {
-        return 1.401298464324817E-45f;
+    public static int GDK_KEY_Arabic_teh() {
+        return GDK_KEY_Arabic_teh;
     }
+    private static final int GDK_KEY_Arabic_theh = (int)1483L;
     /**
-     * {@snippet :
-     * #define DBL_TRUE_MIN 4.9E-324
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_theh 1483
      * }
      */
-    public static double DBL_TRUE_MIN() {
-        return 4.9E-324d;
+    public static int GDK_KEY_Arabic_theh() {
+        return GDK_KEY_Arabic_theh;
     }
+    private static final int GDK_KEY_Arabic_jeem = (int)1484L;
     /**
-     * {@snippet :
-     * #define FLT_DECIMAL_DIG 9
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_jeem 1484
      * }
      */
-    public static int FLT_DECIMAL_DIG() {
-        return (int)9L;
+    public static int GDK_KEY_Arabic_jeem() {
+        return GDK_KEY_Arabic_jeem;
     }
+    private static final int GDK_KEY_Arabic_hah = (int)1485L;
     /**
-     * {@snippet :
-     * #define DBL_DECIMAL_DIG 17
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_hah 1485
      * }
      */
-    public static int DBL_DECIMAL_DIG() {
-        return (int)17L;
+    public static int GDK_KEY_Arabic_hah() {
+        return GDK_KEY_Arabic_hah;
     }
+    private static final int GDK_KEY_Arabic_khah = (int)1486L;
     /**
-     * {@snippet :
-     * #define LDBL_DECIMAL_DIG 36
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_khah 1486
      * }
      */
-    public static int LDBL_DECIMAL_DIG() {
-        return (int)36L;
+    public static int GDK_KEY_Arabic_khah() {
+        return GDK_KEY_Arabic_khah;
     }
+    private static final int GDK_KEY_Arabic_dal = (int)1487L;
     /**
-     * {@snippet :
-     * #define FLT_HAS_SUBNORM 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_dal 1487
      * }
      */
-    public static int FLT_HAS_SUBNORM() {
-        return (int)1L;
+    public static int GDK_KEY_Arabic_dal() {
+        return GDK_KEY_Arabic_dal;
     }
+    private static final int GDK_KEY_Arabic_thal = (int)1488L;
     /**
-     * {@snippet :
-     * #define DBL_HAS_SUBNORM 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_thal 1488
      * }
      */
-    public static int DBL_HAS_SUBNORM() {
-        return (int)1L;
+    public static int GDK_KEY_Arabic_thal() {
+        return GDK_KEY_Arabic_thal;
     }
+    private static final int GDK_KEY_Arabic_ra = (int)1489L;
     /**
-     * {@snippet :
-     * #define LDBL_HAS_SUBNORM 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_ra 1489
      * }
      */
-    public static int LDBL_HAS_SUBNORM() {
-        return (int)1L;
+    public static int GDK_KEY_Arabic_ra() {
+        return GDK_KEY_Arabic_ra;
     }
+    private static final int GDK_KEY_Arabic_zain = (int)1490L;
     /**
-     * {@snippet :
-     * #define G_MINFLOAT 1.1754943508222875E-38
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_zain 1490
      * }
      */
-    public static float G_MINFLOAT() {
-        return 1.1754943508222875E-38f;
+    public static int GDK_KEY_Arabic_zain() {
+        return GDK_KEY_Arabic_zain;
     }
+    private static final int GDK_KEY_Arabic_seen = (int)1491L;
     /**
-     * {@snippet :
-     * #define G_MAXFLOAT 3.4028234663852886E38
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_seen 1491
      * }
      */
-    public static float G_MAXFLOAT() {
-        return 3.4028234663852886E38f;
+    public static int GDK_KEY_Arabic_seen() {
+        return GDK_KEY_Arabic_seen;
     }
+    private static final int GDK_KEY_Arabic_sheen = (int)1492L;
     /**
-     * {@snippet :
-     * #define G_MINDOUBLE 2.2250738585072014E-308
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_sheen 1492
      * }
      */
-    public static double G_MINDOUBLE() {
-        return 2.2250738585072014E-308d;
+    public static int GDK_KEY_Arabic_sheen() {
+        return GDK_KEY_Arabic_sheen;
     }
+    private static final int GDK_KEY_Arabic_sad = (int)1493L;
     /**
-     * {@snippet :
-     * #define G_MAXDOUBLE 1.7976931348623157E308
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_sad 1493
      * }
      */
-    public static double G_MAXDOUBLE() {
-        return 1.7976931348623157E308d;
+    public static int GDK_KEY_Arabic_sad() {
+        return GDK_KEY_Arabic_sad;
     }
+    private static final int GDK_KEY_Arabic_dad = (int)1494L;
     /**
-     * {@snippet :
-     * #define G_MINSHORT -32768
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_dad 1494
      * }
      */
-    public static int G_MINSHORT() {
-        return (int)-32768L;
+    public static int GDK_KEY_Arabic_dad() {
+        return GDK_KEY_Arabic_dad;
     }
+    private static final int GDK_KEY_Arabic_tah = (int)1495L;
     /**
-     * {@snippet :
-     * #define G_MAXSHORT 32767
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_tah 1495
      * }
      */
-    public static int G_MAXSHORT() {
-        return (int)32767L;
+    public static int GDK_KEY_Arabic_tah() {
+        return GDK_KEY_Arabic_tah;
     }
+    private static final int GDK_KEY_Arabic_zah = (int)1496L;
     /**
-     * {@snippet :
-     * #define G_MAXUSHORT 65535
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_zah 1496
      * }
      */
-    public static int G_MAXUSHORT() {
-        return (int)65535L;
+    public static int GDK_KEY_Arabic_zah() {
+        return GDK_KEY_Arabic_zah;
     }
+    private static final int GDK_KEY_Arabic_ain = (int)1497L;
     /**
-     * {@snippet :
-     * #define G_MININT -2147483648
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_ain 1497
      * }
      */
-    public static int G_MININT() {
-        return (int)-2147483648L;
+    public static int GDK_KEY_Arabic_ain() {
+        return GDK_KEY_Arabic_ain;
     }
+    private static final int GDK_KEY_Arabic_ghain = (int)1498L;
     /**
-     * {@snippet :
-     * #define G_MAXINT 2147483647
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_ghain 1498
      * }
      */
-    public static int G_MAXINT() {
-        return (int)2147483647L;
+    public static int GDK_KEY_Arabic_ghain() {
+        return GDK_KEY_Arabic_ghain;
     }
+    private static final int GDK_KEY_Arabic_tatweel = (int)1504L;
     /**
-     * {@snippet :
-     * #define G_MAXUINT 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_tatweel 1504
      * }
      */
-    public static int G_MAXUINT() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Arabic_tatweel() {
+        return GDK_KEY_Arabic_tatweel;
     }
+    private static final int GDK_KEY_Arabic_feh = (int)1505L;
     /**
-     * {@snippet :
-     * #define G_MINLONG -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_feh 1505
      * }
      */
-    public static long G_MINLONG() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Arabic_feh() {
+        return GDK_KEY_Arabic_feh;
     }
+    private static final int GDK_KEY_Arabic_qaf = (int)1506L;
     /**
-     * {@snippet :
-     * #define G_MAXLONG 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_qaf 1506
      * }
      */
-    public static long G_MAXLONG() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Arabic_qaf() {
+        return GDK_KEY_Arabic_qaf;
     }
+    private static final int GDK_KEY_Arabic_kaf = (int)1507L;
     /**
-     * {@snippet :
-     * #define G_MAXULONG -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_kaf 1507
      * }
      */
-    public static long G_MAXULONG() {
-        return -1L;
+    public static int GDK_KEY_Arabic_kaf() {
+        return GDK_KEY_Arabic_kaf;
     }
+    private static final int GDK_KEY_Arabic_lam = (int)1508L;
     /**
-     * {@snippet :
-     * #define G_GINT16_MODIFIER "h"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_lam 1508
      * }
      */
-    public static MemorySegment G_GINT16_MODIFIER() {
-        return constants$3413.const$5;
+    public static int GDK_KEY_Arabic_lam() {
+        return GDK_KEY_Arabic_lam;
     }
+    private static final int GDK_KEY_Arabic_meem = (int)1509L;
     /**
-     * {@snippet :
-     * #define G_GINT16_FORMAT "hi"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_meem 1509
      * }
      */
-    public static MemorySegment G_GINT16_FORMAT() {
-        return constants$3414.const$0;
+    public static int GDK_KEY_Arabic_meem() {
+        return GDK_KEY_Arabic_meem;
     }
+    private static final int GDK_KEY_Arabic_noon = (int)1510L;
     /**
-     * {@snippet :
-     * #define G_GUINT16_FORMAT "hu"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_noon 1510
      * }
      */
-    public static MemorySegment G_GUINT16_FORMAT() {
-        return constants$3414.const$1;
+    public static int GDK_KEY_Arabic_noon() {
+        return GDK_KEY_Arabic_noon;
     }
+    private static final int GDK_KEY_Arabic_ha = (int)1511L;
     /**
-     * {@snippet :
-     * #define G_GINT32_MODIFIER ""
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_ha 1511
      * }
      */
-    public static MemorySegment G_GINT32_MODIFIER() {
-        return constants$3413.const$3;
+    public static int GDK_KEY_Arabic_ha() {
+        return GDK_KEY_Arabic_ha;
     }
+    private static final int GDK_KEY_Arabic_heh = (int)1511L;
     /**
-     * {@snippet :
-     * #define G_GINT32_FORMAT "i"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_heh 1511
      * }
      */
-    public static MemorySegment G_GINT32_FORMAT() {
-        return constants$3414.const$2;
+    public static int GDK_KEY_Arabic_heh() {
+        return GDK_KEY_Arabic_heh;
     }
+    private static final int GDK_KEY_Arabic_waw = (int)1512L;
     /**
-     * {@snippet :
-     * #define G_GUINT32_FORMAT "u"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_waw 1512
      * }
      */
-    public static MemorySegment G_GUINT32_FORMAT() {
-        return constants$3414.const$3;
+    public static int GDK_KEY_Arabic_waw() {
+        return GDK_KEY_Arabic_waw;
     }
+    private static final int GDK_KEY_Arabic_alefmaksura = (int)1513L;
     /**
-     * {@snippet :
-     * #define G_GINT64_MODIFIER "l"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_alefmaksura 1513
      * }
      */
-    public static MemorySegment G_GINT64_MODIFIER() {
-        return constants$3414.const$4;
+    public static int GDK_KEY_Arabic_alefmaksura() {
+        return GDK_KEY_Arabic_alefmaksura;
     }
+    private static final int GDK_KEY_Arabic_yeh = (int)1514L;
     /**
-     * {@snippet :
-     * #define G_GINT64_FORMAT "li"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_yeh 1514
      * }
      */
-    public static MemorySegment G_GINT64_FORMAT() {
-        return constants$3414.const$5;
+    public static int GDK_KEY_Arabic_yeh() {
+        return GDK_KEY_Arabic_yeh;
     }
+    private static final int GDK_KEY_Arabic_fathatan = (int)1515L;
     /**
-     * {@snippet :
-     * #define G_GUINT64_FORMAT "lu"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_fathatan 1515
      * }
      */
-    public static MemorySegment G_GUINT64_FORMAT() {
-        return constants$3415.const$0;
+    public static int GDK_KEY_Arabic_fathatan() {
+        return GDK_KEY_Arabic_fathatan;
     }
+    private static final int GDK_KEY_Arabic_dammatan = (int)1516L;
     /**
-     * {@snippet :
-     * #define G_GSIZE_MODIFIER "l"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_dammatan 1516
      * }
      */
-    public static MemorySegment G_GSIZE_MODIFIER() {
-        return constants$3414.const$4;
+    public static int GDK_KEY_Arabic_dammatan() {
+        return GDK_KEY_Arabic_dammatan;
     }
+    private static final int GDK_KEY_Arabic_kasratan = (int)1517L;
     /**
-     * {@snippet :
-     * #define G_GSSIZE_MODIFIER "l"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_kasratan 1517
      * }
      */
-    public static MemorySegment G_GSSIZE_MODIFIER() {
-        return constants$3414.const$4;
+    public static int GDK_KEY_Arabic_kasratan() {
+        return GDK_KEY_Arabic_kasratan;
     }
+    private static final int GDK_KEY_Arabic_fatha = (int)1518L;
     /**
-     * {@snippet :
-     * #define G_GSIZE_FORMAT "lu"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_fatha 1518
      * }
      */
-    public static MemorySegment G_GSIZE_FORMAT() {
-        return constants$3415.const$0;
+    public static int GDK_KEY_Arabic_fatha() {
+        return GDK_KEY_Arabic_fatha;
     }
+    private static final int GDK_KEY_Arabic_damma = (int)1519L;
     /**
-     * {@snippet :
-     * #define G_GSSIZE_FORMAT "li"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_damma 1519
      * }
      */
-    public static MemorySegment G_GSSIZE_FORMAT() {
-        return constants$3414.const$5;
+    public static int GDK_KEY_Arabic_damma() {
+        return GDK_KEY_Arabic_damma;
     }
+    private static final int GDK_KEY_Arabic_kasra = (int)1520L;
     /**
-     * {@snippet :
-     * #define G_MAXSIZE -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_kasra 1520
      * }
      */
-    public static long G_MAXSIZE() {
-        return -1L;
+    public static int GDK_KEY_Arabic_kasra() {
+        return GDK_KEY_Arabic_kasra;
     }
+    private static final int GDK_KEY_Arabic_shadda = (int)1521L;
     /**
-     * {@snippet :
-     * #define G_MINSSIZE -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_shadda 1521
      * }
      */
-    public static long G_MINSSIZE() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Arabic_shadda() {
+        return GDK_KEY_Arabic_shadda;
     }
+    private static final int GDK_KEY_Arabic_sukun = (int)1522L;
     /**
-     * {@snippet :
-     * #define G_MAXSSIZE 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_sukun 1522
      * }
      */
-    public static long G_MAXSSIZE() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Arabic_sukun() {
+        return GDK_KEY_Arabic_sukun;
     }
+    private static final int GDK_KEY_Arabic_madda_above = (int)16778835L;
     /**
-     * {@snippet :
-     * #define G_MINOFFSET -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_madda_above 16778835
      * }
      */
-    public static long G_MINOFFSET() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Arabic_madda_above() {
+        return GDK_KEY_Arabic_madda_above;
     }
+    private static final int GDK_KEY_Arabic_hamza_above = (int)16778836L;
     /**
-     * {@snippet :
-     * #define G_MAXOFFSET 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_hamza_above 16778836
      * }
      */
-    public static long G_MAXOFFSET() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Arabic_hamza_above() {
+        return GDK_KEY_Arabic_hamza_above;
     }
+    private static final int GDK_KEY_Arabic_hamza_below = (int)16778837L;
     /**
-     * {@snippet :
-     * #define G_GOFFSET_MODIFIER "l"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_hamza_below 16778837
      * }
      */
-    public static MemorySegment G_GOFFSET_MODIFIER() {
-        return constants$3414.const$4;
+    public static int GDK_KEY_Arabic_hamza_below() {
+        return GDK_KEY_Arabic_hamza_below;
     }
+    private static final int GDK_KEY_Arabic_jeh = (int)16778904L;
     /**
-     * {@snippet :
-     * #define G_GOFFSET_FORMAT "li"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_jeh 16778904
      * }
      */
-    public static MemorySegment G_GOFFSET_FORMAT() {
-        return constants$3414.const$5;
+    public static int GDK_KEY_Arabic_jeh() {
+        return GDK_KEY_Arabic_jeh;
     }
+    private static final int GDK_KEY_Arabic_veh = (int)16778916L;
     /**
-     * {@snippet :
-     * #define G_POLLFD_FORMAT "%d"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_veh 16778916
      * }
      */
-    public static MemorySegment G_POLLFD_FORMAT() {
-        return constants$3415.const$1;
+    public static int GDK_KEY_Arabic_veh() {
+        return GDK_KEY_Arabic_veh;
     }
+    private static final int GDK_KEY_Arabic_keheh = (int)16778921L;
     /**
-     * {@snippet :
-     * #define G_GINTPTR_MODIFIER "l"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_keheh 16778921
      * }
      */
-    public static MemorySegment G_GINTPTR_MODIFIER() {
-        return constants$3414.const$4;
+    public static int GDK_KEY_Arabic_keheh() {
+        return GDK_KEY_Arabic_keheh;
     }
+    private static final int GDK_KEY_Arabic_gaf = (int)16778927L;
     /**
-     * {@snippet :
-     * #define G_GINTPTR_FORMAT "li"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_gaf 16778927
      * }
      */
-    public static MemorySegment G_GINTPTR_FORMAT() {
-        return constants$3414.const$5;
+    public static int GDK_KEY_Arabic_gaf() {
+        return GDK_KEY_Arabic_gaf;
     }
+    private static final int GDK_KEY_Arabic_noon_ghunna = (int)16778938L;
     /**
-     * {@snippet :
-     * #define G_GUINTPTR_FORMAT "lu"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_noon_ghunna 16778938
      * }
      */
-    public static MemorySegment G_GUINTPTR_FORMAT() {
-        return constants$3415.const$0;
+    public static int GDK_KEY_Arabic_noon_ghunna() {
+        return GDK_KEY_Arabic_noon_ghunna;
     }
+    private static final int GDK_KEY_Arabic_heh_doachashmee = (int)16778942L;
     /**
-     * {@snippet :
-     * #define G_BYTE_ORDER 1234
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_heh_doachashmee 16778942
      * }
      */
-    public static int G_BYTE_ORDER() {
-        return (int)1234L;
+    public static int GDK_KEY_Arabic_heh_doachashmee() {
+        return GDK_KEY_Arabic_heh_doachashmee;
     }
+    private static final int GDK_KEY_Farsi_yeh = (int)16778956L;
     /**
-     * {@snippet :
-     * #define G_MODULE_SUFFIX "so"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Farsi_yeh 16778956
      * }
      */
-    public static MemorySegment G_MODULE_SUFFIX() {
-        return constants$3415.const$2;
+    public static int GDK_KEY_Farsi_yeh() {
+        return GDK_KEY_Farsi_yeh;
     }
+    private static final int GDK_KEY_Arabic_farsi_yeh = (int)16778956L;
     /**
-     * {@snippet :
-     * #define G_PID_FORMAT "i"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_farsi_yeh 16778956
      * }
      */
-    public static MemorySegment G_PID_FORMAT() {
-        return constants$3414.const$2;
+    public static int GDK_KEY_Arabic_farsi_yeh() {
+        return GDK_KEY_Arabic_farsi_yeh;
     }
+    private static final int GDK_KEY_Arabic_yeh_baree = (int)16778962L;
     /**
-     * {@snippet :
-     * #define G_DIR_SEPARATOR 47
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_yeh_baree 16778962
      * }
      */
-    public static int G_DIR_SEPARATOR() {
-        return (int)47L;
+    public static int GDK_KEY_Arabic_yeh_baree() {
+        return GDK_KEY_Arabic_yeh_baree;
     }
+    private static final int GDK_KEY_Arabic_heh_goal = (int)16778945L;
     /**
-     * {@snippet :
-     * #define G_DIR_SEPARATOR_S "/"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_heh_goal 16778945
      * }
      */
-    public static MemorySegment G_DIR_SEPARATOR_S() {
-        return constants$3415.const$3;
+    public static int GDK_KEY_Arabic_heh_goal() {
+        return GDK_KEY_Arabic_heh_goal;
     }
+    private static final int GDK_KEY_Arabic_switch = (int)65406L;
     /**
-     * {@snippet :
-     * #define G_SEARCHPATH_SEPARATOR 58
+     * {@snippet lang=c :
+     * #define GDK_KEY_Arabic_switch 65406
      * }
      */
-    public static int G_SEARCHPATH_SEPARATOR() {
-        return (int)58L;
+    public static int GDK_KEY_Arabic_switch() {
+        return GDK_KEY_Arabic_switch;
     }
+    private static final int GDK_KEY_Cyrillic_GHE_bar = (int)16778386L;
     /**
-     * {@snippet :
-     * #define G_SEARCHPATH_SEPARATOR_S ":"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_GHE_bar 16778386
      * }
      */
-    public static MemorySegment G_SEARCHPATH_SEPARATOR_S() {
-        return constants$3415.const$4;
+    public static int GDK_KEY_Cyrillic_GHE_bar() {
+        return GDK_KEY_Cyrillic_GHE_bar;
     }
+    private static final int GDK_KEY_Cyrillic_ghe_bar = (int)16778387L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_2 131584
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ghe_bar 16778387
      * }
      */
-    public static int GLIB_VERSION_2_2() {
-        return (int)131584L;
+    public static int GDK_KEY_Cyrillic_ghe_bar() {
+        return GDK_KEY_Cyrillic_ghe_bar;
     }
+    private static final int GDK_KEY_Cyrillic_ZHE_descender = (int)16778390L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_4 132096
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ZHE_descender 16778390
      * }
      */
-    public static int GLIB_VERSION_2_4() {
-        return (int)132096L;
+    public static int GDK_KEY_Cyrillic_ZHE_descender() {
+        return GDK_KEY_Cyrillic_ZHE_descender;
     }
+    private static final int GDK_KEY_Cyrillic_zhe_descender = (int)16778391L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_6 132608
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_zhe_descender 16778391
      * }
      */
-    public static int GLIB_VERSION_2_6() {
-        return (int)132608L;
+    public static int GDK_KEY_Cyrillic_zhe_descender() {
+        return GDK_KEY_Cyrillic_zhe_descender;
     }
+    private static final int GDK_KEY_Cyrillic_KA_descender = (int)16778394L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_8 133120
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_KA_descender 16778394
      * }
      */
-    public static int GLIB_VERSION_2_8() {
-        return (int)133120L;
+    public static int GDK_KEY_Cyrillic_KA_descender() {
+        return GDK_KEY_Cyrillic_KA_descender;
     }
+    private static final int GDK_KEY_Cyrillic_ka_descender = (int)16778395L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_10 133632
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ka_descender 16778395
      * }
      */
-    public static int GLIB_VERSION_2_10() {
-        return (int)133632L;
+    public static int GDK_KEY_Cyrillic_ka_descender() {
+        return GDK_KEY_Cyrillic_ka_descender;
     }
+    private static final int GDK_KEY_Cyrillic_KA_vertstroke = (int)16778396L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_12 134144
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_KA_vertstroke 16778396
      * }
      */
-    public static int GLIB_VERSION_2_12() {
-        return (int)134144L;
+    public static int GDK_KEY_Cyrillic_KA_vertstroke() {
+        return GDK_KEY_Cyrillic_KA_vertstroke;
     }
+    private static final int GDK_KEY_Cyrillic_ka_vertstroke = (int)16778397L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_14 134656
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ka_vertstroke 16778397
      * }
      */
-    public static int GLIB_VERSION_2_14() {
-        return (int)134656L;
+    public static int GDK_KEY_Cyrillic_ka_vertstroke() {
+        return GDK_KEY_Cyrillic_ka_vertstroke;
     }
+    private static final int GDK_KEY_Cyrillic_EN_descender = (int)16778402L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_16 135168
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_EN_descender 16778402
      * }
      */
-    public static int GLIB_VERSION_2_16() {
-        return (int)135168L;
+    public static int GDK_KEY_Cyrillic_EN_descender() {
+        return GDK_KEY_Cyrillic_EN_descender;
     }
+    private static final int GDK_KEY_Cyrillic_en_descender = (int)16778403L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_18 135680
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_en_descender 16778403
      * }
      */
-    public static int GLIB_VERSION_2_18() {
-        return (int)135680L;
+    public static int GDK_KEY_Cyrillic_en_descender() {
+        return GDK_KEY_Cyrillic_en_descender;
     }
+    private static final int GDK_KEY_Cyrillic_U_straight = (int)16778414L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_20 136192
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_U_straight 16778414
      * }
      */
-    public static int GLIB_VERSION_2_20() {
-        return (int)136192L;
+    public static int GDK_KEY_Cyrillic_U_straight() {
+        return GDK_KEY_Cyrillic_U_straight;
     }
+    private static final int GDK_KEY_Cyrillic_u_straight = (int)16778415L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_22 136704
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_u_straight 16778415
      * }
      */
-    public static int GLIB_VERSION_2_22() {
-        return (int)136704L;
+    public static int GDK_KEY_Cyrillic_u_straight() {
+        return GDK_KEY_Cyrillic_u_straight;
     }
+    private static final int GDK_KEY_Cyrillic_U_straight_bar = (int)16778416L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_24 137216
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_U_straight_bar 16778416
      * }
      */
-    public static int GLIB_VERSION_2_24() {
-        return (int)137216L;
+    public static int GDK_KEY_Cyrillic_U_straight_bar() {
+        return GDK_KEY_Cyrillic_U_straight_bar;
     }
+    private static final int GDK_KEY_Cyrillic_u_straight_bar = (int)16778417L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_26 137728
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_u_straight_bar 16778417
      * }
      */
-    public static int GLIB_VERSION_2_26() {
-        return (int)137728L;
+    public static int GDK_KEY_Cyrillic_u_straight_bar() {
+        return GDK_KEY_Cyrillic_u_straight_bar;
     }
+    private static final int GDK_KEY_Cyrillic_HA_descender = (int)16778418L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_28 138240
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_HA_descender 16778418
      * }
      */
-    public static int GLIB_VERSION_2_28() {
-        return (int)138240L;
+    public static int GDK_KEY_Cyrillic_HA_descender() {
+        return GDK_KEY_Cyrillic_HA_descender;
     }
+    private static final int GDK_KEY_Cyrillic_ha_descender = (int)16778419L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_30 138752
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ha_descender 16778419
      * }
      */
-    public static int GLIB_VERSION_2_30() {
-        return (int)138752L;
+    public static int GDK_KEY_Cyrillic_ha_descender() {
+        return GDK_KEY_Cyrillic_ha_descender;
     }
+    private static final int GDK_KEY_Cyrillic_CHE_descender = (int)16778422L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_32 139264
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_CHE_descender 16778422
      * }
      */
-    public static int GLIB_VERSION_2_32() {
-        return (int)139264L;
+    public static int GDK_KEY_Cyrillic_CHE_descender() {
+        return GDK_KEY_Cyrillic_CHE_descender;
     }
+    private static final int GDK_KEY_Cyrillic_che_descender = (int)16778423L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_34 139776
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_che_descender 16778423
      * }
      */
-    public static int GLIB_VERSION_2_34() {
-        return (int)139776L;
+    public static int GDK_KEY_Cyrillic_che_descender() {
+        return GDK_KEY_Cyrillic_che_descender;
     }
+    private static final int GDK_KEY_Cyrillic_CHE_vertstroke = (int)16778424L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_36 140288
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_CHE_vertstroke 16778424
      * }
      */
-    public static int GLIB_VERSION_2_36() {
-        return (int)140288L;
+    public static int GDK_KEY_Cyrillic_CHE_vertstroke() {
+        return GDK_KEY_Cyrillic_CHE_vertstroke;
     }
+    private static final int GDK_KEY_Cyrillic_che_vertstroke = (int)16778425L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_38 140800
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_che_vertstroke 16778425
      * }
      */
-    public static int GLIB_VERSION_2_38() {
-        return (int)140800L;
+    public static int GDK_KEY_Cyrillic_che_vertstroke() {
+        return GDK_KEY_Cyrillic_che_vertstroke;
     }
+    private static final int GDK_KEY_Cyrillic_SHHA = (int)16778426L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_40 141312
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_SHHA 16778426
      * }
      */
-    public static int GLIB_VERSION_2_40() {
-        return (int)141312L;
+    public static int GDK_KEY_Cyrillic_SHHA() {
+        return GDK_KEY_Cyrillic_SHHA;
     }
+    private static final int GDK_KEY_Cyrillic_shha = (int)16778427L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_42 141824
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_shha 16778427
      * }
      */
-    public static int GLIB_VERSION_2_42() {
-        return (int)141824L;
+    public static int GDK_KEY_Cyrillic_shha() {
+        return GDK_KEY_Cyrillic_shha;
     }
+    private static final int GDK_KEY_Cyrillic_SCHWA = (int)16778456L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_44 142336
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_SCHWA 16778456
      * }
      */
-    public static int GLIB_VERSION_2_44() {
-        return (int)142336L;
+    public static int GDK_KEY_Cyrillic_SCHWA() {
+        return GDK_KEY_Cyrillic_SCHWA;
     }
+    private static final int GDK_KEY_Cyrillic_schwa = (int)16778457L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_46 142848
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_schwa 16778457
      * }
      */
-    public static int GLIB_VERSION_2_46() {
-        return (int)142848L;
+    public static int GDK_KEY_Cyrillic_schwa() {
+        return GDK_KEY_Cyrillic_schwa;
     }
+    private static final int GDK_KEY_Cyrillic_I_macron = (int)16778466L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_48 143360
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_I_macron 16778466
      * }
      */
-    public static int GLIB_VERSION_2_48() {
-        return (int)143360L;
+    public static int GDK_KEY_Cyrillic_I_macron() {
+        return GDK_KEY_Cyrillic_I_macron;
     }
+    private static final int GDK_KEY_Cyrillic_i_macron = (int)16778467L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_50 143872
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_i_macron 16778467
      * }
      */
-    public static int GLIB_VERSION_2_50() {
-        return (int)143872L;
+    public static int GDK_KEY_Cyrillic_i_macron() {
+        return GDK_KEY_Cyrillic_i_macron;
     }
+    private static final int GDK_KEY_Cyrillic_O_bar = (int)16778472L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_52 144384
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_O_bar 16778472
      * }
      */
-    public static int GLIB_VERSION_2_52() {
-        return (int)144384L;
+    public static int GDK_KEY_Cyrillic_O_bar() {
+        return GDK_KEY_Cyrillic_O_bar;
     }
+    private static final int GDK_KEY_Cyrillic_o_bar = (int)16778473L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_54 144896
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_o_bar 16778473
      * }
      */
-    public static int GLIB_VERSION_2_54() {
-        return (int)144896L;
+    public static int GDK_KEY_Cyrillic_o_bar() {
+        return GDK_KEY_Cyrillic_o_bar;
     }
+    private static final int GDK_KEY_Cyrillic_U_macron = (int)16778478L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_56 145408
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_U_macron 16778478
      * }
      */
-    public static int GLIB_VERSION_2_56() {
-        return (int)145408L;
+    public static int GDK_KEY_Cyrillic_U_macron() {
+        return GDK_KEY_Cyrillic_U_macron;
     }
+    private static final int GDK_KEY_Cyrillic_u_macron = (int)16778479L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_58 145920
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_u_macron 16778479
      * }
      */
-    public static int GLIB_VERSION_2_58() {
-        return (int)145920L;
+    public static int GDK_KEY_Cyrillic_u_macron() {
+        return GDK_KEY_Cyrillic_u_macron;
     }
+    private static final int GDK_KEY_Serbian_dje = (int)1697L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_60 146432
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_dje 1697
      * }
      */
-    public static int GLIB_VERSION_2_60() {
-        return (int)146432L;
+    public static int GDK_KEY_Serbian_dje() {
+        return GDK_KEY_Serbian_dje;
     }
+    private static final int GDK_KEY_Macedonia_gje = (int)1698L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_62 146944
+     * {@snippet lang=c :
+     * #define GDK_KEY_Macedonia_gje 1698
      * }
      */
-    public static int GLIB_VERSION_2_62() {
-        return (int)146944L;
+    public static int GDK_KEY_Macedonia_gje() {
+        return GDK_KEY_Macedonia_gje;
     }
+    private static final int GDK_KEY_Cyrillic_io = (int)1699L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_64 147456
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_io 1699
      * }
      */
-    public static int GLIB_VERSION_2_64() {
-        return (int)147456L;
+    public static int GDK_KEY_Cyrillic_io() {
+        return GDK_KEY_Cyrillic_io;
     }
+    private static final int GDK_KEY_Ukrainian_ie = (int)1700L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_66 147968
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukrainian_ie 1700
      * }
      */
-    public static int GLIB_VERSION_2_66() {
-        return (int)147968L;
+    public static int GDK_KEY_Ukrainian_ie() {
+        return GDK_KEY_Ukrainian_ie;
     }
+    private static final int GDK_KEY_Ukranian_je = (int)1700L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_68 148480
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukranian_je 1700
      * }
      */
-    public static int GLIB_VERSION_2_68() {
-        return (int)148480L;
+    public static int GDK_KEY_Ukranian_je() {
+        return GDK_KEY_Ukranian_je;
     }
+    private static final int GDK_KEY_Macedonia_dse = (int)1701L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_70 148992
+     * {@snippet lang=c :
+     * #define GDK_KEY_Macedonia_dse 1701
      * }
      */
-    public static int GLIB_VERSION_2_70() {
-        return (int)148992L;
+    public static int GDK_KEY_Macedonia_dse() {
+        return GDK_KEY_Macedonia_dse;
     }
+    private static final int GDK_KEY_Ukrainian_i = (int)1702L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_72 149504
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukrainian_i 1702
      * }
      */
-    public static int GLIB_VERSION_2_72() {
-        return (int)149504L;
+    public static int GDK_KEY_Ukrainian_i() {
+        return GDK_KEY_Ukrainian_i;
     }
+    private static final int GDK_KEY_Ukranian_i = (int)1702L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_74 150016
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukranian_i 1702
      * }
      */
-    public static int GLIB_VERSION_2_74() {
-        return (int)150016L;
+    public static int GDK_KEY_Ukranian_i() {
+        return GDK_KEY_Ukranian_i;
     }
+    private static final int GDK_KEY_Ukrainian_yi = (int)1703L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_2_76 150528
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukrainian_yi 1703
      * }
      */
-    public static int GLIB_VERSION_2_76() {
-        return (int)150528L;
+    public static int GDK_KEY_Ukrainian_yi() {
+        return GDK_KEY_Ukrainian_yi;
     }
+    private static final int GDK_KEY_Ukranian_yi = (int)1703L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_CUR_STABLE 150528
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukranian_yi 1703
      * }
      */
-    public static int GLIB_VERSION_CUR_STABLE() {
-        return (int)150528L;
+    public static int GDK_KEY_Ukranian_yi() {
+        return GDK_KEY_Ukranian_yi;
     }
+    private static final int GDK_KEY_Cyrillic_je = (int)1704L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_PREV_STABLE 150016
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_je 1704
      * }
      */
-    public static int GLIB_VERSION_PREV_STABLE() {
-        return (int)150016L;
+    public static int GDK_KEY_Cyrillic_je() {
+        return GDK_KEY_Cyrillic_je;
     }
+    private static final int GDK_KEY_Serbian_je = (int)1704L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_MIN_REQUIRED 150528
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_je 1704
      * }
      */
-    public static int GLIB_VERSION_MIN_REQUIRED() {
-        return (int)150528L;
+    public static int GDK_KEY_Serbian_je() {
+        return GDK_KEY_Serbian_je;
     }
+    private static final int GDK_KEY_Cyrillic_lje = (int)1705L;
     /**
-     * {@snippet :
-     * #define GLIB_VERSION_MAX_ALLOWED 150528
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_lje 1705
      * }
      */
-    public static int GLIB_VERSION_MAX_ALLOWED() {
-        return (int)150528L;
+    public static int GDK_KEY_Cyrillic_lje() {
+        return GDK_KEY_Cyrillic_lje;
     }
+    private static final int GDK_KEY_Serbian_lje = (int)1705L;
     /**
-     * {@snippet :
-     * #define __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_lje 1705
      * }
      */
-    public static int __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64() {
-        return (int)1L;
+    public static int GDK_KEY_Serbian_lje() {
+        return GDK_KEY_Serbian_lje;
     }
+    private static final int GDK_KEY_Cyrillic_nje = (int)1706L;
     /**
-     * {@snippet :
-     * #define CLOCKS_PER_SEC 1000000
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_nje 1706
      * }
      */
-    public static long CLOCKS_PER_SEC() {
-        return 1000000L;
+    public static int GDK_KEY_Cyrillic_nje() {
+        return GDK_KEY_Cyrillic_nje;
     }
+    private static final int GDK_KEY_Serbian_nje = (int)1706L;
     /**
-     * {@snippet :
-     * #define __BYTE_ORDER 1234
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_nje 1706
      * }
      */
-    public static int __BYTE_ORDER() {
-        return (int)1234L;
+    public static int GDK_KEY_Serbian_nje() {
+        return GDK_KEY_Serbian_nje;
     }
+    private static final int GDK_KEY_Serbian_tshe = (int)1707L;
     /**
-     * {@snippet :
-     * #define __FLOAT_WORD_ORDER 1234
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_tshe 1707
      * }
      */
-    public static int __FLOAT_WORD_ORDER() {
-        return (int)1234L;
+    public static int GDK_KEY_Serbian_tshe() {
+        return GDK_KEY_Serbian_tshe;
     }
+    private static final int GDK_KEY_Macedonia_kje = (int)1708L;
     /**
-     * {@snippet :
-     * #define G_MININT8 -128
+     * {@snippet lang=c :
+     * #define GDK_KEY_Macedonia_kje 1708
      * }
      */
-    public static byte G_MININT8() {
-        return (byte)-128L;
+    public static int GDK_KEY_Macedonia_kje() {
+        return GDK_KEY_Macedonia_kje;
     }
+    private static final int GDK_KEY_Ukrainian_ghe_with_upturn = (int)1709L;
     /**
-     * {@snippet :
-     * #define G_MAXINT8 127
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukrainian_ghe_with_upturn 1709
      * }
      */
-    public static byte G_MAXINT8() {
-        return (byte)127L;
+    public static int GDK_KEY_Ukrainian_ghe_with_upturn() {
+        return GDK_KEY_Ukrainian_ghe_with_upturn;
     }
+    private static final int GDK_KEY_Byelorussian_shortu = (int)1710L;
     /**
-     * {@snippet :
-     * #define G_MAXUINT8 255
+     * {@snippet lang=c :
+     * #define GDK_KEY_Byelorussian_shortu 1710
      * }
      */
-    public static byte G_MAXUINT8() {
-        return (byte)255L;
+    public static int GDK_KEY_Byelorussian_shortu() {
+        return GDK_KEY_Byelorussian_shortu;
     }
+    private static final int GDK_KEY_Cyrillic_dzhe = (int)1711L;
     /**
-     * {@snippet :
-     * #define G_MININT16 -32768
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_dzhe 1711
      * }
      */
-    public static short G_MININT16() {
-        return (short)-32768L;
+    public static int GDK_KEY_Cyrillic_dzhe() {
+        return GDK_KEY_Cyrillic_dzhe;
     }
+    private static final int GDK_KEY_Serbian_dze = (int)1711L;
     /**
-     * {@snippet :
-     * #define G_MAXINT16 32767
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_dze 1711
      * }
      */
-    public static short G_MAXINT16() {
-        return (short)32767L;
+    public static int GDK_KEY_Serbian_dze() {
+        return GDK_KEY_Serbian_dze;
     }
+    private static final int GDK_KEY_numerosign = (int)1712L;
     /**
-     * {@snippet :
-     * #define G_MAXUINT16 65535
+     * {@snippet lang=c :
+     * #define GDK_KEY_numerosign 1712
      * }
      */
-    public static short G_MAXUINT16() {
-        return (short)65535L;
+    public static int GDK_KEY_numerosign() {
+        return GDK_KEY_numerosign;
     }
+    private static final int GDK_KEY_Serbian_DJE = (int)1713L;
     /**
-     * {@snippet :
-     * #define G_MININT32 -2147483648
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_DJE 1713
      * }
      */
-    public static int G_MININT32() {
-        return (int)-2147483648L;
+    public static int GDK_KEY_Serbian_DJE() {
+        return GDK_KEY_Serbian_DJE;
     }
+    private static final int GDK_KEY_Macedonia_GJE = (int)1714L;
     /**
-     * {@snippet :
-     * #define G_MAXINT32 2147483647
+     * {@snippet lang=c :
+     * #define GDK_KEY_Macedonia_GJE 1714
      * }
      */
-    public static int G_MAXINT32() {
-        return (int)2147483647L;
+    public static int GDK_KEY_Macedonia_GJE() {
+        return GDK_KEY_Macedonia_GJE;
     }
+    private static final int GDK_KEY_Cyrillic_IO = (int)1715L;
     /**
-     * {@snippet :
-     * #define G_MAXUINT32 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_IO 1715
      * }
      */
-    public static int G_MAXUINT32() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Cyrillic_IO() {
+        return GDK_KEY_Cyrillic_IO;
     }
+    private static final int GDK_KEY_Ukrainian_IE = (int)1716L;
     /**
-     * {@snippet :
-     * #define G_MININT64 -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukrainian_IE 1716
      * }
      */
-    public static long G_MININT64() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Ukrainian_IE() {
+        return GDK_KEY_Ukrainian_IE;
     }
+    private static final int GDK_KEY_Ukranian_JE = (int)1716L;
     /**
-     * {@snippet :
-     * #define G_MAXINT64 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukranian_JE 1716
      * }
      */
-    public static long G_MAXINT64() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Ukranian_JE() {
+        return GDK_KEY_Ukranian_JE;
     }
+    private static final int GDK_KEY_Macedonia_DSE = (int)1717L;
     /**
-     * {@snippet :
-     * #define G_MAXUINT64 -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Macedonia_DSE 1717
      * }
      */
-    public static long G_MAXUINT64() {
-        return -1L;
+    public static int GDK_KEY_Macedonia_DSE() {
+        return GDK_KEY_Macedonia_DSE;
     }
+    private static final int GDK_KEY_Ukrainian_I = (int)1718L;
     /**
-     * {@snippet :
-     * #define G_E 2.718281828459045
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukrainian_I 1718
      * }
      */
-    public static double G_E() {
-        return 2.718281828459045d;
+    public static int GDK_KEY_Ukrainian_I() {
+        return GDK_KEY_Ukrainian_I;
     }
+    private static final int GDK_KEY_Ukranian_I = (int)1718L;
     /**
-     * {@snippet :
-     * #define G_LN2 0.6931471805599453
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukranian_I 1718
      * }
      */
-    public static double G_LN2() {
-        return 0.6931471805599453d;
+    public static int GDK_KEY_Ukranian_I() {
+        return GDK_KEY_Ukranian_I;
     }
+    private static final int GDK_KEY_Ukrainian_YI = (int)1719L;
     /**
-     * {@snippet :
-     * #define G_LN10 2.302585092994046
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukrainian_YI 1719
      * }
      */
-    public static double G_LN10() {
-        return 2.302585092994046d;
+    public static int GDK_KEY_Ukrainian_YI() {
+        return GDK_KEY_Ukrainian_YI;
     }
+    private static final int GDK_KEY_Ukranian_YI = (int)1719L;
     /**
-     * {@snippet :
-     * #define G_PI 3.141592653589793
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukranian_YI 1719
      * }
      */
-    public static double G_PI() {
-        return 3.141592653589793d;
+    public static int GDK_KEY_Ukranian_YI() {
+        return GDK_KEY_Ukranian_YI;
     }
+    private static final int GDK_KEY_Cyrillic_JE = (int)1720L;
     /**
-     * {@snippet :
-     * #define G_PI_2 1.5707963267948966
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_JE 1720
      * }
      */
-    public static double G_PI_2() {
-        return 1.5707963267948966d;
+    public static int GDK_KEY_Cyrillic_JE() {
+        return GDK_KEY_Cyrillic_JE;
     }
+    private static final int GDK_KEY_Serbian_JE = (int)1720L;
     /**
-     * {@snippet :
-     * #define G_PI_4 0.7853981633974483
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_JE 1720
      * }
      */
-    public static double G_PI_4() {
-        return 0.7853981633974483d;
+    public static int GDK_KEY_Serbian_JE() {
+        return GDK_KEY_Serbian_JE;
     }
+    private static final int GDK_KEY_Cyrillic_LJE = (int)1721L;
     /**
-     * {@snippet :
-     * #define G_SQRT2 1.4142135623730951
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_LJE 1721
      * }
      */
-    public static double G_SQRT2() {
-        return 1.4142135623730951d;
+    public static int GDK_KEY_Cyrillic_LJE() {
+        return GDK_KEY_Cyrillic_LJE;
     }
+    private static final int GDK_KEY_Serbian_LJE = (int)1721L;
     /**
-     * {@snippet :
-     * #define G_IEEE754_FLOAT_BIAS 127
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_LJE 1721
      * }
      */
-    public static int G_IEEE754_FLOAT_BIAS() {
-        return (int)127L;
+    public static int GDK_KEY_Serbian_LJE() {
+        return GDK_KEY_Serbian_LJE;
     }
+    private static final int GDK_KEY_Cyrillic_NJE = (int)1722L;
     /**
-     * {@snippet :
-     * #define G_IEEE754_DOUBLE_BIAS 1023
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_NJE 1722
      * }
      */
-    public static int G_IEEE754_DOUBLE_BIAS() {
-        return (int)1023L;
+    public static int GDK_KEY_Cyrillic_NJE() {
+        return GDK_KEY_Cyrillic_NJE;
     }
+    private static final int GDK_KEY_Serbian_NJE = (int)1722L;
     /**
-     * {@snippet :
-     * #define G_LOG_2_BASE_10 0.3010299956639812
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_NJE 1722
      * }
      */
-    public static double G_LOG_2_BASE_10() {
-        return 0.3010299956639812d;
+    public static int GDK_KEY_Serbian_NJE() {
+        return GDK_KEY_Serbian_NJE;
     }
+    private static final int GDK_KEY_Serbian_TSHE = (int)1723L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_NAME "NAME"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_TSHE 1723
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_NAME() {
-        return constants$3415.const$5;
+    public static int GDK_KEY_Serbian_TSHE() {
+        return GDK_KEY_Serbian_TSHE;
     }
+    private static final int GDK_KEY_Macedonia_KJE = (int)1724L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_PRETTY_NAME "PRETTY_NAME"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Macedonia_KJE 1724
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_PRETTY_NAME() {
-        return constants$3416.const$0;
+    public static int GDK_KEY_Macedonia_KJE() {
+        return GDK_KEY_Macedonia_KJE;
     }
+    private static final int GDK_KEY_Ukrainian_GHE_WITH_UPTURN = (int)1725L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_VERSION "VERSION"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ukrainian_GHE_WITH_UPTURN 1725
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_VERSION() {
-        return constants$3416.const$1;
+    public static int GDK_KEY_Ukrainian_GHE_WITH_UPTURN() {
+        return GDK_KEY_Ukrainian_GHE_WITH_UPTURN;
     }
+    private static final int GDK_KEY_Byelorussian_SHORTU = (int)1726L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_VERSION_CODENAME "VERSION_CODENAME"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Byelorussian_SHORTU 1726
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_VERSION_CODENAME() {
-        return constants$3416.const$2;
+    public static int GDK_KEY_Byelorussian_SHORTU() {
+        return GDK_KEY_Byelorussian_SHORTU;
     }
+    private static final int GDK_KEY_Cyrillic_DZHE = (int)1727L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_VERSION_ID "VERSION_ID"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_DZHE 1727
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_VERSION_ID() {
-        return constants$3416.const$3;
+    public static int GDK_KEY_Cyrillic_DZHE() {
+        return GDK_KEY_Cyrillic_DZHE;
     }
+    private static final int GDK_KEY_Serbian_DZE = (int)1727L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_ID "ID"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Serbian_DZE 1727
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_ID() {
-        return constants$3416.const$4;
+    public static int GDK_KEY_Serbian_DZE() {
+        return GDK_KEY_Serbian_DZE;
     }
+    private static final int GDK_KEY_Cyrillic_yu = (int)1728L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_HOME_URL "HOME_URL"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_yu 1728
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_HOME_URL() {
-        return constants$3416.const$5;
+    public static int GDK_KEY_Cyrillic_yu() {
+        return GDK_KEY_Cyrillic_yu;
     }
+    private static final int GDK_KEY_Cyrillic_a = (int)1729L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_DOCUMENTATION_URL "DOCUMENTATION_URL"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_a 1729
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_DOCUMENTATION_URL() {
-        return constants$3417.const$0;
+    public static int GDK_KEY_Cyrillic_a() {
+        return GDK_KEY_Cyrillic_a;
     }
+    private static final int GDK_KEY_Cyrillic_be = (int)1730L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_SUPPORT_URL "SUPPORT_URL"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_be 1730
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_SUPPORT_URL() {
-        return constants$3417.const$1;
+    public static int GDK_KEY_Cyrillic_be() {
+        return GDK_KEY_Cyrillic_be;
     }
+    private static final int GDK_KEY_Cyrillic_tse = (int)1731L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_BUG_REPORT_URL "BUG_REPORT_URL"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_tse 1731
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_BUG_REPORT_URL() {
-        return constants$3417.const$2;
+    public static int GDK_KEY_Cyrillic_tse() {
+        return GDK_KEY_Cyrillic_tse;
     }
+    private static final int GDK_KEY_Cyrillic_de = (int)1732L;
     /**
-     * {@snippet :
-     * #define G_OS_INFO_KEY_PRIVACY_POLICY_URL "PRIVACY_POLICY_URL"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_de 1732
      * }
      */
-    public static MemorySegment G_OS_INFO_KEY_PRIVACY_POLICY_URL() {
-        return constants$3417.const$3;
+    public static int GDK_KEY_Cyrillic_de() {
+        return GDK_KEY_Cyrillic_de;
     }
+    private static final int GDK_KEY_Cyrillic_ie = (int)1733L;
     /**
-     * {@snippet :
-     * #define __WCLONE 2147483648
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ie 1733
      * }
      */
-    public static int __WCLONE() {
-        return (int)2147483648L;
+    public static int GDK_KEY_Cyrillic_ie() {
+        return GDK_KEY_Cyrillic_ie;
     }
+    private static final int GDK_KEY_Cyrillic_ef = (int)1734L;
     /**
-     * {@snippet :
-     * #define __HAVE_FLOAT64X 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ef 1734
      * }
      */
-    public static int __HAVE_FLOAT64X() {
-        return (int)1L;
+    public static int GDK_KEY_Cyrillic_ef() {
+        return GDK_KEY_Cyrillic_ef;
     }
+    private static final int GDK_KEY_Cyrillic_ghe = (int)1735L;
     /**
-     * {@snippet :
-     * #define __HAVE_FLOAT64X_LONG_DOUBLE 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ghe 1735
      * }
      */
-    public static int __HAVE_FLOAT64X_LONG_DOUBLE() {
-        return (int)1L;
+    public static int GDK_KEY_Cyrillic_ghe() {
+        return GDK_KEY_Cyrillic_ghe;
     }
+    private static final int GDK_KEY_Cyrillic_ha = (int)1736L;
     /**
-     * {@snippet :
-     * #define __HAVE_DISTINCT_FLOAT16 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ha 1736
      * }
      */
-    public static int __HAVE_DISTINCT_FLOAT16() {
-        return (int)0L;
+    public static int GDK_KEY_Cyrillic_ha() {
+        return GDK_KEY_Cyrillic_ha;
     }
+    private static final int GDK_KEY_Cyrillic_i = (int)1737L;
     /**
-     * {@snippet :
-     * #define __HAVE_DISTINCT_FLOAT128X 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_i 1737
      * }
      */
-    public static int __HAVE_DISTINCT_FLOAT128X() {
-        return (int)0L;
+    public static int GDK_KEY_Cyrillic_i() {
+        return GDK_KEY_Cyrillic_i;
     }
+    private static final int GDK_KEY_Cyrillic_shorti = (int)1738L;
     /**
-     * {@snippet :
-     * #define __HAVE_FLOAT128_UNLIKE_LDBL 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_shorti 1738
      * }
      */
-    public static int __HAVE_FLOAT128_UNLIKE_LDBL() {
-        return (int)0L;
+    public static int GDK_KEY_Cyrillic_shorti() {
+        return GDK_KEY_Cyrillic_shorti;
     }
+    private static final int GDK_KEY_Cyrillic_ka = (int)1739L;
     /**
-     * {@snippet :
-     * #define LITTLE_ENDIAN 1234
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ka 1739
      * }
      */
-    public static int LITTLE_ENDIAN() {
-        return (int)1234L;
+    public static int GDK_KEY_Cyrillic_ka() {
+        return GDK_KEY_Cyrillic_ka;
     }
+    private static final int GDK_KEY_Cyrillic_el = (int)1740L;
     /**
-     * {@snippet :
-     * #define BIG_ENDIAN 4321
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_el 1740
      * }
      */
-    public static int BIG_ENDIAN() {
-        return (int)4321L;
+    public static int GDK_KEY_Cyrillic_el() {
+        return GDK_KEY_Cyrillic_el;
     }
+    private static final int GDK_KEY_Cyrillic_em = (int)1741L;
     /**
-     * {@snippet :
-     * #define PDP_ENDIAN 3412
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_em 1741
      * }
      */
-    public static int PDP_ENDIAN() {
-        return (int)3412L;
+    public static int GDK_KEY_Cyrillic_em() {
+        return GDK_KEY_Cyrillic_em;
     }
+    private static final int GDK_KEY_Cyrillic_en = (int)1742L;
     /**
-     * {@snippet :
-     * #define BYTE_ORDER 1234
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_en 1742
      * }
      */
-    public static int BYTE_ORDER() {
-        return (int)1234L;
+    public static int GDK_KEY_Cyrillic_en() {
+        return GDK_KEY_Cyrillic_en;
     }
+    private static final int GDK_KEY_Cyrillic_o = (int)1743L;
     /**
-     * {@snippet :
-     * #define _SIGSET_NWORDS 16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_o 1743
      * }
      */
-    public static long _SIGSET_NWORDS() {
-        return 16L;
+    public static int GDK_KEY_Cyrillic_o() {
+        return GDK_KEY_Cyrillic_o;
     }
+    private static final int GDK_KEY_Cyrillic_pe = (int)1744L;
     /**
-     * {@snippet :
-     * #define __NFDBITS 64
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_pe 1744
      * }
      */
-    public static int __NFDBITS() {
-        return (int)64L;
+    public static int GDK_KEY_Cyrillic_pe() {
+        return GDK_KEY_Cyrillic_pe;
     }
+    private static final int GDK_KEY_Cyrillic_ya = (int)1745L;
     /**
-     * {@snippet :
-     * #define FD_SETSIZE 1024
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ya 1745
      * }
      */
-    public static int FD_SETSIZE() {
-        return (int)1024L;
+    public static int GDK_KEY_Cyrillic_ya() {
+        return GDK_KEY_Cyrillic_ya;
     }
+    private static final int GDK_KEY_Cyrillic_er = (int)1746L;
     /**
-     * {@snippet :
-     * #define NFDBITS 64
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_er 1746
      * }
      */
-    public static int NFDBITS() {
-        return (int)64L;
+    public static int GDK_KEY_Cyrillic_er() {
+        return GDK_KEY_Cyrillic_er;
     }
+    private static final int GDK_KEY_Cyrillic_es = (int)1747L;
     /**
-     * {@snippet :
-     * #define SIG_ERR -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_es 1747
      * }
      */
-    public static MemorySegment SIG_ERR() {
-        return constants$3417.const$4;
+    public static int GDK_KEY_Cyrillic_es() {
+        return GDK_KEY_Cyrillic_es;
     }
+    private static final int GDK_KEY_Cyrillic_te = (int)1748L;
     /**
-     * {@snippet :
-     * #define SIG_DFL 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_te 1748
      * }
      */
-    public static MemorySegment SIG_DFL() {
-        return constants$3413.const$2;
+    public static int GDK_KEY_Cyrillic_te() {
+        return GDK_KEY_Cyrillic_te;
     }
+    private static final int GDK_KEY_Cyrillic_u = (int)1749L;
     /**
-     * {@snippet :
-     * #define SIG_IGN 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_u 1749
      * }
      */
-    public static MemorySegment SIG_IGN() {
-        return constants$3417.const$5;
+    public static int GDK_KEY_Cyrillic_u() {
+        return GDK_KEY_Cyrillic_u;
     }
+    private static final int GDK_KEY_Cyrillic_zhe = (int)1750L;
     /**
-     * {@snippet :
-     * #define SIGIO 29
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_zhe 1750
      * }
      */
-    public static int SIGIO() {
-        return (int)29L;
+    public static int GDK_KEY_Cyrillic_zhe() {
+        return GDK_KEY_Cyrillic_zhe;
     }
+    private static final int GDK_KEY_Cyrillic_ve = (int)1751L;
     /**
-     * {@snippet :
-     * #define SIGIOT 6
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ve 1751
      * }
      */
-    public static int SIGIOT() {
-        return (int)6L;
+    public static int GDK_KEY_Cyrillic_ve() {
+        return GDK_KEY_Cyrillic_ve;
     }
+    private static final int GDK_KEY_Cyrillic_softsign = (int)1752L;
     /**
-     * {@snippet :
-     * #define SIGCLD 17
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_softsign 1752
      * }
      */
-    public static int SIGCLD() {
-        return (int)17L;
+    public static int GDK_KEY_Cyrillic_softsign() {
+        return GDK_KEY_Cyrillic_softsign;
     }
+    private static final int GDK_KEY_Cyrillic_yeru = (int)1753L;
     /**
-     * {@snippet :
-     * #define _NSIG 65
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_yeru 1753
      * }
      */
-    public static int _NSIG() {
-        return (int)65L;
+    public static int GDK_KEY_Cyrillic_yeru() {
+        return GDK_KEY_Cyrillic_yeru;
     }
+    private static final int GDK_KEY_Cyrillic_ze = (int)1754L;
     /**
-     * {@snippet :
-     * #define __SI_PAD_SIZE 28
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ze 1754
      * }
      */
-    public static long __SI_PAD_SIZE() {
-        return 28L;
+    public static int GDK_KEY_Cyrillic_ze() {
+        return GDK_KEY_Cyrillic_ze;
     }
+    private static final int GDK_KEY_Cyrillic_sha = (int)1755L;
     /**
-     * {@snippet :
-     * #define __SIGEV_PAD_SIZE 12
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_sha 1755
      * }
      */
-    public static long __SIGEV_PAD_SIZE() {
-        return 12L;
+    public static int GDK_KEY_Cyrillic_sha() {
+        return GDK_KEY_Cyrillic_sha;
     }
+    private static final int GDK_KEY_Cyrillic_e = (int)1756L;
     /**
-     * {@snippet :
-     * #define NSIG 65
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_e 1756
      * }
      */
-    public static int NSIG() {
-        return (int)65L;
+    public static int GDK_KEY_Cyrillic_e() {
+        return GDK_KEY_Cyrillic_e;
     }
+    private static final int GDK_KEY_Cyrillic_shcha = (int)1757L;
     /**
-     * {@snippet :
-     * #define SA_RESETHAND 2147483648
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_shcha 1757
      * }
      */
-    public static int SA_RESETHAND() {
-        return (int)2147483648L;
+    public static int GDK_KEY_Cyrillic_shcha() {
+        return GDK_KEY_Cyrillic_shcha;
     }
+    private static final int GDK_KEY_Cyrillic_che = (int)1758L;
     /**
-     * {@snippet :
-     * #define SA_NOMASK 1073741824
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_che 1758
      * }
      */
-    public static int SA_NOMASK() {
-        return (int)1073741824L;
+    public static int GDK_KEY_Cyrillic_che() {
+        return GDK_KEY_Cyrillic_che;
     }
+    private static final int GDK_KEY_Cyrillic_hardsign = (int)1759L;
     /**
-     * {@snippet :
-     * #define SA_ONESHOT 2147483648
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_hardsign 1759
      * }
      */
-    public static int SA_ONESHOT() {
-        return (int)2147483648L;
+    public static int GDK_KEY_Cyrillic_hardsign() {
+        return GDK_KEY_Cyrillic_hardsign;
     }
+    private static final int GDK_KEY_Cyrillic_YU = (int)1760L;
     /**
-     * {@snippet :
-     * #define SA_STACK 134217728
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_YU 1760
      * }
      */
-    public static int SA_STACK() {
-        return (int)134217728L;
+    public static int GDK_KEY_Cyrillic_YU() {
+        return GDK_KEY_Cyrillic_YU;
     }
+    private static final int GDK_KEY_Cyrillic_A = (int)1761L;
     /**
-     * {@snippet :
-     * #define __SVE_VL_MIN 16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_A 1761
      * }
      */
-    public static int __SVE_VL_MIN() {
-        return (int)16L;
+    public static int GDK_KEY_Cyrillic_A() {
+        return GDK_KEY_Cyrillic_A;
     }
+    private static final int GDK_KEY_Cyrillic_BE = (int)1762L;
     /**
-     * {@snippet :
-     * #define __SVE_VL_MAX 8192
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_BE 1762
      * }
      */
-    public static int __SVE_VL_MAX() {
-        return (int)8192L;
+    public static int GDK_KEY_Cyrillic_BE() {
+        return GDK_KEY_Cyrillic_BE;
     }
+    private static final int GDK_KEY_Cyrillic_TSE = (int)1763L;
     /**
-     * {@snippet :
-     * #define SVE_VQ_BYTES 16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_TSE 1763
      * }
      */
-    public static int SVE_VQ_BYTES() {
-        return (int)16L;
+    public static int GDK_KEY_Cyrillic_TSE() {
+        return GDK_KEY_Cyrillic_TSE;
     }
+    private static final int GDK_KEY_Cyrillic_DE = (int)1764L;
     /**
-     * {@snippet :
-     * #define SVE_VQ_MIN 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_DE 1764
      * }
      */
-    public static int SVE_VQ_MIN() {
-        return (int)1L;
+    public static int GDK_KEY_Cyrillic_DE() {
+        return GDK_KEY_Cyrillic_DE;
     }
+    private static final int GDK_KEY_Cyrillic_IE = (int)1765L;
     /**
-     * {@snippet :
-     * #define SVE_VQ_MAX 512
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_IE 1765
      * }
      */
-    public static int SVE_VQ_MAX() {
-        return (int)512L;
+    public static int GDK_KEY_Cyrillic_IE() {
+        return GDK_KEY_Cyrillic_IE;
     }
+    private static final int GDK_KEY_Cyrillic_EF = (int)1766L;
     /**
-     * {@snippet :
-     * #define SVE_VL_MIN 16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_EF 1766
      * }
      */
-    public static int SVE_VL_MIN() {
-        return (int)16L;
+    public static int GDK_KEY_Cyrillic_EF() {
+        return GDK_KEY_Cyrillic_EF;
     }
+    private static final int GDK_KEY_Cyrillic_GHE = (int)1767L;
     /**
-     * {@snippet :
-     * #define SVE_VL_MAX 8192
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_GHE 1767
      * }
      */
-    public static int SVE_VL_MAX() {
-        return (int)8192L;
+    public static int GDK_KEY_Cyrillic_GHE() {
+        return GDK_KEY_Cyrillic_GHE;
     }
+    private static final int GDK_KEY_Cyrillic_HA = (int)1768L;
     /**
-     * {@snippet :
-     * #define SVE_NUM_ZREGS 32
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_HA 1768
      * }
      */
-    public static int SVE_NUM_ZREGS() {
-        return (int)32L;
+    public static int GDK_KEY_Cyrillic_HA() {
+        return GDK_KEY_Cyrillic_HA;
     }
+    private static final int GDK_KEY_Cyrillic_I = (int)1769L;
     /**
-     * {@snippet :
-     * #define SVE_NUM_PREGS 16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_I 1769
      * }
      */
-    public static int SVE_NUM_PREGS() {
-        return (int)16L;
+    public static int GDK_KEY_Cyrillic_I() {
+        return GDK_KEY_Cyrillic_I;
     }
+    private static final int GDK_KEY_Cyrillic_SHORTI = (int)1770L;
     /**
-     * {@snippet :
-     * #define SVE_SIG_REGS_OFFSET 16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_SHORTI 1770
      * }
      */
-    public static long SVE_SIG_REGS_OFFSET() {
-        return 16L;
+    public static int GDK_KEY_Cyrillic_SHORTI() {
+        return GDK_KEY_Cyrillic_SHORTI;
     }
+    private static final int GDK_KEY_Cyrillic_KA = (int)1771L;
     /**
-     * {@snippet :
-     * #define SVE_SIG_ZREGS_OFFSET 16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_KA 1771
      * }
      */
-    public static long SVE_SIG_ZREGS_OFFSET() {
-        return 16L;
+    public static int GDK_KEY_Cyrillic_KA() {
+        return GDK_KEY_Cyrillic_KA;
     }
+    private static final int GDK_KEY_Cyrillic_EL = (int)1772L;
     /**
-     * {@snippet :
-     * #define ZA_SIG_REGS_OFFSET 16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_EL 1772
      * }
      */
-    public static long ZA_SIG_REGS_OFFSET() {
-        return 16L;
+    public static int GDK_KEY_Cyrillic_EL() {
+        return GDK_KEY_Cyrillic_EL;
     }
+    private static final int GDK_KEY_Cyrillic_EM = (int)1773L;
     /**
-     * {@snippet :
-     * #define ZT_SIG_REG_BYTES 64
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_EM 1773
      * }
      */
-    public static int ZT_SIG_REG_BYTES() {
-        return (int)64L;
+    public static int GDK_KEY_Cyrillic_EM() {
+        return GDK_KEY_Cyrillic_EM;
     }
+    private static final int GDK_KEY_Cyrillic_EN = (int)1774L;
     /**
-     * {@snippet :
-     * #define ZT_SIG_REGS_OFFSET 16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_EN 1774
      * }
      */
-    public static long ZT_SIG_REGS_OFFSET() {
-        return 16L;
+    public static int GDK_KEY_Cyrillic_EN() {
+        return GDK_KEY_Cyrillic_EN;
     }
+    private static final int GDK_KEY_Cyrillic_O = (int)1775L;
     /**
-     * {@snippet :
-     * #define ELF_NGREG 34
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_O 1775
      * }
      */
-    public static long ELF_NGREG() {
-        return 34L;
+    public static int GDK_KEY_Cyrillic_O() {
+        return GDK_KEY_Cyrillic_O;
     }
+    private static final int GDK_KEY_Cyrillic_PE = (int)1776L;
     /**
-     * {@snippet :
-     * #define ELF_PRARGSZ 80
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_PE 1776
      * }
      */
-    public static int ELF_PRARGSZ() {
-        return (int)80L;
+    public static int GDK_KEY_Cyrillic_PE() {
+        return GDK_KEY_Cyrillic_PE;
     }
+    private static final int GDK_KEY_Cyrillic_YA = (int)1777L;
     /**
-     * {@snippet :
-     * #define G_TIME_SPAN_DAY 86400000000
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_YA 1777
      * }
      */
-    public static long G_TIME_SPAN_DAY() {
-        return 86400000000L;
+    public static int GDK_KEY_Cyrillic_YA() {
+        return GDK_KEY_Cyrillic_YA;
     }
+    private static final int GDK_KEY_Cyrillic_ER = (int)1778L;
     /**
-     * {@snippet :
-     * #define G_TIME_SPAN_HOUR 3600000000
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ER 1778
      * }
      */
-    public static long G_TIME_SPAN_HOUR() {
-        return 3600000000L;
+    public static int GDK_KEY_Cyrillic_ER() {
+        return GDK_KEY_Cyrillic_ER;
     }
+    private static final int GDK_KEY_Cyrillic_ES = (int)1779L;
     /**
-     * {@snippet :
-     * #define G_TIME_SPAN_MINUTE 60000000
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ES 1779
      * }
      */
-    public static long G_TIME_SPAN_MINUTE() {
-        return 60000000L;
+    public static int GDK_KEY_Cyrillic_ES() {
+        return GDK_KEY_Cyrillic_ES;
     }
+    private static final int GDK_KEY_Cyrillic_TE = (int)1780L;
     /**
-     * {@snippet :
-     * #define G_TIME_SPAN_SECOND 1000000
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_TE 1780
      * }
      */
-    public static long G_TIME_SPAN_SECOND() {
-        return 1000000L;
+    public static int GDK_KEY_Cyrillic_TE() {
+        return GDK_KEY_Cyrillic_TE;
     }
+    private static final int GDK_KEY_Cyrillic_U = (int)1781L;
     /**
-     * {@snippet :
-     * #define G_TIME_SPAN_MILLISECOND 1000
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_U 1781
      * }
      */
-    public static long G_TIME_SPAN_MILLISECOND() {
-        return 1000L;
+    public static int GDK_KEY_Cyrillic_U() {
+        return GDK_KEY_Cyrillic_U;
     }
+    private static final int GDK_KEY_Cyrillic_ZHE = (int)1782L;
     /**
-     * {@snippet :
-     * #define G_DATE_BAD_JULIAN 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ZHE 1782
      * }
      */
-    public static int G_DATE_BAD_JULIAN() {
-        return (int)0L;
+    public static int GDK_KEY_Cyrillic_ZHE() {
+        return GDK_KEY_Cyrillic_ZHE;
     }
+    private static final int GDK_KEY_Cyrillic_VE = (int)1783L;
     /**
-     * {@snippet :
-     * #define G_DATE_BAD_DAY 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_VE 1783
      * }
      */
-    public static int G_DATE_BAD_DAY() {
-        return (int)0L;
+    public static int GDK_KEY_Cyrillic_VE() {
+        return GDK_KEY_Cyrillic_VE;
     }
+    private static final int GDK_KEY_Cyrillic_SOFTSIGN = (int)1784L;
     /**
-     * {@snippet :
-     * #define G_DATE_BAD_YEAR 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_SOFTSIGN 1784
      * }
      */
-    public static int G_DATE_BAD_YEAR() {
-        return (int)0L;
+    public static int GDK_KEY_Cyrillic_SOFTSIGN() {
+        return GDK_KEY_Cyrillic_SOFTSIGN;
     }
+    private static final int GDK_KEY_Cyrillic_YERU = (int)1785L;
     /**
-     * {@snippet :
-     * #define MAXNAMLEN 255
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_YERU 1785
      * }
      */
-    public static int MAXNAMLEN() {
-        return (int)255L;
+    public static int GDK_KEY_Cyrillic_YERU() {
+        return GDK_KEY_Cyrillic_YERU;
     }
+    private static final int GDK_KEY_Cyrillic_ZE = (int)1786L;
     /**
-     * {@snippet :
-     * #define G_MEM_ALIGN 8
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_ZE 1786
      * }
      */
-    public static int G_MEM_ALIGN() {
-        return (int)8L;
+    public static int GDK_KEY_Cyrillic_ZE() {
+        return GDK_KEY_Cyrillic_ZE;
     }
+    private static final int GDK_KEY_Cyrillic_SHA = (int)1787L;
     /**
-     * {@snippet :
-     * #define G_HOOK_FLAG_USER_SHIFT 4
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_SHA 1787
      * }
      */
-    public static int G_HOOK_FLAG_USER_SHIFT() {
-        return (int)4L;
+    public static int GDK_KEY_Cyrillic_SHA() {
+        return GDK_KEY_Cyrillic_SHA;
     }
+    private static final int GDK_KEY_Cyrillic_E = (int)1788L;
     /**
-     * {@snippet :
-     * #define G_PRIORITY_HIGH -100
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_E 1788
      * }
      */
-    public static int G_PRIORITY_HIGH() {
-        return (int)-100L;
+    public static int GDK_KEY_Cyrillic_E() {
+        return GDK_KEY_Cyrillic_E;
     }
+    private static final int GDK_KEY_Cyrillic_SHCHA = (int)1789L;
     /**
-     * {@snippet :
-     * #define G_SOURCE_REMOVE 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_SHCHA 1789
      * }
      */
-    public static int G_SOURCE_REMOVE() {
-        return (int)0L;
+    public static int GDK_KEY_Cyrillic_SHCHA() {
+        return GDK_KEY_Cyrillic_SHCHA;
     }
+    private static final int GDK_KEY_Cyrillic_CHE = (int)1790L;
     /**
-     * {@snippet :
-     * #define G_SOURCE_CONTINUE 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_CHE 1790
      * }
      */
-    public static int G_SOURCE_CONTINUE() {
-        return (int)1L;
+    public static int GDK_KEY_Cyrillic_CHE() {
+        return GDK_KEY_Cyrillic_CHE;
     }
+    private static final int GDK_KEY_Cyrillic_HARDSIGN = (int)1791L;
     /**
-     * {@snippet :
-     * #define G_UNICODE_COMBINING_MARK 10
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cyrillic_HARDSIGN 1791
      * }
      */
-    public static int G_UNICODE_COMBINING_MARK() {
-        return (int)10L;
+    public static int GDK_KEY_Cyrillic_HARDSIGN() {
+        return GDK_KEY_Cyrillic_HARDSIGN;
     }
+    private static final int GDK_KEY_Greek_ALPHAaccent = (int)1953L;
     /**
-     * {@snippet :
-     * #define G_STR_DELIMITERS "_-|> <."
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_ALPHAaccent 1953
      * }
      */
-    public static MemorySegment G_STR_DELIMITERS() {
-        return constants$3418.const$0;
+    public static int GDK_KEY_Greek_ALPHAaccent() {
+        return GDK_KEY_Greek_ALPHAaccent;
     }
+    private static final int GDK_KEY_Greek_EPSILONaccent = (int)1954L;
     /**
-     * {@snippet :
-     * #define G_ASCII_DTOSTR_BUF_SIZE 39
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_EPSILONaccent 1954
      * }
      */
-    public static int G_ASCII_DTOSTR_BUF_SIZE() {
-        return (int)39L;
+    public static int GDK_KEY_Greek_EPSILONaccent() {
+        return GDK_KEY_Greek_EPSILONaccent;
     }
+    private static final int GDK_KEY_Greek_ETAaccent = (int)1955L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_GROUP "Desktop Entry"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_ETAaccent 1955
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_GROUP() {
-        return constants$3418.const$1;
+    public static int GDK_KEY_Greek_ETAaccent() {
+        return GDK_KEY_Greek_ETAaccent;
     }
+    private static final int GDK_KEY_Greek_IOTAaccent = (int)1956L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_TYPE "Type"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_IOTAaccent 1956
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_TYPE() {
-        return constants$3418.const$2;
+    public static int GDK_KEY_Greek_IOTAaccent() {
+        return GDK_KEY_Greek_IOTAaccent;
     }
+    private static final int GDK_KEY_Greek_IOTAdieresis = (int)1957L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_VERSION "Version"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_IOTAdieresis 1957
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_VERSION() {
-        return constants$3418.const$3;
+    public static int GDK_KEY_Greek_IOTAdieresis() {
+        return GDK_KEY_Greek_IOTAdieresis;
     }
+    private static final int GDK_KEY_Greek_IOTAdiaeresis = (int)1957L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_NAME "Name"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_IOTAdiaeresis 1957
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_NAME() {
-        return constants$3418.const$4;
+    public static int GDK_KEY_Greek_IOTAdiaeresis() {
+        return GDK_KEY_Greek_IOTAdiaeresis;
     }
+    private static final int GDK_KEY_Greek_OMICRONaccent = (int)1959L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME "GenericName"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_OMICRONaccent 1959
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME() {
-        return constants$3418.const$5;
+    public static int GDK_KEY_Greek_OMICRONaccent() {
+        return GDK_KEY_Greek_OMICRONaccent;
     }
+    private static final int GDK_KEY_Greek_UPSILONaccent = (int)1960L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY "NoDisplay"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_UPSILONaccent 1960
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY() {
-        return constants$3419.const$0;
+    public static int GDK_KEY_Greek_UPSILONaccent() {
+        return GDK_KEY_Greek_UPSILONaccent;
     }
+    private static final int GDK_KEY_Greek_UPSILONdieresis = (int)1961L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_COMMENT "Comment"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_UPSILONdieresis 1961
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_COMMENT() {
-        return constants$3419.const$1;
+    public static int GDK_KEY_Greek_UPSILONdieresis() {
+        return GDK_KEY_Greek_UPSILONdieresis;
     }
+    private static final int GDK_KEY_Greek_OMEGAaccent = (int)1963L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_ICON "Icon"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_OMEGAaccent 1963
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_ICON() {
-        return constants$3419.const$2;
+    public static int GDK_KEY_Greek_OMEGAaccent() {
+        return GDK_KEY_Greek_OMEGAaccent;
     }
+    private static final int GDK_KEY_Greek_accentdieresis = (int)1966L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_HIDDEN "Hidden"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_accentdieresis 1966
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_HIDDEN() {
-        return constants$3419.const$3;
+    public static int GDK_KEY_Greek_accentdieresis() {
+        return GDK_KEY_Greek_accentdieresis;
     }
+    private static final int GDK_KEY_Greek_horizbar = (int)1967L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN "OnlyShowIn"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_horizbar 1967
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN() {
-        return constants$3419.const$4;
+    public static int GDK_KEY_Greek_horizbar() {
+        return GDK_KEY_Greek_horizbar;
     }
+    private static final int GDK_KEY_Greek_alphaaccent = (int)1969L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN "NotShowIn"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_alphaaccent 1969
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN() {
-        return constants$3419.const$5;
+    public static int GDK_KEY_Greek_alphaaccent() {
+        return GDK_KEY_Greek_alphaaccent;
     }
+    private static final int GDK_KEY_Greek_epsilonaccent = (int)1970L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_TRY_EXEC "TryExec"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_epsilonaccent 1970
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_TRY_EXEC() {
-        return constants$3420.const$0;
+    public static int GDK_KEY_Greek_epsilonaccent() {
+        return GDK_KEY_Greek_epsilonaccent;
     }
+    private static final int GDK_KEY_Greek_etaaccent = (int)1971L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_EXEC "Exec"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_etaaccent 1971
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_EXEC() {
-        return constants$3420.const$1;
+    public static int GDK_KEY_Greek_etaaccent() {
+        return GDK_KEY_Greek_etaaccent;
     }
+    private static final int GDK_KEY_Greek_iotaaccent = (int)1972L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_PATH "Path"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_iotaaccent 1972
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_PATH() {
-        return constants$3420.const$2;
+    public static int GDK_KEY_Greek_iotaaccent() {
+        return GDK_KEY_Greek_iotaaccent;
     }
+    private static final int GDK_KEY_Greek_iotadieresis = (int)1973L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_TERMINAL "Terminal"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_iotadieresis 1973
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_TERMINAL() {
-        return constants$3420.const$3;
+    public static int GDK_KEY_Greek_iotadieresis() {
+        return GDK_KEY_Greek_iotadieresis;
     }
+    private static final int GDK_KEY_Greek_iotaaccentdieresis = (int)1974L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_MIME_TYPE "MimeType"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_iotaaccentdieresis 1974
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_MIME_TYPE() {
-        return constants$3420.const$4;
+    public static int GDK_KEY_Greek_iotaaccentdieresis() {
+        return GDK_KEY_Greek_iotaaccentdieresis;
     }
+    private static final int GDK_KEY_Greek_omicronaccent = (int)1975L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_CATEGORIES "Categories"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_omicronaccent 1975
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_CATEGORIES() {
-        return constants$3420.const$5;
+    public static int GDK_KEY_Greek_omicronaccent() {
+        return GDK_KEY_Greek_omicronaccent;
     }
+    private static final int GDK_KEY_Greek_upsilonaccent = (int)1976L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY "StartupNotify"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_upsilonaccent 1976
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY() {
-        return constants$3421.const$0;
+    public static int GDK_KEY_Greek_upsilonaccent() {
+        return GDK_KEY_Greek_upsilonaccent;
     }
+    private static final int GDK_KEY_Greek_upsilondieresis = (int)1977L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS "StartupWMClass"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_upsilondieresis 1977
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS() {
-        return constants$3421.const$1;
+    public static int GDK_KEY_Greek_upsilondieresis() {
+        return GDK_KEY_Greek_upsilondieresis;
     }
+    private static final int GDK_KEY_Greek_upsilonaccentdieresis = (int)1978L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_URL "URL"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_upsilonaccentdieresis 1978
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_URL() {
-        return constants$3421.const$2;
+    public static int GDK_KEY_Greek_upsilonaccentdieresis() {
+        return GDK_KEY_Greek_upsilonaccentdieresis;
     }
+    private static final int GDK_KEY_Greek_omegaaccent = (int)1979L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE "DBusActivatable"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_omegaaccent 1979
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE() {
-        return constants$3421.const$3;
+    public static int GDK_KEY_Greek_omegaaccent() {
+        return GDK_KEY_Greek_omegaaccent;
     }
+    private static final int GDK_KEY_Greek_ALPHA = (int)1985L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_KEY_ACTIONS "Actions"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_ALPHA 1985
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_KEY_ACTIONS() {
-        return constants$3421.const$4;
+    public static int GDK_KEY_Greek_ALPHA() {
+        return GDK_KEY_Greek_ALPHA;
     }
+    private static final int GDK_KEY_Greek_BETA = (int)1986L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_TYPE_APPLICATION "Application"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_BETA 1986
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_TYPE_APPLICATION() {
-        return constants$3421.const$5;
+    public static int GDK_KEY_Greek_BETA() {
+        return GDK_KEY_Greek_BETA;
     }
+    private static final int GDK_KEY_Greek_GAMMA = (int)1987L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_TYPE_LINK "Link"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_GAMMA 1987
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_TYPE_LINK() {
-        return constants$3422.const$0;
+    public static int GDK_KEY_Greek_GAMMA() {
+        return GDK_KEY_Greek_GAMMA;
     }
+    private static final int GDK_KEY_Greek_DELTA = (int)1988L;
     /**
-     * {@snippet :
-     * #define G_KEY_FILE_DESKTOP_TYPE_DIRECTORY "Directory"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_DELTA 1988
      * }
      */
-    public static MemorySegment G_KEY_FILE_DESKTOP_TYPE_DIRECTORY() {
-        return constants$3422.const$1;
+    public static int GDK_KEY_Greek_DELTA() {
+        return GDK_KEY_Greek_DELTA;
     }
+    private static final int GDK_KEY_Greek_EPSILON = (int)1989L;
     /**
-     * {@snippet :
-     * #define G_LOG_LEVEL_USER_SHIFT 8
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_EPSILON 1989
      * }
      */
-    public static int G_LOG_LEVEL_USER_SHIFT() {
-        return (int)8L;
+    public static int GDK_KEY_Greek_EPSILON() {
+        return GDK_KEY_Greek_EPSILON;
     }
+    private static final int GDK_KEY_Greek_ZETA = (int)1990L;
     /**
-     * {@snippet :
-     * #define G_LOG_FATAL_MASK 5
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_ZETA 1990
      * }
      */
-    public static int G_LOG_FATAL_MASK() {
-        return (int)5L;
+    public static int GDK_KEY_Greek_ZETA() {
+        return GDK_KEY_Greek_ZETA;
     }
+    private static final int GDK_KEY_Greek_ETA = (int)1991L;
     /**
-     * {@snippet :
-     * #define G_LOG_DOMAIN 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_ETA 1991
      * }
      */
-    public static MemorySegment G_LOG_DOMAIN() {
-        return constants$3413.const$2;
+    public static int GDK_KEY_Greek_ETA() {
+        return GDK_KEY_Greek_ETA;
     }
+    private static final int GDK_KEY_Greek_THETA = (int)1992L;
     /**
-     * {@snippet :
-     * #define G_OPTION_REMAINING ""
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_THETA 1992
      * }
      */
-    public static MemorySegment G_OPTION_REMAINING() {
-        return constants$3413.const$3;
+    public static int GDK_KEY_Greek_THETA() {
+        return GDK_KEY_Greek_THETA;
     }
+    private static final int GDK_KEY_Greek_IOTA = (int)1993L;
     /**
-     * {@snippet :
-     * #define G_CSET_A_2_Z "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_IOTA 1993
      * }
      */
-    public static MemorySegment G_CSET_A_2_Z() {
-        return constants$3422.const$2;
+    public static int GDK_KEY_Greek_IOTA() {
+        return GDK_KEY_Greek_IOTA;
     }
+    private static final int GDK_KEY_Greek_KAPPA = (int)1994L;
     /**
-     * {@snippet :
-     * #define G_CSET_a_2_z "abcdefghijklmnopqrstuvwxyz"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_KAPPA 1994
      * }
      */
-    public static MemorySegment G_CSET_a_2_z() {
-        return constants$3422.const$3;
+    public static int GDK_KEY_Greek_KAPPA() {
+        return GDK_KEY_Greek_KAPPA;
     }
+    private static final int GDK_KEY_Greek_LAMDA = (int)1995L;
     /**
-     * {@snippet :
-     * #define G_CSET_DIGITS "0123456789"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_LAMDA 1995
      * }
      */
-    public static MemorySegment G_CSET_DIGITS() {
-        return constants$3422.const$4;
+    public static int GDK_KEY_Greek_LAMDA() {
+        return GDK_KEY_Greek_LAMDA;
     }
+    private static final int GDK_KEY_Greek_LAMBDA = (int)1995L;
     /**
-     * {@snippet :
-     * #define G_CSET_LATINC "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_LAMBDA 1995
      * }
      */
-    public static MemorySegment G_CSET_LATINC() {
-        return constants$3422.const$5;
+    public static int GDK_KEY_Greek_LAMBDA() {
+        return GDK_KEY_Greek_LAMBDA;
     }
+    private static final int GDK_KEY_Greek_MU = (int)1996L;
     /**
-     * {@snippet :
-     * #define G_CSET_LATINS "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_MU 1996
      * }
      */
-    public static MemorySegment G_CSET_LATINS() {
-        return constants$3423.const$0;
+    public static int GDK_KEY_Greek_MU() {
+        return GDK_KEY_Greek_MU;
     }
+    private static final int GDK_KEY_Greek_NU = (int)1997L;
     /**
-     * {@snippet :
-     * #define EWOULDBLOCK 11
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_NU 1997
      * }
      */
-    public static int EWOULDBLOCK() {
-        return (int)11L;
+    public static int GDK_KEY_Greek_NU() {
+        return GDK_KEY_Greek_NU;
     }
+    private static final int GDK_KEY_Greek_XI = (int)1998L;
     /**
-     * {@snippet :
-     * #define EDEADLOCK 35
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_XI 1998
      * }
      */
-    public static int EDEADLOCK() {
-        return (int)35L;
+    public static int GDK_KEY_Greek_XI() {
+        return GDK_KEY_Greek_XI;
     }
+    private static final int GDK_KEY_Greek_OMICRON = (int)1999L;
     /**
-     * {@snippet :
-     * #define ENOTSUP 95
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_OMICRON 1999
      * }
      */
-    public static int ENOTSUP() {
-        return (int)95L;
+    public static int GDK_KEY_Greek_OMICRON() {
+        return GDK_KEY_Greek_OMICRON;
     }
+    private static final int GDK_KEY_Greek_PI = (int)2000L;
     /**
-     * {@snippet :
-     * #define G_TEST_OPTION_ISOLATE_DIRS "isolate_dirs"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_PI 2000
      * }
      */
-    public static MemorySegment G_TEST_OPTION_ISOLATE_DIRS() {
-        return constants$3423.const$1;
+    public static int GDK_KEY_Greek_PI() {
+        return GDK_KEY_Greek_PI;
     }
+    private static final int GDK_KEY_Greek_RHO = (int)2001L;
     /**
-     * {@snippet :
-     * #define G_URI_RESERVED_CHARS_GENERIC_DELIMITERS ":/?#[]@"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_RHO 2001
      * }
      */
-    public static MemorySegment G_URI_RESERVED_CHARS_GENERIC_DELIMITERS() {
-        return constants$3423.const$2;
+    public static int GDK_KEY_Greek_RHO() {
+        return GDK_KEY_Greek_RHO;
     }
+    private static final int GDK_KEY_Greek_SIGMA = (int)2002L;
     /**
-     * {@snippet :
-     * #define G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS "!$&\'()*+,;="
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_SIGMA 2002
      * }
      */
-    public static MemorySegment G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS() {
-        return constants$3423.const$3;
+    public static int GDK_KEY_Greek_SIGMA() {
+        return GDK_KEY_Greek_SIGMA;
     }
+    private static final int GDK_KEY_Greek_TAU = (int)2004L;
     /**
-     * {@snippet :
-     * #define G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT "!$&\'()*+,;=:@"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_TAU 2004
      * }
      */
-    public static MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT() {
-        return constants$3423.const$4;
+    public static int GDK_KEY_Greek_TAU() {
+        return GDK_KEY_Greek_TAU;
     }
+    private static final int GDK_KEY_Greek_UPSILON = (int)2005L;
     /**
-     * {@snippet :
-     * #define G_URI_RESERVED_CHARS_ALLOWED_IN_PATH "!$&\'()*+,;=:@/"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_UPSILON 2005
      * }
      */
-    public static MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_PATH() {
-        return constants$3423.const$5;
+    public static int GDK_KEY_Greek_UPSILON() {
+        return GDK_KEY_Greek_UPSILON;
     }
+    private static final int GDK_KEY_Greek_PHI = (int)2006L;
     /**
-     * {@snippet :
-     * #define G_URI_RESERVED_CHARS_ALLOWED_IN_USERINFO "!$&\'()*+,;=:"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_PHI 2006
      * }
      */
-    public static MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_USERINFO() {
-        return constants$3424.const$0;
+    public static int GDK_KEY_Greek_PHI() {
+        return GDK_KEY_Greek_PHI;
     }
+    private static final int GDK_KEY_Greek_CHI = (int)2007L;
     /**
-     * {@snippet :
-     * #define __NCPUBITS 64
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_CHI 2007
      * }
      */
-    public static long __NCPUBITS() {
-        return 64L;
+    public static int GDK_KEY_Greek_CHI() {
+        return GDK_KEY_Greek_CHI;
     }
+    private static final int GDK_KEY_Greek_PSI = (int)2008L;
     /**
-     * {@snippet :
-     * #define PTHREAD_CANCELED -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_PSI 2008
      * }
      */
-    public static MemorySegment PTHREAD_CANCELED() {
-        return constants$3417.const$4;
+    public static int GDK_KEY_Greek_PSI() {
+        return GDK_KEY_Greek_PSI;
     }
+    private static final int GDK_KEY_Greek_OMEGA = (int)2009L;
     /**
-     * {@snippet :
-     * #define PTHREAD_BARRIER_SERIAL_THREAD -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_OMEGA 2009
      * }
      */
-    public static int PTHREAD_BARRIER_SERIAL_THREAD() {
-        return (int)-1L;
+    public static int GDK_KEY_Greek_OMEGA() {
+        return GDK_KEY_Greek_OMEGA;
     }
+    private static final int GDK_KEY_Greek_alpha = (int)2017L;
     /**
-     * {@snippet :
-     * #define GDK_MAJOR_VERSION 3
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_alpha 2017
      * }
      */
-    public static int GDK_MAJOR_VERSION() {
-        return (int)3L;
+    public static int GDK_KEY_Greek_alpha() {
+        return GDK_KEY_Greek_alpha;
     }
+    private static final int GDK_KEY_Greek_beta = (int)2018L;
     /**
-     * {@snippet :
-     * #define GDK_MINOR_VERSION 24
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_beta 2018
      * }
      */
-    public static int GDK_MINOR_VERSION() {
-        return (int)24L;
+    public static int GDK_KEY_Greek_beta() {
+        return GDK_KEY_Greek_beta;
     }
+    private static final int GDK_KEY_Greek_gamma = (int)2019L;
     /**
-     * {@snippet :
-     * #define GDK_MICRO_VERSION 38
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_gamma 2019
      * }
      */
-    public static int GDK_MICRO_VERSION() {
-        return (int)38L;
+    public static int GDK_KEY_Greek_gamma() {
+        return GDK_KEY_Greek_gamma;
     }
+    private static final int GDK_KEY_Greek_delta = (int)2020L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_0 196608
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_delta 2020
      * }
      */
-    public static int GDK_VERSION_3_0() {
-        return (int)196608L;
+    public static int GDK_KEY_Greek_delta() {
+        return GDK_KEY_Greek_delta;
     }
+    private static final int GDK_KEY_Greek_epsilon = (int)2021L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_2 197120
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_epsilon 2021
      * }
      */
-    public static int GDK_VERSION_3_2() {
-        return (int)197120L;
+    public static int GDK_KEY_Greek_epsilon() {
+        return GDK_KEY_Greek_epsilon;
     }
+    private static final int GDK_KEY_Greek_zeta = (int)2022L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_4 197632
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_zeta 2022
      * }
      */
-    public static int GDK_VERSION_3_4() {
-        return (int)197632L;
+    public static int GDK_KEY_Greek_zeta() {
+        return GDK_KEY_Greek_zeta;
     }
+    private static final int GDK_KEY_Greek_eta = (int)2023L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_6 198144
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_eta 2023
      * }
      */
-    public static int GDK_VERSION_3_6() {
-        return (int)198144L;
+    public static int GDK_KEY_Greek_eta() {
+        return GDK_KEY_Greek_eta;
     }
+    private static final int GDK_KEY_Greek_theta = (int)2024L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_8 198656
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_theta 2024
      * }
      */
-    public static int GDK_VERSION_3_8() {
-        return (int)198656L;
+    public static int GDK_KEY_Greek_theta() {
+        return GDK_KEY_Greek_theta;
     }
+    private static final int GDK_KEY_Greek_iota = (int)2025L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_10 199168
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_iota 2025
      * }
      */
-    public static int GDK_VERSION_3_10() {
-        return (int)199168L;
+    public static int GDK_KEY_Greek_iota() {
+        return GDK_KEY_Greek_iota;
     }
+    private static final int GDK_KEY_Greek_kappa = (int)2026L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_12 199680
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_kappa 2026
      * }
      */
-    public static int GDK_VERSION_3_12() {
-        return (int)199680L;
+    public static int GDK_KEY_Greek_kappa() {
+        return GDK_KEY_Greek_kappa;
     }
+    private static final int GDK_KEY_Greek_lamda = (int)2027L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_14 200192
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_lamda 2027
      * }
      */
-    public static int GDK_VERSION_3_14() {
-        return (int)200192L;
+    public static int GDK_KEY_Greek_lamda() {
+        return GDK_KEY_Greek_lamda;
     }
+    private static final int GDK_KEY_Greek_lambda = (int)2027L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_16 200704
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_lambda 2027
      * }
      */
-    public static int GDK_VERSION_3_16() {
-        return (int)200704L;
+    public static int GDK_KEY_Greek_lambda() {
+        return GDK_KEY_Greek_lambda;
     }
+    private static final int GDK_KEY_Greek_mu = (int)2028L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_18 201216
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_mu 2028
      * }
      */
-    public static int GDK_VERSION_3_18() {
-        return (int)201216L;
+    public static int GDK_KEY_Greek_mu() {
+        return GDK_KEY_Greek_mu;
     }
+    private static final int GDK_KEY_Greek_nu = (int)2029L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_20 201728
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_nu 2029
      * }
      */
-    public static int GDK_VERSION_3_20() {
-        return (int)201728L;
+    public static int GDK_KEY_Greek_nu() {
+        return GDK_KEY_Greek_nu;
     }
+    private static final int GDK_KEY_Greek_xi = (int)2030L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_22 202240
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_xi 2030
      * }
      */
-    public static int GDK_VERSION_3_22() {
-        return (int)202240L;
+    public static int GDK_KEY_Greek_xi() {
+        return GDK_KEY_Greek_xi;
     }
+    private static final int GDK_KEY_Greek_omicron = (int)2031L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_3_24 202752
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_omicron 2031
      * }
      */
-    public static int GDK_VERSION_3_24() {
-        return (int)202752L;
+    public static int GDK_KEY_Greek_omicron() {
+        return GDK_KEY_Greek_omicron;
     }
+    private static final int GDK_KEY_Greek_pi = (int)2032L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_CUR_STABLE 202752
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_pi 2032
      * }
      */
-    public static int GDK_VERSION_CUR_STABLE() {
-        return (int)202752L;
+    public static int GDK_KEY_Greek_pi() {
+        return GDK_KEY_Greek_pi;
     }
+    private static final int GDK_KEY_Greek_rho = (int)2033L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_PREV_STABLE 202240
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_rho 2033
      * }
      */
-    public static int GDK_VERSION_PREV_STABLE() {
-        return (int)202240L;
+    public static int GDK_KEY_Greek_rho() {
+        return GDK_KEY_Greek_rho;
     }
+    private static final int GDK_KEY_Greek_sigma = (int)2034L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_MIN_REQUIRED 202752
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_sigma 2034
      * }
      */
-    public static int GDK_VERSION_MIN_REQUIRED() {
-        return (int)202752L;
+    public static int GDK_KEY_Greek_sigma() {
+        return GDK_KEY_Greek_sigma;
     }
+    private static final int GDK_KEY_Greek_finalsmallsigma = (int)2035L;
     /**
-     * {@snippet :
-     * #define GDK_VERSION_MAX_ALLOWED 202752
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_finalsmallsigma 2035
      * }
      */
-    public static int GDK_VERSION_MAX_ALLOWED() {
-        return (int)202752L;
+    public static int GDK_KEY_Greek_finalsmallsigma() {
+        return GDK_KEY_Greek_finalsmallsigma;
     }
+    private static final int GDK_KEY_Greek_tau = (int)2036L;
     /**
-     * {@snippet :
-     * #define G_TYPE_FUNDAMENTAL_MAX 1020
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_tau 2036
      * }
      */
-    public static int G_TYPE_FUNDAMENTAL_MAX() {
-        return (int)1020L;
+    public static int GDK_KEY_Greek_tau() {
+        return GDK_KEY_Greek_tau;
     }
+    private static final int GDK_KEY_Greek_upsilon = (int)2037L;
     /**
-     * {@snippet :
-     * #define G_TYPE_INVALID 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_upsilon 2037
      * }
      */
-    public static long G_TYPE_INVALID() {
-        return 0L;
+    public static int GDK_KEY_Greek_upsilon() {
+        return GDK_KEY_Greek_upsilon;
     }
+    private static final int GDK_KEY_Greek_phi = (int)2038L;
     /**
-     * {@snippet :
-     * #define G_TYPE_NONE 4
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_phi 2038
      * }
      */
-    public static long G_TYPE_NONE() {
-        return 4L;
+    public static int GDK_KEY_Greek_phi() {
+        return GDK_KEY_Greek_phi;
     }
+    private static final int GDK_KEY_Greek_chi = (int)2039L;
     /**
-     * {@snippet :
-     * #define G_TYPE_INTERFACE 8
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_chi 2039
      * }
      */
-    public static long G_TYPE_INTERFACE() {
-        return 8L;
+    public static int GDK_KEY_Greek_chi() {
+        return GDK_KEY_Greek_chi;
     }
+    private static final int GDK_KEY_Greek_psi = (int)2040L;
     /**
-     * {@snippet :
-     * #define G_TYPE_CHAR 12
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_psi 2040
      * }
      */
-    public static long G_TYPE_CHAR() {
-        return 12L;
+    public static int GDK_KEY_Greek_psi() {
+        return GDK_KEY_Greek_psi;
     }
+    private static final int GDK_KEY_Greek_omega = (int)2041L;
     /**
-     * {@snippet :
-     * #define G_TYPE_UCHAR 16
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_omega 2041
      * }
      */
-    public static long G_TYPE_UCHAR() {
-        return 16L;
+    public static int GDK_KEY_Greek_omega() {
+        return GDK_KEY_Greek_omega;
     }
+    private static final int GDK_KEY_Greek_switch = (int)65406L;
     /**
-     * {@snippet :
-     * #define G_TYPE_BOOLEAN 20
+     * {@snippet lang=c :
+     * #define GDK_KEY_Greek_switch 65406
      * }
      */
-    public static long G_TYPE_BOOLEAN() {
-        return 20L;
+    public static int GDK_KEY_Greek_switch() {
+        return GDK_KEY_Greek_switch;
     }
+    private static final int GDK_KEY_leftradical = (int)2209L;
     /**
-     * {@snippet :
-     * #define G_TYPE_INT 24
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftradical 2209
      * }
      */
-    public static long G_TYPE_INT() {
-        return 24L;
+    public static int GDK_KEY_leftradical() {
+        return GDK_KEY_leftradical;
     }
+    private static final int GDK_KEY_topleftradical = (int)2210L;
     /**
-     * {@snippet :
-     * #define G_TYPE_UINT 28
+     * {@snippet lang=c :
+     * #define GDK_KEY_topleftradical 2210
      * }
      */
-    public static long G_TYPE_UINT() {
-        return 28L;
+    public static int GDK_KEY_topleftradical() {
+        return GDK_KEY_topleftradical;
     }
+    private static final int GDK_KEY_horizconnector = (int)2211L;
     /**
-     * {@snippet :
-     * #define G_TYPE_LONG 32
+     * {@snippet lang=c :
+     * #define GDK_KEY_horizconnector 2211
      * }
      */
-    public static long G_TYPE_LONG() {
-        return 32L;
+    public static int GDK_KEY_horizconnector() {
+        return GDK_KEY_horizconnector;
     }
+    private static final int GDK_KEY_topintegral = (int)2212L;
     /**
-     * {@snippet :
-     * #define G_TYPE_ULONG 36
+     * {@snippet lang=c :
+     * #define GDK_KEY_topintegral 2212
      * }
      */
-    public static long G_TYPE_ULONG() {
-        return 36L;
+    public static int GDK_KEY_topintegral() {
+        return GDK_KEY_topintegral;
     }
+    private static final int GDK_KEY_botintegral = (int)2213L;
     /**
-     * {@snippet :
-     * #define G_TYPE_INT64 40
+     * {@snippet lang=c :
+     * #define GDK_KEY_botintegral 2213
      * }
      */
-    public static long G_TYPE_INT64() {
-        return 40L;
+    public static int GDK_KEY_botintegral() {
+        return GDK_KEY_botintegral;
     }
+    private static final int GDK_KEY_vertconnector = (int)2214L;
     /**
-     * {@snippet :
-     * #define G_TYPE_UINT64 44
+     * {@snippet lang=c :
+     * #define GDK_KEY_vertconnector 2214
      * }
      */
-    public static long G_TYPE_UINT64() {
-        return 44L;
+    public static int GDK_KEY_vertconnector() {
+        return GDK_KEY_vertconnector;
     }
+    private static final int GDK_KEY_topleftsqbracket = (int)2215L;
     /**
-     * {@snippet :
-     * #define G_TYPE_ENUM 48
+     * {@snippet lang=c :
+     * #define GDK_KEY_topleftsqbracket 2215
      * }
      */
-    public static long G_TYPE_ENUM() {
-        return 48L;
+    public static int GDK_KEY_topleftsqbracket() {
+        return GDK_KEY_topleftsqbracket;
     }
+    private static final int GDK_KEY_botleftsqbracket = (int)2216L;
     /**
-     * {@snippet :
-     * #define G_TYPE_FLAGS 52
+     * {@snippet lang=c :
+     * #define GDK_KEY_botleftsqbracket 2216
      * }
      */
-    public static long G_TYPE_FLAGS() {
-        return 52L;
+    public static int GDK_KEY_botleftsqbracket() {
+        return GDK_KEY_botleftsqbracket;
     }
+    private static final int GDK_KEY_toprightsqbracket = (int)2217L;
     /**
-     * {@snippet :
-     * #define G_TYPE_FLOAT 56
+     * {@snippet lang=c :
+     * #define GDK_KEY_toprightsqbracket 2217
      * }
      */
-    public static long G_TYPE_FLOAT() {
-        return 56L;
+    public static int GDK_KEY_toprightsqbracket() {
+        return GDK_KEY_toprightsqbracket;
     }
+    private static final int GDK_KEY_botrightsqbracket = (int)2218L;
     /**
-     * {@snippet :
-     * #define G_TYPE_DOUBLE 60
+     * {@snippet lang=c :
+     * #define GDK_KEY_botrightsqbracket 2218
      * }
      */
-    public static long G_TYPE_DOUBLE() {
-        return 60L;
+    public static int GDK_KEY_botrightsqbracket() {
+        return GDK_KEY_botrightsqbracket;
     }
+    private static final int GDK_KEY_topleftparens = (int)2219L;
     /**
-     * {@snippet :
-     * #define G_TYPE_STRING 64
+     * {@snippet lang=c :
+     * #define GDK_KEY_topleftparens 2219
      * }
      */
-    public static long G_TYPE_STRING() {
-        return 64L;
+    public static int GDK_KEY_topleftparens() {
+        return GDK_KEY_topleftparens;
     }
+    private static final int GDK_KEY_botleftparens = (int)2220L;
     /**
-     * {@snippet :
-     * #define G_TYPE_POINTER 68
+     * {@snippet lang=c :
+     * #define GDK_KEY_botleftparens 2220
      * }
      */
-    public static long G_TYPE_POINTER() {
-        return 68L;
+    public static int GDK_KEY_botleftparens() {
+        return GDK_KEY_botleftparens;
     }
+    private static final int GDK_KEY_toprightparens = (int)2221L;
     /**
-     * {@snippet :
-     * #define G_TYPE_BOXED 72
+     * {@snippet lang=c :
+     * #define GDK_KEY_toprightparens 2221
      * }
      */
-    public static long G_TYPE_BOXED() {
-        return 72L;
+    public static int GDK_KEY_toprightparens() {
+        return GDK_KEY_toprightparens;
     }
+    private static final int GDK_KEY_botrightparens = (int)2222L;
     /**
-     * {@snippet :
-     * #define G_TYPE_PARAM 76
+     * {@snippet lang=c :
+     * #define GDK_KEY_botrightparens 2222
      * }
      */
-    public static long G_TYPE_PARAM() {
-        return 76L;
+    public static int GDK_KEY_botrightparens() {
+        return GDK_KEY_botrightparens;
     }
+    private static final int GDK_KEY_leftmiddlecurlybrace = (int)2223L;
     /**
-     * {@snippet :
-     * #define G_TYPE_OBJECT 80
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftmiddlecurlybrace 2223
      * }
      */
-    public static long G_TYPE_OBJECT() {
-        return 80L;
+    public static int GDK_KEY_leftmiddlecurlybrace() {
+        return GDK_KEY_leftmiddlecurlybrace;
     }
+    private static final int GDK_KEY_rightmiddlecurlybrace = (int)2224L;
     /**
-     * {@snippet :
-     * #define G_TYPE_VARIANT 84
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightmiddlecurlybrace 2224
      * }
      */
-    public static long G_TYPE_VARIANT() {
-        return 84L;
+    public static int GDK_KEY_rightmiddlecurlybrace() {
+        return GDK_KEY_rightmiddlecurlybrace;
     }
+    private static final int GDK_KEY_topleftsummation = (int)2225L;
     /**
-     * {@snippet :
-     * #define G_TYPE_FUNDAMENTAL_SHIFT 2
+     * {@snippet lang=c :
+     * #define GDK_KEY_topleftsummation 2225
      * }
      */
-    public static int G_TYPE_FUNDAMENTAL_SHIFT() {
-        return (int)2L;
+    public static int GDK_KEY_topleftsummation() {
+        return GDK_KEY_topleftsummation;
     }
+    private static final int GDK_KEY_botleftsummation = (int)2226L;
     /**
-     * {@snippet :
-     * #define G_TYPE_RESERVED_GLIB_FIRST 22
+     * {@snippet lang=c :
+     * #define GDK_KEY_botleftsummation 2226
      * }
      */
-    public static int G_TYPE_RESERVED_GLIB_FIRST() {
-        return (int)22L;
+    public static int GDK_KEY_botleftsummation() {
+        return GDK_KEY_botleftsummation;
     }
+    private static final int GDK_KEY_topvertsummationconnector = (int)2227L;
     /**
-     * {@snippet :
-     * #define G_TYPE_RESERVED_GLIB_LAST 31
+     * {@snippet lang=c :
+     * #define GDK_KEY_topvertsummationconnector 2227
      * }
      */
-    public static int G_TYPE_RESERVED_GLIB_LAST() {
-        return (int)31L;
+    public static int GDK_KEY_topvertsummationconnector() {
+        return GDK_KEY_topvertsummationconnector;
     }
+    private static final int GDK_KEY_botvertsummationconnector = (int)2228L;
     /**
-     * {@snippet :
-     * #define G_TYPE_RESERVED_BSE_FIRST 32
+     * {@snippet lang=c :
+     * #define GDK_KEY_botvertsummationconnector 2228
      * }
      */
-    public static int G_TYPE_RESERVED_BSE_FIRST() {
-        return (int)32L;
+    public static int GDK_KEY_botvertsummationconnector() {
+        return GDK_KEY_botvertsummationconnector;
     }
+    private static final int GDK_KEY_toprightsummation = (int)2229L;
     /**
-     * {@snippet :
-     * #define G_TYPE_RESERVED_BSE_LAST 48
+     * {@snippet lang=c :
+     * #define GDK_KEY_toprightsummation 2229
      * }
      */
-    public static int G_TYPE_RESERVED_BSE_LAST() {
-        return (int)48L;
+    public static int GDK_KEY_toprightsummation() {
+        return GDK_KEY_toprightsummation;
     }
+    private static final int GDK_KEY_botrightsummation = (int)2230L;
     /**
-     * {@snippet :
-     * #define G_TYPE_RESERVED_USER_FIRST 49
+     * {@snippet lang=c :
+     * #define GDK_KEY_botrightsummation 2230
      * }
      */
-    public static int G_TYPE_RESERVED_USER_FIRST() {
-        return (int)49L;
+    public static int GDK_KEY_botrightsummation() {
+        return GDK_KEY_botrightsummation;
     }
+    private static final int GDK_KEY_rightmiddlesummation = (int)2231L;
     /**
-     * {@snippet :
-     * #define G_TYPE_FLAG_RESERVED_ID_BIT 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightmiddlesummation 2231
      * }
      */
-    public static long G_TYPE_FLAG_RESERVED_ID_BIT() {
-        return 1L;
+    public static int GDK_KEY_rightmiddlesummation() {
+        return GDK_KEY_rightmiddlesummation;
     }
+    private static final int GDK_KEY_lessthanequal = (int)2236L;
     /**
-     * {@snippet :
-     * #define G_VALUE_NOCOPY_CONTENTS 134217728
+     * {@snippet lang=c :
+     * #define GDK_KEY_lessthanequal 2236
      * }
      */
-    public static int G_VALUE_NOCOPY_CONTENTS() {
-        return (int)134217728L;
+    public static int GDK_KEY_lessthanequal() {
+        return GDK_KEY_lessthanequal;
     }
+    private static final int GDK_KEY_notequal = (int)2237L;
     /**
-     * {@snippet :
-     * #define G_VALUE_INTERNED_STRING 268435456
+     * {@snippet lang=c :
+     * #define GDK_KEY_notequal 2237
      * }
      */
-    public static int G_VALUE_INTERNED_STRING() {
-        return (int)268435456L;
+    public static int GDK_KEY_notequal() {
+        return GDK_KEY_notequal;
     }
+    private static final int GDK_KEY_greaterthanequal = (int)2238L;
     /**
-     * {@snippet :
-     * #define G_PARAM_STATIC_STRINGS 224
+     * {@snippet lang=c :
+     * #define GDK_KEY_greaterthanequal 2238
      * }
      */
-    public static int G_PARAM_STATIC_STRINGS() {
-        return (int)224L;
+    public static int GDK_KEY_greaterthanequal() {
+        return GDK_KEY_greaterthanequal;
     }
+    private static final int GDK_KEY_integral = (int)2239L;
     /**
-     * {@snippet :
-     * #define G_PARAM_MASK 255
+     * {@snippet lang=c :
+     * #define GDK_KEY_integral 2239
      * }
      */
-    public static int G_PARAM_MASK() {
-        return (int)255L;
+    public static int GDK_KEY_integral() {
+        return GDK_KEY_integral;
     }
+    private static final int GDK_KEY_therefore = (int)2240L;
     /**
-     * {@snippet :
-     * #define G_PARAM_USER_SHIFT 8
+     * {@snippet lang=c :
+     * #define GDK_KEY_therefore 2240
      * }
      */
-    public static int G_PARAM_USER_SHIFT() {
-        return (int)8L;
+    public static int GDK_KEY_therefore() {
+        return GDK_KEY_therefore;
     }
+    private static final int GDK_KEY_variation = (int)2241L;
     /**
-     * {@snippet :
-     * #define G_SIGNAL_TYPE_STATIC_SCOPE 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_variation 2241
      * }
      */
-    public static long G_SIGNAL_TYPE_STATIC_SCOPE() {
-        return 1L;
+    public static int GDK_KEY_variation() {
+        return GDK_KEY_variation;
     }
+    private static final int GDK_KEY_infinity = (int)2242L;
     /**
-     * {@snippet :
-     * #define _POSIX_VERSION 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_infinity 2242
      * }
      */
-    public static long _POSIX_VERSION() {
-        return 200809L;
+    public static int GDK_KEY_infinity() {
+        return GDK_KEY_infinity;
     }
+    private static final int GDK_KEY_nabla = (int)2245L;
     /**
-     * {@snippet :
-     * #define __POSIX2_THIS_VERSION 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_nabla 2245
      * }
      */
-    public static long __POSIX2_THIS_VERSION() {
-        return 200809L;
+    public static int GDK_KEY_nabla() {
+        return GDK_KEY_nabla;
     }
+    private static final int GDK_KEY_approximate = (int)2248L;
     /**
-     * {@snippet :
-     * #define _POSIX2_VERSION 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_approximate 2248
      * }
      */
-    public static long _POSIX2_VERSION() {
-        return 200809L;
+    public static int GDK_KEY_approximate() {
+        return GDK_KEY_approximate;
     }
+    private static final int GDK_KEY_similarequal = (int)2249L;
     /**
-     * {@snippet :
-     * #define _POSIX2_C_VERSION 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_similarequal 2249
      * }
      */
-    public static long _POSIX2_C_VERSION() {
-        return 200809L;
+    public static int GDK_KEY_similarequal() {
+        return GDK_KEY_similarequal;
     }
+    private static final int GDK_KEY_ifonlyif = (int)2253L;
     /**
-     * {@snippet :
-     * #define _POSIX2_C_BIND 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_ifonlyif 2253
      * }
      */
-    public static long _POSIX2_C_BIND() {
-        return 200809L;
+    public static int GDK_KEY_ifonlyif() {
+        return GDK_KEY_ifonlyif;
     }
+    private static final int GDK_KEY_implies = (int)2254L;
     /**
-     * {@snippet :
-     * #define _POSIX2_C_DEV 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_implies 2254
      * }
      */
-    public static long _POSIX2_C_DEV() {
-        return 200809L;
+    public static int GDK_KEY_implies() {
+        return GDK_KEY_implies;
     }
+    private static final int GDK_KEY_identical = (int)2255L;
     /**
-     * {@snippet :
-     * #define _POSIX2_SW_DEV 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_identical 2255
      * }
      */
-    public static long _POSIX2_SW_DEV() {
-        return 200809L;
+    public static int GDK_KEY_identical() {
+        return GDK_KEY_identical;
     }
+    private static final int GDK_KEY_radical = (int)2262L;
     /**
-     * {@snippet :
-     * #define _POSIX2_LOCALEDEF 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_radical 2262
      * }
      */
-    public static long _POSIX2_LOCALEDEF() {
-        return 200809L;
+    public static int GDK_KEY_radical() {
+        return GDK_KEY_radical;
     }
+    private static final int GDK_KEY_includedin = (int)2266L;
     /**
-     * {@snippet :
-     * #define _POSIX_PRIORITY_SCHEDULING 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_includedin 2266
      * }
      */
-    public static long _POSIX_PRIORITY_SCHEDULING() {
-        return 200809L;
+    public static int GDK_KEY_includedin() {
+        return GDK_KEY_includedin;
     }
+    private static final int GDK_KEY_includes = (int)2267L;
     /**
-     * {@snippet :
-     * #define _POSIX_SYNCHRONIZED_IO 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_includes 2267
      * }
      */
-    public static long _POSIX_SYNCHRONIZED_IO() {
-        return 200809L;
+    public static int GDK_KEY_includes() {
+        return GDK_KEY_includes;
     }
+    private static final int GDK_KEY_intersection = (int)2268L;
     /**
-     * {@snippet :
-     * #define _POSIX_FSYNC 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_intersection 2268
      * }
      */
-    public static long _POSIX_FSYNC() {
-        return 200809L;
+    public static int GDK_KEY_intersection() {
+        return GDK_KEY_intersection;
     }
+    private static final int GDK_KEY_union = (int)2269L;
     /**
-     * {@snippet :
-     * #define _POSIX_MAPPED_FILES 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_union 2269
      * }
      */
-    public static long _POSIX_MAPPED_FILES() {
-        return 200809L;
+    public static int GDK_KEY_union() {
+        return GDK_KEY_union;
     }
+    private static final int GDK_KEY_logicaland = (int)2270L;
     /**
-     * {@snippet :
-     * #define _POSIX_MEMLOCK 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_logicaland 2270
      * }
      */
-    public static long _POSIX_MEMLOCK() {
-        return 200809L;
+    public static int GDK_KEY_logicaland() {
+        return GDK_KEY_logicaland;
     }
+    private static final int GDK_KEY_logicalor = (int)2271L;
     /**
-     * {@snippet :
-     * #define _POSIX_MEMLOCK_RANGE 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_logicalor 2271
      * }
      */
-    public static long _POSIX_MEMLOCK_RANGE() {
-        return 200809L;
+    public static int GDK_KEY_logicalor() {
+        return GDK_KEY_logicalor;
     }
+    private static final int GDK_KEY_partialderivative = (int)2287L;
     /**
-     * {@snippet :
-     * #define _POSIX_MEMORY_PROTECTION 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_partialderivative 2287
      * }
      */
-    public static long _POSIX_MEMORY_PROTECTION() {
-        return 200809L;
+    public static int GDK_KEY_partialderivative() {
+        return GDK_KEY_partialderivative;
     }
+    private static final int GDK_KEY_function = (int)2294L;
     /**
-     * {@snippet :
-     * #define _POSIX_VDISABLE 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_function 2294
      * }
      */
-    public static int _POSIX_VDISABLE() {
-        return (int)0L;
+    public static int GDK_KEY_function() {
+        return GDK_KEY_function;
     }
+    private static final int GDK_KEY_leftarrow = (int)2299L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREADS 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftarrow 2299
      * }
      */
-    public static long _POSIX_THREADS() {
-        return 200809L;
+    public static int GDK_KEY_leftarrow() {
+        return GDK_KEY_leftarrow;
     }
+    private static final int GDK_KEY_uparrow = (int)2300L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREAD_SAFE_FUNCTIONS 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_uparrow 2300
      * }
      */
-    public static long _POSIX_THREAD_SAFE_FUNCTIONS() {
-        return 200809L;
+    public static int GDK_KEY_uparrow() {
+        return GDK_KEY_uparrow;
     }
+    private static final int GDK_KEY_rightarrow = (int)2301L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREAD_PRIORITY_SCHEDULING 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightarrow 2301
      * }
      */
-    public static long _POSIX_THREAD_PRIORITY_SCHEDULING() {
-        return 200809L;
+    public static int GDK_KEY_rightarrow() {
+        return GDK_KEY_rightarrow;
     }
+    private static final int GDK_KEY_downarrow = (int)2302L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREAD_ATTR_STACKSIZE 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_downarrow 2302
      * }
      */
-    public static long _POSIX_THREAD_ATTR_STACKSIZE() {
-        return 200809L;
+    public static int GDK_KEY_downarrow() {
+        return GDK_KEY_downarrow;
     }
+    private static final int GDK_KEY_blank = (int)2527L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREAD_ATTR_STACKADDR 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_blank 2527
      * }
      */
-    public static long _POSIX_THREAD_ATTR_STACKADDR() {
-        return 200809L;
+    public static int GDK_KEY_blank() {
+        return GDK_KEY_blank;
     }
+    private static final int GDK_KEY_soliddiamond = (int)2528L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREAD_PRIO_INHERIT 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_soliddiamond 2528
      * }
      */
-    public static long _POSIX_THREAD_PRIO_INHERIT() {
-        return 200809L;
+    public static int GDK_KEY_soliddiamond() {
+        return GDK_KEY_soliddiamond;
     }
+    private static final int GDK_KEY_checkerboard = (int)2529L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREAD_PRIO_PROTECT 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_checkerboard 2529
      * }
      */
-    public static long _POSIX_THREAD_PRIO_PROTECT() {
-        return 200809L;
+    public static int GDK_KEY_checkerboard() {
+        return GDK_KEY_checkerboard;
     }
+    private static final int GDK_KEY_ht = (int)2530L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREAD_ROBUST_PRIO_INHERIT 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_ht 2530
      * }
      */
-    public static long _POSIX_THREAD_ROBUST_PRIO_INHERIT() {
-        return 200809L;
+    public static int GDK_KEY_ht() {
+        return GDK_KEY_ht;
     }
+    private static final int GDK_KEY_ff = (int)2531L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREAD_ROBUST_PRIO_PROTECT -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_ff 2531
      * }
      */
-    public static int _POSIX_THREAD_ROBUST_PRIO_PROTECT() {
-        return (int)-1L;
+    public static int GDK_KEY_ff() {
+        return GDK_KEY_ff;
     }
+    private static final int GDK_KEY_cr = (int)2532L;
     /**
-     * {@snippet :
-     * #define _POSIX_SEMAPHORES 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_cr 2532
      * }
      */
-    public static long _POSIX_SEMAPHORES() {
-        return 200809L;
+    public static int GDK_KEY_cr() {
+        return GDK_KEY_cr;
     }
+    private static final int GDK_KEY_lf = (int)2533L;
     /**
-     * {@snippet :
-     * #define _POSIX_REALTIME_SIGNALS 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_lf 2533
      * }
      */
-    public static long _POSIX_REALTIME_SIGNALS() {
-        return 200809L;
+    public static int GDK_KEY_lf() {
+        return GDK_KEY_lf;
     }
+    private static final int GDK_KEY_nl = (int)2536L;
     /**
-     * {@snippet :
-     * #define _POSIX_ASYNCHRONOUS_IO 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_nl 2536
      * }
      */
-    public static long _POSIX_ASYNCHRONOUS_IO() {
-        return 200809L;
+    public static int GDK_KEY_nl() {
+        return GDK_KEY_nl;
     }
+    private static final int GDK_KEY_vt = (int)2537L;
     /**
-     * {@snippet :
-     * #define _POSIX_PRIORITIZED_IO 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_vt 2537
      * }
      */
-    public static long _POSIX_PRIORITIZED_IO() {
-        return 200809L;
+    public static int GDK_KEY_vt() {
+        return GDK_KEY_vt;
     }
+    private static final int GDK_KEY_lowrightcorner = (int)2538L;
     /**
-     * {@snippet :
-     * #define _POSIX_SHARED_MEMORY_OBJECTS 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_lowrightcorner 2538
      * }
      */
-    public static long _POSIX_SHARED_MEMORY_OBJECTS() {
-        return 200809L;
+    public static int GDK_KEY_lowrightcorner() {
+        return GDK_KEY_lowrightcorner;
     }
+    private static final int GDK_KEY_uprightcorner = (int)2539L;
     /**
-     * {@snippet :
-     * #define _POSIX_READER_WRITER_LOCKS 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_uprightcorner 2539
      * }
      */
-    public static long _POSIX_READER_WRITER_LOCKS() {
-        return 200809L;
+    public static int GDK_KEY_uprightcorner() {
+        return GDK_KEY_uprightcorner;
     }
+    private static final int GDK_KEY_upleftcorner = (int)2540L;
     /**
-     * {@snippet :
-     * #define _POSIX_TIMEOUTS 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_upleftcorner 2540
      * }
      */
-    public static long _POSIX_TIMEOUTS() {
-        return 200809L;
+    public static int GDK_KEY_upleftcorner() {
+        return GDK_KEY_upleftcorner;
     }
+    private static final int GDK_KEY_lowleftcorner = (int)2541L;
     /**
-     * {@snippet :
-     * #define _POSIX_SPIN_LOCKS 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_lowleftcorner 2541
      * }
      */
-    public static long _POSIX_SPIN_LOCKS() {
-        return 200809L;
+    public static int GDK_KEY_lowleftcorner() {
+        return GDK_KEY_lowleftcorner;
     }
+    private static final int GDK_KEY_crossinglines = (int)2542L;
     /**
-     * {@snippet :
-     * #define _POSIX_SPAWN 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_crossinglines 2542
      * }
      */
-    public static long _POSIX_SPAWN() {
-        return 200809L;
+    public static int GDK_KEY_crossinglines() {
+        return GDK_KEY_crossinglines;
     }
+    private static final int GDK_KEY_horizlinescan1 = (int)2543L;
     /**
-     * {@snippet :
-     * #define _POSIX_TIMERS 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_horizlinescan1 2543
      * }
      */
-    public static long _POSIX_TIMERS() {
-        return 200809L;
+    public static int GDK_KEY_horizlinescan1() {
+        return GDK_KEY_horizlinescan1;
     }
+    private static final int GDK_KEY_horizlinescan3 = (int)2544L;
     /**
-     * {@snippet :
-     * #define _POSIX_BARRIERS 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_horizlinescan3 2544
      * }
      */
-    public static long _POSIX_BARRIERS() {
-        return 200809L;
+    public static int GDK_KEY_horizlinescan3() {
+        return GDK_KEY_horizlinescan3;
     }
+    private static final int GDK_KEY_horizlinescan5 = (int)2545L;
     /**
-     * {@snippet :
-     * #define _POSIX_MESSAGE_PASSING 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_horizlinescan5 2545
      * }
      */
-    public static long _POSIX_MESSAGE_PASSING() {
-        return 200809L;
+    public static int GDK_KEY_horizlinescan5() {
+        return GDK_KEY_horizlinescan5;
     }
+    private static final int GDK_KEY_horizlinescan7 = (int)2546L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREAD_PROCESS_SHARED 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_horizlinescan7 2546
      * }
      */
-    public static long _POSIX_THREAD_PROCESS_SHARED() {
-        return 200809L;
+    public static int GDK_KEY_horizlinescan7() {
+        return GDK_KEY_horizlinescan7;
     }
+    private static final int GDK_KEY_horizlinescan9 = (int)2547L;
     /**
-     * {@snippet :
-     * #define _POSIX_CLOCK_SELECTION 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_horizlinescan9 2547
      * }
      */
-    public static long _POSIX_CLOCK_SELECTION() {
-        return 200809L;
+    public static int GDK_KEY_horizlinescan9() {
+        return GDK_KEY_horizlinescan9;
     }
+    private static final int GDK_KEY_leftt = (int)2548L;
     /**
-     * {@snippet :
-     * #define _POSIX_ADVISORY_INFO 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftt 2548
      * }
      */
-    public static long _POSIX_ADVISORY_INFO() {
-        return 200809L;
+    public static int GDK_KEY_leftt() {
+        return GDK_KEY_leftt;
     }
+    private static final int GDK_KEY_rightt = (int)2549L;
     /**
-     * {@snippet :
-     * #define _POSIX_IPV6 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightt 2549
      * }
      */
-    public static long _POSIX_IPV6() {
-        return 200809L;
+    public static int GDK_KEY_rightt() {
+        return GDK_KEY_rightt;
     }
+    private static final int GDK_KEY_bott = (int)2550L;
     /**
-     * {@snippet :
-     * #define _POSIX_RAW_SOCKETS 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_bott 2550
      * }
      */
-    public static long _POSIX_RAW_SOCKETS() {
-        return 200809L;
+    public static int GDK_KEY_bott() {
+        return GDK_KEY_bott;
     }
+    private static final int GDK_KEY_topt = (int)2551L;
     /**
-     * {@snippet :
-     * #define _POSIX2_CHAR_TERM 200809
+     * {@snippet lang=c :
+     * #define GDK_KEY_topt 2551
      * }
      */
-    public static long _POSIX2_CHAR_TERM() {
-        return 200809L;
+    public static int GDK_KEY_topt() {
+        return GDK_KEY_topt;
     }
+    private static final int GDK_KEY_vertbar = (int)2552L;
     /**
-     * {@snippet :
-     * #define _POSIX_SPORADIC_SERVER -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_vertbar 2552
      * }
      */
-    public static int _POSIX_SPORADIC_SERVER() {
-        return (int)-1L;
+    public static int GDK_KEY_vertbar() {
+        return GDK_KEY_vertbar;
     }
+    private static final int GDK_KEY_emspace = (int)2721L;
     /**
-     * {@snippet :
-     * #define _POSIX_THREAD_SPORADIC_SERVER -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_emspace 2721
      * }
      */
-    public static int _POSIX_THREAD_SPORADIC_SERVER() {
-        return (int)-1L;
+    public static int GDK_KEY_emspace() {
+        return GDK_KEY_emspace;
     }
+    private static final int GDK_KEY_enspace = (int)2722L;
     /**
-     * {@snippet :
-     * #define _POSIX_TRACE -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_enspace 2722
      * }
      */
-    public static int _POSIX_TRACE() {
-        return (int)-1L;
+    public static int GDK_KEY_enspace() {
+        return GDK_KEY_enspace;
     }
+    private static final int GDK_KEY_em3space = (int)2723L;
     /**
-     * {@snippet :
-     * #define _POSIX_TRACE_EVENT_FILTER -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_em3space 2723
      * }
      */
-    public static int _POSIX_TRACE_EVENT_FILTER() {
-        return (int)-1L;
+    public static int GDK_KEY_em3space() {
+        return GDK_KEY_em3space;
     }
+    private static final int GDK_KEY_em4space = (int)2724L;
     /**
-     * {@snippet :
-     * #define _POSIX_TRACE_INHERIT -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_em4space 2724
      * }
      */
-    public static int _POSIX_TRACE_INHERIT() {
-        return (int)-1L;
+    public static int GDK_KEY_em4space() {
+        return GDK_KEY_em4space;
     }
+    private static final int GDK_KEY_digitspace = (int)2725L;
     /**
-     * {@snippet :
-     * #define _POSIX_TRACE_LOG -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_digitspace 2725
      * }
      */
-    public static int _POSIX_TRACE_LOG() {
-        return (int)-1L;
+    public static int GDK_KEY_digitspace() {
+        return GDK_KEY_digitspace;
     }
+    private static final int GDK_KEY_punctspace = (int)2726L;
     /**
-     * {@snippet :
-     * #define _POSIX_TYPED_MEMORY_OBJECTS -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_punctspace 2726
      * }
      */
-    public static int _POSIX_TYPED_MEMORY_OBJECTS() {
-        return (int)-1L;
+    public static int GDK_KEY_punctspace() {
+        return GDK_KEY_punctspace;
     }
+    private static final int GDK_KEY_thinspace = (int)2727L;
     /**
-     * {@snippet :
-     * #define _POSIX_V7_ILP32_OFF32 -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_thinspace 2727
      * }
      */
-    public static int _POSIX_V7_ILP32_OFF32() {
-        return (int)-1L;
+    public static int GDK_KEY_thinspace() {
+        return GDK_KEY_thinspace;
     }
+    private static final int GDK_KEY_hairspace = (int)2728L;
     /**
-     * {@snippet :
-     * #define _POSIX_V7_ILP32_OFFBIG -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_hairspace 2728
      * }
      */
-    public static int _POSIX_V7_ILP32_OFFBIG() {
-        return (int)-1L;
+    public static int GDK_KEY_hairspace() {
+        return GDK_KEY_hairspace;
     }
+    private static final int GDK_KEY_emdash = (int)2729L;
     /**
-     * {@snippet :
-     * #define _POSIX_V6_ILP32_OFF32 -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_emdash 2729
      * }
      */
-    public static int _POSIX_V6_ILP32_OFF32() {
-        return (int)-1L;
+    public static int GDK_KEY_emdash() {
+        return GDK_KEY_emdash;
     }
+    private static final int GDK_KEY_endash = (int)2730L;
     /**
-     * {@snippet :
-     * #define _POSIX_V6_ILP32_OFFBIG -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_endash 2730
      * }
      */
-    public static int _POSIX_V6_ILP32_OFFBIG() {
-        return (int)-1L;
+    public static int GDK_KEY_endash() {
+        return GDK_KEY_endash;
     }
+    private static final int GDK_KEY_signifblank = (int)2732L;
     /**
-     * {@snippet :
-     * #define _XBS5_ILP32_OFF32 -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_signifblank 2732
      * }
      */
-    public static int _XBS5_ILP32_OFF32() {
-        return (int)-1L;
+    public static int GDK_KEY_signifblank() {
+        return GDK_KEY_signifblank;
     }
+    private static final int GDK_KEY_ellipsis = (int)2734L;
     /**
-     * {@snippet :
-     * #define _XBS5_ILP32_OFFBIG -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_ellipsis 2734
      * }
      */
-    public static int _XBS5_ILP32_OFFBIG() {
-        return (int)-1L;
+    public static int GDK_KEY_ellipsis() {
+        return GDK_KEY_ellipsis;
     }
+    private static final int GDK_KEY_doubbaselinedot = (int)2735L;
     /**
-     * {@snippet :
-     * #define _POSIX_V7_LPBIG_OFFBIG -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_doubbaselinedot 2735
      * }
      */
-    public static int _POSIX_V7_LPBIG_OFFBIG() {
-        return (int)-1L;
+    public static int GDK_KEY_doubbaselinedot() {
+        return GDK_KEY_doubbaselinedot;
     }
+    private static final int GDK_KEY_onethird = (int)2736L;
     /**
-     * {@snippet :
-     * #define _POSIX_V6_LPBIG_OFFBIG -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_onethird 2736
      * }
      */
-    public static int _POSIX_V6_LPBIG_OFFBIG() {
-        return (int)-1L;
+    public static int GDK_KEY_onethird() {
+        return GDK_KEY_onethird;
     }
+    private static final int GDK_KEY_twothirds = (int)2737L;
     /**
-     * {@snippet :
-     * #define _XBS5_LPBIG_OFFBIG -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_twothirds 2737
      * }
      */
-    public static int _XBS5_LPBIG_OFFBIG() {
-        return (int)-1L;
+    public static int GDK_KEY_twothirds() {
+        return GDK_KEY_twothirds;
     }
+    private static final int GDK_KEY_onefifth = (int)2738L;
     /**
-     * {@snippet :
-     * #define L_SET 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_onefifth 2738
      * }
      */
-    public static int L_SET() {
-        return (int)0L;
+    public static int GDK_KEY_onefifth() {
+        return GDK_KEY_onefifth;
     }
+    private static final int GDK_KEY_twofifths = (int)2739L;
     /**
-     * {@snippet :
-     * #define L_INCR 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_twofifths 2739
      * }
      */
-    public static int L_INCR() {
-        return (int)1L;
+    public static int GDK_KEY_twofifths() {
+        return GDK_KEY_twofifths;
     }
+    private static final int GDK_KEY_threefifths = (int)2740L;
     /**
-     * {@snippet :
-     * #define L_XTND 2
+     * {@snippet lang=c :
+     * #define GDK_KEY_threefifths 2740
      * }
      */
-    public static int L_XTND() {
-        return (int)2L;
+    public static int GDK_KEY_threefifths() {
+        return GDK_KEY_threefifths;
     }
+    private static final int GDK_KEY_fourfifths = (int)2741L;
     /**
-     * {@snippet :
-     * #define _SC_PAGE_SIZE 30
+     * {@snippet lang=c :
+     * #define GDK_KEY_fourfifths 2741
      * }
      */
-    public static int _SC_PAGE_SIZE() {
-        return (int)30L;
+    public static int GDK_KEY_fourfifths() {
+        return GDK_KEY_fourfifths;
     }
+    private static final int GDK_KEY_onesixth = (int)2742L;
     /**
-     * {@snippet :
-     * #define _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_onesixth 2742
      * }
      */
-    public static int _CS_POSIX_V6_WIDTH_RESTRICTED_ENVS() {
-        return (int)1L;
+    public static int GDK_KEY_onesixth() {
+        return GDK_KEY_onesixth;
     }
+    private static final int GDK_KEY_fivesixths = (int)2743L;
     /**
-     * {@snippet :
-     * #define _CS_POSIX_V5_WIDTH_RESTRICTED_ENVS 4
+     * {@snippet lang=c :
+     * #define GDK_KEY_fivesixths 2743
      * }
      */
-    public static int _CS_POSIX_V5_WIDTH_RESTRICTED_ENVS() {
-        return (int)4L;
+    public static int GDK_KEY_fivesixths() {
+        return GDK_KEY_fivesixths;
     }
+    private static final int GDK_KEY_careof = (int)2744L;
     /**
-     * {@snippet :
-     * #define _CS_POSIX_V7_WIDTH_RESTRICTED_ENVS 5
+     * {@snippet lang=c :
+     * #define GDK_KEY_careof 2744
      * }
      */
-    public static int _CS_POSIX_V7_WIDTH_RESTRICTED_ENVS() {
-        return (int)5L;
+    public static int GDK_KEY_careof() {
+        return GDK_KEY_careof;
     }
+    private static final int GDK_KEY_figdash = (int)2747L;
     /**
-     * {@snippet :
-     * #define G_DBUS_METHOD_INVOCATION_HANDLED 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_figdash 2747
      * }
      */
-    public static int G_DBUS_METHOD_INVOCATION_HANDLED() {
-        return (int)1L;
+    public static int GDK_KEY_figdash() {
+        return GDK_KEY_figdash;
     }
+    private static final int GDK_KEY_leftanglebracket = (int)2748L;
     /**
-     * {@snippet :
-     * #define G_DBUS_METHOD_INVOCATION_UNHANDLED 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftanglebracket 2748
      * }
      */
-    public static int G_DBUS_METHOD_INVOCATION_UNHANDLED() {
-        return (int)0L;
+    public static int GDK_KEY_leftanglebracket() {
+        return GDK_KEY_leftanglebracket;
     }
+    private static final int GDK_KEY_decimalpoint = (int)2749L;
     /**
-     * {@snippet :
-     * #define G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME "gio-debug-controller"
+     * {@snippet lang=c :
+     * #define GDK_KEY_decimalpoint 2749
      * }
      */
-    public static MemorySegment G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME() {
-        return constants$3424.const$1;
+    public static int GDK_KEY_decimalpoint() {
+        return GDK_KEY_decimalpoint;
     }
+    private static final int GDK_KEY_rightanglebracket = (int)2750L;
     /**
-     * {@snippet :
-     * #define G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE "unix-device"
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightanglebracket 2750
      * }
      */
-    public static MemorySegment G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE() {
-        return constants$3424.const$2;
+    public static int GDK_KEY_rightanglebracket() {
+        return GDK_KEY_rightanglebracket;
     }
+    private static final int GDK_KEY_marker = (int)2751L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_TYPE "standard::type"
+     * {@snippet lang=c :
+     * #define GDK_KEY_marker 2751
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_TYPE() {
-        return constants$3424.const$3;
+    public static int GDK_KEY_marker() {
+        return GDK_KEY_marker;
     }
+    private static final int GDK_KEY_oneeighth = (int)2755L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN "standard::is-hidden"
+     * {@snippet lang=c :
+     * #define GDK_KEY_oneeighth 2755
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN() {
-        return constants$3424.const$4;
+    public static int GDK_KEY_oneeighth() {
+        return GDK_KEY_oneeighth;
     }
+    private static final int GDK_KEY_threeeighths = (int)2756L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP "standard::is-backup"
+     * {@snippet lang=c :
+     * #define GDK_KEY_threeeighths 2756
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP() {
-        return constants$3424.const$5;
+    public static int GDK_KEY_threeeighths() {
+        return GDK_KEY_threeeighths;
     }
+    private static final int GDK_KEY_fiveeighths = (int)2757L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK "standard::is-symlink"
+     * {@snippet lang=c :
+     * #define GDK_KEY_fiveeighths 2757
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK() {
-        return constants$3425.const$0;
+    public static int GDK_KEY_fiveeighths() {
+        return GDK_KEY_fiveeighths;
     }
+    private static final int GDK_KEY_seveneighths = (int)2758L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL "standard::is-virtual"
+     * {@snippet lang=c :
+     * #define GDK_KEY_seveneighths 2758
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL() {
-        return constants$3425.const$1;
+    public static int GDK_KEY_seveneighths() {
+        return GDK_KEY_seveneighths;
     }
+    private static final int GDK_KEY_trademark = (int)2761L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE "standard::is-volatile"
+     * {@snippet lang=c :
+     * #define GDK_KEY_trademark 2761
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE() {
-        return constants$3425.const$2;
+    public static int GDK_KEY_trademark() {
+        return GDK_KEY_trademark;
     }
+    private static final int GDK_KEY_signaturemark = (int)2762L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_NAME "standard::name"
+     * {@snippet lang=c :
+     * #define GDK_KEY_signaturemark 2762
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_NAME() {
-        return constants$3425.const$3;
+    public static int GDK_KEY_signaturemark() {
+        return GDK_KEY_signaturemark;
     }
+    private static final int GDK_KEY_trademarkincircle = (int)2763L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME "standard::display-name"
+     * {@snippet lang=c :
+     * #define GDK_KEY_trademarkincircle 2763
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME() {
-        return constants$3425.const$4;
+    public static int GDK_KEY_trademarkincircle() {
+        return GDK_KEY_trademarkincircle;
     }
+    private static final int GDK_KEY_leftopentriangle = (int)2764L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME "standard::edit-name"
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftopentriangle 2764
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME() {
-        return constants$3425.const$5;
+    public static int GDK_KEY_leftopentriangle() {
+        return GDK_KEY_leftopentriangle;
     }
+    private static final int GDK_KEY_rightopentriangle = (int)2765L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_COPY_NAME "standard::copy-name"
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightopentriangle 2765
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_COPY_NAME() {
-        return constants$3426.const$0;
+    public static int GDK_KEY_rightopentriangle() {
+        return GDK_KEY_rightopentriangle;
     }
+    private static final int GDK_KEY_emopencircle = (int)2766L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION "standard::description"
+     * {@snippet lang=c :
+     * #define GDK_KEY_emopencircle 2766
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION() {
-        return constants$3426.const$1;
+    public static int GDK_KEY_emopencircle() {
+        return GDK_KEY_emopencircle;
     }
+    private static final int GDK_KEY_emopenrectangle = (int)2767L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_ICON "standard::icon"
+     * {@snippet lang=c :
+     * #define GDK_KEY_emopenrectangle 2767
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_ICON() {
-        return constants$3426.const$2;
+    public static int GDK_KEY_emopenrectangle() {
+        return GDK_KEY_emopenrectangle;
     }
+    private static final int GDK_KEY_leftsinglequotemark = (int)2768L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON "standard::symbolic-icon"
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftsinglequotemark 2768
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON() {
-        return constants$3426.const$3;
+    public static int GDK_KEY_leftsinglequotemark() {
+        return GDK_KEY_leftsinglequotemark;
     }
+    private static final int GDK_KEY_rightsinglequotemark = (int)2769L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE "standard::content-type"
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightsinglequotemark 2769
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE() {
-        return constants$3426.const$4;
+    public static int GDK_KEY_rightsinglequotemark() {
+        return GDK_KEY_rightsinglequotemark;
     }
+    private static final int GDK_KEY_leftdoublequotemark = (int)2770L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE "standard::fast-content-type"
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftdoublequotemark 2770
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE() {
-        return constants$3426.const$5;
+    public static int GDK_KEY_leftdoublequotemark() {
+        return GDK_KEY_leftdoublequotemark;
     }
+    private static final int GDK_KEY_rightdoublequotemark = (int)2771L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_SIZE "standard::size"
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightdoublequotemark 2771
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SIZE() {
-        return constants$3427.const$0;
+    public static int GDK_KEY_rightdoublequotemark() {
+        return GDK_KEY_rightdoublequotemark;
     }
+    private static final int GDK_KEY_prescription = (int)2772L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE "standard::allocated-size"
+     * {@snippet lang=c :
+     * #define GDK_KEY_prescription 2772
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE() {
-        return constants$3427.const$1;
+    public static int GDK_KEY_prescription() {
+        return GDK_KEY_prescription;
     }
+    private static final int GDK_KEY_permille = (int)2773L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET "standard::symlink-target"
+     * {@snippet lang=c :
+     * #define GDK_KEY_permille 2773
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET() {
-        return constants$3427.const$2;
+    public static int GDK_KEY_permille() {
+        return GDK_KEY_permille;
     }
+    private static final int GDK_KEY_minutes = (int)2774L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_TARGET_URI "standard::target-uri"
+     * {@snippet lang=c :
+     * #define GDK_KEY_minutes 2774
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_TARGET_URI() {
-        return constants$3427.const$3;
+    public static int GDK_KEY_minutes() {
+        return GDK_KEY_minutes;
     }
+    private static final int GDK_KEY_seconds = (int)2775L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER "standard::sort-order"
+     * {@snippet lang=c :
+     * #define GDK_KEY_seconds 2775
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER() {
-        return constants$3427.const$4;
+    public static int GDK_KEY_seconds() {
+        return GDK_KEY_seconds;
     }
+    private static final int GDK_KEY_latincross = (int)2777L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_ETAG_VALUE "etag::value"
+     * {@snippet lang=c :
+     * #define GDK_KEY_latincross 2777
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_ETAG_VALUE() {
-        return constants$3427.const$5;
+    public static int GDK_KEY_latincross() {
+        return GDK_KEY_latincross;
     }
+    private static final int GDK_KEY_hexagram = (int)2778L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_ID_FILE "id::file"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hexagram 2778
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_ID_FILE() {
-        return constants$3428.const$0;
+    public static int GDK_KEY_hexagram() {
+        return GDK_KEY_hexagram;
     }
+    private static final int GDK_KEY_filledrectbullet = (int)2779L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_ID_FILESYSTEM "id::filesystem"
+     * {@snippet lang=c :
+     * #define GDK_KEY_filledrectbullet 2779
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_ID_FILESYSTEM() {
-        return constants$3428.const$1;
+    public static int GDK_KEY_filledrectbullet() {
+        return GDK_KEY_filledrectbullet;
     }
+    private static final int GDK_KEY_filledlefttribullet = (int)2780L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_READ "access::can-read"
+     * {@snippet lang=c :
+     * #define GDK_KEY_filledlefttribullet 2780
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_READ() {
-        return constants$3428.const$2;
+    public static int GDK_KEY_filledlefttribullet() {
+        return GDK_KEY_filledlefttribullet;
     }
+    private static final int GDK_KEY_filledrighttribullet = (int)2781L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE "access::can-write"
+     * {@snippet lang=c :
+     * #define GDK_KEY_filledrighttribullet 2781
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE() {
-        return constants$3428.const$3;
+    public static int GDK_KEY_filledrighttribullet() {
+        return GDK_KEY_filledrighttribullet;
     }
+    private static final int GDK_KEY_emfilledcircle = (int)2782L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE "access::can-execute"
+     * {@snippet lang=c :
+     * #define GDK_KEY_emfilledcircle 2782
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE() {
-        return constants$3428.const$4;
+    public static int GDK_KEY_emfilledcircle() {
+        return GDK_KEY_emfilledcircle;
     }
+    private static final int GDK_KEY_emfilledrect = (int)2783L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE "access::can-delete"
+     * {@snippet lang=c :
+     * #define GDK_KEY_emfilledrect 2783
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE() {
-        return constants$3428.const$5;
+    public static int GDK_KEY_emfilledrect() {
+        return GDK_KEY_emfilledrect;
     }
+    private static final int GDK_KEY_enopencircbullet = (int)2784L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH "access::can-trash"
+     * {@snippet lang=c :
+     * #define GDK_KEY_enopencircbullet 2784
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH() {
-        return constants$3429.const$0;
+    public static int GDK_KEY_enopencircbullet() {
+        return GDK_KEY_enopencircbullet;
     }
+    private static final int GDK_KEY_enopensquarebullet = (int)2785L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME "access::can-rename"
+     * {@snippet lang=c :
+     * #define GDK_KEY_enopensquarebullet 2785
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME() {
-        return constants$3429.const$1;
+    public static int GDK_KEY_enopensquarebullet() {
+        return GDK_KEY_enopensquarebullet;
     }
+    private static final int GDK_KEY_openrectbullet = (int)2786L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT "mountable::can-mount"
+     * {@snippet lang=c :
+     * #define GDK_KEY_openrectbullet 2786
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT() {
-        return constants$3429.const$2;
+    public static int GDK_KEY_openrectbullet() {
+        return GDK_KEY_openrectbullet;
     }
+    private static final int GDK_KEY_opentribulletup = (int)2787L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT "mountable::can-unmount"
+     * {@snippet lang=c :
+     * #define GDK_KEY_opentribulletup 2787
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT() {
-        return constants$3429.const$3;
+    public static int GDK_KEY_opentribulletup() {
+        return GDK_KEY_opentribulletup;
     }
+    private static final int GDK_KEY_opentribulletdown = (int)2788L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT "mountable::can-eject"
+     * {@snippet lang=c :
+     * #define GDK_KEY_opentribulletdown 2788
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT() {
-        return constants$3429.const$4;
+    public static int GDK_KEY_opentribulletdown() {
+        return GDK_KEY_opentribulletdown;
     }
+    private static final int GDK_KEY_openstar = (int)2789L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE "mountable::unix-device"
+     * {@snippet lang=c :
+     * #define GDK_KEY_openstar 2789
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE() {
-        return constants$3429.const$5;
+    public static int GDK_KEY_openstar() {
+        return GDK_KEY_openstar;
     }
+    private static final int GDK_KEY_enfilledcircbullet = (int)2790L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE "mountable::unix-device-file"
+     * {@snippet lang=c :
+     * #define GDK_KEY_enfilledcircbullet 2790
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE() {
-        return constants$3430.const$0;
+    public static int GDK_KEY_enfilledcircbullet() {
+        return GDK_KEY_enfilledcircbullet;
     }
+    private static final int GDK_KEY_enfilledsqbullet = (int)2791L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI "mountable::hal-udi"
+     * {@snippet lang=c :
+     * #define GDK_KEY_enfilledsqbullet 2791
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI() {
-        return constants$3430.const$1;
+    public static int GDK_KEY_enfilledsqbullet() {
+        return GDK_KEY_enfilledsqbullet;
     }
+    private static final int GDK_KEY_filledtribulletup = (int)2792L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START "mountable::can-start"
+     * {@snippet lang=c :
+     * #define GDK_KEY_filledtribulletup 2792
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START() {
-        return constants$3430.const$2;
+    public static int GDK_KEY_filledtribulletup() {
+        return GDK_KEY_filledtribulletup;
     }
+    private static final int GDK_KEY_filledtribulletdown = (int)2793L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED "mountable::can-start-degraded"
+     * {@snippet lang=c :
+     * #define GDK_KEY_filledtribulletdown 2793
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED() {
-        return constants$3430.const$3;
+    public static int GDK_KEY_filledtribulletdown() {
+        return GDK_KEY_filledtribulletdown;
     }
+    private static final int GDK_KEY_leftpointer = (int)2794L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP "mountable::can-stop"
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftpointer 2794
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP() {
-        return constants$3430.const$4;
+    public static int GDK_KEY_leftpointer() {
+        return GDK_KEY_leftpointer;
     }
+    private static final int GDK_KEY_rightpointer = (int)2795L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE "mountable::start-stop-type"
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightpointer 2795
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE() {
-        return constants$3430.const$5;
+    public static int GDK_KEY_rightpointer() {
+        return GDK_KEY_rightpointer;
     }
+    private static final int GDK_KEY_club = (int)2796L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL "mountable::can-poll"
+     * {@snippet lang=c :
+     * #define GDK_KEY_club 2796
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL() {
-        return constants$3431.const$0;
+    public static int GDK_KEY_club() {
+        return GDK_KEY_club;
     }
+    private static final int GDK_KEY_diamond = (int)2797L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC "mountable::is-media-check-automatic"
+     * {@snippet lang=c :
+     * #define GDK_KEY_diamond 2797
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC() {
-        return constants$3431.const$1;
+    public static int GDK_KEY_diamond() {
+        return GDK_KEY_diamond;
     }
+    private static final int GDK_KEY_heart = (int)2798L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_MODIFIED "time::modified"
+     * {@snippet lang=c :
+     * #define GDK_KEY_heart 2798
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED() {
-        return constants$3431.const$2;
+    public static int GDK_KEY_heart() {
+        return GDK_KEY_heart;
     }
+    private static final int GDK_KEY_maltesecross = (int)2800L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC "time::modified-usec"
+     * {@snippet lang=c :
+     * #define GDK_KEY_maltesecross 2800
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC() {
-        return constants$3431.const$3;
+    public static int GDK_KEY_maltesecross() {
+        return GDK_KEY_maltesecross;
     }
+    private static final int GDK_KEY_dagger = (int)2801L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC "time::modified-nsec"
+     * {@snippet lang=c :
+     * #define GDK_KEY_dagger 2801
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC() {
-        return constants$3431.const$4;
+    public static int GDK_KEY_dagger() {
+        return GDK_KEY_dagger;
     }
+    private static final int GDK_KEY_doubledagger = (int)2802L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_ACCESS "time::access"
+     * {@snippet lang=c :
+     * #define GDK_KEY_doubledagger 2802
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS() {
-        return constants$3431.const$5;
+    public static int GDK_KEY_doubledagger() {
+        return GDK_KEY_doubledagger;
     }
+    private static final int GDK_KEY_checkmark = (int)2803L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_ACCESS_USEC "time::access-usec"
+     * {@snippet lang=c :
+     * #define GDK_KEY_checkmark 2803
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_USEC() {
-        return constants$3432.const$0;
+    public static int GDK_KEY_checkmark() {
+        return GDK_KEY_checkmark;
     }
+    private static final int GDK_KEY_ballotcross = (int)2804L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC "time::access-nsec"
+     * {@snippet lang=c :
+     * #define GDK_KEY_ballotcross 2804
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC() {
-        return constants$3432.const$1;
+    public static int GDK_KEY_ballotcross() {
+        return GDK_KEY_ballotcross;
     }
+    private static final int GDK_KEY_musicalsharp = (int)2805L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_CHANGED "time::changed"
+     * {@snippet lang=c :
+     * #define GDK_KEY_musicalsharp 2805
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED() {
-        return constants$3432.const$2;
+    public static int GDK_KEY_musicalsharp() {
+        return GDK_KEY_musicalsharp;
     }
+    private static final int GDK_KEY_musicalflat = (int)2806L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_CHANGED_USEC "time::changed-usec"
+     * {@snippet lang=c :
+     * #define GDK_KEY_musicalflat 2806
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_USEC() {
-        return constants$3432.const$3;
+    public static int GDK_KEY_musicalflat() {
+        return GDK_KEY_musicalflat;
     }
+    private static final int GDK_KEY_malesymbol = (int)2807L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC "time::changed-nsec"
+     * {@snippet lang=c :
+     * #define GDK_KEY_malesymbol 2807
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC() {
-        return constants$3432.const$4;
+    public static int GDK_KEY_malesymbol() {
+        return GDK_KEY_malesymbol;
     }
+    private static final int GDK_KEY_femalesymbol = (int)2808L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_CREATED "time::created"
+     * {@snippet lang=c :
+     * #define GDK_KEY_femalesymbol 2808
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED() {
-        return constants$3432.const$5;
+    public static int GDK_KEY_femalesymbol() {
+        return GDK_KEY_femalesymbol;
     }
+    private static final int GDK_KEY_telephone = (int)2809L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_CREATED_USEC "time::created-usec"
+     * {@snippet lang=c :
+     * #define GDK_KEY_telephone 2809
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_USEC() {
-        return constants$3433.const$0;
+    public static int GDK_KEY_telephone() {
+        return GDK_KEY_telephone;
     }
+    private static final int GDK_KEY_telephonerecorder = (int)2810L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TIME_CREATED_NSEC "time::created-nsec"
+     * {@snippet lang=c :
+     * #define GDK_KEY_telephonerecorder 2810
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_NSEC() {
-        return constants$3433.const$1;
+    public static int GDK_KEY_telephonerecorder() {
+        return GDK_KEY_telephonerecorder;
     }
+    private static final int GDK_KEY_phonographcopyright = (int)2811L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_UNIX_DEVICE "unix::device"
+     * {@snippet lang=c :
+     * #define GDK_KEY_phonographcopyright 2811
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_DEVICE() {
-        return constants$3433.const$2;
+    public static int GDK_KEY_phonographcopyright() {
+        return GDK_KEY_phonographcopyright;
     }
+    private static final int GDK_KEY_caret = (int)2812L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_UNIX_INODE "unix::inode"
+     * {@snippet lang=c :
+     * #define GDK_KEY_caret 2812
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_INODE() {
-        return constants$3433.const$3;
+    public static int GDK_KEY_caret() {
+        return GDK_KEY_caret;
     }
+    private static final int GDK_KEY_singlelowquotemark = (int)2813L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_UNIX_MODE "unix::mode"
+     * {@snippet lang=c :
+     * #define GDK_KEY_singlelowquotemark 2813
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_MODE() {
-        return constants$3433.const$4;
+    public static int GDK_KEY_singlelowquotemark() {
+        return GDK_KEY_singlelowquotemark;
     }
+    private static final int GDK_KEY_doublelowquotemark = (int)2814L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_UNIX_NLINK "unix::nlink"
+     * {@snippet lang=c :
+     * #define GDK_KEY_doublelowquotemark 2814
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_NLINK() {
-        return constants$3433.const$5;
+    public static int GDK_KEY_doublelowquotemark() {
+        return GDK_KEY_doublelowquotemark;
     }
+    private static final int GDK_KEY_cursor = (int)2815L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_UNIX_UID "unix::uid"
+     * {@snippet lang=c :
+     * #define GDK_KEY_cursor 2815
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_UID() {
-        return constants$3434.const$0;
+    public static int GDK_KEY_cursor() {
+        return GDK_KEY_cursor;
     }
+    private static final int GDK_KEY_leftcaret = (int)2979L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_UNIX_GID "unix::gid"
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftcaret 2979
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_GID() {
-        return constants$3434.const$1;
+    public static int GDK_KEY_leftcaret() {
+        return GDK_KEY_leftcaret;
     }
+    private static final int GDK_KEY_rightcaret = (int)2982L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_UNIX_RDEV "unix::rdev"
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightcaret 2982
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_RDEV() {
-        return constants$3434.const$2;
+    public static int GDK_KEY_rightcaret() {
+        return GDK_KEY_rightcaret;
     }
+    private static final int GDK_KEY_downcaret = (int)2984L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE "unix::block-size"
+     * {@snippet lang=c :
+     * #define GDK_KEY_downcaret 2984
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE() {
-        return constants$3434.const$3;
+    public static int GDK_KEY_downcaret() {
+        return GDK_KEY_downcaret;
     }
+    private static final int GDK_KEY_upcaret = (int)2985L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_UNIX_BLOCKS "unix::blocks"
+     * {@snippet lang=c :
+     * #define GDK_KEY_upcaret 2985
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCKS() {
-        return constants$3434.const$4;
+    public static int GDK_KEY_upcaret() {
+        return GDK_KEY_upcaret;
     }
+    private static final int GDK_KEY_overbar = (int)3008L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT "unix::is-mountpoint"
+     * {@snippet lang=c :
+     * #define GDK_KEY_overbar 3008
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT() {
-        return constants$3434.const$5;
+    public static int GDK_KEY_overbar() {
+        return GDK_KEY_overbar;
     }
+    private static final int GDK_KEY_downtack = (int)3010L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE "dos::is-archive"
+     * {@snippet lang=c :
+     * #define GDK_KEY_downtack 3010
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE() {
-        return constants$3435.const$0;
+    public static int GDK_KEY_downtack() {
+        return GDK_KEY_downtack;
     }
+    private static final int GDK_KEY_upshoe = (int)3011L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_DOS_IS_SYSTEM "dos::is-system"
+     * {@snippet lang=c :
+     * #define GDK_KEY_upshoe 3011
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_SYSTEM() {
-        return constants$3435.const$1;
+    public static int GDK_KEY_upshoe() {
+        return GDK_KEY_upshoe;
     }
+    private static final int GDK_KEY_downstile = (int)3012L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT "dos::is-mountpoint"
+     * {@snippet lang=c :
+     * #define GDK_KEY_downstile 3012
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT() {
-        return constants$3435.const$2;
+    public static int GDK_KEY_downstile() {
+        return GDK_KEY_downstile;
     }
+    private static final int GDK_KEY_underbar = (int)3014L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG "dos::reparse-point-tag"
+     * {@snippet lang=c :
+     * #define GDK_KEY_underbar 3014
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG() {
-        return constants$3435.const$3;
+    public static int GDK_KEY_underbar() {
+        return GDK_KEY_underbar;
     }
+    private static final int GDK_KEY_jot = (int)3018L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_OWNER_USER "owner::user"
+     * {@snippet lang=c :
+     * #define GDK_KEY_jot 3018
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_OWNER_USER() {
-        return constants$3435.const$4;
+    public static int GDK_KEY_jot() {
+        return GDK_KEY_jot;
     }
+    private static final int GDK_KEY_quad = (int)3020L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_OWNER_USER_REAL "owner::user-real"
+     * {@snippet lang=c :
+     * #define GDK_KEY_quad 3020
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_OWNER_USER_REAL() {
-        return constants$3435.const$5;
+    public static int GDK_KEY_quad() {
+        return GDK_KEY_quad;
     }
+    private static final int GDK_KEY_uptack = (int)3022L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_OWNER_GROUP "owner::group"
+     * {@snippet lang=c :
+     * #define GDK_KEY_uptack 3022
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_OWNER_GROUP() {
-        return constants$3436.const$0;
+    public static int GDK_KEY_uptack() {
+        return GDK_KEY_uptack;
     }
+    private static final int GDK_KEY_circle = (int)3023L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH "thumbnail::path"
+     * {@snippet lang=c :
+     * #define GDK_KEY_circle 3023
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH() {
-        return constants$3436.const$1;
+    public static int GDK_KEY_circle() {
+        return GDK_KEY_circle;
     }
+    private static final int GDK_KEY_upstile = (int)3027L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED "thumbnail::failed"
+     * {@snippet lang=c :
+     * #define GDK_KEY_upstile 3027
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED() {
-        return constants$3436.const$2;
+    public static int GDK_KEY_upstile() {
+        return GDK_KEY_upstile;
     }
+    private static final int GDK_KEY_downshoe = (int)3030L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID "thumbnail::is-valid"
+     * {@snippet lang=c :
+     * #define GDK_KEY_downshoe 3030
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID() {
-        return constants$3436.const$3;
+    public static int GDK_KEY_downshoe() {
+        return GDK_KEY_downshoe;
     }
+    private static final int GDK_KEY_rightshoe = (int)3032L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL "thumbnail::path-normal"
+     * {@snippet lang=c :
+     * #define GDK_KEY_rightshoe 3032
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL() {
-        return constants$3436.const$4;
+    public static int GDK_KEY_rightshoe() {
+        return GDK_KEY_rightshoe;
     }
+    private static final int GDK_KEY_leftshoe = (int)3034L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL "thumbnail::failed-normal"
+     * {@snippet lang=c :
+     * #define GDK_KEY_leftshoe 3034
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL() {
-        return constants$3436.const$5;
+    public static int GDK_KEY_leftshoe() {
+        return GDK_KEY_leftshoe;
     }
+    private static final int GDK_KEY_lefttack = (int)3036L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL "thumbnail::is-valid-normal"
+     * {@snippet lang=c :
+     * #define GDK_KEY_lefttack 3036
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL() {
-        return constants$3437.const$0;
+    public static int GDK_KEY_lefttack() {
+        return GDK_KEY_lefttack;
     }
+    private static final int GDK_KEY_righttack = (int)3068L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE "thumbnail::path-large"
+     * {@snippet lang=c :
+     * #define GDK_KEY_righttack 3068
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE() {
-        return constants$3437.const$1;
+    public static int GDK_KEY_righttack() {
+        return GDK_KEY_righttack;
     }
+    private static final int GDK_KEY_hebrew_doublelowline = (int)3295L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE "thumbnail::failed-large"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_doublelowline 3295
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE() {
-        return constants$3437.const$2;
+    public static int GDK_KEY_hebrew_doublelowline() {
+        return GDK_KEY_hebrew_doublelowline;
     }
+    private static final int GDK_KEY_hebrew_aleph = (int)3296L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE "thumbnail::is-valid-large"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_aleph 3296
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE() {
-        return constants$3437.const$3;
+    public static int GDK_KEY_hebrew_aleph() {
+        return GDK_KEY_hebrew_aleph;
     }
+    private static final int GDK_KEY_hebrew_bet = (int)3297L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE "thumbnail::path-xlarge"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_bet 3297
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE() {
-        return constants$3437.const$4;
+    public static int GDK_KEY_hebrew_bet() {
+        return GDK_KEY_hebrew_bet;
     }
+    private static final int GDK_KEY_hebrew_beth = (int)3297L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE "thumbnail::failed-xlarge"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_beth 3297
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE() {
-        return constants$3437.const$5;
+    public static int GDK_KEY_hebrew_beth() {
+        return GDK_KEY_hebrew_beth;
     }
+    private static final int GDK_KEY_hebrew_gimel = (int)3298L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE "thumbnail::is-valid-xlarge"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_gimel 3298
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE() {
-        return constants$3438.const$0;
+    public static int GDK_KEY_hebrew_gimel() {
+        return GDK_KEY_hebrew_gimel;
     }
+    private static final int GDK_KEY_hebrew_gimmel = (int)3298L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE "thumbnail::path-xxlarge"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_gimmel 3298
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE() {
-        return constants$3438.const$1;
+    public static int GDK_KEY_hebrew_gimmel() {
+        return GDK_KEY_hebrew_gimmel;
     }
+    private static final int GDK_KEY_hebrew_dalet = (int)3299L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE "thumbnail::failed-xxlarge"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_dalet 3299
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE() {
-        return constants$3438.const$2;
+    public static int GDK_KEY_hebrew_dalet() {
+        return GDK_KEY_hebrew_dalet;
     }
+    private static final int GDK_KEY_hebrew_daleth = (int)3299L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE "thumbnail::is-valid-xxlarge"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_daleth 3299
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE() {
-        return constants$3438.const$3;
+    public static int GDK_KEY_hebrew_daleth() {
+        return GDK_KEY_hebrew_daleth;
     }
+    private static final int GDK_KEY_hebrew_he = (int)3300L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_PREVIEW_ICON "preview::icon"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_he 3300
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_PREVIEW_ICON() {
-        return constants$3438.const$4;
+    public static int GDK_KEY_hebrew_he() {
+        return GDK_KEY_hebrew_he;
     }
+    private static final int GDK_KEY_hebrew_waw = (int)3301L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_SIZE "filesystem::size"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_waw 3301
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_SIZE() {
-        return constants$3438.const$5;
+    public static int GDK_KEY_hebrew_waw() {
+        return GDK_KEY_hebrew_waw;
     }
+    private static final int GDK_KEY_hebrew_zain = (int)3302L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_FREE "filesystem::free"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_zain 3302
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_FREE() {
-        return constants$3439.const$0;
+    public static int GDK_KEY_hebrew_zain() {
+        return GDK_KEY_hebrew_zain;
     }
+    private static final int GDK_KEY_hebrew_zayin = (int)3302L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_USED "filesystem::used"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_zayin 3302
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USED() {
-        return constants$3439.const$1;
+    public static int GDK_KEY_hebrew_zayin() {
+        return GDK_KEY_hebrew_zayin;
     }
+    private static final int GDK_KEY_hebrew_chet = (int)3303L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_TYPE "filesystem::type"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_chet 3303
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_TYPE() {
-        return constants$3439.const$2;
+    public static int GDK_KEY_hebrew_chet() {
+        return GDK_KEY_hebrew_chet;
     }
+    private static final int GDK_KEY_hebrew_het = (int)3303L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_READONLY "filesystem::readonly"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_het 3303
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_READONLY() {
-        return constants$3439.const$3;
+    public static int GDK_KEY_hebrew_het() {
+        return GDK_KEY_hebrew_het;
     }
+    private static final int GDK_KEY_hebrew_tet = (int)3304L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW "filesystem::use-preview"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_tet 3304
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW() {
-        return constants$3439.const$4;
+    public static int GDK_KEY_hebrew_tet() {
+        return GDK_KEY_hebrew_tet;
     }
+    private static final int GDK_KEY_hebrew_teth = (int)3304L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE "filesystem::remote"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_teth 3304
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE() {
-        return constants$3439.const$5;
+    public static int GDK_KEY_hebrew_teth() {
+        return GDK_KEY_hebrew_teth;
     }
+    private static final int GDK_KEY_hebrew_yod = (int)3305L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_GVFS_BACKEND "gvfs::backend"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_yod 3305
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_GVFS_BACKEND() {
-        return constants$3440.const$0;
+    public static int GDK_KEY_hebrew_yod() {
+        return GDK_KEY_hebrew_yod;
     }
+    private static final int GDK_KEY_hebrew_finalkaph = (int)3306L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_SELINUX_CONTEXT "selinux::context"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_finalkaph 3306
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_SELINUX_CONTEXT() {
-        return constants$3440.const$1;
+    public static int GDK_KEY_hebrew_finalkaph() {
+        return GDK_KEY_hebrew_finalkaph;
     }
+    private static final int GDK_KEY_hebrew_kaph = (int)3307L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT "trash::item-count"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_kaph 3307
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT() {
-        return constants$3440.const$2;
+    public static int GDK_KEY_hebrew_kaph() {
+        return GDK_KEY_hebrew_kaph;
     }
+    private static final int GDK_KEY_hebrew_lamed = (int)3308L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TRASH_ORIG_PATH "trash::orig-path"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_lamed 3308
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TRASH_ORIG_PATH() {
-        return constants$3440.const$3;
+    public static int GDK_KEY_hebrew_lamed() {
+        return GDK_KEY_hebrew_lamed;
     }
+    private static final int GDK_KEY_hebrew_finalmem = (int)3309L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_TRASH_DELETION_DATE "trash::deletion-date"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_finalmem 3309
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_TRASH_DELETION_DATE() {
-        return constants$3440.const$4;
+    public static int GDK_KEY_hebrew_finalmem() {
+        return GDK_KEY_hebrew_finalmem;
     }
+    private static final int GDK_KEY_hebrew_mem = (int)3310L;
     /**
-     * {@snippet :
-     * #define G_FILE_ATTRIBUTE_RECENT_MODIFIED "recent::modified"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_mem 3310
      * }
      */
-    public static MemorySegment G_FILE_ATTRIBUTE_RECENT_MODIFIED() {
-        return constants$3440.const$5;
+    public static int GDK_KEY_hebrew_mem() {
+        return GDK_KEY_hebrew_mem;
     }
+    private static final int GDK_KEY_hebrew_finalnun = (int)3311L;
     /**
-     * {@snippet :
-     * #define G_MEMORY_MONITOR_EXTENSION_POINT_NAME "gio-memory-monitor"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_finalnun 3311
      * }
      */
-    public static MemorySegment G_MEMORY_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$3441.const$0;
+    public static int GDK_KEY_hebrew_finalnun() {
+        return GDK_KEY_hebrew_finalnun;
     }
+    private static final int GDK_KEY_hebrew_nun = (int)3312L;
     /**
-     * {@snippet :
-     * #define G_MENU_ATTRIBUTE_ACTION "action"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_nun 3312
      * }
      */
-    public static MemorySegment G_MENU_ATTRIBUTE_ACTION() {
-        return constants$3441.const$1;
+    public static int GDK_KEY_hebrew_nun() {
+        return GDK_KEY_hebrew_nun;
     }
+    private static final int GDK_KEY_hebrew_samech = (int)3313L;
     /**
-     * {@snippet :
-     * #define G_MENU_ATTRIBUTE_ACTION_NAMESPACE "action-namespace"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_samech 3313
      * }
      */
-    public static MemorySegment G_MENU_ATTRIBUTE_ACTION_NAMESPACE() {
-        return constants$3441.const$2;
+    public static int GDK_KEY_hebrew_samech() {
+        return GDK_KEY_hebrew_samech;
     }
+    private static final int GDK_KEY_hebrew_samekh = (int)3313L;
     /**
-     * {@snippet :
-     * #define G_MENU_ATTRIBUTE_TARGET "target"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_samekh 3313
      * }
      */
-    public static MemorySegment G_MENU_ATTRIBUTE_TARGET() {
-        return constants$3441.const$3;
+    public static int GDK_KEY_hebrew_samekh() {
+        return GDK_KEY_hebrew_samekh;
     }
+    private static final int GDK_KEY_hebrew_ayin = (int)3314L;
     /**
-     * {@snippet :
-     * #define G_MENU_ATTRIBUTE_LABEL "label"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_ayin 3314
      * }
      */
-    public static MemorySegment G_MENU_ATTRIBUTE_LABEL() {
-        return constants$3441.const$4;
+    public static int GDK_KEY_hebrew_ayin() {
+        return GDK_KEY_hebrew_ayin;
     }
+    private static final int GDK_KEY_hebrew_finalpe = (int)3315L;
     /**
-     * {@snippet :
-     * #define G_MENU_ATTRIBUTE_ICON "icon"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_finalpe 3315
      * }
      */
-    public static MemorySegment G_MENU_ATTRIBUTE_ICON() {
-        return constants$3441.const$5;
+    public static int GDK_KEY_hebrew_finalpe() {
+        return GDK_KEY_hebrew_finalpe;
     }
+    private static final int GDK_KEY_hebrew_pe = (int)3316L;
     /**
-     * {@snippet :
-     * #define G_MENU_LINK_SUBMENU "submenu"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_pe 3316
      * }
      */
-    public static MemorySegment G_MENU_LINK_SUBMENU() {
-        return constants$3442.const$0;
+    public static int GDK_KEY_hebrew_pe() {
+        return GDK_KEY_hebrew_pe;
     }
+    private static final int GDK_KEY_hebrew_finalzade = (int)3317L;
     /**
-     * {@snippet :
-     * #define G_MENU_LINK_SECTION "section"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_finalzade 3317
      * }
      */
-    public static MemorySegment G_MENU_LINK_SECTION() {
-        return constants$3442.const$1;
+    public static int GDK_KEY_hebrew_finalzade() {
+        return GDK_KEY_hebrew_finalzade;
     }
+    private static final int GDK_KEY_hebrew_finalzadi = (int)3317L;
     /**
-     * {@snippet :
-     * #define G_MENU_EXPORTER_MAX_SECTION_SIZE 1000
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_finalzadi 3317
      * }
      */
-    public static int G_MENU_EXPORTER_MAX_SECTION_SIZE() {
-        return (int)1000L;
+    public static int GDK_KEY_hebrew_finalzadi() {
+        return GDK_KEY_hebrew_finalzadi;
     }
+    private static final int GDK_KEY_hebrew_zade = (int)3318L;
     /**
-     * {@snippet :
-     * #define G_VOLUME_MONITOR_EXTENSION_POINT_NAME "gio-volume-monitor"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_zade 3318
      * }
      */
-    public static MemorySegment G_VOLUME_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$3442.const$2;
+    public static int GDK_KEY_hebrew_zade() {
+        return GDK_KEY_hebrew_zade;
     }
+    private static final int GDK_KEY_hebrew_zadi = (int)3318L;
     /**
-     * {@snippet :
-     * #define G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME "gio-native-volume-monitor"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_zadi 3318
      * }
      */
-    public static MemorySegment G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$3442.const$3;
+    public static int GDK_KEY_hebrew_zadi() {
+        return GDK_KEY_hebrew_zadi;
     }
+    private static final int GDK_KEY_hebrew_qoph = (int)3319L;
     /**
-     * {@snippet :
-     * #define G_NETWORK_MONITOR_EXTENSION_POINT_NAME "gio-network-monitor"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_qoph 3319
      * }
      */
-    public static MemorySegment G_NETWORK_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$3442.const$4;
+    public static int GDK_KEY_hebrew_qoph() {
+        return GDK_KEY_hebrew_qoph;
     }
+    private static final int GDK_KEY_hebrew_kuf = (int)3319L;
     /**
-     * {@snippet :
-     * #define G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME "gio-power-profile-monitor"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_kuf 3319
      * }
      */
-    public static MemorySegment G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$3442.const$5;
+    public static int GDK_KEY_hebrew_kuf() {
+        return GDK_KEY_hebrew_kuf;
     }
+    private static final int GDK_KEY_hebrew_resh = (int)3320L;
     /**
-     * {@snippet :
-     * #define G_PROXY_EXTENSION_POINT_NAME "gio-proxy"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_resh 3320
      * }
      */
-    public static MemorySegment G_PROXY_EXTENSION_POINT_NAME() {
-        return constants$3443.const$0;
+    public static int GDK_KEY_hebrew_resh() {
+        return GDK_KEY_hebrew_resh;
     }
+    private static final int GDK_KEY_hebrew_shin = (int)3321L;
     /**
-     * {@snippet :
-     * #define G_PROXY_RESOLVER_EXTENSION_POINT_NAME "gio-proxy-resolver"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_shin 3321
      * }
      */
-    public static MemorySegment G_PROXY_RESOLVER_EXTENSION_POINT_NAME() {
-        return constants$3443.const$1;
+    public static int GDK_KEY_hebrew_shin() {
+        return GDK_KEY_hebrew_shin;
     }
+    private static final int GDK_KEY_hebrew_taw = (int)3322L;
     /**
-     * {@snippet :
-     * #define G_TLS_BACKEND_EXTENSION_POINT_NAME "gio-tls-backend"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_taw 3322
      * }
      */
-    public static MemorySegment G_TLS_BACKEND_EXTENSION_POINT_NAME() {
-        return constants$3443.const$2;
+    public static int GDK_KEY_hebrew_taw() {
+        return GDK_KEY_hebrew_taw;
     }
+    private static final int GDK_KEY_hebrew_taf = (int)3322L;
     /**
-     * {@snippet :
-     * #define G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER "1.3.6.1.5.5.7.3.1"
+     * {@snippet lang=c :
+     * #define GDK_KEY_hebrew_taf 3322
      * }
      */
-    public static MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER() {
-        return constants$3443.const$3;
+    public static int GDK_KEY_hebrew_taf() {
+        return GDK_KEY_hebrew_taf;
     }
+    private static final int GDK_KEY_Hebrew_switch = (int)65406L;
     /**
-     * {@snippet :
-     * #define G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT "1.3.6.1.5.5.7.3.2"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hebrew_switch 65406
      * }
      */
-    public static MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT() {
-        return constants$3443.const$4;
+    public static int GDK_KEY_Hebrew_switch() {
+        return GDK_KEY_Hebrew_switch;
     }
+    private static final int GDK_KEY_Thai_kokai = (int)3489L;
     /**
-     * {@snippet :
-     * #define G_VFS_EXTENSION_POINT_NAME "gio-vfs"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_kokai 3489
      * }
      */
-    public static MemorySegment G_VFS_EXTENSION_POINT_NAME() {
-        return constants$3443.const$5;
+    public static int GDK_KEY_Thai_kokai() {
+        return GDK_KEY_Thai_kokai;
     }
+    private static final int GDK_KEY_Thai_khokhai = (int)3490L;
     /**
-     * {@snippet :
-     * #define G_VOLUME_IDENTIFIER_KIND_HAL_UDI "hal-udi"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_khokhai 3490
      * }
      */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_HAL_UDI() {
-        return constants$3444.const$0;
+    public static int GDK_KEY_Thai_khokhai() {
+        return GDK_KEY_Thai_khokhai;
     }
+    private static final int GDK_KEY_Thai_khokhuat = (int)3491L;
     /**
-     * {@snippet :
-     * #define G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE "unix-device"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_khokhuat 3491
      * }
      */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE() {
-        return constants$3424.const$2;
+    public static int GDK_KEY_Thai_khokhuat() {
+        return GDK_KEY_Thai_khokhuat;
     }
+    private static final int GDK_KEY_Thai_khokhwai = (int)3492L;
     /**
-     * {@snippet :
-     * #define G_VOLUME_IDENTIFIER_KIND_LABEL "label"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_khokhwai 3492
      * }
      */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_LABEL() {
-        return constants$3441.const$4;
+    public static int GDK_KEY_Thai_khokhwai() {
+        return GDK_KEY_Thai_khokhwai;
     }
+    private static final int GDK_KEY_Thai_khokhon = (int)3493L;
     /**
-     * {@snippet :
-     * #define G_VOLUME_IDENTIFIER_KIND_UUID "uuid"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_khokhon 3493
      * }
      */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_UUID() {
-        return constants$3444.const$1;
+    public static int GDK_KEY_Thai_khokhon() {
+        return GDK_KEY_Thai_khokhon;
     }
+    private static final int GDK_KEY_Thai_khorakhang = (int)3494L;
     /**
-     * {@snippet :
-     * #define G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT "nfs-mount"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_khorakhang 3494
      * }
      */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT() {
-        return constants$3444.const$2;
+    public static int GDK_KEY_Thai_khorakhang() {
+        return GDK_KEY_Thai_khorakhang;
     }
+    private static final int GDK_KEY_Thai_ngongu = (int)3495L;
     /**
-     * {@snippet :
-     * #define G_VOLUME_IDENTIFIER_KIND_CLASS "class"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_ngongu 3495
      * }
      */
-    public static MemorySegment G_VOLUME_IDENTIFIER_KIND_CLASS() {
-        return constants$3444.const$3;
+    public static int GDK_KEY_Thai_ngongu() {
+        return GDK_KEY_Thai_ngongu;
     }
+    private static final int GDK_KEY_Thai_chochan = (int)3496L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_STRING "1.50.14"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_chochan 3496
      * }
      */
-    public static MemorySegment PANGO_VERSION_STRING() {
-        return constants$3444.const$4;
+    public static int GDK_KEY_Thai_chochan() {
+        return GDK_KEY_Thai_chochan;
     }
+    private static final int GDK_KEY_Thai_choching = (int)3497L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_2 66048
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_choching 3497
      * }
      */
-    public static int PANGO_VERSION_1_2() {
-        return (int)66048L;
+    public static int GDK_KEY_Thai_choching() {
+        return GDK_KEY_Thai_choching;
     }
+    private static final int GDK_KEY_Thai_chochang = (int)3498L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_4 66560
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_chochang 3498
      * }
      */
-    public static int PANGO_VERSION_1_4() {
-        return (int)66560L;
+    public static int GDK_KEY_Thai_chochang() {
+        return GDK_KEY_Thai_chochang;
     }
+    private static final int GDK_KEY_Thai_soso = (int)3499L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_6 67072
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_soso 3499
      * }
      */
-    public static int PANGO_VERSION_1_6() {
-        return (int)67072L;
+    public static int GDK_KEY_Thai_soso() {
+        return GDK_KEY_Thai_soso;
     }
+    private static final int GDK_KEY_Thai_chochoe = (int)3500L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_8 67584
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_chochoe 3500
      * }
      */
-    public static int PANGO_VERSION_1_8() {
-        return (int)67584L;
+    public static int GDK_KEY_Thai_chochoe() {
+        return GDK_KEY_Thai_chochoe;
     }
+    private static final int GDK_KEY_Thai_yoying = (int)3501L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_10 68096
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_yoying 3501
      * }
      */
-    public static int PANGO_VERSION_1_10() {
-        return (int)68096L;
+    public static int GDK_KEY_Thai_yoying() {
+        return GDK_KEY_Thai_yoying;
     }
+    private static final int GDK_KEY_Thai_dochada = (int)3502L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_12 68608
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_dochada 3502
      * }
      */
-    public static int PANGO_VERSION_1_12() {
-        return (int)68608L;
+    public static int GDK_KEY_Thai_dochada() {
+        return GDK_KEY_Thai_dochada;
     }
+    private static final int GDK_KEY_Thai_topatak = (int)3503L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_14 69120
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_topatak 3503
      * }
      */
-    public static int PANGO_VERSION_1_14() {
-        return (int)69120L;
+    public static int GDK_KEY_Thai_topatak() {
+        return GDK_KEY_Thai_topatak;
     }
+    private static final int GDK_KEY_Thai_thothan = (int)3504L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_16 69632
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_thothan 3504
      * }
      */
-    public static int PANGO_VERSION_1_16() {
-        return (int)69632L;
+    public static int GDK_KEY_Thai_thothan() {
+        return GDK_KEY_Thai_thothan;
     }
+    private static final int GDK_KEY_Thai_thonangmontho = (int)3505L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_18 70144
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_thonangmontho 3505
      * }
      */
-    public static int PANGO_VERSION_1_18() {
-        return (int)70144L;
+    public static int GDK_KEY_Thai_thonangmontho() {
+        return GDK_KEY_Thai_thonangmontho;
     }
+    private static final int GDK_KEY_Thai_thophuthao = (int)3506L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_20 70656
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_thophuthao 3506
      * }
      */
-    public static int PANGO_VERSION_1_20() {
-        return (int)70656L;
+    public static int GDK_KEY_Thai_thophuthao() {
+        return GDK_KEY_Thai_thophuthao;
     }
+    private static final int GDK_KEY_Thai_nonen = (int)3507L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_22 71168
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_nonen 3507
      * }
      */
-    public static int PANGO_VERSION_1_22() {
-        return (int)71168L;
+    public static int GDK_KEY_Thai_nonen() {
+        return GDK_KEY_Thai_nonen;
     }
+    private static final int GDK_KEY_Thai_dodek = (int)3508L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_24 71680
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_dodek 3508
      * }
      */
-    public static int PANGO_VERSION_1_24() {
-        return (int)71680L;
+    public static int GDK_KEY_Thai_dodek() {
+        return GDK_KEY_Thai_dodek;
     }
+    private static final int GDK_KEY_Thai_totao = (int)3509L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_26 72192
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_totao 3509
      * }
      */
-    public static int PANGO_VERSION_1_26() {
-        return (int)72192L;
+    public static int GDK_KEY_Thai_totao() {
+        return GDK_KEY_Thai_totao;
     }
+    private static final int GDK_KEY_Thai_thothung = (int)3510L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_28 72704
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_thothung 3510
      * }
      */
-    public static int PANGO_VERSION_1_28() {
-        return (int)72704L;
+    public static int GDK_KEY_Thai_thothung() {
+        return GDK_KEY_Thai_thothung;
     }
+    private static final int GDK_KEY_Thai_thothahan = (int)3511L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_30 73216
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_thothahan 3511
      * }
      */
-    public static int PANGO_VERSION_1_30() {
-        return (int)73216L;
+    public static int GDK_KEY_Thai_thothahan() {
+        return GDK_KEY_Thai_thothahan;
     }
+    private static final int GDK_KEY_Thai_thothong = (int)3512L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_32 73728
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_thothong 3512
      * }
      */
-    public static int PANGO_VERSION_1_32() {
-        return (int)73728L;
+    public static int GDK_KEY_Thai_thothong() {
+        return GDK_KEY_Thai_thothong;
     }
+    private static final int GDK_KEY_Thai_nonu = (int)3513L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_34 74240
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_nonu 3513
      * }
      */
-    public static int PANGO_VERSION_1_34() {
-        return (int)74240L;
+    public static int GDK_KEY_Thai_nonu() {
+        return GDK_KEY_Thai_nonu;
     }
+    private static final int GDK_KEY_Thai_bobaimai = (int)3514L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_36 74752
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_bobaimai 3514
      * }
      */
-    public static int PANGO_VERSION_1_36() {
-        return (int)74752L;
+    public static int GDK_KEY_Thai_bobaimai() {
+        return GDK_KEY_Thai_bobaimai;
     }
+    private static final int GDK_KEY_Thai_popla = (int)3515L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_38 75264
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_popla 3515
      * }
      */
-    public static int PANGO_VERSION_1_38() {
-        return (int)75264L;
+    public static int GDK_KEY_Thai_popla() {
+        return GDK_KEY_Thai_popla;
     }
+    private static final int GDK_KEY_Thai_phophung = (int)3516L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_40 75776
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_phophung 3516
      * }
      */
-    public static int PANGO_VERSION_1_40() {
-        return (int)75776L;
+    public static int GDK_KEY_Thai_phophung() {
+        return GDK_KEY_Thai_phophung;
     }
+    private static final int GDK_KEY_Thai_fofa = (int)3517L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_42 76288
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_fofa 3517
      * }
      */
-    public static int PANGO_VERSION_1_42() {
-        return (int)76288L;
+    public static int GDK_KEY_Thai_fofa() {
+        return GDK_KEY_Thai_fofa;
     }
+    private static final int GDK_KEY_Thai_phophan = (int)3518L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_44 76800
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_phophan 3518
      * }
      */
-    public static int PANGO_VERSION_1_44() {
-        return (int)76800L;
+    public static int GDK_KEY_Thai_phophan() {
+        return GDK_KEY_Thai_phophan;
     }
+    private static final int GDK_KEY_Thai_fofan = (int)3519L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_46 77312
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_fofan 3519
      * }
      */
-    public static int PANGO_VERSION_1_46() {
-        return (int)77312L;
+    public static int GDK_KEY_Thai_fofan() {
+        return GDK_KEY_Thai_fofan;
     }
+    private static final int GDK_KEY_Thai_phosamphao = (int)3520L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_48 77824
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_phosamphao 3520
      * }
      */
-    public static int PANGO_VERSION_1_48() {
-        return (int)77824L;
+    public static int GDK_KEY_Thai_phosamphao() {
+        return GDK_KEY_Thai_phosamphao;
     }
+    private static final int GDK_KEY_Thai_moma = (int)3521L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_50 78336
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_moma 3521
      * }
      */
-    public static int PANGO_VERSION_1_50() {
-        return (int)78336L;
+    public static int GDK_KEY_Thai_moma() {
+        return GDK_KEY_Thai_moma;
     }
+    private static final int GDK_KEY_Thai_yoyak = (int)3522L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_1_52 78848
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_yoyak 3522
      * }
      */
-    public static int PANGO_VERSION_1_52() {
-        return (int)78848L;
+    public static int GDK_KEY_Thai_yoyak() {
+        return GDK_KEY_Thai_yoyak;
     }
+    private static final int GDK_KEY_Thai_rorua = (int)3523L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_CUR_STABLE 78336
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_rorua 3523
      * }
      */
-    public static int PANGO_VERSION_CUR_STABLE() {
-        return (int)78336L;
+    public static int GDK_KEY_Thai_rorua() {
+        return GDK_KEY_Thai_rorua;
     }
+    private static final int GDK_KEY_Thai_ru = (int)3524L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_PREV_STABLE 77824
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_ru 3524
      * }
      */
-    public static int PANGO_VERSION_PREV_STABLE() {
-        return (int)77824L;
+    public static int GDK_KEY_Thai_ru() {
+        return GDK_KEY_Thai_ru;
     }
+    private static final int GDK_KEY_Thai_loling = (int)3525L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_MIN_REQUIRED 78336
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_loling 3525
      * }
      */
-    public static int PANGO_VERSION_MIN_REQUIRED() {
-        return (int)78336L;
+    public static int GDK_KEY_Thai_loling() {
+        return GDK_KEY_Thai_loling;
     }
+    private static final int GDK_KEY_Thai_lu = (int)3526L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION_MAX_ALLOWED 78336
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_lu 3526
      * }
      */
-    public static int PANGO_VERSION_MAX_ALLOWED() {
-        return (int)78336L;
+    public static int GDK_KEY_Thai_lu() {
+        return GDK_KEY_Thai_lu;
     }
+    private static final int GDK_KEY_Thai_wowaen = (int)3527L;
     /**
-     * {@snippet :
-     * #define __WCHAR_MAX 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_wowaen 3527
      * }
      */
-    public static int __WCHAR_MAX() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Thai_wowaen() {
+        return GDK_KEY_Thai_wowaen;
     }
+    private static final int GDK_KEY_Thai_sosala = (int)3528L;
     /**
-     * {@snippet :
-     * #define __WCHAR_MIN 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_sosala 3528
      * }
      */
-    public static int __WCHAR_MIN() {
-        return (int)0L;
+    public static int GDK_KEY_Thai_sosala() {
+        return GDK_KEY_Thai_sosala;
     }
+    private static final int GDK_KEY_Thai_sorusi = (int)3529L;
     /**
-     * {@snippet :
-     * #define INT8_MIN -128
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_sorusi 3529
      * }
      */
-    public static int INT8_MIN() {
-        return (int)-128L;
+    public static int GDK_KEY_Thai_sorusi() {
+        return GDK_KEY_Thai_sorusi;
     }
+    private static final int GDK_KEY_Thai_sosua = (int)3530L;
     /**
-     * {@snippet :
-     * #define INT16_MIN -32768
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_sosua 3530
      * }
      */
-    public static int INT16_MIN() {
-        return (int)-32768L;
+    public static int GDK_KEY_Thai_sosua() {
+        return GDK_KEY_Thai_sosua;
     }
+    private static final int GDK_KEY_Thai_hohip = (int)3531L;
     /**
-     * {@snippet :
-     * #define INT32_MIN -2147483648
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_hohip 3531
      * }
      */
-    public static int INT32_MIN() {
-        return (int)-2147483648L;
+    public static int GDK_KEY_Thai_hohip() {
+        return GDK_KEY_Thai_hohip;
     }
+    private static final int GDK_KEY_Thai_lochula = (int)3532L;
     /**
-     * {@snippet :
-     * #define INT64_MIN -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_lochula 3532
      * }
      */
-    public static long INT64_MIN() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Thai_lochula() {
+        return GDK_KEY_Thai_lochula;
     }
+    private static final int GDK_KEY_Thai_oang = (int)3533L;
     /**
-     * {@snippet :
-     * #define INT8_MAX 127
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_oang 3533
      * }
      */
-    public static int INT8_MAX() {
-        return (int)127L;
+    public static int GDK_KEY_Thai_oang() {
+        return GDK_KEY_Thai_oang;
     }
+    private static final int GDK_KEY_Thai_honokhuk = (int)3534L;
     /**
-     * {@snippet :
-     * #define INT16_MAX 32767
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_honokhuk 3534
      * }
      */
-    public static int INT16_MAX() {
-        return (int)32767L;
+    public static int GDK_KEY_Thai_honokhuk() {
+        return GDK_KEY_Thai_honokhuk;
     }
+    private static final int GDK_KEY_Thai_paiyannoi = (int)3535L;
     /**
-     * {@snippet :
-     * #define INT32_MAX 2147483647
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_paiyannoi 3535
      * }
      */
-    public static int INT32_MAX() {
-        return (int)2147483647L;
+    public static int GDK_KEY_Thai_paiyannoi() {
+        return GDK_KEY_Thai_paiyannoi;
     }
+    private static final int GDK_KEY_Thai_saraa = (int)3536L;
     /**
-     * {@snippet :
-     * #define INT64_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_saraa 3536
      * }
      */
-    public static long INT64_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Thai_saraa() {
+        return GDK_KEY_Thai_saraa;
     }
+    private static final int GDK_KEY_Thai_maihanakat = (int)3537L;
     /**
-     * {@snippet :
-     * #define UINT8_MAX 255
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_maihanakat 3537
      * }
      */
-    public static int UINT8_MAX() {
-        return (int)255L;
+    public static int GDK_KEY_Thai_maihanakat() {
+        return GDK_KEY_Thai_maihanakat;
     }
+    private static final int GDK_KEY_Thai_saraaa = (int)3538L;
     /**
-     * {@snippet :
-     * #define UINT16_MAX 65535
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_saraaa 3538
      * }
      */
-    public static int UINT16_MAX() {
-        return (int)65535L;
+    public static int GDK_KEY_Thai_saraaa() {
+        return GDK_KEY_Thai_saraaa;
     }
+    private static final int GDK_KEY_Thai_saraam = (int)3539L;
     /**
-     * {@snippet :
-     * #define UINT32_MAX 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_saraam 3539
      * }
      */
-    public static int UINT32_MAX() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Thai_saraam() {
+        return GDK_KEY_Thai_saraam;
     }
+    private static final int GDK_KEY_Thai_sarai = (int)3540L;
     /**
-     * {@snippet :
-     * #define UINT64_MAX -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_sarai 3540
      * }
      */
-    public static long UINT64_MAX() {
-        return -1L;
+    public static int GDK_KEY_Thai_sarai() {
+        return GDK_KEY_Thai_sarai;
     }
+    private static final int GDK_KEY_Thai_saraii = (int)3541L;
     /**
-     * {@snippet :
-     * #define INT_LEAST8_MIN -128
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_saraii 3541
      * }
      */
-    public static int INT_LEAST8_MIN() {
-        return (int)-128L;
+    public static int GDK_KEY_Thai_saraii() {
+        return GDK_KEY_Thai_saraii;
     }
+    private static final int GDK_KEY_Thai_saraue = (int)3542L;
     /**
-     * {@snippet :
-     * #define INT_LEAST16_MIN -32768
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_saraue 3542
      * }
      */
-    public static int INT_LEAST16_MIN() {
-        return (int)-32768L;
+    public static int GDK_KEY_Thai_saraue() {
+        return GDK_KEY_Thai_saraue;
     }
+    private static final int GDK_KEY_Thai_sarauee = (int)3543L;
     /**
-     * {@snippet :
-     * #define INT_LEAST32_MIN -2147483648
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_sarauee 3543
      * }
      */
-    public static int INT_LEAST32_MIN() {
-        return (int)-2147483648L;
+    public static int GDK_KEY_Thai_sarauee() {
+        return GDK_KEY_Thai_sarauee;
     }
+    private static final int GDK_KEY_Thai_sarau = (int)3544L;
     /**
-     * {@snippet :
-     * #define INT_LEAST64_MIN -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_sarau 3544
      * }
      */
-    public static long INT_LEAST64_MIN() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Thai_sarau() {
+        return GDK_KEY_Thai_sarau;
     }
+    private static final int GDK_KEY_Thai_sarauu = (int)3545L;
     /**
-     * {@snippet :
-     * #define INT_LEAST8_MAX 127
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_sarauu 3545
      * }
      */
-    public static int INT_LEAST8_MAX() {
-        return (int)127L;
+    public static int GDK_KEY_Thai_sarauu() {
+        return GDK_KEY_Thai_sarauu;
     }
+    private static final int GDK_KEY_Thai_phinthu = (int)3546L;
     /**
-     * {@snippet :
-     * #define INT_LEAST16_MAX 32767
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_phinthu 3546
      * }
      */
-    public static int INT_LEAST16_MAX() {
-        return (int)32767L;
+    public static int GDK_KEY_Thai_phinthu() {
+        return GDK_KEY_Thai_phinthu;
     }
+    private static final int GDK_KEY_Thai_maihanakat_maitho = (int)3550L;
     /**
-     * {@snippet :
-     * #define INT_LEAST32_MAX 2147483647
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_maihanakat_maitho 3550
      * }
      */
-    public static int INT_LEAST32_MAX() {
-        return (int)2147483647L;
+    public static int GDK_KEY_Thai_maihanakat_maitho() {
+        return GDK_KEY_Thai_maihanakat_maitho;
     }
+    private static final int GDK_KEY_Thai_baht = (int)3551L;
     /**
-     * {@snippet :
-     * #define INT_LEAST64_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_baht 3551
      * }
      */
-    public static long INT_LEAST64_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Thai_baht() {
+        return GDK_KEY_Thai_baht;
     }
+    private static final int GDK_KEY_Thai_sarae = (int)3552L;
     /**
-     * {@snippet :
-     * #define UINT_LEAST8_MAX 255
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_sarae 3552
      * }
      */
-    public static int UINT_LEAST8_MAX() {
-        return (int)255L;
+    public static int GDK_KEY_Thai_sarae() {
+        return GDK_KEY_Thai_sarae;
     }
+    private static final int GDK_KEY_Thai_saraae = (int)3553L;
     /**
-     * {@snippet :
-     * #define UINT_LEAST16_MAX 65535
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_saraae 3553
      * }
      */
-    public static int UINT_LEAST16_MAX() {
-        return (int)65535L;
+    public static int GDK_KEY_Thai_saraae() {
+        return GDK_KEY_Thai_saraae;
     }
+    private static final int GDK_KEY_Thai_sarao = (int)3554L;
     /**
-     * {@snippet :
-     * #define UINT_LEAST32_MAX 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_sarao 3554
      * }
      */
-    public static int UINT_LEAST32_MAX() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Thai_sarao() {
+        return GDK_KEY_Thai_sarao;
     }
+    private static final int GDK_KEY_Thai_saraaimaimuan = (int)3555L;
     /**
-     * {@snippet :
-     * #define UINT_LEAST64_MAX -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_saraaimaimuan 3555
      * }
      */
-    public static long UINT_LEAST64_MAX() {
-        return -1L;
+    public static int GDK_KEY_Thai_saraaimaimuan() {
+        return GDK_KEY_Thai_saraaimaimuan;
     }
+    private static final int GDK_KEY_Thai_saraaimaimalai = (int)3556L;
     /**
-     * {@snippet :
-     * #define INT_FAST8_MIN -128
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_saraaimaimalai 3556
      * }
      */
-    public static int INT_FAST8_MIN() {
-        return (int)-128L;
+    public static int GDK_KEY_Thai_saraaimaimalai() {
+        return GDK_KEY_Thai_saraaimaimalai;
     }
+    private static final int GDK_KEY_Thai_lakkhangyao = (int)3557L;
     /**
-     * {@snippet :
-     * #define INT_FAST16_MIN -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_lakkhangyao 3557
      * }
      */
-    public static long INT_FAST16_MIN() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Thai_lakkhangyao() {
+        return GDK_KEY_Thai_lakkhangyao;
     }
+    private static final int GDK_KEY_Thai_maiyamok = (int)3558L;
     /**
-     * {@snippet :
-     * #define INT_FAST32_MIN -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_maiyamok 3558
      * }
      */
-    public static long INT_FAST32_MIN() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Thai_maiyamok() {
+        return GDK_KEY_Thai_maiyamok;
     }
+    private static final int GDK_KEY_Thai_maitaikhu = (int)3559L;
     /**
-     * {@snippet :
-     * #define INT_FAST64_MIN -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_maitaikhu 3559
      * }
      */
-    public static long INT_FAST64_MIN() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Thai_maitaikhu() {
+        return GDK_KEY_Thai_maitaikhu;
     }
+    private static final int GDK_KEY_Thai_maiek = (int)3560L;
     /**
-     * {@snippet :
-     * #define INT_FAST8_MAX 127
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_maiek 3560
      * }
      */
-    public static int INT_FAST8_MAX() {
-        return (int)127L;
+    public static int GDK_KEY_Thai_maiek() {
+        return GDK_KEY_Thai_maiek;
     }
+    private static final int GDK_KEY_Thai_maitho = (int)3561L;
     /**
-     * {@snippet :
-     * #define INT_FAST16_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_maitho 3561
      * }
      */
-    public static long INT_FAST16_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Thai_maitho() {
+        return GDK_KEY_Thai_maitho;
     }
+    private static final int GDK_KEY_Thai_maitri = (int)3562L;
     /**
-     * {@snippet :
-     * #define INT_FAST32_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_maitri 3562
      * }
      */
-    public static long INT_FAST32_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Thai_maitri() {
+        return GDK_KEY_Thai_maitri;
     }
+    private static final int GDK_KEY_Thai_maichattawa = (int)3563L;
     /**
-     * {@snippet :
-     * #define INT_FAST64_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_maichattawa 3563
      * }
      */
-    public static long INT_FAST64_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Thai_maichattawa() {
+        return GDK_KEY_Thai_maichattawa;
     }
+    private static final int GDK_KEY_Thai_thanthakhat = (int)3564L;
     /**
-     * {@snippet :
-     * #define UINT_FAST8_MAX 255
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_thanthakhat 3564
      * }
      */
-    public static int UINT_FAST8_MAX() {
-        return (int)255L;
+    public static int GDK_KEY_Thai_thanthakhat() {
+        return GDK_KEY_Thai_thanthakhat;
     }
+    private static final int GDK_KEY_Thai_nikhahit = (int)3565L;
     /**
-     * {@snippet :
-     * #define UINT_FAST16_MAX -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_nikhahit 3565
      * }
      */
-    public static long UINT_FAST16_MAX() {
-        return -1L;
+    public static int GDK_KEY_Thai_nikhahit() {
+        return GDK_KEY_Thai_nikhahit;
     }
+    private static final int GDK_KEY_Thai_leksun = (int)3568L;
     /**
-     * {@snippet :
-     * #define UINT_FAST32_MAX -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_leksun 3568
      * }
      */
-    public static long UINT_FAST32_MAX() {
-        return -1L;
+    public static int GDK_KEY_Thai_leksun() {
+        return GDK_KEY_Thai_leksun;
     }
+    private static final int GDK_KEY_Thai_leknung = (int)3569L;
     /**
-     * {@snippet :
-     * #define UINT_FAST64_MAX -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_leknung 3569
      * }
      */
-    public static long UINT_FAST64_MAX() {
-        return -1L;
+    public static int GDK_KEY_Thai_leknung() {
+        return GDK_KEY_Thai_leknung;
     }
+    private static final int GDK_KEY_Thai_leksong = (int)3570L;
     /**
-     * {@snippet :
-     * #define INTPTR_MIN -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_leksong 3570
      * }
      */
-    public static long INTPTR_MIN() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Thai_leksong() {
+        return GDK_KEY_Thai_leksong;
     }
+    private static final int GDK_KEY_Thai_leksam = (int)3571L;
     /**
-     * {@snippet :
-     * #define INTPTR_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_leksam 3571
      * }
      */
-    public static long INTPTR_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Thai_leksam() {
+        return GDK_KEY_Thai_leksam;
     }
+    private static final int GDK_KEY_Thai_leksi = (int)3572L;
     /**
-     * {@snippet :
-     * #define UINTPTR_MAX -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_leksi 3572
      * }
      */
-    public static long UINTPTR_MAX() {
-        return -1L;
+    public static int GDK_KEY_Thai_leksi() {
+        return GDK_KEY_Thai_leksi;
     }
+    private static final int GDK_KEY_Thai_lekha = (int)3573L;
     /**
-     * {@snippet :
-     * #define INTMAX_MIN -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_lekha 3573
      * }
      */
-    public static long INTMAX_MIN() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Thai_lekha() {
+        return GDK_KEY_Thai_lekha;
     }
+    private static final int GDK_KEY_Thai_lekhok = (int)3574L;
     /**
-     * {@snippet :
-     * #define INTMAX_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_lekhok 3574
      * }
      */
-    public static long INTMAX_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Thai_lekhok() {
+        return GDK_KEY_Thai_lekhok;
     }
+    private static final int GDK_KEY_Thai_lekchet = (int)3575L;
     /**
-     * {@snippet :
-     * #define UINTMAX_MAX -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_lekchet 3575
      * }
      */
-    public static long UINTMAX_MAX() {
-        return -1L;
+    public static int GDK_KEY_Thai_lekchet() {
+        return GDK_KEY_Thai_lekchet;
     }
+    private static final int GDK_KEY_Thai_lekpaet = (int)3576L;
     /**
-     * {@snippet :
-     * #define PTRDIFF_MIN -9223372036854775808
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_lekpaet 3576
      * }
      */
-    public static long PTRDIFF_MIN() {
-        return -9223372036854775808L;
+    public static int GDK_KEY_Thai_lekpaet() {
+        return GDK_KEY_Thai_lekpaet;
     }
+    private static final int GDK_KEY_Thai_lekkao = (int)3577L;
     /**
-     * {@snippet :
-     * #define PTRDIFF_MAX 9223372036854775807
+     * {@snippet lang=c :
+     * #define GDK_KEY_Thai_lekkao 3577
      * }
      */
-    public static long PTRDIFF_MAX() {
-        return 9223372036854775807L;
+    public static int GDK_KEY_Thai_lekkao() {
+        return GDK_KEY_Thai_lekkao;
     }
+    private static final int GDK_KEY_Hangul = (int)65329L;
     /**
-     * {@snippet :
-     * #define SIG_ATOMIC_MIN -2147483648
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul 65329
      * }
      */
-    public static int SIG_ATOMIC_MIN() {
-        return (int)-2147483648L;
+    public static int GDK_KEY_Hangul() {
+        return GDK_KEY_Hangul;
     }
+    private static final int GDK_KEY_Hangul_Start = (int)65330L;
     /**
-     * {@snippet :
-     * #define SIG_ATOMIC_MAX 2147483647
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Start 65330
      * }
      */
-    public static int SIG_ATOMIC_MAX() {
-        return (int)2147483647L;
+    public static int GDK_KEY_Hangul_Start() {
+        return GDK_KEY_Hangul_Start;
     }
+    private static final int GDK_KEY_Hangul_End = (int)65331L;
     /**
-     * {@snippet :
-     * #define SIZE_MAX -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_End 65331
      * }
      */
-    public static long SIZE_MAX() {
-        return -1L;
+    public static int GDK_KEY_Hangul_End() {
+        return GDK_KEY_Hangul_End;
     }
+    private static final int GDK_KEY_Hangul_Hanja = (int)65332L;
     /**
-     * {@snippet :
-     * #define WCHAR_MIN 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Hanja 65332
      * }
      */
-    public static int WCHAR_MIN() {
-        return (int)0L;
+    public static int GDK_KEY_Hangul_Hanja() {
+        return GDK_KEY_Hangul_Hanja;
     }
+    private static final int GDK_KEY_Hangul_Jamo = (int)65333L;
     /**
-     * {@snippet :
-     * #define WCHAR_MAX 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Jamo 65333
      * }
      */
-    public static int WCHAR_MAX() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Hangul_Jamo() {
+        return GDK_KEY_Hangul_Jamo;
     }
+    private static final int GDK_KEY_Hangul_Romaja = (int)65334L;
     /**
-     * {@snippet :
-     * #define WINT_MIN 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Romaja 65334
      * }
      */
-    public static int WINT_MIN() {
-        return (int)0L;
+    public static int GDK_KEY_Hangul_Romaja() {
+        return GDK_KEY_Hangul_Romaja;
     }
+    private static final int GDK_KEY_Hangul_Codeinput = (int)65335L;
     /**
-     * {@snippet :
-     * #define WINT_MAX 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Codeinput 65335
      * }
      */
-    public static int WINT_MAX() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Hangul_Codeinput() {
+        return GDK_KEY_Hangul_Codeinput;
     }
+    private static final int GDK_KEY_Hangul_Jeonja = (int)65336L;
     /**
-     * {@snippet :
-     * #define HB_CODEPOINT_INVALID 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Jeonja 65336
      * }
      */
-    public static int HB_CODEPOINT_INVALID() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Hangul_Jeonja() {
+        return GDK_KEY_Hangul_Jeonja;
     }
+    private static final int GDK_KEY_Hangul_Banja = (int)65337L;
     /**
-     * {@snippet :
-     * #define HB_TAG_NONE 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Banja 65337
      * }
      */
-    public static int HB_TAG_NONE() {
-        return (int)0L;
+    public static int GDK_KEY_Hangul_Banja() {
+        return GDK_KEY_Hangul_Banja;
     }
+    private static final int GDK_KEY_Hangul_PreHanja = (int)65338L;
     /**
-     * {@snippet :
-     * #define HB_TAG_MAX 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_PreHanja 65338
      * }
      */
-    public static int HB_TAG_MAX() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Hangul_PreHanja() {
+        return GDK_KEY_Hangul_PreHanja;
     }
+    private static final int GDK_KEY_Hangul_PostHanja = (int)65339L;
     /**
-     * {@snippet :
-     * #define HB_TAG_MAX_SIGNED 2147483647
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_PostHanja 65339
      * }
      */
-    public static int HB_TAG_MAX_SIGNED() {
-        return (int)2147483647L;
+    public static int GDK_KEY_Hangul_PostHanja() {
+        return GDK_KEY_Hangul_PostHanja;
     }
+    private static final int GDK_KEY_Hangul_SingleCandidate = (int)65340L;
     /**
-     * {@snippet :
-     * #define HB_LANGUAGE_INVALID 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_SingleCandidate 65340
      * }
      */
-    public static MemorySegment HB_LANGUAGE_INVALID() {
-        return constants$3413.const$2;
+    public static int GDK_KEY_Hangul_SingleCandidate() {
+        return GDK_KEY_Hangul_SingleCandidate;
     }
+    private static final int GDK_KEY_Hangul_MultipleCandidate = (int)65341L;
     /**
-     * {@snippet :
-     * #define HB_FEATURE_GLOBAL_END 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_MultipleCandidate 65341
      * }
      */
-    public static int HB_FEATURE_GLOBAL_END() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Hangul_MultipleCandidate() {
+        return GDK_KEY_Hangul_MultipleCandidate;
     }
+    private static final int GDK_KEY_Hangul_PreviousCandidate = (int)65342L;
     /**
-     * {@snippet :
-     * #define HB_UNICODE_MAX 1114111
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_PreviousCandidate 65342
      * }
      */
-    public static int HB_UNICODE_MAX() {
-        return (int)1114111L;
+    public static int GDK_KEY_Hangul_PreviousCandidate() {
+        return GDK_KEY_Hangul_PreviousCandidate;
     }
+    private static final int GDK_KEY_Hangul_Special = (int)65343L;
     /**
-     * {@snippet :
-     * #define HB_SET_VALUE_INVALID 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Special 65343
      * }
      */
-    public static int HB_SET_VALUE_INVALID() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Hangul_Special() {
+        return GDK_KEY_Hangul_Special;
     }
+    private static final int GDK_KEY_Hangul_switch = (int)65406L;
     /**
-     * {@snippet :
-     * #define HB_MAP_VALUE_INVALID 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_switch 65406
      * }
      */
-    public static int HB_MAP_VALUE_INVALID() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Hangul_switch() {
+        return GDK_KEY_Hangul_switch;
     }
+    private static final int GDK_KEY_Hangul_Kiyeog = (int)3745L;
     /**
-     * {@snippet :
-     * #define HB_PAINT_IMAGE_FORMAT_PNG 1886283552
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Kiyeog 3745
      * }
      */
-    public static int HB_PAINT_IMAGE_FORMAT_PNG() {
-        return (int)1886283552L;
+    public static int GDK_KEY_Hangul_Kiyeog() {
+        return GDK_KEY_Hangul_Kiyeog;
     }
+    private static final int GDK_KEY_Hangul_SsangKiyeog = (int)3746L;
     /**
-     * {@snippet :
-     * #define HB_PAINT_IMAGE_FORMAT_SVG 1937139488
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_SsangKiyeog 3746
      * }
      */
-    public static int HB_PAINT_IMAGE_FORMAT_SVG() {
-        return (int)1937139488L;
+    public static int GDK_KEY_Hangul_SsangKiyeog() {
+        return GDK_KEY_Hangul_SsangKiyeog;
     }
+    private static final int GDK_KEY_Hangul_KiyeogSios = (int)3747L;
     /**
-     * {@snippet :
-     * #define HB_PAINT_IMAGE_FORMAT_BGRA 1111970369
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_KiyeogSios 3747
      * }
      */
-    public static int HB_PAINT_IMAGE_FORMAT_BGRA() {
-        return (int)1111970369L;
+    public static int GDK_KEY_Hangul_KiyeogSios() {
+        return GDK_KEY_Hangul_KiyeogSios;
     }
+    private static final int GDK_KEY_Hangul_Nieun = (int)3748L;
     /**
-     * {@snippet :
-     * #define HB_FONT_NO_VAR_NAMED_INSTANCE 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Nieun 3748
      * }
      */
-    public static int HB_FONT_NO_VAR_NAMED_INSTANCE() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Hangul_Nieun() {
+        return GDK_KEY_Hangul_Nieun;
     }
+    private static final int GDK_KEY_Hangul_NieunJieuj = (int)3749L;
     /**
-     * {@snippet :
-     * #define HB_BUFFER_REPLACEMENT_CODEPOINT_DEFAULT 65533
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_NieunJieuj 3749
      * }
      */
-    public static int HB_BUFFER_REPLACEMENT_CODEPOINT_DEFAULT() {
-        return (int)65533L;
+    public static int GDK_KEY_Hangul_NieunJieuj() {
+        return GDK_KEY_Hangul_NieunJieuj;
     }
+    private static final int GDK_KEY_Hangul_NieunHieuh = (int)3750L;
     /**
-     * {@snippet :
-     * #define HB_SCRIPT_CANADIAN_ABORIGINAL 1130458739
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_NieunHieuh 3750
      * }
      */
-    public static int HB_SCRIPT_CANADIAN_ABORIGINAL() {
-        return (int)1130458739L;
+    public static int GDK_KEY_Hangul_NieunHieuh() {
+        return GDK_KEY_Hangul_NieunHieuh;
     }
+    private static final int GDK_KEY_Hangul_Dikeud = (int)3751L;
     /**
-     * {@snippet :
-     * #define HB_BUFFER_FLAGS_DEFAULT 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Dikeud 3751
      * }
      */
-    public static int HB_BUFFER_FLAGS_DEFAULT() {
-        return (int)0L;
+    public static int GDK_KEY_Hangul_Dikeud() {
+        return GDK_KEY_Hangul_Dikeud;
     }
+    private static final int GDK_KEY_Hangul_SsangDikeud = (int)3752L;
     /**
-     * {@snippet :
-     * #define HB_BUFFER_SERIALIZE_FLAGS_DEFAULT 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_SsangDikeud 3752
      * }
      */
-    public static int HB_BUFFER_SERIALIZE_FLAGS_DEFAULT() {
-        return (int)0L;
+    public static int GDK_KEY_Hangul_SsangDikeud() {
+        return GDK_KEY_Hangul_SsangDikeud;
     }
+    private static final int GDK_KEY_Hangul_Rieul = (int)3753L;
     /**
-     * {@snippet :
-     * #define HB_UNICODE_MAX_DECOMPOSITION_LEN 19
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Rieul 3753
      * }
      */
-    public static int HB_UNICODE_MAX_DECOMPOSITION_LEN() {
-        return (int)19L;
+    public static int GDK_KEY_Hangul_Rieul() {
+        return GDK_KEY_Hangul_Rieul;
     }
+    private static final int GDK_KEY_Hangul_RieulKiyeog = (int)3754L;
     /**
-     * {@snippet :
-     * #define HB_VERSION_STRING "8.1.1"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_RieulKiyeog 3754
      * }
      */
-    public static MemorySegment HB_VERSION_STRING() {
-        return constants$3444.const$5;
+    public static int GDK_KEY_Hangul_RieulKiyeog() {
+        return GDK_KEY_Hangul_RieulKiyeog;
     }
+    private static final int GDK_KEY_Hangul_RieulMieum = (int)3755L;
     /**
-     * {@snippet :
-     * #define PANGO_SCALE_XX_SMALL 0.5787037037037
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_RieulMieum 3755
      * }
      */
-    public static double PANGO_SCALE_XX_SMALL() {
-        return 0.5787037037037d;
+    public static int GDK_KEY_Hangul_RieulMieum() {
+        return GDK_KEY_Hangul_RieulMieum;
     }
+    private static final int GDK_KEY_Hangul_RieulPieub = (int)3756L;
     /**
-     * {@snippet :
-     * #define PANGO_SCALE_X_SMALL 0.6944444444444
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_RieulPieub 3756
      * }
      */
-    public static double PANGO_SCALE_X_SMALL() {
-        return 0.6944444444444d;
+    public static int GDK_KEY_Hangul_RieulPieub() {
+        return GDK_KEY_Hangul_RieulPieub;
     }
+    private static final int GDK_KEY_Hangul_RieulSios = (int)3757L;
     /**
-     * {@snippet :
-     * #define PANGO_SCALE_SMALL 0.8333333333333
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_RieulSios 3757
      * }
      */
-    public static double PANGO_SCALE_SMALL() {
-        return 0.8333333333333d;
+    public static int GDK_KEY_Hangul_RieulSios() {
+        return GDK_KEY_Hangul_RieulSios;
     }
+    private static final int GDK_KEY_Hangul_RieulTieut = (int)3758L;
     /**
-     * {@snippet :
-     * #define PANGO_SCALE_MEDIUM 1.0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_RieulTieut 3758
      * }
      */
-    public static double PANGO_SCALE_MEDIUM() {
-        return 1.0d;
+    public static int GDK_KEY_Hangul_RieulTieut() {
+        return GDK_KEY_Hangul_RieulTieut;
     }
+    private static final int GDK_KEY_Hangul_RieulPhieuf = (int)3759L;
     /**
-     * {@snippet :
-     * #define PANGO_SCALE_LARGE 1.2
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_RieulPhieuf 3759
      * }
      */
-    public static double PANGO_SCALE_LARGE() {
-        return 1.2d;
+    public static int GDK_KEY_Hangul_RieulPhieuf() {
+        return GDK_KEY_Hangul_RieulPhieuf;
     }
+    private static final int GDK_KEY_Hangul_RieulHieuh = (int)3760L;
     /**
-     * {@snippet :
-     * #define PANGO_SCALE_X_LARGE 1.44
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_RieulHieuh 3760
      * }
      */
-    public static double PANGO_SCALE_X_LARGE() {
-        return 1.44d;
+    public static int GDK_KEY_Hangul_RieulHieuh() {
+        return GDK_KEY_Hangul_RieulHieuh;
     }
+    private static final int GDK_KEY_Hangul_Mieum = (int)3761L;
     /**
-     * {@snippet :
-     * #define PANGO_SCALE_XX_LARGE 1.728
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Mieum 3761
      * }
      */
-    public static double PANGO_SCALE_XX_LARGE() {
-        return 1.728d;
+    public static int GDK_KEY_Hangul_Mieum() {
+        return GDK_KEY_Hangul_Mieum;
     }
+    private static final int GDK_KEY_Hangul_Pieub = (int)3762L;
     /**
-     * {@snippet :
-     * #define PANGO_GLYPH_EMPTY 268435455
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Pieub 3762
      * }
      */
-    public static int PANGO_GLYPH_EMPTY() {
-        return (int)268435455L;
+    public static int GDK_KEY_Hangul_Pieub() {
+        return GDK_KEY_Hangul_Pieub;
     }
+    private static final int GDK_KEY_Hangul_SsangPieub = (int)3763L;
     /**
-     * {@snippet :
-     * #define PANGO_GLYPH_INVALID_INPUT 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_SsangPieub 3763
      * }
      */
-    public static int PANGO_GLYPH_INVALID_INPUT() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Hangul_SsangPieub() {
+        return GDK_KEY_Hangul_SsangPieub;
     }
+    private static final int GDK_KEY_Hangul_PieubSios = (int)3764L;
     /**
-     * {@snippet :
-     * #define PANGO_GLYPH_UNKNOWN_FLAG 268435456
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_PieubSios 3764
      * }
      */
-    public static int PANGO_GLYPH_UNKNOWN_FLAG() {
-        return (int)268435456L;
+    public static int GDK_KEY_Hangul_PieubSios() {
+        return GDK_KEY_Hangul_PieubSios;
     }
+    private static final int GDK_KEY_Hangul_Sios = (int)3765L;
     /**
-     * {@snippet :
-     * #define PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Sios 3765
      * }
      */
-    public static int PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING() {
-        return (int)0L;
+    public static int GDK_KEY_Hangul_Sios() {
+        return GDK_KEY_Hangul_Sios;
     }
+    private static final int GDK_KEY_Hangul_SsangSios = (int)3766L;
     /**
-     * {@snippet :
-     * #define PANGO_ATTR_INDEX_TO_TEXT_END 4294967295
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_SsangSios 3766
      * }
      */
-    public static int PANGO_ATTR_INDEX_TO_TEXT_END() {
-        return (int)4294967295L;
+    public static int GDK_KEY_Hangul_SsangSios() {
+        return GDK_KEY_Hangul_SsangSios;
     }
+    private static final int GDK_KEY_Hangul_Ieung = (int)3767L;
     /**
-     * {@snippet :
-     * #define PANGO_ANALYSIS_FLAG_CENTERED_BASELINE 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Ieung 3767
      * }
      */
-    public static int PANGO_ANALYSIS_FLAG_CENTERED_BASELINE() {
-        return (int)1L;
+    public static int GDK_KEY_Hangul_Ieung() {
+        return GDK_KEY_Hangul_Ieung;
     }
+    private static final int GDK_KEY_Hangul_Jieuj = (int)3768L;
     /**
-     * {@snippet :
-     * #define PANGO_ANALYSIS_FLAG_IS_ELLIPSIS 2
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Jieuj 3768
      * }
      */
-    public static int PANGO_ANALYSIS_FLAG_IS_ELLIPSIS() {
-        return (int)2L;
+    public static int GDK_KEY_Hangul_Jieuj() {
+        return GDK_KEY_Hangul_Jieuj;
     }
+    private static final int GDK_KEY_Hangul_SsangJieuj = (int)3769L;
     /**
-     * {@snippet :
-     * #define PANGO_ANALYSIS_FLAG_NEED_HYPHEN 4
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_SsangJieuj 3769
      * }
      */
-    public static int PANGO_ANALYSIS_FLAG_NEED_HYPHEN() {
-        return (int)4L;
+    public static int GDK_KEY_Hangul_SsangJieuj() {
+        return GDK_KEY_Hangul_SsangJieuj;
     }
+    private static final int GDK_KEY_Hangul_Cieuc = (int)3770L;
     /**
-     * {@snippet :
-     * #define PANGO_RENDER_TYPE_NONE "PangoRenderNone"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Cieuc 3770
      * }
      */
-    public static MemorySegment PANGO_RENDER_TYPE_NONE() {
-        return constants$3445.const$0;
+    public static int GDK_KEY_Hangul_Cieuc() {
+        return GDK_KEY_Hangul_Cieuc;
     }
+    private static final int GDK_KEY_Hangul_Khieuq = (int)3771L;
     /**
-     * {@snippet :
-     * #define PANGO_ENGINE_TYPE_LANG "PangoEngineLang"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Khieuq 3771
      * }
      */
-    public static MemorySegment PANGO_ENGINE_TYPE_LANG() {
-        return constants$3445.const$1;
+    public static int GDK_KEY_Hangul_Khieuq() {
+        return GDK_KEY_Hangul_Khieuq;
     }
+    private static final int GDK_KEY_Hangul_Tieut = (int)3772L;
     /**
-     * {@snippet :
-     * #define PANGO_ENGINE_TYPE_SHAPE "PangoEngineShape"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Tieut 3772
      * }
      */
-    public static MemorySegment PANGO_ENGINE_TYPE_SHAPE() {
-        return constants$3445.const$2;
+    public static int GDK_KEY_Hangul_Tieut() {
+        return GDK_KEY_Hangul_Tieut;
     }
+    private static final int GDK_KEY_Hangul_Phieuf = (int)3773L;
     /**
-     * {@snippet :
-     * #define EOF -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Phieuf 3773
      * }
      */
-    public static int EOF() {
-        return (int)-1L;
+    public static int GDK_KEY_Hangul_Phieuf() {
+        return GDK_KEY_Hangul_Phieuf;
     }
+    private static final int GDK_KEY_Hangul_Hieuh = (int)3774L;
     /**
-     * {@snippet :
-     * #define P_tmpdir "/tmp"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_Hieuh 3774
      * }
      */
-    public static MemorySegment P_tmpdir() {
-        return constants$3445.const$3;
+    public static int GDK_KEY_Hangul_Hieuh() {
+        return GDK_KEY_Hangul_Hieuh;
     }
+    private static final int GDK_KEY_Hangul_A = (int)3775L;
     /**
-     * {@snippet :
-     * #define PANGO_VERSION 15014
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_A 3775
      * }
      */
-    public static int PANGO_VERSION() {
-        return (int)15014L;
+    public static int GDK_KEY_Hangul_A() {
+        return GDK_KEY_Hangul_A;
     }
+    private static final int GDK_KEY_Hangul_AE = (int)3776L;
     /**
-     * {@snippet :
-     * #define CAIRO_FONT_TYPE_ATSUI 3
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_AE 3776
      * }
      */
-    public static int CAIRO_FONT_TYPE_ATSUI() {
-        return (int)3L;
+    public static int GDK_KEY_Hangul_AE() {
+        return GDK_KEY_Hangul_AE;
     }
+    private static final int GDK_KEY_Hangul_YA = (int)3777L;
     /**
-     * {@snippet :
-     * #define CAIRO_VERSION 11708
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_YA 3777
      * }
      */
-    public static int CAIRO_VERSION() {
-        return (int)11708L;
+    public static int GDK_KEY_Hangul_YA() {
+        return GDK_KEY_Hangul_YA;
     }
+    private static final int GDK_KEY_Hangul_YAE = (int)3778L;
     /**
-     * {@snippet :
-     * #define CAIRO_VERSION_STRING "1.17.8"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_YAE 3778
      * }
      */
-    public static MemorySegment CAIRO_VERSION_STRING() {
-        return constants$3445.const$4;
+    public static int GDK_KEY_Hangul_YAE() {
+        return GDK_KEY_Hangul_YAE;
     }
+    private static final int GDK_KEY_Hangul_EO = (int)3779L;
     /**
-     * {@snippet :
-     * #define CAIRO_TAG_DEST "cairo.dest"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_EO 3779
      * }
      */
-    public static MemorySegment CAIRO_TAG_DEST() {
-        return constants$3445.const$5;
+    public static int GDK_KEY_Hangul_EO() {
+        return GDK_KEY_Hangul_EO;
     }
+    private static final int GDK_KEY_Hangul_E = (int)3780L;
     /**
-     * {@snippet :
-     * #define CAIRO_TAG_LINK "Link"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_E 3780
      * }
      */
-    public static MemorySegment CAIRO_TAG_LINK() {
-        return constants$3422.const$0;
+    public static int GDK_KEY_Hangul_E() {
+        return GDK_KEY_Hangul_E;
     }
+    private static final int GDK_KEY_Hangul_YEO = (int)3781L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_JPEG "image/jpeg"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_YEO 3781
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_JPEG() {
-        return constants$3446.const$0;
+    public static int GDK_KEY_Hangul_YEO() {
+        return GDK_KEY_Hangul_YEO;
     }
+    private static final int GDK_KEY_Hangul_YE = (int)3782L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_PNG "image/png"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_YE 3782
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_PNG() {
-        return constants$3446.const$1;
+    public static int GDK_KEY_Hangul_YE() {
+        return GDK_KEY_Hangul_YE;
     }
+    private static final int GDK_KEY_Hangul_O = (int)3783L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_JP2 "image/jp2"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_O 3783
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_JP2() {
-        return constants$3446.const$2;
+    public static int GDK_KEY_Hangul_O() {
+        return GDK_KEY_Hangul_O;
     }
+    private static final int GDK_KEY_Hangul_WA = (int)3784L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_URI "text/x-uri"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_WA 3784
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_URI() {
-        return constants$3446.const$3;
+    public static int GDK_KEY_Hangul_WA() {
+        return GDK_KEY_Hangul_WA;
     }
+    private static final int GDK_KEY_Hangul_WAE = (int)3785L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_UNIQUE_ID "application/x-cairo.uuid"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_WAE 3785
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_UNIQUE_ID() {
-        return constants$3446.const$4;
+    public static int GDK_KEY_Hangul_WAE() {
+        return GDK_KEY_Hangul_WAE;
     }
+    private static final int GDK_KEY_Hangul_OE = (int)3786L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_JBIG2 "application/x-cairo.jbig2"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_OE 3786
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_JBIG2() {
-        return constants$3446.const$5;
+    public static int GDK_KEY_Hangul_OE() {
+        return GDK_KEY_Hangul_OE;
     }
+    private static final int GDK_KEY_Hangul_YO = (int)3787L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_JBIG2_GLOBAL "application/x-cairo.jbig2-global"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_YO 3787
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL() {
-        return constants$3447.const$0;
+    public static int GDK_KEY_Hangul_YO() {
+        return GDK_KEY_Hangul_YO;
     }
+    private static final int GDK_KEY_Hangul_U = (int)3788L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID "application/x-cairo.jbig2-global-id"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_U 3788
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID() {
-        return constants$3447.const$1;
+    public static int GDK_KEY_Hangul_U() {
+        return GDK_KEY_Hangul_U;
     }
+    private static final int GDK_KEY_Hangul_WEO = (int)3789L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_CCITT_FAX "image/g3fax"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_WEO 3789
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX() {
-        return constants$3447.const$2;
+    public static int GDK_KEY_Hangul_WEO() {
+        return GDK_KEY_Hangul_WEO;
     }
+    private static final int GDK_KEY_Hangul_WE = (int)3790L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_CCITT_FAX_PARAMS "application/x-cairo.ccitt.params"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hangul_WE 3790
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX_PARAMS() {
-        return constants$3447.const$3;
+    public static int GDK_KEY_Hangul_WE() {
+        return GDK_KEY_Hangul_WE;
     }
 }
-
 

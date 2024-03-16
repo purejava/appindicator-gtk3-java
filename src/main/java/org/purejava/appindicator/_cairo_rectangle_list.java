@@ -2,112 +2,220 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _cairo_rectangle_list {
- *     enum _cairo_status status;
- *     struct _cairo_rectangle* rectangles;
+ *     cairo_status_t status;
+ *     cairo_rectangle_t *rectangles;
  *     int num_rectangles;
- * };
+ * }
  * }
  */
 public class _cairo_rectangle_list {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1693.const$1;
+    _cairo_rectangle_list() {
+        // Should not be called directly
     }
-    public static VarHandle status$VH() {
-        return constants$1693.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum _cairo_status status;
-     * }
-     */
-    public static int status$get(MemorySegment seg) {
-        return (int)constants$1693.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum _cairo_status status;
-     * }
-     */
-    public static void status$set(MemorySegment seg, int x) {
-        constants$1693.const$2.set(seg, x);
-    }
-    public static int status$get(MemorySegment seg, long index) {
-        return (int)constants$1693.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void status$set(MemorySegment seg, long index, int x) {
-        constants$1693.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle rectangles$VH() {
-        return constants$1693.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _cairo_rectangle* rectangles;
-     * }
-     */
-    public static MemorySegment rectangles$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1693.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _cairo_rectangle* rectangles;
-     * }
-     */
-    public static void rectangles$set(MemorySegment seg, MemorySegment x) {
-        constants$1693.const$3.set(seg, x);
-    }
-    public static MemorySegment rectangles$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1693.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void rectangles$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1693.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle num_rectangles$VH() {
-        return constants$1693.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int num_rectangles;
-     * }
-     */
-    public static int num_rectangles$get(MemorySegment seg) {
-        return (int)constants$1693.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int num_rectangles;
-     * }
-     */
-    public static void num_rectangles$set(MemorySegment seg, int x) {
-        constants$1693.const$4.set(seg, x);
-    }
-    public static int num_rectangles$get(MemorySegment seg, long index) {
-        return (int)constants$1693.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void num_rectangles$set(MemorySegment seg, long index, int x) {
-        constants$1693.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("status"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("rectangles"),
+        app_indicator_h.C_INT.withName("num_rectangles"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_cairo_rectangle_list");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt status$LAYOUT = (OfInt)$LAYOUT.select(groupElement("status"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * cairo_status_t status
+     * }
+     */
+    public static final OfInt status$layout() {
+        return status$LAYOUT;
+    }
+
+    private static final long status$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * cairo_status_t status
+     * }
+     */
+    public static final long status$offset() {
+        return status$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * cairo_status_t status
+     * }
+     */
+    public static int status(MemorySegment struct) {
+        return struct.get(status$LAYOUT, status$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * cairo_status_t status
+     * }
+     */
+    public static void status(MemorySegment struct, int fieldValue) {
+        struct.set(status$LAYOUT, status$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout rectangles$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("rectangles"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * cairo_rectangle_t *rectangles
+     * }
+     */
+    public static final AddressLayout rectangles$layout() {
+        return rectangles$LAYOUT;
+    }
+
+    private static final long rectangles$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * cairo_rectangle_t *rectangles
+     * }
+     */
+    public static final long rectangles$offset() {
+        return rectangles$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * cairo_rectangle_t *rectangles
+     * }
+     */
+    public static MemorySegment rectangles(MemorySegment struct) {
+        return struct.get(rectangles$LAYOUT, rectangles$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * cairo_rectangle_t *rectangles
+     * }
+     */
+    public static void rectangles(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(rectangles$LAYOUT, rectangles$OFFSET, fieldValue);
+    }
+
+    private static final OfInt num_rectangles$LAYOUT = (OfInt)$LAYOUT.select(groupElement("num_rectangles"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int num_rectangles
+     * }
+     */
+    public static final OfInt num_rectangles$layout() {
+        return num_rectangles$LAYOUT;
+    }
+
+    private static final long num_rectangles$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int num_rectangles
+     * }
+     */
+    public static final long num_rectangles$offset() {
+        return num_rectangles$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int num_rectangles
+     * }
+     */
+    public static int num_rectangles(MemorySegment struct) {
+        return struct.get(num_rectangles$LAYOUT, num_rectangles$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int num_rectangles
+     * }
+     */
+    public static void num_rectangles(MemorySegment struct, int fieldValue) {
+        struct.set(num_rectangles$LAYOUT, num_rectangles$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkArrow GtkArrow;
+ * {@snippet lang=c :
+ * typedef struct _GtkArrow GtkArrow
  * }
  */
-public final class GtkArrow extends _GtkArrow {
+public class GtkArrow extends _GtkArrow {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkArrow() {}
+    GtkArrow() {
+        // Should not be called directly
+    }
 }
-
 

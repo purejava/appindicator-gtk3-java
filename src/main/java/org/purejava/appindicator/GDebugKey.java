@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GDebugKey GDebugKey;
+ * {@snippet lang=c :
+ * typedef struct _GDebugKey GDebugKey
  * }
  */
-public final class GDebugKey extends _GDebugKey {
+public class GDebugKey extends _GDebugKey {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GDebugKey() {}
+    GDebugKey() {
+        // Should not be called directly
+    }
 }
-
 

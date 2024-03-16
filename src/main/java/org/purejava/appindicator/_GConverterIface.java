@@ -2,140 +2,325 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GConverterIface {
- *     struct _GTypeInterface g_iface;
- *     enum GConverterResult (*convert)(struct _GConverter*,void*,unsigned long,void*,unsigned long,enum GConverterFlags,unsigned long*,unsigned long*,struct _GError**);
- *     void (*reset)(struct _GConverter*);
- * };
+ *     GTypeInterface g_iface;
+ *     GConverterResult (*convert)(GConverter *, const void *, gsize, void *, gsize, GConverterFlags, gsize *, gsize *, GError **);
+ *     void (*reset)(GConverter *);
+ * }
  * }
  */
 public class _GConverterIface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$802.const$5;
+    _GConverterIface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("convert"),
+        app_indicator_h.C_POINTER.withName("reset")
+    ).withName("_GConverterIface");
+
     /**
-     * {@snippet :
- * enum GConverterResult (*convert)(struct _GConverter*,void*,unsigned long,void*,unsigned long,enum GConverterFlags,unsigned long*,unsigned long*,struct _GError**);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface convert {
-
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, long _x4, int _x5, java.lang.foreign.MemorySegment _x6, java.lang.foreign.MemorySegment _x7, java.lang.foreign.MemorySegment _x8);
-        static MemorySegment allocate(convert fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$803.const$1, fi, constants$803.const$0, scope);
-        }
-        static convert ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, long __x4, int __x5, java.lang.foreign.MemorySegment __x6, java.lang.foreign.MemorySegment __x7, java.lang.foreign.MemorySegment __x8) -> {
-                try {
-                    return (int)constants$803.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6, __x7, __x8);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle convert$VH() {
-        return constants$803.const$3;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GConverterResult (*convert)(struct _GConverter*,void*,unsigned long,void*,unsigned long,enum GConverterFlags,unsigned long*,unsigned long*,struct _GError**);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment convert$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$803.const$3.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GConverterResult (*convert)(struct _GConverter*,void*,unsigned long,void*,unsigned long,enum GConverterFlags,unsigned long*,unsigned long*,struct _GError**);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void convert$set(MemorySegment seg, MemorySegment x) {
-        constants$803.const$3.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment convert$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$803.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void convert$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$803.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static convert convert(MemorySegment segment, Arena scope) {
-        return convert.ofAddress(convert$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*reset)(struct _GConverter*);
+     * {@snippet lang=c :
+     * GConverterResult (*convert)(GConverter *, const void *, gsize, void *, gsize, GConverterFlags, gsize *, gsize *, GError **)
      * }
      */
-    public interface reset {
+    public class convert {
 
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(reset fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$803.const$4, fi, constants$13.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, long _x4, int _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8);
         }
-        static reset ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(convert.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(convert.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, long _x4, int _x5, MemorySegment _x6, MemorySegment _x7, MemorySegment _x8) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5, _x6, _x7, _x8);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle reset$VH() {
-        return constants$803.const$5;
+    private static final AddressLayout convert$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("convert"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GConverterResult (*convert)(GConverter *, const void *, gsize, void *, gsize, GConverterFlags, gsize *, gsize *, GError **)
+     * }
+     */
+    public static final AddressLayout convert$layout() {
+        return convert$LAYOUT;
     }
+
+    private static final long convert$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GConverterResult (*convert)(GConverter *, const void *, gsize, void *, gsize, GConverterFlags, gsize *, gsize *, GError **)
+     * }
+     */
+    public static final long convert$offset() {
+        return convert$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*reset)(struct _GConverter*);
+     * {@snippet lang=c :
+     * GConverterResult (*convert)(GConverter *, const void *, gsize, void *, gsize, GConverterFlags, gsize *, gsize *, GError **)
      * }
      */
-    public static MemorySegment reset$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$803.const$5.get(seg);
+    public static MemorySegment convert(MemorySegment struct) {
+        return struct.get(convert$LAYOUT, convert$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*reset)(struct _GConverter*);
+     * {@snippet lang=c :
+     * GConverterResult (*convert)(GConverter *, const void *, gsize, void *, gsize, GConverterFlags, gsize *, gsize *, GError **)
      * }
      */
-    public static void reset$set(MemorySegment seg, MemorySegment x) {
-        constants$803.const$5.set(seg, x);
+    public static void convert(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(convert$LAYOUT, convert$OFFSET, fieldValue);
     }
-    public static MemorySegment reset$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$803.const$5.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * void (*reset)(GConverter *)
+     * }
+     */
+    public class reset {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(reset.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(reset.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void reset$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$803.const$5.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout reset$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("reset"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*reset)(GConverter *)
+     * }
+     */
+    public static final AddressLayout reset$layout() {
+        return reset$LAYOUT;
     }
-    public static reset reset(MemorySegment segment, Arena scope) {
-        return reset.ofAddress(reset$get(segment), scope);
+
+    private static final long reset$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*reset)(GConverter *)
+     * }
+     */
+    public static final long reset$offset() {
+        return reset$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*reset)(GConverter *)
+     * }
+     */
+    public static MemorySegment reset(MemorySegment struct) {
+        return struct.get(reset$LAYOUT, reset$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*reset)(GConverter *)
+     * }
+     */
+    public static void reset(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(reset$LAYOUT, reset$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

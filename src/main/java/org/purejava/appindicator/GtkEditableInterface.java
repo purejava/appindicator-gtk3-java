@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkEditableInterface GtkEditableInterface;
+ * {@snippet lang=c :
+ * typedef struct _GtkEditableInterface GtkEditableInterface
  * }
  */
-public final class GtkEditableInterface extends _GtkEditableInterface {
+public class GtkEditableInterface extends _GtkEditableInterface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkEditableInterface() {}
+    GtkEditableInterface() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GString GString;
+ * {@snippet lang=c :
+ * typedef struct _GString GString
  * }
  */
-public final class GString extends _GString {
+public class GString extends _GString {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GString() {}
+    GString() {
+        // Should not be called directly
+    }
 }
-
 

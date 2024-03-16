@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GThread GThread;
+ * {@snippet lang=c :
+ * typedef struct _GThread GThread
  * }
  */
-public final class GThread extends _GThread {
+public class GThread extends _GThread {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GThread() {}
+    GThread() {
+        // Should not be called directly
+    }
 }
-
 

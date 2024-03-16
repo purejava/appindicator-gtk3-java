@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkBin GtkBin;
+ * {@snippet lang=c :
+ * typedef struct _GtkBin GtkBin
  * }
  */
-public final class GtkBin extends _GtkBin {
+public class GtkBin extends _GtkBin {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkBin() {}
+    GtkBin() {
+        // Should not be called directly
+    }
 }
-
 

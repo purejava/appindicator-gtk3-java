@@ -2,15 +2,40 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct elf_prstatus prstatus_t;
+ * {@snippet lang=c :
+ * typedef struct elf_prstatus {
+ *     struct elf_siginfo pr_info;
+ *     short pr_cursig;
+ *     unsigned long pr_sigpend;
+ *     unsigned long pr_sighold;
+ *     __pid_t pr_pid;
+ *     __pid_t pr_ppid;
+ *     __pid_t pr_pgrp;
+ *     __pid_t pr_sid;
+ *     struct timeval pr_utime;
+ *     struct timeval pr_stime;
+ *     struct timeval pr_cutime;
+ *     struct timeval pr_cstime;
+ *     elf_gregset_t pr_reg;
+ *     int pr_fpvalid;
+ * } prstatus_t
  * }
  */
-public final class prstatus_t extends elf_prstatus {
+public class prstatus_t extends elf_prstatus {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private prstatus_t() {}
+    prstatus_t() {
+        // Should not be called directly
+    }
 }
-
 

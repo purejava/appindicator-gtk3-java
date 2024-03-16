@@ -2,364 +2,632 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * union _GTokenValue {
- *     void* v_symbol;
- *     char* v_identifier;
- *     unsigned long v_binary;
- *     unsigned long v_octal;
- *     unsigned long v_int;
- *     unsigned long v_int64;
- *     double v_float;
- *     unsigned long v_hex;
- *     char* v_string;
- *     char* v_comment;
- *     unsigned char v_char;
- *     unsigned int v_error;
- * };
+ *     gpointer v_symbol;
+ *     gchar *v_identifier;
+ *     gulong v_binary;
+ *     gulong v_octal;
+ *     gulong v_int;
+ *     guint64 v_int64;
+ *     gdouble v_float;
+ *     gulong v_hex;
+ *     gchar *v_string;
+ *     gchar *v_comment;
+ *     guchar v_char;
+ *     guint v_error;
+ * }
  * }
  */
 public class _GTokenValue {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$420.const$3;
+    _GTokenValue() {
+        // Should not be called directly
     }
-    public static VarHandle v_symbol$VH() {
-        return constants$420.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * void* v_symbol;
-     * }
-     */
-    public static MemorySegment v_symbol$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$420.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * void* v_symbol;
-     * }
-     */
-    public static void v_symbol$set(MemorySegment seg, MemorySegment x) {
-        constants$420.const$4.set(seg, x);
-    }
-    public static MemorySegment v_symbol$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$420.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_symbol$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$420.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_identifier$VH() {
-        return constants$420.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* v_identifier;
-     * }
-     */
-    public static MemorySegment v_identifier$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$420.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* v_identifier;
-     * }
-     */
-    public static void v_identifier$set(MemorySegment seg, MemorySegment x) {
-        constants$420.const$5.set(seg, x);
-    }
-    public static MemorySegment v_identifier$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$420.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_identifier$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$420.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_binary$VH() {
-        return constants$421.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned long v_binary;
-     * }
-     */
-    public static long v_binary$get(MemorySegment seg) {
-        return (long)constants$421.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned long v_binary;
-     * }
-     */
-    public static void v_binary$set(MemorySegment seg, long x) {
-        constants$421.const$0.set(seg, x);
-    }
-    public static long v_binary$get(MemorySegment seg, long index) {
-        return (long)constants$421.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_binary$set(MemorySegment seg, long index, long x) {
-        constants$421.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_octal$VH() {
-        return constants$421.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned long v_octal;
-     * }
-     */
-    public static long v_octal$get(MemorySegment seg) {
-        return (long)constants$421.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned long v_octal;
-     * }
-     */
-    public static void v_octal$set(MemorySegment seg, long x) {
-        constants$421.const$1.set(seg, x);
-    }
-    public static long v_octal$get(MemorySegment seg, long index) {
-        return (long)constants$421.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_octal$set(MemorySegment seg, long index, long x) {
-        constants$421.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_int$VH() {
-        return constants$421.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned long v_int;
-     * }
-     */
-    public static long v_int$get(MemorySegment seg) {
-        return (long)constants$421.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned long v_int;
-     * }
-     */
-    public static void v_int$set(MemorySegment seg, long x) {
-        constants$421.const$2.set(seg, x);
-    }
-    public static long v_int$get(MemorySegment seg, long index) {
-        return (long)constants$421.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_int$set(MemorySegment seg, long index, long x) {
-        constants$421.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_int64$VH() {
-        return constants$421.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned long v_int64;
-     * }
-     */
-    public static long v_int64$get(MemorySegment seg) {
-        return (long)constants$421.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned long v_int64;
-     * }
-     */
-    public static void v_int64$set(MemorySegment seg, long x) {
-        constants$421.const$3.set(seg, x);
-    }
-    public static long v_int64$get(MemorySegment seg, long index) {
-        return (long)constants$421.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_int64$set(MemorySegment seg, long index, long x) {
-        constants$421.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_float$VH() {
-        return constants$421.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * double v_float;
-     * }
-     */
-    public static double v_float$get(MemorySegment seg) {
-        return (double)constants$421.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * double v_float;
-     * }
-     */
-    public static void v_float$set(MemorySegment seg, double x) {
-        constants$421.const$4.set(seg, x);
-    }
-    public static double v_float$get(MemorySegment seg, long index) {
-        return (double)constants$421.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_float$set(MemorySegment seg, long index, double x) {
-        constants$421.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_hex$VH() {
-        return constants$421.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned long v_hex;
-     * }
-     */
-    public static long v_hex$get(MemorySegment seg) {
-        return (long)constants$421.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned long v_hex;
-     * }
-     */
-    public static void v_hex$set(MemorySegment seg, long x) {
-        constants$421.const$5.set(seg, x);
-    }
-    public static long v_hex$get(MemorySegment seg, long index) {
-        return (long)constants$421.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_hex$set(MemorySegment seg, long index, long x) {
-        constants$421.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_string$VH() {
-        return constants$422.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* v_string;
-     * }
-     */
-    public static MemorySegment v_string$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* v_string;
-     * }
-     */
-    public static void v_string$set(MemorySegment seg, MemorySegment x) {
-        constants$422.const$0.set(seg, x);
-    }
-    public static MemorySegment v_string$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_string$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$422.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_comment$VH() {
-        return constants$422.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* v_comment;
-     * }
-     */
-    public static MemorySegment v_comment$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* v_comment;
-     * }
-     */
-    public static void v_comment$set(MemorySegment seg, MemorySegment x) {
-        constants$422.const$1.set(seg, x);
-    }
-    public static MemorySegment v_comment$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_comment$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$422.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_char$VH() {
-        return constants$422.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned char v_char;
-     * }
-     */
-    public static byte v_char$get(MemorySegment seg) {
-        return (byte)constants$422.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned char v_char;
-     * }
-     */
-    public static void v_char$set(MemorySegment seg, byte x) {
-        constants$422.const$2.set(seg, x);
-    }
-    public static byte v_char$get(MemorySegment seg, long index) {
-        return (byte)constants$422.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_char$set(MemorySegment seg, long index, byte x) {
-        constants$422.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle v_error$VH() {
-        return constants$422.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int v_error;
-     * }
-     */
-    public static int v_error$get(MemorySegment seg) {
-        return (int)constants$422.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int v_error;
-     * }
-     */
-    public static void v_error$set(MemorySegment seg, int x) {
-        constants$422.const$3.set(seg, x);
-    }
-    public static int v_error$get(MemorySegment seg, long index) {
-        return (int)constants$422.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void v_error$set(MemorySegment seg, long index, int x) {
-        constants$422.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.unionLayout(
+        app_indicator_h.C_POINTER.withName("v_symbol"),
+        app_indicator_h.C_POINTER.withName("v_identifier"),
+        app_indicator_h.C_LONG.withName("v_binary"),
+        app_indicator_h.C_LONG.withName("v_octal"),
+        app_indicator_h.C_LONG.withName("v_int"),
+        app_indicator_h.C_LONG.withName("v_int64"),
+        app_indicator_h.C_DOUBLE.withName("v_float"),
+        app_indicator_h.C_LONG.withName("v_hex"),
+        app_indicator_h.C_POINTER.withName("v_string"),
+        app_indicator_h.C_POINTER.withName("v_comment"),
+        app_indicator_h.C_CHAR.withName("v_char"),
+        app_indicator_h.C_INT.withName("v_error")
+    ).withName("_GTokenValue");
+
+    /**
+     * The layout of this union
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final AddressLayout v_symbol$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("v_symbol"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer v_symbol
+     * }
+     */
+    public static final AddressLayout v_symbol$layout() {
+        return v_symbol$LAYOUT;
+    }
+
+    private static final long v_symbol$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer v_symbol
+     * }
+     */
+    public static final long v_symbol$offset() {
+        return v_symbol$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer v_symbol
+     * }
+     */
+    public static MemorySegment v_symbol(MemorySegment union) {
+        return union.get(v_symbol$LAYOUT, v_symbol$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer v_symbol
+     * }
+     */
+    public static void v_symbol(MemorySegment union, MemorySegment fieldValue) {
+        union.set(v_symbol$LAYOUT, v_symbol$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout v_identifier$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("v_identifier"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *v_identifier
+     * }
+     */
+    public static final AddressLayout v_identifier$layout() {
+        return v_identifier$LAYOUT;
+    }
+
+    private static final long v_identifier$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *v_identifier
+     * }
+     */
+    public static final long v_identifier$offset() {
+        return v_identifier$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *v_identifier
+     * }
+     */
+    public static MemorySegment v_identifier(MemorySegment union) {
+        return union.get(v_identifier$LAYOUT, v_identifier$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *v_identifier
+     * }
+     */
+    public static void v_identifier(MemorySegment union, MemorySegment fieldValue) {
+        union.set(v_identifier$LAYOUT, v_identifier$OFFSET, fieldValue);
+    }
+
+    private static final OfLong v_binary$LAYOUT = (OfLong)$LAYOUT.select(groupElement("v_binary"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gulong v_binary
+     * }
+     */
+    public static final OfLong v_binary$layout() {
+        return v_binary$LAYOUT;
+    }
+
+    private static final long v_binary$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gulong v_binary
+     * }
+     */
+    public static final long v_binary$offset() {
+        return v_binary$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gulong v_binary
+     * }
+     */
+    public static long v_binary(MemorySegment union) {
+        return union.get(v_binary$LAYOUT, v_binary$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gulong v_binary
+     * }
+     */
+    public static void v_binary(MemorySegment union, long fieldValue) {
+        union.set(v_binary$LAYOUT, v_binary$OFFSET, fieldValue);
+    }
+
+    private static final OfLong v_octal$LAYOUT = (OfLong)$LAYOUT.select(groupElement("v_octal"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gulong v_octal
+     * }
+     */
+    public static final OfLong v_octal$layout() {
+        return v_octal$LAYOUT;
+    }
+
+    private static final long v_octal$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gulong v_octal
+     * }
+     */
+    public static final long v_octal$offset() {
+        return v_octal$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gulong v_octal
+     * }
+     */
+    public static long v_octal(MemorySegment union) {
+        return union.get(v_octal$LAYOUT, v_octal$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gulong v_octal
+     * }
+     */
+    public static void v_octal(MemorySegment union, long fieldValue) {
+        union.set(v_octal$LAYOUT, v_octal$OFFSET, fieldValue);
+    }
+
+    private static final OfLong v_int$LAYOUT = (OfLong)$LAYOUT.select(groupElement("v_int"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gulong v_int
+     * }
+     */
+    public static final OfLong v_int$layout() {
+        return v_int$LAYOUT;
+    }
+
+    private static final long v_int$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gulong v_int
+     * }
+     */
+    public static final long v_int$offset() {
+        return v_int$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gulong v_int
+     * }
+     */
+    public static long v_int(MemorySegment union) {
+        return union.get(v_int$LAYOUT, v_int$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gulong v_int
+     * }
+     */
+    public static void v_int(MemorySegment union, long fieldValue) {
+        union.set(v_int$LAYOUT, v_int$OFFSET, fieldValue);
+    }
+
+    private static final OfLong v_int64$LAYOUT = (OfLong)$LAYOUT.select(groupElement("v_int64"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint64 v_int64
+     * }
+     */
+    public static final OfLong v_int64$layout() {
+        return v_int64$LAYOUT;
+    }
+
+    private static final long v_int64$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint64 v_int64
+     * }
+     */
+    public static final long v_int64$offset() {
+        return v_int64$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint64 v_int64
+     * }
+     */
+    public static long v_int64(MemorySegment union) {
+        return union.get(v_int64$LAYOUT, v_int64$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint64 v_int64
+     * }
+     */
+    public static void v_int64(MemorySegment union, long fieldValue) {
+        union.set(v_int64$LAYOUT, v_int64$OFFSET, fieldValue);
+    }
+
+    private static final OfDouble v_float$LAYOUT = (OfDouble)$LAYOUT.select(groupElement("v_float"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gdouble v_float
+     * }
+     */
+    public static final OfDouble v_float$layout() {
+        return v_float$LAYOUT;
+    }
+
+    private static final long v_float$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gdouble v_float
+     * }
+     */
+    public static final long v_float$offset() {
+        return v_float$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gdouble v_float
+     * }
+     */
+    public static double v_float(MemorySegment union) {
+        return union.get(v_float$LAYOUT, v_float$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gdouble v_float
+     * }
+     */
+    public static void v_float(MemorySegment union, double fieldValue) {
+        union.set(v_float$LAYOUT, v_float$OFFSET, fieldValue);
+    }
+
+    private static final OfLong v_hex$LAYOUT = (OfLong)$LAYOUT.select(groupElement("v_hex"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gulong v_hex
+     * }
+     */
+    public static final OfLong v_hex$layout() {
+        return v_hex$LAYOUT;
+    }
+
+    private static final long v_hex$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gulong v_hex
+     * }
+     */
+    public static final long v_hex$offset() {
+        return v_hex$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gulong v_hex
+     * }
+     */
+    public static long v_hex(MemorySegment union) {
+        return union.get(v_hex$LAYOUT, v_hex$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gulong v_hex
+     * }
+     */
+    public static void v_hex(MemorySegment union, long fieldValue) {
+        union.set(v_hex$LAYOUT, v_hex$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout v_string$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("v_string"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *v_string
+     * }
+     */
+    public static final AddressLayout v_string$layout() {
+        return v_string$LAYOUT;
+    }
+
+    private static final long v_string$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *v_string
+     * }
+     */
+    public static final long v_string$offset() {
+        return v_string$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *v_string
+     * }
+     */
+    public static MemorySegment v_string(MemorySegment union) {
+        return union.get(v_string$LAYOUT, v_string$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *v_string
+     * }
+     */
+    public static void v_string(MemorySegment union, MemorySegment fieldValue) {
+        union.set(v_string$LAYOUT, v_string$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout v_comment$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("v_comment"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *v_comment
+     * }
+     */
+    public static final AddressLayout v_comment$layout() {
+        return v_comment$LAYOUT;
+    }
+
+    private static final long v_comment$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *v_comment
+     * }
+     */
+    public static final long v_comment$offset() {
+        return v_comment$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *v_comment
+     * }
+     */
+    public static MemorySegment v_comment(MemorySegment union) {
+        return union.get(v_comment$LAYOUT, v_comment$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *v_comment
+     * }
+     */
+    public static void v_comment(MemorySegment union, MemorySegment fieldValue) {
+        union.set(v_comment$LAYOUT, v_comment$OFFSET, fieldValue);
+    }
+
+    private static final OfByte v_char$LAYOUT = (OfByte)$LAYOUT.select(groupElement("v_char"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guchar v_char
+     * }
+     */
+    public static final OfByte v_char$layout() {
+        return v_char$LAYOUT;
+    }
+
+    private static final long v_char$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guchar v_char
+     * }
+     */
+    public static final long v_char$offset() {
+        return v_char$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guchar v_char
+     * }
+     */
+    public static byte v_char(MemorySegment union) {
+        return union.get(v_char$LAYOUT, v_char$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guchar v_char
+     * }
+     */
+    public static void v_char(MemorySegment union, byte fieldValue) {
+        union.set(v_char$LAYOUT, v_char$OFFSET, fieldValue);
+    }
+
+    private static final OfInt v_error$LAYOUT = (OfInt)$LAYOUT.select(groupElement("v_error"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint v_error
+     * }
+     */
+    public static final OfInt v_error$layout() {
+        return v_error$LAYOUT;
+    }
+
+    private static final long v_error$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint v_error
+     * }
+     */
+    public static final long v_error$offset() {
+        return v_error$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint v_error
+     * }
+     */
+    public static int v_error(MemorySegment union) {
+        return union.get(v_error$LAYOUT, v_error$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint v_error
+     * }
+     */
+    public static void v_error(MemorySegment union, int fieldValue) {
+        union.set(v_error$LAYOUT, v_error$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this union
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

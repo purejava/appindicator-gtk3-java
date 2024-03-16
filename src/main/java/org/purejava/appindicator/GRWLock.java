@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GRWLock GRWLock;
+ * {@snippet lang=c :
+ * typedef struct _GRWLock GRWLock
  * }
  */
-public final class GRWLock extends _GRWLock {
+public class GRWLock extends _GRWLock {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GRWLock() {}
+    GRWLock() {
+        // Should not be called directly
+    }
 }
-
 

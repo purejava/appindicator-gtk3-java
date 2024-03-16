@@ -3,28 +3,60 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
 import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
+
 /**
- * {@snippet :
- * int (*GPollFunc)(struct _GPollFD* ufds,unsigned int nfsd,int timeout_);
+ * {@snippet lang=c :
+ * typedef gint (*GPollFunc)(GPollFD *, guint, gint)
  * }
  */
-public interface GPollFunc {
+public class GPollFunc {
 
-    int apply(java.lang.foreign.MemorySegment ufds, int nfsd, int timeout_);
-    static MemorySegment allocate(GPollFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$247.const$1, fi, constants$49.const$0, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment ufds, int nfsd, int timeout_);
     }
-    static GPollFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _ufds, int _nfsd, int _timeout_) -> {
-            try {
-                return (int)constants$247.const$2.invokeExact(symbol, _ufds, _nfsd, _timeout_);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_INT
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GPollFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GPollFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment ufds, int nfsd, int timeout_) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, ufds, nfsd, timeout_);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

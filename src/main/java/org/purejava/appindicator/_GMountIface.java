@@ -2,1490 +2,2751 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GMountIface {
- *     struct _GTypeInterface g_iface;
- *     void (*changed)(struct _GMount*);
- *     void (*unmounted)(struct _GMount*);
- *     struct _GFile* (*get_root)(struct _GMount*);
- *     char* (*get_name)(struct _GMount*);
- *     struct _GIcon* (*get_icon)(struct _GMount*);
- *     char* (*get_uuid)(struct _GMount*);
- *     struct _GVolume* (*get_volume)(struct _GMount*);
- *     struct _GDrive* (*get_drive)(struct _GMount*);
- *     int (*can_unmount)(struct _GMount*);
- *     int (*can_eject)(struct _GMount*);
- *     void (*unmount)(struct _GMount*,enum GMountUnmountFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     int (*unmount_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
- *     void (*eject)(struct _GMount*,enum GMountUnmountFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     int (*eject_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
- *     void (*remount)(struct _GMount*,enum GMountMountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     int (*remount_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
- *     void (*guess_content_type)(struct _GMount*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     char** (*guess_content_type_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
- *     char** (*guess_content_type_sync)(struct _GMount*,int,struct _GCancellable*,struct _GError**);
- *     void (*pre_unmount)(struct _GMount*);
- *     void (*unmount_with_operation)(struct _GMount*,enum GMountUnmountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     int (*unmount_with_operation_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
- *     void (*eject_with_operation)(struct _GMount*,enum GMountUnmountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     int (*eject_with_operation_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
- *     struct _GFile* (*get_default_location)(struct _GMount*);
- *     char* (*get_sort_key)(struct _GMount*);
- *     struct _GIcon* (*get_symbolic_icon)(struct _GMount*);
- * };
+ *     GTypeInterface g_iface;
+ *     void (*changed)(GMount *);
+ *     void (*unmounted)(GMount *);
+ *     GFile *(*get_root)(GMount *);
+ *     char *(*get_name)(GMount *);
+ *     GIcon *(*get_icon)(GMount *);
+ *     char *(*get_uuid)(GMount *);
+ *     GVolume *(*get_volume)(GMount *);
+ *     GDrive *(*get_drive)(GMount *);
+ *     gboolean (*can_unmount)(GMount *);
+ *     gboolean (*can_eject)(GMount *);
+ *     void (*unmount)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     gboolean (*unmount_finish)(GMount *, GAsyncResult *, GError **);
+ *     void (*eject)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     gboolean (*eject_finish)(GMount *, GAsyncResult *, GError **);
+ *     void (*remount)(GMount *, GMountMountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     gboolean (*remount_finish)(GMount *, GAsyncResult *, GError **);
+ *     void (*guess_content_type)(GMount *, gboolean, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     gchar **(*guess_content_type_finish)(GMount *, GAsyncResult *, GError **);
+ *     gchar **(*guess_content_type_sync)(GMount *, gboolean, GCancellable *, GError **);
+ *     void (*pre_unmount)(GMount *);
+ *     void (*unmount_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     gboolean (*unmount_with_operation_finish)(GMount *, GAsyncResult *, GError **);
+ *     void (*eject_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     gboolean (*eject_with_operation_finish)(GMount *, GAsyncResult *, GError **);
+ *     GFile *(*get_default_location)(GMount *);
+ *     const gchar *(*get_sort_key)(GMount *);
+ *     GIcon *(*get_symbolic_icon)(GMount *);
+ * }
  * }
  */
 public class _GMountIface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1159.const$1;
+    _GMountIface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("changed"),
+        app_indicator_h.C_POINTER.withName("unmounted"),
+        app_indicator_h.C_POINTER.withName("get_root"),
+        app_indicator_h.C_POINTER.withName("get_name"),
+        app_indicator_h.C_POINTER.withName("get_icon"),
+        app_indicator_h.C_POINTER.withName("get_uuid"),
+        app_indicator_h.C_POINTER.withName("get_volume"),
+        app_indicator_h.C_POINTER.withName("get_drive"),
+        app_indicator_h.C_POINTER.withName("can_unmount"),
+        app_indicator_h.C_POINTER.withName("can_eject"),
+        app_indicator_h.C_POINTER.withName("unmount"),
+        app_indicator_h.C_POINTER.withName("unmount_finish"),
+        app_indicator_h.C_POINTER.withName("eject"),
+        app_indicator_h.C_POINTER.withName("eject_finish"),
+        app_indicator_h.C_POINTER.withName("remount"),
+        app_indicator_h.C_POINTER.withName("remount_finish"),
+        app_indicator_h.C_POINTER.withName("guess_content_type"),
+        app_indicator_h.C_POINTER.withName("guess_content_type_finish"),
+        app_indicator_h.C_POINTER.withName("guess_content_type_sync"),
+        app_indicator_h.C_POINTER.withName("pre_unmount"),
+        app_indicator_h.C_POINTER.withName("unmount_with_operation"),
+        app_indicator_h.C_POINTER.withName("unmount_with_operation_finish"),
+        app_indicator_h.C_POINTER.withName("eject_with_operation"),
+        app_indicator_h.C_POINTER.withName("eject_with_operation_finish"),
+        app_indicator_h.C_POINTER.withName("get_default_location"),
+        app_indicator_h.C_POINTER.withName("get_sort_key"),
+        app_indicator_h.C_POINTER.withName("get_symbolic_icon")
+    ).withName("_GMountIface");
+
     /**
-     * {@snippet :
- * void (*changed)(struct _GMount*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface changed {
-
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(changed fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1159.const$2, fi, constants$13.const$1, scope);
-        }
-        static changed ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle changed$VH() {
-        return constants$1159.const$3;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*changed)(struct _GMount*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1159.const$3.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*changed)(struct _GMount*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void changed$set(MemorySegment seg, MemorySegment x) {
-        constants$1159.const$3.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1159.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void changed$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1159.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static changed changed(MemorySegment segment, Arena scope) {
-        return changed.ofAddress(changed$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*unmounted)(struct _GMount*);
+     * {@snippet lang=c :
+     * void (*changed)(GMount *)
      * }
      */
-    public interface unmounted {
+    public class changed {
 
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(unmounted fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1159.const$4, fi, constants$13.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static unmounted ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(changed.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(changed.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle unmounted$VH() {
-        return constants$1159.const$5;
+    private static final AddressLayout changed$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("changed"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*changed)(GMount *)
+     * }
+     */
+    public static final AddressLayout changed$layout() {
+        return changed$LAYOUT;
     }
+
+    private static final long changed$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*changed)(GMount *)
+     * }
+     */
+    public static final long changed$offset() {
+        return changed$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*unmounted)(struct _GMount*);
+     * {@snippet lang=c :
+     * void (*changed)(GMount *)
      * }
      */
-    public static MemorySegment unmounted$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1159.const$5.get(seg);
+    public static MemorySegment changed(MemorySegment struct) {
+        return struct.get(changed$LAYOUT, changed$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*unmounted)(struct _GMount*);
+     * {@snippet lang=c :
+     * void (*changed)(GMount *)
      * }
      */
-    public static void unmounted$set(MemorySegment seg, MemorySegment x) {
-        constants$1159.const$5.set(seg, x);
+    public static void changed(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(changed$LAYOUT, changed$OFFSET, fieldValue);
     }
-    public static MemorySegment unmounted$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1159.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void unmounted$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1159.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static unmounted unmounted(MemorySegment segment, Arena scope) {
-        return unmounted.ofAddress(unmounted$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GFile* (*get_root)(struct _GMount*);
+     * {@snippet lang=c :
+     * void (*unmounted)(GMount *)
      * }
      */
-    public interface get_root {
+    public class unmounted {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_root fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1160.const$0, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static get_root ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(unmounted.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(unmounted.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_root$VH() {
-        return constants$1160.const$1;
+    private static final AddressLayout unmounted$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("unmounted"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*unmounted)(GMount *)
+     * }
+     */
+    public static final AddressLayout unmounted$layout() {
+        return unmounted$LAYOUT;
     }
+
+    private static final long unmounted$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*unmounted)(GMount *)
+     * }
+     */
+    public static final long unmounted$offset() {
+        return unmounted$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GFile* (*get_root)(struct _GMount*);
+     * {@snippet lang=c :
+     * void (*unmounted)(GMount *)
      * }
      */
-    public static MemorySegment get_root$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1160.const$1.get(seg);
+    public static MemorySegment unmounted(MemorySegment struct) {
+        return struct.get(unmounted$LAYOUT, unmounted$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GFile* (*get_root)(struct _GMount*);
+     * {@snippet lang=c :
+     * void (*unmounted)(GMount *)
      * }
      */
-    public static void get_root$set(MemorySegment seg, MemorySegment x) {
-        constants$1160.const$1.set(seg, x);
+    public static void unmounted(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(unmounted$LAYOUT, unmounted$OFFSET, fieldValue);
     }
-    public static MemorySegment get_root$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1160.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_root$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1160.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_root get_root(MemorySegment segment, Arena scope) {
-        return get_root.ofAddress(get_root$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * char* (*get_name)(struct _GMount*);
+     * {@snippet lang=c :
+     * GFile *(*get_root)(GMount *)
      * }
      */
-    public interface get_name {
+    public class get_root {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_name fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1160.const$2, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_name ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_root.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_root.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_name$VH() {
-        return constants$1160.const$3;
+    private static final AddressLayout get_root$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_root"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GFile *(*get_root)(GMount *)
+     * }
+     */
+    public static final AddressLayout get_root$layout() {
+        return get_root$LAYOUT;
     }
+
+    private static final long get_root$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GFile *(*get_root)(GMount *)
+     * }
+     */
+    public static final long get_root$offset() {
+        return get_root$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* (*get_name)(struct _GMount*);
+     * {@snippet lang=c :
+     * GFile *(*get_root)(GMount *)
      * }
      */
-    public static MemorySegment get_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1160.const$3.get(seg);
+    public static MemorySegment get_root(MemorySegment struct) {
+        return struct.get(get_root$LAYOUT, get_root$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* (*get_name)(struct _GMount*);
+     * {@snippet lang=c :
+     * GFile *(*get_root)(GMount *)
      * }
      */
-    public static void get_name$set(MemorySegment seg, MemorySegment x) {
-        constants$1160.const$3.set(seg, x);
+    public static void get_root(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_root$LAYOUT, get_root$OFFSET, fieldValue);
     }
-    public static MemorySegment get_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1160.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_name$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1160.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_name get_name(MemorySegment segment, Arena scope) {
-        return get_name.ofAddress(get_name$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GIcon* (*get_icon)(struct _GMount*);
+     * {@snippet lang=c :
+     * char *(*get_name)(GMount *)
      * }
      */
-    public interface get_icon {
+    public class get_name {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_icon fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1160.const$4, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_icon ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_name.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_name.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_icon$VH() {
-        return constants$1160.const$5;
+    private static final AddressLayout get_name$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_name"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * char *(*get_name)(GMount *)
+     * }
+     */
+    public static final AddressLayout get_name$layout() {
+        return get_name$LAYOUT;
     }
+
+    private static final long get_name$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * char *(*get_name)(GMount *)
+     * }
+     */
+    public static final long get_name$offset() {
+        return get_name$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GIcon* (*get_icon)(struct _GMount*);
+     * {@snippet lang=c :
+     * char *(*get_name)(GMount *)
      * }
      */
-    public static MemorySegment get_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1160.const$5.get(seg);
+    public static MemorySegment get_name(MemorySegment struct) {
+        return struct.get(get_name$LAYOUT, get_name$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GIcon* (*get_icon)(struct _GMount*);
+     * {@snippet lang=c :
+     * char *(*get_name)(GMount *)
      * }
      */
-    public static void get_icon$set(MemorySegment seg, MemorySegment x) {
-        constants$1160.const$5.set(seg, x);
+    public static void get_name(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_name$LAYOUT, get_name$OFFSET, fieldValue);
     }
-    public static MemorySegment get_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1160.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_icon$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1160.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_icon get_icon(MemorySegment segment, Arena scope) {
-        return get_icon.ofAddress(get_icon$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * char* (*get_uuid)(struct _GMount*);
+     * {@snippet lang=c :
+     * GIcon *(*get_icon)(GMount *)
      * }
      */
-    public interface get_uuid {
+    public class get_icon {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_uuid fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1161.const$0, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_uuid ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_icon.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_icon.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_uuid$VH() {
-        return constants$1161.const$1;
+    private static final AddressLayout get_icon$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_icon"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIcon *(*get_icon)(GMount *)
+     * }
+     */
+    public static final AddressLayout get_icon$layout() {
+        return get_icon$LAYOUT;
     }
+
+    private static final long get_icon$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIcon *(*get_icon)(GMount *)
+     * }
+     */
+    public static final long get_icon$offset() {
+        return get_icon$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* (*get_uuid)(struct _GMount*);
+     * {@snippet lang=c :
+     * GIcon *(*get_icon)(GMount *)
      * }
      */
-    public static MemorySegment get_uuid$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1161.const$1.get(seg);
+    public static MemorySegment get_icon(MemorySegment struct) {
+        return struct.get(get_icon$LAYOUT, get_icon$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* (*get_uuid)(struct _GMount*);
+     * {@snippet lang=c :
+     * GIcon *(*get_icon)(GMount *)
      * }
      */
-    public static void get_uuid$set(MemorySegment seg, MemorySegment x) {
-        constants$1161.const$1.set(seg, x);
+    public static void get_icon(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_icon$LAYOUT, get_icon$OFFSET, fieldValue);
     }
-    public static MemorySegment get_uuid$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1161.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_uuid$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1161.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_uuid get_uuid(MemorySegment segment, Arena scope) {
-        return get_uuid.ofAddress(get_uuid$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GVolume* (*get_volume)(struct _GMount*);
+     * {@snippet lang=c :
+     * char *(*get_uuid)(GMount *)
      * }
      */
-    public interface get_volume {
+    public class get_uuid {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_volume fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1161.const$2, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_volume ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_uuid.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_uuid.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_volume$VH() {
-        return constants$1161.const$3;
+    private static final AddressLayout get_uuid$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_uuid"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * char *(*get_uuid)(GMount *)
+     * }
+     */
+    public static final AddressLayout get_uuid$layout() {
+        return get_uuid$LAYOUT;
     }
+
+    private static final long get_uuid$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * char *(*get_uuid)(GMount *)
+     * }
+     */
+    public static final long get_uuid$offset() {
+        return get_uuid$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GVolume* (*get_volume)(struct _GMount*);
+     * {@snippet lang=c :
+     * char *(*get_uuid)(GMount *)
      * }
      */
-    public static MemorySegment get_volume$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1161.const$3.get(seg);
+    public static MemorySegment get_uuid(MemorySegment struct) {
+        return struct.get(get_uuid$LAYOUT, get_uuid$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GVolume* (*get_volume)(struct _GMount*);
+     * {@snippet lang=c :
+     * char *(*get_uuid)(GMount *)
      * }
      */
-    public static void get_volume$set(MemorySegment seg, MemorySegment x) {
-        constants$1161.const$3.set(seg, x);
+    public static void get_uuid(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_uuid$LAYOUT, get_uuid$OFFSET, fieldValue);
     }
-    public static MemorySegment get_volume$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1161.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_volume$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1161.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_volume get_volume(MemorySegment segment, Arena scope) {
-        return get_volume.ofAddress(get_volume$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GDrive* (*get_drive)(struct _GMount*);
+     * {@snippet lang=c :
+     * GVolume *(*get_volume)(GMount *)
      * }
      */
-    public interface get_drive {
+    public class get_volume {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_drive fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1161.const$4, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_drive ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_volume.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_volume.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_drive$VH() {
-        return constants$1161.const$5;
+    private static final AddressLayout get_volume$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_volume"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GVolume *(*get_volume)(GMount *)
+     * }
+     */
+    public static final AddressLayout get_volume$layout() {
+        return get_volume$LAYOUT;
     }
+
+    private static final long get_volume$OFFSET = 64;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GVolume *(*get_volume)(GMount *)
+     * }
+     */
+    public static final long get_volume$offset() {
+        return get_volume$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GDrive* (*get_drive)(struct _GMount*);
+     * {@snippet lang=c :
+     * GVolume *(*get_volume)(GMount *)
      * }
      */
-    public static MemorySegment get_drive$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1161.const$5.get(seg);
+    public static MemorySegment get_volume(MemorySegment struct) {
+        return struct.get(get_volume$LAYOUT, get_volume$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GDrive* (*get_drive)(struct _GMount*);
+     * {@snippet lang=c :
+     * GVolume *(*get_volume)(GMount *)
      * }
      */
-    public static void get_drive$set(MemorySegment seg, MemorySegment x) {
-        constants$1161.const$5.set(seg, x);
+    public static void get_volume(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_volume$LAYOUT, get_volume$OFFSET, fieldValue);
     }
-    public static MemorySegment get_drive$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1161.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_drive$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1161.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_drive get_drive(MemorySegment segment, Arena scope) {
-        return get_drive.ofAddress(get_drive$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*can_unmount)(struct _GMount*);
+     * {@snippet lang=c :
+     * GDrive *(*get_drive)(GMount *)
      * }
      */
-    public interface can_unmount {
+    public class get_drive {
 
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(can_unmount fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1162.const$0, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static can_unmount ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_drive.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_drive.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle can_unmount$VH() {
-        return constants$1162.const$1;
+    private static final AddressLayout get_drive$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_drive"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GDrive *(*get_drive)(GMount *)
+     * }
+     */
+    public static final AddressLayout get_drive$layout() {
+        return get_drive$LAYOUT;
     }
+
+    private static final long get_drive$OFFSET = 72;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GDrive *(*get_drive)(GMount *)
+     * }
+     */
+    public static final long get_drive$offset() {
+        return get_drive$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*can_unmount)(struct _GMount*);
+     * {@snippet lang=c :
+     * GDrive *(*get_drive)(GMount *)
      * }
      */
-    public static MemorySegment can_unmount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1162.const$1.get(seg);
+    public static MemorySegment get_drive(MemorySegment struct) {
+        return struct.get(get_drive$LAYOUT, get_drive$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*can_unmount)(struct _GMount*);
+     * {@snippet lang=c :
+     * GDrive *(*get_drive)(GMount *)
      * }
      */
-    public static void can_unmount$set(MemorySegment seg, MemorySegment x) {
-        constants$1162.const$1.set(seg, x);
+    public static void get_drive(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_drive$LAYOUT, get_drive$OFFSET, fieldValue);
     }
-    public static MemorySegment can_unmount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1162.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void can_unmount$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1162.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static can_unmount can_unmount(MemorySegment segment, Arena scope) {
-        return can_unmount.ofAddress(can_unmount$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*can_eject)(struct _GMount*);
+     * {@snippet lang=c :
+     * gboolean (*can_unmount)(GMount *)
      * }
      */
-    public interface can_eject {
+    public class can_unmount {
 
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(can_eject fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1162.const$2, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static can_eject ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(can_unmount.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(can_unmount.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle can_eject$VH() {
-        return constants$1162.const$3;
+    private static final AddressLayout can_unmount$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("can_unmount"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*can_unmount)(GMount *)
+     * }
+     */
+    public static final AddressLayout can_unmount$layout() {
+        return can_unmount$LAYOUT;
     }
+
+    private static final long can_unmount$OFFSET = 80;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*can_unmount)(GMount *)
+     * }
+     */
+    public static final long can_unmount$offset() {
+        return can_unmount$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*can_eject)(struct _GMount*);
+     * {@snippet lang=c :
+     * gboolean (*can_unmount)(GMount *)
      * }
      */
-    public static MemorySegment can_eject$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1162.const$3.get(seg);
+    public static MemorySegment can_unmount(MemorySegment struct) {
+        return struct.get(can_unmount$LAYOUT, can_unmount$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*can_eject)(struct _GMount*);
+     * {@snippet lang=c :
+     * gboolean (*can_unmount)(GMount *)
      * }
      */
-    public static void can_eject$set(MemorySegment seg, MemorySegment x) {
-        constants$1162.const$3.set(seg, x);
+    public static void can_unmount(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(can_unmount$LAYOUT, can_unmount$OFFSET, fieldValue);
     }
-    public static MemorySegment can_eject$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1162.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void can_eject$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1162.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static can_eject can_eject(MemorySegment segment, Arena scope) {
-        return can_eject.ofAddress(can_eject$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*unmount)(struct _GMount*,enum GMountUnmountFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*can_eject)(GMount *)
      * }
      */
-    public interface unmount {
+    public class can_eject {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(unmount fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1162.const$4, fi, constants$281.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static unmount ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
-                try {
-                    constants$754.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(can_eject.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(can_eject.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle unmount$VH() {
-        return constants$1162.const$5;
+    private static final AddressLayout can_eject$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("can_eject"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*can_eject)(GMount *)
+     * }
+     */
+    public static final AddressLayout can_eject$layout() {
+        return can_eject$LAYOUT;
     }
+
+    private static final long can_eject$OFFSET = 88;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*can_eject)(GMount *)
+     * }
+     */
+    public static final long can_eject$offset() {
+        return can_eject$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*unmount)(struct _GMount*,enum GMountUnmountFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*can_eject)(GMount *)
      * }
      */
-    public static MemorySegment unmount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1162.const$5.get(seg);
+    public static MemorySegment can_eject(MemorySegment struct) {
+        return struct.get(can_eject$LAYOUT, can_eject$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*unmount)(struct _GMount*,enum GMountUnmountFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*can_eject)(GMount *)
      * }
      */
-    public static void unmount$set(MemorySegment seg, MemorySegment x) {
-        constants$1162.const$5.set(seg, x);
+    public static void can_eject(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(can_eject$LAYOUT, can_eject$OFFSET, fieldValue);
     }
-    public static MemorySegment unmount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1162.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void unmount$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1162.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static unmount unmount(MemorySegment segment, Arena scope) {
-        return unmount.ofAddress(unmount$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*unmount_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*unmount)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface unmount_finish {
+    public class unmount {
 
-        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(unmount_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1163.const$0, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static unmount_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(unmount.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(unmount.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle unmount_finish$VH() {
-        return constants$1163.const$1;
+    private static final AddressLayout unmount$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("unmount"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*unmount)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout unmount$layout() {
+        return unmount$LAYOUT;
     }
+
+    private static final long unmount$OFFSET = 96;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*unmount)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long unmount$offset() {
+        return unmount$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*unmount_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*unmount)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment unmount_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1163.const$1.get(seg);
+    public static MemorySegment unmount(MemorySegment struct) {
+        return struct.get(unmount$LAYOUT, unmount$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*unmount_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*unmount)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void unmount_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1163.const$1.set(seg, x);
+    public static void unmount(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(unmount$LAYOUT, unmount$OFFSET, fieldValue);
     }
-    public static MemorySegment unmount_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1163.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void unmount_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1163.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static unmount_finish unmount_finish(MemorySegment segment, Arena scope) {
-        return unmount_finish.ofAddress(unmount_finish$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*eject)(struct _GMount*,enum GMountUnmountFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*unmount_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public interface eject {
+    public class unmount_finish {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(eject fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1163.const$2, fi, constants$281.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static eject ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
-                try {
-                    constants$754.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(unmount_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(unmount_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle eject$VH() {
-        return constants$1163.const$3;
+    private static final AddressLayout unmount_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("unmount_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*unmount_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout unmount_finish$layout() {
+        return unmount_finish$LAYOUT;
     }
+
+    private static final long unmount_finish$OFFSET = 104;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*unmount_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long unmount_finish$offset() {
+        return unmount_finish$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*eject)(struct _GMount*,enum GMountUnmountFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*unmount_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static MemorySegment eject$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1163.const$3.get(seg);
+    public static MemorySegment unmount_finish(MemorySegment struct) {
+        return struct.get(unmount_finish$LAYOUT, unmount_finish$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*eject)(struct _GMount*,enum GMountUnmountFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*unmount_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static void eject$set(MemorySegment seg, MemorySegment x) {
-        constants$1163.const$3.set(seg, x);
+    public static void unmount_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(unmount_finish$LAYOUT, unmount_finish$OFFSET, fieldValue);
     }
-    public static MemorySegment eject$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1163.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void eject$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1163.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static eject eject(MemorySegment segment, Arena scope) {
-        return eject.ofAddress(eject$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*eject_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*eject)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface eject_finish {
+    public class eject {
 
-        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(eject_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1163.const$4, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static eject_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(eject.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(eject.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle eject_finish$VH() {
-        return constants$1163.const$5;
+    private static final AddressLayout eject$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("eject"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*eject)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout eject$layout() {
+        return eject$LAYOUT;
     }
+
+    private static final long eject$OFFSET = 112;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*eject)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long eject$offset() {
+        return eject$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*eject_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*eject)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment eject_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1163.const$5.get(seg);
+    public static MemorySegment eject(MemorySegment struct) {
+        return struct.get(eject$LAYOUT, eject$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*eject_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*eject)(GMount *, GMountUnmountFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void eject_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1163.const$5.set(seg, x);
+    public static void eject(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(eject$LAYOUT, eject$OFFSET, fieldValue);
     }
-    public static MemorySegment eject_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1163.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void eject_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1163.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static eject_finish eject_finish(MemorySegment segment, Arena scope) {
-        return eject_finish.ofAddress(eject_finish$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*remount)(struct _GMount*,enum GMountMountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*eject_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public interface remount {
+    public class eject_finish {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(remount fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1164.const$0, fi, constants$380.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static remount ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
-                try {
-                    constants$945.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(eject_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(eject_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle remount$VH() {
-        return constants$1164.const$1;
+    private static final AddressLayout eject_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("eject_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*eject_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout eject_finish$layout() {
+        return eject_finish$LAYOUT;
     }
+
+    private static final long eject_finish$OFFSET = 120;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*eject_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long eject_finish$offset() {
+        return eject_finish$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*remount)(struct _GMount*,enum GMountMountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*eject_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static MemorySegment remount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1164.const$1.get(seg);
+    public static MemorySegment eject_finish(MemorySegment struct) {
+        return struct.get(eject_finish$LAYOUT, eject_finish$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*remount)(struct _GMount*,enum GMountMountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*eject_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static void remount$set(MemorySegment seg, MemorySegment x) {
-        constants$1164.const$1.set(seg, x);
+    public static void eject_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(eject_finish$LAYOUT, eject_finish$OFFSET, fieldValue);
     }
-    public static MemorySegment remount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1164.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void remount$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1164.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static remount remount(MemorySegment segment, Arena scope) {
-        return remount.ofAddress(remount$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*remount_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*remount)(GMount *, GMountMountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface remount_finish {
+    public class remount {
 
-        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(remount_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1164.const$2, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5);
         }
-        static remount_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(remount.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(remount.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle remount_finish$VH() {
-        return constants$1164.const$3;
+    private static final AddressLayout remount$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remount"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*remount)(GMount *, GMountMountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout remount$layout() {
+        return remount$LAYOUT;
     }
+
+    private static final long remount$OFFSET = 128;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*remount)(GMount *, GMountMountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long remount$offset() {
+        return remount$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*remount_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*remount)(GMount *, GMountMountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment remount_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1164.const$3.get(seg);
+    public static MemorySegment remount(MemorySegment struct) {
+        return struct.get(remount$LAYOUT, remount$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*remount_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*remount)(GMount *, GMountMountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void remount_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1164.const$3.set(seg, x);
+    public static void remount(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(remount$LAYOUT, remount$OFFSET, fieldValue);
     }
-    public static MemorySegment remount_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1164.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void remount_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1164.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static remount_finish remount_finish(MemorySegment segment, Arena scope) {
-        return remount_finish.ofAddress(remount_finish$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*guess_content_type)(struct _GMount*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*remount_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public interface guess_content_type {
+    public class remount_finish {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(guess_content_type fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1164.const$4, fi, constants$281.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static guess_content_type ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
-                try {
-                    constants$754.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(remount_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(remount_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle guess_content_type$VH() {
-        return constants$1164.const$5;
+    private static final AddressLayout remount_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("remount_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*remount_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout remount_finish$layout() {
+        return remount_finish$LAYOUT;
     }
+
+    private static final long remount_finish$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*remount_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long remount_finish$offset() {
+        return remount_finish$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*guess_content_type)(struct _GMount*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*remount_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static MemorySegment guess_content_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1164.const$5.get(seg);
+    public static MemorySegment remount_finish(MemorySegment struct) {
+        return struct.get(remount_finish$LAYOUT, remount_finish$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*guess_content_type)(struct _GMount*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*remount_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static void guess_content_type$set(MemorySegment seg, MemorySegment x) {
-        constants$1164.const$5.set(seg, x);
+    public static void remount_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(remount_finish$LAYOUT, remount_finish$OFFSET, fieldValue);
     }
-    public static MemorySegment guess_content_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1164.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void guess_content_type$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1164.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static guess_content_type guess_content_type(MemorySegment segment, Arena scope) {
-        return guess_content_type.ofAddress(guess_content_type$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * char** (*guess_content_type_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*guess_content_type)(GMount *, gboolean, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface guess_content_type_finish {
+    public class guess_content_type {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(guess_content_type_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1165.const$0, fi, constants$23.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static guess_content_type_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(guess_content_type.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(guess_content_type.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle guess_content_type_finish$VH() {
-        return constants$1165.const$1;
+    private static final AddressLayout guess_content_type$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("guess_content_type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*guess_content_type)(GMount *, gboolean, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout guess_content_type$layout() {
+        return guess_content_type$LAYOUT;
     }
+
+    private static final long guess_content_type$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*guess_content_type)(GMount *, gboolean, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long guess_content_type$offset() {
+        return guess_content_type$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char** (*guess_content_type_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*guess_content_type)(GMount *, gboolean, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment guess_content_type_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1165.const$1.get(seg);
+    public static MemorySegment guess_content_type(MemorySegment struct) {
+        return struct.get(guess_content_type$LAYOUT, guess_content_type$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char** (*guess_content_type_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*guess_content_type)(GMount *, gboolean, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void guess_content_type_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1165.const$1.set(seg, x);
+    public static void guess_content_type(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(guess_content_type$LAYOUT, guess_content_type$OFFSET, fieldValue);
     }
-    public static MemorySegment guess_content_type_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1165.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void guess_content_type_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1165.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static guess_content_type_finish guess_content_type_finish(MemorySegment segment, Arena scope) {
-        return guess_content_type_finish.ofAddress(guess_content_type_finish$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * char** (*guess_content_type_sync)(struct _GMount*,int,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * gchar **(*guess_content_type_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public interface guess_content_type_sync {
+    public class guess_content_type_finish {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(guess_content_type_sync fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1165.const$2, fi, constants$180.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static guess_content_type_sync ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$987.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(guess_content_type_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(guess_content_type_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle guess_content_type_sync$VH() {
-        return constants$1165.const$3;
+    private static final AddressLayout guess_content_type_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("guess_content_type_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar **(*guess_content_type_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout guess_content_type_finish$layout() {
+        return guess_content_type_finish$LAYOUT;
     }
+
+    private static final long guess_content_type_finish$OFFSET = 152;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar **(*guess_content_type_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long guess_content_type_finish$offset() {
+        return guess_content_type_finish$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char** (*guess_content_type_sync)(struct _GMount*,int,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * gchar **(*guess_content_type_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static MemorySegment guess_content_type_sync$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1165.const$3.get(seg);
+    public static MemorySegment guess_content_type_finish(MemorySegment struct) {
+        return struct.get(guess_content_type_finish$LAYOUT, guess_content_type_finish$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char** (*guess_content_type_sync)(struct _GMount*,int,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * gchar **(*guess_content_type_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static void guess_content_type_sync$set(MemorySegment seg, MemorySegment x) {
-        constants$1165.const$3.set(seg, x);
+    public static void guess_content_type_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(guess_content_type_finish$LAYOUT, guess_content_type_finish$OFFSET, fieldValue);
     }
-    public static MemorySegment guess_content_type_sync$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1165.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void guess_content_type_sync$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1165.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static guess_content_type_sync guess_content_type_sync(MemorySegment segment, Arena scope) {
-        return guess_content_type_sync.ofAddress(guess_content_type_sync$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*pre_unmount)(struct _GMount*);
+     * {@snippet lang=c :
+     * gchar **(*guess_content_type_sync)(GMount *, gboolean, GCancellable *, GError **)
      * }
      */
-    public interface pre_unmount {
+    public class guess_content_type_sync {
 
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(pre_unmount fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1165.const$4, fi, constants$13.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3);
         }
-        static pre_unmount ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(guess_content_type_sync.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(guess_content_type_sync.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle pre_unmount$VH() {
-        return constants$1165.const$5;
+    private static final AddressLayout guess_content_type_sync$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("guess_content_type_sync"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar **(*guess_content_type_sync)(GMount *, gboolean, GCancellable *, GError **)
+     * }
+     */
+    public static final AddressLayout guess_content_type_sync$layout() {
+        return guess_content_type_sync$LAYOUT;
     }
+
+    private static final long guess_content_type_sync$OFFSET = 160;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar **(*guess_content_type_sync)(GMount *, gboolean, GCancellable *, GError **)
+     * }
+     */
+    public static final long guess_content_type_sync$offset() {
+        return guess_content_type_sync$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*pre_unmount)(struct _GMount*);
+     * {@snippet lang=c :
+     * gchar **(*guess_content_type_sync)(GMount *, gboolean, GCancellable *, GError **)
      * }
      */
-    public static MemorySegment pre_unmount$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1165.const$5.get(seg);
+    public static MemorySegment guess_content_type_sync(MemorySegment struct) {
+        return struct.get(guess_content_type_sync$LAYOUT, guess_content_type_sync$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*pre_unmount)(struct _GMount*);
+     * {@snippet lang=c :
+     * gchar **(*guess_content_type_sync)(GMount *, gboolean, GCancellable *, GError **)
      * }
      */
-    public static void pre_unmount$set(MemorySegment seg, MemorySegment x) {
-        constants$1165.const$5.set(seg, x);
+    public static void guess_content_type_sync(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(guess_content_type_sync$LAYOUT, guess_content_type_sync$OFFSET, fieldValue);
     }
-    public static MemorySegment pre_unmount$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1165.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pre_unmount$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1165.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static pre_unmount pre_unmount(MemorySegment segment, Arena scope) {
-        return pre_unmount.ofAddress(pre_unmount$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*unmount_with_operation)(struct _GMount*,enum GMountUnmountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * void (*pre_unmount)(GMount *)
      * }
      */
-    public interface unmount_with_operation {
+    public class pre_unmount {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(unmount_with_operation fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1166.const$0, fi, constants$380.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static unmount_with_operation ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
-                try {
-                    constants$945.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(pre_unmount.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(pre_unmount.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle unmount_with_operation$VH() {
-        return constants$1166.const$1;
+    private static final AddressLayout pre_unmount$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("pre_unmount"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*pre_unmount)(GMount *)
+     * }
+     */
+    public static final AddressLayout pre_unmount$layout() {
+        return pre_unmount$LAYOUT;
     }
+
+    private static final long pre_unmount$OFFSET = 168;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*pre_unmount)(GMount *)
+     * }
+     */
+    public static final long pre_unmount$offset() {
+        return pre_unmount$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*unmount_with_operation)(struct _GMount*,enum GMountUnmountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * void (*pre_unmount)(GMount *)
      * }
      */
-    public static MemorySegment unmount_with_operation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1166.const$1.get(seg);
+    public static MemorySegment pre_unmount(MemorySegment struct) {
+        return struct.get(pre_unmount$LAYOUT, pre_unmount$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*unmount_with_operation)(struct _GMount*,enum GMountUnmountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * void (*pre_unmount)(GMount *)
      * }
      */
-    public static void unmount_with_operation$set(MemorySegment seg, MemorySegment x) {
-        constants$1166.const$1.set(seg, x);
+    public static void pre_unmount(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(pre_unmount$LAYOUT, pre_unmount$OFFSET, fieldValue);
     }
-    public static MemorySegment unmount_with_operation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1166.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void unmount_with_operation$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1166.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static unmount_with_operation unmount_with_operation(MemorySegment segment, Arena scope) {
-        return unmount_with_operation.ofAddress(unmount_with_operation$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*unmount_with_operation_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*unmount_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface unmount_with_operation_finish {
+    public class unmount_with_operation {
 
-        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(unmount_with_operation_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1166.const$2, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5);
         }
-        static unmount_with_operation_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(unmount_with_operation.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(unmount_with_operation.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle unmount_with_operation_finish$VH() {
-        return constants$1166.const$3;
+    private static final AddressLayout unmount_with_operation$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("unmount_with_operation"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*unmount_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout unmount_with_operation$layout() {
+        return unmount_with_operation$LAYOUT;
     }
+
+    private static final long unmount_with_operation$OFFSET = 176;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*unmount_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long unmount_with_operation$offset() {
+        return unmount_with_operation$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*unmount_with_operation_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*unmount_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment unmount_with_operation_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1166.const$3.get(seg);
+    public static MemorySegment unmount_with_operation(MemorySegment struct) {
+        return struct.get(unmount_with_operation$LAYOUT, unmount_with_operation$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*unmount_with_operation_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*unmount_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void unmount_with_operation_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1166.const$3.set(seg, x);
+    public static void unmount_with_operation(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(unmount_with_operation$LAYOUT, unmount_with_operation$OFFSET, fieldValue);
     }
-    public static MemorySegment unmount_with_operation_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1166.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void unmount_with_operation_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1166.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static unmount_with_operation_finish unmount_with_operation_finish(MemorySegment segment, Arena scope) {
-        return unmount_with_operation_finish.ofAddress(unmount_with_operation_finish$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*eject_with_operation)(struct _GMount*,enum GMountUnmountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*unmount_with_operation_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public interface eject_with_operation {
+    public class unmount_with_operation_finish {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(eject_with_operation fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1166.const$4, fi, constants$380.const$0, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static eject_with_operation ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
-                try {
-                    constants$945.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(unmount_with_operation_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(unmount_with_operation_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle eject_with_operation$VH() {
-        return constants$1166.const$5;
+    private static final AddressLayout unmount_with_operation_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("unmount_with_operation_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*unmount_with_operation_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout unmount_with_operation_finish$layout() {
+        return unmount_with_operation_finish$LAYOUT;
     }
+
+    private static final long unmount_with_operation_finish$OFFSET = 184;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*unmount_with_operation_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long unmount_with_operation_finish$offset() {
+        return unmount_with_operation_finish$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*eject_with_operation)(struct _GMount*,enum GMountUnmountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*unmount_with_operation_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static MemorySegment eject_with_operation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1166.const$5.get(seg);
+    public static MemorySegment unmount_with_operation_finish(MemorySegment struct) {
+        return struct.get(unmount_with_operation_finish$LAYOUT, unmount_with_operation_finish$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*eject_with_operation)(struct _GMount*,enum GMountUnmountFlags,struct _GMountOperation*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * gboolean (*unmount_with_operation_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static void eject_with_operation$set(MemorySegment seg, MemorySegment x) {
-        constants$1166.const$5.set(seg, x);
+    public static void unmount_with_operation_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(unmount_with_operation_finish$LAYOUT, unmount_with_operation_finish$OFFSET, fieldValue);
     }
-    public static MemorySegment eject_with_operation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1166.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void eject_with_operation$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1166.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static eject_with_operation eject_with_operation(MemorySegment segment, Arena scope) {
-        return eject_with_operation.ofAddress(eject_with_operation$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*eject_with_operation_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*eject_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface eject_with_operation_finish {
+    public class eject_with_operation {
 
-        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(eject_with_operation_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1167.const$0, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5);
         }
-        static eject_with_operation_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(eject_with_operation.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(eject_with_operation.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle eject_with_operation_finish$VH() {
-        return constants$1167.const$1;
+    private static final AddressLayout eject_with_operation$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("eject_with_operation"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*eject_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout eject_with_operation$layout() {
+        return eject_with_operation$LAYOUT;
     }
+
+    private static final long eject_with_operation$OFFSET = 192;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*eject_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long eject_with_operation$offset() {
+        return eject_with_operation$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*eject_with_operation_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*eject_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment eject_with_operation_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1167.const$1.get(seg);
+    public static MemorySegment eject_with_operation(MemorySegment struct) {
+        return struct.get(eject_with_operation$LAYOUT, eject_with_operation$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*eject_with_operation_finish)(struct _GMount*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*eject_with_operation)(GMount *, GMountUnmountFlags, GMountOperation *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void eject_with_operation_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1167.const$1.set(seg, x);
+    public static void eject_with_operation(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(eject_with_operation$LAYOUT, eject_with_operation$OFFSET, fieldValue);
     }
-    public static MemorySegment eject_with_operation_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1167.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void eject_with_operation_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1167.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static eject_with_operation_finish eject_with_operation_finish(MemorySegment segment, Arena scope) {
-        return eject_with_operation_finish.ofAddress(eject_with_operation_finish$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GFile* (*get_default_location)(struct _GMount*);
+     * {@snippet lang=c :
+     * gboolean (*eject_with_operation_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public interface get_default_location {
+    public class eject_with_operation_finish {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_default_location fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1167.const$2, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static get_default_location ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(eject_with_operation_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(eject_with_operation_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_default_location$VH() {
-        return constants$1167.const$3;
+    private static final AddressLayout eject_with_operation_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("eject_with_operation_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*eject_with_operation_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout eject_with_operation_finish$layout() {
+        return eject_with_operation_finish$LAYOUT;
     }
+
+    private static final long eject_with_operation_finish$OFFSET = 200;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*eject_with_operation_finish)(GMount *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long eject_with_operation_finish$offset() {
+        return eject_with_operation_finish$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GFile* (*get_default_location)(struct _GMount*);
+     * {@snippet lang=c :
+     * gboolean (*eject_with_operation_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static MemorySegment get_default_location$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1167.const$3.get(seg);
+    public static MemorySegment eject_with_operation_finish(MemorySegment struct) {
+        return struct.get(eject_with_operation_finish$LAYOUT, eject_with_operation_finish$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GFile* (*get_default_location)(struct _GMount*);
+     * {@snippet lang=c :
+     * gboolean (*eject_with_operation_finish)(GMount *, GAsyncResult *, GError **)
      * }
      */
-    public static void get_default_location$set(MemorySegment seg, MemorySegment x) {
-        constants$1167.const$3.set(seg, x);
+    public static void eject_with_operation_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(eject_with_operation_finish$LAYOUT, eject_with_operation_finish$OFFSET, fieldValue);
     }
-    public static MemorySegment get_default_location$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1167.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_default_location$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1167.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_default_location get_default_location(MemorySegment segment, Arena scope) {
-        return get_default_location.ofAddress(get_default_location$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * char* (*get_sort_key)(struct _GMount*);
+     * {@snippet lang=c :
+     * GFile *(*get_default_location)(GMount *)
      * }
      */
-    public interface get_sort_key {
+    public class get_default_location {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_sort_key fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1167.const$4, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_sort_key ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_default_location.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_default_location.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_sort_key$VH() {
-        return constants$1167.const$5;
+    private static final AddressLayout get_default_location$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_default_location"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GFile *(*get_default_location)(GMount *)
+     * }
+     */
+    public static final AddressLayout get_default_location$layout() {
+        return get_default_location$LAYOUT;
     }
+
+    private static final long get_default_location$OFFSET = 208;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GFile *(*get_default_location)(GMount *)
+     * }
+     */
+    public static final long get_default_location$offset() {
+        return get_default_location$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * char* (*get_sort_key)(struct _GMount*);
+     * {@snippet lang=c :
+     * GFile *(*get_default_location)(GMount *)
      * }
      */
-    public static MemorySegment get_sort_key$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1167.const$5.get(seg);
+    public static MemorySegment get_default_location(MemorySegment struct) {
+        return struct.get(get_default_location$LAYOUT, get_default_location$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * char* (*get_sort_key)(struct _GMount*);
+     * {@snippet lang=c :
+     * GFile *(*get_default_location)(GMount *)
      * }
      */
-    public static void get_sort_key$set(MemorySegment seg, MemorySegment x) {
-        constants$1167.const$5.set(seg, x);
+    public static void get_default_location(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_default_location$LAYOUT, get_default_location$OFFSET, fieldValue);
     }
-    public static MemorySegment get_sort_key$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1167.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_sort_key$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1167.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_sort_key get_sort_key(MemorySegment segment, Arena scope) {
-        return get_sort_key.ofAddress(get_sort_key$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GIcon* (*get_symbolic_icon)(struct _GMount*);
+     * {@snippet lang=c :
+     * const gchar *(*get_sort_key)(GMount *)
      * }
      */
-    public interface get_symbolic_icon {
+    public class get_sort_key {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_symbolic_icon fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1168.const$0, fi, constants$5.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
         }
-        static get_symbolic_icon ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_sort_key.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_sort_key.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle get_symbolic_icon$VH() {
-        return constants$1168.const$1;
+    private static final AddressLayout get_sort_key$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_sort_key"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_sort_key)(GMount *)
+     * }
+     */
+    public static final AddressLayout get_sort_key$layout() {
+        return get_sort_key$LAYOUT;
     }
+
+    private static final long get_sort_key$OFFSET = 216;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * const gchar *(*get_sort_key)(GMount *)
+     * }
+     */
+    public static final long get_sort_key$offset() {
+        return get_sort_key$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GIcon* (*get_symbolic_icon)(struct _GMount*);
+     * {@snippet lang=c :
+     * const gchar *(*get_sort_key)(GMount *)
      * }
      */
-    public static MemorySegment get_symbolic_icon$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1168.const$1.get(seg);
+    public static MemorySegment get_sort_key(MemorySegment struct) {
+        return struct.get(get_sort_key$LAYOUT, get_sort_key$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GIcon* (*get_symbolic_icon)(struct _GMount*);
+     * {@snippet lang=c :
+     * const gchar *(*get_sort_key)(GMount *)
      * }
      */
-    public static void get_symbolic_icon$set(MemorySegment seg, MemorySegment x) {
-        constants$1168.const$1.set(seg, x);
+    public static void get_sort_key(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_sort_key$LAYOUT, get_sort_key$OFFSET, fieldValue);
     }
-    public static MemorySegment get_symbolic_icon$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1168.const$1.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * GIcon *(*get_symbolic_icon)(GMount *)
+     * }
+     */
+    public class get_symbolic_icon {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_symbolic_icon.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_symbolic_icon.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void get_symbolic_icon$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1168.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout get_symbolic_icon$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_symbolic_icon"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GIcon *(*get_symbolic_icon)(GMount *)
+     * }
+     */
+    public static final AddressLayout get_symbolic_icon$layout() {
+        return get_symbolic_icon$LAYOUT;
     }
-    public static get_symbolic_icon get_symbolic_icon(MemorySegment segment, Arena scope) {
-        return get_symbolic_icon.ofAddress(get_symbolic_icon$get(segment), scope);
+
+    private static final long get_symbolic_icon$OFFSET = 224;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GIcon *(*get_symbolic_icon)(GMount *)
+     * }
+     */
+    public static final long get_symbolic_icon$offset() {
+        return get_symbolic_icon$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GIcon *(*get_symbolic_icon)(GMount *)
+     * }
+     */
+    public static MemorySegment get_symbolic_icon(MemorySegment struct) {
+        return struct.get(get_symbolic_icon$LAYOUT, get_symbolic_icon$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GIcon *(*get_symbolic_icon)(GMount *)
+     * }
+     */
+    public static void get_symbolic_icon(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_symbolic_icon$LAYOUT, get_symbolic_icon$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

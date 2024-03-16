@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GApplication GApplication;
+ * {@snippet lang=c :
+ * typedef struct _GApplication GApplication
  * }
  */
-public final class GApplication extends _GApplication {
+public class GApplication extends _GApplication {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GApplication() {}
+    GApplication() {
+        // Should not be called directly
+    }
 }
-
 

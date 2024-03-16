@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GDriveIface GDriveIface;
+ * {@snippet lang=c :
+ * typedef struct _GDriveIface GDriveIface
  * }
  */
-public final class GDriveIface extends _GDriveIface {
+public class GDriveIface extends _GDriveIface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GDriveIface() {}
+    GDriveIface() {
+        // Should not be called directly
+    }
 }
-
 

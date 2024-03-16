@@ -2,1881 +2,9057 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.MemorySegment;
-public class app_indicator_h_21 extends app_indicator_h_20 {
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
 
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
+public class app_indicator_h_21 {
+
+    app_indicator_h_21() {
+        // Should not be called directly
+    }
+
+    static final Arena LIBRARY_ARENA = Arena.ofAuto();
+    static final boolean TRACE_DOWNCALLS = Boolean.getBoolean("jextract.trace.downcalls");
+
+    static void traceDowncall(String name, Object... args) {
+         String traceArgs = Arrays.stream(args)
+                       .map(Object::toString)
+                       .collect(Collectors.joining(", "));
+         System.out.printf("%s(%s)\n", name, traceArgs);
+    }
+
+    static MemorySegment findOrThrow(String symbol) {
+        return SYMBOL_LOOKUP.find(symbol)
+            .orElseThrow(() -> new UnsatisfiedLinkError("unresolved symbol: " + symbol));
+    }
+
+    static MethodHandle upcallHandle(Class<?> fi, String name, FunctionDescriptor fdesc) {
+        try {
+            return MethodHandles.lookup().findVirtual(fi, name, fdesc.toMethodType());
+        } catch (ReflectiveOperationException ex) {
+            throw new AssertionError(ex);
+        }
+    }
+
+    static final SymbolLookup SYMBOL_LOOKUP = SymbolLookup.loaderLookup()
+            .or(Linker.nativeLinker().defaultLookup());
+
+    public static final ValueLayout.OfBoolean C_BOOL = ValueLayout.JAVA_BOOLEAN;
+    public static final ValueLayout.OfByte C_CHAR = ValueLayout.JAVA_BYTE;
+    public static final ValueLayout.OfShort C_SHORT = ValueLayout.JAVA_SHORT;
+    public static final ValueLayout.OfInt C_INT = ValueLayout.JAVA_INT;
+    public static final ValueLayout.OfLong C_LONG_LONG = ValueLayout.JAVA_LONG;
+    public static final ValueLayout.OfFloat C_FLOAT = ValueLayout.JAVA_FLOAT;
+    public static final ValueLayout.OfDouble C_DOUBLE = ValueLayout.JAVA_DOUBLE;
+    public static final AddressLayout C_POINTER = ValueLayout.ADDRESS
+            .withTargetLayout(MemoryLayout.sequenceLayout(java.lang.Long.MAX_VALUE, JAVA_BYTE));
+    public static final ValueLayout.OfLong C_LONG = ValueLayout.JAVA_LONG;
+    private static final int G_ANALYZER_ANALYZING = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define G_ANALYZER_ANALYZING 0
+     * }
+     */
+    public static int G_ANALYZER_ANALYZING() {
+        return G_ANALYZER_ANALYZING;
+    }
+    private static final int G_HAVE_GNUC_VISIBILITY = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define G_HAVE_GNUC_VISIBILITY 1
+     * }
+     */
+    public static int G_HAVE_GNUC_VISIBILITY() {
+        return G_HAVE_GNUC_VISIBILITY;
+    }
+    private static final int _LIBC_LIMITS_H_ = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _LIBC_LIMITS_H_ 1
+     * }
+     */
+    public static int _LIBC_LIMITS_H_() {
+        return _LIBC_LIMITS_H_;
+    }
+    private static final int _FEATURES_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _FEATURES_H 1
+     * }
+     */
+    public static int _FEATURES_H() {
+        return _FEATURES_H;
+    }
+    private static final int _DEFAULT_SOURCE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _DEFAULT_SOURCE 1
+     * }
+     */
+    public static int _DEFAULT_SOURCE() {
+        return _DEFAULT_SOURCE;
+    }
+    private static final int __GLIBC_USE_ISOC2X = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_ISOC2X 0
+     * }
+     */
+    public static int __GLIBC_USE_ISOC2X() {
+        return __GLIBC_USE_ISOC2X;
+    }
+    private static final int __USE_ISOC11 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_ISOC11 1
+     * }
+     */
+    public static int __USE_ISOC11() {
+        return __USE_ISOC11;
+    }
+    private static final int __USE_ISOC99 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_ISOC99 1
+     * }
+     */
+    public static int __USE_ISOC99() {
+        return __USE_ISOC99;
+    }
+    private static final int __USE_ISOC95 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_ISOC95 1
+     * }
+     */
+    public static int __USE_ISOC95() {
+        return __USE_ISOC95;
+    }
+    private static final int __USE_POSIX_IMPLICITLY = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_POSIX_IMPLICITLY 1
+     * }
+     */
+    public static int __USE_POSIX_IMPLICITLY() {
+        return __USE_POSIX_IMPLICITLY;
+    }
+    private static final int _POSIX_SOURCE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SOURCE 1
+     * }
+     */
+    public static int _POSIX_SOURCE() {
+        return _POSIX_SOURCE;
+    }
+    private static final int __USE_POSIX = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_POSIX 1
+     * }
+     */
+    public static int __USE_POSIX() {
+        return __USE_POSIX;
+    }
+    private static final int __USE_POSIX2 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_POSIX2 1
+     * }
+     */
+    public static int __USE_POSIX2() {
+        return __USE_POSIX2;
+    }
+    private static final int __USE_POSIX199309 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_POSIX199309 1
+     * }
+     */
+    public static int __USE_POSIX199309() {
+        return __USE_POSIX199309;
+    }
+    private static final int __USE_POSIX199506 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_POSIX199506 1
+     * }
+     */
+    public static int __USE_POSIX199506() {
+        return __USE_POSIX199506;
+    }
+    private static final int __USE_XOPEN2K = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_XOPEN2K 1
+     * }
+     */
+    public static int __USE_XOPEN2K() {
+        return __USE_XOPEN2K;
+    }
+    private static final int __USE_XOPEN2K8 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_XOPEN2K8 1
+     * }
+     */
+    public static int __USE_XOPEN2K8() {
+        return __USE_XOPEN2K8;
+    }
+    private static final int _ATFILE_SOURCE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _ATFILE_SOURCE 1
+     * }
+     */
+    public static int _ATFILE_SOURCE() {
+        return _ATFILE_SOURCE;
+    }
+    private static final int __WORDSIZE = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * #define __WORDSIZE 64
+     * }
+     */
+    public static int __WORDSIZE() {
+        return __WORDSIZE;
+    }
+    private static final int __WORDSIZE_TIME64_COMPAT32 = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __WORDSIZE_TIME64_COMPAT32 0
+     * }
+     */
+    public static int __WORDSIZE_TIME64_COMPAT32() {
+        return __WORDSIZE_TIME64_COMPAT32;
+    }
+    private static final int __TIMESIZE = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * #define __TIMESIZE 64
+     * }
+     */
+    public static int __TIMESIZE() {
+        return __TIMESIZE;
+    }
+    private static final int __USE_MISC = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_MISC 1
+     * }
+     */
+    public static int __USE_MISC() {
+        return __USE_MISC;
+    }
+    private static final int __USE_ATFILE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_ATFILE 1
+     * }
+     */
+    public static int __USE_ATFILE() {
+        return __USE_ATFILE;
+    }
+    private static final int __USE_FORTIFY_LEVEL = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __USE_FORTIFY_LEVEL 0
+     * }
+     */
+    public static int __USE_FORTIFY_LEVEL() {
+        return __USE_FORTIFY_LEVEL;
+    }
+    private static final int __GLIBC_USE_DEPRECATED_GETS = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_DEPRECATED_GETS 0
+     * }
+     */
+    public static int __GLIBC_USE_DEPRECATED_GETS() {
+        return __GLIBC_USE_DEPRECATED_GETS;
+    }
+    private static final int __GLIBC_USE_DEPRECATED_SCANF = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_DEPRECATED_SCANF 0
+     * }
+     */
+    public static int __GLIBC_USE_DEPRECATED_SCANF() {
+        return __GLIBC_USE_DEPRECATED_SCANF;
+    }
+    private static final int _STDC_PREDEF_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _STDC_PREDEF_H 1
+     * }
+     */
+    public static int _STDC_PREDEF_H() {
+        return _STDC_PREDEF_H;
+    }
+    private static final int __STDC_IEC_559__ = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __STDC_IEC_559__ 1
+     * }
+     */
+    public static int __STDC_IEC_559__() {
+        return __STDC_IEC_559__;
+    }
+    private static final int __STDC_IEC_559_COMPLEX__ = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __STDC_IEC_559_COMPLEX__ 1
+     * }
+     */
+    public static int __STDC_IEC_559_COMPLEX__() {
+        return __STDC_IEC_559_COMPLEX__;
+    }
+    private static final int __GNU_LIBRARY__ = (int)6L;
+    /**
+     * {@snippet lang=c :
+     * #define __GNU_LIBRARY__ 6
+     * }
+     */
+    public static int __GNU_LIBRARY__() {
+        return __GNU_LIBRARY__;
+    }
+    private static final int __GLIBC__ = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC__ 2
+     * }
+     */
+    public static int __GLIBC__() {
+        return __GLIBC__;
+    }
+    private static final int __GLIBC_MINOR__ = (int)35L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_MINOR__ 35
+     * }
+     */
+    public static int __GLIBC_MINOR__() {
+        return __GLIBC_MINOR__;
+    }
+    private static final int _SYS_CDEFS_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _SYS_CDEFS_H 1
+     * }
+     */
+    public static int _SYS_CDEFS_H() {
+        return _SYS_CDEFS_H;
+    }
+    private static final int __glibc_c99_flexarr_available = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __glibc_c99_flexarr_available 1
+     * }
+     */
+    public static int __glibc_c99_flexarr_available() {
+        return __glibc_c99_flexarr_available;
+    }
+    private static final int __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI 0
+     * }
+     */
+    public static int __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI() {
+        return __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI;
+    }
+    private static final int __HAVE_GENERIC_SELECTION = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_GENERIC_SELECTION 1
+     * }
+     */
+    public static int __HAVE_GENERIC_SELECTION() {
+        return __HAVE_GENERIC_SELECTION;
+    }
+    private static final int __GLIBC_USE_LIB_EXT2 = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_LIB_EXT2 0
+     * }
+     */
+    public static int __GLIBC_USE_LIB_EXT2() {
+        return __GLIBC_USE_LIB_EXT2;
+    }
+    private static final int __GLIBC_USE_IEC_60559_BFP_EXT = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_IEC_60559_BFP_EXT 0
+     * }
+     */
+    public static int __GLIBC_USE_IEC_60559_BFP_EXT() {
+        return __GLIBC_USE_IEC_60559_BFP_EXT;
+    }
+    private static final int __GLIBC_USE_IEC_60559_BFP_EXT_C2X = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_IEC_60559_BFP_EXT_C2X 0
+     * }
+     */
+    public static int __GLIBC_USE_IEC_60559_BFP_EXT_C2X() {
+        return __GLIBC_USE_IEC_60559_BFP_EXT_C2X;
+    }
+    private static final int __GLIBC_USE_IEC_60559_EXT = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_IEC_60559_EXT 0
+     * }
+     */
+    public static int __GLIBC_USE_IEC_60559_EXT() {
+        return __GLIBC_USE_IEC_60559_EXT;
+    }
+    private static final int __GLIBC_USE_IEC_60559_FUNCS_EXT = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_IEC_60559_FUNCS_EXT 0
+     * }
+     */
+    public static int __GLIBC_USE_IEC_60559_FUNCS_EXT() {
+        return __GLIBC_USE_IEC_60559_FUNCS_EXT;
+    }
+    private static final int __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X 0
+     * }
+     */
+    public static int __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X() {
+        return __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X;
+    }
+    private static final int __GLIBC_USE_IEC_60559_TYPES_EXT = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __GLIBC_USE_IEC_60559_TYPES_EXT 0
+     * }
+     */
+    public static int __GLIBC_USE_IEC_60559_TYPES_EXT() {
+        return __GLIBC_USE_IEC_60559_TYPES_EXT;
+    }
+    private static final int MB_LEN_MAX = (int)16L;
+    /**
+     * {@snippet lang=c :
+     * #define MB_LEN_MAX 16
+     * }
+     */
+    public static int MB_LEN_MAX() {
+        return MB_LEN_MAX;
+    }
+    private static final int _BITS_POSIX1_LIM_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_POSIX1_LIM_H 1
+     * }
+     */
+    public static int _BITS_POSIX1_LIM_H() {
+        return _BITS_POSIX1_LIM_H;
+    }
+    private static final int _POSIX_AIO_LISTIO_MAX = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_AIO_LISTIO_MAX 2
+     * }
+     */
+    public static int _POSIX_AIO_LISTIO_MAX() {
+        return _POSIX_AIO_LISTIO_MAX;
+    }
+    private static final int _POSIX_AIO_MAX = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_AIO_MAX 1
+     * }
+     */
+    public static int _POSIX_AIO_MAX() {
+        return _POSIX_AIO_MAX;
+    }
+    private static final int _POSIX_ARG_MAX = (int)4096L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_ARG_MAX 4096
+     * }
+     */
+    public static int _POSIX_ARG_MAX() {
+        return _POSIX_ARG_MAX;
+    }
+    private static final int _POSIX_CHILD_MAX = (int)25L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_CHILD_MAX 25
+     * }
+     */
+    public static int _POSIX_CHILD_MAX() {
+        return _POSIX_CHILD_MAX;
+    }
+    private static final int _POSIX_DELAYTIMER_MAX = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_DELAYTIMER_MAX 32
+     * }
+     */
+    public static int _POSIX_DELAYTIMER_MAX() {
+        return _POSIX_DELAYTIMER_MAX;
+    }
+    private static final int _POSIX_HOST_NAME_MAX = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_HOST_NAME_MAX 255
+     * }
+     */
+    public static int _POSIX_HOST_NAME_MAX() {
+        return _POSIX_HOST_NAME_MAX;
+    }
+    private static final int _POSIX_LINK_MAX = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_LINK_MAX 8
+     * }
+     */
+    public static int _POSIX_LINK_MAX() {
+        return _POSIX_LINK_MAX;
+    }
+    private static final int _POSIX_LOGIN_NAME_MAX = (int)9L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_LOGIN_NAME_MAX 9
+     * }
+     */
+    public static int _POSIX_LOGIN_NAME_MAX() {
+        return _POSIX_LOGIN_NAME_MAX;
+    }
+    private static final int _POSIX_MAX_CANON = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_MAX_CANON 255
+     * }
+     */
+    public static int _POSIX_MAX_CANON() {
+        return _POSIX_MAX_CANON;
+    }
+    private static final int _POSIX_MAX_INPUT = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_MAX_INPUT 255
+     * }
+     */
+    public static int _POSIX_MAX_INPUT() {
+        return _POSIX_MAX_INPUT;
+    }
+    private static final int _POSIX_MQ_OPEN_MAX = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_MQ_OPEN_MAX 8
+     * }
+     */
+    public static int _POSIX_MQ_OPEN_MAX() {
+        return _POSIX_MQ_OPEN_MAX;
+    }
+    private static final int _POSIX_MQ_PRIO_MAX = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_MQ_PRIO_MAX 32
+     * }
+     */
+    public static int _POSIX_MQ_PRIO_MAX() {
+        return _POSIX_MQ_PRIO_MAX;
+    }
+    private static final int _POSIX_NAME_MAX = (int)14L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_NAME_MAX 14
+     * }
+     */
+    public static int _POSIX_NAME_MAX() {
+        return _POSIX_NAME_MAX;
+    }
+    private static final int _POSIX_NGROUPS_MAX = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_NGROUPS_MAX 8
+     * }
+     */
+    public static int _POSIX_NGROUPS_MAX() {
+        return _POSIX_NGROUPS_MAX;
+    }
+    private static final int _POSIX_OPEN_MAX = (int)20L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_OPEN_MAX 20
+     * }
+     */
+    public static int _POSIX_OPEN_MAX() {
+        return _POSIX_OPEN_MAX;
+    }
+    private static final int _POSIX_PATH_MAX = (int)256L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_PATH_MAX 256
+     * }
+     */
+    public static int _POSIX_PATH_MAX() {
+        return _POSIX_PATH_MAX;
+    }
+    private static final int _POSIX_PIPE_BUF = (int)512L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_PIPE_BUF 512
+     * }
+     */
+    public static int _POSIX_PIPE_BUF() {
+        return _POSIX_PIPE_BUF;
+    }
+    private static final int _POSIX_RE_DUP_MAX = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_RE_DUP_MAX 255
+     * }
+     */
+    public static int _POSIX_RE_DUP_MAX() {
+        return _POSIX_RE_DUP_MAX;
+    }
+    private static final int _POSIX_RTSIG_MAX = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_RTSIG_MAX 8
+     * }
+     */
+    public static int _POSIX_RTSIG_MAX() {
+        return _POSIX_RTSIG_MAX;
+    }
+    private static final int _POSIX_SEM_NSEMS_MAX = (int)256L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SEM_NSEMS_MAX 256
+     * }
+     */
+    public static int _POSIX_SEM_NSEMS_MAX() {
+        return _POSIX_SEM_NSEMS_MAX;
+    }
+    private static final int _POSIX_SEM_VALUE_MAX = (int)32767L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SEM_VALUE_MAX 32767
+     * }
+     */
+    public static int _POSIX_SEM_VALUE_MAX() {
+        return _POSIX_SEM_VALUE_MAX;
+    }
+    private static final int _POSIX_SIGQUEUE_MAX = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SIGQUEUE_MAX 32
+     * }
+     */
+    public static int _POSIX_SIGQUEUE_MAX() {
+        return _POSIX_SIGQUEUE_MAX;
+    }
+    private static final int _POSIX_SSIZE_MAX = (int)32767L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SSIZE_MAX 32767
+     * }
+     */
+    public static int _POSIX_SSIZE_MAX() {
+        return _POSIX_SSIZE_MAX;
+    }
+    private static final int _POSIX_STREAM_MAX = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_STREAM_MAX 8
+     * }
+     */
+    public static int _POSIX_STREAM_MAX() {
+        return _POSIX_STREAM_MAX;
+    }
+    private static final int _POSIX_SYMLINK_MAX = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SYMLINK_MAX 255
+     * }
+     */
+    public static int _POSIX_SYMLINK_MAX() {
+        return _POSIX_SYMLINK_MAX;
+    }
+    private static final int _POSIX_SYMLOOP_MAX = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SYMLOOP_MAX 8
+     * }
+     */
+    public static int _POSIX_SYMLOOP_MAX() {
+        return _POSIX_SYMLOOP_MAX;
+    }
+    private static final int _POSIX_TIMER_MAX = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_TIMER_MAX 32
+     * }
+     */
+    public static int _POSIX_TIMER_MAX() {
+        return _POSIX_TIMER_MAX;
+    }
+    private static final int _POSIX_TTY_NAME_MAX = (int)9L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_TTY_NAME_MAX 9
+     * }
+     */
+    public static int _POSIX_TTY_NAME_MAX() {
+        return _POSIX_TTY_NAME_MAX;
+    }
+    private static final int _POSIX_TZNAME_MAX = (int)6L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_TZNAME_MAX 6
+     * }
+     */
+    public static int _POSIX_TZNAME_MAX() {
+        return _POSIX_TZNAME_MAX;
+    }
+    private static final int _POSIX_CLOCKRES_MIN = (int)20000000L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_CLOCKRES_MIN 20000000
+     * }
+     */
+    public static int _POSIX_CLOCKRES_MIN() {
+        return _POSIX_CLOCKRES_MIN;
+    }
+    private static final int NR_OPEN = (int)1024L;
+    /**
+     * {@snippet lang=c :
+     * #define NR_OPEN 1024
+     * }
+     */
+    public static int NR_OPEN() {
+        return NR_OPEN;
+    }
+    private static final int NGROUPS_MAX = (int)65536L;
+    /**
+     * {@snippet lang=c :
+     * #define NGROUPS_MAX 65536
+     * }
+     */
+    public static int NGROUPS_MAX() {
+        return NGROUPS_MAX;
+    }
+    private static final int ARG_MAX = (int)131072L;
+    /**
+     * {@snippet lang=c :
+     * #define ARG_MAX 131072
+     * }
+     */
+    public static int ARG_MAX() {
+        return ARG_MAX;
+    }
+    private static final int LINK_MAX = (int)127L;
+    /**
+     * {@snippet lang=c :
+     * #define LINK_MAX 127
+     * }
+     */
+    public static int LINK_MAX() {
+        return LINK_MAX;
+    }
+    private static final int MAX_CANON = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define MAX_CANON 255
+     * }
+     */
+    public static int MAX_CANON() {
+        return MAX_CANON;
+    }
+    private static final int MAX_INPUT = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define MAX_INPUT 255
+     * }
+     */
+    public static int MAX_INPUT() {
+        return MAX_INPUT;
+    }
+    private static final int NAME_MAX = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define NAME_MAX 255
+     * }
+     */
+    public static int NAME_MAX() {
+        return NAME_MAX;
+    }
+    private static final int PATH_MAX = (int)4096L;
+    /**
+     * {@snippet lang=c :
+     * #define PATH_MAX 4096
+     * }
+     */
+    public static int PATH_MAX() {
+        return PATH_MAX;
+    }
+    private static final int PIPE_BUF = (int)4096L;
+    /**
+     * {@snippet lang=c :
+     * #define PIPE_BUF 4096
+     * }
+     */
+    public static int PIPE_BUF() {
+        return PIPE_BUF;
+    }
+    private static final int XATTR_NAME_MAX = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define XATTR_NAME_MAX 255
+     * }
+     */
+    public static int XATTR_NAME_MAX() {
+        return XATTR_NAME_MAX;
+    }
+    private static final int XATTR_SIZE_MAX = (int)65536L;
+    /**
+     * {@snippet lang=c :
+     * #define XATTR_SIZE_MAX 65536
+     * }
+     */
+    public static int XATTR_SIZE_MAX() {
+        return XATTR_SIZE_MAX;
+    }
+    private static final int XATTR_LIST_MAX = (int)65536L;
+    /**
+     * {@snippet lang=c :
+     * #define XATTR_LIST_MAX 65536
+     * }
+     */
+    public static int XATTR_LIST_MAX() {
+        return XATTR_LIST_MAX;
+    }
+    private static final int RTSIG_MAX = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define RTSIG_MAX 32
+     * }
+     */
+    public static int RTSIG_MAX() {
+        return RTSIG_MAX;
+    }
+    private static final int _POSIX_THREAD_KEYS_MAX = (int)128L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_KEYS_MAX 128
+     * }
+     */
+    public static int _POSIX_THREAD_KEYS_MAX() {
+        return _POSIX_THREAD_KEYS_MAX;
+    }
+    private static final int PTHREAD_KEYS_MAX = (int)1024L;
+    /**
+     * {@snippet lang=c :
+     * #define PTHREAD_KEYS_MAX 1024
+     * }
+     */
+    public static int PTHREAD_KEYS_MAX() {
+        return PTHREAD_KEYS_MAX;
+    }
+    private static final int _POSIX_THREAD_DESTRUCTOR_ITERATIONS = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_DESTRUCTOR_ITERATIONS 4
+     * }
+     */
+    public static int _POSIX_THREAD_DESTRUCTOR_ITERATIONS() {
+        return _POSIX_THREAD_DESTRUCTOR_ITERATIONS;
+    }
+    private static final int _POSIX_THREAD_THREADS_MAX = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_THREADS_MAX 64
+     * }
+     */
+    public static int _POSIX_THREAD_THREADS_MAX() {
+        return _POSIX_THREAD_THREADS_MAX;
+    }
+    private static final int AIO_PRIO_DELTA_MAX = (int)20L;
+    /**
+     * {@snippet lang=c :
+     * #define AIO_PRIO_DELTA_MAX 20
+     * }
+     */
+    public static int AIO_PRIO_DELTA_MAX() {
+        return AIO_PRIO_DELTA_MAX;
+    }
+    private static final int PTHREAD_STACK_MIN = (int)131072L;
+    /**
+     * {@snippet lang=c :
+     * #define PTHREAD_STACK_MIN 131072
+     * }
+     */
+    public static int PTHREAD_STACK_MIN() {
+        return PTHREAD_STACK_MIN;
+    }
+    private static final int DELAYTIMER_MAX = (int)2147483647L;
+    /**
+     * {@snippet lang=c :
+     * #define DELAYTIMER_MAX 2147483647
+     * }
+     */
+    public static int DELAYTIMER_MAX() {
+        return DELAYTIMER_MAX;
+    }
+    private static final int TTY_NAME_MAX = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define TTY_NAME_MAX 32
+     * }
+     */
+    public static int TTY_NAME_MAX() {
+        return TTY_NAME_MAX;
+    }
+    private static final int LOGIN_NAME_MAX = (int)256L;
+    /**
+     * {@snippet lang=c :
+     * #define LOGIN_NAME_MAX 256
+     * }
+     */
+    public static int LOGIN_NAME_MAX() {
+        return LOGIN_NAME_MAX;
+    }
+    private static final int HOST_NAME_MAX = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * #define HOST_NAME_MAX 64
+     * }
+     */
+    public static int HOST_NAME_MAX() {
+        return HOST_NAME_MAX;
+    }
+    private static final int MQ_PRIO_MAX = (int)32768L;
+    /**
+     * {@snippet lang=c :
+     * #define MQ_PRIO_MAX 32768
+     * }
+     */
+    public static int MQ_PRIO_MAX() {
+        return MQ_PRIO_MAX;
+    }
+    private static final int _BITS_POSIX2_LIM_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_POSIX2_LIM_H 1
+     * }
+     */
+    public static int _BITS_POSIX2_LIM_H() {
+        return _BITS_POSIX2_LIM_H;
+    }
+    private static final int _POSIX2_BC_BASE_MAX = (int)99L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_BC_BASE_MAX 99
+     * }
+     */
+    public static int _POSIX2_BC_BASE_MAX() {
+        return _POSIX2_BC_BASE_MAX;
+    }
+    private static final int _POSIX2_BC_DIM_MAX = (int)2048L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_BC_DIM_MAX 2048
+     * }
+     */
+    public static int _POSIX2_BC_DIM_MAX() {
+        return _POSIX2_BC_DIM_MAX;
+    }
+    private static final int _POSIX2_BC_SCALE_MAX = (int)99L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_BC_SCALE_MAX 99
+     * }
+     */
+    public static int _POSIX2_BC_SCALE_MAX() {
+        return _POSIX2_BC_SCALE_MAX;
+    }
+    private static final int _POSIX2_BC_STRING_MAX = (int)1000L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_BC_STRING_MAX 1000
+     * }
+     */
+    public static int _POSIX2_BC_STRING_MAX() {
+        return _POSIX2_BC_STRING_MAX;
+    }
+    private static final int _POSIX2_COLL_WEIGHTS_MAX = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_COLL_WEIGHTS_MAX 2
+     * }
+     */
+    public static int _POSIX2_COLL_WEIGHTS_MAX() {
+        return _POSIX2_COLL_WEIGHTS_MAX;
+    }
+    private static final int _POSIX2_EXPR_NEST_MAX = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_EXPR_NEST_MAX 32
+     * }
+     */
+    public static int _POSIX2_EXPR_NEST_MAX() {
+        return _POSIX2_EXPR_NEST_MAX;
+    }
+    private static final int _POSIX2_LINE_MAX = (int)2048L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_LINE_MAX 2048
+     * }
+     */
+    public static int _POSIX2_LINE_MAX() {
+        return _POSIX2_LINE_MAX;
+    }
+    private static final int _POSIX2_RE_DUP_MAX = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_RE_DUP_MAX 255
+     * }
+     */
+    public static int _POSIX2_RE_DUP_MAX() {
+        return _POSIX2_RE_DUP_MAX;
+    }
+    private static final int _POSIX2_CHARCLASS_NAME_MAX = (int)14L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX2_CHARCLASS_NAME_MAX 14
+     * }
+     */
+    public static int _POSIX2_CHARCLASS_NAME_MAX() {
+        return _POSIX2_CHARCLASS_NAME_MAX;
+    }
+    private static final int COLL_WEIGHTS_MAX = (int)255L;
+    /**
+     * {@snippet lang=c :
+     * #define COLL_WEIGHTS_MAX 255
+     * }
+     */
+    public static int COLL_WEIGHTS_MAX() {
+        return COLL_WEIGHTS_MAX;
+    }
+    private static final int CHARCLASS_NAME_MAX = (int)2048L;
+    /**
+     * {@snippet lang=c :
+     * #define CHARCLASS_NAME_MAX 2048
+     * }
+     */
+    public static int CHARCLASS_NAME_MAX() {
+        return CHARCLASS_NAME_MAX;
+    }
+    private static final int CHAR_MIN = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define CHAR_MIN 0
+     * }
+     */
+    public static int CHAR_MIN() {
+        return CHAR_MIN;
+    }
+    private static final int G_HAVE_GINT64 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define G_HAVE_GINT64 1
+     * }
+     */
+    public static int G_HAVE_GINT64() {
+        return G_HAVE_GINT64;
+    }
+    private static final int GLIB_SIZEOF_VOID_P = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_SIZEOF_VOID_P 8
+     * }
+     */
+    public static int GLIB_SIZEOF_VOID_P() {
+        return GLIB_SIZEOF_VOID_P;
+    }
+    private static final int GLIB_SIZEOF_LONG = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_SIZEOF_LONG 8
+     * }
+     */
+    public static int GLIB_SIZEOF_LONG() {
+        return GLIB_SIZEOF_LONG;
+    }
+    private static final int GLIB_SIZEOF_SIZE_T = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_SIZEOF_SIZE_T 8
+     * }
+     */
+    public static int GLIB_SIZEOF_SIZE_T() {
+        return GLIB_SIZEOF_SIZE_T;
+    }
+    private static final int GLIB_SIZEOF_SSIZE_T = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_SIZEOF_SSIZE_T 8
+     * }
+     */
+    public static int GLIB_SIZEOF_SSIZE_T() {
+        return GLIB_SIZEOF_SSIZE_T;
+    }
+    private static final int GLIB_MAJOR_VERSION = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_MAJOR_VERSION 2
+     * }
+     */
+    public static int GLIB_MAJOR_VERSION() {
+        return GLIB_MAJOR_VERSION;
+    }
+    private static final int GLIB_MINOR_VERSION = (int)78L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_MINOR_VERSION 78
+     * }
+     */
+    public static int GLIB_MINOR_VERSION() {
+        return GLIB_MINOR_VERSION;
+    }
+    private static final int GLIB_MICRO_VERSION = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_MICRO_VERSION 4
+     * }
+     */
+    public static int GLIB_MICRO_VERSION() {
+        return GLIB_MICRO_VERSION;
+    }
+    private static final int G_HAVE_ISO_VARARGS = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define G_HAVE_ISO_VARARGS 1
+     * }
+     */
+    public static int G_HAVE_ISO_VARARGS() {
+        return G_HAVE_ISO_VARARGS;
+    }
+    private static final int G_HAVE_GROWING_STACK = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define G_HAVE_GROWING_STACK 0
+     * }
+     */
+    public static int G_HAVE_GROWING_STACK() {
+        return G_HAVE_GROWING_STACK;
+    }
+    private static final int G_HAVE_GNUC_VARARGS = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define G_HAVE_GNUC_VARARGS 1
+     * }
+     */
+    public static int G_HAVE_GNUC_VARARGS() {
+        return G_HAVE_GNUC_VARARGS;
+    }
+    private static final int GLIB_SYSDEF_AF_UNIX = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_SYSDEF_AF_UNIX 1
+     * }
+     */
+    public static int GLIB_SYSDEF_AF_UNIX() {
+        return GLIB_SYSDEF_AF_UNIX;
+    }
+    private static final int GLIB_SYSDEF_AF_INET = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_SYSDEF_AF_INET 2
+     * }
+     */
+    public static int GLIB_SYSDEF_AF_INET() {
+        return GLIB_SYSDEF_AF_INET;
+    }
+    private static final int GLIB_SYSDEF_AF_INET6 = (int)10L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_SYSDEF_AF_INET6 10
+     * }
+     */
+    public static int GLIB_SYSDEF_AF_INET6() {
+        return GLIB_SYSDEF_AF_INET6;
+    }
+    private static final int GLIB_SYSDEF_MSG_OOB = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_SYSDEF_MSG_OOB 1
+     * }
+     */
+    public static int GLIB_SYSDEF_MSG_OOB() {
+        return GLIB_SYSDEF_MSG_OOB;
+    }
+    private static final int GLIB_SYSDEF_MSG_PEEK = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_SYSDEF_MSG_PEEK 2
+     * }
+     */
+    public static int GLIB_SYSDEF_MSG_PEEK() {
+        return GLIB_SYSDEF_MSG_PEEK;
+    }
+    private static final int GLIB_SYSDEF_MSG_DONTROUTE = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define GLIB_SYSDEF_MSG_DONTROUTE 4
+     * }
+     */
+    public static int GLIB_SYSDEF_MSG_DONTROUTE() {
+        return GLIB_SYSDEF_MSG_DONTROUTE;
+    }
+    private static final int _TIME_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _TIME_H 1
+     * }
+     */
+    public static int _TIME_H() {
+        return _TIME_H;
+    }
+    private static final int _BITS_TIME_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_TIME_H 1
+     * }
+     */
+    public static int _BITS_TIME_H() {
+        return _BITS_TIME_H;
+    }
+    private static final int _BITS_TYPES_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_TYPES_H 1
+     * }
+     */
+    public static int _BITS_TYPES_H() {
+        return _BITS_TYPES_H;
+    }
+    private static final int _BITS_TYPESIZES_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_TYPESIZES_H 1
+     * }
+     */
+    public static int _BITS_TYPESIZES_H() {
+        return _BITS_TYPESIZES_H;
+    }
+    private static final int __OFF_T_MATCHES_OFF64_T = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __OFF_T_MATCHES_OFF64_T 1
+     * }
+     */
+    public static int __OFF_T_MATCHES_OFF64_T() {
+        return __OFF_T_MATCHES_OFF64_T;
+    }
+    private static final int __INO_T_MATCHES_INO64_T = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __INO_T_MATCHES_INO64_T 1
+     * }
+     */
+    public static int __INO_T_MATCHES_INO64_T() {
+        return __INO_T_MATCHES_INO64_T;
+    }
+    private static final int __RLIM_T_MATCHES_RLIM64_T = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __RLIM_T_MATCHES_RLIM64_T 1
+     * }
+     */
+    public static int __RLIM_T_MATCHES_RLIM64_T() {
+        return __RLIM_T_MATCHES_RLIM64_T;
+    }
+    private static final int __STATFS_MATCHES_STATFS64 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __STATFS_MATCHES_STATFS64 1
+     * }
+     */
+    public static int __STATFS_MATCHES_STATFS64() {
+        return __STATFS_MATCHES_STATFS64;
+    }
+    private static final int __FD_SETSIZE = (int)1024L;
+    /**
+     * {@snippet lang=c :
+     * #define __FD_SETSIZE 1024
+     * }
+     */
+    public static int __FD_SETSIZE() {
+        return __FD_SETSIZE;
+    }
+    private static final int _BITS_TIME64_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_TIME64_H 1
+     * }
+     */
+    public static int _BITS_TIME64_H() {
+        return _BITS_TIME64_H;
+    }
+    private static final int CLOCK_REALTIME = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_REALTIME 0
+     * }
+     */
+    public static int CLOCK_REALTIME() {
+        return CLOCK_REALTIME;
+    }
+    private static final int CLOCK_MONOTONIC = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_MONOTONIC 1
+     * }
+     */
+    public static int CLOCK_MONOTONIC() {
+        return CLOCK_MONOTONIC;
+    }
+    private static final int CLOCK_PROCESS_CPUTIME_ID = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_PROCESS_CPUTIME_ID 2
+     * }
+     */
+    public static int CLOCK_PROCESS_CPUTIME_ID() {
+        return CLOCK_PROCESS_CPUTIME_ID;
+    }
+    private static final int CLOCK_THREAD_CPUTIME_ID = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_THREAD_CPUTIME_ID 3
+     * }
+     */
+    public static int CLOCK_THREAD_CPUTIME_ID() {
+        return CLOCK_THREAD_CPUTIME_ID;
+    }
+    private static final int CLOCK_MONOTONIC_RAW = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_MONOTONIC_RAW 4
+     * }
+     */
+    public static int CLOCK_MONOTONIC_RAW() {
+        return CLOCK_MONOTONIC_RAW;
+    }
+    private static final int CLOCK_REALTIME_COARSE = (int)5L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_REALTIME_COARSE 5
+     * }
+     */
+    public static int CLOCK_REALTIME_COARSE() {
+        return CLOCK_REALTIME_COARSE;
+    }
+    private static final int CLOCK_MONOTONIC_COARSE = (int)6L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_MONOTONIC_COARSE 6
+     * }
+     */
+    public static int CLOCK_MONOTONIC_COARSE() {
+        return CLOCK_MONOTONIC_COARSE;
+    }
+    private static final int CLOCK_BOOTTIME = (int)7L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_BOOTTIME 7
+     * }
+     */
+    public static int CLOCK_BOOTTIME() {
+        return CLOCK_BOOTTIME;
+    }
+    private static final int CLOCK_REALTIME_ALARM = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_REALTIME_ALARM 8
+     * }
+     */
+    public static int CLOCK_REALTIME_ALARM() {
+        return CLOCK_REALTIME_ALARM;
+    }
+    private static final int CLOCK_BOOTTIME_ALARM = (int)9L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_BOOTTIME_ALARM 9
+     * }
+     */
+    public static int CLOCK_BOOTTIME_ALARM() {
+        return CLOCK_BOOTTIME_ALARM;
+    }
+    private static final int CLOCK_TAI = (int)11L;
+    /**
+     * {@snippet lang=c :
+     * #define CLOCK_TAI 11
+     * }
+     */
+    public static int CLOCK_TAI() {
+        return CLOCK_TAI;
+    }
+    private static final int TIMER_ABSTIME = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define TIMER_ABSTIME 1
+     * }
+     */
+    public static int TIMER_ABSTIME() {
+        return TIMER_ABSTIME;
+    }
+    private static final int __clock_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __clock_t_defined 1
+     * }
+     */
+    public static int __clock_t_defined() {
+        return __clock_t_defined;
+    }
+    private static final int __time_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __time_t_defined 1
+     * }
+     */
+    public static int __time_t_defined() {
+        return __time_t_defined;
+    }
+    private static final int __struct_tm_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __struct_tm_defined 1
+     * }
+     */
+    public static int __struct_tm_defined() {
+        return __struct_tm_defined;
+    }
+    private static final int _STRUCT_TIMESPEC = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _STRUCT_TIMESPEC 1
+     * }
+     */
+    public static int _STRUCT_TIMESPEC() {
+        return _STRUCT_TIMESPEC;
+    }
+    private static final int _BITS_ENDIAN_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_ENDIAN_H 1
+     * }
+     */
+    public static int _BITS_ENDIAN_H() {
+        return _BITS_ENDIAN_H;
+    }
+    private static final int __LITTLE_ENDIAN = (int)1234L;
+    /**
+     * {@snippet lang=c :
+     * #define __LITTLE_ENDIAN 1234
+     * }
+     */
+    public static int __LITTLE_ENDIAN() {
+        return __LITTLE_ENDIAN;
+    }
+    private static final int __BIG_ENDIAN = (int)4321L;
+    /**
+     * {@snippet lang=c :
+     * #define __BIG_ENDIAN 4321
+     * }
+     */
+    public static int __BIG_ENDIAN() {
+        return __BIG_ENDIAN;
+    }
+    private static final int __PDP_ENDIAN = (int)3412L;
+    /**
+     * {@snippet lang=c :
+     * #define __PDP_ENDIAN 3412
+     * }
+     */
+    public static int __PDP_ENDIAN() {
+        return __PDP_ENDIAN;
+    }
+    private static final int _BITS_ENDIANNESS_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_ENDIANNESS_H 1
+     * }
+     */
+    public static int _BITS_ENDIANNESS_H() {
+        return _BITS_ENDIANNESS_H;
+    }
+    private static final int __clockid_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __clockid_t_defined 1
+     * }
+     */
+    public static int __clockid_t_defined() {
+        return __clockid_t_defined;
+    }
+    private static final int __timer_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __timer_t_defined 1
+     * }
+     */
+    public static int __timer_t_defined() {
+        return __timer_t_defined;
+    }
+    private static final int __itimerspec_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __itimerspec_defined 1
+     * }
+     */
+    public static int __itimerspec_defined() {
+        return __itimerspec_defined;
+    }
+    private static final int _BITS_TYPES_LOCALE_T_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_TYPES_LOCALE_T_H 1
+     * }
+     */
+    public static int _BITS_TYPES_LOCALE_T_H() {
+        return _BITS_TYPES_LOCALE_T_H;
+    }
+    private static final int _BITS_TYPES___LOCALE_T_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_TYPES___LOCALE_T_H 1
+     * }
+     */
+    public static int _BITS_TYPES___LOCALE_T_H() {
+        return _BITS_TYPES___LOCALE_T_H;
+    }
+    private static final int TIME_UTC = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define TIME_UTC 1
+     * }
+     */
+    public static int TIME_UTC() {
+        return TIME_UTC;
+    }
+    private static final int G_LITTLE_ENDIAN = (int)1234L;
+    /**
+     * {@snippet lang=c :
+     * #define G_LITTLE_ENDIAN 1234
+     * }
+     */
+    public static int G_LITTLE_ENDIAN() {
+        return G_LITTLE_ENDIAN;
+    }
+    private static final int G_BIG_ENDIAN = (int)4321L;
+    /**
+     * {@snippet lang=c :
+     * #define G_BIG_ENDIAN 4321
+     * }
+     */
+    public static int G_BIG_ENDIAN() {
+        return G_BIG_ENDIAN;
+    }
+    private static final int G_PDP_ENDIAN = (int)3412L;
+    /**
+     * {@snippet lang=c :
+     * #define G_PDP_ENDIAN 3412
+     * }
+     */
+    public static int G_PDP_ENDIAN() {
+        return G_PDP_ENDIAN;
+    }
+    private static final int _STRING_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _STRING_H 1
+     * }
+     */
+    public static int _STRING_H() {
+        return _STRING_H;
+    }
+    private static final int _STRINGS_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _STRINGS_H 1
+     * }
+     */
+    public static int _STRINGS_H() {
+        return _STRINGS_H;
+    }
+    private static final int __GNUC_VA_LIST = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __GNUC_VA_LIST 1
+     * }
+     */
+    public static int __GNUC_VA_LIST() {
+        return __GNUC_VA_LIST;
+    }
+    private static final int _STDLIB_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _STDLIB_H 1
+     * }
+     */
+    public static int _STDLIB_H() {
+        return _STDLIB_H;
+    }
+    private static final int WNOHANG = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define WNOHANG 1
+     * }
+     */
+    public static int WNOHANG() {
+        return WNOHANG;
+    }
+    private static final int WUNTRACED = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define WUNTRACED 2
+     * }
+     */
+    public static int WUNTRACED() {
+        return WUNTRACED;
+    }
+    private static final int WSTOPPED = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define WSTOPPED 2
+     * }
+     */
+    public static int WSTOPPED() {
+        return WSTOPPED;
+    }
+    private static final int WEXITED = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define WEXITED 4
+     * }
+     */
+    public static int WEXITED() {
+        return WEXITED;
+    }
+    private static final int WCONTINUED = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define WCONTINUED 8
+     * }
+     */
+    public static int WCONTINUED() {
+        return WCONTINUED;
+    }
+    private static final int WNOWAIT = (int)16777216L;
+    /**
+     * {@snippet lang=c :
+     * #define WNOWAIT 16777216
+     * }
+     */
+    public static int WNOWAIT() {
+        return WNOWAIT;
+    }
+    private static final int __WNOTHREAD = (int)536870912L;
+    /**
+     * {@snippet lang=c :
+     * #define __WNOTHREAD 536870912
+     * }
+     */
+    public static int __WNOTHREAD() {
+        return __WNOTHREAD;
+    }
+    private static final int __WALL = (int)1073741824L;
+    /**
+     * {@snippet lang=c :
+     * #define __WALL 1073741824
+     * }
+     */
+    public static int __WALL() {
+        return __WALL;
+    }
+    private static final int __W_CONTINUED = (int)65535L;
+    /**
+     * {@snippet lang=c :
+     * #define __W_CONTINUED 65535
+     * }
+     */
+    public static int __W_CONTINUED() {
+        return __W_CONTINUED;
+    }
+    private static final int __WCOREFLAG = (int)128L;
+    /**
+     * {@snippet lang=c :
+     * #define __WCOREFLAG 128
+     * }
+     */
+    public static int __WCOREFLAG() {
+        return __WCOREFLAG;
+    }
+    private static final int __HAVE_FLOAT128 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_FLOAT128 1
+     * }
+     */
+    public static int __HAVE_FLOAT128() {
+        return __HAVE_FLOAT128;
+    }
+    private static final int __HAVE_DISTINCT_FLOAT128 = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_DISTINCT_FLOAT128 0
+     * }
+     */
+    public static int __HAVE_DISTINCT_FLOAT128() {
+        return __HAVE_DISTINCT_FLOAT128;
+    }
+    private static final int __HAVE_FLOAT16 = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_FLOAT16 0
+     * }
+     */
+    public static int __HAVE_FLOAT16() {
+        return __HAVE_FLOAT16;
+    }
+    private static final int __HAVE_FLOAT32 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_FLOAT32 1
+     * }
+     */
+    public static int __HAVE_FLOAT32() {
+        return __HAVE_FLOAT32;
+    }
+    private static final int __HAVE_FLOAT64 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_FLOAT64 1
+     * }
+     */
+    public static int __HAVE_FLOAT64() {
+        return __HAVE_FLOAT64;
+    }
+    private static final int __HAVE_FLOAT32X = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_FLOAT32X 1
+     * }
+     */
+    public static int __HAVE_FLOAT32X() {
+        return __HAVE_FLOAT32X;
+    }
+    private static final int __HAVE_FLOAT128X = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_FLOAT128X 0
+     * }
+     */
+    public static int __HAVE_FLOAT128X() {
+        return __HAVE_FLOAT128X;
+    }
+    private static final int __HAVE_DISTINCT_FLOAT32 = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_DISTINCT_FLOAT32 0
+     * }
+     */
+    public static int __HAVE_DISTINCT_FLOAT32() {
+        return __HAVE_DISTINCT_FLOAT32;
+    }
+    private static final int __HAVE_DISTINCT_FLOAT64 = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_DISTINCT_FLOAT64 0
+     * }
+     */
+    public static int __HAVE_DISTINCT_FLOAT64() {
+        return __HAVE_DISTINCT_FLOAT64;
+    }
+    private static final int __HAVE_DISTINCT_FLOAT32X = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_DISTINCT_FLOAT32X 0
+     * }
+     */
+    public static int __HAVE_DISTINCT_FLOAT32X() {
+        return __HAVE_DISTINCT_FLOAT32X;
+    }
+    private static final int __HAVE_DISTINCT_FLOAT64X = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_DISTINCT_FLOAT64X 0
+     * }
+     */
+    public static int __HAVE_DISTINCT_FLOAT64X() {
+        return __HAVE_DISTINCT_FLOAT64X;
+    }
+    private static final int __HAVE_FLOATN_NOT_TYPEDEF = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __HAVE_FLOATN_NOT_TYPEDEF 0
+     * }
+     */
+    public static int __HAVE_FLOATN_NOT_TYPEDEF() {
+        return __HAVE_FLOATN_NOT_TYPEDEF;
+    }
+    private static final int __ldiv_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __ldiv_t_defined 1
+     * }
+     */
+    public static int __ldiv_t_defined() {
+        return __ldiv_t_defined;
+    }
+    private static final int __lldiv_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __lldiv_t_defined 1
+     * }
+     */
+    public static int __lldiv_t_defined() {
+        return __lldiv_t_defined;
+    }
+    private static final int RAND_MAX = (int)2147483647L;
+    /**
+     * {@snippet lang=c :
+     * #define RAND_MAX 2147483647
+     * }
+     */
+    public static int RAND_MAX() {
+        return RAND_MAX;
+    }
+    private static final int EXIT_FAILURE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define EXIT_FAILURE 1
+     * }
+     */
+    public static int EXIT_FAILURE() {
+        return EXIT_FAILURE;
+    }
+    private static final int EXIT_SUCCESS = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define EXIT_SUCCESS 0
+     * }
+     */
+    public static int EXIT_SUCCESS() {
+        return EXIT_SUCCESS;
+    }
+    private static final int _SYS_TYPES_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _SYS_TYPES_H 1
+     * }
+     */
+    public static int _SYS_TYPES_H() {
+        return _SYS_TYPES_H;
+    }
+    private static final int _BITS_STDINT_INTN_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_STDINT_INTN_H 1
+     * }
+     */
+    public static int _BITS_STDINT_INTN_H() {
+        return _BITS_STDINT_INTN_H;
+    }
+    private static final int __BIT_TYPES_DEFINED__ = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __BIT_TYPES_DEFINED__ 1
+     * }
+     */
+    public static int __BIT_TYPES_DEFINED__() {
+        return __BIT_TYPES_DEFINED__;
+    }
+    private static final int _ENDIAN_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _ENDIAN_H 1
+     * }
+     */
+    public static int _ENDIAN_H() {
+        return _ENDIAN_H;
+    }
+    private static final int _BITS_BYTESWAP_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_BYTESWAP_H 1
+     * }
+     */
+    public static int _BITS_BYTESWAP_H() {
+        return _BITS_BYTESWAP_H;
+    }
+    private static final int _BITS_UINTN_IDENTITY_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_UINTN_IDENTITY_H 1
+     * }
+     */
+    public static int _BITS_UINTN_IDENTITY_H() {
+        return _BITS_UINTN_IDENTITY_H;
+    }
+    private static final int _SYS_SELECT_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _SYS_SELECT_H 1
+     * }
+     */
+    public static int _SYS_SELECT_H() {
+        return _SYS_SELECT_H;
+    }
+    private static final int __sigset_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __sigset_t_defined 1
+     * }
+     */
+    public static int __sigset_t_defined() {
+        return __sigset_t_defined;
+    }
+    private static final int __timeval_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __timeval_defined 1
+     * }
+     */
+    public static int __timeval_defined() {
+        return __timeval_defined;
+    }
+    private static final int _BITS_PTHREADTYPES_COMMON_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_PTHREADTYPES_COMMON_H 1
+     * }
+     */
+    public static int _BITS_PTHREADTYPES_COMMON_H() {
+        return _BITS_PTHREADTYPES_COMMON_H;
+    }
+    private static final int _THREAD_SHARED_TYPES_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _THREAD_SHARED_TYPES_H 1
+     * }
+     */
+    public static int _THREAD_SHARED_TYPES_H() {
+        return _THREAD_SHARED_TYPES_H;
+    }
+    private static final int _BITS_PTHREADTYPES_ARCH_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_PTHREADTYPES_ARCH_H 1
+     * }
+     */
+    public static int _BITS_PTHREADTYPES_ARCH_H() {
+        return _BITS_PTHREADTYPES_ARCH_H;
+    }
+    private static final int __SIZEOF_PTHREAD_ATTR_T = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_ATTR_T 64
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_ATTR_T() {
+        return __SIZEOF_PTHREAD_ATTR_T;
+    }
+    private static final int __SIZEOF_PTHREAD_MUTEX_T = (int)48L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_MUTEX_T 48
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_MUTEX_T() {
+        return __SIZEOF_PTHREAD_MUTEX_T;
+    }
+    private static final int __SIZEOF_PTHREAD_MUTEXATTR_T = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_MUTEXATTR_T 8
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_MUTEXATTR_T() {
+        return __SIZEOF_PTHREAD_MUTEXATTR_T;
+    }
+    private static final int __SIZEOF_PTHREAD_CONDATTR_T = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_CONDATTR_T 8
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_CONDATTR_T() {
+        return __SIZEOF_PTHREAD_CONDATTR_T;
+    }
+    private static final int __SIZEOF_PTHREAD_RWLOCK_T = (int)56L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_RWLOCK_T 56
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_RWLOCK_T() {
+        return __SIZEOF_PTHREAD_RWLOCK_T;
+    }
+    private static final int __SIZEOF_PTHREAD_BARRIER_T = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_BARRIER_T 32
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_BARRIER_T() {
+        return __SIZEOF_PTHREAD_BARRIER_T;
+    }
+    private static final int __SIZEOF_PTHREAD_BARRIERATTR_T = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_BARRIERATTR_T 8
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_BARRIERATTR_T() {
+        return __SIZEOF_PTHREAD_BARRIERATTR_T;
+    }
+    private static final int __SIZEOF_PTHREAD_COND_T = (int)48L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_COND_T 48
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_COND_T() {
+        return __SIZEOF_PTHREAD_COND_T;
+    }
+    private static final int __SIZEOF_PTHREAD_RWLOCKATTR_T = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIZEOF_PTHREAD_RWLOCKATTR_T 8
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_RWLOCKATTR_T() {
+        return __SIZEOF_PTHREAD_RWLOCKATTR_T;
+    }
+    private static final int _THREAD_MUTEX_INTERNAL_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _THREAD_MUTEX_INTERNAL_H 1
+     * }
+     */
+    public static int _THREAD_MUTEX_INTERNAL_H() {
+        return _THREAD_MUTEX_INTERNAL_H;
+    }
+    private static final int __PTHREAD_MUTEX_HAVE_PREV = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __PTHREAD_MUTEX_HAVE_PREV 1
+     * }
+     */
+    public static int __PTHREAD_MUTEX_HAVE_PREV() {
+        return __PTHREAD_MUTEX_HAVE_PREV;
+    }
+    private static final int __have_pthread_attr_t = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __have_pthread_attr_t 1
+     * }
+     */
+    public static int __have_pthread_attr_t() {
+        return __have_pthread_attr_t;
+    }
+    private static final int _ALLOCA_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _ALLOCA_H 1
+     * }
+     */
+    public static int _ALLOCA_H() {
+        return _ALLOCA_H;
+    }
+    private static final int _BITS_SIGNUM_GENERIC_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SIGNUM_GENERIC_H 1
+     * }
+     */
+    public static int _BITS_SIGNUM_GENERIC_H() {
+        return _BITS_SIGNUM_GENERIC_H;
+    }
+    private static final int SIGINT = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGINT 2
+     * }
+     */
+    public static int SIGINT() {
+        return SIGINT;
+    }
+    private static final int SIGILL = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGILL 4
+     * }
+     */
+    public static int SIGILL() {
+        return SIGILL;
+    }
+    private static final int SIGABRT = (int)6L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGABRT 6
+     * }
+     */
+    public static int SIGABRT() {
+        return SIGABRT;
+    }
+    private static final int SIGFPE = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGFPE 8
+     * }
+     */
+    public static int SIGFPE() {
+        return SIGFPE;
+    }
+    private static final int SIGSEGV = (int)11L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGSEGV 11
+     * }
+     */
+    public static int SIGSEGV() {
+        return SIGSEGV;
+    }
+    private static final int SIGTERM = (int)15L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGTERM 15
+     * }
+     */
+    public static int SIGTERM() {
+        return SIGTERM;
+    }
+    private static final int SIGHUP = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGHUP 1
+     * }
+     */
+    public static int SIGHUP() {
+        return SIGHUP;
+    }
+    private static final int SIGQUIT = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGQUIT 3
+     * }
+     */
+    public static int SIGQUIT() {
+        return SIGQUIT;
+    }
+    private static final int SIGTRAP = (int)5L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGTRAP 5
+     * }
+     */
+    public static int SIGTRAP() {
+        return SIGTRAP;
+    }
+    private static final int SIGKILL = (int)9L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGKILL 9
+     * }
+     */
+    public static int SIGKILL() {
+        return SIGKILL;
+    }
+    private static final int SIGPIPE = (int)13L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGPIPE 13
+     * }
+     */
+    public static int SIGPIPE() {
+        return SIGPIPE;
+    }
+    private static final int SIGALRM = (int)14L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGALRM 14
+     * }
+     */
+    public static int SIGALRM() {
+        return SIGALRM;
+    }
+    private static final int _BITS_SIGNUM_ARCH_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SIGNUM_ARCH_H 1
+     * }
+     */
+    public static int _BITS_SIGNUM_ARCH_H() {
+        return _BITS_SIGNUM_ARCH_H;
+    }
+    private static final int SIGSTKFLT = (int)16L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGSTKFLT 16
+     * }
+     */
+    public static int SIGSTKFLT() {
+        return SIGSTKFLT;
+    }
+    private static final int SIGPWR = (int)30L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGPWR 30
+     * }
+     */
+    public static int SIGPWR() {
+        return SIGPWR;
+    }
+    private static final int SIGBUS = (int)7L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGBUS 7
+     * }
+     */
+    public static int SIGBUS() {
+        return SIGBUS;
+    }
+    private static final int SIGSYS = (int)31L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGSYS 31
+     * }
+     */
+    public static int SIGSYS() {
+        return SIGSYS;
+    }
+    private static final int SIGURG = (int)23L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGURG 23
+     * }
+     */
+    public static int SIGURG() {
+        return SIGURG;
+    }
+    private static final int SIGSTOP = (int)19L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGSTOP 19
+     * }
+     */
+    public static int SIGSTOP() {
+        return SIGSTOP;
+    }
+    private static final int SIGTSTP = (int)20L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGTSTP 20
+     * }
+     */
+    public static int SIGTSTP() {
+        return SIGTSTP;
+    }
+    private static final int SIGCONT = (int)18L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGCONT 18
+     * }
+     */
+    public static int SIGCONT() {
+        return SIGCONT;
+    }
+    private static final int SIGCHLD = (int)17L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGCHLD 17
+     * }
+     */
+    public static int SIGCHLD() {
+        return SIGCHLD;
+    }
+    private static final int SIGTTIN = (int)21L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGTTIN 21
+     * }
+     */
+    public static int SIGTTIN() {
+        return SIGTTIN;
+    }
+    private static final int SIGTTOU = (int)22L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGTTOU 22
+     * }
+     */
+    public static int SIGTTOU() {
+        return SIGTTOU;
+    }
+    private static final int SIGPOLL = (int)29L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGPOLL 29
+     * }
+     */
+    public static int SIGPOLL() {
+        return SIGPOLL;
+    }
+    private static final int SIGXFSZ = (int)25L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGXFSZ 25
+     * }
+     */
+    public static int SIGXFSZ() {
+        return SIGXFSZ;
+    }
+    private static final int SIGXCPU = (int)24L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGXCPU 24
+     * }
+     */
+    public static int SIGXCPU() {
+        return SIGXCPU;
+    }
+    private static final int SIGVTALRM = (int)26L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGVTALRM 26
+     * }
+     */
+    public static int SIGVTALRM() {
+        return SIGVTALRM;
+    }
+    private static final int SIGPROF = (int)27L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGPROF 27
+     * }
+     */
+    public static int SIGPROF() {
+        return SIGPROF;
+    }
+    private static final int SIGUSR1 = (int)10L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGUSR1 10
+     * }
+     */
+    public static int SIGUSR1() {
+        return SIGUSR1;
+    }
+    private static final int SIGUSR2 = (int)12L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGUSR2 12
+     * }
+     */
+    public static int SIGUSR2() {
+        return SIGUSR2;
+    }
+    private static final int SIGWINCH = (int)28L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGWINCH 28
+     * }
+     */
+    public static int SIGWINCH() {
+        return SIGWINCH;
+    }
+    private static final int __SIGRTMIN = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIGRTMIN 32
+     * }
+     */
+    public static int __SIGRTMIN() {
+        return __SIGRTMIN;
+    }
+    private static final int __SIGRTMAX = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIGRTMAX 64
+     * }
+     */
+    public static int __SIGRTMAX() {
+        return __SIGRTMAX;
+    }
+    private static final int __sig_atomic_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __sig_atomic_t_defined 1
+     * }
+     */
+    public static int __sig_atomic_t_defined() {
+        return __sig_atomic_t_defined;
+    }
+    private static final int __siginfo_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __siginfo_t_defined 1
+     * }
+     */
+    public static int __siginfo_t_defined() {
+        return __siginfo_t_defined;
+    }
+    private static final int __SI_MAX_SIZE = (int)128L;
+    /**
+     * {@snippet lang=c :
+     * #define __SI_MAX_SIZE 128
+     * }
+     */
+    public static int __SI_MAX_SIZE() {
+        return __SI_MAX_SIZE;
+    }
+    private static final int _BITS_SIGINFO_ARCH_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SIGINFO_ARCH_H 1
+     * }
+     */
+    public static int _BITS_SIGINFO_ARCH_H() {
+        return _BITS_SIGINFO_ARCH_H;
+    }
+    private static final int __SI_ERRNO_THEN_CODE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __SI_ERRNO_THEN_CODE 1
+     * }
+     */
+    public static int __SI_ERRNO_THEN_CODE() {
+        return __SI_ERRNO_THEN_CODE;
+    }
+    private static final int __SI_HAVE_SIGSYS = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __SI_HAVE_SIGSYS 1
+     * }
+     */
+    public static int __SI_HAVE_SIGSYS() {
+        return __SI_HAVE_SIGSYS;
+    }
+    private static final int _BITS_SIGINFO_CONSTS_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SIGINFO_CONSTS_H 1
+     * }
+     */
+    public static int _BITS_SIGINFO_CONSTS_H() {
+        return _BITS_SIGINFO_CONSTS_H;
+    }
+    private static final int __SI_ASYNCIO_AFTER_SIGIO = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __SI_ASYNCIO_AFTER_SIGIO 1
+     * }
+     */
+    public static int __SI_ASYNCIO_AFTER_SIGIO() {
+        return __SI_ASYNCIO_AFTER_SIGIO;
+    }
+    private static final int __sigevent_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __sigevent_t_defined 1
+     * }
+     */
+    public static int __sigevent_t_defined() {
+        return __sigevent_t_defined;
+    }
+    private static final int __SIGEV_MAX_SIZE = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * #define __SIGEV_MAX_SIZE 64
+     * }
+     */
+    public static int __SIGEV_MAX_SIZE() {
+        return __SIGEV_MAX_SIZE;
+    }
+    private static final int _BITS_SIGEVENT_CONSTS_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SIGEVENT_CONSTS_H 1
+     * }
+     */
+    public static int _BITS_SIGEVENT_CONSTS_H() {
+        return _BITS_SIGEVENT_CONSTS_H;
+    }
+    private static final int _BITS_SIGACTION_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SIGACTION_H 1
+     * }
+     */
+    public static int _BITS_SIGACTION_H() {
+        return _BITS_SIGACTION_H;
+    }
+    private static final int SA_NOCLDSTOP = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define SA_NOCLDSTOP 1
+     * }
+     */
+    public static int SA_NOCLDSTOP() {
+        return SA_NOCLDSTOP;
+    }
+    private static final int SA_NOCLDWAIT = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define SA_NOCLDWAIT 2
+     * }
+     */
+    public static int SA_NOCLDWAIT() {
+        return SA_NOCLDWAIT;
+    }
+    private static final int SA_SIGINFO = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define SA_SIGINFO 4
+     * }
+     */
+    public static int SA_SIGINFO() {
+        return SA_SIGINFO;
+    }
+    private static final int SA_ONSTACK = (int)134217728L;
+    /**
+     * {@snippet lang=c :
+     * #define SA_ONSTACK 134217728
+     * }
+     */
+    public static int SA_ONSTACK() {
+        return SA_ONSTACK;
+    }
+    private static final int SA_RESTART = (int)268435456L;
+    /**
+     * {@snippet lang=c :
+     * #define SA_RESTART 268435456
+     * }
+     */
+    public static int SA_RESTART() {
+        return SA_RESTART;
+    }
+    private static final int SA_NODEFER = (int)1073741824L;
+    /**
+     * {@snippet lang=c :
+     * #define SA_NODEFER 1073741824
+     * }
+     */
+    public static int SA_NODEFER() {
+        return SA_NODEFER;
+    }
+    private static final int SA_INTERRUPT = (int)536870912L;
+    /**
+     * {@snippet lang=c :
+     * #define SA_INTERRUPT 536870912
+     * }
+     */
+    public static int SA_INTERRUPT() {
+        return SA_INTERRUPT;
+    }
+    private static final int SIG_BLOCK = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define SIG_BLOCK 0
+     * }
+     */
+    public static int SIG_BLOCK() {
+        return SIG_BLOCK;
+    }
+    private static final int SIG_UNBLOCK = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define SIG_UNBLOCK 1
+     * }
+     */
+    public static int SIG_UNBLOCK() {
+        return SIG_UNBLOCK;
+    }
+    private static final int SIG_SETMASK = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define SIG_SETMASK 2
+     * }
+     */
+    public static int SIG_SETMASK() {
+        return SIG_SETMASK;
+    }
+    private static final int _BITS_SIGCONTEXT_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SIGCONTEXT_H 1
+     * }
+     */
+    public static int _BITS_SIGCONTEXT_H() {
+        return _BITS_SIGCONTEXT_H;
+    }
+    private static final int __BITS_PER_LONG = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * #define __BITS_PER_LONG 64
+     * }
+     */
+    public static int __BITS_PER_LONG() {
+        return __BITS_PER_LONG;
+    }
+    private static final int FPSIMD_MAGIC = (int)1179680769L;
+    /**
+     * {@snippet lang=c :
+     * #define FPSIMD_MAGIC 1179680769
+     * }
+     */
+    public static int FPSIMD_MAGIC() {
+        return FPSIMD_MAGIC;
+    }
+    private static final int ESR_MAGIC = (int)1163088385L;
+    /**
+     * {@snippet lang=c :
+     * #define ESR_MAGIC 1163088385
+     * }
+     */
+    public static int ESR_MAGIC() {
+        return ESR_MAGIC;
+    }
+    private static final int EXTRA_MAGIC = (int)1163416577L;
+    /**
+     * {@snippet lang=c :
+     * #define EXTRA_MAGIC 1163416577
+     * }
+     */
+    public static int EXTRA_MAGIC() {
+        return EXTRA_MAGIC;
+    }
+    private static final int SVE_MAGIC = (int)1398162689L;
+    /**
+     * {@snippet lang=c :
+     * #define SVE_MAGIC 1398162689
+     * }
+     */
+    public static int SVE_MAGIC() {
+        return SVE_MAGIC;
+    }
+    private static final int SVE_SIG_FLAG_SM = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define SVE_SIG_FLAG_SM 1
+     * }
+     */
+    public static int SVE_SIG_FLAG_SM() {
+        return SVE_SIG_FLAG_SM;
+    }
+    private static final int TPIDR2_MAGIC = (int)1414547714L;
+    /**
+     * {@snippet lang=c :
+     * #define TPIDR2_MAGIC 1414547714
+     * }
+     */
+    public static int TPIDR2_MAGIC() {
+        return TPIDR2_MAGIC;
+    }
+    private static final int ZA_MAGIC = (int)1412850501L;
+    /**
+     * {@snippet lang=c :
+     * #define ZA_MAGIC 1412850501
+     * }
+     */
+    public static int ZA_MAGIC() {
+        return ZA_MAGIC;
+    }
+    private static final int ZT_MAGIC = (int)1515474433L;
+    /**
+     * {@snippet lang=c :
+     * #define ZT_MAGIC 1515474433
+     * }
+     */
+    public static int ZT_MAGIC() {
+        return ZT_MAGIC;
+    }
+    private static final int __SVE_VQ_BYTES = (int)16L;
+    /**
+     * {@snippet lang=c :
+     * #define __SVE_VQ_BYTES 16
+     * }
+     */
+    public static int __SVE_VQ_BYTES() {
+        return __SVE_VQ_BYTES;
+    }
+    private static final int __SVE_VQ_MIN = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __SVE_VQ_MIN 1
+     * }
+     */
+    public static int __SVE_VQ_MIN() {
+        return __SVE_VQ_MIN;
+    }
+    private static final int __SVE_VQ_MAX = (int)512L;
+    /**
+     * {@snippet lang=c :
+     * #define __SVE_VQ_MAX 512
+     * }
+     */
+    public static int __SVE_VQ_MAX() {
+        return __SVE_VQ_MAX;
+    }
+    private static final int __SVE_NUM_ZREGS = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define __SVE_NUM_ZREGS 32
+     * }
+     */
+    public static int __SVE_NUM_ZREGS() {
+        return __SVE_NUM_ZREGS;
+    }
+    private static final int __SVE_NUM_PREGS = (int)16L;
+    /**
+     * {@snippet lang=c :
+     * #define __SVE_NUM_PREGS 16
+     * }
+     */
+    public static int __SVE_NUM_PREGS() {
+        return __SVE_NUM_PREGS;
+    }
+    private static final int __SVE_ZREGS_OFFSET = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define __SVE_ZREGS_OFFSET 0
+     * }
+     */
+    public static int __SVE_ZREGS_OFFSET() {
+        return __SVE_ZREGS_OFFSET;
+    }
+    private static final int ZT_SIG_REG_SIZE = (int)512L;
+    /**
+     * {@snippet lang=c :
+     * #define ZT_SIG_REG_SIZE 512
+     * }
+     */
+    public static int ZT_SIG_REG_SIZE() {
+        return ZT_SIG_REG_SIZE;
+    }
+    private static final int __stack_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __stack_t_defined 1
+     * }
+     */
+    public static int __stack_t_defined() {
+        return __stack_t_defined;
+    }
+    private static final int _SYS_UCONTEXT_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _SYS_UCONTEXT_H 1
+     * }
+     */
+    public static int _SYS_UCONTEXT_H() {
+        return _SYS_UCONTEXT_H;
+    }
+    private static final int _SYS_PROCFS_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _SYS_PROCFS_H 1
+     * }
+     */
+    public static int _SYS_PROCFS_H() {
+        return _SYS_PROCFS_H;
+    }
+    private static final int _SYS_TIME_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _SYS_TIME_H 1
+     * }
+     */
+    public static int _SYS_TIME_H() {
+        return _SYS_TIME_H;
+    }
+    private static final int _SYS_USER_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _SYS_USER_H 1
+     * }
+     */
+    public static int _SYS_USER_H() {
+        return _SYS_USER_H;
+    }
+    private static final int _BITS_SIGSTACK_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SIGSTACK_H 1
+     * }
+     */
+    public static int _BITS_SIGSTACK_H() {
+        return _BITS_SIGSTACK_H;
+    }
+    private static final int MINSIGSTKSZ = (int)5120L;
+    /**
+     * {@snippet lang=c :
+     * #define MINSIGSTKSZ 5120
+     * }
+     */
+    public static int MINSIGSTKSZ() {
+        return MINSIGSTKSZ;
+    }
+    private static final int SIGSTKSZ = (int)16384L;
+    /**
+     * {@snippet lang=c :
+     * #define SIGSTKSZ 16384
+     * }
+     */
+    public static int SIGSTKSZ() {
+        return SIGSTKSZ;
+    }
+    private static final int _BITS_SS_FLAGS_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SS_FLAGS_H 1
+     * }
+     */
+    public static int _BITS_SS_FLAGS_H() {
+        return _BITS_SS_FLAGS_H;
+    }
+    private static final int __sigstack_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __sigstack_defined 1
+     * }
+     */
+    public static int __sigstack_defined() {
+        return __sigstack_defined;
+    }
+    private static final int _BITS_SIGTHREAD_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SIGTHREAD_H 1
+     * }
+     */
+    public static int _BITS_SIGTHREAD_H() {
+        return _BITS_SIGTHREAD_H;
+    }
+    private static final int G_DATALIST_FLAGS_MASK = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * #define G_DATALIST_FLAGS_MASK 3
+     * }
+     */
+    public static int G_DATALIST_FLAGS_MASK() {
+        return G_DATALIST_FLAGS_MASK;
+    }
+    private static final int _DIRENT_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _DIRENT_H 1
+     * }
+     */
+    public static int _DIRENT_H() {
+        return _DIRENT_H;
+    }
+    private static final int _DIRENT_MATCHES_DIRENT64 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _DIRENT_MATCHES_DIRENT64 1
+     * }
+     */
+    public static int _DIRENT_MATCHES_DIRENT64() {
+        return _DIRENT_MATCHES_DIRENT64;
+    }
+    private static final int G_PRIORITY_DEFAULT = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define G_PRIORITY_DEFAULT 0
+     * }
+     */
+    public static int G_PRIORITY_DEFAULT() {
+        return G_PRIORITY_DEFAULT;
+    }
+    private static final int G_PRIORITY_HIGH_IDLE = (int)100L;
+    /**
+     * {@snippet lang=c :
+     * #define G_PRIORITY_HIGH_IDLE 100
+     * }
+     */
+    public static int G_PRIORITY_HIGH_IDLE() {
+        return G_PRIORITY_HIGH_IDLE;
+    }
+    private static final int G_PRIORITY_DEFAULT_IDLE = (int)200L;
+    /**
+     * {@snippet lang=c :
+     * #define G_PRIORITY_DEFAULT_IDLE 200
+     * }
+     */
+    public static int G_PRIORITY_DEFAULT_IDLE() {
+        return G_PRIORITY_DEFAULT_IDLE;
+    }
+    private static final int G_PRIORITY_LOW = (int)300L;
+    /**
+     * {@snippet lang=c :
+     * #define G_PRIORITY_LOW 300
+     * }
+     */
+    public static int G_PRIORITY_LOW() {
+        return G_PRIORITY_LOW;
+    }
+    private static final int G_UNICHAR_MAX_DECOMPOSITION_LENGTH = (int)18L;
+    /**
+     * {@snippet lang=c :
+     * #define G_UNICHAR_MAX_DECOMPOSITION_LENGTH 18
+     * }
+     */
+    public static int G_UNICHAR_MAX_DECOMPOSITION_LENGTH() {
+        return G_UNICHAR_MAX_DECOMPOSITION_LENGTH;
+    }
+    private static final int _ERRNO_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _ERRNO_H 1
+     * }
+     */
+    public static int _ERRNO_H() {
+        return _ERRNO_H;
+    }
+    private static final int _BITS_ERRNO_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_ERRNO_H 1
+     * }
+     */
+    public static int _BITS_ERRNO_H() {
+        return _BITS_ERRNO_H;
+    }
+    private static final int EPERM = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define EPERM 1
+     * }
+     */
+    public static int EPERM() {
+        return EPERM;
+    }
+    private static final int ENOENT = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOENT 2
+     * }
+     */
+    public static int ENOENT() {
+        return ENOENT;
+    }
+    private static final int ESRCH = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * #define ESRCH 3
+     * }
+     */
+    public static int ESRCH() {
+        return ESRCH;
+    }
+    private static final int EINTR = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define EINTR 4
+     * }
+     */
+    public static int EINTR() {
+        return EINTR;
+    }
+    private static final int EIO = (int)5L;
+    /**
+     * {@snippet lang=c :
+     * #define EIO 5
+     * }
+     */
+    public static int EIO() {
+        return EIO;
+    }
+    private static final int ENXIO = (int)6L;
+    /**
+     * {@snippet lang=c :
+     * #define ENXIO 6
+     * }
+     */
+    public static int ENXIO() {
+        return ENXIO;
+    }
+    private static final int E2BIG = (int)7L;
+    /**
+     * {@snippet lang=c :
+     * #define E2BIG 7
+     * }
+     */
+    public static int E2BIG() {
+        return E2BIG;
+    }
+    private static final int ENOEXEC = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOEXEC 8
+     * }
+     */
+    public static int ENOEXEC() {
+        return ENOEXEC;
+    }
+    private static final int EBADF = (int)9L;
+    /**
+     * {@snippet lang=c :
+     * #define EBADF 9
+     * }
+     */
+    public static int EBADF() {
+        return EBADF;
+    }
+    private static final int ECHILD = (int)10L;
+    /**
+     * {@snippet lang=c :
+     * #define ECHILD 10
+     * }
+     */
+    public static int ECHILD() {
+        return ECHILD;
+    }
+    private static final int EAGAIN = (int)11L;
+    /**
+     * {@snippet lang=c :
+     * #define EAGAIN 11
+     * }
+     */
+    public static int EAGAIN() {
+        return EAGAIN;
+    }
+    private static final int ENOMEM = (int)12L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOMEM 12
+     * }
+     */
+    public static int ENOMEM() {
+        return ENOMEM;
+    }
+    private static final int EACCES = (int)13L;
+    /**
+     * {@snippet lang=c :
+     * #define EACCES 13
+     * }
+     */
+    public static int EACCES() {
+        return EACCES;
+    }
+    private static final int EFAULT = (int)14L;
+    /**
+     * {@snippet lang=c :
+     * #define EFAULT 14
+     * }
+     */
+    public static int EFAULT() {
+        return EFAULT;
+    }
+    private static final int ENOTBLK = (int)15L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOTBLK 15
+     * }
+     */
+    public static int ENOTBLK() {
+        return ENOTBLK;
+    }
+    private static final int EBUSY = (int)16L;
+    /**
+     * {@snippet lang=c :
+     * #define EBUSY 16
+     * }
+     */
+    public static int EBUSY() {
+        return EBUSY;
+    }
+    private static final int EEXIST = (int)17L;
+    /**
+     * {@snippet lang=c :
+     * #define EEXIST 17
+     * }
+     */
+    public static int EEXIST() {
+        return EEXIST;
+    }
+    private static final int EXDEV = (int)18L;
+    /**
+     * {@snippet lang=c :
+     * #define EXDEV 18
+     * }
+     */
+    public static int EXDEV() {
+        return EXDEV;
+    }
+    private static final int ENODEV = (int)19L;
+    /**
+     * {@snippet lang=c :
+     * #define ENODEV 19
+     * }
+     */
+    public static int ENODEV() {
+        return ENODEV;
+    }
+    private static final int ENOTDIR = (int)20L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOTDIR 20
+     * }
+     */
+    public static int ENOTDIR() {
+        return ENOTDIR;
+    }
+    private static final int EISDIR = (int)21L;
+    /**
+     * {@snippet lang=c :
+     * #define EISDIR 21
+     * }
+     */
+    public static int EISDIR() {
+        return EISDIR;
+    }
+    private static final int EINVAL = (int)22L;
+    /**
+     * {@snippet lang=c :
+     * #define EINVAL 22
+     * }
+     */
+    public static int EINVAL() {
+        return EINVAL;
+    }
+    private static final int ENFILE = (int)23L;
+    /**
+     * {@snippet lang=c :
+     * #define ENFILE 23
+     * }
+     */
+    public static int ENFILE() {
+        return ENFILE;
+    }
+    private static final int EMFILE = (int)24L;
+    /**
+     * {@snippet lang=c :
+     * #define EMFILE 24
+     * }
+     */
+    public static int EMFILE() {
+        return EMFILE;
+    }
+    private static final int ENOTTY = (int)25L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOTTY 25
+     * }
+     */
+    public static int ENOTTY() {
+        return ENOTTY;
+    }
+    private static final int ETXTBSY = (int)26L;
+    /**
+     * {@snippet lang=c :
+     * #define ETXTBSY 26
+     * }
+     */
+    public static int ETXTBSY() {
+        return ETXTBSY;
+    }
+    private static final int EFBIG = (int)27L;
+    /**
+     * {@snippet lang=c :
+     * #define EFBIG 27
+     * }
+     */
+    public static int EFBIG() {
+        return EFBIG;
+    }
+    private static final int ENOSPC = (int)28L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOSPC 28
+     * }
+     */
+    public static int ENOSPC() {
+        return ENOSPC;
+    }
+    private static final int ESPIPE = (int)29L;
+    /**
+     * {@snippet lang=c :
+     * #define ESPIPE 29
+     * }
+     */
+    public static int ESPIPE() {
+        return ESPIPE;
+    }
+    private static final int EROFS = (int)30L;
+    /**
+     * {@snippet lang=c :
+     * #define EROFS 30
+     * }
+     */
+    public static int EROFS() {
+        return EROFS;
+    }
+    private static final int EMLINK = (int)31L;
+    /**
+     * {@snippet lang=c :
+     * #define EMLINK 31
+     * }
+     */
+    public static int EMLINK() {
+        return EMLINK;
+    }
+    private static final int EPIPE = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define EPIPE 32
+     * }
+     */
+    public static int EPIPE() {
+        return EPIPE;
+    }
+    private static final int EDOM = (int)33L;
+    /**
+     * {@snippet lang=c :
+     * #define EDOM 33
+     * }
+     */
+    public static int EDOM() {
+        return EDOM;
+    }
+    private static final int ERANGE = (int)34L;
+    /**
+     * {@snippet lang=c :
+     * #define ERANGE 34
+     * }
+     */
+    public static int ERANGE() {
+        return ERANGE;
+    }
+    private static final int EDEADLK = (int)35L;
+    /**
+     * {@snippet lang=c :
+     * #define EDEADLK 35
+     * }
+     */
+    public static int EDEADLK() {
+        return EDEADLK;
+    }
+    private static final int ENAMETOOLONG = (int)36L;
+    /**
+     * {@snippet lang=c :
+     * #define ENAMETOOLONG 36
+     * }
+     */
+    public static int ENAMETOOLONG() {
+        return ENAMETOOLONG;
+    }
+    private static final int ENOLCK = (int)37L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOLCK 37
+     * }
+     */
+    public static int ENOLCK() {
+        return ENOLCK;
+    }
+    private static final int ENOSYS = (int)38L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOSYS 38
+     * }
+     */
+    public static int ENOSYS() {
+        return ENOSYS;
+    }
+    private static final int ENOTEMPTY = (int)39L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOTEMPTY 39
+     * }
+     */
+    public static int ENOTEMPTY() {
+        return ENOTEMPTY;
+    }
+    private static final int ELOOP = (int)40L;
+    /**
+     * {@snippet lang=c :
+     * #define ELOOP 40
+     * }
+     */
+    public static int ELOOP() {
+        return ELOOP;
+    }
+    private static final int ENOMSG = (int)42L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOMSG 42
+     * }
+     */
+    public static int ENOMSG() {
+        return ENOMSG;
+    }
+    private static final int EIDRM = (int)43L;
+    /**
+     * {@snippet lang=c :
+     * #define EIDRM 43
+     * }
+     */
+    public static int EIDRM() {
+        return EIDRM;
+    }
+    private static final int ECHRNG = (int)44L;
+    /**
+     * {@snippet lang=c :
+     * #define ECHRNG 44
+     * }
+     */
+    public static int ECHRNG() {
+        return ECHRNG;
+    }
+    private static final int EL2NSYNC = (int)45L;
+    /**
+     * {@snippet lang=c :
+     * #define EL2NSYNC 45
+     * }
+     */
+    public static int EL2NSYNC() {
+        return EL2NSYNC;
+    }
+    private static final int EL3HLT = (int)46L;
+    /**
+     * {@snippet lang=c :
+     * #define EL3HLT 46
+     * }
+     */
+    public static int EL3HLT() {
+        return EL3HLT;
+    }
+    private static final int EL3RST = (int)47L;
+    /**
+     * {@snippet lang=c :
+     * #define EL3RST 47
+     * }
+     */
+    public static int EL3RST() {
+        return EL3RST;
+    }
+    private static final int ELNRNG = (int)48L;
+    /**
+     * {@snippet lang=c :
+     * #define ELNRNG 48
+     * }
+     */
+    public static int ELNRNG() {
+        return ELNRNG;
+    }
+    private static final int EUNATCH = (int)49L;
+    /**
+     * {@snippet lang=c :
+     * #define EUNATCH 49
+     * }
+     */
+    public static int EUNATCH() {
+        return EUNATCH;
+    }
+    private static final int ENOCSI = (int)50L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOCSI 50
+     * }
+     */
+    public static int ENOCSI() {
+        return ENOCSI;
+    }
+    private static final int EL2HLT = (int)51L;
+    /**
+     * {@snippet lang=c :
+     * #define EL2HLT 51
+     * }
+     */
+    public static int EL2HLT() {
+        return EL2HLT;
+    }
+    private static final int EBADE = (int)52L;
+    /**
+     * {@snippet lang=c :
+     * #define EBADE 52
+     * }
+     */
+    public static int EBADE() {
+        return EBADE;
+    }
+    private static final int EBADR = (int)53L;
+    /**
+     * {@snippet lang=c :
+     * #define EBADR 53
+     * }
+     */
+    public static int EBADR() {
+        return EBADR;
+    }
+    private static final int EXFULL = (int)54L;
+    /**
+     * {@snippet lang=c :
+     * #define EXFULL 54
+     * }
+     */
+    public static int EXFULL() {
+        return EXFULL;
+    }
+    private static final int ENOANO = (int)55L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOANO 55
+     * }
+     */
+    public static int ENOANO() {
+        return ENOANO;
+    }
+    private static final int EBADRQC = (int)56L;
+    /**
+     * {@snippet lang=c :
+     * #define EBADRQC 56
+     * }
+     */
+    public static int EBADRQC() {
+        return EBADRQC;
+    }
+    private static final int EBADSLT = (int)57L;
+    /**
+     * {@snippet lang=c :
+     * #define EBADSLT 57
+     * }
+     */
+    public static int EBADSLT() {
+        return EBADSLT;
+    }
+    private static final int EBFONT = (int)59L;
+    /**
+     * {@snippet lang=c :
+     * #define EBFONT 59
+     * }
+     */
+    public static int EBFONT() {
+        return EBFONT;
+    }
+    private static final int ENOSTR = (int)60L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOSTR 60
+     * }
+     */
+    public static int ENOSTR() {
+        return ENOSTR;
+    }
+    private static final int ENODATA = (int)61L;
+    /**
+     * {@snippet lang=c :
+     * #define ENODATA 61
+     * }
+     */
+    public static int ENODATA() {
+        return ENODATA;
+    }
+    private static final int ETIME = (int)62L;
+    /**
+     * {@snippet lang=c :
+     * #define ETIME 62
+     * }
+     */
+    public static int ETIME() {
+        return ETIME;
+    }
+    private static final int ENOSR = (int)63L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOSR 63
+     * }
+     */
+    public static int ENOSR() {
+        return ENOSR;
+    }
+    private static final int ENONET = (int)64L;
+    /**
+     * {@snippet lang=c :
+     * #define ENONET 64
+     * }
+     */
+    public static int ENONET() {
+        return ENONET;
+    }
+    private static final int ENOPKG = (int)65L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOPKG 65
+     * }
+     */
+    public static int ENOPKG() {
+        return ENOPKG;
+    }
+    private static final int EREMOTE = (int)66L;
+    /**
+     * {@snippet lang=c :
+     * #define EREMOTE 66
+     * }
+     */
+    public static int EREMOTE() {
+        return EREMOTE;
+    }
+    private static final int ENOLINK = (int)67L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOLINK 67
+     * }
+     */
+    public static int ENOLINK() {
+        return ENOLINK;
+    }
+    private static final int EADV = (int)68L;
+    /**
+     * {@snippet lang=c :
+     * #define EADV 68
+     * }
+     */
+    public static int EADV() {
+        return EADV;
+    }
+    private static final int ESRMNT = (int)69L;
+    /**
+     * {@snippet lang=c :
+     * #define ESRMNT 69
+     * }
+     */
+    public static int ESRMNT() {
+        return ESRMNT;
+    }
+    private static final int ECOMM = (int)70L;
+    /**
+     * {@snippet lang=c :
+     * #define ECOMM 70
+     * }
+     */
+    public static int ECOMM() {
+        return ECOMM;
+    }
+    private static final int EPROTO = (int)71L;
+    /**
+     * {@snippet lang=c :
+     * #define EPROTO 71
+     * }
+     */
+    public static int EPROTO() {
+        return EPROTO;
+    }
+    private static final int EMULTIHOP = (int)72L;
+    /**
+     * {@snippet lang=c :
+     * #define EMULTIHOP 72
+     * }
+     */
+    public static int EMULTIHOP() {
+        return EMULTIHOP;
+    }
+    private static final int EDOTDOT = (int)73L;
+    /**
+     * {@snippet lang=c :
+     * #define EDOTDOT 73
+     * }
+     */
+    public static int EDOTDOT() {
+        return EDOTDOT;
+    }
+    private static final int EBADMSG = (int)74L;
+    /**
+     * {@snippet lang=c :
+     * #define EBADMSG 74
+     * }
+     */
+    public static int EBADMSG() {
+        return EBADMSG;
+    }
+    private static final int EOVERFLOW = (int)75L;
+    /**
+     * {@snippet lang=c :
+     * #define EOVERFLOW 75
+     * }
+     */
+    public static int EOVERFLOW() {
+        return EOVERFLOW;
+    }
+    private static final int ENOTUNIQ = (int)76L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOTUNIQ 76
+     * }
+     */
+    public static int ENOTUNIQ() {
+        return ENOTUNIQ;
+    }
+    private static final int EBADFD = (int)77L;
+    /**
+     * {@snippet lang=c :
+     * #define EBADFD 77
+     * }
+     */
+    public static int EBADFD() {
+        return EBADFD;
+    }
+    private static final int EREMCHG = (int)78L;
+    /**
+     * {@snippet lang=c :
+     * #define EREMCHG 78
+     * }
+     */
+    public static int EREMCHG() {
+        return EREMCHG;
+    }
+    private static final int ELIBACC = (int)79L;
+    /**
+     * {@snippet lang=c :
+     * #define ELIBACC 79
+     * }
+     */
+    public static int ELIBACC() {
+        return ELIBACC;
+    }
+    private static final int ELIBBAD = (int)80L;
+    /**
+     * {@snippet lang=c :
+     * #define ELIBBAD 80
+     * }
+     */
+    public static int ELIBBAD() {
+        return ELIBBAD;
+    }
+    private static final int ELIBSCN = (int)81L;
+    /**
+     * {@snippet lang=c :
+     * #define ELIBSCN 81
+     * }
+     */
+    public static int ELIBSCN() {
+        return ELIBSCN;
+    }
+    private static final int ELIBMAX = (int)82L;
+    /**
+     * {@snippet lang=c :
+     * #define ELIBMAX 82
+     * }
+     */
+    public static int ELIBMAX() {
+        return ELIBMAX;
+    }
+    private static final int ELIBEXEC = (int)83L;
+    /**
+     * {@snippet lang=c :
+     * #define ELIBEXEC 83
+     * }
+     */
+    public static int ELIBEXEC() {
+        return ELIBEXEC;
+    }
+    private static final int EILSEQ = (int)84L;
+    /**
+     * {@snippet lang=c :
+     * #define EILSEQ 84
+     * }
+     */
+    public static int EILSEQ() {
+        return EILSEQ;
+    }
+    private static final int ERESTART = (int)85L;
+    /**
+     * {@snippet lang=c :
+     * #define ERESTART 85
+     * }
+     */
+    public static int ERESTART() {
+        return ERESTART;
+    }
+    private static final int ESTRPIPE = (int)86L;
+    /**
+     * {@snippet lang=c :
+     * #define ESTRPIPE 86
+     * }
+     */
+    public static int ESTRPIPE() {
+        return ESTRPIPE;
+    }
+    private static final int EUSERS = (int)87L;
+    /**
+     * {@snippet lang=c :
+     * #define EUSERS 87
+     * }
+     */
+    public static int EUSERS() {
+        return EUSERS;
+    }
+    private static final int ENOTSOCK = (int)88L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOTSOCK 88
+     * }
+     */
+    public static int ENOTSOCK() {
+        return ENOTSOCK;
+    }
+    private static final int EDESTADDRREQ = (int)89L;
+    /**
+     * {@snippet lang=c :
+     * #define EDESTADDRREQ 89
+     * }
+     */
+    public static int EDESTADDRREQ() {
+        return EDESTADDRREQ;
+    }
+    private static final int EMSGSIZE = (int)90L;
+    /**
+     * {@snippet lang=c :
+     * #define EMSGSIZE 90
+     * }
+     */
+    public static int EMSGSIZE() {
+        return EMSGSIZE;
+    }
+    private static final int EPROTOTYPE = (int)91L;
+    /**
+     * {@snippet lang=c :
+     * #define EPROTOTYPE 91
+     * }
+     */
+    public static int EPROTOTYPE() {
+        return EPROTOTYPE;
+    }
+    private static final int ENOPROTOOPT = (int)92L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOPROTOOPT 92
+     * }
+     */
+    public static int ENOPROTOOPT() {
+        return ENOPROTOOPT;
+    }
+    private static final int EPROTONOSUPPORT = (int)93L;
+    /**
+     * {@snippet lang=c :
+     * #define EPROTONOSUPPORT 93
+     * }
+     */
+    public static int EPROTONOSUPPORT() {
+        return EPROTONOSUPPORT;
+    }
+    private static final int ESOCKTNOSUPPORT = (int)94L;
+    /**
+     * {@snippet lang=c :
+     * #define ESOCKTNOSUPPORT 94
+     * }
+     */
+    public static int ESOCKTNOSUPPORT() {
+        return ESOCKTNOSUPPORT;
+    }
+    private static final int EOPNOTSUPP = (int)95L;
+    /**
+     * {@snippet lang=c :
+     * #define EOPNOTSUPP 95
+     * }
+     */
+    public static int EOPNOTSUPP() {
+        return EOPNOTSUPP;
+    }
+    private static final int EPFNOSUPPORT = (int)96L;
+    /**
+     * {@snippet lang=c :
+     * #define EPFNOSUPPORT 96
+     * }
+     */
+    public static int EPFNOSUPPORT() {
+        return EPFNOSUPPORT;
+    }
+    private static final int EAFNOSUPPORT = (int)97L;
+    /**
+     * {@snippet lang=c :
+     * #define EAFNOSUPPORT 97
+     * }
+     */
+    public static int EAFNOSUPPORT() {
+        return EAFNOSUPPORT;
+    }
+    private static final int EADDRINUSE = (int)98L;
+    /**
+     * {@snippet lang=c :
+     * #define EADDRINUSE 98
+     * }
+     */
+    public static int EADDRINUSE() {
+        return EADDRINUSE;
+    }
+    private static final int EADDRNOTAVAIL = (int)99L;
+    /**
+     * {@snippet lang=c :
+     * #define EADDRNOTAVAIL 99
+     * }
+     */
+    public static int EADDRNOTAVAIL() {
+        return EADDRNOTAVAIL;
+    }
+    private static final int ENETDOWN = (int)100L;
+    /**
+     * {@snippet lang=c :
+     * #define ENETDOWN 100
+     * }
+     */
+    public static int ENETDOWN() {
+        return ENETDOWN;
+    }
+    private static final int ENETUNREACH = (int)101L;
+    /**
+     * {@snippet lang=c :
+     * #define ENETUNREACH 101
+     * }
+     */
+    public static int ENETUNREACH() {
+        return ENETUNREACH;
+    }
+    private static final int ENETRESET = (int)102L;
+    /**
+     * {@snippet lang=c :
+     * #define ENETRESET 102
+     * }
+     */
+    public static int ENETRESET() {
+        return ENETRESET;
+    }
+    private static final int ECONNABORTED = (int)103L;
+    /**
+     * {@snippet lang=c :
+     * #define ECONNABORTED 103
+     * }
+     */
+    public static int ECONNABORTED() {
+        return ECONNABORTED;
+    }
+    private static final int ECONNRESET = (int)104L;
+    /**
+     * {@snippet lang=c :
+     * #define ECONNRESET 104
+     * }
+     */
+    public static int ECONNRESET() {
+        return ECONNRESET;
+    }
+    private static final int ENOBUFS = (int)105L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOBUFS 105
+     * }
+     */
+    public static int ENOBUFS() {
+        return ENOBUFS;
+    }
+    private static final int EISCONN = (int)106L;
+    /**
+     * {@snippet lang=c :
+     * #define EISCONN 106
+     * }
+     */
+    public static int EISCONN() {
+        return EISCONN;
+    }
+    private static final int ENOTCONN = (int)107L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOTCONN 107
+     * }
+     */
+    public static int ENOTCONN() {
+        return ENOTCONN;
+    }
+    private static final int ESHUTDOWN = (int)108L;
+    /**
+     * {@snippet lang=c :
+     * #define ESHUTDOWN 108
+     * }
+     */
+    public static int ESHUTDOWN() {
+        return ESHUTDOWN;
+    }
+    private static final int ETOOMANYREFS = (int)109L;
+    /**
+     * {@snippet lang=c :
+     * #define ETOOMANYREFS 109
+     * }
+     */
+    public static int ETOOMANYREFS() {
+        return ETOOMANYREFS;
+    }
+    private static final int ETIMEDOUT = (int)110L;
+    /**
+     * {@snippet lang=c :
+     * #define ETIMEDOUT 110
+     * }
+     */
+    public static int ETIMEDOUT() {
+        return ETIMEDOUT;
+    }
+    private static final int ECONNREFUSED = (int)111L;
+    /**
+     * {@snippet lang=c :
+     * #define ECONNREFUSED 111
+     * }
+     */
+    public static int ECONNREFUSED() {
+        return ECONNREFUSED;
+    }
+    private static final int EHOSTDOWN = (int)112L;
+    /**
+     * {@snippet lang=c :
+     * #define EHOSTDOWN 112
+     * }
+     */
+    public static int EHOSTDOWN() {
+        return EHOSTDOWN;
+    }
+    private static final int EHOSTUNREACH = (int)113L;
+    /**
+     * {@snippet lang=c :
+     * #define EHOSTUNREACH 113
+     * }
+     */
+    public static int EHOSTUNREACH() {
+        return EHOSTUNREACH;
+    }
+    private static final int EALREADY = (int)114L;
+    /**
+     * {@snippet lang=c :
+     * #define EALREADY 114
+     * }
+     */
+    public static int EALREADY() {
+        return EALREADY;
+    }
+    private static final int EINPROGRESS = (int)115L;
+    /**
+     * {@snippet lang=c :
+     * #define EINPROGRESS 115
+     * }
+     */
+    public static int EINPROGRESS() {
+        return EINPROGRESS;
+    }
+    private static final int ESTALE = (int)116L;
+    /**
+     * {@snippet lang=c :
+     * #define ESTALE 116
+     * }
+     */
+    public static int ESTALE() {
+        return ESTALE;
+    }
+    private static final int EUCLEAN = (int)117L;
+    /**
+     * {@snippet lang=c :
+     * #define EUCLEAN 117
+     * }
+     */
+    public static int EUCLEAN() {
+        return EUCLEAN;
+    }
+    private static final int ENOTNAM = (int)118L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOTNAM 118
+     * }
+     */
+    public static int ENOTNAM() {
+        return ENOTNAM;
+    }
+    private static final int ENAVAIL = (int)119L;
+    /**
+     * {@snippet lang=c :
+     * #define ENAVAIL 119
+     * }
+     */
+    public static int ENAVAIL() {
+        return ENAVAIL;
+    }
+    private static final int EISNAM = (int)120L;
+    /**
+     * {@snippet lang=c :
+     * #define EISNAM 120
+     * }
+     */
+    public static int EISNAM() {
+        return EISNAM;
+    }
+    private static final int EREMOTEIO = (int)121L;
+    /**
+     * {@snippet lang=c :
+     * #define EREMOTEIO 121
+     * }
+     */
+    public static int EREMOTEIO() {
+        return EREMOTEIO;
+    }
+    private static final int EDQUOT = (int)122L;
+    /**
+     * {@snippet lang=c :
+     * #define EDQUOT 122
+     * }
+     */
+    public static int EDQUOT() {
+        return EDQUOT;
+    }
+    private static final int ENOMEDIUM = (int)123L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOMEDIUM 123
+     * }
+     */
+    public static int ENOMEDIUM() {
+        return ENOMEDIUM;
+    }
+    private static final int EMEDIUMTYPE = (int)124L;
+    /**
+     * {@snippet lang=c :
+     * #define EMEDIUMTYPE 124
+     * }
+     */
+    public static int EMEDIUMTYPE() {
+        return EMEDIUMTYPE;
+    }
+    private static final int ECANCELED = (int)125L;
+    /**
+     * {@snippet lang=c :
+     * #define ECANCELED 125
+     * }
+     */
+    public static int ECANCELED() {
+        return ECANCELED;
+    }
+    private static final int ENOKEY = (int)126L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOKEY 126
+     * }
+     */
+    public static int ENOKEY() {
+        return ENOKEY;
+    }
+    private static final int EKEYEXPIRED = (int)127L;
+    /**
+     * {@snippet lang=c :
+     * #define EKEYEXPIRED 127
+     * }
+     */
+    public static int EKEYEXPIRED() {
+        return EKEYEXPIRED;
+    }
+    private static final int EKEYREVOKED = (int)128L;
+    /**
+     * {@snippet lang=c :
+     * #define EKEYREVOKED 128
+     * }
+     */
+    public static int EKEYREVOKED() {
+        return EKEYREVOKED;
+    }
+    private static final int EKEYREJECTED = (int)129L;
+    /**
+     * {@snippet lang=c :
+     * #define EKEYREJECTED 129
+     * }
+     */
+    public static int EKEYREJECTED() {
+        return EKEYREJECTED;
+    }
+    private static final int EOWNERDEAD = (int)130L;
+    /**
+     * {@snippet lang=c :
+     * #define EOWNERDEAD 130
+     * }
+     */
+    public static int EOWNERDEAD() {
+        return EOWNERDEAD;
+    }
+    private static final int ENOTRECOVERABLE = (int)131L;
+    /**
+     * {@snippet lang=c :
+     * #define ENOTRECOVERABLE 131
+     * }
+     */
+    public static int ENOTRECOVERABLE() {
+        return ENOTRECOVERABLE;
+    }
+    private static final int ERFKILL = (int)132L;
+    /**
+     * {@snippet lang=c :
+     * #define ERFKILL 132
+     * }
+     */
+    public static int ERFKILL() {
+        return ERFKILL;
+    }
+    private static final int EHWPOISON = (int)133L;
+    /**
+     * {@snippet lang=c :
+     * #define EHWPOISON 133
+     * }
+     */
+    public static int EHWPOISON() {
+        return EHWPOISON;
+    }
+    private static final int G_USEC_PER_SEC = (int)1000000L;
+    /**
+     * {@snippet lang=c :
+     * #define G_USEC_PER_SEC 1000000
+     * }
+     */
+    public static int G_USEC_PER_SEC() {
+        return G_USEC_PER_SEC;
+    }
+    private static final int G_ALLOC_ONLY = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define G_ALLOC_ONLY 1
+     * }
+     */
+    public static int G_ALLOC_ONLY() {
+        return G_ALLOC_ONLY;
+    }
+    private static final int G_ALLOC_AND_FREE = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define G_ALLOC_AND_FREE 2
+     * }
+     */
+    public static int G_ALLOC_AND_FREE() {
+        return G_ALLOC_AND_FREE;
+    }
+    private static final int G_ALLOCATOR_LIST = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define G_ALLOCATOR_LIST 1
+     * }
+     */
+    public static int G_ALLOCATOR_LIST() {
+        return G_ALLOCATOR_LIST;
+    }
+    private static final int G_ALLOCATOR_SLIST = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define G_ALLOCATOR_SLIST 2
+     * }
+     */
+    public static int G_ALLOCATOR_SLIST() {
+        return G_ALLOCATOR_SLIST;
+    }
+    private static final int G_ALLOCATOR_NODE = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * #define G_ALLOCATOR_NODE 3
+     * }
+     */
+    public static int G_ALLOCATOR_NODE() {
+        return G_ALLOCATOR_NODE;
+    }
+    private static final int _PTHREAD_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _PTHREAD_H 1
+     * }
+     */
+    public static int _PTHREAD_H() {
+        return _PTHREAD_H;
+    }
+    private static final int _SCHED_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _SCHED_H 1
+     * }
+     */
+    public static int _SCHED_H() {
+        return _SCHED_H;
+    }
+    private static final int _BITS_SCHED_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SCHED_H 1
+     * }
+     */
+    public static int _BITS_SCHED_H() {
+        return _BITS_SCHED_H;
+    }
+    private static final int SCHED_OTHER = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define SCHED_OTHER 0
+     * }
+     */
+    public static int SCHED_OTHER() {
+        return SCHED_OTHER;
+    }
+    private static final int SCHED_FIFO = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define SCHED_FIFO 1
+     * }
+     */
+    public static int SCHED_FIFO() {
+        return SCHED_FIFO;
+    }
+    private static final int SCHED_RR = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define SCHED_RR 2
+     * }
+     */
+    public static int SCHED_RR() {
+        return SCHED_RR;
+    }
+    private static final int _BITS_TYPES_STRUCT_SCHED_PARAM = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_TYPES_STRUCT_SCHED_PARAM 1
+     * }
+     */
+    public static int _BITS_TYPES_STRUCT_SCHED_PARAM() {
+        return _BITS_TYPES_STRUCT_SCHED_PARAM;
+    }
+    private static final int _BITS_CPU_SET_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_CPU_SET_H 1
+     * }
+     */
+    public static int _BITS_CPU_SET_H() {
+        return _BITS_CPU_SET_H;
+    }
+    private static final int __CPU_SETSIZE = (int)1024L;
+    /**
+     * {@snippet lang=c :
+     * #define __CPU_SETSIZE 1024
+     * }
+     */
+    public static int __CPU_SETSIZE() {
+        return __CPU_SETSIZE;
+    }
+    private static final int _BITS_SETJMP_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_SETJMP_H 1
+     * }
+     */
+    public static int _BITS_SETJMP_H() {
+        return _BITS_SETJMP_H;
+    }
+    private static final int __jmp_buf_tag_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __jmp_buf_tag_defined 1
+     * }
+     */
+    public static int __jmp_buf_tag_defined() {
+        return __jmp_buf_tag_defined;
+    }
+    private static final int PTHREAD_ONCE_INIT = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define PTHREAD_ONCE_INIT 0
+     * }
+     */
+    public static int PTHREAD_ONCE_INIT() {
+        return PTHREAD_ONCE_INIT;
+    }
+    private static final int G_SIGNAL_FLAGS_MASK = (int)511L;
+    /**
+     * {@snippet lang=c :
+     * #define G_SIGNAL_FLAGS_MASK 511
+     * }
+     */
+    public static int G_SIGNAL_FLAGS_MASK() {
+        return G_SIGNAL_FLAGS_MASK;
+    }
+    private static final int G_SIGNAL_MATCH_MASK = (int)63L;
+    /**
+     * {@snippet lang=c :
+     * #define G_SIGNAL_MATCH_MASK 63
+     * }
+     */
+    public static int G_SIGNAL_MATCH_MASK() {
+        return G_SIGNAL_MATCH_MASK;
+    }
+    private static final int _UNISTD_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _UNISTD_H 1
+     * }
+     */
+    public static int _UNISTD_H() {
+        return _UNISTD_H;
+    }
+    private static final int _XOPEN_VERSION = (int)700L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_VERSION 700
+     * }
+     */
+    public static int _XOPEN_VERSION() {
+        return _XOPEN_VERSION;
+    }
+    private static final int _XOPEN_XCU_VERSION = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_XCU_VERSION 4
+     * }
+     */
+    public static int _XOPEN_XCU_VERSION() {
+        return _XOPEN_XCU_VERSION;
+    }
+    private static final int _XOPEN_XPG2 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_XPG2 1
+     * }
+     */
+    public static int _XOPEN_XPG2() {
+        return _XOPEN_XPG2;
+    }
+    private static final int _XOPEN_XPG3 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_XPG3 1
+     * }
+     */
+    public static int _XOPEN_XPG3() {
+        return _XOPEN_XPG3;
+    }
+    private static final int _XOPEN_XPG4 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_XPG4 1
+     * }
+     */
+    public static int _XOPEN_XPG4() {
+        return _XOPEN_XPG4;
+    }
+    private static final int _XOPEN_UNIX = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_UNIX 1
+     * }
+     */
+    public static int _XOPEN_UNIX() {
+        return _XOPEN_UNIX;
+    }
+    private static final int _XOPEN_ENH_I18N = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_ENH_I18N 1
+     * }
+     */
+    public static int _XOPEN_ENH_I18N() {
+        return _XOPEN_ENH_I18N;
+    }
+    private static final int _XOPEN_LEGACY = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_LEGACY 1
+     * }
+     */
+    public static int _XOPEN_LEGACY() {
+        return _XOPEN_LEGACY;
+    }
+    private static final int _BITS_POSIX_OPT_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_POSIX_OPT_H 1
+     * }
+     */
+    public static int _BITS_POSIX_OPT_H() {
+        return _BITS_POSIX_OPT_H;
+    }
+    private static final int _POSIX_JOB_CONTROL = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_JOB_CONTROL 1
+     * }
+     */
+    public static int _POSIX_JOB_CONTROL() {
+        return _POSIX_JOB_CONTROL;
+    }
+    private static final int _POSIX_SAVED_IDS = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SAVED_IDS 1
+     * }
+     */
+    public static int _POSIX_SAVED_IDS() {
+        return _POSIX_SAVED_IDS;
+    }
+    private static final int _POSIX_CHOWN_RESTRICTED = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_CHOWN_RESTRICTED 0
+     * }
+     */
+    public static int _POSIX_CHOWN_RESTRICTED() {
+        return _POSIX_CHOWN_RESTRICTED;
+    }
+    private static final int _POSIX_NO_TRUNC = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_NO_TRUNC 1
+     * }
+     */
+    public static int _POSIX_NO_TRUNC() {
+        return _POSIX_NO_TRUNC;
+    }
+    private static final int _XOPEN_REALTIME = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_REALTIME 1
+     * }
+     */
+    public static int _XOPEN_REALTIME() {
+        return _XOPEN_REALTIME;
+    }
+    private static final int _XOPEN_REALTIME_THREADS = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_REALTIME_THREADS 1
+     * }
+     */
+    public static int _XOPEN_REALTIME_THREADS() {
+        return _XOPEN_REALTIME_THREADS;
+    }
+    private static final int _XOPEN_SHM = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XOPEN_SHM 1
+     * }
+     */
+    public static int _XOPEN_SHM() {
+        return _XOPEN_SHM;
+    }
+    private static final int _POSIX_REENTRANT_FUNCTIONS = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_REENTRANT_FUNCTIONS 1
+     * }
+     */
+    public static int _POSIX_REENTRANT_FUNCTIONS() {
+        return _POSIX_REENTRANT_FUNCTIONS;
+    }
+    private static final int _POSIX_ASYNC_IO = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_ASYNC_IO 1
+     * }
+     */
+    public static int _POSIX_ASYNC_IO() {
+        return _POSIX_ASYNC_IO;
+    }
+    private static final int _LFS_ASYNCHRONOUS_IO = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _LFS_ASYNCHRONOUS_IO 1
+     * }
+     */
+    public static int _LFS_ASYNCHRONOUS_IO() {
+        return _LFS_ASYNCHRONOUS_IO;
+    }
+    private static final int _LFS64_ASYNCHRONOUS_IO = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _LFS64_ASYNCHRONOUS_IO 1
+     * }
+     */
+    public static int _LFS64_ASYNCHRONOUS_IO() {
+        return _LFS64_ASYNCHRONOUS_IO;
+    }
+    private static final int _LFS_LARGEFILE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _LFS_LARGEFILE 1
+     * }
+     */
+    public static int _LFS_LARGEFILE() {
+        return _LFS_LARGEFILE;
+    }
+    private static final int _LFS64_LARGEFILE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _LFS64_LARGEFILE 1
+     * }
+     */
+    public static int _LFS64_LARGEFILE() {
+        return _LFS64_LARGEFILE;
+    }
+    private static final int _LFS64_STDIO = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _LFS64_STDIO 1
+     * }
+     */
+    public static int _LFS64_STDIO() {
+        return _LFS64_STDIO;
+    }
+    private static final int _POSIX_CPUTIME = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_CPUTIME 0
+     * }
+     */
+    public static int _POSIX_CPUTIME() {
+        return _POSIX_CPUTIME;
+    }
+    private static final int _POSIX_THREAD_CPUTIME = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_THREAD_CPUTIME 0
+     * }
+     */
+    public static int _POSIX_THREAD_CPUTIME() {
+        return _POSIX_THREAD_CPUTIME;
+    }
+    private static final int _POSIX_REGEXP = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_REGEXP 1
+     * }
+     */
+    public static int _POSIX_REGEXP() {
+        return _POSIX_REGEXP;
+    }
+    private static final int _POSIX_SHELL = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_SHELL 1
+     * }
+     */
+    public static int _POSIX_SHELL() {
+        return _POSIX_SHELL;
+    }
+    private static final int _POSIX_MONOTONIC_CLOCK = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_MONOTONIC_CLOCK 0
+     * }
+     */
+    public static int _POSIX_MONOTONIC_CLOCK() {
+        return _POSIX_MONOTONIC_CLOCK;
+    }
+    private static final int _POSIX_V7_LP64_OFF64 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_V7_LP64_OFF64 1
+     * }
+     */
+    public static int _POSIX_V7_LP64_OFF64() {
+        return _POSIX_V7_LP64_OFF64;
+    }
+    private static final int _POSIX_V6_LP64_OFF64 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _POSIX_V6_LP64_OFF64 1
+     * }
+     */
+    public static int _POSIX_V6_LP64_OFF64() {
+        return _POSIX_V6_LP64_OFF64;
+    }
+    private static final int _XBS5_LP64_OFF64 = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _XBS5_LP64_OFF64 1
+     * }
+     */
+    public static int _XBS5_LP64_OFF64() {
+        return _XBS5_LP64_OFF64;
+    }
+    private static final int STDIN_FILENO = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define STDIN_FILENO 0
+     * }
+     */
+    public static int STDIN_FILENO() {
+        return STDIN_FILENO;
+    }
+    private static final int STDOUT_FILENO = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define STDOUT_FILENO 1
+     * }
+     */
+    public static int STDOUT_FILENO() {
+        return STDOUT_FILENO;
+    }
+    private static final int STDERR_FILENO = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define STDERR_FILENO 2
+     * }
+     */
+    public static int STDERR_FILENO() {
+        return STDERR_FILENO;
+    }
+    private static final int R_OK = (int)4L;
+    /**
+     * {@snippet lang=c :
+     * #define R_OK 4
+     * }
+     */
+    public static int R_OK() {
+        return R_OK;
+    }
+    private static final int W_OK = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define W_OK 2
+     * }
+     */
+    public static int W_OK() {
+        return W_OK;
+    }
+    private static final int X_OK = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define X_OK 1
+     * }
+     */
+    public static int X_OK() {
+        return X_OK;
+    }
+    private static final int F_OK = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define F_OK 0
+     * }
+     */
+    public static int F_OK() {
+        return F_OK;
+    }
+    private static final int SEEK_SET = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define SEEK_SET 0
+     * }
+     */
+    public static int SEEK_SET() {
+        return SEEK_SET;
+    }
+    private static final int SEEK_CUR = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define SEEK_CUR 1
+     * }
+     */
+    public static int SEEK_CUR() {
+        return SEEK_CUR;
+    }
+    private static final int SEEK_END = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define SEEK_END 2
+     * }
+     */
+    public static int SEEK_END() {
+        return SEEK_END;
+    }
+    private static final int _GETOPT_POSIX_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _GETOPT_POSIX_H 1
+     * }
+     */
+    public static int _GETOPT_POSIX_H() {
+        return _GETOPT_POSIX_H;
+    }
+    private static final int _GETOPT_CORE_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _GETOPT_CORE_H 1
+     * }
+     */
+    public static int _GETOPT_CORE_H() {
+        return _GETOPT_CORE_H;
+    }
+    private static final int F_ULOCK = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define F_ULOCK 0
+     * }
+     */
+    public static int F_ULOCK() {
+        return F_ULOCK;
+    }
+    private static final int F_LOCK = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define F_LOCK 1
+     * }
+     */
+    public static int F_LOCK() {
+        return F_LOCK;
+    }
+    private static final int F_TLOCK = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define F_TLOCK 2
+     * }
+     */
+    public static int F_TLOCK() {
+        return F_TLOCK;
+    }
+    private static final int F_TEST = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * #define F_TEST 3
+     * }
+     */
+    public static int F_TEST() {
+        return F_TEST;
+    }
+    private static final int PANGO_VERSION_MAJOR = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_MAJOR 1
+     * }
+     */
+    public static int PANGO_VERSION_MAJOR() {
+        return PANGO_VERSION_MAJOR;
+    }
+    private static final int PANGO_VERSION_MINOR = (int)52L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_MINOR 52
+     * }
+     */
+    public static int PANGO_VERSION_MINOR() {
+        return PANGO_VERSION_MINOR;
+    }
+    private static final int PANGO_VERSION_MICRO = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_VERSION_MICRO 1
+     * }
+     */
+    public static int PANGO_VERSION_MICRO() {
+        return PANGO_VERSION_MICRO;
+    }
+    private static final int _STDINT_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _STDINT_H 1
+     * }
+     */
+    public static int _STDINT_H() {
+        return _STDINT_H;
+    }
+    private static final int _BITS_WCHAR_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_WCHAR_H 1
+     * }
+     */
+    public static int _BITS_WCHAR_H() {
+        return _BITS_WCHAR_H;
+    }
+    private static final int _BITS_STDINT_UINTN_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_STDINT_UINTN_H 1
+     * }
+     */
+    public static int _BITS_STDINT_UINTN_H() {
+        return _BITS_STDINT_UINTN_H;
+    }
+    private static final int HB_FEATURE_GLOBAL_START = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_FEATURE_GLOBAL_START 0
+     * }
+     */
+    public static int HB_FEATURE_GLOBAL_START() {
+        return HB_FEATURE_GLOBAL_START;
+    }
+    private static final int HB_UNICODE_COMBINING_CLASS_CCC133 = (int)133L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_UNICODE_COMBINING_CLASS_CCC133 133
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC133() {
+        return HB_UNICODE_COMBINING_CLASS_CCC133;
+    }
+    private static final int HB_VERSION_MAJOR = (int)8L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_VERSION_MAJOR 8
+     * }
+     */
+    public static int HB_VERSION_MAJOR() {
+        return HB_VERSION_MAJOR;
+    }
+    private static final int HB_VERSION_MINOR = (int)3L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_VERSION_MINOR 3
+     * }
+     */
+    public static int HB_VERSION_MINOR() {
+        return HB_VERSION_MINOR;
+    }
+    private static final int HB_VERSION_MICRO = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define HB_VERSION_MICRO 0
+     * }
+     */
+    public static int HB_VERSION_MICRO() {
+        return HB_VERSION_MICRO;
+    }
+    private static final int PANGO_SCALE = (int)1024L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_SCALE 1024
+     * }
+     */
+    public static int PANGO_SCALE() {
+        return PANGO_SCALE;
+    }
+    private static final int PANGO_UNKNOWN_GLYPH_WIDTH = (int)10L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_UNKNOWN_GLYPH_WIDTH 10
+     * }
+     */
+    public static int PANGO_UNKNOWN_GLYPH_WIDTH() {
+        return PANGO_UNKNOWN_GLYPH_WIDTH;
+    }
+    private static final int PANGO_UNKNOWN_GLYPH_HEIGHT = (int)14L;
+    /**
+     * {@snippet lang=c :
+     * #define PANGO_UNKNOWN_GLYPH_HEIGHT 14
+     * }
+     */
+    public static int PANGO_UNKNOWN_GLYPH_HEIGHT() {
+        return PANGO_UNKNOWN_GLYPH_HEIGHT;
+    }
+    private static final int _STDIO_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _STDIO_H 1
+     * }
+     */
+    public static int _STDIO_H() {
+        return _STDIO_H;
+    }
+    private static final int _____fpos_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _____fpos_t_defined 1
+     * }
+     */
+    public static int _____fpos_t_defined() {
+        return _____fpos_t_defined;
+    }
+    private static final int ____mbstate_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define ____mbstate_t_defined 1
+     * }
+     */
+    public static int ____mbstate_t_defined() {
+        return ____mbstate_t_defined;
+    }
+    private static final int _____fpos64_t_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _____fpos64_t_defined 1
+     * }
+     */
+    public static int _____fpos64_t_defined() {
+        return _____fpos64_t_defined;
+    }
+    private static final int ____FILE_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define ____FILE_defined 1
+     * }
+     */
+    public static int ____FILE_defined() {
+        return ____FILE_defined;
+    }
+    private static final int __FILE_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __FILE_defined 1
+     * }
+     */
+    public static int __FILE_defined() {
+        return __FILE_defined;
+    }
+    private static final int __struct_FILE_defined = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define __struct_FILE_defined 1
+     * }
+     */
+    public static int __struct_FILE_defined() {
+        return __struct_FILE_defined;
+    }
+    private static final int _IO_EOF_SEEN = (int)16L;
+    /**
+     * {@snippet lang=c :
+     * #define _IO_EOF_SEEN 16
+     * }
+     */
+    public static int _IO_EOF_SEEN() {
+        return _IO_EOF_SEEN;
+    }
+    private static final int _IO_ERR_SEEN = (int)32L;
+    /**
+     * {@snippet lang=c :
+     * #define _IO_ERR_SEEN 32
+     * }
+     */
+    public static int _IO_ERR_SEEN() {
+        return _IO_ERR_SEEN;
+    }
+    private static final int _IO_USER_LOCK = (int)32768L;
+    /**
+     * {@snippet lang=c :
+     * #define _IO_USER_LOCK 32768
+     * }
+     */
+    public static int _IO_USER_LOCK() {
+        return _IO_USER_LOCK;
+    }
+    private static final int _IOFBF = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define _IOFBF 0
+     * }
+     */
+    public static int _IOFBF() {
+        return _IOFBF;
+    }
+    private static final int _IOLBF = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _IOLBF 1
+     * }
+     */
+    public static int _IOLBF() {
+        return _IOLBF;
+    }
+    private static final int _IONBF = (int)2L;
+    /**
+     * {@snippet lang=c :
+     * #define _IONBF 2
+     * }
+     */
+    public static int _IONBF() {
+        return _IONBF;
+    }
+    private static final int BUFSIZ = (int)8192L;
+    /**
+     * {@snippet lang=c :
+     * #define BUFSIZ 8192
+     * }
+     */
+    public static int BUFSIZ() {
+        return BUFSIZ;
+    }
+    private static final int _BITS_STDIO_LIM_H = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define _BITS_STDIO_LIM_H 1
+     * }
+     */
+    public static int _BITS_STDIO_LIM_H() {
+        return _BITS_STDIO_LIM_H;
+    }
+    private static final int L_tmpnam = (int)20L;
+    /**
+     * {@snippet lang=c :
+     * #define L_tmpnam 20
+     * }
+     */
+    public static int L_tmpnam() {
+        return L_tmpnam;
+    }
+    private static final int TMP_MAX = (int)238328L;
+    /**
+     * {@snippet lang=c :
+     * #define TMP_MAX 238328
+     * }
+     */
+    public static int TMP_MAX() {
+        return TMP_MAX;
+    }
+    private static final int FILENAME_MAX = (int)4096L;
+    /**
+     * {@snippet lang=c :
+     * #define FILENAME_MAX 4096
+     * }
+     */
+    public static int FILENAME_MAX() {
+        return FILENAME_MAX;
+    }
+    private static final int L_ctermid = (int)9L;
+    /**
+     * {@snippet lang=c :
+     * #define L_ctermid 9
+     * }
+     */
+    public static int L_ctermid() {
+        return L_ctermid;
+    }
+    private static final int FOPEN_MAX = (int)16L;
+    /**
+     * {@snippet lang=c :
+     * #define FOPEN_MAX 16
+     * }
+     */
+    public static int FOPEN_MAX() {
+        return FOPEN_MAX;
+    }
+    private static final int CAIRO_VERSION_MAJOR = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_VERSION_MAJOR 1
+     * }
+     */
+    public static int CAIRO_VERSION_MAJOR() {
+        return CAIRO_VERSION_MAJOR;
+    }
+    private static final int CAIRO_VERSION_MINOR = (int)18L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_VERSION_MINOR 18
+     * }
+     */
+    public static int CAIRO_VERSION_MINOR() {
+        return CAIRO_VERSION_MINOR;
+    }
+    private static final int CAIRO_VERSION_MICRO = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_VERSION_MICRO 0
+     * }
+     */
+    public static int CAIRO_VERSION_MICRO() {
+        return CAIRO_VERSION_MICRO;
+    }
+    private static final int CAIRO_HAS_FC_FONT = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_FC_FONT 1
+     * }
+     */
+    public static int CAIRO_HAS_FC_FONT() {
+        return CAIRO_HAS_FC_FONT;
+    }
+    private static final int CAIRO_HAS_FT_FONT = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_FT_FONT 1
+     * }
+     */
+    public static int CAIRO_HAS_FT_FONT() {
+        return CAIRO_HAS_FT_FONT;
+    }
+    private static final int CAIRO_HAS_GOBJECT_FUNCTIONS = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_GOBJECT_FUNCTIONS 1
+     * }
+     */
+    public static int CAIRO_HAS_GOBJECT_FUNCTIONS() {
+        return CAIRO_HAS_GOBJECT_FUNCTIONS;
+    }
+    private static final int CAIRO_HAS_IMAGE_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_IMAGE_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_IMAGE_SURFACE() {
+        return CAIRO_HAS_IMAGE_SURFACE;
+    }
+    private static final int CAIRO_HAS_MIME_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_MIME_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_MIME_SURFACE() {
+        return CAIRO_HAS_MIME_SURFACE;
+    }
+    private static final int CAIRO_HAS_OBSERVER_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_OBSERVER_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_OBSERVER_SURFACE() {
+        return CAIRO_HAS_OBSERVER_SURFACE;
+    }
+    private static final int CAIRO_HAS_PDF_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_PDF_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_PDF_SURFACE() {
+        return CAIRO_HAS_PDF_SURFACE;
+    }
+    private static final int CAIRO_HAS_PNG_FUNCTIONS = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_PNG_FUNCTIONS 1
+     * }
+     */
+    public static int CAIRO_HAS_PNG_FUNCTIONS() {
+        return CAIRO_HAS_PNG_FUNCTIONS;
+    }
+    private static final int CAIRO_HAS_PS_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_PS_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_PS_SURFACE() {
+        return CAIRO_HAS_PS_SURFACE;
+    }
+    private static final int CAIRO_HAS_RECORDING_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_RECORDING_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_RECORDING_SURFACE() {
+        return CAIRO_HAS_RECORDING_SURFACE;
+    }
+    private static final int CAIRO_HAS_SCRIPT_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_SCRIPT_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_SCRIPT_SURFACE() {
+        return CAIRO_HAS_SCRIPT_SURFACE;
+    }
+    private static final int CAIRO_HAS_SVG_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_SVG_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_SVG_SURFACE() {
+        return CAIRO_HAS_SVG_SURFACE;
+    }
+    private static final int CAIRO_HAS_TEE_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_TEE_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_TEE_SURFACE() {
+        return CAIRO_HAS_TEE_SURFACE;
+    }
+    private static final int CAIRO_HAS_USER_FONT = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_USER_FONT 1
+     * }
+     */
+    public static int CAIRO_HAS_USER_FONT() {
+        return CAIRO_HAS_USER_FONT;
+    }
+    private static final int CAIRO_HAS_XCB_SHM_FUNCTIONS = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_XCB_SHM_FUNCTIONS 1
+     * }
+     */
+    public static int CAIRO_HAS_XCB_SHM_FUNCTIONS() {
+        return CAIRO_HAS_XCB_SHM_FUNCTIONS;
+    }
+    private static final int CAIRO_HAS_XCB_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_XCB_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_XCB_SURFACE() {
+        return CAIRO_HAS_XCB_SURFACE;
+    }
+    private static final int CAIRO_HAS_XLIB_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_XLIB_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_XLIB_SURFACE() {
+        return CAIRO_HAS_XLIB_SURFACE;
+    }
+    private static final int CAIRO_HAS_XLIB_XRENDER_SURFACE = (int)1L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_HAS_XLIB_XRENDER_SURFACE 1
+     * }
+     */
+    public static int CAIRO_HAS_XLIB_XRENDER_SURFACE() {
+        return CAIRO_HAS_XLIB_XRENDER_SURFACE;
+    }
+    private static final int CAIRO_COLOR_PALETTE_DEFAULT = (int)0L;
+    /**
+     * {@snippet lang=c :
+     * #define CAIRO_COLOR_PALETTE_DEFAULT 0
+     * }
+     */
+    public static int CAIRO_COLOR_PALETTE_DEFAULT() {
+        return CAIRO_COLOR_PALETTE_DEFAULT;
+    }
+    private static final int GDK_MAX_TIMECOORD_AXES = (int)128L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_MAX_TIMECOORD_AXES 128
+     * }
+     */
+    public static int GDK_MAX_TIMECOORD_AXES() {
+        return GDK_MAX_TIMECOORD_AXES;
+    }
+    private static final int GDK_KEY_VoidSymbol = (int)16777215L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_VoidSymbol 16777215
+     * }
+     */
+    public static int GDK_KEY_VoidSymbol() {
+        return GDK_KEY_VoidSymbol;
+    }
+    private static final int GDK_KEY_BackSpace = (int)65288L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_BackSpace 65288
+     * }
+     */
+    public static int GDK_KEY_BackSpace() {
+        return GDK_KEY_BackSpace;
+    }
+    private static final int GDK_KEY_Tab = (int)65289L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Tab 65289
+     * }
+     */
+    public static int GDK_KEY_Tab() {
+        return GDK_KEY_Tab;
+    }
+    private static final int GDK_KEY_Linefeed = (int)65290L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Linefeed 65290
+     * }
+     */
+    public static int GDK_KEY_Linefeed() {
+        return GDK_KEY_Linefeed;
+    }
+    private static final int GDK_KEY_Clear = (int)65291L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Clear 65291
+     * }
+     */
+    public static int GDK_KEY_Clear() {
+        return GDK_KEY_Clear;
+    }
+    private static final int GDK_KEY_Return = (int)65293L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Return 65293
+     * }
+     */
+    public static int GDK_KEY_Return() {
+        return GDK_KEY_Return;
+    }
+    private static final int GDK_KEY_Pause = (int)65299L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pause 65299
+     * }
+     */
+    public static int GDK_KEY_Pause() {
+        return GDK_KEY_Pause;
+    }
+    private static final int GDK_KEY_Scroll_Lock = (int)65300L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Scroll_Lock 65300
+     * }
+     */
+    public static int GDK_KEY_Scroll_Lock() {
+        return GDK_KEY_Scroll_Lock;
+    }
+    private static final int GDK_KEY_Sys_Req = (int)65301L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Sys_Req 65301
+     * }
+     */
+    public static int GDK_KEY_Sys_Req() {
+        return GDK_KEY_Sys_Req;
+    }
+    private static final int GDK_KEY_Escape = (int)65307L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Escape 65307
+     * }
+     */
+    public static int GDK_KEY_Escape() {
+        return GDK_KEY_Escape;
+    }
+    private static final int GDK_KEY_Delete = (int)65535L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Delete 65535
+     * }
+     */
+    public static int GDK_KEY_Delete() {
+        return GDK_KEY_Delete;
+    }
+    private static final int GDK_KEY_Multi_key = (int)65312L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Multi_key 65312
+     * }
+     */
+    public static int GDK_KEY_Multi_key() {
+        return GDK_KEY_Multi_key;
+    }
+    private static final int GDK_KEY_Codeinput = (int)65335L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Codeinput 65335
+     * }
+     */
+    public static int GDK_KEY_Codeinput() {
+        return GDK_KEY_Codeinput;
+    }
+    private static final int GDK_KEY_SingleCandidate = (int)65340L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_SingleCandidate 65340
+     * }
+     */
+    public static int GDK_KEY_SingleCandidate() {
+        return GDK_KEY_SingleCandidate;
+    }
+    private static final int GDK_KEY_MultipleCandidate = (int)65341L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_MultipleCandidate 65341
+     * }
+     */
+    public static int GDK_KEY_MultipleCandidate() {
+        return GDK_KEY_MultipleCandidate;
+    }
+    private static final int GDK_KEY_PreviousCandidate = (int)65342L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_PreviousCandidate 65342
+     * }
+     */
+    public static int GDK_KEY_PreviousCandidate() {
+        return GDK_KEY_PreviousCandidate;
+    }
+    private static final int GDK_KEY_Kanji = (int)65313L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Kanji 65313
+     * }
+     */
+    public static int GDK_KEY_Kanji() {
+        return GDK_KEY_Kanji;
+    }
+    private static final int GDK_KEY_Muhenkan = (int)65314L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Muhenkan 65314
+     * }
+     */
+    public static int GDK_KEY_Muhenkan() {
+        return GDK_KEY_Muhenkan;
+    }
+    private static final int GDK_KEY_Henkan_Mode = (int)65315L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Henkan_Mode 65315
+     * }
+     */
+    public static int GDK_KEY_Henkan_Mode() {
+        return GDK_KEY_Henkan_Mode;
+    }
+    private static final int GDK_KEY_Henkan = (int)65315L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Henkan 65315
+     * }
+     */
+    public static int GDK_KEY_Henkan() {
+        return GDK_KEY_Henkan;
+    }
+    private static final int GDK_KEY_Romaji = (int)65316L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Romaji 65316
+     * }
+     */
+    public static int GDK_KEY_Romaji() {
+        return GDK_KEY_Romaji;
+    }
+    private static final int GDK_KEY_Hiragana = (int)65317L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hiragana 65317
+     * }
+     */
+    public static int GDK_KEY_Hiragana() {
+        return GDK_KEY_Hiragana;
+    }
+    private static final int GDK_KEY_Katakana = (int)65318L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Katakana 65318
+     * }
+     */
+    public static int GDK_KEY_Katakana() {
+        return GDK_KEY_Katakana;
+    }
+    private static final int GDK_KEY_Hiragana_Katakana = (int)65319L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hiragana_Katakana 65319
+     * }
+     */
+    public static int GDK_KEY_Hiragana_Katakana() {
+        return GDK_KEY_Hiragana_Katakana;
+    }
+    private static final int GDK_KEY_Zenkaku = (int)65320L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Zenkaku 65320
+     * }
+     */
+    public static int GDK_KEY_Zenkaku() {
+        return GDK_KEY_Zenkaku;
+    }
+    private static final int GDK_KEY_Hankaku = (int)65321L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hankaku 65321
+     * }
+     */
+    public static int GDK_KEY_Hankaku() {
+        return GDK_KEY_Hankaku;
+    }
+    private static final int GDK_KEY_Zenkaku_Hankaku = (int)65322L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Zenkaku_Hankaku 65322
+     * }
+     */
+    public static int GDK_KEY_Zenkaku_Hankaku() {
+        return GDK_KEY_Zenkaku_Hankaku;
+    }
+    private static final int GDK_KEY_Touroku = (int)65323L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Touroku 65323
+     * }
+     */
+    public static int GDK_KEY_Touroku() {
+        return GDK_KEY_Touroku;
+    }
+    private static final int GDK_KEY_Massyo = (int)65324L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Massyo 65324
+     * }
+     */
+    public static int GDK_KEY_Massyo() {
+        return GDK_KEY_Massyo;
+    }
+    private static final int GDK_KEY_Kana_Lock = (int)65325L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Kana_Lock 65325
+     * }
+     */
+    public static int GDK_KEY_Kana_Lock() {
+        return GDK_KEY_Kana_Lock;
+    }
+    private static final int GDK_KEY_Kana_Shift = (int)65326L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Kana_Shift 65326
+     * }
+     */
+    public static int GDK_KEY_Kana_Shift() {
+        return GDK_KEY_Kana_Shift;
+    }
+    private static final int GDK_KEY_Eisu_Shift = (int)65327L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Eisu_Shift 65327
+     * }
+     */
+    public static int GDK_KEY_Eisu_Shift() {
+        return GDK_KEY_Eisu_Shift;
+    }
+    private static final int GDK_KEY_Eisu_toggle = (int)65328L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Eisu_toggle 65328
+     * }
+     */
+    public static int GDK_KEY_Eisu_toggle() {
+        return GDK_KEY_Eisu_toggle;
+    }
+    private static final int GDK_KEY_Kanji_Bangou = (int)65335L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Kanji_Bangou 65335
+     * }
+     */
+    public static int GDK_KEY_Kanji_Bangou() {
+        return GDK_KEY_Kanji_Bangou;
+    }
+    private static final int GDK_KEY_Zen_Koho = (int)65341L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Zen_Koho 65341
+     * }
+     */
+    public static int GDK_KEY_Zen_Koho() {
+        return GDK_KEY_Zen_Koho;
+    }
+    private static final int GDK_KEY_Mae_Koho = (int)65342L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Mae_Koho 65342
+     * }
+     */
+    public static int GDK_KEY_Mae_Koho() {
+        return GDK_KEY_Mae_Koho;
+    }
+    private static final int GDK_KEY_Home = (int)65360L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Home 65360
+     * }
+     */
+    public static int GDK_KEY_Home() {
+        return GDK_KEY_Home;
+    }
+    private static final int GDK_KEY_Left = (int)65361L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Left 65361
+     * }
+     */
+    public static int GDK_KEY_Left() {
+        return GDK_KEY_Left;
+    }
+    private static final int GDK_KEY_Up = (int)65362L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Up 65362
+     * }
+     */
+    public static int GDK_KEY_Up() {
+        return GDK_KEY_Up;
+    }
+    private static final int GDK_KEY_Right = (int)65363L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Right 65363
+     * }
+     */
+    public static int GDK_KEY_Right() {
+        return GDK_KEY_Right;
+    }
+    private static final int GDK_KEY_Down = (int)65364L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Down 65364
+     * }
+     */
+    public static int GDK_KEY_Down() {
+        return GDK_KEY_Down;
+    }
+    private static final int GDK_KEY_Prior = (int)65365L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Prior 65365
+     * }
+     */
+    public static int GDK_KEY_Prior() {
+        return GDK_KEY_Prior;
+    }
+    private static final int GDK_KEY_Page_Up = (int)65365L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Page_Up 65365
+     * }
+     */
+    public static int GDK_KEY_Page_Up() {
+        return GDK_KEY_Page_Up;
+    }
+    private static final int GDK_KEY_Next = (int)65366L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Next 65366
+     * }
+     */
+    public static int GDK_KEY_Next() {
+        return GDK_KEY_Next;
+    }
+    private static final int GDK_KEY_Page_Down = (int)65366L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Page_Down 65366
+     * }
+     */
+    public static int GDK_KEY_Page_Down() {
+        return GDK_KEY_Page_Down;
+    }
+    private static final int GDK_KEY_End = (int)65367L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_End 65367
+     * }
+     */
+    public static int GDK_KEY_End() {
+        return GDK_KEY_End;
+    }
+    private static final int GDK_KEY_Begin = (int)65368L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Begin 65368
+     * }
+     */
+    public static int GDK_KEY_Begin() {
+        return GDK_KEY_Begin;
+    }
+    private static final int GDK_KEY_Select = (int)65376L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Select 65376
+     * }
+     */
+    public static int GDK_KEY_Select() {
+        return GDK_KEY_Select;
+    }
+    private static final int GDK_KEY_Print = (int)65377L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Print 65377
+     * }
+     */
+    public static int GDK_KEY_Print() {
+        return GDK_KEY_Print;
+    }
+    private static final int GDK_KEY_Execute = (int)65378L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Execute 65378
+     * }
+     */
+    public static int GDK_KEY_Execute() {
+        return GDK_KEY_Execute;
+    }
+    private static final int GDK_KEY_Insert = (int)65379L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Insert 65379
+     * }
+     */
+    public static int GDK_KEY_Insert() {
+        return GDK_KEY_Insert;
+    }
+    private static final int GDK_KEY_Undo = (int)65381L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Undo 65381
+     * }
+     */
+    public static int GDK_KEY_Undo() {
+        return GDK_KEY_Undo;
+    }
+    private static final int GDK_KEY_Redo = (int)65382L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Redo 65382
+     * }
+     */
+    public static int GDK_KEY_Redo() {
+        return GDK_KEY_Redo;
+    }
+    private static final int GDK_KEY_Menu = (int)65383L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Menu 65383
+     * }
+     */
+    public static int GDK_KEY_Menu() {
+        return GDK_KEY_Menu;
+    }
+    private static final int GDK_KEY_Find = (int)65384L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Find 65384
+     * }
+     */
+    public static int GDK_KEY_Find() {
+        return GDK_KEY_Find;
+    }
+    private static final int GDK_KEY_Cancel = (int)65385L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Cancel 65385
+     * }
+     */
+    public static int GDK_KEY_Cancel() {
+        return GDK_KEY_Cancel;
+    }
+    private static final int GDK_KEY_Help = (int)65386L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Help 65386
+     * }
+     */
+    public static int GDK_KEY_Help() {
+        return GDK_KEY_Help;
+    }
+    private static final int GDK_KEY_Break = (int)65387L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Break 65387
+     * }
+     */
+    public static int GDK_KEY_Break() {
+        return GDK_KEY_Break;
+    }
+    private static final int GDK_KEY_Mode_switch = (int)65406L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Mode_switch 65406
+     * }
+     */
+    public static int GDK_KEY_Mode_switch() {
+        return GDK_KEY_Mode_switch;
+    }
+    private static final int GDK_KEY_script_switch = (int)65406L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_script_switch 65406
+     * }
+     */
+    public static int GDK_KEY_script_switch() {
+        return GDK_KEY_script_switch;
+    }
+    private static final int GDK_KEY_Num_Lock = (int)65407L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Num_Lock 65407
+     * }
+     */
+    public static int GDK_KEY_Num_Lock() {
+        return GDK_KEY_Num_Lock;
+    }
+    private static final int GDK_KEY_KP_Space = (int)65408L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Space 65408
+     * }
+     */
+    public static int GDK_KEY_KP_Space() {
+        return GDK_KEY_KP_Space;
+    }
+    private static final int GDK_KEY_KP_Tab = (int)65417L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Tab 65417
+     * }
+     */
+    public static int GDK_KEY_KP_Tab() {
+        return GDK_KEY_KP_Tab;
+    }
+    private static final int GDK_KEY_KP_Enter = (int)65421L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Enter 65421
+     * }
+     */
+    public static int GDK_KEY_KP_Enter() {
+        return GDK_KEY_KP_Enter;
+    }
+    private static final int GDK_KEY_KP_F1 = (int)65425L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_F1 65425
+     * }
+     */
+    public static int GDK_KEY_KP_F1() {
+        return GDK_KEY_KP_F1;
+    }
+    private static final int GDK_KEY_KP_F2 = (int)65426L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_F2 65426
+     * }
+     */
+    public static int GDK_KEY_KP_F2() {
+        return GDK_KEY_KP_F2;
+    }
+    private static final int GDK_KEY_KP_F3 = (int)65427L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_F3 65427
+     * }
+     */
+    public static int GDK_KEY_KP_F3() {
+        return GDK_KEY_KP_F3;
+    }
+    private static final int GDK_KEY_KP_F4 = (int)65428L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_F4 65428
+     * }
+     */
+    public static int GDK_KEY_KP_F4() {
+        return GDK_KEY_KP_F4;
+    }
+    private static final int GDK_KEY_KP_Home = (int)65429L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Home 65429
+     * }
+     */
+    public static int GDK_KEY_KP_Home() {
+        return GDK_KEY_KP_Home;
+    }
+    private static final int GDK_KEY_KP_Left = (int)65430L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Left 65430
+     * }
+     */
+    public static int GDK_KEY_KP_Left() {
+        return GDK_KEY_KP_Left;
+    }
+    private static final int GDK_KEY_KP_Up = (int)65431L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Up 65431
+     * }
+     */
+    public static int GDK_KEY_KP_Up() {
+        return GDK_KEY_KP_Up;
+    }
+    private static final int GDK_KEY_KP_Right = (int)65432L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Right 65432
+     * }
+     */
+    public static int GDK_KEY_KP_Right() {
+        return GDK_KEY_KP_Right;
+    }
+    private static final int GDK_KEY_KP_Down = (int)65433L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Down 65433
+     * }
+     */
+    public static int GDK_KEY_KP_Down() {
+        return GDK_KEY_KP_Down;
+    }
+    private static final int GDK_KEY_KP_Prior = (int)65434L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Prior 65434
+     * }
+     */
+    public static int GDK_KEY_KP_Prior() {
+        return GDK_KEY_KP_Prior;
+    }
+    private static final int GDK_KEY_KP_Page_Up = (int)65434L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Page_Up 65434
+     * }
+     */
+    public static int GDK_KEY_KP_Page_Up() {
+        return GDK_KEY_KP_Page_Up;
+    }
+    private static final int GDK_KEY_KP_Next = (int)65435L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Next 65435
+     * }
+     */
+    public static int GDK_KEY_KP_Next() {
+        return GDK_KEY_KP_Next;
+    }
+    private static final int GDK_KEY_KP_Page_Down = (int)65435L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Page_Down 65435
+     * }
+     */
+    public static int GDK_KEY_KP_Page_Down() {
+        return GDK_KEY_KP_Page_Down;
+    }
+    private static final int GDK_KEY_KP_End = (int)65436L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_End 65436
+     * }
+     */
+    public static int GDK_KEY_KP_End() {
+        return GDK_KEY_KP_End;
+    }
+    private static final int GDK_KEY_KP_Begin = (int)65437L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Begin 65437
+     * }
+     */
+    public static int GDK_KEY_KP_Begin() {
+        return GDK_KEY_KP_Begin;
+    }
+    private static final int GDK_KEY_KP_Insert = (int)65438L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Insert 65438
+     * }
+     */
+    public static int GDK_KEY_KP_Insert() {
+        return GDK_KEY_KP_Insert;
+    }
+    private static final int GDK_KEY_KP_Delete = (int)65439L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Delete 65439
+     * }
+     */
+    public static int GDK_KEY_KP_Delete() {
+        return GDK_KEY_KP_Delete;
+    }
+    private static final int GDK_KEY_KP_Equal = (int)65469L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Equal 65469
+     * }
+     */
+    public static int GDK_KEY_KP_Equal() {
+        return GDK_KEY_KP_Equal;
+    }
+    private static final int GDK_KEY_KP_Multiply = (int)65450L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Multiply 65450
+     * }
+     */
+    public static int GDK_KEY_KP_Multiply() {
+        return GDK_KEY_KP_Multiply;
+    }
+    private static final int GDK_KEY_KP_Add = (int)65451L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Add 65451
+     * }
+     */
+    public static int GDK_KEY_KP_Add() {
+        return GDK_KEY_KP_Add;
+    }
+    private static final int GDK_KEY_KP_Separator = (int)65452L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Separator 65452
+     * }
+     */
+    public static int GDK_KEY_KP_Separator() {
+        return GDK_KEY_KP_Separator;
+    }
+    private static final int GDK_KEY_KP_Subtract = (int)65453L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Subtract 65453
+     * }
+     */
+    public static int GDK_KEY_KP_Subtract() {
+        return GDK_KEY_KP_Subtract;
+    }
+    private static final int GDK_KEY_KP_Decimal = (int)65454L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Decimal 65454
+     * }
+     */
+    public static int GDK_KEY_KP_Decimal() {
+        return GDK_KEY_KP_Decimal;
+    }
+    private static final int GDK_KEY_KP_Divide = (int)65455L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_Divide 65455
+     * }
+     */
+    public static int GDK_KEY_KP_Divide() {
+        return GDK_KEY_KP_Divide;
+    }
+    private static final int GDK_KEY_KP_0 = (int)65456L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_0 65456
+     * }
+     */
+    public static int GDK_KEY_KP_0() {
+        return GDK_KEY_KP_0;
+    }
+    private static final int GDK_KEY_KP_1 = (int)65457L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_1 65457
+     * }
+     */
+    public static int GDK_KEY_KP_1() {
+        return GDK_KEY_KP_1;
+    }
+    private static final int GDK_KEY_KP_2 = (int)65458L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_2 65458
+     * }
+     */
+    public static int GDK_KEY_KP_2() {
+        return GDK_KEY_KP_2;
+    }
+    private static final int GDK_KEY_KP_3 = (int)65459L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_3 65459
+     * }
+     */
+    public static int GDK_KEY_KP_3() {
+        return GDK_KEY_KP_3;
+    }
+    private static final int GDK_KEY_KP_4 = (int)65460L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_4 65460
+     * }
+     */
+    public static int GDK_KEY_KP_4() {
+        return GDK_KEY_KP_4;
+    }
+    private static final int GDK_KEY_KP_5 = (int)65461L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_5 65461
+     * }
+     */
+    public static int GDK_KEY_KP_5() {
+        return GDK_KEY_KP_5;
+    }
+    private static final int GDK_KEY_KP_6 = (int)65462L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_6 65462
+     * }
+     */
+    public static int GDK_KEY_KP_6() {
+        return GDK_KEY_KP_6;
+    }
+    private static final int GDK_KEY_KP_7 = (int)65463L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_7 65463
+     * }
+     */
+    public static int GDK_KEY_KP_7() {
+        return GDK_KEY_KP_7;
+    }
+    private static final int GDK_KEY_KP_8 = (int)65464L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_8 65464
+     * }
+     */
+    public static int GDK_KEY_KP_8() {
+        return GDK_KEY_KP_8;
+    }
+    private static final int GDK_KEY_KP_9 = (int)65465L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_KP_9 65465
+     * }
+     */
+    public static int GDK_KEY_KP_9() {
+        return GDK_KEY_KP_9;
+    }
+    private static final int GDK_KEY_F1 = (int)65470L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F1 65470
+     * }
+     */
+    public static int GDK_KEY_F1() {
+        return GDK_KEY_F1;
+    }
+    private static final int GDK_KEY_F2 = (int)65471L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F2 65471
+     * }
+     */
+    public static int GDK_KEY_F2() {
+        return GDK_KEY_F2;
+    }
+    private static final int GDK_KEY_F3 = (int)65472L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F3 65472
+     * }
+     */
+    public static int GDK_KEY_F3() {
+        return GDK_KEY_F3;
+    }
+    private static final int GDK_KEY_F4 = (int)65473L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F4 65473
+     * }
+     */
+    public static int GDK_KEY_F4() {
+        return GDK_KEY_F4;
+    }
+    private static final int GDK_KEY_F5 = (int)65474L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F5 65474
+     * }
+     */
+    public static int GDK_KEY_F5() {
+        return GDK_KEY_F5;
+    }
+    private static final int GDK_KEY_F6 = (int)65475L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F6 65475
+     * }
+     */
+    public static int GDK_KEY_F6() {
+        return GDK_KEY_F6;
+    }
+    private static final int GDK_KEY_F7 = (int)65476L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F7 65476
+     * }
+     */
+    public static int GDK_KEY_F7() {
+        return GDK_KEY_F7;
+    }
+    private static final int GDK_KEY_F8 = (int)65477L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F8 65477
+     * }
+     */
+    public static int GDK_KEY_F8() {
+        return GDK_KEY_F8;
+    }
+    private static final int GDK_KEY_F9 = (int)65478L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F9 65478
+     * }
+     */
+    public static int GDK_KEY_F9() {
+        return GDK_KEY_F9;
+    }
+    private static final int GDK_KEY_F10 = (int)65479L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F10 65479
+     * }
+     */
+    public static int GDK_KEY_F10() {
+        return GDK_KEY_F10;
+    }
+    private static final int GDK_KEY_F11 = (int)65480L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F11 65480
+     * }
+     */
+    public static int GDK_KEY_F11() {
+        return GDK_KEY_F11;
+    }
+    private static final int GDK_KEY_L1 = (int)65480L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_L1 65480
+     * }
+     */
+    public static int GDK_KEY_L1() {
+        return GDK_KEY_L1;
+    }
+    private static final int GDK_KEY_F12 = (int)65481L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F12 65481
+     * }
+     */
+    public static int GDK_KEY_F12() {
+        return GDK_KEY_F12;
+    }
+    private static final int GDK_KEY_L2 = (int)65481L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_L2 65481
+     * }
+     */
+    public static int GDK_KEY_L2() {
+        return GDK_KEY_L2;
+    }
+    private static final int GDK_KEY_F13 = (int)65482L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F13 65482
+     * }
+     */
+    public static int GDK_KEY_F13() {
+        return GDK_KEY_F13;
+    }
+    private static final int GDK_KEY_L3 = (int)65482L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_L3 65482
+     * }
+     */
+    public static int GDK_KEY_L3() {
+        return GDK_KEY_L3;
+    }
+    private static final int GDK_KEY_F14 = (int)65483L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F14 65483
+     * }
+     */
+    public static int GDK_KEY_F14() {
+        return GDK_KEY_F14;
+    }
+    private static final int GDK_KEY_L4 = (int)65483L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_L4 65483
+     * }
+     */
+    public static int GDK_KEY_L4() {
+        return GDK_KEY_L4;
+    }
+    private static final int GDK_KEY_F15 = (int)65484L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F15 65484
+     * }
+     */
+    public static int GDK_KEY_F15() {
+        return GDK_KEY_F15;
+    }
+    private static final int GDK_KEY_L5 = (int)65484L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_L5 65484
+     * }
+     */
+    public static int GDK_KEY_L5() {
+        return GDK_KEY_L5;
+    }
+    private static final int GDK_KEY_F16 = (int)65485L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F16 65485
+     * }
+     */
+    public static int GDK_KEY_F16() {
+        return GDK_KEY_F16;
+    }
+    private static final int GDK_KEY_L6 = (int)65485L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_L6 65485
+     * }
+     */
+    public static int GDK_KEY_L6() {
+        return GDK_KEY_L6;
+    }
+    private static final int GDK_KEY_F17 = (int)65486L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F17 65486
+     * }
+     */
+    public static int GDK_KEY_F17() {
+        return GDK_KEY_F17;
+    }
+    private static final int GDK_KEY_L7 = (int)65486L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_L7 65486
+     * }
+     */
+    public static int GDK_KEY_L7() {
+        return GDK_KEY_L7;
+    }
+    private static final int GDK_KEY_F18 = (int)65487L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F18 65487
+     * }
+     */
+    public static int GDK_KEY_F18() {
+        return GDK_KEY_F18;
+    }
+    private static final int GDK_KEY_L8 = (int)65487L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_L8 65487
+     * }
+     */
+    public static int GDK_KEY_L8() {
+        return GDK_KEY_L8;
+    }
+    private static final int GDK_KEY_F19 = (int)65488L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F19 65488
+     * }
+     */
+    public static int GDK_KEY_F19() {
+        return GDK_KEY_F19;
+    }
+    private static final int GDK_KEY_L9 = (int)65488L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_L9 65488
+     * }
+     */
+    public static int GDK_KEY_L9() {
+        return GDK_KEY_L9;
+    }
+    private static final int GDK_KEY_F20 = (int)65489L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F20 65489
+     * }
+     */
+    public static int GDK_KEY_F20() {
+        return GDK_KEY_F20;
+    }
+    private static final int GDK_KEY_L10 = (int)65489L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_L10 65489
+     * }
+     */
+    public static int GDK_KEY_L10() {
+        return GDK_KEY_L10;
+    }
+    private static final int GDK_KEY_F21 = (int)65490L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F21 65490
+     * }
+     */
+    public static int GDK_KEY_F21() {
+        return GDK_KEY_F21;
+    }
+    private static final int GDK_KEY_R1 = (int)65490L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R1 65490
+     * }
+     */
+    public static int GDK_KEY_R1() {
+        return GDK_KEY_R1;
+    }
+    private static final int GDK_KEY_F22 = (int)65491L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F22 65491
+     * }
+     */
+    public static int GDK_KEY_F22() {
+        return GDK_KEY_F22;
+    }
+    private static final int GDK_KEY_R2 = (int)65491L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R2 65491
+     * }
+     */
+    public static int GDK_KEY_R2() {
+        return GDK_KEY_R2;
+    }
+    private static final int GDK_KEY_F23 = (int)65492L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F23 65492
+     * }
+     */
+    public static int GDK_KEY_F23() {
+        return GDK_KEY_F23;
+    }
+    private static final int GDK_KEY_R3 = (int)65492L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R3 65492
+     * }
+     */
+    public static int GDK_KEY_R3() {
+        return GDK_KEY_R3;
+    }
+    private static final int GDK_KEY_F24 = (int)65493L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F24 65493
+     * }
+     */
+    public static int GDK_KEY_F24() {
+        return GDK_KEY_F24;
+    }
+    private static final int GDK_KEY_R4 = (int)65493L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R4 65493
+     * }
+     */
+    public static int GDK_KEY_R4() {
+        return GDK_KEY_R4;
+    }
+    private static final int GDK_KEY_F25 = (int)65494L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F25 65494
+     * }
+     */
+    public static int GDK_KEY_F25() {
+        return GDK_KEY_F25;
+    }
+    private static final int GDK_KEY_R5 = (int)65494L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R5 65494
+     * }
+     */
+    public static int GDK_KEY_R5() {
+        return GDK_KEY_R5;
+    }
+    private static final int GDK_KEY_F26 = (int)65495L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F26 65495
+     * }
+     */
+    public static int GDK_KEY_F26() {
+        return GDK_KEY_F26;
+    }
+    private static final int GDK_KEY_R6 = (int)65495L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R6 65495
+     * }
+     */
+    public static int GDK_KEY_R6() {
+        return GDK_KEY_R6;
+    }
+    private static final int GDK_KEY_F27 = (int)65496L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F27 65496
+     * }
+     */
+    public static int GDK_KEY_F27() {
+        return GDK_KEY_F27;
+    }
+    private static final int GDK_KEY_R7 = (int)65496L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R7 65496
+     * }
+     */
+    public static int GDK_KEY_R7() {
+        return GDK_KEY_R7;
+    }
+    private static final int GDK_KEY_F28 = (int)65497L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F28 65497
+     * }
+     */
+    public static int GDK_KEY_F28() {
+        return GDK_KEY_F28;
+    }
+    private static final int GDK_KEY_R8 = (int)65497L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R8 65497
+     * }
+     */
+    public static int GDK_KEY_R8() {
+        return GDK_KEY_R8;
+    }
+    private static final int GDK_KEY_F29 = (int)65498L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F29 65498
+     * }
+     */
+    public static int GDK_KEY_F29() {
+        return GDK_KEY_F29;
+    }
+    private static final int GDK_KEY_R9 = (int)65498L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R9 65498
+     * }
+     */
+    public static int GDK_KEY_R9() {
+        return GDK_KEY_R9;
+    }
+    private static final int GDK_KEY_F30 = (int)65499L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F30 65499
+     * }
+     */
+    public static int GDK_KEY_F30() {
+        return GDK_KEY_F30;
+    }
+    private static final int GDK_KEY_R10 = (int)65499L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R10 65499
+     * }
+     */
+    public static int GDK_KEY_R10() {
+        return GDK_KEY_R10;
+    }
+    private static final int GDK_KEY_F31 = (int)65500L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F31 65500
+     * }
+     */
+    public static int GDK_KEY_F31() {
+        return GDK_KEY_F31;
+    }
+    private static final int GDK_KEY_R11 = (int)65500L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R11 65500
+     * }
+     */
+    public static int GDK_KEY_R11() {
+        return GDK_KEY_R11;
+    }
+    private static final int GDK_KEY_F32 = (int)65501L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F32 65501
+     * }
+     */
+    public static int GDK_KEY_F32() {
+        return GDK_KEY_F32;
+    }
+    private static final int GDK_KEY_R12 = (int)65501L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R12 65501
+     * }
+     */
+    public static int GDK_KEY_R12() {
+        return GDK_KEY_R12;
+    }
+    private static final int GDK_KEY_F33 = (int)65502L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F33 65502
+     * }
+     */
+    public static int GDK_KEY_F33() {
+        return GDK_KEY_F33;
+    }
+    private static final int GDK_KEY_R13 = (int)65502L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R13 65502
+     * }
+     */
+    public static int GDK_KEY_R13() {
+        return GDK_KEY_R13;
+    }
+    private static final int GDK_KEY_F34 = (int)65503L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F34 65503
+     * }
+     */
+    public static int GDK_KEY_F34() {
+        return GDK_KEY_F34;
+    }
+    private static final int GDK_KEY_R14 = (int)65503L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R14 65503
+     * }
+     */
+    public static int GDK_KEY_R14() {
+        return GDK_KEY_R14;
+    }
+    private static final int GDK_KEY_F35 = (int)65504L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_F35 65504
+     * }
+     */
+    public static int GDK_KEY_F35() {
+        return GDK_KEY_F35;
+    }
+    private static final int GDK_KEY_R15 = (int)65504L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_R15 65504
+     * }
+     */
+    public static int GDK_KEY_R15() {
+        return GDK_KEY_R15;
+    }
+    private static final int GDK_KEY_Shift_L = (int)65505L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Shift_L 65505
+     * }
+     */
+    public static int GDK_KEY_Shift_L() {
+        return GDK_KEY_Shift_L;
+    }
+    private static final int GDK_KEY_Shift_R = (int)65506L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Shift_R 65506
+     * }
+     */
+    public static int GDK_KEY_Shift_R() {
+        return GDK_KEY_Shift_R;
+    }
+    private static final int GDK_KEY_Control_L = (int)65507L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Control_L 65507
+     * }
+     */
+    public static int GDK_KEY_Control_L() {
+        return GDK_KEY_Control_L;
+    }
+    private static final int GDK_KEY_Control_R = (int)65508L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Control_R 65508
+     * }
+     */
+    public static int GDK_KEY_Control_R() {
+        return GDK_KEY_Control_R;
+    }
+    private static final int GDK_KEY_Caps_Lock = (int)65509L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Caps_Lock 65509
+     * }
+     */
+    public static int GDK_KEY_Caps_Lock() {
+        return GDK_KEY_Caps_Lock;
+    }
+    private static final int GDK_KEY_Shift_Lock = (int)65510L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Shift_Lock 65510
+     * }
+     */
+    public static int GDK_KEY_Shift_Lock() {
+        return GDK_KEY_Shift_Lock;
+    }
+    private static final int GDK_KEY_Meta_L = (int)65511L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Meta_L 65511
+     * }
+     */
+    public static int GDK_KEY_Meta_L() {
+        return GDK_KEY_Meta_L;
+    }
+    private static final int GDK_KEY_Meta_R = (int)65512L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Meta_R 65512
+     * }
+     */
+    public static int GDK_KEY_Meta_R() {
+        return GDK_KEY_Meta_R;
+    }
+    private static final int GDK_KEY_Alt_L = (int)65513L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Alt_L 65513
+     * }
+     */
+    public static int GDK_KEY_Alt_L() {
+        return GDK_KEY_Alt_L;
+    }
+    private static final int GDK_KEY_Alt_R = (int)65514L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Alt_R 65514
+     * }
+     */
+    public static int GDK_KEY_Alt_R() {
+        return GDK_KEY_Alt_R;
+    }
+    private static final int GDK_KEY_Super_L = (int)65515L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Super_L 65515
+     * }
+     */
+    public static int GDK_KEY_Super_L() {
+        return GDK_KEY_Super_L;
+    }
+    private static final int GDK_KEY_Super_R = (int)65516L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Super_R 65516
+     * }
+     */
+    public static int GDK_KEY_Super_R() {
+        return GDK_KEY_Super_R;
+    }
+    private static final int GDK_KEY_Hyper_L = (int)65517L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hyper_L 65517
+     * }
+     */
+    public static int GDK_KEY_Hyper_L() {
+        return GDK_KEY_Hyper_L;
+    }
+    private static final int GDK_KEY_Hyper_R = (int)65518L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_Hyper_R 65518
+     * }
+     */
+    public static int GDK_KEY_Hyper_R() {
+        return GDK_KEY_Hyper_R;
+    }
+    private static final int GDK_KEY_ISO_Lock = (int)65025L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Lock 65025
+     * }
+     */
+    public static int GDK_KEY_ISO_Lock() {
+        return GDK_KEY_ISO_Lock;
+    }
+    private static final int GDK_KEY_ISO_Level2_Latch = (int)65026L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Level2_Latch 65026
+     * }
+     */
+    public static int GDK_KEY_ISO_Level2_Latch() {
+        return GDK_KEY_ISO_Level2_Latch;
+    }
+    private static final int GDK_KEY_ISO_Level3_Shift = (int)65027L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Level3_Shift 65027
+     * }
+     */
+    public static int GDK_KEY_ISO_Level3_Shift() {
+        return GDK_KEY_ISO_Level3_Shift;
+    }
+    private static final int GDK_KEY_ISO_Level3_Latch = (int)65028L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Level3_Latch 65028
+     * }
+     */
+    public static int GDK_KEY_ISO_Level3_Latch() {
+        return GDK_KEY_ISO_Level3_Latch;
+    }
+    private static final int GDK_KEY_ISO_Level3_Lock = (int)65029L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Level3_Lock 65029
+     * }
+     */
+    public static int GDK_KEY_ISO_Level3_Lock() {
+        return GDK_KEY_ISO_Level3_Lock;
+    }
+    private static final int GDK_KEY_ISO_Level5_Shift = (int)65041L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Level5_Shift 65041
+     * }
+     */
+    public static int GDK_KEY_ISO_Level5_Shift() {
+        return GDK_KEY_ISO_Level5_Shift;
+    }
+    private static final int GDK_KEY_ISO_Level5_Latch = (int)65042L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Level5_Latch 65042
+     * }
+     */
+    public static int GDK_KEY_ISO_Level5_Latch() {
+        return GDK_KEY_ISO_Level5_Latch;
+    }
+    private static final int GDK_KEY_ISO_Level5_Lock = (int)65043L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Level5_Lock 65043
+     * }
+     */
+    public static int GDK_KEY_ISO_Level5_Lock() {
+        return GDK_KEY_ISO_Level5_Lock;
+    }
+    private static final int GDK_KEY_ISO_Group_Shift = (int)65406L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Group_Shift 65406
+     * }
+     */
+    public static int GDK_KEY_ISO_Group_Shift() {
+        return GDK_KEY_ISO_Group_Shift;
+    }
+    private static final int GDK_KEY_ISO_Group_Latch = (int)65030L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Group_Latch 65030
+     * }
+     */
+    public static int GDK_KEY_ISO_Group_Latch() {
+        return GDK_KEY_ISO_Group_Latch;
+    }
+    private static final int GDK_KEY_ISO_Group_Lock = (int)65031L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Group_Lock 65031
+     * }
+     */
+    public static int GDK_KEY_ISO_Group_Lock() {
+        return GDK_KEY_ISO_Group_Lock;
+    }
+    private static final int GDK_KEY_ISO_Next_Group = (int)65032L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Next_Group 65032
+     * }
+     */
+    public static int GDK_KEY_ISO_Next_Group() {
+        return GDK_KEY_ISO_Next_Group;
+    }
+    private static final int GDK_KEY_ISO_Next_Group_Lock = (int)65033L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Next_Group_Lock 65033
+     * }
+     */
+    public static int GDK_KEY_ISO_Next_Group_Lock() {
+        return GDK_KEY_ISO_Next_Group_Lock;
+    }
+    private static final int GDK_KEY_ISO_Prev_Group = (int)65034L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Prev_Group 65034
+     * }
+     */
+    public static int GDK_KEY_ISO_Prev_Group() {
+        return GDK_KEY_ISO_Prev_Group;
+    }
+    private static final int GDK_KEY_ISO_Prev_Group_Lock = (int)65035L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Prev_Group_Lock 65035
+     * }
+     */
+    public static int GDK_KEY_ISO_Prev_Group_Lock() {
+        return GDK_KEY_ISO_Prev_Group_Lock;
+    }
+    private static final int GDK_KEY_ISO_First_Group = (int)65036L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_First_Group 65036
+     * }
+     */
+    public static int GDK_KEY_ISO_First_Group() {
+        return GDK_KEY_ISO_First_Group;
+    }
+    private static final int GDK_KEY_ISO_First_Group_Lock = (int)65037L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_First_Group_Lock 65037
+     * }
+     */
+    public static int GDK_KEY_ISO_First_Group_Lock() {
+        return GDK_KEY_ISO_First_Group_Lock;
+    }
+    private static final int GDK_KEY_ISO_Last_Group = (int)65038L;
+    /**
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Last_Group 65038
+     * }
+     */
+    public static int GDK_KEY_ISO_Last_Group() {
+        return GDK_KEY_ISO_Last_Group;
+    }
+    private static final int GDK_KEY_ISO_Last_Group_Lock = (int)65039L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_EPS "application/postscript"
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Last_Group_Lock 65039
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_EPS() {
-        return constants$3447.const$4;
+    public static int GDK_KEY_ISO_Last_Group_Lock() {
+        return GDK_KEY_ISO_Last_Group_Lock;
     }
+    private static final int GDK_KEY_ISO_Left_Tab = (int)65056L;
     /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_EPS_PARAMS "application/x-cairo.eps.params"
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Left_Tab 65056
      * }
      */
-    public static MemorySegment CAIRO_MIME_TYPE_EPS_PARAMS() {
-        return constants$3447.const$5;
+    public static int GDK_KEY_ISO_Left_Tab() {
+        return GDK_KEY_ISO_Left_Tab;
     }
+    private static final int GDK_KEY_ISO_Move_Line_Up = (int)65057L;
     /**
-     * {@snippet :
-     * #define GDK_CURRENT_TIME 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Move_Line_Up 65057
      * }
      */
-    public static long GDK_CURRENT_TIME() {
-        return 0L;
+    public static int GDK_KEY_ISO_Move_Line_Up() {
+        return GDK_KEY_ISO_Move_Line_Up;
     }
+    private static final int GDK_KEY_ISO_Move_Line_Down = (int)65058L;
     /**
-     * {@snippet :
-     * #define GDK_PARENT_RELATIVE 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Move_Line_Down 65058
      * }
      */
-    public static long GDK_PARENT_RELATIVE() {
-        return 1L;
+    public static int GDK_KEY_ISO_Move_Line_Down() {
+        return GDK_KEY_ISO_Move_Line_Down;
     }
+    private static final int GDK_KEY_ISO_Partial_Line_Up = (int)65059L;
     /**
-     * {@snippet :
-     * #define GDK_NONE 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Partial_Line_Up 65059
      * }
      */
-    public static MemorySegment GDK_NONE() {
-        return constants$3413.const$2;
+    public static int GDK_KEY_ISO_Partial_Line_Up() {
+        return GDK_KEY_ISO_Partial_Line_Up;
     }
+    private static final int GDK_KEY_ISO_Partial_Line_Down = (int)65060L;
     /**
-     * {@snippet :
-     * #define GDK_PRIORITY_EVENTS 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Partial_Line_Down 65060
      * }
      */
-    public static int GDK_PRIORITY_EVENTS() {
-        return (int)0L;
+    public static int GDK_KEY_ISO_Partial_Line_Down() {
+        return GDK_KEY_ISO_Partial_Line_Down;
     }
+    private static final int GDK_KEY_ISO_Partial_Space_Left = (int)65061L;
     /**
-     * {@snippet :
-     * #define GDK_PRIORITY_REDRAW 120
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Partial_Space_Left 65061
      * }
      */
-    public static int GDK_PRIORITY_REDRAW() {
-        return (int)120L;
+    public static int GDK_KEY_ISO_Partial_Space_Left() {
+        return GDK_KEY_ISO_Partial_Space_Left;
     }
+    private static final int GDK_KEY_ISO_Partial_Space_Right = (int)65062L;
     /**
-     * {@snippet :
-     * #define GDK_EVENT_PROPAGATE 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Partial_Space_Right 65062
      * }
      */
-    public static int GDK_EVENT_PROPAGATE() {
-        return (int)0L;
+    public static int GDK_KEY_ISO_Partial_Space_Right() {
+        return GDK_KEY_ISO_Partial_Space_Right;
     }
+    private static final int GDK_KEY_ISO_Set_Margin_Left = (int)65063L;
     /**
-     * {@snippet :
-     * #define GDK_EVENT_STOP 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Set_Margin_Left 65063
      * }
      */
-    public static int GDK_EVENT_STOP() {
-        return (int)1L;
+    public static int GDK_KEY_ISO_Set_Margin_Left() {
+        return GDK_KEY_ISO_Set_Margin_Left;
     }
+    private static final int GDK_KEY_ISO_Set_Margin_Right = (int)65064L;
     /**
-     * {@snippet :
-     * #define GDK_BUTTON_PRIMARY 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Set_Margin_Right 65064
      * }
      */
-    public static int GDK_BUTTON_PRIMARY() {
-        return (int)1L;
+    public static int GDK_KEY_ISO_Set_Margin_Right() {
+        return GDK_KEY_ISO_Set_Margin_Right;
     }
+    private static final int GDK_KEY_ISO_Release_Margin_Left = (int)65065L;
     /**
-     * {@snippet :
-     * #define GDK_BUTTON_MIDDLE 2
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Release_Margin_Left 65065
      * }
      */
-    public static int GDK_BUTTON_MIDDLE() {
-        return (int)2L;
+    public static int GDK_KEY_ISO_Release_Margin_Left() {
+        return GDK_KEY_ISO_Release_Margin_Left;
     }
+    private static final int GDK_KEY_ISO_Release_Margin_Right = (int)65066L;
     /**
-     * {@snippet :
-     * #define GDK_BUTTON_SECONDARY 3
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Release_Margin_Right 65066
      * }
      */
-    public static int GDK_BUTTON_SECONDARY() {
-        return (int)3L;
+    public static int GDK_KEY_ISO_Release_Margin_Right() {
+        return GDK_KEY_ISO_Release_Margin_Right;
     }
+    private static final int GDK_KEY_ISO_Release_Both_Margins = (int)65067L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_MAJOR 2
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Release_Both_Margins 65067
      * }
      */
-    public static int GDK_PIXBUF_MAJOR() {
-        return (int)2L;
+    public static int GDK_KEY_ISO_Release_Both_Margins() {
+        return GDK_KEY_ISO_Release_Both_Margins;
     }
+    private static final int GDK_KEY_ISO_Fast_Cursor_Left = (int)65068L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_MINOR 42
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Fast_Cursor_Left 65068
      * }
      */
-    public static int GDK_PIXBUF_MINOR() {
-        return (int)42L;
+    public static int GDK_KEY_ISO_Fast_Cursor_Left() {
+        return GDK_KEY_ISO_Fast_Cursor_Left;
     }
+    private static final int GDK_KEY_ISO_Fast_Cursor_Right = (int)65069L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_MICRO 10
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Fast_Cursor_Right 65069
      * }
      */
-    public static int GDK_PIXBUF_MICRO() {
-        return (int)10L;
+    public static int GDK_KEY_ISO_Fast_Cursor_Right() {
+        return GDK_KEY_ISO_Fast_Cursor_Right;
     }
+    private static final int GDK_KEY_ISO_Fast_Cursor_Up = (int)65070L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION "2.42.10"
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Fast_Cursor_Up 65070
      * }
      */
-    public static MemorySegment GDK_PIXBUF_VERSION() {
-        return constants$3448.const$0;
+    public static int GDK_KEY_ISO_Fast_Cursor_Up() {
+        return GDK_KEY_ISO_Fast_Cursor_Up;
     }
+    private static final int GDK_KEY_ISO_Fast_Cursor_Down = (int)65071L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_0 131072
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Fast_Cursor_Down 65071
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_0() {
-        return (int)131072L;
+    public static int GDK_KEY_ISO_Fast_Cursor_Down() {
+        return GDK_KEY_ISO_Fast_Cursor_Down;
     }
+    private static final int GDK_KEY_ISO_Continuous_Underline = (int)65072L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_2 131584
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Continuous_Underline 65072
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_2() {
-        return (int)131584L;
+    public static int GDK_KEY_ISO_Continuous_Underline() {
+        return GDK_KEY_ISO_Continuous_Underline;
     }
+    private static final int GDK_KEY_ISO_Discontinuous_Underline = (int)65073L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_4 132096
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Discontinuous_Underline 65073
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_4() {
-        return (int)132096L;
+    public static int GDK_KEY_ISO_Discontinuous_Underline() {
+        return GDK_KEY_ISO_Discontinuous_Underline;
     }
+    private static final int GDK_KEY_ISO_Emphasize = (int)65074L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_6 132608
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Emphasize 65074
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_6() {
-        return (int)132608L;
+    public static int GDK_KEY_ISO_Emphasize() {
+        return GDK_KEY_ISO_Emphasize;
     }
+    private static final int GDK_KEY_ISO_Center_Object = (int)65075L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_8 133120
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Center_Object 65075
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_8() {
-        return (int)133120L;
+    public static int GDK_KEY_ISO_Center_Object() {
+        return GDK_KEY_ISO_Center_Object;
     }
+    private static final int GDK_KEY_ISO_Enter = (int)65076L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_10 133632
+     * {@snippet lang=c :
+     * #define GDK_KEY_ISO_Enter 65076
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_10() {
-        return (int)133632L;
+    public static int GDK_KEY_ISO_Enter() {
+        return GDK_KEY_ISO_Enter;
     }
+    private static final int GDK_KEY_dead_grave = (int)65104L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_12 134144
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_grave 65104
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_12() {
-        return (int)134144L;
+    public static int GDK_KEY_dead_grave() {
+        return GDK_KEY_dead_grave;
     }
+    private static final int GDK_KEY_dead_acute = (int)65105L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_14 134656
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_acute 65105
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_14() {
-        return (int)134656L;
+    public static int GDK_KEY_dead_acute() {
+        return GDK_KEY_dead_acute;
     }
+    private static final int GDK_KEY_dead_circumflex = (int)65106L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_16 135168
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_circumflex 65106
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_16() {
-        return (int)135168L;
+    public static int GDK_KEY_dead_circumflex() {
+        return GDK_KEY_dead_circumflex;
     }
+    private static final int GDK_KEY_dead_tilde = (int)65107L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_18 135680
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_tilde 65107
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_18() {
-        return (int)135680L;
+    public static int GDK_KEY_dead_tilde() {
+        return GDK_KEY_dead_tilde;
     }
+    private static final int GDK_KEY_dead_perispomeni = (int)65107L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_20 136192
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_perispomeni 65107
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_20() {
-        return (int)136192L;
+    public static int GDK_KEY_dead_perispomeni() {
+        return GDK_KEY_dead_perispomeni;
     }
+    private static final int GDK_KEY_dead_macron = (int)65108L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_22 136704
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_macron 65108
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_22() {
-        return (int)136704L;
+    public static int GDK_KEY_dead_macron() {
+        return GDK_KEY_dead_macron;
     }
+    private static final int GDK_KEY_dead_breve = (int)65109L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_24 137216
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_breve 65109
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_24() {
-        return (int)137216L;
+    public static int GDK_KEY_dead_breve() {
+        return GDK_KEY_dead_breve;
     }
+    private static final int GDK_KEY_dead_abovedot = (int)65110L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_26 137728
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_abovedot 65110
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_26() {
-        return (int)137728L;
+    public static int GDK_KEY_dead_abovedot() {
+        return GDK_KEY_dead_abovedot;
     }
+    private static final int GDK_KEY_dead_diaeresis = (int)65111L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_28 138240
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_diaeresis 65111
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_28() {
-        return (int)138240L;
+    public static int GDK_KEY_dead_diaeresis() {
+        return GDK_KEY_dead_diaeresis;
     }
+    private static final int GDK_KEY_dead_abovering = (int)65112L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_30 138752
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_abovering 65112
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_30() {
-        return (int)138752L;
+    public static int GDK_KEY_dead_abovering() {
+        return GDK_KEY_dead_abovering;
     }
+    private static final int GDK_KEY_dead_doubleacute = (int)65113L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_32 139264
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_doubleacute 65113
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_32() {
-        return (int)139264L;
+    public static int GDK_KEY_dead_doubleacute() {
+        return GDK_KEY_dead_doubleacute;
     }
+    private static final int GDK_KEY_dead_caron = (int)65114L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_34 139776
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_caron 65114
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_34() {
-        return (int)139776L;
+    public static int GDK_KEY_dead_caron() {
+        return GDK_KEY_dead_caron;
     }
+    private static final int GDK_KEY_dead_cedilla = (int)65115L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_36 140288
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_cedilla 65115
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_36() {
-        return (int)140288L;
+    public static int GDK_KEY_dead_cedilla() {
+        return GDK_KEY_dead_cedilla;
     }
+    private static final int GDK_KEY_dead_ogonek = (int)65116L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_38 140800
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_ogonek 65116
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_38() {
-        return (int)140800L;
+    public static int GDK_KEY_dead_ogonek() {
+        return GDK_KEY_dead_ogonek;
     }
+    private static final int GDK_KEY_dead_iota = (int)65117L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_40 141312
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_iota 65117
      * }
      */
-    public static int GDK_PIXBUF_VERSION_2_40() {
-        return (int)141312L;
+    public static int GDK_KEY_dead_iota() {
+        return GDK_KEY_dead_iota;
     }
+    private static final int GDK_KEY_dead_voiced_sound = (int)65118L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_CUR_STABLE 141824
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_voiced_sound 65118
      * }
      */
-    public static int GDK_PIXBUF_VERSION_CUR_STABLE() {
-        return (int)141824L;
+    public static int GDK_KEY_dead_voiced_sound() {
+        return GDK_KEY_dead_voiced_sound;
     }
+    private static final int GDK_KEY_dead_semivoiced_sound = (int)65119L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_PREV_STABLE 141312
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_semivoiced_sound 65119
      * }
      */
-    public static int GDK_PIXBUF_VERSION_PREV_STABLE() {
-        return (int)141312L;
+    public static int GDK_KEY_dead_semivoiced_sound() {
+        return GDK_KEY_dead_semivoiced_sound;
     }
+    private static final int GDK_KEY_dead_belowdot = (int)65120L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_MIN_REQUIRED 141824
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_belowdot 65120
      * }
      */
-    public static int GDK_PIXBUF_VERSION_MIN_REQUIRED() {
-        return (int)141824L;
+    public static int GDK_KEY_dead_belowdot() {
+        return GDK_KEY_dead_belowdot;
     }
+    private static final int GDK_KEY_dead_hook = (int)65121L;
     /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_MAX_ALLOWED 141824
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_hook 65121
      * }
      */
-    public static int GDK_PIXBUF_VERSION_MAX_ALLOWED() {
-        return (int)141824L;
+    public static int GDK_KEY_dead_hook() {
+        return GDK_KEY_dead_hook;
     }
+    private static final int GDK_KEY_dead_horn = (int)65122L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_PRIMARY 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_horn 65122
      * }
      */
-    public static MemorySegment GDK_SELECTION_PRIMARY() {
-        return constants$3417.const$5;
+    public static int GDK_KEY_dead_horn() {
+        return GDK_KEY_dead_horn;
     }
+    private static final int GDK_KEY_dead_stroke = (int)65123L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_SECONDARY 2
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_stroke 65123
      * }
      */
-    public static MemorySegment GDK_SELECTION_SECONDARY() {
-        return constants$3448.const$1;
+    public static int GDK_KEY_dead_stroke() {
+        return GDK_KEY_dead_stroke;
     }
+    private static final int GDK_KEY_dead_abovecomma = (int)65124L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_CLIPBOARD 69
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_abovecomma 65124
      * }
      */
-    public static MemorySegment GDK_SELECTION_CLIPBOARD() {
-        return constants$3448.const$2;
+    public static int GDK_KEY_dead_abovecomma() {
+        return GDK_KEY_dead_abovecomma;
     }
+    private static final int GDK_KEY_dead_psili = (int)65124L;
     /**
-     * {@snippet :
-     * #define GDK_TARGET_BITMAP 5
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_psili 65124
      * }
      */
-    public static MemorySegment GDK_TARGET_BITMAP() {
-        return constants$3448.const$3;
+    public static int GDK_KEY_dead_psili() {
+        return GDK_KEY_dead_psili;
     }
+    private static final int GDK_KEY_dead_abovereversedcomma = (int)65125L;
     /**
-     * {@snippet :
-     * #define GDK_TARGET_COLORMAP 7
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_abovereversedcomma 65125
      * }
      */
-    public static MemorySegment GDK_TARGET_COLORMAP() {
-        return constants$3448.const$4;
+    public static int GDK_KEY_dead_abovereversedcomma() {
+        return GDK_KEY_dead_abovereversedcomma;
     }
+    private static final int GDK_KEY_dead_dasia = (int)65125L;
     /**
-     * {@snippet :
-     * #define GDK_TARGET_DRAWABLE 17
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_dasia 65125
      * }
      */
-    public static MemorySegment GDK_TARGET_DRAWABLE() {
-        return constants$3448.const$5;
+    public static int GDK_KEY_dead_dasia() {
+        return GDK_KEY_dead_dasia;
     }
+    private static final int GDK_KEY_dead_doublegrave = (int)65126L;
     /**
-     * {@snippet :
-     * #define GDK_TARGET_PIXMAP 20
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_doublegrave 65126
      * }
      */
-    public static MemorySegment GDK_TARGET_PIXMAP() {
-        return constants$3449.const$0;
+    public static int GDK_KEY_dead_doublegrave() {
+        return GDK_KEY_dead_doublegrave;
     }
+    private static final int GDK_KEY_dead_belowring = (int)65127L;
     /**
-     * {@snippet :
-     * #define GDK_TARGET_STRING 31
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_belowring 65127
      * }
      */
-    public static MemorySegment GDK_TARGET_STRING() {
-        return constants$3449.const$1;
+    public static int GDK_KEY_dead_belowring() {
+        return GDK_KEY_dead_belowring;
     }
+    private static final int GDK_KEY_dead_belowmacron = (int)65128L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_ATOM 4
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_belowmacron 65128
      * }
      */
-    public static MemorySegment GDK_SELECTION_TYPE_ATOM() {
-        return constants$3449.const$2;
+    public static int GDK_KEY_dead_belowmacron() {
+        return GDK_KEY_dead_belowmacron;
     }
+    private static final int GDK_KEY_dead_belowcircumflex = (int)65129L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_BITMAP 5
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_belowcircumflex 65129
      * }
      */
-    public static MemorySegment GDK_SELECTION_TYPE_BITMAP() {
-        return constants$3448.const$3;
+    public static int GDK_KEY_dead_belowcircumflex() {
+        return GDK_KEY_dead_belowcircumflex;
     }
+    private static final int GDK_KEY_dead_belowtilde = (int)65130L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_COLORMAP 7
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_belowtilde 65130
      * }
      */
-    public static MemorySegment GDK_SELECTION_TYPE_COLORMAP() {
-        return constants$3448.const$4;
+    public static int GDK_KEY_dead_belowtilde() {
+        return GDK_KEY_dead_belowtilde;
     }
+    private static final int GDK_KEY_dead_belowbreve = (int)65131L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_DRAWABLE 17
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_belowbreve 65131
      * }
      */
-    public static MemorySegment GDK_SELECTION_TYPE_DRAWABLE() {
-        return constants$3448.const$5;
+    public static int GDK_KEY_dead_belowbreve() {
+        return GDK_KEY_dead_belowbreve;
     }
+    private static final int GDK_KEY_dead_belowdiaeresis = (int)65132L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_INTEGER 19
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_belowdiaeresis 65132
      * }
      */
-    public static MemorySegment GDK_SELECTION_TYPE_INTEGER() {
-        return constants$3449.const$3;
+    public static int GDK_KEY_dead_belowdiaeresis() {
+        return GDK_KEY_dead_belowdiaeresis;
     }
+    private static final int GDK_KEY_dead_invertedbreve = (int)65133L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_PIXMAP 20
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_invertedbreve 65133
      * }
      */
-    public static MemorySegment GDK_SELECTION_TYPE_PIXMAP() {
-        return constants$3449.const$0;
+    public static int GDK_KEY_dead_invertedbreve() {
+        return GDK_KEY_dead_invertedbreve;
     }
+    private static final int GDK_KEY_dead_belowcomma = (int)65134L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_WINDOW 33
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_belowcomma 65134
      * }
      */
-    public static MemorySegment GDK_SELECTION_TYPE_WINDOW() {
-        return constants$3449.const$4;
+    public static int GDK_KEY_dead_belowcomma() {
+        return GDK_KEY_dead_belowcomma;
     }
+    private static final int GDK_KEY_dead_currency = (int)65135L;
     /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_STRING 31
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_currency 65135
      * }
      */
-    public static MemorySegment GDK_SELECTION_TYPE_STRING() {
-        return constants$3449.const$1;
+    public static int GDK_KEY_dead_currency() {
+        return GDK_KEY_dead_currency;
     }
+    private static final int GDK_KEY_dead_lowline = (int)65168L;
     /**
-     * {@snippet :
-     * #define GTK_UNIT_PIXEL 0
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_lowline 65168
      * }
      */
-    public static int GTK_UNIT_PIXEL() {
-        return (int)0L;
+    public static int GDK_KEY_dead_lowline() {
+        return GDK_KEY_dead_lowline;
     }
+    private static final int GDK_KEY_dead_aboveverticalline = (int)65169L;
     /**
-     * {@snippet :
-     * #define ATK_MAJOR_VERSION 2
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_aboveverticalline 65169
      * }
      */
-    public static int ATK_MAJOR_VERSION() {
-        return (int)2L;
+    public static int GDK_KEY_dead_aboveverticalline() {
+        return GDK_KEY_dead_aboveverticalline;
     }
+    private static final int GDK_KEY_dead_belowverticalline = (int)65170L;
     /**
-     * {@snippet :
-     * #define ATK_MINOR_VERSION 48
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_belowverticalline 65170
      * }
      */
-    public static int ATK_MINOR_VERSION() {
-        return (int)48L;
+    public static int GDK_KEY_dead_belowverticalline() {
+        return GDK_KEY_dead_belowverticalline;
     }
+    private static final int GDK_KEY_dead_longsolidusoverlay = (int)65171L;
     /**
-     * {@snippet :
-     * #define ATK_MICRO_VERSION 3
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_longsolidusoverlay 65171
      * }
      */
-    public static int ATK_MICRO_VERSION() {
-        return (int)3L;
+    public static int GDK_KEY_dead_longsolidusoverlay() {
+        return GDK_KEY_dead_longsolidusoverlay;
     }
+    private static final int GDK_KEY_dead_a = (int)65152L;
     /**
-     * {@snippet :
-     * #define ATK_BINARY_AGE 24813
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_a 65152
      * }
      */
-    public static int ATK_BINARY_AGE() {
-        return (int)24813L;
+    public static int GDK_KEY_dead_a() {
+        return GDK_KEY_dead_a;
     }
+    private static final int GDK_KEY_dead_A = (int)65153L;
     /**
-     * {@snippet :
-     * #define ATK_INTERFACE_AGE 1
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_A 65153
      * }
      */
-    public static int ATK_INTERFACE_AGE() {
-        return (int)1L;
+    public static int GDK_KEY_dead_A() {
+        return GDK_KEY_dead_A;
     }
+    private static final int GDK_KEY_dead_e = (int)65154L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_2_2 131584
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_e 65154
      * }
      */
-    public static int ATK_VERSION_2_2() {
-        return (int)131584L;
+    public static int GDK_KEY_dead_e() {
+        return GDK_KEY_dead_e;
     }
+    private static final int GDK_KEY_dead_E = (int)65155L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_2_4 132096
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_E 65155
      * }
      */
-    public static int ATK_VERSION_2_4() {
-        return (int)132096L;
+    public static int GDK_KEY_dead_E() {
+        return GDK_KEY_dead_E;
     }
+    private static final int GDK_KEY_dead_i = (int)65156L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_2_6 132608
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_i 65156
      * }
      */
-    public static int ATK_VERSION_2_6() {
-        return (int)132608L;
+    public static int GDK_KEY_dead_i() {
+        return GDK_KEY_dead_i;
     }
+    private static final int GDK_KEY_dead_I = (int)65157L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_2_8 133120
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_I 65157
      * }
      */
-    public static int ATK_VERSION_2_8() {
-        return (int)133120L;
+    public static int GDK_KEY_dead_I() {
+        return GDK_KEY_dead_I;
     }
+    private static final int GDK_KEY_dead_o = (int)65158L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_2_10 133632
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_o 65158
      * }
      */
-    public static int ATK_VERSION_2_10() {
-        return (int)133632L;
+    public static int GDK_KEY_dead_o() {
+        return GDK_KEY_dead_o;
     }
+    private static final int GDK_KEY_dead_O = (int)65159L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_2_12 134144
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_O 65159
      * }
      */
-    public static int ATK_VERSION_2_12() {
-        return (int)134144L;
+    public static int GDK_KEY_dead_O() {
+        return GDK_KEY_dead_O;
     }
+    private static final int GDK_KEY_dead_u = (int)65160L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_2_14 134656
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_u 65160
      * }
      */
-    public static int ATK_VERSION_2_14() {
-        return (int)134656L;
+    public static int GDK_KEY_dead_u() {
+        return GDK_KEY_dead_u;
     }
+    private static final int GDK_KEY_dead_U = (int)65161L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_2_30 138752
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_U 65161
      * }
      */
-    public static int ATK_VERSION_2_30() {
-        return (int)138752L;
+    public static int GDK_KEY_dead_U() {
+        return GDK_KEY_dead_U;
     }
+    private static final int GDK_KEY_dead_small_schwa = (int)65162L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_2_36 140288
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_small_schwa 65162
      * }
      */
-    public static int ATK_VERSION_2_36() {
-        return (int)140288L;
+    public static int GDK_KEY_dead_small_schwa() {
+        return GDK_KEY_dead_small_schwa;
     }
+    private static final int GDK_KEY_dead_capital_schwa = (int)65163L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_CUR_STABLE 143360
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_capital_schwa 65163
      * }
      */
-    public static int ATK_VERSION_CUR_STABLE() {
-        return (int)143360L;
+    public static int GDK_KEY_dead_capital_schwa() {
+        return GDK_KEY_dead_capital_schwa;
     }
+    private static final int GDK_KEY_dead_greek = (int)65164L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_PREV_STABLE 142848
+     * {@snippet lang=c :
+     * #define GDK_KEY_dead_greek 65164
      * }
      */
-    public static int ATK_VERSION_PREV_STABLE() {
-        return (int)142848L;
+    public static int GDK_KEY_dead_greek() {
+        return GDK_KEY_dead_greek;
     }
+    private static final int GDK_KEY_First_Virtual_Screen = (int)65232L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_MIN_REQUIRED 143360
+     * {@snippet lang=c :
+     * #define GDK_KEY_First_Virtual_Screen 65232
      * }
      */
-    public static int ATK_VERSION_MIN_REQUIRED() {
-        return (int)143360L;
+    public static int GDK_KEY_First_Virtual_Screen() {
+        return GDK_KEY_First_Virtual_Screen;
     }
+    private static final int GDK_KEY_Prev_Virtual_Screen = (int)65233L;
     /**
-     * {@snippet :
-     * #define ATK_VERSION_MAX_ALLOWED 143360
+     * {@snippet lang=c :
+     * #define GDK_KEY_Prev_Virtual_Screen 65233
      * }
      */
-    public static int ATK_VERSION_MAX_ALLOWED() {
-        return (int)143360L;
+    public static int GDK_KEY_Prev_Virtual_Screen() {
+        return GDK_KEY_Prev_Virtual_Screen;
     }
+    private static final int GDK_KEY_Next_Virtual_Screen = (int)65234L;
     /**
-     * {@snippet :
-     * #define GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_Next_Virtual_Screen 65234
      * }
      */
-    public static int GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID() {
-        return (int)-1L;
+    public static int GDK_KEY_Next_Virtual_Screen() {
+        return GDK_KEY_Next_Virtual_Screen;
     }
+    private static final int GDK_KEY_Last_Virtual_Screen = (int)65236L;
     /**
-     * {@snippet :
-     * #define GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID -2
+     * {@snippet lang=c :
+     * #define GDK_KEY_Last_Virtual_Screen 65236
      * }
      */
-    public static int GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID() {
-        return (int)-2L;
+    public static int GDK_KEY_Last_Virtual_Screen() {
+        return GDK_KEY_Last_Virtual_Screen;
     }
+    private static final int GDK_KEY_Terminate_Server = (int)65237L;
     /**
-     * {@snippet :
-     * #define GTK_ENTRY_BUFFER_MAX_SIZE 65535
+     * {@snippet lang=c :
+     * #define GDK_KEY_Terminate_Server 65237
      * }
      */
-    public static int GTK_ENTRY_BUFFER_MAX_SIZE() {
-        return (int)65535L;
+    public static int GDK_KEY_Terminate_Server() {
+        return GDK_KEY_Terminate_Server;
     }
+    private static final int GDK_KEY_AccessX_Enable = (int)65136L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BACKGROUND_COLOR "background-color"
+     * {@snippet lang=c :
+     * #define GDK_KEY_AccessX_Enable 65136
      * }
      */
-    public static MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_COLOR() {
-        return constants$3449.const$5;
+    public static int GDK_KEY_AccessX_Enable() {
+        return GDK_KEY_AccessX_Enable;
     }
+    private static final int GDK_KEY_AccessX_Feedback_Enable = (int)65137L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_COLOR "color"
+     * {@snippet lang=c :
+     * #define GDK_KEY_AccessX_Feedback_Enable 65137
      * }
      */
-    public static MemorySegment GTK_STYLE_PROPERTY_COLOR() {
-        return constants$3450.const$0;
+    public static int GDK_KEY_AccessX_Feedback_Enable() {
+        return GDK_KEY_AccessX_Feedback_Enable;
     }
+    private static final int GDK_KEY_RepeatKeys_Enable = (int)65138L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_FONT "font"
+     * {@snippet lang=c :
+     * #define GDK_KEY_RepeatKeys_Enable 65138
      * }
      */
-    public static MemorySegment GTK_STYLE_PROPERTY_FONT() {
-        return constants$3450.const$1;
+    public static int GDK_KEY_RepeatKeys_Enable() {
+        return GDK_KEY_RepeatKeys_Enable;
     }
+    private static final int GDK_KEY_SlowKeys_Enable = (int)65139L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_PADDING "padding"
+     * {@snippet lang=c :
+     * #define GDK_KEY_SlowKeys_Enable 65139
      * }
      */
-    public static MemorySegment GTK_STYLE_PROPERTY_PADDING() {
-        return constants$3450.const$2;
+    public static int GDK_KEY_SlowKeys_Enable() {
+        return GDK_KEY_SlowKeys_Enable;
     }
+    private static final int GDK_KEY_BounceKeys_Enable = (int)65140L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BORDER_WIDTH "border-width"
+     * {@snippet lang=c :
+     * #define GDK_KEY_BounceKeys_Enable 65140
      * }
      */
-    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_WIDTH() {
-        return constants$3450.const$3;
+    public static int GDK_KEY_BounceKeys_Enable() {
+        return GDK_KEY_BounceKeys_Enable;
     }
+    private static final int GDK_KEY_StickyKeys_Enable = (int)65141L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_MARGIN "margin"
+     * {@snippet lang=c :
+     * #define GDK_KEY_StickyKeys_Enable 65141
      * }
      */
-    public static MemorySegment GTK_STYLE_PROPERTY_MARGIN() {
-        return constants$3450.const$4;
+    public static int GDK_KEY_StickyKeys_Enable() {
+        return GDK_KEY_StickyKeys_Enable;
     }
+    private static final int GDK_KEY_MouseKeys_Enable = (int)65142L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BORDER_RADIUS "border-radius"
+     * {@snippet lang=c :
+     * #define GDK_KEY_MouseKeys_Enable 65142
      * }
      */
-    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_RADIUS() {
-        return constants$3450.const$5;
+    public static int GDK_KEY_MouseKeys_Enable() {
+        return GDK_KEY_MouseKeys_Enable;
     }
+    private static final int GDK_KEY_MouseKeys_Accel_Enable = (int)65143L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BORDER_STYLE "border-style"
+     * {@snippet lang=c :
+     * #define GDK_KEY_MouseKeys_Accel_Enable 65143
      * }
      */
-    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_STYLE() {
-        return constants$3451.const$0;
+    public static int GDK_KEY_MouseKeys_Accel_Enable() {
+        return GDK_KEY_MouseKeys_Accel_Enable;
     }
+    private static final int GDK_KEY_Overlay1_Enable = (int)65144L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BORDER_COLOR "border-color"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Overlay1_Enable 65144
      * }
      */
-    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_COLOR() {
-        return constants$3451.const$1;
+    public static int GDK_KEY_Overlay1_Enable() {
+        return GDK_KEY_Overlay1_Enable;
     }
+    private static final int GDK_KEY_Overlay2_Enable = (int)65145L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BACKGROUND_IMAGE "background-image"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Overlay2_Enable 65145
      * }
      */
-    public static MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_IMAGE() {
-        return constants$3451.const$2;
+    public static int GDK_KEY_Overlay2_Enable() {
+        return GDK_KEY_Overlay2_Enable;
     }
+    private static final int GDK_KEY_AudibleBell_Enable = (int)65146L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CELL "cell"
+     * {@snippet lang=c :
+     * #define GDK_KEY_AudibleBell_Enable 65146
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_CELL() {
-        return constants$3451.const$3;
+    public static int GDK_KEY_AudibleBell_Enable() {
+        return GDK_KEY_AudibleBell_Enable;
     }
+    private static final int GDK_KEY_Pointer_Left = (int)65248L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_DIM_LABEL "dim-label"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Left 65248
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_DIM_LABEL() {
-        return constants$3451.const$4;
+    public static int GDK_KEY_Pointer_Left() {
+        return GDK_KEY_Pointer_Left;
     }
+    private static final int GDK_KEY_Pointer_Right = (int)65249L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_ENTRY "entry"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Right 65249
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_ENTRY() {
-        return constants$3451.const$5;
+    public static int GDK_KEY_Pointer_Right() {
+        return GDK_KEY_Pointer_Right;
     }
+    private static final int GDK_KEY_Pointer_Up = (int)65250L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LABEL "label"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Up 65250
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_LABEL() {
-        return constants$3441.const$4;
+    public static int GDK_KEY_Pointer_Up() {
+        return GDK_KEY_Pointer_Up;
     }
+    private static final int GDK_KEY_Pointer_Down = (int)65251L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_COMBOBOX_ENTRY "combobox-entry"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Down 65251
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_COMBOBOX_ENTRY() {
-        return constants$3452.const$0;
+    public static int GDK_KEY_Pointer_Down() {
+        return GDK_KEY_Pointer_Down;
     }
+    private static final int GDK_KEY_Pointer_UpLeft = (int)65252L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_BUTTON "button"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_UpLeft 65252
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_BUTTON() {
-        return constants$3452.const$1;
+    public static int GDK_KEY_Pointer_UpLeft() {
+        return GDK_KEY_Pointer_UpLeft;
     }
+    private static final int GDK_KEY_Pointer_UpRight = (int)65253L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LIST "list"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_UpRight 65253
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_LIST() {
-        return constants$3452.const$2;
+    public static int GDK_KEY_Pointer_UpRight() {
+        return GDK_KEY_Pointer_UpRight;
     }
+    private static final int GDK_KEY_Pointer_DownLeft = (int)65254L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LIST_ROW "list-row"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_DownLeft 65254
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_LIST_ROW() {
-        return constants$3452.const$3;
+    public static int GDK_KEY_Pointer_DownLeft() {
+        return GDK_KEY_Pointer_DownLeft;
     }
+    private static final int GDK_KEY_Pointer_DownRight = (int)65255L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CALENDAR "calendar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_DownRight 65255
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_CALENDAR() {
-        return constants$3452.const$4;
+    public static int GDK_KEY_Pointer_DownRight() {
+        return GDK_KEY_Pointer_DownRight;
     }
+    private static final int GDK_KEY_Pointer_Button_Dflt = (int)65256L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SLIDER "slider"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Button_Dflt 65256
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SLIDER() {
-        return constants$3452.const$5;
+    public static int GDK_KEY_Pointer_Button_Dflt() {
+        return GDK_KEY_Pointer_Button_Dflt;
     }
+    private static final int GDK_KEY_Pointer_Button1 = (int)65257L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_BACKGROUND "background"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Button1 65257
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_BACKGROUND() {
-        return constants$3453.const$0;
+    public static int GDK_KEY_Pointer_Button1() {
+        return GDK_KEY_Pointer_Button1;
     }
+    private static final int GDK_KEY_Pointer_Button2 = (int)65258L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_RUBBERBAND "rubberband"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Button2 65258
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_RUBBERBAND() {
-        return constants$3453.const$1;
+    public static int GDK_KEY_Pointer_Button2() {
+        return GDK_KEY_Pointer_Button2;
     }
+    private static final int GDK_KEY_Pointer_Button3 = (int)65259L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CSD "csd"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Button3 65259
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_CSD() {
-        return constants$3453.const$2;
+    public static int GDK_KEY_Pointer_Button3() {
+        return GDK_KEY_Pointer_Button3;
     }
+    private static final int GDK_KEY_Pointer_Button4 = (int)65260L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TOOLTIP "tooltip"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Button4 65260
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_TOOLTIP() {
-        return constants$3453.const$3;
+    public static int GDK_KEY_Pointer_Button4() {
+        return GDK_KEY_Pointer_Button4;
     }
+    private static final int GDK_KEY_Pointer_Button5 = (int)65261L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MENU "menu"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Button5 65261
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_MENU() {
-        return constants$3453.const$4;
+    public static int GDK_KEY_Pointer_Button5() {
+        return GDK_KEY_Pointer_Button5;
     }
+    private static final int GDK_KEY_Pointer_DblClick_Dflt = (int)65262L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CONTEXT_MENU "context-menu"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_DblClick_Dflt 65262
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_CONTEXT_MENU() {
-        return constants$3453.const$5;
+    public static int GDK_KEY_Pointer_DblClick_Dflt() {
+        return GDK_KEY_Pointer_DblClick_Dflt;
     }
+    private static final int GDK_KEY_Pointer_DblClick1 = (int)65263L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TOUCH_SELECTION "touch-selection"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_DblClick1 65263
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_TOUCH_SELECTION() {
-        return constants$3454.const$0;
+    public static int GDK_KEY_Pointer_DblClick1() {
+        return GDK_KEY_Pointer_DblClick1;
     }
+    private static final int GDK_KEY_Pointer_DblClick2 = (int)65264L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MENUBAR "menubar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_DblClick2 65264
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_MENUBAR() {
-        return constants$3454.const$1;
+    public static int GDK_KEY_Pointer_DblClick2() {
+        return GDK_KEY_Pointer_DblClick2;
     }
+    private static final int GDK_KEY_Pointer_DblClick3 = (int)65265L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MENUITEM "menuitem"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_DblClick3 65265
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_MENUITEM() {
-        return constants$3454.const$2;
+    public static int GDK_KEY_Pointer_DblClick3() {
+        return GDK_KEY_Pointer_DblClick3;
     }
+    private static final int GDK_KEY_Pointer_DblClick4 = (int)65266L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TOOLBAR "toolbar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_DblClick4 65266
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_TOOLBAR() {
-        return constants$3454.const$3;
+    public static int GDK_KEY_Pointer_DblClick4() {
+        return GDK_KEY_Pointer_DblClick4;
     }
+    private static final int GDK_KEY_Pointer_DblClick5 = (int)65267L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_PRIMARY_TOOLBAR "primary-toolbar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_DblClick5 65267
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_PRIMARY_TOOLBAR() {
-        return constants$3454.const$4;
+    public static int GDK_KEY_Pointer_DblClick5() {
+        return GDK_KEY_Pointer_DblClick5;
     }
+    private static final int GDK_KEY_Pointer_Drag_Dflt = (int)65268L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_INLINE_TOOLBAR "inline-toolbar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Drag_Dflt 65268
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_INLINE_TOOLBAR() {
-        return constants$3454.const$5;
+    public static int GDK_KEY_Pointer_Drag_Dflt() {
+        return GDK_KEY_Pointer_Drag_Dflt;
     }
+    private static final int GDK_KEY_Pointer_Drag1 = (int)65269L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_STATUSBAR "statusbar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Drag1 65269
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_STATUSBAR() {
-        return constants$3455.const$0;
+    public static int GDK_KEY_Pointer_Drag1() {
+        return GDK_KEY_Pointer_Drag1;
     }
+    private static final int GDK_KEY_Pointer_Drag2 = (int)65270L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_RADIO "radio"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Drag2 65270
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_RADIO() {
-        return constants$3455.const$1;
+    public static int GDK_KEY_Pointer_Drag2() {
+        return GDK_KEY_Pointer_Drag2;
     }
+    private static final int GDK_KEY_Pointer_Drag3 = (int)65271L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CHECK "check"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Drag3 65271
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_CHECK() {
-        return constants$3455.const$2;
+    public static int GDK_KEY_Pointer_Drag3() {
+        return GDK_KEY_Pointer_Drag3;
     }
+    private static final int GDK_KEY_Pointer_Drag4 = (int)65272L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_DEFAULT "default"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Drag4 65272
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_DEFAULT() {
-        return constants$3455.const$3;
+    public static int GDK_KEY_Pointer_Drag4() {
+        return GDK_KEY_Pointer_Drag4;
     }
+    private static final int GDK_KEY_Pointer_Drag5 = (int)65277L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TROUGH "trough"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Drag5 65277
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_TROUGH() {
-        return constants$3455.const$4;
+    public static int GDK_KEY_Pointer_Drag5() {
+        return GDK_KEY_Pointer_Drag5;
     }
+    private static final int GDK_KEY_Pointer_EnableKeys = (int)65273L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SCROLLBAR "scrollbar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_EnableKeys 65273
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SCROLLBAR() {
-        return constants$3455.const$5;
+    public static int GDK_KEY_Pointer_EnableKeys() {
+        return GDK_KEY_Pointer_EnableKeys;
     }
+    private static final int GDK_KEY_Pointer_Accelerate = (int)65274L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SCROLLBARS_JUNCTION "scrollbars-junction"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_Accelerate 65274
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SCROLLBARS_JUNCTION() {
-        return constants$3456.const$0;
+    public static int GDK_KEY_Pointer_Accelerate() {
+        return GDK_KEY_Pointer_Accelerate;
     }
+    private static final int GDK_KEY_Pointer_DfltBtnNext = (int)65275L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SCALE "scale"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_DfltBtnNext 65275
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SCALE() {
-        return constants$3456.const$1;
+    public static int GDK_KEY_Pointer_DfltBtnNext() {
+        return GDK_KEY_Pointer_DfltBtnNext;
     }
+    private static final int GDK_KEY_Pointer_DfltBtnPrev = (int)65276L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE "scale-has-marks-above"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Pointer_DfltBtnPrev 65276
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE() {
-        return constants$3456.const$2;
+    public static int GDK_KEY_Pointer_DfltBtnPrev() {
+        return GDK_KEY_Pointer_DfltBtnPrev;
     }
+    private static final int GDK_KEY_ch = (int)65184L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW "scale-has-marks-below"
+     * {@snippet lang=c :
+     * #define GDK_KEY_ch 65184
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW() {
-        return constants$3456.const$3;
+    public static int GDK_KEY_ch() {
+        return GDK_KEY_ch;
     }
+    private static final int GDK_KEY_Ch = (int)65185L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_HEADER "header"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Ch 65185
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_HEADER() {
-        return constants$3456.const$4;
+    public static int GDK_KEY_Ch() {
+        return GDK_KEY_Ch;
     }
+    private static final int GDK_KEY_CH = (int)65186L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_ACCELERATOR "accelerator"
+     * {@snippet lang=c :
+     * #define GDK_KEY_CH 65186
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_ACCELERATOR() {
-        return constants$3456.const$5;
+    public static int GDK_KEY_CH() {
+        return GDK_KEY_CH;
     }
+    private static final int GDK_KEY_c_h = (int)65187L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_RAISED "raised"
+     * {@snippet lang=c :
+     * #define GDK_KEY_c_h 65187
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_RAISED() {
-        return constants$3457.const$0;
+    public static int GDK_KEY_c_h() {
+        return GDK_KEY_c_h;
     }
+    private static final int GDK_KEY_C_h = (int)65188L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LINKED "linked"
+     * {@snippet lang=c :
+     * #define GDK_KEY_C_h 65188
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_LINKED() {
-        return constants$3457.const$1;
+    public static int GDK_KEY_C_h() {
+        return GDK_KEY_C_h;
     }
+    private static final int GDK_KEY_C_H = (int)65189L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_GRIP "grip"
+     * {@snippet lang=c :
+     * #define GDK_KEY_C_H 65189
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_GRIP() {
-        return constants$3457.const$2;
+    public static int GDK_KEY_C_H() {
+        return GDK_KEY_C_H;
     }
+    private static final int GDK_KEY_3270_Duplicate = (int)64769L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_DOCK "dock"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Duplicate 64769
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_DOCK() {
-        return constants$3457.const$3;
+    public static int GDK_KEY_3270_Duplicate() {
+        return GDK_KEY_3270_Duplicate;
     }
+    private static final int GDK_KEY_3270_FieldMark = (int)64770L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_PROGRESSBAR "progressbar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_FieldMark 64770
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_PROGRESSBAR() {
-        return constants$3457.const$4;
+    public static int GDK_KEY_3270_FieldMark() {
+        return GDK_KEY_3270_FieldMark;
     }
+    private static final int GDK_KEY_3270_Right2 = (int)64771L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SPINNER "spinner"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Right2 64771
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SPINNER() {
-        return constants$3457.const$5;
+    public static int GDK_KEY_3270_Right2() {
+        return GDK_KEY_3270_Right2;
     }
+    private static final int GDK_KEY_3270_Left2 = (int)64772L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MARK "mark"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Left2 64772
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_MARK() {
-        return constants$3458.const$0;
+    public static int GDK_KEY_3270_Left2() {
+        return GDK_KEY_3270_Left2;
     }
+    private static final int GDK_KEY_3270_BackTab = (int)64773L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_EXPANDER "expander"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_BackTab 64773
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_EXPANDER() {
-        return constants$3458.const$1;
+    public static int GDK_KEY_3270_BackTab() {
+        return GDK_KEY_3270_BackTab;
     }
+    private static final int GDK_KEY_3270_EraseEOF = (int)64774L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SPINBUTTON "spinbutton"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_EraseEOF 64774
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SPINBUTTON() {
-        return constants$3458.const$2;
+    public static int GDK_KEY_3270_EraseEOF() {
+        return GDK_KEY_3270_EraseEOF;
     }
+    private static final int GDK_KEY_3270_EraseInput = (int)64775L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_NOTEBOOK "notebook"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_EraseInput 64775
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_NOTEBOOK() {
-        return constants$3458.const$3;
+    public static int GDK_KEY_3270_EraseInput() {
+        return GDK_KEY_3270_EraseInput;
     }
+    private static final int GDK_KEY_3270_Reset = (int)64776L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_VIEW "view"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Reset 64776
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_VIEW() {
-        return constants$3458.const$4;
+    public static int GDK_KEY_3270_Reset() {
+        return GDK_KEY_3270_Reset;
     }
+    private static final int GDK_KEY_3270_Quit = (int)64777L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SIDEBAR "sidebar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Quit 64777
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SIDEBAR() {
-        return constants$3458.const$5;
+    public static int GDK_KEY_3270_Quit() {
+        return GDK_KEY_3270_Quit;
     }
+    private static final int GDK_KEY_3270_PA1 = (int)64778L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_IMAGE "image"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_PA1 64778
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_IMAGE() {
-        return constants$3459.const$0;
+    public static int GDK_KEY_3270_PA1() {
+        return GDK_KEY_3270_PA1;
     }
+    private static final int GDK_KEY_3270_PA2 = (int)64779L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_HIGHLIGHT "highlight"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_PA2 64779
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_HIGHLIGHT() {
-        return constants$3459.const$1;
+    public static int GDK_KEY_3270_PA2() {
+        return GDK_KEY_3270_PA2;
     }
+    private static final int GDK_KEY_3270_PA3 = (int)64780L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_FRAME "frame"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_PA3 64780
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_FRAME() {
-        return constants$3459.const$2;
+    public static int GDK_KEY_3270_PA3() {
+        return GDK_KEY_3270_PA3;
     }
+    private static final int GDK_KEY_3270_Test = (int)64781L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_DND "dnd"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Test 64781
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_DND() {
-        return constants$3459.const$3;
+    public static int GDK_KEY_3270_Test() {
+        return GDK_KEY_3270_Test;
     }
+    private static final int GDK_KEY_3270_Attn = (int)64782L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_PANE_SEPARATOR "pane-separator"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Attn 64782
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_PANE_SEPARATOR() {
-        return constants$3459.const$4;
+    public static int GDK_KEY_3270_Attn() {
+        return GDK_KEY_3270_Attn;
     }
+    private static final int GDK_KEY_3270_CursorBlink = (int)64783L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SEPARATOR "separator"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_CursorBlink 64783
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SEPARATOR() {
-        return constants$3459.const$5;
+    public static int GDK_KEY_3270_CursorBlink() {
+        return GDK_KEY_3270_CursorBlink;
     }
+    private static final int GDK_KEY_3270_AltCursor = (int)64784L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_INFO "info"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_AltCursor 64784
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_INFO() {
-        return constants$3460.const$0;
+    public static int GDK_KEY_3270_AltCursor() {
+        return GDK_KEY_3270_AltCursor;
     }
+    private static final int GDK_KEY_3270_KeyClick = (int)64785L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_WARNING "warning"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_KeyClick 64785
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_WARNING() {
-        return constants$3460.const$1;
+    public static int GDK_KEY_3270_KeyClick() {
+        return GDK_KEY_3270_KeyClick;
     }
+    private static final int GDK_KEY_3270_Jump = (int)64786L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_QUESTION "question"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Jump 64786
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_QUESTION() {
-        return constants$3460.const$2;
+    public static int GDK_KEY_3270_Jump() {
+        return GDK_KEY_3270_Jump;
     }
+    private static final int GDK_KEY_3270_Ident = (int)64787L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_ERROR "error"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Ident 64787
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_ERROR() {
-        return constants$3460.const$3;
+    public static int GDK_KEY_3270_Ident() {
+        return GDK_KEY_3270_Ident;
     }
+    private static final int GDK_KEY_3270_Rule = (int)64788L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_HORIZONTAL "horizontal"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Rule 64788
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_HORIZONTAL() {
-        return constants$3460.const$4;
+    public static int GDK_KEY_3270_Rule() {
+        return GDK_KEY_3270_Rule;
     }
+    private static final int GDK_KEY_3270_Copy = (int)64789L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_VERTICAL "vertical"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Copy 64789
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_VERTICAL() {
-        return constants$3460.const$5;
+    public static int GDK_KEY_3270_Copy() {
+        return GDK_KEY_3270_Copy;
     }
+    private static final int GDK_KEY_3270_Play = (int)64790L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TOP "top"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Play 64790
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_TOP() {
-        return constants$3461.const$0;
+    public static int GDK_KEY_3270_Play() {
+        return GDK_KEY_3270_Play;
     }
+    private static final int GDK_KEY_3270_Setup = (int)64791L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_BOTTOM "bottom"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Setup 64791
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_BOTTOM() {
-        return constants$3461.const$1;
+    public static int GDK_KEY_3270_Setup() {
+        return GDK_KEY_3270_Setup;
     }
+    private static final int GDK_KEY_3270_Record = (int)64792L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LEFT "left"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Record 64792
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_LEFT() {
-        return constants$3461.const$2;
+    public static int GDK_KEY_3270_Record() {
+        return GDK_KEY_3270_Record;
     }
+    private static final int GDK_KEY_3270_ChangeScreen = (int)64793L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_RIGHT "right"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_ChangeScreen 64793
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_RIGHT() {
-        return constants$3461.const$3;
+    public static int GDK_KEY_3270_ChangeScreen() {
+        return GDK_KEY_3270_ChangeScreen;
     }
+    private static final int GDK_KEY_3270_DeleteWord = (int)64794L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_PULSE "pulse"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_DeleteWord 64794
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_PULSE() {
-        return constants$3461.const$4;
+    public static int GDK_KEY_3270_DeleteWord() {
+        return GDK_KEY_3270_DeleteWord;
     }
+    private static final int GDK_KEY_3270_ExSelect = (int)64795L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_ARROW "arrow"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_ExSelect 64795
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_ARROW() {
-        return constants$3461.const$5;
+    public static int GDK_KEY_3270_ExSelect() {
+        return GDK_KEY_3270_ExSelect;
     }
+    private static final int GDK_KEY_3270_CursorSelect = (int)64796L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_OSD "osd"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_CursorSelect 64796
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_OSD() {
-        return constants$3462.const$0;
+    public static int GDK_KEY_3270_CursorSelect() {
+        return GDK_KEY_3270_CursorSelect;
     }
+    private static final int GDK_KEY_3270_PrintScreen = (int)64797L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LEVEL_BAR "level-bar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_PrintScreen 64797
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_LEVEL_BAR() {
-        return constants$3462.const$1;
+    public static int GDK_KEY_3270_PrintScreen() {
+        return GDK_KEY_3270_PrintScreen;
     }
+    private static final int GDK_KEY_3270_Enter = (int)64798L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CURSOR_HANDLE "cursor-handle"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3270_Enter 64798
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_CURSOR_HANDLE() {
-        return constants$3462.const$2;
+    public static int GDK_KEY_3270_Enter() {
+        return GDK_KEY_3270_Enter;
     }
+    private static final int GDK_KEY_space = (int)32L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_INSERTION_CURSOR "insertion-cursor"
+     * {@snippet lang=c :
+     * #define GDK_KEY_space 32
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_INSERTION_CURSOR() {
-        return constants$3462.const$3;
+    public static int GDK_KEY_space() {
+        return GDK_KEY_space;
     }
+    private static final int GDK_KEY_exclam = (int)33L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TITLEBAR "titlebar"
+     * {@snippet lang=c :
+     * #define GDK_KEY_exclam 33
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_TITLEBAR() {
-        return constants$3462.const$4;
+    public static int GDK_KEY_exclam() {
+        return GDK_KEY_exclam;
     }
+    private static final int GDK_KEY_quotedbl = (int)34L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TITLE "title"
+     * {@snippet lang=c :
+     * #define GDK_KEY_quotedbl 34
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_TITLE() {
-        return constants$3462.const$5;
+    public static int GDK_KEY_quotedbl() {
+        return GDK_KEY_quotedbl;
     }
+    private static final int GDK_KEY_numbersign = (int)35L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SUBTITLE "subtitle"
+     * {@snippet lang=c :
+     * #define GDK_KEY_numbersign 35
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SUBTITLE() {
-        return constants$3463.const$0;
+    public static int GDK_KEY_numbersign() {
+        return GDK_KEY_numbersign;
     }
+    private static final int GDK_KEY_dollar = (int)36L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_NEEDS_ATTENTION "needs-attention"
+     * {@snippet lang=c :
+     * #define GDK_KEY_dollar 36
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_NEEDS_ATTENTION() {
-        return constants$3463.const$1;
+    public static int GDK_KEY_dollar() {
+        return GDK_KEY_dollar;
     }
+    private static final int GDK_KEY_percent = (int)37L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SUGGESTED_ACTION "suggested-action"
+     * {@snippet lang=c :
+     * #define GDK_KEY_percent 37
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_SUGGESTED_ACTION() {
-        return constants$3463.const$2;
+    public static int GDK_KEY_percent() {
+        return GDK_KEY_percent;
     }
+    private static final int GDK_KEY_ampersand = (int)38L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_DESTRUCTIVE_ACTION "destructive-action"
+     * {@snippet lang=c :
+     * #define GDK_KEY_ampersand 38
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_DESTRUCTIVE_ACTION() {
-        return constants$3463.const$3;
+    public static int GDK_KEY_ampersand() {
+        return GDK_KEY_ampersand;
     }
+    private static final int GDK_KEY_apostrophe = (int)39L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_POPOVER "popover"
+     * {@snippet lang=c :
+     * #define GDK_KEY_apostrophe 39
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_POPOVER() {
-        return constants$3463.const$4;
+    public static int GDK_KEY_apostrophe() {
+        return GDK_KEY_apostrophe;
     }
+    private static final int GDK_KEY_quoteright = (int)39L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_POPUP "popup"
+     * {@snippet lang=c :
+     * #define GDK_KEY_quoteright 39
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_POPUP() {
-        return constants$3463.const$5;
+    public static int GDK_KEY_quoteright() {
+        return GDK_KEY_quoteright;
     }
+    private static final int GDK_KEY_parenleft = (int)40L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MESSAGE_DIALOG "message-dialog"
+     * {@snippet lang=c :
+     * #define GDK_KEY_parenleft 40
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_MESSAGE_DIALOG() {
-        return constants$3464.const$0;
+    public static int GDK_KEY_parenleft() {
+        return GDK_KEY_parenleft;
     }
+    private static final int GDK_KEY_parenright = (int)41L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_FLAT "flat"
+     * {@snippet lang=c :
+     * #define GDK_KEY_parenright 41
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_FLAT() {
-        return constants$3464.const$1;
+    public static int GDK_KEY_parenright() {
+        return GDK_KEY_parenright;
     }
+    private static final int GDK_KEY_asterisk = (int)42L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_READ_ONLY "read-only"
+     * {@snippet lang=c :
+     * #define GDK_KEY_asterisk 42
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_READ_ONLY() {
-        return constants$3464.const$2;
+    public static int GDK_KEY_asterisk() {
+        return GDK_KEY_asterisk;
     }
+    private static final int GDK_KEY_plus = (int)43L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_OVERSHOOT "overshoot"
+     * {@snippet lang=c :
+     * #define GDK_KEY_plus 43
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_OVERSHOOT() {
-        return constants$3464.const$3;
+    public static int GDK_KEY_plus() {
+        return GDK_KEY_plus;
     }
+    private static final int GDK_KEY_comma = (int)44L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_UNDERSHOOT "undershoot"
+     * {@snippet lang=c :
+     * #define GDK_KEY_comma 44
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_UNDERSHOOT() {
-        return constants$3464.const$4;
+    public static int GDK_KEY_comma() {
+        return GDK_KEY_comma;
     }
+    private static final int GDK_KEY_minus = (int)45L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_PAPER "paper"
+     * {@snippet lang=c :
+     * #define GDK_KEY_minus 45
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_PAPER() {
-        return constants$3464.const$5;
+    public static int GDK_KEY_minus() {
+        return GDK_KEY_minus;
     }
+    private static final int GDK_KEY_period = (int)46L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MONOSPACE "monospace"
+     * {@snippet lang=c :
+     * #define GDK_KEY_period 46
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_MONOSPACE() {
-        return constants$3465.const$0;
+    public static int GDK_KEY_period() {
+        return GDK_KEY_period;
     }
+    private static final int GDK_KEY_slash = (int)47L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_WIDE "wide"
+     * {@snippet lang=c :
+     * #define GDK_KEY_slash 47
      * }
      */
-    public static MemorySegment GTK_STYLE_CLASS_WIDE() {
-        return constants$3465.const$1;
+    public static int GDK_KEY_slash() {
+        return GDK_KEY_slash;
     }
+    private static final int GDK_KEY_0 = (int)48L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_REGION_ROW "row"
+     * {@snippet lang=c :
+     * #define GDK_KEY_0 48
      * }
      */
-    public static MemorySegment GTK_STYLE_REGION_ROW() {
-        return constants$3465.const$2;
+    public static int GDK_KEY_0() {
+        return GDK_KEY_0;
     }
+    private static final int GDK_KEY_1 = (int)49L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_REGION_COLUMN "column"
+     * {@snippet lang=c :
+     * #define GDK_KEY_1 49
      * }
      */
-    public static MemorySegment GTK_STYLE_REGION_COLUMN() {
-        return constants$3465.const$3;
+    public static int GDK_KEY_1() {
+        return GDK_KEY_1;
     }
+    private static final int GDK_KEY_2 = (int)50L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_REGION_COLUMN_HEADER "column-header"
+     * {@snippet lang=c :
+     * #define GDK_KEY_2 50
      * }
      */
-    public static MemorySegment GTK_STYLE_REGION_COLUMN_HEADER() {
-        return constants$3465.const$4;
+    public static int GDK_KEY_2() {
+        return GDK_KEY_2;
     }
+    private static final int GDK_KEY_3 = (int)51L;
     /**
-     * {@snippet :
-     * #define GTK_STYLE_REGION_TAB "tab"
+     * {@snippet lang=c :
+     * #define GDK_KEY_3 51
      * }
      */
-    public static MemorySegment GTK_STYLE_REGION_TAB() {
-        return constants$3465.const$5;
+    public static int GDK_KEY_3() {
+        return GDK_KEY_3;
     }
+    private static final int GDK_KEY_4 = (int)52L;
     /**
-     * {@snippet :
-     * #define GTK_LEVEL_BAR_OFFSET_LOW "low"
+     * {@snippet lang=c :
+     * #define GDK_KEY_4 52
      * }
      */
-    public static MemorySegment GTK_LEVEL_BAR_OFFSET_LOW() {
-        return constants$3466.const$0;
+    public static int GDK_KEY_4() {
+        return GDK_KEY_4;
     }
+    private static final int GDK_KEY_5 = (int)53L;
     /**
-     * {@snippet :
-     * #define GTK_LEVEL_BAR_OFFSET_HIGH "high"
+     * {@snippet lang=c :
+     * #define GDK_KEY_5 53
      * }
      */
-    public static MemorySegment GTK_LEVEL_BAR_OFFSET_HIGH() {
-        return constants$3466.const$1;
+    public static int GDK_KEY_5() {
+        return GDK_KEY_5;
     }
+    private static final int GDK_KEY_6 = (int)54L;
     /**
-     * {@snippet :
-     * #define GTK_LEVEL_BAR_OFFSET_FULL "full"
+     * {@snippet lang=c :
+     * #define GDK_KEY_6 54
      * }
      */
-    public static MemorySegment GTK_LEVEL_BAR_OFFSET_FULL() {
-        return constants$3466.const$2;
+    public static int GDK_KEY_6() {
+        return GDK_KEY_6;
     }
+    private static final int GDK_KEY_7 = (int)55L;
     /**
-     * {@snippet :
-     * #define GTK_PRIORITY_RESIZE 110
+     * {@snippet lang=c :
+     * #define GDK_KEY_7 55
      * }
      */
-    public static int GTK_PRIORITY_RESIZE() {
-        return (int)110L;
+    public static int GDK_KEY_7() {
+        return GDK_KEY_7;
     }
+    private static final int GDK_KEY_8 = (int)56L;
     /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_A3 "iso_a3"
+     * {@snippet lang=c :
+     * #define GDK_KEY_8 56
      * }
      */
-    public static MemorySegment GTK_PAPER_NAME_A3() {
-        return constants$3466.const$3;
+    public static int GDK_KEY_8() {
+        return GDK_KEY_8;
     }
+    private static final int GDK_KEY_9 = (int)57L;
     /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_A4 "iso_a4"
+     * {@snippet lang=c :
+     * #define GDK_KEY_9 57
      * }
      */
-    public static MemorySegment GTK_PAPER_NAME_A4() {
-        return constants$3466.const$4;
+    public static int GDK_KEY_9() {
+        return GDK_KEY_9;
     }
+    private static final int GDK_KEY_colon = (int)58L;
     /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_A5 "iso_a5"
+     * {@snippet lang=c :
+     * #define GDK_KEY_colon 58
      * }
      */
-    public static MemorySegment GTK_PAPER_NAME_A5() {
-        return constants$3466.const$5;
+    public static int GDK_KEY_colon() {
+        return GDK_KEY_colon;
     }
+    private static final int GDK_KEY_semicolon = (int)59L;
     /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_B5 "iso_b5"
+     * {@snippet lang=c :
+     * #define GDK_KEY_semicolon 59
      * }
      */
-    public static MemorySegment GTK_PAPER_NAME_B5() {
-        return constants$3467.const$0;
+    public static int GDK_KEY_semicolon() {
+        return GDK_KEY_semicolon;
     }
+    private static final int GDK_KEY_less = (int)60L;
     /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_LETTER "na_letter"
+     * {@snippet lang=c :
+     * #define GDK_KEY_less 60
      * }
      */
-    public static MemorySegment GTK_PAPER_NAME_LETTER() {
-        return constants$3467.const$1;
+    public static int GDK_KEY_less() {
+        return GDK_KEY_less;
     }
+    private static final int GDK_KEY_equal = (int)61L;
     /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_EXECUTIVE "na_executive"
+     * {@snippet lang=c :
+     * #define GDK_KEY_equal 61
      * }
      */
-    public static MemorySegment GTK_PAPER_NAME_EXECUTIVE() {
-        return constants$3467.const$2;
+    public static int GDK_KEY_equal() {
+        return GDK_KEY_equal;
     }
+    private static final int GDK_KEY_greater = (int)62L;
     /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_LEGAL "na_legal"
+     * {@snippet lang=c :
+     * #define GDK_KEY_greater 62
      * }
      */
-    public static MemorySegment GTK_PAPER_NAME_LEGAL() {
-        return constants$3467.const$3;
+    public static int GDK_KEY_greater() {
+        return GDK_KEY_greater;
     }
+    private static final int GDK_KEY_question = (int)63L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PRINTER "printer"
+     * {@snippet lang=c :
+     * #define GDK_KEY_question 63
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_PRINTER() {
-        return constants$3467.const$4;
+    public static int GDK_KEY_question() {
+        return GDK_KEY_question;
     }
+    private static final int GDK_KEY_at = (int)64L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_ORIENTATION "orientation"
+     * {@snippet lang=c :
+     * #define GDK_KEY_at 64
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_ORIENTATION() {
-        return constants$3467.const$5;
+    public static int GDK_KEY_at() {
+        return GDK_KEY_at;
     }
+    private static final int GDK_KEY_A = (int)65L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PAPER_FORMAT "paper-format"
+     * {@snippet lang=c :
+     * #define GDK_KEY_A 65
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_FORMAT() {
-        return constants$3468.const$0;
+    public static int GDK_KEY_A() {
+        return GDK_KEY_A;
     }
+    private static final int GDK_KEY_B = (int)66L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PAPER_WIDTH "paper-width"
+     * {@snippet lang=c :
+     * #define GDK_KEY_B 66
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_WIDTH() {
-        return constants$3468.const$1;
+    public static int GDK_KEY_B() {
+        return GDK_KEY_B;
     }
+    private static final int GDK_KEY_C = (int)67L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PAPER_HEIGHT "paper-height"
+     * {@snippet lang=c :
+     * #define GDK_KEY_C 67
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_HEIGHT() {
-        return constants$3468.const$2;
+    public static int GDK_KEY_C() {
+        return GDK_KEY_C;
     }
+    private static final int GDK_KEY_D = (int)68L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_N_COPIES "n-copies"
+     * {@snippet lang=c :
+     * #define GDK_KEY_D 68
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_N_COPIES() {
-        return constants$3468.const$3;
+    public static int GDK_KEY_D() {
+        return GDK_KEY_D;
     }
+    private static final int GDK_KEY_E = (int)69L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_DEFAULT_SOURCE "default-source"
+     * {@snippet lang=c :
+     * #define GDK_KEY_E 69
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_DEFAULT_SOURCE() {
-        return constants$3468.const$4;
+    public static int GDK_KEY_E() {
+        return GDK_KEY_E;
     }
+    private static final int GDK_KEY_F = (int)70L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_QUALITY "quality"
+     * {@snippet lang=c :
+     * #define GDK_KEY_F 70
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_QUALITY() {
-        return constants$3468.const$5;
+    public static int GDK_KEY_F() {
+        return GDK_KEY_F;
     }
+    private static final int GDK_KEY_G = (int)71L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_RESOLUTION "resolution"
+     * {@snippet lang=c :
+     * #define GDK_KEY_G 71
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION() {
-        return constants$3469.const$0;
+    public static int GDK_KEY_G() {
+        return GDK_KEY_G;
     }
+    private static final int GDK_KEY_H = (int)72L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_USE_COLOR "use-color"
+     * {@snippet lang=c :
+     * #define GDK_KEY_H 72
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_USE_COLOR() {
-        return constants$3469.const$1;
+    public static int GDK_KEY_H() {
+        return GDK_KEY_H;
     }
+    private static final int GDK_KEY_I = (int)73L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_DUPLEX "duplex"
+     * {@snippet lang=c :
+     * #define GDK_KEY_I 73
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_DUPLEX() {
-        return constants$3469.const$2;
+    public static int GDK_KEY_I() {
+        return GDK_KEY_I;
     }
+    private static final int GDK_KEY_J = (int)74L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_COLLATE "collate"
+     * {@snippet lang=c :
+     * #define GDK_KEY_J 74
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_COLLATE() {
-        return constants$3469.const$3;
+    public static int GDK_KEY_J() {
+        return GDK_KEY_J;
     }
+    private static final int GDK_KEY_K = (int)75L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_REVERSE "reverse"
+     * {@snippet lang=c :
+     * #define GDK_KEY_K 75
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_REVERSE() {
-        return constants$3469.const$4;
+    public static int GDK_KEY_K() {
+        return GDK_KEY_K;
     }
+    private static final int GDK_KEY_L = (int)76L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_MEDIA_TYPE "media-type"
+     * {@snippet lang=c :
+     * #define GDK_KEY_L 76
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_MEDIA_TYPE() {
-        return constants$3469.const$5;
+    public static int GDK_KEY_L() {
+        return GDK_KEY_L;
     }
+    private static final int GDK_KEY_M = (int)77L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_DITHER "dither"
+     * {@snippet lang=c :
+     * #define GDK_KEY_M 77
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_DITHER() {
-        return constants$3470.const$0;
+    public static int GDK_KEY_M() {
+        return GDK_KEY_M;
     }
+    private static final int GDK_KEY_N = (int)78L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_SCALE "scale"
+     * {@snippet lang=c :
+     * #define GDK_KEY_N 78
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_SCALE() {
-        return constants$3456.const$1;
+    public static int GDK_KEY_N() {
+        return GDK_KEY_N;
     }
+    private static final int GDK_KEY_O = (int)79L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PRINT_PAGES "print-pages"
+     * {@snippet lang=c :
+     * #define GDK_KEY_O 79
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_PRINT_PAGES() {
-        return constants$3470.const$1;
+    public static int GDK_KEY_O() {
+        return GDK_KEY_O;
     }
+    private static final int GDK_KEY_P = (int)80L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PAGE_RANGES "page-ranges"
+     * {@snippet lang=c :
+     * #define GDK_KEY_P 80
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_PAGE_RANGES() {
-        return constants$3470.const$2;
+    public static int GDK_KEY_P() {
+        return GDK_KEY_P;
     }
+    private static final int GDK_KEY_Q = (int)81L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PAGE_SET "page-set"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Q 81
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_PAGE_SET() {
-        return constants$3470.const$3;
+    public static int GDK_KEY_Q() {
+        return GDK_KEY_Q;
     }
+    private static final int GDK_KEY_R = (int)82L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_FINISHINGS "finishings"
+     * {@snippet lang=c :
+     * #define GDK_KEY_R 82
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_FINISHINGS() {
-        return constants$3470.const$4;
+    public static int GDK_KEY_R() {
+        return GDK_KEY_R;
     }
+    private static final int GDK_KEY_S = (int)83L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_NUMBER_UP "number-up"
+     * {@snippet lang=c :
+     * #define GDK_KEY_S 83
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP() {
-        return constants$3470.const$5;
+    public static int GDK_KEY_S() {
+        return GDK_KEY_S;
     }
+    private static final int GDK_KEY_T = (int)84L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT "number-up-layout"
+     * {@snippet lang=c :
+     * #define GDK_KEY_T 84
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT() {
-        return constants$3471.const$0;
+    public static int GDK_KEY_T() {
+        return GDK_KEY_T;
     }
+    private static final int GDK_KEY_U = (int)85L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_OUTPUT_BIN "output-bin"
+     * {@snippet lang=c :
+     * #define GDK_KEY_U 85
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BIN() {
-        return constants$3471.const$1;
+    public static int GDK_KEY_U() {
+        return GDK_KEY_U;
     }
+    private static final int GDK_KEY_V = (int)86L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_RESOLUTION_X "resolution-x"
+     * {@snippet lang=c :
+     * #define GDK_KEY_V 86
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_X() {
-        return constants$3471.const$2;
+    public static int GDK_KEY_V() {
+        return GDK_KEY_V;
     }
+    private static final int GDK_KEY_W = (int)87L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_RESOLUTION_Y "resolution-y"
+     * {@snippet lang=c :
+     * #define GDK_KEY_W 87
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_Y() {
-        return constants$3471.const$3;
+    public static int GDK_KEY_W() {
+        return GDK_KEY_W;
     }
+    private static final int GDK_KEY_X = (int)88L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PRINTER_LPI "printer-lpi"
+     * {@snippet lang=c :
+     * #define GDK_KEY_X 88
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_PRINTER_LPI() {
-        return constants$3471.const$4;
+    public static int GDK_KEY_X() {
+        return GDK_KEY_X;
     }
+    private static final int GDK_KEY_Y = (int)89L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_OUTPUT_DIR "output-dir"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Y 89
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_DIR() {
-        return constants$3471.const$5;
+    public static int GDK_KEY_Y() {
+        return GDK_KEY_Y;
     }
+    private static final int GDK_KEY_Z = (int)90L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_OUTPUT_BASENAME "output-basename"
+     * {@snippet lang=c :
+     * #define GDK_KEY_Z 90
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BASENAME() {
-        return constants$3472.const$0;
+    public static int GDK_KEY_Z() {
+        return GDK_KEY_Z;
     }
+    private static final int GDK_KEY_bracketleft = (int)91L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT "output-file-format"
+     * {@snippet lang=c :
+     * #define GDK_KEY_bracketleft 91
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT() {
-        return constants$3472.const$1;
+    public static int GDK_KEY_bracketleft() {
+        return GDK_KEY_bracketleft;
     }
+    private static final int GDK_KEY_backslash = (int)92L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_OUTPUT_URI "output-uri"
+     * {@snippet lang=c :
+     * #define GDK_KEY_backslash 92
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_URI() {
-        return constants$3472.const$2;
+    public static int GDK_KEY_backslash() {
+        return GDK_KEY_backslash;
     }
+    private static final int GDK_KEY_bracketright = (int)93L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION "win32-driver-version"
+     * {@snippet lang=c :
+     * #define GDK_KEY_bracketright 93
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION() {
-        return constants$3472.const$3;
+    public static int GDK_KEY_bracketright() {
+        return GDK_KEY_bracketright;
     }
+    private static final int GDK_KEY_asciicircum = (int)94L;
     /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA "win32-driver-extra"
+     * {@snippet lang=c :
+     * #define GDK_KEY_asciicircum 94
      * }
      */
-    public static MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA() {
-        return constants$3472.const$4;
+    public static int GDK_KEY_asciicircum() {
+        return GDK_KEY_asciicircum;
     }
+    private static final int GDK_KEY_underscore = (int)95L;
     /**
-     * {@snippet :
-     * #define GTK_INPUT_ERROR -1
+     * {@snippet lang=c :
+     * #define GDK_KEY_underscore 95
      * }
      */
-    public static int GTK_INPUT_ERROR() {
-        return (int)-1L;
+    public static int GDK_KEY_underscore() {
+        return GDK_KEY_underscore;
     }
+    private static final int GDK_KEY_grave = (int)96L;
     /**
-     * {@snippet :
-     * #define GTK_TEXT_VIEW_PRIORITY_VALIDATE 125
+     * {@snippet lang=c :
+     * #define GDK_KEY_grave 96
      * }
      */
-    public static int GTK_TEXT_VIEW_PRIORITY_VALIDATE() {
-        return (int)125L;
+    public static int GDK_KEY_grave() {
+        return GDK_KEY_grave;
     }
+    private static final int GDK_KEY_quoteleft = (int)96L;
     /**
-     * {@snippet :
-     * #define GTK_MAJOR_VERSION 3
+     * {@snippet lang=c :
+     * #define GDK_KEY_quoteleft 96
      * }
      */
-    public static int GTK_MAJOR_VERSION() {
-        return (int)3L;
+    public static int GDK_KEY_quoteleft() {
+        return GDK_KEY_quoteleft;
     }
+    private static final int GDK_KEY_a = (int)97L;
     /**
-     * {@snippet :
-     * #define GTK_MINOR_VERSION 24
+     * {@snippet lang=c :
+     * #define GDK_KEY_a 97
      * }
      */
-    public static int GTK_MINOR_VERSION() {
-        return (int)24L;
+    public static int GDK_KEY_a() {
+        return GDK_KEY_a;
     }
+    private static final int GDK_KEY_b = (int)98L;
     /**
-     * {@snippet :
-     * #define GTK_MICRO_VERSION 38
+     * {@snippet lang=c :
+     * #define GDK_KEY_b 98
      * }
      */
-    public static int GTK_MICRO_VERSION() {
-        return (int)38L;
+    public static int GDK_KEY_b() {
+        return GDK_KEY_b;
     }
+    private static final int GDK_KEY_c = (int)99L;
     /**
-     * {@snippet :
-     * #define GTK_BINARY_AGE 2438
+     * {@snippet lang=c :
+     * #define GDK_KEY_c 99
      * }
      */
-    public static int GTK_BINARY_AGE() {
-        return (int)2438L;
+    public static int GDK_KEY_c() {
+        return GDK_KEY_c;
     }
+    private static final int GDK_KEY_d = (int)100L;
     /**
-     * {@snippet :
-     * #define GTK_INTERFACE_AGE 32
+     * {@snippet lang=c :
+     * #define GDK_KEY_d 100
      * }
      */
-    public static int GTK_INTERFACE_AGE() {
-        return (int)32L;
+    public static int GDK_KEY_d() {
+        return GDK_KEY_d;
     }
+    private static final int GDK_KEY_e = (int)101L;
     /**
-     * {@snippet :
-     * #define APP_INDICATOR_SIGNAL_NEW_ICON "new-icon"
+     * {@snippet lang=c :
+     * #define GDK_KEY_e 101
      * }
      */
-    public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON() {
-        return constants$3472.const$5;
+    public static int GDK_KEY_e() {
+        return GDK_KEY_e;
     }
+    private static final int GDK_KEY_f = (int)102L;
     /**
-     * {@snippet :
-     * #define APP_INDICATOR_SIGNAL_NEW_ATTENTION_ICON "new-attention-icon"
+     * {@snippet lang=c :
+     * #define GDK_KEY_f 102
      * }
      */
-    public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ATTENTION_ICON() {
-        return constants$3473.const$0;
+    public static int GDK_KEY_f() {
+        return GDK_KEY_f;
     }
+    private static final int GDK_KEY_g = (int)103L;
     /**
-     * {@snippet :
-     * #define APP_INDICATOR_SIGNAL_NEW_STATUS "new-status"
+     * {@snippet lang=c :
+     * #define GDK_KEY_g 103
      * }
      */
-    public static MemorySegment APP_INDICATOR_SIGNAL_NEW_STATUS() {
-        return constants$3473.const$1;
+    public static int GDK_KEY_g() {
+        return GDK_KEY_g;
     }
+    private static final int GDK_KEY_h = (int)104L;
     /**
-     * {@snippet :
-     * #define APP_INDICATOR_SIGNAL_NEW_LABEL "new-label"
+     * {@snippet lang=c :
+     * #define GDK_KEY_h 104
      * }
      */
-    public static MemorySegment APP_INDICATOR_SIGNAL_NEW_LABEL() {
-        return constants$3473.const$2;
+    public static int GDK_KEY_h() {
+        return GDK_KEY_h;
     }
+    private static final int GDK_KEY_i = (int)105L;
     /**
-     * {@snippet :
-     * #define APP_INDICATOR_SIGNAL_CONNECTION_CHANGED "connection-changed"
+     * {@snippet lang=c :
+     * #define GDK_KEY_i 105
      * }
      */
-    public static MemorySegment APP_INDICATOR_SIGNAL_CONNECTION_CHANGED() {
-        return constants$3473.const$3;
+    public static int GDK_KEY_i() {
+        return GDK_KEY_i;
     }
+    private static final int GDK_KEY_j = (int)106L;
     /**
-     * {@snippet :
-     * #define APP_INDICATOR_SIGNAL_NEW_ICON_THEME_PATH "new-icon-theme-path"
+     * {@snippet lang=c :
+     * #define GDK_KEY_j 106
      * }
      */
-    public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON_THEME_PATH() {
-        return constants$3473.const$4;
+    public static int GDK_KEY_j() {
+        return GDK_KEY_j;
     }
+    private static final int GDK_KEY_k = (int)107L;
     /**
-     * {@snippet :
-     * #define APP_INDICATOR_SIGNAL_SCROLL_EVENT "scroll-event"
+     * {@snippet lang=c :
+     * #define GDK_KEY_k 107
      * }
      */
-    public static MemorySegment APP_INDICATOR_SIGNAL_SCROLL_EVENT() {
-        return constants$3473.const$5;
+    public static int GDK_KEY_k() {
+        return GDK_KEY_k;
     }
 }
-
 

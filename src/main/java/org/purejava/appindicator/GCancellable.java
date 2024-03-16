@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GCancellable GCancellable;
+ * {@snippet lang=c :
+ * typedef struct _GCancellable GCancellable
  * }
  */
-public final class GCancellable extends _GCancellable {
+public class GCancellable extends _GCancellable {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GCancellable() {}
+    GCancellable() {
+        // Should not be called directly
+    }
 }
-
 

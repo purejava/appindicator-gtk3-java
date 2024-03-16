@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _PangoColor PangoColor;
+ * {@snippet lang=c :
+ * typedef struct _PangoColor PangoColor
  * }
  */
-public final class PangoColor extends _PangoColor {
+public class PangoColor extends _PangoColor {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private PangoColor() {}
+    PangoColor() {
+        // Should not be called directly
+    }
 }
-
 

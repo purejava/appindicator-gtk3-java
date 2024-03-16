@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GSimpleProxyResolverClass GSimpleProxyResolverClass;
+ * {@snippet lang=c :
+ * typedef struct _GSimpleProxyResolverClass GSimpleProxyResolverClass
  * }
  */
-public final class GSimpleProxyResolverClass extends _GSimpleProxyResolverClass {
+public class GSimpleProxyResolverClass extends _GSimpleProxyResolverClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GSimpleProxyResolverClass() {}
+    GSimpleProxyResolverClass() {
+        // Should not be called directly
+    }
 }
-
 

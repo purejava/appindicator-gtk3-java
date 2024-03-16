@@ -2,360 +2,799 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GTlsInteractionClass {
- *     struct _GObjectClass parent_class;
- *     enum GTlsInteractionResult (*ask_password)(struct _GTlsInteraction*,struct _GTlsPassword*,struct _GCancellable*,struct _GError**);
- *     void (*ask_password_async)(struct _GTlsInteraction*,struct _GTlsPassword*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     enum GTlsInteractionResult (*ask_password_finish)(struct _GTlsInteraction*,struct _GAsyncResult*,struct _GError**);
- *     enum GTlsInteractionResult (*request_certificate)(struct _GTlsInteraction*,struct _GTlsConnection*,enum GTlsCertificateRequestFlags,struct _GCancellable*,struct _GError**);
- *     void (*request_certificate_async)(struct _GTlsInteraction*,struct _GTlsConnection*,enum GTlsCertificateRequestFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
- *     enum GTlsInteractionResult (*request_certificate_finish)(struct _GTlsInteraction*,struct _GAsyncResult*,struct _GError**);
- *     void* padding[21];
- * };
+ *     GObjectClass parent_class;
+ *     GTlsInteractionResult (*ask_password)(GTlsInteraction *, GTlsPassword *, GCancellable *, GError **);
+ *     void (*ask_password_async)(GTlsInteraction *, GTlsPassword *, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     GTlsInteractionResult (*ask_password_finish)(GTlsInteraction *, GAsyncResult *, GError **);
+ *     GTlsInteractionResult (*request_certificate)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GError **);
+ *     void (*request_certificate_async)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GAsyncReadyCallback, gpointer);
+ *     GTlsInteractionResult (*request_certificate_finish)(GTlsInteraction *, GAsyncResult *, GError **);
+ *     gpointer padding[21];
+ * }
  * }
  */
 public class _GTlsInteractionClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1374.const$0;
+    _GTlsInteractionClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 136);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObjectClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("ask_password"),
+        app_indicator_h.C_POINTER.withName("ask_password_async"),
+        app_indicator_h.C_POINTER.withName("ask_password_finish"),
+        app_indicator_h.C_POINTER.withName("request_certificate"),
+        app_indicator_h.C_POINTER.withName("request_certificate_async"),
+        app_indicator_h.C_POINTER.withName("request_certificate_finish"),
+        MemoryLayout.sequenceLayout(21, app_indicator_h.C_POINTER).withName("padding")
+    ).withName("_GTlsInteractionClass");
+
     /**
-     * {@snippet :
- * enum GTlsInteractionResult (*ask_password)(struct _GTlsInteraction*,struct _GTlsPassword*,struct _GCancellable*,struct _GError**);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public interface ask_password {
-
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(ask_password fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1374.const$1, fi, constants$34.const$5, scope);
-        }
-        static ask_password ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
-                try {
-                    return (int)constants$382.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle ask_password$VH() {
-        return constants$1374.const$2;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObjectClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GTlsInteractionResult (*ask_password)(struct _GTlsInteraction*,struct _GTlsPassword*,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static MemorySegment ask_password$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1374.const$2.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GTlsInteractionResult (*ask_password)(struct _GTlsInteraction*,struct _GTlsPassword*,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GObjectClass parent_class
      * }
      */
-    public static void ask_password$set(MemorySegment seg, MemorySegment x) {
-        constants$1374.const$2.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment ask_password$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1374.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void ask_password$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1374.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static ask_password ask_password(MemorySegment segment, Arena scope) {
-        return ask_password.ofAddress(ask_password$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*ask_password_async)(struct _GTlsInteraction*,struct _GTlsPassword*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*ask_password)(GTlsInteraction *, GTlsPassword *, GCancellable *, GError **)
      * }
      */
-    public interface ask_password_async {
+    public class ask_password {
 
-        void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(ask_password_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1374.const$3, fi, constants$331.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3);
         }
-        static ask_password_async ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(ask_password.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(ask_password.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle ask_password_async$VH() {
-        return constants$1374.const$4;
+    private static final AddressLayout ask_password$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ask_password"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*ask_password)(GTlsInteraction *, GTlsPassword *, GCancellable *, GError **)
+     * }
+     */
+    public static final AddressLayout ask_password$layout() {
+        return ask_password$LAYOUT;
     }
+
+    private static final long ask_password$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*ask_password)(GTlsInteraction *, GTlsPassword *, GCancellable *, GError **)
+     * }
+     */
+    public static final long ask_password$offset() {
+        return ask_password$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*ask_password_async)(struct _GTlsInteraction*,struct _GTlsPassword*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*ask_password)(GTlsInteraction *, GTlsPassword *, GCancellable *, GError **)
      * }
      */
-    public static MemorySegment ask_password_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1374.const$4.get(seg);
+    public static MemorySegment ask_password(MemorySegment struct) {
+        return struct.get(ask_password$LAYOUT, ask_password$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*ask_password_async)(struct _GTlsInteraction*,struct _GTlsPassword*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*ask_password)(GTlsInteraction *, GTlsPassword *, GCancellable *, GError **)
      * }
      */
-    public static void ask_password_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1374.const$4.set(seg, x);
+    public static void ask_password(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(ask_password$LAYOUT, ask_password$OFFSET, fieldValue);
     }
-    public static MemorySegment ask_password_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1374.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void ask_password_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1374.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static ask_password_async ask_password_async(MemorySegment segment, Arena scope) {
-        return ask_password_async.ofAddress(ask_password_async$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GTlsInteractionResult (*ask_password_finish)(struct _GTlsInteraction*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*ask_password_async)(GTlsInteraction *, GTlsPassword *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface ask_password_finish {
+    public class ask_password_async {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(ask_password_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1374.const$5, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static ask_password_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, __x0, __x1, __x2);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(ask_password_async.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(ask_password_async.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle ask_password_finish$VH() {
-        return constants$1375.const$0;
+    private static final AddressLayout ask_password_async$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ask_password_async"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*ask_password_async)(GTlsInteraction *, GTlsPassword *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout ask_password_async$layout() {
+        return ask_password_async$LAYOUT;
     }
+
+    private static final long ask_password_async$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*ask_password_async)(GTlsInteraction *, GTlsPassword *, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long ask_password_async$offset() {
+        return ask_password_async$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GTlsInteractionResult (*ask_password_finish)(struct _GTlsInteraction*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*ask_password_async)(GTlsInteraction *, GTlsPassword *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment ask_password_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1375.const$0.get(seg);
+    public static MemorySegment ask_password_async(MemorySegment struct) {
+        return struct.get(ask_password_async$LAYOUT, ask_password_async$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GTlsInteractionResult (*ask_password_finish)(struct _GTlsInteraction*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*ask_password_async)(GTlsInteraction *, GTlsPassword *, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void ask_password_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1375.const$0.set(seg, x);
+    public static void ask_password_async(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(ask_password_async$LAYOUT, ask_password_async$OFFSET, fieldValue);
     }
-    public static MemorySegment ask_password_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1375.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void ask_password_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1375.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static ask_password_finish ask_password_finish(MemorySegment segment, Arena scope) {
-        return ask_password_finish.ofAddress(ask_password_finish$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GTlsInteractionResult (*request_certificate)(struct _GTlsInteraction*,struct _GTlsConnection*,enum GTlsCertificateRequestFlags,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*ask_password_finish)(GTlsInteraction *, GAsyncResult *, GError **)
      * }
      */
-    public interface request_certificate {
+    public class ask_password_finish {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(request_certificate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1375.const$1, fi, constants$859.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
         }
-        static request_certificate ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
-                try {
-                    return (int)constants$985.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(ask_password_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(ask_password_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle request_certificate$VH() {
-        return constants$1375.const$2;
+    private static final AddressLayout ask_password_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("ask_password_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*ask_password_finish)(GTlsInteraction *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout ask_password_finish$layout() {
+        return ask_password_finish$LAYOUT;
     }
+
+    private static final long ask_password_finish$OFFSET = 152;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*ask_password_finish)(GTlsInteraction *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long ask_password_finish$offset() {
+        return ask_password_finish$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GTlsInteractionResult (*request_certificate)(struct _GTlsInteraction*,struct _GTlsConnection*,enum GTlsCertificateRequestFlags,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*ask_password_finish)(GTlsInteraction *, GAsyncResult *, GError **)
      * }
      */
-    public static MemorySegment request_certificate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1375.const$2.get(seg);
+    public static MemorySegment ask_password_finish(MemorySegment struct) {
+        return struct.get(ask_password_finish$LAYOUT, ask_password_finish$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GTlsInteractionResult (*request_certificate)(struct _GTlsInteraction*,struct _GTlsConnection*,enum GTlsCertificateRequestFlags,struct _GCancellable*,struct _GError**);
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*ask_password_finish)(GTlsInteraction *, GAsyncResult *, GError **)
      * }
      */
-    public static void request_certificate$set(MemorySegment seg, MemorySegment x) {
-        constants$1375.const$2.set(seg, x);
+    public static void ask_password_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(ask_password_finish$LAYOUT, ask_password_finish$OFFSET, fieldValue);
     }
-    public static MemorySegment request_certificate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1375.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void request_certificate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1375.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static request_certificate request_certificate(MemorySegment segment, Arena scope) {
-        return request_certificate.ofAddress(request_certificate$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*request_certificate_async)(struct _GTlsInteraction*,struct _GTlsConnection*,enum GTlsCertificateRequestFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*request_certificate)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GError **)
      * }
      */
-    public interface request_certificate_async {
+    public class request_certificate {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(request_certificate_async fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1375.const$3, fi, constants$584.const$3, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4);
         }
-        static request_certificate_async ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
-                try {
-                    constants$584.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(request_certificate.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(request_certificate.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle request_certificate_async$VH() {
-        return constants$1375.const$4;
+    private static final AddressLayout request_certificate$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("request_certificate"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*request_certificate)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GError **)
+     * }
+     */
+    public static final AddressLayout request_certificate$layout() {
+        return request_certificate$LAYOUT;
     }
+
+    private static final long request_certificate$OFFSET = 160;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*request_certificate)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GError **)
+     * }
+     */
+    public static final long request_certificate$offset() {
+        return request_certificate$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*request_certificate_async)(struct _GTlsInteraction*,struct _GTlsConnection*,enum GTlsCertificateRequestFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*request_certificate)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GError **)
      * }
      */
-    public static MemorySegment request_certificate_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1375.const$4.get(seg);
+    public static MemorySegment request_certificate(MemorySegment struct) {
+        return struct.get(request_certificate$LAYOUT, request_certificate$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*request_certificate_async)(struct _GTlsInteraction*,struct _GTlsConnection*,enum GTlsCertificateRequestFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*request_certificate)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GError **)
      * }
      */
-    public static void request_certificate_async$set(MemorySegment seg, MemorySegment x) {
-        constants$1375.const$4.set(seg, x);
+    public static void request_certificate(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(request_certificate$LAYOUT, request_certificate$OFFSET, fieldValue);
     }
-    public static MemorySegment request_certificate_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1375.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void request_certificate_async$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1375.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static request_certificate_async request_certificate_async(MemorySegment segment, Arena scope) {
-        return request_certificate_async.ofAddress(request_certificate_async$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GTlsInteractionResult (*request_certificate_finish)(struct _GTlsInteraction*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*request_certificate_async)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public interface request_certificate_finish {
+    public class request_certificate_async {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(request_certificate_finish fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1375.const$5, fi, constants$12.const$2, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5);
         }
-        static request_certificate_finish ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
-                try {
-                    return (int)constants$12.const$4.invokeExact(symbol, __x0, __x1, __x2);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(request_certificate_async.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(request_certificate_async.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, MemorySegment _x5) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle request_certificate_finish$VH() {
-        return constants$1376.const$0;
+    private static final AddressLayout request_certificate_async$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("request_certificate_async"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*request_certificate_async)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final AddressLayout request_certificate_async$layout() {
+        return request_certificate_async$LAYOUT;
     }
+
+    private static final long request_certificate_async$OFFSET = 168;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*request_certificate_async)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GAsyncReadyCallback, gpointer)
+     * }
+     */
+    public static final long request_certificate_async$offset() {
+        return request_certificate_async$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GTlsInteractionResult (*request_certificate_finish)(struct _GTlsInteraction*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*request_certificate_async)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static MemorySegment request_certificate_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1376.const$0.get(seg);
+    public static MemorySegment request_certificate_async(MemorySegment struct) {
+        return struct.get(request_certificate_async$LAYOUT, request_certificate_async$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GTlsInteractionResult (*request_certificate_finish)(struct _GTlsInteraction*,struct _GAsyncResult*,struct _GError**);
+     * {@snippet lang=c :
+     * void (*request_certificate_async)(GTlsInteraction *, GTlsConnection *, GTlsCertificateRequestFlags, GCancellable *, GAsyncReadyCallback, gpointer)
      * }
      */
-    public static void request_certificate_finish$set(MemorySegment seg, MemorySegment x) {
-        constants$1376.const$0.set(seg, x);
+    public static void request_certificate_async(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(request_certificate_async$LAYOUT, request_certificate_async$OFFSET, fieldValue);
     }
-    public static MemorySegment request_certificate_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1376.const$0.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*request_certificate_finish)(GTlsInteraction *, GAsyncResult *, GError **)
+     * }
+     */
+    public class request_certificate_finish {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, MemorySegment _x2);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(request_certificate_finish.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(request_certificate_finish.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, MemorySegment _x2) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void request_certificate_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1376.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout request_certificate_finish$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("request_certificate_finish"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*request_certificate_finish)(GTlsInteraction *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final AddressLayout request_certificate_finish$layout() {
+        return request_certificate_finish$LAYOUT;
     }
-    public static request_certificate_finish request_certificate_finish(MemorySegment segment, Arena scope) {
-        return request_certificate_finish.ofAddress(request_certificate_finish$get(segment), scope);
+
+    private static final long request_certificate_finish$OFFSET = 176;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*request_certificate_finish)(GTlsInteraction *, GAsyncResult *, GError **)
+     * }
+     */
+    public static final long request_certificate_finish$offset() {
+        return request_certificate_finish$OFFSET;
     }
-    public static MemorySegment padding$slice(MemorySegment seg) {
-        return seg.asSlice(184, 168);
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*request_certificate_finish)(GTlsInteraction *, GAsyncResult *, GError **)
+     * }
+     */
+    public static MemorySegment request_certificate_finish(MemorySegment struct) {
+        return struct.get(request_certificate_finish$LAYOUT, request_certificate_finish$OFFSET);
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GTlsInteractionResult (*request_certificate_finish)(GTlsInteraction *, GAsyncResult *, GError **)
+     * }
+     */
+    public static void request_certificate_finish(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(request_certificate_finish$LAYOUT, request_certificate_finish$OFFSET, fieldValue);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    private static final SequenceLayout padding$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("padding"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer padding[21]
+     * }
+     */
+    public static final SequenceLayout padding$layout() {
+        return padding$LAYOUT;
+    }
+
+    private static final long padding$OFFSET = 184;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer padding[21]
+     * }
+     */
+    public static final long padding$offset() {
+        return padding$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[21]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct) {
+        return struct.asSlice(padding$OFFSET, padding$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[21]
+     * }
+     */
+    public static void padding(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, padding$OFFSET, padding$LAYOUT.byteSize());
+    }
+
+    private static long[] padding$DIMS = { 21 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * gpointer padding[21]
+     * }
+     */
+    public static long[] padding$dimensions() {
+        return padding$DIMS;
+    }
+    private static final VarHandle padding$ELEM_HANDLE = padding$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[21]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct, long index0) {
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[21]
+     * }
+     */
+    public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

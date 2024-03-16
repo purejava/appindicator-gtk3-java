@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkPopover GtkPopover;
+ * {@snippet lang=c :
+ * typedef struct _GtkPopover GtkPopover
  * }
  */
-public final class GtkPopover extends _GtkPopover {
+public class GtkPopover extends _GtkPopover {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkPopover() {}
+    GtkPopover() {
+        // Should not be called directly
+    }
 }
-
 

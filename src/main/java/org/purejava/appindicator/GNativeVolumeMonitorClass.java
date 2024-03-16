@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GNativeVolumeMonitorClass GNativeVolumeMonitorClass;
+ * {@snippet lang=c :
+ * typedef struct _GNativeVolumeMonitorClass GNativeVolumeMonitorClass
  * }
  */
-public final class GNativeVolumeMonitorClass extends _GNativeVolumeMonitorClass {
+public class GNativeVolumeMonitorClass extends _GNativeVolumeMonitorClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GNativeVolumeMonitorClass() {}
+    GNativeVolumeMonitorClass() {
+        // Should not be called directly
+    }
 }
-
 

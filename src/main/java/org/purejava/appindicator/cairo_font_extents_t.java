@@ -2,168 +2,310 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * struct cairo_font_extents_t {
+ * {@snippet lang=c :
+ * struct {
  *     double ascent;
  *     double descent;
  *     double height;
  *     double max_x_advance;
  *     double max_y_advance;
- * };
+ * }
  * }
  */
 public class cairo_font_extents_t {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1697.const$3;
+    cairo_font_extents_t() {
+        // Should not be called directly
     }
-    public static VarHandle ascent$VH() {
-        return constants$1697.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * double ascent;
-     * }
-     */
-    public static double ascent$get(MemorySegment seg) {
-        return (double)constants$1697.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * double ascent;
-     * }
-     */
-    public static void ascent$set(MemorySegment seg, double x) {
-        constants$1697.const$4.set(seg, x);
-    }
-    public static double ascent$get(MemorySegment seg, long index) {
-        return (double)constants$1697.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void ascent$set(MemorySegment seg, long index, double x) {
-        constants$1697.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle descent$VH() {
-        return constants$1697.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * double descent;
-     * }
-     */
-    public static double descent$get(MemorySegment seg) {
-        return (double)constants$1697.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * double descent;
-     * }
-     */
-    public static void descent$set(MemorySegment seg, double x) {
-        constants$1697.const$5.set(seg, x);
-    }
-    public static double descent$get(MemorySegment seg, long index) {
-        return (double)constants$1697.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void descent$set(MemorySegment seg, long index, double x) {
-        constants$1697.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle height$VH() {
-        return constants$1698.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * double height;
-     * }
-     */
-    public static double height$get(MemorySegment seg) {
-        return (double)constants$1698.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * double height;
-     * }
-     */
-    public static void height$set(MemorySegment seg, double x) {
-        constants$1698.const$0.set(seg, x);
-    }
-    public static double height$get(MemorySegment seg, long index) {
-        return (double)constants$1698.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void height$set(MemorySegment seg, long index, double x) {
-        constants$1698.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle max_x_advance$VH() {
-        return constants$1698.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * double max_x_advance;
-     * }
-     */
-    public static double max_x_advance$get(MemorySegment seg) {
-        return (double)constants$1698.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * double max_x_advance;
-     * }
-     */
-    public static void max_x_advance$set(MemorySegment seg, double x) {
-        constants$1698.const$1.set(seg, x);
-    }
-    public static double max_x_advance$get(MemorySegment seg, long index) {
-        return (double)constants$1698.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void max_x_advance$set(MemorySegment seg, long index, double x) {
-        constants$1698.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle max_y_advance$VH() {
-        return constants$1698.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * double max_y_advance;
-     * }
-     */
-    public static double max_y_advance$get(MemorySegment seg) {
-        return (double)constants$1698.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * double max_y_advance;
-     * }
-     */
-    public static void max_y_advance$set(MemorySegment seg, double x) {
-        constants$1698.const$2.set(seg, x);
-    }
-    public static double max_y_advance$get(MemorySegment seg, long index) {
-        return (double)constants$1698.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void max_y_advance$set(MemorySegment seg, long index, double x) {
-        constants$1698.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_DOUBLE.withName("ascent"),
+        app_indicator_h.C_DOUBLE.withName("descent"),
+        app_indicator_h.C_DOUBLE.withName("height"),
+        app_indicator_h.C_DOUBLE.withName("max_x_advance"),
+        app_indicator_h.C_DOUBLE.withName("max_y_advance")
+    ).withName("$anon$1299:9");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfDouble ascent$LAYOUT = (OfDouble)$LAYOUT.select(groupElement("ascent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * double ascent
+     * }
+     */
+    public static final OfDouble ascent$layout() {
+        return ascent$LAYOUT;
+    }
+
+    private static final long ascent$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * double ascent
+     * }
+     */
+    public static final long ascent$offset() {
+        return ascent$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * double ascent
+     * }
+     */
+    public static double ascent(MemorySegment struct) {
+        return struct.get(ascent$LAYOUT, ascent$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * double ascent
+     * }
+     */
+    public static void ascent(MemorySegment struct, double fieldValue) {
+        struct.set(ascent$LAYOUT, ascent$OFFSET, fieldValue);
+    }
+
+    private static final OfDouble descent$LAYOUT = (OfDouble)$LAYOUT.select(groupElement("descent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * double descent
+     * }
+     */
+    public static final OfDouble descent$layout() {
+        return descent$LAYOUT;
+    }
+
+    private static final long descent$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * double descent
+     * }
+     */
+    public static final long descent$offset() {
+        return descent$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * double descent
+     * }
+     */
+    public static double descent(MemorySegment struct) {
+        return struct.get(descent$LAYOUT, descent$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * double descent
+     * }
+     */
+    public static void descent(MemorySegment struct, double fieldValue) {
+        struct.set(descent$LAYOUT, descent$OFFSET, fieldValue);
+    }
+
+    private static final OfDouble height$LAYOUT = (OfDouble)$LAYOUT.select(groupElement("height"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * double height
+     * }
+     */
+    public static final OfDouble height$layout() {
+        return height$LAYOUT;
+    }
+
+    private static final long height$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * double height
+     * }
+     */
+    public static final long height$offset() {
+        return height$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * double height
+     * }
+     */
+    public static double height(MemorySegment struct) {
+        return struct.get(height$LAYOUT, height$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * double height
+     * }
+     */
+    public static void height(MemorySegment struct, double fieldValue) {
+        struct.set(height$LAYOUT, height$OFFSET, fieldValue);
+    }
+
+    private static final OfDouble max_x_advance$LAYOUT = (OfDouble)$LAYOUT.select(groupElement("max_x_advance"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * double max_x_advance
+     * }
+     */
+    public static final OfDouble max_x_advance$layout() {
+        return max_x_advance$LAYOUT;
+    }
+
+    private static final long max_x_advance$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * double max_x_advance
+     * }
+     */
+    public static final long max_x_advance$offset() {
+        return max_x_advance$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * double max_x_advance
+     * }
+     */
+    public static double max_x_advance(MemorySegment struct) {
+        return struct.get(max_x_advance$LAYOUT, max_x_advance$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * double max_x_advance
+     * }
+     */
+    public static void max_x_advance(MemorySegment struct, double fieldValue) {
+        struct.set(max_x_advance$LAYOUT, max_x_advance$OFFSET, fieldValue);
+    }
+
+    private static final OfDouble max_y_advance$LAYOUT = (OfDouble)$LAYOUT.select(groupElement("max_y_advance"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * double max_y_advance
+     * }
+     */
+    public static final OfDouble max_y_advance$layout() {
+        return max_y_advance$LAYOUT;
+    }
+
+    private static final long max_y_advance$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * double max_y_advance
+     * }
+     */
+    public static final long max_y_advance$offset() {
+        return max_y_advance$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * double max_y_advance
+     * }
+     */
+    public static double max_y_advance(MemorySegment struct) {
+        return struct.get(max_y_advance$LAYOUT, max_y_advance$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * double max_y_advance
+     * }
+     */
+    public static void max_y_advance(MemorySegment struct, double fieldValue) {
+        struct.set(max_y_advance$LAYOUT, max_y_advance$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

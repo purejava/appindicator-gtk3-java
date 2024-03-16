@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkFrame GtkFrame;
+ * {@snippet lang=c :
+ * typedef struct _GtkFrame GtkFrame
  * }
  */
-public final class GtkFrame extends _GtkFrame {
+public class GtkFrame extends _GtkFrame {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFrame() {}
+    GtkFrame() {
+        // Should not be called directly
+    }
 }
-
 

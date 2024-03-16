@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GCond GCond;
+ * {@snippet lang=c :
+ * typedef struct _GCond GCond
  * }
  */
-public final class GCond extends _GCond {
+public class GCond extends _GCond {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GCond() {}
+    GCond() {
+        // Should not be called directly
+    }
 }
-
 

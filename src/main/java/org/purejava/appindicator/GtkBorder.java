@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkBorder GtkBorder;
+ * {@snippet lang=c :
+ * typedef struct _GtkBorder GtkBorder
  * }
  */
-public final class GtkBorder extends _GtkBorder {
+public class GtkBorder extends _GtkBorder {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkBorder() {}
+    GtkBorder() {
+        // Should not be called directly
+    }
 }
-
 

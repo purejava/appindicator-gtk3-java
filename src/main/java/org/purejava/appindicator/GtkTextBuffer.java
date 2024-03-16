@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkTextBuffer GtkTextBuffer;
+ * {@snippet lang=c :
+ * typedef struct _GtkTextBuffer GtkTextBuffer
  * }
  */
-public final class GtkTextBuffer extends _GtkTextBuffer {
+public class GtkTextBuffer extends _GtkTextBuffer {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkTextBuffer() {}
+    GtkTextBuffer() {
+        // Should not be called directly
+    }
 }
-
 

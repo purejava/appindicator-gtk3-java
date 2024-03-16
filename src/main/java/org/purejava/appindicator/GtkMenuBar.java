@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkMenuBar GtkMenuBar;
+ * {@snippet lang=c :
+ * typedef struct _GtkMenuBar GtkMenuBar
  * }
  */
-public final class GtkMenuBar extends _GtkMenuBar {
+public class GtkMenuBar extends _GtkMenuBar {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkMenuBar() {}
+    GtkMenuBar() {
+        // Should not be called directly
+    }
 }
-
 

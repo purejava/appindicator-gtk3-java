@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GAsyncInitableIface GAsyncInitableIface;
+ * {@snippet lang=c :
+ * typedef struct _GAsyncInitableIface GAsyncInitableIface
  * }
  */
-public final class GAsyncInitableIface extends _GAsyncInitableIface {
+public class GAsyncInitableIface extends _GAsyncInitableIface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GAsyncInitableIface() {}
+    GAsyncInitableIface() {
+        // Should not be called directly
+    }
 }
-
 

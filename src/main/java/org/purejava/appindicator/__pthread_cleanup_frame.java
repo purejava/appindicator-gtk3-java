@@ -2,166 +2,313 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct __pthread_cleanup_frame {
- *     void (*__cancel_routine)(void*);
- *     void* __cancel_arg;
+ *     void (*__cancel_routine)(void *);
+ *     void *__cancel_arg;
  *     int __do_it;
  *     int __cancel_type;
- * };
+ * }
  * }
  */
 public class __pthread_cleanup_frame {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$523.const$3;
-    }
-    /**
-     * {@snippet :
- * void (*__cancel_routine)(void*);
-     * }
-     */
-    public interface __cancel_routine {
-
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(__cancel_routine fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$523.const$4, fi, constants$13.const$1, scope);
-        }
-        static __cancel_routine ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    __pthread_cleanup_frame() {
+        // Should not be called directly
     }
 
-    public static VarHandle __cancel_routine$VH() {
-        return constants$523.const$5;
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("__cancel_routine"),
+        app_indicator_h.C_POINTER.withName("__cancel_arg"),
+        app_indicator_h.C_INT.withName("__do_it"),
+        app_indicator_h.C_INT.withName("__cancel_type")
+    ).withName("__pthread_cleanup_frame");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
+
+    /**
+     * {@snippet lang=c :
+     * void (*__cancel_routine)(void *)
+     * }
+     */
+    public class __cancel_routine {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(__cancel_routine.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(__cancel_routine.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
+    }
+
+    private static final AddressLayout __cancel_routine$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("__cancel_routine"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*__cancel_routine)(void *)
+     * }
+     */
+    public static final AddressLayout __cancel_routine$layout() {
+        return __cancel_routine$LAYOUT;
+    }
+
+    private static final long __cancel_routine$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*__cancel_routine)(void *)
+     * }
+     */
+    public static final long __cancel_routine$offset() {
+        return __cancel_routine$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*__cancel_routine)(void*);
+     * {@snippet lang=c :
+     * void (*__cancel_routine)(void *)
      * }
      */
-    public static MemorySegment __cancel_routine$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$523.const$5.get(seg);
+    public static MemorySegment __cancel_routine(MemorySegment struct) {
+        return struct.get(__cancel_routine$LAYOUT, __cancel_routine$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*__cancel_routine)(void*);
+     * {@snippet lang=c :
+     * void (*__cancel_routine)(void *)
      * }
      */
-    public static void __cancel_routine$set(MemorySegment seg, MemorySegment x) {
-        constants$523.const$5.set(seg, x);
+    public static void __cancel_routine(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(__cancel_routine$LAYOUT, __cancel_routine$OFFSET, fieldValue);
     }
-    public static MemorySegment __cancel_routine$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$523.const$5.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout __cancel_arg$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("__cancel_arg"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void *__cancel_arg
+     * }
+     */
+    public static final AddressLayout __cancel_arg$layout() {
+        return __cancel_arg$LAYOUT;
     }
-    public static void __cancel_routine$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$523.const$5.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long __cancel_arg$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void *__cancel_arg
+     * }
+     */
+    public static final long __cancel_arg$offset() {
+        return __cancel_arg$OFFSET;
     }
-    public static __cancel_routine __cancel_routine(MemorySegment segment, Arena scope) {
-        return __cancel_routine.ofAddress(__cancel_routine$get(segment), scope);
-    }
-    public static VarHandle __cancel_arg$VH() {
-        return constants$524.const$0;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* __cancel_arg;
+     * {@snippet lang=c :
+     * void *__cancel_arg
      * }
      */
-    public static MemorySegment __cancel_arg$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$524.const$0.get(seg);
+    public static MemorySegment __cancel_arg(MemorySegment struct) {
+        return struct.get(__cancel_arg$LAYOUT, __cancel_arg$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* __cancel_arg;
+     * {@snippet lang=c :
+     * void *__cancel_arg
      * }
      */
-    public static void __cancel_arg$set(MemorySegment seg, MemorySegment x) {
-        constants$524.const$0.set(seg, x);
+    public static void __cancel_arg(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(__cancel_arg$LAYOUT, __cancel_arg$OFFSET, fieldValue);
     }
-    public static MemorySegment __cancel_arg$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$524.const$0.get(seg.asSlice(index*sizeof()));
+
+    private static final OfInt __do_it$LAYOUT = (OfInt)$LAYOUT.select(groupElement("__do_it"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int __do_it
+     * }
+     */
+    public static final OfInt __do_it$layout() {
+        return __do_it$LAYOUT;
     }
-    public static void __cancel_arg$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$524.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long __do_it$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int __do_it
+     * }
+     */
+    public static final long __do_it$offset() {
+        return __do_it$OFFSET;
     }
-    public static VarHandle __do_it$VH() {
-        return constants$524.const$1;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int __do_it;
+     * {@snippet lang=c :
+     * int __do_it
      * }
      */
-    public static int __do_it$get(MemorySegment seg) {
-        return (int)constants$524.const$1.get(seg);
+    public static int __do_it(MemorySegment struct) {
+        return struct.get(__do_it$LAYOUT, __do_it$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int __do_it;
+     * {@snippet lang=c :
+     * int __do_it
      * }
      */
-    public static void __do_it$set(MemorySegment seg, int x) {
-        constants$524.const$1.set(seg, x);
+    public static void __do_it(MemorySegment struct, int fieldValue) {
+        struct.set(__do_it$LAYOUT, __do_it$OFFSET, fieldValue);
     }
-    public static int __do_it$get(MemorySegment seg, long index) {
-        return (int)constants$524.const$1.get(seg.asSlice(index*sizeof()));
+
+    private static final OfInt __cancel_type$LAYOUT = (OfInt)$LAYOUT.select(groupElement("__cancel_type"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int __cancel_type
+     * }
+     */
+    public static final OfInt __cancel_type$layout() {
+        return __cancel_type$LAYOUT;
     }
-    public static void __do_it$set(MemorySegment seg, long index, int x) {
-        constants$524.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long __cancel_type$OFFSET = 20;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int __cancel_type
+     * }
+     */
+    public static final long __cancel_type$offset() {
+        return __cancel_type$OFFSET;
     }
-    public static VarHandle __cancel_type$VH() {
-        return constants$524.const$2;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int __cancel_type;
+     * {@snippet lang=c :
+     * int __cancel_type
      * }
      */
-    public static int __cancel_type$get(MemorySegment seg) {
-        return (int)constants$524.const$2.get(seg);
+    public static int __cancel_type(MemorySegment struct) {
+        return struct.get(__cancel_type$LAYOUT, __cancel_type$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int __cancel_type;
+     * {@snippet lang=c :
+     * int __cancel_type
      * }
      */
-    public static void __cancel_type$set(MemorySegment seg, int x) {
-        constants$524.const$2.set(seg, x);
+    public static void __cancel_type(MemorySegment struct, int fieldValue) {
+        struct.set(__cancel_type$LAYOUT, __cancel_type$OFFSET, fieldValue);
     }
-    public static int __cancel_type$get(MemorySegment seg, long index) {
-        return (int)constants$524.const$2.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
     }
-    public static void __cancel_type$set(MemorySegment seg, long index, int x) {
-        constants$524.const$2.set(seg.asSlice(index*sizeof()), x);
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

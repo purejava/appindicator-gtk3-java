@@ -2,164 +2,218 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GInterfaceInfo {
- *     void (*interface_init)(void*,void*);
- *     void (*interface_finalize)(void*,void*);
- *     void* interface_data;
- * };
+ *     GInterfaceInitFunc interface_init;
+ *     GInterfaceFinalizeFunc interface_finalize;
+ *     gpointer interface_data;
+ * }
  * }
  */
 public class _GInterfaceInfo {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$556.const$2;
+    _GInterfaceInfo() {
+        // Should not be called directly
     }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("interface_init"),
+        app_indicator_h.C_POINTER.withName("interface_finalize"),
+        app_indicator_h.C_POINTER.withName("interface_data")
+    ).withName("_GInterfaceInfo");
+
     /**
-     * {@snippet :
- * void (*interface_init)(void*,void*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final AddressLayout interface_init$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("interface_init"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GInterfaceInitFunc interface_init
      * }
      */
-    public interface interface_init {
-
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(interface_init fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$556.const$3, fi, constants$13.const$4, scope);
-        }
-        static interface_init ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final AddressLayout interface_init$layout() {
+        return interface_init$LAYOUT;
     }
 
-    public static VarHandle interface_init$VH() {
-        return constants$556.const$4;
+    private static final long interface_init$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GInterfaceInitFunc interface_init
+     * }
+     */
+    public static final long interface_init$offset() {
+        return interface_init$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*interface_init)(void*,void*);
+     * {@snippet lang=c :
+     * GInterfaceInitFunc interface_init
      * }
      */
-    public static MemorySegment interface_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$556.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * void (*interface_init)(void*,void*);
-     * }
-     */
-    public static void interface_init$set(MemorySegment seg, MemorySegment x) {
-        constants$556.const$4.set(seg, x);
-    }
-    public static MemorySegment interface_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$556.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void interface_init$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$556.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static interface_init interface_init(MemorySegment segment, Arena scope) {
-        return interface_init.ofAddress(interface_init$get(segment), scope);
-    }
-    /**
-     * {@snippet :
- * void (*interface_finalize)(void*,void*);
-     * }
-     */
-    public interface interface_finalize {
-
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(interface_finalize fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$556.const$5, fi, constants$13.const$4, scope);
-        }
-        static interface_finalize ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static MemorySegment interface_init(MemorySegment struct) {
+        return struct.get(interface_init$LAYOUT, interface_init$OFFSET);
     }
 
-    public static VarHandle interface_finalize$VH() {
-        return constants$557.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * void (*interface_finalize)(void*,void*);
-     * }
-     */
-    public static MemorySegment interface_finalize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$557.const$0.get(seg);
-    }
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*interface_finalize)(void*,void*);
+     * {@snippet lang=c :
+     * GInterfaceInitFunc interface_init
      * }
      */
-    public static void interface_finalize$set(MemorySegment seg, MemorySegment x) {
-        constants$557.const$0.set(seg, x);
+    public static void interface_init(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(interface_init$LAYOUT, interface_init$OFFSET, fieldValue);
     }
-    public static MemorySegment interface_finalize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$557.const$0.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout interface_finalize$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("interface_finalize"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GInterfaceFinalizeFunc interface_finalize
+     * }
+     */
+    public static final AddressLayout interface_finalize$layout() {
+        return interface_finalize$LAYOUT;
     }
-    public static void interface_finalize$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$557.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long interface_finalize$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GInterfaceFinalizeFunc interface_finalize
+     * }
+     */
+    public static final long interface_finalize$offset() {
+        return interface_finalize$OFFSET;
     }
-    public static interface_finalize interface_finalize(MemorySegment segment, Arena scope) {
-        return interface_finalize.ofAddress(interface_finalize$get(segment), scope);
-    }
-    public static VarHandle interface_data$VH() {
-        return constants$557.const$1;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* interface_data;
+     * {@snippet lang=c :
+     * GInterfaceFinalizeFunc interface_finalize
      * }
      */
-    public static MemorySegment interface_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$557.const$1.get(seg);
+    public static MemorySegment interface_finalize(MemorySegment struct) {
+        return struct.get(interface_finalize$LAYOUT, interface_finalize$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* interface_data;
+     * {@snippet lang=c :
+     * GInterfaceFinalizeFunc interface_finalize
      * }
      */
-    public static void interface_data$set(MemorySegment seg, MemorySegment x) {
-        constants$557.const$1.set(seg, x);
+    public static void interface_finalize(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(interface_finalize$LAYOUT, interface_finalize$OFFSET, fieldValue);
     }
-    public static MemorySegment interface_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$557.const$1.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout interface_data$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("interface_data"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer interface_data
+     * }
+     */
+    public static final AddressLayout interface_data$layout() {
+        return interface_data$LAYOUT;
     }
-    public static void interface_data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$557.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long interface_data$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer interface_data
+     * }
+     */
+    public static final long interface_data$offset() {
+        return interface_data$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer interface_data
+     * }
+     */
+    public static MemorySegment interface_data(MemorySegment struct) {
+        return struct.get(interface_data$LAYOUT, interface_data$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer interface_data
+     * }
+     */
+    public static void interface_data(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(interface_data$LAYOUT, interface_data$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

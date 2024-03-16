@@ -2,60 +2,172 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkIconFactory {
- *     struct _GObject parent_instance;
- *     struct _GtkIconFactoryPrivate* priv;
- * };
+ *     GObject parent_instance;
+ *     GtkIconFactoryPrivate *priv;
+ * }
  * }
  */
 public class _GtkIconFactory {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2759.const$2;
+    _GtkIconFactory() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_instance$slice(MemorySegment seg) {
-        return seg.asSlice(0, 24);
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObject.layout().withName("parent_instance"),
+        app_indicator_h.C_POINTER.withName("priv")
+    ).withName("_GtkIconFactory");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
-    public static VarHandle priv$VH() {
-        return constants$2759.const$3;
+
+    private static final GroupLayout parent_instance$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_instance"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObject parent_instance
+     * }
+     */
+    public static final GroupLayout parent_instance$layout() {
+        return parent_instance$LAYOUT;
     }
+
+    private static final long parent_instance$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObject parent_instance
+     * }
+     */
+    public static final long parent_instance$offset() {
+        return parent_instance$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GtkIconFactoryPrivate* priv;
+     * {@snippet lang=c :
+     * GObject parent_instance
      * }
      */
-    public static MemorySegment priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2759.const$3.get(seg);
+    public static MemorySegment parent_instance(MemorySegment struct) {
+        return struct.asSlice(parent_instance$OFFSET, parent_instance$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GtkIconFactoryPrivate* priv;
+     * {@snippet lang=c :
+     * GObject parent_instance
      * }
      */
-    public static void priv$set(MemorySegment seg, MemorySegment x) {
-        constants$2759.const$3.set(seg, x);
+    public static void parent_instance(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_instance$OFFSET, parent_instance$LAYOUT.byteSize());
     }
-    public static MemorySegment priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2759.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void priv$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2759.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final AddressLayout priv$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("priv"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkIconFactoryPrivate *priv
+     * }
+     */
+    public static final AddressLayout priv$layout() {
+        return priv$LAYOUT;
+    }
+
+    private static final long priv$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkIconFactoryPrivate *priv
+     * }
+     */
+    public static final long priv$offset() {
+        return priv$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GtkIconFactoryPrivate *priv
+     * }
+     */
+    public static MemorySegment priv(MemorySegment struct) {
+        return struct.get(priv$LAYOUT, priv$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GtkIconFactoryPrivate *priv
+     * }
+     */
+    public static void priv(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(priv$LAYOUT, priv$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

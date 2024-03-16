@@ -3,28 +3,63 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
 import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
+
 /**
- * {@snippet :
- * unsigned char* (*GtkTextBufferSerializeFunc)(struct _GtkTextBuffer* register_buffer,struct _GtkTextBuffer* content_buffer,struct _GtkTextIter* start,struct _GtkTextIter* end,unsigned long* length,void* user_data);
+ * {@snippet lang=c :
+ * typedef guint8 *(*GtkTextBufferSerializeFunc)(GtkTextBuffer *, GtkTextBuffer *, const GtkTextIter *, const GtkTextIter *, gsize *, gpointer)
  * }
  */
-public interface GtkTextBufferSerializeFunc {
+public class GtkTextBufferSerializeFunc {
 
-    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment register_buffer, java.lang.foreign.MemorySegment content_buffer, java.lang.foreign.MemorySegment start, java.lang.foreign.MemorySegment end, java.lang.foreign.MemorySegment length, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GtkTextBufferSerializeFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$3140.const$2, fi, constants$334.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        MemorySegment apply(MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment start, MemorySegment end, MemorySegment length, MemorySegment user_data);
     }
-    static GtkTextBufferSerializeFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _register_buffer, java.lang.foreign.MemorySegment _content_buffer, java.lang.foreign.MemorySegment _start, java.lang.foreign.MemorySegment _end, java.lang.foreign.MemorySegment _length, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                return (java.lang.foreign.MemorySegment)constants$3140.const$3.invokeExact(symbol, _register_buffer, _content_buffer, _start, _end, _length, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GtkTextBufferSerializeFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GtkTextBufferSerializeFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment start, MemorySegment end, MemorySegment length, MemorySegment user_data) {
+        try {
+            return (MemorySegment) DOWN$MH.invokeExact(funcPtr, register_buffer, content_buffer, start, end, length, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

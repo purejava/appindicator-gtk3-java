@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkFileChooserWidgetClass GtkFileChooserWidgetClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkFileChooserWidgetClass GtkFileChooserWidgetClass
  * }
  */
-public final class GtkFileChooserWidgetClass extends _GtkFileChooserWidgetClass {
+public class GtkFileChooserWidgetClass extends _GtkFileChooserWidgetClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFileChooserWidgetClass() {}
+    GtkFileChooserWidgetClass() {
+        // Should not be called directly
+    }
 }
-
 

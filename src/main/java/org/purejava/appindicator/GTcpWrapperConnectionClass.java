@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GTcpWrapperConnectionClass GTcpWrapperConnectionClass;
+ * {@snippet lang=c :
+ * typedef struct _GTcpWrapperConnectionClass GTcpWrapperConnectionClass
  * }
  */
-public final class GTcpWrapperConnectionClass extends _GTcpWrapperConnectionClass {
+public class GTcpWrapperConnectionClass extends _GTcpWrapperConnectionClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTcpWrapperConnectionClass() {}
+    GTcpWrapperConnectionClass() {
+        // Should not be called directly
+    }
 }
-
 

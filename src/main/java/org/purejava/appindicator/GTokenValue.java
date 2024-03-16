@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef union _GTokenValue GTokenValue;
+ * {@snippet lang=c :
+ * typedef union _GTokenValue GTokenValue
  * }
  */
-public final class GTokenValue extends _GTokenValue {
+public class GTokenValue extends _GTokenValue {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTokenValue() {}
+    GTokenValue() {
+        // Should not be called directly
+    }
 }
-
 

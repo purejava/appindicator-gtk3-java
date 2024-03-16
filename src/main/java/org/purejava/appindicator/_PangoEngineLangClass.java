@@ -2,86 +2,226 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _PangoEngineLangClass {
- *     struct _PangoEngineClass parent_class;
- *     void (*script_break)(struct _PangoEngineLang*,char*,int,struct _PangoAnalysis*,struct _PangoLogAttr*,int);
- * };
+ *     PangoEngineClass parent_class;
+ *     void (*script_break)(PangoEngineLang *, const char *, int, PangoAnalysis *, PangoLogAttr *, int);
+ * }
  * }
  */
 public class _PangoEngineLangClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1604.const$2;
+    _PangoEngineLangClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 136);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _PangoEngineClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("script_break")
+    ).withName("_PangoEngineLangClass");
+
     /**
-     * {@snippet :
- * void (*script_break)(struct _PangoEngineLang*,char*,int,struct _PangoAnalysis*,struct _PangoLogAttr*,int);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoEngineClass parent_class
      * }
      */
-    public interface script_break {
-
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, int _x5);
-        static MemorySegment allocate(script_break fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1604.const$3, fi, constants$1603.const$2, scope);
-        }
-        static script_break ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, int __x5) -> {
-                try {
-                    constants$1604.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle script_break$VH() {
-        return constants$1604.const$5;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoEngineClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*script_break)(struct _PangoEngineLang*,char*,int,struct _PangoAnalysis*,struct _PangoLogAttr*,int);
+     * {@snippet lang=c :
+     * PangoEngineClass parent_class
      * }
      */
-    public static MemorySegment script_break$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1604.const$5.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*script_break)(struct _PangoEngineLang*,char*,int,struct _PangoAnalysis*,struct _PangoLogAttr*,int);
+     * {@snippet lang=c :
+     * PangoEngineClass parent_class
      * }
      */
-    public static void script_break$set(MemorySegment seg, MemorySegment x) {
-        constants$1604.const$5.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment script_break$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1604.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void script_break$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1604.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static script_break script_break(MemorySegment segment, Arena scope) {
-        return script_break.ofAddress(script_break$get(segment), scope);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    /**
+     * {@snippet lang=c :
+     * void (*script_break)(PangoEngineLang *, const char *, int, PangoAnalysis *, PangoLogAttr *, int)
+     * }
+     */
+    public class script_break {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(script_break.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(script_break.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, int _x2, MemorySegment _x3, MemorySegment _x4, int _x5) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4, _x5);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
+    }
+
+    private static final AddressLayout script_break$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("script_break"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*script_break)(PangoEngineLang *, const char *, int, PangoAnalysis *, PangoLogAttr *, int)
+     * }
+     */
+    public static final AddressLayout script_break$layout() {
+        return script_break$LAYOUT;
+    }
+
+    private static final long script_break$OFFSET = 136;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*script_break)(PangoEngineLang *, const char *, int, PangoAnalysis *, PangoLogAttr *, int)
+     * }
+     */
+    public static final long script_break$offset() {
+        return script_break$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*script_break)(PangoEngineLang *, const char *, int, PangoAnalysis *, PangoLogAttr *, int)
+     * }
+     */
+    public static MemorySegment script_break(MemorySegment struct) {
+        return struct.get(script_break$LAYOUT, script_break$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*script_break)(PangoEngineLang *, const char *, int, PangoAnalysis *, PangoLogAttr *, int)
+     * }
+     */
+    public static void script_break(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(script_break$LAYOUT, script_break$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

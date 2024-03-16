@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GSource GSource;
+ * {@snippet lang=c :
+ * typedef struct _GSource GSource
  * }
  */
-public final class GSource extends _GSource {
+public class GSource extends _GSource {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GSource() {}
+    GSource() {
+        // Should not be called directly
+    }
 }
-
 

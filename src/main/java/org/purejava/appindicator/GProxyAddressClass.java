@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GProxyAddressClass GProxyAddressClass;
+ * {@snippet lang=c :
+ * typedef struct _GProxyAddressClass GProxyAddressClass
  * }
  */
-public final class GProxyAddressClass extends _GProxyAddressClass {
+public class GProxyAddressClass extends _GProxyAddressClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GProxyAddressClass() {}
+    GProxyAddressClass() {
+        // Should not be called directly
+    }
 }
-
 

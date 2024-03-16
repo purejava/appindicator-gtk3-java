@@ -2,29 +2,70 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * int (*GDBusInterfaceSetPropertyFunc)(struct _GDBusConnection* connection,char* sender,char* object_path,char* interface_name,char* property_name,struct _GVariant* value,struct _GError** error,void* user_data);
+ * {@snippet lang=c :
+ * typedef gboolean (*GDBusInterfaceSetPropertyFunc)(GDBusConnection *, const gchar *, const gchar *, const gchar *, const gchar *, GVariant *, GError **, gpointer)
  * }
  */
-public interface GDBusInterfaceSetPropertyFunc {
+public class GDBusInterfaceSetPropertyFunc {
 
-    int apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment property_name, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment error, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GDBusInterfaceSetPropertyFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$863.const$3, fi, constants$863.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment connection, MemorySegment sender, MemorySegment object_path, MemorySegment interface_name, MemorySegment property_name, MemorySegment value, MemorySegment error, MemorySegment user_data);
     }
-    static GDBusInterfaceSetPropertyFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _property_name, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _error, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                return (int)constants$863.const$4.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _property_name, _value, _error, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GDBusInterfaceSetPropertyFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GDBusInterfaceSetPropertyFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment connection, MemorySegment sender, MemorySegment object_path, MemorySegment interface_name, MemorySegment property_name, MemorySegment value, MemorySegment error, MemorySegment user_data) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, connection, sender, object_path, interface_name, property_name, value, error, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

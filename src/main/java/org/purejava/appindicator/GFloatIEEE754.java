@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef union _GFloatIEEE754 GFloatIEEE754;
+ * {@snippet lang=c :
+ * typedef union _GFloatIEEE754 GFloatIEEE754
  * }
  */
-public final class GFloatIEEE754 extends _GFloatIEEE754 {
+public class GFloatIEEE754 extends _GFloatIEEE754 {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GFloatIEEE754() {}
+    GFloatIEEE754() {
+        // Should not be called directly
+    }
 }
-
 

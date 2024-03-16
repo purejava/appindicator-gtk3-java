@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkCellRendererToggleClass GtkCellRendererToggleClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkCellRendererToggleClass GtkCellRendererToggleClass
  * }
  */
-public final class GtkCellRendererToggleClass extends _GtkCellRendererToggleClass {
+public class GtkCellRendererToggleClass extends _GtkCellRendererToggleClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkCellRendererToggleClass() {}
+    GtkCellRendererToggleClass() {
+        // Should not be called directly
+    }
 }
-
 

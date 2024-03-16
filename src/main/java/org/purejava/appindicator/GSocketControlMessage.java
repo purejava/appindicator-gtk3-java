@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GSocketControlMessage GSocketControlMessage;
+ * {@snippet lang=c :
+ * typedef struct _GSocketControlMessage GSocketControlMessage
  * }
  */
-public final class GSocketControlMessage extends _GSocketControlMessage {
+public class GSocketControlMessage extends _GSocketControlMessage {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GSocketControlMessage() {}
+    GSocketControlMessage() {
+        // Should not be called directly
+    }
 }
-
 

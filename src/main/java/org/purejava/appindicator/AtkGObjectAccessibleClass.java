@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _AtkGObjectAccessibleClass AtkGObjectAccessibleClass;
+ * {@snippet lang=c :
+ * typedef struct _AtkGObjectAccessibleClass AtkGObjectAccessibleClass
  * }
  */
-public final class AtkGObjectAccessibleClass extends _AtkGObjectAccessibleClass {
+public class AtkGObjectAccessibleClass extends _AtkGObjectAccessibleClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkGObjectAccessibleClass() {}
+    AtkGObjectAccessibleClass() {
+        // Should not be called directly
+    }
 }
-
 

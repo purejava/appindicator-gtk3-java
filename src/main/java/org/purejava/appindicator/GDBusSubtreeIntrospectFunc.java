@@ -3,28 +3,62 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
 import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
+
 /**
- * {@snippet :
- * struct _GDBusInterfaceInfo** (*GDBusSubtreeIntrospectFunc)(struct _GDBusConnection* connection,char* sender,char* object_path,char* node,void* user_data);
+ * {@snippet lang=c :
+ * typedef GDBusInterfaceInfo **(*GDBusSubtreeIntrospectFunc)(GDBusConnection *, const gchar *, const gchar *, const gchar *, gpointer)
  * }
  */
-public interface GDBusSubtreeIntrospectFunc {
+public class GDBusSubtreeIntrospectFunc {
 
-    java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GDBusSubtreeIntrospectFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$866.const$0, fi, constants$330.const$5, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        MemorySegment apply(MemorySegment connection, MemorySegment sender, MemorySegment object_path, MemorySegment node, MemorySegment user_data);
     }
-    static GDBusSubtreeIntrospectFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _user_data) -> {
-            try {
-                return (java.lang.foreign.MemorySegment)constants$866.const$1.invokeExact(symbol, _connection, _sender, _object_path, _node, _user_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GDBusSubtreeIntrospectFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GDBusSubtreeIntrospectFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment connection, MemorySegment sender, MemorySegment object_path, MemorySegment node, MemorySegment user_data) {
+        try {
+            return (MemorySegment) DOWN$MH.invokeExact(funcPtr, connection, sender, object_path, node, user_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkBuildableIface GtkBuildableIface;
+ * {@snippet lang=c :
+ * typedef struct _GtkBuildableIface GtkBuildableIface
  * }
  */
-public final class GtkBuildableIface extends _GtkBuildableIface {
+public class GtkBuildableIface extends _GtkBuildableIface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkBuildableIface() {}
+    GtkBuildableIface() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,15 +2,32 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _cairo_matrix cairo_matrix_t;
+ * {@snippet lang=c :
+ * typedef struct _cairo_matrix {
+ *     double xx;
+ *     double yx;
+ *     double xy;
+ *     double yy;
+ *     double x0;
+ *     double y0;
+ * } cairo_matrix_t
  * }
  */
-public final class cairo_matrix_t extends _cairo_matrix {
+public class cairo_matrix_t extends _cairo_matrix {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private cairo_matrix_t() {}
+    cairo_matrix_t() {
+        // Should not be called directly
+    }
 }
-
 

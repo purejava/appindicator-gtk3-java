@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef union _GMutex GMutex;
+ * {@snippet lang=c :
+ * typedef union _GMutex GMutex
  * }
  */
-public final class GMutex extends _GMutex {
+public class GMutex extends _GMutex {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GMutex() {}
+    GMutex() {
+        // Should not be called directly
+    }
 }
-
 

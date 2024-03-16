@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef union _GdkEvent GdkEvent;
+ * {@snippet lang=c :
+ * typedef union _GdkEvent GdkEvent
  * }
  */
-public final class GdkEvent extends _GdkEvent {
+public class GdkEvent extends _GdkEvent {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GdkEvent() {}
+    GdkEvent() {
+        // Should not be called directly
+    }
 }
-
 

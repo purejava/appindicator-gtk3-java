@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkSeparatorMenuItemClass GtkSeparatorMenuItemClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkSeparatorMenuItemClass GtkSeparatorMenuItemClass
  * }
  */
-public final class GtkSeparatorMenuItemClass extends _GtkSeparatorMenuItemClass {
+public class GtkSeparatorMenuItemClass extends _GtkSeparatorMenuItemClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkSeparatorMenuItemClass() {}
+    GtkSeparatorMenuItemClass() {
+        // Should not be called directly
+    }
 }
-
 

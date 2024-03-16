@@ -3,28 +3,62 @@
 package org.purejava.appindicator;
 
 import java.lang.foreign.Arena;
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
 import java.lang.foreign.MemorySegment;
+import java.lang.invoke.MethodHandle;
+
 /**
- * {@snippet :
- * int (*GtkTreeViewSearchEqualFunc)(struct _GtkTreeModel* model,int column,char* key,struct _GtkTreeIter* iter,void* search_data);
+ * {@snippet lang=c :
+ * typedef gboolean (*GtkTreeViewSearchEqualFunc)(GtkTreeModel *, gint, const gchar *, GtkTreeIter *, gpointer)
  * }
  */
-public interface GtkTreeViewSearchEqualFunc {
+public class GtkTreeViewSearchEqualFunc {
 
-    int apply(java.lang.foreign.MemorySegment model, int column, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment search_data);
-    static MemorySegment allocate(GtkTreeViewSearchEqualFunc fi, Arena scope) {
-        return RuntimeHelper.upcallStub(constants$2474.const$2, fi, constants$373.const$2, scope);
+    /**
+     * The function pointer signature, expressed as a functional interface
+     */
+    public interface Function {
+        int apply(MemorySegment model, int column, MemorySegment key, MemorySegment iter, MemorySegment search_data);
     }
-    static GtkTreeViewSearchEqualFunc ofAddress(MemorySegment addr, Arena arena) {
-        MemorySegment symbol = addr.reinterpret(arena, null);
-        return (java.lang.foreign.MemorySegment _model, int _column, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _search_data) -> {
-            try {
-                return (int)constants$1427.const$2.invokeExact(symbol, _model, _column, _key, _iter, _search_data);
-            } catch (Throwable ex$) {
-                throw new AssertionError("should not reach here", ex$);
-            }
-        };
+
+    private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_INT,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER,
+        app_indicator_h.C_POINTER
+    );
+
+    /**
+     * The descriptor of this function pointer
+     */
+    public static FunctionDescriptor descriptor() {
+        return $DESC;
+    }
+
+    private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(GtkTreeViewSearchEqualFunc.Function.class, "apply", $DESC);
+
+    /**
+     * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+     * The lifetime of the returned segment is managed by {@code arena}
+     */
+    public static MemorySegment allocate(GtkTreeViewSearchEqualFunc.Function fi, Arena arena) {
+        return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+    }
+
+    private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+    /**
+     * Invoke the upcall stub {@code funcPtr}, with given parameters
+     */
+    public static int invoke(MemorySegment funcPtr,MemorySegment model, int column, MemorySegment key, MemorySegment iter, MemorySegment search_data) {
+        try {
+            return (int) DOWN$MH.invokeExact(funcPtr, model, column, key, iter, search_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
     }
 }
-
 

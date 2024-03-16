@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GTlsPasswordClass GTlsPasswordClass;
+ * {@snippet lang=c :
+ * typedef struct _GTlsPasswordClass GTlsPasswordClass
  * }
  */
-public final class GTlsPasswordClass extends _GTlsPasswordClass {
+public class GTlsPasswordClass extends _GTlsPasswordClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTlsPasswordClass() {}
+    GTlsPasswordClass() {
+        // Should not be called directly
+    }
 }
-
 

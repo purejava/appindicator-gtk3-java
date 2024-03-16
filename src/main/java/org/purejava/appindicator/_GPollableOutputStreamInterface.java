@@ -2,302 +2,614 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GPollableOutputStreamInterface {
- *     struct _GTypeInterface g_iface;
- *     int (*can_poll)(struct _GPollableOutputStream*);
- *     int (*is_writable)(struct _GPollableOutputStream*);
- *     struct _GSource* (*create_source)(struct _GPollableOutputStream*,struct _GCancellable*);
- *     long (*write_nonblocking)(struct _GPollableOutputStream*,void*,unsigned long,struct _GError**);
- *     enum GPollableReturn (*writev_nonblocking)(struct _GPollableOutputStream*,struct _GOutputVector*,unsigned long,unsigned long*,struct _GError**);
- * };
+ *     GTypeInterface g_iface;
+ *     gboolean (*can_poll)(GPollableOutputStream *);
+ *     gboolean (*is_writable)(GPollableOutputStream *);
+ *     GSource *(*create_source)(GPollableOutputStream *, GCancellable *);
+ *     gssize (*write_nonblocking)(GPollableOutputStream *, const void *, gsize, GError **);
+ *     GPollableReturn (*writev_nonblocking)(GPollableOutputStream *, const GOutputVector *, gsize, gsize *, GError **);
+ * }
  * }
  */
 public class _GPollableOutputStreamInterface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1211.const$4;
+    _GPollableOutputStreamInterface() {
+        // Should not be called directly
     }
-    public static MemorySegment g_iface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("g_iface"),
+        app_indicator_h.C_POINTER.withName("can_poll"),
+        app_indicator_h.C_POINTER.withName("is_writable"),
+        app_indicator_h.C_POINTER.withName("create_source"),
+        app_indicator_h.C_POINTER.withName("write_nonblocking"),
+        app_indicator_h.C_POINTER.withName("writev_nonblocking")
+    ).withName("_GPollableOutputStreamInterface");
+
     /**
-     * {@snippet :
- * int (*can_poll)(struct _GPollableOutputStream*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout g_iface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("g_iface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public interface can_poll {
-
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(can_poll fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1211.const$5, fi, constants$10.const$5, scope);
-        }
-        static can_poll ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout g_iface$layout() {
+        return g_iface$LAYOUT;
     }
 
-    public static VarHandle can_poll$VH() {
-        return constants$1212.const$0;
+    private static final long g_iface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
+     * }
+     */
+    public static final long g_iface$offset() {
+        return g_iface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*can_poll)(struct _GPollableOutputStream*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static MemorySegment can_poll$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1212.const$0.get(seg);
+    public static MemorySegment g_iface(MemorySegment struct) {
+        return struct.asSlice(g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*can_poll)(struct _GPollableOutputStream*);
+     * {@snippet lang=c :
+     * GTypeInterface g_iface
      * }
      */
-    public static void can_poll$set(MemorySegment seg, MemorySegment x) {
-        constants$1212.const$0.set(seg, x);
+    public static void g_iface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, g_iface$OFFSET, g_iface$LAYOUT.byteSize());
     }
-    public static MemorySegment can_poll$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1212.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void can_poll$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1212.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static can_poll can_poll(MemorySegment segment, Arena scope) {
-        return can_poll.ofAddress(can_poll$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*is_writable)(struct _GPollableOutputStream*);
+     * {@snippet lang=c :
+     * gboolean (*can_poll)(GPollableOutputStream *)
      * }
      */
-    public interface is_writable {
+    public class can_poll {
 
-        int apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(is_writable fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1212.const$1, fi, constants$10.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static is_writable ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _user_data) -> {
-                try {
-                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(can_poll.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(can_poll.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle is_writable$VH() {
-        return constants$1212.const$2;
+    private static final AddressLayout can_poll$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("can_poll"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*can_poll)(GPollableOutputStream *)
+     * }
+     */
+    public static final AddressLayout can_poll$layout() {
+        return can_poll$LAYOUT;
     }
+
+    private static final long can_poll$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*can_poll)(GPollableOutputStream *)
+     * }
+     */
+    public static final long can_poll$offset() {
+        return can_poll$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*is_writable)(struct _GPollableOutputStream*);
+     * {@snippet lang=c :
+     * gboolean (*can_poll)(GPollableOutputStream *)
      * }
      */
-    public static MemorySegment is_writable$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1212.const$2.get(seg);
+    public static MemorySegment can_poll(MemorySegment struct) {
+        return struct.get(can_poll$LAYOUT, can_poll$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*is_writable)(struct _GPollableOutputStream*);
+     * {@snippet lang=c :
+     * gboolean (*can_poll)(GPollableOutputStream *)
      * }
      */
-    public static void is_writable$set(MemorySegment seg, MemorySegment x) {
-        constants$1212.const$2.set(seg, x);
+    public static void can_poll(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(can_poll$LAYOUT, can_poll$OFFSET, fieldValue);
     }
-    public static MemorySegment is_writable$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1212.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void is_writable$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1212.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static is_writable is_writable(MemorySegment segment, Arena scope) {
-        return is_writable.ofAddress(is_writable$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * struct _GSource* (*create_source)(struct _GPollableOutputStream*,struct _GCancellable*);
+     * {@snippet lang=c :
+     * gboolean (*is_writable)(GPollableOutputStream *)
      * }
      */
-    public interface create_source {
+    public class is_writable {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-        static MemorySegment allocate(create_source fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1212.const$3, fi, constants$5.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0);
         }
-        static create_source ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
-                try {
-                    return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(is_writable.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(is_writable.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle create_source$VH() {
-        return constants$1212.const$4;
+    private static final AddressLayout is_writable$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("is_writable"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*is_writable)(GPollableOutputStream *)
+     * }
+     */
+    public static final AddressLayout is_writable$layout() {
+        return is_writable$LAYOUT;
     }
+
+    private static final long is_writable$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*is_writable)(GPollableOutputStream *)
+     * }
+     */
+    public static final long is_writable$offset() {
+        return is_writable$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * struct _GSource* (*create_source)(struct _GPollableOutputStream*,struct _GCancellable*);
+     * {@snippet lang=c :
+     * gboolean (*is_writable)(GPollableOutputStream *)
      * }
      */
-    public static MemorySegment create_source$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1212.const$4.get(seg);
+    public static MemorySegment is_writable(MemorySegment struct) {
+        return struct.get(is_writable$LAYOUT, is_writable$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * struct _GSource* (*create_source)(struct _GPollableOutputStream*,struct _GCancellable*);
+     * {@snippet lang=c :
+     * gboolean (*is_writable)(GPollableOutputStream *)
      * }
      */
-    public static void create_source$set(MemorySegment seg, MemorySegment x) {
-        constants$1212.const$4.set(seg, x);
+    public static void is_writable(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(is_writable$LAYOUT, is_writable$OFFSET, fieldValue);
     }
-    public static MemorySegment create_source$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1212.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void create_source$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1212.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static create_source create_source(MemorySegment segment, Arena scope) {
-        return create_source.ofAddress(create_source$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * long (*write_nonblocking)(struct _GPollableOutputStream*,void*,unsigned long,struct _GError**);
+     * {@snippet lang=c :
+     * GSource *(*create_source)(GPollableOutputStream *, GCancellable *)
      * }
      */
-    public interface write_nonblocking {
+    public class create_source {
 
-        long apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(write_nonblocking fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1212.const$5, fi, constants$20.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            MemorySegment apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static write_nonblocking ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3) -> {
-                try {
-                    return (long)constants$1210.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(create_source.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(create_source.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static MemorySegment invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                return (MemorySegment) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle write_nonblocking$VH() {
-        return constants$1213.const$0;
+    private static final AddressLayout create_source$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("create_source"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GSource *(*create_source)(GPollableOutputStream *, GCancellable *)
+     * }
+     */
+    public static final AddressLayout create_source$layout() {
+        return create_source$LAYOUT;
     }
+
+    private static final long create_source$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GSource *(*create_source)(GPollableOutputStream *, GCancellable *)
+     * }
+     */
+    public static final long create_source$offset() {
+        return create_source$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * long (*write_nonblocking)(struct _GPollableOutputStream*,void*,unsigned long,struct _GError**);
+     * {@snippet lang=c :
+     * GSource *(*create_source)(GPollableOutputStream *, GCancellable *)
      * }
      */
-    public static MemorySegment write_nonblocking$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1213.const$0.get(seg);
+    public static MemorySegment create_source(MemorySegment struct) {
+        return struct.get(create_source$LAYOUT, create_source$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * long (*write_nonblocking)(struct _GPollableOutputStream*,void*,unsigned long,struct _GError**);
+     * {@snippet lang=c :
+     * GSource *(*create_source)(GPollableOutputStream *, GCancellable *)
      * }
      */
-    public static void write_nonblocking$set(MemorySegment seg, MemorySegment x) {
-        constants$1213.const$0.set(seg, x);
+    public static void create_source(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(create_source$LAYOUT, create_source$OFFSET, fieldValue);
     }
-    public static MemorySegment write_nonblocking$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1213.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void write_nonblocking$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1213.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static write_nonblocking write_nonblocking(MemorySegment segment, Arena scope) {
-        return write_nonblocking.ofAddress(write_nonblocking$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * enum GPollableReturn (*writev_nonblocking)(struct _GPollableOutputStream*,struct _GOutputVector*,unsigned long,unsigned long*,struct _GError**);
+     * {@snippet lang=c :
+     * gssize (*write_nonblocking)(GPollableOutputStream *, const void *, gsize, GError **)
      * }
      */
-    public interface writev_nonblocking {
+    public class write_nonblocking {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(writev_nonblocking fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$1213.const$1, fi, constants$315.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            long apply(MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3);
         }
-        static writev_nonblocking ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
-                try {
-                    return (int)constants$316.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(write_nonblocking.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(write_nonblocking.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static long invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3) {
+            try {
+                return (long) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle writev_nonblocking$VH() {
-        return constants$1213.const$2;
+    private static final AddressLayout write_nonblocking$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("write_nonblocking"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gssize (*write_nonblocking)(GPollableOutputStream *, const void *, gsize, GError **)
+     * }
+     */
+    public static final AddressLayout write_nonblocking$layout() {
+        return write_nonblocking$LAYOUT;
     }
+
+    private static final long write_nonblocking$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gssize (*write_nonblocking)(GPollableOutputStream *, const void *, gsize, GError **)
+     * }
+     */
+    public static final long write_nonblocking$offset() {
+        return write_nonblocking$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * enum GPollableReturn (*writev_nonblocking)(struct _GPollableOutputStream*,struct _GOutputVector*,unsigned long,unsigned long*,struct _GError**);
+     * {@snippet lang=c :
+     * gssize (*write_nonblocking)(GPollableOutputStream *, const void *, gsize, GError **)
      * }
      */
-    public static MemorySegment writev_nonblocking$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1213.const$2.get(seg);
+    public static MemorySegment write_nonblocking(MemorySegment struct) {
+        return struct.get(write_nonblocking$LAYOUT, write_nonblocking$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * enum GPollableReturn (*writev_nonblocking)(struct _GPollableOutputStream*,struct _GOutputVector*,unsigned long,unsigned long*,struct _GError**);
+     * {@snippet lang=c :
+     * gssize (*write_nonblocking)(GPollableOutputStream *, const void *, gsize, GError **)
      * }
      */
-    public static void writev_nonblocking$set(MemorySegment seg, MemorySegment x) {
-        constants$1213.const$2.set(seg, x);
+    public static void write_nonblocking(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(write_nonblocking$LAYOUT, write_nonblocking$OFFSET, fieldValue);
     }
-    public static MemorySegment writev_nonblocking$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1213.const$2.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * GPollableReturn (*writev_nonblocking)(GPollableOutputStream *, const GOutputVector *, gsize, gsize *, GError **)
+     * }
+     */
+    public class writev_nonblocking {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_LONG,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(writev_nonblocking.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(writev_nonblocking.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1, long _x2, MemorySegment _x3, MemorySegment _x4) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void writev_nonblocking$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1213.const$2.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout writev_nonblocking$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("writev_nonblocking"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GPollableReturn (*writev_nonblocking)(GPollableOutputStream *, const GOutputVector *, gsize, gsize *, GError **)
+     * }
+     */
+    public static final AddressLayout writev_nonblocking$layout() {
+        return writev_nonblocking$LAYOUT;
     }
-    public static writev_nonblocking writev_nonblocking(MemorySegment segment, Arena scope) {
-        return writev_nonblocking.ofAddress(writev_nonblocking$get(segment), scope);
+
+    private static final long writev_nonblocking$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GPollableReturn (*writev_nonblocking)(GPollableOutputStream *, const GOutputVector *, gsize, gsize *, GError **)
+     * }
+     */
+    public static final long writev_nonblocking$offset() {
+        return writev_nonblocking$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GPollableReturn (*writev_nonblocking)(GPollableOutputStream *, const GOutputVector *, gsize, gsize *, GError **)
+     * }
+     */
+    public static MemorySegment writev_nonblocking(MemorySegment struct) {
+        return struct.get(writev_nonblocking$LAYOUT, writev_nonblocking$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GPollableReturn (*writev_nonblocking)(GPollableOutputStream *, const GOutputVector *, gsize, gsize *, GError **)
+     * }
+     */
+    public static void writev_nonblocking(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(writev_nonblocking$LAYOUT, writev_nonblocking$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

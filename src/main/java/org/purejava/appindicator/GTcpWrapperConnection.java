@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GTcpWrapperConnection GTcpWrapperConnection;
+ * {@snippet lang=c :
+ * typedef struct _GTcpWrapperConnection GTcpWrapperConnection
  * }
  */
-public final class GTcpWrapperConnection extends _GTcpWrapperConnection {
+public class GTcpWrapperConnection extends _GTcpWrapperConnection {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTcpWrapperConnection() {}
+    GTcpWrapperConnection() {
+        // Should not be called directly
+    }
 }
-
 

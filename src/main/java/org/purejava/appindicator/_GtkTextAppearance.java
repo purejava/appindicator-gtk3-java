@@ -2,73 +2,303 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkTextAppearance {
- *     struct _GdkColor bg_color;
- *     struct _GdkColor fg_color;
- *     int rise;
- *      *     unsigned int underline;
- *     unsigned int strikethrough;
- *     unsigned int draw_bg;
- *     unsigned int inside_selection;
- *     unsigned int is_text;
- *     struct _GdkRGBA* rgba[2];
- * };
+ *     GdkColor bg_color;
+ *     GdkColor fg_color;
+ *     gint rise;
+ *     guint underline : 4;
+ *     guint strikethrough : 1;
+ *     guint draw_bg : 1;
+ *     guint inside_selection : 1;
+ *     guint is_text : 1;
+ *     GdkRGBA *rgba[2];
+ * }
  * }
  */
 public class _GtkTextAppearance {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2355.const$0;
+    _GtkTextAppearance() {
+        // Should not be called directly
     }
-    public static MemorySegment bg_color$slice(MemorySegment seg) {
-        return seg.asSlice(0, 12);
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GdkColor.layout().withName("bg_color"),
+        _GdkColor.layout().withName("fg_color"),
+        app_indicator_h.C_INT.withName("rise"),
+        MemoryLayout.paddingLayout(4),
+        MemoryLayout.sequenceLayout(2, app_indicator_h.C_POINTER).withName("rgba")
+    ).withName("_GtkTextAppearance");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
-    public static MemorySegment fg_color$slice(MemorySegment seg) {
-        return seg.asSlice(12, 12);
+
+    private static final GroupLayout bg_color$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("bg_color"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkColor bg_color
+     * }
+     */
+    public static final GroupLayout bg_color$layout() {
+        return bg_color$LAYOUT;
     }
-    public static VarHandle rise$VH() {
-        return constants$2355.const$1;
+
+    private static final long bg_color$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkColor bg_color
+     * }
+     */
+    public static final long bg_color$offset() {
+        return bg_color$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int rise;
+     * {@snippet lang=c :
+     * GdkColor bg_color
      * }
      */
-    public static int rise$get(MemorySegment seg) {
-        return (int)constants$2355.const$1.get(seg);
+    public static MemorySegment bg_color(MemorySegment struct) {
+        return struct.asSlice(bg_color$OFFSET, bg_color$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int rise;
+     * {@snippet lang=c :
+     * GdkColor bg_color
      * }
      */
-    public static void rise$set(MemorySegment seg, int x) {
-        constants$2355.const$1.set(seg, x);
+    public static void bg_color(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, bg_color$OFFSET, bg_color$LAYOUT.byteSize());
     }
-    public static int rise$get(MemorySegment seg, long index) {
-        return (int)constants$2355.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void rise$set(MemorySegment seg, long index, int x) {
-        constants$2355.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment rgba$slice(MemorySegment seg) {
-        return seg.asSlice(32, 16);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout fg_color$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("fg_color"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkColor fg_color
+     * }
+     */
+    public static final GroupLayout fg_color$layout() {
+        return fg_color$LAYOUT;
+    }
+
+    private static final long fg_color$OFFSET = 12;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkColor fg_color
+     * }
+     */
+    public static final long fg_color$offset() {
+        return fg_color$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkColor fg_color
+     * }
+     */
+    public static MemorySegment fg_color(MemorySegment struct) {
+        return struct.asSlice(fg_color$OFFSET, fg_color$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkColor fg_color
+     * }
+     */
+    public static void fg_color(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, fg_color$OFFSET, fg_color$LAYOUT.byteSize());
+    }
+
+    private static final OfInt rise$LAYOUT = (OfInt)$LAYOUT.select(groupElement("rise"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint rise
+     * }
+     */
+    public static final OfInt rise$layout() {
+        return rise$LAYOUT;
+    }
+
+    private static final long rise$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint rise
+     * }
+     */
+    public static final long rise$offset() {
+        return rise$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint rise
+     * }
+     */
+    public static int rise(MemorySegment struct) {
+        return struct.get(rise$LAYOUT, rise$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint rise
+     * }
+     */
+    public static void rise(MemorySegment struct, int fieldValue) {
+        struct.set(rise$LAYOUT, rise$OFFSET, fieldValue);
+    }
+
+    private static final SequenceLayout rgba$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("rgba"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkRGBA *rgba[2]
+     * }
+     */
+    public static final SequenceLayout rgba$layout() {
+        return rgba$LAYOUT;
+    }
+
+    private static final long rgba$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkRGBA *rgba[2]
+     * }
+     */
+    public static final long rgba$offset() {
+        return rgba$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkRGBA *rgba[2]
+     * }
+     */
+    public static MemorySegment rgba(MemorySegment struct) {
+        return struct.asSlice(rgba$OFFSET, rgba$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkRGBA *rgba[2]
+     * }
+     */
+    public static void rgba(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, rgba$OFFSET, rgba$LAYOUT.byteSize());
+    }
+
+    private static long[] rgba$DIMS = { 2 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * GdkRGBA *rgba[2]
+     * }
+     */
+    public static long[] rgba$dimensions() {
+        return rgba$DIMS;
+    }
+    private static final VarHandle rgba$ELEM_HANDLE = rgba$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * GdkRGBA *rgba[2]
+     * }
+     */
+    public static MemorySegment rgba(MemorySegment struct, long index0) {
+        return (MemorySegment)rgba$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * GdkRGBA *rgba[2]
+     * }
+     */
+    public static void rgba(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        rgba$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GMemVTable GMemVTable;
+ * {@snippet lang=c :
+ * typedef struct _GMemVTable GMemVTable
  * }
  */
-public final class GMemVTable extends _GMemVTable {
+public class GMemVTable extends _GMemVTable {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GMemVTable() {}
+    GMemVTable() {
+        // Should not be called directly
+    }
 }
-
 

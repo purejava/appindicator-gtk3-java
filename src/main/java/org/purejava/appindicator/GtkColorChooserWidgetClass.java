@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkColorChooserWidgetClass GtkColorChooserWidgetClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkColorChooserWidgetClass GtkColorChooserWidgetClass
  * }
  */
-public final class GtkColorChooserWidgetClass extends _GtkColorChooserWidgetClass {
+public class GtkColorChooserWidgetClass extends _GtkColorChooserWidgetClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkColorChooserWidgetClass() {}
+    GtkColorChooserWidgetClass() {
+        // Should not be called directly
+    }
 }
-
 

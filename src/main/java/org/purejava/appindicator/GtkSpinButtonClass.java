@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkSpinButtonClass GtkSpinButtonClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkSpinButtonClass GtkSpinButtonClass
  * }
  */
-public final class GtkSpinButtonClass extends _GtkSpinButtonClass {
+public class GtkSpinButtonClass extends _GtkSpinButtonClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkSpinButtonClass() {}
+    GtkSpinButtonClass() {
+        // Should not be called directly
+    }
 }
-
 

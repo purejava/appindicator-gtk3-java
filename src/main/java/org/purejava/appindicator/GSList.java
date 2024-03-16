@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GSList GSList;
+ * {@snippet lang=c :
+ * typedef struct _GSList GSList
  * }
  */
-public final class GSList extends _GSList {
+public class GSList extends _GSList {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GSList() {}
+    GSList() {
+        // Should not be called directly
+    }
 }
-
 

@@ -2,168 +2,311 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _PangoGlyphItem {
- *     struct _PangoItem* item;
- *     struct _PangoGlyphString* glyphs;
+ *     PangoItem *item;
+ *     PangoGlyphString *glyphs;
  *     int y_offset;
  *     int start_x_offset;
  *     int end_x_offset;
- * };
+ * }
  * }
  */
 public class _PangoGlyphItem {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1614.const$1;
+    _PangoGlyphItem() {
+        // Should not be called directly
     }
-    public static VarHandle item$VH() {
-        return constants$1614.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoItem* item;
-     * }
-     */
-    public static MemorySegment item$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1614.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoItem* item;
-     * }
-     */
-    public static void item$set(MemorySegment seg, MemorySegment x) {
-        constants$1614.const$2.set(seg, x);
-    }
-    public static MemorySegment item$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1614.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void item$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1614.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle glyphs$VH() {
-        return constants$1614.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoGlyphString* glyphs;
-     * }
-     */
-    public static MemorySegment glyphs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1614.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoGlyphString* glyphs;
-     * }
-     */
-    public static void glyphs$set(MemorySegment seg, MemorySegment x) {
-        constants$1614.const$3.set(seg, x);
-    }
-    public static MemorySegment glyphs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1614.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void glyphs$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1614.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle y_offset$VH() {
-        return constants$1614.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int y_offset;
-     * }
-     */
-    public static int y_offset$get(MemorySegment seg) {
-        return (int)constants$1614.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int y_offset;
-     * }
-     */
-    public static void y_offset$set(MemorySegment seg, int x) {
-        constants$1614.const$4.set(seg, x);
-    }
-    public static int y_offset$get(MemorySegment seg, long index) {
-        return (int)constants$1614.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void y_offset$set(MemorySegment seg, long index, int x) {
-        constants$1614.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle start_x_offset$VH() {
-        return constants$1614.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int start_x_offset;
-     * }
-     */
-    public static int start_x_offset$get(MemorySegment seg) {
-        return (int)constants$1614.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int start_x_offset;
-     * }
-     */
-    public static void start_x_offset$set(MemorySegment seg, int x) {
-        constants$1614.const$5.set(seg, x);
-    }
-    public static int start_x_offset$get(MemorySegment seg, long index) {
-        return (int)constants$1614.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void start_x_offset$set(MemorySegment seg, long index, int x) {
-        constants$1614.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle end_x_offset$VH() {
-        return constants$1615.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int end_x_offset;
-     * }
-     */
-    public static int end_x_offset$get(MemorySegment seg) {
-        return (int)constants$1615.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int end_x_offset;
-     * }
-     */
-    public static void end_x_offset$set(MemorySegment seg, int x) {
-        constants$1615.const$0.set(seg, x);
-    }
-    public static int end_x_offset$get(MemorySegment seg, long index) {
-        return (int)constants$1615.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void end_x_offset$set(MemorySegment seg, long index, int x) {
-        constants$1615.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("item"),
+        app_indicator_h.C_POINTER.withName("glyphs"),
+        app_indicator_h.C_INT.withName("y_offset"),
+        app_indicator_h.C_INT.withName("start_x_offset"),
+        app_indicator_h.C_INT.withName("end_x_offset"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_PangoGlyphItem");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final AddressLayout item$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("item"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoItem *item
+     * }
+     */
+    public static final AddressLayout item$layout() {
+        return item$LAYOUT;
+    }
+
+    private static final long item$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoItem *item
+     * }
+     */
+    public static final long item$offset() {
+        return item$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoItem *item
+     * }
+     */
+    public static MemorySegment item(MemorySegment struct) {
+        return struct.get(item$LAYOUT, item$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoItem *item
+     * }
+     */
+    public static void item(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(item$LAYOUT, item$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout glyphs$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("glyphs"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoGlyphString *glyphs
+     * }
+     */
+    public static final AddressLayout glyphs$layout() {
+        return glyphs$LAYOUT;
+    }
+
+    private static final long glyphs$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoGlyphString *glyphs
+     * }
+     */
+    public static final long glyphs$offset() {
+        return glyphs$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoGlyphString *glyphs
+     * }
+     */
+    public static MemorySegment glyphs(MemorySegment struct) {
+        return struct.get(glyphs$LAYOUT, glyphs$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoGlyphString *glyphs
+     * }
+     */
+    public static void glyphs(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(glyphs$LAYOUT, glyphs$OFFSET, fieldValue);
+    }
+
+    private static final OfInt y_offset$LAYOUT = (OfInt)$LAYOUT.select(groupElement("y_offset"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int y_offset
+     * }
+     */
+    public static final OfInt y_offset$layout() {
+        return y_offset$LAYOUT;
+    }
+
+    private static final long y_offset$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int y_offset
+     * }
+     */
+    public static final long y_offset$offset() {
+        return y_offset$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int y_offset
+     * }
+     */
+    public static int y_offset(MemorySegment struct) {
+        return struct.get(y_offset$LAYOUT, y_offset$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int y_offset
+     * }
+     */
+    public static void y_offset(MemorySegment struct, int fieldValue) {
+        struct.set(y_offset$LAYOUT, y_offset$OFFSET, fieldValue);
+    }
+
+    private static final OfInt start_x_offset$LAYOUT = (OfInt)$LAYOUT.select(groupElement("start_x_offset"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int start_x_offset
+     * }
+     */
+    public static final OfInt start_x_offset$layout() {
+        return start_x_offset$LAYOUT;
+    }
+
+    private static final long start_x_offset$OFFSET = 20;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int start_x_offset
+     * }
+     */
+    public static final long start_x_offset$offset() {
+        return start_x_offset$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int start_x_offset
+     * }
+     */
+    public static int start_x_offset(MemorySegment struct) {
+        return struct.get(start_x_offset$LAYOUT, start_x_offset$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int start_x_offset
+     * }
+     */
+    public static void start_x_offset(MemorySegment struct, int fieldValue) {
+        struct.set(start_x_offset$LAYOUT, start_x_offset$OFFSET, fieldValue);
+    }
+
+    private static final OfInt end_x_offset$LAYOUT = (OfInt)$LAYOUT.select(groupElement("end_x_offset"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int end_x_offset
+     * }
+     */
+    public static final OfInt end_x_offset$layout() {
+        return end_x_offset$LAYOUT;
+    }
+
+    private static final long end_x_offset$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int end_x_offset
+     * }
+     */
+    public static final long end_x_offset$offset() {
+        return end_x_offset$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int end_x_offset
+     * }
+     */
+    public static int end_x_offset(MemorySegment struct) {
+        return struct.get(end_x_offset$LAYOUT, end_x_offset$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int end_x_offset
+     * }
+     */
+    public static void end_x_offset(MemorySegment struct, int fieldValue) {
+        struct.set(end_x_offset$LAYOUT, end_x_offset$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

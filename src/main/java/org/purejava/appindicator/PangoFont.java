@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _PangoFont PangoFont;
+ * {@snippet lang=c :
+ * typedef struct _PangoFont PangoFont
  * }
  */
-public final class PangoFont extends _PangoFont {
+public class PangoFont extends _PangoFont {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private PangoFont() {}
+    PangoFont() {
+        // Should not be called directly
+    }
 }
-
 

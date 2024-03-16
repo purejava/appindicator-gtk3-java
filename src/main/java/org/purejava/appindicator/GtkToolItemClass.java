@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkToolItemClass GtkToolItemClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkToolItemClass GtkToolItemClass
  * }
  */
-public final class GtkToolItemClass extends _GtkToolItemClass {
+public class GtkToolItemClass extends _GtkToolItemClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkToolItemClass() {}
+    GtkToolItemClass() {
+        // Should not be called directly
+    }
 }
-
 

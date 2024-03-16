@@ -2,138 +2,219 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GThreadPool {
- *     void (*func)(void*,void*);
- *     void* user_data;
- *     int exclusive;
- * };
+ *     GFunc func;
+ *     gpointer user_data;
+ *     gboolean exclusive;
+ * }
  * }
  */
 public class _GThreadPool {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$465.const$3;
-    }
-    /**
-     * {@snippet :
- * void (*func)(void*,void*);
-     * }
-     */
-    public interface func {
-
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(func fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$465.const$4, fi, constants$13.const$4, scope);
-        }
-        static func ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    _GThreadPool() {
+        // Should not be called directly
     }
 
-    public static VarHandle func$VH() {
-        return constants$465.const$5;
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("func"),
+        app_indicator_h.C_POINTER.withName("user_data"),
+        app_indicator_h.C_INT.withName("exclusive"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GThreadPool");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
+
+    private static final AddressLayout func$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("func"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GFunc func
+     * }
+     */
+    public static final AddressLayout func$layout() {
+        return func$LAYOUT;
+    }
+
+    private static final long func$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GFunc func
+     * }
+     */
+    public static final long func$offset() {
+        return func$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*func)(void*,void*);
+     * {@snippet lang=c :
+     * GFunc func
      * }
      */
-    public static MemorySegment func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$465.const$5.get(seg);
+    public static MemorySegment func(MemorySegment struct) {
+        return struct.get(func$LAYOUT, func$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*func)(void*,void*);
+     * {@snippet lang=c :
+     * GFunc func
      * }
      */
-    public static void func$set(MemorySegment seg, MemorySegment x) {
-        constants$465.const$5.set(seg, x);
+    public static void func(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(func$LAYOUT, func$OFFSET, fieldValue);
     }
-    public static MemorySegment func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$465.const$5.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout user_data$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("user_data"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer user_data
+     * }
+     */
+    public static final AddressLayout user_data$layout() {
+        return user_data$LAYOUT;
     }
-    public static void func$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$465.const$5.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long user_data$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer user_data
+     * }
+     */
+    public static final long user_data$offset() {
+        return user_data$OFFSET;
     }
-    public static func func(MemorySegment segment, Arena scope) {
-        return func.ofAddress(func$get(segment), scope);
-    }
-    public static VarHandle user_data$VH() {
-        return constants$466.const$0;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* user_data;
+     * {@snippet lang=c :
+     * gpointer user_data
      * }
      */
-    public static MemorySegment user_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$466.const$0.get(seg);
+    public static MemorySegment user_data(MemorySegment struct) {
+        return struct.get(user_data$LAYOUT, user_data$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* user_data;
+     * {@snippet lang=c :
+     * gpointer user_data
      * }
      */
-    public static void user_data$set(MemorySegment seg, MemorySegment x) {
-        constants$466.const$0.set(seg, x);
+    public static void user_data(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(user_data$LAYOUT, user_data$OFFSET, fieldValue);
     }
-    public static MemorySegment user_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$466.const$0.get(seg.asSlice(index*sizeof()));
+
+    private static final OfInt exclusive$LAYOUT = (OfInt)$LAYOUT.select(groupElement("exclusive"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean exclusive
+     * }
+     */
+    public static final OfInt exclusive$layout() {
+        return exclusive$LAYOUT;
     }
-    public static void user_data$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$466.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long exclusive$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean exclusive
+     * }
+     */
+    public static final long exclusive$offset() {
+        return exclusive$OFFSET;
     }
-    public static VarHandle exclusive$VH() {
-        return constants$466.const$1;
-    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int exclusive;
+     * {@snippet lang=c :
+     * gboolean exclusive
      * }
      */
-    public static int exclusive$get(MemorySegment seg) {
-        return (int)constants$466.const$1.get(seg);
+    public static int exclusive(MemorySegment struct) {
+        return struct.get(exclusive$LAYOUT, exclusive$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int exclusive;
+     * {@snippet lang=c :
+     * gboolean exclusive
      * }
      */
-    public static void exclusive$set(MemorySegment seg, int x) {
-        constants$466.const$1.set(seg, x);
+    public static void exclusive(MemorySegment struct, int fieldValue) {
+        struct.set(exclusive$LAYOUT, exclusive$OFFSET, fieldValue);
     }
-    public static int exclusive$get(MemorySegment seg, long index) {
-        return (int)constants$466.const$1.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
     }
-    public static void exclusive$set(MemorySegment seg, long index, int x) {
-        constants$466.const$1.set(seg.asSlice(index*sizeof()), x);
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

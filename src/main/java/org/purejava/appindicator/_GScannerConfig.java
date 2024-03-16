@@ -2,190 +2,333 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GScannerConfig {
- *     char* cset_skip_characters;
- *     char* cset_identifier_first;
- *     char* cset_identifier_nth;
- *     char* cpair_comment_single;
- *      *     unsigned int case_sensitive;
- *     unsigned int skip_comment_multi;
- *     unsigned int skip_comment_single;
- *     unsigned int scan_comment_multi;
- *     unsigned int scan_identifier;
- *     unsigned int scan_identifier_1char;
- *     unsigned int scan_identifier_NULL;
- *     unsigned int scan_symbols;
- *     unsigned int scan_binary;
- *     unsigned int scan_octal;
- *     unsigned int scan_float;
- *     unsigned int scan_hex;
- *     unsigned int scan_hex_dollar;
- *     unsigned int scan_string_sq;
- *     unsigned int scan_string_dq;
- *     unsigned int numbers_2_int;
- *     unsigned int int_2_float;
- *     unsigned int identifier_2_string;
- *     unsigned int char_2_token;
- *     unsigned int symbol_2_token;
- *     unsigned int scope_0_fallback;
- *     unsigned int store_int64;
- *     unsigned int padding_dummy;
- * };
+ *     gchar *cset_skip_characters;
+ *     gchar *cset_identifier_first;
+ *     gchar *cset_identifier_nth;
+ *     gchar *cpair_comment_single;
+ *     guint case_sensitive : 1;
+ *     guint skip_comment_multi : 1;
+ *     guint skip_comment_single : 1;
+ *     guint scan_comment_multi : 1;
+ *     guint scan_identifier : 1;
+ *     guint scan_identifier_1char : 1;
+ *     guint scan_identifier_NULL : 1;
+ *     guint scan_symbols : 1;
+ *     guint scan_binary : 1;
+ *     guint scan_octal : 1;
+ *     guint scan_float : 1;
+ *     guint scan_hex : 1;
+ *     guint scan_hex_dollar : 1;
+ *     guint scan_string_sq : 1;
+ *     guint scan_string_dq : 1;
+ *     guint numbers_2_int : 1;
+ *     guint int_2_float : 1;
+ *     guint identifier_2_string : 1;
+ *     guint char_2_token : 1;
+ *     guint symbol_2_token : 1;
+ *     guint scope_0_fallback : 1;
+ *     guint store_int64 : 1;
+ *     guint padding_dummy;
+ * }
  * }
  */
 public class _GScannerConfig {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$422.const$4;
+    _GScannerConfig() {
+        // Should not be called directly
     }
-    public static VarHandle cset_skip_characters$VH() {
-        return constants$422.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* cset_skip_characters;
-     * }
-     */
-    public static MemorySegment cset_skip_characters$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* cset_skip_characters;
-     * }
-     */
-    public static void cset_skip_characters$set(MemorySegment seg, MemorySegment x) {
-        constants$422.const$5.set(seg, x);
-    }
-    public static MemorySegment cset_skip_characters$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$422.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void cset_skip_characters$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$422.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle cset_identifier_first$VH() {
-        return constants$423.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* cset_identifier_first;
-     * }
-     */
-    public static MemorySegment cset_identifier_first$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* cset_identifier_first;
-     * }
-     */
-    public static void cset_identifier_first$set(MemorySegment seg, MemorySegment x) {
-        constants$423.const$0.set(seg, x);
-    }
-    public static MemorySegment cset_identifier_first$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void cset_identifier_first$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$423.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle cset_identifier_nth$VH() {
-        return constants$423.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* cset_identifier_nth;
-     * }
-     */
-    public static MemorySegment cset_identifier_nth$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* cset_identifier_nth;
-     * }
-     */
-    public static void cset_identifier_nth$set(MemorySegment seg, MemorySegment x) {
-        constants$423.const$1.set(seg, x);
-    }
-    public static MemorySegment cset_identifier_nth$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void cset_identifier_nth$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$423.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle cpair_comment_single$VH() {
-        return constants$423.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* cpair_comment_single;
-     * }
-     */
-    public static MemorySegment cpair_comment_single$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* cpair_comment_single;
-     * }
-     */
-    public static void cpair_comment_single$set(MemorySegment seg, MemorySegment x) {
-        constants$423.const$2.set(seg, x);
-    }
-    public static MemorySegment cpair_comment_single$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$423.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void cpair_comment_single$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$423.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle padding_dummy$VH() {
-        return constants$423.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int padding_dummy;
-     * }
-     */
-    public static int padding_dummy$get(MemorySegment seg) {
-        return (int)constants$423.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int padding_dummy;
-     * }
-     */
-    public static void padding_dummy$set(MemorySegment seg, int x) {
-        constants$423.const$3.set(seg, x);
-    }
-    public static int padding_dummy$get(MemorySegment seg, long index) {
-        return (int)constants$423.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void padding_dummy$set(MemorySegment seg, long index, int x) {
-        constants$423.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_POINTER.withName("cset_skip_characters"),
+        app_indicator_h.C_POINTER.withName("cset_identifier_first"),
+        app_indicator_h.C_POINTER.withName("cset_identifier_nth"),
+        app_indicator_h.C_POINTER.withName("cpair_comment_single"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_INT.withName("padding_dummy")
+    ).withName("_GScannerConfig");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final AddressLayout cset_skip_characters$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("cset_skip_characters"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *cset_skip_characters
+     * }
+     */
+    public static final AddressLayout cset_skip_characters$layout() {
+        return cset_skip_characters$LAYOUT;
+    }
+
+    private static final long cset_skip_characters$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *cset_skip_characters
+     * }
+     */
+    public static final long cset_skip_characters$offset() {
+        return cset_skip_characters$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *cset_skip_characters
+     * }
+     */
+    public static MemorySegment cset_skip_characters(MemorySegment struct) {
+        return struct.get(cset_skip_characters$LAYOUT, cset_skip_characters$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *cset_skip_characters
+     * }
+     */
+    public static void cset_skip_characters(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(cset_skip_characters$LAYOUT, cset_skip_characters$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout cset_identifier_first$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("cset_identifier_first"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *cset_identifier_first
+     * }
+     */
+    public static final AddressLayout cset_identifier_first$layout() {
+        return cset_identifier_first$LAYOUT;
+    }
+
+    private static final long cset_identifier_first$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *cset_identifier_first
+     * }
+     */
+    public static final long cset_identifier_first$offset() {
+        return cset_identifier_first$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *cset_identifier_first
+     * }
+     */
+    public static MemorySegment cset_identifier_first(MemorySegment struct) {
+        return struct.get(cset_identifier_first$LAYOUT, cset_identifier_first$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *cset_identifier_first
+     * }
+     */
+    public static void cset_identifier_first(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(cset_identifier_first$LAYOUT, cset_identifier_first$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout cset_identifier_nth$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("cset_identifier_nth"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *cset_identifier_nth
+     * }
+     */
+    public static final AddressLayout cset_identifier_nth$layout() {
+        return cset_identifier_nth$LAYOUT;
+    }
+
+    private static final long cset_identifier_nth$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *cset_identifier_nth
+     * }
+     */
+    public static final long cset_identifier_nth$offset() {
+        return cset_identifier_nth$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *cset_identifier_nth
+     * }
+     */
+    public static MemorySegment cset_identifier_nth(MemorySegment struct) {
+        return struct.get(cset_identifier_nth$LAYOUT, cset_identifier_nth$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *cset_identifier_nth
+     * }
+     */
+    public static void cset_identifier_nth(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(cset_identifier_nth$LAYOUT, cset_identifier_nth$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout cpair_comment_single$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("cpair_comment_single"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *cpair_comment_single
+     * }
+     */
+    public static final AddressLayout cpair_comment_single$layout() {
+        return cpair_comment_single$LAYOUT;
+    }
+
+    private static final long cpair_comment_single$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *cpair_comment_single
+     * }
+     */
+    public static final long cpair_comment_single$offset() {
+        return cpair_comment_single$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *cpair_comment_single
+     * }
+     */
+    public static MemorySegment cpair_comment_single(MemorySegment struct) {
+        return struct.get(cpair_comment_single$LAYOUT, cpair_comment_single$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *cpair_comment_single
+     * }
+     */
+    public static void cpair_comment_single(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(cpair_comment_single$LAYOUT, cpair_comment_single$OFFSET, fieldValue);
+    }
+
+    private static final OfInt padding_dummy$LAYOUT = (OfInt)$LAYOUT.select(groupElement("padding_dummy"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint padding_dummy
+     * }
+     */
+    public static final OfInt padding_dummy$layout() {
+        return padding_dummy$LAYOUT;
+    }
+
+    private static final long padding_dummy$OFFSET = 36;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint padding_dummy
+     * }
+     */
+    public static final long padding_dummy$offset() {
+        return padding_dummy$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint padding_dummy
+     * }
+     */
+    public static int padding_dummy(MemorySegment struct) {
+        return struct.get(padding_dummy$LAYOUT, padding_dummy$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint padding_dummy
+     * }
+     */
+    public static void padding_dummy(MemorySegment struct, int fieldValue) {
+        struct.set(padding_dummy$LAYOUT, padding_dummy$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

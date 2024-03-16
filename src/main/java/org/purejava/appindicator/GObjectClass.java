@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GObjectClass GObjectClass;
+ * {@snippet lang=c :
+ * typedef struct _GObjectClass GObjectClass
  * }
  */
-public final class GObjectClass extends _GObjectClass {
+public class GObjectClass extends _GObjectClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GObjectClass() {}
+    GObjectClass() {
+        // Should not be called directly
+    }
 }
-
 

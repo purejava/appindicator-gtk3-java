@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _AtkNoOpObject AtkNoOpObject;
+ * {@snippet lang=c :
+ * typedef struct _AtkNoOpObject AtkNoOpObject
  * }
  */
-public final class AtkNoOpObject extends _AtkNoOpObject {
+public class AtkNoOpObject extends _AtkNoOpObject {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkNoOpObject() {}
+    AtkNoOpObject() {
+        // Should not be called directly
+    }
 }
-
 

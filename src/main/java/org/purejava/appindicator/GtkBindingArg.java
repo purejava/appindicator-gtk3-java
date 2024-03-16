@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkBindingArg GtkBindingArg;
+ * {@snippet lang=c :
+ * typedef struct _GtkBindingArg GtkBindingArg
  * }
  */
-public final class GtkBindingArg extends _GtkBindingArg {
+public class GtkBindingArg extends _GtkBindingArg {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkBindingArg() {}
+    GtkBindingArg() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GBufferedInputStreamClass GBufferedInputStreamClass;
+ * {@snippet lang=c :
+ * typedef struct _GBufferedInputStreamClass GBufferedInputStreamClass
  * }
  */
-public final class GBufferedInputStreamClass extends _GBufferedInputStreamClass {
+public class GBufferedInputStreamClass extends _GBufferedInputStreamClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GBufferedInputStreamClass() {}
+    GBufferedInputStreamClass() {
+        // Should not be called directly
+    }
 }
-
 

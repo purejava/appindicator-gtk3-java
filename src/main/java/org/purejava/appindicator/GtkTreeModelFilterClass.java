@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkTreeModelFilterClass GtkTreeModelFilterClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkTreeModelFilterClass GtkTreeModelFilterClass
  * }
  */
-public final class GtkTreeModelFilterClass extends _GtkTreeModelFilterClass {
+public class GtkTreeModelFilterClass extends _GtkTreeModelFilterClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkTreeModelFilterClass() {}
+    GtkTreeModelFilterClass() {
+        // Should not be called directly
+    }
 }
-
 

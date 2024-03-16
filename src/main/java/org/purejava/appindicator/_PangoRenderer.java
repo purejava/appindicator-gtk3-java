@@ -2,172 +2,357 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _PangoRenderer {
- *     struct _GObject parent_instance;
- *     enum PangoUnderline underline;
- *     int strikethrough;
+ *     GObject parent_instance;
+ *     PangoUnderline underline;
+ *     gboolean strikethrough;
  *     int active_count;
- *     struct _PangoMatrix* matrix;
- *     struct _PangoRendererPrivate* priv;
- * };
+ *     PangoMatrix *matrix;
+ *     PangoRendererPrivate *priv;
+ * }
  * }
  */
 public class _PangoRenderer {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1640.const$4;
+    _PangoRenderer() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_instance$slice(MemorySegment seg) {
-        return seg.asSlice(0, 24);
-    }
-    public static VarHandle underline$VH() {
-        return constants$1640.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum PangoUnderline underline;
-     * }
-     */
-    public static int underline$get(MemorySegment seg) {
-        return (int)constants$1640.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum PangoUnderline underline;
-     * }
-     */
-    public static void underline$set(MemorySegment seg, int x) {
-        constants$1640.const$5.set(seg, x);
-    }
-    public static int underline$get(MemorySegment seg, long index) {
-        return (int)constants$1640.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void underline$set(MemorySegment seg, long index, int x) {
-        constants$1640.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle strikethrough$VH() {
-        return constants$1641.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int strikethrough;
-     * }
-     */
-    public static int strikethrough$get(MemorySegment seg) {
-        return (int)constants$1641.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int strikethrough;
-     * }
-     */
-    public static void strikethrough$set(MemorySegment seg, int x) {
-        constants$1641.const$0.set(seg, x);
-    }
-    public static int strikethrough$get(MemorySegment seg, long index) {
-        return (int)constants$1641.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void strikethrough$set(MemorySegment seg, long index, int x) {
-        constants$1641.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle active_count$VH() {
-        return constants$1641.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int active_count;
-     * }
-     */
-    public static int active_count$get(MemorySegment seg) {
-        return (int)constants$1641.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int active_count;
-     * }
-     */
-    public static void active_count$set(MemorySegment seg, int x) {
-        constants$1641.const$1.set(seg, x);
-    }
-    public static int active_count$get(MemorySegment seg, long index) {
-        return (int)constants$1641.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void active_count$set(MemorySegment seg, long index, int x) {
-        constants$1641.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle matrix$VH() {
-        return constants$1641.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoMatrix* matrix;
-     * }
-     */
-    public static MemorySegment matrix$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1641.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoMatrix* matrix;
-     * }
-     */
-    public static void matrix$set(MemorySegment seg, MemorySegment x) {
-        constants$1641.const$2.set(seg, x);
-    }
-    public static MemorySegment matrix$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1641.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void matrix$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1641.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle priv$VH() {
-        return constants$1641.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoRendererPrivate* priv;
-     * }
-     */
-    public static MemorySegment priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$1641.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoRendererPrivate* priv;
-     * }
-     */
-    public static void priv$set(MemorySegment seg, MemorySegment x) {
-        constants$1641.const$3.set(seg, x);
-    }
-    public static MemorySegment priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$1641.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void priv$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$1641.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GObject.layout().withName("parent_instance"),
+        app_indicator_h.C_INT.withName("underline"),
+        app_indicator_h.C_INT.withName("strikethrough"),
+        app_indicator_h.C_INT.withName("active_count"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("matrix"),
+        app_indicator_h.C_POINTER.withName("priv")
+    ).withName("_PangoRenderer");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_instance$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_instance"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GObject parent_instance
+     * }
+     */
+    public static final GroupLayout parent_instance$layout() {
+        return parent_instance$LAYOUT;
+    }
+
+    private static final long parent_instance$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GObject parent_instance
+     * }
+     */
+    public static final long parent_instance$offset() {
+        return parent_instance$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GObject parent_instance
+     * }
+     */
+    public static MemorySegment parent_instance(MemorySegment struct) {
+        return struct.asSlice(parent_instance$OFFSET, parent_instance$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GObject parent_instance
+     * }
+     */
+    public static void parent_instance(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_instance$OFFSET, parent_instance$LAYOUT.byteSize());
+    }
+
+    private static final OfInt underline$LAYOUT = (OfInt)$LAYOUT.select(groupElement("underline"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoUnderline underline
+     * }
+     */
+    public static final OfInt underline$layout() {
+        return underline$LAYOUT;
+    }
+
+    private static final long underline$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoUnderline underline
+     * }
+     */
+    public static final long underline$offset() {
+        return underline$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoUnderline underline
+     * }
+     */
+    public static int underline(MemorySegment struct) {
+        return struct.get(underline$LAYOUT, underline$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoUnderline underline
+     * }
+     */
+    public static void underline(MemorySegment struct, int fieldValue) {
+        struct.set(underline$LAYOUT, underline$OFFSET, fieldValue);
+    }
+
+    private static final OfInt strikethrough$LAYOUT = (OfInt)$LAYOUT.select(groupElement("strikethrough"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean strikethrough
+     * }
+     */
+    public static final OfInt strikethrough$layout() {
+        return strikethrough$LAYOUT;
+    }
+
+    private static final long strikethrough$OFFSET = 28;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean strikethrough
+     * }
+     */
+    public static final long strikethrough$offset() {
+        return strikethrough$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean strikethrough
+     * }
+     */
+    public static int strikethrough(MemorySegment struct) {
+        return struct.get(strikethrough$LAYOUT, strikethrough$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean strikethrough
+     * }
+     */
+    public static void strikethrough(MemorySegment struct, int fieldValue) {
+        struct.set(strikethrough$LAYOUT, strikethrough$OFFSET, fieldValue);
+    }
+
+    private static final OfInt active_count$LAYOUT = (OfInt)$LAYOUT.select(groupElement("active_count"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * int active_count
+     * }
+     */
+    public static final OfInt active_count$layout() {
+        return active_count$LAYOUT;
+    }
+
+    private static final long active_count$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * int active_count
+     * }
+     */
+    public static final long active_count$offset() {
+        return active_count$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * int active_count
+     * }
+     */
+    public static int active_count(MemorySegment struct) {
+        return struct.get(active_count$LAYOUT, active_count$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * int active_count
+     * }
+     */
+    public static void active_count(MemorySegment struct, int fieldValue) {
+        struct.set(active_count$LAYOUT, active_count$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout matrix$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("matrix"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoMatrix *matrix
+     * }
+     */
+    public static final AddressLayout matrix$layout() {
+        return matrix$LAYOUT;
+    }
+
+    private static final long matrix$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoMatrix *matrix
+     * }
+     */
+    public static final long matrix$offset() {
+        return matrix$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoMatrix *matrix
+     * }
+     */
+    public static MemorySegment matrix(MemorySegment struct) {
+        return struct.get(matrix$LAYOUT, matrix$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoMatrix *matrix
+     * }
+     */
+    public static void matrix(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(matrix$LAYOUT, matrix$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout priv$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("priv"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoRendererPrivate *priv
+     * }
+     */
+    public static final AddressLayout priv$layout() {
+        return priv$LAYOUT;
+    }
+
+    private static final long priv$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoRendererPrivate *priv
+     * }
+     */
+    public static final long priv$offset() {
+        return priv$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoRendererPrivate *priv
+     * }
+     */
+    public static MemorySegment priv(MemorySegment struct) {
+        return struct.get(priv$LAYOUT, priv$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoRendererPrivate *priv
+     * }
+     */
+    public static void priv(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(priv$LAYOUT, priv$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

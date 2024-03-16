@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkFontSelectionClass GtkFontSelectionClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkFontSelectionClass GtkFontSelectionClass
  * }
  */
-public final class GtkFontSelectionClass extends _GtkFontSelectionClass {
+public class GtkFontSelectionClass extends _GtkFontSelectionClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkFontSelectionClass() {}
+    GtkFontSelectionClass() {
+        // Should not be called directly
+    }
 }
-
 

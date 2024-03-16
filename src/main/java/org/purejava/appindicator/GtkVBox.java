@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkVBox GtkVBox;
+ * {@snippet lang=c :
+ * typedef struct _GtkVBox GtkVBox
  * }
  */
-public final class GtkVBox extends _GtkVBox {
+public class GtkVBox extends _GtkVBox {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkVBox() {}
+    GtkVBox() {
+        // Should not be called directly
+    }
 }
-
 

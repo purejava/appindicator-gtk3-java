@@ -2,252 +2,590 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.*;
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkColorChooserInterface {
- *     struct _GTypeInterface base_interface;
- *     void (*get_rgba)(struct _GtkColorChooser*,struct _GdkRGBA*);
- *     void (*set_rgba)(struct _GtkColorChooser*,struct _GdkRGBA*);
- *     void (*add_palette)(struct _GtkColorChooser*,enum GtkOrientation,int,int,struct _GdkRGBA*);
- *     void (*color_activated)(struct _GtkColorChooser*,struct _GdkRGBA*);
- *     void* padding[12];
- * };
+ *     GTypeInterface base_interface;
+ *     void (*get_rgba)(GtkColorChooser *, GdkRGBA *);
+ *     void (*set_rgba)(GtkColorChooser *, const GdkRGBA *);
+ *     void (*add_palette)(GtkColorChooser *, GtkOrientation, gint, gint, GdkRGBA *);
+ *     void (*color_activated)(GtkColorChooser *, const GdkRGBA *);
+ *     gpointer padding[12];
+ * }
  * }
  */
 public class _GtkColorChooserInterface {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2637.const$0;
+    _GtkColorChooserInterface() {
+        // Should not be called directly
     }
-    public static MemorySegment base_interface$slice(MemorySegment seg) {
-        return seg.asSlice(0, 16);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GTypeInterface.layout().withName("base_interface"),
+        app_indicator_h.C_POINTER.withName("get_rgba"),
+        app_indicator_h.C_POINTER.withName("set_rgba"),
+        app_indicator_h.C_POINTER.withName("add_palette"),
+        app_indicator_h.C_POINTER.withName("color_activated"),
+        MemoryLayout.sequenceLayout(12, app_indicator_h.C_POINTER).withName("padding")
+    ).withName("_GtkColorChooserInterface");
+
     /**
-     * {@snippet :
- * void (*get_rgba)(struct _GtkColorChooser*,struct _GdkRGBA*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout base_interface$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("base_interface"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GTypeInterface base_interface
      * }
      */
-    public interface get_rgba {
-
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(get_rgba fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2637.const$1, fi, constants$13.const$4, scope);
-        }
-        static get_rgba ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout base_interface$layout() {
+        return base_interface$LAYOUT;
     }
 
-    public static VarHandle get_rgba$VH() {
-        return constants$2637.const$2;
+    private static final long base_interface$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GTypeInterface base_interface
+     * }
+     */
+    public static final long base_interface$offset() {
+        return base_interface$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*get_rgba)(struct _GtkColorChooser*,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * GTypeInterface base_interface
      * }
      */
-    public static MemorySegment get_rgba$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2637.const$2.get(seg);
+    public static MemorySegment base_interface(MemorySegment struct) {
+        return struct.asSlice(base_interface$OFFSET, base_interface$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*get_rgba)(struct _GtkColorChooser*,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * GTypeInterface base_interface
      * }
      */
-    public static void get_rgba$set(MemorySegment seg, MemorySegment x) {
-        constants$2637.const$2.set(seg, x);
+    public static void base_interface(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, base_interface$OFFSET, base_interface$LAYOUT.byteSize());
     }
-    public static MemorySegment get_rgba$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2637.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void get_rgba$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2637.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static get_rgba get_rgba(MemorySegment segment, Arena scope) {
-        return get_rgba.ofAddress(get_rgba$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*set_rgba)(struct _GtkColorChooser*,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * void (*get_rgba)(GtkColorChooser *, GdkRGBA *)
      * }
      */
-    public interface set_rgba {
+    public class get_rgba {
 
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(set_rgba fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2637.const$3, fi, constants$13.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static set_rgba ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(get_rgba.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(get_rgba.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle set_rgba$VH() {
-        return constants$2637.const$4;
+    private static final AddressLayout get_rgba$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("get_rgba"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*get_rgba)(GtkColorChooser *, GdkRGBA *)
+     * }
+     */
+    public static final AddressLayout get_rgba$layout() {
+        return get_rgba$LAYOUT;
     }
+
+    private static final long get_rgba$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*get_rgba)(GtkColorChooser *, GdkRGBA *)
+     * }
+     */
+    public static final long get_rgba$offset() {
+        return get_rgba$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*set_rgba)(struct _GtkColorChooser*,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * void (*get_rgba)(GtkColorChooser *, GdkRGBA *)
      * }
      */
-    public static MemorySegment set_rgba$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2637.const$4.get(seg);
+    public static MemorySegment get_rgba(MemorySegment struct) {
+        return struct.get(get_rgba$LAYOUT, get_rgba$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*set_rgba)(struct _GtkColorChooser*,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * void (*get_rgba)(GtkColorChooser *, GdkRGBA *)
      * }
      */
-    public static void set_rgba$set(MemorySegment seg, MemorySegment x) {
-        constants$2637.const$4.set(seg, x);
+    public static void get_rgba(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(get_rgba$LAYOUT, get_rgba$OFFSET, fieldValue);
     }
-    public static MemorySegment set_rgba$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2637.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void set_rgba$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2637.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static set_rgba set_rgba(MemorySegment segment, Arena scope) {
-        return set_rgba.ofAddress(set_rgba$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*add_palette)(struct _GtkColorChooser*,enum GtkOrientation,int,int,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * void (*set_rgba)(GtkColorChooser *, const GdkRGBA *)
      * }
      */
-    public interface add_palette {
+    public class set_rgba {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(add_palette fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2637.const$5, fi, constants$1954.const$1, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1);
         }
-        static add_palette ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4) -> {
-                try {
-                    constants$2018.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(set_rgba.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(set_rgba.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle add_palette$VH() {
-        return constants$2638.const$0;
+    private static final AddressLayout set_rgba$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("set_rgba"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*set_rgba)(GtkColorChooser *, const GdkRGBA *)
+     * }
+     */
+    public static final AddressLayout set_rgba$layout() {
+        return set_rgba$LAYOUT;
     }
+
+    private static final long set_rgba$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*set_rgba)(GtkColorChooser *, const GdkRGBA *)
+     * }
+     */
+    public static final long set_rgba$offset() {
+        return set_rgba$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*add_palette)(struct _GtkColorChooser*,enum GtkOrientation,int,int,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * void (*set_rgba)(GtkColorChooser *, const GdkRGBA *)
      * }
      */
-    public static MemorySegment add_palette$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2638.const$0.get(seg);
+    public static MemorySegment set_rgba(MemorySegment struct) {
+        return struct.get(set_rgba$LAYOUT, set_rgba$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*add_palette)(struct _GtkColorChooser*,enum GtkOrientation,int,int,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * void (*set_rgba)(GtkColorChooser *, const GdkRGBA *)
      * }
      */
-    public static void add_palette$set(MemorySegment seg, MemorySegment x) {
-        constants$2638.const$0.set(seg, x);
+    public static void set_rgba(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(set_rgba$LAYOUT, set_rgba$OFFSET, fieldValue);
     }
-    public static MemorySegment add_palette$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2638.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void add_palette$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2638.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static add_palette add_palette(MemorySegment segment, Arena scope) {
-        return add_palette.ofAddress(add_palette$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*color_activated)(struct _GtkColorChooser*,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * void (*add_palette)(GtkColorChooser *, GtkOrientation, gint, gint, GdkRGBA *)
      * }
      */
-    public interface color_activated {
+    public class add_palette {
 
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(color_activated fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$2638.const$1, fi, constants$13.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, int _x1, int _x2, int _x3, MemorySegment _x4);
         }
-        static color_activated ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(add_palette.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(add_palette.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1, int _x2, int _x3, MemorySegment _x4) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1, _x2, _x3, _x4);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle color_activated$VH() {
-        return constants$2638.const$2;
+    private static final AddressLayout add_palette$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("add_palette"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*add_palette)(GtkColorChooser *, GtkOrientation, gint, gint, GdkRGBA *)
+     * }
+     */
+    public static final AddressLayout add_palette$layout() {
+        return add_palette$LAYOUT;
     }
+
+    private static final long add_palette$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*add_palette)(GtkColorChooser *, GtkOrientation, gint, gint, GdkRGBA *)
+     * }
+     */
+    public static final long add_palette$offset() {
+        return add_palette$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*color_activated)(struct _GtkColorChooser*,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * void (*add_palette)(GtkColorChooser *, GtkOrientation, gint, gint, GdkRGBA *)
      * }
      */
-    public static MemorySegment color_activated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2638.const$2.get(seg);
+    public static MemorySegment add_palette(MemorySegment struct) {
+        return struct.get(add_palette$LAYOUT, add_palette$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*color_activated)(struct _GtkColorChooser*,struct _GdkRGBA*);
+     * {@snippet lang=c :
+     * void (*add_palette)(GtkColorChooser *, GtkOrientation, gint, gint, GdkRGBA *)
      * }
      */
-    public static void color_activated$set(MemorySegment seg, MemorySegment x) {
-        constants$2638.const$2.set(seg, x);
+    public static void add_palette(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(add_palette$LAYOUT, add_palette$OFFSET, fieldValue);
     }
-    public static MemorySegment color_activated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2638.const$2.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * void (*color_activated)(GtkColorChooser *, const GdkRGBA *)
+     * }
+     */
+    public class color_activated {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0, MemorySegment _x1);
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(color_activated.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(color_activated.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0, MemorySegment _x1) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void color_activated$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2638.const$2.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout color_activated$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("color_activated"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*color_activated)(GtkColorChooser *, const GdkRGBA *)
+     * }
+     */
+    public static final AddressLayout color_activated$layout() {
+        return color_activated$LAYOUT;
     }
-    public static color_activated color_activated(MemorySegment segment, Arena scope) {
-        return color_activated.ofAddress(color_activated$get(segment), scope);
+
+    private static final long color_activated$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*color_activated)(GtkColorChooser *, const GdkRGBA *)
+     * }
+     */
+    public static final long color_activated$offset() {
+        return color_activated$OFFSET;
     }
-    public static MemorySegment padding$slice(MemorySegment seg) {
-        return seg.asSlice(48, 96);
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*color_activated)(GtkColorChooser *, const GdkRGBA *)
+     * }
+     */
+    public static MemorySegment color_activated(MemorySegment struct) {
+        return struct.get(color_activated$LAYOUT, color_activated$OFFSET);
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*color_activated)(GtkColorChooser *, const GdkRGBA *)
+     * }
+     */
+    public static void color_activated(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(color_activated$LAYOUT, color_activated$OFFSET, fieldValue);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    private static final SequenceLayout padding$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("padding"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer padding[12]
+     * }
+     */
+    public static final SequenceLayout padding$layout() {
+        return padding$LAYOUT;
+    }
+
+    private static final long padding$OFFSET = 48;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer padding[12]
+     * }
+     */
+    public static final long padding$offset() {
+        return padding$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[12]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct) {
+        return struct.asSlice(padding$OFFSET, padding$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[12]
+     * }
+     */
+    public static void padding(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, padding$OFFSET, padding$LAYOUT.byteSize());
+    }
+
+    private static long[] padding$DIMS = { 12 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * gpointer padding[12]
+     * }
+     */
+    public static long[] padding$dimensions() {
+        return padding$DIMS;
+    }
+    private static final VarHandle padding$ELEM_HANDLE = padding$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * gpointer padding[12]
+     * }
+     */
+    public static MemorySegment padding(MemorySegment struct, long index0) {
+        return (MemorySegment)padding$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * gpointer padding[12]
+     * }
+     */
+    public static void padding(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        padding$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

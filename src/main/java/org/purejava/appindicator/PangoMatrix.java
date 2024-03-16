@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _PangoMatrix PangoMatrix;
+ * {@snippet lang=c :
+ * typedef struct _PangoMatrix PangoMatrix
  * }
  */
-public final class PangoMatrix extends _PangoMatrix {
+public class PangoMatrix extends _PangoMatrix {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private PangoMatrix() {}
+    PangoMatrix() {
+        // Should not be called directly
+    }
 }
-
 

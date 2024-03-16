@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GNativeSocketAddressClass GNativeSocketAddressClass;
+ * {@snippet lang=c :
+ * typedef struct _GNativeSocketAddressClass GNativeSocketAddressClass
  * }
  */
-public final class GNativeSocketAddressClass extends _GNativeSocketAddressClass {
+public class GNativeSocketAddressClass extends _GNativeSocketAddressClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GNativeSocketAddressClass() {}
+    GNativeSocketAddressClass() {
+        // Should not be called directly
+    }
 }
-
 

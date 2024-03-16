@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GStaticRWLock GStaticRWLock;
+ * {@snippet lang=c :
+ * typedef struct _GStaticRWLock GStaticRWLock
  * }
  */
-public final class GStaticRWLock extends _GStaticRWLock {
+public class GStaticRWLock extends _GStaticRWLock {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GStaticRWLock() {}
+    GStaticRWLock() {
+        // Should not be called directly
+    }
 }
-
 

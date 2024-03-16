@@ -2,120 +2,310 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct hb_glyph_info_t {
- *     unsigned int codepoint;
- *     unsigned int mask;
- *     unsigned int cluster;
- *     union _hb_var_int_t var1;
- *     union _hb_var_int_t var2;
- * };
+ *     hb_codepoint_t codepoint;
+ *     hb_mask_t mask;
+ *     uint32_t cluster;
+ *     hb_var_int_t var1;
+ *     hb_var_int_t var2;
+ * }
  * }
  */
 public class hb_glyph_info_t {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$1503.const$4;
+    hb_glyph_info_t() {
+        // Should not be called directly
     }
-    public static VarHandle codepoint$VH() {
-        return constants$1503.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int codepoint;
-     * }
-     */
-    public static int codepoint$get(MemorySegment seg) {
-        return (int)constants$1503.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int codepoint;
-     * }
-     */
-    public static void codepoint$set(MemorySegment seg, int x) {
-        constants$1503.const$5.set(seg, x);
-    }
-    public static int codepoint$get(MemorySegment seg, long index) {
-        return (int)constants$1503.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void codepoint$set(MemorySegment seg, long index, int x) {
-        constants$1503.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle mask$VH() {
-        return constants$1504.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int mask;
-     * }
-     */
-    public static int mask$get(MemorySegment seg) {
-        return (int)constants$1504.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int mask;
-     * }
-     */
-    public static void mask$set(MemorySegment seg, int x) {
-        constants$1504.const$0.set(seg, x);
-    }
-    public static int mask$get(MemorySegment seg, long index) {
-        return (int)constants$1504.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void mask$set(MemorySegment seg, long index, int x) {
-        constants$1504.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle cluster$VH() {
-        return constants$1504.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int cluster;
-     * }
-     */
-    public static int cluster$get(MemorySegment seg) {
-        return (int)constants$1504.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int cluster;
-     * }
-     */
-    public static void cluster$set(MemorySegment seg, int x) {
-        constants$1504.const$1.set(seg, x);
-    }
-    public static int cluster$get(MemorySegment seg, long index) {
-        return (int)constants$1504.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void cluster$set(MemorySegment seg, long index, int x) {
-        constants$1504.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment var1$slice(MemorySegment seg) {
-        return seg.asSlice(12, 4);
-    }
-    public static MemorySegment var2$slice(MemorySegment seg) {
-        return seg.asSlice(16, 4);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("codepoint"),
+        app_indicator_h.C_INT.withName("mask"),
+        app_indicator_h.C_INT.withName("cluster"),
+        _hb_var_int_t.layout().withName("var1"),
+        _hb_var_int_t.layout().withName("var2")
+    ).withName("hb_glyph_info_t");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt codepoint$LAYOUT = (OfInt)$LAYOUT.select(groupElement("codepoint"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_codepoint_t codepoint
+     * }
+     */
+    public static final OfInt codepoint$layout() {
+        return codepoint$LAYOUT;
+    }
+
+    private static final long codepoint$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_codepoint_t codepoint
+     * }
+     */
+    public static final long codepoint$offset() {
+        return codepoint$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_codepoint_t codepoint
+     * }
+     */
+    public static int codepoint(MemorySegment struct) {
+        return struct.get(codepoint$LAYOUT, codepoint$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_codepoint_t codepoint
+     * }
+     */
+    public static void codepoint(MemorySegment struct, int fieldValue) {
+        struct.set(codepoint$LAYOUT, codepoint$OFFSET, fieldValue);
+    }
+
+    private static final OfInt mask$LAYOUT = (OfInt)$LAYOUT.select(groupElement("mask"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_mask_t mask
+     * }
+     */
+    public static final OfInt mask$layout() {
+        return mask$LAYOUT;
+    }
+
+    private static final long mask$OFFSET = 4;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_mask_t mask
+     * }
+     */
+    public static final long mask$offset() {
+        return mask$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_mask_t mask
+     * }
+     */
+    public static int mask(MemorySegment struct) {
+        return struct.get(mask$LAYOUT, mask$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_mask_t mask
+     * }
+     */
+    public static void mask(MemorySegment struct, int fieldValue) {
+        struct.set(mask$LAYOUT, mask$OFFSET, fieldValue);
+    }
+
+    private static final OfInt cluster$LAYOUT = (OfInt)$LAYOUT.select(groupElement("cluster"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * uint32_t cluster
+     * }
+     */
+    public static final OfInt cluster$layout() {
+        return cluster$LAYOUT;
+    }
+
+    private static final long cluster$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * uint32_t cluster
+     * }
+     */
+    public static final long cluster$offset() {
+        return cluster$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * uint32_t cluster
+     * }
+     */
+    public static int cluster(MemorySegment struct) {
+        return struct.get(cluster$LAYOUT, cluster$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * uint32_t cluster
+     * }
+     */
+    public static void cluster(MemorySegment struct, int fieldValue) {
+        struct.set(cluster$LAYOUT, cluster$OFFSET, fieldValue);
+    }
+
+    private static final GroupLayout var1$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("var1"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_var_int_t var1
+     * }
+     */
+    public static final GroupLayout var1$layout() {
+        return var1$LAYOUT;
+    }
+
+    private static final long var1$OFFSET = 12;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_var_int_t var1
+     * }
+     */
+    public static final long var1$offset() {
+        return var1$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_var_int_t var1
+     * }
+     */
+    public static MemorySegment var1(MemorySegment struct) {
+        return struct.asSlice(var1$OFFSET, var1$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_var_int_t var1
+     * }
+     */
+    public static void var1(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, var1$OFFSET, var1$LAYOUT.byteSize());
+    }
+
+    private static final GroupLayout var2$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("var2"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * hb_var_int_t var2
+     * }
+     */
+    public static final GroupLayout var2$layout() {
+        return var2$LAYOUT;
+    }
+
+    private static final long var2$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * hb_var_int_t var2
+     * }
+     */
+    public static final long var2$offset() {
+        return var2$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * hb_var_int_t var2
+     * }
+     */
+    public static MemorySegment var2(MemorySegment struct) {
+        return struct.asSlice(var2$OFFSET, var2$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * hb_var_int_t var2
+     * }
+     */
+    public static void var2(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, var2$OFFSET, var2$LAYOUT.byteSize());
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

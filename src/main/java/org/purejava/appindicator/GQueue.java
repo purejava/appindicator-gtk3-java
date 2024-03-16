@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GQueue GQueue;
+ * {@snippet lang=c :
+ * typedef struct _GQueue GQueue
  * }
  */
-public final class GQueue extends _GQueue {
+public class GQueue extends _GQueue {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GQueue() {}
+    GQueue() {
+        // Should not be called directly
+    }
 }
-
 

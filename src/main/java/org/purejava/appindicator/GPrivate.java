@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GPrivate GPrivate;
+ * {@snippet lang=c :
+ * typedef struct _GPrivate GPrivate
  * }
  */
-public final class GPrivate extends _GPrivate {
+public class GPrivate extends _GPrivate {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GPrivate() {}
+    GPrivate() {
+        // Should not be called directly
+    }
 }
-
 

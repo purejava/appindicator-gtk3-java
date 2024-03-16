@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _AtkHyperlinkClass AtkHyperlinkClass;
+ * {@snippet lang=c :
+ * typedef struct _AtkHyperlinkClass AtkHyperlinkClass
  * }
  */
-public final class AtkHyperlinkClass extends _AtkHyperlinkClass {
+public class AtkHyperlinkClass extends _AtkHyperlinkClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private AtkHyperlinkClass() {}
+    AtkHyperlinkClass() {
+        // Should not be called directly
+    }
 }
-
 

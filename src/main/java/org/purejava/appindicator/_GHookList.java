@@ -2,172 +2,344 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.*;
 import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+import static java.lang.foreign.MemoryLayout.PathElement.sequenceElement;
+import static java.lang.foreign.ValueLayout.OfLong;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GHookList {
- *     unsigned long seq_id;
- *      *     unsigned int hook_size;
- *     unsigned int is_setup;
- *     struct _GHook* hooks;
- *     void* dummy3;
- *     void (*finalize_hook)(struct _GHookList*,struct _GHook*);
- *     void* dummy[2];
- * };
+ *     gulong seq_id;
+ *     guint hook_size : 16;
+ *     guint is_setup : 1;
+ *     GHook *hooks;
+ *     gpointer dummy3;
+ *     GHookFinalizeFunc finalize_hook;
+ *     gpointer dummy[2];
+ * }
  * }
  */
 public class _GHookList {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$239.const$1;
-    }
-    public static VarHandle seq_id$VH() {
-        return constants$239.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned long seq_id;
-     * }
-     */
-    public static long seq_id$get(MemorySegment seg) {
-        return (long)constants$239.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned long seq_id;
-     * }
-     */
-    public static void seq_id$set(MemorySegment seg, long x) {
-        constants$239.const$2.set(seg, x);
-    }
-    public static long seq_id$get(MemorySegment seg, long index) {
-        return (long)constants$239.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void seq_id$set(MemorySegment seg, long index, long x) {
-        constants$239.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle hooks$VH() {
-        return constants$239.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GHook* hooks;
-     * }
-     */
-    public static MemorySegment hooks$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$239.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GHook* hooks;
-     * }
-     */
-    public static void hooks$set(MemorySegment seg, MemorySegment x) {
-        constants$239.const$3.set(seg, x);
-    }
-    public static MemorySegment hooks$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$239.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void hooks$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$239.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle dummy3$VH() {
-        return constants$239.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * void* dummy3;
-     * }
-     */
-    public static MemorySegment dummy3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$239.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * void* dummy3;
-     * }
-     */
-    public static void dummy3$set(MemorySegment seg, MemorySegment x) {
-        constants$239.const$4.set(seg, x);
-    }
-    public static MemorySegment dummy3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$239.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void dummy3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$239.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    /**
-     * {@snippet :
- * void (*finalize_hook)(struct _GHookList*,struct _GHook*);
-     * }
-     */
-    public interface finalize_hook {
-
-        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(finalize_hook fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$239.const$5, fi, constants$13.const$4, scope);
-        }
-        static finalize_hook ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
-                try {
-                    constants$14.const$0.invokeExact(symbol, _tag, _data);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    _GHookList() {
+        // Should not be called directly
     }
 
-    public static VarHandle finalize_hook$VH() {
-        return constants$240.const$0;
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_LONG.withName("seq_id"),
+        MemoryLayout.paddingLayout(8),
+        app_indicator_h.C_POINTER.withName("hooks"),
+        app_indicator_h.C_POINTER.withName("dummy3"),
+        app_indicator_h.C_POINTER.withName("finalize_hook"),
+        MemoryLayout.sequenceLayout(2, app_indicator_h.C_POINTER).withName("dummy")
+    ).withName("_GHookList");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
+
+    private static final OfLong seq_id$LAYOUT = (OfLong)$LAYOUT.select(groupElement("seq_id"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gulong seq_id
+     * }
+     */
+    public static final OfLong seq_id$layout() {
+        return seq_id$LAYOUT;
+    }
+
+    private static final long seq_id$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gulong seq_id
+     * }
+     */
+    public static final long seq_id$offset() {
+        return seq_id$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*finalize_hook)(struct _GHookList*,struct _GHook*);
+     * {@snippet lang=c :
+     * gulong seq_id
      * }
      */
-    public static MemorySegment finalize_hook$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$240.const$0.get(seg);
+    public static long seq_id(MemorySegment struct) {
+        return struct.get(seq_id$LAYOUT, seq_id$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*finalize_hook)(struct _GHookList*,struct _GHook*);
+     * {@snippet lang=c :
+     * gulong seq_id
      * }
      */
-    public static void finalize_hook$set(MemorySegment seg, MemorySegment x) {
-        constants$240.const$0.set(seg, x);
+    public static void seq_id(MemorySegment struct, long fieldValue) {
+        struct.set(seq_id$LAYOUT, seq_id$OFFSET, fieldValue);
     }
-    public static MemorySegment finalize_hook$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$240.const$0.get(seg.asSlice(index*sizeof()));
+
+    private static final AddressLayout hooks$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("hooks"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GHook *hooks
+     * }
+     */
+    public static final AddressLayout hooks$layout() {
+        return hooks$LAYOUT;
     }
-    public static void finalize_hook$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$240.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final long hooks$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GHook *hooks
+     * }
+     */
+    public static final long hooks$offset() {
+        return hooks$OFFSET;
     }
-    public static finalize_hook finalize_hook(MemorySegment segment, Arena scope) {
-        return finalize_hook.ofAddress(finalize_hook$get(segment), scope);
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GHook *hooks
+     * }
+     */
+    public static MemorySegment hooks(MemorySegment struct) {
+        return struct.get(hooks$LAYOUT, hooks$OFFSET);
     }
-    public static MemorySegment dummy$slice(MemorySegment seg) {
-        return seg.asSlice(40, 16);
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GHook *hooks
+     * }
+     */
+    public static void hooks(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(hooks$LAYOUT, hooks$OFFSET, fieldValue);
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    private static final AddressLayout dummy3$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("dummy3"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer dummy3
+     * }
+     */
+    public static final AddressLayout dummy3$layout() {
+        return dummy3$LAYOUT;
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    private static final long dummy3$OFFSET = 24;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer dummy3
+     * }
+     */
+    public static final long dummy3$offset() {
+        return dummy3$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer dummy3
+     * }
+     */
+    public static MemorySegment dummy3(MemorySegment struct) {
+        return struct.get(dummy3$LAYOUT, dummy3$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer dummy3
+     * }
+     */
+    public static void dummy3(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(dummy3$LAYOUT, dummy3$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout finalize_hook$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("finalize_hook"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GHookFinalizeFunc finalize_hook
+     * }
+     */
+    public static final AddressLayout finalize_hook$layout() {
+        return finalize_hook$LAYOUT;
+    }
+
+    private static final long finalize_hook$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GHookFinalizeFunc finalize_hook
+     * }
+     */
+    public static final long finalize_hook$offset() {
+        return finalize_hook$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GHookFinalizeFunc finalize_hook
+     * }
+     */
+    public static MemorySegment finalize_hook(MemorySegment struct) {
+        return struct.get(finalize_hook$LAYOUT, finalize_hook$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GHookFinalizeFunc finalize_hook
+     * }
+     */
+    public static void finalize_hook(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(finalize_hook$LAYOUT, finalize_hook$OFFSET, fieldValue);
+    }
+
+    private static final SequenceLayout dummy$LAYOUT = (SequenceLayout)$LAYOUT.select(groupElement("dummy"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer dummy[2]
+     * }
+     */
+    public static final SequenceLayout dummy$layout() {
+        return dummy$LAYOUT;
+    }
+
+    private static final long dummy$OFFSET = 40;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer dummy[2]
+     * }
+     */
+    public static final long dummy$offset() {
+        return dummy$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer dummy[2]
+     * }
+     */
+    public static MemorySegment dummy(MemorySegment struct) {
+        return struct.asSlice(dummy$OFFSET, dummy$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer dummy[2]
+     * }
+     */
+    public static void dummy(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, dummy$OFFSET, dummy$LAYOUT.byteSize());
+    }
+
+    private static long[] dummy$DIMS = { 2 };
+
+    /**
+     * Dimensions for array field:
+     * {@snippet lang=c :
+     * gpointer dummy[2]
+     * }
+     */
+    public static long[] dummy$dimensions() {
+        return dummy$DIMS;
+    }
+    private static final VarHandle dummy$ELEM_HANDLE = dummy$LAYOUT.varHandle(sequenceElement());
+
+    /**
+     * Indexed getter for field:
+     * {@snippet lang=c :
+     * gpointer dummy[2]
+     * }
+     */
+    public static MemorySegment dummy(MemorySegment struct, long index0) {
+        return (MemorySegment)dummy$ELEM_HANDLE.get(struct, 0L, index0);
+    }
+
+    /**
+     * Indexed setter for field:
+     * {@snippet lang=c :
+     * gpointer dummy[2]
+     * }
+     */
+    public static void dummy(MemorySegment struct, long index0, MemorySegment fieldValue) {
+        dummy$ELEM_HANDLE.set(struct, 0L, index0, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

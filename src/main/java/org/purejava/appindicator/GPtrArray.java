@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GPtrArray GPtrArray;
+ * {@snippet lang=c :
+ * typedef struct _GPtrArray GPtrArray
  * }
  */
-public final class GPtrArray extends _GPtrArray {
+public class GPtrArray extends _GPtrArray {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GPtrArray() {}
+    GPtrArray() {
+        // Should not be called directly
+    }
 }
-
 

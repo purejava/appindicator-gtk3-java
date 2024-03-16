@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkCellRendererProgressClass GtkCellRendererProgressClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkCellRendererProgressClass GtkCellRendererProgressClass
  * }
  */
-public final class GtkCellRendererProgressClass extends _GtkCellRendererProgressClass {
+public class GtkCellRendererProgressClass extends _GtkCellRendererProgressClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkCellRendererProgressClass() {}
+    GtkCellRendererProgressClass() {
+        // Should not be called directly
+    }
 }
-
 

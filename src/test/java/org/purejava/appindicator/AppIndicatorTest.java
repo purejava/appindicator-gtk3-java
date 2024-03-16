@@ -22,8 +22,8 @@ class AppIndicatorTest {
     private static final String LD_CONFIG = "/etc/ld.so.conf.d/";
     private static final String LIB_NAME_VERSION = "libappindicator3.so.1";
     private static final String FLATPAK_LIB_NAME_VERSION = "libappindicator3.so";
-    private static  final String LIBNAME_WITH_VERSION = "appindicator3";
-    private static  List<String> allPath = new LinkedList<>();
+    private static final String LIBNAME_WITH_VERSION = "appindicator3";
+    private static List<String> allPath = new LinkedList<>();
 
     @Test
     @Order(1)
@@ -58,7 +58,7 @@ class AppIndicatorTest {
             } catch (UnsatisfiedLinkError ignored) { }
         }
 
-        // When loading via System.load wasn't successfull, try to load via System.loadLibrary
+        // When loading via System.load wasn't successful, try to load via System.loadLibrary
         if (!isLoaded) {
             try {
                 System.loadLibrary(LIBNAME_WITH_VERSION);

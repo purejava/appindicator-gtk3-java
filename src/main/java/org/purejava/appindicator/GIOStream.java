@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GIOStream GIOStream;
+ * {@snippet lang=c :
+ * typedef struct _GIOStream GIOStream
  * }
  */
-public final class GIOStream extends _GIOStream {
+public class GIOStream extends _GIOStream {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GIOStream() {}
+    GIOStream() {
+        // Should not be called directly
+    }
 }
-
 

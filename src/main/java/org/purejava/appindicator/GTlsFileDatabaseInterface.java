@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GTlsFileDatabaseInterface GTlsFileDatabaseInterface;
+ * {@snippet lang=c :
+ * typedef struct _GTlsFileDatabaseInterface GTlsFileDatabaseInterface
  * }
  */
-public final class GTlsFileDatabaseInterface extends _GTlsFileDatabaseInterface {
+public class GTlsFileDatabaseInterface extends _GTlsFileDatabaseInterface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTlsFileDatabaseInterface() {}
+    GTlsFileDatabaseInterface() {
+        // Should not be called directly
+    }
 }
-
 

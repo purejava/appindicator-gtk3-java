@@ -2,410 +2,783 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkSwitchClass {
- *     struct _GtkWidgetClass parent_class;
- *     void (*activate)(struct _GtkSwitch*);
- *     int (*state_set)(struct _GtkSwitch*,int);
- *     void (*_switch_padding_1)();
- *     void (*_switch_padding_2)();
- *     void (*_switch_padding_3)();
- *     void (*_switch_padding_4)();
- *     void (*_switch_padding_5)();
- * };
+ *     GtkWidgetClass parent_class;
+ *     void (*activate)(GtkSwitch *);
+ *     gboolean (*state_set)(GtkSwitch *, gboolean);
+ *     void (*_switch_padding_1)(void);
+ *     void (*_switch_padding_2)(void);
+ *     void (*_switch_padding_3)(void);
+ *     void (*_switch_padding_4)(void);
+ *     void (*_switch_padding_5)(void);
+ * }
  * }
  */
 public class _GtkSwitchClass {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$3112.const$4;
+    _GtkSwitchClass() {
+        // Should not be called directly
     }
-    public static MemorySegment parent_class$slice(MemorySegment seg) {
-        return seg.asSlice(0, 824);
-    }
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GtkWidgetClass.layout().withName("parent_class"),
+        app_indicator_h.C_POINTER.withName("activate"),
+        app_indicator_h.C_POINTER.withName("state_set"),
+        app_indicator_h.C_POINTER.withName("_switch_padding_1"),
+        app_indicator_h.C_POINTER.withName("_switch_padding_2"),
+        app_indicator_h.C_POINTER.withName("_switch_padding_3"),
+        app_indicator_h.C_POINTER.withName("_switch_padding_4"),
+        app_indicator_h.C_POINTER.withName("_switch_padding_5")
+    ).withName("_GtkSwitchClass");
+
     /**
-     * {@snippet :
- * void (*activate)(struct _GtkSwitch*);
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final GroupLayout parent_class$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("parent_class"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkWidgetClass parent_class
      * }
      */
-    public interface activate {
-
-        void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(activate fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3112.const$5, fi, constants$13.const$1, scope);
-        }
-        static activate ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment _display) -> {
-                try {
-                    constants$13.const$3.invokeExact(symbol, _display);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
-        }
+    public static final GroupLayout parent_class$layout() {
+        return parent_class$LAYOUT;
     }
 
-    public static VarHandle activate$VH() {
-        return constants$3113.const$0;
+    private static final long parent_class$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkWidgetClass parent_class
+     * }
+     */
+    public static final long parent_class$offset() {
+        return parent_class$OFFSET;
     }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*activate)(struct _GtkSwitch*);
+     * {@snippet lang=c :
+     * GtkWidgetClass parent_class
      * }
      */
-    public static MemorySegment activate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$0.get(seg);
+    public static MemorySegment parent_class(MemorySegment struct) {
+        return struct.asSlice(parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*activate)(struct _GtkSwitch*);
+     * {@snippet lang=c :
+     * GtkWidgetClass parent_class
      * }
      */
-    public static void activate$set(MemorySegment seg, MemorySegment x) {
-        constants$3113.const$0.set(seg, x);
+    public static void parent_class(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, parent_class$OFFSET, parent_class$LAYOUT.byteSize());
     }
-    public static MemorySegment activate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void activate$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3113.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static activate activate(MemorySegment segment, Arena scope) {
-        return activate.ofAddress(activate$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * int (*state_set)(struct _GtkSwitch*,int);
+     * {@snippet lang=c :
+     * void (*activate)(GtkSwitch *)
      * }
      */
-    public interface state_set {
+    public class activate {
 
-        int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(state_set fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3113.const$1, fi, constants$11.const$4, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply(MemorySegment _x0);
         }
-        static state_set ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
-                try {
-                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(activate.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(activate.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr, _x0);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle state_set$VH() {
-        return constants$3113.const$2;
+    private static final AddressLayout activate$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("activate"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*activate)(GtkSwitch *)
+     * }
+     */
+    public static final AddressLayout activate$layout() {
+        return activate$LAYOUT;
     }
+
+    private static final long activate$OFFSET = 824;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*activate)(GtkSwitch *)
+     * }
+     */
+    public static final long activate$offset() {
+        return activate$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * int (*state_set)(struct _GtkSwitch*,int);
+     * {@snippet lang=c :
+     * void (*activate)(GtkSwitch *)
      * }
      */
-    public static MemorySegment state_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$2.get(seg);
+    public static MemorySegment activate(MemorySegment struct) {
+        return struct.get(activate$LAYOUT, activate$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * int (*state_set)(struct _GtkSwitch*,int);
+     * {@snippet lang=c :
+     * void (*activate)(GtkSwitch *)
      * }
      */
-    public static void state_set$set(MemorySegment seg, MemorySegment x) {
-        constants$3113.const$2.set(seg, x);
+    public static void activate(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(activate$LAYOUT, activate$OFFSET, fieldValue);
     }
-    public static MemorySegment state_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void state_set$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3113.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static state_set state_set(MemorySegment segment, Arena scope) {
-        return state_set.ofAddress(state_set$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_switch_padding_1)();
+     * {@snippet lang=c :
+     * gboolean (*state_set)(GtkSwitch *, gboolean)
      * }
      */
-    public interface _switch_padding_1 {
+    public class state_set {
 
-        void apply();
-        static MemorySegment allocate(_switch_padding_1 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3113.const$3, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            int apply(MemorySegment _x0, int _x1);
         }
-        static _switch_padding_1 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.of(
+            app_indicator_h.C_INT,
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(state_set.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(state_set.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static int invoke(MemorySegment funcPtr,MemorySegment _x0, int _x1) {
+            try {
+                return (int) DOWN$MH.invokeExact(funcPtr, _x0, _x1);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _switch_padding_1$VH() {
-        return constants$3113.const$4;
+    private static final AddressLayout state_set$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("state_set"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean (*state_set)(GtkSwitch *, gboolean)
+     * }
+     */
+    public static final AddressLayout state_set$layout() {
+        return state_set$LAYOUT;
     }
+
+    private static final long state_set$OFFSET = 832;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean (*state_set)(GtkSwitch *, gboolean)
+     * }
+     */
+    public static final long state_set$offset() {
+        return state_set$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_switch_padding_1)();
+     * {@snippet lang=c :
+     * gboolean (*state_set)(GtkSwitch *, gboolean)
      * }
      */
-    public static MemorySegment _switch_padding_1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$4.get(seg);
+    public static MemorySegment state_set(MemorySegment struct) {
+        return struct.get(state_set$LAYOUT, state_set$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_switch_padding_1)();
+     * {@snippet lang=c :
+     * gboolean (*state_set)(GtkSwitch *, gboolean)
      * }
      */
-    public static void _switch_padding_1$set(MemorySegment seg, MemorySegment x) {
-        constants$3113.const$4.set(seg, x);
+    public static void state_set(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(state_set$LAYOUT, state_set$OFFSET, fieldValue);
     }
-    public static MemorySegment _switch_padding_1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3113.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _switch_padding_1$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3113.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _switch_padding_1 _switch_padding_1(MemorySegment segment, Arena scope) {
-        return _switch_padding_1.ofAddress(_switch_padding_1$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_switch_padding_2)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_1)(void)
      * }
      */
-    public interface _switch_padding_2 {
+    public class _switch_padding_1 {
 
-        void apply();
-        static MemorySegment allocate(_switch_padding_2 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3113.const$5, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _switch_padding_2 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_switch_padding_1.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_switch_padding_1.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _switch_padding_2$VH() {
-        return constants$3114.const$0;
+    private static final AddressLayout _switch_padding_1$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_switch_padding_1"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_1)(void)
+     * }
+     */
+    public static final AddressLayout _switch_padding_1$layout() {
+        return _switch_padding_1$LAYOUT;
     }
+
+    private static final long _switch_padding_1$OFFSET = 840;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_1)(void)
+     * }
+     */
+    public static final long _switch_padding_1$offset() {
+        return _switch_padding_1$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_switch_padding_2)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_1)(void)
      * }
      */
-    public static MemorySegment _switch_padding_2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$0.get(seg);
+    public static MemorySegment _switch_padding_1(MemorySegment struct) {
+        return struct.get(_switch_padding_1$LAYOUT, _switch_padding_1$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_switch_padding_2)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_1)(void)
      * }
      */
-    public static void _switch_padding_2$set(MemorySegment seg, MemorySegment x) {
-        constants$3114.const$0.set(seg, x);
+    public static void _switch_padding_1(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_switch_padding_1$LAYOUT, _switch_padding_1$OFFSET, fieldValue);
     }
-    public static MemorySegment _switch_padding_2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _switch_padding_2$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3114.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _switch_padding_2 _switch_padding_2(MemorySegment segment, Arena scope) {
-        return _switch_padding_2.ofAddress(_switch_padding_2$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_switch_padding_3)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_2)(void)
      * }
      */
-    public interface _switch_padding_3 {
+    public class _switch_padding_2 {
 
-        void apply();
-        static MemorySegment allocate(_switch_padding_3 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3114.const$1, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _switch_padding_3 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_switch_padding_2.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_switch_padding_2.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _switch_padding_3$VH() {
-        return constants$3114.const$2;
+    private static final AddressLayout _switch_padding_2$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_switch_padding_2"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_2)(void)
+     * }
+     */
+    public static final AddressLayout _switch_padding_2$layout() {
+        return _switch_padding_2$LAYOUT;
     }
+
+    private static final long _switch_padding_2$OFFSET = 848;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_2)(void)
+     * }
+     */
+    public static final long _switch_padding_2$offset() {
+        return _switch_padding_2$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_switch_padding_3)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_2)(void)
      * }
      */
-    public static MemorySegment _switch_padding_3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$2.get(seg);
+    public static MemorySegment _switch_padding_2(MemorySegment struct) {
+        return struct.get(_switch_padding_2$LAYOUT, _switch_padding_2$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_switch_padding_3)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_2)(void)
      * }
      */
-    public static void _switch_padding_3$set(MemorySegment seg, MemorySegment x) {
-        constants$3114.const$2.set(seg, x);
+    public static void _switch_padding_2(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_switch_padding_2$LAYOUT, _switch_padding_2$OFFSET, fieldValue);
     }
-    public static MemorySegment _switch_padding_3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _switch_padding_3$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3114.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _switch_padding_3 _switch_padding_3(MemorySegment segment, Arena scope) {
-        return _switch_padding_3.ofAddress(_switch_padding_3$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_switch_padding_4)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_3)(void)
      * }
      */
-    public interface _switch_padding_4 {
+    public class _switch_padding_3 {
 
-        void apply();
-        static MemorySegment allocate(_switch_padding_4 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3114.const$3, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _switch_padding_4 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_switch_padding_3.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_switch_padding_3.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _switch_padding_4$VH() {
-        return constants$3114.const$4;
+    private static final AddressLayout _switch_padding_3$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_switch_padding_3"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_3)(void)
+     * }
+     */
+    public static final AddressLayout _switch_padding_3$layout() {
+        return _switch_padding_3$LAYOUT;
     }
+
+    private static final long _switch_padding_3$OFFSET = 856;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_3)(void)
+     * }
+     */
+    public static final long _switch_padding_3$offset() {
+        return _switch_padding_3$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_switch_padding_4)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_3)(void)
      * }
      */
-    public static MemorySegment _switch_padding_4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$4.get(seg);
+    public static MemorySegment _switch_padding_3(MemorySegment struct) {
+        return struct.get(_switch_padding_3$LAYOUT, _switch_padding_3$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_switch_padding_4)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_3)(void)
      * }
      */
-    public static void _switch_padding_4$set(MemorySegment seg, MemorySegment x) {
-        constants$3114.const$4.set(seg, x);
+    public static void _switch_padding_3(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_switch_padding_3$LAYOUT, _switch_padding_3$OFFSET, fieldValue);
     }
-    public static MemorySegment _switch_padding_4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3114.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void _switch_padding_4$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3114.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static _switch_padding_4 _switch_padding_4(MemorySegment segment, Arena scope) {
-        return _switch_padding_4.ofAddress(_switch_padding_4$get(segment), scope);
-    }
+
     /**
-     * {@snippet :
- * void (*_switch_padding_5)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_4)(void)
      * }
      */
-    public interface _switch_padding_5 {
+    public class _switch_padding_4 {
 
-        void apply();
-        static MemorySegment allocate(_switch_padding_5 fi, Arena scope) {
-            return RuntimeHelper.upcallStub(constants$3114.const$5, fi, constants$7.const$5, scope);
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
         }
-        static _switch_padding_5 ofAddress(MemorySegment addr, Arena arena) {
-            MemorySegment symbol = addr.reinterpret(arena, null);
-            return () -> {
-                try {
-                    constants$64.const$1.invokeExact(symbol);
-                } catch (Throwable ex$) {
-                    throw new AssertionError("should not reach here", ex$);
-                }
-            };
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_switch_padding_4.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_switch_padding_4.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
         }
     }
 
-    public static VarHandle _switch_padding_5$VH() {
-        return constants$3115.const$0;
+    private static final AddressLayout _switch_padding_4$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_switch_padding_4"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_4)(void)
+     * }
+     */
+    public static final AddressLayout _switch_padding_4$layout() {
+        return _switch_padding_4$LAYOUT;
     }
+
+    private static final long _switch_padding_4$OFFSET = 864;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_4)(void)
+     * }
+     */
+    public static final long _switch_padding_4$offset() {
+        return _switch_padding_4$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void (*_switch_padding_5)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_4)(void)
      * }
      */
-    public static MemorySegment _switch_padding_5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$3115.const$0.get(seg);
+    public static MemorySegment _switch_padding_4(MemorySegment struct) {
+        return struct.get(_switch_padding_4$LAYOUT, _switch_padding_4$OFFSET);
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void (*_switch_padding_5)();
+     * {@snippet lang=c :
+     * void (*_switch_padding_4)(void)
      * }
      */
-    public static void _switch_padding_5$set(MemorySegment seg, MemorySegment x) {
-        constants$3115.const$0.set(seg, x);
+    public static void _switch_padding_4(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_switch_padding_4$LAYOUT, _switch_padding_4$OFFSET, fieldValue);
     }
-    public static MemorySegment _switch_padding_5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$3115.const$0.get(seg.asSlice(index*sizeof()));
+
+    /**
+     * {@snippet lang=c :
+     * void (*_switch_padding_5)(void)
+     * }
+     */
+    public class _switch_padding_5 {
+
+        /**
+         * The function pointer signature, expressed as a functional interface
+         */
+        public interface Function {
+            void apply();
+        }
+
+        private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid();
+
+        /**
+         * The descriptor of this function pointer
+         */
+        public static FunctionDescriptor descriptor() {
+            return $DESC;
+        }
+
+        private static final MethodHandle UP$MH = app_indicator_h.upcallHandle(_switch_padding_5.Function.class, "apply", $DESC);
+
+        /**
+         * Allocates a new upcall stub, whose implementation is defined by {@code fi}.
+         * The lifetime of the returned segment is managed by {@code arena}
+         */
+        public static MemorySegment allocate(_switch_padding_5.Function fi, Arena arena) {
+            return Linker.nativeLinker().upcallStub(UP$MH.bindTo(fi), $DESC, arena);
+        }
+
+        private static final MethodHandle DOWN$MH = Linker.nativeLinker().downcallHandle($DESC);
+
+        /**
+         * Invoke the upcall stub {@code funcPtr}, with given parameters
+         */
+        public static void invoke(MemorySegment funcPtr) {
+            try {
+                 DOWN$MH.invokeExact(funcPtr);
+            } catch (Throwable ex$) {
+                throw new AssertionError("should not reach here", ex$);
+            }
+        }
     }
-    public static void _switch_padding_5$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$3115.const$0.set(seg.asSlice(index*sizeof()), x);
+
+    private static final AddressLayout _switch_padding_5$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("_switch_padding_5"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_5)(void)
+     * }
+     */
+    public static final AddressLayout _switch_padding_5$layout() {
+        return _switch_padding_5$LAYOUT;
     }
-    public static _switch_padding_5 _switch_padding_5(MemorySegment segment, Arena scope) {
-        return _switch_padding_5.ofAddress(_switch_padding_5$get(segment), scope);
+
+    private static final long _switch_padding_5$OFFSET = 872;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_5)(void)
+     * }
+     */
+    public static final long _switch_padding_5$offset() {
+        return _switch_padding_5$OFFSET;
     }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_5)(void)
+     * }
+     */
+    public static MemorySegment _switch_padding_5(MemorySegment struct) {
+        return struct.get(_switch_padding_5$LAYOUT, _switch_padding_5$OFFSET);
     }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * void (*_switch_padding_5)(void)
+     * }
+     */
+    public static void _switch_padding_5(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(_switch_padding_5$LAYOUT, _switch_padding_5$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
 }
-
 

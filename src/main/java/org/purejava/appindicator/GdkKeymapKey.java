@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GdkKeymapKey GdkKeymapKey;
+ * {@snippet lang=c :
+ * typedef struct _GdkKeymapKey GdkKeymapKey
  * }
  */
-public final class GdkKeymapKey extends _GdkKeymapKey {
+public class GdkKeymapKey extends _GdkKeymapKey {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GdkKeymapKey() {}
+    GdkKeymapKey() {
+        // Should not be called directly
+    }
 }
-
 

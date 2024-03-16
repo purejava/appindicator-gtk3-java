@@ -2,540 +2,962 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GtkTextAttributes {
- *     unsigned int refcount;
- *     struct _GtkTextAppearance appearance;
- *     enum GtkJustification justification;
- *     enum GtkTextDirection direction;
- *     struct _PangoFontDescription* font;
- *     double font_scale;
- *     int left_margin;
- *     int right_margin;
- *     int indent;
- *     int pixels_above_lines;
- *     int pixels_below_lines;
- *     int pixels_inside_wrap;
- *     struct _PangoTabArray* tabs;
- *     enum GtkWrapMode wrap_mode;
- *     struct _PangoLanguage* language;
- *     struct _GdkColor* pg_bg_color;
- *      *     unsigned int invisible;
- *     unsigned int bg_full_height;
- *     unsigned int editable;
- *     unsigned int no_fallback;
- *     struct _GdkRGBA* pg_bg_rgba;
- *     int letter_spacing;
- *     char* font_features;
- * };
+ *     guint refcount;
+ *     GtkTextAppearance appearance;
+ *     GtkJustification justification;
+ *     GtkTextDirection direction;
+ *     PangoFontDescription *font;
+ *     gdouble font_scale;
+ *     gint left_margin;
+ *     gint right_margin;
+ *     gint indent;
+ *     gint pixels_above_lines;
+ *     gint pixels_below_lines;
+ *     gint pixels_inside_wrap;
+ *     PangoTabArray *tabs;
+ *     GtkWrapMode wrap_mode;
+ *     PangoLanguage *language;
+ *     GdkColor *pg_bg_color;
+ *     guint invisible : 1;
+ *     guint bg_full_height : 1;
+ *     guint editable : 1;
+ *     guint no_fallback : 1;
+ *     GdkRGBA *pg_bg_rgba;
+ *     gint letter_spacing;
+ *     gchar *font_features;
+ * }
  * }
  */
 public class _GtkTextAttributes {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$2355.const$2;
+    _GtkTextAttributes() {
+        // Should not be called directly
     }
-    public static VarHandle refcount$VH() {
-        return constants$2355.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * unsigned int refcount;
-     * }
-     */
-    public static int refcount$get(MemorySegment seg) {
-        return (int)constants$2355.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * unsigned int refcount;
-     * }
-     */
-    public static void refcount$set(MemorySegment seg, int x) {
-        constants$2355.const$3.set(seg, x);
-    }
-    public static int refcount$get(MemorySegment seg, long index) {
-        return (int)constants$2355.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void refcount$set(MemorySegment seg, long index, int x) {
-        constants$2355.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static MemorySegment appearance$slice(MemorySegment seg) {
-        return seg.asSlice(8, 48);
-    }
-    public static VarHandle justification$VH() {
-        return constants$2355.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum GtkJustification justification;
-     * }
-     */
-    public static int justification$get(MemorySegment seg) {
-        return (int)constants$2355.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum GtkJustification justification;
-     * }
-     */
-    public static void justification$set(MemorySegment seg, int x) {
-        constants$2355.const$4.set(seg, x);
-    }
-    public static int justification$get(MemorySegment seg, long index) {
-        return (int)constants$2355.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void justification$set(MemorySegment seg, long index, int x) {
-        constants$2355.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle direction$VH() {
-        return constants$2355.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum GtkTextDirection direction;
-     * }
-     */
-    public static int direction$get(MemorySegment seg) {
-        return (int)constants$2355.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum GtkTextDirection direction;
-     * }
-     */
-    public static void direction$set(MemorySegment seg, int x) {
-        constants$2355.const$5.set(seg, x);
-    }
-    public static int direction$get(MemorySegment seg, long index) {
-        return (int)constants$2355.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void direction$set(MemorySegment seg, long index, int x) {
-        constants$2355.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle font$VH() {
-        return constants$2356.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoFontDescription* font;
-     * }
-     */
-    public static MemorySegment font$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2356.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoFontDescription* font;
-     * }
-     */
-    public static void font$set(MemorySegment seg, MemorySegment x) {
-        constants$2356.const$0.set(seg, x);
-    }
-    public static MemorySegment font$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2356.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void font$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2356.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle font_scale$VH() {
-        return constants$2356.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * double font_scale;
-     * }
-     */
-    public static double font_scale$get(MemorySegment seg) {
-        return (double)constants$2356.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * double font_scale;
-     * }
-     */
-    public static void font_scale$set(MemorySegment seg, double x) {
-        constants$2356.const$1.set(seg, x);
-    }
-    public static double font_scale$get(MemorySegment seg, long index) {
-        return (double)constants$2356.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void font_scale$set(MemorySegment seg, long index, double x) {
-        constants$2356.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle left_margin$VH() {
-        return constants$2356.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int left_margin;
-     * }
-     */
-    public static int left_margin$get(MemorySegment seg) {
-        return (int)constants$2356.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int left_margin;
-     * }
-     */
-    public static void left_margin$set(MemorySegment seg, int x) {
-        constants$2356.const$2.set(seg, x);
-    }
-    public static int left_margin$get(MemorySegment seg, long index) {
-        return (int)constants$2356.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void left_margin$set(MemorySegment seg, long index, int x) {
-        constants$2356.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle right_margin$VH() {
-        return constants$2356.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int right_margin;
-     * }
-     */
-    public static int right_margin$get(MemorySegment seg) {
-        return (int)constants$2356.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int right_margin;
-     * }
-     */
-    public static void right_margin$set(MemorySegment seg, int x) {
-        constants$2356.const$3.set(seg, x);
-    }
-    public static int right_margin$get(MemorySegment seg, long index) {
-        return (int)constants$2356.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void right_margin$set(MemorySegment seg, long index, int x) {
-        constants$2356.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle indent$VH() {
-        return constants$2356.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int indent;
-     * }
-     */
-    public static int indent$get(MemorySegment seg) {
-        return (int)constants$2356.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int indent;
-     * }
-     */
-    public static void indent$set(MemorySegment seg, int x) {
-        constants$2356.const$4.set(seg, x);
-    }
-    public static int indent$get(MemorySegment seg, long index) {
-        return (int)constants$2356.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void indent$set(MemorySegment seg, long index, int x) {
-        constants$2356.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pixels_above_lines$VH() {
-        return constants$2356.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int pixels_above_lines;
-     * }
-     */
-    public static int pixels_above_lines$get(MemorySegment seg) {
-        return (int)constants$2356.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int pixels_above_lines;
-     * }
-     */
-    public static void pixels_above_lines$set(MemorySegment seg, int x) {
-        constants$2356.const$5.set(seg, x);
-    }
-    public static int pixels_above_lines$get(MemorySegment seg, long index) {
-        return (int)constants$2356.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pixels_above_lines$set(MemorySegment seg, long index, int x) {
-        constants$2356.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pixels_below_lines$VH() {
-        return constants$2357.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int pixels_below_lines;
-     * }
-     */
-    public static int pixels_below_lines$get(MemorySegment seg) {
-        return (int)constants$2357.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int pixels_below_lines;
-     * }
-     */
-    public static void pixels_below_lines$set(MemorySegment seg, int x) {
-        constants$2357.const$0.set(seg, x);
-    }
-    public static int pixels_below_lines$get(MemorySegment seg, long index) {
-        return (int)constants$2357.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pixels_below_lines$set(MemorySegment seg, long index, int x) {
-        constants$2357.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pixels_inside_wrap$VH() {
-        return constants$2357.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int pixels_inside_wrap;
-     * }
-     */
-    public static int pixels_inside_wrap$get(MemorySegment seg) {
-        return (int)constants$2357.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int pixels_inside_wrap;
-     * }
-     */
-    public static void pixels_inside_wrap$set(MemorySegment seg, int x) {
-        constants$2357.const$1.set(seg, x);
-    }
-    public static int pixels_inside_wrap$get(MemorySegment seg, long index) {
-        return (int)constants$2357.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pixels_inside_wrap$set(MemorySegment seg, long index, int x) {
-        constants$2357.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle tabs$VH() {
-        return constants$2357.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoTabArray* tabs;
-     * }
-     */
-    public static MemorySegment tabs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2357.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoTabArray* tabs;
-     * }
-     */
-    public static void tabs$set(MemorySegment seg, MemorySegment x) {
-        constants$2357.const$2.set(seg, x);
-    }
-    public static MemorySegment tabs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2357.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void tabs$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2357.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle wrap_mode$VH() {
-        return constants$2357.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * enum GtkWrapMode wrap_mode;
-     * }
-     */
-    public static int wrap_mode$get(MemorySegment seg) {
-        return (int)constants$2357.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * enum GtkWrapMode wrap_mode;
-     * }
-     */
-    public static void wrap_mode$set(MemorySegment seg, int x) {
-        constants$2357.const$3.set(seg, x);
-    }
-    public static int wrap_mode$get(MemorySegment seg, long index) {
-        return (int)constants$2357.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void wrap_mode$set(MemorySegment seg, long index, int x) {
-        constants$2357.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle language$VH() {
-        return constants$2357.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _PangoLanguage* language;
-     * }
-     */
-    public static MemorySegment language$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2357.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _PangoLanguage* language;
-     * }
-     */
-    public static void language$set(MemorySegment seg, MemorySegment x) {
-        constants$2357.const$4.set(seg, x);
-    }
-    public static MemorySegment language$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2357.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void language$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2357.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pg_bg_color$VH() {
-        return constants$2357.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GdkColor* pg_bg_color;
-     * }
-     */
-    public static MemorySegment pg_bg_color$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2357.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GdkColor* pg_bg_color;
-     * }
-     */
-    public static void pg_bg_color$set(MemorySegment seg, MemorySegment x) {
-        constants$2357.const$5.set(seg, x);
-    }
-    public static MemorySegment pg_bg_color$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2357.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pg_bg_color$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2357.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle pg_bg_rgba$VH() {
-        return constants$2358.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * struct _GdkRGBA* pg_bg_rgba;
-     * }
-     */
-    public static MemorySegment pg_bg_rgba$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2358.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * struct _GdkRGBA* pg_bg_rgba;
-     * }
-     */
-    public static void pg_bg_rgba$set(MemorySegment seg, MemorySegment x) {
-        constants$2358.const$0.set(seg, x);
-    }
-    public static MemorySegment pg_bg_rgba$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2358.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void pg_bg_rgba$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2358.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle letter_spacing$VH() {
-        return constants$2358.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int letter_spacing;
-     * }
-     */
-    public static int letter_spacing$get(MemorySegment seg) {
-        return (int)constants$2358.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int letter_spacing;
-     * }
-     */
-    public static void letter_spacing$set(MemorySegment seg, int x) {
-        constants$2358.const$1.set(seg, x);
-    }
-    public static int letter_spacing$get(MemorySegment seg, long index) {
-        return (int)constants$2358.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void letter_spacing$set(MemorySegment seg, long index, int x) {
-        constants$2358.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle font_features$VH() {
-        return constants$2358.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * char* font_features;
-     * }
-     */
-    public static MemorySegment font_features$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$2358.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * char* font_features;
-     * }
-     */
-    public static void font_features$set(MemorySegment seg, MemorySegment x) {
-        constants$2358.const$2.set(seg, x);
-    }
-    public static MemorySegment font_features$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$2358.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void font_features$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$2358.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("refcount"),
+        MemoryLayout.paddingLayout(4),
+        _GtkTextAppearance.layout().withName("appearance"),
+        app_indicator_h.C_INT.withName("justification"),
+        app_indicator_h.C_INT.withName("direction"),
+        app_indicator_h.C_POINTER.withName("font"),
+        app_indicator_h.C_DOUBLE.withName("font_scale"),
+        app_indicator_h.C_INT.withName("left_margin"),
+        app_indicator_h.C_INT.withName("right_margin"),
+        app_indicator_h.C_INT.withName("indent"),
+        app_indicator_h.C_INT.withName("pixels_above_lines"),
+        app_indicator_h.C_INT.withName("pixels_below_lines"),
+        app_indicator_h.C_INT.withName("pixels_inside_wrap"),
+        app_indicator_h.C_POINTER.withName("tabs"),
+        app_indicator_h.C_INT.withName("wrap_mode"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("language"),
+        app_indicator_h.C_POINTER.withName("pg_bg_color"),
+        MemoryLayout.paddingLayout(8),
+        app_indicator_h.C_POINTER.withName("pg_bg_rgba"),
+        app_indicator_h.C_INT.withName("letter_spacing"),
+        MemoryLayout.paddingLayout(4),
+        app_indicator_h.C_POINTER.withName("font_features")
+    ).withName("_GtkTextAttributes");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt refcount$LAYOUT = (OfInt)$LAYOUT.select(groupElement("refcount"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * guint refcount
+     * }
+     */
+    public static final OfInt refcount$layout() {
+        return refcount$LAYOUT;
+    }
+
+    private static final long refcount$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * guint refcount
+     * }
+     */
+    public static final long refcount$offset() {
+        return refcount$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * guint refcount
+     * }
+     */
+    public static int refcount(MemorySegment struct) {
+        return struct.get(refcount$LAYOUT, refcount$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * guint refcount
+     * }
+     */
+    public static void refcount(MemorySegment struct, int fieldValue) {
+        struct.set(refcount$LAYOUT, refcount$OFFSET, fieldValue);
+    }
+
+    private static final GroupLayout appearance$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("appearance"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkTextAppearance appearance
+     * }
+     */
+    public static final GroupLayout appearance$layout() {
+        return appearance$LAYOUT;
+    }
+
+    private static final long appearance$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkTextAppearance appearance
+     * }
+     */
+    public static final long appearance$offset() {
+        return appearance$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GtkTextAppearance appearance
+     * }
+     */
+    public static MemorySegment appearance(MemorySegment struct) {
+        return struct.asSlice(appearance$OFFSET, appearance$LAYOUT.byteSize());
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GtkTextAppearance appearance
+     * }
+     */
+    public static void appearance(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, appearance$OFFSET, appearance$LAYOUT.byteSize());
+    }
+
+    private static final OfInt justification$LAYOUT = (OfInt)$LAYOUT.select(groupElement("justification"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkJustification justification
+     * }
+     */
+    public static final OfInt justification$layout() {
+        return justification$LAYOUT;
+    }
+
+    private static final long justification$OFFSET = 56;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkJustification justification
+     * }
+     */
+    public static final long justification$offset() {
+        return justification$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GtkJustification justification
+     * }
+     */
+    public static int justification(MemorySegment struct) {
+        return struct.get(justification$LAYOUT, justification$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GtkJustification justification
+     * }
+     */
+    public static void justification(MemorySegment struct, int fieldValue) {
+        struct.set(justification$LAYOUT, justification$OFFSET, fieldValue);
+    }
+
+    private static final OfInt direction$LAYOUT = (OfInt)$LAYOUT.select(groupElement("direction"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkTextDirection direction
+     * }
+     */
+    public static final OfInt direction$layout() {
+        return direction$LAYOUT;
+    }
+
+    private static final long direction$OFFSET = 60;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkTextDirection direction
+     * }
+     */
+    public static final long direction$offset() {
+        return direction$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GtkTextDirection direction
+     * }
+     */
+    public static int direction(MemorySegment struct) {
+        return struct.get(direction$LAYOUT, direction$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GtkTextDirection direction
+     * }
+     */
+    public static void direction(MemorySegment struct, int fieldValue) {
+        struct.set(direction$LAYOUT, direction$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout font$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("font"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoFontDescription *font
+     * }
+     */
+    public static final AddressLayout font$layout() {
+        return font$LAYOUT;
+    }
+
+    private static final long font$OFFSET = 64;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoFontDescription *font
+     * }
+     */
+    public static final long font$offset() {
+        return font$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoFontDescription *font
+     * }
+     */
+    public static MemorySegment font(MemorySegment struct) {
+        return struct.get(font$LAYOUT, font$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoFontDescription *font
+     * }
+     */
+    public static void font(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(font$LAYOUT, font$OFFSET, fieldValue);
+    }
+
+    private static final OfDouble font_scale$LAYOUT = (OfDouble)$LAYOUT.select(groupElement("font_scale"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gdouble font_scale
+     * }
+     */
+    public static final OfDouble font_scale$layout() {
+        return font_scale$LAYOUT;
+    }
+
+    private static final long font_scale$OFFSET = 72;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gdouble font_scale
+     * }
+     */
+    public static final long font_scale$offset() {
+        return font_scale$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gdouble font_scale
+     * }
+     */
+    public static double font_scale(MemorySegment struct) {
+        return struct.get(font_scale$LAYOUT, font_scale$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gdouble font_scale
+     * }
+     */
+    public static void font_scale(MemorySegment struct, double fieldValue) {
+        struct.set(font_scale$LAYOUT, font_scale$OFFSET, fieldValue);
+    }
+
+    private static final OfInt left_margin$LAYOUT = (OfInt)$LAYOUT.select(groupElement("left_margin"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint left_margin
+     * }
+     */
+    public static final OfInt left_margin$layout() {
+        return left_margin$LAYOUT;
+    }
+
+    private static final long left_margin$OFFSET = 80;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint left_margin
+     * }
+     */
+    public static final long left_margin$offset() {
+        return left_margin$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint left_margin
+     * }
+     */
+    public static int left_margin(MemorySegment struct) {
+        return struct.get(left_margin$LAYOUT, left_margin$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint left_margin
+     * }
+     */
+    public static void left_margin(MemorySegment struct, int fieldValue) {
+        struct.set(left_margin$LAYOUT, left_margin$OFFSET, fieldValue);
+    }
+
+    private static final OfInt right_margin$LAYOUT = (OfInt)$LAYOUT.select(groupElement("right_margin"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint right_margin
+     * }
+     */
+    public static final OfInt right_margin$layout() {
+        return right_margin$LAYOUT;
+    }
+
+    private static final long right_margin$OFFSET = 84;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint right_margin
+     * }
+     */
+    public static final long right_margin$offset() {
+        return right_margin$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint right_margin
+     * }
+     */
+    public static int right_margin(MemorySegment struct) {
+        return struct.get(right_margin$LAYOUT, right_margin$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint right_margin
+     * }
+     */
+    public static void right_margin(MemorySegment struct, int fieldValue) {
+        struct.set(right_margin$LAYOUT, right_margin$OFFSET, fieldValue);
+    }
+
+    private static final OfInt indent$LAYOUT = (OfInt)$LAYOUT.select(groupElement("indent"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint indent
+     * }
+     */
+    public static final OfInt indent$layout() {
+        return indent$LAYOUT;
+    }
+
+    private static final long indent$OFFSET = 88;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint indent
+     * }
+     */
+    public static final long indent$offset() {
+        return indent$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint indent
+     * }
+     */
+    public static int indent(MemorySegment struct) {
+        return struct.get(indent$LAYOUT, indent$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint indent
+     * }
+     */
+    public static void indent(MemorySegment struct, int fieldValue) {
+        struct.set(indent$LAYOUT, indent$OFFSET, fieldValue);
+    }
+
+    private static final OfInt pixels_above_lines$LAYOUT = (OfInt)$LAYOUT.select(groupElement("pixels_above_lines"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint pixels_above_lines
+     * }
+     */
+    public static final OfInt pixels_above_lines$layout() {
+        return pixels_above_lines$LAYOUT;
+    }
+
+    private static final long pixels_above_lines$OFFSET = 92;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint pixels_above_lines
+     * }
+     */
+    public static final long pixels_above_lines$offset() {
+        return pixels_above_lines$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint pixels_above_lines
+     * }
+     */
+    public static int pixels_above_lines(MemorySegment struct) {
+        return struct.get(pixels_above_lines$LAYOUT, pixels_above_lines$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint pixels_above_lines
+     * }
+     */
+    public static void pixels_above_lines(MemorySegment struct, int fieldValue) {
+        struct.set(pixels_above_lines$LAYOUT, pixels_above_lines$OFFSET, fieldValue);
+    }
+
+    private static final OfInt pixels_below_lines$LAYOUT = (OfInt)$LAYOUT.select(groupElement("pixels_below_lines"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint pixels_below_lines
+     * }
+     */
+    public static final OfInt pixels_below_lines$layout() {
+        return pixels_below_lines$LAYOUT;
+    }
+
+    private static final long pixels_below_lines$OFFSET = 96;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint pixels_below_lines
+     * }
+     */
+    public static final long pixels_below_lines$offset() {
+        return pixels_below_lines$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint pixels_below_lines
+     * }
+     */
+    public static int pixels_below_lines(MemorySegment struct) {
+        return struct.get(pixels_below_lines$LAYOUT, pixels_below_lines$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint pixels_below_lines
+     * }
+     */
+    public static void pixels_below_lines(MemorySegment struct, int fieldValue) {
+        struct.set(pixels_below_lines$LAYOUT, pixels_below_lines$OFFSET, fieldValue);
+    }
+
+    private static final OfInt pixels_inside_wrap$LAYOUT = (OfInt)$LAYOUT.select(groupElement("pixels_inside_wrap"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint pixels_inside_wrap
+     * }
+     */
+    public static final OfInt pixels_inside_wrap$layout() {
+        return pixels_inside_wrap$LAYOUT;
+    }
+
+    private static final long pixels_inside_wrap$OFFSET = 100;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint pixels_inside_wrap
+     * }
+     */
+    public static final long pixels_inside_wrap$offset() {
+        return pixels_inside_wrap$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint pixels_inside_wrap
+     * }
+     */
+    public static int pixels_inside_wrap(MemorySegment struct) {
+        return struct.get(pixels_inside_wrap$LAYOUT, pixels_inside_wrap$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint pixels_inside_wrap
+     * }
+     */
+    public static void pixels_inside_wrap(MemorySegment struct, int fieldValue) {
+        struct.set(pixels_inside_wrap$LAYOUT, pixels_inside_wrap$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout tabs$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("tabs"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoTabArray *tabs
+     * }
+     */
+    public static final AddressLayout tabs$layout() {
+        return tabs$LAYOUT;
+    }
+
+    private static final long tabs$OFFSET = 104;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoTabArray *tabs
+     * }
+     */
+    public static final long tabs$offset() {
+        return tabs$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoTabArray *tabs
+     * }
+     */
+    public static MemorySegment tabs(MemorySegment struct) {
+        return struct.get(tabs$LAYOUT, tabs$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoTabArray *tabs
+     * }
+     */
+    public static void tabs(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(tabs$LAYOUT, tabs$OFFSET, fieldValue);
+    }
+
+    private static final OfInt wrap_mode$LAYOUT = (OfInt)$LAYOUT.select(groupElement("wrap_mode"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GtkWrapMode wrap_mode
+     * }
+     */
+    public static final OfInt wrap_mode$layout() {
+        return wrap_mode$LAYOUT;
+    }
+
+    private static final long wrap_mode$OFFSET = 112;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GtkWrapMode wrap_mode
+     * }
+     */
+    public static final long wrap_mode$offset() {
+        return wrap_mode$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GtkWrapMode wrap_mode
+     * }
+     */
+    public static int wrap_mode(MemorySegment struct) {
+        return struct.get(wrap_mode$LAYOUT, wrap_mode$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GtkWrapMode wrap_mode
+     * }
+     */
+    public static void wrap_mode(MemorySegment struct, int fieldValue) {
+        struct.set(wrap_mode$LAYOUT, wrap_mode$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout language$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("language"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * PangoLanguage *language
+     * }
+     */
+    public static final AddressLayout language$layout() {
+        return language$LAYOUT;
+    }
+
+    private static final long language$OFFSET = 120;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * PangoLanguage *language
+     * }
+     */
+    public static final long language$offset() {
+        return language$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * PangoLanguage *language
+     * }
+     */
+    public static MemorySegment language(MemorySegment struct) {
+        return struct.get(language$LAYOUT, language$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * PangoLanguage *language
+     * }
+     */
+    public static void language(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(language$LAYOUT, language$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout pg_bg_color$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("pg_bg_color"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkColor *pg_bg_color
+     * }
+     */
+    public static final AddressLayout pg_bg_color$layout() {
+        return pg_bg_color$LAYOUT;
+    }
+
+    private static final long pg_bg_color$OFFSET = 128;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkColor *pg_bg_color
+     * }
+     */
+    public static final long pg_bg_color$offset() {
+        return pg_bg_color$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkColor *pg_bg_color
+     * }
+     */
+    public static MemorySegment pg_bg_color(MemorySegment struct) {
+        return struct.get(pg_bg_color$LAYOUT, pg_bg_color$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkColor *pg_bg_color
+     * }
+     */
+    public static void pg_bg_color(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(pg_bg_color$LAYOUT, pg_bg_color$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout pg_bg_rgba$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("pg_bg_rgba"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GdkRGBA *pg_bg_rgba
+     * }
+     */
+    public static final AddressLayout pg_bg_rgba$layout() {
+        return pg_bg_rgba$LAYOUT;
+    }
+
+    private static final long pg_bg_rgba$OFFSET = 144;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GdkRGBA *pg_bg_rgba
+     * }
+     */
+    public static final long pg_bg_rgba$offset() {
+        return pg_bg_rgba$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * GdkRGBA *pg_bg_rgba
+     * }
+     */
+    public static MemorySegment pg_bg_rgba(MemorySegment struct) {
+        return struct.get(pg_bg_rgba$LAYOUT, pg_bg_rgba$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * GdkRGBA *pg_bg_rgba
+     * }
+     */
+    public static void pg_bg_rgba(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(pg_bg_rgba$LAYOUT, pg_bg_rgba$OFFSET, fieldValue);
+    }
+
+    private static final OfInt letter_spacing$LAYOUT = (OfInt)$LAYOUT.select(groupElement("letter_spacing"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gint letter_spacing
+     * }
+     */
+    public static final OfInt letter_spacing$layout() {
+        return letter_spacing$LAYOUT;
+    }
+
+    private static final long letter_spacing$OFFSET = 152;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gint letter_spacing
+     * }
+     */
+    public static final long letter_spacing$offset() {
+        return letter_spacing$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gint letter_spacing
+     * }
+     */
+    public static int letter_spacing(MemorySegment struct) {
+        return struct.get(letter_spacing$LAYOUT, letter_spacing$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gint letter_spacing
+     * }
+     */
+    public static void letter_spacing(MemorySegment struct, int fieldValue) {
+        struct.set(letter_spacing$LAYOUT, letter_spacing$OFFSET, fieldValue);
+    }
+
+    private static final AddressLayout font_features$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("font_features"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gchar *font_features
+     * }
+     */
+    public static final AddressLayout font_features$layout() {
+        return font_features$LAYOUT;
+    }
+
+    private static final long font_features$OFFSET = 160;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gchar *font_features
+     * }
+     */
+    public static final long font_features$offset() {
+        return font_features$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gchar *font_features
+     * }
+     */
+    public static MemorySegment font_features(MemorySegment struct) {
+        return struct.get(font_features$LAYOUT, font_features$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gchar *font_features
+     * }
+     */
+    public static void font_features(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(font_features$LAYOUT, font_features$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

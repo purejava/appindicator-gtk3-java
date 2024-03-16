@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkCellRendererPixbufClass GtkCellRendererPixbufClass;
+ * {@snippet lang=c :
+ * typedef struct _GtkCellRendererPixbufClass GtkCellRendererPixbufClass
  * }
  */
-public final class GtkCellRendererPixbufClass extends _GtkCellRendererPixbufClass {
+public class GtkCellRendererPixbufClass extends _GtkCellRendererPixbufClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkCellRendererPixbufClass() {}
+    GtkCellRendererPixbufClass() {
+        // Should not be called directly
+    }
 }
-
 

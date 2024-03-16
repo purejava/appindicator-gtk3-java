@@ -2,196 +2,356 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * struct GTestConfig {
- *     int test_initialized;
- *     int test_quick;
- *     int test_perf;
- *     int test_verbose;
- *     int test_quiet;
- *     int test_undefined;
- * };
+ * {@snippet lang=c :
+ * struct {
+ *     gboolean test_initialized;
+ *     gboolean test_quick;
+ *     gboolean test_perf;
+ *     gboolean test_verbose;
+ *     gboolean test_quiet;
+ *     gboolean test_undefined;
+ * }
  * }
  */
 public class GTestConfig {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$460.const$0;
+    GTestConfig() {
+        // Should not be called directly
     }
-    public static VarHandle test_initialized$VH() {
-        return constants$460.const$1;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int test_initialized;
-     * }
-     */
-    public static int test_initialized$get(MemorySegment seg) {
-        return (int)constants$460.const$1.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int test_initialized;
-     * }
-     */
-    public static void test_initialized$set(MemorySegment seg, int x) {
-        constants$460.const$1.set(seg, x);
-    }
-    public static int test_initialized$get(MemorySegment seg, long index) {
-        return (int)constants$460.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void test_initialized$set(MemorySegment seg, long index, int x) {
-        constants$460.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle test_quick$VH() {
-        return constants$460.const$2;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int test_quick;
-     * }
-     */
-    public static int test_quick$get(MemorySegment seg) {
-        return (int)constants$460.const$2.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int test_quick;
-     * }
-     */
-    public static void test_quick$set(MemorySegment seg, int x) {
-        constants$460.const$2.set(seg, x);
-    }
-    public static int test_quick$get(MemorySegment seg, long index) {
-        return (int)constants$460.const$2.get(seg.asSlice(index*sizeof()));
-    }
-    public static void test_quick$set(MemorySegment seg, long index, int x) {
-        constants$460.const$2.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle test_perf$VH() {
-        return constants$460.const$3;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int test_perf;
-     * }
-     */
-    public static int test_perf$get(MemorySegment seg) {
-        return (int)constants$460.const$3.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int test_perf;
-     * }
-     */
-    public static void test_perf$set(MemorySegment seg, int x) {
-        constants$460.const$3.set(seg, x);
-    }
-    public static int test_perf$get(MemorySegment seg, long index) {
-        return (int)constants$460.const$3.get(seg.asSlice(index*sizeof()));
-    }
-    public static void test_perf$set(MemorySegment seg, long index, int x) {
-        constants$460.const$3.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle test_verbose$VH() {
-        return constants$460.const$4;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int test_verbose;
-     * }
-     */
-    public static int test_verbose$get(MemorySegment seg) {
-        return (int)constants$460.const$4.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int test_verbose;
-     * }
-     */
-    public static void test_verbose$set(MemorySegment seg, int x) {
-        constants$460.const$4.set(seg, x);
-    }
-    public static int test_verbose$get(MemorySegment seg, long index) {
-        return (int)constants$460.const$4.get(seg.asSlice(index*sizeof()));
-    }
-    public static void test_verbose$set(MemorySegment seg, long index, int x) {
-        constants$460.const$4.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle test_quiet$VH() {
-        return constants$460.const$5;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int test_quiet;
-     * }
-     */
-    public static int test_quiet$get(MemorySegment seg) {
-        return (int)constants$460.const$5.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int test_quiet;
-     * }
-     */
-    public static void test_quiet$set(MemorySegment seg, int x) {
-        constants$460.const$5.set(seg, x);
-    }
-    public static int test_quiet$get(MemorySegment seg, long index) {
-        return (int)constants$460.const$5.get(seg.asSlice(index*sizeof()));
-    }
-    public static void test_quiet$set(MemorySegment seg, long index, int x) {
-        constants$460.const$5.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static VarHandle test_undefined$VH() {
-        return constants$461.const$0;
-    }
-    /**
-     * Getter for field:
-     * {@snippet :
-     * int test_undefined;
-     * }
-     */
-    public static int test_undefined$get(MemorySegment seg) {
-        return (int)constants$461.const$0.get(seg);
-    }
-    /**
-     * Setter for field:
-     * {@snippet :
-     * int test_undefined;
-     * }
-     */
-    public static void test_undefined$set(MemorySegment seg, int x) {
-        constants$461.const$0.set(seg, x);
-    }
-    public static int test_undefined$get(MemorySegment seg, long index) {
-        return (int)constants$461.const$0.get(seg.asSlice(index*sizeof()));
-    }
-    public static void test_undefined$set(MemorySegment seg, long index, int x) {
-        constants$461.const$0.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        app_indicator_h.C_INT.withName("test_initialized"),
+        app_indicator_h.C_INT.withName("test_quick"),
+        app_indicator_h.C_INT.withName("test_perf"),
+        app_indicator_h.C_INT.withName("test_verbose"),
+        app_indicator_h.C_INT.withName("test_quiet"),
+        app_indicator_h.C_INT.withName("test_undefined")
+    ).withName("$anon$649:9");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
+    }
+
+    private static final OfInt test_initialized$LAYOUT = (OfInt)$LAYOUT.select(groupElement("test_initialized"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean test_initialized
+     * }
+     */
+    public static final OfInt test_initialized$layout() {
+        return test_initialized$LAYOUT;
+    }
+
+    private static final long test_initialized$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean test_initialized
+     * }
+     */
+    public static final long test_initialized$offset() {
+        return test_initialized$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean test_initialized
+     * }
+     */
+    public static int test_initialized(MemorySegment struct) {
+        return struct.get(test_initialized$LAYOUT, test_initialized$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean test_initialized
+     * }
+     */
+    public static void test_initialized(MemorySegment struct, int fieldValue) {
+        struct.set(test_initialized$LAYOUT, test_initialized$OFFSET, fieldValue);
+    }
+
+    private static final OfInt test_quick$LAYOUT = (OfInt)$LAYOUT.select(groupElement("test_quick"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean test_quick
+     * }
+     */
+    public static final OfInt test_quick$layout() {
+        return test_quick$LAYOUT;
+    }
+
+    private static final long test_quick$OFFSET = 4;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean test_quick
+     * }
+     */
+    public static final long test_quick$offset() {
+        return test_quick$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean test_quick
+     * }
+     */
+    public static int test_quick(MemorySegment struct) {
+        return struct.get(test_quick$LAYOUT, test_quick$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean test_quick
+     * }
+     */
+    public static void test_quick(MemorySegment struct, int fieldValue) {
+        struct.set(test_quick$LAYOUT, test_quick$OFFSET, fieldValue);
+    }
+
+    private static final OfInt test_perf$LAYOUT = (OfInt)$LAYOUT.select(groupElement("test_perf"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean test_perf
+     * }
+     */
+    public static final OfInt test_perf$layout() {
+        return test_perf$LAYOUT;
+    }
+
+    private static final long test_perf$OFFSET = 8;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean test_perf
+     * }
+     */
+    public static final long test_perf$offset() {
+        return test_perf$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean test_perf
+     * }
+     */
+    public static int test_perf(MemorySegment struct) {
+        return struct.get(test_perf$LAYOUT, test_perf$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean test_perf
+     * }
+     */
+    public static void test_perf(MemorySegment struct, int fieldValue) {
+        struct.set(test_perf$LAYOUT, test_perf$OFFSET, fieldValue);
+    }
+
+    private static final OfInt test_verbose$LAYOUT = (OfInt)$LAYOUT.select(groupElement("test_verbose"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean test_verbose
+     * }
+     */
+    public static final OfInt test_verbose$layout() {
+        return test_verbose$LAYOUT;
+    }
+
+    private static final long test_verbose$OFFSET = 12;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean test_verbose
+     * }
+     */
+    public static final long test_verbose$offset() {
+        return test_verbose$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean test_verbose
+     * }
+     */
+    public static int test_verbose(MemorySegment struct) {
+        return struct.get(test_verbose$LAYOUT, test_verbose$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean test_verbose
+     * }
+     */
+    public static void test_verbose(MemorySegment struct, int fieldValue) {
+        struct.set(test_verbose$LAYOUT, test_verbose$OFFSET, fieldValue);
+    }
+
+    private static final OfInt test_quiet$LAYOUT = (OfInt)$LAYOUT.select(groupElement("test_quiet"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean test_quiet
+     * }
+     */
+    public static final OfInt test_quiet$layout() {
+        return test_quiet$LAYOUT;
+    }
+
+    private static final long test_quiet$OFFSET = 16;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean test_quiet
+     * }
+     */
+    public static final long test_quiet$offset() {
+        return test_quiet$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean test_quiet
+     * }
+     */
+    public static int test_quiet(MemorySegment struct) {
+        return struct.get(test_quiet$LAYOUT, test_quiet$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean test_quiet
+     * }
+     */
+    public static void test_quiet(MemorySegment struct, int fieldValue) {
+        struct.set(test_quiet$LAYOUT, test_quiet$OFFSET, fieldValue);
+    }
+
+    private static final OfInt test_undefined$LAYOUT = (OfInt)$LAYOUT.select(groupElement("test_undefined"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gboolean test_undefined
+     * }
+     */
+    public static final OfInt test_undefined$layout() {
+        return test_undefined$LAYOUT;
+    }
+
+    private static final long test_undefined$OFFSET = 20;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gboolean test_undefined
+     * }
+     */
+    public static final long test_undefined$offset() {
+        return test_undefined$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gboolean test_undefined
+     * }
+     */
+    public static int test_undefined(MemorySegment struct) {
+        return struct.get(test_undefined$LAYOUT, test_undefined$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gboolean test_undefined
+     * }
+     */
+    public static void test_undefined(MemorySegment struct, int fieldValue) {
+        struct.set(test_undefined$LAYOUT, test_undefined$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

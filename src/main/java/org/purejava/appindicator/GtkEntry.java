@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GtkEntry GtkEntry;
+ * {@snippet lang=c :
+ * typedef struct _GtkEntry GtkEntry
  * }
  */
-public final class GtkEntry extends _GtkEntry {
+public class GtkEntry extends _GtkEntry {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkEntry() {}
+    GtkEntry() {
+        // Should not be called directly
+    }
 }
-
 

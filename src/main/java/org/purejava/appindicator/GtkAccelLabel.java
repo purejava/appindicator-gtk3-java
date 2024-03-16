@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GtkAccelLabel GtkAccelLabel;
+ * {@snippet lang=c :
+ * typedef struct _GtkAccelLabel GtkAccelLabel
  * }
  */
-public final class GtkAccelLabel extends _GtkAccelLabel {
+public class GtkAccelLabel extends _GtkAccelLabel {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GtkAccelLabel() {}
+    GtkAccelLabel() {
+        // Should not be called directly
+    }
 }
-
 

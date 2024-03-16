@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GFileIface GFileIface;
+ * {@snippet lang=c :
+ * typedef struct _GFileIface GFileIface
  * }
  */
-public final class GFileIface extends _GFileIface {
+public class GFileIface extends _GFileIface {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GFileIface() {}
+    GFileIface() {
+        // Should not be called directly
+    }
 }
-
 

@@ -3,14 +3,14 @@
 package org.purejava.appindicator;
 
 /**
- * {@snippet :
- * typedef struct _GDate GDate;
+ * {@snippet lang=c :
+ * typedef struct _GDate GDate
  * }
  */
-public final class GDate extends _GDate {
+public class GDate extends _GDate {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GDate() {}
+    GDate() {
+        // Should not be called directly
+    }
 }
-
 

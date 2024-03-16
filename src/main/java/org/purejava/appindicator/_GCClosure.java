@@ -2,60 +2,167 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemoryLayout;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.SegmentAllocator;
-import java.lang.invoke.VarHandle;
+import java.lang.foreign.*;
+import java.util.function.Consumer;
+
+import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
+
 /**
- * {@snippet :
+ * {@snippet lang=c :
  * struct _GCClosure {
- *     struct _GClosure closure;
- *     void* callback;
- * };
+ *     GClosure closure;
+ *     gpointer callback;
+ * }
  * }
  */
 public class _GCClosure {
 
-    public static MemoryLayout $LAYOUT() {
-        return constants$587.const$0;
+    _GCClosure() {
+        // Should not be called directly
     }
-    public static MemorySegment closure$slice(MemorySegment seg) {
-        return seg.asSlice(0, 32);
+
+    private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
+        _GClosure.layout().withName("closure"),
+        app_indicator_h.C_POINTER.withName("callback")
+    ).withName("_GCClosure");
+
+    /**
+     * The layout of this struct
+     */
+    public static final GroupLayout layout() {
+        return $LAYOUT;
     }
-    public static VarHandle callback$VH() {
-        return constants$587.const$1;
+
+    private static final GroupLayout closure$LAYOUT = (GroupLayout)$LAYOUT.select(groupElement("closure"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * GClosure closure
+     * }
+     */
+    public static final GroupLayout closure$layout() {
+        return closure$LAYOUT;
     }
+
+    private static final long closure$OFFSET = 0;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * GClosure closure
+     * }
+     */
+    public static final long closure$offset() {
+        return closure$OFFSET;
+    }
+
     /**
      * Getter for field:
-     * {@snippet :
-     * void* callback;
+     * {@snippet lang=c :
+     * GClosure closure
      * }
      */
-    public static MemorySegment callback$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)constants$587.const$1.get(seg);
+    public static MemorySegment closure(MemorySegment struct) {
+        return struct.asSlice(closure$OFFSET, closure$LAYOUT.byteSize());
     }
+
     /**
      * Setter for field:
-     * {@snippet :
-     * void* callback;
+     * {@snippet lang=c :
+     * GClosure closure
      * }
      */
-    public static void callback$set(MemorySegment seg, MemorySegment x) {
-        constants$587.const$1.set(seg, x);
+    public static void closure(MemorySegment struct, MemorySegment fieldValue) {
+        MemorySegment.copy(fieldValue, 0L, struct, closure$OFFSET, closure$LAYOUT.byteSize());
     }
-    public static MemorySegment callback$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)constants$587.const$1.get(seg.asSlice(index*sizeof()));
-    }
-    public static void callback$set(MemorySegment seg, long index, MemorySegment x) {
-        constants$587.const$1.set(seg.asSlice(index*sizeof()), x);
-    }
-    public static long sizeof() { return $LAYOUT().byteSize(); }
-    public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
-    public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
-        return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
-    }
-    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
-}
 
+    private static final AddressLayout callback$LAYOUT = (AddressLayout)$LAYOUT.select(groupElement("callback"));
+
+    /**
+     * Layout for field:
+     * {@snippet lang=c :
+     * gpointer callback
+     * }
+     */
+    public static final AddressLayout callback$layout() {
+        return callback$LAYOUT;
+    }
+
+    private static final long callback$OFFSET = 32;
+
+    /**
+     * Offset for field:
+     * {@snippet lang=c :
+     * gpointer callback
+     * }
+     */
+    public static final long callback$offset() {
+        return callback$OFFSET;
+    }
+
+    /**
+     * Getter for field:
+     * {@snippet lang=c :
+     * gpointer callback
+     * }
+     */
+    public static MemorySegment callback(MemorySegment struct) {
+        return struct.get(callback$LAYOUT, callback$OFFSET);
+    }
+
+    /**
+     * Setter for field:
+     * {@snippet lang=c :
+     * gpointer callback
+     * }
+     */
+    public static void callback(MemorySegment struct, MemorySegment fieldValue) {
+        struct.set(callback$LAYOUT, callback$OFFSET, fieldValue);
+    }
+
+    /**
+     * Obtains a slice of {@code arrayParam} which selects the array element at {@code index}.
+     * The returned segment has address {@code arrayParam.address() + index * layout().byteSize()}
+     */
+    public static MemorySegment asSlice(MemorySegment array, long index) {
+        return array.asSlice(layout().byteSize() * index);
+    }
+
+    /**
+     * The size (in bytes) of this struct
+     */
+    public static long sizeof() { return layout().byteSize(); }
+
+    /**
+     * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}
+     */
+    public static MemorySegment allocate(SegmentAllocator allocator) {
+        return allocator.allocate(layout());
+    }
+
+    /**
+     * Allocate an array of size {@code elementCount} using {@code allocator}.
+     * The returned segment has size {@code elementCount * layout().byteSize()}.
+     */
+    public static MemorySegment allocateArray(long elementCount, SegmentAllocator allocator) {
+        return allocator.allocate(MemoryLayout.sequenceLayout(elementCount, layout()));
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, Arena arena, Consumer<MemorySegment> cleanup) {
+        return reinterpret(addr, 1, arena, cleanup);
+    }
+
+    /**
+     * Reinterprets {@code addr} using target {@code arena} and {@code cleanupAction) (if any).
+     * The returned segment has size {@code elementCount * layout().byteSize()}
+     */
+    public static MemorySegment reinterpret(MemorySegment addr, long elementCount, Arena arena, Consumer<MemorySegment> cleanup) {
+        return addr.reinterpret(layout().byteSize() * elementCount, arena, cleanup);
+    }
+}
 

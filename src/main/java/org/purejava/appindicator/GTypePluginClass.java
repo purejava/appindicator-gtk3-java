@@ -2,15 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.*;
+import java.lang.foreign.*;
+import java.nio.ByteOrder;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static java.lang.foreign.MemoryLayout.PathElement.*;
+
 /**
- * {@snippet :
- * typedef struct _GTypePluginClass GTypePluginClass;
+ * {@snippet lang=c :
+ * typedef struct _GTypePluginClass GTypePluginClass
  * }
  */
-public final class GTypePluginClass extends _GTypePluginClass {
+public class GTypePluginClass extends _GTypePluginClass {
 
-    // Suppresses default constructor, ensuring non-instantiability.
-    private GTypePluginClass() {}
+    GTypePluginClass() {
+        // Should not be called directly
+    }
 }
-
 
