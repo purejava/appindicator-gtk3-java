@@ -27,7 +27,7 @@ public final class AppIndicator {
     private static final String AYATANA_APPINDICATOR_VERSION = "libayatana-appindicator3.so.1";
     private static final String AYATANA_APPINDICATOR_LIBNAME_VERSION = "ayatana-appindicator3";
     private static final String APPINDICATOR_LIBNAME_VERSION = "appindicator3";
-    private static  List<String> allPath = new LinkedList<>();
+    private static List<String> allPath = new LinkedList<>();
 
     static {
         try (Stream<Path> paths = Files.list(Path.of(LD_CONFIG))) {
