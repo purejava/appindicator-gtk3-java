@@ -11,7 +11,7 @@ Based on libappindicator3-1 (12.10.1+20.10.20200706.1-0ubuntu1)
 
 # Requires
 Java 22
-- due to the use of the new Foreign Function & Memory API
+- due to the use of the [Foreign Function & Memory API](https://openjdk.org/jeps/454). Please refer to an older version of this lib, if you are interested in using it with an older JDK (with `--enable-preview`).
 
 # Usage
 The bindings come in three flavors:
