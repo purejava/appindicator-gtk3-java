@@ -16,6 +16,19 @@ public final class Gtk {
     }
 
     /**
+     * Sets the sensitivity of a widget. A widget is sensitive if the user can interact with it. Insensitive widgets
+     * are “grayed out” and the user can’t interact with them. Insensitive widgets are known as “inactive”, “disabled”,
+     * or “ghosted” in some other toolkits.
+     * @param widget    A GtkWidget.
+     * @param sensitive TRUE to make the widget sensitive.
+     */
+    public static void widgetSetSensitive(MemorySegment widget, boolean sensitive) {
+        if (null != widget) {
+            gtk_widget_set_sensitive(widget, sensitive ? 1 : 0);
+        }
+    }
+
+    /**
      * Recursively shows a widget, and any child widgets (if the widget is a container).
      * @param widget A GtkWidget.
      */

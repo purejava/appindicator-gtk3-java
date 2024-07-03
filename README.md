@@ -81,6 +81,7 @@ As the according jar has a size of ~9,6M, I decided to provide a **reduced varia
 - gtk_widget_destroy
 - gtk_widget_destroyed
 - gtk_widget_grab_focus
+- gtk_widget_set_sensitive
 - gtk_widget_show
 - gtk_widget_show_all
 - gtk_window_add_accel_group

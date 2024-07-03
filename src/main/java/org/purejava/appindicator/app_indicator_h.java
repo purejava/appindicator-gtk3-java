@@ -2,15 +2,13 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
+import static java.lang.foreign.ValueLayout.JAVA_BYTE;
 
 public class app_indicator_h {
 
@@ -41,6 +39,20 @@ public class app_indicator_h {
         }
     }
 
+    static MemoryLayout align(MemoryLayout layout, long align) {
+        return switch (layout) {
+            case PaddingLayout p -> p;
+            case ValueLayout v -> v.withByteAlignment(align);
+            case GroupLayout g -> {
+                MemoryLayout[] alignedMembers = g.memberLayouts().stream()
+                        .map(m -> align(m, align)).toArray(MemoryLayout[]::new);
+                yield g instanceof StructLayout ?
+                        MemoryLayout.structLayout(alignedMembers) : MemoryLayout.unionLayout(alignedMembers);
+            }
+            case SequenceLayout s -> MemoryLayout.sequenceLayout(s.elementCount(), align(s.elementLayout(), align));
+        };
+    }
+
     static final SymbolLookup SYMBOL_LOOKUP = SymbolLookup.loaderLookup()
             .or(Linker.nativeLinker().defaultLookup());
 
@@ -60,9 +72,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_error_free"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_error_free");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -84,6 +96,17 @@ public class app_indicator_h {
     public static MethodHandle g_error_free$handle() {
         return g_error_free.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_error_free(GError *error)
+     * }
+     */
+    public static MemorySegment g_error_free$address() {
+        return g_error_free.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_error_free(GError *error)
@@ -109,9 +132,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_object_set_data_full"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_object_set_data_full");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -133,6 +156,17 @@ public class app_indicator_h {
     public static MethodHandle g_object_set_data_full$handle() {
         return g_object_set_data_full.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void g_object_set_data_full(GObject *object, const gchar *key, gpointer data, GDestroyNotify destroy)
+     * }
+     */
+    public static MemorySegment g_object_set_data_full$address() {
+        return g_object_set_data_full.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void g_object_set_data_full(GObject *object, const gchar *key, gpointer data, GDestroyNotify destroy)
@@ -160,9 +194,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("g_signal_connect_object"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("g_signal_connect_object");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -184,6 +218,17 @@ public class app_indicator_h {
     public static MethodHandle g_signal_connect_object$handle() {
         return g_signal_connect_object.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern gulong g_signal_connect_object(gpointer instance, const gchar *detailed_signal, GCallback c_handler, gpointer gobject, GConnectFlags connect_flags)
+     * }
+     */
+    public static MemorySegment g_signal_connect_object$address() {
+        return g_signal_connect_object.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern gulong g_signal_connect_object(gpointer instance, const gchar *detailed_signal, GCallback c_handler, gpointer gobject, GConnectFlags connect_flags)
@@ -206,9 +251,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_widget_destroy"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_destroy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -230,6 +275,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_widget_destroy$handle() {
         return gtk_widget_destroy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_destroy(GtkWidget *widget)
+     * }
+     */
+    public static MemorySegment gtk_widget_destroy$address() {
+        return gtk_widget_destroy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_widget_destroy(GtkWidget *widget)
@@ -253,9 +309,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_widget_destroyed"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_destroyed");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -277,6 +333,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_widget_destroyed$handle() {
         return gtk_widget_destroyed.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_destroyed(GtkWidget *widget, GtkWidget **widget_pointer)
+     * }
+     */
+    public static MemorySegment gtk_widget_destroyed$address() {
+        return gtk_widget_destroyed.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_widget_destroyed(GtkWidget *widget, GtkWidget **widget_pointer)
@@ -299,9 +366,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_widget_show"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_show");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -323,6 +390,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_widget_show$handle() {
         return gtk_widget_show.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_show(GtkWidget *widget)
+     * }
+     */
+    public static MemorySegment gtk_widget_show$address() {
+        return gtk_widget_show.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_widget_show(GtkWidget *widget)
@@ -345,9 +423,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_widget_show_all"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_show_all");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -369,6 +447,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_widget_show_all$handle() {
         return gtk_widget_show_all.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_show_all(GtkWidget *widget)
+     * }
+     */
+    public static MemorySegment gtk_widget_show_all$address() {
+        return gtk_widget_show_all.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_widget_show_all(GtkWidget *widget)
@@ -391,9 +480,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_widget_grab_focus"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_grab_focus");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -415,6 +504,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_widget_grab_focus$handle() {
         return gtk_widget_grab_focus.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_grab_focus(GtkWidget *widget)
+     * }
+     */
+    public static MemorySegment gtk_widget_grab_focus$address() {
+        return gtk_widget_grab_focus.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_widget_grab_focus(GtkWidget *widget)
@@ -432,15 +532,73 @@ public class app_indicator_h {
         }
     }
 
+    private static class gtk_widget_set_sensitive {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
+            app_indicator_h.C_POINTER,
+            app_indicator_h.C_INT
+        );
+
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_widget_set_sensitive");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
+    /**
+     * Function descriptor for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_set_sensitive(GtkWidget *widget, gboolean sensitive)
+     * }
+     */
+    public static FunctionDescriptor gtk_widget_set_sensitive$descriptor() {
+        return gtk_widget_set_sensitive.DESC;
+    }
+
+    /**
+     * Downcall method handle for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_set_sensitive(GtkWidget *widget, gboolean sensitive)
+     * }
+     */
+    public static MethodHandle gtk_widget_set_sensitive$handle() {
+        return gtk_widget_set_sensitive.HANDLE;
+    }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_widget_set_sensitive(GtkWidget *widget, gboolean sensitive)
+     * }
+     */
+    public static MemorySegment gtk_widget_set_sensitive$address() {
+        return gtk_widget_set_sensitive.ADDR;
+    }
+
+    /**
+     * {@snippet lang=c :
+     * extern void gtk_widget_set_sensitive(GtkWidget *widget, gboolean sensitive)
+     * }
+     */
+    public static void gtk_widget_set_sensitive(MemorySegment widget, int sensitive) {
+        var mh$ = gtk_widget_set_sensitive.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("gtk_widget_set_sensitive", widget, sensitive);
+            }
+            mh$.invokeExact(widget, sensitive);
+        } catch (Throwable ex$) {
+           throw new AssertionError("should not reach here", ex$);
+        }
+    }
+
     private static class gtk_container_add {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
             app_indicator_h.C_POINTER,
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_container_add"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_container_add");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -462,6 +620,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_container_add$handle() {
         return gtk_container_add.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_container_add(GtkContainer *container, GtkWidget *widget)
+     * }
+     */
+    public static MemorySegment gtk_container_add$address() {
+        return gtk_container_add.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_container_add(GtkContainer *container, GtkWidget *widget)
@@ -485,9 +654,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_window_new"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -509,6 +678,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_window_new$handle() {
         return gtk_window_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_window_new(GtkWindowType type)
+     * }
+     */
+    public static MemorySegment gtk_window_new$address() {
+        return gtk_window_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GtkWidget *gtk_window_new(GtkWindowType type)
@@ -532,9 +712,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_window_set_title"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_set_title");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -556,6 +736,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_window_set_title$handle() {
         return gtk_window_set_title.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_title(GtkWindow *window, const gchar *title)
+     * }
+     */
+    public static MemorySegment gtk_window_set_title$address() {
+        return gtk_window_set_title.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_window_set_title(GtkWindow *window, const gchar *title)
@@ -579,9 +770,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_window_add_accel_group"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_add_accel_group");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -603,6 +794,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_window_add_accel_group$handle() {
         return gtk_window_add_accel_group.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_window_add_accel_group(GtkWindow *window, GtkAccelGroup *accel_group)
+     * }
+     */
+    public static MemorySegment gtk_window_add_accel_group$address() {
+        return gtk_window_add_accel_group.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_window_add_accel_group(GtkWindow *window, GtkAccelGroup *accel_group)
@@ -626,9 +828,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_window_set_icon"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_set_icon");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -650,6 +852,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_window_set_icon$handle() {
         return gtk_window_set_icon.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_icon(GtkWindow *window, GdkPixbuf *icon)
+     * }
+     */
+    public static MemorySegment gtk_window_set_icon$address() {
+        return gtk_window_set_icon.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_window_set_icon(GtkWindow *window, GdkPixbuf *icon)
@@ -673,9 +886,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_window_set_icon_name"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_set_icon_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -697,6 +910,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_window_set_icon_name$handle() {
         return gtk_window_set_icon_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_icon_name(GtkWindow *window, const gchar *name)
+     * }
+     */
+    public static MemorySegment gtk_window_set_icon_name$address() {
+        return gtk_window_set_icon_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_window_set_icon_name(GtkWindow *window, const gchar *name)
@@ -721,9 +945,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_window_set_default_size"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_window_set_default_size");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -745,6 +969,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_window_set_default_size$handle() {
         return gtk_window_set_default_size.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_window_set_default_size(GtkWindow *window, gint width, gint height)
+     * }
+     */
+    public static MemorySegment gtk_window_set_default_size$address() {
+        return gtk_window_set_default_size.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_window_set_default_size(GtkWindow *window, gint width, gint height)
@@ -768,9 +1003,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_menu_shell_append"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_menu_shell_append");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -792,6 +1027,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_menu_shell_append$handle() {
         return gtk_menu_shell_append.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_menu_shell_append(GtkMenuShell *menu_shell, GtkWidget *child)
+     * }
+     */
+    public static MemorySegment gtk_menu_shell_append$address() {
+        return gtk_menu_shell_append.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_menu_shell_append(GtkMenuShell *menu_shell, GtkWidget *child)
@@ -813,15 +1059,15 @@ public class app_indicator_h {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_menu_new"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_menu_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_menu_new(void)
+     * extern GtkWidget *gtk_menu_new()
      * }
      */
     public static FunctionDescriptor gtk_menu_new$descriptor() {
@@ -831,15 +1077,26 @@ public class app_indicator_h {
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_menu_new(void)
+     * extern GtkWidget *gtk_menu_new()
      * }
      */
     public static MethodHandle gtk_menu_new$handle() {
         return gtk_menu_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_menu_new()
+     * }
+     */
+    public static MemorySegment gtk_menu_new$address() {
+        return gtk_menu_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_menu_new(void)
+     * extern GtkWidget *gtk_menu_new()
      * }
      */
     public static MemorySegment gtk_menu_new() {
@@ -858,15 +1115,15 @@ public class app_indicator_h {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_menu_item_new"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_menu_item_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_menu_item_new(void)
+     * extern GtkWidget *gtk_menu_item_new()
      * }
      */
     public static FunctionDescriptor gtk_menu_item_new$descriptor() {
@@ -876,15 +1133,26 @@ public class app_indicator_h {
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_menu_item_new(void)
+     * extern GtkWidget *gtk_menu_item_new()
      * }
      */
     public static MethodHandle gtk_menu_item_new$handle() {
         return gtk_menu_item_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_menu_item_new()
+     * }
+     */
+    public static MemorySegment gtk_menu_item_new$address() {
+        return gtk_menu_item_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_menu_item_new(void)
+     * extern GtkWidget *gtk_menu_item_new()
      * }
      */
     public static MemorySegment gtk_menu_item_new() {
@@ -905,9 +1173,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_menu_item_set_submenu"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_menu_item_set_submenu");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -929,6 +1197,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_menu_item_set_submenu$handle() {
         return gtk_menu_item_set_submenu.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_menu_item_set_submenu(GtkMenuItem *menu_item, GtkWidget *submenu)
+     * }
+     */
+    public static MemorySegment gtk_menu_item_set_submenu$address() {
+        return gtk_menu_item_set_submenu.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_menu_item_set_submenu(GtkMenuItem *menu_item, GtkWidget *submenu)
@@ -952,9 +1231,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_menu_item_set_label"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_menu_item_set_label");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -976,6 +1255,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_menu_item_set_label$handle() {
         return gtk_menu_item_set_label.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_menu_item_set_label(GtkMenuItem *menu_item, const gchar *label)
+     * }
+     */
+    public static MemorySegment gtk_menu_item_set_label$address() {
+        return gtk_menu_item_set_label.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_menu_item_set_label(GtkMenuItem *menu_item, const gchar *label)
@@ -999,9 +1289,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_init"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_init");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1023,6 +1313,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_init$handle() {
         return gtk_init.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_init(int *argc, char ***argv)
+     * }
+     */
+    public static MemorySegment gtk_init$address() {
+        return gtk_init.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_init(int *argc, char ***argv)
@@ -1043,15 +1344,15 @@ public class app_indicator_h {
     private static class gtk_main {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_main"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_main");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern void gtk_main(void)
+     * extern void gtk_main()
      * }
      */
     public static FunctionDescriptor gtk_main$descriptor() {
@@ -1061,15 +1362,26 @@ public class app_indicator_h {
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern void gtk_main(void)
+     * extern void gtk_main()
      * }
      */
     public static MethodHandle gtk_main$handle() {
         return gtk_main.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_main()
+     * }
+     */
+    public static MemorySegment gtk_main$address() {
+        return gtk_main.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern void gtk_main(void)
+     * extern void gtk_main()
      * }
      */
     public static void gtk_main() {
@@ -1126,6 +1438,13 @@ public class app_indicator_h {
         }
 
         /**
+         * {@return the address}
+         */
+        public static MemorySegment address() {
+            return ADDR;
+        }
+
+        /**
          * {@return the specialized method handle}
          */
         public MethodHandle handle() {
@@ -1160,9 +1479,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_scrolled_window_new"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_scrolled_window_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1184,6 +1503,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_scrolled_window_new$handle() {
         return gtk_scrolled_window_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_scrolled_window_new(GtkAdjustment *hadjustment, GtkAdjustment *vadjustment)
+     * }
+     */
+    public static MemorySegment gtk_scrolled_window_new$address() {
+        return gtk_scrolled_window_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GtkWidget *gtk_scrolled_window_new(GtkAdjustment *hadjustment, GtkAdjustment *vadjustment)
@@ -1208,9 +1538,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_scrolled_window_set_policy"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_scrolled_window_set_policy");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1232,6 +1562,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_scrolled_window_set_policy$handle() {
         return gtk_scrolled_window_set_policy.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_scrolled_window_set_policy(GtkScrolledWindow *scrolled_window, GtkPolicyType hscrollbar_policy, GtkPolicyType vscrollbar_policy)
+     * }
+     */
+    public static MemorySegment gtk_scrolled_window_set_policy$address() {
+        return gtk_scrolled_window_set_policy.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_scrolled_window_set_policy(GtkScrolledWindow *scrolled_window, GtkPolicyType hscrollbar_policy, GtkPolicyType vscrollbar_policy)
@@ -1255,9 +1596,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_scrolled_window_set_shadow_type"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_scrolled_window_set_shadow_type");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1279,6 +1620,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_scrolled_window_set_shadow_type$handle() {
         return gtk_scrolled_window_set_shadow_type.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_scrolled_window_set_shadow_type(GtkScrolledWindow *scrolled_window, GtkShadowType type)
+     * }
+     */
+    public static MemorySegment gtk_scrolled_window_set_shadow_type$address() {
+        return gtk_scrolled_window_set_shadow_type.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_scrolled_window_set_shadow_type(GtkScrolledWindow *scrolled_window, GtkShadowType type)
@@ -1300,15 +1652,15 @@ public class app_indicator_h {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_statusbar_new"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_statusbar_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_statusbar_new(void)
+     * extern GtkWidget *gtk_statusbar_new()
      * }
      */
     public static FunctionDescriptor gtk_statusbar_new$descriptor() {
@@ -1318,15 +1670,26 @@ public class app_indicator_h {
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_statusbar_new(void)
+     * extern GtkWidget *gtk_statusbar_new()
      * }
      */
     public static MethodHandle gtk_statusbar_new$handle() {
         return gtk_statusbar_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_statusbar_new()
+     * }
+     */
+    public static MemorySegment gtk_statusbar_new$address() {
+        return gtk_statusbar_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_statusbar_new(void)
+     * extern GtkWidget *gtk_statusbar_new()
      * }
      */
     public static MemorySegment gtk_statusbar_new() {
@@ -1345,15 +1708,15 @@ public class app_indicator_h {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_text_view_new"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_text_view_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_text_view_new(void)
+     * extern GtkWidget *gtk_text_view_new()
      * }
      */
     public static FunctionDescriptor gtk_text_view_new$descriptor() {
@@ -1363,15 +1726,26 @@ public class app_indicator_h {
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_text_view_new(void)
+     * extern GtkWidget *gtk_text_view_new()
      * }
      */
     public static MethodHandle gtk_text_view_new$handle() {
         return gtk_text_view_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_text_view_new()
+     * }
+     */
+    public static MemorySegment gtk_text_view_new$address() {
+        return gtk_text_view_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern GtkWidget *gtk_text_view_new(void)
+     * extern GtkWidget *gtk_text_view_new()
      * }
      */
     public static MemorySegment gtk_text_view_new() {
@@ -1392,9 +1766,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_action_get_name"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_action_get_name");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1416,6 +1790,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_action_get_name$handle() {
         return gtk_action_get_name.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern const gchar *gtk_action_get_name(GtkAction *action)
+     * }
+     */
+    public static MemorySegment gtk_action_get_name$address() {
+        return gtk_action_get_name.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern const gchar *gtk_action_get_name(GtkAction *action)
@@ -1439,9 +1824,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_action_group_new"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_action_group_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1463,6 +1848,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_action_group_new$handle() {
         return gtk_action_group_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkActionGroup *gtk_action_group_new(const gchar *name)
+     * }
+     */
+    public static MemorySegment gtk_action_group_new$address() {
+        return gtk_action_group_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GtkActionGroup *gtk_action_group_new(const gchar *name)
@@ -1486,9 +1882,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_action_group_add_action"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_action_group_add_action");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1510,6 +1906,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_action_group_add_action$handle() {
         return gtk_action_group_add_action.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_action_group_add_action(GtkActionGroup *action_group, GtkAction *action)
+     * }
+     */
+    public static MemorySegment gtk_action_group_add_action$address() {
+        return gtk_action_group_add_action.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_action_group_add_action(GtkActionGroup *action_group, GtkAction *action)
@@ -1535,9 +1942,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_action_group_add_actions"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_action_group_add_actions");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1559,6 +1966,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_action_group_add_actions$handle() {
         return gtk_action_group_add_actions.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_action_group_add_actions(GtkActionGroup *action_group, const GtkActionEntry *entries, guint n_entries, gpointer user_data)
+     * }
+     */
+    public static MemorySegment gtk_action_group_add_actions$address() {
+        return gtk_action_group_add_actions.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_action_group_add_actions(GtkActionGroup *action_group, const GtkActionEntry *entries, guint n_entries, gpointer user_data)
@@ -1584,9 +2002,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_table_new"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_table_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1608,6 +2026,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_table_new$handle() {
         return gtk_table_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_table_new(guint rows, guint columns, gboolean homogeneous)
+     * }
+     */
+    public static MemorySegment gtk_table_new$address() {
+        return gtk_table_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GtkWidget *gtk_table_new(guint rows, guint columns, gboolean homogeneous)
@@ -1639,9 +2068,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_table_attach"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_table_attach");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1663,6 +2092,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_table_attach$handle() {
         return gtk_table_attach.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_table_attach(GtkTable *table, GtkWidget *child, guint left_attach, guint right_attach, guint top_attach, guint bottom_attach, GtkAttachOptions xoptions, GtkAttachOptions yoptions, guint xpadding, guint ypadding)
+     * }
+     */
+    public static MemorySegment gtk_table_attach$address() {
+        return gtk_table_attach.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_table_attach(GtkTable *table, GtkWidget *child, guint left_attach, guint right_attach, guint top_attach, guint bottom_attach, GtkAttachOptions xoptions, GtkAttachOptions yoptions, guint xpadding, guint ypadding)
@@ -1684,15 +2124,15 @@ public class app_indicator_h {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
             app_indicator_h.C_POINTER    );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_ui_manager_new"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
      * Function descriptor for:
      * {@snippet lang=c :
-     * extern GtkUIManager *gtk_ui_manager_new(void)
+     * extern GtkUIManager *gtk_ui_manager_new()
      * }
      */
     public static FunctionDescriptor gtk_ui_manager_new$descriptor() {
@@ -1702,15 +2142,26 @@ public class app_indicator_h {
     /**
      * Downcall method handle for:
      * {@snippet lang=c :
-     * extern GtkUIManager *gtk_ui_manager_new(void)
+     * extern GtkUIManager *gtk_ui_manager_new()
      * }
      */
     public static MethodHandle gtk_ui_manager_new$handle() {
         return gtk_ui_manager_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkUIManager *gtk_ui_manager_new()
+     * }
+     */
+    public static MemorySegment gtk_ui_manager_new$address() {
+        return gtk_ui_manager_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
-     * extern GtkUIManager *gtk_ui_manager_new(void)
+     * extern GtkUIManager *gtk_ui_manager_new()
      * }
      */
     public static MemorySegment gtk_ui_manager_new() {
@@ -1732,9 +2183,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_ui_manager_insert_action_group"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_insert_action_group");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1756,6 +2207,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_ui_manager_insert_action_group$handle() {
         return gtk_ui_manager_insert_action_group.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_ui_manager_insert_action_group(GtkUIManager *manager, GtkActionGroup *action_group, gint pos)
+     * }
+     */
+    public static MemorySegment gtk_ui_manager_insert_action_group$address() {
+        return gtk_ui_manager_insert_action_group.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_ui_manager_insert_action_group(GtkUIManager *manager, GtkActionGroup *action_group, gint pos)
@@ -1779,9 +2241,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_ui_manager_get_accel_group"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_get_accel_group");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1803,6 +2265,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_ui_manager_get_accel_group$handle() {
         return gtk_ui_manager_get_accel_group.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkAccelGroup *gtk_ui_manager_get_accel_group(GtkUIManager *manager)
+     * }
+     */
+    public static MemorySegment gtk_ui_manager_get_accel_group$address() {
+        return gtk_ui_manager_get_accel_group.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GtkAccelGroup *gtk_ui_manager_get_accel_group(GtkUIManager *manager)
@@ -1827,9 +2300,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_ui_manager_get_widget"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_get_widget");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1851,6 +2324,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_ui_manager_get_widget$handle() {
         return gtk_ui_manager_get_widget.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern GtkWidget *gtk_ui_manager_get_widget(GtkUIManager *manager, const gchar *path)
+     * }
+     */
+    public static MemorySegment gtk_ui_manager_get_widget$address() {
+        return gtk_ui_manager_get_widget.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern GtkWidget *gtk_ui_manager_get_widget(GtkUIManager *manager, const gchar *path)
@@ -1877,9 +2361,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_ui_manager_add_ui_from_string"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_add_ui_from_string");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1901,6 +2385,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_ui_manager_add_ui_from_string$handle() {
         return gtk_ui_manager_add_ui_from_string.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern guint gtk_ui_manager_add_ui_from_string(GtkUIManager *manager, const gchar *buffer, gssize length, GError **error)
+     * }
+     */
+    public static MemorySegment gtk_ui_manager_add_ui_from_string$address() {
+        return gtk_ui_manager_add_ui_from_string.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern guint gtk_ui_manager_add_ui_from_string(GtkUIManager *manager, const gchar *buffer, gssize length, GError **error)
@@ -1929,9 +2424,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("gtk_ui_manager_add_ui"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("gtk_ui_manager_add_ui");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -1953,6 +2448,17 @@ public class app_indicator_h {
     public static MethodHandle gtk_ui_manager_add_ui$handle() {
         return gtk_ui_manager_add_ui.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * extern void gtk_ui_manager_add_ui(GtkUIManager *manager, guint merge_id, const gchar *path, const gchar *name, const gchar *action, GtkUIManagerItemType type, gboolean top)
+     * }
+     */
+    public static MemorySegment gtk_ui_manager_add_ui$address() {
+        return gtk_ui_manager_add_ui.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * extern void gtk_ui_manager_add_ui(GtkUIManager *manager, guint merge_id, const gchar *path, const gchar *name, const gchar *action, GtkUIManagerItemType type, gboolean top)
@@ -1972,7 +2478,7 @@ public class app_indicator_h {
     private static final int APP_INDICATOR_CATEGORY_APPLICATION_STATUS = (int)0L;
     /**
      * {@snippet lang=c :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_APPLICATION_STATUS = 0
+     * enum <anonymous>.APP_INDICATOR_CATEGORY_APPLICATION_STATUS = 0
      * }
      */
     public static int APP_INDICATOR_CATEGORY_APPLICATION_STATUS() {
@@ -1981,7 +2487,7 @@ public class app_indicator_h {
     private static final int APP_INDICATOR_CATEGORY_COMMUNICATIONS = (int)1L;
     /**
      * {@snippet lang=c :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_COMMUNICATIONS = 1
+     * enum <anonymous>.APP_INDICATOR_CATEGORY_COMMUNICATIONS = 1
      * }
      */
     public static int APP_INDICATOR_CATEGORY_COMMUNICATIONS() {
@@ -1990,7 +2496,7 @@ public class app_indicator_h {
     private static final int APP_INDICATOR_CATEGORY_SYSTEM_SERVICES = (int)2L;
     /**
      * {@snippet lang=c :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_SYSTEM_SERVICES = 2
+     * enum <anonymous>.APP_INDICATOR_CATEGORY_SYSTEM_SERVICES = 2
      * }
      */
     public static int APP_INDICATOR_CATEGORY_SYSTEM_SERVICES() {
@@ -1999,7 +2505,7 @@ public class app_indicator_h {
     private static final int APP_INDICATOR_CATEGORY_HARDWARE = (int)3L;
     /**
      * {@snippet lang=c :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_HARDWARE = 3
+     * enum <anonymous>.APP_INDICATOR_CATEGORY_HARDWARE = 3
      * }
      */
     public static int APP_INDICATOR_CATEGORY_HARDWARE() {
@@ -2008,7 +2514,7 @@ public class app_indicator_h {
     private static final int APP_INDICATOR_CATEGORY_OTHER = (int)4L;
     /**
      * {@snippet lang=c :
-     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_OTHER = 4
+     * enum <anonymous>.APP_INDICATOR_CATEGORY_OTHER = 4
      * }
      */
     public static int APP_INDICATOR_CATEGORY_OTHER() {
@@ -2017,7 +2523,7 @@ public class app_indicator_h {
     private static final int APP_INDICATOR_STATUS_PASSIVE = (int)0L;
     /**
      * {@snippet lang=c :
-     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_PASSIVE = 0
+     * enum <anonymous>.APP_INDICATOR_STATUS_PASSIVE = 0
      * }
      */
     public static int APP_INDICATOR_STATUS_PASSIVE() {
@@ -2026,7 +2532,7 @@ public class app_indicator_h {
     private static final int APP_INDICATOR_STATUS_ACTIVE = (int)1L;
     /**
      * {@snippet lang=c :
-     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_ACTIVE = 1
+     * enum <anonymous>.APP_INDICATOR_STATUS_ACTIVE = 1
      * }
      */
     public static int APP_INDICATOR_STATUS_ACTIVE() {
@@ -2035,7 +2541,7 @@ public class app_indicator_h {
     private static final int APP_INDICATOR_STATUS_ATTENTION = (int)2L;
     /**
      * {@snippet lang=c :
-     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_ATTENTION = 2
+     * enum <anonymous>.APP_INDICATOR_STATUS_ATTENTION = 2
      * }
      */
     public static int APP_INDICATOR_STATUS_ATTENTION() {
@@ -2050,9 +2556,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_new"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_new");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2074,6 +2580,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_new$handle() {
         return app_indicator_new.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * AppIndicator *app_indicator_new(const gchar *id, const gchar *icon_name, AppIndicatorCategory category)
+     * }
+     */
+    public static MemorySegment app_indicator_new$address() {
+        return app_indicator_new.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * AppIndicator *app_indicator_new(const gchar *id, const gchar *icon_name, AppIndicatorCategory category)
@@ -2100,9 +2617,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_new_with_path"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_new_with_path");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2124,6 +2641,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_new_with_path$handle() {
         return app_indicator_new_with_path.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * AppIndicator *app_indicator_new_with_path(const gchar *id, const gchar *icon_name, AppIndicatorCategory category, const gchar *icon_theme_path)
+     * }
+     */
+    public static MemorySegment app_indicator_new_with_path$address() {
+        return app_indicator_new_with_path.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * AppIndicator *app_indicator_new_with_path(const gchar *id, const gchar *icon_name, AppIndicatorCategory category, const gchar *icon_theme_path)
@@ -2147,9 +2675,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_status"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_status");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2171,6 +2699,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_set_status$handle() {
         return app_indicator_set_status.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_status(AppIndicator *self, AppIndicatorStatus status)
+     * }
+     */
+    public static MemorySegment app_indicator_set_status$address() {
+        return app_indicator_set_status.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_status(AppIndicator *self, AppIndicatorStatus status)
@@ -2194,9 +2733,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_attention_icon"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_attention_icon");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2218,6 +2757,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_set_attention_icon$handle() {
         return app_indicator_set_attention_icon.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_attention_icon(AppIndicator *self, const gchar *icon_name)
+     * }
+     */
+    public static MemorySegment app_indicator_set_attention_icon$address() {
+        return app_indicator_set_attention_icon.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_attention_icon(AppIndicator *self, const gchar *icon_name)
@@ -2241,9 +2791,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_menu"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_menu");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2265,6 +2815,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_set_menu$handle() {
         return app_indicator_set_menu.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_menu(AppIndicator *self, GtkMenu *menu)
+     * }
+     */
+    public static MemorySegment app_indicator_set_menu$address() {
+        return app_indicator_set_menu.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_menu(AppIndicator *self, GtkMenu *menu)
@@ -2288,9 +2849,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_icon"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_icon");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2312,6 +2873,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_set_icon$handle() {
         return app_indicator_set_icon.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_icon(AppIndicator *self, const gchar *icon_name)
+     * }
+     */
+    public static MemorySegment app_indicator_set_icon$address() {
+        return app_indicator_set_icon.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_icon(AppIndicator *self, const gchar *icon_name)
@@ -2336,9 +2908,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_label"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_label");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2360,6 +2932,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_set_label$handle() {
         return app_indicator_set_label.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_label(AppIndicator *self, const gchar *label, const gchar *guide)
+     * }
+     */
+    public static MemorySegment app_indicator_set_label$address() {
+        return app_indicator_set_label.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_label(AppIndicator *self, const gchar *label, const gchar *guide)
@@ -2383,9 +2966,9 @@ public class app_indicator_h {
             app_indicator_h.C_INT
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_ordering_index"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_ordering_index");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2407,6 +2990,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_set_ordering_index$handle() {
         return app_indicator_set_ordering_index.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_ordering_index(AppIndicator *self, guint32 ordering_index)
+     * }
+     */
+    public static MemorySegment app_indicator_set_ordering_index$address() {
+        return app_indicator_set_ordering_index.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_ordering_index(AppIndicator *self, guint32 ordering_index)
@@ -2430,9 +3024,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_set_title"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_set_title");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2454,6 +3048,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_set_title$handle() {
         return app_indicator_set_title.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_set_title(AppIndicator *self, const gchar *title)
+     * }
+     */
+    public static MemorySegment app_indicator_set_title$address() {
+        return app_indicator_set_title.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_set_title(AppIndicator *self, const gchar *title)
@@ -2477,9 +3082,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_id"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_id");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2501,6 +3106,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_get_id$handle() {
         return app_indicator_get_id.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_id(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_id$address() {
+        return app_indicator_get_id.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_id(AppIndicator *self)
@@ -2524,9 +3140,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_category"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_category");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2548,6 +3164,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_get_category$handle() {
         return app_indicator_get_category.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * AppIndicatorCategory app_indicator_get_category(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_category$address() {
+        return app_indicator_get_category.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * AppIndicatorCategory app_indicator_get_category(AppIndicator *self)
@@ -2571,9 +3198,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_status"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_status");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2595,6 +3222,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_get_status$handle() {
         return app_indicator_get_status.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * AppIndicatorStatus app_indicator_get_status(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_status$address() {
+        return app_indicator_get_status.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * AppIndicatorStatus app_indicator_get_status(AppIndicator *self)
@@ -2618,9 +3256,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_icon"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_icon");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2642,6 +3280,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_get_icon$handle() {
         return app_indicator_get_icon.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_icon(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_icon$address() {
+        return app_indicator_get_icon.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_icon(AppIndicator *self)
@@ -2665,9 +3314,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_attention_icon"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_attention_icon");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2689,6 +3338,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_get_attention_icon$handle() {
         return app_indicator_get_attention_icon.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_attention_icon(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_attention_icon$address() {
+        return app_indicator_get_attention_icon.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_attention_icon(AppIndicator *self)
@@ -2712,9 +3372,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_title"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_title");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2736,6 +3396,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_get_title$handle() {
         return app_indicator_get_title.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_title(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_title$address() {
+        return app_indicator_get_title.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_title(AppIndicator *self)
@@ -2759,9 +3430,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_menu"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_menu");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2783,6 +3454,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_get_menu$handle() {
         return app_indicator_get_menu.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * GtkMenu *app_indicator_get_menu(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_menu$address() {
+        return app_indicator_get_menu.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * GtkMenu *app_indicator_get_menu(AppIndicator *self)
@@ -2806,9 +3488,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_label"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_label");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2830,6 +3512,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_get_label$handle() {
         return app_indicator_get_label.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * const gchar *app_indicator_get_label(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_label$address() {
+        return app_indicator_get_label.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * const gchar *app_indicator_get_label(AppIndicator *self)
@@ -2853,9 +3546,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_get_ordering_index"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_get_ordering_index");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2877,6 +3570,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_get_ordering_index$handle() {
         return app_indicator_get_ordering_index.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * guint32 app_indicator_get_ordering_index(AppIndicator *self)
+     * }
+     */
+    public static MemorySegment app_indicator_get_ordering_index$address() {
+        return app_indicator_get_ordering_index.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * guint32 app_indicator_get_ordering_index(AppIndicator *self)
@@ -2901,9 +3605,9 @@ public class app_indicator_h {
             app_indicator_h.C_POINTER
         );
 
-        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(
-                    app_indicator_h.findOrThrow("app_indicator_build_menu_from_desktop"),
-                    DESC);
+        public static final MemorySegment ADDR = app_indicator_h.findOrThrow("app_indicator_build_menu_from_desktop");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
     }
 
     /**
@@ -2925,6 +3629,17 @@ public class app_indicator_h {
     public static MethodHandle app_indicator_build_menu_from_desktop$handle() {
         return app_indicator_build_menu_from_desktop.HANDLE;
     }
+
+    /**
+     * Address for:
+     * {@snippet lang=c :
+     * void app_indicator_build_menu_from_desktop(AppIndicator *self, const gchar *desktop_file, const gchar *desktop_profile)
+     * }
+     */
+    public static MemorySegment app_indicator_build_menu_from_desktop$address() {
+        return app_indicator_build_menu_from_desktop.ADDR;
+    }
+
     /**
      * {@snippet lang=c :
      * void app_indicator_build_menu_from_desktop(AppIndicator *self, const gchar *desktop_file, const gchar *desktop_profile)
