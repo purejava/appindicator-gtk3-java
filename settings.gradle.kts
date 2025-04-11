@@ -4,4 +4,4 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-rootProject.name = 'libappindicator-gtk3-java-minimal'
+rootProject.name = "libappindicator-gtk3-java-minimal"
