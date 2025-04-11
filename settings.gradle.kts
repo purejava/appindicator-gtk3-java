@@ -4,4 +4,4 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-rootProject.name = 'libayatana-appindicator-java-full'
+rootProject.name = "libayatana-appindicator-java-full"
