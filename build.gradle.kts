@@ -14,6 +14,7 @@ dependencies {
     testImplementation(libs.org.junit.jupiter.junit.jupiter.api)
     testImplementation(libs.org.junit.jupiter.junit.jupiter.engine)
     testImplementation(libs.org.junit.jupiter.junit.jupiter)
+    testRuntimeOnly(libs.org.junit.platform.junit.platform.launcher)
     testImplementation(libs.org.slf4j.slf4j.simple)
 }
 
