@@ -1,7 +1,9 @@
+import net.thebugmc.gradle.sonatypepublisher.PublishingType.*
+
 plugins {
     id("java-library")
-    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
-    is("maven-publish")
+    id("net.thebugmc.gradle.sonatype-central-portal-publisher") version "1.2.4"
+    id("maven-publish")
     id("signing")
 }
 
@@ -73,13 +75,38 @@ publishing {
     }
 }
 
-nexusPublishing {
-    repositories {
-        sonatype {
-            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
-            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-            username.set(sonatypeUsername)
-            password.set(sonatypePassword)
+centralPortal {
+    publishingType.set(USER_MANAGED)
+
+    username.set(sonatypeUsername)
+    password.set(sonatypePassword)
+
+    // Configure POM metadata
+    pom {
+        name.set("libappindicator-gtk3-java-minimal")
+        description.set("Java bindings for libayatana-appindicator and libappindicator-gtk3 in 100% pure Java")
+        url.set("https://github.com/purejava/appindicator-gtk3-java")
+        licenses {
+            license {
+                name.set("MIT License")
+                url.set("https://opensource.org/licenses/MIT")
+            }
+        }
+        developers {
+            developer {
+                id.set("purejava")
+                name.set("Ralph Plawetzki")
+                email.set("ralph@purejava.org")
+            }
+        }
+        scm {
+            connection.set("scm:git:git://github.com/purejava/appindicator-gtk3-java.git")
+            developerConnection.set("scm:git:ssh://github.com/purejava/appindicator-gtk3-java.git")
+            url.set("https://github.com/purejava/appindicator-gtk3-java/tree/minimal")
+        }
+        issueManagement {
+            system.set("GitHub Issues")
+            url.set("https://github.com/purejava/appindicator-gtk3-java/issues")
         }
     }
 }
