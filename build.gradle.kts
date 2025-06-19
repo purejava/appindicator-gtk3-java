@@ -119,8 +119,16 @@ if (!version.toString().endsWith("-SNAPSHOT")) {
     }
 }
 
-tasks.withType<Javadoc> {
-    failOnError = false
+tasks.withType<Javadoc>().configureEach {
+    // Use reflection to access the private field
+    try {
+        val field = Javadoc::class.java.getDeclaredField("failOnError")
+        field.isAccessible = true
+        field.setBoolean(this, false)
+    } catch (e: Exception) {
+        logger.warn("Could not set failOnError: ${e.message}")
+    }
+
     (options as StandardJavadocDocletOptions).encoding = "UTF-8"
     if (JavaVersion.current().isJava9Compatible) {
         (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
