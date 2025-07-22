@@ -43,7 +43,7 @@ public class AppIndicator extends _AppIndicator {
                 }
             });
         } catch (IOException e) {
-            LOG.error("Directory '{}' does not exist", LD_CONFIG);
+            LOG.warn("Directory '{}' does not exist", LD_CONFIG);
         }
 
         allPath.add("/usr/lib"); // for systems, that don't implement multiarch
