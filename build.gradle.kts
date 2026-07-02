@@ -25,7 +25,7 @@ version = "1.4.3-SNAPSHOT"
 description = "Java bindings for libappindicator-gtk3 in 100% pure Java"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_22
+    sourceCompatibility = JavaVersion.VERSION_25
     withSourcesJar()
     withJavadocJar()
 }
